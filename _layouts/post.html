@@ -1,0 +1,35 @@
+---
+layout: single_article
+---
+
+<div class="post">
+  <main class="fix-blue">
+    <div class="pt-3 pt-sm-3 mb-5">
+      {% include menu.html %}
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="post-content">
+          <h2 class="font-weight-normal">{{ page.title }}</h2>
+          <p class="article-metadata">
+            <span class="date">Written {{ page.date | date: '%B %d, %Y' }}.</span>
+            <!-- <span class="category">Flagged under
+              <a href="{{ page.tag_for_seo | prepend: '/category/' | prepend: site.baseurl | prepend: site.url }}">
+                {{ page.tags }}
+              </a>
+            </span> -->
+          </p>
+          <div class="post-image mb-5">
+            <img class="mw-100" src="{{ page.date | date: '%Y-%m-%d' | append: '.jpeg' | prepend: '/assets/img/posts/' | prepend: site.baseurl | prepend: site.url }}"  alt="Image" />
+          </div>
+          <div class="content">
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

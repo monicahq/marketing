@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<main class="blog">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blog-header">
+          <h2>Our blog</h2>
+          <ul class="horizontal">
+            <li>
+              <a href="https://twitter.com/MonicaHQ_app">Follow Monica on Twitter</a>
+            </li>
+            <li>
+              <a href="https://tinyletter.com/monicahq">Subscribe to the newsletter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+
+        {% for post in site.posts %}
+          {% if post.tags contains 'PRM' %}
+          <article>
+            <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+            <p class="article-metadata">
+              <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
+              <span class="category">{{ post.tags }}</span>
+            </p>
+            <div class="content">
+              {{ post.content }}
+            </div>
+          </article>
+          {% endif %}
+        {% endfor %}
+
+      </div>
+      <div class="col-3">
+        {% include categories.html %}
+      </div>
+    </div>
+  </div>
+
+</main>
