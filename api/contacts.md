@@ -57,6 +57,8 @@ creating another contact in the account, the API will return an error.
       "last_name": "Doe",
       "gender": "female",
       "is_partial": false,
+      "is_dead": false,
+      "deceased_date": null,
       "last_called": null,
       "last_talked_to": null,
       "information": {
@@ -257,6 +259,8 @@ creating another contact in the account, the API will return an error.
   "last_name": "Doe",
   "gender": "female",
   "is_partial": false,
+  "is_dead": false,
+  "deceased_date": null,
   "last_called": null,
   "last_talked_to": null,
   "information": {
@@ -418,6 +422,8 @@ Partial contacts are partners or children.
     "last_name": null,
     "gender": "female",
     "is_partial": true,
+    "is_dead": false,
+    "deceased_date": null,
     "information": {
       "dates": [
         {
@@ -474,6 +480,8 @@ If a field is not required, you can send the `null` value as the content of the 
 | first_met_date | string | The date the user has met this person. Format: 'YYYY-MM-DD'. |
 | first_met_through_contact_id | integer | The contact whose made the introduction to this person. |
 | is_partial | integer | <strong>Required</strong>. Indicates whether a contact is `real` or `partial`. Can be `0` (false) or `1` (true). |
+| is_dead | integer | <strong>Required</strong>. Indicates whether a contact is deceased. Can be `0` (false) or `1` (true). |
+| deceased_date | string | The date of death of the contact. Format: 'YYYY-MM-DD'. |
 
 ### Example
 
@@ -517,6 +525,8 @@ The API call returns a contact object if the call succeeds.
   "last_name": "troyat",
   "gender": "male",
   "is_partial": false,
+  "is_dead": false,
+  "deceased_date": null,
   "last_called": null,
   "last_talked_to": null,
   "information": {
@@ -697,6 +707,8 @@ The API call returns a contact object if the call succeeds.
   "last_name": "troyat",
   "gender": "male",
   "is_partial": false,
+  "is_dead": false,
+  "deceased_date": null,
   "last_called": null,
   "last_talked_to": null,
   "information": {
