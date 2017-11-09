@@ -1,3 +1,15 @@
+- date: 2017-11-09
+  list-changes:
+      - change: Add the ability to mark a contact as deceased
+      - change: Add the ability to indicate how you've met someone
+
+- date: 2017-10-29
+  list-changes:
+      - change: Add a button to `Save and add another contact` straight from the Add contact screen
+      - change: Add the ability to indicate how you've met someone
+      - change: Add first version of the API
+      - change: Upgrade codebase to Laravel 5.5
+
 - date: 2017-10-21
   list-changes:
       - change: Add ability to add an activity to multiple people at the same time.
