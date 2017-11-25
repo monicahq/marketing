@@ -7,7 +7,7 @@ title: Addresses
 ## Overview
 
 The Address object represents an address of a contact. A contact can have as
-many address as necessary. An address can't be orphan - it needs to be linked to
+many addresses as necessary. An address can't be orphan - it needs to be linked to
 at least one contact.
 
 When retrieving an address, we always also return some basic information about
