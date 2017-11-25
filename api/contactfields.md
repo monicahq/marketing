@@ -42,6 +42,28 @@ When retrieving a contact field, we always also return some basic information ab
       "account": {
         "id": 1
       },
+      "contact": {
+        "id": 8,
+        "object": "contact",
+        "first_name": "Jim",
+        "last_name": "Halpert",
+        "gender": "male",
+        "is_partial": false,
+        "is_dead": false,
+        "deceased_date": null,
+        "information": {
+          "dates": [
+            {
+              "name": "birthdate",
+              "is_birthdate_approximate": "exact",
+              "birthdate": "1978-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "account": {
+          "id": 1
+        }
+      },
       "created_at": "2017-11-24T11:19:18Z",
       "updated_at": null
     },
@@ -65,6 +87,28 @@ When retrieving a contact field, we always also return some basic information ab
       },
       "account": {
         "id": 1
+      },
+      "contact": {
+        "id": 8,
+        "object": "contact",
+        "first_name": "Jim",
+        "last_name": "Halpert",
+        "gender": "male",
+        "is_partial": false,
+        "is_dead": false,
+        "deceased_date": null,
+        "information": {
+          "dates": [
+            {
+              "name": "birthdate",
+              "is_birthdate_approximate": "exact",
+              "birthdate": "1978-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "account": {
+          "id": 1
+        }
       },
       "created_at": "2017-11-24T11:19:18Z",
       "updated_at": null
@@ -90,8 +134,122 @@ When retrieving a contact field, we always also return some basic information ab
       "account": {
         "id": 1
       },
+      "contact": {
+        "id": 8,
+        "object": "contact",
+        "first_name": "Jim",
+        "last_name": "Halpert",
+        "gender": "male",
+        "is_partial": false,
+        "is_dead": false,
+        "deceased_date": null,
+        "information": {
+          "dates": [
+            {
+              "name": "birthdate",
+              "is_birthdate_approximate": "exact",
+              "birthdate": "1978-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "account": {
+          "id": 1
+        }
+      },
       "created_at": "2017-11-24T11:19:18Z",
       "updated_at": null
+    },
+    {
+      "id": 62793,
+      "object": "contactfield",
+      "data": "123456",
+      "contact_field_type": {
+        "id": 1,
+        "object": "contactfieldtype",
+        "name": "Email",
+        "fontawesome_icon": "fa fa-envelope-open-o",
+        "protocol": "mailto:",
+        "delible": false,
+        "type": "email",
+        "account": {
+          "id": 1
+        },
+        "created_at": "2017-11-24T11:19:18Z",
+        "updated_at": "2017-11-24T11:19:18Z"
+      },
+      "account": {
+        "id": 1
+      },
+      "contact": {
+        "id": 8,
+        "object": "contact",
+        "first_name": "Jim",
+        "last_name": "Halpert",
+        "gender": "male",
+        "is_partial": false,
+        "is_dead": false,
+        "deceased_date": null,
+        "information": {
+          "dates": [
+            {
+              "name": "birthdate",
+              "is_birthdate_approximate": "exact",
+              "birthdate": "1978-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "account": {
+          "id": 1
+        }
+      },
+      "created_at": "2017-11-24T16:43:50Z",
+      "updated_at": "2017-11-24T16:43:50Z"
+    },
+    {
+      "id": 62794,
+      "object": "contactfield",
+      "data": "123456",
+      "contact_field_type": {
+        "id": 1,
+        "object": "contactfieldtype",
+        "name": "Email",
+        "fontawesome_icon": "fa fa-envelope-open-o",
+        "protocol": "mailto:",
+        "delible": false,
+        "type": "email",
+        "account": {
+          "id": 1
+        },
+        "created_at": "2017-11-24T11:19:18Z",
+        "updated_at": "2017-11-24T11:19:18Z"
+      },
+      "account": {
+        "id": 1
+      },
+      "contact": {
+        "id": 8,
+        "object": "contact",
+        "first_name": "Jim",
+        "last_name": "Halpert",
+        "gender": "male",
+        "is_partial": false,
+        "is_dead": false,
+        "deceased_date": null,
+        "information": {
+          "dates": [
+            {
+              "name": "birthdate",
+              "is_birthdate_approximate": "exact",
+              "birthdate": "1978-10-01T00:00:00Z"
+            }
+          ]
+        },
+        "account": {
+          "id": 1
+        }
+      },
+      "created_at": "2017-11-25T08:40:54Z",
+      "updated_at": "2017-11-25T08:40:54Z"
     }
   ],
   "links": {
@@ -106,8 +264,8 @@ When retrieving a contact field, we always also return some basic information ab
     "last_page": 1,
     "path": "http:\/\/monica.app\/api\/contacts\/8\/contactfields",
     "per_page": 10,
-    "to": 3,
-    "total": 3
+    "to": 5,
+    "total": 5
   }
 }
 {% endhighlight %}
@@ -142,6 +300,28 @@ When retrieving a contact field, we always also return some basic information ab
   "account": {
     "id": 1
   },
+  "contact": {
+    "id": 8,
+    "object": "contact",
+    "first_name": "Jim",
+    "last_name": "Halpert",
+    "gender": "male",
+    "is_partial": false,
+    "is_dead": false,
+    "deceased_date": null,
+    "information": {
+      "dates": [
+        {
+          "name": "birthdate",
+          "is_birthdate_approximate": "exact",
+          "birthdate": "1978-10-01T00:00:00Z"
+        }
+      ]
+    },
+    "account": {
+      "id": 1
+    }
+  },
   "created_at": "2017-11-24T11:19:18Z",
   "updated_at": null
 }
@@ -157,81 +337,94 @@ When retrieving a contact field, we always also return some basic information ab
 
 | Name | Type | Description |
 | ---- | ----------- | ----------- |
-| content | string | <strong>Required</strong>. The description of the call. Max 100000 characters. |
-| contact_id | integer | <strong>Required</strong>. The ID of the contact that the call is associated with. |
-| called_at | string | <strong>Required</strong>. The date the call happened. Can be in the past or future - the latter being dumb, but well. Format: YYYY-MM-DD. |
+| data | string | <strong>Required</strong>. The actual content of the contact field. Max 255 characters. |
+| contact_field_type_id | integer | <strong>Required</strong>. The type of the contact field. Has to be a valid, existing contact field type ID. You can retrieve the list of all the contact field types of an account <a href="{{ "/api/countries" | prepend: site.baseurl | prepend: site.url }}">via the API</a>. |
+| contact_id | integer | <strong>Required</strong>. The ID of the contact that the content field is associated with. |
 
 ### Example
 
 {% highlight json %}
 {
-  "content": "He called, we had fun.",
-  "contact_id": 3,
-  "called_at": "2018-02-02"
+  "contact_field_type_id": 1,
+  "data": "123456",
+  "contact_id": 8
 }
 {% endhighlight %}
 
 ### Response
 
-The API call returns a Call object if the call succeeds.
+The API call returns a Contact Field object if the call succeeds.
 
 {% highlight json %}
 {
-  "data": {
-    "id": 5,
-    "object": "call",
-    "called_at": "2017-10-07T22:29:21Z",
-    "content": "He called, we had fun.",
+  "id": 62795,
+  "object": "contactfield",
+  "data": "123456",
+  "contact_field_type": {
+    "id": 1,
+    "object": "contactfieldtype",
+    "name": "Email",
+    "fontawesome_icon": "fa fa-envelope-open-o",
+    "protocol": "mailto:",
+    "delible": false,
+    "type": "email",
     "account": {
-      "id": 5
+      "id": 1
     },
-    "contact": {
-      "id": 3,
-      "object": "contact",
-      "first_name": "Leslie",
-      "last_name": "Knope",
-      "gender": "none",
-      "is_partial": false,
-      "information": {
-        "dates": [
-          {
-            "name": "birthdate",
-            "is_birthdate_approximate": "unknown",
-            "birthdate": null
-          }
-        ]
-      },
-      "account": {
-        "id": 5
-      }
+    "created_at": "2017-11-24T11:19:18Z",
+    "updated_at": "2017-11-24T11:19:18Z"
+  },
+  "account": {
+    "id": 1
+  },
+  "contact": {
+    "id": 8,
+    "object": "contact",
+    "first_name": "Jim",
+    "last_name": "Halpert",
+    "gender": "male",
+    "is_partial": false,
+    "is_dead": false,
+    "deceased_date": null,
+    "information": {
+      "dates": [
+        {
+          "name": "birthdate",
+          "is_birthdate_approximate": "exact",
+          "birthdate": "1978-10-01T00:00:00Z"
+        }
+      ]
     },
-    "created_at": "2017-10-07T22:29:21Z",
-    "updated_at": "2017-10-07T22:29:21Z"
-  }
+    "account": {
+      "id": 1
+    }
+  },
+  "created_at": "2017-11-25T08:42:36Z",
+  "updated_at": "2017-11-25T08:42:36Z"
 }
 {% endhighlight %}
 
-## Update a call
+## Update a contact field
 
 <url>
-  PUT /calls/:id
+  PUT /contactfields/:id
 </url>
 
 ### Input
 
 | Name | Type | Description |
 | ---- | ----------- | ----------- |
-| content | string | <strong>Required</strong>. The description of the call. Max 100000 characters. |
-| contact_id | integer | <strong>Required</strong>. The ID of the contact that the call is associated with. |
-| called_at | string | <strong>Required</strong>. The date the called happened. Can be in the past or future - the latter being dumb, but well. Format: YYYY-MM-DD. |
+| data | string | <strong>Required</strong>. The actual content of the contact field. Max 255 characters. |
+| contact_field_type_id | integer | <strong>Required</strong>. The type of the contact field. Has to be a valid, existing contact field type ID. You can retrieve the list of all the contact field types of an account <a href="{{ "/api/countries" | prepend: site.baseurl | prepend: site.url }}">via the API</a>. |
+| contact_id | integer | <strong>Required</strong>. The ID of the contact that the content field is associated with. |
 
 ### Example
 
 {% highlight json %}
 {
-  "content": "He called, we had fun and really awesome.",
-  "contact_id": 3,
-  "called_at": "2018-02-02"
+  "contact_field_type_id": 1,
+  "data": "456778",
+  "contact_id": 8
 }
 {% endhighlight %}
 
@@ -239,44 +432,57 @@ The API call returns a Call object if the call succeeds.
 
 {% highlight json %}
 {
-  "data": {
-    "id": 5,
-    "object": "call",
-    "called_at": "2017-10-07T22:29:21Z",
-    "content": "He called, we had fun and really awesome.",
+  "id": 62795,
+  "object": "contactfield",
+  "data": "456778",
+  "contact_field_type": {
+    "id": 1,
+    "object": "contactfieldtype",
+    "name": "Email",
+    "fontawesome_icon": "fa fa-envelope-open-o",
+    "protocol": "mailto:",
+    "delible": false,
+    "type": "email",
     "account": {
-      "id": 5
+      "id": 1
     },
-    "contact": {
-      "id": 3,
-      "object": "contact",
-      "first_name": "Leslie",
-      "last_name": "Knope",
-      "gender": "none",
-      "is_partial": false,
-      "information": {
-        "dates": [
-          {
-            "name": "birthdate",
-            "is_birthdate_approximate": "unknown",
-            "birthdate": null
-          }
-        ]
-      },
-      "account": {
-        "id": 5
-      }
+    "created_at": "2017-11-24T11:19:18Z",
+    "updated_at": "2017-11-24T11:19:18Z"
+  },
+  "account": {
+    "id": 1
+  },
+  "contact": {
+    "id": 8,
+    "object": "contact",
+    "first_name": "Jim",
+    "last_name": "Halpert",
+    "gender": "male",
+    "is_partial": false,
+    "is_dead": false,
+    "deceased_date": null,
+    "information": {
+      "dates": [
+        {
+          "name": "birthdate",
+          "is_birthdate_approximate": "exact",
+          "birthdate": "1978-10-01T00:00:00Z"
+        }
+      ]
     },
-    "created_at": "2017-10-07T22:29:21Z",
-    "updated_at": "2017-10-07T22:29:56Z"
-  }
+    "account": {
+      "id": 1
+    }
+  },
+  "created_at": "2017-11-25T08:42:36Z",
+  "updated_at": "2017-11-25T08:43:47Z"
 }
 {% endhighlight %}
 
-## Delete a call
+## Delete a contact field
 
 <url>
-  DELETE /calls/:id
+  DELETE /contactfields/:id
 </url>
 
 ### Response
