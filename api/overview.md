@@ -5,7 +5,7 @@ title: General concept
 ---
 
 Note: the API is in alpha mode at the moment. It's not considered to be production
-ready and we will stabilize it over the next weeks.
+ready and we will stabilize it over the next months.
 
 ## Overview
 
