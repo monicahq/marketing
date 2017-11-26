@@ -1,3 +1,10 @@
+- date: 2017-11-26
+  list-changes:
+      - change: Add the ability to have multiple contact fields per contact
+      - change: Add the ability to have multiple addresses per contact
+      - change: Add a Personalization tab under Settings
+
+
 - date: 2017-11-09
   list-changes:
       - change: Add the ability to mark a contact as deceased
