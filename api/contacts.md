@@ -155,36 +155,25 @@ creating another contact in the account, the API will return an error.
         },
         "food_preferencies": "Love oranges and pepper."
       },
-      "contact": {
-        "emails": [
-          {
-            "name": "personal",
-            "email": "john.doe@gmail.com"
-          }
-        ],
-        "phone_numbers": [
-          {
-            "name": "home",
-            "phone_number": "314 443 1231"
-          }
-        ],
-        "social_network": {
-          "facebook_profile_url": "https://facebook.com/johndoe",
-          "twitter_profile_url": "https://twitter.com/johndoe",
-          "linkedin_profile_url": "https://linkedin.com/johndoe"
-        },
-        "addresses": [
-          {
-            "name": "home",
-            "street": "1234 Street",
-            "city": "Montreal",
-            "province": "QC",
-            "postal_code": "21LK23",
-            "country_id": 2,
-            "country_name": "Canada"
-          }
-        ]
-      },
+      "addresses": [
+        {
+          "id": 3,
+          "object": "address",
+          "name": "default",
+          "street": null,
+          "city": "Scranton",
+          "province": null,
+          "postal_code": null,
+          "country": {
+            "id": 1,
+            "object": "country",
+            "name": "United States",
+            "iso": "us"
+          },
+          "created_at": null,
+          "updated_at": null
+        }
+      ],
       "tags": [
         {
           "id": 856,
@@ -253,155 +242,184 @@ creating another contact in the account, the API will return an error.
 
 {% highlight json %}
 {
-  "id": 1,
-  "object": "contact",
-  "first_name": "John",
-  "last_name": "Doe",
-  "gender": "female",
-  "is_partial": false,
-  "is_dead": false,
-  "deceased_date": null,
-  "last_called": null,
-  "last_talked_to": null,
-  "information": {
-    "family": {
-      "kids": {
-        "total": 1,
-        "kids": [
-          {
-            "id": 79172,
-            "object": "contact",
-            "first_name": "Héloïse",
-            "last_name": null,
-            "gender": "female",
-            "is_partial": true,
-            "information": {
-              "dates": [
-                {
-                  "name": "birthdate",
-                  "is_birthdate_approximate": "exact",
-                  "birthdate": "2011-11-22T02:21:49Z"
-                }
-              ]
+  "data": {
+    "id": 8,
+    "object": "contact",
+    "first_name": "Jim",
+    "last_name": "Halpert",
+    "gender": "male",
+    "is_partial": false,
+    "is_dead": false,
+    "deceased_date": null,
+    "last_called": null,
+    "last_talked_to": "2013-08-31 00:00:00",
+    "information": {
+      "family": {
+        "kids": {
+          "total": 2,
+          "kids": [
+            {
+              "id": 79120,
+              "object": "contact",
+              "first_name": "Cecelia Marie",
+              "last_name": null,
+              "gender": "female",
+              "is_partial": true,
+              "information": {
+                "dates": [
+                  {
+                    "name": "birthdate",
+                    "is_birthdate_approximate": "approximate",
+                    "birthdate": "2013-01-01T23:55:58Z"
+                  }
+                ]
+              },
+              "account": {
+                "id": 1
+              }
             },
-            "account": {
-              "id": 1
+            {
+              "id": 79121,
+              "object": "contact",
+              "first_name": "Philip",
+              "last_name": null,
+              "gender": "male",
+              "is_partial": true,
+              "information": {
+                "dates": [
+                  {
+                    "name": "birthdate",
+                    "is_birthdate_approximate": "approximate",
+                    "birthdate": "2014-01-01T23:56:05Z"
+                  }
+                ]
+              },
+              "account": {
+                "id": 1
+              }
             }
-          }
-        ]
+          ]
+        },
+        "partners": {
+          "total": 1,
+          "partners": [
+            {
+              "id": 76936,
+              "object": "contact",
+              "first_name": "Pam Beesly",
+              "last_name": "",
+              "gender": "female",
+              "is_partial": false,
+              "information": {
+                "dates": [
+                  {
+                    "name": "birthdate",
+                    "is_birthdate_approximate": "exact",
+                    "birthdate": "1979-04-26T00:00:00Z"
+                  }
+                ]
+              },
+              "account": {
+                "id": 1
+              }
+            }
+          ]
+        },
+        "progenitors": {
+          "total": 0,
+          "progenitors": []
+        }
       },
-      "partners": {
-        "total": 1,
-        "partners": [
-          {
-            "id": 76934,
-            "object": "contact",
-            "first_name": "Roger",
-            "last_name": null,
-            "gender": "male",
-            "is_partial": true,
-            "information": {
-              "dates": [
-                {
-                  "name": "birthdate",
-                  "is_birthdate_approximate": "approximate",
-                  "birthdate": "1976-01-01T02:43:04Z"
-                }
-              ]
-            },
-            "account": {
-              "id": 1
-            }
-          }
-        ]
+      "dates": [
+        {
+          "name": "birthdate",
+          "is_birthdate_approximate": "exact",
+          "birthdate": "1978-10-01T00:00:00Z"
+        }
+      ],
+      "career": {
+        "job": "Paper Salesman",
+        "company": "Dunder Mifflin"
       },
-      "progenitors": {
-        "total": 0,
-        "progenitors": [
-          {
-            "id": 76934,
-            "object": "contact",
-            "first_name": "Roger",
-            "last_name": null,
-            "gender": "male",
-            "is_partial": true,
-            "information": {
-              "dates": [
-                {
-                  "name": "birthdate",
-                  "is_birthdate_approximate": "approximate",
-                  "birthdate": "1976-01-01T02:43:04Z"
-                }
-              ]
-            },
-            "account": {
-              "id": 1
-            }
+      "avatar": {
+        "url": "\/storage\/avatars\/NzeTsDx6RL9mkbPWVwRLJCOXyOiYVSpMXZHQeWDt_100.jpeg",
+        "source": "internal"
+      },
+      "food_preferencies": null,
+      "how_you_met": {
+        "general_information": "I met him at a bar.",
+        "first_met_date": "2008-09-01T00:00:00Z",
+        "first_met_through_contact": {
+          "id": 76936,
+          "object": "contact",
+          "first_name": "Pam Beesly",
+          "last_name": "",
+          "gender": "female",
+          "is_partial": false,
+          "is_dead": false,
+          "deceased_date": null,
+          "information": {
+            "dates": [
+              {
+                "name": "birthdate",
+                "is_birthdate_approximate": "exact",
+                "birthdate": "1979-04-26T00:00:00Z"
+              }
+            ]
+          },
+          "account": {
+            "id": 1
           }
-        ]
+        }
       }
-    },
-    "dates": [
-      {
-        "name": "birthdate",
-        "is_birthdate_approximate": "exact",
-        "birthdate": "1983-10-23T19:10:42Z"
-      }
-    ],
-    "career": {
-      "job": null,
-      "company": null
-    },
-    "avatar": {
-      "gravatar_url": false
-    },
-    "food_preferencies": null
-  },
-  "contact": {
-    "emails": [
-      {
-        "name": "personal",
-        "email": null
-      }
-    ],
-    "phone_numbers": [
-      {
-        "name": "home",
-        "phone_number": null
-      }
-    ],
-    "social_network": {
-      "facebook_profile_url": "https://facebook.com/johndoe",
-          "twitter_profile_url": "https://twitter.com/johndoe",
-          "linkedin_profile_url": "https://linkedin.com/johndoe"
     },
     "addresses": [
       {
-        "name": "home",
-        "street": "1234 Plessis",
-        "city": "Montreal",
+        "id": 3,
+        "object": "address",
+        "name": "default",
+        "street": null,
+        "city": "Scranton",
         "province": null,
         "postal_code": null,
-        "country_id": 2,
-        "country_name": "Canada"
+        "country": {
+          "id": 1,
+          "object": "country",
+          "name": "United States",
+          "iso": "us"
+        },
+        "created_at": null,
+        "updated_at": null
       }
-    ]
-  },
-  "tags": [],
-  "statistics": {
-    "number_of_calls": 0,
-    "number_of_notes": 1,
-    "number_of_activities": 2,
-    "number_of_reminders": 1,
-    "number_of_tasks": 0,
-    "number_of_gifts": 1,
-    "number_of_debts": 0
-  },
-  "account": {
-    "id": 1
-  },
-  "created_at": "2016-09-04T02:42:51Z",
-  "updated_at": "2017-06-13T14:57:53Z"
+    ],
+    "tags": [
+      {
+        "id": 1229,
+        "object": "tag",
+        "name": "dunder mifflin",
+        "name_slug": "dunder-mifflin",
+        "account": {
+          "id": 1
+        },
+        "created_at": "2017-11-03T12:06:19Z",
+        "updated_at": "2017-11-03T12:06:19Z"
+      }
+    ],
+    "statistics": {
+      "number_of_calls": 1,
+      "number_of_notes": 1,
+      "number_of_activities": 1,
+      "number_of_reminders": 5,
+      "number_of_tasks": 0,
+      "number_of_gifts": 2,
+      "number_of_debts": 1
+    },
+    "account": {
+      "id": 1
+    },
+    "created_at": "2016-10-18T23:54:13Z",
+    "updated_at": "2017-11-27T16:28:57Z"
+  }
 }
 {% endhighlight %}
 
@@ -432,9 +450,6 @@ Partial contacts are partners or children.
           "birthdate": "2011-11-22T02:21:49Z"
         }
       ],
-      "avatar": {
-        "gravatar_url": false
-      }
     },
     "account": {
       "id": 1
@@ -463,18 +478,9 @@ If a field is not required, you can send the `null` value as the content of the 
 | birthdate | string | The birthdate of the contact. Format: 'YYYY-MM-DD'. |
 | is_birthdate_approximate | string | Can be `exact`, `approximate` or `unknown`. |
 | age | integer | The age of the contact. |
-| email | string | The email address of the contact. Max 255 characters. |
-| phone_number | string | The phone number of the contact. Max 255 characters. |
 | job | string | The job title of the contact. Max 255 characters. |
 | company | string | The company which employs the contact. Max 255 characters. |
-| street | string | The street where the contact lives. Max 255 characters. |
-| city | string | The city where the contact lives. Max 255 characters. |
-| province | string | The province where the contact lives. Max 255 characters. |
-| postal_code | string | The postal code where the contact lives. Max 255 characters. |
-| country_id | integer | The country id of the country. You need to retrieve the list of countries that we support and send the right country id from this list. |
 | food_preferencies | string | The food preferencies of the contact. Max 100000 characters. |
-| facebook_profile_url | string | The Facebook URL of the contact. Max 255 characters. |
-| twitter_profile_url | string | The Twitter URL of the contact. Max 255 characters. |
 | linkedin_profile_url | string | The LinkedIn URL of the contact. Max 255 characters. |
 | first_met_information | string | The information (ie where and how) the user has met the contact. Max 1000000 characters. |
 | first_met_date | string | The date the user has met this person. Format: 'YYYY-MM-DD'. |
@@ -482,6 +488,7 @@ If a field is not required, you can send the `null` value as the content of the 
 | is_partial | integer | <strong>Required</strong>. Indicates whether a contact is `real` or `partial`. Can be `0` (false) or `1` (true). |
 | is_dead | integer | <strong>Required</strong>. Indicates whether a contact is deceased. Can be `0` (false) or `1` (true). |
 | deceased_date | string | The date of death of the contact. Format: 'YYYY-MM-DD'. |
+| avatar_url | string | The URL of an external image that would serve as the avatar of the contact. Max 400 characters. |
 
 ### Example
 
@@ -493,23 +500,17 @@ If a field is not required, you can send the `null` value as the content of the 
   "birthdate":"1981-02-02 00:00:00",
   "is_birthdate_approximate":"approximate",
   "age":30,
-  "email":"henri.troyat@gmail.com",
-  "phone_number":"455 321 2123",
   "job":"Animator",
   "company":"Star Wars",
-  "street":"21 Jump Street",
-  "city":"Montreal",
-  "province":"QC",
-  "postal_code":"H2K1N1",
-  "country_id":3,
   "food_preferencies":"Fish and fresh potatoes.",
-  "facebook_profile_url":"https://facebook.com/johndoe",
-  "twitter_profile_url":"https://twitter.com/johndoe",
   "linkedin_profile_url":"https://linkedin.com/johndoe",
   "first_met_information":"we met a bar.",
   "first_met_date":"2013-03-03",
   "first_met_through_contact_id":2,
-  "is_partial":0
+  "is_partial":0,
+  "is_dead": 1,
+  "deceased_date": "2017-09-11",
+  "avatar_url": "https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-1/p160x160/23561695_738743569647668_3975953680386408_n.jpg?oh=c32aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F"
 }
 {% endhighlight %}
 
@@ -519,120 +520,71 @@ The API call returns a contact object if the call succeeds.
 
 {% highlight json %}
 {
-  "id": 93145,
-  "object": "contact",
-  "first_name": "henri",
-  "last_name": "troyat",
-  "gender": "male",
-  "is_partial": false,
-  "is_dead": false,
-  "deceased_date": null,
-  "last_called": null,
-  "last_talked_to": null,
-  "information": {
-    "family": {
-      "kids": {
-        "total": 0,
-        "kids": []
+  "data": {
+    "id": 116154,
+    "object": "contact",
+    "first_name": "henri",
+    "last_name": "troyat",
+    "gender": "male",
+    "is_partial": false,
+    "is_dead": true,
+    "deceased_date": "2017-09-11T00:00:00Z",
+    "last_called": null,
+    "last_talked_to": null,
+    "information": {
+      "family": {
+        "kids": {
+          "total": 0,
+          "kids": []
+        },
+        "partners": {
+          "total": 0,
+          "partners": []
+        },
+        "progenitors": {
+          "total": 0,
+          "progenitors": []
+        }
       },
-      "partners": {
-        "total": 0,
-        "partners": []
+      "dates": [
+        {
+          "name": "birthdate",
+          "is_birthdate_approximate": "approximate",
+          "birthdate": "1987-01-01T16:55:36Z"
+        }
+      ],
+      "career": {
+        "job": "Animator",
+        "company": "Star Wars"
       },
-      "progenitors": {
-        "total": 0,
-        "progenitors": []
-      }
-    },
-    "dates": [
-      {
-        "name": "birthdate",
-        "is_birthdate_approximate": "approximate",
-        "birthdate": "1987-01-01T19:19:36Z"
-      }
-    ],
-    "career": {
-      "job": "Animator",
-      "company": "Star Wars"
-    },
-    "avatar": {
-      "gravatar_url": false
-    },
-    "food_preferencies": "Fish and fresh potatoes.",
-    "how_you_met": {
-      "general_information": "we met a bar.",
-      "first_met_date": "2013-03-03",
-      "first_met_through_contact": 2
-    }
-  },
-  "contact": {
-    "emails": [
-      {
-        "name": "personal",
-        "email": "henri.troyat@gmail.com"
-      }
-    ],
-    "phone_numbers": [
-      {
-        "name": "home",
-        "phone_number": "455 321 2123"
-      }
-    ],
-    "social_network": {
-      "facebook_profile_url": "https://facebook.com/johndoe",
-      "twitter_profile_url": "https://twitter.com/johndoe",
-      "linkedin_profile_url": "https://linkedin.com/johndoe"
-    },
-    "addresses": [
-      {
-        "name": "home",
-        "street": "21 Jump Street",
-        "city": "Montreal",
-        "province": "QC",
-        "postal_code": "H2K1N1",
-        "country_id": 3,
-        "country_name": "France"
-      }
-    ]
-  },
-  "tags": [
-    {
-      "id": 856,
-      "object": "tag",
-      "name": "friend",
-      "name_slug": "friend",
-      "account": {
-        "id": 1
+      "avatar": {
+        "url": "https:\/\/scontent-yyz1-1.xx.fbcdn.net\/v\/t1.0-1\/p160x160\/23561695_738743569647668_3975953680386680408_n.jpg?oh=c32fe55aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F",
+        "source": "external"
       },
-      "created_at": "2017-09-26 20:51:59",
-      "updated_at": "2017-09-26T20:51:59Z"
+      "food_preferencies": "Fish and fresh potatoes.",
+      "how_you_met": {
+        "general_information": "I've met him at a bar. It was a great night.",
+        "first_met_date": "2013-03-03T00:00:00Z",
+        "first_met_through_contact": null
+      }
     },
-    {
-      "id": 857,
-      "object": "tag",
-      "name": "college",
-      "name_slug": "college",
-      "account": {
-        "id": 1
-      },
-      "created_at": "2017-09-26 20:51:59",
-      "updated_at": "2017-09-26T20:51:59Z"
-    }
-  ],
-  "statistics": {
-    "number_of_calls": 0,
-    "number_of_notes": 0,
-    "number_of_activities": 0,
-    "number_of_reminders": 0,
-    "number_of_tasks": 0,
-    "number_of_gifts": 0,
-    "number_of_debts": 0
-  },
-  "account": {
-    "id": 1
-  },
-  "created_at": "2017-09-18T19:19:36Z",
-  "updated_at": "2017-09-18T19:19:36Z"
+    "addresses": [],
+    "tags": [],
+    "statistics": {
+      "number_of_calls": 0,
+      "number_of_notes": 0,
+      "number_of_activities": 0,
+      "number_of_reminders": 0,
+      "number_of_tasks": 0,
+      "number_of_gifts": 0,
+      "number_of_debts": 0
+    },
+    "account": {
+      "id": 1
+    },
+    "created_at": "2017-11-27T16:55:36Z",
+    "updated_at": "2017-11-27T16:55:36Z"
+  }
 }
 {% endhighlight %}
 
@@ -652,48 +604,35 @@ The API call returns a contact object if the call succeeds.
 | birthdate | string | The birthdate of the contact. Format: 'YYYY-MM-DD'. |
 | is_birthdate_approximate | string | Can be `exact`, `approximate` or `unknown`. |
 | age | integer | The age of the contact. |
-| email | string | The email address of the contact. Max 255 characters. |
-| phone_number | string | The phone number of the contact. Max 255 characters. |
 | job | string | The job title of the contact. Max 255 characters. |
-| company | string | The company which employs the contact. Max 255 characters. |
-| street | string | The street where the contact lives. Max 255 characters. |
-| city | string | The city where the contact lives. Max 255 characters. |
-| province | string | The province where the contact lives. Max 255 characters. |
-| postal_code | string | The postal code where the contact lives. Max 255 characters. |
-| country_id | integer | The country id of the country. You need to retrieve the list of countries that we support and send the right country id from this list. |
 | food_preferencies | string | The food preferencies of the contact. Max 100000 characters. |
-| facebook_profile_url | string | The Facebook URL of the contact. Max 255 characters. |
-| twitter_profile_url | string | The Twitter URL of the contact. Max 255 characters. |
 | linkedin_profile_url | string | The LinkedIn URL of the contact. Max 255 characters. |
 | is_partial | integer | <strong>Required</strong>. Indicates whether a contact is `real` or `partial`. Can be `0` (false) or `1` (true). |
+| is_dead | integer | <strong>Required</strong>. Indicates whether a contact is deceased. Can be `0` (false) or `1` (true). |
+| deceased_date | string | The date of death of the contact. Format: 'YYYY-MM-DD'. |
+| avatar_url | string | The URL of an external image that would serve as the avatar of the contact. Max 400 characters. |
 
 ### Example
 
 {% highlight json %}
 {
-  "first_name":"henri",
-  "last_name":"troyat",
+  "first_name":"Henri",
+  "last_name":"Troyat",
   "gender":"male",
   "birthdate":"1981-02-02 00:00:00",
   "is_birthdate_approximate":"approximate",
   "age":30,
-  "email":"henri.troyat@gmail.com",
-  "phone_number":"455 321 2123",
   "job":"Animator",
   "company":"Star Wars",
-  "street":"21 Jump Street",
-  "city":"Montreal",
-  "province":"QC",
-  "postal_code":"H2K1N1",
-  "country_id":3,
   "food_preferencies":"Fish and fresh potatoes.",
-  "facebook_profile_url":"https://facebook.com/johndoe",
-  "twitter_profile_url":"https://twitter.com/johndoe",
   "linkedin_profile_url":"https://linkedin.com/johndoe",
-  "first_met_information":"we met a bar.",
+  "first_met_information":"I've met him at a bar. It was a great night.",
   "first_met_date":"2013-03-03",
-  "first_met_through_contact_id":2,
-  "is_partial":0
+  "first_met_through_contact_id":null,
+  "is_partial":0,
+  "is_dead": 1,
+  "deceased_date": "2017-09-11",
+  "avatar_url": "https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-1/p160x160/23561695_738743569647668_3975953680386680408_n.jpg?oh=c32fe55aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F"
 }
 {% endhighlight %}
 
@@ -701,97 +640,71 @@ The API call returns a contact object if the call succeeds.
 
 {% highlight json %}
 {
-  "id": 93145,
-  "object": "contact",
-  "first_name": "henri",
-  "last_name": "troyat",
-  "gender": "male",
-  "is_partial": false,
-  "is_dead": false,
-  "deceased_date": null,
-  "last_called": null,
-  "last_talked_to": null,
-  "information": {
-    "family": {
-      "kids": {
-        "total": 0,
-        "kids": []
+  "data": {
+    "id": 116154,
+    "object": "contact",
+    "first_name": "Henri",
+    "last_name": "Troyat",
+    "gender": "male",
+    "is_partial": false,
+    "is_dead": true,
+    "deceased_date": "2017-09-11T00:00:00Z",
+    "last_called": null,
+    "last_talked_to": null,
+    "information": {
+      "family": {
+        "kids": {
+          "total": 0,
+          "kids": []
+        },
+        "partners": {
+          "total": 0,
+          "partners": []
+        },
+        "progenitors": {
+          "total": 0,
+          "progenitors": []
+        }
       },
-      "partners": {
-        "total": 0,
-        "partners": []
+      "dates": [
+        {
+          "name": "birthdate",
+          "is_birthdate_approximate": "approximate",
+          "birthdate": "1987-01-01T19:16:36Z"
+        }
+      ],
+      "career": {
+        "job": "Animator",
+        "company": "Star Wars"
       },
-      "progenitors": {
-        "total": 0,
-        "progenitors": []
+      "avatar": {
+        "url": "https:\/\/scontent-yyz1-1.xx.fbcdn.net\/v\/t1.0-1\/p160x160\/23561695_738743569647668_3975953680386680408_n.jpg?oh=c32fe55aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F",
+        "source": "external"
+      },
+      "food_preferencies": "Fish and fresh potatoes.",
+      "how_you_met": {
+        "general_information": "I've met him at a bar. It was a great night.",
+        "first_met_date": "2013-03-03T00:00:00Z",
+        "first_met_through_contact": null
       }
     },
-    "dates": [
-      {
-        "name": "birthdate",
-        "is_birthdate_approximate": "approximate",
-        "birthdate": "1987-01-01T19:19:36Z"
-      }
-    ],
-    "career": {
-      "job": "Animator",
-      "company": "Star Wars"
+    "addresses": [],
+    "tags": [],
+    "statistics": {
+      "number_of_calls": 0,
+      "number_of_notes": 0,
+      "number_of_activities": 0,
+      "number_of_reminders": 0,
+      "number_of_tasks": 0,
+      "number_of_gifts": 0,
+      "number_of_debts": 0
     },
-    "avatar": {
-      "gravatar_url": false
+    "account": {
+      "id": 1
     },
-    "food_preferencies": "Fish and fresh potatoes.",
-    "how_you_met": {
-      "general_information": "we met a bar.",
-      "first_met_date": "2013-03-03",
-      "first_met_through_contact": 2
-    }
-  },
-  "contact": {
-    "emails": [
-      {
-        "name": "personal",
-        "email": "henri.troyat@gmail.com"
-      }
-    ],
-    "phone_numbers": [
-      {
-        "name": "home",
-        "phone_number": "455 321 2123"
-      }
-    ],
-    "social_network": {
-      "facebook_profile_url": "https://facebook.com/johndoe",
-      "twitter_profile_url": "https://twitter.com/johndoe",
-      "linkedin_profile_url": "https://linkedin.com/johndoe"
-    },
-    "addresses": [
-      {
-        "name": "home",
-        "street": "21 Jump Street",
-        "city": "Montreal",
-        "province": "QC",
-        "postal_code": "H2K1N1",
-        "country_id": 3,
-        "country_name": "France"
-      }
-    ]
-  },
-  "tags": [],
-  "statistics": {
-    "number_of_calls": 0,
-    "number_of_notes": 0,
-    "number_of_activities": 0,
-    "number_of_reminders": 0,
-    "number_of_tasks": 0,
-    "number_of_gifts": 0,
-    "number_of_debts": 0
-  },
-  "account": {
-    "id": 1
-  },
-  "created_at": "2017-09-18T19:19:36Z",
-  "updated_at": "2017-09-18T19:19:36Z"
+    "created_at": "2017-11-27T16:55:36Z",
+    "updated_at": "2017-11-27T19:16:36Z"
+  }
 }
 {% endhighlight %}
 
