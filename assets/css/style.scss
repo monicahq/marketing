@@ -297,28 +297,44 @@ footer {
 
 .blog {
   article {
-    border: 1px solid $border-color;
-
-    .article-image {
-      img {
-        width: 100%;
-      }
-    }
-
-    .article-excerpt {
-      height: 200px;
-
-      @media only screen and (max-width: 480px) {
-        height: 100%;
-      }
-
-      h3 {
-        font-size: 22px;
-      }
+    img {
+      border: 1px solid $border-color;
+      padding: 3px;
+      max-width: 100%;
     }
 
     .article-metadata {
       font-size: 13px;
+    }
+
+    h2 {
+      font-weight: normal;
+      font-size: 1.7rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-weight: normal;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 10px;
+    }
+  }
+
+  .blog-menu {
+    border: 1px solid $border-color;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-top: 1.5rem;
+
+    li {
+      padding: 10px;
+    }
+
+    li:not(:last-child) {
+      border-bottom: 1px solid $border-color;
     }
   }
 }
@@ -337,7 +353,9 @@ footer {
     }
 
     img {
+      border: 1px solid #d8d8d8;
       max-width: 100%;
+      padding: 3px;
     }
   }
 }
