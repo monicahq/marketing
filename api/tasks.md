@@ -34,7 +34,7 @@ related contact.
       "object": "task",
       "title": "Send Phillys all my love",
       "description": "",
-      "status": "inprogress",
+      "completed": false,
       "completed_at": null,
       "account": {
         "id": 1
@@ -67,7 +67,7 @@ related contact.
       "object": "task",
       "title": "Send Michael Scott some flowers",
       "description": "Because he's the best boss ever.",
-      "status": "inprogress",
+      "completed": false,
       "completed_at": null,
       "account": {
         "id": 1
@@ -130,7 +130,7 @@ related contact.
       "object": "task",
       "title": "Send Phillys all my love",
       "description": "",
-      "status": "inprogress",
+      "completed": false,
       "completed_at": null,
       "account": {
         "id": 1
@@ -163,7 +163,7 @@ related contact.
       "object": "task",
       "title": "Send Michael Scott some flowers",
       "description": "Because he's the best boss ever.",
-      "status": "inprogress",
+      "completed": false,
       "completed_at": null,
       "account": {
         "id": 1
@@ -225,7 +225,7 @@ related contact.
     "object": "task",
     "title": "Send Phillys all my love",
     "description": "",
-    "status": "inprogress",
+    "completed": false,
     "completed_at": null,
     "account": {
       "id": 1
@@ -268,7 +268,7 @@ related contact.
 | ---- | ----------- | ----------- |
 | title | string | <strong>Required</strong>. The title of the task. Max 255 characters. |
 | description | string | A description about what the task is. Max 1000000 characters. |
-| status | string | <strong>Required</strong>. The status of the task. Possible values: `completed`, `inprogress`, `archived`. |
+| completed | integer | <strong>Required</strong>. The status of the task. Values: `0` (false), `1` (true). |
 | completed_at | string | The date the task happened. Can be in the past or future - the latter being dumb, but well. Format: YYYY-MM-DD. |
 | contact_id | integer | <strong>Required</strong>. The ID of the contact that the call is associated with. |
 
@@ -278,7 +278,7 @@ related contact.
 {
   "title": "Bring back the table",
   "description": "I borrowed a table a while ago.",
-  "status": "inprogress",
+  "completed": 0,
   "contact_id": 1
 }
 {% endhighlight %}
@@ -294,7 +294,7 @@ The API call returns a task object if the call succeeds.
     "object": "task",
     "title": "Bring back the table",
     "description": "I borrowed a table a while ago.",
-    "status": "inprogress",
+    "completed": false,
     "completed_at": null,
     "account": {
       "id": 1
@@ -337,7 +337,7 @@ The API call returns a task object if the call succeeds.
 | ---- | ----------- | ----------- |
 | title | string | <strong>Required</strong>. The title of the task. Max 255 characters. |
 | description | string | A description about what the task is. Max 1000000 characters. |
-| status | string | <strong>Required</strong>. The status of the task. Possible values: `completed`, `inprogress`, `archived`. |
+| completed | integer | <strong>Required</strong>. The status of the task. Values: `0` (false), `1` (true). |
 | completed_at | string | The date the task happened. Can be in the past or future - the latter being dumb, but well. Format: YYYY-MM-DD. |
 | contact_id | integer | <strong>Required</strong>. The ID of the contact that the call is associated with. |
 
@@ -347,7 +347,7 @@ The API call returns a task object if the call succeeds.
 {
   "title": "Bring back the table",
   "description": "I borrowed a table a while ago.",
-  "status": "completed",
+  "completed": 1,
   "completed_at": "1970-03-03",
   "contact_id": 1
 }
@@ -362,7 +362,7 @@ The API call returns a task object if the call succeeds.
     "object": "task",
     "title": "Bring back the table",
     "description": "I borrowed a table a while ago.",
-    "status": "completed",
+    "completed": true,
     "completed_at": "1970-03-03T00:00:00Z",
     "account": {
       "id": 1
