@@ -9,6 +9,9 @@ title: Notes
 The Note object allows to associate notes to contacts. A note has to be
 associated with an existing contact - it can't be orphan.
 
+A note can be favorited. When favorited, it will be display on the dashboard
+inside the application.
+
 When retrieving a note, we always also return some basic information about the
 related contact.
 
@@ -34,6 +37,8 @@ related contact.
       "id": 4724,
       "object": "note",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.",
+      "is_favorited": true,
+      "favorited_at": "2017-12-04T00:00:00Z",
       "account": {
         "id": 1
       },
@@ -64,6 +69,8 @@ related contact.
       "id": 4725,
       "object": "note",
       "body": "I should definitely see her more often, this is sad that I don't see her more often.",
+      "is_favorited": true,
+      "favorited_at": "2017-12-04T00:00:00Z",
       "account": {
         "id": 1
       },
@@ -124,6 +131,8 @@ related contact.
       "id": 4724,
       "object": "note",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.",
+      "is_favorited": true,
+      "favorited_at": "2017-12-04T00:00:00Z",
       "account": {
         "id": 1
       },
@@ -154,6 +163,8 @@ related contact.
       "id": 4725,
       "object": "note",
       "body": "I should definitely see her more often, this is sad that I don't see her more often.",
+      "is_favorited": true,
+      "favorited_at": "2017-12-04T00:00:00Z",
       "account": {
         "id": 1
       },
@@ -213,6 +224,8 @@ related contact.
     "id": 4724,
     "object": "note",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.",
+    "is_favorited": true,
+      "favorited_at": "2017-12-04T00:00:00Z",
     "account": {
       "id": 1
     },
@@ -254,13 +267,15 @@ related contact.
 | ---- | ----------- | ----------- |
 | body | string | <strong>Required</strong>. The body of the note. Max 100000 characters. |
 | contact_id | integer | <strong>Required</strong>. The ID of the contact that the note is associated with. |
+| is_favorited | integer | <strong>Required</strong>. Indicates whether the note is favorited or not. Can be `0` (false) or `1` (true). |
 
 ### Example
 
 {% highlight json %}
 {
   "body": "This is a sample of a note.",
-  "contact_id": "1"
+  "contact_id": 1,
+  "is_favorited": 0
 }
 {% endhighlight %}
 
@@ -274,6 +289,8 @@ The API call returns a note object if the call succeeds.
     "id": 4724,
     "object": "note",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.",
+    "is_favorited": true,
+    "favorited_at": null,
     "account": {
       "id": 1
     },
@@ -315,6 +332,7 @@ The API call returns a note object if the call succeeds.
 | ---- | ----------- | ----------- |
 | body | string | <strong>Required</strong>. The body of the note. Max 100000 characters. |
 | contact_id | integer | <strong>Required</strong>. The ID of the contact that the note is associated with. |
+| is_favorited | integer | <strong>Required</strong>. Indicates whether the note is favorited or not. Can be `0` (false) or `1` (true). |
 
 ### Example
 
@@ -333,6 +351,8 @@ The API call returns a note object if the call succeeds.
     "id": 4724,
     "object": "note",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.",
+    "is_favorited": true,
+    "favorited_at": "2017-12-04T00:00:00Z",
     "account": {
       "id": 1
     },
