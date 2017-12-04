@@ -1,9 +1,15 @@
+- date: 2017-12-04
+  list-changes:
+      - change: Add the ability to manage notes inline
+      - change: Add the notion of favorites for notes. Favorites will appear on the dashboard
+      - change: Add ability to edit account's owner first and last names
+      - change: Add the ability to manage tasks inline
+
 - date: 2017-11-26
   list-changes:
       - change: Add the ability to have multiple contact fields per contact
       - change: Add the ability to have multiple addresses per contact
       - change: Add a Personalization tab under Settings
-
 
 - date: 2017-11-09
   list-changes:
