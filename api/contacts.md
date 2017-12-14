@@ -32,6 +32,121 @@ When creating `real` contacts, the only rule is the uniqueness of the email
 address in the user's account. If you try to use the same email address when
 creating another contact in the account, the API will return an error.
 
+### Special dates
+
+Some dates about a contact are considered "special". Currently three dates have this special type:
+* birthdate
+* deceased date
+* first met date
+
+Those dates are special because they can be based on different factors:
+* User knows the exact date: Oct 29 1981.
+* User knows only the month and day, but not the year: Oct 29.
+* User knows the age, but not the date.
+* User doesn't know the date at all.
+
+When you retrieve one of these dates, here is what you get:
+
+{% highlight json %}
+"birthdate": {
+  "is_age_based": false,
+  "is_year_unknown": false,
+  "date": "1994-01-27T00:00:00Z"
+}
+{% endhighlight %}
+
+* If the `date` field is present and not null, that means we know a date for the birthdate of the contact.
+* `is_age_based`: this indicates whether the date is based on the age provided by the user or not. When it is, `date` is set with the right year, but the month and the day should be set to `01`. We can't set a reminder to a date that is age-based.
+* `is_year_unknown`: this indicates whether we know the year of birth of the contact or not. If we don't know the year, `date` has to be set to the current year.
+
+Note that `is_year_unknown` and `is_age_based` are mutually exclusive. That means, if `is_age_based` is true, `is_year_unknown` has to be false and vice versa.
+
+Below is a summary of the different use-cases. We assume the current year is 2017.
+
+**I don't know the date of birth of a contact**
+
+Query:
+{% highlight json %}
+...
+"birthdate": null,
+"birthdate_is_age_based": false,
+"birthdate_is_year_unknown": false,
+"birthdate_age": null,
+...
+{% endhighlight %}
+
+Response:
+{% highlight json %}
+"birthdate": {
+  "is_age_based": false,
+  "is_year_unknown": false,
+  "date": null
+}
+{% endhighlight %}
+
+**I only know the age of a contact**
+
+Query:
+{% highlight json %}
+...
+"birthdate": null,
+"birthdate_is_age_based": true,
+"birthdate_is_year_unknown": false,
+"birthdate_age": 29,
+...
+{% endhighlight %}
+
+Response:
+{% highlight json %}
+"birthdate": {
+  "is_age_based": true,
+  "is_year_unknown": false,
+  "date": "1994-01-01T00:00:00Z"
+}
+{% endhighlight %}
+
+**I know the day and month of birth of a contact**
+
+Query:
+{% highlight json %}
+...
+"birthdate": "2017-10-29 00:00:00",
+"birthdate_is_age_based": false,
+"birthdate_is_year_unknown": true,
+"birthdate_age": null,
+...
+{% endhighlight %}
+
+Response:
+{% highlight json %}
+"birthdate": {
+  "is_age_based": false,
+  "is_year_unknown": true,
+  "date": "2017-10-29T00:00:00Z"
+}
+{% endhighlight %}
+
+**I know the day, month and year of birth of a contact**
+
+Query:
+{% highlight json %}
+...
+"birthdate": "1994-03-21 00:00:00",
+"birthdate_is_age_based": false,
+"birthdate_is_year_unknown": false,
+"birthdate_age": null,
+...
+{% endhighlight %}
+
+Response:
+{% highlight json %}
+"birthdate": {
+  "is_age_based": false,
+  "is_year_unknown": false,
+  "date": "1994-03-21T00:00:00Z"
+}
+{% endhighlight %}
+
 ## List all your contacts
 
 <url>
@@ -53,34 +168,89 @@ creating another contact in the account, the API will return an error.
     {
       "id": 1,
       "object": "contact",
-      "first_name": "John",
-      "last_name": "Doe",
-      "gender": "female",
+      "first_name": "Justen",
+      "last_name": "Flatley",
+      "gender": "male",
       "is_partial": false,
       "is_dead": false,
-      "deceased_date": null,
       "last_called": null,
-      "last_talked_to": null,
+      "last_activity_together": {
+        "date": "1977-07-17 00:00:00.000000",
+        "timezone_type": 3,
+        "timezone": "US\/Eastern"
+      },
       "information": {
         "family": {
           "kids": {
-            "total": 1,
+            "total": 4,
             "kids": [
               {
-                "id": 79172,
+                "id": 2,
                 "object": "contact",
-                "first_name": "Héloïse",
+                "first_name": "Oscar",
+                "last_name": "Tremblay",
+                "gender": "male",
+                "is_partial": true,
+                "information": {
+                  "birthdate": {
+                    "is_age_based": false,
+                    "is_year_unknown": true,
+                    "date": "2017-11-29T00:00:00Z"
+                  }
+                },
+                "account": {
+                  "id": 1
+                }
+              },
+              {
+                "id": 3,
+                "object": "contact",
+                "first_name": "Makayla",
+                "last_name": null,
+                "gender": "female",
+                "is_partial": false,
+                "information": {
+                  "birthdate": {
+                    "is_age_based": false,
+                    "is_year_unknown": true,
+                    "date": "2017-02-27T00:00:00Z"
+                  }
+                },
+                "account": {
+                  "id": 1
+                }
+              },
+              {
+                "id": 4,
+                "object": "contact",
+                "first_name": "Johnathon",
+                "last_name": "Stark",
+                "gender": "male",
+                "is_partial": true,
+                "information": {
+                  "birthdate": {
+                    "is_age_based": false,
+                    "is_year_unknown": true,
+                    "date": "2017-09-24T00:00:00Z"
+                  }
+                },
+                "account": {
+                  "id": 1
+                }
+              },
+              {
+                "id": 5,
+                "object": "contact",
+                "first_name": "Karianne",
                 "last_name": null,
                 "gender": "female",
                 "is_partial": true,
                 "information": {
-                  "dates": [
-                    {
-                      "name": "birthdate",
-                      "is_birthdate_approximate": "exact",
-                      "birthdate": "2011-11-22T02:21:49Z"
-                    }
-                  ]
+                  "birthdate": {
+                    "is_age_based": false,
+                    "is_year_unknown": true,
+                    "date": "2017-09-25T00:00:00Z"
+                  }
                 },
                 "account": {
                   "id": 1
@@ -89,145 +259,191 @@ creating another contact in the account, the API will return an error.
             ]
           },
           "partners": {
-            "total": 1,
-            "partners": [
-              {
-                "id": 76934,
-                "object": "contact",
-                "first_name": "Roger",
-                "last_name": null,
-                "gender": "male",
-                "is_partial": true,
-                "information": {
-                  "dates": [
-                    {
-                      "name": "birthdate",
-                      "is_birthdate_approximate": "approximate",
-                      "birthdate": "1976-01-01T02:43:04Z"
-                    }
-                  ]
-                },
-                "account": {
-                  "id": 1
-                }
-              }
-            ]
+            "total": 0,
+            "partners": []
           },
           "progenitors": {
             "total": 0,
-            "progenitors": [
-              {
-                "id": 76934,
-                "object": "contact",
-                "first_name": "Henri",
-                "last_name": null,
-                "gender": "male",
-                "is_partial": true,
-                "information": {
-                  "dates": [
-                    {
-                      "name": "birthdate",
-                      "is_birthdate_approximate": "approximate",
-                      "birthdate": "1976-01-01T02:43:04Z"
-                    }
-                  ]
-                },
-                "account": {
-                  "id": 1
-                }
-              }
-            ]
+            "progenitors": []
           }
         },
-        "dates": [
-          {
-            "name": "birthdate",
-            "is_birthdate_approximate": "exact",
-            "birthdate": "1983-10-23T19:10:42Z"
+        "dates": {
+          "birthdate": {
+            "is_age_based": null,
+            "is_year_unknown": null,
+            "date": null
+          },
+          "deceased_date": {
+            "is_age_based": null,
+            "is_year_unknown": null,
+            "date": null
           }
-        ],
+        },
         "career": {
           "job": null,
           "company": null
         },
         "avatar": {
-          "gravatar_url": false
+          "url": "https:\/\/randomuser.me\/api\/portraits\/men\/39.jpg",
+          "source": "external"
         },
-        "food_preferencies": "Love oranges and pepper."
+        "food_preferencies": "Alice was a paper label, with the distant sobs of the March Hare. Visit either you like: they're both mad.' 'But I don't believe you do lessons?' said Alice, 'because I'm not myself, you see.' 'I.",
+        "how_you_met": {
+          "general_information": "King exclaimed.",
+          "first_met_date": {
+            "is_age_based": null,
+            "is_year_unknown": null,
+            "date": null
+          },
+          "first_met_through_contact": {
+            "id": 4,
+            "object": "contact",
+            "first_name": "Johnathon",
+            "last_name": "Stark",
+            "gender": "male",
+            "is_partial": true,
+            "is_dead": false,
+            "information": {
+              "birthdate": {
+                "is_age_based": false,
+                "is_year_unknown": true,
+                "date": "2017-09-24T00:00:00Z"
+              },
+              "deceased_date": {
+                "is_age_based": null,
+                "is_year_unknown": null,
+                "date": null
+              }
+            },
+            "account": {
+              "id": 1
+            }
+          }
+        }
       },
-      "addresses": [
-        {
-          "id": 3,
-          "object": "address",
-          "name": "default",
-          "street": null,
-          "city": "Scranton",
-          "province": null,
-          "postal_code": null,
-          "country": {
-            "id": 1,
-            "object": "country",
-            "name": "United States",
-            "iso": "us"
-          },
-          "created_at": null,
-          "updated_at": null
-        }
-      ],
-      "tags": [
-        {
-          "id": 856,
-          "object": "tag",
-          "name": "friend",
-          "name_slug": "friend",
-          "account": {
-            "id": 1
-          },
-          "created_at": "2017-09-26 20:51:59",
-          "updated_at": "2017-09-26T20:51:59Z"
-        },
-        {
-          "id": 857,
-          "object": "tag",
-          "name": "college",
-          "name_slug": "college",
-          "account": {
-            "id": 1
-          },
-          "created_at": "2017-09-26 20:51:59",
-          "updated_at": "2017-09-26T20:51:59Z"
-        }
-      ],
+      "addresses": [],
+      "tags": [],
       "statistics": {
         "number_of_calls": 0,
-        "number_of_notes": 1,
-        "number_of_activities": 2,
+        "number_of_notes": 5,
+        "number_of_activities": 3,
+        "number_of_reminders": 0,
+        "number_of_tasks": 3,
+        "number_of_gifts": 7,
+        "number_of_debts": 1
+      },
+      "account": {
+        "id": 1
+      },
+      "created_at": "2017-12-12T09:57:15Z",
+      "updated_at": "2017-12-12T09:57:15Z"
+    },
+    {
+      "id": 3,
+      "object": "contact",
+      "first_name": "Makayla",
+      "last_name": null,
+      "gender": "female",
+      "is_partial": false,
+      "is_dead": false,
+      "last_called": null,
+      "last_activity_together": null,
+      "information": {
+        "family": {
+          "kids": {
+            "total": 0,
+            "kids": []
+          },
+          "partners": {
+            "total": 0,
+            "partners": []
+          },
+          "progenitors": {
+            "total": 1,
+            "progenitors": [
+              {
+                "id": 1,
+                "object": "contact",
+                "first_name": "Justen",
+                "last_name": "Flatley",
+                "gender": "male",
+                "information": {
+                  "birthdate": {
+                    "is_age_based": null,
+                    "is_year_unknown": null,
+                    "date": null
+                  }
+                },
+                "account": {
+                  "id": 1
+                }
+              }
+            ]
+          }
+        },
+        "dates": {
+          "birthdate": {
+            "is_age_based": false,
+            "is_year_unknown": true,
+            "date": "2017-02-27T00:00:00Z"
+          },
+          "deceased_date": {
+            "is_age_based": null,
+            "is_year_unknown": null,
+            "date": null
+          }
+        },
+        "career": {
+          "job": null,
+          "company": null
+        },
+        "avatar": {
+          "url": null,
+          "source": null
+        },
+        "food_preferencies": null,
+        "how_you_met": {
+          "general_information": null,
+          "first_met_date": {
+            "is_age_based": null,
+            "is_year_unknown": null,
+            "date": null
+          },
+          "first_met_through_contact": null
+        }
+      },
+      "addresses": [],
+      "tags": [],
+      "statistics": {
+        "number_of_calls": 0,
+        "number_of_notes": 0,
+        "number_of_activities": 0,
         "number_of_reminders": 1,
         "number_of_tasks": 0,
-        "number_of_gifts": 1,
+        "number_of_gifts": 0,
         "number_of_debts": 0
       },
       "account": {
         "id": 1
       },
-      "created_at": "2016-09-04T02:42:51Z",
-      "updated_at": "2017-06-13T14:57:53Z"
+      "created_at": "2017-12-12T09:57:15Z",
+      "updated_at": "2017-12-12T09:57:15Z"
     }
   ],
   "links": {
-    "first": "https://app.monica.com/api/contacts?page=1",
-    "last": "https://app.monica.com/api/contacts?page=15",
+    "first": "http:\/\/monica.app\/api\/contacts?page=1",
+    "last": "http:\/\/monica.app\/api\/contacts?page=104",
     "prev": null,
-    "next": "https://app.monica.com/api/contacts?page=2"
+    "next": "http:\/\/monica.app\/api\/contacts?page=2"
   },
   "meta": {
     "current_page": 1,
     "from": 1,
-    "last_page": 15,
-    "path": "https://app.monica.com/api/contacts",
+    "last_page": 104,
+    "path": "http:\/\/monica.app\/api\/contacts",
     "per_page": "2",
     "to": 2,
-    "total": 30
+    "total": 208
   }
 }
 {% endhighlight %}
@@ -243,56 +459,91 @@ creating another contact in the account, the API will return an error.
 {% highlight json %}
 {
   "data": {
-    "id": 8,
+    "id": 1,
     "object": "contact",
-    "first_name": "Jim",
-    "last_name": "Halpert",
+    "first_name": "Justen",
+    "last_name": "Flatley",
     "gender": "male",
     "is_partial": false,
     "is_dead": false,
-    "deceased_date": null,
     "last_called": null,
-    "last_talked_to": "2013-08-31 00:00:00",
+    "last_activity_together": {
+      "date": "1977-07-17 00:00:00.000000",
+      "timezone_type": 3,
+      "timezone": "US\/Eastern"
+    },
     "information": {
       "family": {
         "kids": {
-          "total": 2,
+          "total": 4,
           "kids": [
             {
-              "id": 79120,
+              "id": 2,
               "object": "contact",
-              "first_name": "Cecelia Marie",
-              "last_name": null,
-              "gender": "female",
+              "first_name": "Oscar",
+              "last_name": "Tremblay",
+              "gender": "male",
               "is_partial": true,
               "information": {
-                "dates": [
-                  {
-                    "name": "birthdate",
-                    "is_birthdate_approximate": "approximate",
-                    "birthdate": "2013-01-01T23:55:58Z"
-                  }
-                ]
+                "birthdate": {
+                  "is_age_based": false,
+                  "is_year_unknown": true,
+                  "date": "2017-11-29T00:00:00Z"
+                }
               },
               "account": {
                 "id": 1
               }
             },
             {
-              "id": 79121,
+              "id": 3,
               "object": "contact",
-              "first_name": "Philip",
+              "first_name": "Makayla",
               "last_name": null,
+              "gender": "female",
+              "is_partial": false,
+              "information": {
+                "birthdate": {
+                  "is_age_based": false,
+                  "is_year_unknown": true,
+                  "date": "2017-02-27T00:00:00Z"
+                }
+              },
+              "account": {
+                "id": 1
+              }
+            },
+            {
+              "id": 4,
+              "object": "contact",
+              "first_name": "Johnathon",
+              "last_name": "Stark",
               "gender": "male",
               "is_partial": true,
               "information": {
-                "dates": [
-                  {
-                    "name": "birthdate",
-                    "is_birthdate_approximate": "approximate",
-                    "birthdate": "2014-01-01T23:56:05Z"
-                  }
-                ]
+                "birthdate": {
+                  "is_age_based": false,
+                  "is_year_unknown": true,
+                  "date": "2017-09-24T00:00:00Z"
+                }
+              },
+              "account": {
+                "id": 1
+              }
+            },
+            {
+              "id": 5,
+              "object": "contact",
+              "first_name": "Karianne",
+              "last_name": null,
+              "gender": "female",
+              "is_partial": true,
+              "information": {
+                "birthdate": {
+                  "is_age_based": false,
+                  "is_year_unknown": true,
+                  "date": "2017-09-25T00:00:00Z"
+                }
               },
               "account": {
                 "id": 1
@@ -301,71 +552,61 @@ creating another contact in the account, the API will return an error.
           ]
         },
         "partners": {
-          "total": 1,
-          "partners": [
-            {
-              "id": 76936,
-              "object": "contact",
-              "first_name": "Pam Beesly",
-              "last_name": "",
-              "gender": "female",
-              "is_partial": false,
-              "information": {
-                "dates": [
-                  {
-                    "name": "birthdate",
-                    "is_birthdate_approximate": "exact",
-                    "birthdate": "1979-04-26T00:00:00Z"
-                  }
-                ]
-              },
-              "account": {
-                "id": 1
-              }
-            }
-          ]
+          "total": 0,
+          "partners": []
         },
         "progenitors": {
           "total": 0,
           "progenitors": []
         }
       },
-      "dates": [
-        {
-          "name": "birthdate",
-          "is_birthdate_approximate": "exact",
-          "birthdate": "1978-10-01T00:00:00Z"
+      "dates": {
+        "birthdate": {
+          "is_age_based": null,
+          "is_year_unknown": null,
+          "date": null
+        },
+        "deceased_date": {
+          "is_age_based": null,
+          "is_year_unknown": null,
+          "date": null
         }
-      ],
+      },
       "career": {
-        "job": "Paper Salesman",
-        "company": "Dunder Mifflin"
+        "job": null,
+        "company": null
       },
       "avatar": {
-        "url": "\/storage\/avatars\/NzeTsDx6RL9mkbPWVwRLJCOXyOiYVSpMXZHQeWDt_100.jpeg",
-        "source": "internal"
+        "url": "https:\/\/randomuser.me\/api\/portraits\/men\/39.jpg",
+        "source": "external"
       },
-      "food_preferencies": null,
+      "food_preferencies": "Alice was a paper label, with the distant sobs of the March Hare. Visit either you like: they're both mad.' 'But I don't believe you do lessons?' said Alice, 'because I'm not myself, you see.' 'I.",
       "how_you_met": {
-        "general_information": "I met him at a bar.",
-        "first_met_date": "2008-09-01T00:00:00Z",
+        "general_information": "King exclaimed.",
+        "first_met_date": {
+          "is_age_based": null,
+          "is_year_unknown": null,
+          "date": null
+        },
         "first_met_through_contact": {
-          "id": 76936,
+          "id": 4,
           "object": "contact",
-          "first_name": "Pam Beesly",
-          "last_name": "",
-          "gender": "female",
-          "is_partial": false,
+          "first_name": "Johnathon",
+          "last_name": "Stark",
+          "gender": "male",
+          "is_partial": true,
           "is_dead": false,
-          "deceased_date": null,
           "information": {
-            "dates": [
-              {
-                "name": "birthdate",
-                "is_birthdate_approximate": "exact",
-                "birthdate": "1979-04-26T00:00:00Z"
-              }
-            ]
+            "birthdate": {
+              "is_age_based": false,
+              "is_year_unknown": true,
+              "date": "2017-09-24T00:00:00Z"
+            },
+            "deceased_date": {
+              "is_age_based": null,
+              "is_year_unknown": null,
+              "date": null
+            }
           },
           "account": {
             "id": 1
@@ -373,52 +614,22 @@ creating another contact in the account, the API will return an error.
         }
       }
     },
-    "addresses": [
-      {
-        "id": 3,
-        "object": "address",
-        "name": "default",
-        "street": null,
-        "city": "Scranton",
-        "province": null,
-        "postal_code": null,
-        "country": {
-          "id": 1,
-          "object": "country",
-          "name": "United States",
-          "iso": "us"
-        },
-        "created_at": null,
-        "updated_at": null
-      }
-    ],
-    "tags": [
-      {
-        "id": 1229,
-        "object": "tag",
-        "name": "dunder mifflin",
-        "name_slug": "dunder-mifflin",
-        "account": {
-          "id": 1
-        },
-        "created_at": "2017-11-03T12:06:19Z",
-        "updated_at": "2017-11-03T12:06:19Z"
-      }
-    ],
+    "addresses": [],
+    "tags": [],
     "statistics": {
-      "number_of_calls": 1,
-      "number_of_notes": 1,
-      "number_of_activities": 1,
-      "number_of_reminders": 5,
-      "number_of_tasks": 0,
-      "number_of_gifts": 2,
+      "number_of_calls": 0,
+      "number_of_notes": 5,
+      "number_of_activities": 3,
+      "number_of_reminders": 0,
+      "number_of_tasks": 3,
+      "number_of_gifts": 7,
       "number_of_debts": 1
     },
     "account": {
       "id": 1
     },
-    "created_at": "2016-10-18T23:54:13Z",
-    "updated_at": "2017-11-27T16:28:57Z"
+    "created_at": "2017-12-12T09:57:15Z",
+    "updated_at": "2017-12-12T09:57:15Z"
   }
 }
 {% endhighlight %}
@@ -433,29 +644,33 @@ Partial contacts are partners or children.
 
 {% highlight json %}
 {
-  "statistics": {
-    "id": 79172,
+  "data": {
+    "id": 10,
     "object": "contact",
-    "first_name": "Héloïse",
+    "first_name": "Casandra",
     "last_name": null,
     "gender": "female",
     "is_partial": true,
     "is_dead": false,
-    "deceased_date": null,
     "information": {
-      "dates": [
-        {
-          "name": "birthdate",
-          "is_birthdate_approximate": "exact",
-          "birthdate": "2011-11-22T02:21:49Z"
+      "dates": {
+        "birthdate": {
+          "is_age_based": false,
+          "is_year_unknown": false,
+          "date": "1994-01-27T00:00:00Z"
+        },
+        "deceased_date": {
+          "is_age_based": null,
+          "is_year_unknown": null,
+          "date": null
         }
-      ],
+      }
     },
     "account": {
       "id": 1
     },
-    "created_at": "2017-05-30T02:21:49Z",
-    "updated_at": "2017-05-30T02:21:49Z"
+    "created_at": "2017-12-12T09:57:16Z",
+    "updated_at": "2017-12-12T09:57:16Z"
   }
 }
 {% endhighlight %}
@@ -476,18 +691,25 @@ If a field is not required, you can send the `null` value as the content of the 
 | last_name | string | Last name of the contact. Max 100 characters. |
 | gender | string | <strong>Required</strong>. The gender of the contact. Can be `male`, `female` or `unknown`. |
 | birthdate | string | The birthdate of the contact. Format: 'YYYY-MM-DD'. |
-| is_birthdate_approximate | string | Can be `exact`, `approximate` or `unknown`. |
-| age | integer | The age of the contact. |
+| birthdate_is_age_based | boolean | <strong>Required</strong>. Indicates whether the birthdate is age based or not. |
+| birthdate_is_year_unknown | boolean | <strong>Required</strong>. Indicates whether we know the year or not. |
+| birthdate_age | integer | The number of years between the birthdate and the current year. |
 | job | string | The job title of the contact. Max 255 characters. |
 | company | string | The company which employs the contact. Max 255 characters. |
 | food_preferencies | string | The food preferencies of the contact. Max 100000 characters. |
 | linkedin_profile_url | string | The LinkedIn URL of the contact. Max 255 characters. |
 | first_met_information | string | The information (ie where and how) the user has met the contact. Max 1000000 characters. |
-| first_met_date | string | The date the user has met this person. Format: 'YYYY-MM-DD'. |
+| first_met_date | string | The date you first met the contact. Format: 'YYYY-MM-DD'. |
+| first_met_date_is_age_based | boolean | <strong>Required</strong>. Indicates whether the first_met_date is age based or not. |
+| first_met_date_is_year_unknown | boolean | <strong>Required</strong>. Indicates whether we know the year or not. |
+| first_met_date_age | integer | The number of years between the first_met_date and the current year. |
 | first_met_through_contact_id | integer | The contact whose made the introduction to this person. |
 | is_partial | integer | <strong>Required</strong>. Indicates whether a contact is `real` or `partial`. Can be `0` (false) or `1` (true). |
 | is_dead | integer | <strong>Required</strong>. Indicates whether a contact is deceased. Can be `0` (false) or `1` (true). |
-| deceased_date | string | The date of death of the contact. Format: 'YYYY-MM-DD'. |
+| deceased_date | string | The date you first met the contact. Format: 'YYYY-MM-DD'. |
+| deceased_date_is_age_based | boolean | <strong>Required</strong>. Indicates whether the deceased_date is age based or not. |
+| deceased_date_is_year_unknown | boolean | <strong>Required</strong>. Indicates whether we know the year or not. |
+| deceased_date_age | integer | The number of years between the deceased_date and the current year. |
 | avatar_url | string | The URL of an external image that would serve as the avatar of the contact. Max 400 characters. |
 
 ### Example
@@ -497,7 +719,10 @@ If a field is not required, you can send the `null` value as the content of the 
   "first_name":"henri",
   "last_name":"troyat",
   "gender":"male",
-  "birthdate":"1981-02-02 00:00:00",
+  "birthdate": null,
+  "birthdate_is_age_based": true,
+  "birthdate_is_year_unknown": false,
+  "birthdate_age": 29,
   "is_birthdate_approximate":"approximate",
   "age":30,
   "job":"Animator",
@@ -505,11 +730,17 @@ If a field is not required, you can send the `null` value as the content of the 
   "food_preferencies":"Fish and fresh potatoes.",
   "linkedin_profile_url":"https://linkedin.com/johndoe",
   "first_met_information":"we met a bar.",
-  "first_met_date":"2013-03-03",
+  "first_met_date":"1981-02-02",
+  "first_met_date_is_age_based": false,
+  "first_met_date_is_year_unknown": false,
+  "first_met_date_age": null,
   "first_met_through_contact_id":2,
   "is_partial":0,
   "is_dead": 1,
-  "deceased_date": "2017-09-11",
+  "deceased_date":"2017-02-02",
+  "deceased_date_is_age_based": false,
+  "deceased_date_is_year_unknown": true,
+  "deceased_date_age": null,
   "avatar_url": "https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-1/p160x160/23561695_738743569647668_3975953680386408_n.jpg?oh=c32aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F"
 }
 {% endhighlight %}
@@ -521,16 +752,15 @@ The API call returns a contact object if the call succeeds.
 {% highlight json %}
 {
   "data": {
-    "id": 116154,
+    "id": 383,
     "object": "contact",
     "first_name": "henri",
     "last_name": "troyat",
     "gender": "male",
     "is_partial": false,
     "is_dead": true,
-    "deceased_date": "2017-09-11T00:00:00Z",
     "last_called": null,
-    "last_talked_to": null,
+    "last_activity_together": null,
     "information": {
       "family": {
         "kids": {
@@ -546,25 +776,34 @@ The API call returns a contact object if the call succeeds.
           "progenitors": []
         }
       },
-      "dates": [
-        {
-          "name": "birthdate",
-          "is_birthdate_approximate": "approximate",
-          "birthdate": "1987-01-01T16:55:36Z"
+      "dates": {
+        "birthdate": {
+          "is_age_based": true,
+          "is_year_unknown": false,
+          "date": "1988-01-01T00:00:00Z"
+        },
+        "deceased_date": {
+          "is_age_based": false,
+          "is_year_unknown": true,
+          "date": "2017-02-02T00:00:00Z"
         }
-      ],
+      },
       "career": {
         "job": "Animator",
         "company": "Star Wars"
       },
       "avatar": {
-        "url": "https:\/\/scontent-yyz1-1.xx.fbcdn.net\/v\/t1.0-1\/p160x160\/23561695_738743569647668_3975953680386680408_n.jpg?oh=c32fe55aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F",
+        "url": "https:\/\/scontent-yyz1-1.xx.fbcdn.net\/v\/t1.0-1\/p160x160\/23561695_738743569647668_3975953680386408_n.jpg?oh=c32aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F",
         "source": "external"
       },
       "food_preferencies": "Fish and fresh potatoes.",
       "how_you_met": {
-        "general_information": "I've met him at a bar. It was a great night.",
-        "first_met_date": "2013-03-03T00:00:00Z",
+        "general_information": "we met a bar.",
+        "first_met_date": {
+          "is_age_based": false,
+          "is_year_unknown": false,
+          "date": "1981-02-02T00:00:00Z"
+        },
         "first_met_through_contact": null
       }
     },
@@ -574,7 +813,7 @@ The API call returns a contact object if the call succeeds.
       "number_of_calls": 0,
       "number_of_notes": 0,
       "number_of_activities": 0,
-      "number_of_reminders": 0,
+      "number_of_reminders": 1,
       "number_of_tasks": 0,
       "number_of_gifts": 0,
       "number_of_debts": 0
@@ -582,8 +821,8 @@ The API call returns a contact object if the call succeeds.
     "account": {
       "id": 1
     },
-    "created_at": "2017-11-27T16:55:36Z",
-    "updated_at": "2017-11-27T16:55:36Z"
+    "created_at": "2017-12-12T11:03:17Z",
+    "updated_at": "2017-12-12T11:03:17Z"
   }
 }
 {% endhighlight %}
@@ -602,37 +841,57 @@ The API call returns a contact object if the call succeeds.
 | last_name | string | Last name of the contact. Max 100 characters. |
 | gender | string | <strong>Required</strong>. The gender of the contact. Can be `male`, `female` or `unknown`. |
 | birthdate | string | The birthdate of the contact. Format: 'YYYY-MM-DD'. |
-| is_birthdate_approximate | string | Can be `exact`, `approximate` or `unknown`. |
-| age | integer | The age of the contact. |
+| birthdate_is_age_based | boolean | <strong>Required</strong>. Indicates whether the birthdate is age based or not. |
+| birthdate_is_year_unknown | boolean | <strong>Required</strong>. Indicates whether we know the year or not. |
+| birthdate_age | integer | The number of years between the birthdate and the current year. |
 | job | string | The job title of the contact. Max 255 characters. |
+| company | string | The company which employs the contact. Max 255 characters. |
 | food_preferencies | string | The food preferencies of the contact. Max 100000 characters. |
 | linkedin_profile_url | string | The LinkedIn URL of the contact. Max 255 characters. |
+| first_met_information | string | The information (ie where and how) the user has met the contact. Max 1000000 characters. |
+| first_met_date | string | The date you first met the contact. Format: 'YYYY-MM-DD'. |
+| first_met_date_is_age_based | boolean | <strong>Required</strong>. Indicates whether the first_met_date is age based or not. |
+| first_met_date_is_year_unknown | boolean | <strong>Required</strong>. Indicates whether we know the year or not. |
+| first_met_date_age | integer | The number of years between the first_met_date and the current year. |
+| first_met_through_contact_id | integer | The contact whose made the introduction to this person. |
 | is_partial | integer | <strong>Required</strong>. Indicates whether a contact is `real` or `partial`. Can be `0` (false) or `1` (true). |
 | is_dead | integer | <strong>Required</strong>. Indicates whether a contact is deceased. Can be `0` (false) or `1` (true). |
-| deceased_date | string | The date of death of the contact. Format: 'YYYY-MM-DD'. |
+| deceased_date | string | The date you first met the contact. Format: 'YYYY-MM-DD'. |
+| deceased_date_is_age_based | boolean | <strong>Required</strong>. Indicates whether the deceased_date is age based or not. |
+| deceased_date_is_year_unknown | boolean | <strong>Required</strong>. Indicates whether we know the year or not. |
+| deceased_date_age | integer | The number of years between the deceased_date and the current year. |
 | avatar_url | string | The URL of an external image that would serve as the avatar of the contact. Max 400 characters. |
 
 ### Example
 
 {% highlight json %}
 {
-  "first_name":"Henri",
-  "last_name":"Troyat",
+  "first_name":"henri",
+  "last_name":"troyat",
   "gender":"male",
-  "birthdate":"1981-02-02 00:00:00",
+  "birthdate": null,
+  "birthdate_is_age_based": true,
+  "birthdate_is_year_unknown": false,
+  "birthdate_age": 29,
   "is_birthdate_approximate":"approximate",
   "age":30,
   "job":"Animator",
   "company":"Star Wars",
   "food_preferencies":"Fish and fresh potatoes.",
   "linkedin_profile_url":"https://linkedin.com/johndoe",
-  "first_met_information":"I've met him at a bar. It was a great night.",
-  "first_met_date":"2013-03-03",
-  "first_met_through_contact_id":null,
+  "first_met_information":"we met a bar.",
+  "first_met_date":"1981-02-02",
+  "first_met_date_is_age_based": false,
+  "first_met_date_is_year_unknown": false,
+  "first_met_date_age": null,
+  "first_met_through_contact_id":2,
   "is_partial":0,
   "is_dead": 1,
-  "deceased_date": "2017-09-11",
-  "avatar_url": "https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-1/p160x160/23561695_738743569647668_3975953680386680408_n.jpg?oh=c32fe55aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F"
+  "deceased_date":null,
+  "deceased_date_is_age_based": true,
+  "deceased_date_is_year_unknown": false,
+  "deceased_date_age": 98,
+  "avatar_url": "https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-1/p160x160/23561695_738743569647668_3975953680386408_n.jpg?oh=c32aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F"
 }
 {% endhighlight %}
 
@@ -641,16 +900,15 @@ The API call returns a contact object if the call succeeds.
 {% highlight json %}
 {
   "data": {
-    "id": 116154,
+    "id": 388,
     "object": "contact",
-    "first_name": "Henri",
-    "last_name": "Troyat",
+    "first_name": "henri",
+    "last_name": "troyat",
     "gender": "male",
     "is_partial": false,
     "is_dead": true,
-    "deceased_date": "2017-09-11T00:00:00Z",
     "last_called": null,
-    "last_talked_to": null,
+    "last_activity_together": null,
     "information": {
       "family": {
         "kids": {
@@ -666,25 +924,34 @@ The API call returns a contact object if the call succeeds.
           "progenitors": []
         }
       },
-      "dates": [
-        {
-          "name": "birthdate",
-          "is_birthdate_approximate": "approximate",
-          "birthdate": "1987-01-01T19:16:36Z"
+      "dates": {
+        "birthdate": {
+          "is_age_based": true,
+          "is_year_unknown": false,
+          "date": "1978-01-01T00:00:00Z"
+        },
+        "deceased_date": {
+          "is_age_based": false,
+          "is_year_unknown": true,
+          "date": "2017-02-02T00:00:00Z"
         }
-      ],
+      },
       "career": {
         "job": "Animator",
         "company": "Star Wars"
       },
       "avatar": {
-        "url": "https:\/\/scontent-yyz1-1.xx.fbcdn.net\/v\/t1.0-1\/p160x160\/23561695_738743569647668_3975953680386680408_n.jpg?oh=c32fe55aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F",
+        "url": "https:\/\/scontent-yyz1-1.xx.fbcdn.net\/v\/t1.0-1\/p160x160\/23561695_738743569647668_3975953680386408_n.jpg?oh=c32aa5f5c6c8d2ca927cbd2fcaa3&oe=5AA2632F",
         "source": "external"
       },
       "food_preferencies": "Fish and fresh potatoes.",
       "how_you_met": {
-        "general_information": "I've met him at a bar. It was a great night.",
-        "first_met_date": "2013-03-03T00:00:00Z",
+        "general_information": "we met a bar.",
+        "first_met_date": {
+          "is_age_based": false,
+          "is_year_unknown": false,
+          "date": "1981-02-02T00:00:00Z"
+        },
         "first_met_through_contact": null
       }
     },
@@ -694,7 +961,7 @@ The API call returns a contact object if the call succeeds.
       "number_of_calls": 0,
       "number_of_notes": 0,
       "number_of_activities": 0,
-      "number_of_reminders": 0,
+      "number_of_reminders": 1,
       "number_of_tasks": 0,
       "number_of_gifts": 0,
       "number_of_debts": 0
@@ -702,8 +969,8 @@ The API call returns a contact object if the call succeeds.
     "account": {
       "id": 1
     },
-    "created_at": "2017-11-27T16:55:36Z",
-    "updated_at": "2017-11-27T19:16:36Z"
+    "created_at": "2017-12-12T11:13:12Z",
+    "updated_at": "2017-12-12T11:18:40Z"
   }
 }
 {% endhighlight %}
