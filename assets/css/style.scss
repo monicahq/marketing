@@ -295,16 +295,13 @@ footer {
   }
 }
 
-.blog {
+.blog,
+.post {
   article {
     img {
       border: 1px solid $border-color;
       padding: 3px;
       max-width: 100%;
-    }
-
-    .article-metadata {
-      font-size: 13px;
     }
 
     h2 {
@@ -321,27 +318,30 @@ footer {
       padding-bottom: 10px;
     }
   }
+}
 
-  .blog-menu {
-    border: 1px solid $border-color;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    margin-top: 1.5rem;
+.blog-menu {
+  border: 1px solid $border-color;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  margin-top: 1.5rem;
 
-    li {
-      padding: 10px;
-    }
-
-    li:not(:last-child) {
-      border-bottom: 1px solid $border-color;
-    }
+  li {
+    padding: 10px;
   }
+
+  li:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.article-metadata {
+  font-size: 13px;
 }
 
 .post {
   .post-content {
-    margin: 0 auto;
     max-width: 600px;
 
     h3 {
@@ -356,6 +356,36 @@ footer {
       border: 1px solid #d8d8d8;
       max-width: 100%;
       padding: 3px;
+    }
+  }
+
+  .blog-breadcrumb {
+    ul {
+      margin: 0 0 40px 0;
+      padding-left: 0;
+    }
+
+    li:not(:last-child):after {
+      content: '>';
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+
+  .share-twitter {
+    background-color: #f9fafc;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    margin-bottom: 150px;
+
+    p {
+      margin: 0;
+      padding: 10px;
+      font-size: 13px;
+
+      &:first-child {
+        border-bottom: 1px solid #e1e1e1;
+      }
     }
   }
 }

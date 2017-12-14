@@ -11,21 +11,53 @@ layout: single_article
 
   <div class="container">
     <div class="row">
-      <div class="col">
-        <div class="post-content">
-          <h2 class="font-weight-normal">{{ page.title }}</h2>
-          <p class="article-metadata">
-            <span class="date">Written {{ page.date | date: '%B %d, %Y' }}.</span>
-            <!-- <span class="category">Flagged under
-              <a href="{{ page.tag_for_seo | prepend: '/category/' | prepend: site.baseurl | prepend: site.url }}">
-                {{ page.tags }}
-              </a>
-            </span> -->
-          </p>
-          <div class="content">
-            {{ page.content }}
-          </div>
+      <div class="col-12">
+        <div class="blog-breadcrumb">
+          <ul class="inline">
+            <li><a href="{{ "/blog" | prepend: site.baseurl | prepend: site.url }}">Blog homepage</a></li>
+            <li>{{ page.title }}</li>
+          </ul>
         </div>
+      </div>
+      <div class="col-12 col-sm-9">
+        <article class="mb-5">
+          <div class="article">
+            <h2 class="font-weight-normal">{{ page.title }}</h2>
+            <p class="article-metadata">
+              <span class="date">Written {{ page.date | date: '%B %d, %Y' }}.</span>
+              <!-- <span class="category">Flagged under
+                <a href="{{ page.tag_for_seo | prepend: '/category/' | prepend: site.baseurl | prepend: site.url }}">
+                  {{ page.tags }}
+                </a>
+              </span> -->
+            </p>
+            <div class="content">
+              <p>{{ page.content }}</p>
+            </div>
+          </div>
+        </article>
+        <div class="share-twitter">
+          <p>Have feedback on this post? Let us
+            <a href="https://twitter.com/intent/tweet?text=@MonicaHQ_app%20&amp;related=monica&amp;url={{ page.url | prepend: site.baseurl | prepend: site.url }}" target="blank">know on Twitter</a>!
+          </p>
+          <p>
+            Found a typo, a bug or need help? <a href="https://github.com/monicahq/monica/issues">Create an issue</a>.
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-3">
+        <ul class="blog-menu">
+          <li>
+            <a href="https://twitter.com/MonicaHQ_app">
+              Our Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/MonicaPersonalCRM/">
+              Our Facebook
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
