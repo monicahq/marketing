@@ -1,3 +1,12 @@
+- date: 2017-12-23
+  list-changes:
+      - change: Change how the Journal works. It now displays all the activities chronologically, and lets you define how a day went.
+      - change: Add ability to change password
+
+- date: 2017-12-13
+  list-changes:
+      - change: Add the ability to set a date without knowing the year (for a birthdate)
+
 - date: 2017-12-04
   list-changes:
       - change: Add the ability to manage notes inline
