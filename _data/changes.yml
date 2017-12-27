@@ -1,3 +1,7 @@
+- date: 2017-12-25
+  list-changes:
+      - change: Add the ability to manage pets
+
 - date: 2017-12-23
   list-changes:
       - change: Change how the Journal works. It now displays all the activities chronologically, and lets you define how a day went.
