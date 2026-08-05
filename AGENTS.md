@@ -1,22 +1,12 @@
-## Development
+# Agent instructions
 
-When starting the dev server, use background mode:
+Marketing site for Monica, the personal CRM. Static Astro 7 site.
 
-```
-astro dev --background
-```
+**The full working notes (conventions, file layout, blog/content-collection gotchas, current state of the repo) live in [`.claude/CLAUDE.md`](.claude/CLAUDE.md). Read that file first.** It's kept as the single source so guidance doesn't drift between tools.
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+Two things that matter regardless:
 
-## Documentation
+- Start the dev server in background mode: `astro dev --background` (manage with `astro dev stop` / `status` / `logs`). Don't run it in the foreground. It blocks.
+- Astro docs: https://docs.astro.build. The content collections API changed across versions, so check the docs rather than trusting older examples.
 
-Full documentation: https://docs.astro.build
-
-Consult these guides before working on related tasks:
-
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+> Note: `CLAUDE.md` in the repo root is a symlink to this file.
