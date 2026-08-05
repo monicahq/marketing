@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Renders the social sharing images into public/og/, one per locale, at
+# Renders the social sharing images into source/og/, one per locale, at
 # 1200x630. Run it after editing scripts/og/template.html or after changing the
 # hero copy it mirrors:
 #
@@ -22,7 +22,7 @@ fi
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 TEMPLATE="$ROOT/scripts/og/template.html"
-OUT_DIR="$ROOT/public/og"
+OUT_DIR="$ROOT/source/og"
 
 mkdir -p "$OUT_DIR"
 
@@ -50,4 +50,4 @@ for locale in en fr de es; do
   echo "  $(basename "$out")  $(du -h "$out" | cut -f1)"
 done
 
-echo "Wrote $(ls -1 "$OUT_DIR"/*.png | wc -l | tr -d ' ') images to public/og/"
+echo "Wrote $(ls -1 "$OUT_DIR"/*.png | wc -l | tr -d ' ') images to source/og/"

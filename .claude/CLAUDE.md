@@ -139,6 +139,8 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 
 Social cards are `source/og/monica-<locale>.png`, one per language, 1200x630. They are generated from `scripts/og/template.html` by `npm run og`, which drives headless Chrome. The PNGs are committed so a build never depends on a browser being installed. **The template mirrors the hero copy by hand**, so when a hero headline changes in `lang/`, update the template and re-run `npm run og`.
 
+The template is opened over `file://`, outside the build, so it resolves the webfont and the panda mark by relative path from `scripts/og/`. Chrome fails those silently: a missing font falls back to a system sans and a missing mark just leaves a gap, in an image nobody looks at until it is on X. Moving either asset means editing the two URLs in the template, and the way to check is to open the output, not to trust the exit code.
+
 ## Star count
 
 `bootstrap.php` reads `monicahq/monica` from the GitHub API in a `beforeBuild` listener and writes `starCount` into config, so templates use `$page->starCount`. It floors to the nearest thousand, so 24,956 renders as `24k+`. **Floor, never round**: the `+` promises at least that many.
