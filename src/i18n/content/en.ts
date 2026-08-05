@@ -12,6 +12,9 @@ export const en = {
     title: 'Monica — the open-source personal CRM',
     description:
       'Monica helps you remember the people you care about: what is happening in their life, important dates, previous conversations, and when to get back in touch. Private, open source, self-hostable.',
+    /** Alt text for the social sharing card in public/og/. */
+    imageAlt:
+      'Monica: remember the people you care about. The open-source personal CRM.',
   },
 
   announcement: {

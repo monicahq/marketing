@@ -16,6 +16,18 @@ export const localeNames: Record<Locale, string> = {
   es: 'Español',
 };
 
+/**
+ * Open Graph wants language_TERRITORY, not a bare language code. `og:locale`
+ * with a plain "fr" is ignored by Facebook's scraper, so map it explicitly.
+ * hreflang, by contrast, is happy with the bare code and stays as-is.
+ */
+export const ogLocales: Record<Locale, string> = {
+  en: 'en_US',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  es: 'es_ES',
+};
+
 export function isLocale(value: string | undefined): value is Locale {
   return locales.includes(value as Locale);
 }

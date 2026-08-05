@@ -10,6 +10,9 @@ export const de: Dictionary = {
     title: 'Monica — das quelloffene persönliche CRM',
     description:
       'Monica hilft Ihnen, sich an die Menschen zu erinnern, die Ihnen wichtig sind: was in ihrem Leben passiert, wichtige Daten, frühere Gespräche und wann Sie sich wieder melden sollten. Privat, quelloffen, selbst hostbar.',
+    /** Alt text for the social sharing card in public/og/. */
+    imageAlt:
+      'Monica: Erinnern Sie sich an die Menschen, die Ihnen wichtig sind. Das quelloffene persönliche CRM.',
   },
 
   announcement: {

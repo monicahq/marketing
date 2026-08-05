@@ -10,6 +10,9 @@ export const es: Dictionary = {
     title: 'Monica — el CRM personal de código abierto',
     description:
       'Monica te ayuda a recordar a las personas que te importan: qué está pasando en su vida, las fechas importantes, vuestras conversaciones anteriores y cuándo volver a hablar. Privado, de código abierto, alojable por ti.',
+    /** Alt text for the social sharing card in public/og/. */
+    imageAlt:
+      'Monica: recuerda a las personas que te importan. El CRM personal de código abierto.',
   },
 
   announcement: {

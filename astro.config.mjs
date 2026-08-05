@@ -3,10 +3,18 @@ import { defineConfig, envField } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
-  // Needed for canonical URLs, hreflang alternates and, later, the sitemap.
+  // Every canonical URL, hreflang alternate, sitemap entry and og:image URL is
+  // built from this. It must match the domain the site is actually served from,
+  // or search engines are handed addresses that do not resolve.
   site: 'https://www.monicahq.com',
+
+  // Generated URLs end in a slash (/en/, /fr/tarifs/). Enforcing it means one
+  // canonical form per page instead of two that look like duplicate content.
+  trailingSlash: 'always',
 
   i18n: {
     locales: ['en', 'fr', 'de', 'es'],
@@ -41,4 +49,20 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  integrations: [
+    sitemap({
+      // Tells the sitemap which URLs are translations of each other, so every
+      // entry carries xhtml:link rel="alternate" hreflang annotations. This is
+      // the second half of multilingual SEO: the <link> tags in the page head
+      // say it, and the sitemap says it again where crawlers look first.
+      i18n: {
+        defaultLocale: 'en',
+        locales: { en: 'en', fr: 'fr', de: 'de', es: 'es' },
+      },
+      // The bare root is a redirect stub carrying noindex. Listing a page in a
+      // sitemap while telling robots not to index it is a contradiction.
+      filter: (page) => new URL(page).pathname !== '/',
+    }),
+  ],
 });

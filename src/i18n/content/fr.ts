@@ -10,6 +10,9 @@ export const fr: Dictionary = {
     title: 'Monica — le CRM personnel open source',
     description:
       'Monica vous aide à vous souvenir des gens qui comptent : ce qui se passe dans leur vie, les dates importantes, vos conversations passées et le moment de reprendre contact. Privé, open source, auto-hébergeable.',
+    /** Alt text for the social sharing card in public/og/. */
+    imageAlt:
+      'Monica : souvenez-vous des gens qui comptent pour vous. Le CRM personnel open source.',
   },
 
   announcement: {
