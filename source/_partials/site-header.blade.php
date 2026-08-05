@@ -2,10 +2,11 @@
     $home = $page->route('home');
 
     // Nav items in order. Entries whose destination is a page that does not
-    // exist yet keep the design's placeholder href.
+    // exist yet keep the design's placeholder href. `current` names the route
+    // key, so aria-current follows the page being rendered.
     $navItems = [
-        ['label' => $page->t('nav.product'), 'href' => $home, 'current' => true],
-        ['label' => $page->t('nav.v3'), 'href' => $page->links['v3']],
+        ['label' => $page->t('nav.product'), 'href' => $home, 'current' => 'home'],
+        ['label' => $page->t('nav.v3'), 'href' => $page->route('v3'), 'current' => 'v3'],
         ['label' => $page->t('nav.pricing'), 'href' => '#pricing'],
         ['label' => $page->t('nav.openSource'), 'href' => '#open-source'],
         ['label' => $page->t('nav.blog'), 'href' => $page->links['blog']],
@@ -34,7 +35,7 @@
             @foreach ($navItems as $item)
                 <a
                     href="{{ $item['href'] }}"
-                    @isset($item['current']) aria-current="page" @endisset
+                    @if (($item['current'] ?? null) === $page->page) aria-current="page" @endif
                     class="{{ $navLink }}"
                 >{{ $item['label'] }}</a>
             @endforeach

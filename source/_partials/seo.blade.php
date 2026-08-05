@@ -7,8 +7,11 @@
     an x-default for readers whose language is not one of ours.
 --}}
 @php
-    $title = $page->t('meta.title');
-    $description = $page->t('meta.description');
+    // Title and description are per page and per locale, so they are keyed by
+    // the route name: `meta.home.title`, `meta.v3.title`. A new page that
+    // forgets its block fails the build here rather than shipping a blank head.
+    $title = $page->t("meta.{$page->page}.title");
+    $description = $page->t("meta.{$page->page}.description");
     $canonical = $page->absolute($page->localePath($page->page));
     $alternates = $page->alternates();
 

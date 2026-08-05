@@ -7,7 +7,7 @@
             <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary no-underline hover:no-underline">
                 {{ $page->t('finalCta.primaryCta') }}
             </a>
-            <a href="{{ $page->links['v3'] }}" class="mn-btn mn-btn--secondary no-underline hover:no-underline">
+            <a href="{{ $page->route('v3') }}" class="mn-btn mn-btn--secondary no-underline hover:no-underline">
                 {{ $page->t('finalCta.secondaryCta') }}
             </a>
         </div>

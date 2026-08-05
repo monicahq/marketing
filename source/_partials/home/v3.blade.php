@@ -19,7 +19,7 @@
         </div>
 
         <div class="mt-10 flex flex-wrap items-center gap-4">
-            <a href="{{ $page->links['v3'] }}" class="mn-btn mn-btn--primary no-underline hover:no-underline">
+            <a href="{{ $page->route('v3') }}" class="mn-btn mn-btn--primary no-underline hover:no-underline">
                 {{ $page->t('v3.cta') }}
             </a>
             <span class="font-mono text-mono text-text-muted">{{ $page->t('v3.note') }}</span>
