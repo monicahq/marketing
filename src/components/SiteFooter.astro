@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+import Container from './Container.astro';
+import LocalePicker from './LocalePicker.astro';
+import pandaMark from '../assets/monica-panda-mark.jpg';
+import { site } from '../config';
+import type { Locale } from '../i18n/config';
+import { path } from '../i18n/routes';
+import { useTranslations } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const home = path('home', locale);
+
+const columns = [
+  {
+    label: t.footer.productLabel,
+    links: [
+      { label: t.nav.product, href: home },
+      { label: t.nav.v3, href: site.links.v3 },
+      { label: t.nav.pricing, href: '#pricing' },
+    ],
+  },
+  {
+    label: t.footer.buildLabel,
+    links: [
+      { label: t.footer.api, href: site.links.api },
+      { label: t.nav.docs, href: site.links.docs },
+      { label: t.footer.selfHosting, href: site.links.selfHostingGuide },
+    ],
+  },
+  {
+    label: t.footer.projectLabel,
+    links: [
+      { label: t.footer.github, href: site.links.github },
+      { label: t.nav.blog, href: site.links.blog },
+      { label: t.footer.privacy, href: site.links.privacy },
+    ],
+  },
+];
+
+const footLink = 'text-small text-on-inverse no-underline hover:text-on-inverse-strong';
+---
+
+{/* The only large dark region in the entire system. */}
+<footer class="bg-surface-inverse text-on-inverse">
+  <Container class="pt-12 pb-10">
+    <div class="grid grid-cols-2 gap-8 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex rounded-sm bg-white p-0.5">
+            <Image src={pandaMark} alt="" width={18} densities={[1, 2]} class="block size-[18px]" />
+          </span>
+          <span class="text-[16px] font-semibold tracking-[-0.015em] text-on-inverse-strong">
+            Monica
+          </span>
+        </div>
+        <p class="mt-4 max-w-[38ch] text-small leading-[1.6]">{t.footer.tagline}</p>
+      </div>
+
+      {
+        columns.map((column) => (
+          <div class="flex flex-col gap-3">
+            <div class="text-micro font-medium tracking-[0.06em] text-on-inverse-muted uppercase">
+              {column.label}
+            </div>
+            {column.links.map((link) => (
+              <a href={link.href} class={footLink}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="mt-10 flex flex-wrap items-center gap-4 border-t border-on-inverse-border pt-6 text-small text-on-inverse-muted"
+    >
+      <LocalePicker locale={locale} page="home" />
+      <span>{t.footer.copyright(site.year)}</span>
+      <span class="font-mono text-mono">{t.footer.since}</span>
+      <span>{t.footer.ownership}</span>
+    </div>
+  </Container>
+</footer>

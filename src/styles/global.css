@@ -1,0 +1,17 @@
+/* Single stylesheet entry point. Imported once, by BaseLayout.astro.
+
+   Load order matters:
+   1. tailwindcss           declares the theme / base / components / utilities layers
+   2. theme.css             @theme — turns design tokens into Tailwind utilities
+   3. fonts, app-tokens     plain custom properties the component CSS reads
+   4. base                  design-system element defaults, after Preflight
+   5. components            mn-* classes, below utilities so markup can override
+   6. dark                  unlayered, so it overrides the theme layer at runtime */
+
+@import "tailwindcss";
+@import "./theme.css";
+@import "./design-system/fonts.css";
+@import "./design-system/app-tokens.css";
+@import "./design-system/base.css" layer(base);
+@import "./design-system/components.css" layer(components);
+@import "./design-system/dark.css";

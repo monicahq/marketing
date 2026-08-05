@@ -1,0 +1,55 @@
+---
+import Flag from './Flag.astro';
+import Icon from './Icon.astro';
+import { localeNames, type Locale } from '../i18n/config';
+import { alternates, type PageKey } from '../i18n/routes';
+import { useTranslations } from '../i18n/ui';
+
+/**
+ * Language menu for the footer. Built on <details>, so it opens, closes and
+ * takes keyboard focus with no JavaScript at all — and each entry is a real
+ * link to the same page in another locale, which is what a crawler and a
+ * middle-click both expect.
+ */
+interface Props {
+  locale: Locale;
+  page: PageKey;
+}
+
+const { locale, page } = Astro.props;
+const t = useTranslations(locale);
+const options = alternates(page);
+---
+
+<details class="relative order-1 ml-auto">
+  <summary
+    class="flex cursor-pointer list-none items-center gap-3 rounded-md border border-on-inverse-border px-3 py-2 text-small text-on-inverse [&::-webkit-details-marker]:hidden"
+    aria-label={t.footer.languageLabel}
+  >
+    <Flag locale={locale} />
+    <span>{localeNames[locale]}</span>
+    <Icon name="chevronDown" size={12} class="opacity-60" />
+  </summary>
+
+  <div
+    class="absolute right-0 bottom-[calc(100%+6px)] z-20 flex min-w-45 flex-col rounded-md border border-on-inverse-border bg-on-inverse-raised p-1"
+  >
+    {
+      options.map(({ locale: option, path }) => (
+        <a
+          href={path}
+          hreflang={option}
+          lang={option}
+          aria-current={option === locale ? 'true' : undefined}
+          class:list={[
+            'flex items-center gap-3 rounded-sm px-3 py-2 text-small text-on-inverse no-underline hover:text-on-inverse-strong hover:no-underline',
+            option === locale && 'bg-on-inverse-selected',
+          ]}
+        >
+          <Flag locale={option} />
+          <span>{localeNames[option]}</span>
+        </a>
+      ))
+    }
+  </div>
+</details>

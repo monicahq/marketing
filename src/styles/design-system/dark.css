@@ -1,0 +1,47 @@
+/* Dark theme overrides, vendored from the design system's tokens/colors.css.
+
+   These are plain (unlayered) declarations, so they win over the values
+   Tailwind emits from @theme regardless of specificity. Utilities compile to
+   `var(--color-…)`, which means flipping data-theme on <html> re-themes every
+   Tailwind utility and every mn-* component at once.
+
+   Nothing in the marketing site sets data-theme yet — the homepage design has
+   no theme control. The tokens are here so the application shell and any later
+   toggle inherit the design system's own dark values rather than inventing a
+   second set. */
+:root[data-theme="dark"] {
+  --color-canvas: #111111;
+  --color-surface: #171717;
+  --color-surface-subtle: #1d1d1d;
+  --color-surface-muted: #262626;
+  --color-surface-inverse: #f5f5f5;
+  --color-border-subtle: #242424;
+  --color-border: #333333;
+  --color-border-strong: #4a4a4a;
+  --color-text: #f5f5f5;
+  --color-text-secondary: #d4d4d4;
+  --color-text-muted: #a3a3a3;
+  --color-text-disabled: #6b6b6b;
+  --color-text-inverse: #171717;
+  --color-primary: #f5f5f5;
+  --color-primary-hover: #e5e5e5;
+  --color-primary-active: #ffffff;
+  --color-accent: #60a5fa;
+  --color-accent-subtle: #17233a;
+  --color-success: #4ade80;
+  --color-success-subtle: #12241a;
+  --color-warning: #facc15;
+  --color-warning-subtle: #241f10;
+  --color-danger: #f87171;
+  --color-danger-hover: #fca5a5;
+  --color-danger-active: #fecaca;
+  --color-danger-subtle: #2a1615;
+  --color-focus: #60a5fa;
+  --color-backdrop: rgba(0, 0, 0, 0.6);
+  --color-nature-meal: #fbbf24;
+  --color-nature-call: #38bdf8;
+  --color-nature-outing: #2dd4bf;
+  --color-nature-medical: #fb7185;
+  --color-nature-milestone: #a78bfa;
+  --color-nature-record: #a3e635;
+}

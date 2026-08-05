@@ -1,0 +1,139 @@
+/* ---------------------------------------------------------------------------
+   Design-system tokens that are NOT exposed as Tailwind utilities.
+
+   These exist because `components.css` reads them. They are the application
+   scale (control heights, row padding, panel padding) plus the composite
+   border and motion tokens. Anything a marketing page needs to reach for lives
+   in theme.css instead, as a real utility.
+
+   Vendored from the design system's tokens/{spacing,typography,shape,motion,
+   layout}.css. Colours, radii, font families and the marketing type scale were
+   moved into theme.css so Tailwind can generate utilities for them; they are
+   not duplicated here.
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* ---------- Spacing (tokens/spacing.css) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Application spacing decisions */
+  --page-padding-x: 24px;
+  --page-padding-x-mobile: 16px;
+  --section-gap: 32px;
+  --section-heading-gap: 12px;
+  --row-padding: 10px 12px;
+  --panel-padding: 16px;
+  --dialog-padding: 20px;
+  --field-gap: 16px;
+  --label-gap: 6px;
+  --inline-gap: 8px;
+
+  /* Marketing spacing */
+  --marketing-section-gap: 88px;
+  --marketing-section-gap-mobile: 60px;
+  --marketing-title-gap: 16px;
+  --marketing-actions-gap: 24px;
+  --marketing-grid-gap: 24px;
+  --marketing-region-padding: 32px;
+
+  /* ---------- Application type scale (tokens/typography.css) ----------
+     Application headings rarely exceed 24px. Personal information is never set
+     in marketing-sized type. */
+  --text-page-title-size: 24px;
+  --text-page-title-weight: 600;
+  --text-page-title-line: 1.25;
+  --text-section-title-size: 16px;
+  --text-section-title-weight: 600;
+  --text-section-title-line: 1.4;
+  --text-card-title-size: 15px;
+  --text-card-title-weight: 600;
+  --text-card-title-line: 1.4;
+  --text-body-size: 14px;
+  --text-body-weight: 400;
+  --text-body-line: 1.5;
+  --text-body-strong-size: 14px;
+  --text-body-strong-weight: 500;
+  --text-body-strong-line: 1.5;
+  --text-small-size: 13px;
+  --text-small-weight: 400;
+  --text-small-line: 1.45;
+  --text-caption-size: 12px;
+  --text-caption-weight: 500;
+  --text-caption-line: 1.4;
+  --text-mono-size: 12px;
+  --text-mono-weight: 400;
+  --text-mono-line: 1.5;
+  --text-button-size: 14px;
+  --text-button-weight: 500;
+  --text-button-line: 1;
+
+  /* Reading measure: 65–75 characters */
+  --measure-reading: 68ch;
+
+  /* ---------- Border hierarchy (tokens/shape.css) ----------
+     Four levels do the work that shadows would do elsewhere. */
+  --border-quiet: 1px solid var(--color-border-subtle);
+  --border-standard: 1px solid var(--color-border);
+  --border-strong: 1px solid var(--color-border-strong);
+  --border-emphasized: 2px solid var(--color-text);
+
+  /* Monica uses no box shadows anywhere. */
+  --shadow-none: none;
+
+  /* ---------- Motion (tokens/motion.css) ---------- */
+  --motion-fast: 100ms;
+  --motion-standard: 150ms;
+  --motion-slow: 200ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0.38, 1);
+
+  /* ---------- Layout (tokens/layout.css) ---------- */
+  --sidebar-width: 232px;
+  --sidebar-width-collapsed: 56px;
+  --page-header-height: 52px;
+  --content-padding: 24px;
+  --detail-panel-width: 360px;
+  --detail-panel-min: 320px;
+  --detail-panel-max: 400px;
+
+  --width-form: 760px;
+  --width-reading: 720px;
+  --width-profile: 1120px;
+  --width-marketing: 1200px;
+
+  --control-height: 36px;
+  --control-height-sm: 32px;
+  --control-padding-x: 14px;
+  --input-padding-x: 10px;
+  --row-height: 40px;
+  --table-header-height: 36px;
+  --touch-target: 44px;
+
+  --toast-width: 380px;
+  --toast-inset: 20px;
+  --toast-min-height: 48px;
+  --toast-max-visible: 3;
+
+  --bp-mobile: 640px;
+  --bp-tablet: 1024px;
+  --bp-wide: 1440px;
+}
+
+/* Reduced motion removes movement rather than shortening it. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-standard: 0ms;
+    --motion-slow: 0ms;
+  }
+}
