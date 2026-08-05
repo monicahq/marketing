@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Monica social card</title>
+    <!--
+      Source for the social sharing images in public/og/. Rendered to PNG by
+      scripts/og/generate.sh, one per locale, at 1200x630.
+
+      This file is a build artifact generator, not part of the site, so the
+      design tokens are written out literally: it is opened over file:// by
+      headless Chrome, where Tailwind's @theme block would mean nothing. The
+      values are copied from src/styles/theme.css and must be kept in step
+      with it.
+
+      Design system rules still apply. Flat colour, one-pixel borders, no
+      shadow, no gradient, sentence case.
+    -->
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        src: url('../../src/assets/fonts/Inter-Variable.woff2') format('woff2');
+        font-weight: 100 900;
+        font-style: normal;
+      }
+
+      :root {
+        --color-canvas: #ffffff;
+        --color-text: #171717;
+        --color-text-secondary: #525252;
+        --color-text-muted: #737373;
+        --color-border: #e2e2e2;
+        --font-sans: Inter, ui-sans-serif, -apple-system, sans-serif;
+        --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 72px 80px;
+        background: var(--color-canvas);
+        color: var(--color-text);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .brand img {
+        width: 44px;
+        height: auto;
+        mix-blend-mode: multiply;
+      }
+
+      .brand span {
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+      }
+
+      .eyebrow {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        color: var(--color-text-muted);
+      }
+
+      h1 {
+        margin: 20px 0 0;
+        max-width: 22ch;
+        font-size: 62px;
+        font-weight: 600;
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        text-wrap: balance;
+      }
+
+      .foot {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-top: 28px;
+        border-top: 1px solid var(--color-border);
+        font-size: 20px;
+        color: var(--color-text-secondary);
+      }
+
+      .foot .sep {
+        color: var(--color-text-muted);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="brand">
+      <img src="../../src/assets/monica-panda-mark.jpg" alt="" />
+      <span>Monica</span>
+    </div>
+
+    <div>
+      <div class="eyebrow" data-slot="eyebrow"></div>
+      <h1 data-slot="title"></h1>
+    </div>
+
+    <div class="foot" data-slot="foot"></div>
+
+    <script>
+      // Copy mirrored from src/i18n/content/<locale>.ts. Kept here rather than
+      // imported because this file runs standalone under file://.
+      const COPY = {
+        en: {
+          eyebrow: 'The open-source personal CRM',
+          title: 'Remember the people you care about.',
+          foot: ['Open source', 'Self-hostable', 'Your data stays yours'],
+        },
+        fr: {
+          eyebrow: 'Le CRM personnel open source',
+          title: 'Souvenez-vous des gens qui comptent pour vous.',
+          foot: ['Open source', 'Auto-hébergeable', 'Vos données restent les vôtres'],
+        },
+        de: {
+          eyebrow: 'Das quelloffene persönliche CRM',
+          title: 'Erinnern Sie sich an die Menschen, die Ihnen wichtig sind.',
+          foot: ['Quelloffen', 'Selbst hostbar', 'Ihre Daten bleiben Ihre'],
+        },
+        es: {
+          eyebrow: 'El CRM personal de código abierto',
+          title: 'Recuerda a las personas que te importan.',
+          foot: ['Código abierto', 'Alojable por ti', 'Tus datos siguen siendo tuyos'],
+        },
+      };
+
+      const locale = new URLSearchParams(location.search).get('locale') ?? 'en';
+      const copy = COPY[locale] ?? COPY.en;
+
+      document.documentElement.lang = locale;
+      document.querySelector('[data-slot="eyebrow"]').textContent = copy.eyebrow;
+      document.querySelector('[data-slot="title"]').textContent = copy.title;
+      document.querySelector('[data-slot="foot"]').innerHTML = copy.foot
+        .map((item) => `<span>${item}</span>`)
+        .join('<span class="sep">·</span>');
+    </script>
+  </body>
+</html>

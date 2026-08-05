@@ -1,0 +1,10 @@
+/* Monica bundles its webfont. Do not require a third-party font CDN at runtime.
+   Vendored from the Monica design system (tokens/fonts.css); only the url() is
+   repointed at src/assets so Vite fingerprints and serves the file. */
+@font-face {
+  font-family: "Inter";
+  src: url("../../fonts/Inter-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,20 +1,28 @@
 # Monica Marketing Site
 
-The public marketing site for **Monica**, the personal CRM. Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), in English, French, German and Spanish.
+The public marketing site for **Monica**, the personal CRM. Built with [Jigsaw](https://jigsaw.tighten.com) and [Tailwind CSS](https://tailwindcss.com), in English, French, German and Spanish.
+
+Jigsaw is a static site generator written in PHP. It renders Blade templates to plain HTML files, so what gets deployed is a folder of HTML, CSS and images. No PHP runs in production.
 
 ---
 
 ## Requirements
 
-Node.js **22.12 or newer**. Check what you have:
+Three things:
+
+| Tool         | Version    | Check with        |
+| :----------- | :--------- | :---------------- |
+| **PHP**      | 8.2 or newer | `php -v`        |
+| **Composer** | any recent | `composer --version` |
+| **Node.js**  | 20 or newer | `node -v`        |
+
+If any are missing, on macOS with [Homebrew](https://brew.sh):
 
 ```sh
-node -v
+brew install php composer node
 ```
 
-If that says "command not found" or prints an older version, install it with `brew install node` (macOS), from [nodejs.org](https://nodejs.org) (any platform), or with `nvm install 22` if you juggle several versions.
-
-Node includes `npm`, which is all you need. Astro comes with the project, so there is nothing to install globally.
+PHP needs the `mbstring`, `dom`, `xml` and `curl` extensions, which the Homebrew and official builds all include. Check with `php -m`.
 
 ---
 
@@ -23,94 +31,100 @@ Node includes `npm`, which is all you need. Astro comes with the project, so the
 From the project folder:
 
 ```sh
-npm install
+composer install    # PHP dependencies, including Jigsaw itself, into vendor/
+npm install         # Vite and Tailwind, into node_modules/
 ```
 
-This downloads the project's dependencies into `node_modules/`. It takes a minute the first time. Run it again after a `git pull` that changed `package.json`.
+Both are needed: Composer builds the pages, npm builds the CSS. Run them again after a `git pull` that changed `composer.json` or `package.json`.
 
-`node_modules/` is large and disposable, and already ignored by git. If things ever get strange, `rm -rf node_modules && npm install` is a safe reset.
+`vendor/` and `node_modules/` are large, disposable and already ignored by git. If things get strange, delete them and install again.
 
 ---
 
 ## Run it locally
 
+Two commands, in two terminals.
+
+**Terminal 1** rebuilds the site whenever a file changes:
+
 ```sh
 npm run dev
 ```
 
-Astro prints the address it is serving on, normally `http://localhost:4321`. Open it:
+**Terminal 2** serves the result:
 
 ```sh
-open http://localhost:4321                      # default browser, macOS
-open -a Firefox http://localhost:4321           # Firefox
-open -a "Google Chrome" http://localhost:4321   # Chrome
+npm run serve
+```
+
+Then open the address it prints, normally `http://localhost:8000`:
+
+```sh
+open http://localhost:8000                      # default browser, macOS
+open -a Firefox http://localhost:8000           # Firefox
+open -a "Google Chrome" http://localhost:8000   # Chrome
 ```
 
 On Linux use `xdg-open`, on Windows `start`, or just paste the address into your browser.
 
-`http://localhost:4321` redirects to `/en/`, because every URL carries its language:
+`http://localhost:8000` redirects to `/en/`, because every URL carries its language:
 
-| URL                         | Page              |
-| :-------------------------- | :---------------- |
-| `http://localhost:4321/en/` | Homepage, English |
-| `http://localhost:4321/fr/` | Homepage, French  |
-| `http://localhost:4321/de/` | Homepage, German  |
-| `http://localhost:4321/es/` | Homepage, Spanish |
+| URL                        | Page              |
+| :------------------------- | :---------------- |
+| `http://localhost:8000/en/` | Homepage, English |
+| `http://localhost:8000/fr/` | Homepage, French  |
+| `http://localhost:8000/de/` | Homepage, German  |
+| `http://localhost:8000/es/` | Homepage, Spanish |
 
-Edit any file under `src/` and save, and the browser updates within a second. Press `Ctrl+C` to stop the server.
-
-### Running it in the background
-
-`npm run dev` takes over the terminal. To keep using the same shell:
-
-```sh
-npx astro dev --background     # start it
-npx astro dev status           # is it running, and where
-npx astro dev logs             # what it has printed
-npx astro dev stop             # stop it
-```
+Edit a file under `source/` or `lang/` and `npm run dev` rebuilds within a second. Refresh the browser to see it. Press `Ctrl+C` in either terminal to stop.
 
 ### Checking the real site
 
-The dev server is built for fast feedback, not for what visitors actually get. Before deploying, build the static site and serve it:
+The local build is not what visitors get: it has no domain baked into its canonical URLs. Before deploying, build for production:
 
 ```sh
-npm run build      # writes the finished site into dist/
-npm run preview    # serves dist/ at http://localhost:4321
+npm run build
+```
+
+That writes the finished site into `build_production/`. Serve it with any static server to check it:
+
+```sh
+php -S localhost:8001 -t build_production
 ```
 
 ---
 
 ## Commands
 
-| Command           | What it does                                                 |
-| :---------------- | :----------------------------------------------------------- |
-| `npm install`     | Downloads dependencies                                        |
-| `npm run dev`     | Development server with live reload                           |
-| `npm run build`   | Builds the production site into `dist/`                       |
-| `npm run preview` | Serves the built `dist/` locally                              |
-| `npx astro check` | Checks types. **This is what catches a missing translation**  |
-
-Run `npx astro check` after editing anything in `src/i18n/`.
+| Command             | What it does                                                     |
+| :------------------ | :--------------------------------------------------------------- |
+| `composer install`  | Installs Jigsaw and its PHP dependencies                          |
+| `npm install`       | Installs Vite and Tailwind                                        |
+| `npm run dev`       | Rebuilds the site as files change, and compiles CSS               |
+| `npm run serve`     | Serves the local build at `localhost:8000`                        |
+| `npm run build`     | Builds the production site into `build_production/`               |
+| `npm run og`        | Regenerates the social sharing images (needs Chrome installed)    |
 
 ---
 
 ## If something goes wrong
 
-**`command not found: npm`.** Node is not installed, or not on your PATH. See [Requirements](#requirements).
+**`command not found: php` or `composer`.** Not installed, or not on your PATH. See [Requirements](#requirements).
 
-**`Cannot find package 'astro'`.** You skipped `npm install`, or dependencies changed.
+**`Could not open input file: vendor/bin/jigsaw`.** You skipped `composer install`.
 
-**Port 4321 is already in use.** A dev server is already running. Either `npx astro dev stop`, or pick another port with `npm run dev -- --port 3000`.
+**`The Vite manifest does not exist`.** Jigsaw ran before Vite compiled the CSS. Run `npm run dev` or `npm run build`, both of which do it in the right order.
 
-**Blank page, or a section is missing.** Check the terminal running the dev server. Astro prints errors there with the file and line.
+**A page shows a PHP error.** Jigsaw prints the template, the line and the message. The trace points at a file in `cache/`, which is generated: the real file is the one named at the top.
 
-**Edits do not show up.** Confirm the server is still running and the file is saved. If it is genuinely stuck, `Ctrl+C` and start it again.
+**Port 8000 is already in use.** Something else is serving there. Stop it, or serve the build folder yourself with `php -S localhost:8001 -t build_local`.
+
+**Changes do not show up.** Confirm `npm run dev` is still running, then hard-refresh. If it is genuinely stuck, delete `cache/` and start it again.
 
 ---
 
 ## Where things live
 
-All visible text is in `src/i18n/content/`, one file per language, never inside a component. That is where you change a headline.
+All visible text is in `lang/`, one PHP file per language, never inside a template. That is where you change a headline.
 
-Everything else (project structure, the design system rules, Tailwind conventions, how to add a page or a language, how to set up the blog) is documented in [`.claude/CLAUDE.md`](.claude/CLAUDE.md).
+Everything else (project structure, the design system rules, Tailwind conventions, how to add a page or a language, how the star count and the social cards work) is documented in [`.claude/CLAUDE.md`](.claude/CLAUDE.md).
