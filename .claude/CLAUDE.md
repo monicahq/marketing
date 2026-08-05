@@ -63,8 +63,32 @@ Four locales: `en`, `fr`, `de`, `es`. **Every URL is locale-prefixed, English in
 - All copy lives in `src/i18n/content/<locale>.ts`. **Never hard-code a user-visible string in a component.** If you add a string, add it to all four dictionaries.
 - `en.ts` defines the shape; the others are typed `: Dictionary`, so a missing key fails `astro check`. That check is the safety net, so run it.
 - Paths come from `path(pageKey, locale)` in `src/i18n/routes.ts`. Never build a URL by string concatenation.
-- Adding a page means adding a key + four slugs to `routes.ts` and a `getStaticPaths` that maps locale → slug. See the README.
 - German runs ~30% longer than English and French ~20%. Don't pin widths to English label lengths.
+
+### Adding a page
+
+Slugs differ per locale, so a page cannot be a plain filename. Add its key and four slugs to `routes.ts`, then generate one path per locale:
+
+```astro
+---
+// src/pages/[locale]/[pricing].astro  →  /en/pricing, /fr/tarifs, /de/preise, /es/precios
+import { locales } from '../../i18n/config';
+import { routes } from '../../i18n/routes';
+
+export const getStaticPaths = () =>
+  locales.map((locale) => ({ params: { locale, pricing: routes.pricing[locale] } }));
+---
+```
+
+### Adding a locale
+
+1. `locales` and `localeNames` in `src/i18n/config.ts`.
+2. `locales` in `astro.config.mjs`.
+3. A slug for it on every entry in `src/i18n/routes.ts`.
+4. Copy `content/en.ts`, translate, register it in `ui.ts`.
+5. Its flag in `src/components/Flag.astro`.
+
+Then `astro check` lists every key still missing.
 
 ## Where things go
 
@@ -75,11 +99,28 @@ Four locales: `en`, `fr`, `de`, `es`. **Every URL is locale-prefixed, English in
 | Page shell, `<head>`, hreflang      | `src/layouts/BaseLayout.astro`              |
 | Copy                                | `src/i18n/content/<locale>.ts`              |
 | Routes and translated slugs         | `src/i18n/routes.ts`                        |
-| Star count, external links          | `src/config.ts`                             |
+| External links                      | `src/config.ts`                             |
+| GitHub star count                   | `src/lib/github.ts`                         |
 | Design tokens → Tailwind            | `src/styles/theme.css`                      |
 | Vendored design system              | `src/styles/design-system/` (do not edit)   |
 | Images, webfont                     | `src/assets/`                               |
 | Blog posts                          | `src/data/blog/*.md` (once set up)          |
+
+## Star count
+
+`src/lib/github.ts` reads `monicahq/monica` from the GitHub API during the build and floors it to the nearest thousand, so 24,956 renders as `24k+`. **Floor, never round**: the `+` promises at least that many.
+
+Failures fall back to a hard-coded value and log a warning rather than breaking the build. The result is memoized at module scope so the four locale pages share one request. `GITHUB_TOKEN` is an optional secret declared through `astro:env` in `astro.config.mjs`; it only lifts the 60-per-hour unauthenticated rate limit.
+
+## The blog
+
+Not built. It needs Astro content collections: `src/content.config.ts` declaring a collection with the `glob` loader from `astro/loaders` and a zod schema, Markdown under `src/data/blog/`, and a `src/pages/[locale]/blog/[...id].astro` route using `getCollection` and `render` from `astro:content`.
+
+Current API, which older examples online get wrong: the config lives at `src/content.config.ts` (not `src/content/config.ts`), entries are keyed by `id` (not `slug`), and you render with `const { Content } = await render(post)` (not `post.render()`). Posts also need a locale dimension, either a schema field or one folder per language.
+
+## Deploying
+
+`npm run build` produces a fully static `dist/`. No Node process in production. `site` in `astro.config.mjs` drives canonical URLs and the hreflang alternates, so it must match the real domain.
 
 ## Other conventions
 
