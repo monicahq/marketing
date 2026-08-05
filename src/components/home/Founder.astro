@@ -1,0 +1,22 @@
+---
+import Section from '../Section.astro';
+import type { Locale } from '../../i18n/config';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const body = 'text-copy-lg text-text-secondary text-pretty';
+---
+
+<Section surface="subtle" border="top" narrow>
+  <h2 class="text-heading font-semibold lg:text-display-md">{t.founder.title}</h2>
+  <p class:list={['mt-5', body]}>{t.founder.body}</p>
+  <p class:list={['mt-4', body]}>{t.founder.body2}</p>
+  <p class:list={['mt-4', body]}>{t.founder.body3}</p>
+  <p class="mt-6 text-small text-text-muted">{t.founder.signature}</p>
+</Section>

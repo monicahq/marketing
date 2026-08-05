@@ -1,0 +1,43 @@
+---
+import Section from '../Section.astro';
+import Icon from '../Icon.astro';
+import { site } from '../../config';
+import type { Locale } from '../../i18n/config';
+import { useTranslations } from '../../i18n/ui';
+import { getStarCount } from '../../lib/github';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const stars = await getStarCount();
+
+const lede =
+  'max-w-[58ch] text-lede-sm text-text-secondary text-pretty md:text-lede-md lg:text-lede';
+const heroButton = 'no-underline hover:no-underline max-md:w-full max-md:justify-center';
+---
+
+<Section>
+  <span class="font-mono text-mono text-text-muted">{t.hero.eyebrow}</span>
+
+  <h1 class="mt-4 text-display-sm font-semibold md:text-display-lg lg:text-display-xl">
+    {t.hero.title}
+  </h1>
+
+  <p class:list={['mt-6', lede]}>{t.hero.lede}</p>
+  <p class:list={['mt-4', lede]}>{t.hero.lede2}</p>
+
+  <div class="mt-8 flex flex-wrap gap-3 max-md:flex-col max-md:items-stretch">
+    <a href={site.links.getStarted} class:list={['mn-btn mn-btn--primary', heroButton]}>
+      {t.hero.primaryCta}
+    </a>
+    <a href={site.links.github} class:list={['mn-btn mn-btn--secondary gap-2', heroButton]}>
+      <Icon name="star" />
+      <span>{t.hero.githubCta(stars)}</span>
+    </a>
+  </div>
+
+  <p class="mt-5 font-mono text-mono text-text-muted">{t.hero.note}</p>
+</Section>

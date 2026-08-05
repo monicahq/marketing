@@ -1,0 +1,41 @@
+---
+import Icon, { type IconName } from './Icon.astro';
+
+/**
+ * An icon in a bordered square beside a title and a sentence. Two arrangements:
+ * `inline` sets the glyph to the left (the showcase column), `stacked` puts it
+ * above the title over a top rule (the v3 grid).
+ */
+interface Props {
+  icon: IconName;
+  title: string;
+  body: string;
+  layout?: 'inline' | 'stacked';
+  /** Stacked items only: the design quietens the second row's rule. */
+  rule?: 'standard' | 'quiet';
+}
+
+const { icon, title, body, layout = 'inline', rule = 'standard' } = Astro.props;
+---
+
+{
+  layout === 'inline' ? (
+    <div class="flex gap-4">
+      <span class="inline-flex size-9 flex-none items-center justify-center rounded-md border border-border text-text">
+        <Icon name={icon} size={18} />
+      </span>
+      <span class="min-w-0">
+        <span class="block text-title font-semibold">{title}</span>
+        <span class="mt-2 block text-copy text-text-secondary text-pretty">{body}</span>
+      </span>
+    </div>
+  ) : (
+    <div class:list={['pt-5 border-t', rule === 'quiet' ? 'border-border-subtle' : 'border-border']}>
+      <span class="inline-flex size-9 flex-none items-center justify-center rounded-md border border-border text-text">
+        <Icon name={icon} size={18} />
+      </span>
+      <h3 class="mt-4 text-title font-semibold">{title}</h3>
+      <p class="mt-2 text-copy text-text-secondary text-pretty">{body}</p>
+    </div>
+  )
+}

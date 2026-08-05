@@ -1,0 +1,30 @@
+---
+import Container from './Container.astro';
+import Icon from './Icon.astro';
+import { site } from '../config';
+import type { Locale } from '../i18n/config';
+import { useTranslations } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div class="bg-surface-inverse text-on-inverse">
+  <Container
+    class="flex flex-wrap items-center gap-4 py-3 max-md:flex-col max-md:items-start max-md:gap-2"
+  >
+    <span class="text-small font-semibold text-on-inverse-strong">{t.announcement.headline}</span>
+    <span class="text-small text-on-inverse-muted">{t.announcement.detail}</span>
+    <a
+      href={site.links.v3}
+      class="inline-flex items-center gap-2 text-small text-on-inverse-strong underline underline-offset-[3px] hover:text-on-inverse-strong md:ml-auto"
+    >
+      {t.announcement.cta}
+      <Icon name="arrowRight" size={14} />
+    </a>
+  </Container>
+</div>

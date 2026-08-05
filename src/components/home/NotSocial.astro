@@ -1,0 +1,27 @@
+---
+import Section from '../Section.astro';
+import type { Locale } from '../../i18n/config';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const body = 'text-copy-lg text-text-secondary text-pretty';
+---
+
+<Section border="top" narrow>
+  <h2 class="text-heading font-semibold lg:text-display-md">{t.notSocial.title}</h2>
+  <p class:list={['mt-5', body]}>{t.notSocial.body}</p>
+  <p class:list={['mt-4', body]}>{t.notSocial.body2}</p>
+
+  {/* Emphasis through a rule and weight — never a tinted panel or a shadow. */}
+  <p
+    class="mt-8 border-l-2 border-text pl-6 text-heading-sm font-semibold text-balance"
+  >
+    {t.notSocial.quote}
+  </p>
+</Section>
