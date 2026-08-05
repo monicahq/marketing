@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import '../styles/global.css';
+import Container from '../components/Container.astro';
+import Flag from '../components/Flag.astro';
+import pandaMark from '../assets/monica-panda-mark.jpg';
+import { locales, localeNames } from '../i18n/config';
+import { path } from '../i18n/routes';
+
+/**
+ * Static hosts serve /404.html for anything they cannot find, and it is served
+ * for every language, so this page cannot know which one the reader wants.
+ * Rather than guess, it names all four in their own words and lets them pick.
+ *
+ * Deliberately outside BaseLayout: a 404 has no canonical, no hreflang cluster
+ * and no place in the sitemap.
+ */
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>Page not found — Monica</title>
+    <meta name="robots" content="noindex, follow" />
+  </head>
+
+  <body class="min-h-screen bg-canvas font-sans text-text">
+    <Container class="flex min-h-screen flex-col justify-center py-section-sm">
+      <a href="/en/" class="flex items-center gap-3 text-text no-underline hover:no-underline">
+        <Image
+          src={pandaMark}
+          alt=""
+          width={24}
+          densities={[1, 2]}
+          class="h-auto w-6 flex-none mix-blend-multiply"
+        />
+        <span class="text-title font-semibold tracking-[-0.015em]">Monica</span>
+      </a>
+
+      <p class="mt-16 font-mono text-mono text-text-muted">404</p>
+      <h1 class="mt-4 text-display-sm font-semibold md:text-display-lg">Page not found.</h1>
+      <p class="mt-5 max-w-[52ch] text-copy-lg text-text-secondary text-pretty">
+        This address does not lead anywhere. It may have moved, or it may never have existed.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-2">
+        {
+          locales.map((locale) => (
+            <a
+              href={path('home', locale)}
+              hreflang={locale}
+              lang={locale}
+              class="mn-btn mn-btn--secondary gap-2 no-underline hover:no-underline"
+            >
+              <Flag locale={locale} />
+              <span>{localeNames[locale]}</span>
+            </a>
+          ))
+        }
+      </div>
+    </Container>
+  </body>
+</html>
