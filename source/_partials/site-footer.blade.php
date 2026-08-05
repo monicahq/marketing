@@ -4,7 +4,7 @@
             'label' => $page->t('footer.productLabel'),
             'links' => [
                 ['label' => $page->t('nav.product'), 'href' => $page->route('home')],
-                ['label' => $page->t('nav.v3'), 'href' => $page->links['v3']],
+                ['label' => $page->t('nav.v3'), 'href' => $page->route('v3')],
                 ['label' => $page->t('nav.pricing'), 'href' => '#pricing'],
             ],
         ],

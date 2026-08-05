@@ -8,9 +8,17 @@
 
 return [
     'meta' => [
-        'title' => "Monica — das quelloffene persönliche CRM",
-        'description' => "Monica hilft Ihnen, sich an die Menschen zu erinnern, die Ihnen wichtig sind: was in ihrem Leben passiert, wichtige Daten, frühere Gespräche und wann Sie sich wieder melden sollten. Privat, quelloffen, selbst hostbar.",
         'imageAlt' => "Monica: Erinnern Sie sich an die Menschen, die Ihnen wichtig sind. Das quelloffene persönliche CRM.",
+
+        'home' => [
+            'title' => "Monica — das quelloffene persönliche CRM",
+            'description' => "Monica hilft Ihnen, sich an die Menschen zu erinnern, die Ihnen wichtig sind: was in ihrem Leben passiert, wichtige Daten, frühere Gespräche und wann Sie sich wieder melden sollten. Privat, quelloffen, selbst hostbar.",
+        ],
+
+        'v3' => [
+            'title' => "Monica v3 — neu gebaut für die nächsten zehn Jahre",
+            'description' => "Monica v3 ist ein vollständiger Neubau des quelloffenen persönlichen CRM: Einträge, die Sie selbst gestalten, ein mit allem verbundenes Journal, eine vollständige API und eine echte mobile Erfahrung. Weiterhin quelloffen, jetzt unter MIT-Lizenz. Vor Ende 2026.",
+        ],
     ],
 
     'announcement' => [
@@ -142,6 +150,7 @@ return [
         'aside' => "Vertrauen ist nützlich. Quellcode ist besser.",
         'sourceCta' => "Quellcode ansehen",
         'hostingCta' => "Anleitung zum Selbst-Hosten lesen",
+        'v3Cta' => "Alles ansehen, was mit Monica v3 kommt",
         'listTitle' => "Mit Monica v3:",
         'items' => [
             "bleibt das Projekt vollständig quelloffen;",
@@ -194,6 +203,107 @@ return [
         'note' => "Erwartet vor Ende 2026 · Der Beta-Zugang öffnet sich schrittweise",
     ],
 
+    /** Die Seite /v3. Der Schlüssel `v3` oben ist der Abschnitt auf der Startseite. */
+    'v3page' => [
+        'badge' => "Monica v3 · In Entwicklung",
+        'timing' => "Kommt vor Ende 2026",
+        'title' => "Monica wird für die nächsten zehn Jahre neu gebaut.",
+        'lede' => "Monica hat Tausenden Menschen geholfen, sich an das zu erinnern, was bei den Menschen in ihrem Leben zählt. Jetzt wird sie von Grund auf neu gebaut: flexibler, privater, leichter erweiterbar und besser auf jedem Bildschirm.",
+        'lede2' => "Sie bleibt quelloffen. Sie wechselt zur MIT-Lizenz. Und alles, was Monica von Anfang an lohnend gemacht hat, bleibt erhalten.",
+
+        'form' => [
+            'label' => "E-Mail-Adresse",
+            'placeholder' => "sie@beispiel.de",
+            'cta' => "Benachrichtigen Sie mich",
+            'note' => "Eine E-Mail, wenn Monica v3 erscheint. Kein Newsletter, kein Tracking-Pixel, kein Lärm.",
+        ],
+
+        'proof' => [
+            'stars' => ":count Sterne auf GitHub",
+            'openSource' => "Quelloffen seit 2017",
+            'selfHostable' => "Selbst hostbar",
+        ],
+
+        'coming' => [
+            'label' => "Was kommt",
+            'title' => "Vieles ändert sich. Monica wird mehr zu Ihrer eigenen.",
+            'body' => "Monica v3 ist keine optische Auffrischung. Es ist ein neues Fundament, das das Produkt flexibler machen soll, ohne es komplizierter zu machen.",
+            'features' => [
+                [
+                    'icon' => 'panel',
+                    'title' => "Formen Sie Monica um Ihr Leben herum",
+                    'body' => "Legen Sie die Abschnitte und Felder an, die für Sie sinnvoll sind. Halten Sie Monica einfach, oder bauen Sie ausführliche Einträge für das, woran Sie sich erinnern wollen.",
+                ],
+                [
+                    'icon' => 'relationship',
+                    'title' => "Erfassen Sie mehr als Menschen",
+                    'body' => "Menschen bleiben der Mittelpunkt von Monica, aber sie stehen nicht für sich allein. Verbinden Sie sie mit Haustieren, Unternehmen, Wohnungen, Fahrzeugen, Projekten oder jedem anderen Eintrag, der in ihrem Leben zählt.",
+                ],
+                [
+                    'icon' => 'journal',
+                    'title' => "Erinnern Sie sich an das, was passiert ist",
+                    'body' => "Anrufe, Essen, Reisen, schwierige Momente, kleine Details, die es wert sind: Tragen Sie sie in ein Journal ein, das sich ganz selbstverständlich mit Menschen, Daten und Erinnerungen verbindet.",
+                ],
+                [
+                    'icon' => 'tag',
+                    'title' => "Beginnen Sie mit Strukturen von anderen",
+                    'body' => "Installieren Sie fertige Vorlagen aus der Community, passen Sie sie frei an, und behalten Sie die volle Kontrolle über Ihre eigene Fassung.",
+                ],
+                [
+                    'icon' => 'code',
+                    'title' => "Bauen Sie auf einem offenen Fundament",
+                    'body' => "Alles, was in der Oberfläche verfügbar ist, wird auch über die API verfügbar sein. Monica lässt sich leichter einbinden, automatisieren und erweitern, ohne auf verborgene oder private Endpunkte angewiesen zu sein.",
+                ],
+                [
+                    'icon' => 'phone',
+                    'title' => "Nutzen Sie Monica auf jedem Bildschirm richtig",
+                    'body' => "Die Webanwendung wird von Anfang an für das Telefon entworfen. Native Anwendungen für iOS und Android folgen, gebaut als echte Anwendungen und nicht als Hülle um eine Website.",
+                ],
+            ],
+        ],
+
+        'principles' => [
+            'label' => "Was sich nicht ändert",
+            'title' => "Die Grundsätze werden nicht neu geschrieben.",
+            'body' => "Monica v3 ist ehrgeizig, aber es ist immer noch Monica. Die Zusagen hinter :count Sternen auf GitHub bleiben Teil des Fundaments.",
+            'items' => [
+                [
+                    'icon' => 'code',
+                    'title' => "Quelloffen, jetzt unter MIT",
+                    'body' => "Monica bleibt vollständig quelloffen und selbst hostbar. Version 3 verwendet die MIT-Lizenz und ist damit einfacher zu verstehen, wiederzuverwenden, zu erweitern und zu ergänzen.",
+                ],
+                [
+                    'icon' => 'lock',
+                    'title' => "Ihre Daten bleiben Ihre",
+                    'body' => "Keine Werbung. Kein Verkauf persönlicher Daten. Kein Modell, das auf Ihren Kontakten trainiert wird. Ihr Privatleben ist kein Geschäftsmodell.",
+                ],
+                [
+                    'icon' => 'download',
+                    'title' => "Exportieren Sie alles",
+                    'body' => "Exportieren Sie Ihre Informationen, wann immer Sie sie brauchen, einschließlich der eigenen Strukturen, Abschnitte und Felder, die Sie angelegt haben.",
+                ],
+                [
+                    'icon' => 'people',
+                    'title' => "Gebaut, damit alle sie nutzen können",
+                    'body' => "Tastaturbedienung, Screenreader, Lokalisierung und anpassungsfähige Layouts sind Produktanforderungen und keine Arbeit, die auf später verschoben wird.",
+                ],
+                [
+                    'icon' => 'arrowRight',
+                    'title' => "Bestehende Nutzerinnen und Nutzer bleiben nicht zurück",
+                    'body' => "Das Ziel ist ein klarer Migrationsweg für bestehende Monica-Konten, einschließlich Kontakten, Notizen, Erinnerungen und anderen wesentlichen Informationen.",
+                ],
+            ],
+        ],
+
+        'follow' => [
+            'title' => "Verfolgen Sie den Neubau von Anfang an.",
+            'body' => "Monica v3 ist noch in Entwicklung, und viele wichtige Entscheidungen fallen öffentlich. Tragen Sie sich in die Startliste ein oder folgen Sie dem Repository, um die Arbeit mitzuverfolgen.",
+            'note' => "Quelloffen · MIT-Lizenz · Öffentlich entwickelt",
+            'primaryCta' => "Start-E-Mail erhalten",
+            'secondaryCta' => "Monica auf GitHub folgen",
+        ],
+    ],
+
     'founder' => [
         'title' => "Entstanden, weil mein Gedächtnis schlecht ist.",
         'body' => "Ich habe Monica gebaut, weil ich immer wieder Details über Menschen vergessen habe, die mir wirklich wichtig waren.",
@@ -228,6 +338,7 @@ return [
             [
                 'q' => "Was passiert mit meinem Konto, wenn v3 erscheint?",
                 'a' => "Das Ziel ist ein klarer Migrationsweg für bestehende Konten, samt Kontakten, Notizen, Erinnerungen und weiteren wesentlichen Informationen. Nichts wird gelöscht und nichts wird Ihnen über Nacht aufgezwungen.",
+                'link' => ['label' => "Mehr über Monica v3 lesen", 'page' => 'v3'],
             ],
             [
                 'q' => "Gibt es eine mobile Anwendung?",

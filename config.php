@@ -55,6 +55,11 @@ return [
      */
     'routes' => [
         'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => ''],
+
+        // "v3" is the product's version number, so it is the same word in every
+        // language. Slugs are still declared per locale, because the next page
+        // added will not be.
+        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3'],
     ],
 
     // ------------------------------------------------------------------ links
@@ -75,7 +80,13 @@ return [
         'api' => '#',
         'blog' => '#',
         'privacy' => '#',
-        'v3' => '#',
+
+        /**
+         * Where the v3 launch-list form posts. The site is static, so this has
+         * to be somebody else's endpoint: a form host, a newsletter provider,
+         * or a small function elsewhere. Until it has one, the form is inert.
+         */
+        'launchList' => '#',
     ],
 
     /** Replaced during the build by bootstrap.php, which reads the real count. */

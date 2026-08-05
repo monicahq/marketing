@@ -13,7 +13,22 @@
                             <span class="hidden group-open:inline">&ndash;</span>
                         </span>
                     </summary>
-                    <p class="max-w-[70ch] pb-5 text-copy text-text-secondary text-pretty">{{ $item['a'] }}</p>
+                    <div class="pb-5">
+                        <p class="max-w-[70ch] text-copy text-text-secondary text-pretty">{{ $item['a'] }}</p>
+
+                        {{-- An answer may point at the page that covers it in
+                             full. `page` is a route key, so the link stays in
+                             the reader's language. --}}
+                        @isset($item['link'])
+                            <a
+                                href="{{ $page->route($item['link']['page']) }}"
+                                class="mt-3 inline-flex items-center gap-2 text-copy text-accent underline-offset-[3px]"
+                            >
+                                {{ $item['link']['label'] }}
+                                @include('_partials.icon', ['name' => 'arrowRight', 'size' => 14])
+                            </a>
+                        @endisset
+                    </div>
                 </details>
             @endforeach
         </div>
