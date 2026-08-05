@@ -4,14 +4,19 @@
     <meta charset="utf-8" />
     <title>Monica social card</title>
     <!--
-      Source for the social sharing images in public/og/. Rendered to PNG by
+      Source for the social sharing images in source/og/. Rendered to PNG by
       scripts/og/generate.sh, one per locale, at 1200x630.
 
       This file is a build artifact generator, not part of the site, so the
       design tokens are written out literally: it is opened over file:// by
       headless Chrome, where Tailwind's @theme block would mean nothing. The
-      values are copied from src/styles/theme.css and must be kept in step
-      with it.
+      values are copied from source/_assets/css/theme.css and must be kept in
+      step with it.
+
+      The webfont and the mark below are resolved by relative path from this
+      directory, not by the build. Chrome renders a missing one silently: the
+      type falls back to a system sans and the mark simply does not appear.
+      Moving either asset means editing the two URLs here.
 
       Design system rules still apply. Flat colour, one-pixel borders, no
       shadow, no gradient, sentence case.
@@ -19,7 +24,7 @@
     <style>
       @font-face {
         font-family: 'Inter';
-        src: url('../../src/assets/fonts/Inter-Variable.woff2') format('woff2');
+        src: url('../../source/_assets/fonts/Inter-Variable.woff2') format('woff2');
         font-weight: 100 900;
         font-style: normal;
       }
@@ -109,7 +114,7 @@
 
   <body>
     <div class="brand">
-      <img src="../../src/assets/monica-panda-mark.jpg" alt="" />
+      <img src="../../source/assets/images/monica-panda-mark.jpg" alt="" />
       <span>Monica</span>
     </div>
 

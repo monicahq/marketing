@@ -4,4 +4,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.monicahq.com/sitemap-index.xml
+Sitemap: https://www.monicahq.com/sitemap.xml
