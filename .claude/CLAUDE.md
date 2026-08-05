@@ -1,7 +1,7 @@
 # Monica marketing site: working notes for Claude
 
-Marketing site for **Monica**, the personal CRM. Static Astro 7 + Tailwind 4 site, built on the Monica design system, shipping in four languages.
-The owner is not an Astro expert, so explain Astro-specific choices briefly, and prefer boring, idiomatic Astro over clever setups.
+Marketing site for **Monica**, the personal CRM. Static [Jigsaw](https://jigsaw.tighten.com) + Tailwind 4 site, built on the Monica design system, shipping in four languages.
+The owner is not a Jigsaw expert, so explain Jigsaw-specific choices briefly, and prefer boring, idiomatic Jigsaw over clever setups.
 
 ## Guidelines for Git and GitHub
 
@@ -17,22 +17,67 @@ Never use dashes (— or -) as punctuation in documentation or README files. Rep
 
 ## Development
 
-Start the dev server in background mode:
+Jigsaw renders Blade to static HTML. PHP builds the site; it never runs in production.
 
 ```
-astro dev --background
+npm run dev      # rebuild on change, compile CSS (leave running)
+npm run serve    # serve build_local at localhost:8000
+npm run build    # production build into build_production/
 ```
 
-Manage it with `astro dev stop`, `astro dev status`, `astro dev logs`. Don't run `npm run dev` in the foreground. It blocks.
+**Vite must run before Jigsaw.** Templates call `vite('source/_assets/css/main.css')`, which reads the manifest, so a bare `vendor/bin/jigsaw build` fails with "The Vite manifest does not exist". The npm scripts handle the ordering: the Jigsaw Vite plugin spawns the Jigsaw build itself.
 
-Before claiming a change works: `npx astro check` (typechecks the translation dictionaries too) and `npm run build`. Content-collection and routing errors often only surface at build time.
+Before claiming a change works, run `npm run build` and check the output in `build_production/`. There is no type checker here, so a missing translation key surfaces as a build-time exception rather than a warning.
+
+## How the four languages work
+
+Jigsaw has **no locale routing**, so it is built by hand and lives in two places: `config.php` and the file tree.
+
+- **One directory per locale.** `source/en/index.blade.php`, `source/fr/index.blade.php`, and so on. The filename is the slug, so a French pricing page is literally `source/fr/tarifs.blade.php`. Each page file is front matter plus an `@extends`, nothing more.
+- **Every page declares `locale` and `page` in its front matter.** Everything else follows: the copy, the canonical URL, the hreflang cluster.
+- **Every URL is locale-prefixed, English included** (`/en/`, `/fr/`), and slugs are translated per locale (`/fr/tarifs/`, never `/fr/pricing/`).
+
+### Copy
+
+All text lives in `lang/<locale>.php`, plain PHP arrays. **Never hard-code a user-visible string in a template.** If you add a string, add it to all four files.
+
+Read it with `$page->t('hero.title')`, which takes a dot path and returns strings or arrays. Placeholders are `:colon` style: `$page->t('nav.stars', [':count' => $page->starCount])`.
+
+`lang/en.php` is the canonical shape. A key missing from another locale throws during the build, naming the key and the locale, which is the safety net that replaced TypeScript's compile-time check.
+
+### URLs
+
+Three helpers, and the distinction matters:
+
+| Helper | Returns | Use for |
+| :--- | :--- | :--- |
+| `$page->localePath('home', 'fr')` | `/fr/` | building block |
+| `$page->route('home', 'fr')` | `/fr/` | `href` in markup |
+| `$page->absolute('/fr/')` | `https://…/fr/` | canonical, hreflang, og:url, sitemap |
+
+**Never build a URL by string concatenation**, and never wrap `route()` in `absolute()`: `route()` is already root-relative, so doing both produced a doubled domain once already.
+
+### Adding a page
+
+1. Add its key and four slugs to `routes` in `config.php`.
+2. Create one Blade file per locale, named after that locale's slug.
+3. Add its copy to all four `lang/` files.
+
+### Adding a locale
+
+1. `$locales`, `localeNames` and `ogLocales` in `config.php`.
+2. A slug for it on every entry in `routes`.
+3. Copy `lang/en.php`, translate it.
+4. Its flag in `source/_partials/flag.blade.php`.
+5. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
+
+German runs ~30% longer than English and French ~20%. Don't pin widths to English label lengths.
 
 ## The design system is the authority
 
-`src/styles/design-system/` is vendored verbatim from the Claude Design project
-`8711a85c-8b75-4074-a0b4-ff23d508475c`. **Do not edit those files.** Change them in the design project and re-sync. `theme.css` (ours) is the bridge that exposes the tokens to Tailwind.
+`source/_assets/css/design-system/` is vendored verbatim from the Claude Design project `8711a85c-8b75-4074-a0b4-ff23d508475c`. **Do not edit those files.** Change them in the design project and re-sync. `theme.css` (ours) is the bridge that exposes the tokens to Tailwind.
 
-Non-negotiable rules from the design system, in rough order of how often they get broken:
+Non-negotiable rules, in rough order of how often they get broken:
 
 - **No box shadows, anywhere.** Not on buttons, dropdowns, dialogs, sticky headers or hover states. Hierarchy comes from 1px borders, surface contrast, whitespace and type. The shadow utilities are removed from the Tailwind theme, so `shadow-*` simply does not exist.
 - **No gradients, no background imagery, no illustration, no photography.** Flat colour only.
@@ -41,105 +86,86 @@ Non-negotiable rules from the design system, in rough order of how often they ge
 - **No emoji**, ever. No exclamation marks, no "Awesome!", no gamification.
 - **Hover is subtle and additive**: background, border-colour or text-colour change. Never movement, scale, glow or shadow. Hover is never the only route to an action.
 - **Radii top out at 8px** on standard surfaces. Ordinary buttons are never pills.
-- **Marketing shows the real product.** No device mockups, browser chrome, stock photography or fabricated screenshots. `ContactCard.astro` is built from the application's own `mn-*` classes for exactly this reason.
+- **Marketing shows the real product.** No device mockups, browser chrome, stock photography or fabricated screenshots. `_partials/home/contact-card.blade.php` is built from the application's own `mn-*` classes for exactly this reason.
 
 Voice: address the reader as *you*; Monica refers to itself in the third person. Label actions with verbs ("Add a relationship", not "Create relationship entity"). Relationship direction is always a sentence ("Élise is Marc's partner"), never an arrow.
 
 ## Tailwind conventions
 
-Tailwind's stock palette, type scale, radii, fonts and shadows are reset to `initial` in `src/styles/theme.css`. **Every utility that exists came from a design token.** If a class you want doesn't exist, the answer is almost never an arbitrary value. Check whether the design system has a token for it, and add it to `@theme` if so.
+Tailwind's stock palette, type scale, radii, fonts and shadows are reset to `initial` in `source/_assets/css/theme.css`. **Every utility that exists came from a design token.** If a class you want doesn't exist, the answer is almost never an arbitrary value. Check whether the design system has a token for it, and add it to `@theme` if so.
 
 - Colour utilities keep the design-system spelling: `text-text-secondary`, `bg-surface-subtle`, `border-border-strong`. Verbose, deliberate, traceable.
 - Spacing is 4px-based (`--spacing: 4px`), matching `--space-*`. `p-6` is 24px.
-- Marketing rhythm: `py-section-sm lg:py-section` (60px → 88px). Use the `Section.astro` component rather than reapplying it.
+- Marketing rhythm: `py-section-sm lg:py-section` (60px to 88px).
 - `mn-*` component classes live in Tailwind's `components` layer, so utilities in markup override them. `class="mn-btn mn-btn--primary w-full"` works.
 - An `<a class="mn-btn">` needs `no-underline hover:no-underline`, because the design system's base layer underlines links on hover.
-- **No `@apply`.** Repeated markup becomes an Astro component, not a new CSS class.
+- **No `@apply`.** Repeated markup becomes a Blade partial, not a new CSS class.
+- Tailwind scans Blade through the `@source` lines at the bottom of `main.css`. A new template directory outside `source/` needs adding there or its classes get stripped.
 
-## Internationalization
+## Templates
 
-Four locales: `en`, `fr`, `de`, `es`. **Every URL is locale-prefixed, English included** (`/en/`, `/fr/`), and slugs are translated per locale (`/fr/tarifs`, not `/fr/pricing`).
+Plain Blade with `@include`, not Blade components. Jigsaw's view finder resolves anonymous components under `source/components/`, a directory that would then be built into output, so partials are the safe path.
 
-- All copy lives in `src/i18n/content/<locale>.ts`. **Never hard-code a user-visible string in a component.** If you add a string, add it to all four dictionaries.
-- `en.ts` defines the shape; the others are typed `: Dictionary`, so a missing key fails `astro check`. That check is the safety net, so run it.
-- Paths come from `path(pageKey, locale)` in `src/i18n/routes.ts`. Never build a URL by string concatenation.
-- German runs ~30% longer than English and French ~20%. Don't pin widths to English label lengths.
-
-### Adding a page
-
-Slugs differ per locale, so a page cannot be a plain filename. Add its key and four slugs to `routes.ts`, then generate one path per locale:
-
-```astro
----
-// src/pages/[locale]/[pricing].astro  →  /en/pricing, /fr/tarifs, /de/preise, /es/precios
-import { locales } from '../../i18n/config';
-import { routes } from '../../i18n/routes';
-
-export const getStaticPaths = () =>
-  locales.map((locale) => ({ params: { locale, pricing: routes.pricing[locale] } }));
----
-```
-
-### Adding a locale
-
-1. `locales` and `localeNames` in `src/i18n/config.ts`.
-2. `locales` in `astro.config.mjs`.
-3. A slug for it on every entry in `src/i18n/routes.ts`.
-4. Copy `content/en.ts`, translate, register it in `ui.ts`.
-5. Its flag in `src/components/Flag.astro`.
-
-Then `astro check` lists every key still missing.
+Partials take data through the `@include` array: `@include('_partials.icon', ['name' => 'star', 'size' => 16])`. Underscore-prefixed directories are never written to the build.
 
 ## Where things go
 
-| What                                | Where                                       |
-| :---------------------------------- | :------------------------------------------ |
-| Homepage sections                   | `src/components/home/`                      |
-| Shared UI (Container, Section, Icon)| `src/components/`                           |
-| Page shell, `<head>`, hreflang      | `src/layouts/BaseLayout.astro`              |
-| Copy                                | `src/i18n/content/<locale>.ts`              |
-| Routes and translated slugs         | `src/i18n/routes.ts`                        |
-| External links                      | `src/config.ts`                             |
-| GitHub star count                   | `src/lib/github.ts`                         |
-| Design tokens → Tailwind            | `src/styles/theme.css`                      |
-| Vendored design system              | `src/styles/design-system/` (do not edit)   |
-| Images, webfont                     | `src/assets/`                               |
-| Blog posts                          | `src/data/blog/*.md` (once set up)          |
+| What                                | Where                                              |
+| :---------------------------------- | :------------------------------------------------- |
+| Page shell, `<head>`                | `source/_layouts/base.blade.php`                    |
+| SEO, Open Graph, JSON-LD            | `source/_partials/seo.blade.php`                    |
+| Homepage sections                   | `source/_partials/home/`                            |
+| Shared partials (icon, flag, header)| `source/_partials/`                                 |
+| Locale pages                        | `source/<locale>/`                                  |
+| Copy                                | `lang/<locale>.php`                                 |
+| Routes, helpers, links, locales     | `config.php`                                        |
+| Production domain                   | `config.production.php`                             |
+| Star count fetch                    | `bootstrap.php`                                     |
+| Design tokens to Tailwind           | `source/_assets/css/theme.css`                      |
+| Vendored design system              | `source/_assets/css/design-system/` (do not edit)   |
+| Compiled CSS entry                  | `source/_assets/css/main.css`                       |
+| Fonts                               | `source/_assets/fonts/`                             |
+| Images, OG cards, robots.txt        | `source/assets/`, `source/og/`, `source/robots.txt` |
+
+## SEO and social cards
+
+`source/_partials/seo.blade.php` owns the whole head: title, description, canonical, robots, hreflang, Open Graph, Twitter card and JSON-LD. **A new page gets all of it by extending `_layouts.base` with `locale` and `page` front matter.** Never hand-write a meta tag in a page.
+
+- Every crawler-facing URL is absolute, built from `baseUrl` in `config.production.php`. If the domain changes, that is the only edit, plus the hard-coded line in `source/robots.txt`.
+- hreflang is emitted for all four locales **including the current one**. Reciprocity is what makes the cluster credible.
+- `og:locale` needs `language_TERRITORY` (`fr_FR`), from `ogLocales`. hreflang uses the bare code, so the two differ on purpose.
+- `source/sitemap.blade.xml` builds the sitemap by walking `routes` and `locales`, with `xhtml:link` hreflang annotations. It is named `.blade.xml` so Jigsaw writes `sitemap.xml` rather than `sitemap.html`. Its XML declaration is echoed as a string, because a literal `<?xml` would be parsed as a PHP open tag.
+- `source/index.blade.php` and `source/404.blade.php` both set an explicit `permalink`, because pretty URLs would otherwise write them to `index/index.html` and `404/index.html`. Both carry `noindex`, and neither is in the sitemap.
+
+Social cards are `source/og/monica-<locale>.png`, one per language, 1200x630. They are generated from `scripts/og/template.html` by `npm run og`, which drives headless Chrome. The PNGs are committed so a build never depends on a browser being installed. **The template mirrors the hero copy by hand**, so when a hero headline changes in `lang/`, update the template and re-run `npm run og`.
 
 ## Star count
 
-`src/lib/github.ts` reads `monicahq/monica` from the GitHub API during the build and floors it to the nearest thousand, so 24,956 renders as `24k+`. **Floor, never round**: the `+` promises at least that many.
+`bootstrap.php` reads `monicahq/monica` from the GitHub API in a `beforeBuild` listener and writes `starCount` into config, so templates use `$page->starCount`. It floors to the nearest thousand, so 24,956 renders as `24k+`. **Floor, never round**: the `+` promises at least that many.
 
-Failures fall back to a hard-coded value and log a warning rather than breaking the build. The result is memoized at module scope so the four locale pages share one request. `GITHUB_TOKEN` is an optional secret declared through `astro:env` in `astro.config.mjs`; it only lifts the 60-per-hour unauthenticated rate limit.
-
-## The blog
-
-Not built. It needs Astro content collections: `src/content.config.ts` declaring a collection with the `glob` loader from `astro/loaders` and a zod schema, Markdown under `src/data/blog/`, and a `src/pages/[locale]/blog/[...id].astro` route using `getCollection` and `render` from `astro:content`.
-
-Current API, which older examples online get wrong: the config lives at `src/content.config.ts` (not `src/content/config.ts`), entries are keyed by `id` (not `slug`), and you render with `const { Content } = await render(post)` (not `post.render()`). Posts also need a locale dimension, either a schema field or one folder per language.
-
-## Deploying
-
-`npm run build` produces a fully static `dist/`. No Node process in production. `site` in `astro.config.mjs` drives canonical URLs and the hreflang alternates, so it must match the real domain.
+Failures keep the fallback in `config.php` and print a warning rather than breaking the build. `GITHUB_TOKEN` is read from the environment and only lifts the 60-per-hour unauthenticated rate limit.
 
 ## Other conventions
 
-- **Static by default.** No SSR, no adapters, no server endpoints unless the task genuinely requires them. Say so first if you think it does.
-- **Zero JS unless asked.** The homepage currently ships none: the FAQ and the language menu are native `<details>`. Prefer that, then a plain `<script>`, then (only with the owner's agreement) a UI framework.
-- **No new dependencies without asking.** Use `npx astro add <x>` for official integrations so config is wired correctly.
+- **Static by default.** Jigsaw outputs files. Nothing runs server-side in production.
+- **Zero JS unless asked.** The site currently ships none: the FAQ and the language menu are native `<details>`, and Vite has no JS entry point. Adding one is a real decision, so ask first.
+- **No new dependencies without asking**, Composer or npm.
 - **Marketing copy is the owner's call.** Draft it when asked, but don't rewrite existing headlines, pricing or product claims as a side effect of an unrelated change.
 
 ## Known gaps
 
-Only the homepage exists. Pricing, features, docs, the v3 teaser and the blog are unbuilt; their nav links are the design's `#` placeholders in `src/config.ts`. The star count is read live from the GitHub API at build time (`src/lib/github.ts`), so it refreshes only on a rebuild. The icons in `src/components/Icon.astro` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same API. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+Only the homepage exists. Pricing, features, docs, the v3 teaser and the blog are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+
+## The blog
+
+Not built. Jigsaw handles it with a **collection**: a `collections` entry in `config.php` pointing at `source/_blog/`, Markdown files with front matter, and a template. Posts need a locale dimension, either a front-matter field or one collection per language. See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
 
 ## Docs
 
-Full documentation: https://docs.astro.build
+Full documentation: https://jigsaw.tighten.com/docs
 
-- [Routing and dynamic routes](https://docs.astro.build/en/guides/routing/)
-- [Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Internationalization](https://docs.astro.build/en/guides/internationalization/)
-- [Content collections](https://docs.astro.build/en/guides/content-collections/). This API changed in Astro 5; older examples online are wrong
-- [Styling and Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Images](https://docs.astro.build/en/guides/images/)
+- [Collections](https://jigsaw.tighten.com/docs/collections/)
+- [Site variables and helper functions](https://jigsaw.tighten.com/docs/site-variables/)
+- [Event listeners](https://jigsaw.tighten.com/docs/event-listeners/)
+- [Pretty URLs](https://jigsaw.tighten.com/docs/pretty-urls/)
+- [Compiling assets](https://jigsaw.tighten.com/docs/compiling-assets/)

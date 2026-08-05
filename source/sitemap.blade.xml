@@ -1,0 +1,25 @@
+{{--
+    Every page in every language, with xhtml:link hreflang annotations.
+
+    This is the second half of multilingual SEO: the <link> tags in the page
+    head say which URLs are translations of each other, and the sitemap says it
+    again where crawlers look first.
+
+    Named .blade.xml so Jigsaw writes sitemap.xml rather than sitemap.html.
+--}}
+{{-- The XML declaration is echoed, because a literal <?xml would be parsed
+     as a PHP open tag. --}}
+{!! '<'.'?xml version="1.0" encoding="UTF-8"?'.'>' !!}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+@foreach (collect($page->routes)->keys() as $key)
+@foreach ($page->locales as $locale)
+    <url>
+        <loc>{{ $page->absolute($page->localePath($key, $locale)) }}</loc>
+@foreach ($page->locales as $alternate)
+        <xhtml:link rel="alternate" hreflang="{{ $alternate }}" href="{{ $page->absolute($page->localePath($key, $alternate)) }}"/>
+@endforeach
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $page->absolute($page->localePath($key, $page->defaultLocale)) }}"/>
+    </url>
+@endforeach
+@endforeach
+</urlset>

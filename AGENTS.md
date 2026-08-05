@@ -1,12 +1,13 @@
 # Agent instructions
 
-Marketing site for Monica, the personal CRM. Static Astro 7 site.
+Marketing site for Monica, the personal CRM. Static Jigsaw + Tailwind site, in four languages.
 
-**The full working notes (conventions, file layout, blog/content-collection gotchas, current state of the repo) live in [`.claude/CLAUDE.md`](.claude/CLAUDE.md). Read that file first.** It's kept as the single source so guidance doesn't drift between tools.
+**The full working notes (conventions, file layout, how the four languages work, SEO, current state of the repo) live in [`.claude/CLAUDE.md`](.claude/CLAUDE.md). Read that file first.** It's kept as the single source so guidance doesn't drift between tools.
 
-Two things that matter regardless:
+Three things that matter regardless:
 
-- Start the dev server in background mode: `astro dev --background` (manage with `astro dev stop` / `status` / `logs`). Don't run it in the foreground. It blocks.
-- Astro docs: https://docs.astro.build. The content collections API changed across versions, so check the docs rather than trusting older examples.
+- Build with `npm run dev` (watch) or `npm run build` (production), never `vendor/bin/jigsaw build` on its own. Vite has to compile the CSS before Jigsaw renders, or the build fails on a missing manifest.
+- All visible text lives in `lang/<locale>.php`. Never hard-code a string in a template.
+- Jigsaw docs: https://jigsaw.tighten.com/docs
 
 > Note: `CLAUDE.md` in the repo root is a symlink to this file.
