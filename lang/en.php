@@ -161,6 +161,7 @@ return [
         'aside' => "Trust is useful. Source code is better.",
         'sourceCta' => "Explore the source code",
         'hostingCta' => "Read the self-hosting guide",
+        'v3Cta' => "See everything coming in Monica v3",
         'listTitle' => "With Monica v3:",
         'items' => [
             "the project remains fully open source;",
@@ -348,6 +349,7 @@ return [
             [
                 'q' => "What happens to my account when v3 arrives?",
                 'a' => "The goal is a clear migration path for existing accounts, including contacts, notes, reminders, and other essential information. Nothing is deleted and nothing is forced on you overnight.",
+                'link' => ['label' => "Read about Monica v3", 'page' => 'v3'],
             ],
             [
                 'q' => "Is there a mobile application?",

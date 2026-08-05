@@ -18,6 +18,16 @@
         <div>
             <p class="text-copy font-medium text-text">{{ $page->t('openSource.listTitle') }}</p>
             @include('_partials.bullets', ['items' => $page->t('openSource.items')])
+
+            {{-- The list is entirely about v3, so the question it leaves the
+                 reader with is answered one link away. --}}
+            <a
+                href="{{ $page->route('v3') }}"
+                class="mt-6 inline-flex items-center gap-2 text-copy text-accent underline-offset-[3px]"
+            >
+                {{ $page->t('openSource.v3Cta') }}
+                @include('_partials.icon', ['name' => 'arrowRight', 'size' => 14])
+            </a>
         </div>
     </div>
 </section>

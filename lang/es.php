@@ -150,6 +150,7 @@ return [
         'aside' => "La confianza es útil. El código fuente es mejor.",
         'sourceCta' => "Explorar el código fuente",
         'hostingCta' => "Leer la guía de autoalojamiento",
+        'v3Cta' => "Ver todo lo que llega con Monica v3",
         'listTitle' => "Con Monica v3:",
         'items' => [
             "el proyecto sigue siendo totalmente de código abierto;",
@@ -337,6 +338,7 @@ return [
             [
                 'q' => "¿Qué pasa con mi cuenta cuando llegue la v3?",
                 'a' => "El objetivo es un camino de migración claro para las cuentas existentes, con contactos, notas, recordatorios y demás información esencial. No se borra nada y no se te impone nada de un día para otro.",
+                'link' => ['label' => "Leer sobre Monica v3", 'page' => 'v3'],
             ],
             [
                 'q' => "¿Hay aplicación móvil?",

@@ -150,6 +150,7 @@ return [
         'aside' => "Vertrauen ist nützlich. Quellcode ist besser.",
         'sourceCta' => "Quellcode ansehen",
         'hostingCta' => "Anleitung zum Selbst-Hosten lesen",
+        'v3Cta' => "Alles ansehen, was mit Monica v3 kommt",
         'listTitle' => "Mit Monica v3:",
         'items' => [
             "bleibt das Projekt vollständig quelloffen;",
@@ -337,6 +338,7 @@ return [
             [
                 'q' => "Was passiert mit meinem Konto, wenn v3 erscheint?",
                 'a' => "Das Ziel ist ein klarer Migrationsweg für bestehende Konten, samt Kontakten, Notizen, Erinnerungen und weiteren wesentlichen Informationen. Nichts wird gelöscht und nichts wird Ihnen über Nacht aufgezwungen.",
+                'link' => ['label' => "Mehr über Monica v3 lesen", 'page' => 'v3'],
             ],
             [
                 'q' => "Gibt es eine mobile Anwendung?",
