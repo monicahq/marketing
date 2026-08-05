@@ -90,7 +90,7 @@ Four locales: `en`, `fr`, `de`, `es`. **Every URL is locale-prefixed, English in
 
 ## Known gaps
 
-Only the homepage exists. Pricing, features, docs, the v3 teaser and the blog are unbuilt; their nav links are the design's `#` placeholders in `src/config.ts`. The star count is hard-coded. The icons in `src/components/Icon.astro` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same API. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+Only the homepage exists. Pricing, features, docs, the v3 teaser and the blog are unbuilt; their nav links are the design's `#` placeholders in `src/config.ts`. The star count is read live from the GitHub API at build time (`src/lib/github.ts`), so it refreshes only on a rebuild. The icons in `src/components/Icon.astro` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same API. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 
 ## Docs
 

@@ -301,9 +301,22 @@ stars: (count: string) => `${count} stars`,
 
 Don't hard-code a value in a component. Open `src/styles/theme.css` and change the token. Everything using it follows. See [Tailwind and the design tokens](#tailwind-and-the-design-tokens).
 
-### Change a link, or the GitHub star count
+### Change a link
 
 `src/config.ts`. Several links are still `#` placeholders because those pages don't exist yet.
+
+### The GitHub star count
+
+You don't set it. `src/lib/github.ts` reads it from the GitHub API during `npm run build` and floors it to the nearest thousand, so 24,956 displays as `24k+`. It's flooring rather than rounding on purpose: the `+` promises "at least this many", so rounding up would be a claim the repository can't back.
+
+Because the site is static, the figure is fixed at build time. Flooring keeps it truthful for months, but it only moves when you rebuild. If you want it to track more closely, point a scheduled deploy hook at your host.
+
+Two things it handles on its own:
+
+- **If GitHub is unreachable**, the build prints a warning and falls back to a hard-coded value rather than failing. A marketing site should never miss a deploy because an API timed out.
+- **All four locale pages share one request**, not four, because the result is memoized at module scope.
+
+Optionally set `GITHUB_TOKEN` in the build environment. Unauthenticated calls are limited to 60 per hour per IP, which is plenty for one build but is shared with every other tenant on a CI runner. A token raises the ceiling to 5,000. It's declared as an optional secret in `astro.config.mjs`, so Astro reads it from the environment first and from a local `.env` file second.
 
 ### Add a section to the homepage
 
@@ -417,7 +430,7 @@ Then run `npx astro check`. It lists every key you still owe.
 - **The blog.** Content collections aren't set up. See the next section.
 - **Every page except the homepage**: pricing, features, documentation, the Monica v3 teaser. Their nav links are the design's `#` placeholders, collected in `src/config.ts`.
 - **Real destinations** for sign-in, get-started and the docs. Also `src/config.ts`.
-- **The star count** is hard-coded (`25k+`), not fetched from GitHub.
+- **The star count** is live, but frozen at build time. It refreshes only when the site is rebuilt.
 - **The icons** are the design system's placeholder geometry. Monica's real repository SVGs were never supplied. See the note at the top of `src/components/Icon.astro`.
 
 ---

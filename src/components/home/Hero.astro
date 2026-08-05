@@ -4,6 +4,7 @@ import Icon from '../Icon.astro';
 import { site } from '../../config';
 import type { Locale } from '../../i18n/config';
 import { useTranslations } from '../../i18n/ui';
+import { getStarCount } from '../../lib/github';
 
 interface Props {
   locale: Locale;
@@ -11,6 +12,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const stars = await getStarCount();
 
 const lede =
   'max-w-[58ch] text-lede-sm text-text-secondary text-pretty md:text-lede-md lg:text-lede';
@@ -33,7 +35,7 @@ const heroButton = 'no-underline hover:no-underline max-md:w-full max-md:justify
     </a>
     <a href={site.links.github} class:list={['mn-btn mn-btn--secondary gap-2', heroButton]}>
       <Icon name="star" />
-      <span>{t.hero.githubCta(site.starCount)}</span>
+      <span>{t.hero.githubCta(stars)}</span>
     </a>
   </div>
 

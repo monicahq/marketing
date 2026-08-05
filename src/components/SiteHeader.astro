@@ -7,6 +7,7 @@ import { site } from '../config';
 import type { Locale } from '../i18n/config';
 import { path } from '../i18n/routes';
 import { useTranslations } from '../i18n/ui';
+import { getStarCount } from '../lib/github';
 
 interface Props {
   locale: Locale;
@@ -15,6 +16,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const home = path('home', locale);
+const stars = await getStarCount();
 
 /**
  * Nav items in order. `current` marks the page the visitor is on; the anchors
@@ -70,7 +72,7 @@ const buttonLink = 'no-underline hover:no-underline';
         class:list={['mn-btn mn-btn--secondary mn-btn--sm gap-2', buttonLink]}
       >
         <Icon name="star" />
-        <span>{t.nav.stars(site.starCount)}</span>
+        <span>{t.nav.stars(stars)}</span>
       </a>
       <a href={site.links.signIn} class:list={['mn-btn mn-btn--quiet mn-btn--sm', buttonLink]}>
         {t.nav.signIn}

@@ -6,9 +6,6 @@
  * repository knows about yet.
  */
 export const site = {
-  /** Shown in the header, the hero CTA and the proof strip. Update by hand. */
-  starCount: '25k+',
-
   /** Year in the footer notice. Read once at build time. */
   year: new Date().getFullYear(),
 

@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -22,6 +22,20 @@ export default defineConfig({
   // builds do not run the SSR locale redirect, so send it on explicitly.
   redirects: {
     '/': '/en/',
+  },
+
+  env: {
+    schema: {
+      // Optional. The star count is read from the GitHub API at build time;
+      // without a token that call is limited to 60 requests per hour per IP,
+      // which a shared CI runner can exhaust. Setting this raises it to 5,000.
+      // Read from the build environment first, then from a local .env file.
+      GITHUB_TOKEN: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+    },
   },
 
   vite: {

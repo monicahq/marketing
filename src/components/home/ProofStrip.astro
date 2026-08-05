@@ -1,8 +1,8 @@
 ---
 import Section from '../Section.astro';
-import { site } from '../../config';
 import type { Locale } from '../../i18n/config';
 import { useTranslations } from '../../i18n/ui';
+import { getStarCount } from '../../lib/github';
 
 interface Props {
   locale: Locale;
@@ -10,9 +10,10 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const stars = await getStarCount();
 
 const stats = [
-  { value: site.starCount, label: t.proof.starsLabel },
+  { value: stars, label: t.proof.starsLabel },
   { value: t.proof.since, label: t.proof.sinceLabel },
   { value: t.proof.featured, label: t.proof.featuredLabel },
   { value: t.proof.launch, label: t.proof.launchLabel },
