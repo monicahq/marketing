@@ -52,13 +52,13 @@ return [
 
         'v3' => [
             'title' => "Monica v3 — reconstruida para los próximos diez años",
-            'description' => "Monica v3 es una reconstrucción completa del CRM personal de código abierto: fichas que diseñas tú, un diario conectado con todo lo demás, una API completa y una experiencia móvil de verdad. Sigue siendo de código abierto, ahora con licencia MIT. Antes de que acabe 2026.",
+            'description' => "Monica v3 es una reconstrucción completa del CRM personal de código abierto: fichas que diseñas tú, un diario conectado con todo lo demás, una API completa y una experiencia móvil de verdad. Sigue siendo de código abierto. Antes de que acabe 2026.",
         ],
     ],
 
     'announcement' => [
         'headline' => "Monica v3 llega antes de que acabe 2026.",
-        'detail' => "Reconstruida desde cero. Sigue siendo de código abierto. Ahora con licencia MIT.",
+        'detail' => "Reconstruida desde cero. Sigue siendo de código abierto.",
         'cta' => "Ver lo que viene",
     ],
 
@@ -81,7 +81,7 @@ return [
         'lede2' => "Privada por diseño. De código abierto. Alojable por ti. Sin anuncios, sin reventa de datos, sin notificaciones incómodas para «reengancharte».",
         'primaryCta' => "Empezar con Monica",
         'githubCta' => "Ver en GitHub · :count estrellas",
-        'note' => "Alojarla tú es gratis · Versión alojada disponible · Con licencia MIT en la v3",
+        'note' => "Alojarla tú es gratis · Versión alojada disponible",
     ],
 
     'proof' => [
@@ -188,7 +188,6 @@ return [
         'listTitle' => "Con Monica v3:",
         'items' => [
             "el proyecto sigue siendo totalmente de código abierto;",
-            "la licencia pasa a ser MIT;",
             "puedes ejecutarla en tu propio servidor;",
             "el producto alojado usa la misma aplicación;",
             "tus datos se pueden exportar;",
@@ -243,7 +242,7 @@ return [
         'timing' => "Antes de que acabe 2026",
         'title' => "Monica se está reconstruyendo para los próximos diez años.",
         'lede' => "Monica ha ayudado a miles de personas a recordar lo que importa de quienes las rodean. Ahora se está reconstruyendo desde cero: más flexible, más privada, más fácil de ampliar y mejor en cualquier pantalla.",
-        'lede2' => "Seguirá siendo de código abierto. Pasará a licencia MIT. Y todo lo que hacía que Monica mereciera la pena se queda.",
+        'lede2' => "Seguirá siendo de código abierto. Y todo lo que hacía que Monica mereciera la pena se queda.",
 
         'form' => [
             'label' => "Correo electrónico",
@@ -303,8 +302,8 @@ return [
             'items' => [
                 [
                     'icon' => 'code',
-                    'title' => "De código abierto, ahora con MIT",
-                    'body' => "Monica seguirá siendo totalmente de código abierto y alojable por ti. La versión 3 usará la licencia MIT, más sencilla de entender, reutilizar, ampliar y a la que contribuir.",
+                    'title' => "De código abierto, y seguirá siéndolo",
+                    'body' => "Monica seguirá siendo totalmente de código abierto y alojable por ti. El código se podrá leer, modificar, bifurcar y mejorar, igual que hoy.",
                 ],
                 [
                     'icon' => 'lock',
@@ -332,7 +331,7 @@ return [
         'follow' => [
             'title' => "Sigue la reconstrucción desde el principio.",
             'body' => "Monica v3 aún está en desarrollo y muchas decisiones importantes se toman en abierto. Apúntate a la lista de lanzamiento o sigue el repositorio para ver el trabajo según avanza.",
-            'note' => "Código abierto · Licencia MIT · Desarrollada en público",
+            'note' => "Código abierto · Alojable por ti · Desarrollada en público",
             'primaryCta' => "Recibir el correo de lanzamiento",
             'secondaryCta' => "Seguir a Monica en GitHub",
         ],
@@ -483,8 +482,7 @@ return [
                 "importación y exportación de datos;",
                 "documentación de la comunidad;",
                 "soporte de la comunidad;",
-                "la posibilidad de inspeccionar y modificar el código;",
-                "la licencia MIT en Monica v3.",
+                "la posibilidad de inspeccionar y modificar el código.",
             ],
             'footnote' => "La edición autoalojada no es una demo recortada. Es Monica funcionando en tu infraestructura.",
             'footnote2' => "Las copias de seguridad gestionadas, el envío de correo, la supervisión de la infraestructura y el soporte directo forman parte del servicio alojado.",
@@ -565,7 +563,7 @@ return [
                 ['q' => "¿El precio es por usuario o por contacto?", 'a' => "No. El plan alojado tiene un único precio por cuenta e incluye contactos ilimitados."],
                 ['q' => "¿Monica es realmente de código abierto?", 'a' => [
                     "Sí. El código de Monica es público y el proyecto tiene :count estrellas en GitHub.",
-                    "Monica v3 se publicará con licencia MIT.",
+                    "Monica v3 seguirá siendo de código abierto y alojable por ti.",
                 ], 'link' => ['label' => "Leer sobre Monica v3", 'page' => 'v3']],
                 ['q' => "¿Autoalojar es gratis?", 'a' => "Monica no cobra por el software autoalojado. El servidor y los costes de infraestructura corren de tu cuenta."],
                 ['q' => "¿La versión alojada es distinta de la autoalojada?", 'a' => [

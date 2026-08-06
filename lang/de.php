@@ -52,13 +52,13 @@ return [
 
         'v3' => [
             'title' => "Monica v3 — neu gebaut für die nächsten zehn Jahre",
-            'description' => "Monica v3 ist ein vollständiger Neubau des quelloffenen persönlichen CRM: Einträge, die Sie selbst gestalten, ein mit allem verbundenes Journal, eine vollständige API und eine echte mobile Erfahrung. Weiterhin quelloffen, jetzt unter MIT-Lizenz. Vor Ende 2026.",
+            'description' => "Monica v3 ist ein vollständiger Neubau des quelloffenen persönlichen CRM: Einträge, die Sie selbst gestalten, ein mit allem verbundenes Journal, eine vollständige API und eine echte mobile Erfahrung. Weiterhin quelloffen. Vor Ende 2026.",
         ],
     ],
 
     'announcement' => [
         'headline' => "Monica v3 kommt vor Ende 2026.",
-        'detail' => "Von Grund auf neu gebaut. Weiterhin quelloffen. Jetzt unter MIT-Lizenz.",
+        'detail' => "Von Grund auf neu gebaut. Weiterhin quelloffen.",
         'cta' => "Sehen, was kommt",
     ],
 
@@ -81,7 +81,7 @@ return [
         'lede2' => "Privat von Grund auf. Quelloffen. Selbst hostbar. Keine Werbung, kein Datenverkauf, keine peinlichen Benachrichtigungen zur „Aktivierung“.",
         'primaryCta' => "Mit Monica beginnen",
         'githubCta' => "Auf GitHub ansehen · :count Sterne",
-        'note' => "Selbst hosten ist kostenlos · Gehostete Version verfügbar · MIT-lizenziert ab v3",
+        'note' => "Selbst hosten ist kostenlos · Gehostete Version verfügbar",
     ],
 
     'proof' => [
@@ -188,7 +188,6 @@ return [
         'listTitle' => "Mit Monica v3:",
         'items' => [
             "bleibt das Projekt vollständig quelloffen;",
-            "wird die Lizenz zu MIT;",
             "können Sie es auf Ihrem eigenen Server betreiben;",
             "nutzt das gehostete Produkt dieselbe Anwendung;",
             "lassen sich Ihre Daten exportieren;",
@@ -243,7 +242,7 @@ return [
         'timing' => "Kommt vor Ende 2026",
         'title' => "Monica wird für die nächsten zehn Jahre neu gebaut.",
         'lede' => "Monica hat Tausenden Menschen geholfen, sich an das zu erinnern, was bei den Menschen in ihrem Leben zählt. Jetzt wird sie von Grund auf neu gebaut: flexibler, privater, leichter erweiterbar und besser auf jedem Bildschirm.",
-        'lede2' => "Sie bleibt quelloffen. Sie wechselt zur MIT-Lizenz. Und alles, was Monica von Anfang an lohnend gemacht hat, bleibt erhalten.",
+        'lede2' => "Sie bleibt quelloffen. Und alles, was Monica von Anfang an lohnend gemacht hat, bleibt erhalten.",
 
         'form' => [
             'label' => "E-Mail-Adresse",
@@ -303,8 +302,8 @@ return [
             'items' => [
                 [
                     'icon' => 'code',
-                    'title' => "Quelloffen, jetzt unter MIT",
-                    'body' => "Monica bleibt vollständig quelloffen und selbst hostbar. Version 3 verwendet die MIT-Lizenz und ist damit einfacher zu verstehen, wiederzuverwenden, zu erweitern und zu ergänzen.",
+                    'title' => "Quelloffen, und das bleibt so",
+                    'body' => "Monica bleibt vollständig quelloffen und selbst hostbar. Der Code lässt sich weiterhin lesen, verändern, forken und ergänzen, genau wie heute.",
                 ],
                 [
                     'icon' => 'lock',
@@ -332,7 +331,7 @@ return [
         'follow' => [
             'title' => "Verfolgen Sie den Neubau von Anfang an.",
             'body' => "Monica v3 ist noch in Entwicklung, und viele wichtige Entscheidungen fallen öffentlich. Tragen Sie sich in die Startliste ein oder folgen Sie dem Repository, um die Arbeit mitzuverfolgen.",
-            'note' => "Quelloffen · MIT-Lizenz · Öffentlich entwickelt",
+            'note' => "Quelloffen · Selbst hostbar · Öffentlich entwickelt",
             'primaryCta' => "Start-E-Mail erhalten",
             'secondaryCta' => "Monica auf GitHub folgen",
         ],
@@ -483,8 +482,7 @@ return [
                 "Datenimport und -export;",
                 "Dokumentation der Community;",
                 "Unterstützung durch die Community;",
-                "die Möglichkeit, den Quellcode einzusehen und zu ändern;",
-                "die MIT-Lizenz in Monica v3.",
+                "die Möglichkeit, den Quellcode einzusehen und zu ändern.",
             ],
             'footnote' => "Die selbst gehostete Ausgabe ist keine abgespeckte Demo. Es ist Monica auf Ihrer Infrastruktur.",
             'footnote2' => "Verwaltete Sicherungen, E-Mail-Versand, Infrastrukturüberwachung und direkter Support gehören zum gehosteten Dienst.",
@@ -565,7 +563,7 @@ return [
                 ['q' => "Gilt der Preis pro Nutzer oder pro Kontakt?", 'a' => "Nein. Der gehostete Tarif hat einen Preis pro Konto und enthält unbegrenzte Kontakte."],
                 ['q' => "Ist Monica wirklich quelloffen?", 'a' => [
                     "Ja. Der Quellcode von Monica ist öffentlich, und das Projekt hat :count Sterne auf GitHub.",
-                    "Monica v3 wird unter der MIT-Lizenz veröffentlicht.",
+                    "Monica v3 bleibt quelloffen und selbst hostbar.",
                 ], 'link' => ['label' => "Mehr über Monica v3 lesen", 'page' => 'v3']],
                 ['q' => "Ist Selbst-Hosten kostenlos?", 'a' => "Monica berechnet nichts für die selbst gehostete Software. Server und Infrastrukturkosten tragen Sie."],
                 ['q' => "Unterscheidet sich die gehostete von der selbst gehosteten Version?", 'a' => [
