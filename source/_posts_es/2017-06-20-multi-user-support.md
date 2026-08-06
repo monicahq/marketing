@@ -17,7 +17,7 @@ queridos.
 Para cubrir ese caso, presentamos la compatibilidad con varios usuarios en una
 misma cuenta.
 
-![Imagen que representa la compatibilidad con varios usuarios](/assets/images/blog/2017-06-20-multi-user-support.webp)
+![Los ajustes de usuarios de Monica, vacíos, ofreciendo invitar a otra persona a la cuenta.](/assets/images/blog/2017-06-20-multi-user-support.webp)
 
 Los usuarios se añaden por correo electrónico. Como medida de seguridad, la
 persona a la que invites tendrá que introducir, al registrarse, el correo del

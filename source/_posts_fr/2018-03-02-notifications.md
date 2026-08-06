@@ -13,12 +13,12 @@ Par défaut, les notifications sont envoyées 30 jours avant l'événement, puis
 
 Ces notifications peuvent être désactivées dans vos réglages, dans la section Personnalisation.
 
-![image](/assets/images/blog/2018-03-02-reminder-rule.webp)
+![Les réglages des rappels, avec les notifications 7 et 30 jours avant un événement toutes deux activées.](/assets/images/blog/2018-03-02-reminder-rule.webp)
 
 Les notifications ne concernent que les rappels mensuels et annuels, pas les rappels hebdomadaires.
 
 Cerise sur le gâteau : vous pouvez maintenant définir l'heure de la journée à laquelle vous souhaitez recevoir les emails de rappel.
 
-![image](/assets/images/blog/2018-03-02-hour.webp)
+![Les préférences du compte, dont l'heure de la journée à laquelle les e-mails de rappel sont envoyés.](/assets/images/blog/2018-03-02-hour.webp)
 
 Ces nouveautés sont déjà en production et seront disponibles dans la v1.8.1, qui sortira dans quelques jours, si vous faites tourner Monica sur un serveur qui vous appartient.

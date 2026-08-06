@@ -9,11 +9,11 @@ original_url: https://www.monicahq.com/blog/inline-notes
 ---
 Notes can now be set as a favorite. Favorites are a great way to keep track of notes that you find interesting.
 
-![image](/assets/images/blog/2017-12-04-inline-notes.webp)
+![Notes on a contact's profile, one of them starred as a favourite.](/assets/images/blog/2017-12-04-inline-notes.webp)
 
 When a note is set as favorite, it will appear in a new tab on the dashboard, called `Important notes`.
 
-![image](/assets/images/blog/2017-12-04-notes-dashboard.webp)
+![The dashboard's important notes tab, collecting the notes starred across every contact.](/assets/images/blog/2017-12-04-notes-dashboard.webp)
 
 In this release, we've also released some goodies:
 

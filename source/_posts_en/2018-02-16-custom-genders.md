@@ -11,4 +11,4 @@ When I launched Monica last year, I didn't realize that only offering two gender
 
 This is why we are introducing the notion of custom genders. By default, each account still comes with three genders (male, female and other), but now you can customize this list, add or remove genders at will. You will be the one deciding which gender people should have. While we should be careful not to add too many options in Monica, this is a case where we need to put you, the user, in control of what your reality is.
 
-![image](/assets/images/blog/2018-02-16-custom-genders.webp)
+![The settings screen listing the gender types on the account, each with the number of contacts using it.](/assets/images/blog/2018-02-16-custom-genders.webp)

@@ -11,16 +11,16 @@ I don't like Facebook. It's not a secret. But despite their general evilness, th
 
 Life events is now a new tab in the Profile page of a contact.
 
-![image](/assets/images/blog/2018-10-12-life-events-blank.webp)
+![The life events tab on a contact, empty, offering to add the first one.](/assets/images/blog/2018-10-12-life-events-blank.webp)
 
 You have access to 45+ life events that you can document. You can also set a reminder for each one of these events.
 
-![image](/assets/images/blog/2018-10-12-life-events-list.webp)
+![The list of life events to pick from, under the home and living category.](/assets/images/blog/2018-10-12-life-events-list.webp)
 
 Note that you can add an event without knowing the month or the day it happened.
 
 Once a life event is added, it will appear on a timeline that will be improved in an upcoming release.
 
-![image](/assets/images/blog/2018-10-12-life-events-details.webp)
+![Two life events on a contact's profile, a marriage and a home improvement, each with its date.](/assets/images/blog/2018-10-12-life-events-details.webp)
 
 I hope you will like this feature and have fun with it.

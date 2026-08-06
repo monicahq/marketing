@@ -9,7 +9,7 @@ original_url: https://www.monicahq.com/blog/stay-in-touch
 ---
 Es gibt Menschen in Ihrem Leben, die besonders wichtig sind und bei denen Sie nichts verpassen wollen. Mit der neuen Funktion „In Kontakt bleiben“ erhalten Sie jetzt in einem von Ihnen festgelegten Abstand einen Hinweis zu einer bestimmten Person.
 
-![Bild](/assets/images/blog/2018-05-03-stayintouch.gif)
+![Ein Kontakteintrag mit dem Link „In Kontakt bleiben“ unter dem Namen.](/assets/images/blog/2018-05-03-stayintouch.gif)
 
 Die Funktion verschickt alle paar Tage eine E-Mail. Sie richtet sich nicht danach, wann Sie zuletzt mit jemandem zu tun hatten oder eine Aktivität festgehalten haben.
 

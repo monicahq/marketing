@@ -11,7 +11,7 @@ Au fond, Monica sert à consigner des informations sur les personnes qui compten
 
 Avec notre [dernière mise à jour](https://github.com/monicahq/monica/releases), vous pouvez désormais consigner une conversation tenue avec quelqu'un sur les réseaux sociaux, par SMS ou via Telegram, par exemple. L'interface que nous avons choisie s'inspire de celle des messageries populaires.
 
-![image](/assets/images/blog/2018-09-05-conversations.webp)
+![Le formulaire pour consigner une conversation, message par message, en indiquant qui a écrit chacun d'eux.](/assets/images/blog/2018-09-05-conversations.webp)
 
 Quand vous consignez une conversation, vous pouvez indiquer par quel moyen de communication elle a eu lieu. Cette liste provient des types de champs de contact définis dans vos réglages.
 

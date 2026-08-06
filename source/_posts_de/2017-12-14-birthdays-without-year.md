@@ -13,6 +13,6 @@ Deshalb haben wir die Möglichkeit ergänzt, ein Datum ohne bekanntes Jahr einzu
 
 Das gilt für Geburtsdaten, für das Datum des ersten Treffens und für Sterbedaten. Erinnerungen zu diesen Daten funktionieren wie bisher.
 
-![Bild](/assets/images/blog/2017-12-14-year-unknown.webp)
+![Das Geburtsdatumsformular, mit gewähltem Monat und Tag und unbekanntem Jahr.](/assets/images/blog/2017-12-14-year-unknown.webp)
 
 Diese Funktion war eine der [meistgewünschten](https://github.com/monicahq/monica/issues/75) in unserem [Ticketsystem](https://github.com/monicahq/monica/issues). Wir hoffen, sie hilft Ihnen dabei, mehr über Ihre Freunde und Familienmitglieder festzuhalten.

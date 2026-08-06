@@ -17,11 +17,15 @@
             </div>
 
             <figure class="m-0 overflow-hidden rounded-lg border border-border bg-surface">
+                {{-- A section down the page, below the screenshot that opens
+                     it, so this one waits until the reader is on their way. --}}
                 <img
                     src="/assets/images/features/api.webp"
                     alt="{{ $page->t('features.api.imageAlt') }}"
                     width="666"
                     height="483"
+                    loading="lazy"
+                    decoding="async"
                     class="block h-auto w-full"
                 >
             </figure>

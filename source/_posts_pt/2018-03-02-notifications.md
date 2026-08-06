@@ -13,12 +13,12 @@ Por padrão, as notificações são enviadas 30 dias antes do evento, depois 7 d
 
 Essas notificações podem ser desativadas no painel de Configurações, em Personalização.
 
-![imagem](/assets/images/blog/2018-03-02-reminder-rule.webp)
+![As configurações de lembretes, com as notificações de 7 e 30 dias antes de um evento ativadas.](/assets/images/blog/2018-03-02-reminder-rule.webp)
 
 As notificações valem apenas para lembretes mensais e anuais, não para os semanais.
 
 Cereja do bolo: agora você também pode definir a hora do dia em que quer receber os e-mails de lembrete.
 
-![imagem](/assets/images/blog/2018-03-02-hour.webp)
+![As preferências da conta, incluindo a hora do dia em que os e-mails de lembrete são enviados.](/assets/images/blog/2018-03-02-hour.webp)
 
 Essas novidades já estão em produção e estarão disponíveis na v1.8.1, que será lançada em alguns dias, caso você rode o Monica em um servidor seu.

@@ -13,6 +13,6 @@ Por eso hemos añadido la posibilidad de indicar una fecha sin conocer el año.
 
 Este cambio se aplica a las fechas de nacimiento, a las fechas del primer encuentro y a las fechas de fallecimiento. Los recordatorios de esas fechas funcionan igual que antes.
 
-![imagen](/assets/images/blog/2017-12-14-year-unknown.webp)
+![El formulario de fecha de nacimiento, con un mes y un día elegidos y el año como desconocido.](/assets/images/blog/2017-12-14-year-unknown.webp)
 
 Esta funcionalidad era una de las [más pedidas](https://github.com/monicahq/monica/issues/75) en nuestro [gestor de incidencias](https://github.com/monicahq/monica/issues). Esperamos que te ayude a guardar más información sobre tus amigos y familiares.

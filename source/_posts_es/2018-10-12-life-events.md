@@ -11,16 +11,16 @@ No me gusta Facebook. No es ningún secreto. Pero, pese a su maldad general, tie
 
 Los acontecimientos vitales son ahora una pestaña nueva en la página de perfil de un contacto.
 
-![imagen](/assets/images/blog/2018-10-12-life-events-blank.webp)
+![La pestaña de acontecimientos vitales de un contacto, vacía, ofreciendo añadir el primero.](/assets/images/blog/2018-10-12-life-events-blank.webp)
 
 Tienes acceso a más de 45 acontecimientos vitales que puedes documentar. También puedes poner un recordatorio para cada uno de ellos.
 
-![imagen](/assets/images/blog/2018-10-12-life-events-list.webp)
+![La lista de acontecimientos vitales para elegir, en la categoría hogar y vivienda.](/assets/images/blog/2018-10-12-life-events-list.webp)
 
 Ten en cuenta que puedes añadir un acontecimiento sin saber el mes ni el día en que ocurrió.
 
 Una vez añadido, el acontecimiento aparece en una línea de tiempo que mejoraremos en una versión próxima.
 
-![imagen](/assets/images/blog/2018-10-12-life-events-details.webp)
+![Dos acontecimientos vitales en la ficha de un contacto, una boda y una reforma, cada uno con su fecha.](/assets/images/blog/2018-10-12-life-events-details.webp)
 
 Espero que te guste esta función y que te diviertas con ella.

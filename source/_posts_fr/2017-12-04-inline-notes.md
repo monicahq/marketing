@@ -9,11 +9,11 @@ original_url: https://www.monicahq.com/blog/inline-notes
 ---
 Les notes peuvent maintenant être mises en favori. Les favoris sont un excellent moyen de garder sous la main les notes qui vous intéressent.
 
-![image](/assets/images/blog/2017-12-04-inline-notes.webp)
+![Des notes sur la fiche d'un contact, l'une d'elles marquée comme favorite.](/assets/images/blog/2017-12-04-inline-notes.webp)
 
 Quand une note est en favori, elle apparaît dans un nouvel onglet du tableau de bord, appelé `Notes importantes`.
 
-![image](/assets/images/blog/2017-12-04-notes-dashboard.webp)
+![L'onglet « notes importantes » du tableau de bord, qui rassemble les notes marquées comme favorites sur tous les contacts.](/assets/images/blog/2017-12-04-notes-dashboard.webp)
 
 Cette version apporte aussi quelques petits plus :
 

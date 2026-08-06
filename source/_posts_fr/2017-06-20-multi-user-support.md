@@ -17,7 +17,7 @@ les relations qu'il entretient avec ses proches.
 Pour répondre à ce besoin, nous introduisons le support de plusieurs
 utilisateurs dans un même compte.
 
-![Image représentant le support multi-utilisateur](/assets/images/blog/2017-06-20-multi-user-support.webp)
+![Les réglages des utilisateurs de Monica, vides, proposant d'inviter quelqu'un d'autre sur le compte.](/assets/images/blog/2017-06-20-multi-user-support.webp)
 
 L'ajout d'un utilisateur se fait par email. Par mesure de sécurité, la personne
 que vous invitez devra saisir, au moment de son inscription, l'email de

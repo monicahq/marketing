@@ -11,16 +11,16 @@ Eu não gosto do Facebook. Não é segredo. Mas, apesar da maldade geral deles, 
 
 Os acontecimentos de vida agora são uma nova aba na página de perfil de um contato.
 
-![imagem](/assets/images/blog/2018-10-12-life-events-blank.webp)
+![A aba de acontecimentos de vida de um contato, vazia, oferecendo adicionar o primeiro.](/assets/images/blog/2018-10-12-life-events-blank.webp)
 
 Você tem acesso a mais de 45 acontecimentos de vida que pode documentar. Também pode definir um lembrete para cada um deles.
 
-![imagem](/assets/images/blog/2018-10-12-life-events-list.webp)
+![A lista de acontecimentos de vida para escolher, na categoria casa e moradia.](/assets/images/blog/2018-10-12-life-events-list.webp)
 
 Vale notar que você pode adicionar um acontecimento sem saber o mês ou o dia em que ele ocorreu.
 
 Depois de adicionado, o acontecimento aparece em uma linha do tempo que será aprimorada em uma versão futura.
 
-![imagem](/assets/images/blog/2018-10-12-life-events-details.webp)
+![Dois acontecimentos de vida na ficha de um contato, um casamento e uma reforma, cada um com sua data.](/assets/images/blog/2018-10-12-life-events-details.webp)
 
 Espero que você goste desse recurso e se divirta com ele.

@@ -107,6 +107,8 @@ Non-negotiable rules, in rough order of how often they get broken:
 - **No emoji**, ever. No exclamation marks, no "Awesome!", no gamification.
 - **Hover is subtle and additive**: background, border-colour or text-colour change. Never movement, scale, glow or shadow. Hover is never the only route to an action.
 - **Radii top out at 8px** on standard surfaces. Ordinary buttons are never pills.
+- **Every `<img>` carries `width` and `height`**, its file's own pixels, so the browser reserves the box before the bytes arrive and nothing on the page moves. The CSS still does the sizing; the attributes only supply the ratio.
+- **`loading="lazy"` below the fold, `fetchpriority="high"` on nothing but the LCP image.** Today that is one image: the screenshot under the headline on the three feature pages. Handing the hint to a second image tells the browser nothing. The mark in the header is eager because it is in the first screenful of every page; the one in the footer is lazy because it never is.
 - **Marketing shows the real product.** No device mockups, browser chrome, stock photography or fabricated screenshots. `_partials/home/contact-card.blade.php` is built from the application's own `mn-*` classes for exactly this reason.
 
 Voice: address the reader as *you*; Monica refers to itself in the third person. Label actions with verbs ("Add a relationship", not "Create relationship entity"). Relationship direction is always a sentence ("Élise is Marc's partner"), never an arrow.
@@ -232,6 +234,10 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 **Dates are timestamps.** YAML reads an unquoted `date: 2018-10-12` as a date and hands it back as ten digits, so anything that displays a date or gives one to a crawler calls `$post->isoDate()`. `readingMinutes()` and `authorInitials()` are collection helpers alongside it.
 
 **`updated` is the one fact about a post that may differ between languages.** It is optional front matter, it feeds `$post->lastmodDate()` and through it the sitemap's `lastmod`, and it falls back to `date` because a post nobody has touched was last modified when it was published. Per locale on purpose: the slug and the date are the same fact in five files, but a French translation corrected on its own should say so without moving the other four. Set it only for a change a reader would notice.
+
+**Images go through `bodyHtml()`, never `getContent()`.** It is the rendered Markdown with every `<img>` given its intrinsic `width` and `height` (read off the file with `getimagesize()` at build time), plus `loading="lazy"` and `decoding="async"`. `![alt](src)` is all an author can write, so the alternative is raw `<img>` tags in 195 Markdown files repeating numbers that are already facts about the files on disk. Both the post page and the index card render through it, and `feedContent()` is built on top of it. Lazy on all of them without exception: every image in this collection is inside a post body, under a title, a lede and a byline, and the index carries ten whole posts at once.
+
+**Alt text is per locale and describes the screenshot.** It lives in the Markdown, so it is translated with the body. Say what the screen shows and what state it is in ("the life events tab on a contact, empty, offering to add the first one"), not what the file is. `![image]` is not alt text.
 
 `.mn-prose` in `source/_assets/css/prose.css` styles the rendered Markdown. It is the one place on the site that styles by element rather than by class, because the markup is generated and there is nothing to hang a utility on. Nothing else belongs in that file.
 

@@ -9,11 +9,11 @@ original_url: https://www.monicahq.com/blog/inline-notes
 ---
 Agora as notas podem ser marcadas como favoritas. Os favoritos são uma ótima forma de manter à mão as notas que você achar interessantes.
 
-![imagem](/assets/images/blog/2017-12-04-inline-notes.webp)
+![Notas na ficha de um contato, uma delas marcada como favorita.](/assets/images/blog/2017-12-04-inline-notes.webp)
 
 Quando uma nota é marcada como favorita, ela aparece em uma nova aba do painel, chamada `Notas importantes`.
 
-![imagem](/assets/images/blog/2017-12-04-notes-dashboard.webp)
+![A aba de notas importantes do painel, que reúne as notas marcadas como favoritas em todos os contatos.](/assets/images/blog/2017-12-04-notes-dashboard.webp)
 
 Nesta versão também lançamos alguns extras:
 

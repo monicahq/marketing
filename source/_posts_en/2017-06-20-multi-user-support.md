@@ -16,7 +16,7 @@ a single entity to organize the relationships they have with their loved ones.
 To address this use case, we are introducing the support for multiple users in a
 single account.
 
-![Image representing the multi user support](/assets/images/blog/2017-06-20-multi-user-support.webp)
+![Monica's user settings, empty, offering to invite someone else onto the account.](/assets/images/blog/2017-06-20-multi-user-support.webp)
 
 Adding users happens via email. As a security measure, the person you invite by
 email will have to enter the email of the user who has invited her upon

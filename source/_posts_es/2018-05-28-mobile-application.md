@@ -17,7 +17,7 @@ Durante estos meses hemos dedicado mucho esfuerzo a crear todo lo que la aplicac
 
 Y seis meses después nos enorgullece anunciar que la primera versión de la aplicación móvil está disponible [en iOS](https://itunes.apple.com/ca/app/monica-personal-crm/id1339447754?mt=8) y en [Android](https://play.google.com/store/apps/details?id=com.monicahq.app).
 
-![imagen](/assets/images/blog/2018-05-28-mobile-app.webp)
+![La aplicación móvil de Monica en tres teléfonos: la ficha de un contacto, la lista de contactos vacía y la pantalla de actividades.](/assets/images/blog/2018-05-28-mobile-app.webp)
 
 Hay un matiz importante: *esta primera versión es de solo lectura*. Es decir, no puedes añadir ni editar nada. Queremos tener una gran aplicación, pero queremos ir despacio y asegurarnos de que funciona bien. En cuanto tengamos la certeza de que esta versión funciona para todo el mundo, añadiremos funciones que te permitirán manipular por completo tus datos como quieras (pista: ya hemos empezado a trabajar en una versión nueva).
 
