@@ -25,6 +25,7 @@
                 // Nothing else on the site links here, and a terms page nobody
                 // can reach is not a terms page.
                 ['label' => $page->t('footer.terms'), 'href' => $page->route('terms')],
+                ['label' => $page->t('footer.team'), 'href' => $page->route('team')],
             ],
         ],
     ];
