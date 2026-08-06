@@ -13,12 +13,12 @@ By default, notifications are sent 30 days before the event happens, then 7 days
 
 Those notifications can be disabled in your Settings panel, under Personalization.
 
-![image](/assets/images/blog/2018-03-02-reminder-rule.png)
+![image](/assets/images/blog/2018-03-02-reminder-rule.webp)
 
 Notifications only affect monthly and yearly reminders, not weekly.
 
 Cherry on the cake: you also now have the possibility to define the hour in the day you want to receive the reminder emails.
 
-![image](/assets/images/blog/2018-03-02-hour.png)
+![image](/assets/images/blog/2018-03-02-hour.webp)
 
 These new features are already in production, and will be available in v1.8.1, which will be released in a few days, if you are into running Monica on a server that you own.

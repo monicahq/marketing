@@ -11,6 +11,10 @@ The owner is not a Jigsaw expert, so explain Jigsaw-specific choices briefly, an
 - You MUST NOT mention Claude Code in PR descriptions, PR comments, or issue comments.
 - You MUST NOT add any AI attribution anywhere. No `Co-Authored-By` trailer, no `Claude-Session` line, no "generated with" footer. This applies to commit messages, PR descriptions, comments, and code comments, with no exceptions.
 
+## Testing locally
+
+- Do not test anything with claude in chrome.
+
 ## Writing style
 
 Never use dashes (— or -) as punctuation in documentation or README files. Rephrase sentences using periods, commas, or parentheses instead.

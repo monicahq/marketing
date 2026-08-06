@@ -17,7 +17,7 @@ In those months, we've put a lot of efforts to create all the things the mobile 
 
 And six months later we are proud to announce that the first version of the mobile application is available [on iOS](https://itunes.apple.com/ca/app/monica-personal-crm/id1339447754?mt=8) and [Android](https://play.google.com/store/apps/details?id=com.monicahq.app).
 
-![image](/assets/images/blog/2018-05-28-mobile-app.png)
+![image](/assets/images/blog/2018-05-28-mobile-app.webp)
 
 There is one caveat though: *this first version is read-only*. That means you can't add or edit something. We want to have a great application, but we want to move slowly and make sure it's working well. As soon as we are confident this version works for everyone, we'll add features that will let you completely manipulate your data as you want (hint: we’ve already started working on a new version).
 
