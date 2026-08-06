@@ -25,6 +25,11 @@ return [
             'description' => "Comment Monica traite vos données : ce que nous collectons, où c'est stocké, qui peut y accéder et ce qui se passe quand vous fermez votre compte. Pas de publicité, pas de traceurs, pas de revente de données.",
         ],
 
+        'team' => [
+            'title' => "Équipe — Monica",
+            'description' => "Monica est construite par deux personnes à Montréal, avec des centaines de contributeurs open source. Pourquoi nous bâtissons un CRM personnel qui ne nuit pas aux relations humaines.",
+        ],
+
         'terms' => [
             'title' => "Conditions d'utilisation — Monica",
             'description' => "Les conditions d'utilisation de Monica, le CRM personnel open source : ce que couvre le service, vos droits sur vos données, vos responsabilités et les mentions légales.",
@@ -623,6 +628,7 @@ return [
         'github' => "GitHub",
         'privacy' => "Confidentialité",
         'terms' => "Conditions d'utilisation",
+        'team' => "Équipe",
         'copyright' => "© :year Monica",
         'since' => "Open source depuis 2017",
         'ownership' => "Vos données restent les vôtres.",
@@ -766,6 +772,29 @@ return [
                 ],
             ],
         ],
+    ],
+
+    'team' => [
+        'eyebrow' => "Équipe",
+        'title' => "Monica, c'est une équipe de 2. Et des centaines de contributeurs.",
+
+        'stats' => [
+            ['value' => "2016", 'label' => "Première ligne de code"],
+            ['value' => "Montréal", 'label' => "Siège social"],
+            ['value' => "2", 'label' => "Membres officiels"],
+            ['value' => "Des centaines", 'label' => "Contributeurs open source"],
+            ['value' => "Des millions", 'label' => "Contacts gérés"],
+        ],
+
+        'missionLabel' => "Notre mission",
+        'mission' => [
+            "Notre mission est d'utiliser la technologie d'une manière qui ne nuit pas aux relations humaines, comme peuvent le faire les grands réseaux sociaux.",
+            "À une époque où les gens ont des milliers d'amis virtuels, nous voulons offrir un outil qui aide à renforcer les liens avec quelques-uns d'entre eux seulement. Que chaque amitié compte vraiment.",
+            "Monica est née d'un besoin personnel : garder le fil de ce que devenaient des amis vivant dans d'autres pays. Après avoir construit la première version de l'outil, j'ai décidé d'en ouvrir le code, de le présenter sur Hacker News, et la suite appartient à l'histoire.",
+            "Monica est aujourd'hui un projet open source en bonne santé. Nous avons la chance d'avoir une belle communauté, avec des dizaines de contributeurs et des centaines de contributions au code. Le projet rapporte aussi un peu d'argent : chaque dollar gagné y est réinvesti, pour payer les factures et faire avancer le développement.",
+            "Merci de vous intéresser au projet.",
+        ],
+        'signature' => "Regis Freyd et Alexis Saettler",
     ],
 
     'notFound' => [

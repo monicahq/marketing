@@ -193,6 +193,8 @@ return [
             'es' => 'condiciones-de-uso',
         ],
 
+        'team' => ['en' => 'team', 'fr' => 'equipe', 'de' => 'team', 'es' => 'equipo'],
+
         'privacy' => [
             'en' => 'privacy',
             'fr' => 'confidentialite',
