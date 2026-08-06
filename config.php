@@ -61,6 +61,14 @@ return [
             'perPage' => 10,
             'prefix' => 'page',
 
+            /**
+             * How many posts the feed carries. Ours is not paginated, so this
+             * is the whole of it: a reader subscribing today gets the last two
+             * years and picks up the rest from the site. Every item carries its
+             * full body, so the number is also what keeps the file reasonable.
+             */
+            'perFeed' => 20,
+
             /** Names the SEO shape in _partials/seo.blade.php, as `page` does elsewhere. */
             'page' => 'post',
 
@@ -91,6 +99,31 @@ return [
                 return is_numeric($post->date)
                     ? date('Y-m-d', (int) $post->date)
                     : (string) $post->date;
+            },
+
+            /** The same date as RFC 2822, which is the only format RSS accepts. */
+            'rfcDate' => function ($post) {
+                $timestamp = is_numeric($post->date) ? (int) $post->date : strtotime((string) $post->date);
+
+                return date(DATE_RSS, $timestamp);
+            },
+
+            /**
+             * The post body, with every URL made absolute, for the feed.
+             *
+             * A feed is read somewhere else: in a reader, in an email digest,
+             * on another domain. Root-relative markup that resolves perfectly
+             * on the site resolves against whatever host is displaying it,
+             * which is how a feed ends up full of broken screenshots. Both
+             * `src` and `href` are rewritten, so images and internal links
+             * survive the trip.
+             */
+            'feedContent' => function ($post) {
+                return preg_replace_callback(
+                    '/\b(src|href)="(\/[^"]*)"/',
+                    fn ($match) => $match[1] . '="' . $post->absolute($match[2]) . '"',
+                    $post->getContent(),
+                );
             },
 
             /** "Regis Freyd" becomes "RF", for the avatar circle. */
@@ -294,6 +327,15 @@ return [
     /** A single post: /fr/blog/life-events/. */
     'postPath' => function ($page, string $slug, ?string $locale = null) {
         return $page->localePath('blog', $locale ?: $page->lang()) . "{$slug}/";
+    },
+
+    /**
+     * The RSS feed: /fr/blog/feed.xml. One per locale, like everything else
+     * here, so a reader who subscribes from the French blog gets a feed whose
+     * links land back on the French pages.
+     */
+    'feedPath' => function ($page, ?string $locale = null) {
+        return $page->blogPath($locale) . 'feed.xml';
     },
 
     /**
