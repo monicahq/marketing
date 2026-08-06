@@ -35,6 +35,11 @@ return [
             'description' => "How Monica handles your data: what we collect, where it is stored, who can see it, and what happens when you close your account. No ads, no trackers, no data resale.",
         ],
 
+        'team' => [
+            'title' => "Team — Monica",
+            'description' => "Monica is built by two people in Montreal, with hundreds of open-source contributors. Why we build a personal CRM that does not harm human relationships.",
+        ],
+
         'terms' => [
             'title' => "Terms of use — Monica",
             'description' => "The terms of use for Monica, the open-source personal CRM: what the service covers, your rights over your data, your responsibilities, and the legal small print.",
@@ -635,6 +640,7 @@ return [
         'github' => "GitHub",
         'privacy' => "Privacy",
         'terms' => "Terms",
+        'team' => "Team",
         'copyright' => "© :year Monica",
         'since' => "Open source since 2017",
         'ownership' => "Your data stays yours.",
@@ -791,6 +797,40 @@ return [
         ],
     ],
 
+
+    /**
+     * The mission text is the copy published at monicahq.com/team, word for
+     * word, including its grammar. This is the canonical wording; the other
+     * three locales are translations of it.
+     *
+     * The two stat values that were numbers on the old page are words here.
+     * Nothing in this build can count contributors across a repository whose
+     * history was reset, or contacts on a server it never talks to, and a
+     * figure that is wrong a week after it ships is worse than an honest
+     * magnitude.
+     */
+    'team' => [
+        'eyebrow' => "Team",
+        'title' => "Monica is a team of 2. With hundreds of contributors.",
+
+        'stats' => [
+            ['value' => "2016", 'label' => "First line of code"],
+            ['value' => "Montreal", 'label' => "Headquarters"],
+            ['value' => "2", 'label' => "Official members"],
+            ['value' => "Hundreds", 'label' => "Open source contributors"],
+            ['value' => "Millions", 'label' => "Contacts managed"],
+        ],
+
+        'missionLabel' => "Our mission",
+        'mission' => [
+            "Our mission is to use technology in a way that does not harm human relationships, like big social networks can do.",
+            "In an age where people have thousands of virtual friends, we want to provide a tool that helps people strengthen the relationships with only a few of these friends. Make each friendship matter a lot.",
+            "Monica is born out of a personal need to keep track of what friends living in other countries were doing with their lives. After having built the first version of the tool, I decided to open sourced it, promote it on Hacker News and the rest is history.",
+            "Monica is now an healthy open source project. We've been fortunate enough to have a great community, with dozens of contributors and hundreds of code contributions. It also generates a bit of money - every dollar we make on this project is reinvested in the project, to pay the bills and help further development.",
+            "Thanks for checking out the project.",
+        ],
+        'signature' => "Regis Freyd and Alexis Saettler",
+    ],
 
     'notFound' => [
         'title' => "Page not found.",
