@@ -62,7 +62,6 @@ return [
         'product' => "Produkt",
         'v3' => "Monica v3",
         'pricing' => "Preise",
-        'openSource' => "Quelloffen",
         'blog' => "Blog",
         'docs' => "Dokumentation",
         'signIn' => "Anmelden",

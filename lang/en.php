@@ -72,7 +72,6 @@ return [
         'product' => "Product",
         'v3' => "Monica v3",
         'pricing' => "Pricing",
-        'openSource' => "Open source",
         'blog' => "Blog",
         'docs' => "Documentation",
         'signIn' => "Sign in",
