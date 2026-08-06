@@ -133,6 +133,9 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Homepage sections                   | `source/_partials/home/`                            |
 | Shared partials (icon, flag, header)| `source/_partials/`                                 |
 | Locale pages                        | `source/<locale>/`                                  |
+| Blog posts                          | `source/_posts/` (Markdown), images in `source/assets/images/blog/` |
+| Blog templates                      | `source/_layouts/post.blade.php`, `source/_partials/blog/` |
+| Blog post body styling              | `source/_assets/css/prose.css`                      |
 | Copy                                | `lang/<locale>.php`                                 |
 | Routes, helpers, links, locales     | `config.php`                                        |
 | Production domain                   | `config.production.php`                             |
@@ -181,11 +184,25 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 
 ## Known gaps
 
-Only the homepage exists. Pricing, features, docs, the v3 teaser and the blog are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+The homepage, pricing, the v3 teaser and the blog exist. Features and docs are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The blog's newsletter box has no endpoint yet and posts to `links.newsletter`, which is a placeholder like `links.launchList`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 
 ## The blog
 
-Not built. Jigsaw handles it with a **collection**: a `collections` entry in `config.php` pointing at `source/_blog/`, Markdown files with front matter, and a template. Posts need a locale dimension, either a front-matter field or one collection per language. See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
+`/en/blog/`, ten posts a page, plus a page per post. The 39 posts are the ones imported from the old site, Markdown in `source/_posts/`, one file each.
+
+**One file becomes four pages.** The bodies are English and translating them is a separate job, so a post is written once and published in every locale. The `posts` collection in `config.php` names four `extends` templates, keyed by locale; Jigsaw renders the item once per key and `path` gives each rendering its own URL. `_layouts/post.blade.php` reads the key back with `$page->getExtending()` and copies it onto `locale` before `@extends` runs, because `t()`, the `<html lang>` attribute, the canonical and the hreflang cluster all read `$page->locale` and have no idea a collection is involved. A locale key is in `_meta`, so `$page->extending` is quietly null and `getExtending()` is the accessor that works.
+
+**URLs go through `canonicalPath()`.** Three shapes live behind it: an ordinary page named by its route key, the paginated index, and a post. The canonical, the hreflang cluster, the sitemap and the dead-link checker all call it, so they cannot drift apart. `blogPath($locale, $n)` and `postPath($slug, $locale)` are the two building blocks.
+
+**Pagination is Jigsaw's.** Each locale index (`source/<locale>/blog.blade.php`) is four lines of front matter naming the collection; `perPage` and `prefix` live on the collection so they cannot disagree between locales. Page 2 is `/en/blog/page/2/`, its canonical is itself, and its hreflang points at page 2 in the other three languages. `$pagination` (the view variable) is the current page; `$page->pagination` is the front-matter block that asked for it, which is a different thing and a trap.
+
+**Dates are timestamps.** YAML reads an unquoted `date: 2018-10-12` as a date and hands it back as ten digits, so anything that displays a date or gives one to a crawler calls `$post->isoDate()`. `readingMinutes()` and `authorInitials()` are collection helpers alongside it.
+
+`.mn-prose` in `source/_assets/css/prose.css` styles the rendered Markdown. It is the one place on the site that styles by element rather than by class, because the markup is generated and there is nothing to hang a utility on. Nothing else belongs in that file.
+
+Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in `source/_posts/` with `title`, `slug`, `date`, `author` and `description`, and nothing else to register.
+
+See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
 
 ## Docs
 

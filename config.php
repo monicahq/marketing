@@ -18,7 +18,92 @@ return [
     'production' => false,
     'pretty' => true,
     'trailing_slash' => true,
-    'collections' => [],
+
+    // ------------------------------------------------------------------ blog
+
+    /**
+     * The posts, read from source/_posts, one Markdown file each.
+     *
+     * A post is written once and published in all four languages, because the
+     * bodies are English and translating 39 of them is a separate job from
+     * building the blog. That is what the `extends` map does: Jigsaw renders an
+     * item once per key, so one file becomes /en/blog/<slug>/, /fr/blog/<slug>/
+     * and so on, and `path` gives each rendering its own URL. `_layouts.post`
+     * reads the key back as the locale. Four locales, four pages, one file to
+     * edit when a typo turns up.
+     *
+     * `{slug}` is the post's own front-matter slug rather than the filename,
+     * which is date-prefixed so the directory reads chronologically.
+     */
+    'collections' => [
+        'posts' => [
+            'extends' => [
+                'en' => '_layouts.post',
+                'fr' => '_layouts.post',
+                'de' => '_layouts.post',
+                'es' => '_layouts.post',
+            ],
+            'path' => [
+                'en' => 'en/blog/{slug}',
+                'fr' => 'fr/blog/{slug}',
+                'de' => 'de/blog/{slug}',
+                'es' => 'es/blog/{slug}',
+            ],
+
+            /** Newest first, everywhere the collection is read. */
+            'sort' => '-date',
+
+            /**
+             * Read by Jigsaw's paginator, so the four locale index templates
+             * declare only `pagination.collection` and inherit the rest. Page 2
+             * and after land on /blog/page/2/ rather than a bare /blog/2/.
+             */
+            'perPage' => 10,
+            'prefix' => 'page',
+
+            /** Names the SEO shape in _partials/seo.blade.php, as `page` does elsewhere. */
+            'page' => 'post',
+
+            /**
+             * 200 words a minute, floored at one, so a two-paragraph post does
+             * not advertise "0 min". Counted on the rendered body with the tags
+             * removed, which is the closest thing to what a reader reads.
+             */
+            'readingMinutes' => function ($post) {
+                $words = str_word_count(strip_tags($post->getContent()));
+
+                return max(1, (int) ceil($words / 200));
+            },
+
+            /**
+             * The publication date as the ISO string the front matter holds.
+             *
+             * YAML reads an unquoted `date: 2018-10-12` as a date and hands it
+             * over as a Unix timestamp, which sorts correctly and renders as
+             * ten digits. Everything that shows a date or hands one to a
+             * crawler goes through here instead of touching `date` directly.
+             *
+             * Deliberately not localised. It is set in the mono face as
+             * metadata, it reads the same in all four languages, and it is the
+             * one fact on the page a reader may want to compare or copy.
+             */
+            'isoDate' => function ($post) {
+                return is_numeric($post->date)
+                    ? date('Y-m-d', (int) $post->date)
+                    : (string) $post->date;
+            },
+
+            /** "Regis Freyd" becomes "RF", for the avatar circle. */
+            'authorInitials' => function ($post) {
+                return collect(preg_split('/\s+/', trim($post->author)))
+                    ->filter()
+                    ->take(2)
+                    ->map(fn ($word) => mb_strtoupper(mb_substr($word, 0, 1)))
+                    ->implode('');
+            },
+        ],
+    ],
+
 
     // ---------------------------------------------------------------- locales
 
@@ -62,6 +147,11 @@ return [
         'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3'],
 
         'pricing' => ['en' => 'pricing', 'fr' => 'tarifs', 'de' => 'preise', 'es' => 'precios'],
+
+        // "Blog" is the same word in all four languages. Declared per locale
+        // anyway, so the day one of them wants a different word it is an edit
+        // here rather than a new mechanism.
+        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog'],
     ],
 
     // ------------------------------------------------------------------ links
@@ -83,7 +173,6 @@ return [
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
-        'blog' => '#',
         'privacy' => '#',
 
         /**
@@ -92,6 +181,9 @@ return [
          * or a small function elsewhere. Until it has one, the form is inert.
          */
         'launchList' => '#',
+
+        /** Where the blog's newsletter box posts. Inert for the same reason. */
+        'newsletter' => '#',
     ],
 
     /** Replaced during the build by bootstrap.php, which reads the real count. */
@@ -113,7 +205,7 @@ return [
     't' => function ($page, string $key, array $replace = []) {
         static $dictionaries = [];
 
-        $locale = $page->locale;
+        $locale = $page->lang();
         $dictionaries[$locale] ??= require __DIR__ . "/lang/{$locale}.php";
 
         $value = Arr::get($dictionaries[$locale], $key);
@@ -149,7 +241,7 @@ return [
      * This is the building block; templates normally want `route` or `absolute`.
      */
     'localePath' => function ($page, string $key, ?string $locale = null) {
-        $locale = $locale ?: $page->locale;
+        $locale = $locale ?: $page->lang();
         $slug = $page->routes[$key][$locale];
 
         return $slug ? "/{$locale}/{$slug}/" : "/{$locale}/";
@@ -170,18 +262,79 @@ return [
     },
 
     /**
+     * The locale a page is being rendered in.
+     *
+     * Ordinary pages declare `locale` in their front matter. A post cannot: one
+     * Markdown file is rendered once per locale, so the locale is the `extends`
+     * key Jigsaw is currently using, which it records as `extending`.
+     * `_layouts.post` copies that onto `locale` before anything reads it, so
+     * this is the fallback rather than the common path — but a post is data
+     * before it is a page, and gets read while the collection is being built.
+     *
+     * `extending` lives in the page's `_meta` rather than among its variables,
+     * so it is reached through `_meta` and not as `$page->extending`, which
+     * would quietly be null.
+     */
+    'lang' => function ($page) {
+        return $page->locale ?: ($page->_meta->get('extending') ?: $page->defaultLocale);
+    },
+
+    /**
+     * The blog index, which paginates. Page 1 is /fr/blog/, page 2 and after
+     * are /fr/blog/page/2/, matching the `prefix` set in the index templates'
+     * front matter. Jigsaw builds those paths itself; this reproduces them for
+     * the head and the sitemap, which are written before pagination is known.
+     */
+    'blogPath' => function ($page, ?string $locale = null, int $number = 1) {
+        $index = $page->localePath('blog', $locale ?: $page->lang());
+
+        return $number > 1 ? "{$index}page/{$number}/" : $index;
+    },
+
+    /** A single post: /fr/blog/life-events/. */
+    'postPath' => function ($page, string $slug, ?string $locale = null) {
+        return $page->localePath('blog', $locale ?: $page->lang()) . "{$slug}/";
+    },
+
+    /**
+     * Where a page is canonical, in any locale. Three shapes live behind one
+     * call — an ordinary page named by its route key, the paginated blog index,
+     * and a post — so canonical, hreflang, the sitemap and the dead-link
+     * checker cannot drift apart. Adding a fourth shape means editing here once.
+     */
+    'canonicalPath' => function ($page, ?string $locale = null, int $number = 1) {
+        $locale = $locale ?: $page->lang();
+
+        if ($page->page === 'post') {
+            return $page->postPath($page->slug, $locale);
+        }
+
+        if ($page->page === 'blog') {
+            return $page->blogPath($locale, $number);
+        }
+
+        return $page->localePath($page->page, $locale);
+    },
+
+    /**
      * The same page in every locale, for the language menu and hreflang.
      * `href` is for markup, `absolute` is for the head and the sitemap.
+     *
+     * Page 2 of the English blog points at page 2 of the French one, not at the
+     * French front page, because a cluster is only reciprocal if both ends
+     * agree — and the checker tests exactly that.
      */
-    'alternates' => function ($page, ?string $key = null) {
-        $key = $key ?: $page->page;
-
+    'alternates' => function ($page, ?string $key = null, int $number = 1) {
         return collect($page->locales)
-            ->map(fn ($locale) => [
-                'locale' => $locale,
-                'href' => $page->route($key, $locale),
-                'absolute' => $page->absolute($page->localePath($key, $locale)),
-            ])
+            ->map(function ($locale) use ($page, $key, $number) {
+                $path = $key ? $page->localePath($key, $locale) : $page->canonicalPath($locale, $number);
+
+                return [
+                    'locale' => $locale,
+                    'href' => $path,
+                    'absolute' => $page->absolute($path),
+                ];
+            })
             ->all();
     },
 ];

@@ -5,20 +5,47 @@
     head say which URLs are translations of each other, and the sitemap says it
     again where crawlers look first.
 
+    Three families of URL, listed in one shape, because the checker tests the
+    sitemap and the build against each other in both directions and a page
+    missing here is as much a failure as a page missing there:
+
+      - the route pages, one per key per locale
+      - the blog index, once per page of the list per locale
+      - the posts, one per post per locale
+
     Named .blade.xml so Jigsaw writes sitemap.xml rather than sitemap.html.
 --}}
+@php
+    $urls = [];
+
+    foreach (collect($page->routes)->keys() as $key) {
+        $urls[] = fn ($locale) => $page->localePath($key, $locale);
+    }
+
+    // ceil rather than a stored count: the paginator is the only thing that
+    // knows how many pages there are, and it is not running here.
+    $pages = (int) ceil($posts->count() / $page->collections->posts->perPage);
+
+    for ($number = 2; $number <= $pages; $number++) {
+        $urls[] = fn ($locale) => $page->blogPath($locale, $number);
+    }
+
+    foreach ($posts as $post) {
+        $urls[] = fn ($locale) => $page->postPath($post->slug, $locale);
+    }
+@endphp
 {{-- The XML declaration is echoed, because a literal <?xml would be parsed
      as a PHP open tag. --}}
 {!! '<'.'?xml version="1.0" encoding="UTF-8"?'.'>' !!}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-@foreach (collect($page->routes)->keys() as $key)
+@foreach ($urls as $url)
 @foreach ($page->locales as $locale)
     <url>
-        <loc>{{ $page->absolute($page->localePath($key, $locale)) }}</loc>
+        <loc>{{ $page->absolute($url($locale)) }}</loc>
 @foreach ($page->locales as $alternate)
-        <xhtml:link rel="alternate" hreflang="{{ $alternate }}" href="{{ $page->absolute($page->localePath($key, $alternate)) }}"/>
+        <xhtml:link rel="alternate" hreflang="{{ $alternate }}" href="{{ $page->absolute($url($alternate)) }}"/>
 @endforeach
-        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $page->absolute($page->localePath($key, $page->defaultLocale)) }}"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $page->absolute($url($page->defaultLocale)) }}"/>
     </url>
 @endforeach
 @endforeach

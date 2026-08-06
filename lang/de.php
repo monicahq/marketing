@@ -20,6 +20,21 @@ return [
             'description' => "Gehostete Monica kostet 9 USD pro Monat oder 90 USD pro Jahr, mit unbegrenzten Kontakten und ohne Preis pro Kontakt. Oder hosten Sie die quelloffene Anwendung kostenlos auf Ihrer eigenen Infrastruktur.",
         ],
 
+        'blog' => [
+            'title' => "Der Monica-Blog — Release Notes und Produktentscheidungen",
+            'description' => "Was wir ausliefern, warum wir es so bauen und wie ein kleines Open-Source-Unternehmen wirklich aussieht. Geschrieben von den Menschen, die Monica machen.",
+        ],
+
+        // Ein Beitrag bringt Titel und Beschreibung selbst mit. Hier bleibt nur
+        // der Rahmen, den die Website darum legt.
+        'post' => [
+            'title' => ":title — der Monica-Blog",
+        ],
+
+        // Seite 2 einer Liste ist nicht die Liste. Ohne das konkurrieren vier
+        // Seiten des Blogs unter einem Titel um dasselbe Ergebnis.
+        'paginated' => ":title (Seite :page von :total)",
+
         'v3' => [
             'title' => "Monica v3 — neu gebaut für die nächsten zehn Jahre",
             'description' => "Monica v3 ist ein vollständiger Neubau des quelloffenen persönlichen CRM: Einträge, die Sie selbst gestalten, ein mit allem verbundenes Journal, eine vollständige API und eine echte mobile Erfahrung. Weiterhin quelloffen, jetzt unter MIT-Lizenz. Vor Ende 2026.",
@@ -602,6 +617,53 @@ return [
         'since' => "Quelloffen seit 2017",
         'ownership' => "Ihre Daten bleiben Ihre.",
         'languageLabel' => "Sprache wechseln",
+    ],
+
+    'blog' => [
+        'title' => "Blog",
+        'lede' => "Notizen zum Bau von Monica, zum Schutz persönlicher Daten und zur kleinen Mechanik des Kontakthaltens.",
+
+        'allPosts' => "Alle Beiträge",
+        'keepReading' => "Weiterlesen",
+        'onThisPage' => "Auf dieser Seite",
+        'latest' => "Neueste Beiträge",
+
+        'readingTime' => ":count Min. Lesezeit",
+
+        // Bisher haben alle Beiträge dieselbe Autorenschaft. Die Bezeichnung
+        // steht hier und nicht im Kopf jedes Beitrags, weil sie eine
+        // Beschriftung der Website ist und als solche übersetzt gehört.
+        'authorRole' => "Gründer",
+
+        'copyLink' => "Link kopieren",
+        'copyLinkDone' => "Kopiert",
+
+        'showing' => "Beiträge :from bis :to von :total",
+        'pageOf' => "Seite :page von :total",
+        'newerPosts' => "Neuere Beiträge",
+        'olderPosts' => "Ältere Beiträge",
+
+        'tryMonica' => [
+            'title' => "Monica ausprobieren",
+            'body' => "Ein privates, quelloffenes persönliches CRM, um sich an die Menschen zu erinnern, die zählen. Selbst hosten, oder uns machen lassen.",
+            'bodyPost' => "Behalten Sie die Menschen in Ihrem Leben im Blick, ohne sie einer Werbedatenbank zu überlassen.",
+            'cta' => "Loslegen",
+            'note' => "30 Tage testen · Keine Kreditkarte nötig",
+        ],
+
+        'newsletter' => [
+            'title' => "Newsletter",
+            'body' => "Eine E-Mail im Monat: was sich in Monica geändert hat und woran wir als Nächstes arbeiten.",
+            'label' => "E-Mail-Adresse",
+            'placeholder' => "sie@beispiel.de",
+            'cta' => "Abonnieren",
+            'note' => "Abmeldung mit einem Klick. Wir geben Ihre Adresse nie weiter.",
+        ],
+
+        'openSource' => [
+            'title' => "Open Source",
+            'body' => "Monica ist seit dem ersten Tag quelloffen. Lesen Sie den Code, betreiben Sie Ihre eigene Instanz, schicken Sie einen Patch.",
+        ],
     ],
 
     'notFound' => [

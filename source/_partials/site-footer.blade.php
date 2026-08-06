@@ -20,7 +20,7 @@
             'label' => $page->t('footer.projectLabel'),
             'links' => [
                 ['label' => $page->t('footer.github'), 'href' => $page->links['github']],
-                ['label' => $page->t('nav.blog'), 'href' => $page->links['blog']],
+                ['label' => $page->t('nav.blog'), 'href' => $page->route('blog')],
                 ['label' => $page->t('footer.privacy'), 'href' => $page->links['privacy']],
             ],
         ],

@@ -20,6 +20,21 @@ return [
             'description' => "Monica alojada cuesta 9 USD al mes o 90 USD al año, con contactos ilimitados y sin precio por contacto. O aloja gratis la aplicación de código abierto en tu propia infraestructura.",
         ],
 
+        'blog' => [
+            'title' => "El blog de Monica — notas de versión y decisiones de producto",
+            'description' => "Qué publicamos, por qué lo construimos así y cómo es de verdad llevar una pequeña empresa de código abierto. Escrito por quienes hacen Monica.",
+        ],
+
+        // Un artículo trae su propio título y su propia descripción: aquí solo
+        // queda el marco que el sitio pone alrededor.
+        'post' => [
+            'title' => ":title — el blog de Monica",
+        ],
+
+        // La página 2 de una lista no es la lista. Sin esto, cuatro páginas del
+        // blog compiten por un mismo resultado bajo un mismo título.
+        'paginated' => ":title (página :page de :total)",
+
         'v3' => [
             'title' => "Monica v3 — reconstruida para los próximos diez años",
             'description' => "Monica v3 es una reconstrucción completa del CRM personal de código abierto: fichas que diseñas tú, un diario conectado con todo lo demás, una API completa y una experiencia móvil de verdad. Sigue siendo de código abierto, ahora con licencia MIT. Antes de que acabe 2026.",
@@ -602,6 +617,53 @@ return [
         'since' => "De código abierto desde 2017",
         'ownership' => "Tus datos siguen siendo tuyos.",
         'languageLabel' => "Cambiar de idioma",
+    ],
+
+    'blog' => [
+        'title' => "Blog",
+        'lede' => "Notas sobre la construcción de Monica, sobre mantener privados los datos personales y sobre la pequeña mecánica de seguir en contacto.",
+
+        'allPosts' => "Todos los artículos",
+        'keepReading' => "Seguir leyendo",
+        'onThisPage' => "En esta página",
+        'latest' => "Últimos artículos",
+
+        'readingTime' => ":count min de lectura",
+
+        // Hasta ahora todos los artículos tienen la misma autoría. La etiqueta
+        // vive aquí y no en la cabecera de cada artículo porque es una etiqueta
+        // del sitio y debe traducirse como tal.
+        'authorRole' => "Fundador",
+
+        'copyLink' => "Copiar enlace",
+        'copyLinkDone' => "Copiado",
+
+        'showing' => "Artículos :from a :to de :total",
+        'pageOf' => "Página :page de :total",
+        'newerPosts' => "Artículos más recientes",
+        'olderPosts' => "Artículos más antiguos",
+
+        'tryMonica' => [
+            'title' => "Probar Monica",
+            'body' => "Un CRM personal privado y de código abierto para recordar a las personas que importan. Aloja tú la instancia, o deja que la llevemos nosotros.",
+            'bodyPost' => "Sigue el hilo de las personas de tu vida sin entregarlas a una base de datos publicitaria.",
+            'cta' => "Empezar",
+            'note' => "Prueba de 30 días · Sin tarjeta de crédito",
+        ],
+
+        'newsletter' => [
+            'title' => "Boletín",
+            'body' => "Un correo al mes: qué ha cambiado en Monica y en qué trabajamos a continuación.",
+            'label' => "Dirección de correo",
+            'placeholder' => "tu@ejemplo.com",
+            'cta' => "Suscribirse",
+            'note' => "Baja en un clic. Nunca compartimos tu dirección.",
+        ],
+
+        'openSource' => [
+            'title' => "Código abierto",
+            'body' => "Monica es de código abierto desde el principio. Lee el código, ejecuta tu propia instancia, envía un parche.",
+        ],
     ],
 
     'notFound' => [

@@ -6,6 +6,8 @@
    3. fonts, app-tokens     plain custom properties the component CSS reads
    4. base                  design-system element defaults, after Preflight
    5. components            mn-* classes, below utilities so markup can override
+                            (prose.css joins them: rendered Markdown has no
+                            classes of its own to hang utilities on)
    6. dark                  unlayered, so it overrides the theme layer at runtime */
 
 @import "tailwindcss";
@@ -14,6 +16,7 @@
 @import "./design-system/app-tokens.css";
 @import "./design-system/base.css" layer(base);
 @import "./design-system/components.css" layer(components);
+@import "./prose.css" layer(components);
 @import "./design-system/dark.css";
 
 /* Tailwind scans these for class names. Blade templates are not picked up by
