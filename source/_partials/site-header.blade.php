@@ -7,7 +7,7 @@
     $navItems = [
         ['label' => $page->t('nav.product'), 'href' => $home, 'current' => 'home'],
         ['label' => $page->t('nav.v3'), 'href' => $page->route('v3'), 'current' => 'v3'],
-        ['label' => $page->t('nav.pricing'), 'href' => '#pricing'],
+        ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing'), 'current' => 'pricing'],
         ['label' => $page->t('nav.openSource'), 'href' => '#open-source'],
         ['label' => $page->t('nav.blog'), 'href' => $page->links['blog']],
         ['label' => $page->t('nav.docs'), 'href' => $page->links['docs']],
