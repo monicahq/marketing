@@ -17,20 +17,34 @@
 @endphp
 
 <header class="border-b border-border">
-    <div class="mx-auto flex min-h-16 w-full max-w-marketing flex-wrap items-stretch gap-6 px-4 md:px-8">
+    {{-- `min-h-16` is what centres a single row on desktop. Below `lg` the bar
+         wraps into two rows, the min-height stops doing anything, and the logo
+         ends up flush against the announcement bar above it, so the wrapped
+         layout pays for its own vertical padding.
+
+         The gap is split: 24px between items on a row, 12px between the rows,
+         which is enough to separate them without a mobile header that tall. --}}
+    <div class="mx-auto flex min-h-16 w-full max-w-marketing flex-wrap items-stretch gap-x-6 gap-y-3 px-4 max-lg:py-4 md:px-8">
         <a href="{{ $home }}" class="flex items-center gap-3 text-text no-underline hover:no-underline">
+            {{-- `width`/`height` are the SVG's intrinsic ratio, so the browser
+                 reserves the right box before it loads; `w-6 h-auto` sizes it.
+                 The JPG needed `mix-blend-multiply` to hide its white
+                 background. This one is transparent, so the hack is gone. --}}
             <img
-                src="/assets/images/monica-panda-mark.jpg"
+                src="/assets/images/monica-panda-mark.svg"
                 alt=""
-                width="24"
-                class="h-auto w-6 flex-none mix-blend-multiply"
+                width="32"
+                height="29"
+                class="h-auto w-6 flex-none"
             >
             <span class="text-title font-semibold tracking-[-0.015em]">Monica</span>
         </a>
 
         <nav
             aria-label="{{ $page->t('nav.label') }}"
-            class="flex min-w-0 items-stretch gap-6 max-lg:order-3 max-lg:h-auto max-lg:basis-full max-lg:overflow-x-auto max-lg:pb-3 lg:ml-8"
+            {{-- The bottom padding moved to the container, so the space below
+                 the nav matches the space above the logo. --}}
+            class="flex min-w-0 items-stretch gap-6 max-lg:order-3 max-lg:h-auto max-lg:basis-full max-lg:overflow-x-auto lg:ml-8"
         >
             @foreach ($navItems as $item)
                 <a

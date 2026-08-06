@@ -33,13 +33,15 @@
         <div class="grid grid-cols-2 gap-8 lg:grid-cols-[2fr_1fr_1fr_1fr]">
             <div>
                 <div class="flex items-center gap-3">
+                    {{-- The white chip stays: the mark's body is near-black and
+                         would disappear into the inverse surface without it. --}}
                     <span class="inline-flex rounded-sm bg-white p-0.5">
                         <img
-                            src="/assets/images/monica-panda-mark.jpg"
+                            src="/assets/images/monica-panda-mark.svg"
                             alt=""
-                            width="18"
-                            height="18"
-                            class="block size-[18px]"
+                            width="32"
+                            height="29"
+                            class="block h-auto w-[18px]"
                         >
                     </span>
                     <span class="text-[16px] font-semibold tracking-[-0.015em] text-on-inverse-strong">Monica</span>
