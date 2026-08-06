@@ -638,10 +638,7 @@ return [
     'footer' => [
         'tagline' => "Un CRM personnel privé et open source pour se souvenir des gens qui comptent.",
         'productLabel' => "Produit",
-        'buildLabel' => "Développer",
         'projectLabel' => "Projet",
-        'api' => "API",
-        'selfHosting' => "Auto-hébergement",
         'github' => "GitHub",
         'privacy' => "Confidentialité",
         'terms' => "Conditions d'utilisation",

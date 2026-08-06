@@ -648,10 +648,7 @@ return [
     'footer' => [
         'tagline' => "A private, open-source personal CRM for remembering the people who matter.",
         'productLabel' => "Product",
-        'buildLabel' => "Build",
         'projectLabel' => "Project",
-        'api' => "API",
-        'selfHosting' => "Self-hosting",
         'github' => "GitHub",
         'privacy' => "Privacy",
         'terms' => "Terms",

@@ -637,10 +637,7 @@ return [
     'footer' => [
         'tagline' => "Ein privates, quelloffenes persönliches CRM, um sich an die Menschen zu erinnern, die zählen.",
         'productLabel' => "Produkt",
-        'buildLabel' => "Entwickeln",
         'projectLabel' => "Projekt",
-        'api' => "API",
-        'selfHosting' => "Selbst hosten",
         'github' => "GitHub",
         'privacy' => "Datenschutz",
         'terms' => "Nutzungsbedingungen",

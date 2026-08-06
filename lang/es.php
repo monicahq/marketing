@@ -638,10 +638,7 @@ return [
     'footer' => [
         'tagline' => "Un CRM personal privado y de código abierto para recordar a las personas que importan.",
         'productLabel' => "Producto",
-        'buildLabel' => "Desarrollar",
         'projectLabel' => "Proyecto",
-        'api' => "API",
-        'selfHosting' => "Autoalojamiento",
         'github' => "GitHub",
         'privacy' => "Privacidad",
         'terms' => "Condiciones de uso",
