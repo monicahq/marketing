@@ -283,11 +283,9 @@ return [
         'lede' => "Monica ha ayudado a miles de personas a recordar lo que importa de quienes las rodean. Ahora se está reconstruyendo desde cero: más flexible, más privada, más fácil de ampliar y mejor en cualquier pantalla.",
         'lede2' => "Seguirá siendo de código abierto. Y todo lo que hacía que Monica mereciera la pena se queda.",
 
-        'form' => [
-            'label' => "Correo electrónico",
-            'placeholder' => "tu@ejemplo.com",
-            'cta' => "Avísame cuando esté lista",
-            'note' => "Un solo correo, cuando se lance Monica v3. Sin boletín, sin píxel de seguimiento, sin ruido.",
+        'progress' => [
+            'body' => "No hay nada a lo que apuntarse. Monica v3 se está construyendo en abierto: vuelve dentro de unas semanas para ver lo que ha cambiado.",
+            'note' => "Sin lista de lanzamiento, sin boletín, sin píxel de seguimiento.",
         ],
 
         'proof' => [
@@ -369,10 +367,9 @@ return [
 
         'follow' => [
             'title' => "Sigue la reconstrucción desde el principio.",
-            'body' => "Monica v3 aún está en desarrollo y muchas decisiones importantes se toman en abierto. Apúntate a la lista de lanzamiento o sigue el repositorio para ver el trabajo según avanza.",
+            'body' => "Monica v3 aún está en desarrollo y muchas decisiones importantes se toman en abierto. Sigue el repositorio para ver el trabajo según avanza.",
             'note' => "Código abierto · Alojable por ti · Desarrollada en público",
-            'primaryCta' => "Recibir el correo de lanzamiento",
-            'secondaryCta' => "Seguir a Monica en GitHub",
+            'cta' => "Seguir a Monica en GitHub",
         ],
     ],
 

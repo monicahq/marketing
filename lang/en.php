@@ -309,11 +309,9 @@ return [
         'lede' => "Monica has helped thousands of people remember what matters about the people in their lives. Now it is being rebuilt from the ground up: more flexible, more private, easier to extend, and better on every screen.",
         'lede2' => "It will remain open source. And everything that made Monica worth using in the first place is staying.",
 
-        'form' => [
-            'label' => "Email address",
-            'placeholder' => "you@example.com",
-            'cta' => "Tell me when it is ready",
-            'note' => "One email when Monica v3 launches. No newsletter, no tracking pixel, no noise.",
+        'progress' => [
+            'body' => "There is nothing to sign up for. Monica v3 is being built in the open, so come back in a few weeks to see what has changed.",
+            'note' => "No launch list, no newsletter, no tracking pixel.",
         ],
 
         'proof' => [
@@ -395,10 +393,9 @@ return [
 
         'follow' => [
             'title' => "Follow the rebuild from the beginning.",
-            'body' => "Monica v3 is still in development, and many important decisions are being made in the open. Join the launch list or follow the repository to see the work as it happens.",
+            'body' => "Monica v3 is still in development, and many important decisions are being made in the open. Follow the repository to see the work as it happens.",
             'note' => "Open source · Self-hostable · Built in public",
-            'primaryCta' => "Get the launch email",
-            'secondaryCta' => "Follow Monica on GitHub",
+            'cta' => "Follow Monica on GitHub",
         ],
     ],
 

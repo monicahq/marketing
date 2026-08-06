@@ -283,11 +283,9 @@ return [
         'lede' => "Monica a aidé des milliers de personnes à se souvenir de ce qui compte chez celles et ceux qui les entourent. Elle est aujourd'hui reconstruite de fond en comble : plus souple, plus privée, plus facile à étendre, et meilleure sur tous les écrans.",
         'lede2' => "Elle restera open source. Et tout ce qui faisait l'intérêt de Monica reste en place.",
 
-        'form' => [
-            'label' => "Adresse e-mail",
-            'placeholder' => "vous@exemple.com",
-            'cta' => "Prévenez-moi au lancement",
-            'note' => "Un seul e-mail, au lancement de Monica v3. Pas de newsletter, pas de pixel de suivi, pas de bruit.",
+        'progress' => [
+            'body' => "Il n'y a rien à quoi s'inscrire. Monica v3 se construit au grand jour : revenez dans quelques semaines pour voir ce qui a changé.",
+            'note' => "Pas de liste de lancement, pas de newsletter, pas de pixel de suivi.",
         ],
 
         'proof' => [
@@ -369,10 +367,9 @@ return [
 
         'follow' => [
             'title' => "Suivez la reconstruction depuis le début.",
-            'body' => "Monica v3 est encore en développement, et beaucoup de décisions importantes se prennent au grand jour. Inscrivez-vous à la liste de lancement ou suivez le dépôt pour voir le travail avancer.",
+            'body' => "Monica v3 est encore en développement, et beaucoup de décisions importantes se prennent au grand jour. Suivez le dépôt pour voir le travail avancer.",
             'note' => "Open source · Auto-hébergeable · Développée en public",
-            'primaryCta' => "Recevoir l'e-mail de lancement",
-            'secondaryCta' => "Suivre Monica sur GitHub",
+            'cta' => "Suivre Monica sur GitHub",
         ],
     ],
 
