@@ -72,7 +72,6 @@
 
         <aside class="flex flex-col gap-6 lg:sticky lg:top-6">
             @include('_partials.blog.try-monica', ['body' => $page->t('blog.tryMonica.body')])
-            @include('_partials.blog.newsletter', ['showNote' => true])
             @include('_partials.blog.latest-posts')
             @include('_partials.blog.open-source')
         </aside>

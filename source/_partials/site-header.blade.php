@@ -4,18 +4,26 @@
     // Nav items in order. Entries whose destination is a page that does not
     // exist yet keep the design's placeholder href. `current` names the route
     // key, so aria-current follows the page being rendered.
+    //
+    // Three entries, and each one is a page this site actually has.
+    //
+    // No "Product": the logo beside it is already a link to the homepage, and
+    // two links to the same page in one bar is one more than a reader needs.
+    // No "Open source": it pointed at a section of the homepage, which the
+    // homepage itself already walks a reader through. No "Documentation":
+    // there is no documentation yet, and a nav entry that goes to '#' is a
+    // promise the site cannot keep.
+    //
+    // Nothing marks the homepage as current in here now, which is the ordinary
+    // arrangement for a site whose wordmark is its home link. The footer still
+    // carries Product, Documentation and the rest, which is where a link that
+    // is a signpost rather than a destination belongs.
     $navItems = [
-        ['label' => $page->t('nav.product'), 'href' => $home, 'current' => ['home']],
         ['label' => $page->t('nav.v3'), 'href' => $page->route('v3'), 'current' => ['v3']],
         ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing'), 'current' => ['pricing']],
-        // The section it names lives on the homepage, so the href carries the
-        // homepage with it. A bare '#open-source' worked on the homepage and
-        // did nothing on every other page.
-        ['label' => $page->t('nav.openSource'), 'href' => "{$home}#open-source"],
         // A post is a blog page too, so the nav keeps its underline while the
         // reader is inside one. `current` is an array for that reason.
         ['label' => $page->t('nav.blog'), 'href' => $page->route('blog'), 'current' => ['blog', 'post']],
-        ['label' => $page->t('nav.docs'), 'href' => $page->links['docs']],
     ];
 
     $navLink = 'inline-flex flex-none items-center border-b-2 border-transparent text-small text-text-secondary no-underline transition-colors duration-100 ease-standard hover:border-text hover:text-text hover:no-underline aria-[current=page]:border-text aria-[current=page]:font-medium aria-[current=page]:text-text max-lg:h-9 lg:h-16';

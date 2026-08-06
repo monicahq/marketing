@@ -67,7 +67,6 @@ return [
         'product' => "Produkt",
         'v3' => "Monica v3",
         'pricing' => "Preise",
-        'openSource' => "Quelloffen",
         'blog' => "Blog",
         'docs' => "Dokumentation",
         'signIn' => "Anmelden",
@@ -668,14 +667,6 @@ return [
             'note' => "30 Tage testen · Keine Kreditkarte nötig",
         ],
 
-        'newsletter' => [
-            'title' => "Newsletter",
-            'body' => "Eine E-Mail im Monat: was sich in Monica geändert hat und woran wir als Nächstes arbeiten.",
-            'label' => "E-Mail-Adresse",
-            'placeholder' => "sie@beispiel.de",
-            'cta' => "Abonnieren",
-            'note' => "Abmeldung mit einem Klick. Wir geben Ihre Adresse nie weiter.",
-        ],
 
         'openSource' => [
             'title' => "Open Source",

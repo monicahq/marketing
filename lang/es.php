@@ -67,7 +67,6 @@ return [
         'product' => "Producto",
         'v3' => "Monica v3",
         'pricing' => "Precios",
-        'openSource' => "Código abierto",
         'blog' => "Blog",
         'docs' => "Documentación",
         'signIn' => "Iniciar sesión",
@@ -668,14 +667,6 @@ return [
             'note' => "Prueba de 30 días · Sin tarjeta de crédito",
         ],
 
-        'newsletter' => [
-            'title' => "Boletín",
-            'body' => "Un correo al mes: qué ha cambiado en Monica y en qué trabajamos a continuación.",
-            'label' => "Dirección de correo",
-            'placeholder' => "tu@ejemplo.com",
-            'cta' => "Suscribirse",
-            'note' => "Baja en un clic. Nunca compartimos tu dirección.",
-        ],
 
         'openSource' => [
             'title' => "Código abierto",

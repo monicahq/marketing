@@ -67,7 +67,6 @@ return [
         'product' => "Produit",
         'v3' => "Monica v3",
         'pricing' => "Tarifs",
-        'openSource' => "Open source",
         'blog' => "Blog",
         'docs' => "Documentation",
         'signIn' => "Se connecter",
@@ -668,14 +667,6 @@ return [
             'note' => "Essai de 30 jours · Aucune carte bancaire requise",
         ],
 
-        'newsletter' => [
-            'title' => "Infolettre",
-            'body' => "Un e-mail par mois : ce qui a changé dans Monica, et ce sur quoi nous travaillons ensuite.",
-            'label' => "Adresse e-mail",
-            'placeholder' => "vous@exemple.com",
-            'cta' => "S'abonner",
-            'note' => "Désabonnement en un clic. Nous ne partageons jamais votre adresse.",
-        ],
 
         'openSource' => [
             'title' => "Open source",

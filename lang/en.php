@@ -77,7 +77,6 @@ return [
         'product' => "Product",
         'v3' => "Monica v3",
         'pricing' => "Pricing",
-        'openSource' => "Open source",
         'blog' => "Blog",
         'docs' => "Documentation",
         'signIn' => "Sign in",
@@ -679,14 +678,6 @@ return [
             'note' => "30-day trial · No credit card required",
         ],
 
-        'newsletter' => [
-            'title' => "Newsletter",
-            'body' => "One email a month: what changed in Monica, and what we are working on next.",
-            'label' => "Email address",
-            'placeholder' => "you@example.com",
-            'cta' => "Subscribe",
-            'note' => "Unsubscribe in one click. We never share your address.",
-        ],
 
         'openSource' => [
             'title' => "Open source",
