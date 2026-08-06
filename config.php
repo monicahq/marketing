@@ -7,11 +7,11 @@ use Illuminate\Support\Arr;
  *
  * Anything declared here as a closure becomes a method on $page, called with
  * the page as its first argument: `$page->t('hero.title')` runs the 't' closure
- * below. That is Jigsaw's extension point, and it is where the four-language
+ * below. That is Jigsaw's extension point, and it is where the multilingual
  * behaviour lives, because Jigsaw has no locale routing of its own.
  */
 
-$locales = ['en', 'fr', 'de', 'es'];
+$locales = ['en', 'fr', 'de', 'es', 'pt'];
 
 return [
     'baseUrl' => '',
@@ -24,13 +24,13 @@ return [
     /**
      * The posts, read from source/_posts, one Markdown file each.
      *
-     * A post is written once and published in all four languages, because the
+     * A post is written once and published in every language, because the
      * bodies are English and translating 39 of them is a separate job from
      * building the blog. That is what the `extends` map does: Jigsaw renders an
      * item once per key, so one file becomes /en/blog/<slug>/, /fr/blog/<slug>/
      * and so on, and `path` gives each rendering its own URL. `_layouts.post`
-     * reads the key back as the locale. Four locales, four pages, one file to
-     * edit when a typo turns up.
+     * reads the key back as the locale. One file, one page per locale, and one
+     * file to edit when a typo turns up.
      *
      * `{slug}` is the post's own front-matter slug rather than the filename,
      * which is date-prefixed so the directory reads chronologically.
@@ -42,20 +42,22 @@ return [
                 'fr' => '_layouts.post',
                 'de' => '_layouts.post',
                 'es' => '_layouts.post',
+                'pt' => '_layouts.post',
             ],
             'path' => [
                 'en' => 'en/blog/{slug}',
                 'fr' => 'fr/blog/{slug}',
                 'de' => 'de/blog/{slug}',
                 'es' => 'es/blog/{slug}',
+                'pt' => 'pt/blog/{slug}',
             ],
 
             /** Newest first, everywhere the collection is read. */
             'sort' => '-date',
 
             /**
-             * Read by Jigsaw's paginator, so the four locale index templates
-             * declare only `pagination.collection` and inherit the rest. Page 2
+             * Read by Jigsaw's paginator, so each locale's index template
+             * declares only `pagination.collection` and inherits the rest. Page 2
              * and after land on /blog/page/2/ rather than a bare /blog/2/.
              */
             'perPage' => 10,
@@ -92,7 +94,7 @@ return [
              * crawler goes through here instead of touching `date` directly.
              *
              * Deliberately not localised. It is set in the mono face as
-             * metadata, it reads the same in all four languages, and it is the
+             * metadata, it reads the same in every language, and it is the
              * one fact on the page a reader may want to compare or copy.
              */
             'isoDate' => function ($post) {
@@ -149,6 +151,7 @@ return [
         'fr' => 'Français',
         'de' => 'Deutsch',
         'es' => 'Español',
+        'pt' => 'Português',
     ],
 
     /**
@@ -161,6 +164,11 @@ return [
         'fr' => 'fr_FR',
         'de' => 'de_DE',
         'es' => 'es_ES',
+
+        // The copy is Brazilian, so the territory is BR. hreflang stays the
+        // bare "pt", which is what a reader searching in any Portuguese
+        // variant should match.
+        'pt' => 'pt_BR',
     ],
 
     /**
@@ -172,14 +180,14 @@ return [
      * named after that locale's slug. See .claude/CLAUDE.md.
      */
     'routes' => [
-        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => ''],
+        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => ''],
 
         // "v3" is the product's version number, so it is the same word in every
         // language. Slugs are still declared per locale, because the next page
         // added will not be.
-        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3'],
+        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3'],
 
-        'pricing' => ['en' => 'pricing', 'fr' => 'tarifs', 'de' => 'preise', 'es' => 'precios'],
+        'pricing' => ['en' => 'pricing', 'fr' => 'tarifs', 'de' => 'preise', 'es' => 'precios', 'pt' => 'precos'],
 
         /**
          * The features section is three pages behind one tab strip, so its
@@ -197,6 +205,7 @@ return [
             'fr' => 'fonctionnalites',
             'de' => 'funktionen',
             'es' => 'funcionalidades',
+            'pt' => 'recursos',
         ],
 
         'featuresDashboard' => [
@@ -204,6 +213,7 @@ return [
             'fr' => 'fonctionnalites/tableau-de-bord',
             'de' => 'funktionen/dashboard',
             'es' => 'funcionalidades/panel',
+            'pt' => 'recursos/painel',
         ],
 
         'featuresJournal' => [
@@ -211,27 +221,30 @@ return [
             'fr' => 'fonctionnalites/journal',
             'de' => 'funktionen/tagebuch',
             'es' => 'funcionalidades/diario',
+            'pt' => 'recursos/diario',
         ],
 
-        // "Blog" is the same word in all four languages. Declared per locale
+        // "Blog" is the same word in every language we ship. Declared per locale
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.
-        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog'],
+        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog'],
 
         'terms' => [
             'en' => 'terms',
             'fr' => 'conditions-utilisation',
             'de' => 'nutzungsbedingungen',
             'es' => 'condiciones-de-uso',
+            'pt' => 'termos-de-uso',
         ],
 
-        'team' => ['en' => 'team', 'fr' => 'equipe', 'de' => 'team', 'es' => 'equipo'],
+        'team' => ['en' => 'team', 'fr' => 'equipe', 'de' => 'team', 'es' => 'equipo', 'pt' => 'equipe'],
 
         'privacy' => [
             'en' => 'privacy',
             'fr' => 'confidentialite',
             'de' => 'datenschutz',
             'es' => 'privacidad',
+            'pt' => 'privacidade',
         ],
     ],
 

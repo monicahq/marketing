@@ -4,8 +4,7 @@
     The three tabs differ in exactly three things (which copy block, which
     screenshot, and whether the API section follows), so they are one partial
     with a table rather than three near-identical templates. That is also what
-    keeps the twelve page files, four locales times three tabs, down to four
-    lines each.
+    keeps the page files, one per locale per tab, down to four lines each.
 
     The screenshot dimensions are the files' own pixels, listed here because the
     markup needs them before the browser has the image. They are not the old

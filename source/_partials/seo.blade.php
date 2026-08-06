@@ -2,7 +2,7 @@
     Everything a crawler or a link preview needs.
 
     The multilingual half matters as much as the tags themselves: each page
-    declares a canonical for itself, an hreflang for all four translations
+    declares a canonical for itself, an hreflang for every translation
     including itself (reciprocity is what makes Google trust the cluster), and
     an x-default for readers whose language is not one of ours.
 --}}
