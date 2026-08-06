@@ -31,10 +31,11 @@ permalink: 404.html
         <div class="mx-auto flex min-h-screen w-full max-w-marketing flex-col justify-center px-4 py-section-sm md:px-8">
             <a href="{{ $page->route('home', 'en') }}" class="flex items-center gap-3 text-text no-underline hover:no-underline">
                 <img
-                    src="/assets/images/monica-panda-mark.jpg"
+                    src="/assets/images/monica-panda-mark.svg"
                     alt=""
-                    width="24"
-                    class="h-auto w-6 flex-none mix-blend-multiply"
+                    width="32"
+                    height="29"
+                    class="h-auto w-6 flex-none"
                 >
                 <span class="text-title font-semibold tracking-[-0.015em]">Monica</span>
             </a>
