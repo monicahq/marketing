@@ -26,7 +26,7 @@ OUT_DIR="$ROOT/source/og"
 
 mkdir -p "$OUT_DIR"
 
-for locale in en fr de es; do
+for locale in en fr de es pt; do
   out="$OUT_DIR/monica-$locale.png"
 
   # --allow-file-access-from-files lets the page load the webfont and the mark

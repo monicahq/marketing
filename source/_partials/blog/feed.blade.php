@@ -1,5 +1,5 @@
 {{--
-    The blog's RSS feed, shared by all four locale templates.
+    The blog's RSS feed, shared by every locale template.
 
     RSS 2.0 rather than Atom, because it is what "RSS feed" means to almost
     everyone and every reader accepts it. Two namespaces earn their place:
@@ -12,7 +12,7 @@
     two paragraphs is a feed nobody keeps subscribed to.
 
     Included from source/<locale>/blog/feed.blade.xml, which is front matter
-    and one line, so the four cannot drift apart.
+    and one line, so they cannot drift apart.
 --}}
 @php
     $items = $posts->sortByDesc('date')->take($page->collections->posts->perFeed);

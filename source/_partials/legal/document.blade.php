@@ -2,9 +2,9 @@
     A legal document: the terms of use, the privacy policy.
 
     The text lives in lang/ under the key passed in, rather than in the markup,
-    because these documents are translated four ways and a legal text with its
-    sentences spread across four Blade files is a legal text that quietly goes
-    out of sync.
+    because these documents are translated into every locale and a legal text
+    with its sentences spread across one Blade file per language is a legal text
+    that quietly goes out of sync.
 
     The shape is a title, a date, and a run of sections. A section is an
     optional heading plus an ordered run of blocks, where a block with `items`

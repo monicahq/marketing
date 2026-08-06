@@ -1,6 +1,6 @@
 # Monica marketing site: working notes for Claude
 
-Marketing site for **Monica**, the personal CRM. Static [Jigsaw](https://jigsaw.tighten.com) + Tailwind 4 site, built on the Monica design system, shipping in four languages.
+Marketing site for **Monica**, the personal CRM. Static [Jigsaw](https://jigsaw.tighten.com) + Tailwind 4 site, built on the Monica design system, shipping in five languages.
 The owner is not a Jigsaw expert, so explain Jigsaw-specific choices briefly, and prefer boring, idiomatic Jigsaw over clever setups.
 
 ## Guidelines for Git and GitHub
@@ -49,7 +49,7 @@ What it checks, all of it against the files on disk and none of it over the netw
 
 Two things it deliberately does **not** do. External hosts are counted and left alone: they are the only URLs that need the network, and the only ones that fail for reasons unrelated to this repository. And `#` placeholders are reported with the `config.php` keys still missing a destination, but never fail anything, because they are a launch checklist rather than a regression.
 
-## How the four languages work
+## How the languages work
 
 Jigsaw has **no locale routing**, so it is built by hand and lives in two places: `config.php` and the file tree.
 
@@ -59,7 +59,7 @@ Jigsaw has **no locale routing**, so it is built by hand and lives in two places
 
 ### Copy
 
-All text lives in `lang/<locale>.php`, plain PHP arrays. **Never hard-code a user-visible string in a template.** If you add a string, add it to all four files.
+All text lives in `lang/<locale>.php`, plain PHP arrays. **Never hard-code a user-visible string in a template.** If you add a string, add it to every `lang/` file.
 
 Read it with `$page->t('hero.title')`, which takes a dot path and returns strings or arrays. Placeholders are `:colon` style: `$page->t('nav.stars', [':count' => $page->starCount])`.
 
@@ -79,9 +79,9 @@ Three helpers, and the distinction matters:
 
 ### Adding a page
 
-1. Add its key and four slugs to `routes` in `config.php`.
+1. Add its key and one slug per locale to `routes` in `config.php`.
 2. Create one Blade file per locale, named after that locale's slug.
-3. Add its copy to all four `lang/` files.
+3. Add its copy to every `lang/` file.
 
 ### Adding a locale
 
@@ -91,7 +91,7 @@ Three helpers, and the distinction matters:
 4. Its flag in `source/_partials/flag.blade.php`.
 5. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
 
-German runs ~30% longer than English and French ~20%. Don't pin widths to English label lengths.
+German runs ~30% longer than English, French ~20%, and Portuguese ~20%. Don't pin widths to English label lengths.
 
 ## The design system is the authority
 
@@ -160,7 +160,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 `source/_partials/seo.blade.php` owns the whole head: title, description, canonical, robots, hreflang, Open Graph, Twitter card and JSON-LD. **A new page gets all of it by extending `_layouts.base` with `locale` and `page` front matter.** Never hand-write a meta tag in a page.
 
 - Every crawler-facing URL is absolute, built from `baseUrl` in `config.production.php`. If the domain changes, that is the only edit, plus the hard-coded line in `source/robots.txt`.
-- hreflang is emitted for all four locales **including the current one**. Reciprocity is what makes the cluster credible.
+- hreflang is emitted for every locale **including the current one**. Reciprocity is what makes the cluster credible.
 - `og:locale` needs `language_TERRITORY` (`fr_FR`), from `ogLocales`. hreflang uses the bare code, so the two differ on purpose.
 - `source/sitemap.blade.xml` builds the sitemap by walking `routes` and `locales`, with `xhtml:link` hreflang annotations. It is named `.blade.xml` so Jigsaw writes `sitemap.xml` rather than `sitemap.html`. Its XML declaration is echoed as a string, because a literal `<?xml` would be parsed as a PHP open tag.
 - `source/index.blade.php` and `source/404.blade.php` both set an explicit `permalink`, because pretty URLs would otherwise write them to `index/index.html` and `404/index.html`. Both carry `noindex`, and neither is in the sitemap.
@@ -197,11 +197,11 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 `/en/blog/`, ten posts a page, plus a page per post. The 39 posts are the ones imported from the old site, Markdown in `source/_posts/`, one file each.
 
-**One file becomes four pages.** The bodies are English and translating them is a separate job, so a post is written once and published in every locale. The `posts` collection in `config.php` names four `extends` templates, keyed by locale; Jigsaw renders the item once per key and `path` gives each rendering its own URL. `_layouts/post.blade.php` reads the key back with `$page->getExtending()` and copies it onto `locale` before `@extends` runs, because `t()`, the `<html lang>` attribute, the canonical and the hreflang cluster all read `$page->locale` and have no idea a collection is involved. A locale key is in `_meta`, so `$page->extending` is quietly null and `getExtending()` is the accessor that works.
+**One file becomes one page per locale.** The bodies are English and translating them is a separate job, so a post is written once and published in every locale. The `posts` collection in `config.php` names one `extends` template per locale, keyed by locale; Jigsaw renders the item once per key and `path` gives each rendering its own URL. `_layouts/post.blade.php` reads the key back with `$page->getExtending()` and copies it onto `locale` before `@extends` runs, because `t()`, the `<html lang>` attribute, the canonical and the hreflang cluster all read `$page->locale` and have no idea a collection is involved. A locale key is in `_meta`, so `$page->extending` is quietly null and `getExtending()` is the accessor that works.
 
 **URLs go through `canonicalPath()`.** Three shapes live behind it: an ordinary page named by its route key, the paginated index, and a post. The canonical, the hreflang cluster, the sitemap and the dead-link checker all call it, so they cannot drift apart. `blogPath($locale, $n)` and `postPath($slug, $locale)` are the two building blocks.
 
-**Pagination is Jigsaw's.** Each locale index (`source/<locale>/blog.blade.php`) is four lines of front matter naming the collection; `perPage` and `prefix` live on the collection so they cannot disagree between locales. Page 2 is `/en/blog/page/2/`, its canonical is itself, and its hreflang points at page 2 in the other three languages. `$pagination` (the view variable) is the current page; `$page->pagination` is the front-matter block that asked for it, which is a different thing and a trap.
+**Pagination is Jigsaw's.** Each locale index (`source/<locale>/blog.blade.php`) is four lines of front matter naming the collection; `perPage` and `prefix` live on the collection so they cannot disagree between locales. Page 2 is `/en/blog/page/2/`, its canonical is itself, and its hreflang points at page 2 in every other language. `$pagination` (the view variable) is the current page; `$page->pagination` is the front-matter block that asked for it, which is a different thing and a trap.
 
 **Dates are timestamps.** YAML reads an unquoted `date: 2018-10-12` as a date and hands it back as ten digits, so anything that displays a date or gives one to a crawler calls `$post->isoDate()`. `readingMinutes()` and `authorInitials()` are collection helpers alongside it.
 
@@ -217,13 +217,13 @@ See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
 
 ## The features pages
 
-Three tabs (contact management, dashboard, journal), three route keys (`features`, `featuresDashboard`, `featuresJournal`), twelve pages once the four locales are counted.
+Three tabs (contact management, dashboard, journal), three route keys (`features`, `featuresDashboard`, `featuresJournal`), fifteen pages once the five locales are counted.
 
 **The tabs are pages, not a JavaScript widget.** Each one has its own URL, so it can be linked to, indexed and translated, which is what the old site did. `_partials/features/tabs.blade.php` renders the strip on all three, and `aria-current="page"` marks the one being read.
 
 **The slugs nest**, so `featuresDashboard` in English is `features/dashboard` and the file is `source/en/features/dashboard.blade.php`. The helpers need nothing special for this: they only ever join a slug to a locale prefix. A slug with a slash and a file in a subdirectory are the whole trick.
 
-**One partial builds all three.** `_partials/features/page.blade.php` holds a table of which copy block, which screenshot and whether the API section follows, keyed by the route name, so each of the twelve page files is four lines of front matter and an `@include`.
+**One partial builds all three.** `_partials/features/page.blade.php` holds a table of which copy block, which screenshot and whether the API section follows, keyed by the route name, so each of the fifteen page files is four lines of front matter and an `@include`.
 
 The screenshots came from the old site and were cropped on the way in: the browser window drawn around each one, and the drop shadow behind it, are both things the design system forbids. The annotations that were pinned onto them as red labels are now an ordinary list beside the picture, which is what makes them survive a phone, a screen reader and a translation running longer than English.
 

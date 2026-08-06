@@ -2,10 +2,10 @@
     A single blog post.
 
     One Markdown file in source/_posts is rendered once per locale, because the
-    `extends` map in config.php names four templates. Jigsaw records which key it
-    is currently rendering as `extending`, and that key is the locale: there is
-    nowhere else for a collection item to carry one, since the same file is all
-    four pages.
+    `extends` map in config.php names one template per locale. Jigsaw records
+    which key it is currently rendering as `extending`, and that key is the
+    locale: there is nowhere else for a collection item to carry one, since the
+    same file is every one of those pages.
 
     Copying it onto `locale` is the first thing that happens, before `@extends`
     hands over to the base layout, because everything downstream — the `<html

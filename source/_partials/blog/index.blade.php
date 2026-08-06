@@ -1,5 +1,5 @@
 {{--
-    The blog index, shared by all four locale templates.
+    The blog index, shared by every locale template.
 
     Jigsaw's paginator hands the template one page's worth of items in
     `$pagination->items`, and builds /blog/, /blog/page/2/ and so on from the

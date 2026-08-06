@@ -216,8 +216,8 @@ final class LinkCheck
 
     /**
      * Every page in an hreflang cluster must publish the same cluster. That
-     * reciprocity is what makes Google treat the four languages as one page
-     * rather than four competing ones, and a single locale drifting out of the
+     * reciprocity is what makes Google treat the translations as one page
+     * rather than several competing ones, and a single locale drifting out of the
      * set is invisible in the rendered page.
      */
     private function checkAlternates(array $pages): void

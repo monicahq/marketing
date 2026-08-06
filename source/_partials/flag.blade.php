@@ -40,5 +40,16 @@
             <rect width="60" height="40" fill="#aa151b"></rect>
             <rect y="10" width="60" height="20" fill="#f1bf00"></rect>
             @break
+
+        {{--
+            Brazil, because the Portuguese copy is Brazilian. The band across
+            the globe is left out: at 20x14 it is a smudge, and the flag is
+            decorative anyway.
+        --}}
+        @case('pt')
+            <rect width="60" height="40" fill="#009c3b"></rect>
+            <polygon points="30,4 56,20 30,36 4,20" fill="#ffdf00"></polygon>
+            <circle cx="30" cy="20" r="7" fill="#002776"></circle>
+            @break
     @endswitch
 </svg>
