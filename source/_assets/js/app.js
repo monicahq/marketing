@@ -10,12 +10,22 @@
  *                 webfont and this script survive the navigation.
  *   Alpine        the pricing page's billing toggle, and nothing else.
  *
- * Turbo 8 prefetches on hover by default, which would mean two prefetchers
- * racing for the same URL. `<meta name="turbo-prefetch" content="false">` in
- * the layout turns Turbo's off and leaves instant.page to it, because its
- * heuristics are the better of the two: it backs off on slow connections and
- * when the reader has asked to save data, and it falls back to mousedown on
- * touch, where there is no hover to react to.
+ * Both prefetchers stay on, because they feed different kinds of navigation and
+ * neither one covers the other's:
+ *
+ *   Turbo's prefetch (on by default since Turbo 8, 100ms hover) keeps the
+ *   in-flight fetch in its own cache and swaps it straight into the visit when
+ *   the click lands. It is the only prefetch a Turbo visit can consume, so
+ *   turning it off would leave every internal link fetching on click.
+ *
+ *   instant.page (65ms hover) issues <link rel="prefetch">, which warms the
+ *   browser's HTTP cache. That is what an ordinary browser navigation reads,
+ *   which here means the locale picker: those links are `data-turbo="false"`
+ *   and Turbo never touches them.
+ *
+ * On a link Turbo does drive, both fire. The later request is normally served
+ * from the cache the earlier one filled, so the duplicate costs little, and
+ * dropping either library would leave one class of link unprefetched.
  *
  * Links that must not be Turbo visits carry `data-turbo="false"`. The locale
  * picker is the case that matters: Turbo replaces <body> but leaves <html lang>

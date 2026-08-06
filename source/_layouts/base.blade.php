@@ -19,11 +19,6 @@
         @viteRefresh()
         <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
 
-        {{-- Turbo 8 prefetches on hover by default. instant.page does the same
-             job better, so Turbo's is turned off and only one prefetcher runs.
-             See source/_assets/js/app.js. --}}
-        <meta name="turbo-prefetch" content="false">
-
         {{-- A module, so it is deferred and runs after parsing.
 
              On every page, not just the ones with an Alpine component: Turbo
