@@ -15,6 +15,11 @@ return [
             'description' => "Monica vous aide à vous souvenir des gens qui comptent : ce qui se passe dans leur vie, les dates importantes, vos conversations passées et le moment de reprendre contact. Privé, open source, auto-hébergeable.",
         ],
 
+        'pricing' => [
+            'title' => "Tarifs Monica — une offre hébergée, ou l'auto-hébergement gratuit",
+            'description' => "Monica hébergée coûte 9 USD par mois ou 90 USD par an, avec des contacts illimités et aucun tarif au contact. Ou hébergez gratuitement l'application open source sur votre propre infrastructure.",
+        ],
+
         'v3' => [
             'title' => "Monica v3 — reconstruite pour les dix prochaines années",
             'description' => "Monica v3 est une reconstruction complète du CRM personnel open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source, désormais sous licence MIT. Avant la fin de 2026.",
@@ -383,6 +388,205 @@ return [
         'primaryCta' => "Commencer avec Monica",
         'secondaryCta' => "Voir Monica v3",
         'note' => "Open source · Auto-hébergeable · Sans carte bancaire",
+    ],
+
+    /** La page /tarifs. Les prix viennent du design ; à changer ici, par locale. */
+    'pricing' => [
+        'eyebrow' => "Tarifs simples",
+        'title' => "Une seule offre hébergée. Aucun tarif à la relation.",
+        'lede' => "Utilisez Monica sur nos serveurs pour un prix prévisible, ou hébergez-la vous-même gratuitement.",
+        'lede2' => "Nous ne facturons ni au contact, ni au rappel, ni à l'anniversaire important, ni à la personne que vous essayez de ne pas décevoir.",
+        'currency' => "Prix en USD",
+        'taxFootnote' => "Les prix sont affichés en USD. Les taxes applicables sont calculées avant le paiement.",
+
+        'billing' => [
+            'label' => "Périodicité de facturation",
+            'yearly' => "Annuel — 2 mois offerts",
+            'monthly' => "Mensuel",
+        ],
+
+        'hosted' => [
+            'title' => "Monica hébergée",
+            'body' => "Pour celles et ceux qui veulent Monica sans entretenir de serveur.",
+            'yearlyPrice' => "90 $",
+            'yearlyPeriod' => "USD / an",
+            'yearlyNote' => "Deux mois offerts en facturation annuelle.",
+            'monthlyPrice' => "9 $",
+            'monthlyPeriod' => "USD / mois",
+            'monthlyNote' => "Facturé au mois. Passez à l'annuel pour deux mois offerts.",
+            'taxNote' => "Des taxes peuvent s'appliquer selon votre pays.",
+            'cta' => "Commencer avec Monica",
+            'trial' => "Essai de 30 jours · Aucune carte bancaire pendant l'essai",
+            'listTitle' => "Tout ce qu'il faut pour se souvenir des gens qui comptent :",
+            'items' => [
+                "contacts illimités ;",
+                "notes illimitées ;",
+                "rappels illimités ;",
+                "activités et entrées de journal illimitées ;",
+                "gestion des relations ;",
+                "champs et sections personnalisés ;",
+                "pièces jointes ;",
+                "export des données ;",
+                "mises à jour automatiques ;",
+                "sauvegardes gérées ;",
+                "support par e-mail ;",
+                "accès depuis téléphone, tablette et ordinateur ;",
+                "toutes les futures fonctionnalités hébergées incluses.",
+            ],
+            'aside' => "Aucun supplément pour une grande famille.",
+            'footnote' => "Résiliez quand vous voulez. Vos contacts ne seront pas pris en otage.",
+        ],
+
+        'selfHosted' => [
+            'title' => "Vous préférez votre propre serveur ?",
+            'body' => "Monica est open source et s'installe sur l'infrastructure de votre choix.",
+            'price' => "0 $",
+            'period' => "côté Monica",
+            'aside' => "Votre hébergeur, lui, voudra sans doute de l'argent. Nous n'avons pas encore vaincu le capitalisme.",
+            'cta' => "Voir le guide d'auto-hébergement",
+            'sourceCta' => "Parcourir le code sur GitHub · :count étoiles",
+            'listTitle' => "L'application est gratuite. Vous fournissez le serveur, les mises à jour, les sauvegardes, la supervision, les correctifs de sécurité, et la tranquillité de savoir exactement où vivent vos données.",
+            'items' => [
+                "l'application open source complète ;",
+                "des contacts illimités ;",
+                "autant d'utilisateurs que votre infrastructure le permet ;",
+                "le contrôle total de vos données ;",
+                "l'import et l'export des données ;",
+                "la documentation communautaire ;",
+                "le support communautaire ;",
+                "la possibilité d'inspecter et de modifier le code source ;",
+                "la licence MIT dans Monica v3.",
+            ],
+            'footnote' => "L'édition auto-hébergée n'est pas une démo bridée. C'est Monica, sur votre infrastructure.",
+            'footnote2' => "Les sauvegardes gérées, l'envoi d'e-mails, la supervision de l'infrastructure et le support direct font partie du service hébergé.",
+        ],
+
+        'compare' => [
+            'title' => "La même Monica. Une autre personne responsable du serveur.",
+            'rowHeader' => "Quoi",
+            'hosted' => "Monica hébergée",
+            'selfHosted' => "Monica auto-hébergée",
+            'rows' => [
+                ['label' => "Logiciel Monica", 'hosted' => "Inclus", 'selfHosted' => "Inclus"],
+                ['label' => "Contacts", 'hosted' => "Illimités", 'selfHosted' => "Illimités"],
+                ['label' => "Mises à jour", 'hosted' => "Automatiques", 'selfHosted' => "Vous les installez"],
+                ['label' => "Sauvegardes", 'hosted' => "Gérées par Monica", 'selfHosted' => "Vous les gérez"],
+                ['label' => "Maintenance du serveur", 'hosted' => "Gérée par Monica", 'selfHosted' => "Vous la gérez"],
+                ['label' => "Emplacement des données", 'hosted' => "Infrastructure Monica", 'selfHosted' => "Votre infrastructure"],
+                ['label' => "Connaissances techniques requises", 'hosted' => "Aucune", 'selfHosted' => "Quelques-unes"],
+                ['label' => "Support", 'hosted' => "Support par e-mail", 'selfHosted' => "Support communautaire"],
+                ['label' => "Coût", 'hosted' => "Abonnement mensuel ou annuel", 'selfHosted' => "Logiciel gratuit plus frais d'hébergement"],
+                ['label' => "Idéal pour", 'hosted' => "Les gens qui veulent que Monica fonctionne", 'selfHosted' => "Les gens qui aiment les serveurs, ou qui y sont contraints"],
+            ],
+        ],
+
+        'whyPay' => [
+            'title' => "Pourquoi payer si Monica est open source ?",
+            'body' => "L'open source vous permet d'exécuter, d'inspecter, de modifier Monica et d'y contribuer. Il ne fait pas disparaître les serveurs, les sauvegardes, l'envoi d'e-mails, le travail de sécurité ni le support.",
+            'body2' => "Un abonnement hébergé paie l'infrastructure qui fait tourner votre compte et finance le développement continu de Monica pour tout le monde, y compris pour celles et ceux qui l'auto-hébergent.",
+            'quote' => "Vous nous payez pour faire tourner Monica, pas pour déverrouiller vos propres données.",
+            'aside' => "Un serveur, c'est un ordinateur qui envoie des factures.",
+        ],
+
+        'noCharge' => [
+            'title' => "Ce que nous ne facturons pas",
+            'items' => [
+                ['title' => "Plus de contacts", 'body' => "Votre tarif n'augmente pas parce que vous connaissez plus de monde."],
+                ['title' => "Plus de rappels", 'body' => "Se souvenir des anniversaires est déjà assez stressant."],
+                ['title' => "L'export des données", 'body' => "Repartir avec vos données est un droit, pas une option payante."],
+                ['title' => "La confidentialité", 'body' => "Nous ne vendons pas d'option vie privée. La confidentialité est la valeur par défaut."],
+                ['title' => "La résiliation", 'body' => "Aucun frais de résiliation, et aucun appel de rupture protocolaire."],
+                ['title' => "L'utilisation de l'API", 'body' => "L'API fait partie du produit, ce n'est pas une négociation à part."],
+            ],
+        ],
+
+        'leaving' => [
+            'title' => "Votre abonnement peut s'arrêter. Votre accès à vos données, non.",
+            'body' => "Vous pouvez exporter vos données à tout moment.",
+            'body2' => "À la résiliation, votre compte reste accessible jusqu'à la fin de la période payée. Ensuite, nous le gardons disponible pendant un délai de grâce défini avant suppression.",
+            'steps' => [
+                ['label' => "Résilier", 'body' => "Votre offre reste active jusqu'à la fin de la période de facturation."],
+                ['label' => "Exporter", 'body' => "Téléchargez vos données avant ou après la résiliation, pendant le délai de grâce."],
+                ['label' => "Supprimer", 'body' => "Supprimez votre compte immédiatement depuis les réglages, quand vous le décidez."],
+            ],
+            'note' => "Le délai de grâce, les formats d'export et les délais de suppression sont détaillés dans la politique de conservation.",
+        ],
+
+        'trackRecord' => [
+            'title' => "Open source avant que ce soit une stratégie tarifaire",
+            'body' => "Monica est développée au grand jour depuis 2017.",
+            'body2' => "Le projet a réuni :count étoiles sur GitHub, a été choisi plusieurs fois comme dépôt de la semaine, est arrivé en tête de Product Hunt et a été reconnu par la communauté open source.",
+            'starsLabel' => "Étoiles sur GitHub",
+            'since' => "2017",
+            'sinceLabel' => "Open source depuis",
+            'launch' => "N° 1 du jour",
+            'launchLabel' => "Product Hunt",
+            'featured' => "Dépôt de la semaine",
+            'featuredLabel' => "Mis en avant plusieurs fois",
+            'cta' => "Voir Monica sur GitHub",
+        ],
+
+        'faq' => [
+            'title' => "Questions sur le paiement de Monica",
+            'items' => [
+                ['q' => "Combien coûte Monica ?", 'a' => [
+                    "Monica hébergée coûte 9 USD par mois ou 90 USD par an.",
+                    "Vous pouvez aussi héberger Monica gratuitement sur une infrastructure que vous gérez.",
+                ]],
+                ['q' => "Le prix est-il par utilisateur ou par contact ?", 'a' => "Non. L'offre hébergée a un seul prix par compte et inclut des contacts illimités."],
+                ['q' => "Monica est-elle vraiment open source ?", 'a' => [
+                    "Oui. Le code source de Monica est public, et le projet compte :count étoiles sur GitHub.",
+                    "Monica v3 sera publiée sous licence MIT.",
+                ], 'link' => ['label' => "En savoir plus sur Monica v3", 'page' => 'v3']],
+                ['q' => "L'auto-hébergement est-il gratuit ?", 'a' => "Monica ne facture pas le logiciel auto-hébergé. Le serveur et les frais d'infrastructure sont à votre charge."],
+                ['q' => "La version hébergée diffère-t-elle de la version auto-hébergée ?", 'a' => [
+                    "Elles utilisent la même application.",
+                    "Le service hébergé comprend l'infrastructure, les mises à jour gérées, les sauvegardes, la supervision, l'envoi d'e-mails et le support. Certaines intégrations qui dépendent de l'infrastructure opérée par Monica peuvent n'exister que sur le service hébergé.",
+                ]],
+                ['q' => "Puis-je passer de l'hébergé à l'auto-hébergé ?", 'a' => "Oui. Vous pouvez exporter vos données Monica et les importer dans une installation auto-hébergée compatible."],
+                ['q' => "Puis-je résilier à tout moment ?", 'a' => "Oui. Résiliez depuis les réglages de votre compte. Votre abonnement reste actif jusqu'à la fin de la période en cours."],
+                ['q' => "Y a-t-il des frais de résiliation ?", 'a' => "Non. Partir ne devrait pas exiger une rançon."],
+                ['q' => "Que se passe-t-il si mon paiement échoue ?", 'a' => [
+                    "Nous vous prévenons et réessayons le paiement avant de restreindre le compte.",
+                    "Vos données ne sont pas supprimées parce qu'une carte a expiré.",
+                ]],
+                ['q' => "Comment fonctionnent les remboursements ?", 'a' => [
+                    "Si vous avez été débité par erreur ou avez oublié de résilier, écrivez-nous dans les 30 jours. Nous examinerons la demande comme des êtres humains raisonnables.",
+                    "Les abonnements annuels peuvent être remboursés dans le délai défini par notre politique de remboursement. Les remboursements ne s'appliquent pas aux comptes ayant gravement abusé du service.",
+                ]],
+                ['q' => "Le prix va-t-il augmenter ?", 'a' => [
+                    "Les prix peuvent évoluer avec Monica, mais nous prévenons les abonnés existants à l'avance.",
+                    "Nous ne changeons pas les prix en silence en espérant que personne ne s'en aperçoive.",
+                ]],
+                ['q' => "Les taxes sont-elles incluses ?", 'a' => "Les prix affichés incluent ou excluent les taxes selon votre pays et la loi applicable. Le montant final est indiqué avant le paiement."],
+                ['q' => "Monica conserve-t-elle mes informations de paiement ?", 'a' => "Les informations de paiement sont traitées par notre prestataire. Monica ne stocke pas les numéros de carte complets."],
+                ['q' => "Mes données servent-elles à la publicité ?", 'a' => "Non. Monica ne vend pas vos données personnelles, n'affiche pas de publicité et n'utilise pas les personnes de votre compte pour construire des profils publicitaires."],
+                ['q' => "Mes données servent-elles à entraîner des modèles d'IA ?", 'a' => "Aucun modèle n'est entraîné sur le contenu privé de votre compte Monica."],
+                ['q' => "Les sauvegardes sont-elles incluses ?", 'a' => [
+                    "Oui, le service hébergé comprend des sauvegardes gérées.",
+                    "Les installations auto-hébergées exigent que vous configuriez et testiez vos propres sauvegardes.",
+                ]],
+                ['q' => "Puis-je tout exporter ?", 'a' => "Vous pouvez exporter contacts, relations, notes, rappels, activités, champs personnalisés et les autres données prises en charge. Les pièces jointes sont incluses selon le format d'export documenté."],
+                ['q' => "Puis-je supprimer mon compte ?", 'a' => "Oui. La suppression du compte se fait depuis les réglages, sans passer par le support."],
+                ['q' => "Proposez-vous des réductions ?", 'a' => "Pas pour l'instant. Nous préférons un prix compréhensible à un système où chacun négocie de son côté."],
+                ['q' => "Proposez-vous une offre à vie ?", 'a' => "Non. Les serveurs continuent d'avoir des dépenses après la fin des campagnes de lancement enthousiastes."],
+                ['q' => "Proposez-vous une offre entreprise ?", 'a' => [
+                    "Aucun rendez-vous commercial n'est nécessaire pour utiliser Monica.",
+                    "Pour les questions de sécurité, d'achats ou d'hébergement en volume, écrivez-nous.",
+                ]],
+                ['q' => "Puis-je payer dans une autre devise ?", 'a' => "La facturation se fait actuellement en USD. Votre banque peut convertir le montant et facturer des frais de change."],
+                ['q' => "S'abonner soutient-il le projet open source ?", 'a' => "Oui. Les abonnements hébergés financent l'infrastructure, la maintenance, le support et le développement open source continu de Monica."],
+            ],
+        ],
+
+        'finalCta' => [
+            'title' => "Votre mémoire a fait assez d'heures non payées.",
+            'body' => "Prenez la version hébergée et laissez-nous gérer l'infrastructure, ou installez Monica sur votre propre serveur.",
+            'body2' => "Dans les deux cas, vos contacts restent des gens, pas des prospects.",
+            'primaryCta' => "Commencer avec Monica",
+            'secondaryCta' => "Auto-héberger Monica",
+            'note' => "Une offre hébergée simple · Auto-hébergement gratuit · Open source",
+        ],
     ],
 
     'footer' => [

@@ -124,6 +124,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Design tokens to Tailwind           | `source/_assets/css/theme.css`                      |
 | Vendored design system              | `source/_assets/css/design-system/` (do not edit)   |
 | Compiled CSS entry                  | `source/_assets/css/main.css`                       |
+| Compiled JS entry (Alpine)          | `source/_assets/js/app.js`                          |
 | Fonts                               | `source/_assets/fonts/`                             |
 | Images, OG cards, robots.txt        | `source/assets/`, `source/og/`, `source/robots.txt` |
 
@@ -150,7 +151,10 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 ## Other conventions
 
 - **Static by default.** Jigsaw outputs files. Nothing runs server-side in production.
-- **Zero JS unless asked.** The site currently ships none: the FAQ and the language menu are native `<details>`, and Vite has no JS entry point. Adding one is a real decision, so ask first.
+- **Almost no JS, and only where asked.** The site ships one script, `source/_assets/js/app.js`, which starts [Alpine](https://alpinejs.dev) and nothing else. It exists for the pricing page's billing toggle. The FAQ and the language menu are still native `<details>` and must stay that way: reach for Alpine only when a native element genuinely cannot do the job, and ask first.
+- **Anything Alpine touches is server-rendered in its default state first.** Bind with `x-text` wrapped around real content (`<span x-text="plans[period].price">$90</span>`), never an empty element filled in on load. A control that does nothing without Alpine carries `js-only`, which `_layouts/base.blade.php` hides inside a `<noscript>` block, so a reader without JavaScript is not offered a dead button.
+- Alpine state comes from `lang/` through one `json_encode` into `x-data`, so copy never gets hard-coded into an expression. Blade escapes the quotes and the browser decodes them; see `_partials/pricing/plans.blade.php`.
+- Class names inside `x-bind:class` are literal strings in the template, so Tailwind's scanner finds them. Building one by concatenation makes it invisible to the scanner and the class silently vanishes from the stylesheet.
 - **No new dependencies without asking**, Composer or npm.
 - **Marketing copy is the owner's call.** Draft it when asked, but don't rewrite existing headlines, pricing or product claims as a side effect of an unrelated change.
 

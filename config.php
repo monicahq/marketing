@@ -60,6 +60,8 @@ return [
         // language. Slugs are still declared per locale, because the next page
         // added will not be.
         'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3'],
+
+        'pricing' => ['en' => 'pricing', 'fr' => 'tarifs', 'de' => 'preise', 'es' => 'precios'],
     ],
 
     // ------------------------------------------------------------------ links
@@ -117,7 +119,25 @@ return [
             throw new Exception("Missing translation [{$key}] for locale [{$locale}].");
         }
 
-        return $replace && is_string($value) ? strtr($value, $replace) : $value;
+        if (! $replace) {
+            return $value;
+        }
+
+        /**
+         * Placeholders are filled at every depth, not just on a bare string.
+         * A FAQ answer is a list of paragraphs and a plan is a nested array, so
+         * substituting only the top level silently shipped a literal ":count"
+         * to the page once already.
+         */
+        $fill = function ($value) use (&$fill, $replace) {
+            if (is_array($value)) {
+                return array_map($fill, $value);
+            }
+
+            return is_string($value) ? strtr($value, $replace) : $value;
+        };
+
+        return $fill($value);
     },
 
     /**
