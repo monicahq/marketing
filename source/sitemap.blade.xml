@@ -22,9 +22,16 @@
         $urls[] = fn ($locale) => $page->localePath($key, $locale);
     }
 
+    // The English archive is the list of slugs, because a post carries the same
+    // slug in every language and every language carries the same posts. Listing
+    // a URL here that no build wrote is what the dead-link checker fails on, so
+    // a translation missing from one locale is caught rather than quietly
+    // dropped from that language's sitemap.
+    $posts = $posts_en;
+
     // ceil rather than a stored count: the paginator is the only thing that
     // knows how many pages there are, and it is not running here.
-    $pages = (int) ceil($posts->count() / $page->collections->posts->perPage);
+    $pages = (int) ceil($posts->count() / $page->postsPerPage);
 
     for ($number = 2; $number <= $pages; $number++) {
         $urls[] = fn ($locale) => $page->blogPath($locale, $number);

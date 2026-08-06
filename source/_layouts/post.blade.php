@@ -1,19 +1,17 @@
 {{--
     A single blog post.
 
-    One Markdown file in source/_posts is rendered once per locale, because the
-    `extends` map in config.php names one template per locale. Jigsaw records
-    which key it is currently rendering as `extending`, and that key is the
-    locale: there is nowhere else for a collection item to carry one, since the
-    same file is every one of those pages.
+    The post is one Markdown file in source/_posts_<locale>, and its locale
+    comes from its collection, so `$page->locale` is set before this template
+    runs and the base layout, the `t()` lookups, the canonical and the hreflang
+    cluster all read it without knowing a collection is involved.
 
-    Copying it onto `locale` is the first thing that happens, before `@extends`
-    hands over to the base layout, because everything downstream — the `<html
-    lang>` attribute, every `t()` lookup, the canonical and the hreflang cluster
-    — reads `$page->locale` and has no idea a collection is involved.
+    What this template does have to work out is which archive the post belongs
+    to, for "keep reading" below. The collections are one per language, so the
+    name is built from the locale: a French post is a neighbour of French posts.
 --}}
 @php
-    $page->put('locale', $page->getExtending());
+    $posts = ${'posts_' . $page->lang()};
 
     $posts = $posts->sortByDesc('date')->values();
     $position = $posts->search(fn ($item) => $item->slug === $page->slug);

@@ -138,7 +138,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Features tabs                       | `source/_partials/features/`, screenshots in `source/assets/images/features/` |
 | Shared partials (icon, flag, header)| `source/_partials/`                                 |
 | Locale pages                        | `source/<locale>/`                                  |
-| Blog posts                          | `source/_posts/` (Markdown), images in `source/assets/images/blog/` |
+| Blog posts                          | `source/_posts_<locale>/` (Markdown), images in `source/assets/images/blog/` |
 | Blog templates                      | `source/_layouts/post.blade.php`, `source/_partials/blog/` |
 | Blog post body styling              | `source/_assets/css/prose.css`                      |
 | Blog RSS feed                       | `source/_partials/blog/feed.blade.php`, `source/<locale>/blog/feed.blade.xml` |
@@ -195,13 +195,19 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 ## The blog
 
-`/en/blog/`, ten posts a page, plus a page per post. The 39 posts are the ones imported from the old site, Markdown in `source/_posts/`, one file each.
+`/en/blog/`, ten posts a page, plus a page per post. The 39 posts are the ones imported from the old site, Markdown, one file per post per language.
 
-**One file becomes one page per locale.** The bodies are English and translating them is a separate job, so a post is written once and published in every locale. The `posts` collection in `config.php` names one `extends` template per locale, keyed by locale; Jigsaw renders the item once per key and `path` gives each rendering its own URL. `_layouts/post.blade.php` reads the key back with `$page->getExtending()` and copies it onto `locale` before `@extends` runs, because `t()`, the `<html lang>` attribute, the canonical and the hreflang cluster all read `$page->locale` and have no idea a collection is involved. A locale key is in `_meta`, so `$page->extending` is quietly null and `getExtending()` is the accessor that works.
+**One collection per locale.** The bodies are translated, so a post is a different file in every language: `source/_posts_en/`, `source/_posts_fr/`, and so on, read by the `posts_en`, `posts_fr`, ... collections that `config.php` builds by looping over `$locales`. Everything else about them (sort order, `perPage`, the helpers) comes from one shared `$postSettings` array, so it cannot drift between languages. Five collections rather than one with a `locale` field, because Jigsaw's paginator takes a collection and nothing else: it cannot be told to paginate the French tenth of a pile of 195 items, and the French index would otherwise list German posts.
+
+`locale` is a collection setting, so it is stated once per language rather than 39 times, and `$page->locale` is set before `_layouts/post.blade.php` runs. That is what `t()`, the `<html lang>` attribute, the canonical and the hreflang cluster read, and none of them has to know a collection is involved.
+
+**A template that needs the archive names it from the locale**: `$posts = ${'posts_' . $page->lang()}`, in `_layouts/post.blade.php` (for "keep reading"), `_partials/blog/index.blade.php` and `_partials/blog/feed.blade.php`. The sidebar partials are included from the index and inherit `$posts` from it. The sitemap deliberately uses `$posts_en`: slugs are identical across languages, so the English archive is the list of slugs, and a translation missing from one locale becomes a dead-link failure rather than a silent gap.
+
+**The slug does not change between languages.** `/de/blog/life-events/` is the German page. Only `title` and `description` are translated in the front matter; the slug, the date and the author are the same fact in five files. That is what lets one `postPath()` serve the canonical, the hreflang cluster, the sitemap and the feed without a per-locale slug table.
 
 **URLs go through `canonicalPath()`.** Three shapes live behind it: an ordinary page named by its route key, the paginated index, and a post. The canonical, the hreflang cluster, the sitemap and the dead-link checker all call it, so they cannot drift apart. `blogPath($locale, $n)` and `postPath($slug, $locale)` are the two building blocks.
 
-**Pagination is Jigsaw's.** Each locale index (`source/<locale>/blog.blade.php`) is four lines of front matter naming the collection; `perPage` and `prefix` live on the collection so they cannot disagree between locales. Page 2 is `/en/blog/page/2/`, its canonical is itself, and its hreflang points at page 2 in every other language. `$pagination` (the view variable) is the current page; `$page->pagination` is the front-matter block that asked for it, which is a different thing and a trap.
+**Pagination is Jigsaw's.** Each locale index (`source/<locale>/blog.blade.php`) is four lines of front matter naming its own collection (`posts_fr` on the French one); `perPage` and `prefix` come from the shared settings so they cannot disagree between locales. Templates that reproduce the paginator's arithmetic read `$page->postsPerPage` and `$page->postsPerFeed` instead, so they never have to name a language. Page 2 is `/en/blog/page/2/`, its canonical is itself, and its hreflang points at page 2 in every other language. `$pagination` (the view variable) is the current page; `$page->pagination` is the front-matter block that asked for it, which is a different thing and a trap.
 
 **Dates are timestamps.** YAML reads an unquoted `date: 2018-10-12` as a date and hands it back as ten digits, so anything that displays a date or gives one to a crawler calls `$post->isoDate()`. `readingMinutes()` and `authorInitials()` are collection helpers alongside it.
 
@@ -211,7 +217,7 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 Autodiscovery (`rel="alternate" type="application/rss+xml"`) is in `_layouts/base.blade.php`, so it is on every page rather than only the blog: the page someone is on when they decide to subscribe is rarely the index. It points at the current locale's feed. That is safe under Turbo for the same reason `<html lang>` is: the link is identical across a locale, and crossing locales is a full page load because the locale picker carries `data-turbo="false"`.
 
-Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in `source/_posts/` with `title`, `slug`, `date`, `author` and `description`, and nothing else to register.
+Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in **every** `source/_posts_<locale>/` with `title`, `slug`, `date`, `author` and `description`, and nothing else to register. The same slug and the same date in all five, the title, the description and the body translated. A post present in one language and missing in another fails the dead-link check, because the sitemap lists it for every locale.
 
 See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
 

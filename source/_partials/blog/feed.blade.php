@@ -15,7 +15,11 @@
     and one line, so they cannot drift apart.
 --}}
 @php
-    $items = $posts->sortByDesc('date')->take($page->collections->posts->perFeed);
+    // This locale's archive, so a French subscriber gets French bodies. The
+    // collections are one per language, so the name is built from the locale.
+    $posts = ${'posts_' . $page->lang()};
+
+    $items = $posts->sortByDesc('date')->take($page->postsPerFeed);
 
     // The feed's own address, which `atom:link rel="self"` exists to state.
     // Without it a reader that has been handed the file by some other route

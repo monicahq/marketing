@@ -8,9 +8,14 @@
     markup and the files on disk cannot disagree.
 --}}
 @php
+    // This locale's archive. The collections are one per language, so the name
+    // is built from the locale; the sidebar's partials are included from here
+    // and inherit it.
+    $posts = ${'posts_' . $page->lang()};
+
     $first = $pagination->currentPage === 1;
     $shown = $pagination->items->count();
-    $offset = ($pagination->currentPage - 1) * $page->collections->posts->perPage;
+    $offset = ($pagination->currentPage - 1) * $page->postsPerPage;
 @endphp
 
 <div class="mx-auto w-full max-w-marketing px-4 pt-12 pb-24 md:px-8">
