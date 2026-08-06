@@ -27,6 +27,17 @@ $perPage = 10;
 $perFeed = 20;
 
 /**
+ * A front-matter date as the ISO string a crawler wants.
+ *
+ * YAML reads an unquoted `date: 2018-10-12` as a date and hands it over as a
+ * Unix timestamp; a quoted one stays a string. Both shapes arrive here, and
+ * both leave as Y-m-d.
+ */
+$isoDay = fn ($value) => is_numeric($value)
+    ? date('Y-m-d', (int) $value)
+    : (string) $value;
+
+/**
  * Everything a posts collection is, apart from where it reads and where it
  * writes. Shared by all five, so a change to the sort order or to a helper
  * cannot land in one language and miss the other four.
@@ -82,10 +93,28 @@ $postSettings = [
      * metadata, it reads the same in every language, and it is the
      * one fact on the page a reader may want to compare or copy.
      */
-    'isoDate' => function ($post) {
-        return is_numeric($post->date)
-            ? date('Y-m-d', (int) $post->date)
-            : (string) $post->date;
+    'isoDate' => function ($post) use ($isoDay) {
+        return $isoDay($post->date);
+    },
+
+    /**
+     * When this post was last meaningfully changed, for the sitemap's lastmod.
+     *
+     * `updated` in the front matter when a post has been corrected, rewritten
+     * or retranslated, the publication date otherwise, because a post nobody
+     * has touched was last modified when it was published.
+     *
+     * Read per locale rather than per slug, so a French translation fixed on
+     * its own says so and the four other languages keep the date they had.
+     * That is the only reason `updated` is front matter and not a shared fact
+     * like the slug: it is the one thing about a post that legitimately
+     * differs between the five files.
+     *
+     * Only set it for a change a reader would notice. A typo fixed in a
+     * heading is not a reason to tell every crawler the article is new.
+     */
+    'lastmodDate' => function ($post) use ($isoDay) {
+        return $post->updated ? $isoDay($post->updated) : $post->isoDate();
     },
 
     /** The same date as RFC 2822, which is the only format RSS accepts. */
@@ -275,6 +304,39 @@ return [
         ],
     ],
 
+    // ---------------------------------------------------------------- lastmod
+
+    /**
+     * When each page was last meaningfully changed, for the sitemap.
+     *
+     * A crawler treats lastmod as a hint about whether re-fetching a URL is
+     * worth its time, and it only stays a useful hint while it is true. So this
+     * is a hand-kept fact rather than the build date or the file's mtime: both
+     * of those say "everything changed" every time anything is deployed, which
+     * teaches a crawler to ignore the field entirely.
+     *
+     * One date per page, not per locale. The copy for all five lives in the
+     * same `lang/` edit, so they change together.
+     *
+     * Update the entry when the page's copy changes in a way a reader would
+     * notice. A CSS tweak or a refactor behind identical text is not one.
+     *
+     * Every key in `routes` needs an entry here, except `blog`: the index's
+     * lastmod is the newest post it lists, which the sitemap works out from the
+     * archive rather than from a number somebody has to remember.
+     */
+    'lastmod' => [
+        'home' => '2026-08-06',
+        'v3' => '2026-08-06',
+        'pricing' => '2026-08-06',
+        'features' => '2026-08-06',
+        'featuresDashboard' => '2026-08-06',
+        'featuresJournal' => '2026-08-06',
+        'terms' => '2026-08-06',
+        'team' => '2026-08-06',
+        'privacy' => '2026-08-06',
+    ],
+
     // ------------------------------------------------------------------ links
 
     /**
@@ -434,6 +496,25 @@ return [
         }
 
         return $page->localePath($page->page, $locale);
+    },
+
+    /**
+     * When the page behind a route key was last changed: `$page->lastmodFor('pricing')`.
+     *
+     * Throws on a key with no entry, the same way `t()` throws on a missing
+     * translation, because a page added to `routes` and forgotten here would
+     * otherwise drop out of the sitemap's lastmod silently. A build that fails
+     * naming the key is a one-line fix; a sitemap quietly missing a date is not
+     * something anybody goes looking for.
+     */
+    'lastmodFor' => function ($page, string $key) {
+        $date = $page->lastmod[$key] ?? null;
+
+        if ($date === null) {
+            throw new Exception("Missing lastmod for page [{$key}]. Add it to the 'lastmod' map in config.php.");
+        }
+
+        return $date;
     },
 
     /**
