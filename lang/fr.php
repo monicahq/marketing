@@ -52,13 +52,13 @@ return [
 
         'v3' => [
             'title' => "Monica v3 — reconstruite pour les dix prochaines années",
-            'description' => "Monica v3 est une reconstruction complète du CRM personnel open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source, désormais sous licence MIT. Avant la fin de 2026.",
+            'description' => "Monica v3 est une reconstruction complète du CRM personnel open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source. Avant la fin de 2026.",
         ],
     ],
 
     'announcement' => [
         'headline' => "Monica v3 arrive avant la fin de 2026.",
-        'detail' => "Reconstruite de zéro. Toujours open source. Désormais sous licence MIT.",
+        'detail' => "Reconstruite de zéro. Toujours open source.",
         'cta' => "Découvrir ce qui arrive",
     ],
 
@@ -81,7 +81,7 @@ return [
         'lede2' => "Privée par conception. Open source. Auto-hébergeable. Aucune publicité, aucune revente de données, aucune notification gênante pour vous « réengager ».",
         'primaryCta' => "Commencer avec Monica",
         'githubCta' => "Voir sur GitHub · :count étoiles",
-        'note' => "Auto-hébergement gratuit · Version hébergée disponible · Sous licence MIT en v3",
+        'note' => "Auto-hébergement gratuit · Version hébergée disponible",
     ],
 
     'proof' => [
@@ -188,7 +188,6 @@ return [
         'listTitle' => "Avec Monica v3 :",
         'items' => [
             "le projet reste entièrement open source ;",
-            "la licence devient MIT ;",
             "vous pouvez l’exécuter sur votre propre serveur ;",
             "la version hébergée utilise la même application ;",
             "vos données peuvent être exportées ;",
@@ -243,7 +242,7 @@ return [
         'timing' => "Avant la fin de 2026",
         'title' => "Monica est reconstruite pour les dix prochaines années.",
         'lede' => "Monica a aidé des milliers de personnes à se souvenir de ce qui compte chez celles et ceux qui les entourent. Elle est aujourd'hui reconstruite de fond en comble : plus souple, plus privée, plus facile à étendre, et meilleure sur tous les écrans.",
-        'lede2' => "Elle restera open source. Elle passera sous licence MIT. Et tout ce qui faisait l'intérêt de Monica reste en place.",
+        'lede2' => "Elle restera open source. Et tout ce qui faisait l'intérêt de Monica reste en place.",
 
         'form' => [
             'label' => "Adresse e-mail",
@@ -303,8 +302,8 @@ return [
             'items' => [
                 [
                     'icon' => 'code',
-                    'title' => "Open source, désormais sous MIT",
-                    'body' => "Monica restera entièrement open source et auto-hébergeable. La version 3 adoptera la licence MIT, plus simple à comprendre, à réutiliser, à étendre et à laquelle contribuer.",
+                    'title' => "Open source, et elle le restera",
+                    'body' => "Monica restera entièrement open source et auto-hébergeable. Le code pourra être lu, modifié, forké et enrichi, exactement comme aujourd'hui.",
                 ],
                 [
                     'icon' => 'lock',
@@ -332,7 +331,7 @@ return [
         'follow' => [
             'title' => "Suivez la reconstruction depuis le début.",
             'body' => "Monica v3 est encore en développement, et beaucoup de décisions importantes se prennent au grand jour. Inscrivez-vous à la liste de lancement ou suivez le dépôt pour voir le travail avancer.",
-            'note' => "Open source · Licence MIT · Développée en public",
+            'note' => "Open source · Auto-hébergeable · Développée en public",
             'primaryCta' => "Recevoir l'e-mail de lancement",
             'secondaryCta' => "Suivre Monica sur GitHub",
         ],
@@ -483,8 +482,7 @@ return [
                 "l'import et l'export des données ;",
                 "la documentation communautaire ;",
                 "le support communautaire ;",
-                "la possibilité d'inspecter et de modifier le code source ;",
-                "la licence MIT dans Monica v3.",
+                "la possibilité d'inspecter et de modifier le code source.",
             ],
             'footnote' => "L'édition auto-hébergée n'est pas une démo bridée. C'est Monica, sur votre infrastructure.",
             'footnote2' => "Les sauvegardes gérées, l'envoi d'e-mails, la supervision de l'infrastructure et le support direct font partie du service hébergé.",
@@ -565,7 +563,7 @@ return [
                 ['q' => "Le prix est-il par utilisateur ou par contact ?", 'a' => "Non. L'offre hébergée a un seul prix par compte et inclut des contacts illimités."],
                 ['q' => "Monica est-elle vraiment open source ?", 'a' => [
                     "Oui. Le code source de Monica est public, et le projet compte :count étoiles sur GitHub.",
-                    "Monica v3 sera publiée sous licence MIT.",
+                    "Monica v3 restera open source et auto-hébergeable.",
                 ], 'link' => ['label' => "En savoir plus sur Monica v3", 'page' => 'v3']],
                 ['q' => "L'auto-hébergement est-il gratuit ?", 'a' => "Monica ne facture pas le logiciel auto-hébergé. Le serveur et les frais d'infrastructure sont à votre charge."],
                 ['q' => "La version hébergée diffère-t-elle de la version auto-hébergée ?", 'a' => [
