@@ -3,6 +3,13 @@
     takes keyboard focus with no JavaScript at all, and each entry is a real
     link to the same page in another locale, which is what a crawler and a
     middle-click both expect.
+
+    These are the one set of links on the site that must not be Turbo visits.
+    Turbo swaps <body> and leaves <html lang> as it found it, so switching to
+    French would load French copy into a document still declaring itself
+    English: wrong for screen readers, hyphenation, and anything reading the
+    page's language. `data-turbo="false"` makes each one a full page load.
+    instant.page still prefetches them, so the full load is a warm one.
 --}}
 <details class="relative order-1 ml-auto">
     <summary
@@ -22,6 +29,7 @@
                 href="{{ $alternate['href'] }}"
                 hreflang="{{ $alternate['locale'] }}"
                 lang="{{ $alternate['locale'] }}"
+                data-turbo="false"
                 @if ($alternate['locale'] === $page->locale) aria-current="true" @endif
                 class="flex items-center gap-3 rounded-sm px-3 py-2 text-small text-on-inverse no-underline hover:text-on-inverse-strong hover:no-underline {{ $alternate['locale'] === $page->locale ? 'bg-on-inverse-selected' : '' }}"
             >

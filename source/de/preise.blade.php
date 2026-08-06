@@ -1,7 +1,6 @@
 ---
 locale: de
 page: pricing
-alpine: true
 ---
 @extends('_layouts.base')
 
