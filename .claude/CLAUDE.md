@@ -82,6 +82,7 @@ Three helpers, and the distinction matters:
 1. Add its key and one slug per locale to `routes` in `config.php`.
 2. Create one Blade file per locale, named after that locale's slug.
 3. Add its copy to every `lang/` file.
+4. Add its key to the `lastmod` map in `config.php`. The sitemap throws without it.
 
 ### Adding a locale
 
@@ -163,6 +164,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 - hreflang is emitted for every locale **including the current one**. Reciprocity is what makes the cluster credible.
 - `og:locale` needs `language_TERRITORY` (`fr_FR`), from `ogLocales`. hreflang uses the bare code, so the two differ on purpose.
 - `source/sitemap.blade.xml` builds the sitemap by walking `routes` and `locales`, with `xhtml:link` hreflang annotations. It is named `.blade.xml` so Jigsaw writes `sitemap.xml` rather than `sitemap.html`. Its XML declaration is echoed as a string, because a literal `<?xml` would be parsed as a PHP open tag.
+- **`lastmod` is hand-kept, never the build date.** Three sources, one per family of URL: an ordinary page reads the `lastmod` map in `config.php` (via `$page->lastmodFor($key)`, which throws on a key with no entry), a post reads `$post->lastmodDate()`, and a page of the blog index reads the newest post it lists. Nothing derives it from a file's mtime or from the deploy, because a sitemap that claims every page changed on every deploy teaches a crawler to ignore the field. Move a date when the copy changes in a way a reader would notice, not for a refactor behind identical text.
 - `source/index.blade.php` and `source/404.blade.php` both set an explicit `permalink`, because pretty URLs would otherwise write them to `index/index.html` and `404/index.html`. Both carry `noindex`, and neither is in the sitemap.
 
 ### The JSON-LD graph
@@ -229,13 +231,15 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 **Dates are timestamps.** YAML reads an unquoted `date: 2018-10-12` as a date and hands it back as ten digits, so anything that displays a date or gives one to a crawler calls `$post->isoDate()`. `readingMinutes()` and `authorInitials()` are collection helpers alongside it.
 
+**`updated` is the one fact about a post that may differ between languages.** It is optional front matter, it feeds `$post->lastmodDate()` and through it the sitemap's `lastmod`, and it falls back to `date` because a post nobody has touched was last modified when it was published. Per locale on purpose: the slug and the date are the same fact in five files, but a French translation corrected on its own should say so without moving the other four. Set it only for a change a reader would notice.
+
 `.mn-prose` in `source/_assets/css/prose.css` styles the rendered Markdown. It is the one place on the site that styles by element rather than by class, because the markup is generated and there is nothing to hang a utility on. Nothing else belongs in that file.
 
 **The feed** is RSS 2.0 at `/<locale>/blog/feed.xml`, the 20 newest posts with their full bodies. `feedContent()` rewrites every `src` and `href` to an absolute URL first, because a feed is read on someone else's host and root-relative markup resolves against that host instead of ours. `rfcDate()` exists because RSS accepts only RFC 2822 dates. `lastBuildDate` is the newest post's date rather than the build's, so rebuilding the site does not tell every reader the feed changed.
 
 Autodiscovery (`rel="alternate" type="application/rss+xml"`) is in `_layouts/base.blade.php`, so it is on every page rather than only the blog: the page someone is on when they decide to subscribe is rarely the index. It points at the current locale's feed. That is safe under Turbo for the same reason `<html lang>` is: the link is identical across a locale, and crossing locales is a full page load because the locale picker carries `data-turbo="false"`.
 
-Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in **every** `source/_posts_<locale>/` with `title`, `slug`, `date`, `author` and `description`, and nothing else to register. The same slug and the same date in all five, the title, the description and the body translated. A post present in one language and missing in another fails the dead-link check, because the sitemap lists it for every locale.
+Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in **every** `source/_posts_<locale>/` with `title`, `slug`, `date`, `author` and `description` (plus `updated` once it has been changed), and nothing else to register. The same slug and the same date in all five, the title, the description and the body translated. A post present in one language and missing in another fails the dead-link check, because the sitemap lists it for every locale.
 
 See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
 
