@@ -11,16 +11,16 @@ Je n'aime pas Facebook. Ce n'est un secret pour personne. Mais malgré leur noci
 
 Les événements de vie sont désormais un nouvel onglet de la page Profil d'un contact.
 
-![image](/assets/images/blog/2018-10-12-life-events-blank.webp)
+![L'onglet des événements de vie d'un contact, vide, proposant d'ajouter le premier.](/assets/images/blog/2018-10-12-life-events-blank.webp)
 
 Vous avez accès à plus de 45 événements de vie que vous pouvez documenter. Vous pouvez aussi définir un rappel pour chacun d'eux.
 
-![image](/assets/images/blog/2018-10-12-life-events-list.webp)
+![La liste des événements de vie à choisir, dans la catégorie maison et logement.](/assets/images/blog/2018-10-12-life-events-list.webp)
 
 Notez que vous pouvez ajouter un événement sans en connaître le mois ni le jour.
 
 Une fois ajouté, un événement de vie apparaît sur une frise qui sera améliorée dans une prochaine version.
 
-![image](/assets/images/blog/2018-10-12-life-events-details.webp)
+![Deux événements de vie sur la fiche d'un contact, un mariage et des travaux, chacun avec sa date.](/assets/images/blog/2018-10-12-life-events-details.webp)
 
 J'espère que cette fonctionnalité vous plaira et que vous vous amuserez avec.

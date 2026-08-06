@@ -17,7 +17,7 @@ mantém com as pessoas queridas.
 Para atender a esse caso, estamos lançando o suporte a vários usuários em uma
 única conta.
 
-![Imagem representando o suporte a vários usuários](/assets/images/blog/2017-06-20-multi-user-support.webp)
+![As configurações de usuários da Monica, vazias, oferecendo convidar outra pessoa para a conta.](/assets/images/blog/2017-06-20-multi-user-support.webp)
 
 Os usuários são adicionados por e-mail. Como medida de segurança, a pessoa que
 você convidar terá que informar, no momento do cadastro, o e-mail do usuário que

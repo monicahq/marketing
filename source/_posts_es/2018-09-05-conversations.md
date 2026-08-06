@@ -11,7 +11,7 @@ En el fondo, Monica sirve para registrar información sobre las personas que te 
 
 Con nuestra [última actualización](https://github.com/monicahq/monica/releases) ya puedes registrar una conversación que hayas tenido con alguien en redes sociales, por SMS o usando Telegram, por ejemplo. La interfaz que hemos elegido imita la de las aplicaciones de mensajería más conocidas.
 
-![imagen](/assets/images/blog/2018-09-05-conversations.webp)
+![El formulario para registrar una conversación, mensaje a mensaje, indicando quién escribió cada uno.](/assets/images/blog/2018-09-05-conversations.webp)
 
 Al registrar una conversación puedes indicar por qué medio la tuviste. Esa lista sale de los tipos de campo de contacto definidos en tu página de Ajustes.
 

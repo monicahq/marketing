@@ -17,7 +17,7 @@ In diesen Monaten haben wir viel Mühe darauf verwendet, alles zu schaffen, was 
 
 Sechs Monate später freuen wir uns, die erste Version der mobilen Anwendung ankündigen zu können, verfügbar [für iOS](https://itunes.apple.com/ca/app/monica-personal-crm/id1339447754?mt=8) und [Android](https://play.google.com/store/apps/details?id=com.monicahq.app).
 
-![Bild](/assets/images/blog/2018-05-28-mobile-app.webp)
+![Monicas mobile Anwendung auf drei Telefonen: ein Kontakteintrag, die leere Kontaktliste und der Aktivitätenbildschirm.](/assets/images/blog/2018-05-28-mobile-app.webp)
 
 Ein Vorbehalt allerdings: *Diese erste Version ist nur lesend*. Sie können also nichts anlegen oder bearbeiten. Wir wollen eine großartige Anwendung, aber wir wollen langsam vorgehen und sicherstellen, dass sie gut funktioniert. Sobald wir sicher sind, dass diese Version für alle läuft, ergänzen wir Funktionen, mit denen Sie Ihre Daten vollständig bearbeiten können (kleiner Hinweis: Wir haben bereits mit einer neuen Version begonnen).
 

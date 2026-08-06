@@ -11,4 +11,4 @@ Quand j'ai lancé Monica l'an dernier, je n'avais pas réalisé que proposer seu
 
 C'est pourquoi nous introduisons la notion de genres personnalisés. Par défaut, chaque compte est toujours livré avec trois genres (masculin, féminin et autre), mais vous pouvez désormais personnaliser cette liste, ajouter ou supprimer des genres à votre guise. C'est vous qui déciderez quels genres les personnes peuvent avoir. Même s'il faut se garder d'ajouter trop d'options dans Monica, c'est un cas où vous, l'utilisateur, devez garder la main sur votre réalité.
 
-![image](/assets/images/blog/2018-02-16-custom-genders.webp)
+![L'écran de réglages listant les genres du compte, chacun avec le nombre de contacts qui l'utilisent.](/assets/images/blog/2018-02-16-custom-genders.webp)

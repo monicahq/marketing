@@ -13,6 +13,6 @@ C'est pourquoi nous avons ajouté la possibilité de renseigner une date sans en
 
 Ce changement s'applique aux dates de naissance, aux dates de première rencontre et aux dates de décès. Les rappels liés à ces dates fonctionnent comme avant.
 
-![image](/assets/images/blog/2017-12-14-year-unknown.webp)
+![Le formulaire de date de naissance, avec un mois et un jour choisis et l'année laissée inconnue.](/assets/images/blog/2017-12-14-year-unknown.webp)
 
 Cette fonctionnalité était l'une des [plus demandées](https://github.com/monicahq/monica/issues/75) dans notre [suivi des tickets](https://github.com/monicahq/monica/issues). Nous espérons qu'elle vous aidera à enregistrer davantage d'informations sur vos amis et les membres de votre famille.

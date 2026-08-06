@@ -11,4 +11,4 @@ Manter traduções é realmente penoso. Ainda não encontrei um projeto em que i
 
 Graças ao Crowdin e ao seu generoso programa para código aberto, agora você pode usar uma ferramenta bem simples para traduzir o Monica para o idioma que quiser. O projeto está em [https://crowdin.com/project/monicahq](https://crowdin.com/project/monicahq) e pedirá que você crie uma conta se quiser contribuir. Não hesite em [abrir uma issue](https://github.com/monicahq/monica/issues) se quiser traduzir um idioma que ainda não temos.
 
-![imagem](/assets/images/blog/2018-02-25-crowdin.webp)
+![O projeto da Monica no Crowdin, com cada idioma e o quanto sua tradução avançou.](/assets/images/blog/2018-02-25-crowdin.webp)

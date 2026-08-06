@@ -40,7 +40,9 @@
 
             return "<h{$match[1]} id=\"{$id}\">{$match[2]}</h{$match[1]}>";
         },
-        $page->getContent(),
+        // Not getContent(): bodyHtml() is the same markup with every image
+        // given its dimensions and lazy loading. See config.php.
+        $page->bodyHtml(),
     );
 
     // One heading is a title, not a table of contents.

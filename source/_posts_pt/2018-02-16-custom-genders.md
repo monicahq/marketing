@@ -11,4 +11,4 @@ Quando lancei o Monica no ano passado, não percebi que oferecer apenas dois gê
 
 Por isso estamos introduzindo a ideia de gêneros personalizados. Por padrão, cada conta continua vindo com três gêneros (masculino, feminino e outro), mas agora você pode personalizar essa lista, acrescentando ou removendo gêneros à vontade. Você é quem decide quais gêneros as pessoas podem ter. Embora devamos tomar cuidado para não acrescentar opções demais no Monica, este é um caso em que você, usuário, precisa ter o controle sobre qual é a sua realidade.
 
-![imagem](/assets/images/blog/2018-02-16-custom-genders.webp)
+![A tela de configurações com os gêneros da conta, cada um com o número de contatos que o usam.](/assets/images/blog/2018-02-16-custom-genders.webp)

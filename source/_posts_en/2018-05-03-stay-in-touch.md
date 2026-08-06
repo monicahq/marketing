@@ -9,7 +9,7 @@ original_url: https://www.monicahq.com/blog/stay-in-touch
 ---
 There are people in your life who are especially important and you don't want to miss anything about them. Now, you can use the new Stay in touch feature to receive an alert about a specific person at a regular interval, defined by you.
 
-![image](/assets/images/blog/2018-05-03-stayintouch.gif)
+![A contact's profile with the stay in touch link under the name.](/assets/images/blog/2018-05-03-stayintouch.gif)
 
 The feature sends an email that is sent every few days - it's not affected by the last time you've interacted with someone or recorded an activity.
 

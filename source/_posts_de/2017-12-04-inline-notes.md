@@ -9,11 +9,11 @@ original_url: https://www.monicahq.com/blog/inline-notes
 ---
 Notizen lassen sich jetzt als Favorit markieren. Favoriten sind eine gute Möglichkeit, Notizen im Blick zu behalten, die Sie interessant finden.
 
-![Bild](/assets/images/blog/2017-12-04-inline-notes.webp)
+![Notizen in einem Kontakteintrag, eine davon als Favorit markiert.](/assets/images/blog/2017-12-04-inline-notes.webp)
 
 Ist eine Notiz als Favorit markiert, erscheint sie in einem neuen Reiter der Übersicht namens `Wichtige Notizen`.
 
-![Bild](/assets/images/blog/2017-12-04-notes-dashboard.webp)
+![Der Reiter „Wichtige Notizen“ im Dashboard, der die favorisierten Notizen aller Kontakte sammelt.](/assets/images/blog/2017-12-04-notes-dashboard.webp)
 
 In dieser Veröffentlichung stecken noch ein paar Kleinigkeiten:
 

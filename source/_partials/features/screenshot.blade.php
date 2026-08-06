@@ -32,11 +32,20 @@
                  chrome: the border and the subtle surface are the whole of the
                  presentation. --}}
             <figure class="m-0 overflow-hidden rounded-lg border border-border bg-surface-subtle">
+                {{-- The one image on the site worth prioritising. It sits
+                     directly under the headline on all three feature pages,
+                     which makes it the largest thing in the first screenful
+                     and therefore the page's likely LCP element. Nowhere else
+                     carries `fetchpriority="high"`: handing it out twice tells
+                     the browser nothing, and the marks in the header and the
+                     footer are a few hundred bytes of SVG. --}}
                 <img
                     src="/assets/images/features/{{ $image }}.webp"
                     alt="{{ $feature['imageAlt'] }}"
                     width="{{ $width }}"
                     height="{{ $height }}"
+                    fetchpriority="high"
+                    decoding="async"
                     class="block h-auto w-full"
                 >
             </figure>

@@ -11,16 +11,16 @@ Ich mag Facebook nicht. Das ist kein Geheimnis. Doch trotz aller Schlechtigkeit 
 
 Lebensereignisse sind jetzt ein neuer Reiter auf der Profilseite eines Kontakts.
 
-![Bild](/assets/images/blog/2018-10-12-life-events-blank.webp)
+![Der Reiter für Lebensereignisse eines Kontakts, leer, mit dem Angebot, das erste hinzuzufügen.](/assets/images/blog/2018-10-12-life-events-blank.webp)
 
 Sie haben Zugriff auf mehr als 45 Lebensereignisse, die Sie dokumentieren können. Für jedes davon lässt sich außerdem eine Erinnerung setzen.
 
-![Bild](/assets/images/blog/2018-10-12-life-events-list.webp)
+![Die Liste der Lebensereignisse zur Auswahl, in der Kategorie Wohnen und Zuhause.](/assets/images/blog/2018-10-12-life-events-list.webp)
 
 Sie können ein Ereignis auch anlegen, ohne Monat oder Tag zu kennen.
 
 Ist ein Lebensereignis angelegt, erscheint es auf einem Zeitstrahl, den wir in einer kommenden Veröffentlichung verbessern werden.
 
-![Bild](/assets/images/blog/2018-10-12-life-events-details.webp)
+![Zwei Lebensereignisse in einem Kontakteintrag, eine Hochzeit und eine Renovierung, jeweils mit Datum.](/assets/images/blog/2018-10-12-life-events-details.webp)
 
 Ich hoffe, diese Funktion gefällt Ihnen und Sie haben Freude daran.

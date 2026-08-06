@@ -39,11 +39,16 @@
                     {{-- The white chip stays: the mark's body is near-black and
                          would disappear into the inverse surface without it. --}}
                     <span class="inline-flex rounded-sm bg-white p-0.5">
+                        {{-- The one mark on the site that is below the fold on
+                             every page, which is the only thing `lazy` is for.
+                             The header's copy of it stays eager. --}}
                         <img
                             src="/assets/images/monica-panda-mark.svg"
                             alt=""
                             width="32"
                             height="29"
+                            loading="lazy"
+                            decoding="async"
                             class="block h-auto w-[18px]"
                         >
                     </span>

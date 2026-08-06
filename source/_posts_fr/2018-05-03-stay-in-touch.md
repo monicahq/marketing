@@ -9,7 +9,7 @@ original_url: https://www.monicahq.com/blog/stay-in-touch
 ---
 Il y a dans votre vie des personnes particulièrement importantes dont vous ne voulez rien manquer. Vous pouvez désormais utiliser la nouvelle fonctionnalité « Garder le contact » pour recevoir une alerte à propos d'une personne précise, à l'intervalle de votre choix.
 
-![image](/assets/images/blog/2018-05-03-stayintouch.gif)
+![La fiche d'un contact avec le lien « rester en contact » sous le nom.](/assets/images/blog/2018-05-03-stayintouch.gif)
 
 La fonctionnalité envoie un email tous les quelques jours. Elle ne tient pas compte de la dernière fois où vous avez échangé avec quelqu'un ou enregistré une activité.
 

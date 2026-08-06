@@ -11,7 +11,7 @@ Im Kern geht es bei Monica darum, Informationen über die Menschen festzuhalten,
 
 Mit unserer [jüngsten Aktualisierung](https://github.com/monicahq/monica/releases) können Sie jetzt eine Unterhaltung festhalten, die Sie mit jemandem in einem sozialen Netzwerk, per SMS oder etwa über Telegram geführt haben. Die Oberfläche, die wir dafür gewählt haben, orientiert sich an bekannten Messenger-Programmen.
 
-![Bild](/assets/images/blog/2018-09-05-conversations.webp)
+![Das Formular zum Festhalten eines Gesprächs, Nachricht für Nachricht, mit Angabe, wer welche geschrieben hat.](/assets/images/blog/2018-09-05-conversations.webp)
 
 Beim Festhalten einer Unterhaltung können Sie angeben, über welchen Weg sie stattgefunden hat. Diese Liste stammt aus den Kontaktfeldtypen, die Sie in Ihren Einstellungen festgelegt haben.
 

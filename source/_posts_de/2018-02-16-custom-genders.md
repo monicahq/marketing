@@ -11,4 +11,4 @@ Als ich Monica im vergangenen Jahr veröffentlicht habe, war mir nicht klar, das
 
 Deshalb führen wir eigene Geschlechter ein. Standardmäßig bringt jedes Konto weiterhin drei Geschlechter mit (männlich, weiblich und divers), doch Sie können diese Liste jetzt anpassen und nach Belieben Geschlechter ergänzen oder entfernen. Sie entscheiden, welches Geschlecht Menschen haben können. Zwar sollten wir aufpassen, Monica nicht mit zu vielen Optionen zu überfrachten, doch hier müssen Sie als Nutzer die Hoheit über Ihre Wirklichkeit haben.
 
-![Bild](/assets/images/blog/2018-02-16-custom-genders.webp)
+![Der Einstellungsbildschirm mit den Geschlechtern des Kontos, jeweils mit der Zahl der Kontakte, die sie verwenden.](/assets/images/blog/2018-02-16-custom-genders.webp)

@@ -17,7 +17,7 @@ organisieren.
 Für diesen Anwendungsfall führen wir die Unterstützung mehrerer Benutzer in
 einem einzigen Konto ein.
 
-![Bild zur Unterstützung mehrerer Benutzer](/assets/images/blog/2017-06-20-multi-user-support.webp)
+![Monicas Benutzereinstellungen, leer, mit dem Angebot, jemanden zum Konto einzuladen.](/assets/images/blog/2017-06-20-multi-user-support.webp)
 
 Benutzer werden per E-Mail hinzugefügt. Als Sicherheitsmaßnahme muss die
 eingeladene Person bei der Registrierung die E-Mail-Adresse desjenigen

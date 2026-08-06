@@ -38,6 +38,54 @@ $isoDay = fn ($value) => is_numeric($value)
     : (string) $value;
 
 /**
+ * Gives every image in a rendered post body the attributes Markdown has no
+ * syntax for: its intrinsic size, lazy loading and asynchronous decoding.
+ *
+ * `![alt](src)` is the whole of what an author can say, so the alternative to
+ * doing this here is 195 Markdown files full of raw `<img>` tags, each
+ * repeating a number that is already a fact about the file on disk. The
+ * numbers are read from the file itself with getimagesize(), once per path
+ * per build, which is what keeps them true when an image is re-exported.
+ *
+ * Width and height are what stop the page jumping as each screenshot arrives:
+ * the browser can reserve the right box before it has a single byte of the
+ * image. The CSS still sizes it (`width: 100%; height: auto` in prose.css), so
+ * the attributes only ever supply the ratio.
+ *
+ * `loading="lazy"` on all of them, unconditionally, because every one of these
+ * images is inside a post body, under a title, a lede and a byline. There is
+ * no such thing as an above-the-fold image in this collection.
+ *
+ * An image whose file is missing keeps its markup and loses only the
+ * dimensions. Nothing is hidden by that: `src` values are checked against the
+ * build by scripts/links/check.php, which fails on the file that is not there
+ * rather than on the attribute that could not be worked out.
+ */
+$imageAttributes = function (string $html): string {
+    static $sizes = [];
+
+    return preg_replace_callback('/<img\b([^>]*?)\s*\/?>/i', function ($match) use (&$sizes) {
+        $attributes = rtrim($match[1]);
+
+        if (! preg_match('/\bsrc="([^"]+)"/i', $attributes, $src)) {
+            return $match[0];
+        }
+
+        $path = __DIR__ . '/source' . $src[1];
+
+        if (! array_key_exists($path, $sizes)) {
+            $sizes[$path] = is_file($path) ? (getimagesize($path) ?: null) : null;
+        }
+
+        if ($sizes[$path] && ! preg_match('/\bwidth=/i', $attributes)) {
+            $attributes .= " width=\"{$sizes[$path][0]}\" height=\"{$sizes[$path][1]}\"";
+        }
+
+        return "<img{$attributes} loading=\"lazy\" decoding=\"async\">";
+    }, $html);
+};
+
+/**
  * Everything a posts collection is, apart from where it reads and where it
  * writes. Shared by all five, so a change to the sort order or to a helper
  * cannot land in one language and miss the other four.
@@ -125,6 +173,17 @@ $postSettings = [
     },
 
     /**
+     * The rendered body as the page shows it: every image carrying its
+     * own dimensions, lazy loading and asynchronous decoding.
+     *
+     * See $imageAttributes above for why that is done here rather than
+     * written into the Markdown.
+     */
+    'bodyHtml' => function ($post) use ($imageAttributes) {
+        return $imageAttributes($post->getContent());
+    },
+
+    /**
      * The post body, with every URL made absolute, for the feed.
      *
      * A feed is read somewhere else: in a reader, in an email digest,
@@ -133,12 +192,16 @@ $postSettings = [
      * which is how a feed ends up full of broken screenshots. Both
      * `src` and `href` are rewritten, so images and internal links
      * survive the trip.
+     *
+     * Built on `bodyHtml`, so a subscriber gets the same dimensions the
+     * page has. A reader that ignores `loading` is no worse off for
+     * having been told.
      */
     'feedContent' => function ($post) {
         return preg_replace_callback(
             '/\b(src|href)="(\/[^"]*)"/',
             fn ($match) => $match[1] . '="' . $post->absolute($match[2]) . '"',
-            $post->getContent(),
+            $post->bodyHtml(),
         );
     },
 

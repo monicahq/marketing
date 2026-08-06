@@ -13,12 +13,12 @@ Standardmäßig werden Benachrichtigungen 30 Tage vor dem Ereignis verschickt, d
 
 Diese Benachrichtigungen lassen sich in Ihren Einstellungen unter Personalisierung abschalten.
 
-![Bild](/assets/images/blog/2018-03-02-reminder-rule.webp)
+![Die Erinnerungseinstellungen, mit den Benachrichtigungen 7 und 30 Tage vor einem Ereignis, beide aktiviert.](/assets/images/blog/2018-03-02-reminder-rule.webp)
 
 Benachrichtigungen betreffen nur monatliche und jährliche Erinnerungen, nicht wöchentliche.
 
 Sahnehäubchen: Sie können jetzt außerdem die Tageszeit festlegen, zu der Sie die Erinnerungs-E-Mails erhalten möchten.
 
-![Bild](/assets/images/blog/2018-03-02-hour.webp)
+![Die Kontoeinstellungen, darunter die Tageszeit, zu der die Erinnerungs-E-Mails verschickt werden.](/assets/images/blog/2018-03-02-hour.webp)
 
 Diese neuen Funktionen sind bereits in Produktion und erscheinen in v1.8.1, die in wenigen Tagen veröffentlicht wird, falls Sie Monica auf einem eigenen Server betreiben.

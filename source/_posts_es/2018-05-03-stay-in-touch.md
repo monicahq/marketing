@@ -9,7 +9,7 @@ original_url: https://www.monicahq.com/blog/stay-in-touch
 ---
 Hay personas en tu vida especialmente importantes de las que no quieres perderte nada. Ahora puedes usar la nueva función «Mantener el contacto» para recibir un aviso sobre una persona concreta cada cierto tiempo, con el intervalo que tú decidas.
 
-![imagen](/assets/images/blog/2018-05-03-stayintouch.gif)
+![La ficha de un contacto con el enlace «seguir en contacto» bajo el nombre.](/assets/images/blog/2018-05-03-stayintouch.gif)
 
 La función envía un correo cada pocos días. No tiene en cuenta la última vez que interactuaste con alguien ni cuándo registraste una actividad.
 
