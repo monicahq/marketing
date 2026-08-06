@@ -14,6 +14,26 @@ return [
     'meta' => [
         'imageAlt' => "Monica: lembre-se das pessoas com quem você se importa. O CRM pessoal de código aberto.",
 
+        'breadcrumb' => [
+            'home' => "Início",
+            'v3' => "Monica v3",
+            'pricing' => "Preços",
+            'features' => "Recursos",
+            'featuresDashboard' => "Painel",
+            'featuresJournal' => "Diário",
+            'blog' => "Blog",
+            'terms' => "Termos de uso",
+            'team' => "Equipe",
+            'privacy' => "Política de privacidade",
+            'page' => "Página :number",
+        ],
+
+        'software' => [
+            'monthly' => "Monica hospedada, cobrança mensal",
+            'yearly' => "Monica hospedada, cobrança anual",
+            'selfHosted' => "Monica auto-hospedada",
+        ],
+
         'home' => [
             'title' => "Monica — o CRM pessoal de código aberto",
             'description' => "A Monica ajuda você a lembrar das pessoas com quem se importa: o que está acontecendo na vida delas, as datas importantes, as conversas anteriores e quando voltar a falar. Privado, de código aberto, com hospedagem própria.",

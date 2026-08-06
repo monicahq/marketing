@@ -10,6 +10,26 @@ return [
     'meta' => [
         'imageAlt' => "Monica : souvenez-vous des gens qui comptent pour vous. Le CRM personnel open source.",
 
+        'breadcrumb' => [
+            'home' => "Accueil",
+            'v3' => "Monica v3",
+            'pricing' => "Tarifs",
+            'features' => "Fonctionnalités",
+            'featuresDashboard' => "Tableau de bord",
+            'featuresJournal' => "Journal",
+            'blog' => "Blog",
+            'terms' => "Conditions d’utilisation",
+            'team' => "Équipe",
+            'privacy' => "Politique de confidentialité",
+            'page' => "Page :number",
+        ],
+
+        'software' => [
+            'monthly' => "Monica hébergée, facturée au mois",
+            'yearly' => "Monica hébergée, facturée à l’année",
+            'selfHosted' => "Monica auto-hébergée",
+        ],
+
         'home' => [
             'title' => "Monica — le CRM personnel open source",
             'description' => "Monica vous aide à vous souvenir des gens qui comptent : ce qui se passe dans leur vie, les dates importantes, vos conversations passées et le moment de reprendre contact. Privé, open source, auto-hébergeable.",

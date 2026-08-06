@@ -39,7 +39,7 @@ final class LinkCheck
      * else in the graph, '@id' above all, is an identifier that happens to be
      * spelled like a URL and is never meant to resolve.
      */
-    private const JSON_LD_URL_KEYS = ['url', 'logo', 'image', 'sameAs', 'contentUrl', 'thumbnailUrl'];
+    private const JSON_LD_URL_KEYS = ['url', 'logo', 'image', 'sameAs', 'contentUrl', 'thumbnailUrl', 'item', 'license'];
 
     private array $errors = [];
 

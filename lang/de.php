@@ -10,6 +10,26 @@ return [
     'meta' => [
         'imageAlt' => "Monica: Erinnern Sie sich an die Menschen, die Ihnen wichtig sind. Das quelloffene persönliche CRM.",
 
+        'breadcrumb' => [
+            'home' => "Startseite",
+            'v3' => "Monica v3",
+            'pricing' => "Preise",
+            'features' => "Funktionen",
+            'featuresDashboard' => "Dashboard",
+            'featuresJournal' => "Tagebuch",
+            'blog' => "Blog",
+            'terms' => "Nutzungsbedingungen",
+            'team' => "Team",
+            'privacy' => "Datenschutzerklärung",
+            'page' => "Seite :number",
+        ],
+
+        'software' => [
+            'monthly' => "Gehostete Monica, monatlich abgerechnet",
+            'yearly' => "Gehostete Monica, jährlich abgerechnet",
+            'selfHosted' => "Selbst gehostete Monica",
+        ],
+
         'home' => [
             'title' => "Monica — das quelloffene persönliche CRM",
             'description' => "Monica hilft Ihnen, sich an die Menschen zu erinnern, die Ihnen wichtig sind: was in ihrem Leben passiert, wichtige Daten, frühere Gespräche und wann Sie sich wieder melden sollten. Privat, quelloffen, selbst hostbar.",

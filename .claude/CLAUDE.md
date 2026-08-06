@@ -167,6 +167,24 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 - **`lastmod` is hand-kept, never the build date.** Three sources, one per family of URL: an ordinary page reads the `lastmod` map in `config.php` (via `$page->lastmodFor($key)`, which throws on a key with no entry), a post reads `$post->lastmodDate()`, and a page of the blog index reads the newest post it lists. Nothing derives it from a file's mtime or from the deploy, because a sitemap that claims every page changed on every deploy teaches a crawler to ignore the field. Move a date when the copy changes in a way a reader would notice, not for a refactor behind identical text.
 - `source/index.blade.php` and `source/404.blade.php` both set an explicit `permalink`, because pretty URLs would otherwise write them to `index/index.html` and `404/index.html`. Both carry `noindex`, and neither is in the sitemap.
 
+### The JSON-LD graph
+
+One `@graph` per page, whose nodes reference each other by `@id` instead of repeating themselves. Two of them are site-wide and keep a fixed `@id` on every page in every locale (`/#organization`, `/#website`), so a crawler reading fifty pages sees one organisation rather than fifty. The rest are per page and hang their `@id` off the canonical, which is unique by construction.
+
+| Node | Where | `@id` |
+| :--- | :--- | :--- |
+| `Organization` | every page | `/#organization` |
+| `WebSite` | every page | `/#website` |
+| `WebPage` | every page | `<canonical>#webpage` |
+| `BreadcrumbList` | any page with more than one crumb | `<canonical>#breadcrumb` |
+| `SoftwareApplication` | homepage and pricing | `/#software` |
+| `BlogPosting` | posts | `<canonical>#post` |
+
+- **The `WebPage` type is chosen per page**: `CollectionPage` for the blog index, `AboutPage` for the team page, `WebPage` for everything else including a post, which carries its `BlogPosting` alongside rather than instead.
+- **The breadcrumb trail is built from the route key**, and its labels are `meta.breadcrumb.*` in `lang/`, one per route key, kept apart from `nav` because a nav label is written to be scanned and a crumb is read out in a search result. The homepage gets no trail: a single crumb states that the root is the root.
+- **`SoftwareApplication` is only on the two pages that are about buying the product.** Its three offers read their prices from `plans` in `config.php`, as bare numbers, because a crawler wants `9.00` and `USD` while a reader wants `$9`. Those two are the only pair on the site that can disagree without anything failing, so **a price change is an edit in `config.php` and an edit in five `lang/` files.** No `aggregateRating`: there is no review data, and inventing one is the fastest way to a manual action.
+- `scripts/links/check.php` resolves JSON-LD values under the keys in `JSON_LD_URL_KEYS`, which is what checks every breadcrumb `item`. `@id` is deliberately not in that list: it is an identifier spelled like a URL and is never meant to resolve.
+
 Social cards are `source/og/monica-<locale>.png`, one per language, 1200x630. They are generated from `scripts/og/template.html` by `npm run og`, which drives headless Chrome. The PNGs are committed so a build never depends on a browser being installed. **The template mirrors the hero copy by hand**, so when a hero headline changes in `lang/`, update the template and re-run `npm run og`.
 
 The template is opened over `file://`, outside the build, so it resolves the webfont and the panda mark by relative path from `scripts/og/`. Chrome fails those silently: a missing font falls back to a system sans and a missing mark just leaves a gap, in an image nobody looks at until it is on X. Moving either asset means editing the two URLs in the template, and the way to check is to open the output, not to trust the exit code.
