@@ -1,0 +1,110 @@
+/* ---------------------------------------------------------------------------
+   .mn-prose — the body of a blog post.
+
+   The one place on this site where the markup is not ours to put classes on:
+   Jigsaw renders a post's Markdown to plain <p>, <h2>, <ul>, <img> and friends,
+   so it has to be styled by element. Everywhere else, repeated markup becomes a
+   Blade partial and the classes go in the template; that is not available here,
+   which is why this file exists and why nothing else belongs in it.
+
+   Every value is a design-system token. In the components layer, so a utility
+   in the markup still wins.
+   --------------------------------------------------------------------------- */
+
+.mn-prose {
+  font-size: var(--text-copy-lg);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+
+.mn-prose > :first-child {
+  margin-top: 0;
+}
+
+.mn-prose p {
+  margin: 0 0 var(--space-5);
+}
+
+.mn-prose h2 {
+  margin: var(--space-10) 0 var(--space-4);
+  font-size: var(--text-heading-sm);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+
+.mn-prose h3 {
+  margin: var(--space-8) 0 var(--space-3);
+  font-size: var(--text-copy-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Bullets are drawn rather than listed, so the marker sits on the same 5px dot
+   the design uses elsewhere and long items wrap flush with their first line. */
+.mn-prose ul {
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mn-prose li {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.mn-prose li::before {
+  content: "";
+  flex: none;
+  width: 5px;
+  height: 5px;
+  margin-top: 11px;
+  border-radius: 50%;
+  background: var(--color-border-strong);
+}
+
+.mn-prose blockquote {
+  margin: var(--space-8) 0;
+  padding: 0 0 0 var(--space-5);
+  border-left: 2px solid var(--color-text);
+  font-size: var(--text-lede);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.mn-prose code {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  color: var(--color-text);
+}
+
+/* A screenshot gets a 1px border and an 8px radius and nothing else: no shadow,
+   no browser chrome, no device frame. Several of these are animated GIFs of the
+   product, which is the same thing moving. */
+.mn-prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: var(--space-8) 0;
+  border: var(--border-standard);
+  border-radius: var(--radius-lg);
+}
+
+/* Markdown wraps a lone image in its own paragraph. Without this the image
+   carries the paragraph's bottom margin on top of its own. */
+.mn-prose p:has(> img:only-child) {
+  margin: 0;
+}
+
+/* Anchors for "on this page". Without it the sticky header covers the heading
+   the reader just jumped to. */
+.mn-prose :target {
+  scroll-margin-top: var(--space-6);
+}

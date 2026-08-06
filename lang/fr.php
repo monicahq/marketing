@@ -20,6 +20,21 @@ return [
             'description' => "Monica hébergée coûte 9 USD par mois ou 90 USD par an, avec des contacts illimités et aucun tarif au contact. Ou hébergez gratuitement l'application open source sur votre propre infrastructure.",
         ],
 
+        'blog' => [
+            'title' => "Le blog de Monica — notes de version et choix de conception",
+            'description' => "Ce que nous livrons, pourquoi nous le construisons ainsi, et à quoi ressemble vraiment une petite entreprise open source. Écrit par les personnes qui font Monica.",
+        ],
+
+        // Un article apporte son propre titre et sa propre description : il ne
+        // reste ici que le cadre que le site met autour.
+        'post' => [
+            'title' => ":title — le blog de Monica",
+        ],
+
+        // La page 2 d'une liste n'est pas la liste. Sans cela, quatre pages du
+        // blog se disputent un même résultat sous un même titre.
+        'paginated' => ":title (page :page sur :total)",
+
         'v3' => [
             'title' => "Monica v3 — reconstruite pour les dix prochaines années",
             'description' => "Monica v3 est une reconstruction complète du CRM personnel open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source, désormais sous licence MIT. Avant la fin de 2026.",
@@ -602,6 +617,53 @@ return [
         'since' => "Open source depuis 2017",
         'ownership' => "Vos données restent les vôtres.",
         'languageLabel' => "Changer de langue",
+    ],
+
+    'blog' => [
+        'title' => "Blog",
+        'lede' => "Notes sur la construction de Monica, sur la confidentialité des données personnelles et sur la petite mécanique du fait de rester en contact.",
+
+        'allPosts' => "Tous les articles",
+        'keepReading' => "À lire ensuite",
+        'onThisPage' => "Sur cette page",
+        'latest' => "Derniers articles",
+
+        'readingTime' => ":count min de lecture",
+
+        // Tous les articles ont le même auteur pour l'instant. Ce libellé vit
+        // ici plutôt que dans l'en-tête de chaque article, parce que c'est une
+        // étiquette du site et qu'elle doit se traduire comme telle.
+        'authorRole' => "Fondateur",
+
+        'copyLink' => "Copier le lien",
+        'copyLinkDone' => "Copié",
+
+        'showing' => "Articles :from à :to sur :total",
+        'pageOf' => "Page :page sur :total",
+        'newerPosts' => "Articles plus récents",
+        'olderPosts' => "Articles plus anciens",
+
+        'tryMonica' => [
+            'title' => "Essayer Monica",
+            'body' => "Un CRM personnel privé et open source pour se souvenir des gens qui comptent. Auto-hébergez-le, ou laissez-nous nous en charger.",
+            'bodyPost' => "Gardez le fil des gens de votre vie sans les confier à une base de données publicitaire.",
+            'cta' => "Commencer",
+            'note' => "Essai de 30 jours · Aucune carte bancaire requise",
+        ],
+
+        'newsletter' => [
+            'title' => "Infolettre",
+            'body' => "Un e-mail par mois : ce qui a changé dans Monica, et ce sur quoi nous travaillons ensuite.",
+            'label' => "Adresse e-mail",
+            'placeholder' => "vous@exemple.com",
+            'cta' => "S'abonner",
+            'note' => "Désabonnement en un clic. Nous ne partageons jamais votre adresse.",
+        ],
+
+        'openSource' => [
+            'title' => "Open source",
+            'body' => "Monica est open source depuis le premier jour. Lisez le code, faites tourner votre propre instance, proposez un correctif.",
+        ],
     ],
 
     'notFound' => [

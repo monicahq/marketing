@@ -30,6 +30,21 @@ return [
             'description' => "Hosted Monica is $9 USD per month or $90 per year, with unlimited contacts and no per-contact pricing. Or self-host the open-source application for free on your own infrastructure.",
         ],
 
+        'blog' => [
+            'title' => "The Monica blog — release notes and product decisions",
+            'description' => "What we ship, why we build it that way, and what running a small open-source company actually looks like. Written by the people making Monica.",
+        ],
+
+        // A post brings its own title and description, so this is only the
+        // frame the site puts around them.
+        'post' => [
+            'title' => ":title — the Monica blog",
+        ],
+
+        // Page 2 of a list is not the list. Without this, four pages of the
+        // blog compete for one result under one title.
+        'paginated' => ":title (page :page of :total)",
+
         'v3' => [
             'title' => "Monica v3 — rebuilt for the next ten years",
             'description' => "Monica v3 is a ground-up rebuild of the open-source personal CRM: records you design, a journal connected to everything, a complete API, and a proper mobile experience. Still open source, now MIT licensed. Coming before the end of 2026.",
@@ -613,6 +628,53 @@ return [
         'since' => "Open source since 2017",
         'ownership' => "Your data stays yours.",
         'languageLabel' => "Change language",
+    ],
+
+    'blog' => [
+        'title' => "Blog",
+        'lede' => "Notes on building Monica, keeping personal data private, and the small mechanics of staying in touch.",
+
+        'allPosts' => "All posts",
+        'keepReading' => "Keep reading",
+        'onThisPage' => "On this page",
+        'latest' => "Latest posts",
+
+        'readingTime' => ":count min read",
+
+        // Every post so far has the same author. Kept in lang/ rather than in
+        // each post's front matter for that reason: it is a label on the site,
+        // and it has to be translated like one.
+        'authorRole' => "Founder",
+
+        'copyLink' => "Copy link",
+        'copyLinkDone' => "Copied",
+
+        'showing' => "Showing :from to :to of :total posts",
+        'pageOf' => "Page :page of :total",
+        'newerPosts' => "Newer posts",
+        'olderPosts' => "Older posts",
+
+        'tryMonica' => [
+            'title' => "Try Monica",
+            'body' => "A private, open-source personal CRM for remembering the people who matter. Self-host it, or let us run it.",
+            'bodyPost' => "Keep track of the people in your life without handing them to an advertising database.",
+            'cta' => "Get started",
+            'note' => "30-day trial · No credit card required",
+        ],
+
+        'newsletter' => [
+            'title' => "Newsletter",
+            'body' => "One email a month: what changed in Monica, and what we are working on next.",
+            'label' => "Email address",
+            'placeholder' => "you@example.com",
+            'cta' => "Subscribe",
+            'note' => "Unsubscribe in one click. We never share your address.",
+        ],
+
+        'openSource' => [
+            'title' => "Open source",
+            'body' => "Monica has been open source since the beginning. Read the code, run your own instance, send a patch.",
+        ],
     ],
 
     'notFound' => [
