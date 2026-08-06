@@ -137,6 +137,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Blog templates                      | `source/_layouts/post.blade.php`, `source/_partials/blog/` |
 | Blog post body styling              | `source/_assets/css/prose.css`                      |
 | Blog RSS feed                       | `source/_partials/blog/feed.blade.php`, `source/<locale>/blog/feed.blade.xml` |
+| Terms of use                        | `source/_partials/terms/document.blade.php`, copy in `lang/<locale>.php` |
 | Copy                                | `lang/<locale>.php`                                 |
 | Routes, helpers, links, locales     | `config.php`                                        |
 | Production domain                   | `config.production.php`                             |
@@ -183,9 +184,19 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 - **No new dependencies without asking**, Composer or npm.
 - **Marketing copy is the owner's call.** Draft it when asked, but don't rewrite existing headlines, pricing or product claims as a side effect of an unrelated change.
 
+## The terms of use
+
+`/en/terms/`, and a translated slug per locale. The content is the terms published at monicahq.com/terms, copied word for word.
+
+**`lang/en.php` is authoritative.** It is the wording that was actually published; the other three are translations of it, and each carries a comment saying so. Change English first, then the translations, or the four quietly stop being the same document.
+
+The whole document lives in `terms.sections` rather than in the markup, because it is translated four ways and a legal text with its sentences spread across four Blade files is a legal text that goes out of sync. A section is a title plus an ordered run of blocks; a block with `items` renders as a list, anything else as a paragraph. That keeps the author's order, which a fixed paragraphs-then-list shape would not.
+
+**The translations have not been reviewed by a lawyer or a native speaker.** They were produced for this repository, not vetted. The warranty disclaimer in the last section is the part where that matters.
+
 ## Known gaps
 
-The homepage, pricing, the v3 teaser and the blog exist. Features and docs are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The blog's newsletter box has no endpoint yet and posts to `links.newsletter`, which is a placeholder like `links.launchList`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+The homepage, pricing, the v3 teaser, the blog and the terms of use exist. Features, docs and the privacy policy are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The blog's newsletter box has no endpoint yet and posts to `links.newsletter`, which is a placeholder like `links.launchList`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 
 ## The blog
 

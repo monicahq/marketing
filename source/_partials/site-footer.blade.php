@@ -22,6 +22,9 @@
                 ['label' => $page->t('footer.github'), 'href' => $page->links['github']],
                 ['label' => $page->t('nav.blog'), 'href' => $page->route('blog')],
                 ['label' => $page->t('footer.privacy'), 'href' => $page->links['privacy']],
+                // Nothing else on the site links here, and a terms page nobody
+                // can reach is not a terms page.
+                ['label' => $page->t('footer.terms'), 'href' => $page->route('terms')],
             ],
         ],
     ];

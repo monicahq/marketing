@@ -20,6 +20,11 @@ return [
             'description' => "Monica alojada cuesta 9 USD al mes o 90 USD al año, con contactos ilimitados y sin precio por contacto. O aloja gratis la aplicación de código abierto en tu propia infraestructura.",
         ],
 
+        'terms' => [
+            'title' => "Condiciones de uso — Monica",
+            'description' => "Las condiciones de uso de Monica, el CRM personal de código abierto: qué cubre el servicio, tus derechos sobre tus datos, tus responsabilidades y la letra pequeña legal.",
+        ],
+
         'blog' => [
             'title' => "El blog de Monica — notas de versión y decisiones de producto",
             'description' => "Qué publicamos, por qué lo construimos así y cómo es de verdad llevar una pequeña empresa de código abierto. Escrito por quienes hacen Monica.",
@@ -613,6 +618,7 @@ return [
         'selfHosting' => "Autoalojamiento",
         'github' => "GitHub",
         'privacy' => "Privacidad",
+        'terms' => "Condiciones de uso",
         'copyright' => "© :year Monica",
         'since' => "De código abierto desde 2017",
         'ownership' => "Tus datos siguen siendo tuyos.",
@@ -663,6 +669,66 @@ return [
         'openSource' => [
             'title' => "Código abierto",
             'body' => "Monica es de código abierto desde el principio. Lee el código, ejecuta tu propia instancia, envía un parche.",
+        ],
+    ],
+
+    /**
+     * Traducción de las condiciones publicadas en monicahq.com/terms. La
+     * versión inglesa de lang/en.php es la que prevalece: es la que se publicó,
+     * y es la que hay que modificar primero.
+     */
+    'terms' => [
+        'title' => "Nuestras condiciones de uso",
+        'updated' => "Última actualización: :date",
+        'updatedOn' => "12 de abril de 2018",
+
+        'sections' => [
+            [
+                'title' => "Alcance del servicio",
+                'blocks' => [
+                    ['text' => "Monica es compatible con los siguientes navegadores:"],
+                    ['items' => [
+                        "Internet Explorer (11+)",
+                        "Firefox (50+)",
+                        "Chrome (última versión)",
+                        "Safari (última versión)",
+                    ]],
+                    ['text' => "No garantizo que el sitio funcione con otros navegadores, pero es muy probable que sencillamente funcione."],
+                ],
+            ],
+            [
+                'title' => "Derechos",
+                'blocks' => [
+                    ['text' => "No tienes que facilitar tu nombre real al registrar una cuenta. Sí necesitas, en cambio, una dirección de correo válida si quieres pasar tu cuenta a la versión de pago o recibir recordatorios por correo."],
+                    ['text' => "Tienes derecho a cerrar tu cuenta en cualquier momento."],
+                    ['text' => "Tienes derecho a exportar tus datos en cualquier momento, en formato SQL."],
+                    ['text' => "Tus datos no se mostrarán intencionadamente a otras personas usuarias ni se compartirán con terceros."],
+                    ['text' => "Tus datos personales no se compartirán con nadie sin tu consentimiento."],
+                    ['text' => "Se hace una copia de seguridad de tus datos cada hora."],
+                    ['text' => "Si el sitio deja de funcionar, tendrás la oportunidad de exportar todos tus datos antes de que desaparezca."],
+                    ['text' => "Cualquier función nueva que afecte a la privacidad será estrictamente voluntaria."],
+                ],
+            ],
+            [
+                'title' => "Responsabilidades",
+                'blocks' => [
+                    ['text' => "No usarás el sitio para almacenar información o datos ilegales según la legislación canadiense (ni según ninguna otra legislación)."],
+                    ['text' => "Debes tener al menos 18 años para crear una cuenta y usar el sitio."],
+                    ['text' => "No debes abusar del sitio publicando a sabiendas código malicioso que pueda perjudicarte a ti o a otras personas usuarias."],
+                    ['text' => "Solo debes usar el sitio para hacer cosas ampliamente aceptadas como moralmente buenas."],
+                    ['text' => "No puedes hacer peticiones automatizadas al sitio."],
+                    ['text' => "No puedes abusar del sistema de invitaciones."],
+                    ['text' => "Eres responsable de mantener tu cuenta segura."],
+                    ['text' => "Me reservo el derecho de cerrar las cuentas que abusen del sistema (miles de contactos con cientos de miles de recordatorios, por ejemplo) o que lo usen de forma poco razonable."],
+                ],
+            ],
+            [
+                'title' => "Otras cuestiones legales importantes",
+                'blocks' => [
+                    ['text' => "Aunque quiero ofrecer un gran servicio, hay ciertas cosas que no puedo prometer sobre él. Por ejemplo, los servicios y el software se proporcionan «tal cual», bajo tu propia responsabilidad, sin garantía ni condición expresa o implícita de ningún tipo. También rechazo cualquier garantía de comerciabilidad, de idoneidad para un fin concreto o de no infracción. Monica no asumirá responsabilidad alguna por daños a tu sistema informático, por la pérdida o corrupción de datos, ni por cualquier otro perjuicio derivado de tu acceso a los servicios o al software, o de su uso."],
+                    ['text' => "Estas condiciones pueden cambiar en cualquier momento, pero nunca me portaré como un cabrón al hacerlo. Sacar adelante este sitio es un sueño hecho realidad para mí, y espero poder mantenerlo tanto tiempo como pueda."],
+                ],
+            ],
         ],
     ],
 

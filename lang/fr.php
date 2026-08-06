@@ -20,6 +20,11 @@ return [
             'description' => "Monica hébergée coûte 9 USD par mois ou 90 USD par an, avec des contacts illimités et aucun tarif au contact. Ou hébergez gratuitement l'application open source sur votre propre infrastructure.",
         ],
 
+        'terms' => [
+            'title' => "Conditions d'utilisation — Monica",
+            'description' => "Les conditions d'utilisation de Monica, le CRM personnel open source : ce que couvre le service, vos droits sur vos données, vos responsabilités et les mentions légales.",
+        ],
+
         'blog' => [
             'title' => "Le blog de Monica — notes de version et choix de conception",
             'description' => "Ce que nous livrons, pourquoi nous le construisons ainsi, et à quoi ressemble vraiment une petite entreprise open source. Écrit par les personnes qui font Monica.",
@@ -613,6 +618,7 @@ return [
         'selfHosting' => "Auto-hébergement",
         'github' => "GitHub",
         'privacy' => "Confidentialité",
+        'terms' => "Conditions d'utilisation",
         'copyright' => "© :year Monica",
         'since' => "Open source depuis 2017",
         'ownership' => "Vos données restent les vôtres.",
@@ -663,6 +669,66 @@ return [
         'openSource' => [
             'title' => "Open source",
             'body' => "Monica est open source depuis le premier jour. Lisez le code, faites tourner votre propre instance, proposez un correctif.",
+        ],
+    ],
+
+    /**
+     * Traduction des conditions publiées sur monicahq.com/terms. La version
+     * anglaise dans lang/en.php fait foi : c'est elle qui a été publiée, et
+     * c'est elle qu'il faut modifier en premier.
+     */
+    'terms' => [
+        'title' => "Nos conditions d'utilisation",
+        'updated' => "Dernière mise à jour : :date",
+        'updatedOn' => "12 avril 2018",
+
+        'sections' => [
+            [
+                'title' => "Portée du service",
+                'blocks' => [
+                    ['text' => "Monica prend en charge les navigateurs suivants :"],
+                    ['items' => [
+                        "Internet Explorer (11+)",
+                        "Firefox (50+)",
+                        "Chrome (dernière version)",
+                        "Safari (dernière version)",
+                    ]],
+                    ['text' => "Je ne garantis pas que le site fonctionnera avec d'autres navigateurs, mais il est très probable que ce soit simplement le cas."],
+                ],
+            ],
+            [
+                'title' => "Droits",
+                'blocks' => [
+                    ['text' => "Vous n'êtes pas obligé de fournir votre véritable nom lorsque vous créez un compte. Vous avez en revanche besoin d'une adresse e-mail valide si vous souhaitez passer à la version payante ou recevoir des rappels par e-mail."],
+                    ['text' => "Vous avez le droit de fermer votre compte à tout moment."],
+                    ['text' => "Vous avez le droit d'exporter vos données à tout moment, au format SQL."],
+                    ['text' => "Vos données ne seront pas intentionnellement montrées à d'autres utilisateurs ni partagées avec des tiers."],
+                    ['text' => "Vos données personnelles ne seront partagées avec personne sans votre consentement."],
+                    ['text' => "Vos données sont sauvegardées toutes les heures."],
+                    ['text' => "Si le site cesse son activité, vous aurez la possibilité d'exporter toutes vos données avant sa disparition."],
+                    ['text' => "Toute nouvelle fonctionnalité touchant à la vie privée sera strictement facultative."],
+                ],
+            ],
+            [
+                'title' => "Responsabilités",
+                'blocks' => [
+                    ['text' => "Vous n'utiliserez pas le site pour stocker des informations ou des données illégales au regard du droit canadien (ou de toute autre loi)."],
+                    ['text' => "Vous devez avoir au moins 18 ans pour créer un compte et utiliser le site."],
+                    ['text' => "Vous ne devez pas abuser du site en publiant sciemment du code malveillant susceptible de vous nuire ou de nuire aux autres utilisateurs."],
+                    ['text' => "Vous ne devez utiliser le site que pour des usages largement reconnus comme moralement bons."],
+                    ['text' => "Vous n'avez pas le droit d'adresser des requêtes automatisées au site."],
+                    ['text' => "Vous n'avez pas le droit d'abuser du système d'invitation."],
+                    ['text' => "Il vous appartient de garder votre compte sécurisé."],
+                    ['text' => "Je me réserve le droit de fermer les comptes qui abusent du système (des milliers de contacts assortis de centaines de milliers de rappels, par exemple) ou qui l'utilisent de manière déraisonnable."],
+                ],
+            ],
+            [
+                'title' => "Autres mentions légales importantes",
+                'blocks' => [
+                    ['text' => "Même si je veux offrir un excellent service, il y a certaines choses que je ne peux pas promettre à son sujet. Les services et les logiciels sont par exemple fournis « en l'état », à vos propres risques, sans garantie ni condition expresse ou implicite d'aucune sorte. Je décline également toute garantie de qualité marchande, d'adéquation à un usage particulier ou d'absence de contrefaçon. Monica ne saurait être tenue responsable d'un quelconque dommage causé à votre système informatique, d'une perte ou d'une corruption de données, ni de tout autre préjudice résultant de votre accès aux services ou aux logiciels, ou de leur utilisation."],
+                    ['text' => "Ces conditions peuvent changer à tout moment, mais je ne me comporterai jamais comme un salaud à ce sujet. Faire tourner ce site est un rêve devenu réalité, et j'espère pouvoir le faire aussi longtemps que possible."],
+                ],
+            ],
         ],
     ],
 

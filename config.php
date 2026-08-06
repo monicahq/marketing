@@ -185,6 +185,13 @@ return [
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.
         'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog'],
+
+        'terms' => [
+            'en' => 'terms',
+            'fr' => 'conditions-utilisation',
+            'de' => 'nutzungsbedingungen',
+            'es' => 'condiciones-de-uso',
+        ],
     ],
 
     // ------------------------------------------------------------------ links

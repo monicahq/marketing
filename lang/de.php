@@ -20,6 +20,11 @@ return [
             'description' => "Gehostete Monica kostet 9 USD pro Monat oder 90 USD pro Jahr, mit unbegrenzten Kontakten und ohne Preis pro Kontakt. Oder hosten Sie die quelloffene Anwendung kostenlos auf Ihrer eigenen Infrastruktur.",
         ],
 
+        'terms' => [
+            'title' => "Nutzungsbedingungen — Monica",
+            'description' => "Die Nutzungsbedingungen von Monica, dem quelloffenen persönlichen CRM: was der Dienst abdeckt, Ihre Rechte an Ihren Daten, Ihre Pflichten und das rechtliche Kleingedruckte.",
+        ],
+
         'blog' => [
             'title' => "Der Monica-Blog — Release Notes und Produktentscheidungen",
             'description' => "Was wir ausliefern, warum wir es so bauen und wie ein kleines Open-Source-Unternehmen wirklich aussieht. Geschrieben von den Menschen, die Monica machen.",
@@ -613,6 +618,7 @@ return [
         'selfHosting' => "Selbst hosten",
         'github' => "GitHub",
         'privacy' => "Datenschutz",
+        'terms' => "Nutzungsbedingungen",
         'copyright' => "© :year Monica",
         'since' => "Quelloffen seit 2017",
         'ownership' => "Ihre Daten bleiben Ihre.",
@@ -663,6 +669,66 @@ return [
         'openSource' => [
             'title' => "Open Source",
             'body' => "Monica ist seit dem ersten Tag quelloffen. Lesen Sie den Code, betreiben Sie Ihre eigene Instanz, schicken Sie einen Patch.",
+        ],
+    ],
+
+    /**
+     * Übersetzung der auf monicahq.com/terms veröffentlichten Bedingungen.
+     * Maßgeblich ist die englische Fassung in lang/en.php: sie wurde
+     * veröffentlicht, und sie ist zuerst zu ändern.
+     */
+    'terms' => [
+        'title' => "Unsere Nutzungsbedingungen",
+        'updated' => "Letzte Aktualisierung: :date",
+        'updatedOn' => "12. April 2018",
+
+        'sections' => [
+            [
+                'title' => "Umfang des Dienstes",
+                'blocks' => [
+                    ['text' => "Monica unterstützt die folgenden Browser:"],
+                    ['items' => [
+                        "Internet Explorer (11+)",
+                        "Firefox (50+)",
+                        "Chrome (neueste Version)",
+                        "Safari (neueste Version)",
+                    ]],
+                    ['text' => "Ich garantiere nicht, dass die Website mit anderen Browsern funktioniert, aber sehr wahrscheinlich tut sie es einfach."],
+                ],
+            ],
+            [
+                'title' => "Rechte",
+                'blocks' => [
+                    ['text' => "Sie müssen bei der Registrierung eines Kontos nicht Ihren echten Namen angeben. Sie brauchen allerdings eine gültige E-Mail-Adresse, wenn Sie Ihr Konto auf die kostenpflichtige Version umstellen oder Erinnerungen per E-Mail erhalten möchten."],
+                    ['text' => "Sie haben das Recht, Ihr Konto jederzeit zu schließen."],
+                    ['text' => "Sie haben das Recht, Ihre Daten jederzeit im SQL-Format zu exportieren."],
+                    ['text' => "Ihre Daten werden anderen Nutzerinnen und Nutzern nicht absichtlich gezeigt und nicht an Dritte weitergegeben."],
+                    ['text' => "Ihre personenbezogenen Daten werden ohne Ihre Einwilligung an niemanden weitergegeben."],
+                    ['text' => "Ihre Daten werden stündlich gesichert."],
+                    ['text' => "Sollte der Betrieb der Website eingestellt werden, erhalten Sie die Gelegenheit, alle Ihre Daten zu exportieren, bevor sie verschwindet."],
+                    ['text' => "Alle neuen Funktionen, die die Privatsphäre berühren, sind ausdrücklich freiwillig."],
+                ],
+            ],
+            [
+                'title' => "Pflichten",
+                'blocks' => [
+                    ['text' => "Sie werden die Website nicht dazu verwenden, nach kanadischem Recht (oder nach irgendeinem Recht) illegale Informationen oder Daten zu speichern."],
+                    ['text' => "Sie müssen mindestens 18 Jahre alt sein, um ein Konto anzulegen und die Website zu nutzen."],
+                    ['text' => "Sie dürfen die Website nicht missbrauchen, indem Sie wissentlich Schadcode veröffentlichen, der Ihnen oder anderen Nutzerinnen und Nutzern schaden könnte."],
+                    ['text' => "Sie dürfen die Website ausschließlich für Zwecke nutzen, die allgemein als moralisch gut gelten."],
+                    ['text' => "Sie dürfen keine automatisierten Anfragen an die Website stellen."],
+                    ['text' => "Sie dürfen das Einladungssystem nicht missbrauchen."],
+                    ['text' => "Für die Sicherheit Ihres Kontos sind Sie selbst verantwortlich."],
+                    ['text' => "Ich behalte mir das Recht vor, Konten zu schließen, die das System missbrauchen (etwa Tausende Kontakte mit Hunderttausenden Erinnerungen) oder es in unangemessener Weise nutzen."],
+                ],
+            ],
+            [
+                'title' => "Weitere wichtige rechtliche Hinweise",
+                'blocks' => [
+                    ['text' => "So sehr ich einen großartigen Dienst anbieten möchte, gibt es einige Dinge, die ich zu diesem Dienst nicht versprechen kann. Die Dienste und die Software werden zum Beispiel „wie besehen“ und auf Ihr eigenes Risiko bereitgestellt, ohne ausdrückliche oder stillschweigende Gewährleistung oder Zusicherung jeglicher Art. Ich schließe außerdem jede Gewährleistung der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter aus. Monica übernimmt keine Verantwortung für Schäden an Ihrem Computersystem, für Datenverlust oder Datenbeschädigung oder für sonstige Schäden, die sich aus Ihrem Zugriff auf die Dienste oder die Software oder aus deren Nutzung ergeben."],
+                    ['text' => "Diese Bedingungen können sich jederzeit ändern, aber ich werde mich dabei nie wie ein Arschloch verhalten. Diese Website zu betreiben ist für mich ein wahr gewordener Traum, und ich hoffe, es so lange tun zu können, wie ich kann."],
+                ],
+            ],
         ],
     ],
 
