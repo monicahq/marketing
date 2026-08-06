@@ -13,6 +13,116 @@ use Illuminate\Support\Arr;
 
 $locales = ['en', 'fr', 'de', 'es', 'pt'];
 
+/**
+ * How the blog is chunked, in one place.
+ *
+ * Both numbers are read twice: by the collections below, which is what Jigsaw's
+ * paginator and the feed template obey, and by the templates that have to
+ * reproduce the arithmetic (the sitemap counts pages of the index, the index
+ * prints "showing 1 to 10 of 39"). Declaring them here rather than reading them
+ * back off one locale's collection keeps those templates from having to name a
+ * language they have no opinion about.
+ */
+$perPage = 10;
+$perFeed = 20;
+
+/**
+ * Everything a posts collection is, apart from where it reads and where it
+ * writes. Shared by all five, so a change to the sort order or to a helper
+ * cannot land in one language and miss the other four.
+ */
+$postSettings = [
+    'extends' => '_layouts.post',
+
+    /** Newest first, everywhere the collection is read. */
+    'sort' => '-date',
+
+    /**
+     * Read by Jigsaw's paginator, so each locale's index template declares
+     * only `pagination.collection` and inherits the rest. Page 2 and after
+     * land on /blog/page/2/ rather than a bare /blog/2/.
+     */
+    'perPage' => $perPage,
+    'prefix' => 'page',
+
+    /**
+     * How many posts the feed carries. Ours is not paginated, so this is the
+     * whole of it: a reader subscribing today gets the last two years and
+     * picks up the rest from the site. Every item carries its full body, so
+     * the number is also what keeps the file reasonable.
+     */
+    'perFeed' => $perFeed,
+
+    /** Names the SEO shape in _partials/seo.blade.php, as `page` does elsewhere. */
+    'page' => 'post',
+
+    /**
+     * 200 words a minute, floored at one, so a two-paragraph post does not
+     * advertise "0 min". Counted on the rendered body with the tags removed,
+     * which is the closest thing to what a reader reads.
+     *
+     * Counted on the translated body, so a German page states how long the
+     * German text takes, which is the only number that is true on that page.
+     */
+    'readingMinutes' => function ($post) {
+        $words = str_word_count(strip_tags($post->getContent()));
+
+        return max(1, (int) ceil($words / 200));
+    },
+
+    /**
+     * The publication date as the ISO string the front matter holds.
+     *
+     * YAML reads an unquoted `date: 2018-10-12` as a date and hands it
+     * over as a Unix timestamp, which sorts correctly and renders as
+     * ten digits. Everything that shows a date or hands one to a
+     * crawler goes through here instead of touching `date` directly.
+     *
+     * Deliberately not localised. It is set in the mono face as
+     * metadata, it reads the same in every language, and it is the
+     * one fact on the page a reader may want to compare or copy.
+     */
+    'isoDate' => function ($post) {
+        return is_numeric($post->date)
+            ? date('Y-m-d', (int) $post->date)
+            : (string) $post->date;
+    },
+
+    /** The same date as RFC 2822, which is the only format RSS accepts. */
+    'rfcDate' => function ($post) {
+        $timestamp = is_numeric($post->date) ? (int) $post->date : strtotime((string) $post->date);
+
+        return date(DATE_RSS, $timestamp);
+    },
+
+    /**
+     * The post body, with every URL made absolute, for the feed.
+     *
+     * A feed is read somewhere else: in a reader, in an email digest,
+     * on another domain. Root-relative markup that resolves perfectly
+     * on the site resolves against whatever host is displaying it,
+     * which is how a feed ends up full of broken screenshots. Both
+     * `src` and `href` are rewritten, so images and internal links
+     * survive the trip.
+     */
+    'feedContent' => function ($post) {
+        return preg_replace_callback(
+            '/\b(src|href)="(\/[^"]*)"/',
+            fn ($match) => $match[1] . '="' . $post->absolute($match[2]) . '"',
+            $post->getContent(),
+        );
+    },
+
+    /** "Regis Freyd" becomes "RF", for the avatar circle. */
+    'authorInitials' => function ($post) {
+        return collect(preg_split('/\s+/', trim($post->author)))
+            ->filter()
+            ->take(2)
+            ->map(fn ($word) => mb_strtoupper(mb_substr($word, 0, 1)))
+            ->implode('');
+    },
+];
+
 return [
     'baseUrl' => '',
     'production' => false,
@@ -22,123 +132,40 @@ return [
     // ------------------------------------------------------------------ blog
 
     /**
-     * The posts, read from source/_posts, one Markdown file each.
+     * One posts collection per locale: `posts_fr` reads source/_posts_fr, one
+     * Markdown file per post, and writes /fr/blog/<slug>/.
      *
-     * A post is written once and published in every language, because the
-     * bodies are English and translating 39 of them is a separate job from
-     * building the blog. That is what the `extends` map does: Jigsaw renders an
-     * item once per key, so one file becomes /en/blog/<slug>/, /fr/blog/<slug>/
-     * and so on, and `path` gives each rendering its own URL. `_layouts.post`
-     * reads the key back as the locale. One file, one page per locale, and one
-     * file to edit when a typo turns up.
+     * The bodies are translated, so a post is a different file in every
+     * language and there is nowhere for one file to carry five of them. Five
+     * collections rather than one with a `locale` field, because Jigsaw's
+     * paginator takes a collection and nothing else: it cannot be told to
+     * paginate the French tenth of a pile of 195 items, and the French index
+     * would otherwise list German posts.
+     *
+     * The slug does not change between languages. `/de/blog/life-events/` is
+     * the German page, and keeping the last segment stable is what lets one
+     * `postPath()` serve the canonical, the hreflang cluster, the sitemap and
+     * the feed without a per-locale slug table. The title and the description
+     * in the front matter are translated; the slug, the date and the author
+     * are the same fact in five files.
+     *
+     * `locale` is a collection setting rather than front matter, so it is
+     * stated once per language instead of 39 times, and every item carries the
+     * one thing its directory already implies. `$page->lang()` reads it.
      *
      * `{slug}` is the post's own front-matter slug rather than the filename,
-     * which is date-prefixed so the directory reads chronologically.
+     * which is date-prefixed so each directory reads chronologically.
      */
-    'collections' => [
-        'posts' => [
-            'extends' => [
-                'en' => '_layouts.post',
-                'fr' => '_layouts.post',
-                'de' => '_layouts.post',
-                'es' => '_layouts.post',
-                'pt' => '_layouts.post',
-            ],
-            'path' => [
-                'en' => 'en/blog/{slug}',
-                'fr' => 'fr/blog/{slug}',
-                'de' => 'de/blog/{slug}',
-                'es' => 'es/blog/{slug}',
-                'pt' => 'pt/blog/{slug}',
-            ],
-
-            /** Newest first, everywhere the collection is read. */
-            'sort' => '-date',
-
-            /**
-             * Read by Jigsaw's paginator, so each locale's index template
-             * declares only `pagination.collection` and inherits the rest. Page 2
-             * and after land on /blog/page/2/ rather than a bare /blog/2/.
-             */
-            'perPage' => 10,
-            'prefix' => 'page',
-
-            /**
-             * How many posts the feed carries. Ours is not paginated, so this
-             * is the whole of it: a reader subscribing today gets the last two
-             * years and picks up the rest from the site. Every item carries its
-             * full body, so the number is also what keeps the file reasonable.
-             */
-            'perFeed' => 20,
-
-            /** Names the SEO shape in _partials/seo.blade.php, as `page` does elsewhere. */
-            'page' => 'post',
-
-            /**
-             * 200 words a minute, floored at one, so a two-paragraph post does
-             * not advertise "0 min". Counted on the rendered body with the tags
-             * removed, which is the closest thing to what a reader reads.
-             */
-            'readingMinutes' => function ($post) {
-                $words = str_word_count(strip_tags($post->getContent()));
-
-                return max(1, (int) ceil($words / 200));
-            },
-
-            /**
-             * The publication date as the ISO string the front matter holds.
-             *
-             * YAML reads an unquoted `date: 2018-10-12` as a date and hands it
-             * over as a Unix timestamp, which sorts correctly and renders as
-             * ten digits. Everything that shows a date or hands one to a
-             * crawler goes through here instead of touching `date` directly.
-             *
-             * Deliberately not localised. It is set in the mono face as
-             * metadata, it reads the same in every language, and it is the
-             * one fact on the page a reader may want to compare or copy.
-             */
-            'isoDate' => function ($post) {
-                return is_numeric($post->date)
-                    ? date('Y-m-d', (int) $post->date)
-                    : (string) $post->date;
-            },
-
-            /** The same date as RFC 2822, which is the only format RSS accepts. */
-            'rfcDate' => function ($post) {
-                $timestamp = is_numeric($post->date) ? (int) $post->date : strtotime((string) $post->date);
-
-                return date(DATE_RSS, $timestamp);
-            },
-
-            /**
-             * The post body, with every URL made absolute, for the feed.
-             *
-             * A feed is read somewhere else: in a reader, in an email digest,
-             * on another domain. Root-relative markup that resolves perfectly
-             * on the site resolves against whatever host is displaying it,
-             * which is how a feed ends up full of broken screenshots. Both
-             * `src` and `href` are rewritten, so images and internal links
-             * survive the trip.
-             */
-            'feedContent' => function ($post) {
-                return preg_replace_callback(
-                    '/\b(src|href)="(\/[^"]*)"/',
-                    fn ($match) => $match[1] . '="' . $post->absolute($match[2]) . '"',
-                    $post->getContent(),
-                );
-            },
-
-            /** "Regis Freyd" becomes "RF", for the avatar circle. */
-            'authorInitials' => function ($post) {
-                return collect(preg_split('/\s+/', trim($post->author)))
-                    ->filter()
-                    ->take(2)
-                    ->map(fn ($word) => mb_strtoupper(mb_substr($word, 0, 1)))
-                    ->implode('');
-            },
+    'collections' => collect($locales)->mapWithKeys(fn ($locale) => [
+        "posts_{$locale}" => $postSettings + [
+            'locale' => $locale,
+            'path' => "{$locale}/blog/{slug}",
         ],
-    ],
+    ])->all(),
 
+    /** The blog's two sizes, for templates that reproduce the paginator's arithmetic. */
+    'postsPerPage' => $perPage,
+    'postsPerFeed' => $perFeed,
 
     // ---------------------------------------------------------------- locales
 
@@ -354,19 +381,13 @@ return [
     /**
      * The locale a page is being rendered in.
      *
-     * Ordinary pages declare `locale` in their front matter. A post cannot: one
-     * Markdown file is rendered once per locale, so the locale is the `extends`
-     * key Jigsaw is currently using, which it records as `extending`.
-     * `_layouts.post` copies that onto `locale` before anything reads it, so
-     * this is the fallback rather than the common path — but a post is data
-     * before it is a page, and gets read while the collection is being built.
-     *
-     * `extending` lives in the page's `_meta` rather than among its variables,
-     * so it is reached through `_meta` and not as `$page->extending`, which
-     * would quietly be null.
+     * Ordinary pages declare `locale` in their front matter. A post inherits it
+     * from its collection, which is one per language, so both arrive at the
+     * same variable and nothing downstream has to know which kind of page it is
+     * looking at.
      */
     'lang' => function ($page) {
-        return $page->locale ?: ($page->_meta->get('extending') ?: $page->defaultLocale);
+        return $page->locale ?: $page->defaultLocale;
     },
 
     /**

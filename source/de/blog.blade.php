@@ -2,7 +2,7 @@
 locale: de
 page: blog
 pagination:
-    collection: posts
+    collection: posts_de
 ---
 @extends('_layouts.base')
 
