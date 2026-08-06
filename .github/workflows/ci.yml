@@ -9,10 +9,11 @@
 # real domain, and the one where the link check is strict rather than advisory.
 name: CI
 
+# Pull requests only. A push to main runs the same build inside
+# `deploy.yml`, where a failure also stops the deploy, so running it here as
+# well would build main twice and prove nothing the deploy has not.
 on:
   pull_request:
-  push:
-    branches: [main]
 
 # A second push to the same branch makes the first run irrelevant.
 concurrency:
