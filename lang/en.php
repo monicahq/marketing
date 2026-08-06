@@ -20,6 +20,42 @@ return [
     'meta' => [
         'imageAlt' => "Monica: remember the people you care about. The open-source personal CRM.",
 
+        /**
+         * The page names in a breadcrumb trail: one per route key, plus the
+         * root and the label a page of the blog index gets.
+         *
+         * Kept apart from `nav` on purpose. A nav label is written to be
+         * scanned in a bar four items wide; a breadcrumb is read out in a
+         * search result and can afford to say what the page is.
+         *
+         * `features` is "Features" both as its own page and as the parent of
+         * the two other tabs, so one URL never carries two names.
+         */
+        'breadcrumb' => [
+            'home' => "Home",
+            'v3' => "Monica v3",
+            'pricing' => "Pricing",
+            'features' => "Features",
+            'featuresDashboard' => "Powerful dashboard",
+            'featuresJournal' => "Journal",
+            'blog' => "Blog",
+            'terms' => "Terms of use",
+            'team' => "Team",
+            'privacy' => "Privacy policy",
+            'page' => "Page :number",
+        ],
+
+        /**
+         * What each of the three offers is called in the SoftwareApplication
+         * structured data. The prices themselves are numbers in config.php,
+         * because a crawler wants 9.00 and USD, not "$9".
+         */
+        'software' => [
+            'monthly' => "Hosted Monica, billed monthly",
+            'yearly' => "Hosted Monica, billed yearly",
+            'selfHosted' => "Self-hosted Monica",
+        ],
+
         'home' => [
             'title' => "Monica — the open-source personal CRM",
             'description' => "Monica helps you remember the people you care about: what is happening in their life, important dates, previous conversations, and when to get back in touch. Private, open source, self-hostable.",

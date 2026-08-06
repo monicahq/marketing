@@ -303,6 +303,28 @@ return [
         'launchList' => '#',
     ],
 
+    // ------------------------------------------------------------------ plans
+
+    /**
+     * The hosted plan's prices as bare numbers, for the offers in the
+     * structured data. A crawler wants 9.00 and USD; a reader wants "$9", and
+     * that string stays in `lang/` with the rest of the pricing copy.
+     *
+     * Which means the two have to be changed together. They are the only pair
+     * on the site that can disagree without anything failing, so a price
+     * change is an edit here and an edit in five `lang/` files.
+     *
+     * Only USD, because that is the only currency the pricing page quotes.
+     */
+    'plans' => [
+        'currency' => 'USD',
+        'monthly' => '9.00',
+        'yearly' => '90.00',
+
+        // The application is free; the server is the reader's problem.
+        'selfHosted' => '0.00',
+    ],
+
     /** Replaced during the build by bootstrap.php, which reads the real count. */
     'starCount' => '24k+',
 
