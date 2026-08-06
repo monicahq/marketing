@@ -54,6 +54,24 @@ return [
             'title' => "Monica v3 — reconstruite pour les dix prochaines années",
             'description' => "Monica v3 est une reconstruction complète du CRM personnel open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source. Avant la fin de 2026.",
         ],
+
+        // Un bloc par onglet des fonctionnalités : chaque onglet a sa propre
+        // URL, et un moteur de recherche qui trouve les trois doit pouvoir les
+        // distinguer.
+        'features' => [
+            'title' => "Gestion des contacts — les fonctionnalités de Monica",
+            'description' => "Notez ce que vous savez des personnes qui comptent pour vous : relations, coordonnées, notes privées, appels, rappels et cadeaux, le tout sur une même fiche de contact.",
+        ],
+
+        'featuresDashboard' => [
+            'title' => "Le tableau de bord — les fonctionnalités de Monica",
+            'description' => "Le tableau de bord de Monica montre qui vous avez consulté en dernier, ce qui arrive ensuite, vos notes favorites et les appels que vous avez passés, pour vous concentrer sur ce qui compte vraiment.",
+        ],
+
+        'featuresJournal' => [
+            'title' => "Le journal — les fonctionnalités de Monica",
+            'description' => "Écrivez des entrées de journal, indiquez comment s’est passée votre journée et relisez les activités avec vos contacts que Monica consigne automatiquement.",
+        ],
     ],
 
     'announcement' => [
@@ -66,6 +84,7 @@ return [
         'label' => "Principale",
         'product' => "Produit",
         'v3' => "Monica v3",
+        'features' => "Fonctionnalités",
         'pricing' => "Tarifs",
         'blog' => "Blog",
         'docs' => "Documentation",
@@ -793,6 +812,89 @@ return [
             "Merci de vous intéresser au projet.",
         ],
         'signature' => "Regis Freyd et Alexis Saettler",
+    ],
+
+    /**
+     * Les trois pages de fonctionnalités, qui partagent une barre d’onglets et
+     * une même rangée de conclusion.
+     *
+     * La copie est celle de l’ancien site, phrase par phrase : c’est la copie
+     * marketing du propriétaire, et cette version est une refonte, pas une
+     * réécriture. Les annotations étaient des étiquettes rouges épinglées
+     * autour de la capture d’écran ; ici, elles forment une liste à côté de
+     * l’image, pour survivre à un téléphone, à un lecteur d’écran et à une
+     * traduction plus longue que l’anglais.
+     */
+    'features' => [
+        'tabsLabel' => "Fonctionnalités",
+        'tabs' => [
+            'features' => "Gestion des contacts",
+            'featuresDashboard' => "Tableau de bord complet",
+            'featuresJournal' => "Journal",
+        ],
+
+        'calloutsLabel' => "Sur cet écran",
+
+        'contacts' => [
+            'title' => "Comment les gens gardent le fil de ce qui compte.",
+            'lede' => "Notez ce que vous savez des personnes qui comptent pour vous. Et n’oubliez plus jamais un seul détail à leur sujet.",
+            'imageAlt' => "Une fiche de contact Monica : relations, coordonnées, notes, appels, rappels et cadeaux.",
+            'callouts' => [
+                "Voyez d’un coup d’œil les informations importantes de votre contact",
+                "Indiquez les noms des conjoints, des enfants et même des animaux.",
+                "Ajoutez toutes les façons de joindre cette personne : téléphone, e-mail, pseudo Whatsapp, et bien plus encore.",
+                "Ajoutez des notes, privées, à propos de cette personne.",
+                "Indiquez chaque fois que vous appelez des personnes dont vous avez peu de nouvelles, pour qu’on vous rappelle de les appeler à l’avenir.",
+                "Ajoutez des rappels pour les dates ou les événements importants. Certains rappels sont remplis automatiquement pour vous (les anniversaires, par exemple).",
+                "Gérez les cadeaux offerts ou que vous souhaitez offrir. Indiquez si vous devez de l’argent ou si on vous en doit.",
+            ],
+        ],
+
+        'dashboard' => [
+            'title' => "Voyez rapidement ce qui compte et ce qui arrive ensuite",
+            'lede' => "Pour vous concentrer sur ce qui compte vraiment pour vous.",
+            'imageAlt' => "Le tableau de bord de Monica : contacts consultés récemment, prochains rappels, notes favorites et appels consignés.",
+            'callouts' => [
+                "Voyez qui vous avez consulté en dernier",
+                "La liste des prochains événements ou rappels concernant vos contacts",
+                "Consultez vos notes favorites à propos de vos contacts",
+                "Gardez une trace des appels passés avec les personnes qui comptent pour vous",
+            ],
+        ],
+
+        'journal' => [
+            'title' => "Documentez votre vie. Et voyez comment vous évoluez.",
+            'lede' => "Écrivez des entrées de journal. Indiquez rapidement comment s’est passée votre journée. Historique d’activité automatique.",
+            'imageAlt' => "Le journal de Monica : le déroulé de la journée, les activités consignées avec les contacts et les entrées écrites.",
+            'callouts' => [
+                "Indiquez comment s’est passée votre journée.",
+                "Le journal liste automatiquement toutes les activités avec vos contacts.",
+                "Le journal vous permet aussi d’écrire des entrées. Voyez-le comme votre journal intime en ligne.",
+                "Dans une prochaine version, nous afficherons de belles statistiques sur vos journées et vos activités.",
+            ],
+        ],
+
+        'pillars' => [
+            [
+                'title' => "Tout au même endroit",
+                'body' => "Gérez, organisez et suivez toutes les interactions avec vos contacts à un endroit central.",
+            ],
+            [
+                'title' => "Sur le web",
+                'body' => "Accédez facilement à Monica, hébergée sur vos serveurs ou sur les nôtres.",
+            ],
+            [
+                'title' => "Interface moderne",
+                'body' => "Monica est belle et très simple à utiliser.",
+            ],
+        ],
+
+        'api' => [
+            'title' => "Appréciée des utilisateurs. Adorée des développeurs.",
+            'body' => "Nos utilisateurs apprécient la rapidité et la simplicité du produit. Les développeurs adorent l’API, qui leur permet d’automatiser Monica comme ils l’entendent.",
+            'body2' => "Importez ou exportez facilement vos contacts et leurs données grâce à la puissante API REST de Monica, ou utilisez l’API pour automatiser de nombreuses parties de l’application.",
+            'imageAlt' => "Les routes de l’API de Monica, ouvertes dans un éditeur de code.",
+        ],
     ],
 
     'notFound' => [

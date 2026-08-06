@@ -54,6 +54,23 @@ return [
             'title' => "Monica v3 — neu gebaut für die nächsten zehn Jahre",
             'description' => "Monica v3 ist ein vollständiger Neubau des quelloffenen persönlichen CRM: Einträge, die Sie selbst gestalten, ein mit allem verbundenes Journal, eine vollständige API und eine echte mobile Erfahrung. Weiterhin quelloffen. Vor Ende 2026.",
         ],
+
+        // Ein Block je Funktionen-Tab: jeder Tab hat seine eigene URL, und eine
+        // Suchmaschine, die alle drei findet, soll sie unterscheiden können.
+        'features' => [
+            'title' => "Kontaktverwaltung — die Funktionen von Monica",
+            'description' => "Halten Sie fest, was Sie über die Menschen wissen, die Ihnen wichtig sind: Beziehungen, Kontaktdaten, private Notizen, Anrufe, Erinnerungen und Geschenke, alles auf einem Eintrag.",
+        ],
+
+        'featuresDashboard' => [
+            'title' => "Das Dashboard — die Funktionen von Monica",
+            'description' => "Das Dashboard von Monica zeigt, wen Sie zuletzt angesehen haben, was als Nächstes ansteht, Ihre bevorzugten Notizen und die geführten Anrufe, damit Sie sich auf das Wesentliche konzentrieren können.",
+        ],
+
+        'featuresJournal' => [
+            'title' => "Das Journal — die Funktionen von Monica",
+            'description' => "Schreiben Sie Journaleinträge, halten Sie fest, wie Ihr Tag verlaufen ist, und lesen Sie die Aktivitäten mit Ihren Kontakten, die Monica automatisch protokolliert.",
+        ],
     ],
 
     'announcement' => [
@@ -66,6 +83,7 @@ return [
         'label' => "Haupt",
         'product' => "Produkt",
         'v3' => "Monica v3",
+        'features' => "Funktionen",
         'pricing' => "Preise",
         'blog' => "Blog",
         'docs' => "Dokumentation",
@@ -793,6 +811,89 @@ return [
             "Danke, dass Sie sich das Projekt ansehen.",
         ],
         'signature' => "Regis Freyd und Alexis Saettler",
+    ],
+
+    /**
+     * Die drei Funktionsseiten, die sich eine Tab-Leiste und eine abschließende
+     * Reihe teilen.
+     *
+     * Der Text ist der der alten Seite, Satz für Satz: Es ist die Marketing-
+     * Copy des Eigentümers, und dieser Aufbau ist eine Neugestaltung, keine
+     * Neufassung. Die Anmerkungen waren dort rote Etiketten rund um den
+     * Screenshot; hier stehen sie als gewöhnliche Liste daneben, damit sie ein
+     * Telefon, einen Screenreader und eine Übersetzung überstehen, die länger
+     * ausfällt als das Englische.
+     */
+    'features' => [
+        'tabsLabel' => "Funktionen",
+        'tabs' => [
+            'features' => "Kontaktverwaltung",
+            'featuresDashboard' => "Umfassendes Dashboard",
+            'featuresJournal' => "Journal",
+        ],
+
+        'calloutsLabel' => "Auf diesem Bildschirm",
+
+        'contacts' => [
+            'title' => "Wie Menschen im Blick behalten, was wichtig ist.",
+            'lede' => "Halten Sie fest, was Sie über die Menschen wissen, die Ihnen wichtig sind. Und vergessen Sie nie wieder eine Kleinigkeit über sie.",
+            'imageAlt' => "Ein Monica-Kontakteintrag: Beziehungen, Kontaktdaten, Notizen, Anrufe, Erinnerungen und Geschenke.",
+            'callouts' => [
+                "Sehen Sie auf einen Blick die wichtigen Informationen zu Ihrem Kontakt",
+                "Halten Sie die Namen von Partnerinnen und Partnern, Kindern und sogar Haustieren fest.",
+                "Fügen Sie alle Wege hinzu, diese Person zu erreichen: Telefon, E-Mail, Whatsapp-Name und vieles mehr.",
+                "Fügen Sie Notizen zu dieser Person hinzu, die nur Sie sehen.",
+                "Halten Sie jedes Telefonat mit Menschen fest, von denen Sie selten hören, damit Sie später daran erinnert werden, sie anzurufen.",
+                "Fügen Sie Erinnerungen an wichtige Daten oder Ereignisse hinzu. Einige Erinnerungen werden automatisch für Sie angelegt (Geburtstage zum Beispiel).",
+                "Verwalten Sie verschenkte oder geplante Geschenke. Halten Sie fest, ob Sie Geld schulden oder ob Ihnen Geld geschuldet wird.",
+            ],
+        ],
+
+        'dashboard' => [
+            'title' => "Sehen Sie schnell, was wichtig ist und was als Nächstes kommt",
+            'lede' => "Damit Sie sich auf das konzentrieren können, was Ihnen wirklich wichtig ist.",
+            'imageAlt' => "Das Dashboard von Monica: zuletzt angesehene Kontakte, kommende Erinnerungen, bevorzugte Notizen und protokollierte Anrufe.",
+            'callouts' => [
+                "Sehen Sie, wen Sie zuletzt angesehen haben",
+                "Die Liste der nächsten geplanten Ereignisse oder Erinnerungen zu Ihren Kontakten",
+                "Lesen Sie Ihre bevorzugten Notizen zu Ihren Kontakten",
+                "Behalten Sie die Anrufe mit den Menschen im Blick, die Ihnen wichtig sind",
+            ],
+        ],
+
+        'journal' => [
+            'title' => "Dokumentieren Sie Ihr Leben. Und sehen Sie, wie Sie sich entwickeln.",
+            'lede' => "Schreiben Sie Journaleinträge. Halten Sie kurz fest, wie Ihr Tag verlaufen ist. Automatische Aktivitätsprotokolle.",
+            'imageAlt' => "Das Journal von Monica: der Verlauf des Tages, die protokollierten Aktivitäten mit Kontakten und geschriebene Einträge.",
+            'callouts' => [
+                "Halten Sie fest, wie Ihr Tag verlaufen ist.",
+                "Das Journal listet alle Aktivitäten mit Ihren Kontakten automatisch auf.",
+                "Im Journal können Sie auch eigene Einträge schreiben. Betrachten Sie es als Ihr privates Online-Tagebuch.",
+                "In einer künftigen Version zeigen wir schöne Statistiken zu Ihren Tagen und Aktivitäten.",
+            ],
+        ],
+
+        'pillars' => [
+            [
+                'title' => "Alles an einem Ort",
+                'body' => "Verwalten, ordnen und verfolgen Sie alle Interaktionen mit Ihren Kontakten an einem zentralen Ort.",
+            ],
+            [
+                'title' => "Im Web",
+                'body' => "Greifen Sie einfach auf Monica zu, gehostet auf Ihren oder unseren Servern.",
+            ],
+            [
+                'title' => "Moderne Oberfläche",
+                'body' => "Monica ist schön und sehr einfach zu bedienen.",
+            ],
+        ],
+
+        'api' => [
+            'title' => "Geliebt von Nutzern. Verehrt von Entwicklern.",
+            'body' => "Unsere Nutzerinnen und Nutzer schätzen, wie schnell und einfach das Produkt ist. Entwickler lieben die API, mit der sie Monica nach eigenem Ermessen automatisieren können.",
+            'body2' => "Importieren oder exportieren Sie Ihre Kontakte und deren Daten mühelos über die leistungsfähige REST-API von Monica, oder automatisieren Sie damit viele Bereiche der Anwendung.",
+            'imageAlt' => "Die API-Routen von Monica, geöffnet in einem Code-Editor.",
+        ],
     ],
 
     'notFound' => [

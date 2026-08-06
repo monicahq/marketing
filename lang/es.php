@@ -54,6 +54,24 @@ return [
             'title' => "Monica v3 — reconstruida para los próximos diez años",
             'description' => "Monica v3 es una reconstrucción completa del CRM personal de código abierto: fichas que diseñas tú, un diario conectado con todo lo demás, una API completa y una experiencia móvil de verdad. Sigue siendo de código abierto. Antes de que acabe 2026.",
         ],
+
+        // Un bloque por pestaña de funcionalidades: cada pestaña tiene su
+        // propia URL, y un buscador que encuentre las tres debe poder
+        // distinguirlas.
+        'features' => [
+            'title' => "Gestión de contactos — las funcionalidades de Monica",
+            'description' => "Anota lo que sabes de las personas que te importan: relaciones, datos de contacto, notas privadas, llamadas, recordatorios y regalos, todo en una misma ficha.",
+        ],
+
+        'featuresDashboard' => [
+            'title' => "El panel — las funcionalidades de Monica",
+            'description' => "El panel de Monica te muestra a quién has consultado por última vez, lo que viene a continuación, tus notas favoritas y las llamadas que has hecho, para que te centres en lo que de verdad importa.",
+        ],
+
+        'featuresJournal' => [
+            'title' => "El diario — las funcionalidades de Monica",
+            'description' => "Escribe entradas de diario, indica cómo ha ido tu día y lee las actividades con tus contactos que Monica registra automáticamente.",
+        ],
     ],
 
     'announcement' => [
@@ -66,6 +84,7 @@ return [
         'label' => "Principal",
         'product' => "Producto",
         'v3' => "Monica v3",
+        'features' => "Funcionalidades",
         'pricing' => "Precios",
         'blog' => "Blog",
         'docs' => "Documentación",
@@ -793,6 +812,89 @@ return [
             "Gracias por interesarte por el proyecto.",
         ],
         'signature' => "Regis Freyd y Alexis Saettler",
+    ],
+
+    /**
+     * Las tres páginas de funcionalidades, que comparten una barra de pestañas
+     * y una misma fila de cierre.
+     *
+     * El texto es el del sitio antiguo, frase por frase: es la copia de
+     * marketing del propietario, y esta versión es un rediseño, no una
+     * reescritura. Las anotaciones eran etiquetas rojas colocadas alrededor de
+     * la captura; aquí son una lista corriente junto a la imagen, para que
+     * sobrevivan a un teléfono, a un lector de pantalla y a una traducción más
+     * larga que el inglés.
+     */
+    'features' => [
+        'tabsLabel' => "Funcionalidades",
+        'tabs' => [
+            'features' => "Gestión de contactos",
+            'featuresDashboard' => "Panel completo",
+            'featuresJournal' => "Diario",
+        ],
+
+        'calloutsLabel' => "En esta pantalla",
+
+        'contacts' => [
+            'title' => "Cómo la gente recuerda lo que importa.",
+            'lede' => "Anota lo que sabes de las personas que te importan. Y no vuelvas a olvidar ni un solo detalle sobre ellas.",
+            'imageAlt' => "Una ficha de contacto de Monica: relaciones, datos de contacto, notas, llamadas, recordatorios y regalos.",
+            'callouts' => [
+                "Consulta de un vistazo la información importante de tu contacto",
+                "Indica los nombres de las parejas, los hijos e incluso las mascotas.",
+                "Añade todas las formas de contactar con esta persona: teléfono, correo electrónico, nombre de Whatsapp y mucho más.",
+                "Añade notas sobre esta persona, privadas y solo para ti.",
+                "Anota cada vez que llamas a personas de las que sabes poco, para que se te recuerde llamarlas en el futuro.",
+                "Añade recordatorios de fechas o eventos importantes. Algunos se rellenan automáticamente (los cumpleaños, por ejemplo).",
+                "Gestiona los regalos que has hecho o que quieres hacer. Indica si debes dinero o si te lo deben.",
+            ],
+        ],
+
+        'dashboard' => [
+            'title' => "Comprueba rápido qué importa y qué viene a continuación",
+            'lede' => "Para que te centres en lo que de verdad te importa.",
+            'imageAlt' => "El panel de Monica: contactos consultados recientemente, próximos recordatorios, notas favoritas y llamadas registradas.",
+            'callouts' => [
+                "Comprueba a quién has consultado por última vez",
+                "La lista de los próximos eventos o recordatorios sobre tus contactos",
+                "Consulta tus notas favoritas sobre tus contactos",
+                "Lleva la cuenta de las llamadas que has hecho a las personas que te importan",
+            ],
+        ],
+
+        'journal' => [
+            'title' => "Documenta tu vida. Y observa cómo evolucionas.",
+            'lede' => "Escribe entradas de diario. Indica en un momento cómo ha ido tu día. Registro de actividad automático.",
+            'imageAlt' => "El diario de Monica: cómo ha ido el día, las actividades registradas con los contactos y las entradas escritas.",
+            'callouts' => [
+                "Indica cómo ha ido tu día.",
+                "El diario recoge automáticamente todas las actividades con tus contactos.",
+                "El diario también te deja escribir entradas. Piensa en él como tu diario personal en línea.",
+                "En una versión futura mostraremos bonitas estadísticas sobre tus días y tus actividades.",
+            ],
+        ],
+
+        'pillars' => [
+            [
+                'title' => "Todo en un mismo sitio",
+                'body' => "Gestiona, organiza y sigue todas las interacciones con tus contactos en un lugar central.",
+            ],
+            [
+                'title' => "En la web",
+                'body' => "Accede a Monica fácilmente, alojada en tus servidores o en los nuestros.",
+            ],
+            [
+                'title' => "Interfaz moderna",
+                'body' => "Monica es bonita y muy sencilla de usar.",
+            ],
+        ],
+
+        'api' => [
+            'title' => "Querida por quienes la usan. Adorada por quienes programan.",
+            'body' => "Quienes usan Monica valoran lo rápido y sencillo que es el producto. Quienes programan adoran la API, que les permite automatizar Monica a su gusto.",
+            'body2' => "Importa o exporta tus contactos y sus datos con la potente API REST de Monica, o usa la API para automatizar muchas partes de la aplicación.",
+            'imageAlt' => "Las rutas de la API de Monica, abiertas en un editor de código.",
+        ],
     ],
 
     'notFound' => [

@@ -64,6 +64,23 @@ return [
             'title' => "Monica v3 — rebuilt for the next ten years",
             'description' => "Monica v3 is a ground-up rebuild of the open-source personal CRM: records you design, a journal connected to everything, a complete API, and a proper mobile experience. Still open source. Coming before the end of 2026.",
         ],
+
+        // One block per features tab, because each tab is its own URL and a
+        // crawler that finds all three should be able to tell them apart.
+        'features' => [
+            'title' => "Contact management — Monica features",
+            'description' => "Write down what you know about the people you care about: relationships, contact details, private notes, calls, reminders and gifts, all on one contact record.",
+        ],
+
+        'featuresDashboard' => [
+            'title' => "The dashboard — Monica features",
+            'description' => "The Monica dashboard shows who you last consulted, what is coming next, your favourite notes and the calls you have made, so you can focus on what really matters to you.",
+        ],
+
+        'featuresJournal' => [
+            'title' => "The journal — Monica features",
+            'description' => "Write journal entries, record how your day went, and read the activities with your contacts that Monica logs for you automatically.",
+        ],
     ],
 
     'announcement' => [
@@ -76,6 +93,7 @@ return [
         'label' => "Main",
         'product' => "Product",
         'v3' => "Monica v3",
+        'features' => "Features",
         'pricing' => "Pricing",
         'blog' => "Blog",
         'docs' => "Documentation",
@@ -819,6 +837,90 @@ return [
             "Thanks for checking out the project.",
         ],
         'signature' => "Regis Freyd and Alexis Saettler",
+    ],
+
+    /**
+     * The three features pages, which share one tab strip and one closing row.
+     *
+     * The copy is the old site's, sentence for sentence, because it is the
+     * owner's marketing copy and this build is a redesign rather than a
+     * rewrite. The annotations were red labels pinned around the screenshot
+     * there; here they are an ordinary list beside it, so they survive a phone,
+     * a screen reader and a translation that runs longer than English.
+     *
+     * `pillars` and `api` are shared by all three tabs, which is why they sit
+     * outside the per-tab blocks.
+     */
+    'features' => [
+        'tabsLabel' => "Features",
+        'tabs' => [
+            'features' => "Contact management",
+            'featuresDashboard' => "Powerful dashboard",
+            'featuresJournal' => "Journal",
+        ],
+
+        'calloutsLabel' => "On this screen",
+
+        'contacts' => [
+            'title' => "How people keep track of what's important.",
+            'lede' => "Write down what you know about the people you care about. And never forget again a single thing about them.",
+            'imageAlt' => "A Monica contact record: relationships, contact details, notes, calls, reminders and gifts.",
+            'callouts' => [
+                "Have a quick glance of important information of your contact",
+                "Indicate the names of significant others, children and even pets.",
+                "Add all the different ways of contacting this person: phone, email, Whatsapp nickname, and much more.",
+                "Add notes, private to you, about this person.",
+                "Indicate each time you call people you don't hear about often, so you can be reminded to call them in the future.",
+                "Add reminders about important dates or events. Some reminders are automatically filled for you (birthdays, for instance).",
+                "Manage gifts offered or that you want to offer. Indicate if you owe or if you are owed money.",
+            ],
+        ],
+
+        'dashboard' => [
+            'title' => "Quickly see what's important and what's coming next",
+            'lede' => "So you can focus on what really matters to you.",
+            'imageAlt' => "The Monica dashboard: recently consulted contacts, upcoming reminders, favourite notes and logged calls.",
+            'callouts' => [
+                "See who you’ve last consulted",
+                "List of next planned events or reminders about your contacts",
+                "Consult your favorite notes about your contacts",
+                "Keep track of the calls you’ve made with people you care about",
+            ],
+        ],
+
+        'journal' => [
+            'title' => "Document your life. And see how you evolve.",
+            'lede' => "Write journal entries. Quickly indicate how your day went. Automatic activity logs.",
+            'imageAlt' => "The Monica journal: how the day went, the activities logged with contacts, and written entries.",
+            'callouts' => [
+                "Indicate how your day went.",
+                "The journal lists all the activities with your contacts automatically.",
+                "The journal also lets you write journal entries. Think of it as your private online journal.",
+                "In a future version, we'll display nice statistics about your days and activities.",
+            ],
+        ],
+
+        'pillars' => [
+            [
+                'title' => "All in one place",
+                'body' => "Manage, organize and track all the interactions with your contacts in a central place.",
+            ],
+            [
+                'title' => "Web based",
+                'body' => "Easily access Monica, either hosted on your or our servers.",
+            ],
+            [
+                'title' => "Modern interface",
+                'body' => "Monica is beautiful and very simple to use.",
+            ],
+        ],
+
+        'api' => [
+            'title' => "Loved by users. Adored by developers.",
+            'body' => "Our users are happy with how fast and simple the product is. Developers love the API that allow them to automate Monica as they see fit.",
+            'body2' => "Easily import or export your contacts and their data with Monica's powerful REST API, or use the API to automate many areas of the application.",
+            'imageAlt' => "Monica's API routes, open in a code editor.",
+        ],
     ],
 
     'notFound' => [
