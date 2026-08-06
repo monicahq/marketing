@@ -1,0 +1,54 @@
+# Builds the site the way a deploy would, on every pull request.
+#
+# The build is the check. Jigsaw has no type checker, so this repository puts
+# its invariants in the build itself: a missing translation key throws, and so
+# does a dead link (see bootstrap.php and scripts/links/check.php). Running
+# `npm run build` here is what turns those into a red cross on the pull request.
+#
+# `production` is deliberate. It is the environment that resolves baseUrl to the
+# real domain, and the one where the link check is strict rather than advisory.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# A second push to the same branch makes the first run irrelevant.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and check links
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # The runner's own PHP is 8.3, and composer.lock resolves to Symfony 8,
+      # which needs 8.4.1. composer.json says so; this is where it is honoured.
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Install node dependencies
+        run: npm ci
+
+      - name: Build the site
+        # Only lifts the GitHub API rate limit for the star count, which is
+        # shared across everything else running on this runner's IP. The build
+        # falls back to the figure in config.php if the call fails.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run build

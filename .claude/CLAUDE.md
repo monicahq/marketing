@@ -23,11 +23,27 @@ Jigsaw renders Blade to static HTML. PHP builds the site; it never runs in produ
 npm run dev      # rebuild on change, compile CSS (leave running)
 npm run serve    # serve build_local at localhost:8000
 npm run build    # production build into build_production/
+npm run links    # check build_production/ for dead links
 ```
 
 **Vite must run before Jigsaw.** Templates call `vite('source/_assets/css/main.css')`, which reads the manifest, so a bare `vendor/bin/jigsaw build` fails with "The Vite manifest does not exist". The npm scripts handle the ordering: the Jigsaw Vite plugin spawns the Jigsaw build itself.
 
 Before claiming a change works, run `npm run build` and check the output in `build_production/`. There is no type checker here, so a missing translation key surfaces as a build-time exception rather than a warning.
+
+### Dead links
+
+`scripts/links/check.php` runs after every build, from an `afterBuild` listener in `bootstrap.php`. It reads the build output rather than the templates, so it sees the URLs a reader actually gets.
+
+It **fails a production build and only warns on a local one**. A page in progress legitimately links to things nobody has written yet, and a watch loop that refuses to rebuild is a watch loop nobody keeps running. Nothing reaches the web without `npm run build`, so that is where it is strict. `.github/workflows/ci.yml` runs a production build on every pull request, which is what turns a dead link into a red cross.
+
+What it checks, all of it against the files on disk and none of it over the network:
+
+- Every `href`, `src`, `form` action, social tag and JSON-LD URL resolves to a file the build wrote. Absolute URLs on our own domain count, so a hand-built canonical is checked like any other link.
+- Fragments (`#open-source`) name an id that exists on the page they land on.
+- Canonicals are self-referential, hreflang clusters are reciprocal, and the sitemap and the build agree in both directions. `noindex` is what decides whether a page belongs in the sitemap, which is why the root redirect stub and `404.html` are exempt without being special-cased.
+- Relative URLs are an error in themselves, because `route()` and `absolute()` never produce one.
+
+Two things it deliberately does **not** do. External hosts are counted and left alone: they are the only URLs that need the network, and the only ones that fail for reasons unrelated to this repository. And `#` placeholders are reported with the `config.php` keys still missing a destination, but never fail anything, because they are a launch checklist rather than a regression.
 
 ## How the four languages work
 
@@ -121,6 +137,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Routes, helpers, links, locales     | `config.php`                                        |
 | Production domain                   | `config.production.php`                             |
 | Star count fetch                    | `bootstrap.php`                                     |
+| Dead link checking                  | `scripts/links/check.php`, wired up in `bootstrap.php` |
 | Design tokens to Tailwind           | `source/_assets/css/theme.css`                      |
 | Vendored design system              | `source/_assets/css/design-system/` (do not edit)   |
 | Compiled CSS entry                  | `source/_assets/css/main.css`                       |

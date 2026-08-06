@@ -5,6 +5,7 @@
     "dev": "vite",
     "serve": "vendor/bin/jigsaw serve",
     "build": "vite build",
+    "links": "php scripts/links/check.php build_production",
     "og": "bash scripts/og/generate.sh"
   },
   "devDependencies": {

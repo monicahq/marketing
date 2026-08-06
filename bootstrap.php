@@ -55,3 +55,42 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
     // many". 24,956 becomes "24k+", never "25k+".
     $jigsaw->setConfig('starCount', $count < 1000 ? (string) $count : intdiv($count, 1000) . 'k+');
 });
+
+/**
+ * Checks every link the build just wrote, against the build itself.
+ *
+ * This is the same safety net as a missing translation key: the site has no
+ * type checker, so an invariant that is not enforced at build time is one
+ * nobody finds until a reader does. A slug corrected in `routes` and missed in
+ * one locale produces a page that builds cleanly and 404s in French.
+ *
+ * It fails a production build and only warns on a local one. A page in progress
+ * legitimately links to things that are not written yet, and a watch loop that
+ * refuses to rebuild is a watch loop nobody keeps running. Nothing reaches the
+ * web without going through `npm run build`, so the strict half is the half
+ * that matters.
+ *
+ * See scripts/links/check.php for what it checks and what it deliberately does
+ * not, external hosts above all.
+ */
+$events->afterBuild(function (Jigsaw $jigsaw) {
+    require_once __DIR__ . '/scripts/links/check.php';
+
+    $check = LinkCheck::run($jigsaw->getDestinationPath(), $jigsaw->getConfig('baseUrl'));
+
+    if ($notices = $check->notices()) {
+        echo "  [links] Notices\n{$notices}\n";
+    }
+
+    if ($check->passed()) {
+        return;
+    }
+
+    $report = count($check->errors()) . " dead links\n" . $check->report();
+
+    if ($jigsaw->getEnvironment() === 'production') {
+        throw new Exception($report);
+    }
+
+    echo "  [links] {$report}\n";
+});
