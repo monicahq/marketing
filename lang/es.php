@@ -754,7 +754,7 @@ return [
                     ['text' => "Monica viene en dos modalidades: puedes usar nuestra versión alojada, o descargarla y ejecutarla tú. En este segundo caso no rastreamos absolutamente nada. Ni siquiera sabemos que has descargado el producto. Haz con él lo que quieras (pero respeta las leyes de tu país)."],
                     ['text' => "Cuando creas tu cuenta en nuestra versión alojada, facilitas al sitio información sobre ti que recogemos. Incluye tu nombre, tu dirección de correo y tu contraseña, que se cifra antes de almacenarse. No almacenamos ninguna otra información personal."],
                     ['text' => "Cuando inicias sesión en el servicio, usamos cookies para recordar tus credenciales. Ese es el único propósito de las cookies."],
-                    ['text' => "Monica funciona en Linode y somos los únicos, aparte del personal de Linode, con acceso a esos servidores."],
+                    ['text' => "Monica funciona en Fortrabbit y somos los únicos, aparte del personal de Fortrabbit, con acceso a esos servidores."],
                     ['text' => "Hacemos copias de seguridad de la base de datos cada hora."],
                     ['text' => "Tu contraseña se cifra con bcrypt, un algoritmo de hash de contraseñas muy seguro. También puedes activar la autenticación en dos pasos en tu cuenta si quieres una capa de seguridad adicional. Al margen de esos mecanismos de cifrado, tus datos no están cifrados en la base de datos. Si alguien accede a la base de datos, podrá leer tus datos. Hacemos todo lo posible para que eso no ocurra nunca, pero puede ocurrir."],
                     ['text' => "Si se produce una filtración de datos, avisaremos a las personas usuarias afectadas para advertirlas."],

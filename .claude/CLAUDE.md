@@ -184,23 +184,6 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 - **No new dependencies without asking**, Composer or npm.
 - **Marketing copy is the owner's call.** Draft it when asked, but don't rewrite existing headlines, pricing or product claims as a side effect of an unrelated change.
 
-## The legal pages
-
-The terms of use and the privacy policy, both copied word for word from what monicahq.com publishes today, both at a translated slug per locale:
-
-| Key | en | fr | de | es |
-| :--- | :--- | :--- | :--- | :--- |
-| `terms` | `/en/terms/` | `/fr/conditions-utilisation/` | `/de/nutzungsbedingungen/` | `/es/condiciones-de-uso/` |
-| `privacy` | `/en/privacy/` | `/fr/confidentialite/` | `/de/datenschutz/` | `/es/privacidad/` |
-
-**`lang/en.php` is authoritative for both.** It is the wording that was actually published; the other three are translations of it, and each carries a comment saying so. Change English first, then the translations, or the four quietly stop being the same document.
-
-Both render through `_partials/legal/document.blade.php`, which takes the lang key. The text lives in `lang/` rather than the markup because a legal text with its sentences spread across four Blade files is a legal text that goes out of sync. The shape is a title, a date, and a run of sections; a section is an **optional** heading plus an ordered run of blocks, where a block with `items` is a list and anything else is a paragraph. The terms are four titled sections. The published privacy policy has no headings at all, so it is one untitled section, and inventing headings for it would be editing a legal document.
-
-**The translations have not been reviewed by a lawyer or a native speaker.** They were produced for this repository, not vetted. The warranty disclaimer in the terms is the paragraph where that matters most.
-
-**Both documents are stale in places**, faithfully so. The privacy policy is dated May 2019 and still names Stripe as the payment processor, though the blog announced the move to Paddle in March 2022. It also names Linode. Copying them accurately was the job; bringing them up to date is a separate one, and the owner's.
-
 ## Known gaps
 
 The homepage, pricing, the v3 teaser, the blog and the two legal pages exist. Features and docs are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The blog's newsletter box has no endpoint yet and posts to `links.newsletter`, which is a placeholder like `links.launchList`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.

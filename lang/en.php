@@ -759,7 +759,7 @@ return [
     'privacy' => [
         'title' => "Our privacy policy",
         'updated' => "Last update: :date",
-        'updatedOn' => "May 30, 2019",
+        'updatedOn' => "Aug 06, 2026",
 
         'sections' => [
             [
@@ -768,7 +768,7 @@ return [
                     ['text' => "Monica comes in two flavors: you can either use our hosted version, or download it and run it yourself. In the latter case, we do not track anything at all. We don't know that you've even downloaded the product. Do whatever you want with it (but respect your local laws)."],
                     ['text' => "When you create your account on our hosted version, you are giving the site information about yourself that we collect. This includes your name, your email address and your password, that is encrypted before being stored. We do not store any other personal information."],
                     ['text' => "When you login to the service, we are using cookies to remember your login credentials. This is the only purpose of the cookies."],
-                    ['text' => "Monica runs on Linode and we are the only ones, apart from Linode's employees, who have access to those servers."],
+                    ['text' => "Monica runs on Fortrabbit and we are the only ones, apart from Fortrabbit's employees, who have access to those servers."],
                     ['text' => "We do hourly backups of the database."],
                     ['text' => "Your password is encrypted with bcrypt, a password hashing algorithm that is highly secure. You can also activate two factor authentication on your account if you need an extra layer of security. Apart from those encryption mechanisms, your data is not encrypted in the database. If someone gets access to the database, they will be able to read your data. We do our best to make sure that this never happens, but it can happen."],
                     ['text' => "If a data breach happens, we will contact the users who are affected to warn them about the breach."],
