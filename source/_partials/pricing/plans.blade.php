@@ -5,25 +5,35 @@
     $planTitle = 'text-heading-sm font-semibold';
     $amount = 'text-[44px] leading-none font-semibold tracking-[-0.03em]';
 
-    // The segmented control is two radios and two labels. The peers are named,
-    // because `peer-checked:` compiles to a `~` combinator that would match any
-    // later sibling: an unnamed peer lights both labels at once. The prices are
-    // not siblings of the inputs at all, so those swap through the section's
-    // `:has()` instead.
-    //
-    // Written out per label rather than built from a variable: Tailwind scans
-    // for literal class strings, and a concatenated one is invisible to it.
-    // The checked colour is marked important because `hover:text-text` ties with
-    // it on specificity and wins on source order. The pointer is left sitting on
-    // the label the moment it is clicked, so without this the selected option is
-    // near-black text on a near-black pill.
-    $seg = 'cursor-pointer rounded-full px-4 py-1.5 text-small text-text-secondary transition-colors duration-100 ease-standard hover:text-text';
-    $segYearly = 'peer-checked/yearly:bg-surface-inverse peer-checked/yearly:font-medium peer-checked/yearly:text-canvas! peer-focus-visible/yearly:outline-2 peer-focus-visible/yearly:outline-offset-2 peer-focus-visible/yearly:outline-focus';
-    $segMonthly = 'peer-checked/monthly:bg-surface-inverse peer-checked/monthly:font-medium peer-checked/monthly:text-canvas! peer-focus-visible/monthly:outline-2 peer-focus-visible/monthly:outline-offset-2 peer-focus-visible/monthly:outline-focus';
+    $seg = 'cursor-pointer rounded-full px-4 py-1.5 text-small transition-colors duration-100 ease-standard focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus';
+
+    /**
+     * Alpine's state, handed over as one JSON object rather than assembled in
+     * the markup, so the copy stays in lang/ and the template stays readable.
+     *
+     * `yearly` first, because it is the default the page renders with.
+     */
+    $billing = [
+        'period' => 'yearly',
+        'plans' => [
+            'yearly' => [
+                'price' => $page->t('pricing.hosted.yearlyPrice'),
+                'period' => $page->t('pricing.hosted.yearlyPeriod'),
+                'note' => $page->t('pricing.hosted.yearlyNote'),
+            ],
+            'monthly' => [
+                'price' => $page->t('pricing.hosted.monthlyPrice'),
+                'period' => $page->t('pricing.hosted.monthlyPeriod'),
+                'note' => $page->t('pricing.hosted.monthlyNote'),
+            ],
+        ],
+    ];
 @endphp
 
-{{-- `group/billing` is what the price spans read through `group-has-*`. --}}
-<section class="group/billing">
+{{-- The one interactive region on the site. Alpine owns the billing period;
+     everything below is rendered in the yearly state first, so the page is
+     complete and correct before the script loads, and if it never does. --}}
+<section x-data="{{ json_encode($billing, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) }}">
     <div class="mx-auto w-full max-w-marketing px-4 py-section-sm md:px-8 lg:py-section">
         <span class="font-mono text-mono text-text-muted">{{ $page->t('pricing.eyebrow') }}</span>
 
@@ -35,15 +45,26 @@
         <p class="mt-4 {{ $lede }}">{{ $page->t('pricing.lede2') }}</p>
 
         <div class="mt-8 flex flex-wrap items-center gap-4">
-            <fieldset class="inline-flex rounded-full border border-border bg-surface p-[3px]">
-                <legend class="sr-only">{{ $page->t('pricing.billing.label') }}</legend>
+            {{-- Hidden without JavaScript, because the buttons would be inert:
+                 the reader keeps the yearly price and loses only the choice,
+                 rather than being given a control that does nothing. --}}
+            <div class="js-only inline-flex rounded-full border border-border bg-surface p-[3px]" role="group" aria-label="{{ $page->t('pricing.billing.label') }}">
+                <button
+                    type="button"
+                    x-on:click="period = 'yearly'"
+                    x-bind:aria-pressed="period === 'yearly'"
+                    x-bind:class="period === 'yearly' ? 'bg-surface-inverse font-medium text-canvas' : 'text-text-secondary hover:text-text'"
+                    class="{{ $seg }}"
+                >{{ $page->t('pricing.billing.yearly') }}</button>
 
-                <input type="radio" name="billing" id="billing-yearly" class="peer/yearly sr-only" checked>
-                <label for="billing-yearly" class="{{ $seg }} {{ $segYearly }}">{{ $page->t('pricing.billing.yearly') }}</label>
-
-                <input type="radio" name="billing" id="billing-monthly" class="peer/monthly sr-only">
-                <label for="billing-monthly" class="{{ $seg }} {{ $segMonthly }}">{{ $page->t('pricing.billing.monthly') }}</label>
-            </fieldset>
+                <button
+                    type="button"
+                    x-on:click="period = 'monthly'"
+                    x-bind:aria-pressed="period === 'monthly'"
+                    x-bind:class="period === 'monthly' ? 'bg-surface-inverse font-medium text-canvas' : 'text-text-secondary hover:text-text'"
+                    class="{{ $seg }}"
+                >{{ $page->t('pricing.billing.monthly') }}</button>
+            </div>
 
             <span class="font-mono text-mono text-text-muted">{{ $page->t('pricing.currency') }}</span>
         </div>
@@ -55,22 +76,16 @@
 
                 {{-- Fixed height so the two cards' buttons stay on one line as
                      the price swaps between a one-line and a two-line note. --}}
-                <div class="mt-6 min-h-24">
+                {{-- Each binding wraps the yearly text it will replace, so the
+                     figures are in the HTML rather than filled in on load.
+                     aria-live keeps a screen reader informed when they change. --}}
+                <div class="mt-6 min-h-24" aria-live="polite">
                     <div class="flex items-baseline gap-3">
-                        <span class="{{ $amount }}">
-                            <span class="hidden group-has-[#billing-yearly:checked]/billing:inline">{{ $page->t('pricing.hosted.yearlyPrice') }}</span>
-                            <span class="hidden group-has-[#billing-monthly:checked]/billing:inline">{{ $page->t('pricing.hosted.monthlyPrice') }}</span>
-                        </span>
-                        <span class="text-copy-lg text-text-secondary">
-                            <span class="hidden group-has-[#billing-yearly:checked]/billing:inline">{{ $page->t('pricing.hosted.yearlyPeriod') }}</span>
-                            <span class="hidden group-has-[#billing-monthly:checked]/billing:inline">{{ $page->t('pricing.hosted.monthlyPeriod') }}</span>
-                        </span>
+                        <span class="{{ $amount }}" x-text="plans[period].price">{{ $page->t('pricing.hosted.yearlyPrice') }}</span>
+                        <span class="text-copy-lg text-text-secondary" x-text="plans[period].period">{{ $page->t('pricing.hosted.yearlyPeriod') }}</span>
                     </div>
 
-                    <p class="mt-3 {{ $body }}">
-                        <span class="hidden group-has-[#billing-yearly:checked]/billing:inline">{{ $page->t('pricing.hosted.yearlyNote') }}</span>
-                        <span class="hidden group-has-[#billing-monthly:checked]/billing:inline">{{ $page->t('pricing.hosted.monthlyNote') }}</span>
-                    </p>
+                    <p class="mt-3 {{ $body }}" x-text="plans[period].note">{{ $page->t('pricing.hosted.yearlyNote') }}</p>
                     <p class="mt-2 font-mono text-mono text-text-muted">{{ $page->t('pricing.hosted.taxNote') }}</p>
                 </div>
 
