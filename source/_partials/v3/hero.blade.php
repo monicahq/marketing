@@ -34,8 +34,18 @@
             {{-- The site is static, so the form posts to somebody else's
                  endpoint. Until `launchList` in config.php has a real one, it
                  posts to '#'. There is no success state here for the same
-                 reason: the provider owns the page the reader lands on. --}}
-            <form action="{{ $page->links['launchList'] }}" method="post" class="flex gap-3 max-md:flex-col max-md:items-stretch">
+                 reason: the provider owns the page the reader lands on.
+
+                 `data-turbo="false"` for that last reason: Turbo intercepts
+                 form submissions and expects to render the response itself,
+                 which is not a conversation to have with someone else's signup
+                 endpoint. This one submits the ordinary way. --}}
+            <form
+                action="{{ $page->links['launchList'] }}"
+                method="post"
+                data-turbo="false"
+                class="flex gap-3 max-md:flex-col max-md:items-stretch"
+            >
                 <label class="mn-field min-w-0 flex-1">
                     <span class="mn-label">{{ $page->t('v3page.form.label') }}</span>
                     <input

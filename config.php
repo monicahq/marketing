@@ -68,12 +68,15 @@ return [
 
     /**
      * ⚠️ The '#' entries are placeholders carried over from the design. They
-     * need real destinations before launch: the application does not live at a
-     * URL this repository knows about yet.
+     * need real destinations before launch.
+     *
+     * The application itself lives at app.monicahq.com. Anything that sends a
+     * reader into it belongs on that host, not on this one: it is a different
+     * origin, so Turbo leaves those links alone and they load normally.
      */
     'links' => [
         'github' => 'https://github.com/monicahq/monica',
-        'signIn' => '#',
+        'signIn' => 'https://app.monicahq.com',
         'getStarted' => '#',
         'createAccount' => '#',
         'selfHost' => '#',
