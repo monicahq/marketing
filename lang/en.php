@@ -30,6 +30,16 @@ return [
             'description' => "Hosted Monica is $9 USD per month or $90 per year, with unlimited contacts and no per-contact pricing. Or self-host the open-source application for free on your own infrastructure.",
         ],
 
+        'privacy' => [
+            'title' => "Privacy policy — Monica",
+            'description' => "How Monica handles your data: what we collect, where it is stored, who can see it, and what happens when you close your account. No ads, no trackers, no data resale.",
+        ],
+
+        'terms' => [
+            'title' => "Terms of use — Monica",
+            'description' => "The terms of use for Monica, the open-source personal CRM: what the service covers, your rights over your data, your responsibilities, and the legal small print.",
+        ],
+
         'blog' => [
             'title' => "The Monica blog — release notes and product decisions",
             'description' => "What we ship, why we build it that way, and what running a small open-source company actually looks like. Written by the people making Monica.",
@@ -624,6 +634,7 @@ return [
         'selfHosting' => "Self-hosting",
         'github' => "GitHub",
         'privacy' => "Privacy",
+        'terms' => "Terms",
         'copyright' => "© :year Monica",
         'since' => "Open source since 2017",
         'ownership' => "Your data stays yours.",
@@ -676,6 +687,110 @@ return [
             'body' => "Monica has been open source since the beginning. Read the code, run your own instance, send a patch.",
         ],
     ],
+
+    /**
+     * Copied verbatim from the terms published at monicahq.com/terms. This is
+     * the authoritative wording; the other three locales are translations of
+     * it. Change it here first.
+     */
+    'terms' => [
+        'title' => "Our terms of use",
+        'updated' => "Last update: :date",
+        'updatedOn' => "April 12, 2018",
+
+        'sections' => [
+            [
+                'title' => "Scope of service",
+                'blocks' => [
+                    ['text' => "Monica supports the following browsers:"],
+                    ['items' => [
+                        "Internet Explorer (11+)",
+                        "Firefox (50+)",
+                        "Chrome (latest)",
+                        "Safari (latest)",
+                    ]],
+                    ['text' => "I do not guarantee that the site will work with other browsers, but it's very likely that it will just work."],
+                ],
+            ],
+            [
+                'title' => "Rights",
+                'blocks' => [
+                    ['text' => "You don't have to provide your real name when you register to an account. You do however need a valid email address if you want to upgrade your account to the paid version, or receive reminders by email."],
+                    ['text' => "You have the right to close your account at any time."],
+                    ['text' => "You have the right to export your data at any time, in the SQL format."],
+                    ['text' => "Your data will not be intentionally shown to other users or shared with third parties."],
+                    ['text' => "Your personal data will not be shared with anyone without your consent."],
+                    ['text' => "Your data is backed up every hour."],
+                    ['text' => "If the site ceases operation, you will receive an opportunity to export all your data before the site dies."],
+                    ['text' => "Any new features that affect privacy will be strictly opt-in."],
+                ],
+            ],
+            [
+                'title' => "Responsibilities",
+                'blocks' => [
+                    ['text' => "You will not use the site to store illegal information or data under the Canadian law (or any law)."],
+                    ['text' => "You have to be at least 18+ to create an account and use the site."],
+                    ['text' => "You must not abuse the site by knowingly posting malicious code that could harm you or the other users."],
+                    ['text' => "You must only use the site to do things that are widely accepted as morally good."],
+                    ['text' => "You may not make automated requests to the site."],
+                    ['text' => "You may not abuse the invitation system."],
+                    ['text' => "You are responsible for keeping your account secure."],
+                    ['text' => "I reserve the right to close accounts that abuse the system (thousands of contacts with hundred of thousands of reminders for instance) or use it in an unreasonable manner."],
+                ],
+            ],
+            [
+                'title' => "Other important legal stuff",
+                'blocks' => [
+                    ['text' => "Though I want to provide a great service, there are certain things about the service I cannot promise. For example, the services and software are provided “as-is”, at your own risk, without express or implied warranty or condition of any kind. I also disclaim any warranties of merchantability, fitness for a particular purpose or non-infringement. Monica will have no responsibility for any harm to your computer system, loss or corruption of data, or other harm that results from your access to or use of the Services or Software."],
+                    ['text' => "These Terms can change at any time, but I'll never be a dick about it. Running this site is a dream come true to me, and I hope I'll be able to run it as long as I can."],
+                ],
+            ],
+        ],
+    ],
+
+    /**
+     * Copied verbatim from the policy published at monicahq.com/privacy. This
+     * is the authoritative wording; the other three locales are translations of
+     * it. Change it here first.
+     *
+     * One untitled section: the published policy is a flat run of paragraphs
+     * with no headings, and inventing some would be editing a legal document.
+     */
+    'privacy' => [
+        'title' => "Our privacy policy",
+        'updated' => "Last update: :date",
+        'updatedOn' => "Aug 06, 2026",
+
+        'sections' => [
+            [
+                'blocks' => [
+                    ['text' => "Monica is an open-source project. The hosted version has a premium plan that lets us collect money so we can pay for the servers and additional services, but the main goal is not to make money (otherwise we wouldn't have open-sourced it)."],
+                    ['text' => "Monica comes in two flavors: you can either use our hosted version, or download it and run it yourself. In the latter case, we do not track anything at all. We don't know that you've even downloaded the product. Do whatever you want with it (but respect your local laws)."],
+                    ['text' => "When you create your account on our hosted version, you are giving the site information about yourself that we collect. This includes your name, your email address and your password, that is encrypted before being stored. We do not store any other personal information."],
+                    ['text' => "When you login to the service, we are using cookies to remember your login credentials. This is the only purpose of the cookies."],
+                    ['text' => "Monica runs on Fortrabbit and we are the only ones, apart from Fortrabbit's employees, who have access to those servers."],
+                    ['text' => "We do hourly backups of the database."],
+                    ['text' => "Your password is encrypted with bcrypt, a password hashing algorithm that is highly secure. You can also activate two factor authentication on your account if you need an extra layer of security. Apart from those encryption mechanisms, your data is not encrypted in the database. If someone gets access to the database, they will be able to read your data. We do our best to make sure that this never happens, but it can happen."],
+                    ['text' => "If a data breach happens, we will contact the users who are affected to warn them about the breach."],
+                    ['text' => "Transactional emails are served through Postmark."],
+                    ['text' => "We use an open-source tool called Sentry to track errors that happen in production. Their service records the errors, but they don't have access to any information apart from the account ID, which lets me debug what's going on."],
+                    ['text' => "The site does not currently and will never show ads. It also does not, and don't intend to, sell data to a third party, with or without your consent. We are just against this. Fuck ads."],
+                    ['text' => "We do not use any tracking third parties, like Google Analytics or Intercom, that track user behaviours or data, neither on the marketing site or the hosted version. We are deeply against their principles as they would use those data to profile you, which we are totally against."],
+                    ['text' => "All the data you put on Monica belongs to you. We do not have any rights on it. Please don't put illegal stuff on it, otherwise we'd be in trouble."],
+                    ['text' => "All the information about the contacts you put on Monica are private to you. We do not cross link information between accounts or use one information in an account to populate another account (unlike Facebook for instance)."],
+                    ['text' => "We use Stripe to collect payments made to access the paid version. We do not store credit card information or anything concerning the transactions themselves on our servers. However, as per the open-source library we use to process the payments (Laravel Cashier), we store the last 4 digits of the credit card, the brand name (VISA or MasterCard). As a user, you are identified on Stripe by a random number that they generate and use."],
+                    ['text' => "Regarding the payments, you can downgrade to the free plan whenever you like. When you do, Stripe is automatically updated and we have no way to charge you again, even if we would like to. The less we deal with payment information, the happier we are."],
+                    ['text' => "You can export your data at any time. You can also use the API to export all your data if you know how to do it. You can also request that we process this ourselves and send it to you. Your data will be exported in the SQL format."],
+                    ['text' => "When you close your account, we immediately destroy all your personal information from the production database, but your information is kept in the backups that we keep for 30 days. After 30 days, your information will be completely destroyed. While you have control over this, we can delete an account for you if you ask us."],
+                    ['text' => "In certain situations, we may be required to disclose personal data in response to lawful requests by public authorities, including to meet national security or law enforcement requirements. We just hope that this never happens."],
+                    ['text' => "If you violate the terms of use we will terminate your account and notify you about it. However if you follow the \"don't be a dick\" policy, nothing should ever happen to you and we'll all be happy."],
+                    ['text' => "Monica uses only open-source projects that are mainly hosted on Github."],
+                    ['text' => "We will update this privacy policy as soon as we introduce new information practices. If we do, we will send an email to the email address specified in your account. We will never be a dick about it and will never, ever, introduce something in what we do that will affect your right to the absolute privacy."],
+                ],
+            ],
+        ],
+    ],
+
 
     'notFound' => [
         'title' => "Page not found.",

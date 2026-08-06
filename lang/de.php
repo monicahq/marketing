@@ -20,6 +20,16 @@ return [
             'description' => "Gehostete Monica kostet 9 USD pro Monat oder 90 USD pro Jahr, mit unbegrenzten Kontakten und ohne Preis pro Kontakt. Oder hosten Sie die quelloffene Anwendung kostenlos auf Ihrer eigenen Infrastruktur.",
         ],
 
+        'privacy' => [
+            'title' => "Datenschutzrichtlinie — Monica",
+            'description' => "Wie Monica mit Ihren Daten umgeht: was wir erheben, wo es gespeichert wird, wer es sehen kann und was beim Schließen Ihres Kontos passiert. Keine Werbung, keine Tracker, kein Datenverkauf.",
+        ],
+
+        'terms' => [
+            'title' => "Nutzungsbedingungen — Monica",
+            'description' => "Die Nutzungsbedingungen von Monica, dem quelloffenen persönlichen CRM: was der Dienst abdeckt, Ihre Rechte an Ihren Daten, Ihre Pflichten und das rechtliche Kleingedruckte.",
+        ],
+
         'blog' => [
             'title' => "Der Monica-Blog — Release Notes und Produktentscheidungen",
             'description' => "Was wir ausliefern, warum wir es so bauen und wie ein kleines Open-Source-Unternehmen wirklich aussieht. Geschrieben von den Menschen, die Monica machen.",
@@ -613,6 +623,7 @@ return [
         'selfHosting' => "Selbst hosten",
         'github' => "GitHub",
         'privacy' => "Datenschutz",
+        'terms' => "Nutzungsbedingungen",
         'copyright' => "© :year Monica",
         'since' => "Quelloffen seit 2017",
         'ownership' => "Ihre Daten bleiben Ihre.",
@@ -663,6 +674,106 @@ return [
         'openSource' => [
             'title' => "Open Source",
             'body' => "Monica ist seit dem ersten Tag quelloffen. Lesen Sie den Code, betreiben Sie Ihre eigene Instanz, schicken Sie einen Patch.",
+        ],
+    ],
+
+    /**
+     * Übersetzung der auf monicahq.com/terms veröffentlichten Bedingungen.
+     * Maßgeblich ist die englische Fassung in lang/en.php: sie wurde
+     * veröffentlicht, und sie ist zuerst zu ändern.
+     */
+    'terms' => [
+        'title' => "Unsere Nutzungsbedingungen",
+        'updated' => "Letzte Aktualisierung: :date",
+        'updatedOn' => "12. April 2018",
+
+        'sections' => [
+            [
+                'title' => "Umfang des Dienstes",
+                'blocks' => [
+                    ['text' => "Monica unterstützt die folgenden Browser:"],
+                    ['items' => [
+                        "Internet Explorer (11+)",
+                        "Firefox (50+)",
+                        "Chrome (neueste Version)",
+                        "Safari (neueste Version)",
+                    ]],
+                    ['text' => "Ich garantiere nicht, dass die Website mit anderen Browsern funktioniert, aber sehr wahrscheinlich tut sie es einfach."],
+                ],
+            ],
+            [
+                'title' => "Rechte",
+                'blocks' => [
+                    ['text' => "Sie müssen bei der Registrierung eines Kontos nicht Ihren echten Namen angeben. Sie brauchen allerdings eine gültige E-Mail-Adresse, wenn Sie Ihr Konto auf die kostenpflichtige Version umstellen oder Erinnerungen per E-Mail erhalten möchten."],
+                    ['text' => "Sie haben das Recht, Ihr Konto jederzeit zu schließen."],
+                    ['text' => "Sie haben das Recht, Ihre Daten jederzeit im SQL-Format zu exportieren."],
+                    ['text' => "Ihre Daten werden anderen Nutzerinnen und Nutzern nicht absichtlich gezeigt und nicht an Dritte weitergegeben."],
+                    ['text' => "Ihre personenbezogenen Daten werden ohne Ihre Einwilligung an niemanden weitergegeben."],
+                    ['text' => "Ihre Daten werden stündlich gesichert."],
+                    ['text' => "Sollte der Betrieb der Website eingestellt werden, erhalten Sie die Gelegenheit, alle Ihre Daten zu exportieren, bevor sie verschwindet."],
+                    ['text' => "Alle neuen Funktionen, die die Privatsphäre berühren, sind ausdrücklich freiwillig."],
+                ],
+            ],
+            [
+                'title' => "Pflichten",
+                'blocks' => [
+                    ['text' => "Sie werden die Website nicht dazu verwenden, nach kanadischem Recht (oder nach irgendeinem Recht) illegale Informationen oder Daten zu speichern."],
+                    ['text' => "Sie müssen mindestens 18 Jahre alt sein, um ein Konto anzulegen und die Website zu nutzen."],
+                    ['text' => "Sie dürfen die Website nicht missbrauchen, indem Sie wissentlich Schadcode veröffentlichen, der Ihnen oder anderen Nutzerinnen und Nutzern schaden könnte."],
+                    ['text' => "Sie dürfen die Website ausschließlich für Zwecke nutzen, die allgemein als moralisch gut gelten."],
+                    ['text' => "Sie dürfen keine automatisierten Anfragen an die Website stellen."],
+                    ['text' => "Sie dürfen das Einladungssystem nicht missbrauchen."],
+                    ['text' => "Für die Sicherheit Ihres Kontos sind Sie selbst verantwortlich."],
+                    ['text' => "Ich behalte mir das Recht vor, Konten zu schließen, die das System missbrauchen (etwa Tausende Kontakte mit Hunderttausenden Erinnerungen) oder es in unangemessener Weise nutzen."],
+                ],
+            ],
+            [
+                'title' => "Weitere wichtige rechtliche Hinweise",
+                'blocks' => [
+                    ['text' => "So sehr ich einen großartigen Dienst anbieten möchte, gibt es einige Dinge, die ich zu diesem Dienst nicht versprechen kann. Die Dienste und die Software werden zum Beispiel „wie besehen“ und auf Ihr eigenes Risiko bereitgestellt, ohne ausdrückliche oder stillschweigende Gewährleistung oder Zusicherung jeglicher Art. Ich schließe außerdem jede Gewährleistung der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter aus. Monica übernimmt keine Verantwortung für Schäden an Ihrem Computersystem, für Datenverlust oder Datenbeschädigung oder für sonstige Schäden, die sich aus Ihrem Zugriff auf die Dienste oder die Software oder aus deren Nutzung ergeben."],
+                    ['text' => "Diese Bedingungen können sich jederzeit ändern, aber ich werde mich dabei nie wie ein Arschloch verhalten. Diese Website zu betreiben ist für mich ein wahr gewordener Traum, und ich hoffe, es so lange tun zu können, wie ich kann."],
+                ],
+            ],
+        ],
+    ],
+
+    /**
+     * Übersetzung der auf monicahq.com/privacy veröffentlichten Richtlinie.
+     * Maßgeblich ist die englische Fassung in lang/en.php: sie wurde
+     * veröffentlicht, und sie ist zuerst zu ändern.
+     */
+    'privacy' => [
+        'title' => "Unsere Datenschutzrichtlinie",
+        'updated' => "Letzte Aktualisierung: :date",
+        'updatedOn' => "30. Mai 2019",
+
+        'sections' => [
+            [
+                'blocks' => [
+                    ['text' => "Monica ist ein Open-Source-Projekt. Die gehostete Version hat einen kostenpflichtigen Tarif, über den wir Geld einnehmen, um Server und zusätzliche Dienste zu bezahlen. Das Hauptziel ist aber nicht, Geld zu verdienen (sonst hätten wir den Quellcode nicht offengelegt)."],
+                    ['text' => "Monica gibt es in zwei Varianten: Sie können unsere gehostete Version nutzen oder sie herunterladen und selbst betreiben. Im zweiten Fall verfolgen wir überhaupt nichts. Wir wissen nicht einmal, dass Sie das Produkt heruntergeladen haben. Machen Sie damit, was Sie wollen (aber halten Sie sich an das Recht Ihres Landes)."],
+                    ['text' => "Wenn Sie Ihr Konto in unserer gehosteten Version anlegen, geben Sie der Website Informationen über sich, die wir erheben. Dazu gehören Ihr Name, Ihre E-Mail-Adresse und Ihr Passwort, das vor der Speicherung verschlüsselt wird. Weitere personenbezogene Daten speichern wir nicht."],
+                    ['text' => "Wenn Sie sich beim Dienst anmelden, verwenden wir Cookies, um Ihre Anmeldedaten zu speichern. Das ist der einzige Zweck der Cookies."],
+                    ['text' => "Monica läuft auf Fortrabbit, und außer den Beschäftigten von Fortrabbit haben nur wir Zugriff auf diese Server."],
+                    ['text' => "Wir sichern die Datenbank stündlich."],
+                    ['text' => "Ihr Passwort wird mit bcrypt verschlüsselt, einem sehr sicheren Verfahren zum Hashen von Passwörtern. Sie können für Ihr Konto zusätzlich die Zwei-Faktor-Authentifizierung aktivieren, wenn Sie eine weitere Sicherheitsebene möchten. Abgesehen von diesen Verschlüsselungsmechanismen sind Ihre Daten in der Datenbank nicht verschlüsselt. Wer Zugriff auf die Datenbank erlangt, kann Ihre Daten lesen. Wir tun unser Bestes, damit das nie passiert, aber es kann passieren."],
+                    ['text' => "Kommt es zu einer Datenpanne, benachrichtigen wir die betroffenen Nutzerinnen und Nutzer, um sie zu warnen."],
+                    ['text' => "Transaktions-E-Mails werden über Postmark zugestellt."],
+                    ['text' => "Wir verwenden ein Open-Source-Werkzeug namens Sentry, um Fehler im Produktivbetrieb zu verfolgen. Deren Dienst zeichnet die Fehler auf, hat aber außer der Konto-ID, mit der ich das Problem nachvollziehen kann, keinen Zugriff auf Informationen."],
+                    ['text' => "Die Website zeigt derzeit keine Werbung und wird das auch nie tun. Sie verkauft auch keine Daten an Dritte, mit oder ohne Ihre Einwilligung, und hat das auch nicht vor. Wir sind schlicht dagegen. Scheiß auf Werbung."],
+                    ['text' => "Wir setzen keine Tracking-Dienste Dritter wie Google Analytics oder Intercom ein, die Nutzerverhalten oder Nutzerdaten verfolgen, weder auf der Marketing-Website noch in der gehosteten Version. Wir lehnen deren Prinzipien zutiefst ab, denn sie würden diese Daten nutzen, um ein Profil von Ihnen zu erstellen, was wir vollkommen ablehnen."],
+                    ['text' => "Alle Daten, die Sie in Monica ablegen, gehören Ihnen. Wir haben keinerlei Rechte daran. Bitte legen Sie dort nichts Illegales ab, sonst bekommen wir Ärger."],
+                    ['text' => "Alle Informationen über die Kontakte, die Sie in Monica ablegen, sind allein Ihre. Wir verknüpfen keine Informationen zwischen Konten und verwenden keine Information aus einem Konto, um ein anderes zu füllen (anders als etwa Facebook)."],
+                    ['text' => "Für Zahlungen zum Zugang zur kostenpflichtigen Version nutzen wir Stripe. Wir speichern auf unseren Servern weder Kreditkartendaten noch irgendetwas zu den Transaktionen selbst. Wie es die quelloffene Bibliothek vorsieht, mit der wir Zahlungen abwickeln (Laravel Cashier), speichern wir jedoch die letzten 4 Ziffern der Kreditkarte und den Namen des Anbieters (VISA oder MasterCard). Als Nutzerin oder Nutzer werden Sie bei Stripe über eine von dort erzeugte Zufallsnummer identifiziert."],
+                    ['text' => "Zu den Zahlungen: Sie können jederzeit auf den kostenlosen Tarif zurückwechseln. Wenn Sie das tun, wird Stripe automatisch aktualisiert, und wir haben keine Möglichkeit mehr, Ihnen etwas zu berechnen, selbst wenn wir es wollten. Je weniger wir mit Zahlungsdaten zu tun haben, desto glücklicher sind wir."],
+                    ['text' => "Sie können Ihre Daten jederzeit exportieren. Sie können dafür auch die API nutzen, wenn Sie wissen, wie das geht. Und Sie können uns bitten, das selbst zu übernehmen und Ihnen die Daten zuzuschicken. Ihre Daten werden im SQL-Format exportiert."],
+                    ['text' => "Wenn Sie Ihr Konto schließen, löschen wir alle Ihre personenbezogenen Daten sofort aus der Produktivdatenbank. In den Sicherungen, die wir 30 Tage aufbewahren, bleiben Ihre Daten jedoch enthalten. Nach 30 Tagen werden sie vollständig gelöscht. Sie haben das selbst in der Hand, aber wir können ein Konto auf Wunsch auch für Sie löschen."],
+                    ['text' => "In bestimmten Situationen können wir verpflichtet sein, personenbezogene Daten auf rechtmäßiges Verlangen von Behörden offenzulegen, etwa zur Erfüllung von Anforderungen der nationalen Sicherheit oder der Strafverfolgung. Wir hoffen einfach, dass das nie passiert."],
+                    ['text' => "Wenn Sie gegen die Nutzungsbedingungen verstoßen, schließen wir Ihr Konto und teilen Ihnen das mit. Wenn Sie sich aber an den Grundsatz „sei kein Arschloch“ halten, sollte Ihnen nie etwas passieren und wir sind alle zufrieden."],
+                    ['text' => "Monica verwendet ausschließlich Open-Source-Projekte, die überwiegend auf Github liegen."],
+                    ['text' => "Wir werden diese Datenschutzrichtlinie aktualisieren, sobald wir neue Praktiken im Umgang mit Informationen einführen. Falls das geschieht, schicken wir eine E-Mail an die in Ihrem Konto hinterlegte Adresse. Wir werden uns dabei nie wie Arschlöcher verhalten und niemals, wirklich niemals, etwas in unsere Arbeit einführen, das Ihr Recht auf absolute Privatsphäre beeinträchtigt."],
+                ],
+            ],
         ],
     ],
 

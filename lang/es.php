@@ -20,6 +20,16 @@ return [
             'description' => "Monica alojada cuesta 9 USD al mes o 90 USD al año, con contactos ilimitados y sin precio por contacto. O aloja gratis la aplicación de código abierto en tu propia infraestructura.",
         ],
 
+        'privacy' => [
+            'title' => "Política de privacidad — Monica",
+            'description' => "Cómo trata Monica tus datos: qué recogemos, dónde se almacena, quién puede verlo y qué ocurre cuando cierras tu cuenta. Sin publicidad, sin rastreadores, sin venta de datos.",
+        ],
+
+        'terms' => [
+            'title' => "Condiciones de uso — Monica",
+            'description' => "Las condiciones de uso de Monica, el CRM personal de código abierto: qué cubre el servicio, tus derechos sobre tus datos, tus responsabilidades y la letra pequeña legal.",
+        ],
+
         'blog' => [
             'title' => "El blog de Monica — notas de versión y decisiones de producto",
             'description' => "Qué publicamos, por qué lo construimos así y cómo es de verdad llevar una pequeña empresa de código abierto. Escrito por quienes hacen Monica.",
@@ -613,6 +623,7 @@ return [
         'selfHosting' => "Autoalojamiento",
         'github' => "GitHub",
         'privacy' => "Privacidad",
+        'terms' => "Condiciones de uso",
         'copyright' => "© :year Monica",
         'since' => "De código abierto desde 2017",
         'ownership' => "Tus datos siguen siendo tuyos.",
@@ -663,6 +674,106 @@ return [
         'openSource' => [
             'title' => "Código abierto",
             'body' => "Monica es de código abierto desde el principio. Lee el código, ejecuta tu propia instancia, envía un parche.",
+        ],
+    ],
+
+    /**
+     * Traducción de las condiciones publicadas en monicahq.com/terms. La
+     * versión inglesa de lang/en.php es la que prevalece: es la que se publicó,
+     * y es la que hay que modificar primero.
+     */
+    'terms' => [
+        'title' => "Nuestras condiciones de uso",
+        'updated' => "Última actualización: :date",
+        'updatedOn' => "12 de abril de 2018",
+
+        'sections' => [
+            [
+                'title' => "Alcance del servicio",
+                'blocks' => [
+                    ['text' => "Monica es compatible con los siguientes navegadores:"],
+                    ['items' => [
+                        "Internet Explorer (11+)",
+                        "Firefox (50+)",
+                        "Chrome (última versión)",
+                        "Safari (última versión)",
+                    ]],
+                    ['text' => "No garantizo que el sitio funcione con otros navegadores, pero es muy probable que sencillamente funcione."],
+                ],
+            ],
+            [
+                'title' => "Derechos",
+                'blocks' => [
+                    ['text' => "No tienes que facilitar tu nombre real al registrar una cuenta. Sí necesitas, en cambio, una dirección de correo válida si quieres pasar tu cuenta a la versión de pago o recibir recordatorios por correo."],
+                    ['text' => "Tienes derecho a cerrar tu cuenta en cualquier momento."],
+                    ['text' => "Tienes derecho a exportar tus datos en cualquier momento, en formato SQL."],
+                    ['text' => "Tus datos no se mostrarán intencionadamente a otras personas usuarias ni se compartirán con terceros."],
+                    ['text' => "Tus datos personales no se compartirán con nadie sin tu consentimiento."],
+                    ['text' => "Se hace una copia de seguridad de tus datos cada hora."],
+                    ['text' => "Si el sitio deja de funcionar, tendrás la oportunidad de exportar todos tus datos antes de que desaparezca."],
+                    ['text' => "Cualquier función nueva que afecte a la privacidad será estrictamente voluntaria."],
+                ],
+            ],
+            [
+                'title' => "Responsabilidades",
+                'blocks' => [
+                    ['text' => "No usarás el sitio para almacenar información o datos ilegales según la legislación canadiense (ni según ninguna otra legislación)."],
+                    ['text' => "Debes tener al menos 18 años para crear una cuenta y usar el sitio."],
+                    ['text' => "No debes abusar del sitio publicando a sabiendas código malicioso que pueda perjudicarte a ti o a otras personas usuarias."],
+                    ['text' => "Solo debes usar el sitio para hacer cosas ampliamente aceptadas como moralmente buenas."],
+                    ['text' => "No puedes hacer peticiones automatizadas al sitio."],
+                    ['text' => "No puedes abusar del sistema de invitaciones."],
+                    ['text' => "Eres responsable de mantener tu cuenta segura."],
+                    ['text' => "Me reservo el derecho de cerrar las cuentas que abusen del sistema (miles de contactos con cientos de miles de recordatorios, por ejemplo) o que lo usen de forma poco razonable."],
+                ],
+            ],
+            [
+                'title' => "Otras cuestiones legales importantes",
+                'blocks' => [
+                    ['text' => "Aunque quiero ofrecer un gran servicio, hay ciertas cosas que no puedo prometer sobre él. Por ejemplo, los servicios y el software se proporcionan «tal cual», bajo tu propia responsabilidad, sin garantía ni condición expresa o implícita de ningún tipo. También rechazo cualquier garantía de comerciabilidad, de idoneidad para un fin concreto o de no infracción. Monica no asumirá responsabilidad alguna por daños a tu sistema informático, por la pérdida o corrupción de datos, ni por cualquier otro perjuicio derivado de tu acceso a los servicios o al software, o de su uso."],
+                    ['text' => "Estas condiciones pueden cambiar en cualquier momento, pero nunca me portaré como un cabrón al hacerlo. Sacar adelante este sitio es un sueño hecho realidad para mí, y espero poder mantenerlo tanto tiempo como pueda."],
+                ],
+            ],
+        ],
+    ],
+
+    /**
+     * Traducción de la política publicada en monicahq.com/privacy. La versión
+     * inglesa de lang/en.php es la que prevalece: es la que se publicó, y es la
+     * que hay que modificar primero.
+     */
+    'privacy' => [
+        'title' => "Nuestra política de privacidad",
+        'updated' => "Última actualización: :date",
+        'updatedOn' => "30 de mayo de 2019",
+
+        'sections' => [
+            [
+                'blocks' => [
+                    ['text' => "Monica es un proyecto de código abierto. La versión alojada tiene un plan de pago que nos permite ingresar dinero para pagar los servidores y otros servicios, pero el objetivo principal no es ganar dinero (de lo contrario no habríamos abierto el código)."],
+                    ['text' => "Monica viene en dos modalidades: puedes usar nuestra versión alojada, o descargarla y ejecutarla tú. En este segundo caso no rastreamos absolutamente nada. Ni siquiera sabemos que has descargado el producto. Haz con él lo que quieras (pero respeta las leyes de tu país)."],
+                    ['text' => "Cuando creas tu cuenta en nuestra versión alojada, facilitas al sitio información sobre ti que recogemos. Incluye tu nombre, tu dirección de correo y tu contraseña, que se cifra antes de almacenarse. No almacenamos ninguna otra información personal."],
+                    ['text' => "Cuando inicias sesión en el servicio, usamos cookies para recordar tus credenciales. Ese es el único propósito de las cookies."],
+                    ['text' => "Monica funciona en Fortrabbit y somos los únicos, aparte del personal de Fortrabbit, con acceso a esos servidores."],
+                    ['text' => "Hacemos copias de seguridad de la base de datos cada hora."],
+                    ['text' => "Tu contraseña se cifra con bcrypt, un algoritmo de hash de contraseñas muy seguro. También puedes activar la autenticación en dos pasos en tu cuenta si quieres una capa de seguridad adicional. Al margen de esos mecanismos de cifrado, tus datos no están cifrados en la base de datos. Si alguien accede a la base de datos, podrá leer tus datos. Hacemos todo lo posible para que eso no ocurra nunca, pero puede ocurrir."],
+                    ['text' => "Si se produce una filtración de datos, avisaremos a las personas usuarias afectadas para advertirlas."],
+                    ['text' => "Los correos transaccionales se envían a través de Postmark."],
+                    ['text' => "Usamos una herramienta de código abierto llamada Sentry para seguir los errores que se producen en producción. Su servicio registra los errores, pero no tienen acceso a ninguna información salvo el identificador de la cuenta, que me permite depurar qué está pasando."],
+                    ['text' => "El sitio no muestra publicidad ahora mismo y nunca la mostrará. Tampoco vende datos a terceros, con o sin tu consentimiento, ni tiene intención de hacerlo. Sencillamente estamos en contra. A la mierda la publicidad."],
+                    ['text' => "No usamos servicios de rastreo de terceros, como Google Analytics o Intercom, que sigan comportamientos o datos de las personas usuarias, ni en el sitio de marketing ni en la versión alojada. Estamos profundamente en contra de sus principios, porque usarían esos datos para perfilarte, algo a lo que nos oponemos por completo."],
+                    ['text' => "Todos los datos que pones en Monica te pertenecen. No tenemos ningún derecho sobre ellos. Por favor, no pongas ahí nada ilegal, o tendremos problemas."],
+                    ['text' => "Toda la información sobre los contactos que pones en Monica es privada y tuya. No cruzamos información entre cuentas ni usamos información de una cuenta para rellenar otra (a diferencia de Facebook, por ejemplo)."],
+                    ['text' => "Usamos Stripe para cobrar los pagos que dan acceso a la versión de pago. No almacenamos en nuestros servidores datos de tarjetas ni nada relativo a las transacciones en sí. Sin embargo, tal como prevé la biblioteca de código abierto que usamos para procesar los pagos (Laravel Cashier), guardamos los 4 últimos dígitos de la tarjeta y el nombre de la marca (VISA o MasterCard). Como usuario, Stripe te identifica mediante un número aleatorio que ellos generan y utilizan."],
+                    ['text' => "En cuanto a los pagos, puedes volver al plan gratuito cuando quieras. Al hacerlo, Stripe se actualiza automáticamente y no tenemos forma de volver a cobrarte, ni aunque quisiéramos. Cuanto menos tratemos con información de pago, más contentos estamos."],
+                    ['text' => "Puedes exportar tus datos en cualquier momento. También puedes usar la API para exportarlos todos si sabes cómo hacerlo. Y puedes pedirnos que lo hagamos nosotros y te los enviemos. Tus datos se exportarán en formato SQL."],
+                    ['text' => "Cuando cierras tu cuenta, destruimos de inmediato toda tu información personal de la base de datos de producción, pero tu información permanece en las copias de seguridad que conservamos durante 30 días. Pasados esos 30 días, tu información quedará completamente destruida. Aunque esto está en tus manos, podemos borrar una cuenta por ti si nos lo pides."],
+                    ['text' => "En determinadas situaciones podemos vernos obligados a revelar datos personales en respuesta a solicitudes legítimas de autoridades públicas, incluidas las que responden a requisitos de seguridad nacional o de aplicación de la ley. Solo esperamos que eso no ocurra nunca."],
+                    ['text' => "Si incumples las condiciones de uso, cerraremos tu cuenta y te lo notificaremos. Ahora bien, si sigues la norma de «no seas un cabrón», no debería pasarte nunca nada y todos tan contentos."],
+                    ['text' => "Monica solo utiliza proyectos de código abierto, alojados en su mayoría en Github."],
+                    ['text' => "Actualizaremos esta política de privacidad en cuanto introduzcamos nuevas prácticas en el tratamiento de la información. Si lo hacemos, enviaremos un correo a la dirección indicada en tu cuenta. Nunca nos portaremos como unos cabrones al hacerlo y jamás, jamás, introduciremos nada en lo que hacemos que afecte a tu derecho a una privacidad absoluta."],
+                ],
+            ],
         ],
     ],
 

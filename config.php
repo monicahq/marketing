@@ -185,6 +185,20 @@ return [
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.
         'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog'],
+
+        'terms' => [
+            'en' => 'terms',
+            'fr' => 'conditions-utilisation',
+            'de' => 'nutzungsbedingungen',
+            'es' => 'condiciones-de-uso',
+        ],
+
+        'privacy' => [
+            'en' => 'privacy',
+            'fr' => 'confidentialite',
+            'de' => 'datenschutz',
+            'es' => 'privacidad',
+        ],
     ],
 
     // ------------------------------------------------------------------ links
@@ -206,7 +220,6 @@ return [
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
-        'privacy' => '#',
 
         /**
          * Where the v3 launch-list form posts. The site is static, so this has
