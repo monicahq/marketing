@@ -4,8 +4,13 @@
     // Nav items in order. Entries whose destination is a page that does not
     // exist yet keep the design's placeholder href. `current` names the route
     // key, so aria-current follows the page being rendered.
+    //
+    // No "Product" entry: the logo beside it is already a link to the homepage,
+    // and two links to the same page in the same bar is one more than a reader
+    // needs. Nothing marks the homepage as current in here now, which is the
+    // ordinary arrangement for a site whose wordmark is its home link. The
+    // footer keeps its Product link, where there is no logo doing the job.
     $navItems = [
-        ['label' => $page->t('nav.product'), 'href' => $home, 'current' => ['home']],
         ['label' => $page->t('nav.v3'), 'href' => $page->route('v3'), 'current' => ['v3']],
         ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing'), 'current' => ['pricing']],
         // The section it names lives on the homepage, so the href carries the

@@ -190,7 +190,7 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 
 ## Known gaps
 
-The homepage, pricing, the v3 teaser, the blog and the two legal pages exist. Features and docs are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The blog's newsletter box has no endpoint yet and posts to `links.newsletter`, which is a placeholder like `links.launchList`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+The homepage, pricing, the v3 teaser, the blog and the two legal pages exist. Features and docs are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 
 ## The blog
 

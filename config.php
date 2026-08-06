@@ -227,9 +227,6 @@ return [
          * or a small function elsewhere. Until it has one, the form is inert.
          */
         'launchList' => '#',
-
-        /** Where the blog's newsletter box posts. Inert for the same reason. */
-        'newsletter' => '#',
     ],
 
     /** Replaced during the build by bootstrap.php, which reads the real count. */

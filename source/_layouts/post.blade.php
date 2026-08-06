@@ -122,7 +122,6 @@
                 @endif
 
                 @include('_partials.blog.try-monica', ['body' => $page->t('blog.tryMonica.bodyPost')])
-                @include('_partials.blog.newsletter', ['showNote' => false])
             </aside>
         </div>
     </div>
