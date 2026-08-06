@@ -419,13 +419,6 @@ return [
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
-
-        /**
-         * Where the v3 launch-list form posts. The site is static, so this has
-         * to be somebody else's endpoint: a form host, a newsletter provider,
-         * or a small function elsewhere. Until it has one, the form is inert.
-         */
-        'launchList' => '#',
     ],
 
     // ------------------------------------------------------------------ plans
