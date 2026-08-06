@@ -20,6 +20,11 @@ return [
             'description' => "Monica hébergée coûte 9 USD par mois ou 90 USD par an, avec des contacts illimités et aucun tarif au contact. Ou hébergez gratuitement l'application open source sur votre propre infrastructure.",
         ],
 
+        'privacy' => [
+            'title' => "Politique de confidentialité — Monica",
+            'description' => "Comment Monica traite vos données : ce que nous collectons, où c'est stocké, qui peut y accéder et ce qui se passe quand vous fermez votre compte. Pas de publicité, pas de traceurs, pas de revente de données.",
+        ],
+
         'terms' => [
             'title' => "Conditions d'utilisation — Monica",
             'description' => "Les conditions d'utilisation de Monica, le CRM personnel open source : ce que couvre le service, vos droits sur vos données, vos responsabilités et les mentions légales.",
@@ -727,6 +732,46 @@ return [
                 'blocks' => [
                     ['text' => "Même si je veux offrir un excellent service, il y a certaines choses que je ne peux pas promettre à son sujet. Les services et les logiciels sont par exemple fournis « en l'état », à vos propres risques, sans garantie ni condition expresse ou implicite d'aucune sorte. Je décline également toute garantie de qualité marchande, d'adéquation à un usage particulier ou d'absence de contrefaçon. Monica ne saurait être tenue responsable d'un quelconque dommage causé à votre système informatique, d'une perte ou d'une corruption de données, ni de tout autre préjudice résultant de votre accès aux services ou aux logiciels, ou de leur utilisation."],
                     ['text' => "Ces conditions peuvent changer à tout moment, mais je ne me comporterai jamais comme un salaud à ce sujet. Faire tourner ce site est un rêve devenu réalité, et j'espère pouvoir le faire aussi longtemps que possible."],
+                ],
+            ],
+        ],
+    ],
+
+    /**
+     * Traduction de la politique publiée sur monicahq.com/privacy. La version
+     * anglaise dans lang/en.php fait foi : c'est elle qui a été publiée, et
+     * c'est elle qu'il faut modifier en premier.
+     */
+    'privacy' => [
+        'title' => "Notre politique de confidentialité",
+        'updated' => "Dernière mise à jour : :date",
+        'updatedOn' => "30 mai 2019",
+
+        'sections' => [
+            [
+                'blocks' => [
+                    ['text' => "Monica est un projet open source. La version hébergée propose une offre payante qui nous permet de percevoir de l'argent afin de payer les serveurs et des services supplémentaires, mais le but premier n'est pas de gagner de l'argent (sinon nous n'en aurions pas ouvert le code)."],
+                    ['text' => "Monica existe en deux versions : vous pouvez utiliser notre version hébergée, ou bien la télécharger et la faire tourner vous-même. Dans ce second cas, nous ne suivons absolument rien. Nous ne savons même pas que vous avez téléchargé le produit. Faites-en ce que vous voulez (mais respectez les lois de votre pays)."],
+                    ['text' => "Lorsque vous créez votre compte sur notre version hébergée, vous fournissez au site des informations vous concernant, que nous collectons. Il s'agit de votre nom, de votre adresse e-mail et de votre mot de passe, qui est chiffré avant d'être stocké. Nous ne stockons aucune autre information personnelle."],
+                    ['text' => "Lorsque vous vous connectez au service, nous utilisons des cookies pour mémoriser vos identifiants. C'est le seul usage que nous faisons des cookies."],
+                    ['text' => "Monica tourne sur Linode et nous sommes les seuls, en dehors des employés de Linode, à avoir accès à ces serveurs."],
+                    ['text' => "Nous effectuons des sauvegardes horaires de la base de données."],
+                    ['text' => "Votre mot de passe est chiffré avec bcrypt, un algorithme de hachage de mots de passe très sûr. Vous pouvez également activer l'authentification à deux facteurs sur votre compte si vous souhaitez une couche de sécurité supplémentaire. En dehors de ces mécanismes de chiffrement, vos données ne sont pas chiffrées dans la base. Si quelqu'un accède à la base de données, il pourra lire vos données. Nous faisons de notre mieux pour que cela n'arrive jamais, mais cela peut arriver."],
+                    ['text' => "En cas de violation de données, nous contacterons les utilisateurs concernés pour les avertir."],
+                    ['text' => "Les e-mails transactionnels sont acheminés par Postmark."],
+                    ['text' => "Nous utilisons un outil open source appelé Sentry pour suivre les erreurs qui surviennent en production. Leur service enregistre les erreurs, mais ils n'ont accès à aucune information en dehors de l'identifiant du compte, qui me permet de comprendre ce qui se passe."],
+                    ['text' => "Le site n'affiche pas de publicité aujourd'hui et n'en affichera jamais. Il ne vend pas non plus de données à des tiers, avec ou sans votre consentement, et n'a pas l'intention de le faire. Nous y sommes tout simplement opposés. Merde à la publicité."],
+                    ['text' => "Nous n'utilisons aucun service tiers de pistage, comme Google Analytics ou Intercom, qui suivrait les comportements ou les données des utilisateurs, ni sur le site vitrine ni sur la version hébergée. Nous sommes profondément opposés à leurs principes, car ils utiliseraient ces données pour vous profiler, ce à quoi nous sommes totalement opposés."],
+                    ['text' => "Toutes les données que vous mettez dans Monica vous appartiennent. Nous n'avons aucun droit dessus. N'y mettez pas de contenu illégal, sans quoi nous aurions des ennuis."],
+                    ['text' => "Toutes les informations sur les contacts que vous mettez dans Monica vous sont privées. Nous ne croisons pas les informations entre les comptes et n'utilisons pas une information d'un compte pour en alimenter un autre (contrairement à Facebook, par exemple)."],
+                    ['text' => "Nous utilisons Stripe pour encaisser les paiements donnant accès à la version payante. Nous ne stockons sur nos serveurs ni les informations de carte bancaire ni quoi que ce soit concernant les transactions elles-mêmes. Toutefois, comme le prévoit la bibliothèque open source que nous utilisons pour traiter les paiements (Laravel Cashier), nous conservons les 4 derniers chiffres de la carte ainsi que le nom du réseau (VISA ou MasterCard). En tant qu'utilisateur, vous êtes identifié chez Stripe par un numéro aléatoire qu'ils génèrent et utilisent."],
+                    ['text' => "À propos des paiements, vous pouvez revenir à l'offre gratuite quand vous le souhaitez. Lorsque vous le faites, Stripe est automatiquement mis à jour et nous n'avons aucun moyen de vous facturer à nouveau, même si nous le voulions. Moins nous manipulons d'informations de paiement, plus nous sommes heureux."],
+                    ['text' => "Vous pouvez exporter vos données à tout moment. Vous pouvez également utiliser l'API pour exporter l'ensemble de vos données si vous savez le faire. Vous pouvez enfin nous demander de nous en charger nous-mêmes et de vous les envoyer. Vos données seront exportées au format SQL."],
+                    ['text' => "Lorsque vous fermez votre compte, nous détruisons immédiatement toutes vos informations personnelles de la base de données de production, mais vos informations restent présentes dans les sauvegardes que nous conservons 30 jours. Passé ce délai, vos informations seront entièrement détruites. Vous gardez la main sur cette opération, mais nous pouvons supprimer un compte pour vous si vous nous le demandez."],
+                    ['text' => "Dans certaines situations, nous pouvons être tenus de divulguer des données personnelles en réponse à des demandes légales d'autorités publiques, notamment pour répondre à des exigences de sécurité nationale ou d'application de la loi. Nous espérons simplement que cela n'arrivera jamais."],
+                    ['text' => "Si vous enfreignez les conditions d'utilisation, nous fermerons votre compte et vous en informerons. Cela dit, si vous suivez la règle « ne soyez pas un salaud », il ne devrait jamais rien vous arriver et tout le monde sera content."],
+                    ['text' => "Monica n'utilise que des projets open source, hébergés pour l'essentiel sur Github."],
+                    ['text' => "Nous mettrons à jour cette politique de confidentialité dès que nous introduirons de nouvelles pratiques en matière d'informations. Le cas échéant, nous enverrons un e-mail à l'adresse indiquée dans votre compte. Nous ne nous comporterons jamais comme des salauds à ce sujet et n'introduirons jamais, au grand jamais, quoi que ce soit dans ce que nous faisons qui porterait atteinte à votre droit à une confidentialité absolue."],
                 ],
             ],
         ],

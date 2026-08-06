@@ -192,6 +192,13 @@ return [
             'de' => 'nutzungsbedingungen',
             'es' => 'condiciones-de-uso',
         ],
+
+        'privacy' => [
+            'en' => 'privacy',
+            'fr' => 'confidentialite',
+            'de' => 'datenschutz',
+            'es' => 'privacidad',
+        ],
     ],
 
     // ------------------------------------------------------------------ links
@@ -213,7 +220,6 @@ return [
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
-        'privacy' => '#',
 
         /**
          * Where the v3 launch-list form posts. The site is static, so this has
