@@ -13,13 +13,31 @@
       - the blog index, once per page of the list per locale
       - the posts, one per post per locale
 
+    Each carries a lastmod, and each family knows its own: an ordinary page
+    reads the hand-kept map in config.php, a post reads its own front matter,
+    and a page of the index reads the newest post it lists. Both the path and
+    the date are resolved per locale, so a translation corrected on its own
+    says so without moving the other four.
+
     Named .blade.xml so Jigsaw writes sitemap.xml rather than sitemap.html.
 --}}
 @php
-    $urls = [];
+    $entries = [];
 
+    // The blog index is the exception in this loop: it paginates, and its
+    // lastmod comes from the posts rather than from the map, so it is built
+    // below alongside them.
     foreach (collect($page->routes)->keys() as $key) {
-        $urls[] = fn ($locale) => $page->localePath($key, $locale);
+        if ($key === 'blog') {
+            continue;
+        }
+
+        $lastmod = $page->lastmodFor($key);
+
+        $entries[] = [
+            'path' => fn ($locale) => $page->localePath($key, $locale),
+            'lastmod' => fn ($locale) => $lastmod,
+        ];
     }
 
     // The English archive is the list of slugs, because a post carries the same
@@ -29,30 +47,62 @@
     // dropped from that language's sitemap.
     $posts = $posts_en;
 
+    // Every locale's archive, keyed by slug, so a URL's lastmod is the one that
+    // locale's own file declares. Newest first already, from the shared
+    // collection settings, which is what makes the slice below a page of the
+    // index rather than an arbitrary ten posts.
+    $archives = [];
+
+    foreach ($page->locales as $locale) {
+        $archives[$locale] = collect(${'posts_' . $locale})->keyBy('slug');
+    }
+
     // ceil rather than a stored count: the paginator is the only thing that
     // knows how many pages there are, and it is not running here.
     $pages = (int) ceil($posts->count() / $page->postsPerPage);
 
-    for ($number = 2; $number <= $pages; $number++) {
-        $urls[] = fn ($locale) => $page->blogPath($locale, $number);
+    for ($number = 1; $number <= $pages; $number++) {
+        $entries[] = [
+            'path' => fn ($locale) => $page->blogPath($locale, $number),
+
+            // The newest thing on this page of the list. Page 1 moves whenever
+            // a post is published; the last page has not changed since 2017 and
+            // now says so, which is the whole point of the field.
+            'lastmod' => fn ($locale) => $archives[$locale]
+                ->slice(($number - 1) * $page->postsPerPage, $page->postsPerPage)
+                ->map(fn ($post) => $post->lastmodDate())
+                ->max(),
+        ];
     }
 
     foreach ($posts as $post) {
-        $urls[] = fn ($locale) => $page->postPath($post->slug, $locale);
+        $slug = $post->slug;
+
+        $entries[] = [
+            'path' => fn ($locale) => $page->postPath($slug, $locale),
+
+            // Falls back to the English post when a locale has not got this one
+            // yet. Nothing is hidden by that: the URL is still listed, so the
+            // dead-link checker still fails the build on the page that was never
+            // written. It only keeps the failure legible instead of a method
+            // call on null several hundred files away from the missing one.
+            'lastmod' => fn ($locale) => ($archives[$locale]->get($slug) ?: $post)->lastmodDate(),
+        ];
     }
 @endphp
 {{-- The XML declaration is echoed, because a literal <?xml would be parsed
      as a PHP open tag. --}}
 {!! '<'.'?xml version="1.0" encoding="UTF-8"?'.'>' !!}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-@foreach ($urls as $url)
+@foreach ($entries as $entry)
 @foreach ($page->locales as $locale)
     <url>
-        <loc>{{ $page->absolute($url($locale)) }}</loc>
+        <loc>{{ $page->absolute($entry['path']($locale)) }}</loc>
+        <lastmod>{{ $entry['lastmod']($locale) }}</lastmod>
 @foreach ($page->locales as $alternate)
-        <xhtml:link rel="alternate" hreflang="{{ $alternate }}" href="{{ $page->absolute($url($alternate)) }}"/>
+        <xhtml:link rel="alternate" hreflang="{{ $alternate }}" href="{{ $page->absolute($entry['path']($alternate)) }}"/>
 @endforeach
-        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $page->absolute($url($page->defaultLocale)) }}"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $page->absolute($entry['path']($page->defaultLocale)) }}"/>
     </url>
 @endforeach
 @endforeach
