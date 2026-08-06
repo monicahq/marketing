@@ -136,6 +136,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Blog posts                          | `source/_posts/` (Markdown), images in `source/assets/images/blog/` |
 | Blog templates                      | `source/_layouts/post.blade.php`, `source/_partials/blog/` |
 | Blog post body styling              | `source/_assets/css/prose.css`                      |
+| Blog RSS feed                       | `source/_partials/blog/feed.blade.php`, `source/<locale>/blog/feed.blade.xml` |
 | Copy                                | `lang/<locale>.php`                                 |
 | Routes, helpers, links, locales     | `config.php`                                        |
 | Production domain                   | `config.production.php`                             |
@@ -199,6 +200,10 @@ The homepage, pricing, the v3 teaser and the blog exist. Features and docs are u
 **Dates are timestamps.** YAML reads an unquoted `date: 2018-10-12` as a date and hands it back as ten digits, so anything that displays a date or gives one to a crawler calls `$post->isoDate()`. `readingMinutes()` and `authorInitials()` are collection helpers alongside it.
 
 `.mn-prose` in `source/_assets/css/prose.css` styles the rendered Markdown. It is the one place on the site that styles by element rather than by class, because the markup is generated and there is nothing to hang a utility on. Nothing else belongs in that file.
+
+**The feed** is RSS 2.0 at `/<locale>/blog/feed.xml`, the 20 newest posts with their full bodies. `feedContent()` rewrites every `src` and `href` to an absolute URL first, because a feed is read on someone else's host and root-relative markup resolves against that host instead of ours. `rfcDate()` exists because RSS accepts only RFC 2822 dates. `lastBuildDate` is the newest post's date rather than the build's, so rebuilding the site does not tell every reader the feed changed.
+
+Autodiscovery (`rel="alternate" type="application/rss+xml"`) is in `_layouts/base.blade.php`, so it is on every page rather than only the blog: the page someone is on when they decide to subscribe is rarely the index. It points at the current locale's feed. That is safe under Turbo for the same reason `<html lang>` is: the link is identical across a locale, and crossing locales is a full page load because the locale picker carries `data-turbo="false"`.
 
 Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in `source/_posts/` with `title`, `slug`, `date`, `author` and `description`, and nothing else to register.
 

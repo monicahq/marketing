@@ -1,0 +1,4 @@
+---
+locale: de
+---
+@include('_partials.blog.feed')

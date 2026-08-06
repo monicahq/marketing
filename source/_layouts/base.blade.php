@@ -14,6 +14,19 @@
         <link rel="icon" href="/favicon.ico">
         <link rel="sitemap" href="/sitemap.xml">
 
+        {{-- How a feed reader finds the feed: you paste any page of the site
+             into it and it looks here. On every page rather than only the blog,
+             because the page somebody happens to be standing on when they
+             decide to subscribe is rarely the index. It points at the current
+             locale's feed, so a reader browsing in French subscribes in
+             French. --}}
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="{{ $page->t('meta.blog.title') }}"
+            href="{{ $page->absolute($page->feedPath()) }}"
+        >
+
         @include('_partials.seo')
 
         @viteRefresh()
