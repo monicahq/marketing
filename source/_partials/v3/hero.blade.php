@@ -30,39 +30,14 @@
         <p class="mt-6 {{ $lede }}">{{ $page->t('v3page.lede') }}</p>
         <p class="mt-4 {{ $lede }}">{{ $page->t('v3page.lede2') }}</p>
 
-        <div id="notify" class="mt-10 max-w-[580px]">
-            {{-- The site is static, so the form posts to somebody else's
-                 endpoint. Until `launchList` in config.php has a real one, it
-                 posts to '#'. There is no success state here for the same
-                 reason: the provider owns the page the reader lands on.
-
-                 `data-turbo="false"` for that last reason: Turbo intercepts
-                 form submissions and expects to render the response itself,
-                 which is not a conversation to have with someone else's signup
-                 endpoint. This one submits the ordinary way. --}}
-            <form
-                action="{{ $page->links['launchList'] }}"
-                method="post"
-                data-turbo="false"
-                class="flex gap-3 max-md:flex-col max-md:items-stretch"
-            >
-                <label class="mn-field min-w-0 flex-1">
-                    <span class="mn-label">{{ $page->t('v3page.form.label') }}</span>
-                    <input
-                        class="mn-input"
-                        type="email"
-                        name="email"
-                        autocomplete="email"
-                        required
-                        placeholder="{{ $page->t('v3page.form.placeholder') }}"
-                    >
-                </label>
-                <button type="submit" class="mn-btn mn-btn--primary self-end max-md:w-full">
-                    {{ $page->t('v3page.form.cta') }}
-                </button>
-            </form>
-
-            <p class="mt-3 text-small leading-[1.6] text-text-muted">{{ $page->t('v3page.form.note') }}</p>
+        {{-- There is no signup form here. The site is static, so a form would
+             have to post to somebody else's endpoint, and asking for an address
+             to send one email later is a promise this page does not need to
+             make. A reader is told when to come back instead. The border keeps
+             the block anchored where the form used to be. --}}
+        <div class="mt-10 max-w-[580px] rounded-lg border border-border bg-surface-subtle p-6">
+            <p class="text-copy-lg text-pretty">{{ $page->t('v3page.progress.body') }}</p>
+            <p class="mt-3 text-small leading-[1.6] text-text-muted">{{ $page->t('v3page.progress.note') }}</p>
         </div>
 
         <div class="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-border-subtle pt-6 font-mono text-mono text-text-muted">
