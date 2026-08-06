@@ -27,10 +27,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # PHP is preinstalled on the runner and only builds the site, so it is
-      # taken as it comes rather than pinned through another action.
-      - name: Show the PHP version
-        run: php --version
+      # The runner's own PHP is 8.3, and composer.lock resolves to Symfony 8,
+      # which needs 8.4.1. composer.json says so; this is where it is honoured.
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
 
       - uses: actions/setup-node@v4
         with:
