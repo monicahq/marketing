@@ -19,8 +19,16 @@
   text-wrap: pretty;
 }
 
+/* The body's own margins are the rhythm between its paragraphs, not padding
+   around the whole thing. Trimming both ends lets whatever contains the body
+   decide the space above and below it, which is what makes the gap between two
+   posts on the index symmetric instead of leaning towards the post below. */
 .mn-prose > :first-child {
   margin-top: 0;
+}
+
+.mn-prose > :last-child {
+  margin-bottom: 0;
 }
 
 .mn-prose p {

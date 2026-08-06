@@ -14,7 +14,15 @@
 
     @include('_partials.blog.post-card', ['post' => $item])
 --}}
-<article class="flex flex-col gap-3 border-b border-border-subtle py-8 last:border-b-0">
+{{-- The padding has to beat every gap inside a post, or the break between two
+     of them reads as just another paragraph. The largest space a body can
+     contain is the 40px above an h2, so 48px each side on a phone and 64px on a
+     desktop puts 96px to 128px of clear air between one post and the next.
+
+     It is symmetric because the body's last element has had its bottom margin
+     trimmed in prose.css. Without that the rule sat 52px under one post and
+     32px over the next, and looked like it belonged to the wrong one. --}}
+<article class="flex flex-col gap-3 border-b border-border-subtle py-12 last:border-b-0 lg:py-16">
     @include('_partials.blog.post-meta', ['post' => $post])
 
     <a
@@ -24,5 +32,8 @@
 
     @include('_partials.blog.byline', ['post' => $post, 'size' => 'sm'])
 
-    <div class="mn-prose mt-3">{!! $post->getContent() !!}</div>
+    {{-- 12px of flex gap plus this, so the body starts 36px below the byline:
+         further than the 12px holding the date, title and byline together, so
+         they group as one header rather than four loose lines. --}}
+    <div class="mn-prose mt-6">{!! $post->getContent() !!}</div>
 </article>
