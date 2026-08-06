@@ -135,6 +135,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Page shell, `<head>`                | `source/_layouts/base.blade.php`                    |
 | SEO, Open Graph, JSON-LD            | `source/_partials/seo.blade.php`                    |
 | Homepage sections                   | `source/_partials/home/`                            |
+| Features tabs                       | `source/_partials/features/`, screenshots in `source/assets/images/features/` |
 | Shared partials (icon, flag, header)| `source/_partials/`                                 |
 | Locale pages                        | `source/<locale>/`                                  |
 | Blog posts                          | `source/_posts/` (Markdown), images in `source/assets/images/blog/` |
@@ -190,7 +191,7 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 
 ## Known gaps
 
-The homepage, pricing, the v3 teaser, the blog and the two legal pages exist. Features and docs are unbuilt; their nav links are the design's `#` placeholders in `config.php`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+The homepage, the three features pages, pricing, the v3 teaser, the team page, the blog and the two legal pages exist. Docs are unbuilt; that nav link is the design's `#` placeholder in `config.php`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 
 ## The blog
 
@@ -213,6 +214,18 @@ Autodiscovery (`rel="alternate" type="application/rss+xml"`) is in `_layouts/bas
 Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in `source/_posts/` with `title`, `slug`, `date`, `author` and `description`, and nothing else to register.
 
 See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
+
+## The features pages
+
+Three tabs (contact management, dashboard, journal), three route keys (`features`, `featuresDashboard`, `featuresJournal`), twelve pages once the four locales are counted.
+
+**The tabs are pages, not a JavaScript widget.** Each one has its own URL, so it can be linked to, indexed and translated, which is what the old site did. `_partials/features/tabs.blade.php` renders the strip on all three, and `aria-current="page"` marks the one being read.
+
+**The slugs nest**, so `featuresDashboard` in English is `features/dashboard` and the file is `source/en/features/dashboard.blade.php`. The helpers need nothing special for this: they only ever join a slug to a locale prefix. A slug with a slash and a file in a subdirectory are the whole trick.
+
+**One partial builds all three.** `_partials/features/page.blade.php` holds a table of which copy block, which screenshot and whether the API section follows, keyed by the route name, so each of the twelve page files is four lines of front matter and an `@include`.
+
+The screenshots came from the old site and were cropped on the way in: the browser window drawn around each one, and the drop shadow behind it, are both things the design system forbids. The annotations that were pinned onto them as red labels are now an ordinary list beside the picture, which is what makes them survive a phone, a screen reader and a translation running longer than English.
 
 ## Docs
 

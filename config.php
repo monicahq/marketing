@@ -181,6 +181,38 @@ return [
 
         'pricing' => ['en' => 'pricing', 'fr' => 'tarifs', 'de' => 'preise', 'es' => 'precios'],
 
+        /**
+         * The features section is three pages behind one tab strip, so its
+         * slugs nest: /en/features/, /en/features/dashboard/ and
+         * /en/features/journal/. A slug carrying a slash needs nothing special
+         * from the helpers, because they only ever join it to a locale prefix,
+         * and Jigsaw builds a nested directory from a nested source path.
+         *
+         * Three keys rather than one page with client-side tabs: each tab is a
+         * URL somebody can send to a friend, which is what the old site did and
+         * what a crawler needs to index all three.
+         */
+        'features' => [
+            'en' => 'features',
+            'fr' => 'fonctionnalites',
+            'de' => 'funktionen',
+            'es' => 'funcionalidades',
+        ],
+
+        'featuresDashboard' => [
+            'en' => 'features/dashboard',
+            'fr' => 'fonctionnalites/tableau-de-bord',
+            'de' => 'funktionen/dashboard',
+            'es' => 'funcionalidades/panel',
+        ],
+
+        'featuresJournal' => [
+            'en' => 'features/journal',
+            'fr' => 'fonctionnalites/journal',
+            'de' => 'funktionen/tagebuch',
+            'es' => 'funcionalidades/diario',
+        ],
+
         // "Blog" is the same word in all four languages. Declared per locale
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.

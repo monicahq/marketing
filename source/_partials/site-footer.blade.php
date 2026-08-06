@@ -4,18 +4,17 @@
             'label' => $page->t('footer.productLabel'),
             'links' => [
                 ['label' => $page->t('nav.product'), 'href' => $page->route('home')],
+                // The features tab strip starts here; the other two tabs are
+                // one click away, so the footer names the section rather than
+                // listing all three.
+                ['label' => $page->t('nav.features'), 'href' => $page->route('features')],
                 ['label' => $page->t('nav.v3'), 'href' => $page->route('v3')],
                 ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing')],
             ],
         ],
-        [
-            'label' => $page->t('footer.buildLabel'),
-            'links' => [
-                ['label' => $page->t('footer.api'), 'href' => $page->links['api']],
-                ['label' => $page->t('nav.docs'), 'href' => $page->links['docs']],
-                ['label' => $page->t('footer.selfHosting'), 'href' => $page->links['selfHostingGuide']],
-            ],
-        ],
+        // No "Build" column. It listed the API, the documentation and the
+        // self-hosting guide, and none of the three has a page to point at yet:
+        // every link in it went to '#'. It comes back when they exist.
         [
             'label' => $page->t('footer.projectLabel'),
             'links' => [
@@ -34,7 +33,7 @@
 {{-- The only large dark region in the entire system. --}}
 <footer class="bg-surface-inverse text-on-inverse">
     <div class="mx-auto w-full max-w-marketing px-4 pt-12 pb-10 md:px-8">
-        <div class="grid grid-cols-2 gap-8 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div class="grid grid-cols-2 gap-8 lg:grid-cols-[2fr_1fr_1fr]">
             <div>
                 <div class="flex items-center gap-3">
                     {{-- The white chip stays: the mark's body is near-black and
