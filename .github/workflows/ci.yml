@@ -53,3 +53,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run build
+
+      # The redirect rules the deploy applies to the zone. No credentials here on
+      # purpose: a pull request has no business writing to Cloudflare, and without
+      # them the script validates the file and prints what it would send, which is
+      # what catches a malformed definition before it reaches a deploy. The build
+      # above has already checked that the file and config.php agree on the
+      # languages.
+      - name: Check the redirect rules definition
+        run: scripts/cloudflare/apply-redirect-rules.sh --dry-run

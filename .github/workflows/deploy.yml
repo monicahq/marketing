@@ -75,3 +75,23 @@ jobs:
           # checkout, and anything other than the project's production branch
           # publishes a preview instead of the live site.
           command: pages deploy build_production --project-name=marketing --branch=main
+
+      # The root is the one URL no file answers: two zone redirect rules read
+      # Accept-Language and send the reader to their own language. This carries
+      # cloudflare/redirect-rules.json to the zone and then checks that the edge
+      # answers with it, so a mistyped expression is a red deploy rather than a
+      # quiet English homepage for everybody.
+      #
+      # It runs after the upload on purpose, so the pages the rules point at exist
+      # before anything is redirected to them. It touches only its own two rules,
+      # and does nothing at all when they already match the file.
+      #
+      # The token is a second one, not the token above: this needs
+      # Zone > Single Redirect > Edit on monicahq.com, which the Pages deploy has
+      # no business holding. Both secrets have to exist or this step fails, which
+      # is the intended way to find out that the rules are not being applied.
+      - name: Apply the root's redirect rules
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_RULES_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: scripts/cloudflare/apply-redirect-rules.sh

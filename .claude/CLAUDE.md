@@ -61,13 +61,13 @@ Jigsaw has **no locale routing**, so it is built by hand and lives in two places
 
 `/` has no page of its own, and it is the only URL here whose answer does not come from a file in the build.
 
-Two Cloudflare redirect rules answer it: they read the `Accept-Language` header, which Cloudflare hands to an expression already parsed and sorted by weight as `http.request.accepted_languages`, and 302 to that reader's language, with `defaultLocale` for anyone whose preference we do not publish. They match **both hostnames the site answers on**, `www.monicahq.com` and the apex, and carry `http.host` into the target, so a reader who came to the apex is answered on the apex. Choosing a language is all they do: sending the apex to `www` is a separate decision about the whole domain, and the root is not where to make it. **[`cloudflare/redirect-rules.md`](../cloudflare/redirect-rules.md) is the source of truth for their text**, and it explains every clause in them.
+Two Cloudflare redirect rules answer it: they read the `Accept-Language` header, which Cloudflare hands to an expression already parsed and sorted by weight as `http.request.accepted_languages`, and 302 to that reader's language, with `defaultLocale` for anyone whose preference we do not publish. They match **both hostnames the site answers on**, `www.monicahq.com` and the apex, and carry `http.host` into the target, so a reader who came to the apex is answered on the apex. Choosing a language is all they do: sending the apex to `www` is a separate decision about the whole domain, and the root is not where to make it. **[`cloudflare/redirect-rules.json`](../cloudflare/redirect-rules.json) is those rules**, and [`redirect-rules.md`](../cloudflare/redirect-rules.md) beside it explains every clause.
 
 Four things follow, and all four are easy to trip over:
 
 - **Nothing in this project runs server-side, and that is the point.** A Cloudflare Pages Function would read the same header in JavaScript, and was the first shape of this, but every hit on `/` would spend a Workers request and bots hit `/` hardest. A redirect the edge makes from zone configuration costs nothing. That is why there is no `functions/` directory and no `_routes.json`.
-- **Applying the rules is a copy and paste**, into the dashboard of the `monicahq.com` zone. The repository holds the text, Cloudflare holds the running copy, and nothing reconciles them automatically. A correction committed here is half-done until it is pasted there.
-- **The rules repeat the locale list**, because a zone expression cannot read `$locales`. An `afterBuild` listener in `bootstrap.php` reads `cloudflare/redirect-rules.md` and fails a production build when the two disagree, naming what is missing. It cannot check the dashboard, so it catches a forgotten file, not a forgotten paste.
+- **The deploy applies them**, through `scripts/cloudflare/apply-redirect-rules.sh`, which sends the JSON to the zone and then curls the live root to prove the edge answers with it. **Never edit these rules in the dashboard**: the next deploy would put the file's version back. It touches only its own two rules, does nothing when they already match, and needs two secrets, `CLOUDFLARE_RULES_API_TOKEN` (scoped to `Zone > Single Redirect > Edit`) and `CLOUDFLARE_ZONE_ID`. Missing either one fails the deploy.
+- **The rules repeat the locale list**, because a zone expression cannot read `$locales`. An `afterBuild` listener in `bootstrap.php` compares the rules' expressions against it and fails a production build when they disagree, naming what is missing, so a language cannot reach the zone unreachable from `/`.
 - **Neither rule runs locally or on a preview.** `npm run serve` is a plain PHP file server and `*.pages.dev` is outside the zone, so `/` falls through to the static stub built from `source/index.blade.php`, which only knows how to reach English. That fall-through is deliberate: a mistyped expression leaves the root on a real page rather than nowhere. Checking the real behaviour means checking the live domain:
 
   ```sh
@@ -107,7 +107,7 @@ Three helpers, and the distinction matters:
 2. A slug for it on every entry in `routes`.
 3. Copy `lang/en.php`, translate it.
 4. Its flag in `source/_partials/flag.blade.php`.
-5. The language set in `cloudflare/redirect-rules.md`, **and then paste both expressions into the zone's redirect rules**, or `/` cannot reach the new language. A production build fails until the file matches `$locales`, but nothing can check that the paste happened.
+5. The language set in both expressions in `cloudflare/redirect-rules.json`, or `/` cannot reach the new language. A production build fails until they match `$locales`, and the deploy applies them.
 6. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
 
 German runs ~30% longer than English, French ~20%, and Portuguese ~20%. Don't pin widths to English label lengths.
@@ -167,10 +167,10 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Copy                                | `lang/<locale>.php`                                 |
 | Routes, helpers, links, locales     | `config.php`                                        |
 | Production domain                   | `config.production.php`                             |
-| Root language redirect              | `cloudflare/redirect-rules.md`, applied by hand in the zone |
+| Root language redirect              | `cloudflare/redirect-rules.json`, applied by `scripts/cloudflare/apply-redirect-rules.sh` |
 | Star count fetch                    | `bootstrap.php`                                     |
 | Dead link checking                  | `scripts/links/check.php`, wired up in `bootstrap.php` |
-| Locale drift check                  | `bootstrap.php`, against `cloudflare/redirect-rules.md` |
+| Locale drift check                  | `bootstrap.php`, against `cloudflare/redirect-rules.json` |
 | Design tokens to Tailwind           | `source/_assets/css/theme.css`                      |
 | Vendored design system              | `source/_assets/css/design-system/` (do not edit)   |
 | Compiled CSS entry                  | `source/_assets/css/main.css`                       |
@@ -182,7 +182,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 
 `source/_partials/seo.blade.php` owns the whole head: title, description, canonical, robots, hreflang, Open Graph, Twitter card and JSON-LD. **A new page gets all of it by extending `_layouts.base` with `locale` and `page` front matter.** Never hand-write a meta tag in a page.
 
-- Every crawler-facing URL is absolute, built from `baseUrl` in `config.production.php`. If the domain changes, that is the first edit, plus the hard-coded line in `source/robots.txt` and the two hostnames in `cloudflare/redirect-rules.md`. A production build fails until that third one is done, and it still has to be pasted into the zone.
+- Every crawler-facing URL is absolute, built from `baseUrl` in `config.production.php`. If the domain changes, that is the first edit, plus the hard-coded line in `source/robots.txt` and the two hostnames in both expressions in `cloudflare/redirect-rules.json`. A production build fails until that third one is done, and the deploy applies it.
 - hreflang is emitted for every locale **including the current one**. Reciprocity is what makes the cluster credible.
 - `og:locale` needs `language_TERRITORY` (`fr_FR`), from `ogLocales`. hreflang uses the bare code, so the two differ on purpose.
 - `source/sitemap.blade.xml` builds the sitemap by walking `routes` and `locales`, with `xhtml:link` hreflang annotations. It is named `.blade.xml` so Jigsaw writes `sitemap.xml` rather than `sitemap.html`. Its XML declaration is echoed as a string, because a literal `<?xml` would be parsed as a PHP open tag.

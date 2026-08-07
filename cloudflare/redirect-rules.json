@@ -1,0 +1,64 @@
+{
+    "documentation": "cloudflare/redirect-rules.md explains every clause below. This file is what gets applied.",
+    "ruleset": {
+        "name": "Zone-level dynamic redirects",
+        "kind": "zone",
+        "phase": "http_request_dynamic_redirect"
+    },
+    "rules": [
+        {
+            "ref": "root_language_we_publish",
+            "description": "root: language we publish",
+            "enabled": true,
+            "expression": "http.host in {\"www.monicahq.com\" \"monicahq.com\"} and http.request.uri.path eq \"/\" and substring(lower(http.request.accepted_languages[0]), 0, 2) in {\"fr\" \"de\" \"es\" \"pt\" \"nl\"}",
+            "action": "redirect",
+            "action_parameters": {
+                "from_value": {
+                    "status_code": 302,
+                    "target_url": {
+                        "expression": "concat(\"https://\", http.host, \"/\", substring(lower(http.request.accepted_languages[0]), 0, 2), \"/\")"
+                    },
+                    "preserve_query_string": true
+                }
+            }
+        },
+        {
+            "ref": "root_default_language",
+            "description": "root: default language",
+            "enabled": true,
+            "expression": "http.host in {\"www.monicahq.com\" \"monicahq.com\"} and http.request.uri.path eq \"/\" and not (substring(lower(http.request.accepted_languages[0]), 0, 2) in {\"fr\" \"de\" \"es\" \"pt\" \"nl\"})",
+            "action": "redirect",
+            "action_parameters": {
+                "from_value": {
+                    "status_code": 302,
+                    "target_url": {
+                        "expression": "concat(\"https://\", http.host, \"/en/\")"
+                    },
+                    "preserve_query_string": true
+                }
+            }
+        }
+    ],
+    "verify": [
+        {
+            "url": "https://www.monicahq.com/",
+            "accept_language": "fr-CA,fr;q=0.9,en;q=0.8",
+            "expect": "https://www.monicahq.com/fr/"
+        },
+        {
+            "url": "https://www.monicahq.com/",
+            "accept_language": "ja,ko;q=0.8",
+            "expect": "https://www.monicahq.com/en/"
+        },
+        {
+            "url": "https://monicahq.com/",
+            "accept_language": "nl-BE",
+            "expect": "https://monicahq.com/nl/"
+        },
+        {
+            "url": "https://monicahq.com/",
+            "accept_language": "ja",
+            "expect": "https://monicahq.com/en/"
+        }
+    ]
+}

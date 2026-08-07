@@ -59,23 +59,25 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 /**
  * Keeps the root's redirect rules in step with config.php.
  *
- * `/` is answered by two Cloudflare redirect rules that read Accept-Language,
- * and they live in zone configuration rather than in this repository.
- * cloudflare/redirect-rules.md is the source of truth for their text, and
- * applying it is a copy and paste into the dashboard.
+ * `/` is answered by two Cloudflare redirect rules that read Accept-Language.
+ * They are zone configuration rather than code, but they are not hand-made:
+ * cloudflare/redirect-rules.json is what the deploy applies, through
+ * scripts/cloudflare/apply-redirect-rules.sh.
  *
  * A zone expression cannot read `$locales`, so it repeats the list, and a
  * repeated list is one that drifts: a seventh language added to config.php and
- * forgotten there would build and deploy cleanly, and the only symptom would be
- * readers of that language quietly landing on English.
+ * forgotten in that file would build, deploy and apply cleanly, and the only
+ * symptom would be readers of that language quietly landing on English.
  *
- * Nothing in a build can see a dashboard, so what is checked is the half that
- * can be, that the file and config.php still agree. It fails a production build
- * and only warns on a local one, the same way the dead-link check does, because
- * a language being added is legitimately half-done for as long as it takes to
- * write its pages. A file that has been corrected but not pasted is still
- * half-done, and no build will ever tell you: that is the price of keeping the
- * redirect off the Workers bill.
+ * So the two are compared here, over the rules' expressions rather than the whole
+ * file, which is the only part a reader of the zone would see. It fails a
+ * production build and only warns on a local one, the same way the dead-link
+ * check does, because a language being added is legitimately half-done for as
+ * long as it takes to write its pages.
+ *
+ * What this cannot check is whether the zone matches the file, only whether the
+ * file matches config.php. The deploy is what closes that gap, and it verifies
+ * the live answers rather than trusting the write.
  */
 $events->afterBuild(function (Jigsaw $jigsaw) {
     $report = function (string $message) use ($jigsaw) {
@@ -86,15 +88,24 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
         echo "  [rules] {$message}\n";
     };
 
-    $path = __DIR__ . '/cloudflare/redirect-rules.md';
+    $path = __DIR__ . '/cloudflare/redirect-rules.json';
+    $definition = is_readable($path) ? json_decode(file_get_contents($path), true) : null;
 
-    if (! is_readable($path)) {
-        $report('cloudflare/redirect-rules.md is missing. It is what says how the root reaches each language.');
+    if (! is_array($definition['rules'] ?? null)) {
+        $report('cloudflare/redirect-rules.json is missing or unreadable. It is what says how the root reaches each language.');
 
         return;
     }
 
-    $file = file_get_contents($path);
+    // Only the expressions, match and target both, because the rest of the file
+    // is names and settings that say nothing about which languages exist.
+    $expressions = collect($definition['rules'])
+        ->flatMap(fn ($rule) => [
+            $rule['expression'] ?? '',
+            $rule['action_parameters']['from_value']['target_url']['expression'] ?? '',
+        ])
+        ->implode("\n");
+
     $default = $jigsaw->getConfig('defaultLocale');
 
     // The set both expressions have to carry: every locale except the default,
@@ -107,23 +118,19 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
         ->implode(' ') . '}';
 
     $checks = [
-        "the language set {$set}" => str_contains($file, $set),
-        "the default target /{$default}/" => str_contains($file, "/{$default}/"),
+        "the language set {$set}" => str_contains($expressions, $set),
+        "the default target /{$default}/" => str_contains($expressions, "/{$default}/"),
     ];
 
     // The rules pin their hostnames, because they apply to a zone that also
     // carries the application, and the site answers on the apex as well as on
-    // www. What is checked is the set as an expression spells it, not the two
-    // names loose in the text: the zone is called monicahq.com, so the apex
-    // appears in this file's prose whether or not any rule matches it.
-    //
-    // Only a production build knows the domain. baseUrl is empty on a local one,
-    // which has no domain to be wrong about.
+    // www. Only a production build knows the domain: baseUrl is empty on a local
+    // one, which has no domain to be wrong about.
     if ($host = parse_url((string) $jigsaw->getConfig('baseUrl'), PHP_URL_HOST)) {
         $hosts = array_unique([$host, preg_replace('/^www\./', '', $host)]);
         $hostSet = '{' . collect($hosts)->map(fn ($name) => "\"{$name}\"")->implode(' ') . '}';
 
-        $checks["the host set {$hostSet}"] = str_contains($file, $hostSet);
+        $checks["the host set {$hostSet}"] = str_contains($expressions, $hostSet);
     }
 
     $missing = collect($checks)->reject(fn ($present) => $present)->keys();
@@ -133,9 +140,9 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
     }
 
     $report(
-        'cloudflare/redirect-rules.md no longer agrees with config.php: it is missing '
-        . $missing->implode(', ') . '. Correct the file, then paste both expressions '
-        . "into the zone's redirect rules, or / will not reach every language it should."
+        'cloudflare/redirect-rules.json no longer agrees with config.php: its expressions are missing '
+        . $missing->implode(', ') . '. Correct the file, and the next deploy applies it. '
+        . 'Until then / will not reach every language it should.'
     );
 });
 

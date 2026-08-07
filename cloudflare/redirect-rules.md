@@ -6,57 +6,61 @@ answer it: they read the `Accept-Language` header the browser already sends and
 redirect to the language it asked for, with English for a reader who asks for
 nothing this site publishes.
 
-**This file is the source of truth for those two rules, and nothing applies it.**
-They are zone configuration, not code, so applying them is a copy and paste into
-the dashboard. What the build does check is that this file still agrees with
-`$locales` in `config.php`: a language added there and forgotten here fails a
-production build, naming what to paste. See the listener in `bootstrap.php`.
+**[`redirect-rules.json`](redirect-rules.json) is those two rules**, in the shape
+the Rulesets API takes them. It is not a copy of something configured elsewhere:
+`scripts/cloudflare/apply-redirect-rules.sh` sends it to the zone on every deploy
+and then checks that the edge answers with it. Nothing about the root is
+configured by hand, and this file is the explanation the JSON has no room for.
+Edit the JSON, never the dashboard.
 
 A redirect rule was chosen over a Pages Function, which could read the same
 header in JavaScript, because every hit on `/` would spend a Workers request and
 bots hit `/` hardest. The edge already knows how to make this redirect, and
 making it there costs nothing.
 
-## Where they go
+## What the deploy needs
 
-Cloudflare dashboard, zone `monicahq.com`, Rules, then Redirect Rules. Two rules,
-both **302**, both with **Preserve query string** enabled, so a campaign link to
-`/` keeps its parameters. Their expressions are mutually exclusive, so their
-order in the list does not matter.
+Two repository secrets, read by the deploy workflow and by nothing else:
 
-## Rule 1, a language we publish
+| Secret | What it is |
+| :--- | :--- |
+| `CLOUDFLARE_RULES_API_TOKEN` | A token carrying **Zone > Single Redirect > Edit** on `monicahq.com`, and nothing else |
+| `CLOUDFLARE_ZONE_ID` | The zone id of `monicahq.com`, from the dashboard's overview page |
 
-Name: `root: language we publish`
+A second token rather than the one the Pages upload uses, because publishing a
+site and rewriting a zone's redirects are different powers and nothing needs
+both. **If either secret is missing, the deploy fails at that step**, after the
+site itself has published. That is deliberate: rules that are not being applied
+should be noisy rather than quiet.
 
-Expression:
+## What the script does
 
+- Applies **only its own two rules**, matched on their `ref` and failing that on
+  their name, so a copy somebody once made by hand is adopted and corrected
+  rather than duplicated. Every other redirect rule in the zone is left alone,
+  which is why it uses the per-rule endpoints instead of rewriting the ruleset.
+- **Does nothing when nothing changed.** A rule whose stored form already matches
+  the file is skipped, so an ordinary deploy adds no version to the zone's
+  history.
+- **Creates the ruleset** on a zone that has never had a redirect rule, rather
+  than failing on the 404 a missing phase entrypoint returns.
+- **Refuses to guess** when two rules in the zone answer to the same job, because
+  one is shadowing the other and picking between them is not its call.
+- **Verifies against the live site** afterwards, using the `verify` cases in the
+  JSON, retrying each while the rule reaches every colo. A mistyped expression is
+  otherwise a silent English homepage for everybody.
+
+Run it by hand the way the deploy does, or ask it what it would change:
+
+```sh
+scripts/cloudflare/apply-redirect-rules.sh --dry-run    # no writes, prints the plan
+scripts/cloudflare/apply-redirect-rules.sh --no-verify  # apply, skip the live check
 ```
-http.host in {"www.monicahq.com" "monicahq.com"} and http.request.uri.path eq "/" and substring(lower(http.request.accepted_languages[0]), 0, 2) in {"fr" "de" "es" "pt" "nl"}
-```
 
-Target URL, **dynamic**:
+With no credentials in the environment, `--dry-run` still validates the file and
+prints the rules it would send, which is what CI does on every pull request.
 
-```
-concat("https://", http.host, "/", substring(lower(http.request.accepted_languages[0]), 0, 2), "/")
-```
-
-## Rule 2, everything else
-
-Name: `root: default language`
-
-Expression:
-
-```
-http.host in {"www.monicahq.com" "monicahq.com"} and http.request.uri.path eq "/" and not (substring(lower(http.request.accepted_languages[0]), 0, 2) in {"fr" "de" "es" "pt" "nl"})
-```
-
-Target URL, **dynamic**:
-
-```
-concat("https://", http.host, "/en/")
-```
-
-## Why they read the way they do
+## Why the rules read the way they do
 
 - `http.request.accepted_languages` is the `Accept-Language` header parsed for
   us, sorted by weight in descending order, with `*` dropped. So `[0]` is the
@@ -66,9 +70,12 @@ concat("https://", http.host, "/en/")
   read as `fr`. Every locale here is a plain two-letter language.
 - `lower()` because the header is case insensitive and `FR-ca` is a legal way to
   write it.
-- **The set is every locale except the default**, in the order `$locales`
-  declares them. English is absent on purpose: rule 2 is what serves it, and
-  listing it in both would make the two rules overlap.
+- **The language set is every locale except the default**, in the order
+  `$locales` declares them in `config.php`. English is absent on purpose: the
+  second rule is what serves it, and listing it in both would make the two rules
+  overlap. An `afterBuild` listener in `bootstrap.php` compares that set against
+  `$locales` and fails a production build when the two disagree, so a language
+  added to the site cannot stay unreachable from `/` unnoticed.
 - **Both hostnames are matched, and the reader keeps the one they arrived on.**
   The site answers on `https://monicahq.com/` as well as on
   `https://www.monicahq.com/`, so a rule naming only one of them would leave half
@@ -83,10 +90,15 @@ concat("https://", http.host, "/en/")
   out. Landing on `https://monicahq.com/fr/` is fine for search too, because that
   page's canonical already names the `www` copy, exactly as it does for any other
   apex URL a reader reaches today.
-- `http.host` is pinned in the first place because a redirect rule applies to the
-  whole zone, and this zone also carries `app.monicahq.com`.
+- `http.host` is pinned in the match in the first place because a redirect rule
+  applies to the whole zone, and this zone also carries `app.monicahq.com`.
   `http.request.uri.path eq "/"` is pinned for the same reason: only the bare
   root has no page of its own.
+- **302, with the query string preserved**, so a campaign link to `/` keeps its
+  parameters, and no browser remembers a language decision that was made for
+  somebody else.
+- The two expressions are mutually exclusive, so their order in the zone's list
+  does not matter, and neither does where the script appends them.
 - Nothing here uses a regular expression, which is a Business plan feature.
   `substring`, `lower` and `concat` are available on every plan.
 - **If neither rule fires, nothing breaks.** `/` falls through to the static stub
@@ -121,24 +133,3 @@ concat("https://", http.host, "/en/")
   fires first, the reader ends on `https://www.monicahq.com/<lang>/`, in two hops
   instead of one. Worth folding the language choice into that rule at the time,
   rather than leaving both.
-
-## Checking it
-
-After pasting, against the live site. Both hostnames, since both are matched:
-
-```sh
-curl -sI -H 'Accept-Language: fr-CA,fr;q=0.9,en;q=0.8' https://www.monicahq.com/ | grep -i location
-curl -sI -H 'Accept-Language: de-DE,de;q=0.9'          https://www.monicahq.com/ | grep -i location
-curl -sI -H 'Accept-Language: ja,ko;q=0.8'             https://www.monicahq.com/ | grep -i location
-curl -sI                                               https://www.monicahq.com/ | grep -i location
-curl -sI -H 'Accept-Language: nl-BE'                   https://monicahq.com/     | grep -i location
-curl -sI -H 'Accept-Language: ja'                      https://monicahq.com/     | grep -i location
-```
-
-Expected, in order: `https://www.monicahq.com/fr/`, `/de/`, `/en/`, `/en/`, then
-`https://monicahq.com/nl/` and `https://monicahq.com/en/`. **The last two are the
-point of the two dynamic targets**: a reader who came to the apex is answered on
-the apex, so a `www` host in either of them means `http.host` was lost from the
-expression. The dashboard's expression editor also previews a match against a
-request you describe, which is the cheapest way to check a change to the set
-before saving it.
