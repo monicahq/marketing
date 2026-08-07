@@ -51,5 +51,11 @@
             <polygon points="30,4 56,20 30,36 4,20" fill="#ffdf00"></polygon>
             <circle cx="30" cy="20" r="7" fill="#002776"></circle>
             @break
+
+        @case('nl')
+            <rect width="60" height="13.34" fill="#ae1c28"></rect>
+            <rect y="13.33" width="60" height="13.34" fill="#fff"></rect>
+            <rect y="26.66" width="60" height="13.34" fill="#21468b"></rect>
+            @break
     @endswitch
 </svg>
