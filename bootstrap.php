@@ -57,19 +57,25 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 });
 
 /**
- * Keeps the root redirect's list of languages in step with config.php.
+ * Keeps the root's redirect rules in step with config.php.
  *
- * functions/index.js is the one piece of this site that runs on a request rather
- * than at build time, and being JavaScript it cannot read `$locales`. It
- * therefore repeats the list, and a repeated list is one that drifts: a seventh
- * language added to config.php and forgotten there would build and deploy
- * cleanly, and the only symptom would be readers of that language quietly
- * landing on English.
+ * `/` is answered by two Cloudflare redirect rules that read Accept-Language,
+ * and they live in zone configuration rather than in this repository.
+ * cloudflare/redirect-rules.md is the source of truth for their text, and
+ * applying it is a copy and paste into the dashboard.
  *
- * So the copy is checked against the original, the same way a missing
- * translation key or a dead link is. It fails a production build and only warns
- * on a local one, because a language being added is legitimately half-done for
- * as long as it takes to write the pages.
+ * A zone expression cannot read `$locales`, so it repeats the list, and a
+ * repeated list is one that drifts: a seventh language added to config.php and
+ * forgotten there would build and deploy cleanly, and the only symptom would be
+ * readers of that language quietly landing on English.
+ *
+ * Nothing in a build can see a dashboard, so what is checked is the half that
+ * can be, that the file and config.php still agree. It fails a production build
+ * and only warns on a local one, the same way the dead-link check does, because
+ * a language being added is legitimately half-done for as long as it takes to
+ * write its pages. A file that has been corrected but not pasted is still
+ * half-done, and no build will ever tell you: that is the price of keeping the
+ * redirect off the Workers bill.
  */
 $events->afterBuild(function (Jigsaw $jigsaw) {
     $report = function (string $message) use ($jigsaw) {
@@ -77,36 +83,51 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
             throw new Exception($message);
         }
 
-        echo "  [locales] {$message}\n";
+        echo "  [rules] {$message}\n";
     };
 
-    $path = __DIR__ . '/functions/index.js';
+    $path = __DIR__ . '/cloudflare/redirect-rules.md';
 
     if (! is_readable($path)) {
-        $report('functions/index.js is missing. The root redirect is what sends a reader to their own language.');
+        $report('cloudflare/redirect-rules.md is missing. It is what says how the root reaches each language.');
 
         return;
     }
 
-    // The declaration this reads is `const LOCALES = ['en', 'fr', ...];`.
-    // Renaming it there means renaming it here.
-    preg_match('/const LOCALES = \[([^\]]*)\]/', file_get_contents($path), $declaration);
-    preg_match_all("/'([a-z-]+)'/", $declaration[1] ?? '', $matches);
+    $file = file_get_contents($path);
+    $default = $jigsaw->getConfig('defaultLocale');
 
-    $declared = $matches[1];
-    $expected = collect($jigsaw->getConfig('locales'))->all();
+    // The set both expressions have to carry: every locale except the default,
+    // in the order config.php declares them, spelled the way the rules language
+    // spells a set of strings. English is absent because the second rule is what
+    // serves it.
+    $set = '{' . collect($jigsaw->getConfig('locales'))
+        ->reject(fn ($locale) => $locale === $default)
+        ->map(fn ($locale) => "\"{$locale}\"")
+        ->implode(' ') . '}';
 
-    sort($declared);
-    sort($expected);
+    $checks = [
+        "the language set {$set}" => str_contains($file, $set),
+        "the default target /{$default}/" => str_contains($file, "/{$default}/"),
+    ];
 
-    if ($declared === $expected) {
+    // The rules pin a host, because they apply to a zone that also carries the
+    // application. Only a production build knows what that host is: baseUrl is
+    // empty on a local one, which has no domain to be wrong about.
+    if ($host = parse_url((string) $jigsaw->getConfig('baseUrl'), PHP_URL_HOST)) {
+        $checks["the host {$host}"] = str_contains($file, $host);
+    }
+
+    $missing = collect($checks)->reject(fn ($present) => $present)->keys();
+
+    if ($missing->isEmpty()) {
         return;
     }
 
     $report(
-        'functions/index.js declares [' . implode(', ', $declared) . '] '
-        . 'and config.php declares [' . implode(', ', $expected) . ']. '
-        . 'The root redirect cannot send a reader to a language it does not list.'
+        'cloudflare/redirect-rules.md no longer agrees with config.php: it is missing '
+        . $missing->implode(', ') . '. Correct the file, then paste both expressions '
+        . "into the zone's redirect rules, or / will not reach every language it should."
     );
 });
 

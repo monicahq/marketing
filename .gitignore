@@ -5,9 +5,6 @@
 /cache/
 /source/assets/build/
 
-# local state from `wrangler pages dev`, which is how the root redirect is tested
-/.wrangler/
-
 # dependencies
 /node_modules/
 /vendor/
