@@ -111,11 +111,19 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
         "the default target /{$default}/" => str_contains($file, "/{$default}/"),
     ];
 
-    // The rules pin a host, because they apply to a zone that also carries the
-    // application. Only a production build knows what that host is: baseUrl is
-    // empty on a local one, which has no domain to be wrong about.
+    // The rules pin their hostnames, because they apply to a zone that also
+    // carries the application, and the site answers on the apex as well as on
+    // www. What is checked is the set as an expression spells it, not the two
+    // names loose in the text: the zone is called monicahq.com, so the apex
+    // appears in this file's prose whether or not any rule matches it.
+    //
+    // Only a production build knows the domain. baseUrl is empty on a local one,
+    // which has no domain to be wrong about.
     if ($host = parse_url((string) $jigsaw->getConfig('baseUrl'), PHP_URL_HOST)) {
-        $checks["the host {$host}"] = str_contains($file, $host);
+        $hosts = array_unique([$host, preg_replace('/^www\./', '', $host)]);
+        $hostSet = '{' . collect($hosts)->map(fn ($name) => "\"{$name}\"")->implode(' ') . '}';
+
+        $checks["the host set {$hostSet}"] = str_contains($file, $hostSet);
     }
 
     $missing = collect($checks)->reject(fn ($present) => $present)->keys();

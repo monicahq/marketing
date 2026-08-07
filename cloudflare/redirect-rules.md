@@ -31,13 +31,13 @@ Name: `root: language we publish`
 Expression:
 
 ```
-http.host eq "www.monicahq.com" and http.request.uri.path eq "/" and substring(lower(http.request.accepted_languages[0]), 0, 2) in {"fr" "de" "es" "pt" "nl"}
+http.host in {"www.monicahq.com" "monicahq.com"} and http.request.uri.path eq "/" and substring(lower(http.request.accepted_languages[0]), 0, 2) in {"fr" "de" "es" "pt" "nl"}
 ```
 
 Target URL, **dynamic**:
 
 ```
-concat("https://www.monicahq.com/", substring(lower(http.request.accepted_languages[0]), 0, 2), "/")
+concat("https://", http.host, "/", substring(lower(http.request.accepted_languages[0]), 0, 2), "/")
 ```
 
 ## Rule 2, everything else
@@ -47,13 +47,13 @@ Name: `root: default language`
 Expression:
 
 ```
-http.host eq "www.monicahq.com" and http.request.uri.path eq "/" and not (substring(lower(http.request.accepted_languages[0]), 0, 2) in {"fr" "de" "es" "pt" "nl"})
+http.host in {"www.monicahq.com" "monicahq.com"} and http.request.uri.path eq "/" and not (substring(lower(http.request.accepted_languages[0]), 0, 2) in {"fr" "de" "es" "pt" "nl"})
 ```
 
-Target URL, **static**:
+Target URL, **dynamic**:
 
 ```
-https://www.monicahq.com/en/
+concat("https://", http.host, "/en/")
 ```
 
 ## Why they read the way they do
@@ -69,9 +69,24 @@ https://www.monicahq.com/en/
 - **The set is every locale except the default**, in the order `$locales`
   declares them. English is absent on purpose: rule 2 is what serves it, and
   listing it in both would make the two rules overlap.
-- `http.host` is pinned because a redirect rule applies to the whole zone, and
-  this zone also carries `app.monicahq.com`. `http.request.uri.path eq "/"` is
-  pinned for the same reason: only the bare root has no page of its own.
+- **Both hostnames are matched, and the reader keeps the one they arrived on.**
+  The site answers on `https://monicahq.com/` as well as on
+  `https://www.monicahq.com/`, so a rule naming only one of them would leave half
+  the readers on English. `http.host` in the target is what carries the reader's
+  own host through, so the apex sends them to `https://monicahq.com/fr/` and
+  never moves them to `www`. That is why both targets are expressions: a static
+  one can only name a single host.
+- **These rules choose a language and nothing else.** Sending the apex to `www`
+  would be canonicalising the host, which is a separate decision about the whole
+  domain, and the root is a bad place to make it: every other apex URL already
+  stays on the apex, and a root that behaved differently would be the odd one
+  out. Landing on `https://monicahq.com/fr/` is fine for search too, because that
+  page's canonical already names the `www` copy, exactly as it does for any other
+  apex URL a reader reaches today.
+- `http.host` is pinned in the first place because a redirect rule applies to the
+  whole zone, and this zone also carries `app.monicahq.com`.
+  `http.request.uri.path eq "/"` is pinned for the same reason: only the bare
+  root has no page of its own.
 - Nothing here uses a regular expression, which is a Business plan feature.
   `substring`, `lower` and `concat` are available on every plan.
 - **If neither rule fires, nothing breaks.** `/` falls through to the static stub
@@ -91,18 +106,39 @@ https://www.monicahq.com/en/
   to test it.
 - **Nothing runs off the zone.** Preview deployments answer in English, which is
   what they did before any of this existed.
+- **They do not send the apex to `www`.** `https://monicahq.com/en/`, and every
+  other path, answers on the apex rather than redirecting, which is duplicate
+  content held together by the canonical tags pointing at `www`. Fixing that is a
+  separate rule about the whole domain, not about language, and it is not this
+  file's business:
+
+  ```
+  http.host eq "monicahq.com"
+  -> concat("https://www.monicahq.com", http.request.uri.path)   301
+  ```
+
+  If it is ever added, these two rules still work and nothing loops: whichever
+  fires first, the reader ends on `https://www.monicahq.com/<lang>/`, in two hops
+  instead of one. Worth folding the language choice into that rule at the time,
+  rather than leaving both.
 
 ## Checking it
 
-After pasting, against the live site:
+After pasting, against the live site. Both hostnames, since both are matched:
 
 ```sh
 curl -sI -H 'Accept-Language: fr-CA,fr;q=0.9,en;q=0.8' https://www.monicahq.com/ | grep -i location
 curl -sI -H 'Accept-Language: de-DE,de;q=0.9'          https://www.monicahq.com/ | grep -i location
 curl -sI -H 'Accept-Language: ja,ko;q=0.8'             https://www.monicahq.com/ | grep -i location
 curl -sI                                               https://www.monicahq.com/ | grep -i location
+curl -sI -H 'Accept-Language: nl-BE'                   https://monicahq.com/     | grep -i location
+curl -sI -H 'Accept-Language: ja'                      https://monicahq.com/     | grep -i location
 ```
 
-Expected: `/fr/`, `/de/`, `/en/`, `/en/`. The dashboard's expression editor also
-previews a match against a request you describe, which is the cheapest way to
-check a change to the set before saving it.
+Expected, in order: `https://www.monicahq.com/fr/`, `/de/`, `/en/`, `/en/`, then
+`https://monicahq.com/nl/` and `https://monicahq.com/en/`. **The last two are the
+point of the two dynamic targets**: a reader who came to the apex is answered on
+the apex, so a `www` host in either of them means `http.host` was lost from the
+expression. The dashboard's expression editor also previews a match against a
+request you describe, which is the cheapest way to check a change to the set
+before saving it.

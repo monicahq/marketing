@@ -61,7 +61,7 @@ Jigsaw has **no locale routing**, so it is built by hand and lives in two places
 
 `/` has no page of its own, and it is the only URL here whose answer does not come from a file in the build.
 
-Two Cloudflare redirect rules answer it: they read the `Accept-Language` header, which Cloudflare hands to an expression already parsed and sorted by weight as `http.request.accepted_languages`, and 302 to that reader's language, with `defaultLocale` for anyone whose preference we do not publish. **[`cloudflare/redirect-rules.md`](../cloudflare/redirect-rules.md) is the source of truth for their text**, and it explains every clause in them.
+Two Cloudflare redirect rules answer it: they read the `Accept-Language` header, which Cloudflare hands to an expression already parsed and sorted by weight as `http.request.accepted_languages`, and 302 to that reader's language, with `defaultLocale` for anyone whose preference we do not publish. They match **both hostnames the site answers on**, `www.monicahq.com` and the apex, and carry `http.host` into the target, so a reader who came to the apex is answered on the apex. Choosing a language is all they do: sending the apex to `www` is a separate decision about the whole domain, and the root is not where to make it. **[`cloudflare/redirect-rules.md`](../cloudflare/redirect-rules.md) is the source of truth for their text**, and it explains every clause in them.
 
 Four things follow, and all four are easy to trip over:
 
@@ -182,7 +182,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 
 `source/_partials/seo.blade.php` owns the whole head: title, description, canonical, robots, hreflang, Open Graph, Twitter card and JSON-LD. **A new page gets all of it by extending `_layouts.base` with `locale` and `page` front matter.** Never hand-write a meta tag in a page.
 
-- Every crawler-facing URL is absolute, built from `baseUrl` in `config.production.php`. If the domain changes, that is the only edit, plus the hard-coded line in `source/robots.txt`.
+- Every crawler-facing URL is absolute, built from `baseUrl` in `config.production.php`. If the domain changes, that is the first edit, plus the hard-coded line in `source/robots.txt` and the two hostnames in `cloudflare/redirect-rules.md`. A production build fails until that third one is done, and it still has to be pasted into the zone.
 - hreflang is emitted for every locale **including the current one**. Reciprocity is what makes the cluster credible.
 - `og:locale` needs `language_TERRITORY` (`fr_FR`), from `ogLocales`. hreflang uses the bare code, so the two differ on purpose.
 - `source/sitemap.blade.xml` builds the sitemap by walking `routes` and `locales`, with `xhtml:link` hreflang annotations. It is named `.blade.xml` so Jigsaw writes `sitemap.xml` rather than `sitemap.html`. Its XML declaration is echoed as a string, because a literal `<?xml` would be parsed as a PHP open tag.
