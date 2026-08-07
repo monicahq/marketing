@@ -413,7 +413,7 @@ return [
     'links' => [
         'github' => 'https://github.com/monicahq/monica',
         'signIn' => 'https://app.monicahq.com',
-        'getStarted' => '#',
+        'getStarted' => 'https://app.monicahq.com/register',
         'createAccount' => '#',
         'selfHost' => '#',
         'selfHostingGuide' => '#',
