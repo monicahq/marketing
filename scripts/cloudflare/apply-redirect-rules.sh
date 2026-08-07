@@ -113,6 +113,18 @@ api() {
 
 errors() { jq -r '[.errors[]? | "\(.code): \(.message)"] | join("; ")' <<<"$1"; }
 
+# Field by field, what the zone holds against what the file asks for. Values are
+# printed whole rather than trimmed, because the difference is usually one word
+# inside a long expression and the point is to see which.
+differences() {
+    jq -rn --argjson zone "$1" --argjson file "$2" '
+        def show: if . == null then "(absent)" elif type == "string" then . else tojson end;
+        (($zone | keys) + ($file | keys) | unique)[]
+        | select($zone[.] != $file[.])
+        | "  \(.)", "    zone: \($zone[.] | show)", "    file: \($file[.] | show)"
+    ' | while IFS= read -r line; do say "$line"; done
+}
+
 # File and zone are compared over the fields this script owns. `id`, `version` and
 # `last_updated` are the zone's business, and `ref` only identifies the pair.
 managed='{description, enabled, expression, action, action_parameters}'
@@ -166,13 +178,16 @@ else
                 ;;
             1)
                 rule=$(jq -c '.[0]' <<<"$matches")
+                stored=$(jq -S "$managed" <<<"$rule")
+                wanted=$(jq -S "$managed" <<<"$desired")
 
-                if [ "$(jq -S "$managed" <<<"$rule")" = "$(jq -S "$managed" <<<"$desired")" ]; then
+                if [ "$stored" = "$wanted" ]; then
                     say "${ref}: already as the file says it, leaving it alone."
                     continue
                 fi
 
-                say "${ref}: differs from the file, updating it."
+                say "${ref}:"
+                differences "$(jq -c . <<<"$stored")" "$(jq -c . <<<"$wanted")"
                 [ "$dry_run" = 1 ] && continue
 
                 # No `ref` on an update: it is settable at creation and immutable
