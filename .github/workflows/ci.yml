@@ -86,8 +86,7 @@ jobs:
       # A second token, because this needs Zone > Single Redirect > Edit, which
       # the Pages upload has no business holding.
       - name: Apply the root's redirect rules
-        if: github.event_name != 'pull_request'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_RULES_API_TOKEN }}
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-        run: scripts/cloudflare/apply-redirect-rules.sh
+        run: scripts/cloudflare/apply-redirect-rules.sh ${{ case(github.event_name == 'pull_request', '--dry-run', '') }}
