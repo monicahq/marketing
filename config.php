@@ -11,7 +11,7 @@ use Illuminate\Support\Arr;
  * behaviour lives, because Jigsaw has no locale routing of its own.
  */
 
-$locales = ['en', 'fr', 'de', 'es', 'pt'];
+$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl'];
 
 /**
  * How the blog is chunked, in one place.
@@ -271,6 +271,7 @@ return [
         'de' => 'Deutsch',
         'es' => 'Español',
         'pt' => 'Português',
+        'nl' => 'Nederlands',
     ],
 
     /**
@@ -288,6 +289,11 @@ return [
         // bare "pt", which is what a reader searching in any Portuguese
         // variant should match.
         'pt' => 'pt_BR',
+
+        // The copy is written for the Netherlands rather than Flanders, so the
+        // territory is NL. hreflang stays the bare "nl", which is what a reader
+        // searching in either variant should match.
+        'nl' => 'nl_NL',
     ],
 
     /**
@@ -299,14 +305,21 @@ return [
      * named after that locale's slug. See .claude/CLAUDE.md.
      */
     'routes' => [
-        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => ''],
+        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => ''],
 
         // "v3" is the product's version number, so it is the same word in every
         // language. Slugs are still declared per locale, because the next page
         // added will not be.
-        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3'],
+        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3'],
 
-        'pricing' => ['en' => 'pricing', 'fr' => 'tarifs', 'de' => 'preise', 'es' => 'precios', 'pt' => 'precos'],
+        'pricing' => [
+            'en' => 'pricing',
+            'fr' => 'tarifs',
+            'de' => 'preise',
+            'es' => 'precios',
+            'pt' => 'precos',
+            'nl' => 'prijzen',
+        ],
 
         /**
          * The features section is three pages behind one tab strip, so its
@@ -325,6 +338,7 @@ return [
             'de' => 'funktionen',
             'es' => 'funcionalidades',
             'pt' => 'recursos',
+            'nl' => 'functies',
         ],
 
         'featuresDashboard' => [
@@ -333,6 +347,7 @@ return [
             'de' => 'funktionen/dashboard',
             'es' => 'funcionalidades/panel',
             'pt' => 'recursos/painel',
+            'nl' => 'functies/dashboard',
         ],
 
         'featuresJournal' => [
@@ -341,12 +356,13 @@ return [
             'de' => 'funktionen/tagebuch',
             'es' => 'funcionalidades/diario',
             'pt' => 'recursos/diario',
+            'nl' => 'functies/dagboek',
         ],
 
         // "Blog" is the same word in every language we ship. Declared per locale
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.
-        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog'],
+        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog'],
 
         'terms' => [
             'en' => 'terms',
@@ -354,9 +370,17 @@ return [
             'de' => 'nutzungsbedingungen',
             'es' => 'condiciones-de-uso',
             'pt' => 'termos-de-uso',
+            'nl' => 'gebruiksvoorwaarden',
         ],
 
-        'team' => ['en' => 'team', 'fr' => 'equipe', 'de' => 'team', 'es' => 'equipo', 'pt' => 'equipe'],
+        'team' => [
+            'en' => 'team',
+            'fr' => 'equipe',
+            'de' => 'team',
+            'es' => 'equipo',
+            'pt' => 'equipe',
+            'nl' => 'team',
+        ],
 
         'privacy' => [
             'en' => 'privacy',
@@ -364,6 +388,7 @@ return [
             'de' => 'datenschutz',
             'es' => 'privacidad',
             'pt' => 'privacidade',
+            'nl' => 'privacybeleid',
         ],
     ],
 
