@@ -1,20 +1,10 @@
-# Builds the site on every pull request, and publishes it to Cloudflare Pages
-# on every push to main.
+# Builds the site on every pull request, and publishes it to Cloudflare Pages on
+# every push to main. One workflow, because it is one build: the deploy is the
+# same steps with an upload on the end.
 #
-# One workflow, because it is one build. The deploy is the same six steps as
-# the check with an upload on the end, and while they lived in two files the
-# only thing keeping them honest was that nobody edited one and forgot the
-# other.
-#
-# The build is the check. Jigsaw has no type checker, so this repository puts
-# its invariants in the build itself: a missing translation key throws, and so
-# does a dead link (see bootstrap.php and scripts/links/check.php). Running
-# `npm run build` here is what turns those into a red cross on the pull
-# request, and on main it is what stops a broken page from shipping, because a
-# failure never reaches the deploy step.
-#
-# `production` is deliberate. It is the environment that resolves baseUrl to the
-# real domain, and the one where the link check is strict rather than advisory.
+# The build is the check. A missing translation key and a dead link both throw
+# during a production build, so a failure never reaches the deploy step. See
+# bootstrap.php and scripts/links/check.php.
 name: CI
 
 on:
@@ -24,39 +14,32 @@ on:
   push:
     branches: [main]
 
-  # A deploy that failed on a flaky network call should be repeatable without
-  # an empty commit.
+  # So a deploy that failed on a flaky network call is repeatable without an
+  # empty commit.
   workflow_dispatch:
 
-# The two events want opposite things here, so both keys are conditional.
-#
-# On a pull request, a second push to the same branch makes the first run
-# irrelevant, so it is cancelled. On main it is not: one production deploy at a
-# time, and a half-finished upload is worse than a superseded one, since the
-# next push deploys over it anyway.
+# A superseded pull request run is cancelled. A superseded deploy is not: one
+# production deploy at a time, because a half-finished upload is worse than a
+# stale one.
 concurrency:
   group: ${{ case(github.event_name == 'pull_request', format('ci-{0}', github.ref), 'cloudflare-pages-production') }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
-    # Reads as "Build and check links" on a pull request and "Build and deploy"
-    # everywhere else, which is the difference the run actually made.
     name: ${{ case(github.event_name == 'pull_request', 'Build and check links', 'Build and deploy') }}
     runs-on: ubuntu-latest
 
     permissions:
       contents: read
-      # Lets wrangler record the deployment against the commit, which is what
-      # puts the live URL on the commit in GitHub's UI. Unused on a pull
-      # request, where the deploy step does not run.
+      # Lets wrangler put the live URL on the commit in GitHub's UI.
       deployments: write
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # The runner's own PHP is 8.3, and composer.lock resolves to Symfony 8,
-      # which needs 8.4.1. composer.json says so; this is where it is honoured.
+      # which needs 8.4.1.
       - uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
         with:
           php-version: '8.4'
@@ -67,11 +50,9 @@ jobs:
           node-version: 24
           cache: npm
 
-      # `--no-dev` on both events rather than only on the deploy: composer.json
-      # declares no require-dev, so it resolves to the same vendor directory
-      # either way, and a condition here would only look like it meant
-      # something.
       - name: Install PHP dependencies
+        # `--no-dev` on both events: composer.json declares no require-dev, so a
+        # condition here would only look like it meant something.
         run: composer install --no-dev --no-interaction --prefer-dist --no-progress
 
       - name: Install node dependencies
@@ -79,26 +60,33 @@ jobs:
 
       - name: Build the site
         # Only lifts the GitHub API rate limit for the star count, which is
-        # shared across everything else running on this runner's IP. The build
-        # falls back to the figure in config.php if the call fails, so a rate
-        # limit shows a stale number rather than failing the deploy.
+        # shared with everything else on this runner's IP. A failed call falls
+        # back to the figure in config.php.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run build
 
-      # Cloudflare builds nothing. It receives the finished `build_production/`
-      # directory, because a Pages build image has no PHP and therefore no
-      # Jigsaw.
       - name: Deploy to Cloudflare Pages
-        # A pull request stops at the build. A push to main and a manual run
-        # both publish.
+        # Cloudflare builds nothing: a Pages build image has no PHP, so it
+        # receives the finished build_production/ directory.
         if: github.event_name != 'pull_request'
         uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          # `--branch` is explicit because wrangler otherwise infers it from the
-          # checkout, and anything other than the project's production branch
-          # publishes a preview instead of the live site.
+          # Explicit `--branch`, because wrangler otherwise infers it from the
+          # checkout and publishes a preview instead of the live site.
           command: pages deploy build_production --project-name=marketing --branch=main
+
+      # Two zone redirect rules answer `/`, the one URL no file answers. Applied
+      # after the upload so the pages they point at exist first, then verified
+      # against the live site. See cloudflare/redirect-rules.md.
+      #
+      # A second token, because this needs Zone > Single Redirect > Edit, which
+      # the Pages upload has no business holding.
+      - name: Apply the root's redirect rules
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_RULES_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: scripts/cloudflare/apply-redirect-rules.sh ${{ case(github.event_name == 'pull_request', '--dry-run', '') }}

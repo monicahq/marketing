@@ -57,6 +57,23 @@ Jigsaw has **no locale routing**, so it is built by hand and lives in two places
 - **Every page declares `locale` and `page` in its front matter.** Everything else follows: the copy, the canonical URL, the hreflang cluster.
 - **Every URL is locale-prefixed, English included** (`/en/`, `/fr/`), and slugs are translated per locale (`/fr/tarifs/`, never `/fr/pricing/`).
 
+### The root
+
+`/` has no page of its own, and it is the only URL here whose answer does not come from a file in the build.
+
+Two Cloudflare redirect rules answer it: they read the `Accept-Language` header, which Cloudflare hands to an expression already parsed and sorted by weight as `http.request.accepted_languages`, and 302 to that reader's language, with `defaultLocale` for anyone whose preference we do not publish. They match **both hostnames the site answers on**, `www.monicahq.com` and the apex, and carry `http.host` into the target, so a reader who came to the apex is answered on the apex. Choosing a language is all they do: sending the apex to `www` is a separate decision about the whole domain, and the root is not where to make it. **[`cloudflare/redirect-rules.json`](../cloudflare/redirect-rules.json) is those rules**, and [`redirect-rules.md`](../cloudflare/redirect-rules.md) beside it explains every clause.
+
+Four things follow, and all four are easy to trip over:
+
+- **Nothing in this project runs server-side, and that is the point.** A Cloudflare Pages Function would read the same header in JavaScript, and was the first shape of this, but every hit on `/` would spend a Workers request and bots hit `/` hardest. A redirect the edge makes from zone configuration costs nothing. That is why there is no `functions/` directory and no `_routes.json`.
+- **The deploy applies them**, through `scripts/cloudflare/apply-redirect-rules.sh`, which sends the JSON to the zone and then curls the live root to prove the edge answers with it. **Never edit these rules in the dashboard**: the next deploy would put the file's version back. It touches only its own two rules, does nothing when they already match, and needs two secrets, `CLOUDFLARE_RULES_API_TOKEN` (scoped to `Zone > Single Redirect > Edit`) and `CLOUDFLARE_ZONE_ID`. Missing either one fails the deploy.
+- **The rules do not list the languages.** Their expressions carry a `{$languages}` marker and the apply script fills it from `lang/`, so a new locale reaches the root by having a copy file. That makes `lang/` load-bearing, so an `afterBuild` listener in `bootstrap.php` checks it against `$locales` in both directions: a stray `lang/it.php` would put Italian in the rules and send those readers to a page that does not exist.
+- **Neither rule runs locally or on a preview.** `npm run serve` is a plain PHP file server and `*.pages.dev` is outside the zone, so `/` falls through to the static stub built from `source/index.blade.php`, which only knows how to reach English. That fall-through is deliberate: a mistyped expression leaves the root on a real page rather than nowhere. Checking the real behaviour means checking the live domain:
+
+  ```sh
+  curl -sI -H 'Accept-Language: fr-CA,fr;q=0.9' https://www.monicahq.com/ | grep -i location
+  ```
+
 ### Copy
 
 All text lives in `lang/<locale>.php`, plain PHP arrays. **Never hard-code a user-visible string in a template.** If you add a string, add it to every `lang/` file.
@@ -88,7 +105,7 @@ Three helpers, and the distinction matters:
 
 1. `$locales`, `localeNames` and `ogLocales` in `config.php`.
 2. A slug for it on every entry in `routes`.
-3. Copy `lang/en.php`, translate it.
+3. Copy `lang/en.php`, translate it. That file is also what puts the language in the root's redirect rules, so there is nothing to do for `/`.
 4. Its flag in `source/_partials/flag.blade.php`.
 5. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
 
@@ -149,8 +166,10 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Copy                                | `lang/<locale>.php`                                 |
 | Routes, helpers, links, locales     | `config.php`                                        |
 | Production domain                   | `config.production.php`                             |
+| Root language redirect              | `cloudflare/redirect-rules.json`, applied by `scripts/cloudflare/apply-redirect-rules.sh` |
 | Star count fetch                    | `bootstrap.php`                                     |
 | Dead link checking                  | `scripts/links/check.php`, wired up in `bootstrap.php` |
+| Locale drift check                  | `bootstrap.php`, against `cloudflare/redirect-rules.json` |
 | Design tokens to Tailwind           | `source/_assets/css/theme.css`                      |
 | Vendored design system              | `source/_assets/css/design-system/` (do not edit)   |
 | Compiled CSS entry                  | `source/_assets/css/main.css`                       |
@@ -162,7 +181,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 
 `source/_partials/seo.blade.php` owns the whole head: title, description, canonical, robots, hreflang, Open Graph, Twitter card and JSON-LD. **A new page gets all of it by extending `_layouts.base` with `locale` and `page` front matter.** Never hand-write a meta tag in a page.
 
-- Every crawler-facing URL is absolute, built from `baseUrl` in `config.production.php`. If the domain changes, that is the only edit, plus the hard-coded line in `source/robots.txt`.
+- Every crawler-facing URL is absolute, built from `baseUrl` in `config.production.php`. If the domain changes, that is the first edit, plus the hard-coded line in `source/robots.txt` and the two hostnames in both expressions in `cloudflare/redirect-rules.json`. A production build fails until that third one is done, and the deploy applies it.
 - hreflang is emitted for every locale **including the current one**. Reciprocity is what makes the cluster credible.
 - `og:locale` needs `language_TERRITORY` (`fr_FR`), from `ogLocales`. hreflang uses the bare code, so the two differ on purpose.
 - `source/sitemap.blade.xml` builds the sitemap by walking `routes` and `locales`, with `xhtml:link` hreflang annotations. It is named `.blade.xml` so Jigsaw writes `sitemap.xml` rather than `sitemap.html`. Its XML declaration is echoed as a string, because a literal `<?xml` would be parsed as a PHP open tag.
@@ -199,7 +218,7 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 
 ## Other conventions
 
-- **Static by default.** Jigsaw outputs files. Nothing runs server-side in production.
+- **Static by default.** Jigsaw outputs files. Nothing runs server-side in production, and the root's language redirect stays that way on purpose: it is zone configuration rather than a Worker, because a Worker would bill a request for every hit on `/`. See "The root" above. Anything that seems to need a Worker needs asking about first.
 - **One script, on every page.** `source/_assets/js/app.js` loads three things: [instant.page](https://instant.page) (prefetch on hover), [Turbo Drive](https://turbo.hotwired.dev) (swap `<body>` instead of reloading the document), and [Alpine](https://alpinejs.dev) (the pricing page's billing toggle, and nothing else). It is on every page because Turbo can only intercept a click from a page already running it, so a page without it is a dead end.
 - **Turbo swaps `<body>` and leaves `<head>` and `<html>` alone.** Anything that has to change with the page and lives outside `<body>` will not. That is why the locale picker's links carry `data-turbo="false"`: a Turbo visit across languages would serve French copy in a document still declaring `lang="en"`. Add it to any link or form Turbo has no business handling, such as one posting to somebody else's endpoint.
 - **Both prefetchers are on, and they are not interchangeable.** Turbo's own prefetch (on by default since Turbo 8) holds the in-flight fetch in its cache and swaps it into the visit on click, so it is the only one a Turbo visit can consume. instant.page issues `<link rel="prefetch">`, which warms the HTTP cache that an ordinary browser navigation reads, which is what the `data-turbo="false"` locale links do. Turning either off leaves one class of link fetching on click.

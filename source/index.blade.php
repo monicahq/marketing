@@ -5,7 +5,15 @@ permalink: index.html
 ---
 {{--
     With every locale prefixed, the bare root has nothing of its own to serve,
-    so it sends readers to English.
+    so it sends readers on. This is the backstop half of that.
+
+    On the live domain, two Cloudflare redirect rules answer / before any file is
+    reached: they read Accept-Language and send the reader to their own language.
+    See cloudflare/redirect-rules.md. They are zone configuration, so they do not
+    run on a *.pages.dev preview, and `npm run serve` knows nothing about them
+    either. This file is what answers in both of those cases, and if a rule is
+    ever mistyped it is what keeps / on a real page. It can only name one
+    language, so it names the default.
 
     It carries noindex, because a redirect stub is not a page anyone should find
     in search results. That is also why it is absent from the sitemap: listing a

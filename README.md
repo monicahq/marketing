@@ -76,6 +76,8 @@ On Linux use `xdg-open`, on Windows `start`, or just paste the address into your
 | `http://localhost:8000/de/` | Homepage, German  |
 | `http://localhost:8000/es/` | Homepage, Spanish |
 
+Locally it always lands on `/en/`. On the real site the root reads the browser's `Accept-Language` header and sends the reader to their own language instead. That is done by two Cloudflare redirect rules rather than by a file, so a local server never runs them. They live in [`cloudflare/redirect-rules.json`](cloudflare/redirect-rules.json), the deploy applies them, and the file beside it explains them.
+
 Edit a file under `source/` or `lang/` and `npm run dev` rebuilds within a second. Refresh the browser to see it. Press `Ctrl+C` in either terminal to stop.
 
 ### Checking the real site
