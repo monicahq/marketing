@@ -20,7 +20,7 @@
 set -euo pipefail
 
 DEFINITION=${DEFINITION:-cloudflare/redirect-rules.json}
-API=https://api.cloudflare.com/client/v4
+API=${API:-https://api.cloudflare.com/client/v4}
 
 dry_run=0
 verify=1
