@@ -57,6 +57,60 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 });
 
 /**
+ * Keeps the root redirect's list of languages in step with config.php.
+ *
+ * functions/index.js is the one piece of this site that runs on a request rather
+ * than at build time, and being JavaScript it cannot read `$locales`. It
+ * therefore repeats the list, and a repeated list is one that drifts: a seventh
+ * language added to config.php and forgotten there would build and deploy
+ * cleanly, and the only symptom would be readers of that language quietly
+ * landing on English.
+ *
+ * So the copy is checked against the original, the same way a missing
+ * translation key or a dead link is. It fails a production build and only warns
+ * on a local one, because a language being added is legitimately half-done for
+ * as long as it takes to write the pages.
+ */
+$events->afterBuild(function (Jigsaw $jigsaw) {
+    $report = function (string $message) use ($jigsaw) {
+        if ($jigsaw->getEnvironment() === 'production') {
+            throw new Exception($message);
+        }
+
+        echo "  [locales] {$message}\n";
+    };
+
+    $path = __DIR__ . '/functions/index.js';
+
+    if (! is_readable($path)) {
+        $report('functions/index.js is missing. The root redirect is what sends a reader to their own language.');
+
+        return;
+    }
+
+    // The declaration this reads is `const LOCALES = ['en', 'fr', ...];`.
+    // Renaming it there means renaming it here.
+    preg_match('/const LOCALES = \[([^\]]*)\]/', file_get_contents($path), $declaration);
+    preg_match_all("/'([a-z-]+)'/", $declaration[1] ?? '', $matches);
+
+    $declared = $matches[1];
+    $expected = collect($jigsaw->getConfig('locales'))->all();
+
+    sort($declared);
+    sort($expected);
+
+    if ($declared === $expected) {
+        return;
+    }
+
+    $report(
+        'functions/index.js declares [' . implode(', ', $declared) . '] '
+        . 'and config.php declares [' . implode(', ', $expected) . ']. '
+        . 'The root redirect cannot send a reader to a language it does not list.'
+    );
+});
+
+/**
  * Checks every link the build just wrote, against the build itself.
  *
  * This is the same safety net as a missing translation key: the site has no

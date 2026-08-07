@@ -1,0 +1,21 @@
+---
+permalink: _routes.json
+---
+{{--
+    Which requests Cloudflare Pages hands to the Function in functions/index.js.
+
+    Once a project has a Function, Pages routes every request through it unless
+    told otherwise, which would put a Worker in front of a site that is 99%
+    static files. One URL needs it, the root, so one URL is what this includes.
+    Everything else is served straight from the asset store, as it was before.
+
+    Named routes.blade.json and given a permalink because Jigsaw never writes a
+    source path beginning with an underscore, and _routes.json is the name Pages
+    looks for. It is the same trick source/index.blade.php uses to land on
+    index.html rather than index/index.html.
+--}}
+{
+    "version": 1,
+    "include": ["/"],
+    "exclude": []
+}
