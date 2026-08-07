@@ -1,37 +1,21 @@
 #!/usr/bin/env bash
 #
 # Applies cloudflare/redirect-rules.json to the zone, then proves it works.
+# See cloudflare/redirect-rules.md for what the rules say and why.
 #
-# The root is the one URL on this site that no file answers: two redirect rules
-# read Accept-Language and send the reader to their own language. Those rules are
-# zone configuration, so this is what carries them from the repository to
-# Cloudflare, on every deploy. See cloudflare/redirect-rules.md for what they say
-# and why.
-#
-# It touches nothing but its own two rules. They are matched by their `ref`, and
-# failing that by their name, so a copy created by hand in the dashboard is
-# adopted and updated rather than duplicated. Every other redirect rule in the
-# zone is left exactly as it is, which is why this uses the per-rule endpoints
-# rather than rewriting the whole ruleset.
-#
-# It is also a no-op when nothing changed: a rule whose stored form already
-# matches the file is skipped, so an ordinary deploy does not add a version to
-# the zone's history.
+# It touches only its own two rules, matched by `ref` and failing that by name,
+# so a copy made by hand in the dashboard is adopted rather than duplicated.
+# Hence the per-rule endpoints instead of rewriting the ruleset. A rule that
+# already matches the file is skipped, so an ordinary deploy is a no-op.
 #
 # Usage:
 #   scripts/cloudflare/apply-redirect-rules.sh              # apply, then verify
 #   scripts/cloudflare/apply-redirect-rules.sh --dry-run    # say what it would do
 #   scripts/cloudflare/apply-redirect-rules.sh --no-verify  # apply only
 #
-# Environment:
-#   CLOUDFLARE_API_TOKEN   needs Zone > Single Redirect > Edit on this zone
-#   CLOUDFLARE_ZONE_ID     the zone, not the account
-#   DEFINITION             the rules file, defaults to cloudflare/redirect-rules.json
-#   API                    the API root, so the write path can be pointed at a
-#                          stand-in and exercised without touching the zone
-#
-# A dry run with neither credential still validates the file and prints the
-# payloads, which is what CI does on a pull request.
+# CLOUDFLARE_API_TOKEN needs Zone > Single Redirect > Edit on the zone, and
+# CLOUDFLARE_ZONE_ID is the zone rather than the account. With neither, a dry run
+# still validates the file and prints the payloads, which is what CI does.
 
 set -euo pipefail
 
@@ -55,8 +39,7 @@ fail() { echo "[rules] $*" >&2; exit 1; }
 command -v jq >/dev/null || fail 'jq is required and was not found.'
 [ -r "$DEFINITION" ] || fail "${DEFINITION} is missing."
 
-# The file is read before anything else, so a typo is a failure that costs no
-# API call and cannot leave the zone half updated.
+# Read first, so a typo fails before any call and cannot leave the zone half done.
 jq -e '.ruleset.phase and .ruleset.kind and (.rules | length) > 0
        and all(.rules[]; .ref and .description and .expression and .action)' \
     "$DEFINITION" >/dev/null || fail "${DEFINITION} is not a complete rules definition."
@@ -72,12 +55,9 @@ if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] || [ -z "${CLOUDFLARE_ZONE_ID:-}" ]; then
     exit 0
 fi
 
-# curl, with the status code kept apart from the body: the difference between "no
-# redirect rule has ever existed on this zone" and a real failure is a 404, not
-# anything in the payload.
-#
-# Both are left in globals rather than printed, because a caller writing
-# `body=$(api GET ...)` would run this in a subshell and lose the status with it.
+# curl, with the status kept apart from the body: a zone that never had a redirect
+# rule answers the entrypoint with 404, which is not a failure. Both land in
+# globals, because `body=$(api GET ...)` would lose the status to a subshell.
 api_status=
 api_body=
 api() {
@@ -100,16 +80,14 @@ api() {
 
 errors() { jq -r '[.errors[]? | "\(.code): \(.message)"] | join("; ")' <<<"$1"; }
 
-# The rules as the file wants them, and the same rules as the zone has them, are
-# compared over the fields this script owns. `id`, `version` and `last_updated`
-# are the zone's business, and `ref` is what identifies the pair.
+# File and zone are compared over the fields this script owns. `id`, `version` and
+# `last_updated` are the zone's business, and `ref` only identifies the pair.
 managed='{description, enabled, expression, action, action_parameters}'
 
 zone_path=/zones/${CLOUDFLARE_ZONE_ID}
 
-# ENTRYPOINT_FIXTURE plans against a recorded response instead of the API. It is
-# honoured on a dry run only, and it exists so the three branches below can be
-# exercised without a token, which is the only part of this script that branches.
+# ENTRYPOINT_FIXTURE plans against a recorded response instead of the API, on a dry
+# run only, so the branches below can be exercised without a token.
 if [ "$dry_run" = 1 ] && [ -n "${ENTRYPOINT_FIXTURE:-}" ]; then
     entrypoint=$(cat "$ENTRYPOINT_FIXTURE")
     api_status=$(jq -r 'if .success then 200 else 404 end' <<<"$entrypoint")
@@ -119,8 +97,7 @@ else
     entrypoint=$api_body
 fi
 
-# A zone with no redirect rule at all has no entrypoint ruleset yet, so the first
-# run creates it, carrying both rules with it.
+# No entrypoint ruleset yet, so the first run creates it, carrying both rules.
 if [ "$api_status" = 404 ]; then
     say 'The zone has no redirect rules yet. Creating the ruleset with both.'
 
@@ -142,9 +119,7 @@ else
         desired=$(jq -c --arg ref "$ref" '.rules[] | select(.ref == $ref)' "$DEFINITION")
         description=$(jq -r '.description' <<<"$desired")
 
-        # Matched on ref, or on the name a hand-made copy would carry, so this
-        # adopts what somebody already pasted rather than adding a second rule
-        # that shadows it.
+        # On the name too, so a hand-made copy is adopted rather than shadowed.
         matches=$(jq -c --arg ref "$ref" --arg description "$description" \
             '[.result.rules[]? | select(.ref == $ref or .description == $description)]' <<<"$entrypoint")
 
@@ -167,21 +142,16 @@ else
                 say "${ref}: differs from the file, updating it."
                 [ "$dry_run" = 1 ] && continue
 
-                # `ref` is left out of an update. It is settable when a rule is
-                # created and immutable afterwards, so sending ours to a rule
-                # that already carries a different one is rejected with 20142,
-                # "expected the reference to be empty". A rule made by hand in
-                # the dashboard carries its own id as its ref, which is exactly
-                # the rule this branch is here to adopt, so it would fail every
-                # time. Dropping the field keeps whatever ref the rule has, and
-                # the name is what keeps matching it.
+                # No `ref` on an update: it is settable at creation and immutable
+                # after, so sending ours to a rule carrying a different one is
+                # rejected with 20142. A hand-made rule carries its own id as its
+                # ref, which is exactly the rule this branch adopts.
                 api PATCH "${zone_path}/rulesets/${ruleset}/rules/$(jq -r '.id' <<<"$rule")" \
                     "$(jq -c 'del(.ref)' <<<"$desired")"
                 [ "$api_status" = 200 ] || fail "Could not update ${ref} ($api_status): $(errors "$api_body")"
                 ;;
             *)
-                # Two rules claiming the same job means one is shadowing the
-                # other, and guessing which to keep is not this script's call.
+                # One is shadowing the other, and picking is not this script's call.
                 fail "${ref}: the zone has more than one rule matching it. Delete the extra one in the dashboard."
                 ;;
         esac
@@ -193,16 +163,14 @@ if [ "$verify" = 0 ] || [ "$dry_run" = 1 ]; then
     exit 0
 fi
 
-# The rules are only really applied when the edge answers with them, and a
-# mistyped expression is otherwise a silent 200 on a page nobody visits. Each
+# A mistyped expression is otherwise a silent English homepage for everybody. Each
 # case is retried, because a rule takes a moment to reach every colo.
 say 'Verifying against the live site.'
 
 failures=0
 
-# IFS is the tab and nothing else, because `Accept-Language: fr-CA, fr;q=0.9` is
-# a legal header and the default IFS would split it into two fields and shift the
-# expected URL out of the line.
+# Tab as the only separator: `fr-CA, fr;q=0.9` is a legal header, and the default
+# IFS would split it in two and shift the expected URL out of the line.
 while IFS=$'\t' read -r url language expected; do
     location=
 
