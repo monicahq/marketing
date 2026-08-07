@@ -118,7 +118,7 @@ jobs:
       # no business holding. Both secrets have to exist or this step fails, which
       # is the intended way to find out that the rules are not being applied.
       - name: Apply the root's redirect rules
-        if: github.event_name != 'pull_request'
+        # if: github.event_name != 'pull_request'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_RULES_API_TOKEN }}
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
