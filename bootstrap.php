@@ -57,27 +57,28 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 });
 
 /**
- * Keeps the root's redirect rules in step with config.php.
+ * Checks what the root's redirect rules assume about this repository.
  *
  * `/` is answered by two Cloudflare redirect rules that read Accept-Language.
- * They are zone configuration rather than code, but they are not hand-made:
  * cloudflare/redirect-rules.json is what the deploy applies, through
- * scripts/cloudflare/apply-redirect-rules.sh.
+ * scripts/cloudflare/apply-redirect-rules.sh, and the languages it matches are
+ * not written there: the script fills a `{$languages}` marker from the lang/
+ * directory, one file per language.
  *
- * A zone expression cannot read `$locales`, so it repeats the list, and a
- * repeated list is one that drifts: a seventh language added to config.php and
- * forgotten in that file would build, deploy and apply cleanly, and the only
- * symptom would be readers of that language quietly landing on English.
+ * Which moves where drift can happen. The list can no longer be forgotten, but
+ * lang/ is now load-bearing in a way it was not: a stray lang/it.php would put
+ * Italian in the rules and send those readers to a page that does not exist,
+ * and a locale in `$locales` with no lang/ file would be missing from the rules
+ * while the rest of the site expects it. Neither is visible in the build output,
+ * so both are checked here, along with the two things the file still spells out
+ * for itself, the default language and the hostnames.
  *
- * So the two are compared here, over the rules' expressions rather than the whole
- * file, which is the only part a reader of the zone would see. It fails a
- * production build and only warns on a local one, the same way the dead-link
- * check does, because a language being added is legitimately half-done for as
- * long as it takes to write its pages.
+ * It fails a production build and only warns on a local one, the same way the
+ * dead-link check does, because a language being added is legitimately half-done
+ * for as long as it takes to write its pages.
  *
- * What this cannot check is whether the zone matches the file, only whether the
- * file matches config.php. The deploy is what closes that gap, and it verifies
- * the live answers rather than trusting the write.
+ * What this cannot check is whether the zone matches the file. The deploy closes
+ * that gap by verifying the live answers rather than trusting the write.
  */
 $events->afterBuild(function (Jigsaw $jigsaw) {
     $report = function (string $message) use ($jigsaw) {
@@ -107,20 +108,33 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
         ->implode("\n");
 
     $default = $jigsaw->getConfig('defaultLocale');
+    $problems = [];
 
-    // The set both expressions have to carry: every locale except the default,
-    // in the order config.php declares them, spelled the way the rules language
-    // spells a set of strings. English is absent because the second rule is what
-    // serves it.
-    $set = '{' . collect($jigsaw->getConfig('locales'))
-        ->reject(fn ($locale) => $locale === $default)
-        ->map(fn ($locale) => "\"{$locale}\"")
-        ->implode(' ') . '}';
+    // lang/ is the list the rules are built from, so it has to be $locales
+    // exactly, in both directions.
+    $translated = collect(glob(__DIR__ . '/lang/*.php'))
+        ->map(fn ($file) => basename($file, '.php'))
+        ->sort()
+        ->values();
+    $declared = collect($jigsaw->getConfig('locales'))->sort()->values();
 
-    $checks = [
-        "the language set {$set}" => str_contains($expressions, $set),
-        "the default target /{$default}/" => str_contains($expressions, "/{$default}/"),
-    ];
+    if ($translated->all() !== $declared->all()) {
+        $problems[] = 'lang/ holds [' . $translated->implode(', ') . '] while config.php declares ['
+            . $declared->implode(', ') . '], and the redirect rules are built from lang/';
+    }
+
+    if (($definition['languages']['default'] ?? null) !== $default) {
+        $problems[] = "its default language is not {$default}";
+    }
+
+    // The markers are what keep the list out of the file. Spelling a language set
+    // back into an expression would freeze it, and nothing downstream would say
+    // so, which is the failure this listener exists to prevent.
+    foreach (['{$languages}', '$default'] as $marker) {
+        if (! str_contains($expressions, $marker)) {
+            $problems[] = "its expressions no longer use {$marker}";
+        }
+    }
 
     // The rules pin their hostnames, because they apply to a zone that also
     // carries the application, and the site answers on the apex as well as on
@@ -130,18 +144,18 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
         $hosts = array_unique([$host, preg_replace('/^www\./', '', $host)]);
         $hostSet = '{' . collect($hosts)->map(fn ($name) => "\"{$name}\"")->implode(' ') . '}';
 
-        $checks["the host set {$hostSet}"] = str_contains($expressions, $hostSet);
+        if (! str_contains($expressions, $hostSet)) {
+            $problems[] = "its expressions no longer match on {$hostSet}";
+        }
     }
 
-    $missing = collect($checks)->reject(fn ($present) => $present)->keys();
-
-    if ($missing->isEmpty()) {
+    if ($problems === []) {
         return;
     }
 
     $report(
-        'cloudflare/redirect-rules.json no longer agrees with config.php: its expressions are missing '
-        . $missing->implode(', ') . '. Correct the file, and the next deploy applies it. '
+        "The root's redirect rules are out of step: " . implode('; ', $problems)
+        . '. Correct cloudflare/redirect-rules.json, and the next deploy applies it. '
         . 'Until then / will not reach every language it should.'
     );
 });

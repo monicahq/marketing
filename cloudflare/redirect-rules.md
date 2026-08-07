@@ -73,12 +73,20 @@ prints the rules it would send, which is what CI does on every pull request.
   read as `fr`. Every locale here is a plain two-letter language.
 - `lower()` because the header is case insensitive and `FR-ca` is a legal way to
   write it.
-- **The language set is every locale except the default**, in the order
-  `$locales` declares them in `config.php`. English is absent on purpose: the
-  second rule is what serves it, and listing it in both would make the two rules
-  overlap. An `afterBuild` listener in `bootstrap.php` compares that set against
-  `$locales` and fails a production build when the two disagree, so a language
-  added to the site cannot stay unreachable from `/` unnoticed.
+- **The language set is not in the JSON.** The expressions carry a
+  `{$languages}` marker, and the apply script fills it from the `lang/`
+  directory, one file per language, every language except the default. `$default`
+  is filled the same way from `languages.default`. So a new language reaches the
+  root by having a `lang/` file, which it needs anyway, and there is no second
+  list to forget. The set is sorted with `LC_ALL=C` so it comes out identical on
+  every run, which is what lets the script recognise a rule as unchanged.
+- **English is absent from the set on purpose**: the second rule is what serves
+  it, and listing it in both would make the two rules overlap.
+- Reading `lang/` makes that directory load-bearing, so an `afterBuild` listener
+  in `bootstrap.php` checks it against `$locales` in both directions. A stray
+  `lang/it.php` would otherwise put Italian in the rules and send those readers
+  to a page that does not exist. The same listener checks that the markers are
+  still there, since spelling a set back into an expression would freeze it.
 - **Both hostnames are matched, and the reader keeps the one they arrived on.**
   The site answers on `https://monicahq.com/` as well as on
   `https://www.monicahq.com/`, so a rule naming only one of them would leave half

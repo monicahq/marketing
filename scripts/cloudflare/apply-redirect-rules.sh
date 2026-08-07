@@ -3,6 +3,10 @@
 # Applies cloudflare/redirect-rules.json to the zone, then proves it works.
 # See cloudflare/redirect-rules.md for what the rules say and why.
 #
+# The languages the rules match are not written out in that file. It carries a
+# `{$languages}` marker, and the list is read from lang/, one file per language,
+# so a new locale reaches the root by existing rather than by being listed twice.
+#
 # It touches only its own two rules, matched by `ref` and failing that by name,
 # so a copy made by hand in the dashboard is adopted rather than duplicated.
 # Hence the per-rule endpoints instead of rewriting the ruleset. A rule that
@@ -19,7 +23,12 @@
 
 set -euo pipefail
 
+# Everything this reads is a repository path, so it runs from the repository root
+# whatever directory it was called from.
+cd "$(dirname "${BASH_SOURCE[0]}")/../.."
+
 DEFINITION=${DEFINITION:-cloudflare/redirect-rules.json}
+LANGUAGES=${LANGUAGES:-lang}
 API=${API:-https://api.cloudflare.com/client/v4}
 
 dry_run=0
@@ -40,18 +49,42 @@ command -v jq >/dev/null || fail 'jq is required and was not found.'
 [ -r "$DEFINITION" ] || fail "${DEFINITION} is missing."
 
 # Read first, so a typo fails before any call and cannot leave the zone half done.
-jq -e '.ruleset.phase and .ruleset.kind and (.rules | length) > 0
+jq -e '.ruleset.phase and .ruleset.kind and .languages.default and (.rules | length) > 0
        and all(.rules[]; .ref and .description and .expression and .action)' \
     "$DEFINITION" >/dev/null || fail "${DEFINITION} is not a complete rules definition."
 
-phase=$(jq -r '.ruleset.phase' "$DEFINITION")
-refs=$(jq -r '.rules[].ref' "$DEFINITION")
+[ -d "$LANGUAGES" ] || fail "${LANGUAGES}/ is missing, and it is where the languages come from."
+
+default=$(jq -r '.languages.default' "$DEFINITION")
+
+# Every language except the default, which the second rule serves on its own.
+# Sorted with LC_ALL=C so the set comes out identical on every run, which is what
+# lets the comparison below recognise a rule as unchanged.
+shopt -s nullglob
+set_of_languages=$(
+    for file in "$LANGUAGES"/*.php; do
+        basename "$file" .php
+    done | grep -Fxv "$default" | LC_ALL=C sort | sed 's/^/"/; s/$/"/' | paste -sd' '
+)
+shopt -u nullglob
+
+[ -n "$set_of_languages" ] || fail "${LANGUAGES}/ holds no language other than ${default}."
+
+# One resolved copy, so nothing below has to know the markers existed.
+definition=$(jq --arg set "{${set_of_languages}}" --arg fallback "$default" '
+    walk(if type == "string"
+         then split("{$languages}") | join($set) | split("$default") | join($fallback)
+         else . end)' "$DEFINITION")
+
+phase=$(jq -r '.ruleset.phase' <<<"$definition")
+refs=$(jq -r '.rules[].ref' <<<"$definition")
 
 if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] || [ -z "${CLOUDFLARE_ZONE_ID:-}" ]; then
     [ "$dry_run" = 1 ] || fail 'CLOUDFLARE_API_TOKEN and CLOUDFLARE_ZONE_ID are required.'
 
-    say "No credentials given. ${DEFINITION} is valid; these are the rules it would apply:"
-    jq '.rules' "$DEFINITION"
+    say "No credentials given. ${DEFINITION} is valid, and ${LANGUAGES}/ gives {${set_of_languages}}."
+    say 'These are the rules it would apply:'
+    jq '.rules' <<<"$definition"
     exit 0
 fi
 
@@ -102,11 +135,11 @@ if [ "$api_status" = 404 ]; then
     say 'The zone has no redirect rules yet. Creating the ruleset with both.'
 
     if [ "$dry_run" = 1 ]; then
-        jq '.ruleset + {rules: .rules}' "$DEFINITION"
+        jq '.ruleset + {rules: .rules}' <<<"$definition"
         exit 0
     fi
 
-    api POST "${zone_path}/rulesets" "$(jq -c '.ruleset + {rules: .rules}' "$DEFINITION")"
+    api POST "${zone_path}/rulesets" "$(jq -c '.ruleset + {rules: .rules}' <<<"$definition")"
     [ "$api_status" = 200 ] || fail "Could not create the ruleset ($api_status): $(errors "$api_body")"
 
     say 'Created.'
@@ -116,7 +149,7 @@ else
     ruleset=$(jq -r '.result.id' <<<"$entrypoint")
 
     for ref in $refs; do
-        desired=$(jq -c --arg ref "$ref" '.rules[] | select(.ref == $ref)' "$DEFINITION")
+        desired=$(jq -c --arg ref "$ref" '.rules[] | select(.ref == $ref)' <<<"$definition")
         description=$(jq -r '.description' <<<"$desired")
 
         # On the name too, so a hand-made copy is adopted rather than shadowed.
@@ -189,7 +222,7 @@ while IFS=$'\t' read -r url language expected; do
         say "  ${url} as ${language} -> ${location:-no redirect}, expected ${expected}"
         failures=$((failures + 1))
     fi
-done < <(jq -r '.verify[] | [.url, .accept_language, .expect] | @tsv' "$DEFINITION")
+done < <(jq -r '.verify[] | [.url, .accept_language, .expect] | @tsv' <<<"$definition")
 
 [ "$failures" = 0 ] || fail "${failures} of the checks in ${DEFINITION} did not pass."
 

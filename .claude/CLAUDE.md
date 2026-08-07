@@ -67,7 +67,7 @@ Four things follow, and all four are easy to trip over:
 
 - **Nothing in this project runs server-side, and that is the point.** A Cloudflare Pages Function would read the same header in JavaScript, and was the first shape of this, but every hit on `/` would spend a Workers request and bots hit `/` hardest. A redirect the edge makes from zone configuration costs nothing. That is why there is no `functions/` directory and no `_routes.json`.
 - **The deploy applies them**, through `scripts/cloudflare/apply-redirect-rules.sh`, which sends the JSON to the zone and then curls the live root to prove the edge answers with it. **Never edit these rules in the dashboard**: the next deploy would put the file's version back. It touches only its own two rules, does nothing when they already match, and needs two secrets, `CLOUDFLARE_RULES_API_TOKEN` (scoped to `Zone > Single Redirect > Edit`) and `CLOUDFLARE_ZONE_ID`. Missing either one fails the deploy.
-- **The rules repeat the locale list**, because a zone expression cannot read `$locales`. An `afterBuild` listener in `bootstrap.php` compares the rules' expressions against it and fails a production build when they disagree, naming what is missing, so a language cannot reach the zone unreachable from `/`.
+- **The rules do not list the languages.** Their expressions carry a `{$languages}` marker and the apply script fills it from `lang/`, so a new locale reaches the root by having a copy file. That makes `lang/` load-bearing, so an `afterBuild` listener in `bootstrap.php` checks it against `$locales` in both directions: a stray `lang/it.php` would put Italian in the rules and send those readers to a page that does not exist.
 - **Neither rule runs locally or on a preview.** `npm run serve` is a plain PHP file server and `*.pages.dev` is outside the zone, so `/` falls through to the static stub built from `source/index.blade.php`, which only knows how to reach English. That fall-through is deliberate: a mistyped expression leaves the root on a real page rather than nowhere. Checking the real behaviour means checking the live domain:
 
   ```sh
@@ -105,10 +105,9 @@ Three helpers, and the distinction matters:
 
 1. `$locales`, `localeNames` and `ogLocales` in `config.php`.
 2. A slug for it on every entry in `routes`.
-3. Copy `lang/en.php`, translate it.
+3. Copy `lang/en.php`, translate it. That file is also what puts the language in the root's redirect rules, so there is nothing to do for `/`.
 4. Its flag in `source/_partials/flag.blade.php`.
-5. The language set in both expressions in `cloudflare/redirect-rules.json`, or `/` cannot reach the new language. A production build fails until they match `$locales`, and the deploy applies them.
-6. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
+5. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
 
 German runs ~30% longer than English, French ~20%, and Portuguese ~20%. Don't pin widths to English label lengths.
 
