@@ -26,8 +26,11 @@
 # Environment:
 #   CLOUDFLARE_API_TOKEN   needs Zone > Single Redirect > Edit on this zone
 #   CLOUDFLARE_ZONE_ID     the zone, not the account
+#   DEFINITION             the rules file, defaults to cloudflare/redirect-rules.json
+#   API                    the API root, so the write path can be pointed at a
+#                          stand-in and exercised without touching the zone
 #
-# A dry run with neither of those still validates the file and prints the
+# A dry run with neither credential still validates the file and prints the
 # payloads, which is what CI does on a pull request.
 
 set -euo pipefail
@@ -164,7 +167,16 @@ else
                 say "${ref}: differs from the file, updating it."
                 [ "$dry_run" = 1 ] && continue
 
-                api PATCH "${zone_path}/rulesets/${ruleset}/rules/$(jq -r '.id' <<<"$rule")" "$desired"
+                # `ref` is left out of an update. It is settable when a rule is
+                # created and immutable afterwards, so sending ours to a rule
+                # that already carries a different one is rejected with 20142,
+                # "expected the reference to be empty". A rule made by hand in
+                # the dashboard carries its own id as its ref, which is exactly
+                # the rule this branch is here to adopt, so it would fail every
+                # time. Dropping the field keeps whatever ref the rule has, and
+                # the name is what keeps matching it.
+                api PATCH "${zone_path}/rulesets/${ruleset}/rules/$(jq -r '.id' <<<"$rule")" \
+                    "$(jq -c 'del(.ref)' <<<"$desired")"
                 [ "$api_status" = 200 ] || fail "Could not update ${ref} ($api_status): $(errors "$api_body")"
                 ;;
             *)
@@ -188,7 +200,10 @@ say 'Verifying against the live site.'
 
 failures=0
 
-while read -r url language expected; do
+# IFS is the tab and nothing else, because `Accept-Language: fr-CA, fr;q=0.9` is
+# a legal header and the default IFS would split it into two fields and shift the
+# expected URL out of the line.
+while IFS=$'\t' read -r url language expected; do
     location=
 
     for attempt in 1 2 3; do

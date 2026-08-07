@@ -39,6 +39,9 @@ should be noisy rather than quiet.
   their name, so a copy somebody once made by hand is adopted and corrected
   rather than duplicated. Every other redirect rule in the zone is left alone,
   which is why it uses the per-rule endpoints instead of rewriting the ruleset.
+  An adopted rule keeps whatever `ref` it already had, because a `ref` can be set
+  when a rule is created and not afterwards, so the name is what goes on
+  identifying it.
 - **Does nothing when nothing changed.** A rule whose stored form already matches
   the file is skipped, so an ordinary deploy adds no version to the zone's
   history.
