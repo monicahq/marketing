@@ -299,7 +299,7 @@ return [
         'coming' => [
             'label' => "Ce qui arrive",
             'title' => "Beaucoup de choses changent. Monica devient davantage la vôtre.",
-            'body' => "Monica v3 n’est pas un simple rafraîchissement visuel. c’est une nouvelle fondation, pensée pour rendre le produit plus souple sans le rendre plus compliqué.",
+            'body' => "Monica v3 n’est pas un simple rafraîchissement visuel. C’est une nouvelle fondation, pensée pour rendre le produit plus souple sans le rendre plus compliqué.",
             'features' => [
                 [
                     'icon' => 'panel',
@@ -522,7 +522,7 @@ return [
                 "le support communautaire ;",
                 "la possibilité d’inspecter et de modifier le code source.",
             ],
-            'footnote' => "L’édition auto-hébergée n’est pas une démo bridée. c’est Monica, sur votre infrastructure.",
+            'footnote' => "L’édition auto-hébergée n’est pas une démo bridée. C’est Monica, sur votre infrastructure.",
             'footnote2' => "Les sauvegardes gérées, l’envoi d’e-mails, la supervision de l’infrastructure et le support direct font partie du service hébergé.",
         ],
 
@@ -783,7 +783,7 @@ return [
                     ['text' => "Monica est un projet open source. La version hébergée propose une offre payante qui nous permet de percevoir de l’argent afin de payer les serveurs et des services supplémentaires, mais le but premier n’est pas de gagner de l’argent (sinon nous n’en aurions pas ouvert le code)."],
                     ['text' => "Monica existe en deux versions : vous pouvez utiliser notre version hébergée, ou bien la télécharger et la faire tourner vous-même. Dans ce second cas, nous ne suivons absolument rien. Nous ne savons même pas que vous avez téléchargé le produit. Faites-en ce que vous voulez (mais respectez les lois de votre pays)."],
                     ['text' => "Lorsque vous créez votre compte sur notre version hébergée, vous fournissez au site des informations vous concernant, que nous collectons. Il s’agit de votre nom, de votre adresse e-mail et de votre mot de passe, qui est chiffré avant d’être stocké. Nous ne stockons aucune autre information personnelle."],
-                    ['text' => "Lorsque vous vous connectez au service, nous utilisons des cookies pour mémoriser vos identifiants. c’est le seul usage que nous faisons des cookies."],
+                    ['text' => "Lorsque vous vous connectez au service, nous utilisons des cookies pour mémoriser vos identifiants. C’est le seul usage que nous faisons des cookies."],
                     ['text' => "Monica tourne sur Fortrabbit et nous sommes les seuls, en dehors des employés de Fortrabbit, à avoir accès à ces serveurs."],
                     ['text' => "Nous effectuons des sauvegardes horaires de la base de données."],
                     ['text' => "Votre mot de passe est chiffré avec bcrypt, un algorithme de hachage de mots de passe très sûr. Vous pouvez également activer l’authentification à deux facteurs sur votre compte si vous souhaitez une couche de sécurité supplémentaire. En dehors de ces mécanismes de chiffrement, vos données ne sont pas chiffrées dans la base. Si quelqu’un accède à la base de données, il pourra lire vos données. Nous faisons de notre mieux pour que cela n’arrive jamais, mais cela peut arriver."],
