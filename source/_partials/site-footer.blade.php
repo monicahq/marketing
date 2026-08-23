@@ -4,6 +4,7 @@
             'label' => $page->t('footer.productLabel'),
             'links' => [
                 ['label' => $page->t('nav.product'), 'href' => $page->route('home')],
+                ['label' => $page->t('footer.personalCrm'), 'href' => $page->route('personalCrm')],
                 // The features tab strip starts here; the other two tabs are
                 // one click away, so the footer names the section rather than
                 // listing all three.

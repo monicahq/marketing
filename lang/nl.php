@@ -24,6 +24,7 @@ return [
             'terms' => "Gebruiksvoorwaarden",
             'team' => "Team",
             'privacy' => "Privacybeleid",
+            'personalCrm' => "Gids persoonlijke CRM",
             'page' => "Pagina :number",
         ],
 
@@ -88,6 +89,11 @@ return [
             'title' => "Het dagboek — functies van Monica",
             'description' => "Schrijf dagboeknotities, leg vast hoe je dag was en lees de activiteiten met je contacten die Monica automatisch voor je bijhoudt.",
         ],
+
+        'personalCrm' => [
+            'title' => "Wat is een persoonlijke CRM? Een praktische gids — Monica",
+            'description' => "Wat een persoonlijke CRM is, hoe die verschilt van een adresboek en een sales-CRM, wat je erin zet, welke privacyafwegingen erbij horen en hoe je de juiste aanpak kiest.",
+        ],
     ],
 
     'announcement' => [
@@ -99,6 +105,7 @@ return [
     'nav' => [
         'label' => "Hoofdmenu",
         'product' => "Product",
+        'personalCrm' => "Wat is een persoonlijke CRM",
         'v3' => "Monica v3",
         'features' => "Functies",
         'pricing' => "Prijzen",
@@ -648,6 +655,229 @@ return [
         ],
     ],
 
+    'personalCrm' => [
+        'eyebrow' => "Een praktische gids",
+        'title' => "Wat is een persoonlijke CRM?",
+        'lede' => "Een persoonlijke CRM is een privéplek om te onthouden wat er speelt rond de mensen in je leven: wat ze je vertelden, wat voor hen belangrijk is en waar je nog op terug wilde komen.",
+        'intro' => "Anders dan een sales-CRM is die gebouwd voor relaties, niet voor pijplijnen. Het gaat er niet om mensen te beheren. Het gaat erom je geheugen een handje te helpen, zodat je met meer context komt opdagen.",
+
+        'toc' => [
+            'label' => "In deze gids",
+            'items' => [
+                ['id' => 'definition', 'title' => "De korte definitie"],
+                ['id' => 'comparison', 'title' => "Hoe die verschilt van andere hulpmiddelen"],
+                ['id' => 'contents', 'title' => "Wat je erin kunt bewaren"],
+                ['id' => 'fit', 'title' => "Wie erbij geholpen is"],
+                ['id' => 'approaches', 'title' => "De belangrijkste aanpakken"],
+                ['id' => 'history', 'title' => "Waar het vandaan komt"],
+                ['id' => 'privacy', 'title' => "Privacy en ethiek"],
+                ['id' => 'hosting', 'title' => "Cloud of in eigen beheer"],
+                ['id' => 'choosing', 'title' => "Hoe je kiest"],
+                ['id' => 'monica', 'title' => "De aanpak van Monica"],
+            ],
+        ],
+
+        'definition' => [
+            'label' => "De korte definitie",
+            'title' => "Een persoonlijke CRM onthoudt meer dan contactgegevens.",
+            'body' => "Je adresboek kent het nummer van Sam. Een persoonlijke CRM kan je eraan herinneren dat Sam voor een halve marathon traint, dat haar dochter Maya heet en dat je hebt beloofd de titel van dat boek te sturen.",
+            'body2' => "Die verbindt feiten met de geschiedenis van een relatie. Afhankelijk van het hulpmiddel horen daar notities, gesprekken, activiteiten, belangrijke data, herinneringen, de banden tussen mensen en eigen gegevens bij die jij belangrijk vindt.",
+            'aside' => "Een goede persoonlijke CRM helpt je onthouden. Die bepaalt niet wat een mens waard is.",
+        ],
+
+        'comparison' => [
+            'label' => "Drie verschillende taken",
+            'title' => "Een adresboek, een persoonlijke CRM en een traditionele CRM zijn niet hetzelfde.",
+            'body' => "Alle drie bewaren informatie over mensen, maar ze zijn rond andere vragen gebouwd. Ze allemaal contactbeheer noemen verbergt het belangrijkste: waarvoor de informatie dient.",
+            'cards' => [
+                [
+                    'title' => "Adresboek",
+                    'question' => "Hoe bereik ik deze persoon?",
+                    'body' => "Namen, telefoonnummers, e-mailadressen, postadressen en misschien een verjaardag. Simpel, vertrouwd en voor veel mensen genoeg.",
+                ],
+                [
+                    'title' => "Persoonlijke CRM",
+                    'question' => "Wat wil ik onthouden over deze persoon?",
+                    'body' => "De persoon, jullie relatie, wat er is gebeurd en wat je later wilt onthouden of doen.",
+                ],
+                [
+                    'title' => "Traditionele CRM",
+                    'question' => "Hoe vordert deze klantrelatie?",
+                    'body' => "Leads, accounts, deals, serviceverzoeken, omzet, teamactiviteit en de fasen van een zakelijk proces.",
+                ],
+            ],
+            'tableTitle' => "Persoonlijke CRM tegenover traditionele CRM",
+            'tableHeadings' => ["", "Persoonlijke CRM", "Traditionele CRM"],
+            'rows' => [
+                ["Belangrijkste doel", "Persoonlijke context onthouden en afspraken nakomen", "Verkoop, marketing of klantenservice afstemmen"],
+                ["Wie erin staat", "Vrienden, familie, buren, collega's en andere mensen in je leven", "Leads, klanten, accounts en zakelijke contacten"],
+                ["Gebruikelijke informatie", "Banden, herinneringen, gesprekken, data, notities en signalen om iets op te pakken", "Deals, omzet, campagnes, supportgeschiedenis en pijplijnfasen"],
+                ["Geslaagd wanneer", "Je de context hebt op het moment dat die telt", "Een zakelijk proces vordert en te meten is"],
+                ["Meestal gebruikt door", "Eén persoon, soms een huishouden", "Een bedrijf of team"],
+            ],
+            'closing' => "Traditionele CRM's zijn nuttige hulpmiddelen voor het werk waarvoor ze zijn gemaakt. Het wordt lastig als de taal en de prikkels van de verkoop meeverhuizen naar het privéleven. Je vrienden zijn geen leads, en een stille maand is geen vastgelopen pijplijn.",
+        ],
+
+        'contents' => [
+            'label' => "Wat erin gaat",
+            'title' => "Bewaar genoeg context om nuttig te zijn. Niet meer dan dat.",
+            'body' => "Een persoonlijke CRM kan een uitgebreid dossier over het leven van iemand anders worden. Dat is een reden om te kiezen, geen reden om elk beschikbaar veld te vullen. Bewaar iets omdat het je helpt onthouden of nakomen, niet omdat de software een leeg vakje aanbiedt.",
+            'groups' => [
+                ['title' => "Identiteit en contactgegevens", 'body' => "Namen, voornaamwoorden, telefoonnummers, e-mailadressen, plaatsen en de namen die iemand echt gebruikt."],
+                ['title' => "Banden", 'body' => "Hoe je iemand kent, de mensen om die persoon heen en de familie- of huishoudverhoudingen die de rest begrijpelijk maken."],
+                ['title' => "Belangrijke data", 'body' => "Verjaardagen, jubilea, verhuizingen, diploma's of elke datum die voor die persoon of voor jullie gedeelde geschiedenis telt."],
+                ['title' => "Gesprekken en notities", 'body' => "Waarover jullie het hadden, een tip die iemand gaf, een zorg die iemand deelde of een detail dat je niet voor de derde keer wilt vragen."],
+                ['title' => "Activiteiten en herinneringen", 'body' => "Etentjes, telefoontjes, reizen, bezoeken, projecten en andere momenten die je later misschien in de tijd wilt plaatsen."],
+                ['title' => "Afspraken en signalen", 'body' => "Een belofte die je deed, iets wat je uitleende, een cadeau-idee of een herinnering om te vragen hoe iets is gegaan."],
+            ],
+            'note' => "Gevoelige informatie verdient een hogere drempel. Als iets opschrijven zou voelen als verraad zodra je het voorleest aan de persoon die het beschrijft, dan is dat gevoel nuttige informatie.",
+        ],
+
+        'example' => [
+            'label' => "Een klein voorbeeld",
+            'title' => "Hoe het gebruik van een persoonlijke CRM er echt uitziet",
+            'body' => "Het nuttige deel is meestal heel gewoon. Het gaat minder om een perfecte database en meer om het sluiten van de kleine lussen die je geheugen anders open laat.",
+            'steps' => [
+                ["number" => "01", 'title' => "Een vriendin vertelt over een sollicitatiegesprek", 'body' => "Je maakt na het gesprek een korte notitie. Geen verslag, alleen de context die je wilt onthouden."],
+                ["number" => "02", 'title' => "Je zet een herinnering", 'body' => "De herinnering hangt aan de persoon en komt na het gesprek langs, op het moment dat ernaar vragen nuttig is."],
+                ["number" => "03", 'title' => "Je komt terug met context", 'body' => "Je vraagt hoe het ging omdat je het belangrijk vindt. De software onthield het moment; de relatie blijft van jou."],
+            ],
+        ],
+
+        'fit' => [
+            'label' => "Passend",
+            'title' => "Sommige mensen hebben er een nodig. Veel mensen niet.",
+            'body' => "Een persoonlijke CRM verdient zijn plek alleen als die een echt probleem met onthouden of opvolgen oplost. Die moet de mentale last verlichten, geen nieuwe administratieve hobby maken.",
+            'goodTitle' => "Het kan helpen als je…",
+            'good' => [
+                "meer mensen belangrijk vindt dan je betrouwbaar in je hoofd houdt;",
+                "vrienden of familie hebt die over steden, landen of levensfasen verspreid zijn;",
+                "regelmatig namen, data, beloftes of gedeelde details vergeet;",
+                "iemand begeleidt, vrijwilligerswerk doet, een gemeenschap organiseert of voor een grote familie zorgt;",
+                "één privéplek wilt voor context over relaties die nu over notities en agenda's verspreid ligt.",
+            ],
+            'notTitle' => "Je hebt er waarschijnlijk geen nodig als…",
+            'not' => [
+                "je adresboek en agenda al dekken wat je vergeet;",
+                "het bijhouden zwaarder weegt dan het probleem dat het oplost;",
+                "je alleen een plek wilt voor telefoonnummers en verjaardagen;",
+                "je teampijplijnen, massacontact, verkoopprognoses of klantanalyses wilt. Daarvoor past een traditionele CRM beter.",
+            ],
+        ],
+
+        'approaches' => [
+            'label' => "Een nuttig kader",
+            'title' => "Persoonlijke CRM's maken andere afwegingen.",
+            'body' => "Persoonlijke CRM is een losse categorie, geen norm. De aanpakken hieronder zijn een manier om producten te vergelijken, geen officiële benamingen uit de sector. Veel hulpmiddelen combineren er meerdere.",
+            'items' => [
+                ['title' => "Netwerk eerst", 'body' => "Gebouwd rond zakelijke contacten, introducties en contact houden. Nuttig als werk van veel langlopende relaties afhangt, maar het kan de taal van de verkoop het privéleven binnenbrengen."],
+                ['title' => "Automatisering eerst", 'body' => "Haalt context uit e-mail, agenda's, sociale netwerken of andere diensten. Dat scheelt handwerk, in ruil voor bredere toegang en soms een ruimere verzameling dan je bedoelde."],
+                ['title' => "Productiviteit eerst", 'body' => "Behandelt opvolgen als taken en terugkerende herinneringen. Duidelijk en werkbaar, al kan een relatie op een postvak gaan lijken als elk contact een verplichting wordt."],
+                ['title' => "Geheugen eerst", 'body' => "Zet notities, activiteiten, data en de gedeelde geschiedenis centraal. Dat vraagt bewuster invoeren, maar jij bepaalt wat er wordt vastgelegd."],
+                ['title' => "Persoonlijke database", 'body' => "Laat je eigen records, velden en verbindingen ontwerpen. Flexibel genoeg voor ongewone levens, met meer inrichting en onderhoud als prijs."],
+            ],
+        ],
+
+        'history' => [
+            'label' => "Een korte geschiedenis",
+            'title' => "De persoonlijke CRM leende het geheugen van zakelijke software en gaf het een ander doel.",
+            'body' => "Er is geen erkende uitvinder van de persoonlijke CRM. De categorie groeide geleidelijk uit adresboeken, contactbeheerders, zakelijke CRM-software en hulpmiddelen voor persoonlijke informatie.",
+            'items' => [
+                ['date' => "Voor de software", 'title' => "Context over relaties stond op papier", 'body' => "Adresboeken, correspondentiemappen, agenda's en beschreven kaartjes hielden contactgegevens gescheiden van al het andere, dat het geheugen slecht vasthoudt."],
+                ['date' => "1987", 'title' => "Contactbeheer bereikt de personal computer", 'body' => "Act! dateert zijn eerste product voor contactbeheer op 1987. Vroege hulpmiddelen werden vaak een digitale Rolodex genoemd, voordat CRM de gangbare term werd."],
+                ['date' => "Midden jaren negentig", 'title' => "CRM wordt een zakelijke categorie", 'body' => "Academische overzichten plaatsen het opkomen van de term customer relationship management in het midden van de jaren negentig, toen contactgegevens deel werden van bredere verkoop- en servicesystemen."],
+                ['date' => "Vanaf 1999", 'title' => "CRM verhuist naar de cloud", 'body' => "Salesforce begon in 1999 met CRM via het web. Software uit de cloud maakte gedeelde records, automatische updates en koppelingen normaal."],
+                ['date' => "Jaren 2010", 'title' => "Persoonlijke CRM wordt een herkenbaar label", 'body' => "Nieuwe producten pasten een deel van die ideeën toe op de zakelijke en persoonlijke relaties van één mens. In 2019 was de categorie gevestigd genoeg om zowel enthousiasme als onbehagen op te roepen over het optimaliseren van vriendschap."],
+            ],
+            'sourcesLabel' => "Bronnen voor deze tijdlijn",
+            'sources' => [
+                ['label' => "Bedrijfsgeschiedenis van Act!", 'url' => 'https://www.act.com/about-us/'],
+                ['label' => "Academische geschiedenis van CRM", 'url' => 'https://www.sciencedirect.com/science/article/pii/S0963868707000182'],
+                ['label' => "Bedrijfsgeschiedenis van Salesforce", 'url' => 'https://www.salesforce.com/company/our-story'],
+                ['label' => "Axios over persoonlijke CRM in 2019", 'url' => 'https://www.axios.com/2019/08/27/startups-new-frontier-optimizing-your-friendships'],
+            ],
+        ],
+
+        'privacy' => [
+            'label' => "Privacy en ethiek",
+            'title' => "Het account gaat over jou. Veel van wat erin staat gaat over anderen.",
+            'body' => "Dat maakt een persoonlijke CRM ongewoon gevoelig. Er kunnen adressen, familiebanden, privégesprekken, gezondheidsgegevens of in vertrouwen gedeelde herinneringen in staan. Een wachtwoord is nodig, maar goed oordeel begint voordat er iets wordt opgeslagen.",
+            'principles' => [
+                ['title' => "Verzamel minder", 'body' => "Bewaar wat een duidelijk doel heeft. Vollediger is niet automatisch nuttiger."],
+                ['title' => "Respecteer de oorspronkelijke context", 'body' => "Wat in een privégesprek is gedeeld wordt geen vrij materiaal voor verrijking, analyse of ruimere verspreiding omdat het te kopiëren valt."],
+                ['title' => "Weet waar automatisering gegevens naartoe stuurt", 'body' => "E-mailsynchronisatie, transcriptie, verrijking en AI-functies gaan soms via andere diensten. Ga na wat de toepassing verlaat, waarom, hoe lang en of het wordt gebruikt om modellen te trainen."],
+                ['title' => "Reken op verlies en vertrek", 'body' => "Gebruik stevige toegangsrechten en back-ups. Zorg dat je je gegevens in een bruikbaar formaat kunt exporteren en bij vertrek kunt verwijderen."],
+                ['title' => "Schrijf voor de mogelijke lezer", 'body' => "Een goede test is of je een notitie zou kunnen uitleggen aan de persoon die erin staat, zonder je achter de software te verschuilen."],
+            ],
+            'closing' => "Een persoonlijke CRM is van zichzelf niet zorgzaam en niet luguber. Het verschil zit meestal in wat je verzamelt, hoe het daar kwam, wie erbij kan en wat je ermee doet.",
+        ],
+
+        'hosting' => [
+            'label' => "Waar die draait",
+            'title' => "Cloud en eigen beheer verplaatsen de verantwoordelijkheid.",
+            'body' => "Bij een gehoste dienst laat je een aanbieder de toepassing draaien. In eigen beheer draaien geeft je de controle over de server en haalt die aanbieder uit het dagelijks gebruik. Geen van beide is automatisch veiliger. Veiligheid hangt af van updates, toegangsrechten, back-ups, toezicht en de mensen die daarvoor verantwoordelijk zijn.",
+            'tableHeadings' => ["", "Gehoste dienst", "In eigen beheer"],
+            'rows' => [
+                ["Onderhoud", "De aanbieder draait en werkt de dienst bij", "Jij installeert, werkt bij en houdt in de gaten"],
+                ["Controle", "Je werkt binnen het product en de regels van de aanbieder", "Je bepaalt server, configuratie en uitrol"],
+                ["Back-ups", "Meestal door de aanbieder geregeld; ga na wat erbij hoort", "Jij stelt ze in, beveiligt ze en test ze"],
+                ["Beschikbaarheid", "Meestal bruikbaar zonder infrastructuur te beheren", "Hangt af van de infrastructuur die je zelf draait"],
+                ["Waar de gegevens staan", "Hangt af van de aanbieder en zijn subverwerkers", "Hangt af van de server en diensten die je kiest"],
+                ["Past het best", "Je wilt het hulpmiddel zonder een dienst te draaien", "Je hebt de kennis en de zin om het zelf te draaien"],
+            ],
+            'note' => "In eigen beheer draaien geeft meer controle. Het geeft ook meer manieren om een serieuze fout te maken. Kies het omdat je die verantwoordelijkheid wilt, niet omdat het label veilig klinkt.",
+        ],
+
+        'choosing' => [
+            'label' => "Voordat je een hulpmiddel kiest",
+            'title' => "Begin bij de gewoonte die je wilt en bekijk daarna de software.",
+            'body' => "De langste functielijst zegt zelden welke persoonlijke CRM het contact met je echte leven overleeft. Een eenvoudig hulpmiddel dat je blijft gebruiken is nuttiger dan een perfect systeem dat je niet opent.",
+            'questions' => [
+                ['title' => "Waarbij wil je hulp met onthouden?", 'body' => "Namen en data vragen een ander hulpmiddel dan een uitgebreide geschiedenis, signalen om iets op te pakken of een flexibele persoonlijke database."],
+                ['title' => "Hoeveel werk kost het vastleggen?", 'body' => "Bepaal of je bewuste notities met de hand wilt, brede automatische imports of iets daartussen."],
+                ['title' => "Welke toegang vraagt het?", 'body' => "Ga na of het e-mail, agenda's, contacten, sociale netwerken of berichten leest, en of elke toestemming nodig is."],
+                ['title' => "Hoe gebruikt het AI?", 'body' => "Zoek uit welke gegevens naar welke modelaanbieder gaan, wat er bewaard blijft, of trainen is toegestaan en of de functie uit kan."],
+                ['title' => "Kun je weg?", 'body' => "Let op volledige export, begrijpelijke formaten, het verwijderen van je account en een geloofwaardig plan voor het onderhoud van het product op langere termijn."],
+                ['title' => "Wie draait het?", 'body' => "Vergelijk het gemak van een gehoste dienst met de controle en het werk van eigen beheer. Neem back-ups en updates mee in de afweging."],
+                ['title' => "Past het bij jouw relaties?", 'body' => "Vaste velden zijn soms eenvoudiger. Records op maat passen soms beter. Kies de flexibiliteit die je echt gaat gebruiken."],
+            ],
+        ],
+
+        'monica' => [
+            'label' => "Het standpunt van Monica",
+            'title' => "Geheugen boven automatisering. Relaties boven netwerken.",
+            'body' => "Monica is één antwoord op de vraag naar een persoonlijke CRM, niet de definitie van de categorie. Het begon met een simpel idee: de details onthouden die helpen om voor vrienden en familie te zorgen, zonder die mensen in prospects te veranderen of hun leven aan een advertentiesysteem te geven.",
+            'principles' => [
+                ['title' => "Context telt meer dan contactgegevens", 'body' => "Monica verbindt mensen met notities, activiteiten, herinneringen, belangrijke data en de banden om hen heen."],
+                ['title' => "Jij kiest wat wordt vastgelegd", 'body' => "Monica kiest bewust onthouden boven onzichtbare verrijking. Het doel is niet om elk mogelijk signaal binnen te halen."],
+                ['title' => "Eigendom hoort bij het product", 'body' => "Monica is open source, kan in eigen beheer draaien en heeft een gehoste versie voor wie geen server wil beheren."],
+                ['title' => "Andere levens vragen andere structuren", 'body' => "Monica v3 wordt gebouwd rond records en verbindingen die je meer kunt aanpassen, met dezelfde uitgangspunten van het project over privacy en eigendom."],
+            ],
+            'currentCta' => "Bekijk wat Monica kan onthouden",
+            'v3Cta' => "Lees over Monica v3",
+            'privacyCta' => "Lees het privacybeleid van Monica",
+            'finalTitle' => "Een persoonlijke CRM moet je helpen opletten en daarna uit de weg gaan.",
+            'finalBody' => "Als de aanpak van Monica past bij de manier waarop je mensen wilt onthouden, kun je de gehoste dienst gebruiken of de open source toepassing zelf draaien.",
+            'primaryCta' => "Begin met Monica",
+            'secondaryCta' => "Bekijk Monica op GitHub",
+        ],
+
+        'faq' => [
+            'label' => "Veelgestelde vragen",
+            'title' => "Een paar eerlijke antwoorden voordat je een tweede brein voor je sociale leven bouwt.",
+            'items' => [
+                ['q' => "Is een persoonlijke CRM gebruiken luguber?", 'a' => [
+                    "Dat kan. Stil gevoelige informatie verzamelen, privégesprekken zonder zorg importeren of mensen een score geven gaat voor veel mensen over een redelijke grens.",
+                    "Een kleine, private verzameling notities en herinneringen kan ook een gewone steun voor het geheugen zijn. Wat je verzamelt, hoe het daar kwam en hoe je het gebruikt telt zwaarder dan het label.",
+                ]],
+                ['q' => "Kan ik in plaats daarvan mijn contacten-app, agenda of notities gebruiken?", 'a' => "Ja. Als die hulpmiddelen het probleem oplossen, blijf ze dan gebruiken. Een persoonlijke CRM wordt nuttig als je de persoon, de context, de geschiedenis en het opvolgen op één plek verbonden wilt hebben."],
+                ['q' => "Is een persoonlijke CRM alleen voor zakelijk netwerken?", 'a' => "Nee. Sommige producten zijn vooral voor zakelijke relaties gebouwd. Andere richten zich op vrienden, familie, een gemeenschap of een mengeling. De juiste keuze hangt af van de relaties en gewoonten die je echt hebt."],
+                ['q' => "Is in eigen beheer draaien privacyvriendelijker?", 'a' => "Het kan het aantal betrokken dienstverleners verkleinen en je meer controle geven. Het regelt geen updates, back-ups, versleuteling of toegangsrechten voor je. Privacy en veiligheid hangen nog steeds af van hoe het systeem wordt beheerd."],
+                ['q' => "Hoeveel moet ik vastleggen?", 'a' => "Begin met het minimum dat je probleem oplost. Wat data, een paar notities en af en toe een herinnering zijn voor veel mensen genoeg. Voeg pas structuur toe als die het onderhoud waard is."],
+            ],
+        ],
+    ],
+
     'footer' => [
         'tagline' => "Een privé, open source persoonlijke CRM om de mensen te onthouden die tellen.",
         'productLabel' => "Product",
@@ -656,6 +886,7 @@ return [
         'privacy' => "Privacy",
         'terms' => "Voorwaarden",
         'team' => "Team",
+        'personalCrm' => "Wat is een persoonlijke CRM?",
         'copyright' => "© :year Monica",
         'since' => "Open source sinds 2017",
         'ownership' => "Je gegevens blijven van jou.",

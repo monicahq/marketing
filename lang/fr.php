@@ -23,6 +23,7 @@ return [
             'terms' => "Conditions d’utilisation",
             'team' => "Équipe",
             'privacy' => "Politique de confidentialité",
+            'personalCrm' => "Guide du CRM personnel",
             'page' => "Page :number",
         ],
 
@@ -94,6 +95,11 @@ return [
             'title' => "Le journal — les fonctionnalités de Monica",
             'description' => "Écrivez des entrées de journal, indiquez comment s’est passée votre journée et relisez les activités avec vos contacts que Monica consigne automatiquement.",
         ],
+
+        'personalCrm' => [
+            'title' => "Qu’est-ce qu’un CRM personnel ? Le guide pratique — Monica",
+            'description' => "Ce qu’est un CRM personnel, en quoi il diffère d’un carnet d’adresses et d’un CRM commercial, quoi y noter, les compromis de confidentialité et comment choisir la bonne approche.",
+        ],
     ],
 
     'announcement' => [
@@ -105,6 +111,7 @@ return [
     'nav' => [
         'label' => "Principale",
         'product' => "Produit",
+        'personalCrm' => "Qu’est-ce qu’un CRM personnel",
         'v3' => "Monica v3",
         'features' => "Fonctionnalités",
         'pricing' => "Tarifs",
@@ -654,6 +661,229 @@ return [
         ],
     ],
 
+    'personalCrm' => [
+        'eyebrow' => "Un guide pratique",
+        'title' => "Qu’est-ce qu’un CRM personnel ?",
+        'lede' => "Un CRM personnel est un espace privé où retenir le contexte autour des gens qui traversent votre vie : ce qu’ils vous ont raconté, ce qui compte pour eux et ce que vous vouliez leur redemander.",
+        'intro' => "Contrairement à un CRM commercial, il est conçu pour des relations, pas pour un tunnel de vente. L’objectif n’est pas de gérer les gens. Il est de donner un coup de main à votre mémoire, pour arriver avec un peu plus de contexte.",
+
+        'toc' => [
+            'label' => "Dans ce guide",
+            'items' => [
+                ['id' => 'definition', 'title' => "La définition courte"],
+                ['id' => 'comparison', 'title' => "Ce qui le distingue des autres outils"],
+                ['id' => 'contents', 'title' => "Ce qu’on peut y garder"],
+                ['id' => 'fit', 'title' => "À qui il sert"],
+                ['id' => 'approaches', 'title' => "Les grandes approches"],
+                ['id' => 'history', 'title' => "D’où cela vient"],
+                ['id' => 'privacy', 'title' => "Vie privée et éthique"],
+                ['id' => 'hosting', 'title' => "Cloud ou auto-hébergement"],
+                ['id' => 'choosing', 'title' => "Comment choisir"],
+                ['id' => 'monica', 'title' => "L’approche de Monica"],
+            ],
+        ],
+
+        'definition' => [
+            'label' => "La définition courte",
+            'title' => "Un CRM personnel retient plus que des coordonnées.",
+            'body' => "Votre carnet d’adresses connaît le numéro de Sam. Un CRM personnel peut vous rappeler que Sam s’entraîne pour un semi-marathon, que sa fille s’appelle Maya et que vous aviez promis de lui envoyer le titre de ce livre.",
+            'body2' => "Il relie des faits à l’histoire d’une relation. Selon l’outil, cela peut comprendre des notes, des conversations, des activités, des dates importantes, des rappels, les liens entre les personnes et les informations sur mesure que vous jugez utiles.",
+            'aside' => "Un bon CRM personnel vous aide à vous souvenir. Il ne décide pas de la valeur d’une personne.",
+        ],
+
+        'comparison' => [
+            'label' => "Trois usages différents",
+            'title' => "Un carnet d’adresses, un CRM personnel et un CRM traditionnel ne font pas le même travail.",
+            'body' => "Tous les trois stockent des informations sur des personnes, mais ils sont bâtis autour de questions différentes. Les appeler tous « gestion de contacts » masque l’essentiel : à quoi sert l’information.",
+            'cards' => [
+                [
+                    'title' => "Carnet d’adresses",
+                    'question' => "Comment joindre cette personne ?",
+                    'body' => "Des noms, des numéros de téléphone, des adresses e-mail, des adresses postales et parfois un anniversaire. Simple, familier et suffisant pour beaucoup de gens.",
+                ],
+                [
+                    'title' => "CRM personnel",
+                    'question' => "Quel contexte ai-je envie de retenir ?",
+                    'body' => "La personne, votre relation, ce qui s’est passé et ce que vous voulez retenir ou faire plus tard.",
+                ],
+                [
+                    'title' => "CRM traditionnel",
+                    'question' => "Où en est cette relation client ?",
+                    'body' => "Des pistes, des comptes, des affaires, des demandes de service, du chiffre d’affaires, l’activité de l’équipe et les étapes d’un processus commercial.",
+                ],
+            ],
+            'tableTitle' => "CRM personnel et CRM traditionnel",
+            'tableHeadings' => ["", "CRM personnel", "CRM traditionnel"],
+            'rows' => [
+                ["Objectif principal", "Retenir le contexte personnel et tenir ses engagements", "Coordonner la vente, le marketing ou le service client"],
+                ["Personnes représentées", "Des amis, la famille, des voisins, des collègues et les autres gens de votre vie", "Des pistes, des clients, des comptes et des contacts professionnels"],
+                ["Informations habituelles", "Des liens, des souvenirs, des conversations, des dates, des notes et des rappels", "Des affaires, du chiffre d’affaires, des campagnes, l’historique du support et les étapes du tunnel"],
+                ["La réussite ressemble à", "Vous avez le contexte dont vous avez besoin au moment où il compte", "Un processus commercial avance et se mesure"],
+                ["Utilisé en général par", "Une personne, parfois un foyer", "Une entreprise ou une équipe"],
+            ],
+            'closing' => "Les CRM traditionnels sont de bons outils pour la tâche qu’ils ont été conçus pour accomplir. Les ennuis commencent quand le vocabulaire et les logiques de la vente débarquent dans la vie privée. Vos amis ne sont pas des prospects, et un mois plus calme n’est pas un tunnel bloqué.",
+        ],
+
+        'contents' => [
+            'label' => "Ce qu’on y met",
+            'title' => "Gardez assez de contexte pour que ce soit utile. Pas plus.",
+            'body' => "Un CRM personnel peut devenir un dossier détaillé sur la vie de quelqu’un d’autre. C’est une raison d’être sélectif, pas une raison de remplir tous les champs disponibles. Notez une information parce qu’elle vous aide à vous souvenir ou à tenir un engagement, pas parce que le logiciel vous propose une case vide.",
+            'groups' => [
+                ['title' => "Identité et coordonnées", 'body' => "Des noms, des pronoms, des numéros de téléphone, des adresses e-mail, des lieux et les noms que la personne utilise réellement."],
+                ['title' => "Liens", 'body' => "Comment vous connaissez quelqu’un, les personnes qui lui sont proches et les liens de famille ou de foyer qui donnent du sens au reste."],
+                ['title' => "Dates importantes", 'body' => "Des anniversaires, des dates de rencontre, un déménagement, un diplôme ou toute date qui compte pour cette personne ou pour votre histoire commune."],
+                ['title' => "Conversations et notes", 'body' => "Ce dont vous avez parlé, une recommandation qu’on vous a faite, une inquiétude qu’on vous a confiée ou un détail que vous ne voulez pas redemander une troisième fois."],
+                ['title' => "Activités et souvenirs", 'body' => "Des repas, des appels, des voyages, des visites, des projets et les autres moments que vous voudrez peut-être resituer plus tard."],
+                ['title' => "Engagements et rappels", 'body' => "Une promesse faite, un objet prêté, une idée de cadeau ou un rappel pour demander comment cela s’est passé."],
+            ],
+            'note' => "Les informations sensibles méritent une exigence plus haute. Si les noter ressemblerait à une trahison au moment de les relire devant la personne concernée, ce sentiment est une information utile.",
+        ],
+
+        'example' => [
+            'label' => "Un petit exemple",
+            'title' => "À quoi ressemble vraiment l’usage d’un CRM personnel",
+            'body' => "La partie utile est en général très ordinaire. Il s’agit moins de bâtir une base de données parfaite que de refermer les petites boucles que votre mémoire laisserait ouvertes.",
+            'steps' => [
+                ["number" => "01", 'title' => "Un ami parle d’un entretien", 'body' => "Vous prenez une note courte après la conversation. Pas une transcription, juste le contexte que vous voulez retenir."],
+                ["number" => "02", 'title' => "Vous programmez un rappel", 'body' => "Le rappel est rattaché à la personne et arrive après l’entretien, au moment où la question sera utile."],
+                ["number" => "03", 'title' => "Vous reprenez contact avec du contexte", 'body' => "Vous demandez comment cela s’est passé parce que vous y tenez. Le logiciel s’est souvenu du calendrier ; la relation reste la vôtre."],
+            ],
+        ],
+
+        'fit' => [
+            'label' => "Pertinence",
+            'title' => "Certaines personnes en ont besoin. Beaucoup d’autres non.",
+            'body' => "Un CRM personnel ne mérite sa place que s’il résout un vrai problème de mémoire ou de suivi. Il doit alléger la charge mentale, pas créer un nouveau loisir administratif.",
+            'goodTitle' => "Il peut aider si vous…",
+            'good' => [
+                "tenez à plus de gens que votre mémoire immédiate ne peut en retenir ;",
+                "avez des amis ou de la famille dispersés entre plusieurs villes, pays ou étapes de vie ;",
+                "oubliez régulièrement des prénoms, des dates, des promesses ou les détails qu’on vous confie ;",
+                "accompagnez, faites du bénévolat, animez une communauté ou vous occupez d’une famille élargie ;",
+                "voulez un seul espace privé pour un contexte relationnel éparpillé entre des notes et des agendas.",
+            ],
+            'notTitle' => "Vous n’en avez probablement pas besoin si…",
+            'not' => [
+                "votre carnet d’adresses et votre agenda couvrent déjà ce que vous oubliez ;",
+                "tenir des fiches vous pèse plus que le problème qu’elles résolvent ;",
+                "vous voulez seulement un endroit pour des numéros de téléphone et des anniversaires ;",
+                "vous cherchez des tunnels de vente en équipe, de la prospection de masse, des prévisions commerciales ou de l’analyse client. Un CRM traditionnel fait mieux ce travail.",
+            ],
+        ],
+
+        'approaches' => [
+            'label' => "Un cadre utile",
+            'title' => "Les CRM personnels ne font pas les mêmes compromis.",
+            'body' => "Le CRM personnel est une catégorie floue, pas une norme. Les approches ci-dessous servent à comparer des produits, ce ne sont pas des étiquettes officielles du secteur. Beaucoup d’outils en combinent plusieurs.",
+            'items' => [
+                ['title' => "Le réseau d’abord", 'body' => "Bâti autour des relations professionnelles, des mises en relation et du maintien du contact. Utile quand le travail dépend de nombreuses relations de longue durée, mais le vocabulaire de la vente peut s’inviter dans la vie privée."],
+                ['title' => "L’automatisation d’abord", 'body' => "Récupère le contexte depuis la messagerie, les agendas, les réseaux sociaux ou d’autres services. La saisie manuelle diminue, en échange d’un accès plus large et parfois d’une collecte plus vaste que prévu."],
+                ['title' => "La productivité d’abord", 'body' => "Traite les relances comme des tâches et des rappels récurrents. C’est clair et actionnable, mais une relation peut finir par ressembler à une boîte de réception si chaque échange devient une obligation."],
+                ['title' => "La mémoire d’abord", 'body' => "Place au centre les notes, les activités, les dates et l’histoire commune. Cela demande une saisie plus volontaire, mais vous décidez de ce qui entre dans la fiche."],
+                ['title' => "Base de données personnelle", 'body' => "Vous laisse concevoir vos propres fiches, vos champs et vos liens. Assez souple pour des vies inhabituelles, au prix d’une mise en place et d’un entretien plus lourds."],
+            ],
+        ],
+
+        'history' => [
+            'label' => "Une brève histoire",
+            'title' => "Le CRM personnel a emprunté la mémoire des logiciels d’entreprise, puis en a changé la finalité.",
+            'body' => "Personne ne s’accorde sur l’inventeur du CRM personnel. La catégorie a grandi peu à peu, à partir des carnets d’adresses, des gestionnaires de contacts, des logiciels de CRM d’entreprise et des outils d’information personnelle.",
+            'items' => [
+                ['date' => "Avant les logiciels", 'title' => "Le contexte relationnel tenait sur du papier", 'body' => "Carnets d’adresses, dossiers de correspondance, agendas et fiches annotées séparaient déjà les coordonnées du reste, que la mémoire retient mal."],
+                ['date' => "1987", 'title' => "La gestion de contacts arrive sur les ordinateurs personnels", 'body' => "Act! fait remonter son premier logiciel de gestion de contacts à 1987. Les premiers outils étaient souvent décrits comme des Rolodex numériques, avant que le mot CRM ne s’impose."],
+                ['date' => "Milieu des années 1990", 'title' => "Le CRM devient une catégorie d’entreprise", 'body' => "Les travaux universitaires situent l’apparition de l’expression customer relationship management au milieu des années 1990, quand les fiches de contact sont devenues une pièce de systèmes de vente et de service plus larges."],
+                ['date' => "À partir de 1999", 'title' => "Le CRM passe dans le cloud", 'body' => "Salesforce est lancée en 1999 avec un CRM accessible par le web. Le logiciel en ligne a rendu normales les fiches partagées, les mises à jour automatiques et les intégrations."],
+                ['date' => "Années 2010", 'title' => "Le CRM personnel devient une étiquette identifiable", 'body' => "De nouveaux produits ont appliqué une partie de ces idées aux relations professionnelles et privées d’une personne. En 2019, la catégorie était assez installée pour susciter autant d’enthousiasme que de gêne à l’idée d’optimiser l’amitié."],
+            ],
+            'sourcesLabel' => "Sources de cette chronologie",
+            'sources' => [
+                ['label' => "Histoire de l’entreprise Act!", 'url' => 'https://www.act.com/about-us/'],
+                ['label' => "Histoire universitaire du CRM", 'url' => 'https://www.sciencedirect.com/science/article/pii/S0963868707000182'],
+                ['label' => "Histoire de l’entreprise Salesforce", 'url' => 'https://www.salesforce.com/company/our-story'],
+                ['label' => "Axios sur le CRM personnel en 2019", 'url' => 'https://www.axios.com/2019/08/27/startups-new-frontier-optimizing-your-friendships'],
+            ],
+        ],
+
+        'privacy' => [
+            'label' => "Vie privée et éthique",
+            'title' => "Le compte est le vôtre. Une grande partie de ce qu’il contient parle d’autres personnes.",
+            'body' => "Cela rend un CRM personnel particulièrement sensible. Il peut contenir des adresses, des liens de famille, des conversations privées, des détails de santé ou des souvenirs confiés en confidence. Un mot de passe est nécessaire, mais le discernement commence avant le premier enregistrement.",
+            'principles' => [
+                ['title' => "Collecter moins", 'body' => "Gardez ce qui a une raison d’être claire. Plus complet n’est pas automatiquement plus utile."],
+                ['title' => "Respecter le contexte d’origine", 'body' => "Une information partagée dans une conversation privée ne devient pas exploitable pour de l’enrichissement, de l’analyse ou une diffusion plus large sous prétexte qu’elle est facile à copier."],
+                ['title' => "Savoir où l’automatisation envoie les données", 'body' => "La synchronisation des e-mails, la transcription, l’enrichissement et les fonctions d’IA passent parfois par d’autres services. Vérifiez ce qui quitte l’application, pourquoi, pour combien de temps et si cela sert à entraîner des modèles."],
+                ['title' => "Prévoir la perte et le départ", 'body' => "Utilisez des accès solides et des sauvegardes. Assurez-vous de pouvoir exporter vos données dans un format exploitable et de les supprimer au moment de partir."],
+                ['title' => "Écrire pour le lecteur possible", 'body' => "Un bon test consiste à vous demander si vous pourriez expliquer une note à la personne qu’elle décrit, sans vous cacher derrière le logiciel."],
+            ],
+            'closing' => "Un CRM personnel n’est ni attentionné ni malsain par nature. La différence tient souvent à ce que vous collectez, à la façon dont c’est arrivé là, à qui peut y accéder et à ce que vous en faites.",
+        ],
+
+        'hosting' => [
+            'label' => "Où il tourne",
+            'title' => "Le cloud et l’auto-hébergement déplacent la responsabilité.",
+            'body' => "Un service hébergé confie l’exploitation de l’application à un prestataire. L’auto-hébergement vous donne la main sur le serveur et écarte ce prestataire du quotidien. Aucun des deux choix n’est plus sûr d’office. La sécurité dépend des mises à jour, des accès, des sauvegardes, de la surveillance et des personnes qui s’en occupent.",
+            'tableHeadings' => ["", "Service hébergé", "Auto-hébergé"],
+            'rows' => [
+                ["Maintenance", "Le prestataire exploite et met à jour le service", "Vous installez, mettez à jour et surveillez"],
+                ["Contrôle", "Vous travaillez dans le produit et les règles du prestataire", "Vous maîtrisez le serveur, la configuration et le déploiement"],
+                ["Sauvegardes", "Gérées en général par le prestataire ; vérifiez ce qui est inclus", "Vous les configurez, les protégez et les testez"],
+                ["Disponibilité", "Accessible en général sans gérer d’infrastructure", "Dépend de l’infrastructure que vous exploitez"],
+                ["Localisation des données", "Dépend du prestataire et de ses sous-traitants", "Dépend du serveur et des services que vous choisissez"],
+                ["Convient si", "Vous voulez l’outil sans exploiter un service", "Vous avez les compétences et l’envie de l’exploiter vous-même"],
+            ],
+            'note' => "L’auto-hébergement donne plus de contrôle. Il donne aussi plus d’occasions de commettre une erreur sérieuse. Choisissez-le parce que vous voulez cette responsabilité, pas parce que l’étiquette a l’air rassurante.",
+        ],
+
+        'choosing' => [
+            'label' => "Avant de choisir un outil",
+            'title' => "Partez de l’habitude que vous voulez prendre, puis examinez le logiciel.",
+            'body' => "La plus longue liste de fonctionnalités dit rarement quel CRM personnel survivra au contact de votre vie réelle. Un outil modeste que vous continuez d’utiliser vaut mieux qu’un système parfait que vous évitez d’ouvrir.",
+            'questions' => [
+                ['title' => "De quoi voulez-vous vous souvenir ?", 'body' => "Des prénoms et des dates n’appellent pas le même outil qu’un historique détaillé, des rappels de relance ou une base de données personnelle souple."],
+                ['title' => "Combien de travail demande la saisie ?", 'body' => "Décidez si vous préférez des notes prises volontairement, de larges imports automatiques ou quelque chose entre les deux."],
+                ['title' => "Quels accès demande-t-il ?", 'body' => "Regardez s’il lit vos e-mails, vos agendas, vos contacts, vos réseaux sociaux ou vos messages, et si chaque autorisation est nécessaire."],
+                ['title' => "Comment utilise-t-il l’IA ?", 'body' => "Cherchez quelles données partent vers quel fournisseur de modèle, ce qui est conservé, si l’entraînement est autorisé et si la fonction peut être désactivée."],
+                ['title' => "Pouvez-vous partir ?", 'body' => "Cherchez un export complet, des formats compréhensibles, la suppression du compte et un plan crédible pour l’entretien du produit sur la durée."],
+                ['title' => "Qui l’exploite ?", 'body' => "Comparez le confort d’un service hébergé avec le contrôle et le travail de l’auto-hébergement. Comptez les sauvegardes et les mises à jour dans la décision."],
+                ['title' => "Peut-il coller à vos relations ?", 'body' => "Des champs rigides sont parfois plus simples. Des fiches sur mesure collent parfois mieux. Choisissez la souplesse que vous utiliserez vraiment."],
+            ],
+        ],
+
+        'monica' => [
+            'label' => "Le point de vue de Monica",
+            'title' => "La mémoire plutôt que l’automatisation. Les relations plutôt que le réseau.",
+            'body' => "Monica est une réponse à la question du CRM personnel, pas la définition de la catégorie. Elle est partie d’une idée simple : retenir les détails qui aident à prendre soin de ses amis et de sa famille, sans transformer ces gens en prospects ni confier leur vie à un système publicitaire.",
+            'principles' => [
+                ['title' => "Le contexte compte plus que les coordonnées", 'body' => "Monica relie les personnes à des notes, des activités, des rappels, des dates importantes et les liens autour d’elles."],
+                ['title' => "Vous choisissez ce qui entre dans la fiche", 'body' => "Monica préfère une mémoire volontaire à un enrichissement invisible. Le but n’est pas d’avaler tous les signaux possibles."],
+                ['title' => "La propriété fait partie du produit", 'body' => "Monica est open source, peut être auto-hébergée et propose une version hébergée pour qui ne veut pas gérer de serveur."],
+                ['title' => "Des vies différentes demandent des structures différentes", 'body' => "Monica v3 se construit autour de fiches et de liens plus personnalisables, en gardant les principes de confidentialité et de propriété du projet."],
+            ],
+            'currentCta' => "Voir ce que Monica peut retenir",
+            'v3Cta' => "En savoir plus sur Monica v3",
+            'privacyCta' => "Lire la politique de confidentialité de Monica",
+            'finalTitle' => "Un CRM personnel doit vous aider à être attentif, puis s’effacer.",
+            'finalBody' => "Si l’approche de Monica correspond à la façon dont vous voulez vous souvenir des gens, vous pouvez utiliser la version hébergée ou installer vous-même l’application open source.",
+            'primaryCta' => "Commencer avec Monica",
+            'secondaryCta' => "Voir Monica sur GitHub",
+        ],
+
+        'faq' => [
+            'label' => "Questions fréquentes",
+            'title' => "Quelques réponses honnêtes avant de bâtir un second cerveau pour votre vie sociale.",
+            'items' => [
+                ['q' => "Est-ce malsain d’utiliser un CRM personnel ?", 'a' => [
+                    "Cela peut l’être. Collecter en silence des informations sensibles, importer des conversations privées sans précaution ou noter les gens dépasse les limites raisonnables pour beaucoup de monde.",
+                    "Un petit ensemble privé de notes et de rappels peut aussi être une aide ordinaire à la mémoire. Ce que vous collectez, la façon dont c’est arrivé là et l’usage que vous en faites comptent plus que l’étiquette.",
+                ]],
+                ['q' => "Puis-je utiliser mon application de contacts, mon agenda ou mes notes à la place ?", 'a' => "Oui. Si ces outils règlent le problème, continuez avec eux. Un CRM personnel devient utile quand vous voulez relier la personne, le contexte, l’historique et le suivi au même endroit."],
+                ['q' => "Un CRM personnel sert-il seulement au réseau professionnel ?", 'a' => "Non. Certains produits visent surtout les relations professionnelles. D’autres se concentrent sur les amis, la famille, une communauté ou un mélange. Le bon choix dépend des relations et des habitudes que vous avez vraiment."],
+                ['q' => "L’auto-hébergement protège-t-il mieux la vie privée ?", 'a' => "Il peut réduire le nombre de prestataires impliqués et vous donner plus de contrôle. Il ne configure pas pour vous les mises à jour, les sauvegardes, le chiffrement ni les accès. La confidentialité et la sécurité dépendent toujours de la façon dont le système est exploité."],
+                ['q' => "Combien d’informations faut-il noter ?", 'a' => "Commencez par le minimum qui règle votre problème. Des dates, quelques notes et un rappel de temps en temps suffisent à beaucoup de gens. N’ajoutez de la structure que lorsqu’elle mérite son coût d’entretien."],
+            ],
+        ],
+    ],
+
     'footer' => [
         'tagline' => "Un CRM personnel privé et open source pour se souvenir des gens qui comptent.",
         'productLabel' => "Produit",
@@ -662,6 +892,7 @@ return [
         'privacy' => "Confidentialité",
         'terms' => "Conditions d’utilisation",
         'team' => "Équipe",
+        'personalCrm' => "Qu’est-ce qu’un CRM personnel ?",
         'copyright' => "© :year Monica",
         'since' => "Open source depuis 2017",
         'ownership' => "Vos données restent les vôtres.",

@@ -21,6 +21,7 @@ return [
             'terms' => "Nutzungsbedingungen",
             'team' => "Team",
             'privacy' => "Datenschutzerklärung",
+            'personalCrm' => "Leitfaden persönliches CRM",
             'page' => "Seite :number",
         ],
 
@@ -91,6 +92,11 @@ return [
             'title' => "Das Journal — die Funktionen von Monica",
             'description' => "Schreiben Sie Journaleinträge, halten Sie fest, wie Ihr Tag verlaufen ist, und lesen Sie die Aktivitäten mit Ihren Kontakten, die Monica automatisch protokolliert.",
         ],
+
+        'personalCrm' => [
+            'title' => "Was ist ein persönliches CRM? Ein praktischer Leitfaden — Monica",
+            'description' => "Was ein persönliches CRM ist, wie es sich von einem Adressbuch und einem Vertriebs-CRM unterscheidet, was hineingehört, welche Abwägungen der Datenschutz verlangt und wie Sie den passenden Ansatz wählen.",
+        ],
     ],
 
     'announcement' => [
@@ -102,6 +108,7 @@ return [
     'nav' => [
         'label' => "Haupt",
         'product' => "Produkt",
+        'personalCrm' => "Was ist ein persönliches CRM",
         'v3' => "Monica v3",
         'features' => "Funktionen",
         'pricing' => "Preise",
@@ -651,6 +658,229 @@ return [
         ],
     ],
 
+    'personalCrm' => [
+        'eyebrow' => "Ein praktischer Leitfaden",
+        'title' => "Was ist ein persönliches CRM?",
+        'lede' => "Ein persönliches CRM ist ein privater Ort für den Zusammenhang rund um die Menschen in Ihrem Leben: was sie Ihnen erzählt haben, was ihnen wichtig ist und worauf Sie noch zurückkommen wollten.",
+        'intro' => "Anders als ein Vertriebs-CRM ist es für Beziehungen gebaut, nicht für Pipelines. Es geht nicht darum, Menschen zu verwalten. Es geht darum, Ihrem Gedächtnis etwas zu helfen, damit Sie mit mehr Zusammenhang auftauchen können.",
+
+        'toc' => [
+            'label' => "In diesem Leitfaden",
+            'items' => [
+                ['id' => 'definition', 'title' => "Die kurze Definition"],
+                ['id' => 'comparison', 'title' => "Der Unterschied zu anderen Werkzeugen"],
+                ['id' => 'contents', 'title' => "Was darin Platz hat"],
+                ['id' => 'fit', 'title' => "Wem es hilft"],
+                ['id' => 'approaches', 'title' => "Die wichtigsten Ansätze"],
+                ['id' => 'history', 'title' => "Woher es kommt"],
+                ['id' => 'privacy', 'title' => "Datenschutz und Ethik"],
+                ['id' => 'hosting', 'title' => "Cloud oder selbst gehostet"],
+                ['id' => 'choosing', 'title' => "Wie Sie wählen"],
+                ['id' => 'monica', 'title' => "Der Ansatz von Monica"],
+            ],
+        ],
+
+        'definition' => [
+            'label' => "Die kurze Definition",
+            'title' => "Ein persönliches CRM merkt sich mehr als Kontaktdaten.",
+            'body' => "Ihr Adressbuch kennt die Telefonnummer von Sam. Ein persönliches CRM kann Sie daran erinnern, dass Sam für einen Halbmarathon trainiert, dass ihre Tochter Maya heißt und dass Sie versprochen haben, den Titel dieses Buches zu schicken.",
+            'body2' => "Es verbindet Fakten mit der Geschichte einer Beziehung. Je nach Werkzeug gehören dazu Notizen, Gespräche, Aktivitäten, wichtige Daten, Erinnerungen, die Verbindungen zwischen Menschen und eigene Angaben, die Ihnen wichtig sind.",
+            'aside' => "Ein gutes persönliches CRM hilft Ihnen beim Erinnern. Es entscheidet nicht, wie viel ein Mensch wert ist.",
+        ],
+
+        'comparison' => [
+            'label' => "Drei verschiedene Aufgaben",
+            'title' => "Ein Adressbuch, ein persönliches CRM und ein klassisches CRM sind nicht dasselbe.",
+            'body' => "Alle drei speichern Informationen über Menschen, aber sie sind um verschiedene Fragen herum gebaut. Sie alle Kontaktverwaltung zu nennen, verdeckt das Wesentliche: wozu die Information da ist.",
+            'cards' => [
+                [
+                    'title' => "Adressbuch",
+                    'question' => "Wie erreiche ich diese Person?",
+                    'body' => "Namen, Telefonnummern, E-Mail-Adressen, Postadressen und vielleicht ein Geburtstag. Einfach, vertraut und für viele Menschen genug.",
+                ],
+                [
+                    'title' => "Persönliches CRM",
+                    'question' => "Welchen Zusammenhang möchte ich behalten?",
+                    'body' => "Die Person, Ihre Beziehung, was passiert ist und was Sie sich merken oder später tun wollen.",
+                ],
+                [
+                    'title' => "Klassisches CRM",
+                    'question' => "Wie entwickelt sich diese Kundenbeziehung?",
+                    'body' => "Leads, Accounts, Abschlüsse, Serviceanfragen, Umsatz, Teamaktivität und die Stufen eines Geschäftsprozesses.",
+                ],
+            ],
+            'tableTitle' => "Persönliches CRM und klassisches CRM",
+            'tableHeadings' => ["", "Persönliches CRM", "Klassisches CRM"],
+            'rows' => [
+                ["Hauptzweck", "Persönlichen Zusammenhang behalten und Zusagen einhalten", "Vertrieb, Marketing oder Kundenservice koordinieren"],
+                ["Abgebildete Menschen", "Freunde, Familie, Nachbarn, Kolleginnen und andere Menschen in Ihrem Leben", "Leads, Kunden, Accounts und geschäftliche Kontakte"],
+                ["Typische Informationen", "Verbindungen, Erinnerungen, Gespräche, Daten, Notizen und Wiedervorlagen", "Abschlüsse, Umsatz, Kampagnen, Supportverlauf und Pipeline-Stufen"],
+                ["Erfolg heißt", "Sie haben den Zusammenhang, wenn er zählt", "Ein Geschäftsprozess kommt voran und lässt sich messen"],
+                ["Genutzt meist von", "Einer Person, manchmal einem Haushalt", "Einem Unternehmen oder Team"],
+            ],
+            'closing' => "Klassische CRM-Systeme sind nützliche Werkzeuge für die Aufgabe, für die sie gebaut wurden. Schwierig wird es, wenn die Sprache und die Anreize des Vertriebs ins Privatleben getragen werden. Ihre Freunde sind keine Leads, und ein ruhiger Monat ist keine stockende Pipeline.",
+        ],
+
+        'contents' => [
+            'label' => "Was hineingehört",
+            'title' => "Behalten Sie genug Zusammenhang, um nützlich zu sein. Mehr nicht.",
+            'body' => "Ein persönliches CRM kann zu einer detaillierten Akte über das Leben eines anderen Menschen werden. Das ist ein Grund, auszuwählen, und kein Grund, jedes verfügbare Feld zu füllen. Halten Sie etwas fest, weil es Ihnen beim Erinnern oder beim Einhalten hilft, nicht weil die Software ein leeres Feld anbietet.",
+            'groups' => [
+                ['title' => "Identität und Kontaktdaten", 'body' => "Namen, Pronomen, Telefonnummern, E-Mail-Adressen, Orte und die Namen, die eine Person wirklich verwendet."],
+                ['title' => "Verbindungen", 'body' => "Woher Sie jemanden kennen, die Menschen um diese Person herum und die Familien- oder Haushaltsverhältnisse, die dem Rest seinen Sinn geben."],
+                ['title' => "Wichtige Daten", 'body' => "Geburtstage, Jubiläen, Umzüge, Abschlüsse oder jedes Datum, das dieser Person oder Ihrer gemeinsamen Geschichte etwas bedeutet."],
+                ['title' => "Gespräche und Notizen", 'body' => "Worüber Sie gesprochen haben, eine Empfehlung, eine Sorge, die jemand geteilt hat, oder ein Detail, das Sie nicht zum dritten Mal erfragen wollen."],
+                ['title' => "Aktivitäten und Erinnerungen", 'body' => "Essen, Anrufe, Reisen, Besuche, Projekte und andere Momente, die Sie später zeitlich einordnen wollen."],
+                ['title' => "Zusagen und Wiedervorlagen", 'body' => "Ein Versprechen, ein geliehener Gegenstand, eine Geschenkidee oder eine Erinnerung, nach dem Ausgang zu fragen."],
+            ],
+            'note' => "Sensible Informationen verlangen einen höheren Maßstab. Wenn es sich wie ein Vertrauensbruch anfühlen würde, eine Notiz der betroffenen Person vorzulesen, dann ist dieses Gefühl eine nützliche Information.",
+        ],
+
+        'example' => [
+            'label' => "Ein kleines Beispiel",
+            'title' => "Wie die Nutzung eines persönlichen CRM tatsächlich aussieht",
+            'body' => "Der nützliche Teil ist meist ganz gewöhnlich. Es geht weniger um eine perfekte Datenbank als darum, die kleinen Schleifen zu schließen, die Ihr Gedächtnis sonst offen lässt.",
+            'steps' => [
+                ["number" => "01", 'title' => "Eine Freundin erwähnt ein Bewerbungsgespräch", 'body' => "Sie machen sich nach dem Gespräch eine kurze Notiz. Kein Protokoll, nur der Zusammenhang, den Sie behalten wollen."],
+                ["number" => "02", 'title' => "Sie legen eine Erinnerung an", 'body' => "Die Erinnerung hängt an der Person und erscheint nach dem Gespräch, wenn die Frage danach nützlich ist."],
+                ["number" => "03", 'title' => "Sie melden sich mit Zusammenhang", 'body' => "Sie fragen nach, weil es Ihnen wichtig ist. Die Software hat den Zeitpunkt behalten; die Beziehung bleibt Ihre."],
+            ],
+        ],
+
+        'fit' => [
+            'label' => "Passt es",
+            'title' => "Manche Menschen brauchen eines. Viele nicht.",
+            'body' => "Ein persönliches CRM verdient seinen Platz nur, wenn es ein echtes Problem mit dem Erinnern oder dem Nachfassen löst. Es soll die geistige Last senken und kein neues Verwaltungshobby schaffen.",
+            'goodTitle' => "Es kann helfen, wenn Sie…",
+            'good' => [
+                "mehr Menschen wichtig nehmen, als Sie zuverlässig im Kopf behalten;",
+                "Freunde oder Familie über Städte, Länder oder Lebensphasen verstreut haben;",
+                "regelmäßig Namen, Daten, Zusagen oder anvertraute Details vergessen;",
+                "Menschen begleiten, sich ehrenamtlich engagieren, eine Gemeinschaft organisieren oder für eine große Familie sorgen;",
+                "einen privaten Ort für Beziehungswissen wollen, das über Notizen und Kalender verstreut ist.",
+            ],
+            'notTitle' => "Sie brauchen wahrscheinlich keines, wenn…",
+            'not' => [
+                "Adressbuch und Kalender schon abdecken, was Sie vergessen;",
+                "das Pflegen der Einträge schwerer wiegt als das Problem, das sie lösen;",
+                "Sie nur einen Ort für Telefonnummern und Geburtstage möchten;",
+                "Sie Team-Pipelines, Massenansprache, Umsatzprognosen oder Kundenanalysen brauchen. Dafür passt ein klassisches CRM besser.",
+            ],
+        ],
+
+        'approaches' => [
+            'label' => "Ein nützlicher Rahmen",
+            'title' => "Persönliche CRM-Systeme wägen unterschiedlich ab.",
+            'body' => "Persönliches CRM ist eine lose Kategorie und keine Norm. Die Ansätze unten sind eine Möglichkeit, Produkte zu vergleichen, keine offiziellen Bezeichnungen der Branche. Viele Werkzeuge verbinden mehrere davon.",
+            'items' => [
+                ['title' => "Netzwerk zuerst", 'body' => "Gebaut um berufliche Kontakte, Vermittlungen und das Halten der Verbindung. Nützlich, wenn Arbeit von vielen langjährigen Beziehungen abhängt, kann aber die Sprache des Vertriebs ins Privatleben holen."],
+                ['title' => "Automatisierung zuerst", 'body' => "Holt den Zusammenhang aus E-Mails, Kalendern, sozialen Netzwerken oder anderen Diensten. Das senkt die Tipparbeit, verlangt aber weitreichenderen Zugriff und sammelt manchmal mehr, als Sie wollten."],
+                ['title' => "Produktivität zuerst", 'body' => "Behandelt das Nachfassen als Aufgabe und wiederkehrende Erinnerung. Klar und umsetzbar, doch eine Beziehung kann sich wie ein Postfach anfühlen, wenn jeder Austausch zur Pflicht wird."],
+                ['title' => "Gedächtnis zuerst", 'body' => "Stellt Notizen, Aktivitäten, Daten und die gemeinsame Geschichte in den Mittelpunkt. Das verlangt bewussteres Eintragen, aber Sie entscheiden, was in die Akte kommt."],
+                ['title' => "Persönliche Datenbank", 'body' => "Lässt Sie eigene Datensätze, Felder und Verbindungen entwerfen. Flexibel genug für ungewöhnliche Lebensläufe, dafür mit mehr Einrichtung und Pflege."],
+            ],
+        ],
+
+        'history' => [
+            'label' => "Eine kurze Geschichte",
+            'title' => "Das persönliche CRM hat sich das Gedächtnis der Unternehmenssoftware geborgt und dann den Zweck geändert.",
+            'body' => "Es gibt keinen anerkannten Erfinder des persönlichen CRM. Die Kategorie wuchs allmählich aus Adressbüchern, Kontaktmanagern, CRM-Software für Unternehmen und Werkzeugen für persönliche Informationen.",
+            'items' => [
+                ['date' => "Vor der Software", 'title' => "Beziehungswissen stand auf Papier", 'body' => "Adressbücher, Korrespondenzmappen, Kalender und beschriftete Karteikarten trennten die Kontaktdaten von allem, was das Gedächtnis unzuverlässig behält."],
+                ['date' => "1987", 'title' => "Kontaktverwaltung erreicht den Personal Computer", 'body' => "Act! datiert sein erstes Produkt zur Kontaktverwaltung auf 1987. Frühe Werkzeuge wurden oft als digitaler Rolodex beschrieben, bevor CRM zum gängigen Begriff wurde."],
+                ['date' => "Mitte der 1990er", 'title' => "CRM wird eine Geschäftskategorie", 'body' => "Wissenschaftliche Darstellungen setzen das Aufkommen des Begriffs customer relationship management in die Mitte der 1990er, als Kontaktdaten Teil größerer Vertriebs- und Servicesysteme wurden."],
+                ['date' => "Ab 1999", 'title' => "CRM zieht in die Cloud", 'body' => "Salesforce startete 1999 mit CRM im Browser. Software aus dem Netz machte gemeinsame Datensätze, automatische Aktualisierungen und Integrationen zur Normalität."],
+                ['date' => "2010er", 'title' => "Persönliches CRM wird ein erkennbarer Begriff", 'body' => "Neue Produkte übertrugen einige dieser Ideen auf die beruflichen und privaten Beziehungen einer einzelnen Person. Bis 2019 war die Kategorie etabliert genug, um sowohl Begeisterung als auch Unbehagen über das Optimieren von Freundschaft auszulösen."],
+            ],
+            'sourcesLabel' => "Quellen für diese Zeitleiste",
+            'sources' => [
+                ['label' => "Unternehmensgeschichte von Act!", 'url' => 'https://www.act.com/about-us/'],
+                ['label' => "Wissenschaftliche Geschichte des CRM", 'url' => 'https://www.sciencedirect.com/science/article/pii/S0963868707000182'],
+                ['label' => "Unternehmensgeschichte von Salesforce", 'url' => 'https://www.salesforce.com/company/our-story'],
+                ['label' => "Axios über persönliches CRM im Jahr 2019", 'url' => 'https://www.axios.com/2019/08/27/startups-new-frontier-optimizing-your-friendships'],
+            ],
+        ],
+
+        'privacy' => [
+            'label' => "Datenschutz und Ethik",
+            'title' => "Das Konto gehört Ihnen. Vieles darin handelt von anderen Menschen.",
+            'body' => "Das macht ein persönliches CRM ungewöhnlich sensibel. Es kann Adressen, Familienverhältnisse, private Gespräche, Gesundheitsangaben oder im Vertrauen geteilte Erinnerungen enthalten. Ein Passwort ist nötig, aber gutes Urteilsvermögen beginnt, bevor etwas gespeichert wird.",
+            'principles' => [
+                ['title' => "Weniger sammeln", 'body' => "Behalten Sie, was einen klaren Zweck hat. Vollständiger ist nicht automatisch nützlicher."],
+                ['title' => "Den ursprünglichen Zusammenhang achten", 'body' => "Was in einem privaten Gespräch geteilt wurde, wird nicht zum Freiwild für Anreicherung, Auswertung oder weitere Verbreitung, nur weil es sich kopieren lässt."],
+                ['title' => "Wissen, wohin Automatisierung Daten schickt", 'body' => "E-Mail-Abgleich, Transkription, Anreicherung und KI-Funktionen beziehen manchmal andere Dienste ein. Prüfen Sie, was die Anwendung verlässt, warum, wie lange und ob es zum Training von Modellen dient."],
+                ['title' => "Für Verlust und Abschied planen", 'body' => "Nutzen Sie strenge Zugriffsrechte und Sicherungen. Stellen Sie sicher, dass Sie Ihre Daten in einem brauchbaren Format exportieren und beim Weggehen löschen können."],
+                ['title' => "Für den möglichen Leser schreiben", 'body' => "Ein guter Test ist, ob Sie eine Notiz der Person erklären könnten, die sie beschreibt, ohne sich hinter der Software zu verstecken."],
+            ],
+            'closing' => "Ein persönliches CRM ist von sich aus weder fürsorglich noch unheimlich. Den Unterschied macht meist, was Sie sammeln, wie es dorthin kam, wer darauf zugreifen kann und was Sie damit tun.",
+        ],
+
+        'hosting' => [
+            'label' => "Wo es läuft",
+            'title' => "Cloud und Selbsthosting verschieben die Verantwortung.",
+            'body' => "Ein gehosteter Dienst überlässt den Betrieb der Anwendung einem Anbieter. Selbsthosting gibt Ihnen die Kontrolle über den Server und nimmt diesen Anbieter aus dem Alltag heraus. Keine der beiden Varianten ist von sich aus sicherer. Sicherheit hängt an Aktualisierungen, Zugriffsrechten, Sicherungen, Überwachung und an den Menschen, die dafür zuständig sind.",
+            'tableHeadings' => ["", "Gehosteter Dienst", "Selbst gehostet"],
+            'rows' => [
+                ["Wartung", "Der Anbieter betreibt und aktualisiert den Dienst", "Sie installieren, aktualisieren und überwachen"],
+                ["Kontrolle", "Sie arbeiten im Produkt und den Regeln des Anbieters", "Sie bestimmen Server, Konfiguration und Bereitstellung"],
+                ["Sicherungen", "Meist vom Anbieter verwaltet; prüfen Sie, was enthalten ist", "Sie richten sie ein, schützen und testen sie"],
+                ["Verfügbarkeit", "Meist nutzbar, ohne Infrastruktur zu betreiben", "Hängt an der Infrastruktur, die Sie betreiben"],
+                ["Speicherort der Daten", "Hängt vom Anbieter und seinen Unterauftragnehmern ab", "Hängt vom Server und den Diensten ab, die Sie wählen"],
+                ["Passt am besten", "Sie wollen das Werkzeug, ohne einen Dienst zu betreiben", "Sie haben das Können und die Lust, es selbst zu betreiben"],
+            ],
+            'note' => "Selbsthosting gibt Ihnen mehr Kontrolle. Es gibt Ihnen auch mehr Wege, einen schweren Fehler zu machen. Wählen Sie es, weil Sie die Verantwortung wollen, nicht weil das Wort allein sicher klingt.",
+        ],
+
+        'choosing' => [
+            'label' => "Bevor Sie ein Werkzeug wählen",
+            'title' => "Beginnen Sie mit der Gewohnheit, die Sie wollen, und prüfen Sie dann die Software.",
+            'body' => "Die längste Funktionsliste sagt selten, welches persönliche CRM den Kontakt mit Ihrem echten Leben übersteht. Ein schlichtes Werkzeug, das Sie weiter benutzen, ist nützlicher als ein perfektes System, das Sie nicht öffnen.",
+            'questions' => [
+                ['title' => "Wobei soll es Ihnen beim Erinnern helfen?", 'body' => "Namen und Daten brauchen ein anderes Werkzeug als eine ausführliche Historie, Wiedervorlagen oder eine flexible persönliche Datenbank."],
+                ['title' => "Wie viel Arbeit macht das Erfassen?", 'body' => "Entscheiden Sie, ob Sie bewusste Notizen von Hand, breite automatische Importe oder etwas dazwischen vorziehen."],
+                ['title' => "Welchen Zugriff verlangt es?", 'body' => "Prüfen Sie, ob es E-Mails, Kalender, Kontakte, soziale Netzwerke oder Nachrichten liest und ob jede Berechtigung wirklich nötig ist."],
+                ['title' => "Wie nutzt es KI?", 'body' => "Finden Sie heraus, welche Daten an welchen Modellanbieter gehen, was gespeichert bleibt, ob Training erlaubt ist und ob die Funktion abschaltbar ist."],
+                ['title' => "Können Sie wieder gehen?", 'body' => "Achten Sie auf vollständigen Export, verständliche Formate, das Löschen des Kontos und einen glaubwürdigen Plan für die langfristige Pflege des Produkts."],
+                ['title' => "Wer betreibt es?", 'body' => "Vergleichen Sie die Bequemlichkeit eines gehosteten Dienstes mit der Kontrolle und Arbeit des Selbsthostings. Rechnen Sie Sicherungen und Aktualisierungen mit ein."],
+                ['title' => "Passt es zu Ihren Beziehungen?", 'body' => "Feste Felder sind manchmal einfacher. Eigene Datensätze passen manchmal besser. Wählen Sie so viel Flexibilität, wie Sie wirklich nutzen."],
+            ],
+        ],
+
+        'monica' => [
+            'label' => "Der Blick von Monica",
+            'title' => "Gedächtnis vor Automatisierung. Beziehungen vor Netzwerken.",
+            'body' => "Monica ist eine Antwort auf die Frage nach dem persönlichen CRM, nicht die Definition der Kategorie. Am Anfang stand eine einfache Idee: die Details behalten, die beim Sorgen für Freunde und Familie helfen, ohne diese Menschen zu Interessenten zu machen oder ihr Leben einem Werbesystem zu übergeben.",
+            'principles' => [
+                ['title' => "Zusammenhang zählt mehr als Kontaktdaten", 'body' => "Monica verbindet Menschen mit Notizen, Aktivitäten, Erinnerungen, wichtigen Daten und den Beziehungen um sie herum."],
+                ['title' => "Sie wählen, was in die Akte kommt", 'body' => "Monica setzt auf bewusstes Erinnern statt auf unsichtbare Anreicherung. Das Ziel ist nicht, jedes verfügbare Signal aufzunehmen."],
+                ['title' => "Eigentum ist Teil des Produkts", 'body' => "Monica ist quelloffen, lässt sich selbst hosten und bietet eine gehostete Variante für alle, die keinen Server betreiben wollen."],
+                ['title' => "Verschiedene Leben brauchen verschiedene Strukturen", 'body' => "Monica v3 entsteht rund um Datensätze und Verbindungen, die sich stärker anpassen lassen, und behält dabei die Grundsätze des Projekts zu Datenschutz und Eigentum."],
+            ],
+            'currentCta' => "Sehen, was Monica behalten kann",
+            'v3Cta' => "Mehr über Monica v3 lesen",
+            'privacyCta' => "Datenschutzerklärung von Monica lesen",
+            'finalTitle' => "Ein persönliches CRM sollte Ihnen beim Aufmerksamsein helfen und dann aus dem Weg gehen.",
+            'finalBody' => "Wenn der Ansatz von Monica dazu passt, wie Sie sich an Menschen erinnern wollen, können Sie die gehostete Variante nutzen oder die quelloffene Anwendung selbst betreiben.",
+            'primaryCta' => "Mit Monica beginnen",
+            'secondaryCta' => "Monica auf GitHub ansehen",
+        ],
+
+        'faq' => [
+            'label' => "Häufige Fragen",
+            'title' => "Ein paar ehrliche Antworten, bevor Sie ein zweites Gehirn für Ihr Sozialleben bauen.",
+            'items' => [
+                ['q' => "Ist ein persönliches CRM unheimlich?", 'a' => [
+                    "Das kann es sein. Sensible Informationen still zu sammeln, private Gespräche unbedacht zu importieren oder Menschen zu bewerten überschreitet für viele eine vernünftige Grenze.",
+                    "Ein kleiner, privater Satz Notizen und Erinnerungen kann aber auch eine gewöhnliche Gedächtnisstütze sein. Was Sie sammeln, wie es dorthin kam und wie Sie es nutzen, zählt mehr als das Wort.",
+                ]],
+                ['q' => "Kann ich stattdessen meine Kontakte-App, meinen Kalender oder meine Notizen nutzen?", 'a' => "Ja. Wenn diese Werkzeuge das Problem lösen, bleiben Sie dabei. Ein persönliches CRM wird nützlich, wenn Sie Person, Zusammenhang, Verlauf und Nachfassen an einem Ort verbunden haben wollen."],
+                ['q' => "Ist ein persönliches CRM nur für berufliches Netzwerken?", 'a' => "Nein. Manche Produkte sind vor allem für berufliche Beziehungen gebaut. Andere richten sich auf Freunde, Familie, Gemeinschaft oder eine Mischung. Die richtige Wahl hängt von den Beziehungen und Gewohnheiten ab, die Sie tatsächlich haben."],
+                ['q' => "Ist Selbsthosting privater?", 'a' => "Es kann die Zahl der beteiligten Dienstleister senken und Ihnen mehr Kontrolle geben. Es richtet für Sie keine Aktualisierungen, Sicherungen, Verschlüsselung oder Zugriffsrechte ein. Datenschutz und Sicherheit hängen weiter daran, wie das System betrieben wird."],
+                ['q' => "Wie viel sollte ich festhalten?", 'a' => "Beginnen Sie mit dem Minimum, das Ihr Problem löst. Daten, ein paar Notizen und gelegentlich eine Erinnerung reichen vielen Menschen. Fügen Sie Struktur erst hinzu, wenn sie ihre Pflegekosten wert ist."],
+            ],
+        ],
+    ],
+
     'footer' => [
         'tagline' => "Ein privates, quelloffenes persönliches CRM, um sich an die Menschen zu erinnern, die zählen.",
         'productLabel' => "Produkt",
@@ -659,6 +889,7 @@ return [
         'privacy' => "Datenschutz",
         'terms' => "Nutzungsbedingungen",
         'team' => "Team",
+        'personalCrm' => "Was ist ein persönliches CRM?",
         'copyright' => "© :year Monica",
         'since' => "Quelloffen seit 2017",
         'ownership' => "Ihre Daten bleiben Ihre.",

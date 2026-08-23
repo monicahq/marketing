@@ -37,6 +37,7 @@
         $entries[] = [
             'path' => fn ($locale) => $page->localePath($key, $locale),
             'lastmod' => fn ($locale) => $lastmod,
+            'locales' => collect($page->routes[$key])->keys()->all(),
         ];
     }
 
@@ -64,6 +65,7 @@
     for ($number = 1; $number <= $pages; $number++) {
         $entries[] = [
             'path' => fn ($locale) => $page->blogPath($locale, $number),
+            'locales' => $page->locales,
 
             // The newest thing on this page of the list. Page 1 moves whenever
             // a post is published; the last page has not changed since 2017 and
@@ -80,6 +82,7 @@
 
         $entries[] = [
             'path' => fn ($locale) => $page->postPath($slug, $locale),
+            'locales' => $page->locales,
 
             // Falls back to the English post when a locale has not got this one
             // yet. Nothing is hidden by that: the URL is still listed, so the
@@ -95,11 +98,11 @@
 {!! '<'.'?xml version="1.0" encoding="UTF-8"?'.'>' !!}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 @foreach ($entries as $entry)
-@foreach ($page->locales as $locale)
+@foreach ($entry['locales'] as $locale)
     <url>
         <loc>{{ $page->absolute($entry['path']($locale)) }}</loc>
         <lastmod>{{ $entry['lastmod']($locale) }}</lastmod>
-@foreach ($page->locales as $alternate)
+@foreach ($entry['locales'] as $alternate)
         <xhtml:link rel="alternate" hreflang="{{ $alternate }}" href="{{ $page->absolute($entry['path']($alternate)) }}"/>
 @endforeach
         <xhtml:link rel="alternate" hreflang="x-default" href="{{ $page->absolute($entry['path']($page->defaultLocale)) }}"/>
