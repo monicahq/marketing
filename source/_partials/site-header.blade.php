@@ -5,7 +5,9 @@
     // exist yet keep the design's placeholder href. `current` names the route
     // key, so aria-current follows the page being rendered.
     //
-    // Four entries, and each one is a page this site actually has.
+    // Five entries in every locale, each one a page this site actually has.
+    // The guide comes first because it answers the question a reader arrives
+    // with, before the pages that assume they already know the answer.
     //
     // No "Product": the logo beside it is already a link to the homepage, and
     // two links to the same page in one bar is one more than a reader needs.
@@ -19,6 +21,7 @@
     // carries Product, Documentation and the rest, which is where a link that
     // is a signpost rather than a destination belongs.
     $navItems = [
+        ['label' => $page->t('nav.personalCrm'), 'href' => $page->route('personalCrm'), 'current' => ['personalCrm']],
         // The features section is three pages behind one tab strip, so all
         // three keys keep this entry underlined while the reader is inside it.
         [

@@ -25,6 +25,7 @@ return [
             'terms' => "Termos de uso",
             'team' => "Equipe",
             'privacy' => "Política de privacidade",
+            'personalCrm' => "Guia do CRM pessoal",
             'page' => "Página :number",
         ],
 
@@ -95,6 +96,11 @@ return [
             'title' => "O diário — recursos da Monica",
             'description' => "Escreva entradas de diário, registre como foi o seu dia e leia as atividades com os seus contatos que a Monica registra automaticamente para você.",
         ],
+
+        'personalCrm' => [
+            'title' => "O que é um CRM pessoal? Um guia prático — Monica",
+            'description' => "O que é um CRM pessoal, como ele se diferencia de uma lista de contatos e de um CRM de vendas, o que guardar, as escolhas de privacidade envolvidas e como escolher a abordagem certa.",
+        ],
     ],
 
     'announcement' => [
@@ -106,6 +112,7 @@ return [
     'nav' => [
         'label' => "Principal",
         'product' => "Produto",
+        'personalCrm' => "O que é um CRM pessoal",
         'v3' => "Monica v3",
         'features' => "Recursos",
         'pricing' => "Preços",
@@ -657,6 +664,229 @@ return [
         ],
     ],
 
+    'personalCrm' => [
+        'eyebrow' => "Um guia prático",
+        'title' => "O que é um CRM pessoal?",
+        'lede' => "Um CRM pessoal é um lugar privado para lembrar o contexto das pessoas da sua vida: o que elas contaram, o que é importante para elas e o que você pretendia retomar.",
+        'intro' => "Diferente de um CRM de vendas, ele é feito para relações, não para funis. A ideia não é gerenciar pessoas. É dar uma ajuda à sua memória, para você chegar com um pouco mais de contexto.",
+
+        'toc' => [
+            'label' => "Neste guia",
+            'items' => [
+                ['id' => 'definition', 'title' => "A definição curta"],
+                ['id' => 'comparison', 'title' => "Como ele difere de outras ferramentas"],
+                ['id' => 'contents', 'title' => "O que cabe dentro dele"],
+                ['id' => 'fit', 'title' => "Para quem ele serve"],
+                ['id' => 'approaches', 'title' => "As principais abordagens"],
+                ['id' => 'history', 'title' => "De onde isso veio"],
+                ['id' => 'privacy', 'title' => "Privacidade e ética"],
+                ['id' => 'hosting', 'title' => "Na nuvem ou com hospedagem própria"],
+                ['id' => 'choosing', 'title' => "Como escolher"],
+                ['id' => 'monica', 'title' => "A abordagem da Monica"],
+            ],
+        ],
+
+        'definition' => [
+            'label' => "A definição curta",
+            'title' => "Um CRM pessoal lembra mais do que dados de contato.",
+            'body' => "Sua lista de contatos sabe o telefone da Sam. Um CRM pessoal pode lembrar você de que a Sam está treinando para uma meia maratona, que a filha dela se chama Maya e que você prometeu mandar o nome daquele livro.",
+            'body2' => "Ele liga fatos à história de uma relação. Dependendo da ferramenta, isso pode incluir anotações, conversas, atividades, datas importantes, lembretes, os vínculos entre as pessoas e as informações próprias que você considera importantes.",
+            'aside' => "Um bom CRM pessoal ajuda você a lembrar. Ele não decide quanto uma pessoa vale.",
+        ],
+
+        'comparison' => [
+            'label' => "Três trabalhos diferentes",
+            'title' => "Uma lista de contatos, um CRM pessoal e um CRM tradicional não são a mesma coisa.",
+            'body' => "Os três guardam informações sobre pessoas, mas foram construídos em torno de perguntas diferentes. Chamar todos de gestão de contatos esconde o que importa: para que serve a informação.",
+            'cards' => [
+                [
+                    'title' => "Lista de contatos",
+                    'question' => "Como falo com esta pessoa?",
+                    'body' => "Nomes, telefones, e-mails, endereços e talvez um aniversário. Simples, familiar e suficiente para muita gente.",
+                ],
+                [
+                    'title' => "CRM pessoal",
+                    'question' => "Que contexto eu quero lembrar?",
+                    'body' => "A pessoa, a sua relação com ela, o que aconteceu e o que você quer lembrar ou fazer mais adiante.",
+                ],
+                [
+                    'title' => "CRM tradicional",
+                    'question' => "Como esta relação com o cliente está avançando?",
+                    'body' => "Leads, contas, negociações, pedidos de suporte, receita, atividade do time e as etapas de um processo comercial.",
+                ],
+            ],
+            'tableTitle' => "CRM pessoal e CRM tradicional",
+            'tableHeadings' => ["", "CRM pessoal", "CRM tradicional"],
+            'rows' => [
+                ["Objetivo principal", "Lembrar o contexto pessoal e cumprir o que foi combinado", "Coordenar vendas, marketing ou atendimento"],
+                ["Pessoas representadas", "Amigos, família, vizinhos, colegas e outras pessoas da sua vida", "Leads, clientes, contas e contatos comerciais"],
+                ["Informações comuns", "Vínculos, memórias, conversas, datas, anotações e lembretes", "Negociações, receita, campanhas, histórico de suporte e etapas do funil"],
+                ["Sucesso é quando", "Você tem o contexto de que precisa na hora que importa", "Um processo comercial avança e pode ser medido"],
+                ["Costuma ser usado por", "Uma pessoa, às vezes uma casa", "Uma empresa ou um time"],
+            ],
+            'closing' => "CRMs tradicionais são boas ferramentas para o trabalho que foram feitos para fazer. O problema começa quando a linguagem e os incentivos das vendas entram na vida privada. Seus amigos não são leads, e um mês mais quieto não é um funil travado.",
+        ],
+
+        'contents' => [
+            'label' => "O que entra ali",
+            'title' => "Guarde contexto suficiente para ser útil. Nada além disso.",
+            'body' => "Um CRM pessoal pode se tornar um registro detalhado da vida de outra pessoa. Isso é motivo para ser seletivo, não motivo para preencher todos os campos disponíveis. Guarde uma informação porque ela ajuda você a lembrar ou a cumprir algo, não porque o programa ofereceu um campo vazio.",
+            'groups' => [
+                ['title' => "Identidade e dados de contato", 'body' => "Nomes, pronomes, telefones, e-mails, lugares e os nomes que a pessoa usa de verdade."],
+                ['title' => "Vínculos", 'body' => "Como você conhece alguém, as pessoas ligadas a ela e as relações de família ou de casa que dão sentido ao resto."],
+                ['title' => "Datas importantes", 'body' => "Aniversários, datas de casamento, mudanças, formaturas ou qualquer data que importe para essa pessoa ou para a história de vocês."],
+                ['title' => "Conversas e anotações", 'body' => "Sobre o que vocês falaram, uma recomendação que ela deu, uma preocupação que ela dividiu ou um detalhe que você não quer perguntar pela terceira vez."],
+                ['title' => "Atividades e memórias", 'body' => "Refeições, ligações, viagens, visitas, projetos e outros momentos que você talvez queira situar no tempo depois."],
+                ['title' => "Compromissos e lembretes", 'body' => "Uma promessa que você fez, algo que emprestou, uma ideia de presente ou um lembrete para perguntar como foi."],
+            ],
+            'note' => "Informação sensível merece um critério mais alto. Se anotar algo pareceria uma traição no momento de ler para a pessoa descrita, esse desconforto é uma informação útil.",
+        ],
+
+        'example' => [
+            'label' => "Um exemplo pequeno",
+            'title' => "Como é de verdade usar um CRM pessoal",
+            'body' => "A parte útil costuma ser bem comum. É menos sobre montar um banco de dados perfeito e mais sobre fechar os pequenos ciclos que a sua memória deixaria abertos.",
+            'steps' => [
+                ["number" => "01", 'title' => "Uma amiga comenta uma entrevista", 'body' => "Você faz uma anotação curta depois da conversa. Não uma transcrição, só o contexto que quer lembrar."],
+                ["number" => "02", 'title' => "Você cria um lembrete", 'body' => "O lembrete fica ligado à pessoa e aparece depois da entrevista, quando perguntar realmente ajuda."],
+                ["number" => "03", 'title' => "Você retoma o contato com contexto", 'body' => "Você pergunta como foi porque se importa. O programa lembrou o momento; a relação continua sendo sua."],
+            ],
+        ],
+
+        'fit' => [
+            'label' => "Se faz sentido",
+            'title' => "Algumas pessoas precisam de um. Muitas outras não.",
+            'body' => "Um CRM pessoal só merece o seu lugar se resolver um problema real de memória ou de acompanhamento. Ele deve reduzir a carga mental, não criar um novo hobby administrativo.",
+            'goodTitle' => "Pode ajudar se você…",
+            'good' => [
+                "se importa com mais pessoas do que consegue manter na cabeça com segurança;",
+                "tem amigos ou família espalhados por cidades, países ou fases da vida;",
+                "esquece com frequência nomes, datas, promessas ou os detalhes que as pessoas contam;",
+                "orienta alguém, é voluntário, organiza uma comunidade ou cuida de uma família grande;",
+                "quer um único lugar privado para o contexto das relações que hoje está espalhado entre anotações e agendas.",
+            ],
+            'notTitle' => "Você provavelmente não precisa de um se…",
+            'not' => [
+                "sua lista de contatos e sua agenda já cobrem o que você esquece;",
+                "manter os registros pesa mais do que o problema que eles resolvem;",
+                "você quer apenas um lugar para telefones e aniversários;",
+                "você quer funis de time, contato em massa, previsão de vendas ou análise de clientes. Um CRM tradicional serve melhor para isso.",
+            ],
+        ],
+
+        'approaches' => [
+            'label' => "Um recorte útil",
+            'title' => "CRMs pessoais fazem escolhas diferentes.",
+            'body' => "CRM pessoal é uma categoria solta, não uma norma. As abordagens abaixo são uma forma de comparar produtos, não rótulos oficiais do setor. Muitas ferramentas combinam várias delas.",
+            'items' => [
+                ['title' => "Rede de contatos primeiro", 'body' => "Construído em torno de contatos profissionais, apresentações e manter o vínculo. Útil quando o trabalho depende de muitas relações de longo prazo, mas pode trazer a linguagem das vendas para a vida pessoal."],
+                ['title' => "Automação primeiro", 'body' => "Puxa contexto de e-mails, agendas, redes sociais ou outros serviços. Reduz a digitação, em troca de um acesso mais amplo e, às vezes, de uma coleta maior do que você pretendia."],
+                ['title' => "Produtividade primeiro", 'body' => "Trata o acompanhamento como tarefas e lembretes recorrentes. É claro e prático, mas uma relação pode começar a parecer uma caixa de entrada se cada troca virar obrigação."],
+                ['title' => "Memória primeiro", 'body' => "Coloca no centro as anotações, as atividades, as datas e a história em comum. Pede um registro mais consciente, mas você decide o que entra."],
+                ['title' => "Banco de dados pessoal", 'body' => "Deixa você desenhar seus próprios registros, campos e conexões. Flexível o suficiente para vidas fora do padrão, com mais configuração e manutenção em troca."],
+            ],
+        ],
+
+        'history' => [
+            'label' => "Uma história curta",
+            'title' => "O CRM pessoal pegou emprestada a memória do software corporativo e depois mudou o propósito dela.",
+            'body' => "Não existe um inventor reconhecido do CRM pessoal. A categoria cresceu pouco a pouco a partir das listas de contatos, dos gerenciadores de contatos, do software de CRM corporativo e das ferramentas de informação pessoal.",
+            'items' => [
+                ['date' => "Antes do software", 'title' => "O contexto das relações ficava no papel", 'body' => "Cadernos de endereços, pastas de correspondência, agendas e fichas anotadas separavam os dados de contato de tudo o mais, que a memória guarda mal."],
+                ['date' => "1987", 'title' => "A gestão de contatos chega ao computador pessoal", 'body' => "A Act! marca o seu primeiro produto de gestão de contatos em 1987. As primeiras ferramentas eram descritas muitas vezes como um Rolodex digital, antes de CRM virar o termo comum."],
+                ['date' => "Meados dos anos 1990", 'title' => "CRM se torna uma categoria corporativa", 'body' => "Estudos acadêmicos situam o surgimento da expressão customer relationship management em meados dos anos 1990, quando os registros de contato passaram a fazer parte de sistemas maiores de vendas e atendimento."],
+                ['date' => "A partir de 1999", 'title' => "O CRM vai para a nuvem", 'body' => "A Salesforce nasceu em 1999 com CRM pelo navegador. O software na nuvem tornou normais os registros compartilhados, as atualizações automáticas e as integrações."],
+                ['date' => "Anos 2010", 'title' => "CRM pessoal se torna um rótulo reconhecível", 'body' => "Produtos novos aplicaram parte dessas ideias às relações profissionais e privadas de uma pessoa. Em 2019, a categoria já estava estabelecida o bastante para gerar tanto entusiasmo quanto desconforto com a ideia de otimizar a amizade."],
+            ],
+            'sourcesLabel' => "Fontes desta linha do tempo",
+            'sources' => [
+                ['label' => "História da empresa Act!", 'url' => 'https://www.act.com/about-us/'],
+                ['label' => "História acadêmica do CRM", 'url' => 'https://www.sciencedirect.com/science/article/pii/S0963868707000182'],
+                ['label' => "História da empresa Salesforce", 'url' => 'https://www.salesforce.com/company/our-story'],
+                ['label' => "Axios sobre CRM pessoal em 2019", 'url' => 'https://www.axios.com/2019/08/27/startups-new-frontier-optimizing-your-friendships'],
+            ],
+        ],
+
+        'privacy' => [
+            'label' => "Privacidade e ética",
+            'title' => "A conta é sua. Boa parte do que está dentro dela é sobre outras pessoas.",
+            'body' => "Isso deixa um CRM pessoal especialmente sensível. Ele pode conter endereços, laços de família, conversas privadas, detalhes de saúde ou memórias contadas em confiança. Uma senha é necessária, mas o bom senso começa antes de qualquer coisa ser salva.",
+            'principles' => [
+                ['title' => "Colete menos", 'body' => "Guarde o que tem um propósito claro. Mais completo não é automaticamente mais útil."],
+                ['title' => "Respeite o contexto original", 'body' => "O que foi dito em uma conversa privada não fica liberado para enriquecimento, análise ou circulação mais ampla só porque dá para copiar."],
+                ['title' => "Saiba para onde a automação manda os dados", 'body' => "Sincronização de e-mail, transcrição, enriquecimento e recursos de IA podem envolver outros serviços. Verifique o que sai da aplicação, por quê, por quanto tempo e se é usado para treinar modelos."],
+                ['title' => "Planeje a perda e a saída", 'body' => "Use bons controles de acesso e cópias de segurança. Garanta que você consegue exportar seus dados em um formato aproveitável e apagá-los quando sair."],
+                ['title' => "Escreva pensando em quem pode ler", 'body' => "Um bom teste é se você conseguiria explicar uma anotação para a pessoa que ela descreve, sem se esconder atrás do programa."],
+            ],
+            'closing' => "Um CRM pessoal não é cuidadoso nem invasivo por natureza. A diferença costuma estar no que você guarda, em como aquilo chegou lá, em quem pode acessar e no que você faz com isso.",
+        ],
+
+        'hosting' => [
+            'label' => "Onde ele roda",
+            'title' => "A nuvem e a hospedagem própria mudam o lugar da responsabilidade.",
+            'body' => "Um serviço hospedado pede que um fornecedor opere a aplicação. A hospedagem própria dá a você o controle do servidor e tira esse fornecedor do dia a dia. Nenhuma das duas opções é mais segura por si só. A segurança depende das atualizações, dos acessos, das cópias de segurança, do monitoramento e das pessoas responsáveis por isso.",
+            'tableHeadings' => ["", "Serviço hospedado", "Hospedagem própria"],
+            'rows' => [
+                ["Manutenção", "O fornecedor opera e atualiza o serviço", "Você instala, atualiza e monitora"],
+                ["Controle", "Você trabalha dentro do produto e das regras do fornecedor", "Você controla o servidor, a configuração e a implantação"],
+                ["Cópias de segurança", "Em geral cuidadas pelo fornecedor; confira o que está incluído", "Você configura, protege e testa"],
+                ["Disponibilidade", "Em geral acessível sem gerenciar infraestrutura", "Depende da infraestrutura que você opera"],
+                ["Local dos dados", "Depende do fornecedor e dos subcontratados dele", "Depende do servidor e dos serviços que você escolher"],
+                ["Combina se", "Você quer a ferramenta sem operar um serviço", "Você tem o conhecimento e a vontade de operar por conta própria"],
+            ],
+            'note' => "A hospedagem própria dá mais controle. Ela também dá mais formas de cometer um erro sério. Escolha isso porque você quer a responsabilidade, não porque o rótulo parece seguro.",
+        ],
+
+        'choosing' => [
+            'label' => "Antes de escolher uma ferramenta",
+            'title' => "Comece pelo hábito que você quer ter e depois examine o programa.",
+            'body' => "A lista de recursos mais longa raramente diz qual CRM pessoal sobrevive ao contato com a sua vida real. Uma ferramenta modesta que você continua usando vale mais do que um sistema perfeito que você evita abrir.",
+            'questions' => [
+                ['title' => "Com o que você quer ajuda para lembrar?", 'body' => "Nomes e datas pedem uma ferramenta diferente de um histórico detalhado, de lembretes de acompanhamento ou de um banco de dados pessoal flexível."],
+                ['title' => "Quanto trabalho dá para registrar?", 'body' => "Decida se prefere anotações feitas de propósito, importações automáticas amplas ou algo entre as duas coisas."],
+                ['title' => "Que acessos ele pede?", 'body' => "Veja se ele lê e-mails, agendas, contatos, redes sociais ou mensagens, e se cada permissão é realmente necessária."],
+                ['title' => "Como ele usa IA?", 'body' => "Descubra que dados vão para qual fornecedor de modelo, o que fica guardado, se o treinamento é permitido e se o recurso pode ser desligado."],
+                ['title' => "Você consegue sair?", 'body' => "Procure exportação completa, formatos compreensíveis, exclusão da conta e um plano crível para a manutenção do produto no longo prazo."],
+                ['title' => "Quem opera?", 'body' => "Compare a comodidade de um serviço hospedado com o controle e o trabalho da hospedagem própria. Inclua cópias de segurança e atualizações na decisão."],
+                ['title' => "Ele acompanha as suas relações?", 'body' => "Campos rígidos podem ser mais simples. Registros sob medida podem servir melhor. Escolha a flexibilidade que você vai usar de verdade."],
+            ],
+        ],
+
+        'monica' => [
+            'label' => "O ponto de vista da Monica",
+            'title' => "Memória antes de automação. Relações antes de rede de contatos.",
+            'body' => "A Monica é uma resposta à pergunta do CRM pessoal, não a definição da categoria. Ela começou com uma ideia simples: lembrar os detalhes que ajudam a cuidar de amigos e da família, sem transformar essas pessoas em oportunidades de venda nem entregar a vida delas a um sistema de publicidade.",
+            'principles' => [
+                ['title' => "O contexto importa mais do que os dados de contato", 'body' => "A Monica liga as pessoas a anotações, atividades, lembretes, datas importantes e aos vínculos ao redor delas."],
+                ['title' => "Você escolhe o que entra no registro", 'body' => "A Monica prefere a memória consciente ao enriquecimento invisível. O objetivo não é engolir todo sinal disponível."],
+                ['title' => "A propriedade faz parte do produto", 'body' => "A Monica é de código aberto, pode ser hospedada por você e oferece uma versão hospedada para quem não quer manter um servidor."],
+                ['title' => "Vidas diferentes precisam de estruturas diferentes", 'body' => "A Monica v3 está sendo construída em torno de registros e conexões mais personalizáveis, mantendo os princípios de privacidade e de propriedade do projeto."],
+            ],
+            'currentCta' => "Ver o que a Monica pode lembrar",
+            'v3Cta' => "Ler sobre a Monica v3",
+            'privacyCta' => "Ler a política de privacidade da Monica",
+            'finalTitle' => "Um CRM pessoal deve ajudar você a prestar atenção e depois sair da frente.",
+            'finalBody' => "Se a abordagem da Monica combina com a forma como você quer lembrar das pessoas, você pode usar o serviço hospedado ou rodar a aplicação de código aberto por conta própria.",
+            'primaryCta' => "Começar a usar a Monica",
+            'secondaryCta' => "Ver a Monica no GitHub",
+        ],
+
+        'faq' => [
+            'label' => "Perguntas comuns",
+            'title' => "Algumas respostas honestas antes de montar um segundo cérebro para a sua vida social.",
+            'items' => [
+                ['q' => "Usar um CRM pessoal é invasivo?", 'a' => [
+                    "Pode ser. Guardar em silêncio informações sensíveis, importar conversas privadas sem cuidado ou dar nota para as pessoas passa de limites razoáveis para muita gente.",
+                    "Um conjunto pequeno e privado de anotações e lembretes também pode ser uma ajuda comum à memória. O que você guarda, como aquilo chegou lá e o que você faz com isso importa mais do que o rótulo.",
+                ]],
+                ['q' => "Posso usar o meu aplicativo de contatos, a agenda ou as anotações no lugar?", 'a' => "Pode. Se essas ferramentas resolvem o problema, continue com elas. Um CRM pessoal fica útil quando você quer a pessoa, o contexto, o histórico e o acompanhamento ligados em um só lugar."],
+                ['q' => "CRM pessoal serve só para rede de contatos profissional?", 'a' => "Não. Alguns produtos são feitos principalmente para relações profissionais. Outros olham para amigos, família, comunidade ou uma mistura. A escolha certa depende das relações e dos hábitos que você tem de verdade."],
+                ['q' => "Hospedar por conta própria é mais privado?", 'a' => "Pode reduzir o número de fornecedores envolvidos e dar mais controle a você. Não configura por você as atualizações, as cópias de segurança, a criptografia nem os acessos. Privacidade e segurança continuam dependendo de como o sistema é operado."],
+                ['q' => "Quanta informação eu deveria registrar?", 'a' => "Comece pelo mínimo que resolve o seu problema. Datas, algumas anotações e um lembrete de vez em quando bastam para muita gente. Acrescente estrutura só quando ela valer o custo de manutenção."],
+            ],
+        ],
+    ],
+
     'footer' => [
         'tagline' => "Um CRM pessoal privado e de código aberto para lembrar das pessoas que importam.",
         'productLabel' => "Produto",
@@ -665,6 +895,7 @@ return [
         'privacy' => "Privacidade",
         'terms' => "Termos",
         'team' => "Equipe",
+        'personalCrm' => "O que é um CRM pessoal?",
         'copyright' => "© :year Monica",
         'since' => "De código aberto desde 2017",
         'ownership' => "Os seus dados continuam seus.",

@@ -390,6 +390,18 @@ return [
             'pt' => 'privacidade',
             'nl' => 'privacybeleid',
         ],
+
+        // The guide that answers the question the nav asks. Its slug says
+        // "personal CRM" in each language rather than transliterating the
+        // English one, because that is the phrase a reader searches for.
+        'personalCrm' => [
+            'en' => 'personal-crm',
+            'fr' => 'crm-personnel',
+            'de' => 'persoenliches-crm',
+            'es' => 'crm-personal',
+            'pt' => 'crm-pessoal',
+            'nl' => 'persoonlijke-crm',
+        ],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -423,6 +435,7 @@ return [
         'terms' => '2026-08-06',
         'team' => '2026-08-06',
         'privacy' => '2026-08-06',
+        'personalCrm' => '2026-08-23',
     ],
 
     // ------------------------------------------------------------------ links
@@ -524,7 +537,11 @@ return [
      */
     'localePath' => function ($page, string $key, ?string $locale = null) {
         $locale = $locale ?: $page->lang();
-        $slug = $page->routes[$key][$locale];
+        $slug = $page->routes[$key][$locale] ?? null;
+
+        if ($slug === null) {
+            throw new Exception("Route [{$key}] is not available for locale [{$locale}].");
+        }
 
         return $slug ? "/{$locale}/{$slug}/" : "/{$locale}/";
     },
@@ -629,7 +646,17 @@ return [
      * agree — and the checker tests exactly that.
      */
     'alternates' => function ($page, ?string $key = null, int $number = 1) {
-        return collect($page->locales)
+        $routeKey = $key;
+
+        if ($routeKey === null && ! in_array($page->page, ['blog', 'post'], true)) {
+            $routeKey = $page->page;
+        }
+
+        $locales = $routeKey
+            ? collect($page->routes[$routeKey])->keys()->all()
+            : $page->locales;
+
+        return collect($locales)
             ->map(function ($locale) use ($page, $key, $number) {
                 $path = $key ? $page->localePath($key, $locale) : $page->canonicalPath($locale, $number);
 
