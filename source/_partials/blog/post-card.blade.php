@@ -26,8 +26,15 @@
 
      It is symmetric because the body's last element has had its bottom margin
      trimmed in prose.css. Without that the rule sat 52px under one post and
-     32px over the next, and looked like it belonged to the wrong one. --}}
-<article class="flex flex-col gap-3 border-b border-border-subtle py-12 last:border-b-0 lg:py-16">
+     32px over the next, and looked like it belonged to the wrong one.
+
+     The first post has no padding above it. That space is there to separate two
+     posts, and above the first one there is no post to separate it from: the
+     heading block (or the "page 2 of 4" line) already sets its own distance,
+     and stacking this on top of that pushed the list a screenful down. Both
+     breakpoints need clearing, because `lg:py-16` would otherwise put the
+     padding back on a desktop. --}}
+<article class="flex flex-col gap-3 border-b border-border-subtle py-12 first:pt-0 last:border-b-0 lg:py-16 lg:first:pt-0">
     @include('_partials.blog.post-meta', ['post' => $post])
 
     <a
