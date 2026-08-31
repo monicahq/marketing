@@ -93,6 +93,33 @@
   color: var(--color-text);
 }
 
+/* A fenced code block, which Markdown renders as <pre><code class="language-…">.
+   It gets the same border, radius and rhythm as a screenshot, because it is the
+   same kind of thing on the page: a rectangle of evidence sitting inside the
+   prose. No highlighting. The language class is the only hook there is, and
+   colouring it would mean a dependency to render one paragraph of every
+   twentieth post.
+
+   overflow-x is the load-bearing part. A line of PHP is as long as it is, and
+   the body column is 68ch, so without this the block widens the page on a
+   phone and takes the rest of the article with it. Scrolling the block is the
+   one thing that keeps the overflow inside the block. */
+.mn-prose pre {
+  margin: var(--space-8) 0;
+  padding: var(--space-4) var(--space-5);
+  overflow-x: auto;
+  border: var(--border-standard);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-subtle);
+}
+
+/* The inline rule above already set the face and the size; what is left is
+   undoing the parts of it that only make sense mid-sentence. */
+.mn-prose pre code {
+  white-space: pre;
+  line-height: 1.6;
+}
+
 /* A screenshot gets a 1px border and an 8px radius and nothing else: no shadow,
    no browser chrome, no device frame. Several of these are animated GIFs of the
    product, which is the same thing moving. */
