@@ -917,6 +917,7 @@ return [
 
         'showing' => "Beiträge :from bis :to von :total",
         'pageOf' => "Seite :page von :total",
+        'rssFeed' => "RSS-Feed",
         'newerPosts' => "Neuere Beiträge",
         'olderPosts' => "Ältere Beiträge",
 

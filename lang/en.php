@@ -944,6 +944,7 @@ return [
 
         'showing' => "Showing :from to :to of :total posts",
         'pageOf' => "Page :page of :total",
+        'rssFeed' => "RSS feed",
         'newerPosts' => "Newer posts",
         'olderPosts' => "Older posts",
 

@@ -923,6 +923,7 @@ return [
 
         'showing' => "Artigos :from a :to de :total",
         'pageOf' => "Página :page de :total",
+        'rssFeed' => "Feed RSS",
         'newerPosts' => "Artigos mais recentes",
         'olderPosts' => "Artigos mais antigos",
 
