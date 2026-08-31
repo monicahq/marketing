@@ -920,6 +920,7 @@ return [
 
         'showing' => "Articles :from à :to sur :total",
         'pageOf' => "Page :page sur :total",
+        'rssFeed' => "Flux RSS",
         'newerPosts' => "Articles plus récents",
         'olderPosts' => "Articles plus anciens",
 

@@ -19,9 +19,36 @@
 @endphp
 
 <div class="mx-auto w-full max-w-marketing px-4 pt-12 pb-24 md:px-8">
-    <div class="border-b border-border pb-8">
-        <h1 class="text-display-md font-semibold">{{ $page->t('blog.title') }}</h1>
-        <p class="mt-4 max-w-[56ch] text-lede-md leading-[1.6] text-text-secondary">{{ $page->t('blog.lede') }}</p>
+    {{-- Stacked below sm, a row above it. Explicit breakpoints rather than
+         flex-wrap: wrapping is decided from the lede's own width, and that
+         sentence is long enough that the button would either sit on its own row
+         at every width or squeeze the lede into a column beside it. --}}
+    <div class="flex flex-col gap-4 border-b border-border pb-8 sm:flex-row sm:items-start sm:justify-between">
+        <div class="min-w-0">
+            <h1 class="text-display-md font-semibold">{{ $page->t('blog.title') }}</h1>
+            <p class="mt-4 max-w-[56ch] text-lede-md leading-[1.6] text-text-secondary">{{ $page->t('blog.lede') }}</p>
+        </div>
+
+        {{-- The feed has always been in the head of every page, where only a
+             reader extension finds it. This is the same URL, for everyone else.
+
+             It leaves the site's own JavaScript alone on both counts, and
+             neither attribute is decoration. Turbo swaps <body> on a same-origin
+             click, and the target is an XML document rather than a page, so this
+             is exactly the kind of link Turbo has no business handling.
+             instant.page would prefetch it on hover, and the feed carries twenty
+             full post bodies, so that is 70KB or so fetched for a pointer that
+             merely swept past. --}}
+        <a
+            href="{{ $page->feedPath() }}"
+            type="application/rss+xml"
+            data-turbo="false"
+            data-no-instant
+            class="mn-btn mn-btn--secondary mn-btn--sm no-underline hover:no-underline"
+        >
+            @include('_partials.icon', ['name' => 'rss', 'size' => 14])
+            {{ $page->t('blog.rssFeed') }}
+        </a>
     </div>
 
     <div class="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16">

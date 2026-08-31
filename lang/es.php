@@ -918,6 +918,7 @@ return [
 
         'showing' => "Artículos :from a :to de :total",
         'pageOf' => "Página :page de :total",
+        'rssFeed' => "Fuente RSS",
         'newerPosts' => "Artículos más recientes",
         'olderPosts' => "Artículos más antiguos",
 

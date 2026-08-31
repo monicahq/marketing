@@ -30,6 +30,12 @@
         'phone' =>'M8.5 3.5l2.5 4-2 2a12 12 0 005.5 5.5l2-2 4 2.5v3A1.5 1.5 0 0119 20C10.6 19.6 3.9 12.9 3.5 4.5A1.5 1.5 0 015 3.5h3.5z',
         'relationship' => 'M9.5 14.5l5-5|M10.5 6.5l1.4-1.4a4 4 0 015.7 5.7l-1.4 1.4|M13.5 17.5l-1.4 1.4a4 4 0 01-5.7-5.7l1.4-1.4',
         'reminder' => 'M18 16V10.5a6 6 0 10-12 0V16l-1.5 2.5h15L18 16z|M9.5 18.5a2.5 2.5 0 005 0',
+        // Drawn here rather than copied from the design project, which has no
+        // RSS glyph: a dot and two arcs sharing its centre at (5, 19), radii
+        // 5.5 and 11. The dot is a zero-length path with a round cap, as the
+        // 'tag' glyph does it, because this partial emits paths with no fill.
+        // First on the list to swap when the real SVGs arrive.
+        'rss' => 'M5 19h.01|M5 13.5A5.5 5.5 0 0110.5 19|M5 8A11 11 0 0116 19',
         'star' => 'M12 4l2.5 5.2 5.5.8-4 4 1 5.5-5-2.8-5 2.8 1-5.5-4-4 5.5-.8L12 4z',
         'tag' => 'M20.5 12.5l-8 8-9-9V3.5H12l8.5 9z|M7.5 8h.01',
     ];

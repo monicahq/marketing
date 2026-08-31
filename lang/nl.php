@@ -911,6 +911,7 @@ return [
 
         'showing' => ":from tot :to van :total berichten",
         'pageOf' => "Pagina :page van :total",
+        'rssFeed' => "RSS-feed",
         'newerPosts' => "Nieuwere berichten",
         'olderPosts' => "Oudere berichten",
 
