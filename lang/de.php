@@ -115,170 +115,50 @@ return [
         'blog' => "Blog",
         'docs' => "Dokumentation",
         'signIn' => "Anmelden",
-        'getStarted' => "Loslegen",
+        'getStarted' => "Registrieren",
         'stars' => ":count Sterne",
-    ],
 
-    'hero' => [
-        'eyebrow' => "Das quelloffene persönliche CRM",
-        'title' => "Erinnern Sie sich an die Menschen, die Ihnen wichtig sind.",
-        'lede' => "Monica hilft Ihnen, den Überblick über die Menschen in Ihrem Leben zu behalten — was sie Ihnen erzählen, welche Momente Sie teilen und welche Versprechen Sie sich fest vorgenommen hatten.",
-        'lede2' => "Privat von Grund auf. Quelloffen. Selbst hostbar. Keine Werbung, kein Datenverkauf, keine peinlichen Benachrichtigungen zur „Aktivierung“.",
-        'primaryCta' => "Mit Monica beginnen",
-        'githubCta' => "Auf GitHub ansehen · :count Sterne",
-        'note' => "Selbst hosten ist kostenlos · Gehostete Version verfügbar",
-    ],
-
-    'proof' => [
-        'starsLabel' => "Sterne auf GitHub",
-        'since' => "2017",
-        'sinceLabel' => "Quelloffen seit",
-        'featured' => "Repository der Woche",
-        'featuredLabel' => "Mehrfach hervorgehoben",
-        'launch' => "Product Hunt",
-        'launchLabel' => "Beachteter Start",
-        'aside' => "Offenbar vergessen noch einige andere Menschen Geburtstage.",
-    ],
-
-    'notALead' => [
-        'title' => "Ein CRM, in dem niemand ein Lead ist.",
-        'body' => "Klassische CRM-Systeme helfen Unternehmen, sich an Kunden zu erinnern. Monica hilft Ihnen, sich an Freunde, Familie, Kolleginnen, Nachbarn und alle anderen zu erinnern, die Ihnen wichtig sind.",
-        'aside' => "Aufmerksamkeit fällt leichter, wenn Ihr Gedächtnis eine Sicherung hat.",
-        'listTitle' => "Halten Sie die Details fest, die Sie sonst vergessen würden:",
-        'items' => [
-            "was gerade in ihrem Leben passiert;",
-            "woher Sie sich kennen;",
-            "wichtige Daten;",
-            "frühere Gespräche;",
-            "Geschenke, Schulden, Versprechen und Ideen;",
-            "Erinnerungen, sich wieder zu melden.",
-        ],
-    ],
-
-    'showcase' => [
-        'title' => "Alles über einen Menschen. An einem Ort.",
-        'aside' => "Menschen sind kompliziert. Ihre Einträge dürfen deshalb auch ein wenig kompliziert sein.",
-        'card' => [
-            'name' => "Élise Aubert",
-            'meta' => "Schwester · Lyon · Zuletzt heute gesprochen",
-            'badge' => "Familie",
-            'birthdayLabel' => "Geburtstag",
-            'birthday' => "18. März · wird in 7 Monaten 39",
-            'metLabel' => "Wie Sie sich kennen",
-            'met' => "Von Geburt an",
-            'relationshipsLabel' => "Beziehungen",
-            'relationships' => [
-                ['initials' => "MC", 'label' => "Élise ist Marcs Partnerin", 'meta' => "10 Jahre"],
-                ['initials' => "LA", 'label' => "Élise ist Léas Elternteil", 'meta' => "Seit 2019"],
-            ],
-            'recentlyLabel' => "Kürzlich",
-            'timeline' => [
+        // The features menu: three columns of what Monica does, and a card
+        // pointing at templates, the thing a new reader most often misses.
+        'menu' => [
+            'groups' => [
                 [
-                    'nature' => 'meal',
-                    'title' => "Mittagessen im Le Petit Sud",
-                    'meta' => "Heute · sie denkt darüber nach, zurück nach Lyon zu ziehen",
+                    'title' => "Erinnern",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "Die Details", 'body' => "Alles über einen Menschen, an einem Ort."],
+                        ['icon' => 'reminder', 'title' => "Erinnerungen", 'body' => "Geburtstage, Rückmeldungen, Wiederholungen."],
+                        ['icon' => 'timeline', 'title' => "Zeitleiste", 'body' => "Einmal festhalten. Alle Beteiligten haben es."],
+                    ],
                 ],
                 [
-                    'nature' => 'call',
-                    'title' => "Anruf wegen Georges",
-                    'meta' => "2. August · 22 Minuten",
+                    'title' => "Ordnen",
+                    'items' => [
+                        ['icon' => 'relationship', 'title' => "Beziehungen", 'body' => "Stammbäume, und wer wen kennt."],
+                        ['icon' => 'vault', 'title' => "Tresore", 'body' => "Privates und Berufliches, getrennt."],
+                        ['icon' => 'link', 'title' => "Teilen", 'body' => "Einzelne Abschnitte teilen. Jederzeit widerrufbar."],
+                    ],
+                ],
+                [
+                    'title' => "Verbinden und schützen",
+                    'items' => [
+                        ['icon' => 'calendar', 'title' => "Sync und Kalender", 'body' => "Adressbücher, Kalender, vCards."],
+                        ['icon' => 'key', 'title' => "Assistenten und API", 'body' => "Ihr Agent kann Menschen nachschlagen."],
+                        ['icon' => 'lock', 'title' => "Datenschutz", 'body' => "Passkeys, 2FA, private Felder."],
+                    ],
                 ],
             ],
-            'reminder' => "Fragen, wie das Vorstellungsgespräch lief",
-            'reminderMeta' => "Erinnerung · morgen",
-        ],
-        'features' => [
-            [
-                'icon' => 'relationship',
-                'title' => "Beziehungen",
-                'body' => "Verstehen Sie Familien, Partnerschaften, Freundschaften, Kolleginnen und die Verbindungen dazwischen.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Notizen und Journaleinträge",
-                'body' => "Erinnern Sie sich an das Geschehene, ohne durch sechs Messenger zu scrollen.",
-            ],
-            [
-                'icon' => 'reminder',
-                'title' => "Erinnerungen",
-                'body' => "Ihre Mutter anrufen. Ihrem Freund gratulieren. Nach dem Vorstellungsgespräch fragen. Monica erinnert sich; die Anerkennung bleibt bei Ihnen.",
-            ],
-            [
-                'icon' => 'activity',
-                'title' => "Aktivitäten",
-                'body' => "Führen Sie eine Historie von Essen, Anrufen, Reisen, Ereignissen und den kleinen Momenten, die eine Beziehung ausmachen.",
-            ],
-            [
-                'icon' => 'panel',
-                'title' => "Eigene Informationen",
-                'body' => "Halten Sie die Details fest, die für Sie zählen, nicht die Felder, die ein Vertriebs-CRM für wichtig hält.",
+            'start' => [
+                'label' => "Hier anfangen",
+                'title' => "Ihre Kontakte, wie Sie sie wollen",
+                'body' => "Gestalten Sie eigene Vorlagen. Tabs, Abschnitte, Felder, Auswahllisten.",
+                'rows' => [
+                    ['label' => "Freunde", 'detail' => "Geschenke, Haustiere"],
+                    ['label' => "Familie", 'detail' => "Stammbaum"],
+                    ['label' => "Arbeit", 'detail' => "Firma, Rolle"],
+                ],
+                'cta' => "So funktionieren Vorlagen",
             ],
         ],
-    ],
-
-    'notSocial' => [
-        'title' => "Bewusst kein soziales Netzwerk.",
-        'body' => "Monica empfiehlt keine Freunde, bewertet keine Beziehungen, blendet keine Werbung ein und teilt niemandem mit, dass Sie sein Profil angesehen haben.",
-        'body2' => "Es ist ein privater Ort für Ihre Erinnerungen und Ihre Beziehungen.",
-        'quote' => "Kein Feed. Keine Follower. Keine Marken, die eine Persönlichkeit vortäuschen.",
-    ],
-
-    'openSource' => [
-        'title' => "Ihres heißt Ihres.",
-        'body' => "Monica ist seit dem ersten Tag quelloffen. Daran ändert sich nichts.",
-        'aside' => "Vertrauen ist nützlich. Quellcode ist besser.",
-        'sourceCta' => "Quellcode ansehen",
-        'hostingCta' => "Anleitung zum Selbst-Hosten lesen",
-        'v3Cta' => "Alles ansehen, was mit Monica v3 kommt",
-        'listTitle' => "Mit Monica v3:",
-        'items' => [
-            "bleibt das Projekt vollständig quelloffen;",
-            "können Sie es auf Ihrem eigenen Server betreiben;",
-            "nutzt das gehostete Produkt dieselbe Anwendung;",
-            "lassen sich Ihre Daten exportieren;",
-            "kann der Code eingesehen, verändert und geforkt werden.",
-        ],
-    ],
-
-    'v3' => [
-        'title' => "Monica wird erwachsen. Einigermaßen.",
-        'body' => "Monica v3 wird für das kommende Jahrzehnt von Grund auf neu gebaut.",
-        'body2' => "Sie wird flexibler, erweiterbarer und deutlich besser auf dem Telefon — und behält dabei die Prinzipien von Privatsphäre und Eigentum, die Monica überhaupt erst nützlich gemacht haben.",
-        'listLabel' => "Kommt in v3",
-        'features' => [
-            [
-                'icon' => 'panel',
-                'title' => "Einträge, die Sie gestalten",
-                'body' => "Wählen Sie die Abschnitte und Felder eines Eintrags, statt unsere Meinung für immer zu übernehmen.",
-            ],
-            [
-                'icon' => 'relationship',
-                'title' => "Mehr als Kontakte",
-                'body' => "Verbinden Sie Menschen mit Haustieren, Unternehmen, Wohnungen, Fahrzeugen, Projekten und allem anderen, was zu ihrem Leben gehört.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Ein Journal, das mit allem verbunden ist",
-                'body' => "Halten Sie einen Moment einmal fest und verknüpfen Sie ihn mit den beteiligten Personen, Einträgen, Daten und Erinnerungen.",
-            ],
-            [
-                'icon' => 'tag',
-                'title' => "Strukturen aus der Community",
-                'body' => "Installieren Sie nützliche Strukturen anderer Monica-Nutzerinnen und passen Sie Ihre Kopie frei an.",
-            ],
-            [
-                'icon' => 'code',
-                'title' => "Eine vollständige API und ein MCP-Server",
-                'body' => "Alles, was über die Oberfläche verfügbar ist, sollte auch programmatisch verfügbar sein.",
-            ],
-            [
-                'icon' => 'phone',
-                'title' => "Eine echte mobile Erfahrung",
-                'body' => "Zuerst eine responsive Webanwendung, danach native Anwendungen für iOS und Android.",
-            ],
-        ],
-        'cta' => "Monica v3 entdecken",
-        'note' => "Erwartet vor Ende 2026 · Der Beta-Zugang öffnet sich schrittweise",
     ],
 
     /** Die Seite /v3. Der Schlüssel `v3` oben ist der Abschnitt auf der Startseite. */
@@ -364,7 +244,7 @@ return [
                     'body' => "Tastaturbedienung, Screenreader, Lokalisierung und anpassungsfähige Layouts sind Produktanforderungen und keine Arbeit, die auf später verschoben wird.",
                 ],
                 [
-                    'icon' => 'arrowRight',
+                    'icon' => 'arrow-right',
                     'title' => "Bestehende Nutzerinnen und Nutzer bleiben nicht zurück",
                     'body' => "Das Ziel ist ein klarer Migrationsweg für bestehende Monica-Konten, einschließlich Kontakten, Notizen, Erinnerungen und anderen wesentlichen Informationen.",
                 ],
@@ -379,88 +259,189 @@ return [
         ],
     ],
 
-    'founder' => [
-        'title' => "Entstanden, weil mein Gedächtnis schlecht ist.",
-        'body' => "Ich habe Monica gebaut, weil ich immer wieder Details über Menschen vergessen habe, die mir wirklich wichtig waren.",
-        'body2' => "Nicht, weil sie unwichtig gewesen wären. Sondern weil das Leben voll ist, das Gedächtnis unzuverlässig und das menschliche Gehirn offenbar ohne Suchfunktion ausgeliefert wurde.",
-        'body3' => "Monica begann 2017 als persönliches Projekt. Inzwischen ist daraus eines der meistbeachteten quelloffenen Projekte für persönliche CRM geworden, getragen und verbessert von Mitwirkenden aus aller Welt.",
-        'signature' => "— Régis, Gründer und Mensch, der gelegentlich immer noch Dinge vergisst",
-    ],
-
-    'faq' => [
-        'title' => "Fragen, die wirklich gestellt werden.",
-        'items' => [
-            [
-                'q' => "Ist Monica wirklich kostenlos?",
-                'a' => "Der Code ist kostenlos und bleibt es. Sie können ihn ohne Zahlung auf Ihrem eigenen Server betreiben. Die gehostete Version ist ein kostenpflichtiges Abonnement, weil Server und Sicherungen Geld kosten, und weil sie die Arbeit am quelloffenen Projekt finanziert.",
-            ],
-            [
-                'q' => "Muss ich technisch versiert sein?",
-                'a' => "Für die gehostete Version nicht: Sie legen ein Konto an und beginnen. Selbst hosten verlangt etwas mehr, nämlich Docker oder eine PHP-Umgebung, die Sie sicher betreiben können. Die Dokumentation beschreibt beide Wege.",
-            ],
-            [
-                'q' => "Wer kann meine Daten in der gehosteten Version sehen?",
-                'a' => "Niemand sieht sie sich an. Der Support kann nur mit Ihrer ausdrücklichen Erlaubnis und für ein konkretes Problem auf ein Konto zugreifen. Ihre Daten werden nie verkauft, nie für Werbung genutzt und nie zum Trainieren eines Modells verwendet.",
-            ],
-            [
-                'q' => "Bekomme ich meine Daten wieder heraus?",
-                'a' => "Jederzeit und vollständig, einschließlich der Strukturen, die Sie selbst gebaut haben. Export ist eine Funktion und kein Hindernisparcours.",
-            ],
-            [
-                'q' => "Kann ich vorhandene Kontakte importieren?",
-                'a' => "Ja, vCard- und CSV-Dateien. Doppelte Einträge werden Ihnen vor jeder Zusammenführung gezeigt, denn die falschen zwei Menschen zusammenzuführen ist eine denkwürdige Art, einen Nachmittag zu ruinieren.",
-            ],
-            [
-                'q' => "Was passiert mit meinem Konto, wenn v3 erscheint?",
-                'a' => "Das Ziel ist ein klarer Migrationsweg für bestehende Konten, samt Kontakten, Notizen, Erinnerungen und weiteren wesentlichen Informationen. Nichts wird gelöscht und nichts wird Ihnen über Nacht aufgezwungen.",
-                'link' => ['label' => "Mehr über Monica v3 lesen", 'page' => 'v3'],
-            ],
-            [
-                'q' => "Gibt es eine mobile Anwendung?",
-                'a' => "Die Webanwendung funktioniert heute schon auf dem Telefon. Native Anwendungen für iOS und Android folgen nach v3, echte Anwendungen und keine Website in einer Hülle.",
-            ],
-            [
-                'q' => "Macht Monica etwas mit KI?",
-                'a' => "Monica v3 stellt einen MCP-Server bereit, sodass Sie Ihren eigenen Assistenten auf Ihre eigenen Daten richten können, wenn Sie möchten. Monica schickt Ihre Beziehungen nicht von sich aus an ein Modell.",
-            ],
-        ],
-    ],
-
-    'plans' => [
-        'title' => "Unser Server. Oder Ihrer.",
-        'hosted' => [
-            'title' => "Monica gehostet",
-            'body' => "Für Menschen, die Monica wollen, ohne einen Server zu betreiben.",
-            'items' => [
-                "automatische Aktualisierungen;",
-                "verwaltete Sicherungen;",
-                "keine Infrastrukturarbeit;",
-                "unterstützt die Entwicklung des quelloffenen Projekts.",
-            ],
-            'cta' => "Konto erstellen",
-        ],
-        'selfHosted' => [
-            'title' => "Monica selbst hosten",
-            'body' => "Für Menschen, die ihre Infrastruktur gern selbst besitzen, oder das zumindest behaupten.",
-            'items' => [
-                "vollständige Kontrolle;",
-                "quelloffener Code;",
-                "kein Abonnement bei Monica;",
-                "Installation per Docker oder manuell.",
-            ],
-            'cta' => "Monica selbst hosten",
-        ],
-    ],
-
-    'finalCta' => [
-        'title' => "Seien Sie eine bessere Freundin. Mit administrativer Unterstützung.",
-        'body' => "Behalten Sie wichtige Details. Melden Sie sich, wenn es zählt. Halten Sie Ihre Beziehungen aus Werbedatenbanken heraus.",
-        'primaryCta' => "Mit Monica beginnen",
-        'secondaryCta' => "Monica v3 ansehen",
-        'note' => "Quelloffen · Selbst hostbar · Ohne Kreditkarte",
-    ],
-
     /** Die Seite /preise. Die Preise stammen aus dem Design; hier je Locale ändern. */
+    // ---------------------------------------------------------------- home
+    //
+    // The homepage, section by section, in page order. The people in it
+    // (Lucie, Théo, Priya, Sam) are demonstration data and keep their names in
+    // every language; what is said about them is translated.
+    //
+    // A sentence with one word in bold is written as three pieces, before, bold
+    // and after, so a translation can move the bold word to wherever its
+    // grammar puts it without anyone writing markup in a copy file.
+    'home' => [
+        'hero' => [
+            'pill' => "Mama, Théo, Priya, Sam und der Hund",
+            'title' => "Erinnern Sie sich an die Menschen, die Ihnen wichtig sind.",
+            'subtitle' => "Wir sind ein quelloffenes persönliches CRM.",
+            'lede' => "Privat von Grund auf. Quelloffen. Selbst hostbar. Keine Werbung, kein Datenverkauf, keine peinlichen Benachrichtigungen zur „Aktivierung“.",
+            'start' => "Mit Monica beginnen",
+            'github' => "Auf GitHub ansehen",
+            'sales' => "Vertrieb kontaktieren",
+            'salesJoke' => "Kleiner Scherz.",
+            'salesTruth' => "Wir haben gar keinen Vertrieb.",
+        ],
+
+        'product' => [
+            // Read out in place of the picture, which is drawn in markup but is
+            // a picture of the product rather than a working copy of it.
+            'label' => "Monica, geöffnet auf der Seite von Lucie Martin: zwei wichtige Daten, ihre Beziehungen, die neueste Notiz über sie und drei Geschenkideen.",
+            'vault' => "Familie",
+            'nav' => ["Dashboard", "Menschen", "Erinnerungen", "Journal", "Geschenkideen", "Einstellungen"],
+            'vaultsLabel' => "Tresore",
+            'vaults' => ["Familie", "Freunde", "Buchclub"],
+            'search' => "Menschen suchen",
+            'add' => "Person hinzufügen",
+            'meta' => "Théos Mutter · Lyon · seit 31 Jahren bekannt",
+            'tabs' => ["Übersicht", "Zeitleiste", "Notizen", "Geschenkideen"],
+            'datesTitle' => "Wichtige Daten",
+            'dates' => [
+                ['title' => "Geburtstag", 'date' => "14. März 1957", 'when' => "in fünf Monaten"],
+                ['title' => "Hochzeitstag", 'date' => "2. Juni 1984", 'when' => "in acht Monaten"],
+            ],
+            'relationshipsTitle' => "Beziehungen",
+            'relationships' => [
+                ["Lucie ist ", "Théos", " Mutter."],
+                ["Lucie ist ", "Bernards", " Ehefrau."],
+            ],
+            'noteTitle' => "Neueste Notiz",
+            'note' => "Hat im September mit Töpfern angefangen. Sehr stolz auf eine Schale. Den Vorfall mit dem Brennofen nicht erwähnen.",
+            'noteWhen' => "Vor sechs Tagen",
+            'giftsTitle' => "Geschenkideen",
+            'gifts' => ["Glasur-Set", "Zugtickets nach Paris", "Ein besserer Brennofen"],
+        ],
+
+        'awards' => [
+            'label' => "Fremde im Internet sind einverstanden",
+            'github' => "GitHub Trending: Repository des Tages, Platz 1",
+            'hn' => "Hacker News: Platz 65 der meistgewählten Links aller Zeiten",
+            'ph' => "Product Hunt: Produkt des Tages, Platz 4",
+            'trendshift' => "Trendshift PHP: Repository des Jahres, Platz 20",
+        ],
+
+        'agents' => [
+            'eyebrow' => "MCP-Server und REST API",
+            'title' => "Nutzen Sie Monica als Backend für Ihre Agenten.",
+            'body' => "Wir sind ausgesprochen entwicklerfreundlich.",
+            'mcp' => "MCP-Doku ansehen",
+            'api' => "API ansehen",
+            'prompt' => "Was soll ich Priya zum Geburtstag schenken?",
+            'answer' => "Priya hat am 3. November Geburtstag, in 23 Tagen.",
+            'saved' => "Sie haben im Juli zwei Ideen gespeichert:",
+            'ideas' => ["Der Keramikkurs, den sie erwähnt hat", "Alles außer noch einer Kerze"],
+            'ask' => "Trag ein, dass ich heute mit Sam zu Mittag gegessen habe.",
+            'used' => "Monica verwendet",
+            'reply' => "Erledigt. „Mittagessen“ am 11. Oktober in Sams Zeitleiste eingetragen.",
+        ],
+
+        'features' => [
+            'title' => "Ihr Gedächtnis, mit Sicherung.",
+            'lede' => "Alles, was man über einen Menschen wissen sollte, an einem ruhigen Ort.",
+            'reminders' => [
+                'title' => "Geburtstage, bevor sie nachträglich werden.",
+                'body' => "Erinnerungen an Daten, Anrufe und Versprechen. Per E-Mail, pünktlich.",
+                'rows' => [
+                    ['name' => "Priya Raman", 'what' => "Geburtstag", 'when' => "in 23 Tagen"],
+                    ['name' => "Mama", 'what' => "wegen Weihnachten zurückrufen", 'when' => "morgen"],
+                    ['name' => "Sam Okafor", 'what' => "Bohrmaschine zurückgeben", 'when' => "seit sechs Wochen überfällig"],
+                ],
+            ],
+            'relationships' => [
+                'title' => "Wer ist wer, und wer gehört zu wem.",
+                'body' => "Stammbäume, Verflossene, Paten. Als ganze Sätze geschrieben.",
+                'sentences' => [
+                    ["Lucie ist ", "Théos", " Mutter."],
+                    ["Théo ist ", "Priyas", " Partner."],
+                    ["Sam ist ", "unser aller", " Problem."],
+                ],
+            ],
+            'gifts' => [
+                'title' => "Geschenkideen, im Juli gespeichert.",
+                'body' => "Damit der Dezember keine Panik wird.",
+                'ideas' => ["Keramikkurs", "Das Buch über Moos"],
+                'crossed' => "Noch eine Kerze",
+            ],
+            'notes' => [
+                'title' => "Notizen, die Sie wiederfinden.",
+                'body' => "Durchsuchen Sie jede Notiz, zu jedem Menschen.",
+                'query' => "allergisch",
+                'who' => "Sam:",
+                'match' => "allergisch gegen Katzen. Hat drei Katzen.",
+            ],
+            'details' => [
+                'title' => "Weiß, wie der Hund heißt.",
+                'body' => "Haustiere, Kinder, Berufe, Essensvorlieben. Die Details, die zählen.",
+                'fields' => [
+                    ['label' => "Hund", 'value' => "Keks"],
+                    ['label' => "Kaffee", 'value' => "Flat White mit Hafermilch"],
+                ],
+            ],
+            'vaults' => [
+                'title' => "Ein Tresor für jeden Kreis.",
+                'body' => "Familie, Freunde, Arbeit. Getrennt gehalten, geteilt mit allen, die Sie einladen.",
+                'vaults' => [
+                    ['name' => "Familie", 'count' => "24 Menschen"],
+                    ['name' => "Freunde", 'count' => "61 Menschen"],
+                    ['name' => "Buchclub", 'count' => "7 Menschen"],
+                ],
+            ],
+            'journal' => [
+                'title' => "Ein Journal ohne Publikum.",
+                'body' => "Schreiben Sie über Ihren Tag. Niemand wird es liken, und genau darum geht es.",
+            ],
+        ],
+
+        'open' => [
+            'title' => "Offen aus Prinzip.",
+            'lede' => "Ihre Freunde sind kein Geschäftsmodell.",
+            'items' => [
+                ['title' => "Quelloffen", 'body' => "Jede Zeile liegt auf GitHub. Lesen, forken, prüfen."],
+                ['title' => "Selbst hostbar", 'body' => "Ein Docker-Befehl. Ihr Server, Ihre Regeln."],
+                ['title' => "Keine Werbung, keine Tracker", 'body' => "Nichts zu verkaufen, niemand, an den man es verkaufen könnte."],
+                ['title' => "Jederzeit gehen", 'body' => "Exportieren Sie alles, wann immer Sie wollen. Keine Geiselnahme."],
+            ],
+        ],
+
+        // The prices themselves are not here: the Cloud card reads them from
+        // `pricing.hosted`, so the homepage and the pricing page cannot quote
+        // two different numbers.
+        'pricing' => [
+            'badge' => "Keine Werbung",
+            'badgeText' => "Ihre Daten sind in jedem Tarif portabel.",
+            'title' => "Zahlen Sie, wie Sie wollen. Oder gar nicht.",
+            'lede' => "Hosten Sie selbst und kostenlos, oder lassen Sie Monica den Betrieb übernehmen.",
+            'selfHost' => [
+                'title' => "Selbst hosten",
+                'price' => "Kostenlos",
+                'per' => "für immer",
+                'items' => ["Alle Funktionen, keine Grenzen", "Docker-Deployment mit einem Befehl", "Volle Kontrolle über Ihre Daten", "Sie sind die IT-Abteilung"],
+                'cta' => "Dokumentation lesen",
+            ],
+            'cloud' => [
+                'title' => "Cloud",
+                'billingLabel' => "Abrechnungszeitraum",
+                'monthly' => "Monatlich",
+                'yearly' => "Jährlich",
+                'perMonth' => "pro Monat",
+                'perYear' => "pro Jahr",
+                'yearlyNote' => "Zwei Monate geschenkt",
+                'items' => ["Verwaltetes Hosting", "Automatische Updates und Sicherungen", "Unbegrenzt viele Menschen und Tresore", "Jederzeit kündbar"],
+                'cta' => "Mit Monica beginnen",
+            ],
+        ],
+
+        'faq' => [
+            'title' => "Fragen, beantwortet.",
+            'items' => [
+                ['q' => "Ist das ein Vertriebs-CRM?", 'a' => "Nein. Hier hat niemand eine Pipeline. Monica ist für Familie, Freunde und die Menschen, bei denen Sie sich eigentlich melden wollten."],
+                ['q' => "Ist Selbsthosten wirklich kostenlos?", 'a' => "Ja. Alle Funktionen, keine Grenzen, lizenziert unter AGPL-3.0. Den Server bringen Sie mit."],
+                ['q' => "Wer kann meine Daten sehen?", 'a' => "Sie und alle, die Sie in einen Tresor einladen. Keine Werbung, keine Tracker, kein Datenverkauf. Wenn Sie selbst hosten, verlassen sie Ihren Server nie."],
+                ['q' => "Kann ich zwischen Cloud und Selbsthosting wechseln?", 'a' => "Ja, in beide Richtungen. Alles exportieren, auf der anderen Seite importieren."],
+                ['q' => "Funktioniert es mit meinem KI-Agenten?", 'a' => "Wenn er MCP spricht, ja. Für alles andere gibt es außerdem eine vollständige REST API."],
+            ],
+        ],
+    ],
+
     'pricing' => [
         'eyebrow' => "Einfache Preise",
         'title' => "Ein gehosteter Tarif. Keine Preise pro Beziehung.",
@@ -648,14 +629,6 @@ return [
             ],
         ],
 
-        'finalCta' => [
-            'title' => "Ihr Gedächtnis hat genug unbezahlt gearbeitet.",
-            'body' => "Nutzen Sie die gehostete Version und überlassen Sie uns die Infrastruktur, oder installieren Sie Monica auf Ihrem eigenen Server.",
-            'body2' => "So oder so bleiben Ihre Kontakte Menschen, keine Leads.",
-            'primaryCta' => "Mit Monica beginnen",
-            'secondaryCta' => "Monica selbst hosten",
-            'note' => "Ein einfacher gehosteter Tarif · Selbst hosten kostenlos · Quelloffen",
-        ],
     ],
 
     'personalCrm' => [
@@ -882,17 +855,27 @@ return [
     ],
 
     'footer' => [
-        'tagline' => "Ein privates, quelloffenes persönliches CRM, um sich an die Menschen zu erinnern, die zählen.",
+        // The closing line ends every page, so it is two short sentences rather
+        // than a pitch. Each one is its own line.
+        'closing' => ["Monica erinnert sich.", "Sie gehen raus."],
+        'start' => "Mit Monica beginnen",
+        'github' => "Auf GitHub ansehen",
+
+        'tagline' => "Quelloffenes persönliches CRM. AGPL-3.0.",
         'productLabel' => "Produkt",
-        'projectLabel' => "Projekt",
-        'github' => "GitHub",
+        'developersLabel' => "Entwickler",
+        'companyLabel' => "Unternehmen",
+        'personalCrm' => "Was ist ein persönliches CRM?",
+        'changelog' => "Änderungsprotokoll",
+        'mcp' => "MCP",
+        'api' => "API",
+        'contactSales' => "Vertrieb kontaktieren",
         'privacy' => "Datenschutz",
         'terms' => "Nutzungsbedingungen",
         'team' => "Team",
-        'personalCrm' => "Was ist ein persönliches CRM?",
-        'copyright' => "© :year Monica",
-        'since' => "Quelloffen seit 2017",
-        'ownership' => "Ihre Daten bleiben Ihre.",
+
+        'art' => "Eine Wiese an einem See, mit Pandas, die im Gras faulenzen und in den Bäumen dösen",
+        'copyright' => "© :year Monica. Es wurden keine Pandas getrackt.",
         'languageLabel' => "Sprache wechseln",
     ],
 

@@ -140,175 +140,54 @@ return [
         'pricing' => "Pricing",
         'blog' => "Blog",
         'docs' => "Documentation",
-        'signIn' => "Sign in",
-        'getStarted' => "Get started",
+        'signIn' => "Login",
+        'getStarted' => "Signup",
         'stars' => ":count stars",
-    ],
 
-    'hero' => [
-        'eyebrow' => "The open-source personal CRM",
-        'title' => "Remember the people you care about.",
-        'lede' => "Monica helps you keep track of the people in your life—the things they tell you, the moments you share, and the promises you definitely intended to remember.",
-        'lede2' => "Private by design. Open source. Self-hostable. No ads, no data resale, no awkward “engagement” notifications.",
-        'primaryCta' => "Start using Monica",
-        'githubCta' => "View on GitHub · :count stars",
-        'note' => "Free to self-host · Hosted version available",
-    ],
-
-    'proof' => [
-        'starsLabel' => "GitHub stars",
-        'since' => "2017",
-        'sinceLabel' => "Open source since",
-        'featured' => "Repository of the Week",
-        'featuredLabel' => "Featured multiple times",
-        'launch' => "Product Hunt",
-        'launchLabel' => "Top launch",
-        'aside' => "Apparently, quite a few people also forget birthdays.",
-    ],
-
-    'notALead' => [
-        'title' => "A CRM, but nobody is a lead.",
-        'body' => "Traditional CRMs help companies remember customers. Monica helps you remember friends, family, colleagues, neighbours, and everyone else who matters.",
-        'aside' => "Thoughtfulness is easier when your memory has backup.",
-        'listTitle' => "Store the details you would otherwise forget:",
-        'items' => [
-            "what is happening in their life;",
-            "how you know each other;",
-            "important dates;",
-            "previous conversations;",
-            "gifts, debts, promises, and ideas;",
-            "reminders to get back in touch.",
-        ],
-    ],
-
-    'showcase' => [
-        'title' => "Everything about someone. In one place.",
-        'aside' => "People are complicated. Their contact records should be allowed to be slightly complicated too.",
-        // A real product surface, not a mockup: this is what a contact record holds.
-        'card' => [
-            'name' => "Élise Aubert",
-            'meta' => "Sister · Lyon · Last spoke today",
-            'badge' => "Family",
-            'birthdayLabel' => "Birthday",
-            'birthday' => "18 March · turns 39 in 7 months",
-            'metLabel' => "How you met",
-            'met' => "Born into it",
-            'relationshipsLabel' => "Relationships",
-            'relationships' => [
-                ['initials' => "MC", 'label' => "Élise is Marc's partner", 'meta' => "10 years"],
-                ['initials' => "LA", 'label' => "Élise is Léa's parent", 'meta' => "Since 2019"],
-            ],
-            'recentlyLabel' => "Recently",
-            'timeline' => [
+        // The features menu: three columns of what Monica does, and a card
+        // pointing at templates, the thing a new reader most often misses.
+        'menu' => [
+            'groups' => [
                 [
-                    'nature' => 'meal',
-                    'title' => "Lunch at Le Petit Sud",
-                    'meta' => "Today · she is thinking about moving back to Lyon",
+                    'title' => "Remember",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "The details", 'body' => "Everything about someone, in one place."],
+                        ['icon' => 'reminder', 'title' => "Reminders", 'body' => "Birthdays, follow-ups, repeats."],
+                        ['icon' => 'timeline', 'title' => "Timeline", 'body' => "Log it once. Everyone there gets it."],
+                    ],
                 ],
                 [
-                    'nature' => 'call',
-                    'title' => "Called about Georges",
-                    'meta' => "2 August · 22 minutes",
+                    'title' => "Organise",
+                    'items' => [
+                        ['icon' => 'relationship', 'title' => "Relationships", 'body' => "Family trees, and who knows whom."],
+                        ['icon' => 'vault', 'title' => "Vaults", 'body' => "Personal and work, kept apart."],
+                        ['icon' => 'link', 'title' => "Sharing", 'body' => "Share a few sections. Revoke any time."],
+                    ],
+                ],
+                [
+                    'title' => "Connect and protect",
+                    'items' => [
+                        ['icon' => 'calendar', 'title' => "Sync and calendars", 'body' => "Address books, calendars, vCards."],
+                        ['icon' => 'key', 'title' => "Assistants and API", 'body' => "Your agent can look people up."],
+                        ['icon' => 'lock', 'title' => "Privacy", 'body' => "Passkeys, 2FA, private fields."],
+                    ],
                 ],
             ],
-            'reminder' => "Ask how the interview went",
-            'reminderMeta' => "Reminder · tomorrow",
-        ],
-        'features' => [
-            [
-                'icon' => 'relationship',
-                'title' => "Relationships",
-                'body' => "Understand families, partners, friendships, coworkers, and the connections between them.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Notes and journal entries",
-                'body' => "Remember what happened without scrolling through six messaging apps.",
-            ],
-            [
-                'icon' => 'reminder',
-                'title' => "Reminders",
-                'body' => "Call your mother. Congratulate your friend. Ask how the interview went. Monica remembers; you still get the credit.",
-            ],
-            [
-                'icon' => 'activity',
-                'title' => "Activities",
-                'body' => "Keep a history of meals, calls, trips, events, and the small moments that make up a relationship.",
-            ],
-            [
-                'icon' => 'panel',
-                'title' => "Custom information",
-                'body' => "Store the details that matter to you, not the fields a sales CRM thinks should matter.",
+            'start' => [
+                'label' => "Start here",
+                'title' => "Your contacts, your way",
+                'body' => "Design your own templates. Tabs, sections, fields, choices.",
+                'rows' => [
+                    ['label' => "Friend", 'detail' => "Gifts, pets"],
+                    ['label' => "Family", 'detail' => "Family tree"],
+                    ['label' => "Work", 'detail' => "Company, role"],
+                ],
+                'cta' => "See how templates work",
             ],
         ],
     ],
 
-    'notSocial' => [
-        'title' => "Deliberately not a social network.",
-        'body' => "Monica does not recommend friends, rank relationships, insert advertising, or tell anyone that you viewed their profile.",
-        'body2' => "It is a private place for your memories and your relationships.",
-        'quote' => "No feed. No followers. No brands pretending to have personalities.",
-    ],
-
-    'openSource' => [
-        'title' => "Yours means yours.",
-        'body' => "Monica has been open source since the beginning. That is not changing.",
-        'aside' => "Trust is useful. Source code is better.",
-        'sourceCta' => "Explore the source code",
-        'hostingCta' => "Read the self-hosting guide",
-        'v3Cta' => "See everything coming in Monica v3",
-        'listTitle' => "With Monica v3:",
-        'items' => [
-            "the project remains fully open source;",
-            "you can run it on your own server;",
-            "the hosted product uses the same core application;",
-            "your data can be exported;",
-            "the code can be inspected, modified, and forked.",
-        ],
-    ],
-
-    'v3' => [
-        'title' => "Monica is growing up. Mostly.",
-        'body' => "Monica v3 is being rebuilt from the ground up for the next decade.",
-        'body2' => "It will be more flexible, more extensible, and much better on phones—while preserving the privacy and ownership principles that made Monica useful in the first place.",
-        'listLabel' => "Coming in v3",
-        'features' => [
-            [
-                'icon' => 'panel',
-                'title' => "Records you design",
-                'body' => "Choose the sections and fields that belong on a record instead of accepting our opinion forever.",
-            ],
-            [
-                'icon' => 'relationship',
-                'title' => "More than contacts",
-                'body' => "Connect people to pets, companies, homes, vehicles, projects, and anything else relevant to their lives.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "A journal connected to everything",
-                'body' => "Log moments once and connect them to the people, records, dates, and reminders involved.",
-            ],
-            [
-                'icon' => 'tag',
-                'title' => "Community-built structures",
-                'body' => "Install useful structures made by other Monica users, then modify your copy freely.",
-            ],
-            [
-                'icon' => 'code',
-                'title' => "A complete API and MCP server",
-                'body' => "Anything available through the interface should also be available programmatically.",
-            ],
-            [
-                'icon' => 'phone',
-                'title' => "A proper mobile experience",
-                'body' => "A responsive web application first, followed by native iOS and Android applications.",
-            ],
-        ],
-        'cta' => "Discover Monica v3",
-        'note' => "Expected before the end of 2026 · Beta access will open progressively",
-    ],
-
-    /** The /v3 teaser page. `v3` above is the homepage section that links to it. */
+    /** The /v3 teaser page. */
     'v3page' => [
         'badge' => "Monica v3 · In development",
         'timing' => "Coming before the end of 2026",
@@ -391,7 +270,7 @@ return [
                     'body' => "Keyboard navigation, screen readers, localization, and responsive layouts are product requirements, not work postponed until later.",
                 ],
                 [
-                    'icon' => 'arrowRight',
+                    'icon' => 'arrow-right',
                     'title' => "Existing users are not left behind",
                     'body' => "The goal is to provide a clear migration path for existing Monica accounts, including contacts, notes, reminders, and other essential information.",
                 ],
@@ -406,88 +285,188 @@ return [
         ],
     ],
 
-    'founder' => [
-        'title' => "Built because my memory is bad.",
-        'body' => "I created Monica because I kept forgetting details about people I genuinely cared about.",
-        'body2' => "Not because they were unimportant. Because life is busy, memory is unreliable, and apparently the human brain did not ship with search.",
-        'body3' => "Monica started as a personal project in 2017. It has since become one of the most widely followed open-source personal CRM projects, supported and improved by contributors around the world.",
-        'signature' => "— Régis, founder and person who still occasionally forgets things",
-    ],
+    // ---------------------------------------------------------------- home
+    //
+    // The homepage, section by section, in page order. The people in it
+    // (Lucie, Théo, Priya, Sam) are demonstration data and keep their names in
+    // every language; what is said about them is translated.
+    //
+    // A sentence with one word in bold is written as three pieces, before, bold
+    // and after, so a translation can move the bold word to wherever its
+    // grammar puts it without anyone writing markup in a copy file.
+    'home' => [
+        'hero' => [
+            'pill' => "Mum, Théo, Priya, Sam, and the dog",
+            'title' => "Remember the people you care about.",
+            'subtitle' => "We are an open source personal CRM.",
+            'lede' => "Private by design. Open source. Self-hostable. No ads, no data resale, no awkward “engagement” notifications.",
+            'start' => "Start using Monica",
+            'github' => "View on GitHub",
+            'sales' => "Contact sales",
+            'salesJoke' => "Just kidding.",
+            'salesTruth' => "We have no sales team.",
+        ],
 
-    'faq' => [
-        'title' => "Questions people actually ask.",
-        'items' => [
-            [
-                'q' => "Is Monica really free?",
-                'a' => "The code is free and always will be. You can run it on your own server without paying anything. The hosted version is a paid subscription, because servers and backups are not free, and it funds the work on the open-source project.",
+        'product' => [
+            // Read out in place of the picture, which is drawn in markup but is
+            // a picture of the product rather than a working copy of it.
+            'label' => "Monica, open on Lucie Martin’s page: two important dates, her relationships, the latest note about her and three gift ideas.",
+            'vault' => "Family",
+            'nav' => ["Dashboard", "People", "Reminders", "Journal", "Gift ideas", "Settings"],
+            'vaultsLabel' => "Vaults",
+            'vaults' => ["Family", "Friends", "Book club"],
+            'search' => "Search people",
+            'add' => "Add a person",
+            'meta' => "Théo’s mother · Lyon · known for 31 years",
+            'tabs' => ["Overview", "Timeline", "Notes", "Gift ideas"],
+            'datesTitle' => "Important dates",
+            'dates' => [
+                ['title' => "Birthday", 'date' => "14 March 1957", 'when' => "in five months"],
+                ['title' => "Wedding anniversary", 'date' => "2 June 1984", 'when' => "in eight months"],
             ],
-            [
-                'q' => "Do I need to be technical to use it?",
-                'a' => "Not for the hosted version — you create an account and start. Self-hosting asks for a little more: Docker, or a PHP environment you are comfortable maintaining. The documentation walks through both.",
+            'relationshipsTitle' => "Relationships",
+            'relationships' => [
+                ["Lucie is ", "Théo’s", " mother."],
+                ["Lucie is ", "Bernard’s", " wife."],
             ],
-            [
-                'q' => "Who can see my data on the hosted version?",
-                'a' => "Nobody browses it. Support staff can only access an account with your explicit permission, for a specific problem. Your data is never sold, never used for advertising, and never used to train a model.",
+            'noteTitle' => "Latest note",
+            'note' => "Started pottery in September. Very proud of a bowl. Do not mention the kiln incident.",
+            'noteWhen' => "Six days ago",
+            'giftsTitle' => "Gift ideas",
+            'gifts' => ["Glaze set", "Train tickets to Paris", "A better kiln"],
+        ],
+
+        'awards' => [
+            'label' => "Strangers on the internet approve",
+            'github' => "GitHub Trending: #1 Repository of the Day",
+            'hn' => "Hacker News: #65 Most Voted Links of All Time",
+            'ph' => "Product Hunt: #4 Product of the Day",
+            'trendshift' => "Trendshift PHP: #20 Repository of the Year",
+        ],
+
+        'agents' => [
+            'eyebrow' => "MCP server and REST API",
+            'title' => "Use Monica as your backend for your agents.",
+            'body' => "We are super developer friendly.",
+            'mcp' => "Explore MCP doc",
+            'api' => "Explore API",
+            'prompt' => "What should I get Priya for her birthday?",
+            'answer' => "Priya’s birthday is 3 November, in 23 days.",
+            'saved' => "You saved two ideas in July:",
+            'ideas' => ["The ceramics class she mentioned", "Anything but another candle"],
+            'ask' => "Log that I had lunch with Sam today.",
+            'used' => "Used Monica",
+            'reply' => "Done. Added “Lunch” to Sam’s timeline for 11 October.",
+        ],
+
+        'features' => [
+            'title' => "Your memory, with backup.",
+            'lede' => "Everything worth knowing about someone, in one calm place.",
+            'reminders' => [
+                'title' => "Birthdays, before they’re belated.",
+                'body' => "Reminders for dates, calls and promises. By email, on time.",
+                'rows' => [
+                    ['name' => "Priya Raman", 'what' => "birthday", 'when' => "in 23 days"],
+                    ['name' => "Mum", 'what' => "call back about Christmas", 'when' => "tomorrow"],
+                    ['name' => "Sam Okafor", 'what' => "return the drill", 'when' => "six weeks overdue"],
+                ],
             ],
-            [
-                'q' => "Can I get my data out?",
-                'a' => "At any time, in full, including the custom structures you built. Export is a feature, not a retention obstacle course.",
+            'relationships' => [
+                'title' => "Who’s who, and whose.",
+                'body' => "Family trees, exes, godparents. Written as sentences.",
+                'sentences' => [
+                    ["Lucie is ", "Théo’s", " mother."],
+                    ["Théo is ", "Priya’s", " partner."],
+                    ["Sam is ", "everyone’s", " problem."],
+                ],
             ],
-            [
-                'q' => "Can I import contacts I already have?",
-                'a' => "Yes — vCard and CSV files. Duplicates are shown to you before anything is merged, because merging the wrong two people is a memorable way to ruin an afternoon.",
+            'gifts' => [
+                'title' => "Gift ideas, saved in July.",
+                'body' => "So December is not a panic.",
+                'ideas' => ["Ceramics class", "That book about moss"],
+                'crossed' => "Another candle",
             ],
-            [
-                'q' => "What happens to my account when v3 arrives?",
-                'a' => "The goal is a clear migration path for existing accounts, including contacts, notes, reminders, and other essential information. Nothing is deleted and nothing is forced on you overnight.",
-                'link' => ['label' => "Read about Monica v3", 'page' => 'v3'],
+            'notes' => [
+                'title' => "Notes you can find again.",
+                'body' => "Search every note, on every person.",
+                'query' => "allergic",
+                'who' => "Sam:",
+                'match' => "allergic to cats. Has three cats.",
             ],
-            [
-                'q' => "Is there a mobile application?",
-                'a' => "The web application works on a phone today. Native iOS and Android applications come after v3 — real applications, not a website in a shell.",
+            'details' => [
+                'title' => "Remembers the dog’s name.",
+                'body' => "Pets, kids, jobs, food preferences. The details that matter.",
+                'fields' => [
+                    ['label' => "Dog", 'value' => "Biscuit"],
+                    ['label' => "Coffee", 'value' => "Oat flat white"],
+                ],
             ],
-            [
-                'q' => "Does Monica do anything with AI?",
-                'a' => "Monica v3 exposes an MCP server, so you can point your own assistant at your own data if you want to. Monica does not send your relationships to a model on its own initiative.",
+            'vaults' => [
+                'title' => "A vault for every circle.",
+                'body' => "Family, friends, work. Kept apart, shared with whoever you invite.",
+                'vaults' => [
+                    ['name' => "Family", 'count' => "24 people"],
+                    ['name' => "Friends", 'count' => "61 people"],
+                    ['name' => "Book club", 'count' => "7 people"],
+                ],
+            ],
+            'journal' => [
+                'title' => "A journal with no audience.",
+                'body' => "Write about your day. Nobody will like it, and that’s the point.",
             ],
         ],
-    ],
 
-    'plans' => [
-        'title' => "Use our server. Or yours.",
-        'hosted' => [
-            'title' => "Monica hosted",
-            'body' => "For people who want Monica without operating a server.",
+        'open' => [
+            'title' => "Open by design.",
+            'lede' => "Your friends are not a business model.",
             'items' => [
-                "automatic updates;",
-                "managed backups;",
-                "no infrastructure work;",
-                "supports development of the open-source project.",
+                ['title' => "Open source", 'body' => "Every line is on GitHub. Read it, fork it, audit it."],
+                ['title' => "Self-hostable", 'body' => "One Docker command. Your server, your rules."],
+                ['title' => "No ads, no trackers", 'body' => "Nothing to sell, nobody to sell it to."],
+                ['title' => "Leave any time", 'body' => "Export everything, whenever you like. No hostage situations."],
             ],
-            'cta' => "Create an account",
         ],
-        'selfHosted' => [
-            'title' => "Self-host Monica",
-            'body' => "For people who enjoy owning their infrastructure, or at least claim to.",
+
+        // The prices themselves are not here: the Cloud card reads them from
+        // `pricing.hosted`, so the homepage and the pricing page cannot quote
+        // two different numbers.
+        'pricing' => [
+            'badge' => "No ads",
+            'badgeText' => "Your data is portable on every plan.",
+            'title' => "Pay how you like. Or don’t.",
+            'lede' => "Host it yourself for free, or let Monica run it for you.",
+            'selfHost' => [
+                'title' => "Self-host",
+                'price' => "Free",
+                'per' => "forever",
+                'items' => ["Every feature, no limits", "One-command Docker deploy", "Full control of your data", "You are the IT department"],
+                'cta' => "Read the docs",
+            ],
+            'cloud' => [
+                'title' => "Cloud",
+                'billingLabel' => "Billing period",
+                'monthly' => "Monthly",
+                'yearly' => "Yearly",
+                'perMonth' => "per month",
+                'perYear' => "per year",
+                'yearlyNote' => "Two months free",
+                'items' => ["Managed hosting", "Automatic updates and backups", "Unlimited people and vaults", "Cancel any time"],
+                'cta' => "Start using Monica",
+            ],
+        ],
+
+        'faq' => [
+            'title' => "Questions, answered.",
             'items' => [
-                "complete control;",
-                "open-source code;",
-                "no subscription to Monica;",
-                "Docker and manual installation options.",
+                ['q' => "Is this a sales CRM?", 'a' => "No. Nobody here has a pipeline. Monica is for family, friends and the people you mean to keep in touch with."],
+                ['q' => "Is self-hosting really free?", 'a' => "Yes. Every feature, no limits, licensed AGPL-3.0. You bring the server."],
+                ['q' => "Who can see my data?", 'a' => "You, and whoever you invite to a vault. No ads, no trackers, no data resale. Self-host and it never leaves your server."],
+                ['q' => "Can I move between cloud and self-hosted?", 'a' => "Yes, both ways. Export everything, import it on the other side."],
+                ['q' => "Does it work with my AI agent?", 'a' => "If it speaks MCP, yes. There is also a full REST API for everything else."],
             ],
-            'cta' => "Self-host Monica",
         ],
     ],
 
-    'finalCta' => [
-        'title' => "Be a better friend. With administrative support.",
-        'body' => "Remember important details. Follow up when it matters. Keep your relationships out of advertising databases.",
-        'primaryCta' => "Start using Monica",
-        'secondaryCta' => "View Monica v3",
-        'note' => "Open source · Self-hostable · No credit card required",
-    ],
-
-    /** The /pricing page. Prices are the design's; change them here, once per locale. */
     'pricing' => [
         'eyebrow' => "Simple pricing",
         'title' => "One hosted plan. No relationship-based pricing.",
@@ -675,14 +654,6 @@ return [
             ],
         ],
 
-        'finalCta' => [
-            'title' => "Your memory has done enough unpaid work.",
-            'body' => "Use the hosted version and let us manage the infrastructure, or install Monica on your own server.",
-            'body2' => "Either way, your contacts remain people, not leads.",
-            'primaryCta' => "Start using Monica",
-            'secondaryCta' => "Self-host Monica",
-            'note' => "One simple hosted plan · Free to self-host · Open source",
-        ],
     ],
 
     'personalCrm' => [
@@ -909,17 +880,27 @@ return [
     ],
 
     'footer' => [
-        'tagline' => "A private, open-source personal CRM for remembering the people who matter.",
+        // The closing line ends every page, so it is two short sentences rather
+        // than a pitch. Each one is its own line.
+        'closing' => ["Monica remembers.", "You go outside."],
+        'start' => "Start using Monica",
+        'github' => "View on GitHub",
+
+        'tagline' => "Open source personal CRM. AGPL-3.0.",
         'productLabel' => "Product",
-        'projectLabel' => "Project",
-        'github' => "GitHub",
+        'developersLabel' => "Developers",
+        'companyLabel' => "Company",
+        'personalCrm' => "What is a personal CRM?",
+        'changelog' => "Changelog",
+        'mcp' => "MCP",
+        'api' => "API",
+        'contactSales' => "Contact sales",
         'privacy' => "Privacy",
         'terms' => "Terms",
         'team' => "Team",
-        'personalCrm' => "What is a personal CRM?",
-        'copyright' => "© :year Monica",
-        'since' => "Open source since 2017",
-        'ownership' => "Your data stays yours.",
+
+        'art' => "A meadow by a lake, with pandas lounging in the grass and napping in the trees",
+        'copyright' => "© :year Monica. No pandas were tracked.",
         'languageLabel' => "Change language",
     ],
 

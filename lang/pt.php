@@ -119,172 +119,50 @@ return [
         'blog' => "Blog",
         'docs' => "Documentação",
         'signIn' => "Entrar",
-        'getStarted' => "Começar",
+        'getStarted' => "Criar conta",
         'stars' => ":count estrelas",
-    ],
 
-    'hero' => [
-        'eyebrow' => "O CRM pessoal de código aberto",
-        'title' => "Lembre-se das pessoas com quem você se importa.",
-        'lede' => "A Monica ajuda você a acompanhar as pessoas da sua vida: as coisas que elas contam, os momentos que vocês dividem e as promessas que você definitivamente pretendia lembrar.",
-        'lede2' => "Privada por concepção. De código aberto. Com hospedagem própria. Sem anúncios, sem revenda de dados, sem notificações constrangedoras de “engajamento”.",
-        'primaryCta' => "Começar a usar a Monica",
-        'githubCta' => "Ver no GitHub · :count estrelas",
-        'note' => "Hospedagem própria gratuita · Versão hospedada disponível",
-    ],
-
-    'proof' => [
-        'starsLabel' => "Estrelas no GitHub",
-        'since' => "2017",
-        'sinceLabel' => "De código aberto desde",
-        'featured' => "Repositório da semana",
-        'featuredLabel' => "Destacado várias vezes",
-        'launch' => "Product Hunt",
-        'launchLabel' => "Melhor lançamento",
-        'aside' => "Pelo visto, bastante gente também esquece aniversários.",
-    ],
-
-    'notALead' => [
-        'title' => "Um CRM, mas ninguém aqui é um lead.",
-        'body' => "Os CRMs tradicionais ajudam empresas a lembrar de clientes. A Monica ajuda você a lembrar de amigos, familiares, colegas, vizinhos e de todo mundo que importa.",
-        'aside' => "Ser atencioso fica mais fácil quando a sua memória tem backup.",
-        'listTitle' => "Guarde os detalhes que você esqueceria de outro jeito:",
-        'items' => [
-            "o que está acontecendo na vida delas;",
-            "como vocês se conhecem;",
-            "datas importantes;",
-            "conversas anteriores;",
-            "presentes, dívidas, promessas e ideias;",
-            "lembretes para voltar a falar.",
-        ],
-    ],
-
-    'showcase' => [
-        'title' => "Tudo sobre alguém. Em um só lugar.",
-        'aside' => "Pessoas são complicadas. As fichas delas têm o direito de ser um pouco complicadas também.",
-        // Uma tela real do produto, não uma maquete: é isto que uma ficha de
-        // contato guarda.
-        'card' => [
-            'name' => "Élise Aubert",
-            'meta' => "Irmã · Lyon · Falaram hoje",
-            'badge' => "Família",
-            'birthdayLabel' => "Aniversário",
-            'birthday' => "18 de março · faz 39 anos em 7 meses",
-            'metLabel' => "Como vocês se conheceram",
-            'met' => "Já nasceu assim",
-            'relationshipsLabel' => "Relações",
-            'relationships' => [
-                ['initials' => "MC", 'label' => "Élise é companheira de Marc", 'meta' => "10 anos"],
-                ['initials' => "LA", 'label' => "Élise é mãe de Léa", 'meta' => "Desde 2019"],
-            ],
-            'recentlyLabel' => "Recentemente",
-            'timeline' => [
+        // The features menu: three columns of what Monica does, and a card
+        // pointing at templates, the thing a new reader most often misses.
+        'menu' => [
+            'groups' => [
                 [
-                    'nature' => 'meal',
-                    'title' => "Almoço no Le Petit Sud",
-                    'meta' => "Hoje · ela está pensando em voltar para Lyon",
+                    'title' => "Lembrar",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "Os detalhes", 'body' => "Tudo sobre alguém, em um só lugar."],
+                        ['icon' => 'reminder', 'title' => "Lembretes", 'body' => "Aniversários, retornos, repetições."],
+                        ['icon' => 'timeline', 'title' => "Linha do tempo", 'body' => "Registre uma vez. Vale para todos que estavam lá."],
+                    ],
                 ],
                 [
-                    'nature' => 'call',
-                    'title' => "Ligou para falar do Georges",
-                    'meta' => "2 de agosto · 22 minutos",
+                    'title' => "Organizar",
+                    'items' => [
+                        ['icon' => 'relationship', 'title' => "Relações", 'body' => "Árvores genealógicas, e quem conhece quem."],
+                        ['icon' => 'vault', 'title' => "Cofres", 'body' => "Pessoal e trabalho, cada um no seu lugar."],
+                        ['icon' => 'link', 'title' => "Compartilhamento", 'body' => "Compartilhe algumas seções. Revogue quando quiser."],
+                    ],
+                ],
+                [
+                    'title' => "Conectar e proteger",
+                    'items' => [
+                        ['icon' => 'calendar', 'title' => "Sincronização e agendas", 'body' => "Catálogos de endereços, agendas, vCards."],
+                        ['icon' => 'key', 'title' => "Assistentes e API", 'body' => "O seu agente pode consultar pessoas."],
+                        ['icon' => 'lock', 'title' => "Privacidade", 'body' => "Chaves de acesso, 2FA, campos privados."],
+                    ],
                 ],
             ],
-            'reminder' => "Perguntar como foi a entrevista",
-            'reminderMeta' => "Lembrete · amanhã",
-        ],
-        'features' => [
-            [
-                'icon' => 'relationship',
-                'title' => "Relações",
-                'body' => "Entenda famílias, casais, amizades, colegas de trabalho e as ligações entre eles.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Notas e entradas de diário",
-                'body' => "Lembre do que aconteceu sem rolar seis aplicativos de mensagem.",
-            ],
-            [
-                'icon' => 'reminder',
-                'title' => "Lembretes",
-                'body' => "Ligar para a sua mãe. Parabenizar um amigo. Perguntar como foi a entrevista. A Monica lembra; o mérito continua sendo seu.",
-            ],
-            [
-                'icon' => 'activity',
-                'title' => "Atividades",
-                'body' => "Mantenha um histórico de refeições, ligações, viagens, eventos e dos pequenos momentos que formam uma relação.",
-            ],
-            [
-                'icon' => 'panel',
-                'title' => "Informações personalizadas",
-                'body' => "Guarde os detalhes que importam para você, não os campos que um CRM de vendas acha que deveriam importar.",
+            'start' => [
+                'label' => "Comece aqui",
+                'title' => "Seus contatos, do seu jeito",
+                'body' => "Crie os seus próprios modelos. Abas, seções, campos, opções.",
+                'rows' => [
+                    ['label' => "Amigo", 'detail' => "Presentes, animais"],
+                    ['label' => "Família", 'detail' => "Árvore genealógica"],
+                    ['label' => "Trabalho", 'detail' => "Empresa, cargo"],
+                ],
+                'cta' => "Ver como funcionam os modelos",
             ],
         ],
-    ],
-
-    'notSocial' => [
-        'title' => "Deliberadamente não é uma rede social.",
-        'body' => "A Monica não recomenda amizades, não classifica relações, não insere publicidade e não conta para ninguém que você visitou o perfil dela.",
-        'body2' => "É um lugar privado para as suas memórias e as suas relações.",
-        'quote' => "Sem feed. Sem seguidores. Sem marcas fingindo ter personalidade.",
-    ],
-
-    'openSource' => [
-        'title' => "Seu quer dizer seu.",
-        'body' => "A Monica é de código aberto desde o começo. Isso não vai mudar.",
-        'aside' => "Confiança é útil. Código-fonte é melhor.",
-        'sourceCta' => "Explorar o código-fonte",
-        'hostingCta' => "Ler o guia de hospedagem própria",
-        'v3Cta' => "Ver tudo o que vem na Monica v3",
-        'listTitle' => "Com a Monica v3:",
-        'items' => [
-            "o projeto continua totalmente de código aberto;",
-            "você pode rodar tudo no seu próprio servidor;",
-            "o produto hospedado usa o mesmo aplicativo por baixo;",
-            "os seus dados podem ser exportados;",
-            "o código pode ser inspecionado, modificado e bifurcado.",
-        ],
-    ],
-
-    'v3' => [
-        'title' => "A Monica está crescendo. Quase toda.",
-        'body' => "A Monica v3 está sendo reconstruída do zero para a próxima década.",
-        'body2' => "Vai ser mais flexível, mais extensível e muito melhor no celular, preservando os princípios de privacidade e de propriedade que tornaram a Monica útil desde o início.",
-        'listLabel' => "Chegando na v3",
-        'features' => [
-            [
-                'icon' => 'panel',
-                'title' => "Fichas que você desenha",
-                'body' => "Escolha as seções e os campos que fazem sentido em uma ficha, em vez de aceitar a nossa opinião para sempre.",
-            ],
-            [
-                'icon' => 'relationship',
-                'title' => "Mais do que contatos",
-                'body' => "Conecte pessoas a animais de estimação, empresas, casas, veículos, projetos e a qualquer outra coisa relevante na vida delas.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Um diário conectado a tudo",
-                'body' => "Registre um momento uma vez só e conecte-o às pessoas, fichas, datas e lembretes envolvidos.",
-            ],
-            [
-                'icon' => 'tag',
-                'title' => "Estruturas feitas pela comunidade",
-                'body' => "Instale estruturas úteis criadas por outras pessoas que usam a Monica e depois modifique a sua cópia à vontade.",
-            ],
-            [
-                'icon' => 'code',
-                'title' => "Uma API completa e um servidor MCP",
-                'body' => "Tudo o que existe na interface também deve existir de forma programável.",
-            ],
-            [
-                'icon' => 'phone',
-                'title' => "Uma experiência de verdade no celular",
-                'body' => "Primeiro um aplicativo web responsivo e, em seguida, aplicativos nativos para iOS e Android.",
-            ],
-        ],
-        'cta' => "Conhecer a Monica v3",
-        'note' => "Prevista para antes do fim de 2026 · O acesso beta vai abrir aos poucos",
     ],
 
     /** A página /v3. O bloco `v3` acima é a seção da home que leva até ela. */
@@ -370,7 +248,7 @@ return [
                     'body' => "Navegação por teclado, leitores de tela, tradução e layouts responsivos são requisitos do produto, não trabalho adiado para depois.",
                 ],
                 [
-                    'icon' => 'arrowRight',
+                    'icon' => 'arrow-right',
                     'title' => "Quem já usa não fica para trás",
                     'body' => "O objetivo é oferecer um caminho de migração claro para as contas Monica já existentes, incluindo contatos, notas, lembretes e outras informações essenciais.",
                 ],
@@ -385,88 +263,189 @@ return [
         ],
     ],
 
-    'founder' => [
-        'title' => "Feita porque a minha memória é ruim.",
-        'body' => "Criei a Monica porque eu vivia esquecendo detalhes sobre pessoas com quem eu me importava de verdade.",
-        'body2' => "Não porque fossem pouco importantes. Porque a vida é corrida, a memória não é confiável e, pelo visto, o cérebro humano não veio com busca.",
-        'body3' => "A Monica começou como um projeto pessoal em 2017. De lá para cá virou um dos projetos de CRM pessoal de código aberto mais acompanhados, apoiado e melhorado por pessoas do mundo inteiro.",
-        'signature' => "— Régis, fundador e pessoa que ainda esquece as coisas de vez em quando",
-    ],
-
-    'faq' => [
-        'title' => "Perguntas que as pessoas realmente fazem.",
-        'items' => [
-            [
-                'q' => "A Monica é mesmo gratuita?",
-                'a' => "O código é livre e sempre será. Você pode rodá-lo no seu próprio servidor sem pagar nada. A versão hospedada é uma assinatura paga, porque servidores e backups não são de graça, e é ela que financia o trabalho no projeto de código aberto.",
-            ],
-            [
-                'q' => "Preciso entender de tecnologia para usar?",
-                'a' => "Na versão hospedada, não: você cria uma conta e começa. A hospedagem própria pede um pouco mais: Docker, ou um ambiente PHP que você se sinta confortável em manter. A documentação explica os dois caminhos.",
-            ],
-            [
-                'q' => "Quem pode ver os meus dados na versão hospedada?",
-                'a' => "Ninguém fica olhando. O suporte só acessa uma conta com a sua permissão explícita e para um problema específico. Os seus dados nunca são vendidos, nunca são usados em publicidade e nunca são usados para treinar um modelo.",
-            ],
-            [
-                'q' => "Consigo tirar os meus dados de lá?",
-                'a' => "A qualquer momento, por completo, incluindo as estruturas personalizadas que você criou. Exportar é um recurso, não uma corrida de obstáculos para segurar você.",
-            ],
-            [
-                'q' => "Posso importar contatos que eu já tenho?",
-                'a' => "Pode, em arquivos vCard e CSV. As duplicatas são mostradas para você antes de qualquer fusão, porque juntar as duas pessoas erradas é um jeito memorável de estragar uma tarde.",
-            ],
-            [
-                'q' => "O que acontece com a minha conta quando a v3 chegar?",
-                'a' => "O objetivo é um caminho de migração claro para as contas existentes, incluindo contatos, notas, lembretes e outras informações essenciais. Nada é apagado e nada é imposto a você de um dia para o outro.",
-                'link' => ['label' => "Ler sobre a Monica v3", 'page' => 'v3'],
-            ],
-            [
-                'q' => "Existe aplicativo para celular?",
-                'a' => "O aplicativo web já funciona no celular hoje. Os aplicativos nativos para iOS e Android vêm depois da v3: aplicativos de verdade, não um site dentro de uma casca.",
-            ],
-            [
-                'q' => "A Monica faz alguma coisa com IA?",
-                'a' => "A Monica v3 expõe um servidor MCP, então você pode apontar o seu próprio assistente para os seus próprios dados, se quiser. A Monica não envia as suas relações para um modelo por conta própria.",
-            ],
-        ],
-    ],
-
-    'plans' => [
-        'title' => "Use o nosso servidor. Ou o seu.",
-        'hosted' => [
-            'title' => "Monica hospedada",
-            'body' => "Para quem quer a Monica sem administrar um servidor.",
-            'items' => [
-                "atualizações automáticas;",
-                "backups gerenciados;",
-                "nenhum trabalho de infraestrutura;",
-                "apoia o desenvolvimento do projeto de código aberto.",
-            ],
-            'cta' => "Criar uma conta",
-        ],
-        'selfHosted' => [
-            'title' => "Hospede a Monica você mesmo",
-            'body' => "Para quem gosta de ser dono da própria infraestrutura, ou pelo menos diz que gosta.",
-            'items' => [
-                "controle total;",
-                "código aberto;",
-                "nenhuma assinatura da Monica;",
-                "instalação por Docker ou manual.",
-            ],
-            'cta' => "Hospedar a Monica",
-        ],
-    ],
-
-    'finalCta' => [
-        'title' => "Seja um amigo melhor. Com apoio administrativo.",
-        'body' => "Lembre dos detalhes importantes. Retome o contato na hora certa. Mantenha as suas relações fora dos bancos de dados de publicidade.",
-        'primaryCta' => "Começar a usar a Monica",
-        'secondaryCta' => "Ver a Monica v3",
-        'note' => "Código aberto · Hospedagem própria · Sem cartão de crédito",
-    ],
-
     /** A página /precos. Os preços vêm do design; mude-os aqui, uma vez por locale. */
+    // ---------------------------------------------------------------- home
+    //
+    // The homepage, section by section, in page order. The people in it
+    // (Lucie, Théo, Priya, Sam) are demonstration data and keep their names in
+    // every language; what is said about them is translated.
+    //
+    // A sentence with one word in bold is written as three pieces, before, bold
+    // and after, so a translation can move the bold word to wherever its
+    // grammar puts it without anyone writing markup in a copy file.
+    'home' => [
+        'hero' => [
+            'pill' => "Mãe, Théo, Priya, Sam e o cachorro",
+            'title' => "Lembre-se das pessoas com quem você se importa.",
+            'subtitle' => "Somos um CRM pessoal de código aberto.",
+            'lede' => "Privada por concepção. De código aberto. Com hospedagem própria. Sem anúncios, sem revenda de dados, sem notificações constrangedoras de “engajamento”.",
+            'start' => "Começar a usar a Monica",
+            'github' => "Ver no GitHub",
+            'sales' => "Falar com vendas",
+            'salesJoke' => "Brincadeira.",
+            'salesTruth' => "Não temos equipe de vendas.",
+        ],
+
+        'product' => [
+            // Read out in place of the picture, which is drawn in markup but is
+            // a picture of the product rather than a working copy of it.
+            'label' => "A Monica aberta na página de Lucie Martin: duas datas importantes, as relações dela, a última nota sobre ela e três ideias de presente.",
+            'vault' => "Família",
+            'nav' => ["Painel", "Pessoas", "Lembretes", "Diário", "Ideias de presente", "Configurações"],
+            'vaultsLabel' => "Cofres",
+            'vaults' => ["Família", "Amigos", "Clube do livro"],
+            'search' => "Buscar pessoas",
+            'add' => "Adicionar pessoa",
+            'meta' => "Mãe de Théo · Lyon · conhecida há 31 anos",
+            'tabs' => ["Visão geral", "Linha do tempo", "Notas", "Ideias de presente"],
+            'datesTitle' => "Datas importantes",
+            'dates' => [
+                ['title' => "Aniversário", 'date' => "14 de março de 1957", 'when' => "daqui a cinco meses"],
+                ['title' => "Aniversário de casamento", 'date' => "2 de junho de 1984", 'when' => "daqui a oito meses"],
+            ],
+            'relationshipsTitle' => "Relações",
+            'relationships' => [
+                ["Lucie é a mãe de ", "Théo", "."],
+                ["Lucie é a esposa de ", "Bernard", "."],
+            ],
+            'noteTitle' => "Última nota",
+            'note' => "Começou a fazer cerâmica em setembro. Muito orgulhosa de uma tigela. Não mencione o incidente do forno.",
+            'noteWhen' => "Há seis dias",
+            'giftsTitle' => "Ideias de presente",
+            'gifts' => ["Kit de esmaltes", "Passagens de trem para Paris", "Um forno melhor"],
+        ],
+
+        'awards' => [
+            'label' => "Desconhecidos na internet aprovam",
+            'github' => "GitHub Trending: repositório nº 1 do dia",
+            'hn' => "Hacker News: nº 65 entre os links mais votados de todos os tempos",
+            'ph' => "Product Hunt: produto nº 4 do dia",
+            'trendshift' => "Trendshift PHP: repositório nº 20 do ano",
+        ],
+
+        'agents' => [
+            'eyebrow' => "Servidor MCP e REST API",
+            'title' => "Use a Monica como backend para os seus agentes.",
+            'body' => "Somos muito amigáveis com quem desenvolve.",
+            'mcp' => "Ver a doc do MCP",
+            'api' => "Ver a API",
+            'prompt' => "O que eu dou para a Priya de aniversário?",
+            'answer' => "O aniversário da Priya é em 3 de novembro, daqui a 23 dias.",
+            'saved' => "Você salvou duas ideias em julho:",
+            'ideas' => ["A aula de cerâmica que ela comentou", "Qualquer coisa, menos outra vela"],
+            'ask' => "Registre que almocei com o Sam hoje.",
+            'used' => "Usou a Monica",
+            'reply' => "Pronto. Adicionei “Almoço” à linha do tempo do Sam em 11 de outubro.",
+        ],
+
+        'features' => [
+            'title' => "A sua memória, com backup.",
+            'lede' => "Tudo o que vale a pena saber sobre alguém, em um só lugar tranquilo.",
+            'reminders' => [
+                'title' => "Parabéns no dia, não no dia seguinte.",
+                'body' => "Lembretes de datas, ligações e promessas. Por e-mail, na hora certa.",
+                'rows' => [
+                    ['name' => "Priya Raman", 'what' => "aniversário", 'when' => "daqui a 23 dias"],
+                    ['name' => "Mãe", 'what' => "retornar sobre o Natal", 'when' => "amanhã"],
+                    ['name' => "Sam Okafor", 'what' => "devolver a furadeira", 'when' => "seis semanas de atraso"],
+                ],
+            ],
+            'relationships' => [
+                'title' => "Quem é quem, e de quem.",
+                'body' => "Árvores genealógicas, ex, padrinhos. Escritos como frases.",
+                'sentences' => [
+                    ["Lucie é a mãe de ", "Théo", "."],
+                    ["Théo é o companheiro de ", "Priya", "."],
+                    ["Sam é problema de ", "todo mundo", "."],
+                ],
+            ],
+            'gifts' => [
+                'title' => "Ideias de presente, salvas em julho.",
+                'body' => "Para dezembro não virar pânico.",
+                'ideas' => ["Aula de cerâmica", "Aquele livro sobre musgo"],
+                'crossed' => "Outra vela",
+            ],
+            'notes' => [
+                'title' => "Notas que você encontra de novo.",
+                'body' => "Busque em todas as notas, de todas as pessoas.",
+                'query' => "alérgico",
+                'who' => "Sam:",
+                'match' => "alérgico a gatos. Tem três gatos.",
+            ],
+            'details' => [
+                'title' => "Lembra o nome do cachorro.",
+                'body' => "Animais, filhos, trabalho, preferências alimentares. Os detalhes que importam.",
+                'fields' => [
+                    ['label' => "Cachorro", 'value' => "Biscoito"],
+                    ['label' => "Café", 'value' => "Flat white com leite de aveia"],
+                ],
+            ],
+            'vaults' => [
+                'title' => "Um cofre para cada círculo.",
+                'body' => "Família, amigos, trabalho. Separados, e compartilhados com quem você convidar.",
+                'vaults' => [
+                    ['name' => "Família", 'count' => "24 pessoas"],
+                    ['name' => "Amigos", 'count' => "61 pessoas"],
+                    ['name' => "Clube do livro", 'count' => "7 pessoas"],
+                ],
+            ],
+            'journal' => [
+                'title' => "Um diário sem plateia.",
+                'body' => "Escreva sobre o seu dia. Ninguém vai curtir, e a graça é justamente essa.",
+            ],
+        ],
+
+        'open' => [
+            'title' => "Aberta por concepção.",
+            'lede' => "Os seus amigos não são um modelo de negócio.",
+            'items' => [
+                ['title' => "Código aberto", 'body' => "Cada linha está no GitHub. Leia, faça um fork, audite."],
+                ['title' => "Hospedagem própria", 'body' => "Um comando Docker. Seu servidor, suas regras."],
+                ['title' => "Sem anúncios nem rastreadores", 'body' => "Nada para vender, ninguém para quem vender."],
+                ['title' => "Saia quando quiser", 'body' => "Exporte tudo, quando quiser. Ninguém fica de refém."],
+            ],
+        ],
+
+        // The prices themselves are not here: the Cloud card reads them from
+        // `pricing.hosted`, so the homepage and the pricing page cannot quote
+        // two different numbers.
+        'pricing' => [
+            'badge' => "Sem anúncios",
+            'badgeText' => "Os seus dados são portáveis em todos os planos.",
+            'title' => "Pague como preferir. Ou não pague.",
+            'lede' => "Hospede você mesmo de graça, ou deixe a Monica cuidar disso para você.",
+            'selfHost' => [
+                'title' => "Hospedagem própria",
+                'price' => "Grátis",
+                'per' => "para sempre",
+                'items' => ["Todos os recursos, sem limites", "Deploy com Docker em um comando", "Controle total dos seus dados", "O suporte técnico é você"],
+                'cta' => "Ler a documentação",
+            ],
+            'cloud' => [
+                'title' => "Nuvem",
+                'billingLabel' => "Período de cobrança",
+                'monthly' => "Mensal",
+                'yearly' => "Anual",
+                'perMonth' => "por mês",
+                'perYear' => "por ano",
+                'yearlyNote' => "Dois meses grátis",
+                'items' => ["Hospedagem gerenciada", "Atualizações e backups automáticos", "Pessoas e cofres ilimitados", "Cancele quando quiser"],
+                'cta' => "Começar a usar a Monica",
+            ],
+        ],
+
+        'faq' => [
+            'title' => "Perguntas e respostas.",
+            'items' => [
+                ['q' => "É um CRM de vendas?", 'a' => "Não. Ninguém aqui tem funil de vendas. A Monica é para a família, os amigos e as pessoas com quem você quer manter contato."],
+                ['q' => "A hospedagem própria é mesmo gratuita?", 'a' => "Sim. Todos os recursos, sem limites, sob a licença AGPL-3.0. O servidor fica por sua conta."],
+                ['q' => "Quem pode ver os meus dados?", 'a' => "Você, e quem você convidar para um cofre. Sem anúncios, sem rastreadores, sem revenda de dados. Na hospedagem própria, eles nunca saem do seu servidor."],
+                ['q' => "Posso migrar entre a nuvem e a hospedagem própria?", 'a' => "Sim, nos dois sentidos. Exporte tudo e importe do outro lado."],
+                ['q' => "Funciona com o meu agente de IA?", 'a' => "Se ele fala MCP, sim. Também há uma REST API completa para todo o resto."],
+            ],
+        ],
+    ],
+
     'pricing' => [
         'eyebrow' => "Preços simples",
         'title' => "Um único plano hospedado. Sem cobrança por relação.",
@@ -654,14 +633,6 @@ return [
             ],
         ],
 
-        'finalCta' => [
-            'title' => "A sua memória já fez trabalho não remunerado demais.",
-            'body' => "Use a versão hospedada e deixe a infraestrutura com a gente, ou instale a Monica no seu próprio servidor.",
-            'body2' => "De um jeito ou de outro, os seus contatos continuam sendo pessoas, não leads.",
-            'primaryCta' => "Começar a usar a Monica",
-            'secondaryCta' => "Hospedar a Monica",
-            'note' => "Um plano hospedado simples · Hospedagem própria gratuita · Código aberto",
-        ],
     ],
 
     'personalCrm' => [
@@ -888,17 +859,27 @@ return [
     ],
 
     'footer' => [
-        'tagline' => "Um CRM pessoal privado e de código aberto para lembrar das pessoas que importam.",
+        // The closing line ends every page, so it is two short sentences rather
+        // than a pitch. Each one is its own line.
+        'closing' => ["A Monica lembra.", "Você vai viver."],
+        'start' => "Começar a usar a Monica",
+        'github' => "Ver no GitHub",
+
+        'tagline' => "CRM pessoal de código aberto. AGPL-3.0.",
         'productLabel' => "Produto",
-        'projectLabel' => "Projeto",
-        'github' => "GitHub",
+        'developersLabel' => "Desenvolvedores",
+        'companyLabel' => "Empresa",
+        'personalCrm' => "O que é um CRM pessoal?",
+        'changelog' => "Novidades",
+        'mcp' => "MCP",
+        'api' => "API",
+        'contactSales' => "Falar com vendas",
         'privacy' => "Privacidade",
         'terms' => "Termos",
         'team' => "Equipe",
-        'personalCrm' => "O que é um CRM pessoal?",
-        'copyright' => "© :year Monica",
-        'since' => "De código aberto desde 2017",
-        'ownership' => "Os seus dados continuam seus.",
+
+        'art' => "Um campo à beira de um lago, com pandas deitados na grama e cochilando nas árvores",
+        'copyright' => "© :year Monica. Nenhum panda foi rastreado.",
         'languageLabel' => "Mudar de idioma",
     ],
 

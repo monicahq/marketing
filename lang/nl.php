@@ -112,170 +112,50 @@ return [
         'blog' => "Blog",
         'docs' => "Documentatie",
         'signIn' => "Inloggen",
-        'getStarted' => "Aan de slag",
+        'getStarted' => "Aanmelden",
         'stars' => ":count sterren",
-    ],
 
-    'hero' => [
-        'eyebrow' => "De open source persoonlijke CRM",
-        'title' => "Onthoud de mensen die je dierbaar zijn.",
-        'lede' => "Monica helpt je bij te houden wat er speelt bij de mensen in je leven: wat ze je vertellen, de momenten die je deelt, en de beloftes die je echt van plan was te onthouden.",
-        'lede2' => "Privé van opzet. Open source. In eigen beheer te draaien. Geen advertenties, geen doorverkoop van gegevens, geen ongemakkelijke meldingen over “betrokkenheid”.",
-        'primaryCta' => "Begin met Monica",
-        'githubCta' => "Bekijk op GitHub · :count sterren",
-        'note' => "Gratis in eigen beheer · Gehoste versie beschikbaar",
-    ],
-
-    'proof' => [
-        'starsLabel' => "GitHub-sterren",
-        'since' => "2017",
-        'sinceLabel' => "Open source sinds",
-        'featured' => "Repository van de week",
-        'featuredLabel' => "Meermaals uitgelicht",
-        'launch' => "Product Hunt",
-        'launchLabel' => "Toplancering",
-        'aside' => "Blijkbaar vergeten nogal wat mensen verjaardagen.",
-    ],
-
-    'notALead' => [
-        'title' => "Een CRM, maar niemand is een lead.",
-        'body' => "Gewone CRM's helpen bedrijven hun klanten te onthouden. Monica helpt jou vrienden, familie, collega's, buren en iedereen die verder telt te onthouden.",
-        'aside' => "Attent zijn gaat makkelijker als je geheugen een back-up heeft.",
-        'listTitle' => "Bewaar de details die je anders zou vergeten:",
-        'items' => [
-            "wat er in hun leven speelt;",
-            "hoe jullie elkaar kennen;",
-            "belangrijke data;",
-            "eerdere gesprekken;",
-            "cadeaus, schulden, beloftes en ideeën;",
-            "herinneringen om weer contact op te nemen.",
-        ],
-    ],
-
-    'showcase' => [
-        'title' => "Alles over iemand. Op één plek.",
-        'aside' => "Mensen zijn ingewikkeld. Hun contactrecord mag dat ook een beetje zijn.",
-        'card' => [
-            'name' => "Élise Aubert",
-            'meta' => "Zus · Lyon · Vandaag gesproken",
-            'badge' => "Familie",
-            'birthdayLabel' => "Verjaardag",
-            'birthday' => "18 maart · wordt over 7 maanden 39",
-            'metLabel' => "Hoe je elkaar kent",
-            'met' => "Er gewoon in geboren",
-            'relationshipsLabel' => "Relaties",
-            'relationships' => [
-                ['initials' => "MC", 'label' => "Élise is de partner van Marc", 'meta' => "10 jaar"],
-                ['initials' => "LA", 'label' => "Élise is de ouder van Léa", 'meta' => "Sinds 2019"],
-            ],
-            'recentlyLabel' => "Recent",
-            'timeline' => [
+        // The features menu: three columns of what Monica does, and a card
+        // pointing at templates, the thing a new reader most often misses.
+        'menu' => [
+            'groups' => [
                 [
-                    'nature' => 'meal',
-                    'title' => "Geluncht bij Le Petit Sud",
-                    'meta' => "Vandaag · ze denkt erover terug naar Lyon te verhuizen",
+                    'title' => "Onthouden",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "De details", 'body' => "Alles over iemand, op één plek."],
+                        ['icon' => 'reminder', 'title' => "Herinneringen", 'body' => "Verjaardagen, opvolgen, terugkerend."],
+                        ['icon' => 'timeline', 'title' => "Tijdlijn", 'body' => "Eén keer vastleggen. Iedereen die erbij was, krijgt het."],
+                    ],
                 ],
                 [
-                    'nature' => 'call',
-                    'title' => "Gebeld over Georges",
-                    'meta' => "2 augustus · 22 minuten",
+                    'title' => "Ordenen",
+                    'items' => [
+                        ['icon' => 'relationship', 'title' => "Relaties", 'body' => "Stambomen, en wie wie kent."],
+                        ['icon' => 'vault', 'title' => "Kluizen", 'body' => "Privé en werk, netjes gescheiden."],
+                        ['icon' => 'link', 'title' => "Delen", 'body' => "Deel een paar secties. Altijd in te trekken."],
+                    ],
+                ],
+                [
+                    'title' => "Verbinden en beschermen",
+                    'items' => [
+                        ['icon' => 'calendar', 'title' => "Synchronisatie en agenda's", 'body' => "Adresboeken, agenda's, vCards."],
+                        ['icon' => 'key', 'title' => "Assistenten en API", 'body' => "Je agent kan mensen opzoeken."],
+                        ['icon' => 'lock', 'title' => "Privacy", 'body' => "Passkeys, 2FA, privévelden."],
+                    ],
                 ],
             ],
-            'reminder' => "Vragen hoe het sollicitatiegesprek ging",
-            'reminderMeta' => "Herinnering · morgen",
-        ],
-        'features' => [
-            [
-                'icon' => 'relationship',
-                'title' => "Relaties",
-                'body' => "Zie hoe families, partners, vriendschappen en collega's met elkaar samenhangen.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Notities en dagboeknotities",
-                'body' => "Onthoud wat er gebeurd is zonder door zes berichtenapps te scrollen.",
-            ],
-            [
-                'icon' => 'reminder',
-                'title' => "Herinneringen",
-                'body' => "Bel je moeder. Feliciteer je vriend. Vraag hoe het gesprek ging. Monica onthoudt het; jij krijgt nog steeds de eer.",
-            ],
-            [
-                'icon' => 'activity',
-                'title' => "Activiteiten",
-                'body' => "Houd een geschiedenis bij van etentjes, telefoontjes, reizen, gebeurtenissen en de kleine momenten waar een relatie uit bestaat.",
-            ],
-            [
-                'icon' => 'panel',
-                'title' => "Eigen informatie",
-                'body' => "Bewaar de details die voor jou tellen, niet de velden waarvan een sales-CRM vindt dat ze zouden moeten tellen.",
+            'start' => [
+                'label' => "Begin hier",
+                'title' => "Je contacten, op jouw manier",
+                'body' => "Ontwerp je eigen sjablonen. Tabbladen, secties, velden, keuzes.",
+                'rows' => [
+                    ['label' => "Vriend", 'detail' => "Cadeaus, huisdieren"],
+                    ['label' => "Familie", 'detail' => "Stamboom"],
+                    ['label' => "Werk", 'detail' => "Bedrijf, functie"],
+                ],
+                'cta' => "Zo werken sjablonen",
             ],
         ],
-    ],
-
-    'notSocial' => [
-        'title' => "Met opzet geen sociaal netwerk.",
-        'body' => "Monica beveelt geen vrienden aan, rangschikt geen relaties, plaatst geen advertenties en vertelt niemand dat je hun profiel hebt bekeken.",
-        'body2' => "Het is een privéplek voor je herinneringen en je relaties.",
-        'quote' => "Geen tijdlijn. Geen volgers. Geen merken die doen alsof ze een persoonlijkheid hebben.",
-    ],
-
-    'openSource' => [
-        'title' => "Van jou betekent van jou.",
-        'body' => "Monica is vanaf het begin open source. Daar verandert niets aan.",
-        'aside' => "Vertrouwen is handig. Broncode is beter.",
-        'sourceCta' => "Verken de broncode",
-        'hostingCta' => "Lees de handleiding voor eigen beheer",
-        'v3Cta' => "Bekijk alles wat in Monica v3 komt",
-        'listTitle' => "Met Monica v3:",
-        'items' => [
-            "blijft het project volledig open source;",
-            "kun je het op je eigen server draaien;",
-            "gebruikt het gehoste product dezelfde kernapplicatie;",
-            "kun je je gegevens exporteren;",
-            "kan de code worden ingezien, aangepast en geforkt.",
-        ],
-    ],
-
-    'v3' => [
-        'title' => "Monica wordt volwassen. Grotendeels.",
-        'body' => "Monica v3 wordt van de grond af herbouwd voor het komende decennium.",
-        'body2' => "Het wordt flexibeler, beter uitbreidbaar en veel prettiger op een telefoon, met behoud van de principes rond privacy en eigenaarschap die Monica in de eerste plaats nuttig maakten.",
-        'listLabel' => "Komt in v3",
-        'features' => [
-            [
-                'icon' => 'panel',
-                'title' => "Records die je zelf ontwerpt",
-                'body' => "Kies zelf welke secties en velden op een record thuishoren, in plaats van voor altijd onze mening te aanvaarden.",
-            ],
-            [
-                'icon' => 'relationship',
-                'title' => "Meer dan contacten",
-                'body' => "Verbind mensen met huisdieren, bedrijven, huizen, voertuigen, projecten en alles wat verder in hun leven speelt.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Een dagboek dat overal aan vastzit",
-                'body' => "Leg een moment één keer vast en koppel het aan de mensen, records, data en herinneringen die erbij horen.",
-            ],
-            [
-                'icon' => 'tag',
-                'title' => "Structuren uit de gemeenschap",
-                'body' => "Installeer bruikbare structuren van andere gebruikers van Monica en pas jouw kopie daarna vrij aan.",
-            ],
-            [
-                'icon' => 'code',
-                'title' => "Een complete API en MCP-server",
-                'body' => "Alles wat via de interface kan, zou ook programmatisch moeten kunnen.",
-            ],
-            [
-                'icon' => 'phone',
-                'title' => "Een fatsoenlijke mobiele ervaring",
-                'body' => "Eerst een responsieve webapplicatie, daarna native applicaties voor iOS en Android.",
-            ],
-        ],
-        'cta' => "Ontdek Monica v3",
-        'note' => "Verwacht voor het eind van 2026 · Bètatoegang gaat stapsgewijs open",
     ],
 
     /** De /v3-pagina. `v3` hierboven is de sectie op de startpagina die ernaar linkt. */
@@ -361,7 +241,7 @@ return [
                     'body' => "Toetsenbordnavigatie, schermlezers, vertalingen en responsieve schermindelingen zijn producteisen, geen werk dat tot later wordt uitgesteld.",
                 ],
                 [
-                    'icon' => 'arrowRight',
+                    'icon' => 'arrow-right',
                     'title' => "Bestaande gebruikers blijven niet achter",
                     'body' => "Het doel is een duidelijk migratiepad voor bestaande Monica-accounts, inclusief contacten, notities, herinneringen en andere essentiële informatie.",
                 ],
@@ -376,88 +256,189 @@ return [
         ],
     ],
 
-    'founder' => [
-        'title' => "Gebouwd omdat mijn geheugen slecht is.",
-        'body' => "Ik heb Monica gemaakt omdat ik steeds details vergat over mensen die me oprecht aan het hart gingen.",
-        'body2' => "Niet omdat ze onbelangrijk waren. Maar omdat het leven druk is, het geheugen onbetrouwbaar en het menselijk brein blijkbaar zonder zoekfunctie geleverd wordt.",
-        'body3' => "Monica begon in 2017 als een persoonlijk project. Inmiddels is het een van de best gevolgde open source projecten voor een persoonlijke CRM, ondersteund en verbeterd door bijdragers over de hele wereld.",
-        'signature' => "— Régis, oprichter en iemand die nog steeds af en toe dingen vergeet",
-    ],
-
-    'faq' => [
-        'title' => "Vragen die mensen echt stellen.",
-        'items' => [
-            [
-                'q' => "Is Monica echt gratis?",
-                'a' => "De code is gratis en blijft dat. Je kunt het zonder te betalen op je eigen server draaien. De gehoste versie is een betaald abonnement, want servers en back-ups zijn niet gratis, en het financiert het werk aan het open source project.",
-            ],
-            [
-                'q' => "Moet ik technisch zijn om het te gebruiken?",
-                'a' => "Voor de gehoste versie niet: je maakt een account aan en je begint. In eigen beheer draaien vraagt iets meer: Docker, of een PHP-omgeving die je zelf prettig onderhoudt. De documentatie loopt beide door.",
-            ],
-            [
-                'q' => "Wie kan mijn gegevens zien in de gehoste versie?",
-                'a' => "Niemand bladert erdoorheen. Support kan alleen bij een account met jouw uitdrukkelijke toestemming, voor een specifiek probleem. Je gegevens worden nooit verkocht, nooit voor advertenties gebruikt en nooit gebruikt om een model te trainen.",
-            ],
-            [
-                'q' => "Kan ik mijn gegevens er weer uit krijgen?",
-                'a' => "Op elk moment, volledig, inclusief de eigen structuren die je hebt gebouwd. Exporteren is een functie, geen hindernisbaan om je binnen te houden.",
-            ],
-            [
-                'q' => "Kan ik contacten importeren die ik al heb?",
-                'a' => "Ja, vCard- en CSV-bestanden. Dubbele contacten krijg je te zien voordat er iets wordt samengevoegd, want de verkeerde twee mensen samenvoegen is een gedenkwaardige manier om een middag te verpesten.",
-            ],
-            [
-                'q' => "Wat gebeurt er met mijn account als v3 komt?",
-                'a' => "Het doel is een duidelijk migratiepad voor bestaande accounts, inclusief contacten, notities, herinneringen en andere essentiële informatie. Er wordt niets verwijderd en je krijgt van de ene op de andere dag niets opgedrongen.",
-                'link' => ['label' => "Lees over Monica v3", 'page' => 'v3'],
-            ],
-            [
-                'q' => "Is er een mobiele applicatie?",
-                'a' => "De webapplicatie werkt vandaag al op een telefoon. Native applicaties voor iOS en Android komen na v3: echte applicaties, geen website in een omhulsel.",
-            ],
-            [
-                'q' => "Doet Monica iets met AI?",
-                'a' => "Monica v3 biedt een MCP-server, zodat je je eigen assistent op je eigen gegevens kunt richten als je dat wilt. Monica stuurt je relaties niet uit zichzelf naar een model.",
-            ],
-        ],
-    ],
-
-    'plans' => [
-        'title' => "Onze server. Of die van jou.",
-        'hosted' => [
-            'title' => "Monica gehost",
-            'body' => "Voor mensen die Monica willen zonder een server te beheren.",
-            'items' => [
-                "automatische updates;",
-                "beheerde back-ups;",
-                "geen werk aan infrastructuur;",
-                "steunt de ontwikkeling van het open source project.",
-            ],
-            'cta' => "Maak een account aan",
-        ],
-        'selfHosted' => [
-            'title' => "Monica in eigen beheer",
-            'body' => "Voor mensen die hun eigen infrastructuur graag bezitten, of dat in elk geval beweren.",
-            'items' => [
-                "volledige controle;",
-                "open source code;",
-                "geen abonnement bij Monica;",
-                "installatie via Docker of handmatig.",
-            ],
-            'cta' => "Draai Monica in eigen beheer",
-        ],
-    ],
-
-    'finalCta' => [
-        'title' => "Wees een betere vriend. Met administratieve ondersteuning.",
-        'body' => "Onthoud belangrijke details. Kom terug op wat telt. Houd je relaties uit advertentiedatabases.",
-        'primaryCta' => "Begin met Monica",
-        'secondaryCta' => "Bekijk Monica v3",
-        'note' => "Open source · In eigen beheer te draaien · Geen creditcard nodig",
-    ],
-
     /** De /prijzen-pagina. De prijzen komen uit het ontwerp; wijzig ze hier, één keer per taal. */
+    // ---------------------------------------------------------------- home
+    //
+    // The homepage, section by section, in page order. The people in it
+    // (Lucie, Théo, Priya, Sam) are demonstration data and keep their names in
+    // every language; what is said about them is translated.
+    //
+    // A sentence with one word in bold is written as three pieces, before, bold
+    // and after, so a translation can move the bold word to wherever its
+    // grammar puts it without anyone writing markup in a copy file.
+    'home' => [
+        'hero' => [
+            'pill' => "Mama, Théo, Priya, Sam en de hond",
+            'title' => "Onthoud de mensen die je dierbaar zijn.",
+            'subtitle' => "We zijn een open source persoonlijke CRM.",
+            'lede' => "Privé van opzet. Open source. In eigen beheer te draaien. Geen advertenties, geen doorverkoop van gegevens, geen ongemakkelijke meldingen over “betrokkenheid”.",
+            'start' => "Begin met Monica",
+            'github' => "Bekijk op GitHub",
+            'sales' => "Contact met sales",
+            'salesJoke' => "Grapje.",
+            'salesTruth' => "We hebben geen salesteam.",
+        ],
+
+        'product' => [
+            // Read out in place of the picture, which is drawn in markup but is
+            // a picture of the product rather than a working copy of it.
+            'label' => "Monica, geopend op de pagina van Lucie Martin: twee belangrijke data, haar relaties, de laatste notitie over haar en drie cadeau-ideeën.",
+            'vault' => "Familie",
+            'nav' => ["Dashboard", "Mensen", "Herinneringen", "Dagboek", "Cadeau-ideeën", "Instellingen"],
+            'vaultsLabel' => "Kluizen",
+            'vaults' => ["Familie", "Vrienden", "Leesclub"],
+            'search' => "Zoek mensen",
+            'add' => "Persoon toevoegen",
+            'meta' => "Moeder van Théo · Lyon · al 31 jaar bekend",
+            'tabs' => ["Overzicht", "Tijdlijn", "Notities", "Cadeau-ideeën"],
+            'datesTitle' => "Belangrijke data",
+            'dates' => [
+                ['title' => "Verjaardag", 'date' => "14 maart 1957", 'when' => "over vijf maanden"],
+                ['title' => "Trouwdag", 'date' => "2 juni 1984", 'when' => "over acht maanden"],
+            ],
+            'relationshipsTitle' => "Relaties",
+            'relationships' => [
+                ["Lucie is de moeder van ", "Théo", "."],
+                ["Lucie is de vrouw van ", "Bernard", "."],
+            ],
+            'noteTitle' => "Laatste notitie",
+            'note' => "Is in september begonnen met pottenbakken. Heel trots op een kom. Niet over het ovenincident beginnen.",
+            'noteWhen' => "Zes dagen geleden",
+            'giftsTitle' => "Cadeau-ideeën",
+            'gifts' => ["Glazuurset", "Treinkaartjes naar Parijs", "Een betere oven"],
+        ],
+
+        'awards' => [
+            'label' => "Vreemden op internet keuren het goed",
+            'github' => "GitHub Trending: #1 repository van de dag",
+            'hn' => "Hacker News: #65 meest gestemde links aller tijden",
+            'ph' => "Product Hunt: #4 product van de dag",
+            'trendshift' => "Trendshift PHP: #20 repository van het jaar",
+        ],
+
+        'agents' => [
+            'eyebrow' => "MCP-server en REST API",
+            'title' => "Gebruik Monica als backend voor je agents.",
+            'body' => "We zijn superontwikkelaarsvriendelijk.",
+            'mcp' => "Bekijk de MCP-documentatie",
+            'api' => "Bekijk de API",
+            'prompt' => "Wat zal ik Priya geven voor haar verjaardag?",
+            'answer' => "Priya is op 3 november jarig, over 23 dagen.",
+            'saved' => "Je hebt in juli twee ideeën bewaard:",
+            'ideas' => ["De keramiekcursus waar ze het over had", "Alles behalve weer een kaars"],
+            'ask' => "Noteer dat ik vandaag met Sam heb geluncht.",
+            'used' => "Monica gebruikt",
+            'reply' => "Klaar. “Lunch” toegevoegd aan de tijdlijn van Sam op 11 oktober.",
+        ],
+
+        'features' => [
+            'title' => "Je geheugen, met back-up.",
+            'lede' => "Alles wat het weten waard is over iemand, op één rustige plek.",
+            'reminders' => [
+                'title' => "Verjaardagen, niet pas achteraf.",
+                'body' => "Herinneringen voor data, telefoontjes en beloftes. Per e-mail, op tijd.",
+                'rows' => [
+                    ['name' => "Priya Raman", 'what' => "verjaardag", 'when' => "over 23 dagen"],
+                    ['name' => "Mama", 'what' => "terugbellen over kerst", 'when' => "morgen"],
+                    ['name' => "Sam Okafor", 'what' => "boormachine terugbrengen", 'when' => "zes weken te laat"],
+                ],
+            ],
+            'relationships' => [
+                'title' => "Wie is wie, en van wie.",
+                'body' => "Stambomen, exen, peetouders. Geschreven als zinnen.",
+                'sentences' => [
+                    ["Lucie is de moeder van ", "Théo", "."],
+                    ["Théo is de partner van ", "Priya", "."],
+                    ["Sam is ", "ieders", " probleem."],
+                ],
+            ],
+            'gifts' => [
+                'title' => "Cadeau-ideeën, bewaard in juli.",
+                'body' => "Zodat december geen paniek wordt.",
+                'ideas' => ["Keramiekcursus", "Dat boek over mos"],
+                'crossed' => "Weer een kaars",
+            ],
+            'notes' => [
+                'title' => "Notities die je terugvindt.",
+                'body' => "Doorzoek elke notitie, bij iedereen.",
+                'query' => "allergisch",
+                'who' => "Sam:",
+                'match' => "allergisch voor katten. Heeft drie katten.",
+            ],
+            'details' => [
+                'title' => "Onthoudt hoe de hond heet.",
+                'body' => "Huisdieren, kinderen, banen, eetvoorkeuren. De details die ertoe doen.",
+                'fields' => [
+                    ['label' => "Hond", 'value' => "Biscuit"],
+                    ['label' => "Koffie", 'value' => "Flat white met havermelk"],
+                ],
+            ],
+            'vaults' => [
+                'title' => "Een kluis voor elke kring.",
+                'body' => "Familie, vrienden, werk. Netjes gescheiden, gedeeld met wie jij uitnodigt.",
+                'vaults' => [
+                    ['name' => "Familie", 'count' => "24 mensen"],
+                    ['name' => "Vrienden", 'count' => "61 mensen"],
+                    ['name' => "Leesclub", 'count' => "7 mensen"],
+                ],
+            ],
+            'journal' => [
+                'title' => "Een dagboek zonder publiek.",
+                'body' => "Schrijf over je dag. Niemand gaat het liken, en dat is nou juist de bedoeling.",
+            ],
+        ],
+
+        'open' => [
+            'title' => "Open van opzet.",
+            'lede' => "Je vrienden zijn geen verdienmodel.",
+            'items' => [
+                ['title' => "Open source", 'body' => "Elke regel code staat op GitHub. Lees hem, fork hem, controleer hem."],
+                ['title' => "In eigen beheer", 'body' => "Eén Docker-commando. Jouw server, jouw regels."],
+                ['title' => "Geen advertenties, geen trackers", 'body' => "Niets te verkopen, en niemand om het aan te verkopen."],
+                ['title' => "Vertrek wanneer je wilt", 'body' => "Exporteer alles, wanneer je maar wilt. Geen gijzelingen."],
+            ],
+        ],
+
+        // The prices themselves are not here: the Cloud card reads them from
+        // `pricing.hosted`, so the homepage and the pricing page cannot quote
+        // two different numbers.
+        'pricing' => [
+            'badge' => "Geen advertenties",
+            'badgeText' => "Bij elk abonnement neem je je gegevens mee.",
+            'title' => "Betaal zoals je wilt. Of niet.",
+            'lede' => "Draai het gratis in eigen beheer, of laat Monica het voor je draaien.",
+            'selfHost' => [
+                'title' => "Eigen beheer",
+                'price' => "Gratis",
+                'per' => "voor altijd",
+                'items' => ["Alle functies, geen limieten", "Installatie met één Docker-commando", "Volledige controle over je gegevens", "Jij bent de IT-afdeling"],
+                'cta' => "Lees de documentatie",
+            ],
+            'cloud' => [
+                'title' => "Cloud",
+                'billingLabel' => "Factuurperiode",
+                'monthly' => "Maandelijks",
+                'yearly' => "Jaarlijks",
+                'perMonth' => "per maand",
+                'perYear' => "per jaar",
+                'yearlyNote' => "Twee maanden gratis",
+                'items' => ["Beheerde hosting", "Automatische updates en back-ups", "Onbeperkt mensen en kluizen", "Altijd opzegbaar"],
+                'cta' => "Begin met Monica",
+            ],
+        ],
+
+        'faq' => [
+            'title' => "Vragen, beantwoord.",
+            'items' => [
+                ['q' => "Is dit een sales-CRM?", 'a' => "Nee. Niemand hier heeft een pijplijn. Monica is voor familie, vrienden en de mensen met wie je contact wilt houden."],
+                ['q' => "Is eigen beheer echt gratis?", 'a' => "Ja. Alle functies, geen limieten, onder de AGPL-3.0-licentie. Jij zorgt voor de server."],
+                ['q' => "Wie kan mijn gegevens zien?", 'a' => "Jij, en wie je uitnodigt in een kluis. Geen advertenties, geen trackers, geen doorverkoop van gegevens. In eigen beheer verlaten ze je server nooit."],
+                ['q' => "Kan ik wisselen tussen cloud en eigen beheer?", 'a' => "Ja, in beide richtingen. Exporteer alles en importeer het aan de andere kant."],
+                ['q' => "Werkt het met mijn AI-agent?", 'a' => "Als die MCP spreekt, ja. Voor al het andere is er ook een volledige REST API."],
+            ],
+        ],
+    ],
+
     'pricing' => [
         'eyebrow' => "Eenvoudige prijzen",
         'title' => "Eén gehost abonnement. Geen prijs per relatie.",
@@ -645,14 +626,6 @@ return [
             ],
         ],
 
-        'finalCta' => [
-            'title' => "Je geheugen heeft genoeg onbetaald werk verzet.",
-            'body' => "Gebruik de gehoste versie en laat ons de infrastructuur beheren, of installeer Monica op je eigen server.",
-            'body2' => "Hoe dan ook blijven je contacten mensen, geen leads.",
-            'primaryCta' => "Begin met Monica",
-            'secondaryCta' => "Draai Monica in eigen beheer",
-            'note' => "Eén eenvoudig gehost abonnement · Gratis in eigen beheer · Open source",
-        ],
     ],
 
     'personalCrm' => [
@@ -879,17 +852,27 @@ return [
     ],
 
     'footer' => [
-        'tagline' => "Een privé, open source persoonlijke CRM om de mensen te onthouden die tellen.",
+        // The closing line ends every page, so it is two short sentences rather
+        // than a pitch. Each one is its own line.
+        'closing' => ["Monica onthoudt.", "Jij gaat naar buiten."],
+        'start' => "Begin met Monica",
+        'github' => "Bekijk op GitHub",
+
+        'tagline' => "Open source persoonlijke CRM. AGPL-3.0.",
         'productLabel' => "Product",
-        'projectLabel' => "Project",
-        'github' => "GitHub",
+        'developersLabel' => "Ontwikkelaars",
+        'companyLabel' => "Bedrijf",
+        'personalCrm' => "Wat is een persoonlijke CRM?",
+        'changelog' => "Wijzigingslog",
+        'mcp' => "MCP",
+        'api' => "API",
+        'contactSales' => "Contact met sales",
         'privacy' => "Privacy",
         'terms' => "Voorwaarden",
         'team' => "Team",
-        'personalCrm' => "Wat is een persoonlijke CRM?",
-        'copyright' => "© :year Monica",
-        'since' => "Open source sinds 2017",
-        'ownership' => "Je gegevens blijven van jou.",
+
+        'art' => "Een weide aan een meer, met panda's die in het gras liggen te luieren en in de bomen een dutje doen",
+        'copyright' => "© :year Monica. Er zijn geen panda's gevolgd.",
         'languageLabel' => "Taal wijzigen",
     ],
 
