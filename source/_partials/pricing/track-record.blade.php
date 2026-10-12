@@ -27,7 +27,7 @@
             @endforeach
         </div>
 
-        <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn--secondary mt-8 gap-2 no-underline hover:no-underline">
+        <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn-secondary mt-8 gap-2 no-underline hover:no-underline">
             @include('_partials.icon', ['name' => 'star'])
             <span>{{ $page->t('pricing.trackRecord.cta') }}</span>
         </a>

@@ -9,7 +9,7 @@
         <div class="flex flex-wrap gap-2 max-md:w-full max-md:flex-col">
             {{-- The repository is the only thing to follow now that there is no
                  launch list, so it takes the primary button. --}}
-            <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn--primary gap-2 no-underline hover:no-underline max-md:w-full">
+            <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn-primary gap-2 no-underline hover:no-underline max-md:w-full">
                 @include('_partials.icon', ['name' => 'star'])
                 <span>{{ $page->t('v3page.follow.cta') }}</span>
             </a>

@@ -44,7 +44,7 @@
             type="application/rss+xml"
             data-turbo="false"
             data-no-instant
-            class="mn-btn mn-btn--secondary mn-btn--sm no-underline hover:no-underline"
+            class="mn-btn mn-btn-secondary mn-btn-small no-underline hover:no-underline"
         >
             @include('_partials.icon', ['name' => 'rss', 'size' => 14])
             {{ $page->t('blog.rssFeed') }}
@@ -87,7 +87,7 @@
                         <a
                             href="{{ $pagination->previous }}"
                             rel="prev"
-                            class="mn-btn mn-btn--secondary mn-btn--sm no-underline hover:no-underline"
+                            class="mn-btn mn-btn-secondary mn-btn-small no-underline hover:no-underline"
                         >{{ $page->t('blog.newerPosts') }}</a>
                     @endif
 
@@ -95,7 +95,7 @@
                         <a
                             href="{{ $pagination->next }}"
                             rel="next"
-                            class="mn-btn mn-btn--secondary mn-btn--sm no-underline hover:no-underline"
+                            class="mn-btn mn-btn-secondary mn-btn-small no-underline hover:no-underline"
                         >{{ $page->t('blog.olderPosts') }}</a>
                     @endif
                 </div>

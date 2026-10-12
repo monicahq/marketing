@@ -50,7 +50,7 @@ permalink: 404.html
                         href="{{ $page->route('home', $locale) }}"
                         hreflang="{{ $locale }}"
                         lang="{{ $locale }}"
-                        class="mn-btn mn-btn--secondary gap-2 no-underline hover:no-underline"
+                        class="mn-btn mn-btn-secondary gap-2 no-underline hover:no-underline"
                     >
                         @include('_partials.flag', ['flagLocale' => $locale])
                         <span>{{ $page->localeNames[$locale] }}</span>

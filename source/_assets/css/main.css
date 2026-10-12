@@ -3,21 +3,26 @@
    Load order matters:
    1. tailwindcss           declares the theme / base / components / utilities layers
    2. theme.css             @theme, turns design tokens into Tailwind utilities
-   3. fonts, app-tokens     plain custom properties the component CSS reads
+   3. design-system tokens  the design system's own custom properties, in the
+                            base layer: --ink, --hairline, --identity-1, and
+                            their `.dark` counterparts, which the theme points at
    4. base                  design-system element defaults, after Preflight
    5. components            mn-* classes, below utilities so markup can override
                             (prose.css joins them: rendered Markdown has no
                             classes of its own to hang utilities on)
-   6. dark                  unlayered, so it overrides the theme layer at runtime */
+
+   The design-system directory is vendored verbatim. Everything above it that
+   adapts it to this site lives in theme.css. */
 
 @import "tailwindcss";
 @import "./theme.css";
-@import "./design-system/fonts.css";
-@import "./design-system/app-tokens.css";
+@import "./design-system/tokens/colors.css" layer(base);
+@import "./design-system/tokens/typography.css" layer(base);
+@import "./design-system/tokens/shape.css" layer(base);
+@import "./design-system/tokens/motion.css" layer(base);
 @import "./design-system/base.css" layer(base);
 @import "./design-system/components.css" layer(components);
 @import "./prose.css" layer(components);
-@import "./design-system/dark.css";
 
 /* Tailwind scans these for class names. Blade templates are not picked up by
    the default heuristics, so they are declared explicitly. */

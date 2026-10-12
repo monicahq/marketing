@@ -13,7 +13,7 @@
 <section>
     <div class="mx-auto w-full max-w-marketing px-4 py-section-sm md:px-8 lg:py-section">
         <div class="flex flex-wrap items-center gap-3">
-            <span class="mn-badge">{{ $page->t('v3page.badge') }}</span>
+            <span class="mn-badge mn-badge-neutral">{{ $page->t('v3page.badge') }}</span>
 
             {{-- The one place on the site with a 2px border: the date is the
                  page's single most important fact. --}}

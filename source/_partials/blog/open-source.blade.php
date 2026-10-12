@@ -10,7 +10,7 @@
 
     <a
         href="{{ $page->links['github'] }}"
-        class="mn-btn mn-btn--secondary mn-btn--sm justify-center gap-2 no-underline hover:no-underline"
+        class="mn-btn mn-btn-secondary mn-btn-small justify-center gap-2 no-underline hover:no-underline"
     >
         @include('_partials.icon', ['name' => 'star'])
         <span>{{ $page->t('nav.stars', [':count' => $page->starCount]) }}</span>

@@ -89,7 +89,7 @@
                     <p class="mt-2 font-mono text-mono text-text-muted">{{ $page->t('pricing.hosted.taxNote') }}</p>
                 </div>
 
-                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary mt-6 self-start no-underline hover:no-underline">
+                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary mt-6 self-start no-underline hover:no-underline">
                     {{ $page->t('pricing.hosted.cta') }}
                 </a>
                 <p class="mt-3 font-mono text-mono text-text-muted">{{ $page->t('pricing.hosted.trial') }}</p>
@@ -113,7 +113,7 @@
                     <p class="mt-3 text-copy leading-[1.6] text-text-muted italic">{{ $page->t('pricing.selfHosted.aside') }}</p>
                 </div>
 
-                <a href="{{ $page->links['selfHostingGuide'] }}" class="mn-btn mn-btn--secondary mt-6 self-start no-underline hover:no-underline">
+                <a href="{{ $page->links['selfHostingGuide'] }}" class="mn-btn mn-btn-secondary mt-6 self-start no-underline hover:no-underline">
                     {{ $page->t('pricing.selfHosted.cta') }}
                 </a>
                 <p class="mt-3 text-small">

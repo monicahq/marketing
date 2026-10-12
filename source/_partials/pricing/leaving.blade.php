@@ -5,14 +5,14 @@
         <p class="mt-5 max-w-[62ch] text-copy-lg text-text-secondary text-pretty">{{ $page->t('pricing.leaving.body') }}</p>
         <p class="mt-4 max-w-[62ch] text-copy-lg text-text-secondary text-pretty">{{ $page->t('pricing.leaving.body2') }}</p>
 
-        {{-- The application's own row group, so the three steps look like the
-             settings screen the reader will actually use. --}}
-        <div class="mn-rowgroup mn-rowgroup--bordered mt-8 max-w-[820px]">
+        {{-- The application's own panel and rows, so the three steps look like
+             the settings screen the reader will actually use. --}}
+        <div class="mn-panel mt-8 max-w-[820px]">
             @foreach ($page->t('pricing.leaving.steps') as $step)
                 <div class="mn-row">
-                    <span class="mn-row__main">
-                        <span class="mn-row__label">{{ $step['label'] }}</span>
-                        <span class="mn-row__desc whitespace-normal">{{ $step['body'] }}</span>
+                    <span class="min-w-0">
+                        <span class="mn-row-title block">{{ $step['label'] }}</span>
+                        <span class="mn-row-description block">{{ $step['body'] }}</span>
                     </span>
                 </div>
             @endforeach
