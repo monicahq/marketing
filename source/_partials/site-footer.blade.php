@@ -32,8 +32,8 @@
 
     // The meadow, by day and by night. The two files need not share a ratio,
     // so each carries its own size.
-    $day = '/assets/images/footer/pandas-day.png';
-    $night = '/assets/images/footer/pandas-night.png';
+    $day = '/assets/images/footer/pandas-day.webp';
+    $night = '/assets/images/footer/pandas-night.webp';
     $daySize = $page->imageSize($day);
     $nightSize = $page->imageSize($night);
 @endphp

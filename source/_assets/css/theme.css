@@ -302,7 +302,7 @@
 :root {
   --ground-sage: #eaf0e2;
   --ground-sage-ink: #3f5a36;
-  --ground-cream: #faf6e9;
+  --ground-cream: #faf6e8;
   --ground-cream-ink: #1d2a17;
   --ground-cream-muted: #4a5a42;
   --ground-cream-rule: rgb(29 42 23 / 0.12);
@@ -311,7 +311,7 @@
 .dark {
   --ground-sage: #111a12;
   --ground-sage-ink: #a3c293;
-  --ground-cream: #152033;
+  --ground-cream: #0f2434;
   --ground-cream-ink: #eef2f8;
   --ground-cream-muted: #a7b3c6;
   --ground-cream-rule: rgb(238 242 248 / 0.14);
