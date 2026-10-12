@@ -5,7 +5,7 @@
     // and the files are about twice that, for sharp edges on a dense screen.
     $badges = [
         ['src' => '/assets/images/awards/award-github.svg', 'alt' => $copy['github']],
-        ['src' => '/assets/images/awards/award-hn.png', 'alt' => $copy['hn']],
+        ['src' => '/assets/images/awards/hacker-news.svg', 'alt' => $copy['hn']],
         ['src' => '/assets/images/awards/product-hunt.svg', 'alt' => $copy['ph']],
     ];
 @endphp
