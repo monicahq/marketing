@@ -32,6 +32,7 @@ return [
             'monthly' => "Monica gehost, per maand gefactureerd",
             'yearly' => "Monica gehost, per jaar gefactureerd",
             'selfHosted' => "Monica in eigen beheer",
+            'lifetime' => "Monica gehost, levenslang",
         ],
 
         'home' => [
@@ -40,8 +41,8 @@ return [
         ],
 
         'pricing' => [
-            'title' => "Prijzen van Monica — één gehost abonnement, of gratis in eigen beheer",
-            'description' => "Monica gehost kost 9 USD per maand of 90 USD per jaar, met onbeperkt contacten en geen prijs per contact. Of draai de open source applicatie gratis op je eigen infrastructuur.",
+            'title' => "Prijzen van Monica: gratis in eigen beheer, of laat Monica het hosten",
+            'description' => "Draai Monica gratis in eigen beheer, of laat Monica het hosten voor 9 USD per maand, 90 USD per jaar of eenmalig 150 USD. Elk abonnement heeft elke functie, onbeperkt contacten en geen prijs per contact.",
         ],
 
         'privacy' => [
@@ -409,7 +410,7 @@ return [
         ],
 
         // The prices themselves are not here: the Cloud card reads them from
-        // `pricing.hosted`, so the homepage and the pricing page cannot quote
+        // `pricing.prices`, so the homepage and the pricing page cannot quote
         // two different numbers.
         'pricing' => [
             'badge' => "Geen advertenties",
@@ -452,193 +453,262 @@ return [
     ],
 
     'pricing' => [
-        'eyebrow' => "Eenvoudige prijzen",
-        'title' => "Eén gehost abonnement. Geen prijs per relatie.",
-        'lede' => "Gebruik Monica op onze servers voor één voorspelbare prijs, of draai het gratis in eigen beheer.",
-        'lede2' => "We rekenen niet per contact, per herinnering, per belangrijke verjaardag of per persoon die je liever niet teleurstelt.",
-        'currency' => "Prijzen in USD",
-        'taxFootnote' => "Prijzen worden getoond in USD. Toepasselijke belastingen worden vóór betaling berekend.",
-
-        'billing' => [
-            'label' => "Factuurperiode",
-            'yearly' => "Per jaar — 2 maanden voordeel",
-            'monthly' => "Per maand",
+        // The four prices, as a reader sees them. Everything below quotes them
+        // through :free, :monthly, :yearly and :lifetime, and the homepage
+        // reads them from here, so a price change is one edit per language
+        // (plus `plans` in config.php, for the structured data).
+        'prices' => [
+            'free' => "$0",
+            'monthly' => "$9",
+            'yearly' => "$90",
+            'lifetime' => "$150",
         ],
 
-        'hosted' => [
-            'title' => "Monica gehost",
-            'body' => "Voor mensen die Monica willen zonder een server te onderhouden.",
-            'yearlyPrice' => "$90",
-            'yearlyPeriod' => "USD / jaar",
-            'yearlyNote' => "Twee maanden gratis bij jaarlijkse facturatie.",
-            'monthlyPrice' => "$9",
-            'monthlyPeriod' => "USD / maand",
-            'monthlyNote' => "Maandelijks gefactureerd. Stap over op jaarlijks voor twee maanden gratis.",
-            'lifetimePrice' => "$150",
-            'taxNote' => "Afhankelijk van je locatie kan er belasting bijkomen.",
-            'cta' => "Begin met Monica",
-            'trial' => "30 dagen proberen · Geen creditcard nodig tijdens de proefperiode",
-            'listTitle' => "Alles wat je nodig hebt om de mensen te onthouden die tellen:",
+        'hero' => [
+            'badge' => "Geen kosten per contact",
+            'badgeText' => "Betaal per maand, per jaar, één keer of nooit.",
+            'title' => "Prijzen waar je geen herinnering voor nodig hebt.",
+            'lede' => "Draai het gratis in eigen beheer. Laat Monica het hosten voor :monthly per maand of :yearly per jaar. Of betaal één keer :lifetime en denk er nooit meer aan. De prijs is dezelfde, of je nu tien mensen kent of tienduizend.",
+        ],
+
+        'selfHost' => [
+            'eyebrow' => "Optie één · gratis",
+            'title' => "Draai het zelf. Het is gratis, en het is alles.",
+            'body' => "Monica is open source. Eén Docker-commando en het draait op je eigen machine: jouw server, jouw regels, elke functie. Geen proefperiode, geen afgeschermd niveau, geen licentiesleutel.",
             'items' => [
-                "onbeperkt contacten;",
-                "onbeperkt notities;",
-                "onbeperkt herinneringen;",
-                "onbeperkt activiteiten en dagboeknotities;",
-                "relatiebeheer;",
-                "eigen velden en secties;",
-                "bijlagen;",
-                "gegevensexport;",
-                "automatische updates;",
-                "beheerde back-ups;",
-                "ondersteuning per e-mail;",
-                "toegang vanaf telefoon, tablet en computer;",
-                "alle toekomstige functies van de gehoste versie inbegrepen.",
+                "Voor altijd gratis, onder AGPL-licentie",
+                "Elke functie die Monica gehost heeft",
+                "Je gegevens verlaten nooit je eigen hardware",
+                "Updates wanneer jij besluit ze binnen te halen",
             ],
-            'aside' => "Geen toeslag voor een grote familie.",
-            'footnote' => "Zeg op wanneer je wilt. Je contacten worden niet gegijzeld.",
+            'cta' => "Lees de handleiding voor eigen beheer",
+            'terminal' => [
+                'comment' => "# Ophalen, starten, klaar.",
+                'pulling' => "monica:latest ophalen…",
+                'starting' => "Database starten…",
+                'running' => "Draait op http://localhost:8080",
+                'outro' => "# Voeg nu je moeder toe.",
+            ],
         ],
 
-        'selfHosted' => [
-            'title' => "Liever je eigen server?",
-            'body' => "Monica is open source en kan worden geïnstalleerd op infrastructuur die jij beheert.",
-            'price' => "$0",
-            'period' => "van Monica",
-            'aside' => "Je hostingpartij wil misschien nog steeds geld. Het kapitalisme hebben we nog niet verslagen.",
-            'cta' => "Bekijk de handleiding voor eigen beheer",
-            'sourceCta' => "Bekijk de broncode op GitHub · :count sterren",
-            'listTitle' => "De applicatie krijg je gratis. Jij zorgt voor de server, de updates, de back-ups, de monitoring, de beveiligingspatches en de rust van precies te weten waar je gegevens staan.",
+        'plans' => [
+            'title' => "Drie manieren. Allemaal eerlijk.",
+            'lede' => "Draai het zelf, betaal per periode, of betaal één keer. Elk abonnement heeft elke functie. Je kiest alleen wie er voor de server zorgt.",
+            'footnote' => "Prijzen in USD. Belasting wordt bij het afrekenen toegevoegd waar dat verplicht is. Op geen enkel abonnement kosten per contact, per herinnering of per kluis.",
+
+            'selfHost' => [
+                'title' => "Eigen beheer",
+                'body' => "Voor mensen die al een server hebben, of een excuus zoeken voor een.",
+                'per' => "voor altijd",
+                'items' => [
+                    "Volledige broncode, AGPL",
+                    "Onbeperkt contacten en kluizen",
+                    "Back-ups en updates doe je zelf",
+                    "Ondersteuning door de gemeenschap",
+                ],
+                'cta' => "Handleiding voor eigen beheer",
+            ],
+
+            'hosted' => [
+                'title' => "Gehost",
+                'badge' => "Meest gekozen",
+                'body' => "Voor mensen die willen dat Monica er gewoon is.",
+                'billingLabel' => "Factuurperiode",
+                'monthly' => "Per maand",
+                'yearly' => "Per jaar",
+                'perMonth' => "/ maand",
+                'perYear' => "/ jaar",
+                'yearlyNote' => "2 maanden gratis",
+                'items' => [
+                    "Onbeperkt contacten, herinneringen, kluizen",
+                    "Automatische updates en dagelijkse back-ups",
+                    "Herinneringen per e-mail",
+                    "Ondersteuning per e-mail door echte mensen",
+                    "Altijd opzegbaar, alles exporteerbaar",
+                ],
+                'cta' => "Begin met Monica",
+            ],
+
+            'lifetime' => [
+                'title' => "Levenslang",
+                'badge' => "Eén keer betalen",
+                'body' => "Voor mensen die er liever nooit meer aan denken.",
+                'per' => "eenmalig",
+                'items' => [
+                    "Alles uit Gehost",
+                    "Eén betaling, geen verlengingen",
+                    "Elke toekomstige versie inbegrepen",
+                    "Stap over op eigen beheer wanneer je wilt",
+                ],
+                'cta' => "Betaal één keer :lifetime",
+            ],
+        ],
+
+        'calculator' => [
+            'eyebrow' => "De relatiegebaseerde prijscalculator",
+            'title' => "Wat zou je sociale leven moeten kosten?",
+            'lede' => "Vertel hem over de mensen in je leven. Hij weegt elf zeer persoonlijke factoren en berekent een eerlijke, op maat gemaakte, volkomen wetenschappelijke prijs.",
+
+            'sliders' => [
+                'people' => ['label' => "Mensen die je wilt onthouden", 'help' => "Dunbar zegt 150. Dunbar heeft je schoonfamilie nog niet ontmoet."],
+                'birthdays' => ['label' => "Verjaardagen die je vorig jaar vergat", 'help' => "Inclusief die ene die je om 23.48 uur te binnen schoot."],
+                'coffee' => ['label' => "Keren dat je “we moeten echt eens koffiedrinken” zei", 'help' => "En toen geen koffie dronk."],
+                'cousins' => ['label' => "Kinderen van neven en nichten die je niet bij naam kent", 'help' => "Je weet dat er een Leo is. Misschien twee."],
+                'reminders' => ['label' => "Herinneringen die je zou instellen", 'help' => "Monica verstuurt ze allemaal."],
+                'mum' => ['label' => "Belletjes naar je moeder, per maand", 'help' => "Ze heeft het hoe dan ook gemerkt."],
+            ],
+
+            'toggles' => [
+                'pretend' => ['label' => "Je hebt weleens gedaan alsof je een naam nog wist", 'help' => "“Hé… jij.”"],
+                'notes' => ['label' => "Je houdt notities over mensen bij op je telefoon", 'help' => "Monica is dat idee, met data erbij."],
+                'dentist' => ['label' => "Je kent de voornaam van je tandarts", 'help' => "Eerlijk gezegd indrukwekkend."],
+                'belated' => ['label' => "Je hebt weleens “nog gefeliciteerd” gestuurd", 'help' => "Iedereen weleens. Sommigen vaker dan anderen."],
+            ],
+
+            'social' => [
+                'label' => "Je sociale leven",
+                'help' => "Toegepast als vermenigvuldiger, want zo werken vermenigvuldigers.",
+                'options' => [
+                    'hermit' => "Kluizenaar",
+                    'reasonable' => "Redelijk",
+                    'mayor' => "Burgemeester van het dorp",
+                ],
+            ],
+
+            'quote' => "Je persoonlijke offerte",
+            'planLabel' => "Abonnement",
+            'plans' => [
+                'monthly' => "Per maand",
+                'yearly' => "Per jaar",
+                'lifetime' => "Levenslang",
+            ],
+
+            // :count is a slider's value, :rate a made-up price per unit.
+            'lines' => [
+                'base' => [
+                    'monthly' => "Monica, per maand",
+                    'yearly' => "Monica, per jaar",
+                    'lifetime' => "Monica, levenslang",
+                ],
+                'people' => ":count mensen × :rate",
+                'reminders' => ":count herinneringen",
+                'birthdays' => ":count vergeten verjaardagen × :rate schuldgevoel",
+                'coffee' => ":count theoretische koffies × :rate",
+                'cousins' => ":count naamloze achterneefjes × :rate",
+                'mum' => ":count belletjes naar mama × :rate tegoed",
+                'pretend' => "Toeslag voor naamveinzen",
+                'notes' => "Verhuizing uit je notitie-app",
+                'dentist' => "Bonus voor vertrouwdheid met de tandarts",
+                'belated' => "Herstelkosten voor “nog gefeliciteerd”",
+                'multiplier' => "Vermenigvuldiger sociale leven ×:rate",
+                'included' => "inbegrepen",
+                'free' => "gratis",
+            ],
+
+            'subtotal' => "Subtotaal",
+            'refund' => "Relatiegebaseerde prijzen",
+            'refundHelp' => "Bestaat niet bij Monica. Volledig afgetrokken.",
+            'total' => "Je totaal",
+            'per' => [
+                'monthly' => "/ maand",
+                'yearly' => "/ jaar",
+                'lifetime' => "eenmalig",
+            ],
+
+            'verdicts' => [
+                'birthdays' => ":count verjaardagen volgend jaar, allemaal geregeld.",
+                'coffee' => "Ga nou eens een van die koffies drinken.",
+                'mum' => "Bel je moeder. De offerte wacht wel.",
+                'default' => "Hetzelfde als voor iedereen. Daar gaat het om.",
+            ],
+
+            'cta' => "Leg deze verdachte prijs vast",
+            'reset' => "Alles vergeten en opnieuw beginnen",
+            'footnote' => "Elke regel hierboven is verzonnen, behalve het totaal. Monica kost hetzelfde, of je nu drie mensen kent of drieduizend, en of je elke verjaardag onthoudt of geen enkele.",
+        ],
+
+        'promises' => [
+            'people' => [
+                'title' => "Nooit een prijs per persoon",
+                'body' => "Iemand nieuw leren kennen zou je niets mogen kosten. Contacten, herinneringen en kluizen zijn onbeperkt op elk abonnement.",
+            ],
+            'export' => [
+                'title' => "Vertrek met alles",
+                'body' => "Exporteer je hele account wanneer je wilt en neem het mee naar een Monica in eigen beheer of waar dan ook. Opzeggen is één knop.",
+            ],
+            'openSource' => [
+                'title' => "Open source sinds 2017",
+                'body' => "Betalen voor hosting betaalt de servers en de mensen die Monica blijven bouwen, ook voor iedereen die het zelf host.",
+            ],
+        ],
+
+        'ninety' => [
+            'eyebrow' => ":yearly in perspectief",
+            'title' => "Wat kost er nog meer negentig dollar?",
+            'lede' => "Een jaar Monica gehost, naast de dingen waar mensen het meestal aan uitgeven nadat ze iets vergeten zijn.",
+            'about' => "~ :yearly",
             'items' => [
-                "de volledige open source applicatie;",
-                "onbeperkt contacten;",
-                "onbeperkt gebruikers, voor zover je infrastructuur het toelaat;",
-                "volledige controle over je gegevens;",
-                "import en export van gegevens;",
-                "documentatie van de gemeenschap;",
-                "ondersteuning door de gemeenschap;",
-                "de mogelijkheid de broncode in te zien en aan te passen.",
+                'bouquets' => ['title' => "Drie excuusboeketten", 'body' => "Eén per vergeten verjaardag. Van het tankstation, onderweg gekocht."],
+                'gift' => ['title' => "Eén te laat cadeau met spoedlevering", 'body' => "Het meeste is verzendkosten. Alles is schuldgevoel."],
+                'coffees' => ['title' => "Achttien koffies", 'body' => "Die je zei te gaan drinken. Monica herinnert je eraan er echt een te gaan drinken."],
+                'streaming' => ['title' => "Zes maanden van een streamingdienst", 'body' => "Die waarvan je vergeten was dat je erop geabonneerd was."],
+                'cards' => ['title' => "Een kaart voor elke neef en nicht", 'body' => "Plus de postzegels. Plus uitzoeken waar ze tegenwoordig wonen."],
+                'dinner' => ['title' => "Diner voor twee, zonder toetje", 'body' => "Waar je eindelijk vraagt hoe het met ze gaat, en luistert."],
+                'addressBook' => ['title' => "Een nieuw adresboekje", 'body' => "Leer, mooi gemaakt, en in het voorjaar weer kwijt."],
+                'monica' => ['title' => "Een jaar lang iedereen onthouden", 'body' => "Verjaardagen, namen van kinderen, hoe het sollicitatiegesprek ging. Dat is Monica."],
             ],
-            'footnote' => "De versie in eigen beheer is geen uitgeklede demo. Het is Monica, draaiend op jouw infrastructuur.",
-            'footnote2' => "Beheerde back-ups, e-mailbezorging, monitoring van de infrastructuur en directe ondersteuning horen bij de gehoste dienst.",
-        ],
-
-        'compare' => [
-            'title' => "Dezelfde Monica. Een andere verantwoordelijke voor de server.",
-            'rowHeader' => "Wat",
-            'hosted' => "Monica gehost",
-            'selfHosted' => "Monica in eigen beheer",
-            'rows' => [
-                ['label' => "Software van Monica", 'hosted' => "Inbegrepen", 'selfHosted' => "Inbegrepen"],
-                ['label' => "Contacten", 'hosted' => "Onbeperkt", 'selfHosted' => "Onbeperkt"],
-                ['label' => "Updates", 'hosted' => "Automatisch", 'selfHosted' => "Jij installeert ze"],
-                ['label' => "Back-ups", 'hosted' => "Beheerd door Monica", 'selfHosted' => "Jij beheert ze"],
-                ['label' => "Serveronderhoud", 'hosted' => "Beheerd door Monica", 'selfHosted' => "Jij beheert het"],
-                ['label' => "Locatie van de gegevens", 'hosted' => "Infrastructuur van Monica", 'selfHosted' => "Jouw infrastructuur"],
-                ['label' => "Benodigde technische kennis", 'hosted' => "Geen", 'selfHosted' => "Enige"],
-                ['label' => "Ondersteuning", 'hosted' => "Per e-mail", 'selfHosted' => "Door de gemeenschap"],
-                ['label' => "Kosten", 'hosted' => "Abonnement per maand of per jaar", 'selfHosted' => "Gratis software plus hostingkosten"],
-                ['label' => "Geschikt voor", 'hosted' => "Mensen die willen dat Monica gewoon werkt", 'selfHosted' => "Mensen die van servers houden, of die het moeten"],
-            ],
-        ],
-
-        'whyPay' => [
-            'title' => "Waarom betalen als Monica open source is?",
-            'body' => "Open source betekent dat je Monica mag draaien, inzien, aanpassen en verbeteren. Het laat servers, back-ups, e-mailbezorging, beveiligingswerk en ondersteuning niet verdwijnen.",
-            'body2' => "Een gehost abonnement betaalt de infrastructuur waarop je account draait en helpt de verdere ontwikkeling van Monica voor iedereen te financieren, ook voor wie het in eigen beheer draait.",
-            'quote' => "Je betaalt ons om Monica te laten draaien, niet om je eigen gegevens vrij te spelen.",
-            'aside' => "Servers zijn gewoon computers die facturen sturen.",
-        ],
-
-        'noCharge' => [
-            'title' => "Waar we niet voor rekenen",
-            'items' => [
-                ['title' => "Meer contacten", 'body' => "Je prijs gaat niet omhoog omdat je meer mensen kent."],
-                ['title' => "Meer herinneringen", 'body' => "Jubilea onthouden is al stressvol genoeg."],
-                ['title' => "Gegevensexport", 'body' => "Je gegevens meenemen is een recht, geen premiumfunctie."],
-                ['title' => "Basisprivacy", 'body' => "We verkopen geen privacy-upgrade. Privacy is de standaard."],
-                ['title' => "Opzeggen", 'body' => "Er zijn geen opzegkosten en geen plechtig afscheidsgesprek."],
-                ['title' => "De API gebruiken", 'body' => "De API hoort bij het product, niet bij een apart zakelijk onderhandelingstraject."],
-            ],
-        ],
-
-        'leaving' => [
-            'title' => "Je abonnement mag eindigen. Je toegang tot je gegevens niet.",
-            'body' => "Je kunt je gegevens op elk moment exporteren.",
-            'body2' => "Als je opzegt, blijft je account bereikbaar tot het eind van de betaalde factuurperiode. Daarna houden we het account nog een vastgestelde respijtperiode beschikbaar voordat het wordt verwijderd.",
-            'steps' => [
-                ['label' => "Opzeggen", 'body' => "Je abonnement blijft actief tot het eind van de factuurperiode."],
-                ['label' => "Exporteren", 'body' => "Download je gegevens voor of na het opzeggen, tijdens de respijtperiode."],
-                ['label' => "Verwijderen", 'body' => "Verwijder je account meteen vanuit Instellingen, wanneer je wilt."],
-            ],
-            'note' => "De respijtperiode, de exportformaten en de termijnen voor verwijdering staan in het bewaarbeleid.",
-        ],
-
-        'trackRecord' => [
-            'title' => "Open source voordat het een prijsstrategie was",
-            'body' => "Monica wordt sinds 2017 in de openbaarheid ontwikkeld.",
-            'body2' => "Het project heeft :count GitHub-sterren verzameld, is meermaals uitgeroepen tot Repository van de week, stond bovenaan op Product Hunt en kreeg erkenning uit de open source gemeenschap.",
-            'starsLabel' => "GitHub-sterren",
-            'since' => "2017",
-            'sinceLabel' => "Open source sinds",
-            'launch' => "#1 Product van de dag",
-            'launchLabel' => "Product Hunt",
-            'featured' => "Repository van de week",
-            'featuredLabel' => "Meermaals uitgelicht",
-            'cta' => "Bekijk Monica op GitHub",
+            'footnote' => "Prijzen zijn bij benadering en gebaseerd op ervaring. Een jaar Monica kost precies :yearly.",
         ],
 
         'faq' => [
-            'title' => "Vragen over betalen voor Monica",
+            'eyebrow' => "Vragen over betalen",
+            'title' => "Vaak gevraagd, zelden vergeten.",
+            'intro' => "Elk antwoord begint met de korte versie. Open de lange als de korte je achterdochtig maakte.",
+            'search' => "Vragen doorzoeken",
+            'categoriesLabel' => "Vragen filteren op onderwerp",
+            'categories' => [
+                'all' => "Alle",
+                'money' => "Geld",
+                'plans' => "Abonnementen",
+                'selfHosting' => "Eigen beheer",
+                'data' => "Je gegevens",
+                'leaving' => "Vertrekken",
+            ],
+            'progress' => [
+                'none' => "0 van :total gelezen. Begin waar je wilt.",
+                'some' => ":count van :total gelezen.",
+                'many' => ":count van :total gelezen. Je weet hier nu meer over dan de meeste mensen die zich aanmelden.",
+                'all' => "Alle :total gelezen. Jij zou de supportinbox kunnen beantwoorden.",
+            ],
+            'random' => "Vraag me iets willekeurigs",
+            'emptyTitle' => "Geen vraag die daarop past",
+            'emptyBody' => "Probeer een korter woord, of schrijf naar support. Daar lezen echte mensen mee.",
             'items' => [
-                ['q' => "Wat kost Monica?", 'a' => [
-                    "Monica gehost kost \$9 USD per maand of \$90 USD per jaar.",
-                    "Je kunt Monica ook gratis in eigen beheer draaien op infrastructuur die jij beheert.",
-                ]],
-                ['q' => "Is de prijs per gebruiker of per contact?", 'a' => "Nee. Het gehoste abonnement heeft één prijs per account en bevat onbeperkt contacten."],
-                ['q' => "Is Monica echt open source?", 'a' => [
-                    "Ja. De broncode van Monica is openbaar en het project heeft :count sterren op GitHub.",
-                    "Monica v3 blijft open source en in eigen beheer te draaien.",
-                ], 'link' => ['label' => "Lees over Monica v3", 'page' => 'v3']],
-                ['q' => "Is eigen beheer gratis?", 'a' => "Monica rekent niets voor de software in eigen beheer. Jij bent verantwoordelijk voor de server en de kosten van de infrastructuur."],
-                ['q' => "Verschilt de gehoste versie van die in eigen beheer?", 'a' => [
-                    "Ze gebruiken dezelfde kernapplicatie.",
-                    "De gehoste dienst omvat de infrastructuur, beheerde updates, back-ups, monitoring, e-mailbezorging en ondersteuning. Sommige koppelingen die afhangen van infrastructuur van Monica zijn mogelijk alleen in de gehoste dienst beschikbaar.",
-                ]],
-                ['q' => "Kan ik van gehost naar eigen beheer overstappen?", 'a' => "Ja. Je kunt je gegevens uit Monica exporteren en importeren in een compatibele installatie in eigen beheer."],
-                ['q' => "Kan ik op elk moment opzeggen?", 'a' => "Ja. Zeg op vanuit je accountinstellingen. Je abonnement blijft actief tot het eind van de lopende factuurperiode."],
-                ['q' => "Zijn er opzegkosten?", 'a' => "Nee. Weggaan zou geen losgeld mogen kosten."],
-                ['q' => "Wat gebeurt er als mijn betaling mislukt?", 'a' => [
-                    "We laten het je weten en proberen de betaling opnieuw voordat we het account beperken.",
-                    "Je gegevens worden niet meteen verwijderd omdat een pas verlopen is.",
-                ]],
-                ['q' => "Hoe werken terugbetalingen?", 'a' => [
-                    "Ben je per ongeluk in rekening gebracht of vergeten op te zeggen, neem dan binnen 30 dagen contact op. We beoordelen het verzoek als redelijke mensen.",
-                    "Jaarabonnementen kunnen worden terugbetaald binnen de termijn uit ons terugbetalingsbeleid. Voor accounts die de dienst ernstig hebben misbruikt is terugbetaling niet mogelijk.",
-                ]],
-                ['q' => "Gaat de prijs omhoog?", 'a' => [
-                    "Prijzen kunnen veranderen naarmate Monica zich ontwikkelt, maar we laten het bestaande abonnees vooraf weten.",
-                    "We veranderen prijzen niet stilletjes in de hoop dat niemand het merkt.",
-                ]],
-                ['q' => "Zijn belastingen inbegrepen?", 'a' => "Of de getoonde prijzen belasting bevatten of niet hangt af van je locatie en de geldende wetgeving. Het eindbedrag zie je vóór de betaling."],
-                ['q' => "Bewaart Monica mijn betaalgegevens?", 'a' => "Betaalgegevens worden verwerkt door onze betaaldienst. Monica bewaart geen volledige kaartnummers."],
-                ['q' => "Worden mijn gegevens voor advertenties gebruikt?", 'a' => "Nee. Monica verkoopt je persoonsgegevens niet, toont geen advertenties en gebruikt de mensen in je account niet om advertentieprofielen te bouwen."],
-                ['q' => "Worden mijn gegevens gebruikt om AI-modellen te trainen?", 'a' => "Er wordt geen model getraind op de privé-inhoud van je Monica-account."],
-                ['q' => "Zijn back-ups inbegrepen?", 'a' => [
-                    "Ja, de gehoste dienst bevat beheerde back-ups.",
-                    "Bij installaties in eigen beheer moet je zelf back-ups instellen en testen.",
-                ]],
-                ['q' => "Kan ik alles exporteren?", 'a' => "Je kunt contacten, relaties, notities, herinneringen, activiteiten, eigen velden en andere ondersteunde accountgegevens exporteren. Bijlagen zitten erbij, volgens het gedocumenteerde exportformaat."],
-                ['q' => "Kan ik mijn account verwijderen?", 'a' => "Ja. Je account verwijderen kan vanuit Instellingen en daar hoef je geen contact voor op te nemen met support."],
-                ['q' => "Bieden jullie kortingen?", 'a' => "Op dit moment niet. We hebben liever één begrijpelijke prijs dan een systeem waarin iedereen apart onderhandelt."],
-                ['q' => "Bieden jullie levenslange abonnementen?", 'a' => "Nee. Servers blijven kosten maken nadat de enthousiaste lanceercampagne voorbij is."],
-                ['q' => "Bieden jullie een enterprise-abonnement?", 'a' => [
-                    "Er is geen verkoopgesprek nodig om Monica te gebruiken.",
-                    "Voor vragen over beveiliging, inkoop of hosting op grote schaal kun je contact opnemen.",
-                ]],
-                ['q' => "Kan ik in een andere valuta betalen?", 'a' => "Er wordt op dit moment in USD gefactureerd. Je bank kan het bedrag omrekenen en daar kosten voor rekenen."],
-                ['q' => "Steunt een abonnement het open source project?", 'a' => "Ja. Gehoste abonnementen financieren de infrastructuur, het onderhoud, de ondersteuning en de doorlopende open source ontwikkeling van Monica."],
+                ['cat' => 'money', 'q' => "Wat kost Monica?", 'short' => "Niets, :monthly, :yearly of :lifetime.", 'a' => "Eigen beheer is gratis. Monica gehost kost :monthly per maand of :yearly per jaar. Levenslang kost :lifetime, één keer betaald. Elke optie bevat elke functie."],
+                ['cat' => 'money', 'q' => "Is de prijs per gebruiker of per contact?", 'short' => "Geen van beide.", 'a' => "Eén account betaalt één prijs. Voeg zoveel contacten, herinneringen, kluizen en notities toe als je wilt. Nieuwe mensen leren kennen zou je nooit geld mogen kosten."],
+                ['cat' => 'money', 'q' => "Is belasting inbegrepen?", 'short' => "Bij het afrekenen toegevoegd waar dat verplicht is.", 'a' => "Als je land omzetbelasting of btw vereist, zie je die voordat je betaalt, dus het bedrag waarmee je instemt is het bedrag dat je betaalt."],
+                ['cat' => 'money', 'q' => "Kan ik in een andere valuta betalen?", 'short' => "Prijzen zijn in Amerikaanse dollars.", 'a' => "Je kaartaanbieder rekent om bij het afrekenen. Het bedrag in dollars blijft van jaar tot jaar hetzelfde."],
+                ['cat' => 'money', 'q' => "Gaat de prijs omhoog?", 'short' => "Niet voor het abonnement dat je al hebt.", 'a' => "Als prijzen voor nieuwe klanten veranderen, houden bestaande abonnementen hun prijs. Je hoort het ruim van tevoren, per e-mail, met het echte bedrag."],
+                ['cat' => 'money', 'q' => "Bieden jullie kortingen?", 'short' => "Per jaar is twee maanden goedkoper.", 'a' => "Per jaar betalen kost :yearly in plaats van $108. Studenten en non-profitorganisaties kunnen naar support schrijven. Eigen beheer blijft de grootste korting van allemaal: 100%."],
+                ['cat' => 'plans', 'q' => "Bieden jullie levenslange abonnementen?", 'short' => "Ja. :lifetime, één keer.", 'a' => "Levenslang is Monica gehost zonder verlengingen. Het bevat elke toekomstige versie zolang Monica gehost bestaat, en je kunt op elk moment overstappen op eigen beheer."],
+                ['cat' => 'plans', 'q' => "Verschilt de gehoste versie van die in eigen beheer?", 'short' => "Dezelfde Monica.", 'a' => "Dezelfde code, dezelfde functies. Het enige verschil is wie de server draait, de updates installeert en de back-ups bewaart."],
+                ['cat' => 'plans', 'q' => "Bieden jullie een enterprise-abonnement?", 'short' => "Nee.", 'a' => "Monica is een persoonlijke CRM voor je eigen leven. Een salesteam is beter af met een salestool."],
+                ['cat' => 'selfHosting', 'q' => "Is Monica echt open source?", 'short' => "Ja, sinds 2017.", 'a' => "De volledige broncode is openbaar onder de AGPL. Je kunt hem lezen, draaien, aanpassen en eraan bijdragen."],
+                ['cat' => 'selfHosting', 'q' => "Is eigen beheer gratis?", 'short' => "Helemaal.", 'a' => "Geen licentiesleutel, geen afgeschermde functies, geen proefperiode. Je betaalt voor je eigen server, als je die hebt, en met je eigen tijd."],
+                ['cat' => 'selfHosting', 'q' => "Kan ik van gehost naar eigen beheer overstappen?", 'short' => "Ja, wanneer je wilt.", 'a' => "Exporteer je account en importeer het in je eigen Monica. Het formaat is aan beide kanten hetzelfde, dus onderweg gaat er niets verloren."],
+                ['cat' => 'selfHosting', 'q' => "Steunt een abonnement het open source project?", 'short' => "Rechtstreeks.", 'a' => "De inkomsten uit hosting betalen de servers en de mensen die Monica blijven ontwikkelen, inclusief de onderdelen die mensen in eigen beheer gratis gebruiken."],
+                ['cat' => 'data', 'q' => "Bewaart Monica mijn betaalgegevens?", 'short' => "Nee.", 'a' => "Betalingen worden afgehandeld door de betaalprovider. Monica ziet en bewaart je kaartnummer nooit."],
+                ['cat' => 'data', 'q' => "Worden mijn gegevens gebruikt voor advertenties?", 'short' => "Nooit.", 'a' => "Er zijn geen advertenties, geen trackers en geen derden die lezen wat je over je familie schrijft."],
+                ['cat' => 'data', 'q' => "Worden mijn gegevens gebruikt om AI-modellen te trainen?", 'short' => "Nee.", 'a' => "Wat je schrijft over de mensen in je leven is geen trainingsmateriaal, niet voor Monica en niet voor wie dan ook met wie Monica samenwerkt."],
+                ['cat' => 'data', 'q' => "Zijn back-ups inbegrepen?", 'short' => "Dagelijks, op de gehoste abonnementen.", 'a' => "Gehoste en levenslange accounts krijgen elke dag een back-up. Bij een Monica in eigen beheer plan je de back-ups zelf."],
+                ['cat' => 'data', 'q' => "Kan ik alles exporteren?", 'short' => "Alles.", 'a' => "Contacten, notities, herinneringen, relaties, bestanden. Exporteren kan op elk abonnement, ook nadat je hebt opgezegd."],
+                ['cat' => 'leaving', 'q' => "Kan ik op elk moment opzeggen?", 'short' => "Ja, met één knop.", 'a' => "Geen telefoontje, geen formulier om je over te halen. Je account blijft bruikbaar tot het eind van de periode waarvoor je hebt betaald."],
+                ['cat' => 'leaving', 'q' => "Zijn er opzegkosten?", 'short' => "Nee.", 'a' => "Opzeggen kost niets. Terugkomen ook niet."],
+                ['cat' => 'leaving', 'q' => "Wat gebeurt er als mijn betaling mislukt?", 'short' => "Er verdwijnt niets.", 'a' => "Je krijgt een e-mail en een respijtperiode om je kaart bij te werken. Je gegevens blijven precies waar ze waren."],
+                ['cat' => 'leaving', 'q' => "Hoe werken terugbetalingen?", 'short' => "Vraag het binnen 30 dagen.", 'a' => "Is Monica niets voor jou, schrijf dan binnen 30 dagen na je betaling naar support en je krijgt het volledige bedrag terug."],
+                ['cat' => 'leaving', 'q' => "Kan ik mijn account verwijderen?", 'short' => "Ja, definitief.", 'a' => "Als je je account verwijdert, worden je gegevens van de servers gehaald. Back-ups waarin ze staan verlopen volgens hun normale schema."],
             ],
         ],
-
     ],
 
     'personalCrm' => [

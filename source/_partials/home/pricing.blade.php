@@ -4,7 +4,7 @@
 
     /**
      * Alpine's state, handed over as one JSON object, the same way the pricing
-     * page does it. The prices come from `pricing.hosted`, the pricing page's
+     * page does it. The prices come from `pricing.prices`, the pricing page's
      * own copy, so the two pages cannot quote different numbers.
      *
      * Yearly first, because it is the default the page renders with.
@@ -13,19 +13,19 @@
         'period' => 'yearly',
         'plans' => [
             'yearly' => [
-                'price' => $page->t('pricing.hosted.yearlyPrice'),
+                'price' => $page->t('pricing.prices.yearly'),
                 'per' => $cloud['perYear'],
                 'note' => $cloud['yearlyNote'],
             ],
             'monthly' => [
-                'price' => $page->t('pricing.hosted.monthlyPrice'),
+                'price' => $page->t('pricing.prices.monthly'),
                 'per' => $cloud['perMonth'],
                 'note' => '',
             ],
 
             // Paid once, never renewed.
             'lifetime' => [
-                'price' => $page->t('pricing.hosted.lifetimePrice'),
+                'price' => $page->t('pricing.prices.lifetime'),
                 'per' => $cloud['once'],
                 'note' => $cloud['lifetimeNote'],
             ],

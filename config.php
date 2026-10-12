@@ -428,7 +428,7 @@ return [
     'lastmod' => [
         'home' => '2026-10-11',
         'v3' => '2026-08-06',
-        'pricing' => '2026-08-06',
+        'pricing' => '2026-10-12',
         'features' => '2026-08-06',
         'featuresDashboard' => '2026-08-06',
         'featuresJournal' => '2026-08-06',
@@ -469,9 +469,10 @@ return [
     // ------------------------------------------------------------------ plans
 
     /**
-     * The hosted plan's prices as bare numbers, for the offers in the
+     * The hosted plans' prices as bare numbers, for the offers in the
      * structured data. A crawler wants 9.00 and USD; a reader wants "$9", and
-     * that string stays in `lang/` with the rest of the pricing copy.
+     * that string stays in `lang/` (`pricing.prices`) with the rest of the
+     * pricing copy.
      *
      * Which means the two have to be changed together. They are the only pair
      * on the site that can disagree without anything failing, so a price
@@ -483,6 +484,9 @@ return [
         'currency' => 'USD',
         'monthly' => '9.00',
         'yearly' => '90.00',
+
+        // Paid once, never renewed.
+        'lifetime' => '150.00',
 
         // The application is free; the server is the reader's problem.
         'selfHosted' => '0.00',

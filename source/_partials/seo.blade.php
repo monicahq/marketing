@@ -185,8 +185,9 @@
         $pricing = $page->absolute($page->localePath('pricing'));
         $currency = $page->plans['currency'];
 
-        // Both hosted prices are subscriptions, so each says what it buys and
-        // for how long: a bare `price` of 90 would read as a one-off purchase.
+        // The monthly and yearly prices are subscriptions, so each says what it
+        // buys and for how long: a bare `price` of 90 would read as a one-off
+        // purchase.
         $subscription = fn (string $name, string $amount, string $unit) => [
             '@type' => 'Offer',
             'name' => $name,
@@ -231,6 +232,16 @@
             'offers' => [
                 $subscription($page->t('meta.software.monthly'), $page->plans['monthly'], 'MON'),
                 $subscription($page->t('meta.software.yearly'), $page->plans['yearly'], 'ANN'),
+
+                // Paid once, so a bare price is exactly what it is.
+                [
+                    '@type' => 'Offer',
+                    'name' => $page->t('meta.software.lifetime'),
+                    'price' => $page->plans['lifetime'],
+                    'priceCurrency' => $currency,
+                    'url' => $pricing,
+                    'availability' => 'https://schema.org/InStock',
+                ],
                 [
                     '@type' => 'Offer',
                     'name' => $page->t('meta.software.selfHosted'),

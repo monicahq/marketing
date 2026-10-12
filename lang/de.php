@@ -29,6 +29,7 @@ return [
             'monthly' => "Gehostete Monica, monatlich abgerechnet",
             'yearly' => "Gehostete Monica, jährlich abgerechnet",
             'selfHosted' => "Selbst gehostete Monica",
+            'lifetime' => "Gehostete Monica, lebenslang",
         ],
 
         'home' => [
@@ -37,8 +38,8 @@ return [
         ],
 
         'pricing' => [
-            'title' => "Monica-Preise — ein gehosteter Tarif, oder kostenlos selbst hosten",
-            'description' => "Gehostete Monica kostet 9 USD pro Monat oder 90 USD pro Jahr, mit unbegrenzten Kontakten und ohne Preis pro Kontakt. Oder hosten Sie die quelloffene Anwendung kostenlos auf Ihrer eigenen Infrastruktur.",
+            'title' => "Monica-Preise: kostenlos selbst hosten, oder Monica hosten lassen",
+            'description' => "Hosten Sie Monica kostenlos selbst, oder lassen Sie Monica sie für 9 USD im Monat, 90 USD im Jahr oder einmalig 150 USD hosten. Jeder Tarif enthält jede Funktion, unbegrenzte Kontakte und keinen Preis pro Kontakt.",
         ],
 
         'privacy' => [
@@ -412,7 +413,7 @@ return [
         ],
 
         // The prices themselves are not here: the Cloud card reads them from
-        // `pricing.hosted`, so the homepage and the pricing page cannot quote
+        // `pricing.prices`, so the homepage and the pricing page cannot quote
         // two different numbers.
         'pricing' => [
             'badge' => "Keine Werbung",
@@ -455,193 +456,262 @@ return [
     ],
 
     'pricing' => [
-        'eyebrow' => "Einfache Preise",
-        'title' => "Ein gehosteter Tarif. Keine Preise pro Beziehung.",
-        'lede' => "Nutzen Sie Monica auf unseren Servern zu einem vorhersehbaren Preis, oder hosten Sie sie kostenlos selbst.",
-        'lede2' => "Wir berechnen nichts pro Kontakt, pro Erinnerung, pro wichtigem Geburtstag oder pro Person, die Sie nicht enttäuschen möchten.",
-        'currency' => "Preise in USD",
-        'taxFootnote' => "Die Preise werden in USD angezeigt. Anfallende Steuern werden vor der Zahlung berechnet.",
-
-        'billing' => [
-            'label' => "Abrechnungszeitraum",
-            'yearly' => "Jährlich — 2 Monate geschenkt",
-            'monthly' => "Monatlich",
+        // The four prices, as a reader sees them. Everything below quotes them
+        // through :free, :monthly, :yearly and :lifetime, and the homepage
+        // reads them from here, so a price change is one edit per language
+        // (plus `plans` in config.php, for the structured data).
+        'prices' => [
+            'free' => "0 $",
+            'monthly' => "9 $",
+            'yearly' => "90 $",
+            'lifetime' => "150 $",
         ],
 
-        'hosted' => [
-            'title' => "Gehostete Monica",
-            'body' => "Für alle, die Monica nutzen wollen, ohne einen Server zu pflegen.",
-            'yearlyPrice' => "90 $",
-            'yearlyPeriod' => "USD / Jahr",
-            'yearlyNote' => "Zwei Monate geschenkt bei jährlicher Abrechnung.",
-            'monthlyPrice' => "9 $",
-            'monthlyPeriod' => "USD / Monat",
-            'monthlyNote' => "Monatlich abgerechnet. Wechseln Sie zu jährlich für zwei Freimonate.",
-            'lifetimePrice' => "150 $",
-            'taxNote' => "Je nach Land können Steuern anfallen.",
-            'cta' => "Mit Monica beginnen",
-            'trial' => "30 Tage testen · Während der Testphase keine Kreditkarte nötig",
-            'listTitle' => "Alles, was Sie brauchen, um sich an die Menschen zu erinnern, die zählen:",
+        'hero' => [
+            'badge' => "Keine Gebühren pro Kontakt",
+            'badgeText' => "Monatlich, jährlich, einmalig oder nie zahlen.",
+            'title' => "Preise, an die Sie keine Erinnerung brauchen.",
+            'lede' => "Hosten Sie Monica kostenlos selbst. Lassen Sie Monica sie für :monthly im Monat oder :yearly im Jahr hosten. Oder zahlen Sie einmal :lifetime und denken Sie nie wieder daran. Der Preis bleibt gleich, ob Sie zehn Menschen kennen oder zehntausend.",
+        ],
+
+        'selfHost' => [
+            'eyebrow' => "Option eins · kostenlos",
+            'title' => "Selbst hosten. Kostenlos, und zwar vollständig.",
+            'body' => "Monica ist quelloffen. Ein Docker-Befehl, und sie läuft auf Ihrem eigenen Rechner: Ihr Server, Ihre Regeln, jede Funktion. Keine Testphase, keine gesperrte Stufe, kein Lizenzschlüssel.",
             'items' => [
-                "unbegrenzte Kontakte;",
-                "unbegrenzte Notizen;",
-                "unbegrenzte Erinnerungen;",
-                "unbegrenzte Aktivitäten und Journaleinträge;",
-                "Beziehungsverwaltung;",
-                "eigene Felder und Abschnitte;",
-                "Dateianhänge;",
-                "Datenexport;",
-                "automatische Updates;",
-                "verwaltete Sicherungen;",
-                "E-Mail-Support;",
-                "Zugriff von Telefon, Tablet und Computer;",
-                "alle künftigen gehosteten Funktionen inbegriffen.",
+                "Für immer kostenlos, unter AGPL-Lizenz",
+                "Jede Funktion der gehosteten Monica",
+                "Ihre Daten verlassen nie Ihre Hardware",
+                "Updates, wann Sie sie holen wollen",
             ],
-            'aside' => "Kein Aufpreis für eine große Familie.",
-            'footnote' => "Kündigen Sie, wann Sie möchten. Ihre Kontakte werden nicht als Geisel genommen.",
+            'cta' => "Anleitung zum Selbst-Hosten lesen",
+            'terminal' => [
+                'comment' => "# Holen, starten, fertig.",
+                'pulling' => "Lade monica:latest…",
+                'starting' => "Starte die Datenbank…",
+                'running' => "Läuft unter http://localhost:8080",
+                'outro' => "# Und jetzt tragen Sie Ihre Mutter ein.",
+            ],
         ],
 
-        'selfHosted' => [
-            'title' => "Lieber Ihr eigener Server?",
-            'body' => "Monica ist quelloffen und lässt sich auf einer Infrastruktur Ihrer Wahl installieren.",
-            'price' => "0 $",
-            'period' => "von Monica",
-            'aside' => "Ihr Hosting-Anbieter möchte womöglich trotzdem Geld. Den Kapitalismus haben wir noch nicht besiegt.",
-            'cta' => "Anleitung zum Selbst-Hosten ansehen",
-            'sourceCta' => "Quellcode auf GitHub ansehen · :count Sterne",
-            'listTitle' => "Die Anwendung bekommen Sie kostenlos. Sie stellen den Server, die Updates, die Sicherungen, die Überwachung, die Sicherheitspatches und die ruhige Gewissheit, genau zu wissen, wo Ihre Daten liegen.",
+        'plans' => [
+            'title' => "Drei Wege hinein. Alle fair.",
+            'lede' => "Selbst betreiben, laufend zahlen oder einmal zahlen. Jeder Tarif hat jede Funktion. Sie entscheiden nur, wer sich um den Server kümmert.",
+            'footnote' => "Preise in USD. Steuern werden, wo vorgeschrieben, an der Kasse hinzugefügt. In keinem Tarif Gebühren pro Kontakt, pro Erinnerung oder pro Tresor.",
+
+            'selfHost' => [
+                'title' => "Selbst hosten",
+                'body' => "Für alle, die schon einen Server haben oder einen Vorwand für einen suchen.",
+                'per' => "für immer",
+                'items' => [
+                    "Vollständiger Quellcode, AGPL",
+                    "Unbegrenzte Kontakte und Tresore",
+                    "Sicherungen und Updates machen Sie",
+                    "Support durch die Community",
+                ],
+                'cta' => "Anleitung zum Selbst-Hosten",
+            ],
+
+            'hosted' => [
+                'title' => "Gehostet",
+                'badge' => "Am häufigsten gewählt",
+                'body' => "Für alle, die wollen, dass Monica einfach da ist.",
+                'billingLabel' => "Abrechnungszeitraum",
+                'monthly' => "Monatlich",
+                'yearly' => "Jährlich",
+                'perMonth' => "/ Monat",
+                'perYear' => "/ Jahr",
+                'yearlyNote' => "2 Monate geschenkt",
+                'items' => [
+                    "Unbegrenzte Kontakte, Erinnerungen, Tresore",
+                    "Automatische Updates und tägliche Sicherungen",
+                    "Erinnerungen per E-Mail",
+                    "E-Mail-Support von echten Menschen",
+                    "Jederzeit kündbar, alles exportierbar",
+                ],
+                'cta' => "Mit Monica beginnen",
+            ],
+
+            'lifetime' => [
+                'title' => "Lebenslang",
+                'badge' => "Einmal zahlen",
+                'body' => "Für alle, die lieber nie wieder darüber nachdenken.",
+                'per' => "einmalig",
+                'items' => [
+                    "Alles aus „Gehostet“",
+                    "Eine Zahlung, keine Verlängerungen",
+                    "Alle künftigen Versionen inbegriffen",
+                    "Wechsel zum Selbst-Hosten, wann Sie möchten",
+                ],
+                'cta' => "Einmal zahlen, :lifetime",
+            ],
+        ],
+
+        'calculator' => [
+            'eyebrow' => "Der beziehungsbasierte Preisrechner",
+            'title' => "Was sollte Ihr Sozialleben kosten?",
+            'lede' => "Erzählen Sie ihm von den Menschen in Ihrem Leben. Er wägt elf zutiefst persönliche Faktoren ab und ermittelt einen fairen, maßgeschneiderten, völlig wissenschaftlichen Preis.",
+
+            'sliders' => [
+                'people' => ['label' => "Menschen, an die Sie sich erinnern möchten", 'help' => "Dunbar sagt 150. Dunbar kennt Ihre Verwandtschaft nicht."],
+                'birthdays' => ['label' => "Letztes Jahr vergessene Geburtstage", 'help' => "Inklusive des einen, der Ihnen um 23:48 Uhr eingefallen ist."],
+                'coffee' => ['label' => "Wie oft Sie „wir sollten mal einen Kaffee trinken“ gesagt haben", 'help' => "Und dann keinen Kaffee getrunken haben."],
+                'cousins' => ['label' => "Kinder von Cousins, deren Namen Sie nicht kennen", 'help' => "Sie wissen, dass es einen Leo gibt. Vielleicht zwei."],
+                'reminders' => ['label' => "Erinnerungen, die Sie anlegen würden", 'help' => "Monica verschickt jede einzelne."],
+                'mum' => ['label' => "Anrufe bei Ihrer Mutter pro Monat", 'help' => "Sie hat es so oder so bemerkt."],
+            ],
+
+            'toggles' => [
+                'pretend' => ['label' => "Sie haben schon so getan, als wüssten Sie einen Namen", 'help' => "„Hallo… du.“"],
+                'notes' => ['label' => "Sie machen sich auf dem Handy Notizen über Menschen", 'help' => "Monica ist genau diese Idee, nur mit Daten dazu."],
+                'dentist' => ['label' => "Sie kennen den Vornamen Ihrer Zahnärztin", 'help' => "Ehrlich gesagt beeindruckend."],
+                'belated' => ['label' => "Sie haben schon „nachträglich alles Gute“ geschickt", 'help' => "Das haben alle. Manche öfter als andere."],
+            ],
+
+            'social' => [
+                'label' => "Ihr Sozialleben",
+                'help' => "Als Multiplikator angewandt, weil Multiplikatoren nun mal so funktionieren.",
+                'options' => [
+                    'hermit' => "Einsiedler",
+                    'reasonable' => "Vernünftig",
+                    'mayor' => "Bürgermeister des Ortes",
+                ],
+            ],
+
+            'quote' => "Ihr persönliches Angebot",
+            'planLabel' => "Tarif",
+            'plans' => [
+                'monthly' => "Monatlich",
+                'yearly' => "Jährlich",
+                'lifetime' => "Lebenslang",
+            ],
+
+            // :count is a slider's value, :rate a made-up price per unit.
+            'lines' => [
+                'base' => [
+                    'monthly' => "Monica, monatlich",
+                    'yearly' => "Monica, jährlich",
+                    'lifetime' => "Monica, lebenslang",
+                ],
+                'people' => ":count Menschen × :rate",
+                'reminders' => ":count Erinnerungen",
+                'birthdays' => ":count vergessene Geburtstage × :rate schlechtes Gewissen",
+                'coffee' => ":count theoretische Kaffees × :rate",
+                'cousins' => ":count namenlose Kinder von Cousins × :rate",
+                'mum' => ":count Anrufe bei Mama × :rate Gutschrift",
+                'pretend' => "Zuschlag fürs Namen-Vortäuschen",
+                'notes' => "Umzug aus Ihrer Notizen-App",
+                'dentist' => "Bonus für Vertrautheit mit der Zahnärztin",
+                'belated' => "Bearbeitungsgebühr für „nachträglich alles Gute“",
+                'multiplier' => "Sozialleben-Multiplikator ×:rate",
+                'included' => "inbegriffen",
+                'free' => "kostenlos",
+            ],
+
+            'subtotal' => "Zwischensumme",
+            'refund' => "Beziehungsbasierte Preise",
+            'refundHelp' => "Gibt es bei Monica nicht. Vollständig abgezogen.",
+            'total' => "Ihr Gesamtbetrag",
+            'per' => [
+                'monthly' => "/ Monat",
+                'yearly' => "/ Jahr",
+                'lifetime' => "einmalig",
+            ],
+
+            'verdicts' => [
+                'birthdays' => ":count Geburtstage im nächsten Jahr, alle abgedeckt.",
+                'coffee' => "Gehen Sie einen dieser Kaffees trinken.",
+                'mum' => "Rufen Sie Ihre Mutter an. Das Angebot wartet.",
+                'default' => "Dasselbe wie für alle anderen. Genau darum geht es.",
+            ],
+
+            'cta' => "Diesen verdächtigen Preis sichern",
+            'reset' => "Alles vergessen und neu anfangen",
+            'footnote' => "Jede Zeile oben ist erfunden, außer dem Gesamtbetrag. Monica kostet dasselbe, ob Sie drei Menschen kennen oder dreitausend, ob Sie jeden Geburtstag behalten oder keinen.",
+        ],
+
+        'promises' => [
+            'people' => [
+                'title' => "Nie ein Preis pro Person",
+                'body' => "Jemanden neu kennenzulernen sollte Sie nichts kosten. Kontakte, Erinnerungen und Tresore sind in jedem Tarif unbegrenzt.",
+            ],
+            'export' => [
+                'title' => "Mit allem gehen",
+                'body' => "Exportieren Sie Ihr ganzes Konto, wann Sie möchten, und nehmen Sie es mit zu einer selbst gehosteten Monica oder anderswohin. Kündigen ist ein einziger Knopf.",
+            ],
+            'openSource' => [
+                'title' => "Quelloffen seit 2017",
+                'body' => "Wer für das Hosting zahlt, bezahlt die Server und die Menschen, die Monica weiterentwickeln, auch für alle, die sie selbst hosten.",
+            ],
+        ],
+
+        'ninety' => [
+            'eyebrow' => ":yearly im Verhältnis",
+            'title' => "Was kostet sonst noch neunzig Dollar?",
+            'lede' => "Ein Jahr gehostete Monica, neben den Dingen, für die Menschen das Geld meist ausgeben, nachdem sie etwas vergessen haben.",
+            'about' => "~ :yearly",
             'items' => [
-                "die vollständige quelloffene Anwendung;",
-                "unbegrenzte Kontakte;",
-                "so viele Nutzerinnen und Nutzer, wie Ihre Infrastruktur trägt;",
-                "volle Kontrolle über Ihre Daten;",
-                "Datenimport und -export;",
-                "Dokumentation der Community;",
-                "Unterstützung durch die Community;",
-                "die Möglichkeit, den Quellcode einzusehen und zu ändern.",
+                'bouquets' => ['title' => "Drei Entschuldigungssträuße", 'body' => "Einer pro vergessenem Geburtstag. Die von der Tankstelle, auf dem Weg gekauft."],
+                'gift' => ['title' => "Ein nachträgliches Geschenk per Expressversand", 'body' => "Das meiste davon ist der Versand. Alles davon ist schlechtes Gewissen."],
+                'coffees' => ['title' => "Achtzehn Kaffees", 'body' => "Die, die Sie trinken gehen wollten. Monica erinnert Sie daran, wirklich einen zu trinken."],
+                'streaming' => ['title' => "Sechs Monate eines Streamingdienstes", 'body' => "Der, von dem Sie vergessen hatten, dass Sie ihn abonniert haben."],
+                'cards' => ['title' => "Eine Karte für jeden Cousin", 'body' => "Plus Briefmarken. Plus herausfinden, wo sie inzwischen wohnen."],
+                'dinner' => ['title' => "Abendessen für zwei, ohne Nachtisch", 'body' => "Bei dem Sie endlich fragen, wie es ihnen geht, und zuhören."],
+                'addressBook' => ['title' => "Ein neues Adressbuch", 'body' => "Leder, schön gemacht, und bis zum Frühling wieder verloren."],
+                'monica' => ['title' => "Ein Jahr, in dem Sie sich an alle erinnern", 'body' => "Geburtstage, Namen der Kinder, wie das Vorstellungsgespräch lief. Das ist Monica."],
             ],
-            'footnote' => "Die selbst gehostete Ausgabe ist keine abgespeckte Demo. Es ist Monica auf Ihrer Infrastruktur.",
-            'footnote2' => "Verwaltete Sicherungen, E-Mail-Versand, Infrastrukturüberwachung und direkter Support gehören zum gehosteten Dienst.",
-        ],
-
-        'compare' => [
-            'title' => "Dieselbe Monica. Eine andere Person ist für den Server zuständig.",
-            'rowHeader' => "Was",
-            'hosted' => "Gehostete Monica",
-            'selfHosted' => "Selbst gehostete Monica",
-            'rows' => [
-                ['label' => "Monica-Software", 'hosted' => "Enthalten", 'selfHosted' => "Enthalten"],
-                ['label' => "Kontakte", 'hosted' => "Unbegrenzt", 'selfHosted' => "Unbegrenzt"],
-                ['label' => "Updates", 'hosted' => "Automatisch", 'selfHosted' => "Sie installieren sie"],
-                ['label' => "Sicherungen", 'hosted' => "Von Monica verwaltet", 'selfHosted' => "Sie verwalten sie"],
-                ['label' => "Serverwartung", 'hosted' => "Von Monica verwaltet", 'selfHosted' => "Sie übernehmen sie"],
-                ['label' => "Speicherort der Daten", 'hosted' => "Monica-Infrastruktur", 'selfHosted' => "Ihre Infrastruktur"],
-                ['label' => "Erforderliches technisches Wissen", 'hosted' => "Keines", 'selfHosted' => "Etwas"],
-                ['label' => "Support", 'hosted' => "E-Mail-Support", 'selfHosted' => "Community-Support"],
-                ['label' => "Kosten", 'hosted' => "Monats- oder Jahresabo", 'selfHosted' => "Kostenlose Software plus Hosting-Kosten"],
-                ['label' => "Am besten für", 'hosted' => "Menschen, die wollen, dass Monica läuft", 'selfHosted' => "Menschen, die Server mögen oder müssen"],
-            ],
-        ],
-
-        'whyPay' => [
-            'title' => "Warum zahlen, wenn Monica quelloffen ist?",
-            'body' => "Quelloffen heißt, dass Sie Monica betreiben, einsehen, ändern und zu ihr beitragen können. Server, Sicherungen, E-Mail-Versand, Sicherheitsarbeit und Support verschwinden dadurch nicht.",
-            'body2' => "Ein gehostetes Abonnement bezahlt die Infrastruktur hinter Ihrem Konto und finanziert die Weiterentwicklung von Monica für alle, auch für jene, die sie selbst hosten.",
-            'quote' => "Sie bezahlen uns dafür, Monica zu betreiben, nicht dafür, Ihre eigenen Daten freizuschalten.",
-            'aside' => "Server sind einfach Computer, die Rechnungen schicken.",
-        ],
-
-        'noCharge' => [
-            'title' => "Wofür wir nichts berechnen",
-            'items' => [
-                ['title' => "Mehr Kontakte", 'body' => "Ihr Preis steigt nicht, weil Sie mehr Menschen kennen."],
-                ['title' => "Mehr Erinnerungen", 'body' => "Sich an Jahrestage zu erinnern ist schon stressig genug."],
-                ['title' => "Datenexporte", 'body' => "Ihre Daten mitzunehmen ist ein Recht, keine Zusatzfunktion."],
-                ['title' => "Grundlegende Privatsphäre", 'body' => "Wir verkaufen kein Privatsphäre-Upgrade. Privatsphäre ist die Voreinstellung."],
-                ['title' => "Kündigen", 'body' => "Es gibt keine Kündigungsgebühren und kein zeremonielles Trennungsgespräch."],
-                ['title' => "Die API nutzen", 'body' => "Die API gehört zum Produkt, sie ist keine gesonderte Verhandlung."],
-            ],
-        ],
-
-        'leaving' => [
-            'title' => "Ihr Abonnement darf enden. Ihr Zugang zu Ihren Daten nicht.",
-            'body' => "Sie können Ihre Daten jederzeit exportieren.",
-            'body2' => "Nach der Kündigung bleibt Ihr Konto bis zum Ende des bezahlten Abrechnungszeitraums zugänglich. Danach halten wir es für eine festgelegte Schonfrist bereit, bevor es gelöscht wird.",
-            'steps' => [
-                ['label' => "Kündigen", 'body' => "Ihr Tarif bleibt bis zum Ende des Abrechnungszeitraums aktiv."],
-                ['label' => "Exportieren", 'body' => "Laden Sie Ihre Daten vor oder nach der Kündigung herunter, während der Schonfrist."],
-                ['label' => "Löschen", 'body' => "Löschen Sie Ihr Konto sofort in den Einstellungen, wann immer Sie möchten."],
-            ],
-            'note' => "Schonfrist, Exportformate und Löschfristen sind in der Aufbewahrungsrichtlinie festgelegt.",
-        ],
-
-        'trackRecord' => [
-            'title' => "Quelloffen, bevor das eine Preisstrategie war",
-            'body' => "Monica wird seit 2017 öffentlich entwickelt.",
-            'body2' => "Das Projekt hat :count Sterne auf GitHub gesammelt, wurde mehrfach als Repository der Woche ausgewählt, stand an der Spitze von Product Hunt und wurde von der Open-Source-Community ausgezeichnet.",
-            'starsLabel' => "Sterne auf GitHub",
-            'since' => "2017",
-            'sinceLabel' => "Quelloffen seit",
-            'launch' => "Nr. 1 des Tages",
-            'launchLabel' => "Product Hunt",
-            'featured' => "Repository der Woche",
-            'featuredLabel' => "Mehrfach hervorgehoben",
-            'cta' => "Monica auf GitHub ansehen",
+            'footnote' => "Die Preise sind ungefähr und beruhen auf Erfahrung. Ein Jahr Monica kostet genau :yearly.",
         ],
 
         'faq' => [
-            'title' => "Fragen zum Bezahlen von Monica",
+            'eyebrow' => "Fragen zum Bezahlen",
+            'title' => "Häufig gefragt, selten vergessen.",
+            'intro' => "Jede Antwort beginnt mit der Kurzfassung. Öffnen Sie die lange, wenn die kurze Sie misstrauisch gemacht hat.",
+            'search' => "Fragen durchsuchen",
+            'categoriesLabel' => "Fragen nach Thema filtern",
+            'categories' => [
+                'all' => "Alle",
+                'money' => "Geld",
+                'plans' => "Tarife",
+                'selfHosting' => "Selbst hosten",
+                'data' => "Ihre Daten",
+                'leaving' => "Gehen",
+            ],
+            'progress' => [
+                'none' => "0 von :total gelesen. Fangen Sie irgendwo an.",
+                'some' => ":count von :total gelesen.",
+                'many' => ":count von :total gelesen. Sie wissen jetzt mehr darüber als die meisten, die sich anmelden.",
+                'all' => "Alle :total gelesen. Sie könnten den Support-Posteingang übernehmen.",
+            ],
+            'random' => "Irgendeine Frage stellen",
+            'emptyTitle' => "Keine Frage passt dazu",
+            'emptyBody' => "Versuchen Sie ein kürzeres Wort, oder schreiben Sie dem Support. Dort lesen echte Menschen.",
             'items' => [
-                ['q' => "Was kostet Monica?", 'a' => [
-                    "Gehostete Monica kostet 9 USD pro Monat oder 90 USD pro Jahr.",
-                    "Sie können Monica auch kostenlos auf einer Infrastruktur hosten, die Sie verwalten.",
-                ]],
-                ['q' => "Gilt der Preis pro Nutzer oder pro Kontakt?", 'a' => "Nein. Der gehostete Tarif hat einen Preis pro Konto und enthält unbegrenzte Kontakte."],
-                ['q' => "Ist Monica wirklich quelloffen?", 'a' => [
-                    "Ja. Der Quellcode von Monica ist öffentlich, und das Projekt hat :count Sterne auf GitHub.",
-                    "Monica v3 bleibt quelloffen und selbst hostbar.",
-                ], 'link' => ['label' => "Mehr über Monica v3 lesen", 'page' => 'v3']],
-                ['q' => "Ist Selbst-Hosten kostenlos?", 'a' => "Monica berechnet nichts für die selbst gehostete Software. Server und Infrastrukturkosten tragen Sie."],
-                ['q' => "Unterscheidet sich die gehostete von der selbst gehosteten Version?", 'a' => [
-                    "Beide nutzen dieselbe Anwendung.",
-                    "Der gehostete Dienst umfasst Infrastruktur, verwaltete Updates, Sicherungen, Überwachung, E-Mail-Versand und Support. Einzelne Integrationen, die auf von Monica betriebener Infrastruktur beruhen, kann es nur im gehosteten Dienst geben.",
-                ]],
-                ['q' => "Kann ich von gehostet zu selbst gehostet wechseln?", 'a' => "Ja. Sie können Ihre Monica-Daten exportieren und in eine kompatible selbst gehostete Installation importieren."],
-                ['q' => "Kann ich jederzeit kündigen?", 'a' => "Ja. Kündigen Sie in Ihren Kontoeinstellungen. Ihr Abonnement bleibt bis zum Ende des laufenden Abrechnungszeitraums aktiv."],
-                ['q' => "Gibt es Kündigungsgebühren?", 'a' => "Nein. Gehen sollte kein Lösegeld kosten."],
-                ['q' => "Was passiert, wenn meine Zahlung fehlschlägt?", 'a' => [
-                    "Wir benachrichtigen Sie und versuchen die Zahlung erneut, bevor wir das Konto einschränken.",
-                    "Ihre Daten werden nicht gelöscht, weil eine Karte abgelaufen ist.",
-                ]],
-                ['q' => "Wie funktionieren Rückerstattungen?", 'a' => [
-                    "Wenn Ihnen versehentlich etwas berechnet wurde oder Sie das Kündigen vergessen haben, melden Sie sich innerhalb von 30 Tagen. Wir prüfen die Anfrage wie vernünftige Menschen.",
-                    "Jahresabonnements können innerhalb der in unserer Rückerstattungsrichtlinie festgelegten Frist erstattet werden. Für Konten, die den Dienst ernsthaft missbraucht haben, gibt es keine Rückerstattung.",
-                ]],
-                ['q' => "Wird der Preis steigen?", 'a' => [
-                    "Preise können sich mit Monica ändern, aber wir informieren bestehende Abonnentinnen und Abonnenten vorher.",
-                    "Wir ändern Preise nicht stillschweigend in der Hoffnung, dass es niemand merkt.",
-                ]],
-                ['q' => "Sind Steuern enthalten?", 'a' => "Ob die angezeigten Preise Steuern enthalten, hängt von Ihrem Land und der geltenden Rechtslage ab. Der Endbetrag wird vor der Zahlung angezeigt."],
-                ['q' => "Speichert Monica meine Zahlungsdaten?", 'a' => "Zahlungsdaten werden von unserem Zahlungsdienstleister verarbeitet. Monica speichert keine vollständigen Kartennummern."],
-                ['q' => "Werden meine Daten für Werbung genutzt?", 'a' => "Nein. Monica verkauft Ihre persönlichen Daten nicht, zeigt keine Werbung und nutzt die Menschen in Ihrem Konto nicht für Werbeprofile."],
-                ['q' => "Werden meine Daten zum Training von KI-Modellen genutzt?", 'a' => "Kein Modell wird auf den privaten Inhalten Ihres Monica-Kontos trainiert."],
-                ['q' => "Sind Sicherungen enthalten?", 'a' => [
-                    "Ja, der gehostete Dienst enthält verwaltete Sicherungen.",
-                    "Bei selbst gehosteten Installationen richten Sie Ihre Sicherungen selbst ein und testen sie.",
-                ]],
-                ['q' => "Kann ich alles exportieren?", 'a' => "Sie können Kontakte, Beziehungen, Notizen, Erinnerungen, Aktivitäten, eigene Felder und weitere unterstützte Kontodaten exportieren. Anhänge sind im dokumentierten Exportformat enthalten."],
-                ['q' => "Kann ich mein Konto löschen?", 'a' => "Ja. Die Kontolöschung finden Sie in den Einstellungen, ohne den Support zu kontaktieren."],
-                ['q' => "Bieten Sie Rabatte an?", 'a' => "Derzeit nicht. Uns ist ein verständlicher Preis lieber als ein System, in dem alle einzeln verhandeln."],
-                ['q' => "Bieten Sie Lifetime-Tarife an?", 'a' => "Nein. Server verursachen weiterhin Kosten, auch nachdem motivierende Startkampagnen vorbei sind."],
-                ['q' => "Bieten Sie einen Enterprise-Tarif an?", 'a' => [
-                    "Für die Nutzung von Monica ist kein Vertriebsgespräch nötig.",
-                    "Bei Fragen zu Sicherheit, Beschaffung oder Hosting in größerem Umfang schreiben Sie uns.",
-                ]],
-                ['q' => "Kann ich in einer anderen Währung zahlen?", 'a' => "Die Abrechnung erfolgt derzeit in USD. Ihre Bank kann den Betrag umrechnen und eine Fremdwährungsgebühr berechnen."],
-                ['q' => "Unterstützt ein Abonnement das Open-Source-Projekt?", 'a' => "Ja. Gehostete Abonnements finanzieren Infrastruktur, Wartung, Support und die weitere quelloffene Entwicklung von Monica."],
+                ['cat' => 'money', 'q' => "Was kostet Monica?", 'short' => "Nichts, :monthly, :yearly oder :lifetime.", 'a' => "Selbst hosten ist kostenlos. Gehostete Monica kostet :monthly im Monat oder :yearly im Jahr. Lebenslang kostet :lifetime, einmal gezahlt. Jede Option enthält jede Funktion."],
+                ['cat' => 'money', 'q' => "Gilt der Preis pro Nutzer oder pro Kontakt?", 'short' => "Weder noch.", 'a' => "Ein Konto zahlt einen Preis. Legen Sie so viele Kontakte, Erinnerungen, Tresore und Notizen an, wie Sie möchten. Neue Menschen kennenzulernen sollte Sie nie Geld kosten."],
+                ['cat' => 'money', 'q' => "Sind Steuern enthalten?", 'short' => "Werden, wo vorgeschrieben, an der Kasse hinzugefügt.", 'a' => "Wenn Ihr Land Umsatzsteuer oder Mehrwertsteuer verlangt, wird sie vor der Zahlung angezeigt. Der Betrag, dem Sie zustimmen, ist der Betrag, der abgebucht wird."],
+                ['cat' => 'money', 'q' => "Kann ich in einer anderen Währung zahlen?", 'short' => "Die Preise sind in US-Dollar.", 'a' => "Ihr Kartenanbieter rechnet beim Bezahlen um. Der Betrag in Dollar bleibt von Jahr zu Jahr gleich."],
+                ['cat' => 'money', 'q' => "Wird der Preis steigen?", 'short' => "Nicht für den Tarif, den Sie schon haben.", 'a' => "Wenn sich die Preise für Neukunden ändern, behalten bestehende Abonnements ihren Preis. Sie erfahren es rechtzeitig per E-Mail, mit der tatsächlichen Zahl."],
+                ['cat' => 'money', 'q' => "Bieten Sie Rabatte an?", 'short' => "Jährlich ist zwei Monate günstiger.", 'a' => "Jährlich zahlen kostet :yearly statt 108 $. Studierende und gemeinnützige Organisationen können dem Support schreiben. Selbst hosten bleibt der größte Rabatt von allen: 100 %."],
+                ['cat' => 'plans', 'q' => "Bieten Sie Lifetime-Tarife an?", 'short' => "Ja. :lifetime, einmalig.", 'a' => "Lebenslang ist gehostete Monica ohne Verlängerungen. Er enthält jede künftige Version, solange es die gehostete Monica gibt, und Sie können jederzeit zum Selbst-Hosten wechseln."],
+                ['cat' => 'plans', 'q' => "Unterscheidet sich die gehostete von der selbst gehosteten Version?", 'short' => "Dieselbe Monica.", 'a' => "Derselbe Code, dieselben Funktionen. Der einzige Unterschied ist, wer den Server betreibt, die Updates einspielt und die Sicherungen aufbewahrt."],
+                ['cat' => 'plans', 'q' => "Bieten Sie einen Enterprise-Tarif an?", 'short' => "Nein.", 'a' => "Monica ist ein persönliches CRM für Ihr eigenes Leben. Ein Vertriebsteam ist mit einem Vertriebswerkzeug besser bedient."],
+                ['cat' => 'selfHosting', 'q' => "Ist Monica wirklich quelloffen?", 'short' => "Ja, seit 2017.", 'a' => "Der vollständige Quellcode ist öffentlich und steht unter der AGPL. Sie können ihn lesen, ausführen, ändern und dazu beitragen."],
+                ['cat' => 'selfHosting', 'q' => "Ist Selbst-Hosten kostenlos?", 'short' => "Vollständig.", 'a' => "Kein Lizenzschlüssel, keine gesperrten Funktionen, keine Testphase. Sie zahlen für Ihren eigenen Server, falls Sie einen haben, und mit Ihrer eigenen Zeit."],
+                ['cat' => 'selfHosting', 'q' => "Kann ich von gehostet zu selbst gehostet wechseln?", 'short' => "Ja, wann Sie möchten.", 'a' => "Exportieren Sie Ihr Konto und importieren Sie es in Ihre eigene Monica. Das Format ist auf beiden Seiten dasselbe, also geht unterwegs nichts verloren."],
+                ['cat' => 'selfHosting', 'q' => "Unterstützt ein Abonnement das Open-Source-Projekt?", 'short' => "Direkt.", 'a' => "Die Einnahmen aus dem Hosting bezahlen die Server und die Menschen, die Monica weiterentwickeln, auch die Teile, die Selbst-Hostende kostenlos nutzen."],
+                ['cat' => 'data', 'q' => "Speichert Monica meine Zahlungsdaten?", 'short' => "Nein.", 'a' => "Zahlungen wickelt der Zahlungsdienstleister ab. Monica sieht und speichert Ihre Kartennummer nie."],
+                ['cat' => 'data', 'q' => "Werden meine Daten für Werbung genutzt?", 'short' => "Nie.", 'a' => "Es gibt keine Werbung, keine Tracker und keine Dritten, die lesen, was Sie über Ihre Familie schreiben."],
+                ['cat' => 'data', 'q' => "Werden meine Daten zum Training von KI-Modellen genutzt?", 'short' => "Nein.", 'a' => "Was Sie über die Menschen in Ihrem Leben schreiben, ist kein Trainingsmaterial, weder für Monica noch für irgendjemanden, mit dem Monica zusammenarbeitet."],
+                ['cat' => 'data', 'q' => "Sind Sicherungen enthalten?", 'short' => "Täglich, in den gehosteten Tarifen.", 'a' => "Gehostete und lebenslange Konten werden jeden Tag gesichert. Bei einer selbst gehosteten Monica planen Sie die Sicherungen selbst."],
+                ['cat' => 'data', 'q' => "Kann ich alles exportieren?", 'short' => "Alles.", 'a' => "Kontakte, Notizen, Erinnerungen, Beziehungen, Dateien. Der Export steht in jedem Tarif zur Verfügung, auch nach der Kündigung."],
+                ['cat' => 'leaving', 'q' => "Kann ich jederzeit kündigen?", 'short' => "Ja, mit einem Knopf.", 'a' => "Kein Anruf, kein Halteformular. Ihr Konto bleibt bis zum Ende des bezahlten Zeitraums nutzbar."],
+                ['cat' => 'leaving', 'q' => "Gibt es Kündigungsgebühren?", 'short' => "Nein.", 'a' => "Kündigen kostet nichts. Zurückkommen auch nicht."],
+                ['cat' => 'leaving', 'q' => "Was passiert, wenn meine Zahlung fehlschlägt?", 'short' => "Nichts verschwindet.", 'a' => "Sie bekommen eine E-Mail und eine Schonfrist, um Ihre Karte zu aktualisieren. Ihre Daten bleiben genau, wo sie waren."],
+                ['cat' => 'leaving', 'q' => "Wie funktionieren Rückerstattungen?", 'short' => "Fragen Sie innerhalb von 30 Tagen.", 'a' => "Wenn Monica nichts für Sie ist, schreiben Sie dem Support innerhalb von 30 Tagen nach der Zahlung, und Sie bekommen den vollen Betrag zurück."],
+                ['cat' => 'leaving', 'q' => "Kann ich mein Konto löschen?", 'short' => "Ja, endgültig.", 'a' => "Wenn Sie Ihr Konto löschen, werden Ihre Daten von den Servern entfernt. Sicherungen, die sie enthalten, laufen nach ihrem üblichen Zeitplan ab."],
             ],
         ],
-
     ],
 
     'personalCrm' => [

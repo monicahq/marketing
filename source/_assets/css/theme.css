@@ -29,9 +29,19 @@
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
-  /* ---------- Colour ----------
-     Cool greys and no accent. The filled button, the link and the focus ring
-     are all the same near black, and it inverts with the theme. */
+}
+
+/* ---------- Colour ----------
+   Cool greys and no accent. The filled button, the link and the focus ring
+   are all the same near black, and it inverts with the theme.
+
+   `inline`, so a utility writes the design system's own variable
+   (`background-color: var(--card)`) rather than ours (`var(--color-surface-
+   subtle)`). The difference shows inside a nested `.dark`, such as the dark
+   panels on the pricing page: our variable is resolved once, on :root, and
+   inherited as a light value, while the design system's is resolved on the
+   element itself, where `.dark` has just redefined it. */
+@theme inline {
   --color-*: initial;
 
   /* Surfaces. The page and a panel on it are both white; what separates them
@@ -133,7 +143,9 @@
   --color-nature-medical: #be123c;
   --color-nature-milestone: #6d28d9;
   --color-nature-record: #4d7c0f;
+}
 
+@theme {
   /* ---------- Type scale ----------
      One family. Marketing display sizes carry tighter tracking; hierarchy is
      built with weight before colour, and size before weight 700. */
@@ -291,8 +303,11 @@
    the hairline given a little weight; `shadow-pop` is for what genuinely
    floats, a menu or the chat card over the terminal. The values repeat the
    design system's exactly, because it declares the same names on :root and
-   the two must agree. Tailwind's stock shadows stay removed. */
-@theme {
+   the two must agree. Tailwind's stock shadows stay removed.
+
+   `inline` for the same reason as the colours: two of them read design system
+   variables, which have to resolve where the shadow is drawn. */
+@theme inline {
   --shadow-*: initial;
   --inset-shadow-*: initial;
   --drop-shadow-*: initial;
