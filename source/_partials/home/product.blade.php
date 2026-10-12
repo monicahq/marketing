@@ -19,21 +19,34 @@
      It is a picture of Monica, not a working copy, so it is one image to a
      screen reader, described by its label, and nothing inside it is a control. --}}
 <section class="relative px-4 pb-24 md:px-6">
-    <div aria-hidden="true" class="absolute inset-x-0 top-[42%] bottom-0 bg-ground-sage"></div>
+    {{-- The page from the meadow's foot down, so the lower half of the product
+         picture and the awards under it sit on white rather than on the cream
+         of home/top. --}}
+    <div aria-hidden="true" class="absolute inset-x-0 top-[42%] bottom-0 bg-canvas"></div>
 
-    {{-- The meadow behind the headline (see home/top). Its foot sits on the
-         sage line, so the grass gives way to the sage band rather than being
-         cut by it, and it grows upward from there. Never narrower than 900px,
-         like the footer's, so a phone crops the edges instead of shrinking the
-         pandas. Decoration: the footer already describes the meadow. --}}
-    <div aria-hidden="true" class="absolute bottom-[58%] left-1/2 w-full min-w-[900px] -translate-x-1/2 dark:hidden">
+    {{-- The meadow behind the headline (see home/top). Its foot sits 42% of
+         the way down the product picture, where the grass gives way to the
+         white page, and it grows upward from there all the way to the header.
+
+         The picture alone is not always tall enough for that: the headline
+         wraps onto more lines on a phone, and in a longer language. So the box
+         is taller than any headline needs, the picture fills it from the foot
+         up (`object-cover object-bottom`, zooming in only when it has to), and
+         home/top's clip cuts off whatever rises past the header. From lg, the
+         box is never shorter than the picture's own height at full width, so
+         a wide screen shows it unzoomed.
+
+         Never narrower than 900px, like the footer's, so a phone crops the
+         edges instead of shrinking the pandas. Decoration: the footer already
+         describes the meadow. --}}
+    <div aria-hidden="true" class="absolute bottom-[58%] left-1/2 h-[1100px] w-full min-w-[900px] -translate-x-1/2 lg:h-[max(960px,56.25vw)] dark:hidden">
         <img
             src="{{ $meadow }}"
             alt=""
             width="{{ $meadowSize['width'] }}"
             height="{{ $meadowSize['height'] }}"
             decoding="async"
-            class="block h-auto w-full"
+            class="block size-full object-cover object-bottom"
         >
     </div>
 

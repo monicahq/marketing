@@ -126,8 +126,7 @@
 
   /* The two marketing grounds. Ours, not the design system's: declared at the
      bottom of this file with their dark counterparts. Sage sits behind the
-     product picture, the awards and the agents section on the homepage;
-     cream is the footer. */
+     agents section on the homepage; cream is the footer. */
   --color-ground-sage: var(--ground-sage);
   --color-ground-sage-ink: var(--ground-sage-ink);
   --color-ground-cream: var(--ground-cream);
@@ -317,7 +316,7 @@
   --shadow-pop: 0 10px 24px -8px var(--pop-shadow);
 
   /* Ours, for one thing: the product picture under the homepage headline,
-     lifted off the sage band behind it. */
+     lifted off the page behind it. */
   --shadow-showcase: 0 30px 60px -30px rgb(40 60 30 / 0.25), 0 1px 2px rgb(0 0 0 / 0.04);
 }
 

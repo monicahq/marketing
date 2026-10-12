@@ -12,7 +12,7 @@
     ];
 @endphp
 
-<section aria-label="{{ $copy['label'] }}" class="bg-ground-sage px-4 pb-24 md:px-6">
+<section aria-label="{{ $copy['label'] }}" class="px-4 pt-20 pb-24 md:px-6">
     <div class="mx-auto flex max-w-page flex-col items-center gap-6">
         <span class="text-caption font-medium tracking-[0.08em] text-ground-sage-ink uppercase">{{ $copy['label'] }}</span>
         <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-4">
