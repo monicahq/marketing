@@ -262,16 +262,18 @@ return [
     /** Die Seite /preise. Die Preise stammen aus dem Design; hier je Locale ändern. */
     // ---------------------------------------------------------------- home
     //
-    // The homepage, section by section, in page order. The people in it
-    // (Lucie, Théo, Priya, Sam) are demonstration data and keep their names in
-    // every language; what is said about them is translated.
+    // The homepage, section by section, in page order. Every person in it is
+    // from Friends, and only from Friends: the product picture is open on
+    // Phoebe, the reminders and the agent are about Rachel, Chandler and Joey.
+    // They keep their names in every language; what is said about them is
+    // translated.
     //
     // A sentence with one word in bold is written as three pieces, before, bold
     // and after, so a translation can move the bold word to wherever its
     // grammar puts it without anyone writing markup in a copy file.
     'home' => [
         'hero' => [
-            'pill' => "Mama, Théo, Priya, Sam und der Hund",
+            'pill' => "Rachel, Ross, Chandler, Joey und die Ente",
             'title' => "Erinnern Sie sich an die Menschen, die Ihnen wichtig sind.",
             'subtitle' => "Wir sind ein quelloffenes persönliches CRM.",
             'lede' => "Privat von Grund auf. Quelloffen. Selbst hostbar. Keine Werbung, kein Datenverkauf, keine peinlichen Benachrichtigungen zur „Aktivierung“.",
@@ -285,30 +287,30 @@ return [
         'product' => [
             // Read out in place of the picture, which is drawn in markup but is
             // a picture of the product rather than a working copy of it.
-            'label' => "Monica, geöffnet auf der Seite von Lucie Martin: zwei wichtige Daten, ihre Beziehungen, die neueste Notiz über sie und drei Geschenkideen.",
+            'label' => "Monica, geöffnet auf der Seite von Phoebe Buffay: zwei wichtige Daten, ihre Beziehungen, die neueste Notiz über sie und drei Geschenkideen.",
             'vault' => "Familie",
             'nav' => ["Dashboard", "Menschen", "Erinnerungen", "Journal", "Geschenkideen", "Einstellungen"],
             'vaultsLabel' => "Tresore",
-            'vaults' => ["Familie", "Freunde", "Buchclub"],
+            'vaults' => ["Familie", "Freunde", "Central Perk"],
             'search' => "Menschen suchen",
             'add' => "Person hinzufügen",
-            'meta' => "Théos Mutter · Lyon · seit 31 Jahren bekannt",
+            'meta' => "Ursulas Zwillingsschwester · New York · seit 10 Jahren bekannt",
             'tabs' => ["Übersicht", "Zeitleiste", "Notizen", "Geschenkideen"],
             'datesTitle' => "Wichtige Daten",
             'dates' => [
-                ['title' => "Geburtstag", 'date' => "14. März 1957", 'when' => "in fünf Monaten"],
-                ['title' => "Hochzeitstag", 'date' => "2. Juni 1984", 'when' => "in acht Monaten"],
+                ['title' => "Geburtstag", 'date' => "16. Februar 1966", 'when' => "in vier Monaten"],
+                ['title' => "Hochzeitstag", 'date' => "12. Februar 2004", 'when' => "in vier Monaten"],
             ],
             'relationshipsTitle' => "Beziehungen",
             'relationships' => [
-                ["Lucie ist ", "Théos", " Mutter."],
-                ["Lucie ist ", "Bernards", " Ehefrau."],
+                ["Phoebe ist ", "Ursulas", " Zwillingsschwester."],
+                ["Phoebe ist ", "Mikes", " Ehefrau."],
             ],
             'noteTitle' => "Neueste Notiz",
-            'note' => "Hat im September mit Töpfern angefangen. Sehr stolz auf eine Schale. Den Vorfall mit dem Brennofen nicht erwähnen.",
+            'note' => "Hat ein neues Lied über eine Katze geschrieben. Sehr stolz darauf. Den Geruch nicht erwähnen.",
             'noteWhen' => "Vor sechs Tagen",
             'giftsTitle' => "Geschenkideen",
-            'gifts' => ["Glasur-Set", "Zugtickets nach Paris", "Ein besserer Brennofen"],
+            'gifts' => ["Gitarrensaiten", "Massageöl", "Geruchloses Katzenstreu"],
         ],
 
         'awards' => [
@@ -325,13 +327,13 @@ return [
             'body' => "Wir sind ausgesprochen entwicklerfreundlich.",
             'mcp' => "MCP-Doku ansehen",
             'api' => "API ansehen",
-            'prompt' => "Was soll ich Priya zum Geburtstag schenken?",
-            'answer' => "Priya hat am 3. November Geburtstag, in 23 Tagen.",
+            'prompt' => "Was soll ich Rachel zum Geburtstag schenken?",
+            'answer' => "Rachel hat in 23 Tagen Geburtstag.",
             'saved' => "Sie haben im Juli zwei Ideen gespeichert:",
-            'ideas' => ["Der Keramikkurs, den sie erwähnt hat", "Alles außer noch einer Kerze"],
-            'ask' => "Trag ein, dass ich heute mit Sam zu Mittag gegessen habe.",
+            'ideas' => ["Der Schal, auf den sie bei Bloomingdale’s gezeigt hat", "Alles außer einer Pro-und-Contra-Liste"],
+            'ask' => "Trag ein, dass ich heute mit Joey im Central Perk Kaffee getrunken habe.",
             'used' => "Monica verwendet",
-            'reply' => "Erledigt. „Mittagessen“ am 11. Oktober in Sams Zeitleiste eingetragen.",
+            'reply' => "Erledigt. „Kaffee“ am 11. Oktober in Joeys Zeitleiste eingetragen.",
         ],
 
         'features' => [
@@ -341,39 +343,39 @@ return [
                 'title' => "Geburtstage, bevor sie nachträglich werden.",
                 'body' => "Erinnerungen an Daten, Anrufe und Versprechen. Per E-Mail, pünktlich.",
                 'rows' => [
-                    ['name' => "Priya Raman", 'what' => "Geburtstag", 'when' => "in 23 Tagen"],
-                    ['name' => "Mama", 'what' => "wegen Weihnachten zurückrufen", 'when' => "morgen"],
-                    ['name' => "Sam Okafor", 'what' => "Bohrmaschine zurückgeben", 'when' => "seit sechs Wochen überfällig"],
+                    ['name' => "Rachel Green", 'what' => "Geburtstag", 'when' => "in 23 Tagen"],
+                    ['name' => "Chandler Bing", 'what' => "wegen Thanksgiving zurückrufen", 'when' => "morgen"],
+                    ['name' => "Joey Tribbiani", 'what' => "Miete zurückzahlen", 'when' => "seit sechs Jahren überfällig"],
                 ],
             ],
             'relationships' => [
                 'title' => "Wer ist wer, und wer gehört zu wem.",
                 'body' => "Stammbäume, Verflossene, Paten. Als ganze Sätze geschrieben.",
                 'sentences' => [
-                    ["Lucie ist ", "Théos", " Mutter."],
-                    ["Théo ist ", "Priyas", " Partner."],
-                    ["Sam ist ", "unser aller", " Problem."],
+                    ["Monica ist die Schwester von ", "Ross", "."],
+                    ["Ross ist ", "Rachels", " Hummer."],
+                    ["Joey ist ", "jedermanns", " Mitbewohner."],
                 ],
             ],
             'gifts' => [
                 'title' => "Geschenkideen, im Juli gespeichert.",
                 'body' => "Damit der Dezember keine Panik wird.",
-                'ideas' => ["Keramikkurs", "Das Buch über Moos"],
-                'crossed' => "Noch eine Kerze",
+                'ideas' => ["Ein Kickertisch", "Das Buch über Dinosaurier"],
+                'crossed' => "Eine Pro-und-Contra-Liste",
             ],
             'notes' => [
                 'title' => "Notizen, die Sie wiederfinden.",
                 'body' => "Durchsuchen Sie jede Notiz, zu jedem Menschen.",
                 'query' => "allergisch",
-                'who' => "Sam:",
-                'match' => "allergisch gegen Katzen. Hat drei Katzen.",
+                'who' => "Ross:",
+                'match' => "allergisch gegen Kiwi. Monica vergisst das ständig.",
             ],
             'details' => [
-                'title' => "Weiß, wie der Hund heißt.",
+                'title' => "Kennt das Küken und die Ente.",
                 'body' => "Haustiere, Kinder, Berufe, Essensvorlieben. Die Details, die zählen.",
                 'fields' => [
-                    ['label' => "Hund", 'value' => "Keks"],
-                    ['label' => "Kaffee", 'value' => "Flat White mit Hafermilch"],
+                    ['label' => "Haustiere", 'value' => "Ein Küken und eine Ente"],
+                    ['label' => "Kaffee", 'value' => "Central Perk, jeden Tag"],
                 ],
             ],
             'vaults' => [
@@ -382,7 +384,7 @@ return [
                 'vaults' => [
                     ['name' => "Familie", 'count' => "24 Menschen"],
                     ['name' => "Freunde", 'count' => "61 Menschen"],
-                    ['name' => "Buchclub", 'count' => "7 Menschen"],
+                    ['name' => "Central Perk", 'count' => "6 Menschen"],
                 ],
             ],
             'journal' => [

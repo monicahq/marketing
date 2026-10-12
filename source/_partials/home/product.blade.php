@@ -5,7 +5,7 @@
     $vaultDots = ['bg-identity-2', 'bg-identity-1', 'bg-identity-7'];
     $dateTiles = ['bg-identity-7/12 text-identity-7', 'bg-identity-3/12 text-identity-3'];
     $dateIcons = ['gift', 'heart'];
-    $relatives = ['Théo Martin', 'Bernard Martin'];
+    $relatives = ['Ursula Buffay', 'Mike Hannigan'];
 
     $card = 'rounded-lg border border-border bg-canvas shadow-panel';
     $cardTitle = 'border-b border-border px-4 py-3 text-copy font-semibold';
@@ -62,10 +62,10 @@
 
             <div class="flex flex-col gap-6 p-5 md:p-7">
                 <div class="flex items-center gap-4">
-                    @include('_partials.avatar-initials', ['name' => 'Lucie Martin', 'size' => 56])
+                    @include('_partials.avatar-initials', ['name' => 'Phoebe Buffay', 'size' => 56])
                     <div class="min-w-0 flex-1">
                         <div class="flex items-center gap-2">
-                            <span class="text-heading-sm font-semibold text-text">Lucie Martin</span>
+                            <span class="text-heading-sm font-semibold text-text">Phoebe Buffay</span>
                             @include('_partials.icon', ['name' => 'star-filled', 'class' => 'text-warning'])
                         </div>
                         <div class="text-base text-text-muted">{{ $copy['meta'] }}</div>

@@ -287,16 +287,18 @@ return [
 
     // ---------------------------------------------------------------- home
     //
-    // The homepage, section by section, in page order. The people in it
-    // (Lucie, Théo, Priya, Sam) are demonstration data and keep their names in
-    // every language; what is said about them is translated.
+    // The homepage, section by section, in page order. Every person in it is
+    // from Friends, and only from Friends: the product picture is open on
+    // Phoebe, the reminders and the agent are about Rachel, Chandler and Joey.
+    // They keep their names in every language; what is said about them is
+    // translated.
     //
     // A sentence with one word in bold is written as three pieces, before, bold
     // and after, so a translation can move the bold word to wherever its
     // grammar puts it without anyone writing markup in a copy file.
     'home' => [
         'hero' => [
-            'pill' => "Mum, Théo, Priya, Sam, and the dog",
+            'pill' => "Rachel, Ross, Chandler, Joey, and the duck",
             'title' => "Remember the people you care about.",
             'subtitle' => "We are an open source personal CRM.",
             'lede' => "Private by design. Open source. Self-hostable. No ads, no data resale, no awkward “engagement” notifications.",
@@ -310,30 +312,30 @@ return [
         'product' => [
             // Read out in place of the picture, which is drawn in markup but is
             // a picture of the product rather than a working copy of it.
-            'label' => "Monica, open on Lucie Martin’s page: two important dates, her relationships, the latest note about her and three gift ideas.",
+            'label' => "Monica, open on Phoebe Buffay’s page: two important dates, her relationships, the latest note about her and three gift ideas.",
             'vault' => "Family",
             'nav' => ["Dashboard", "People", "Reminders", "Journal", "Gift ideas", "Settings"],
             'vaultsLabel' => "Vaults",
-            'vaults' => ["Family", "Friends", "Book club"],
+            'vaults' => ["Family", "Friends", "Central Perk"],
             'search' => "Search people",
             'add' => "Add a person",
-            'meta' => "Théo’s mother · Lyon · known for 31 years",
+            'meta' => "Ursula’s twin sister · New York · known for 10 years",
             'tabs' => ["Overview", "Timeline", "Notes", "Gift ideas"],
             'datesTitle' => "Important dates",
             'dates' => [
-                ['title' => "Birthday", 'date' => "14 March 1957", 'when' => "in five months"],
-                ['title' => "Wedding anniversary", 'date' => "2 June 1984", 'when' => "in eight months"],
+                ['title' => "Birthday", 'date' => "16 February 1966", 'when' => "in four months"],
+                ['title' => "Wedding anniversary", 'date' => "12 February 2004", 'when' => "in four months"],
             ],
             'relationshipsTitle' => "Relationships",
             'relationships' => [
-                ["Lucie is ", "Théo’s", " mother."],
-                ["Lucie is ", "Bernard’s", " wife."],
+                ["Phoebe is ", "Ursula’s", " twin sister."],
+                ["Phoebe is ", "Mike’s", " wife."],
             ],
             'noteTitle' => "Latest note",
-            'note' => "Started pottery in September. Very proud of a bowl. Do not mention the kiln incident.",
+            'note' => "Wrote a new song about a cat. Very proud of it. Do not mention the smell.",
             'noteWhen' => "Six days ago",
             'giftsTitle' => "Gift ideas",
-            'gifts' => ["Glaze set", "Train tickets to Paris", "A better kiln"],
+            'gifts' => ["Guitar strings", "Massage oil", "Unscented cat litter"],
         ],
 
         'awards' => [
@@ -350,13 +352,13 @@ return [
             'body' => "We are super developer friendly.",
             'mcp' => "Explore MCP doc",
             'api' => "Explore API",
-            'prompt' => "What should I get Priya for her birthday?",
-            'answer' => "Priya’s birthday is 3 November, in 23 days.",
+            'prompt' => "What should I get Rachel for her birthday?",
+            'answer' => "Rachel’s birthday is in 23 days.",
             'saved' => "You saved two ideas in July:",
-            'ideas' => ["The ceramics class she mentioned", "Anything but another candle"],
-            'ask' => "Log that I had lunch with Sam today.",
+            'ideas' => ["The scarf she pointed at in Bloomingdale’s", "Anything but a list of pros and cons"],
+            'ask' => "Log that I had coffee with Joey at Central Perk today.",
             'used' => "Used Monica",
-            'reply' => "Done. Added “Lunch” to Sam’s timeline for 11 October.",
+            'reply' => "Done. Added “Coffee” to Joey’s timeline for 11 October.",
         ],
 
         'features' => [
@@ -366,39 +368,39 @@ return [
                 'title' => "Birthdays, before they’re belated.",
                 'body' => "Reminders for dates, calls and promises. By email, on time.",
                 'rows' => [
-                    ['name' => "Priya Raman", 'what' => "birthday", 'when' => "in 23 days"],
-                    ['name' => "Mum", 'what' => "call back about Christmas", 'when' => "tomorrow"],
-                    ['name' => "Sam Okafor", 'what' => "return the drill", 'when' => "six weeks overdue"],
+                    ['name' => "Rachel Green", 'what' => "birthday", 'when' => "in 23 days"],
+                    ['name' => "Chandler Bing", 'what' => "call back about Thanksgiving", 'when' => "tomorrow"],
+                    ['name' => "Joey Tribbiani", 'what' => "pay back the rent", 'when' => "six years overdue"],
                 ],
             ],
             'relationships' => [
                 'title' => "Who’s who, and whose.",
                 'body' => "Family trees, exes, godparents. Written as sentences.",
                 'sentences' => [
-                    ["Lucie is ", "Théo’s", " mother."],
-                    ["Théo is ", "Priya’s", " partner."],
-                    ["Sam is ", "everyone’s", " problem."],
+                    ["Monica is ", "Ross’s", " sister."],
+                    ["Ross is ", "Rachel’s", " lobster."],
+                    ["Joey is ", "everyone’s", " roommate."],
                 ],
             ],
             'gifts' => [
                 'title' => "Gift ideas, saved in July.",
                 'body' => "So December is not a panic.",
-                'ideas' => ["Ceramics class", "That book about moss"],
-                'crossed' => "Another candle",
+                'ideas' => ["A foosball table", "That book about dinosaurs"],
+                'crossed' => "A list of pros and cons",
             ],
             'notes' => [
                 'title' => "Notes you can find again.",
                 'body' => "Search every note, on every person.",
                 'query' => "allergic",
-                'who' => "Sam:",
-                'match' => "allergic to cats. Has three cats.",
+                'who' => "Ross:",
+                'match' => "allergic to kiwi. Monica keeps forgetting.",
             ],
             'details' => [
-                'title' => "Remembers the dog’s name.",
+                'title' => "Remembers the chick and the duck.",
                 'body' => "Pets, kids, jobs, food preferences. The details that matter.",
                 'fields' => [
-                    ['label' => "Dog", 'value' => "Biscuit"],
-                    ['label' => "Coffee", 'value' => "Oat flat white"],
+                    ['label' => "Pets", 'value' => "A chick and a duck"],
+                    ['label' => "Coffee", 'value' => "Central Perk, every day"],
                 ],
             ],
             'vaults' => [
@@ -407,7 +409,7 @@ return [
                 'vaults' => [
                     ['name' => "Family", 'count' => "24 people"],
                     ['name' => "Friends", 'count' => "61 people"],
-                    ['name' => "Book club", 'count' => "7 people"],
+                    ['name' => "Central Perk", 'count' => "6 people"],
                 ],
             ],
             'journal' => [

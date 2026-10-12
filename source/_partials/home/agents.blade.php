@@ -29,8 +29,8 @@
                 <div class="overflow-x-auto px-5.5 pt-5 pb-18 font-mono text-small leading-[1.75] text-on-inverse">
                     <div><span class="text-on-inverse-muted">&gt;</span> <span class="text-on-inverse-strong">{{ $copy['prompt'] }}</span></div>
                     <div class="h-2.5"></div>
-                    <div><span class="text-terminal-ok">●</span> monica · <span class="text-on-inverse-strong">search_contacts</span>(<span class="text-terminal-string">"Priya"</span>)</div>
-                    <div><span class="text-terminal-ok">●</span> monica · <span class="text-on-inverse-strong">list_gift_ideas</span>(contact: <span class="text-terminal-string">"Priya Raman"</span>)</div>
+                    <div><span class="text-terminal-ok">●</span> monica · <span class="text-on-inverse-strong">search_contacts</span>(<span class="text-terminal-string">"Rachel"</span>)</div>
+                    <div><span class="text-terminal-ok">●</span> monica · <span class="text-on-inverse-strong">list_gift_ideas</span>(contact: <span class="text-terminal-string">"Rachel Green"</span>)</div>
                     <div class="h-2.5"></div>
                     <div class="text-on-inverse-strong">{{ $copy['answer'] }}</div>
                     <div>{{ $copy['saved'] }}</div>

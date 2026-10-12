@@ -259,16 +259,18 @@ return [
     /** De /prijzen-pagina. De prijzen komen uit het ontwerp; wijzig ze hier, één keer per taal. */
     // ---------------------------------------------------------------- home
     //
-    // The homepage, section by section, in page order. The people in it
-    // (Lucie, Théo, Priya, Sam) are demonstration data and keep their names in
-    // every language; what is said about them is translated.
+    // The homepage, section by section, in page order. Every person in it is
+    // from Friends, and only from Friends: the product picture is open on
+    // Phoebe, the reminders and the agent are about Rachel, Chandler and Joey.
+    // They keep their names in every language; what is said about them is
+    // translated.
     //
     // A sentence with one word in bold is written as three pieces, before, bold
     // and after, so a translation can move the bold word to wherever its
     // grammar puts it without anyone writing markup in a copy file.
     'home' => [
         'hero' => [
-            'pill' => "Mama, Théo, Priya, Sam en de hond",
+            'pill' => "Rachel, Ross, Chandler, Joey en de eend",
             'title' => "Onthoud de mensen die je dierbaar zijn.",
             'subtitle' => "We zijn een open source persoonlijke CRM.",
             'lede' => "Privé van opzet. Open source. In eigen beheer te draaien. Geen advertenties, geen doorverkoop van gegevens, geen ongemakkelijke meldingen over “betrokkenheid”.",
@@ -282,30 +284,30 @@ return [
         'product' => [
             // Read out in place of the picture, which is drawn in markup but is
             // a picture of the product rather than a working copy of it.
-            'label' => "Monica, geopend op de pagina van Lucie Martin: twee belangrijke data, haar relaties, de laatste notitie over haar en drie cadeau-ideeën.",
+            'label' => "Monica, geopend op de pagina van Phoebe Buffay: twee belangrijke data, haar relaties, de laatste notitie over haar en drie cadeau-ideeën.",
             'vault' => "Familie",
             'nav' => ["Dashboard", "Mensen", "Herinneringen", "Dagboek", "Cadeau-ideeën", "Instellingen"],
             'vaultsLabel' => "Kluizen",
-            'vaults' => ["Familie", "Vrienden", "Leesclub"],
+            'vaults' => ["Familie", "Vrienden", "Central Perk"],
             'search' => "Zoek mensen",
             'add' => "Persoon toevoegen",
-            'meta' => "Moeder van Théo · Lyon · al 31 jaar bekend",
+            'meta' => "Tweelingzus van Ursula · New York · al 10 jaar bekend",
             'tabs' => ["Overzicht", "Tijdlijn", "Notities", "Cadeau-ideeën"],
             'datesTitle' => "Belangrijke data",
             'dates' => [
-                ['title' => "Verjaardag", 'date' => "14 maart 1957", 'when' => "over vijf maanden"],
-                ['title' => "Trouwdag", 'date' => "2 juni 1984", 'when' => "over acht maanden"],
+                ['title' => "Verjaardag", 'date' => "16 februari 1966", 'when' => "over vier maanden"],
+                ['title' => "Trouwdag", 'date' => "12 februari 2004", 'when' => "over vier maanden"],
             ],
             'relationshipsTitle' => "Relaties",
             'relationships' => [
-                ["Lucie is de moeder van ", "Théo", "."],
-                ["Lucie is de vrouw van ", "Bernard", "."],
+                ["Phoebe is de tweelingzus van ", "Ursula", "."],
+                ["Phoebe is de vrouw van ", "Mike", "."],
             ],
             'noteTitle' => "Laatste notitie",
-            'note' => "Is in september begonnen met pottenbakken. Heel trots op een kom. Niet over het ovenincident beginnen.",
+            'note' => "Heeft een nieuw liedje over een kat geschreven. Is er heel trots op. Niet over de geur beginnen.",
             'noteWhen' => "Zes dagen geleden",
             'giftsTitle' => "Cadeau-ideeën",
-            'gifts' => ["Glazuurset", "Treinkaartjes naar Parijs", "Een betere oven"],
+            'gifts' => ["Gitaarsnaren", "Massageolie", "Geurloze kattenbakvulling"],
         ],
 
         'awards' => [
@@ -322,13 +324,13 @@ return [
             'body' => "We zijn superontwikkelaarsvriendelijk.",
             'mcp' => "Bekijk de MCP-documentatie",
             'api' => "Bekijk de API",
-            'prompt' => "Wat zal ik Priya geven voor haar verjaardag?",
-            'answer' => "Priya is op 3 november jarig, over 23 dagen.",
+            'prompt' => "Wat zal ik Rachel geven voor haar verjaardag?",
+            'answer' => "Rachel is over 23 dagen jarig.",
             'saved' => "Je hebt in juli twee ideeën bewaard:",
-            'ideas' => ["De keramiekcursus waar ze het over had", "Alles behalve weer een kaars"],
-            'ask' => "Noteer dat ik vandaag met Sam heb geluncht.",
+            'ideas' => ["De sjaal die ze aanwees bij Bloomingdale’s", "Alles behalve een lijst met voors en tegens"],
+            'ask' => "Noteer dat ik vandaag met Joey koffie heb gedronken in Central Perk.",
             'used' => "Monica gebruikt",
-            'reply' => "Klaar. “Lunch” toegevoegd aan de tijdlijn van Sam op 11 oktober.",
+            'reply' => "Klaar. “Koffie” toegevoegd aan de tijdlijn van Joey op 11 oktober.",
         ],
 
         'features' => [
@@ -338,39 +340,39 @@ return [
                 'title' => "Verjaardagen, niet pas achteraf.",
                 'body' => "Herinneringen voor data, telefoontjes en beloftes. Per e-mail, op tijd.",
                 'rows' => [
-                    ['name' => "Priya Raman", 'what' => "verjaardag", 'when' => "over 23 dagen"],
-                    ['name' => "Mama", 'what' => "terugbellen over kerst", 'when' => "morgen"],
-                    ['name' => "Sam Okafor", 'what' => "boormachine terugbrengen", 'when' => "zes weken te laat"],
+                    ['name' => "Rachel Green", 'what' => "verjaardag", 'when' => "over 23 dagen"],
+                    ['name' => "Chandler Bing", 'what' => "terugbellen over Thanksgiving", 'when' => "morgen"],
+                    ['name' => "Joey Tribbiani", 'what' => "huur terugbetalen", 'when' => "zes jaar te laat"],
                 ],
             ],
             'relationships' => [
                 'title' => "Wie is wie, en van wie.",
                 'body' => "Stambomen, exen, peetouders. Geschreven als zinnen.",
                 'sentences' => [
-                    ["Lucie is de moeder van ", "Théo", "."],
-                    ["Théo is de partner van ", "Priya", "."],
-                    ["Sam is ", "ieders", " probleem."],
+                    ["Monica is de zus van ", "Ross", "."],
+                    ["Ross is de kreeft van ", "Rachel", "."],
+                    ["Joey is ", "ieders", " huisgenoot."],
                 ],
             ],
             'gifts' => [
                 'title' => "Cadeau-ideeën, bewaard in juli.",
                 'body' => "Zodat december geen paniek wordt.",
-                'ideas' => ["Keramiekcursus", "Dat boek over mos"],
-                'crossed' => "Weer een kaars",
+                'ideas' => ["Een tafelvoetbalspel", "Dat boek over dinosaurussen"],
+                'crossed' => "Een lijst met voors en tegens",
             ],
             'notes' => [
                 'title' => "Notities die je terugvindt.",
                 'body' => "Doorzoek elke notitie, bij iedereen.",
                 'query' => "allergisch",
-                'who' => "Sam:",
-                'match' => "allergisch voor katten. Heeft drie katten.",
+                'who' => "Ross:",
+                'match' => "allergisch voor kiwi. Monica vergeet het steeds.",
             ],
             'details' => [
-                'title' => "Onthoudt hoe de hond heet.",
+                'title' => "Onthoudt het kuikentje en de eend.",
                 'body' => "Huisdieren, kinderen, banen, eetvoorkeuren. De details die ertoe doen.",
                 'fields' => [
-                    ['label' => "Hond", 'value' => "Biscuit"],
-                    ['label' => "Koffie", 'value' => "Flat white met havermelk"],
+                    ['label' => "Huisdieren", 'value' => "Een kuiken en een eend"],
+                    ['label' => "Koffie", 'value' => "Central Perk, elke dag"],
                 ],
             ],
             'vaults' => [
@@ -379,7 +381,7 @@ return [
                 'vaults' => [
                     ['name' => "Familie", 'count' => "24 mensen"],
                     ['name' => "Vrienden", 'count' => "61 mensen"],
-                    ['name' => "Leesclub", 'count' => "7 mensen"],
+                    ['name' => "Central Perk", 'count' => "6 mensen"],
                 ],
             ],
             'journal' => [

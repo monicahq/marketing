@@ -1,8 +1,9 @@
 @php
     $copy = $page->t('home.hero');
 
-    // Demonstration people. They keep their names in every language.
-    $faces = ['Lucie Martin', 'Théo Martin', 'Priya Raman', 'Sam Okafor'];
+    // Demonstration people, from Friends like everyone on this page. They keep
+    // their names in every language.
+    $faces = ['Rachel Green', 'Ross Geller', 'Chandler Bing', 'Joey Tribbiani'];
 @endphp
 
 <section class="px-4 pt-24 pb-14 text-center md:px-6">

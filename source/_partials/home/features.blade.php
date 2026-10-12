@@ -6,9 +6,8 @@
     $body = 'text-body text-text-secondary';
     $chip = 'rounded-md border border-border bg-canvas px-3 py-2.5 text-base';
 
-    // Who each reminder is about. The second one is "Mum" in the copy, and her
-    // avatar is Lucie's, the same person the product picture above is open on.
-    $reminderFaces = ['Priya Raman', 'Lucie Martin', 'Sam Okafor'];
+    // Who each reminder is about, in the order of the copy.
+    $reminderFaces = ['Rachel Green', 'Chandler Bing', 'Joey Tribbiani'];
     $vaultTones = [
         ['ground' => 'bg-identity-2/10', 'mark' => 'bg-identity-2'],
         ['ground' => 'bg-identity-1/10', 'mark' => 'bg-identity-1'],
