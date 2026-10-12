@@ -1,58 +1,45 @@
 @php
     $home = $page->route('home');
+    $features = $page->route('features');
 
-    // Nav items in order. Entries whose destination is a page that does not
-    // exist yet keep the design's placeholder href. `current` names the route
-    // key, so aria-current follows the page being rendered.
-    //
-    // Five entries in every locale, each one a page this site actually has.
-    // The guide comes first because it answers the question a reader arrives
-    // with, before the pages that assume they already know the answer.
-    //
-    // No "Product": the logo beside it is already a link to the homepage, and
-    // two links to the same page in one bar is one more than a reader needs.
-    // No "Open source": it pointed at a section of the homepage, which the
-    // homepage itself already walks a reader through. No "Documentation":
-    // there is no documentation yet, and a nav entry that goes to '#' is a
-    // promise the site cannot keep.
-    //
-    // Nothing marks the homepage as current in here now, which is the ordinary
-    // arrangement for a site whose wordmark is its home link. The footer still
-    // carries Product, Documentation and the rest, which is where a link that
-    // is a signpost rather than a destination belongs.
-    $navItems = [
-        ['label' => $page->t('nav.personalCrm'), 'href' => $page->route('personalCrm'), 'current' => ['personalCrm']],
-        // The features section is three pages behind one tab strip, so all
-        // three keys keep this entry underlined while the reader is inside it.
-        [
-            'label' => $page->t('nav.features'),
-            'href' => $page->route('features'),
-            'current' => ['features', 'featuresDashboard', 'featuresJournal'],
-        ],
-        ['label' => $page->t('nav.v3'), 'href' => $page->route('v3'), 'current' => ['v3']],
-        ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing'), 'current' => ['pricing']],
-        // A post is a blog page too, so the nav keeps its underline while the
-        // reader is inside one. `current` is an array for that reason.
-        ['label' => $page->t('nav.blog'), 'href' => $page->route('blog'), 'current' => ['blog', 'post']],
+    // The features menu. Every item lands on the features pages for now,
+    // except the API, which has its own (placeholder) destination. The
+    // destinations are listed here rather than in `lang/`, because a URL is
+    // not copy and does not change with the language.
+    $menu = $page->t('nav.menu');
+    $menuLinks = [
+        [$features, $features, $features],
+        [$features, $features, $features],
+        [$features, $page->links['api'], $features],
     ];
 
-    $navLink = 'inline-flex flex-none items-center border-b-2 border-transparent text-small text-text-secondary no-underline transition-colors duration-100 ease-standard hover:border-text hover:text-text hover:no-underline aria-[current=page]:border-text aria-[current=page]:font-medium aria-[current=page]:text-text max-lg:h-9 lg:h-16';
+    // One identity colour per column, as the design draws it. Literal class
+    // strings, so Tailwind's scanner finds them.
+    $groupTones = [
+        ['dot' => 'bg-identity-7', 'tile' => 'bg-identity-7/12 text-identity-7'],
+        ['dot' => 'bg-identity-1', 'tile' => 'bg-identity-1/12 text-identity-1'],
+        ['dot' => 'bg-identity-2', 'tile' => 'bg-identity-2/12 text-identity-2'],
+    ];
+    $rowDots = ['bg-identity-1', 'bg-identity-2', 'bg-identity-3'];
+
+    // The plain links after the menu. `current` names the route keys that mark
+    // the link as the page being read; a post is a blog page too.
+    $navItems = [
+        ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing'), 'current' => ['pricing']],
+        ['label' => $page->t('nav.blog'), 'href' => $page->route('blog'), 'current' => ['blog', 'post']],
+        ['label' => $page->t('nav.docs'), 'href' => $page->links['docs'], 'current' => []],
+    ];
+
+    $navLink = 'flex items-center gap-1 rounded-md px-2.5 py-2 text-base font-medium text-text-secondary no-underline transition-colors duration-150 ease-standard hover:bg-hover hover:text-text hover:no-underline aria-[current=page]:text-text';
 @endphp
 
-<header class="border-b border-border">
-    {{-- `min-h-16` is what centres a single row on desktop. Below `lg` the bar
-         wraps into two rows, the min-height stops doing anything, and the logo
-         ends up flush against the announcement bar above it, so the wrapped
-         layout pays for its own vertical padding.
-
-         The gap is split: 24px between items on a row, 12px between the rows,
-         which is enough to separate them without a mobile header that tall. --}}
-    <div class="mx-auto flex min-h-16 w-full max-w-marketing flex-wrap items-stretch gap-x-6 gap-y-3 px-4 max-lg:py-4 md:px-8">
-        <a href="{{ $home }}" class="flex items-center gap-3 text-text no-underline hover:no-underline">
+<header class="relative z-40 border-b border-border bg-canvas">
+    {{-- `relative` is on this container rather than on the menu, so the open
+         panel spans the header's width instead of the width of one button. --}}
+    <div class="relative mx-auto flex min-h-15 w-full max-w-page flex-wrap items-center gap-x-8 gap-y-2 px-4 max-lg:py-3 md:px-6">
+        <a href="{{ $home }}" class="flex items-center gap-2 text-text no-underline hover:text-text hover:no-underline">
             {{-- `width`/`height` are the SVG's intrinsic ratio, so the browser
-                 reserves the right box before it loads; `w-6 h-auto` sizes it.
-                 The JPG needed `mix-blend-multiply` to hide its white
-                 background. This one is transparent, so the hack is gone. --}}
+                 reserves the right box before it loads; `w-6 h-auto` sizes it. --}}
             <img
                 src="/assets/images/monica-panda-mark.svg"
                 alt=""
@@ -60,38 +47,89 @@
                 height="29"
                 class="h-auto w-6 flex-none"
             >
-            <span class="text-title font-semibold tracking-[-0.015em]">Monica</span>
+            <span class="text-lede-sm font-semibold tracking-[-0.02em]">Monica</span>
         </a>
 
         <nav
             aria-label="{{ $page->t('nav.label') }}"
-            {{-- The bottom padding moved to the container, so the space below
-                 the nav matches the space above the logo. --}}
-            class="flex min-w-0 items-stretch gap-6 max-lg:order-3 max-lg:h-auto max-lg:basis-full max-lg:overflow-x-auto lg:ml-8"
+            class="flex min-w-0 flex-1 flex-wrap items-center gap-1 max-lg:order-3 max-lg:basis-full max-lg:-mx-2.5"
         >
+            {{-- A native <details>, like the language menu: it opens on a click,
+                 a tap or the keyboard with no script at all. app.js only adds
+                 closing it on Escape or a click elsewhere. It does not open on
+                 hover, because hover is never the only way to an action and a
+                 menu that opens under a passing pointer is one nobody asked
+                 for. --}}
+            <details data-menu class="group/menu">
+                <summary class="{{ $navLink }} cursor-pointer list-none group-open/menu:bg-hover group-open/menu:text-text [&::-webkit-details-marker]:hidden">
+                    {{ $page->t('nav.features') }}
+                    @include('_partials.icon', ['name' => 'chevron-down', 'size' => 14, 'class' => 'transition-transform duration-150 ease-standard group-open/menu:rotate-180'])
+                </summary>
+
+                <div class="absolute inset-x-4 top-full z-50 pt-2 md:inset-x-6">
+                    <div class="flex max-h-[calc(100dvh-140px)] flex-wrap overflow-y-auto rounded-lg border border-border bg-canvas shadow-pop">
+                        <div class="grid min-w-0 flex-[3_1_640px] gap-x-6 gap-y-5 p-6 sm:grid-cols-3 md:p-7">
+                            @foreach ($menu['groups'] as $g => $group)
+                                <div class="flex flex-col gap-1">
+                                    <div class="mb-1.5 flex items-center gap-2 border-b border-border pb-2.5">
+                                        <span class="size-1.5 rounded-full {{ $groupTones[$g]['dot'] }}"></span>
+                                        <span class="text-caption font-medium tracking-[0.08em] text-text-muted uppercase">{{ $group['title'] }}</span>
+                                    </div>
+                                    @foreach ($group['items'] as $i => $item)
+                                        <a href="{{ $menuLinks[$g][$i] }}" class="-mx-2 flex gap-3 rounded-md p-2 text-text no-underline hover:bg-hover hover:text-text hover:no-underline">
+                                            <span class="grid size-7.5 flex-none place-items-center rounded-md {{ $groupTones[$g]['tile'] }}">
+                                                @include('_partials.icon', ['name' => $item['icon']])
+                                            </span>
+                                            <span class="flex flex-col gap-px">
+                                                <span class="text-base leading-snug font-semibold">{{ $item['title'] }}</span>
+                                                <span class="text-xs text-text-muted">{{ $item['body'] }}</span>
+                                            </span>
+                                        </a>
+                                    @endforeach
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <div class="flex min-w-0 flex-[1_1_300px] flex-col gap-4 border-border bg-surface-subtle p-6 max-lg:border-t md:p-7 lg:border-l">
+                            <span class="text-caption font-medium tracking-[0.08em] text-text-muted uppercase">{{ $menu['start']['label'] }}</span>
+                            <a href="{{ $page->links['templates'] }}" class="flex flex-col gap-4 rounded-lg border border-border bg-canvas p-4.5 text-text no-underline shadow-panel hover:border-border-strong hover:text-text hover:no-underline">
+                                <span class="flex flex-col gap-1">
+                                    <span class="text-lede-sm font-semibold tracking-[-0.02em]">{{ $menu['start']['title'] }}</span>
+                                    <span class="text-small text-text-secondary">{{ $menu['start']['body'] }}</span>
+                                </span>
+                                <span class="flex flex-col gap-1.5">
+                                    @foreach ($menu['start']['rows'] as $r => $row)
+                                        <span class="flex items-center gap-2.5 rounded-md border border-border px-2.5 py-2 text-small">
+                                            <span class="size-2 flex-none rounded-full {{ $rowDots[$r] }}"></span>
+                                            <span class="flex-1 font-medium">{{ $row['label'] }}</span>
+                                            <span class="min-w-0 truncate text-caption text-text-muted normal-case">{{ $row['detail'] }}</span>
+                                        </span>
+                                    @endforeach
+                                </span>
+                                <span class="flex items-center gap-1.5 text-small font-medium">
+                                    {{ $menu['start']['cta'] }}
+                                    @include('_partials.icon', ['name' => 'arrow-right', 'size' => 14])
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
             @foreach ($navItems as $item)
                 <a
                     href="{{ $item['href'] }}"
-                    @if (in_array($page->page, $item['current'] ?? [], true)) aria-current="page" @endif
+                    @if (in_array($page->page, $item['current'], true)) aria-current="page" @endif
                     class="{{ $navLink }}"
                 >{{ $item['label'] }}</a>
             @endforeach
         </nav>
 
-        <div class="flex-1"></div>
-
-        <div class="flex items-center gap-2">
-            <a
-                href="{{ $page->links['github'] }}"
-                class="mn-btn mn-btn--secondary mn-btn--sm gap-2 no-underline hover:no-underline"
-            >
-                @include('_partials.icon', ['name' => 'star'])
-                <span>{{ $page->t('nav.stars', [':count' => $page->starCount]) }}</span>
-            </a>
-            <a href="{{ $page->links['signIn'] }}" class="mn-btn mn-btn--quiet mn-btn--sm no-underline hover:no-underline">
+        <div class="flex items-center gap-2 max-lg:ml-auto">
+            <a href="{{ $page->links['signIn'] }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">
                 {{ $page->t('nav.signIn') }}
             </a>
-            <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary mn-btn--sm no-underline hover:no-underline">
+            <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary no-underline hover:no-underline">
                 {{ $page->t('nav.getStarted') }}
             </a>
         </div>

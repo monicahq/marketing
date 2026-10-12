@@ -15,5 +15,4 @@ page: pricing
         'title' => $page->t('pricing.faq.title'),
         'items' => $page->t('pricing.faq.items', [':count' => $page->starCount]),
     ])
-    @include('_partials.pricing.final-cta')
 @endsection

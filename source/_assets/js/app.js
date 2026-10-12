@@ -8,7 +8,8 @@
  *   Turbo Drive   intercepts the click, fetches the page, and swaps <body>
  *                 instead of tearing the document down, so the stylesheet, the
  *                 webfont and this script survive the navigation.
- *   Alpine        the pricing page's billing toggle, and nothing else.
+ *   Alpine        the billing toggle, on the pricing page and the homepage,
+ *                 and nothing else.
  *
  * Both prefetchers stay on, because they feed different kinds of navigation and
  * neither one covers the other's:
@@ -46,3 +47,28 @@ window.Alpine = Alpine;
  * of that would bind every directive twice. (A project using Turbo's morph
  * refreshes does need the hook, because morph patches nodes in place.) */
 Alpine.start();
+
+/* The features menu in the header and the language menu in the footer are
+ * native <details>, so they open, close and take focus with no script at all.
+ * What <details> does not do on its own is close when the reader presses
+ * Escape or clicks somewhere else, which is what a menu is expected to do.
+ * These two listeners add that to any <details data-menu>.
+ *
+ * On the document rather than on each menu, so they survive Turbo swapping
+ * <body> without having to be bound again. */
+const openMenus = () => document.querySelectorAll('details[data-menu][open]');
+
+document.addEventListener('click', (event) => {
+    openMenus().forEach((menu) => {
+        if (!menu.contains(event.target)) menu.open = false;
+    });
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+
+    openMenus().forEach((menu) => {
+        menu.open = false;
+        menu.querySelector('summary')?.focus();
+    });
+});

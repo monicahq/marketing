@@ -426,7 +426,7 @@ return [
      * archive rather than from a number somebody has to remember.
      */
     'lastmod' => [
-        'home' => '2026-08-06',
+        'home' => '2026-10-11',
         'v3' => '2026-08-06',
         'pricing' => '2026-08-06',
         'features' => '2026-08-06',
@@ -457,6 +457,13 @@ return [
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
+        'mcp' => '#',
+        'templates' => '#',
+        'changelog' => '#',
+
+        // There is no sales team, which is the joke on the homepage button.
+        // It still needs somewhere to go: a contact address, most likely.
+        'contactSales' => '#',
     ],
 
     // ------------------------------------------------------------------ plans
@@ -558,6 +565,25 @@ return [
     /** Absolute URL. Crawlers and scrapers do not resolve relative ones. */
     'absolute' => function ($page, string $path) {
         return rtrim($page->baseUrl, '/') . '/' . ltrim($path, '/');
+    },
+
+    /**
+     * An image's intrinsic size, read off the file: `['width' => …, 'height' => …]`.
+     *
+     * Every <img> carries its own pixels as `width` and `height`, and this is
+     * how a template gets them without repeating numbers that are already a
+     * fact about the file. A missing file fails the build, naming the path,
+     * rather than shipping an image with no box reserved for it.
+     */
+    'imageSize' => function ($page, string $src) {
+        $path = __DIR__ . '/source' . $src;
+        $size = is_file($path) ? getimagesize($path) : false;
+
+        if (! $size) {
+            throw new Exception("Image [{$src}] is missing or unreadable.");
+        }
+
+        return ['width' => $size[0], 'height' => $size[1]];
     },
 
     /**
