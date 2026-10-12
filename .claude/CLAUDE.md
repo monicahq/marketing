@@ -113,20 +113,24 @@ German runs ~30% longer than English, French ~20%, and Portuguese ~20%. Don't pi
 
 ## The design system is the authority
 
-`source/_assets/css/design-system/` is vendored verbatim from the Claude Design project `8711a85c-8b75-4074-a0b4-ff23d508475c`. **Do not edit those files.** Change them in the design project and re-sync. `theme.css` (ours) is the bridge that exposes the tokens to Tailwind.
+`source/_assets/css/design-system/` is vendored verbatim from the v3 design system, `monica-design-system-775829c6-137c-4315-9e1b-8644d7459794`, as the homepage design project (`61528750-b7ae-43b2-bc45-aefec20d3e15`) imports it: `tokens/colors.css`, `tokens/typography.css`, `tokens/shape.css`, `tokens/motion.css`, `base.css` and `components.css`. **Do not edit those files.** Change them in the design project and re-sync. `theme.css` (ours) is the bridge that exposes the tokens to Tailwind.
+
+The design system has its own vocabulary (`--ink`, `--body`, `--hairline`, `--card`, `--identity-1`), declared on `:root`. `theme.css` points the site's utility names at it with `var()` (`--color-text: var(--ink)`) instead of copying values, which is what lets dark mode work without a second set of utilities. Where `theme.css` and the design system declare the same name (`--font-sans`, `--text-caption`, `--text-base`, `--radius-xs`, the three shadows), the two values must be identical, because the design system's copy wins.
 
 Non-negotiable rules, in rough order of how often they get broken:
 
-- **No box shadows, anywhere.** Not on buttons, dropdowns, dialogs, sticky headers or hover states. Hierarchy comes from 1px borders, surface contrast, whitespace and type. The shadow utilities are removed from the Tailwind theme, so `shadow-*` simply does not exist.
-- **No gradients, no background imagery, no illustration, no photography.** Flat colour only.
-- **Primary actions are near-black** (`--color-primary`), never accent blue. The accent is functional only: links, focus rings, selection.
+- **Shadows are tokens, and there are four.** `shadow-panel` (one pixel under a card's hairline), `shadow-nav-active` (the selected row in a segmented control or a sidebar), `shadow-pop` (what genuinely floats: a menu, a tooltip, the chat card) and `shadow-showcase` (ours, the product picture under the homepage headline, and nothing else). Tailwind's stock shadows stay removed. Never a coloured shadow, and never a shadow on hover.
+- **No gradients, no background imagery, no photography.** Flat colour only. **One illustration**, deliberately: the pandas meadow at the foot of every page, by day and by night. Nothing else gets one.
+- **Two marketing grounds besides the page**: `bg-ground-sage` behind the homepage's product picture, awards and agents section, and `bg-ground-cream` for the footer. They are ours, declared at the bottom of `theme.css` with their dark values. Do not add a third.
+- **Primary actions are near-black** (`--color-primary`). There is no accent colour: links, focus rings and selection are all near black too. `text-accent` still compiles, and resolves to the link colour.
 - **Sentence case everywhere**, including buttons, headings and labels. Uppercase only for 11–12px metadata labels, and applied with the `uppercase` utility so translations stay correct.
 - **No emoji**, ever. No exclamation marks, no "Awesome!", no gamification.
 - **Hover is subtle and additive**: background, border-colour or text-colour change. Never movement, scale, glow or shadow. Hover is never the only route to an action.
-- **Radii top out at 8px** on standard surfaces. Ordinary buttons are never pills.
+- **Radii are 6 for a control, 8 for a surface, 4 for marks too small for 6.** Fully round is for a badge, a chip and an avatar only. Ordinary buttons are never pills.
+- **One font: the system stack.** Nothing is downloaded. `source/_assets/fonts/Inter-Variable.woff2` is still on disk only because the social card template loads it.
 - **Every `<img>` carries `width` and `height`**, its file's own pixels, so the browser reserves the box before the bytes arrive and nothing on the page moves. The CSS still does the sizing; the attributes only supply the ratio.
 - **`loading="lazy"` below the fold, `fetchpriority="high"` on nothing but the LCP image.** Today that is one image: the screenshot under the headline on the three feature pages. Handing the hint to a second image tells the browser nothing. The mark in the header is eager because it is in the first screenful of every page; the one in the footer is lazy because it never is.
-- **Marketing shows the real product.** No device mockups, browser chrome, stock photography or fabricated screenshots. `_partials/home/contact-card.blade.php` is built from the application's own `mn-*` classes for exactly this reason.
+- **Marketing shows the real product.** No device mockups, browser chrome, stock photography or fabricated screenshots. `_partials/home/product.blade.php` draws the product with the application's own classes and tokens for exactly this reason, and is one `role="img"` with a label, because it is a picture of the interface rather than a working copy. People are drawn with `_partials/avatar-initials.blade.php`, never a generated face.
 
 Voice: address the reader as *you*; Monica refers to itself in the third person. Label actions with verbs ("Add a relationship", not "Create relationship entity"). Relationship direction is always a sentence ("Élise is Marc's partner"), never an arrow.
 
@@ -137,9 +141,10 @@ Tailwind's stock palette, type scale, radii, fonts and shadows are reset to `ini
 - Colour utilities keep the design-system spelling: `text-text-secondary`, `bg-surface-subtle`, `border-border-strong`. Verbose, deliberate, traceable.
 - Spacing is 4px-based (`--spacing: 4px`), matching `--space-*`. `p-6` is 24px.
 - Marketing rhythm: `py-section-sm lg:py-section` (60px to 88px).
-- `mn-*` component classes live in Tailwind's `components` layer, so utilities in markup override them. `class="mn-btn mn-btn--primary w-full"` works.
-- An `<a class="mn-btn">` needs `no-underline hover:no-underline`, because the design system's base layer underlines links on hover.
+- `mn-*` component classes live in Tailwind's `components` layer, so utilities in markup override them. `class="mn-btn mn-btn-primary w-full"` works. The variants are single-dash (`mn-btn-primary`, `mn-btn-secondary`, `mn-btn-ghost`, `mn-btn-small`), as the v3 design system spells them.
+- An `<a class="mn-btn">` carries `no-underline hover:no-underline`, so a button never picks up the link underline whatever the base layer decides next.
 - **No `@apply`.** Repeated markup becomes a Blade partial, not a new CSS class.
+- **Dark mode follows the reader's system setting**, with no toggle. An inline script in `_layouts/base.blade.php` puts `.dark` on `<html>` from `prefers-color-scheme` before the first paint and follows changes. The design system swaps its own values under `.dark`, and every utility follows because `theme.css` points at them. A colour that has to stay the same in both themes (the terminal, the inverse surface) is a fixed value in `theme.css`, not a `var()`. An image that needs a night version uses `<picture>` with a `(prefers-color-scheme: dark)` source, as the footer does.
 - Tailwind scans Blade through the `@source` lines at the bottom of `main.css`. A new template directory outside `source/` needs adding there or its classes get stripped.
 
 ## Templates
@@ -174,7 +179,8 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Vendored design system              | `source/_assets/css/design-system/` (do not edit)   |
 | Compiled CSS entry                  | `source/_assets/css/main.css`                       |
 | Compiled JS entry                   | `source/_assets/js/app.js`                          |
-| Fonts                               | `source/_assets/fonts/`                             |
+| Icons                               | `source/_partials/icon.blade.php`, the product's own glyphs |
+| Avatars (initials)                  | `source/_partials/avatar-initials.blade.php`        |
 | Images, OG cards, robots.txt        | `source/assets/`, `source/og/`, `source/robots.txt` |
 
 ## SEO and social cards
@@ -219,11 +225,11 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 ## Other conventions
 
 - **Static by default.** Jigsaw outputs files. Nothing runs server-side in production, and the root's language redirect stays that way on purpose: it is zone configuration rather than a Worker, because a Worker would bill a request for every hit on `/`. See "The root" above. Anything that seems to need a Worker needs asking about first.
-- **One script, on every page.** `source/_assets/js/app.js` loads three things: [instant.page](https://instant.page) (prefetch on hover), [Turbo Drive](https://turbo.hotwired.dev) (swap `<body>` instead of reloading the document), and [Alpine](https://alpinejs.dev) (the pricing page's billing toggle, and nothing else). It is on every page because Turbo can only intercept a click from a page already running it, so a page without it is a dead end.
+- **One script, on every page.** `source/_assets/js/app.js` loads three things: [instant.page](https://instant.page) (prefetch on hover), [Turbo Drive](https://turbo.hotwired.dev) (swap `<body>` instead of reloading the document), and [Alpine](https://alpinejs.dev) (the billing toggle on the pricing page and on the homepage, and nothing else). It is on every page because Turbo can only intercept a click from a page already running it, so a page without it is a dead end.
 - **Turbo swaps `<body>` and leaves `<head>` and `<html>` alone.** Anything that has to change with the page and lives outside `<body>` will not. That is why the locale picker's links carry `data-turbo="false"`: a Turbo visit across languages would serve French copy in a document still declaring `lang="en"`. Add it to any link or form Turbo has no business handling, such as one posting to somebody else's endpoint.
 - **Both prefetchers are on, and they are not interchangeable.** Turbo's own prefetch (on by default since Turbo 8) holds the in-flight fetch in its cache and swaps it into the visit on click, so it is the only one a Turbo visit can consume. instant.page issues `<link rel="prefetch">`, which warms the HTTP cache that an ordinary browser navigation reads, which is what the `data-turbo="false"` locale links do. Turning either off leaves one class of link fetching on click.
 - **No `turbo:load` hook re-initialising Alpine.** Turbo replaces the whole `<body>`, which Alpine's own MutationObserver already sees; calling `Alpine.initTree` on top would bind every directive twice. A setup using Turbo's morph refreshes would need the hook, because morph patches nodes in place.
-- The FAQ and the language menu are still native `<details>` and must stay that way. Reach for Alpine only when a native element genuinely cannot do the job, and ask first.
+- The FAQ, the features menu in the header and the language menu are native `<details>` and must stay that way. `app.js` adds the one thing `<details>` cannot do, closing on Escape or a click elsewhere, to any `<details data-menu>`. Reach for Alpine only when a native element genuinely cannot do the job, and ask first.
 - **Anything Alpine touches is server-rendered in its default state first.** Bind with `x-text` wrapped around real content (`<span x-text="plans[period].price">$90</span>`), never an empty element filled in on load. A control that does nothing without Alpine carries `js-only`, which `_layouts/base.blade.php` hides inside a `<noscript>` block, so a reader without JavaScript is not offered a dead button.
 - Alpine state comes from `lang/` through one `json_encode` into `x-data`, so copy never gets hard-coded into an expression. Blade escapes the quotes and the browser decodes them; see `_partials/pricing/plans.blade.php`.
 - Class names inside `x-bind:class` are literal strings in the template, so Tailwind's scanner finds them. Building one by concatenation makes it invisible to the scanner and the class silently vanishes from the stylesheet.
@@ -232,7 +238,9 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 
 ## Known gaps
 
-The homepage, the three features pages, pricing, the v3 teaser, the team page, the blog and the two legal pages exist. Docs are unbuilt; that nav link is the design's `#` placeholder in `config.php`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+The homepage, the three features pages, pricing, the v3 teaser, the team page, the blog and the two legal pages exist. Docs, the MCP and API references, templates, the changelog and a contact address are unbuilt; their links are `#` placeholders in `links` in `config.php`, which the dead link checker lists without failing.
+
+`source/_partials/icon.blade.php` holds the product's own glyphs, copied from the v3 design system. Six (`chevron-left`, `code`, `download`, `panel`, `phone`, `rss`) have no product glyph and are drawn on the same grid; replace them if the product ever draws its own. An unknown name fails the build. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 
 ## The blog
 
