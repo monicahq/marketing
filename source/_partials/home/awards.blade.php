@@ -6,7 +6,7 @@
     $badges = [
         ['src' => '/assets/images/awards/award-github.png', 'alt' => $copy['github']],
         ['src' => '/assets/images/awards/award-hn.png', 'alt' => $copy['hn']],
-        ['src' => '/assets/images/awards/award-ph.png', 'alt' => $copy['ph']],
+        ['src' => '/assets/images/awards/product-hunt.svg', 'alt' => $copy['ph']],
         ['src' => '/assets/images/awards/award-trendshift.png', 'alt' => $copy['trendshift']],
     ];
 @endphp

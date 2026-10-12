@@ -577,7 +577,19 @@ return [
      */
     'imageSize' => function ($page, string $src) {
         $path = __DIR__ . '/source' . $src;
-        $size = is_file($path) ? getimagesize($path) : false;
+        $size = false;
+
+        if (is_file($path) && str_ends_with($path, '.svg')) {
+            // getimagesize() does not read SVG. Its size is the `width` and
+            // `height` on the root element, which every badge here carries.
+            if (preg_match('/<svg\b[^>]*>/', file_get_contents($path), $root)
+                && preg_match('/\bwidth="([\d.]+)"/', $root[0], $w)
+                && preg_match('/\bheight="([\d.]+)"/', $root[0], $h)) {
+                $size = [(int) round($w[1]), (int) round($h[1])];
+            }
+        } elseif (is_file($path)) {
+            $size = getimagesize($path);
+        }
 
         if (! $size) {
             throw new Exception("Image [{$src}] is missing or unreadable.");
