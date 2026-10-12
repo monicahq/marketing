@@ -327,7 +327,7 @@ return [
         'agents' => [
             'eyebrow' => "Servidor MCP e REST API",
             'title' => "Use a Monica como backend para os seus agentes.",
-            'body' => "Somos muito amigáveis com quem desenvolve.",
+            'body' => "A Monica não tem nenhuma IA embutida, e nunca terá, mas deixamos o seu próprio agente acessar os seus dados — se você quiser.",
             'mcp' => "Ver a doc do MCP",
             'api' => "Ver a API",
             'prompt' => "O que eu dou para a Rachel de aniversário?",
@@ -340,8 +340,8 @@ return [
         ],
 
         'features' => [
-            'title' => "A sua memória, com backup.",
-            'lede' => "Tudo o que vale a pena saber sobre alguém, em um só lugar tranquilo.",
+            'title' => "Alguns dos recursos que oferecemos",
+            'lede' => "Tudo o que é preciso para registrar o que acontece na sua vida",
             'reminders' => [
                 'title' => "Parabéns no dia, não no dia seguinte.",
                 'body' => "Lembretes de datas, ligações e promessas. Por e-mail, na hora certa.",
@@ -390,20 +390,28 @@ return [
                     ['name' => "Central Perk", 'count' => "6 pessoas"],
                 ],
             ],
-            'journal' => [
-                'title' => "Um diário sem plateia.",
-                'body' => "Escreva sobre o seu dia. Ninguém vai curtir, e a graça é justamente essa.",
-            ],
         ],
 
-        'open' => [
-            'title' => "Aberta por concepção.",
-            'lede' => "Os seus amigos não são um modelo de negócio.",
-            'items' => [
-                ['title' => "Código aberto", 'body' => "Cada linha está no GitHub. Leia, faça um fork, audite."],
-                ['title' => "Hospedagem própria", 'body' => "Um comando Docker. Seu servidor, suas regras."],
-                ['title' => "Sem anúncios nem rastreadores", 'body' => "Nada para vender, ninguém para quem vender."],
-                ['title' => "Saia quando quiser", 'body' => "Exporte tudo, quando quiser. Ninguém fica de refém."],
+        'privacy' => [
+            'eyebrow' => "Privacidade",
+            'title' => "Ao contrário de todos os outros nessa área, nós nos importamos com a sua privacidade.",
+            'aside' => "Muito.",
+            'source' => [
+                'title' => "Código aberto",
+                'body' => "Audite nosso código para ter certeza de que não fazemos besteira.",
+                'comment' => "// O que compartilhamos com terceiros",
+            ],
+            'trackers' => [
+                'title' => "Sem anúncios, sem rastreadores, sem palhaçada",
+                'body' => "Nada para vender. Ninguém para quem vender.",
+                'label' => "Requisições a terceiros",
+                'rows' => ["Publicidade", "Análises", "Corretores de dados", "Fingerprinting"],
+            ],
+            'selfHost' => [
+                'title' => "Recomendamos que você hospede por conta própria",
+                'body' => "Um comando Docker. Seu servidor, suas regras, sua privacidade.",
+                'pulling' => "Baixando a imagem… pronto",
+                'running' => "Rodando no seu servidor",
             ],
         ],
 
@@ -430,6 +438,9 @@ return [
                 'perMonth' => "por mês",
                 'perYear' => "por ano",
                 'yearlyNote' => "Dois meses grátis",
+                'lifetime' => "Vitalício",
+                'once' => "pagamento único",
+                'lifetimeNote' => "Sem pagamentos recorrentes",
                 'items' => ["Hospedagem gerenciada", "Atualizações e backups automáticos", "Pessoas e cofres ilimitados", "Cancele quando quiser"],
                 'cta' => "Começar a usar a Monica",
             ],
@@ -470,6 +481,7 @@ return [
             'monthlyPrice' => "US\$ 9",
             'monthlyPeriod' => "USD / mês",
             'monthlyNote' => "Cobrança mensal. Mude para anual e ganhe dois meses grátis.",
+            'lifetimePrice' => "US\$ 150",
             'taxNote' => "Podem incidir impostos conforme o seu país.",
             'cta' => "Começar a usar a Monica",
             'trial' => "Teste de 30 dias · Sem cartão de crédito durante o teste",

@@ -19,7 +19,7 @@
      behind the icon and a faint wash behind the example. --}}
 <section class="px-4 py-30 md:px-6">
     <div class="mx-auto flex max-w-page flex-col gap-12">
-        <div class="flex max-w-[640px] flex-col gap-3.5">
+        <div class="mx-auto flex max-w-[640px] flex-col items-center gap-3.5 text-center">
             <h2 class="text-display-section font-semibold">{{ $copy['title'] }}</h2>
             <p class="text-copy-lg text-text-secondary">{{ $copy['lede'] }}</p>
         </div>
@@ -114,12 +114,6 @@
                         </div>
                     @endforeach
                 </div>
-            </article>
-
-            <article class="{{ $card }} flex-[1_1_300px] p-6">
-                <span class="mb-2 grid size-8 place-items-center rounded-md bg-identity-5/14 text-identity-5">@include('_partials.icon', ['name' => 'journal', 'size' => 18])</span>
-                <h3 class="{{ $title }}">{{ $copy['journal']['title'] }}</h3>
-                <p class="{{ $body }}">{{ $copy['journal']['body'] }}</p>
             </article>
         </div>
     </div>

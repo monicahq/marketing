@@ -38,7 +38,7 @@
     $nightSize = $page->imageSize($night);
 @endphp
 
-{{-- The one illustration on the site, and a deliberate exception to the design
+{{-- The site's one illustration (the homepage headline sits on it too), a deliberate exception to the design
      system's "no illustration" rule: the closing line is about going outside,
      and this is outside. The ground is cream by day and the night sky's own
      navy by night, so the picture rises out of its own colour. --}}

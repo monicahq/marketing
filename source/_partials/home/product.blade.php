@@ -9,6 +9,9 @@
 
     $card = 'rounded-lg border border-border bg-canvas shadow-panel';
     $cardTitle = 'border-b border-border px-4 py-3 text-copy font-semibold';
+
+    $meadow = '/assets/images/home/meadow-day.webp';
+    $meadowSize = $page->imageSize($meadow);
 @endphp
 
 {{-- The product, drawn with the product's own classes and tokens rather than a
@@ -17,6 +20,22 @@
      screen reader, described by its label, and nothing inside it is a control. --}}
 <section class="relative px-4 pb-24 md:px-6">
     <div aria-hidden="true" class="absolute inset-x-0 top-[42%] bottom-0 bg-ground-sage"></div>
+
+    {{-- The meadow behind the headline (see home/top). Its foot sits on the
+         sage line, so the grass gives way to the sage band rather than being
+         cut by it, and it grows upward from there. Never narrower than 900px,
+         like the footer's, so a phone crops the edges instead of shrinking the
+         pandas. Decoration: the footer already describes the meadow. --}}
+    <div aria-hidden="true" class="absolute bottom-[58%] left-1/2 w-full min-w-[900px] -translate-x-1/2 dark:hidden">
+        <img
+            src="{{ $meadow }}"
+            alt=""
+            width="{{ $meadowSize['width'] }}"
+            height="{{ $meadowSize['height'] }}"
+            decoding="async"
+            class="block h-auto w-full"
+        >
+    </div>
 
     <div
         role="img"

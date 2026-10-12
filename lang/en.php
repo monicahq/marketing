@@ -348,7 +348,7 @@ return [
         'agents' => [
             'eyebrow' => "MCP server and REST API",
             'title' => "Use Monica as your backend for your agents.",
-            'body' => "We are super developer friendly.",
+            'body' => "While we do not have any AI built-in, and never will, we let your own agent access your data — if you want it.",
             'mcp' => "Explore MCP doc",
             'api' => "Explore API",
             'prompt' => "What should I get Rachel for her birthday?",
@@ -361,8 +361,8 @@ return [
         ],
 
         'features' => [
-            'title' => "Your memory, with backup.",
-            'lede' => "Everything worth knowing about someone, in one calm place.",
+            'title' => "Some of the features we offer",
+            'lede' => "Everything necessary to record what’s going on in your life",
             'reminders' => [
                 'title' => "Birthdays, before they’re belated.",
                 'body' => "Reminders for dates, calls and promises. By email, on time.",
@@ -411,20 +411,28 @@ return [
                     ['name' => "Central Perk", 'count' => "6 people"],
                 ],
             ],
-            'journal' => [
-                'title' => "A journal with no audience.",
-                'body' => "Write about your day. Nobody will like it, and that’s the point.",
-            ],
         ],
 
-        'open' => [
-            'title' => "Open by design.",
-            'lede' => "Your friends are not a business model.",
-            'items' => [
-                ['title' => "Open source", 'body' => "Every line is on GitHub. Read it, fork it, audit it."],
-                ['title' => "Self-hostable", 'body' => "One Docker command. Your server, your rules."],
-                ['title' => "No ads, no trackers", 'body' => "Nothing to sell, nobody to sell it to."],
-                ['title' => "Leave any time", 'body' => "Export everything, whenever you like. No hostage situations."],
+        'privacy' => [
+            'eyebrow' => "Privacy",
+            'title' => "Unlike all the other players in this field, we care about your privacy.",
+            'aside' => "A lot.",
+            'source' => [
+                'title' => "Open source",
+                'body' => "Audit our codebase to make sure we don’t do stupid things.",
+                'comment' => "// What we share with third parties",
+            ],
+            'trackers' => [
+                'title' => "No ads, no trackers bullshit",
+                'body' => "Nothing to sell. Nobody to sell it to.",
+                'label' => "Third-party requests",
+                'rows' => ["Advertising", "Analytics", "Data brokers", "Fingerprinting"],
+            ],
+            'selfHost' => [
+                'title' => "We recommend you self-host",
+                'body' => "One Docker command. Your server, your rules, your privacy.",
+                'pulling' => "Pulling image… done",
+                'running' => "Running on your server",
             ],
         ],
 
@@ -451,6 +459,9 @@ return [
                 'perMonth' => "per month",
                 'perYear' => "per year",
                 'yearlyNote' => "Two months free",
+                'lifetime' => "Lifetime",
+                'once' => "one time",
+                'lifetimeNote' => "No recurring payments",
                 'items' => ["Managed hosting", "Automatic updates and backups", "Unlimited people and vaults", "Cancel any time"],
                 'cta' => "Start using Monica",
             ],
@@ -491,6 +502,7 @@ return [
             'monthlyPrice' => "$9",
             'monthlyPeriod' => "USD / month",
             'monthlyNote' => "Billed monthly. Switch to yearly for two months free.",
+            'lifetimePrice' => "$150",
             'taxNote' => "Taxes may apply depending on your location.",
             'cta' => "Start using Monica",
             'trial' => "30-day trial · No credit card required during the trial",

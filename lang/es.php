@@ -324,7 +324,7 @@ return [
         'agents' => [
             'eyebrow' => "Servidor MCP y REST API",
             'title' => "Usa Monica como backend de tus agentes.",
-            'body' => "Nos llevamos genial con quien desarrolla.",
+            'body' => "Monica no incluye ninguna IA, ni la incluirá nunca, pero dejamos que tu propio agente acceda a tus datos — si tú quieres.",
             'mcp' => "Ver la documentación MCP",
             'api' => "Explorar la API",
             'prompt' => "¿Qué le regalo a Rachel por su cumpleaños?",
@@ -337,8 +337,8 @@ return [
         ],
 
         'features' => [
-            'title' => "Tu memoria, con copia de seguridad.",
-            'lede' => "Todo lo que vale la pena saber de alguien, en un lugar tranquilo.",
+            'title' => "Algunas de las funcionalidades que ofrecemos",
+            'lede' => "Todo lo necesario para registrar lo que pasa en tu vida",
             'reminders' => [
                 'title' => "Cumpleaños, antes de que sea tarde.",
                 'body' => "Recordatorios de fechas, llamadas y promesas. Por correo, a tiempo.",
@@ -387,20 +387,28 @@ return [
                     ['name' => "Central Perk", 'count' => "6 personas"],
                 ],
             ],
-            'journal' => [
-                'title' => "Un diario sin público.",
-                'body' => "Escribe sobre tu día. Nadie le dará a me gusta, y esa es la gracia.",
-            ],
         ],
 
-        'open' => [
-            'title' => "Abierta por diseño.",
-            'lede' => "Tus amigos no son un modelo de negocio.",
-            'items' => [
-                ['title' => "Código abierto", 'body' => "Cada línea está en GitHub. Léela, bifúrcala, audítala."],
-                ['title' => "Alojable por ti", 'body' => "Un solo comando de Docker. Tu servidor, tus reglas."],
-                ['title' => "Sin anuncios ni rastreadores", 'body' => "Nada que vender, y nadie a quien vendérselo."],
-                ['title' => "Vete cuando quieras", 'body' => "Exporta todo, cuando quieras. Sin rehenes."],
+        'privacy' => [
+            'eyebrow' => "Privacidad",
+            'title' => "A diferencia de todos los demás en este campo, nos importa tu privacidad.",
+            'aside' => "Mucho.",
+            'source' => [
+                'title' => "Código abierto",
+                'body' => "Audita nuestro código para asegurarte de que no hacemos tonterías.",
+                'comment' => "// Lo que compartimos con terceros",
+            ],
+            'trackers' => [
+                'title' => "Ni anuncios, ni rastreadores, ni chorradas",
+                'body' => "Nada que vender. Nadie a quien vendérselo.",
+                'label' => "Solicitudes a terceros",
+                'rows' => ["Publicidad", "Analítica", "Brókeres de datos", "Huella digital"],
+            ],
+            'selfHost' => [
+                'title' => "Te recomendamos alojarlo tú mismo",
+                'body' => "Un solo comando de Docker. Tu servidor, tus reglas, tu privacidad.",
+                'pulling' => "Descargando la imagen… listo",
+                'running' => "Funcionando en tu servidor",
             ],
         ],
 
@@ -427,6 +435,9 @@ return [
                 'perMonth' => "al mes",
                 'perYear' => "al año",
                 'yearlyNote' => "Dos meses gratis",
+                'lifetime' => "De por vida",
+                'once' => "pago único",
+                'lifetimeNote' => "Sin pagos recurrentes",
                 'items' => ["Alojamiento gestionado", "Actualizaciones y copias de seguridad automáticas", "Personas y bóvedas ilimitadas", "Cancela cuando quieras"],
                 'cta' => "Empezar con Monica",
             ],
@@ -467,6 +478,7 @@ return [
             'monthlyPrice' => "9 $",
             'monthlyPeriod' => "USD / mes",
             'monthlyNote' => "Facturación mensual. Cambia a anual y consigue dos meses gratis.",
+            'lifetimePrice' => "150 $",
             'taxNote' => "Pueden aplicarse impuestos según tu país.",
             'cta' => "Empezar con Monica",
             'trial' => "Prueba de 30 días · Sin tarjeta durante la prueba",

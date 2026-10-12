@@ -320,7 +320,7 @@ return [
         'agents' => [
             'eyebrow' => "MCP-server en REST API",
             'title' => "Gebruik Monica als backend voor je agents.",
-            'body' => "We zijn superontwikkelaarsvriendelijk.",
+            'body' => "Monica heeft geen ingebouwde AI, en dat blijft zo, maar we laten je eigen agent bij je gegevens — als je dat wilt.",
             'mcp' => "Bekijk de MCP-documentatie",
             'api' => "Bekijk de API",
             'prompt' => "Wat zal ik Rachel geven voor haar verjaardag?",
@@ -333,8 +333,8 @@ return [
         ],
 
         'features' => [
-            'title' => "Je geheugen, met back-up.",
-            'lede' => "Alles wat het weten waard is over iemand, op één rustige plek.",
+            'title' => "Een paar van onze functies",
+            'lede' => "Alles wat je nodig hebt om vast te leggen wat er in je leven gebeurt",
             'reminders' => [
                 'title' => "Verjaardagen, niet pas achteraf.",
                 'body' => "Herinneringen voor data, telefoontjes en beloftes. Per e-mail, op tijd.",
@@ -383,20 +383,28 @@ return [
                     ['name' => "Central Perk", 'count' => "6 mensen"],
                 ],
             ],
-            'journal' => [
-                'title' => "Een dagboek zonder publiek.",
-                'body' => "Schrijf over je dag. Niemand gaat het liken, en dat is nou juist de bedoeling.",
-            ],
         ],
 
-        'open' => [
-            'title' => "Open van opzet.",
-            'lede' => "Je vrienden zijn geen verdienmodel.",
-            'items' => [
-                ['title' => "Open source", 'body' => "Elke regel code staat op GitHub. Lees hem, fork hem, controleer hem."],
-                ['title' => "In eigen beheer", 'body' => "Eén Docker-commando. Jouw server, jouw regels."],
-                ['title' => "Geen advertenties, geen trackers", 'body' => "Niets te verkopen, en niemand om het aan te verkopen."],
-                ['title' => "Vertrek wanneer je wilt", 'body' => "Exporteer alles, wanneer je maar wilt. Geen gijzelingen."],
+        'privacy' => [
+            'eyebrow' => "Privacy",
+            'title' => "In tegenstelling tot alle andere spelers in dit veld geven wij om je privacy.",
+            'aside' => "Heel veel.",
+            'source' => [
+                'title' => "Open source",
+                'body' => "Controleer onze code en zie zelf dat we geen domme dingen doen.",
+                'comment' => "// Wat we met derden delen",
+            ],
+            'trackers' => [
+                'title' => "Geen advertenties, geen trackers, geen gezeik",
+                'body' => "Niets te verkopen. Niemand om het aan te verkopen.",
+                'label' => "Verzoeken naar derden",
+                'rows' => ["Advertenties", "Analytics", "Datahandelaren", "Fingerprinting"],
+            ],
+            'selfHost' => [
+                'title' => "We raden je aan zelf te hosten",
+                'body' => "Eén Docker-commando. Jouw server, jouw regels, jouw privacy.",
+                'pulling' => "Image ophalen… klaar",
+                'running' => "Draait op je eigen server",
             ],
         ],
 
@@ -423,6 +431,9 @@ return [
                 'perMonth' => "per maand",
                 'perYear' => "per jaar",
                 'yearlyNote' => "Twee maanden gratis",
+                'lifetime' => "Levenslang",
+                'once' => "eenmalig",
+                'lifetimeNote' => "Geen terugkerende betalingen",
                 'items' => ["Beheerde hosting", "Automatische updates en back-ups", "Onbeperkt mensen en kluizen", "Altijd opzegbaar"],
                 'cta' => "Begin met Monica",
             ],
@@ -463,6 +474,7 @@ return [
             'monthlyPrice' => "$9",
             'monthlyPeriod' => "USD / maand",
             'monthlyNote' => "Maandelijks gefactureerd. Stap over op jaarlijks voor twee maanden gratis.",
+            'lifetimePrice' => "$150",
             'taxNote' => "Afhankelijk van je locatie kan er belasting bijkomen.",
             'cta' => "Begin met Monica",
             'trial' => "30 dagen proberen · Geen creditcard nodig tijdens de proefperiode",

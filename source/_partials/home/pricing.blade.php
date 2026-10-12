@@ -22,8 +22,18 @@
                 'per' => $cloud['perMonth'],
                 'note' => '',
             ],
+
+            // Paid once, never renewed.
+            'lifetime' => [
+                'price' => $page->t('pricing.hosted.lifetimePrice'),
+                'per' => $cloud['once'],
+                'note' => $cloud['lifetimeNote'],
+            ],
         ],
     ];
+
+    // The segmented control's order, left to right.
+    $periods = ['monthly', 'yearly', 'lifetime'];
 
     $planCard = 'flex flex-col gap-6 rounded-lg border border-border bg-canvas p-7 shadow-panel';
     $planTitle = 'text-xl font-semibold';
@@ -59,27 +69,24 @@
                  the script loads, and if it never does. --}}
             <div class="{{ $planCard }}" x-data="{{ json_encode($billing, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) }}">
                 <div class="flex flex-col gap-3.5">
-                    <div class="flex items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center justify-between gap-3">
                         <h3 class="{{ $planTitle }}">{{ $cloud['title'] }}</h3>
 
                         {{-- Hidden without JavaScript, because the buttons would
                              be inert: the reader keeps the yearly price and loses
-                             only the choice. --}}
+                             only the choice. Three labels do not fit beside the
+                             title in every language, so the row wraps and the
+                             control drops under the title when it has to. --}}
                         <div role="group" aria-label="{{ $cloud['billingLabel'] }}" class="js-only flex rounded-md border border-border bg-surface-subtle p-0.5">
-                            <button
-                                type="button"
-                                x-on:click="period = 'monthly'"
-                                x-bind:aria-pressed="period === 'monthly'"
-                                x-bind:class="period === 'monthly' ? 'bg-canvas text-text shadow-nav-active' : 'text-text-muted hover:text-text'"
-                                class="{{ $seg }}"
-                            >{{ $cloud['monthly'] }}</button>
-                            <button
-                                type="button"
-                                x-on:click="period = 'yearly'"
-                                x-bind:aria-pressed="period === 'yearly'"
-                                x-bind:class="period === 'yearly' ? 'bg-canvas text-text shadow-nav-active' : 'text-text-muted hover:text-text'"
-                                class="{{ $seg }}"
-                            >{{ $cloud['yearly'] }}</button>
+                            @foreach ($periods as $period)
+                                <button
+                                    type="button"
+                                    x-on:click="period = '{{ $period }}'"
+                                    x-bind:aria-pressed="period === '{{ $period }}'"
+                                    x-bind:class="period === '{{ $period }}' ? 'bg-canvas text-text shadow-nav-active' : 'text-text-muted hover:text-text'"
+                                    class="{{ $seg }}"
+                                >{{ $cloud[$period] }}</button>
+                            @endforeach
                         </div>
                     </div>
 

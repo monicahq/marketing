@@ -6,7 +6,7 @@
     $faces = ['Rachel Green', 'Ross Geller', 'Chandler Bing', 'Joey Tribbiani'];
 @endphp
 
-<section class="px-4 pt-24 pb-14 text-center md:px-6">
+<section class="relative z-10 px-4 pt-24 pb-14 text-center md:px-6">
     <div class="mx-auto flex max-w-[820px] flex-col items-center gap-6">
         <div class="flex items-center gap-3 rounded-full border border-border bg-canvas py-1.5 pr-3.5 pl-1.5 shadow-panel">
             <div class="flex gap-1">

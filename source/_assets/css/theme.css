@@ -66,6 +66,13 @@
   --color-on-inverse-raised: #27272a;
   --color-on-inverse-selected: #3f3f46;
 
+  /* The privacy band on the homepage, which is the inverse surface at section
+     size: its cards sit a step darker than the band, and its code carries two
+     quieter greys, for a comment and for a line number. */
+  --color-surface-inverse-sunken: #09090b;
+  --color-on-inverse-faint: #71717a;
+  --color-on-inverse-dim: #52525b;
+
   /* The terminal on the homepage: a tool call that succeeded, and a string
      argument. The design system's dark success green, and its dark amber. */
   --color-terminal-ok: #4ade80;
@@ -225,6 +232,10 @@
   --text-display-pricing: clamp(32px, 4.4vw, 52px);
   --text-display-pricing--line-height: 1.05;
   --text-display-pricing--letter-spacing: -0.04em;
+
+  --text-display-privacy: clamp(34px, 5.4vw, 68px);
+  --text-display-privacy--line-height: 1.04;
+  --text-display-privacy--letter-spacing: -0.045em;
 
   --text-display-closing: clamp(32px, 4.6vw, 56px);
   --text-display-closing--line-height: 1.05;

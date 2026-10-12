@@ -326,7 +326,7 @@ return [
         'agents' => [
             'eyebrow' => "Serveur MCP et API REST",
             'title' => "Utilisez Monica comme backend pour vos agents.",
-            'body' => "Nous chouchoutons les développeurs.",
+            'body' => "Monica n’intègre aucune IA, et n’en intégrera jamais, mais nous laissons votre propre agent accéder à vos données — si vous le souhaitez.",
             'mcp' => "Explorer la doc MCP",
             'api' => "Explorer l’API",
             'prompt' => "Qu’est-ce que je pourrais offrir à Rachel pour son anniversaire ?",
@@ -339,8 +339,8 @@ return [
         ],
 
         'features' => [
-            'title' => "Votre mémoire, avec sauvegarde.",
-            'lede' => "Tout ce qui mérite d’être su sur quelqu’un, en un seul endroit tranquille.",
+            'title' => "Quelques-unes de nos fonctionnalités",
+            'lede' => "Tout le nécessaire pour noter ce qui se passe dans votre vie",
             'reminders' => [
                 'title' => "Les anniversaires, avant qu’il soit trop tard.",
                 'body' => "Des rappels pour les dates, les appels et les promesses. Par e-mail, à l’heure.",
@@ -389,20 +389,28 @@ return [
                     ['name' => "Central Perk", 'count' => "6 personnes"],
                 ],
             ],
-            'journal' => [
-                'title' => "Un journal sans public.",
-                'body' => "Racontez votre journée. Personne ne va la liker, et c’est tout l’intérêt.",
-            ],
         ],
 
-        'open' => [
-            'title' => "Ouverte par conception.",
-            'lede' => "Vos amis ne sont pas un modèle économique.",
-            'items' => [
-                ['title' => "Open source", 'body' => "Chaque ligne est sur GitHub. Lisez-la, forkez-la, auditez-la."],
-                ['title' => "Auto-hébergeable", 'body' => "Une commande Docker. Votre serveur, vos règles."],
-                ['title' => "Ni publicité, ni traceurs", 'body' => "Rien à vendre, personne à qui le vendre."],
-                ['title' => "Partez quand vous voulez", 'body' => "Exportez tout, à tout moment. Aucune prise d’otage."],
+        'privacy' => [
+            'eyebrow' => "Confidentialité",
+            'title' => "Contrairement à tous les autres acteurs du secteur, nous tenons à votre vie privée.",
+            'aside' => "Beaucoup.",
+            'source' => [
+                'title' => "Open source",
+                'body' => "Auditez notre code pour vérifier que nous ne faisons pas de bêtises.",
+                'comment' => "// Ce que nous partageons avec des tiers",
+            ],
+            'trackers' => [
+                'title' => "Ni pub, ni pisteurs, ni conneries",
+                'body' => "Rien à vendre. Personne à qui le vendre.",
+                'label' => "Requêtes vers des tiers",
+                'rows' => ["Publicité", "Statistiques", "Courtiers en données", "Empreinte numérique"],
+            ],
+            'selfHost' => [
+                'title' => "Nous vous conseillons l’auto-hébergement",
+                'body' => "Une seule commande Docker. Votre serveur, vos règles, votre vie privée.",
+                'pulling' => "Téléchargement de l’image… terminé",
+                'running' => "Fonctionne sur votre serveur",
             ],
         ],
 
@@ -429,6 +437,9 @@ return [
                 'perMonth' => "par mois",
                 'perYear' => "par an",
                 'yearlyNote' => "Deux mois offerts",
+                'lifetime' => "À vie",
+                'once' => "une seule fois",
+                'lifetimeNote' => "Aucun paiement récurrent",
                 'items' => ["Hébergement géré", "Mises à jour et sauvegardes automatiques", "Personnes et coffres illimités", "Résiliable à tout moment"],
                 'cta' => "Commencer avec Monica",
             ],
@@ -469,6 +480,7 @@ return [
             'monthlyPrice' => "9 $",
             'monthlyPeriod' => "USD / mois",
             'monthlyNote' => "Facturé au mois. Passez à l’annuel pour deux mois offerts.",
+            'lifetimePrice' => "150 $",
             'taxNote' => "Des taxes peuvent s’appliquer selon votre pays.",
             'cta' => "Commencer avec Monica",
             'trial' => "Essai de 30 jours · Aucune carte bancaire pendant l’essai",

@@ -120,8 +120,8 @@ The design system has its own vocabulary (`--ink`, `--body`, `--hairline`, `--ca
 Non-negotiable rules, in rough order of how often they get broken:
 
 - **Shadows are tokens, and there are four.** `shadow-panel` (one pixel under a card's hairline), `shadow-nav-active` (the selected row in a segmented control or a sidebar), `shadow-pop` (what genuinely floats: a menu, a tooltip, the chat card) and `shadow-showcase` (ours, the product picture under the homepage headline, and nothing else). Tailwind's stock shadows stay removed. Never a coloured shadow, and never a shadow on hover.
-- **No gradients, no background imagery, no photography.** Flat colour only. **One illustration**, deliberately: the pandas meadow at the foot of every page, by day and by night. Nothing else gets one.
-- **Two marketing grounds besides the page**: `bg-ground-sage` behind the homepage's product picture, awards and agents section, and `bg-ground-cream` for the footer. They are ours, declared at the bottom of `theme.css` with their dark values. Do not add a third.
+- **No gradients, no background imagery, no photography.** Flat colour only. **One illustration**, deliberately: the pandas meadow, at the foot of every page (by day and by night) and behind the homepage headline (`_partials/home/top.blade.php`, light mode only until it has a night version). Nothing else gets one.
+- **Two marketing grounds besides the page**: `bg-ground-sage` behind the homepage's product picture, awards and agents section, and `bg-ground-cream` for the footer and behind the homepage headline, where it matches the meadow's sky. They are ours, declared at the bottom of `theme.css` with their dark values. Do not add a third.
 - **Primary actions are near-black** (`--color-primary`). There is no accent colour: links, focus rings and selection are all near black too. `text-accent` still compiles, and resolves to the link colour.
 - **Sentence case everywhere**, including buttons, headings and labels. Uppercase only for 11–12px metadata labels, and applied with the `uppercase` utility so translations stay correct.
 - **No emoji**, ever. No exclamation marks, no "Awesome!", no gamification.
