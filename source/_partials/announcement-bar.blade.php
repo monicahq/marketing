@@ -10,7 +10,7 @@
             class="inline-flex items-center gap-2 text-small text-on-inverse-strong underline underline-offset-[3px] hover:text-on-inverse-strong md:ml-auto"
         >
             {{ $page->t('announcement.cta') }}
-            @include('_partials.icon', ['name' => 'arrowRight', 'size' => 14])
+            @include('_partials.icon', ['name' => 'arrow-right', 'size' => 14])
         </a>
     </div>
 </div>
