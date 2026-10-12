@@ -315,7 +315,6 @@ return [
             'github' => "GitHub Trending: #1 repository van de dag",
             'hn' => "Hacker News: #65 meest gestemde links aller tijden",
             'ph' => "Product Hunt: #4 product van de dag",
-            'trendshift' => "Trendshift PHP: #20 repository van het jaar",
         ],
 
         'agents' => [

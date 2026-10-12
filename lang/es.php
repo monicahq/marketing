@@ -319,7 +319,6 @@ return [
             'github' => "GitHub Trending: n.º 1 repositorio del día",
             'hn' => "Hacker News: n.º 65 de los enlaces más votados de la historia",
             'ph' => "Product Hunt: n.º 4 producto del día",
-            'trendshift' => "Trendshift PHP: n.º 20 repositorio del año",
         ],
 
         'agents' => [

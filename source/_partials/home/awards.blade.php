@@ -4,10 +4,9 @@
     // The badges as their issuers drew them. Each one is shown 52px tall,
     // and the files are about twice that, for sharp edges on a dense screen.
     $badges = [
-        ['src' => '/assets/images/awards/award-github.png', 'alt' => $copy['github']],
+        ['src' => '/assets/images/awards/award-github.svg', 'alt' => $copy['github']],
         ['src' => '/assets/images/awards/award-hn.png', 'alt' => $copy['hn']],
         ['src' => '/assets/images/awards/product-hunt.svg', 'alt' => $copy['ph']],
-        ['src' => '/assets/images/awards/award-trendshift.png', 'alt' => $copy['trendshift']],
     ];
 @endphp
 

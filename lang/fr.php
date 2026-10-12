@@ -321,7 +321,6 @@ return [
             'github' => "GitHub Trending : dépôt du jour n° 1",
             'hn' => "Hacker News : n° 65 des liens les plus votés de tous les temps",
             'ph' => "Product Hunt : produit du jour n° 4",
-            'trendshift' => "Trendshift PHP : dépôt de l’année n° 20",
         ],
 
         'agents' => [

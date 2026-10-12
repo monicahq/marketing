@@ -343,7 +343,6 @@ return [
             'github' => "GitHub Trending: #1 Repository of the Day",
             'hn' => "Hacker News: #65 Most Voted Links of All Time",
             'ph' => "Product Hunt: #4 Product of the Day",
-            'trendshift' => "Trendshift PHP: #20 Repository of the Year",
         ],
 
         'agents' => [
