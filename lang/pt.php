@@ -966,6 +966,21 @@ return [
     ],
 
     /**
+     * The people in the drawings on the feature pages. Every drawing reads a
+     * name from here, so a name is spelled one way per language.
+     * `listSeparator` joins a list of names in running text.
+     */
+    'cast' => [
+        'rachel' => ['first' => "Rachel", 'full' => "Rachel Green"],
+        'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
+        'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
+        'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
+        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
+    ],
+    'listSeparator' => ", ",
+
+    /**
      * The templates page, "Your contacts, your way". Every picture on it is a
      * drawing of the product, so each one carries a `label` that a screen
      * reader reads instead of the drawing itself.
@@ -1113,9 +1128,9 @@ return [
             'label' => "Um único campo Como nos conhecemos no modelo Amigos, preenchido com uma história diferente na ficha de três amigos, e o modelo Amigos escolhido como padrão para novos contatos no cofre Amigos.",
             'template' => "Modelo Amigos",
             'stories' => [
-                'Rachel' => "Entrou no Central Perk de vestido de noiva.",
-                'Ross' => "Irmão da Monica, desde a faculdade.",
-                'Joey' => "Respondeu ao anúncio do quarto vago do Chandler.",
+                'rachel' => "Entrou no Central Perk de vestido de noiva.",
+                'ross' => "Irmão da Monica, desde a faculdade.",
+                'joey' => "Respondeu ao anúncio do quarto vago do Chandler.",
             ],
             'default' => "Modelo padrão",
             'defaultBody' => "Os novos contatos do cofre Amigos começam aqui",
@@ -1289,6 +1304,7 @@ return [
             'close' => "Na próxima vez que vocês se encontrarem, você tem um caminho de volta para a última conversa.",
             'label' => "Uma linha do tempo na Monica com três registros de 2026: jantar com a Phoebe em 3 de outubro, ligação com o Chandler em 21 de setembro e um fim de semana em Montauk em 14 de agosto com Ross, Rachel, Monica, Chandler e Joey. Ao lado, o fim de semana em Montauk aparece na linha do tempo dos cinco.",
             'timeline' => "Linha do tempo",
+            'year' => "2026",
             'addEvent' => "Adicionar um acontecimento",
             'entries' => ":count registros",
             'events' => [

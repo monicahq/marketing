@@ -16,19 +16,18 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-3.5 p-4.5">
-                    @include('_partials.reminders.field', ['label' => $story['what']['label'], 'value' => $story['what']['value']])
+                    @include('_partials.drawn-field', ['label' => $story['what']['label'], 'value' => $story['what']['value']])
                     <div class="grid gap-3 sm:grid-cols-2">
-                        @include('_partials.reminders.field', ['label' => $story['when']['label'], 'value' => $story['when']['value']])
-                        @include('_partials.reminders.field', ['label' => $story['where']['label'], 'value' => $story['where']['value']])
+                        @include('_partials.drawn-field', ['label' => $story['when']['label'], 'value' => $story['when']['value']])
+                        @include('_partials.drawn-field', ['label' => $story['where']['label'], 'value' => $story['where']['value']])
                     </div>
-                    {{-- Several lines, so not the one-line field. --}}
-                    <div class="flex flex-col gap-1.5">
-                        <span class="text-small font-medium">
-                            {{ $story['description']['label'] }}
-                            <span class="font-normal text-text-muted">{{ $copy['optional'] }}</span>
-                        </span>
-                        <span class="min-h-18 rounded-md border border-focus bg-canvas p-2.5 text-base ring-3 ring-focus/20">{{ $story['description']['value'] }}</span>
-                    </div>
+                    @include('_partials.drawn-field', [
+                        'label' => $story['description']['label'],
+                        'optional' => $copy['optional'],
+                        'value' => $story['description']['value'],
+                        'multiline' => true,
+                        'focused' => true,
+                    ])
                 </div>
                 <div class="flex justify-end gap-2 border-t border-border bg-surface-subtle px-4.5 py-3">
                     <span class="{{ $button }} mn-btn-ghost">{{ $story['back'] }}</span>

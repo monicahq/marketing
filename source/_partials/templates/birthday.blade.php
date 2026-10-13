@@ -22,8 +22,8 @@
 
             <div class="{{ $window }}">
                 <div class="flex items-center gap-3 border-b border-border px-5 py-4">
-                    @include('_partials.avatar-initials', ['name' => 'Ross Geller', 'size' => 36])
-                    <span class="text-lede-sm font-semibold tracking-[-0.01em]">Ross Geller</span>
+                    @include('_partials.avatar-initials', ['name' => $cast['ross']['full'], 'size' => 36])
+                    <span class="text-lede-sm font-semibold tracking-[-0.01em]">{{ $cast['ross']['full'] }}</span>
                 </div>
                 <div class="divide-y divide-border-subtle px-5 pt-2 pb-4">
                     @foreach ($birthday['monica'] as $row)

@@ -2,7 +2,7 @@
     $moment = $copy['moment'];
 
     // The three timelines drawn under the event, in the order of `before`.
-    $timelines = ['Rachel Green', 'Joey Tribbiani', 'Phoebe Buffay'];
+    $timelines = array_map(fn ($who) => $cast[$who], ['rachel', 'joey', 'phoebe']);
 
     $entry = 'flex flex-col gap-0.5 border-l-2 pl-3 text-small';
 @endphp
@@ -31,19 +31,19 @@
                 <div class="flex flex-wrap gap-1.5">
                     @foreach ($friends as $friend)
                         <span class="flex items-center gap-1.5 rounded-full border border-border py-0.75 pr-2.5 pl-0.75 text-xs font-medium">
-                            @include('_partials.avatar-initials', ['name' => $friend, 'size' => 20])
-                            {{ $firstName($friend) }}
+                            @include('_partials.avatar-initials', ['name' => $friend['full'], 'size' => 20])
+                            {{ $friend['first'] }}
                         </span>
                     @endforeach
                 </div>
             </div>
 
             <div class="grid gap-4 md:grid-cols-3">
-                @foreach ($timelines as $i => $name)
-                    <div class="flex flex-col gap-3 rounded-lg border border-border bg-canvas p-4 shadow-panel">
+                @foreach ($timelines as $i => $person)
+                    <div class="mn-panel flex flex-col gap-3 p-4">
                         <div class="flex items-center gap-2">
-                            @include('_partials.avatar-initials', ['name' => $name, 'size' => 24])
-                            <span class="text-base font-semibold">{{ strtr($moment['timeline'], [':name' => $firstName($name)]) }}</span>
+                            @include('_partials.avatar-initials', ['name' => $person['full'], 'size' => 24])
+                            <span class="text-base font-semibold">{{ strtr($moment['timeline'], [':name' => $person['first']]) }}</span>
                         </div>
                         <div class="{{ $entry }} border-identity-4/30">
                             <strong class="font-semibold">{{ $moment['event'] }}</strong>

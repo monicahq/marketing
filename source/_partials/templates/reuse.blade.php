@@ -1,6 +1,5 @@
 @php
     $reuse = $copy['reuse'];
-    $friends = ['Rachel' => 'Rachel Green', 'Ross' => 'Ross Geller', 'Joey' => 'Joey Tribbiani'];
 @endphp
 
 <section class="px-4 pt-24 md:px-6 lg:pt-30">
@@ -24,11 +23,11 @@
             </div>
 
             <div class="grid gap-3 sm:grid-cols-3">
-                @foreach ($reuse['stories'] as $first => $story)
+                @foreach ($reuse['stories'] as $who => $story)
                     <div class="{{ $card }} flex flex-col gap-2.5 p-3.5">
                         <div class="flex items-center gap-2">
-                            @include('_partials.avatar-initials', ['name' => $friends[$first], 'size' => 24])
-                            <span class="text-base font-semibold">{{ $first }}</span>
+                            @include('_partials.avatar-initials', ['name' => $cast[$who]['full'], 'size' => 24])
+                            <span class="text-base font-semibold">{{ $cast[$who]['first'] }}</span>
                         </div>
                         <span class="{{ $eyebrow }} text-text-muted">{{ $fields['howWeMet'] }}</span>
                         <span class="text-small text-text-soft">{{ $story }}</span>

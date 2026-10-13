@@ -10,9 +10,9 @@
     $closing = 'text-copy-lg font-medium text-text text-pretty';
     $eyebrow = 'text-caption font-semibold tracking-[0.06em] uppercase';
 
-    // The drawings. A drawn window lifts off its tinted panel with the pop
-    // shadow, as the design draws it.
-    $window = 'overflow-hidden rounded-lg border border-border bg-canvas shadow-pop';
+    // The drawings. A drawn window lifts off its tinted panel as the design
+    // system's popover does.
+    $window = 'mn-pop overflow-hidden';
     $windowTitle = 'flex items-center gap-3 border-b border-border px-4.5 py-3.5';
     $stamp = 'text-xs text-text-muted';
     $button = 'mn-btn mn-btn-small pointer-events-none';
@@ -34,9 +34,11 @@
     ];
     $tile = 'grid flex-none place-items-center rounded-md';
 
-    // The five friends at Thanksgiving, in the order the drawings list them.
-    $friends = ['Rachel Green', 'Ross Geller', 'Chandler Bing', 'Joey Tribbiani', 'Phoebe Buffay'];
-    $firstName = fn ($name) => strtok($name, ' ');
+    // The people in the drawings, spelled as this language spells them, and
+    // the five friends at Thanksgiving in the order the drawings list them.
+    $cast = $page->t('cast');
+    $separator = $page->t('listSeparator');
+    $friends = array_map(fn ($who) => $cast[$who], ['rachel', 'ross', 'chandler', 'joey', 'phoebe']);
 @endphp
 
 @include('_partials.timeline.hero')

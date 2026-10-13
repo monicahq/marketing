@@ -2,7 +2,7 @@
     $habit = $copy['habit'];
 
     // Who each repeating reminder is about, in the order of `rows` in `lang/`.
-    $names = ['Phoebe Buffay', 'Rachel Green'];
+    $names = [$cast['phoebe']['full'], $cast['rachel']['full']];
 @endphp
 
 <section class="{{ $section }}">
@@ -27,16 +27,16 @@
                 @endforeach
             </div>
 
-            <div class="flex w-full max-w-65 flex-col self-end rounded-lg border border-border bg-canvas p-1.5 text-base shadow-pop">
+            <div class="mn-pop pointer-events-none flex w-full max-w-65 flex-col self-end p-1.5">
                 <span class="px-2.5 py-2 text-xs text-text-muted">{{ $copy['repeats'] }}</span>
                 @foreach ($habit['options'] as $o => $option)
                     @if ($o === $habit['chosen'])
-                        <span class="flex items-center justify-between rounded-md bg-hover px-2.5 py-2 font-medium">
+                        <span class="mn-menu-item justify-between" aria-checked="true">
                             {{ $option }}
                             @include('_partials.icon', ['name' => 'check', 'size' => 14])
                         </span>
                     @else
-                        <span class="px-2.5 py-2">{{ $option }}</span>
+                        <span class="mn-menu-item">{{ $option }}</span>
                     @endif
                 @endforeach
             </div>

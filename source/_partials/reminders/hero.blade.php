@@ -3,16 +3,18 @@
 
     // Who each reminder in the vault is about, in the order of `overdue` and
     // `upcoming` in `lang/`.
-    $overdueNames = ['Phoebe Buffay'];
-    $upcomingNames = ['Joey Tribbiani', 'Chandler Bing'];
+    $overdueNames = [$cast['phoebe']['full']];
+    $upcomingNames = [$cast['joey']['full'], $cast['chandler']['full']];
 
-    $group = $eyebrow . ' border-t border-border px-5 py-2.5';
+    // A group's title is a panel header, so the overdue one can take the
+    // design system's danger band.
+    $group = 'mn-panel-header border-t border-t-border px-5 ' . $eyebrow;
     $person = 'flex min-w-0 flex-1 flex-col gap-0.5';
 @endphp
 
 <section class="px-4 pt-22 md:px-6">
     <div class="{{ $container }}">
-        <div class="mx-auto flex max-w-[760px] flex-col items-center gap-5 text-center">
+        <div class="mx-auto flex max-w-form flex-col items-center gap-5 text-center">
             <h1 class="text-display-hero font-semibold text-balance">{{ $hero['title'] }}</h1>
             <p class="text-lede text-text-secondary text-pretty">{{ $hero['lede'] }}</p>
             <p class="text-lede font-medium text-text text-pretty">{{ $hero['close'] }}</p>
@@ -33,7 +35,7 @@
                     </div>
                 </div>
 
-                <div class="{{ $group }} border-b border-b-danger-edge bg-danger-subtle text-danger">{{ $hero['overdueTitle'] }}</div>
+                <div class="{{ $group }} mn-panel-header-danger text-danger">{{ $hero['overdueTitle'] }}</div>
                 @foreach ($hero['overdue'] as $i => $reminder)
                     <div class="flex flex-wrap items-center gap-3.5 px-5 py-3.5">
                         @include('_partials.avatar-initials', ['name' => $overdueNames[$i], 'size' => 36])
@@ -49,7 +51,7 @@
                     </div>
                 @endforeach
 
-                <div class="{{ $group }} border-b bg-surface-subtle text-text-muted">{{ $hero['upcomingTitle'] }}</div>
+                <div class="{{ $group }} bg-surface-subtle text-text-muted">{{ $hero['upcomingTitle'] }}</div>
                 <div class="divide-y divide-border-subtle">
                     @foreach ($hero['upcoming'] as $i => $reminder)
                         <div class="flex items-center gap-3.5 px-5 py-3.5">

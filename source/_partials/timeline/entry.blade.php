@@ -1,6 +1,8 @@
 {{-- One entry on a drawn timeline: the event's icon on the line, then its
-     title and date, and whatever else was recorded. `place`, `note` and
-     `with` are optional; `last` stops the line under the icon.
+     title and date, and whatever else was recorded. `place` and `with` are
+     optional; `last` stops the line under the icon. `withLine` is the
+     sentence the names go into, `$copy['with']` unless given, and the names
+     are joined with the language's own `$separator`.
 
      @include('_partials.timeline.entry', ['icon' => 'gift', 'tile' => $tiles[4], 'event' => [...], 'with' => ['Rachel'], 'last' => false]) --}}
 <div class="flex gap-4">
@@ -19,7 +21,7 @@
         @endisset
         <span class="text-text-secondary">{{ $event['note'] }}</span>
         @isset($with)
-            <span class="text-text-muted">{!! strtr(e($copy['with']), [':names' => implode(', ', array_map(fn ($name) => '<span class="text-text underline decoration-border-strong underline-offset-3">' . e($name) . '</span>', $with))]) !!}</span>
+            <span class="text-text-muted">{!! strtr(e($withLine ?? $copy['with']), [':names' => implode(e($separator), array_map(fn ($name) => '<span class="text-text underline decoration-border-strong underline-offset-3">' . e($name) . '</span>', $with))]) !!}</span>
         @endisset
     </div>
 </div>

@@ -10,7 +10,7 @@
 
 <section class="px-4 pt-22 md:px-6">
     <div class="{{ $container }}">
-        <div class="mx-auto flex max-w-[760px] flex-col items-center gap-5 text-center">
+        <div class="mx-auto flex max-w-form flex-col items-center gap-5 text-center">
             <h1 class="text-display-hero font-semibold text-balance">{{ $hero['title'] }}</h1>
             <p class="max-w-[620px] text-lede text-text-secondary text-pretty">{{ $hero['lede'] }}</p>
             <div class="pt-2">
@@ -27,16 +27,16 @@
         >
             <div class="{{ $window }}">
                 <div class="flex items-center gap-4 px-6 pt-6">
-                    @include('_partials.avatar-initials', ['name' => 'Rachel Green', 'size' => 56])
+                    @include('_partials.avatar-initials', ['name' => $cast['rachel']['full'], 'size' => 56])
                     <div class="flex min-w-0 flex-col gap-1">
-                        <span class="text-heading-sm font-semibold">Rachel Green</span>
+                        <span class="text-heading-sm font-semibold">{{ $cast['rachel']['full'] }}</span>
                         <span class="text-base text-text-muted">{{ $hero['meta'] }}</span>
                     </div>
                 </div>
 
-                <div class="flex gap-6 overflow-x-auto border-b border-border px-6 pt-5 text-base font-medium">
+                <div class="mn-tabs pointer-events-none px-6 pt-4">
                     @foreach ($hero['tabs'] as $t => $name)
-                        <span class="{{ $tab }} {{ $t === 2 ? $tabOn : $tabOff }}">{{ $name }}</span>
+                        <span class="mn-tab" @if ($t === 2) aria-selected="true" @endif>{{ $name }}</span>
                     @endforeach
                 </div>
 

@@ -39,8 +39,8 @@
 
             <div class="{{ $window }}">
                 <div class="flex items-center gap-3 border-b border-border px-5 py-4">
-                    @include('_partials.avatar-initials', ['name' => 'Rachel Green', 'size' => 28])
-                    <span class="text-copy font-semibold">Rachel Green</span>
+                    @include('_partials.avatar-initials', ['name' => $cast['rachel']['full'], 'size' => 28])
+                    <span class="text-copy font-semibold">{{ $cast['rachel']['full'] }}</span>
                 </div>
                 <div class="divide-y divide-border-subtle px-5 pt-2 pb-4">
                     @foreach ($versions['values'] as $key => $value)
