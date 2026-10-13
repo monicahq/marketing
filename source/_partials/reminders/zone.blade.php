@@ -10,13 +10,13 @@
         <div class="rounded-lg bg-identity-6/14 p-5 max-lg:order-last md:p-10">
             <div role="img" aria-label="{{ $zone['label'] }}" class="{{ $window }}">
                 <div class="{{ $windowTitle }}">
-                    @include('_partials.avatar-initials', ['name' => 'Ross Geller', 'size' => 28])
+                    @include('_partials.avatar-initials', ['name' => $cast['ross']['full'], 'size' => 28])
                     <span class="text-copy font-semibold">{{ $zone['heading'] }}</span>
                 </div>
                 <div class="grid gap-3 p-4.5 sm:grid-cols-3">
-                    @include('_partials.reminders.field', ['label' => $copy['day'], 'value' => $zone['day']])
-                    @include('_partials.reminders.field', ['label' => $copy['at'], 'value' => $zone['at']])
-                    @include('_partials.reminders.field', ['label' => $copy['timeZone'], 'value' => $zone['zone'], 'focused' => true])
+                    @include('_partials.drawn-field', ['label' => $copy['day'], 'value' => $zone['day']])
+                    @include('_partials.drawn-field', ['label' => $copy['at'], 'value' => $zone['at']])
+                    @include('_partials.drawn-field', ['label' => $copy['timeZone'], 'value' => $zone['zone'], 'focused' => true])
                 </div>
                 <div class="mx-4.5 mb-4.5 grid grid-cols-2 overflow-hidden rounded-lg border border-border">
                     <div class="flex flex-col gap-1 px-4 py-3.5">

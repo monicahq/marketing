@@ -980,6 +980,21 @@ return [
     ],
 
     /**
+     * The people in the drawings on the feature pages. Every drawing reads a
+     * name from here, so a name is spelled one way per language.
+     * `listSeparator` joins a list of names in running text.
+     */
+    'cast' => [
+        'rachel' => ['first' => "Rachel", 'full' => "Rachel Green"],
+        'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
+        'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
+        'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
+        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
+    ],
+    'listSeparator' => ", ",
+
+    /**
      * The templates page, "Your contacts, your way". Every picture on it is a
      * drawing of the product, so each one carries a `label` that a screen
      * reader reads instead of the drawing itself.
@@ -1127,9 +1142,9 @@ return [
             'label' => "Ein Feld „Wie wir uns kennengelernt haben“ in der Vorlage „Freunde“, auf den Seiten dreier Freunde mit je einer anderen Geschichte gefüllt, und die Vorlage „Freunde“ als Standard für neue Kontakte im Tresor „Freunde“.",
             'template' => "Vorlage „Freunde“",
             'stories' => [
-                'Rachel' => "Im Hochzeitskleid ins Central Perk gestolpert.",
-                'Ross' => "Monicas Bruder, damals im College.",
-                'Joey' => "Hat auf Chandlers Anzeige für das freie Zimmer geantwortet.",
+                'rachel' => "Im Hochzeitskleid ins Central Perk gestolpert.",
+                'ross' => "Monicas Bruder, damals im College.",
+                'joey' => "Hat auf Chandlers Anzeige für das freie Zimmer geantwortet.",
             ],
             'default' => "Standardvorlage",
             'defaultBody' => "Neue Kontakte im Tresor „Freunde“ beginnen hier",
@@ -1302,6 +1317,7 @@ return [
             'close' => "Wenn Sie sich das nächste Mal sehen, finden Sie zurück zum letzten Gespräch.",
             'label' => "Eine Zeitleiste in Monica mit drei Einträgen für 2026: Abendessen mit Phoebe am 3. Oktober, Telefonat mit Chandler am 21. September und ein Wochenende in Montauk am 14. August mit Ross, Rachel, Monica, Chandler und Joey. Daneben erscheint das Wochenende in Montauk in den Zeitleisten aller fünf.",
             'timeline' => "Zeitleiste",
+            'year' => "2026",
             'addEvent' => "Lebensereignis hinzufügen",
             'entries' => ":count Einträge",
             'events' => [

@@ -24,9 +24,9 @@
                     </div>
 
                     <div role="img" aria-label="{{ $person['label'] }}" class="{{ $window }} mt-auto">
-                        <div class="flex gap-4 overflow-x-auto border-b border-border px-4 pt-3 text-xs font-medium">
+                        <div class="mn-tabs pointer-events-none px-4 pt-1.5">
                             @foreach ($person['tabs'] as $t => $name)
-                                <span class="{{ $tab }} {{ $t === 0 ? $tabOn : $tabOff }}">{{ $name }}</span>
+                                <span class="mn-tab" @if ($t === 0) aria-selected="true" @endif>{{ $name }}</span>
                             @endforeach
                         </div>
                         <div class="flex flex-col divide-y divide-border-subtle px-4 pt-1.5 pb-3 text-small">

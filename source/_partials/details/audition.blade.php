@@ -13,8 +13,8 @@
         <div role="img" aria-label="{{ $audition['label'] }}" class="flex flex-col gap-4 rounded-lg bg-identity-2/14 p-5 md:p-10">
             <div class="{{ $window }}">
                 <div class="flex items-center gap-3 border-b border-border px-4.5 py-3.5">
-                    @include('_partials.avatar-initials', ['name' => 'Joey Tribbiani', 'size' => 32])
-                    <span class="min-w-0 flex-1 text-copy font-semibold">Joey Tribbiani</span>
+                    @include('_partials.avatar-initials', ['name' => $cast['joey']['full'], 'size' => 32])
+                    <span class="min-w-0 flex-1 text-copy font-semibold">{{ $cast['joey']['full'] }}</span>
                     <span class="{{ $stamp }}">{{ $audition['notes'] }}</span>
                 </div>
                 <div class="flex flex-col divide-y divide-border-subtle px-4.5">
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col gap-3 rounded-lg border border-border bg-canvas px-4.5 py-3.5 shadow-panel">
+            <div class="mn-panel flex flex-col gap-3 px-4.5 py-3.5">
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <span class="text-body font-semibold">{{ $audition['reminder'] }}</span>
                     <span class="mn-badge mn-badge-warning">{{ $audition['today'] }}</span>

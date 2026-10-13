@@ -4,8 +4,8 @@
     // Who each reminder is about, in the order of `overdue` and `upcoming` in
     // `lang/`, and how many reminders sit behind each filter, in the order of
     // `filters`. The first filter is the one selected.
-    $overdueName = 'Phoebe Buffay';
-    $upcomingNames = ['Joey Tribbiani', 'Rachel Green', 'Chandler Bing'];
+    $overdueName = $cast['phoebe']['full'];
+    $upcomingNames = [$cast['joey']['full'], $cast['rachel']['full'], $cast['chandler']['full']];
     $counts = [5, 1, 1, 3, 18];
 
     $groupTitle = 'text-base';

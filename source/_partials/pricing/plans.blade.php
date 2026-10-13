@@ -68,9 +68,10 @@
                         <button
                             type="button"
                             x-on:click="period = '{{ $period }}'"
+                            aria-pressed="{{ $period === $billing['period'] ? 'true' : 'false' }}"
                             x-bind:aria-pressed="period === '{{ $period }}'"
-                            x-bind:class="period === '{{ $period }}' ? 'bg-surface-muted text-text shadow-nav-active' : 'text-text-muted hover:text-text'"
-                            class="{{ $seg }}"
+                            x-bind:class="{ 'bg-surface-muted text-text shadow-nav-active': period === '{{ $period }}', 'text-text-muted hover:text-text': period !== '{{ $period }}' }"
+                            class="{{ $seg }} {{ $period === $billing['period'] ? 'bg-surface-muted text-text shadow-nav-active' : 'text-text-muted hover:text-text' }}"
                         >{{ $hosted[$period] }}</button>
                     @endforeach
                 </div>

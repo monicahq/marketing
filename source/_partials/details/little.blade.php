@@ -5,9 +5,9 @@
     // colour at a low tint, the field name is the colour itself. Literal class
     // strings, so Tailwind's scanner finds them.
     $people = [
-        ['name' => 'Rachel Green', 'panel' => 'bg-identity-7/14', 'label' => 'text-identity-7'],
-        ['name' => 'Chandler Bing', 'panel' => 'bg-identity-3/14', 'label' => 'text-identity-3'],
-        ['name' => 'Ross Geller', 'panel' => 'bg-identity-6/14', 'label' => 'text-identity-6'],
+        ['name' => $cast['rachel']['full'], 'panel' => 'bg-identity-7/14', 'label' => 'text-identity-7'],
+        ['name' => $cast['chandler']['full'], 'panel' => 'bg-identity-3/14', 'label' => 'text-identity-3'],
+        ['name' => $cast['ross']['full'], 'panel' => 'bg-identity-6/14', 'label' => 'text-identity-6'],
     ];
 @endphp
 

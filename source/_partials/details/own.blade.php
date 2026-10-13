@@ -15,9 +15,9 @@
         <div class="rounded-lg bg-identity-1/14 p-4 md:p-10 lg:p-12">
             <div role="img" aria-label="{{ $own['label'] }}" class="{{ $window }} flex flex-col gap-6 p-5 md:p-8">
                 <div class="flex flex-wrap items-center gap-6">
-                    @include('_partials.avatar-initials', ['name' => 'Monica Geller', 'size' => 96])
+                    @include('_partials.avatar-initials', ['name' => $cast['monica']['full'], 'size' => 96])
                     <div class="flex min-w-0 flex-1 flex-col gap-2.5">
-                        <span class="text-heading font-semibold md:text-display-sm">Monica Geller</span>
+                        <span class="text-heading font-semibold md:text-display-sm">{{ $cast['monica']['full'] }}</span>
                         @include('_partials.details.meta', ['items' => $own['meta']])
                     </div>
                 </div>

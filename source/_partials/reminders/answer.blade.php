@@ -6,7 +6,7 @@
     $panel = 'flex flex-col gap-5 rounded-lg p-7';
     $panelTitle = 'text-xl font-semibold';
     $panelBody = 'text-copy text-text-soft text-pretty';
-    $reminder = 'mt-auto flex flex-col gap-3 rounded-lg border border-border bg-canvas px-4.5 py-4 shadow-pop';
+    $reminder = 'mn-pop mt-auto flex flex-col gap-3 px-4.5 py-4';
     $reminderTop = 'flex flex-wrap items-center justify-between gap-3';
 @endphp
 

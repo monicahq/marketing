@@ -183,8 +183,8 @@ return [
         'pricing' => "Pricing",
         'blog' => "Blog",
         'docs' => "Documentation",
-        'signIn' => "Login",
-        'getStarted' => "Signup",
+        'signIn' => "Log in",
+        'getStarted' => "Sign up",
         'stars' => ":count stars",
 
         // The features menu: three columns of what Monica does, and a card
@@ -1005,6 +1005,21 @@ return [
     ],
 
     /**
+     * The people in the drawings on the feature pages. Every drawing reads a
+     * name from here, so a name is spelled one way per language.
+     * `listSeparator` joins a list of names in running text.
+     */
+    'cast' => [
+        'rachel' => ['first' => "Rachel", 'full' => "Rachel Green"],
+        'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
+        'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
+        'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
+        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
+    ],
+    'listSeparator' => ", ",
+
+    /**
      * The templates page, "Your contacts, your way". Every picture on it is a
      * drawing of the product, so each one carries a `label` that a screen
      * reader reads instead of the drawing itself.
@@ -1152,9 +1167,9 @@ return [
             'label' => "One How we met field in the Friends template, filled in with a different story on three friends’ pages, and the Friends template chosen as the default for new contacts in the Friends vault.",
             'template' => "Friends template",
             'stories' => [
-                'Rachel' => "Ran into Central Perk in a wedding dress.",
-                'Ross' => "Monica’s brother, back in college.",
-                'Joey' => "Answered the ad for Chandler’s spare room.",
+                'rachel' => "Ran into Central Perk in a wedding dress.",
+                'ross' => "Monica’s brother, back in college.",
+                'joey' => "Answered the ad for Chandler’s spare room.",
             ],
             'default' => "Default template",
             'defaultBody' => "New contacts in the Friends vault start here",
@@ -1328,6 +1343,7 @@ return [
             'close' => "Next time you meet, you have a way back to the last conversation.",
             'label' => "A timeline in Monica with three entries for 2026: dinner with Phoebe on 3 October, a call with Chandler on 21 September, and a weekend in Montauk on 14 August with Ross, Rachel, Monica, Chandler and Joey. Beside it, the Montauk weekend appears on all five of their timelines.",
             'timeline' => "Timeline",
+            'year' => "2026",
             'addEvent' => "Add a life event",
             'entries' => ":count entries",
             'events' => [

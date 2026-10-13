@@ -112,7 +112,9 @@
         >
     </picture>
 
-    <div class="absolute inset-x-0 bottom-0 z-10 flex justify-center px-6 py-3.5">
-        <span class="text-xs text-[#f4f7ee] [text-shadow:0_1px_2px_rgb(0_0_0/0.35)]">{{ $page->t('footer.copyright', [':year' => $page->year]) }}</span>
+    {{-- On a flat band under the meadow rather than over the grass: no
+         colour of text is legible against every daisy. --}}
+    <div class="flex justify-center bg-ground-sage px-6 py-3.5">
+        <span class="text-xs text-ground-sage-ink">{{ $page->t('footer.copyright', [':year' => $page->year]) }}</span>
     </div>
 </footer>

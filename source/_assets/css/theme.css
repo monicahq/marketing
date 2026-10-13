@@ -20,6 +20,12 @@
    design system.
    --------------------------------------------------------------------------- */
 
+/* `dark:` follows the same `.dark` class on <html> that the colours do, not
+   Tailwind's default media query, so a picture hidden at night and the
+   ground it sits on can never disagree. Keyed to <html> alone: a nested
+   `.dark` panel on the pricing page is not night time. */
+@custom-variant dark (&:where(html.dark, html.dark *));
+
 @theme {
   /* ---------- Fonts ----------
      The system stack, exactly as tokens/typography.css spells it. Nothing is
@@ -317,8 +323,9 @@
   --shadow-pop: 0 10px 24px -8px var(--pop-shadow);
 
   /* Ours, for one thing: the product picture under the homepage headline,
-     lifted off the page behind it. */
-  --shadow-showcase: 0 30px 60px -30px rgb(40 60 30 / 0.25), 0 1px 2px rgb(0 0 0 / 0.04);
+     lifted off the page behind it. Neutral, like the others: never a
+     coloured shadow, even over the meadow. */
+  --shadow-showcase: 0 30px 60px -30px rgb(0 0 0 / 0.2), 0 1px 2px rgb(0 0 0 / 0.04);
 }
 
 /* The two marketing grounds and their dark counterparts. The dark sage is a

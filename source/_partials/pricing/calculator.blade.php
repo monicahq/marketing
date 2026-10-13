@@ -189,14 +189,15 @@
                                 role="switch"
                                 aria-labelledby="calc-{{ $key }}"
                                 aria-describedby="calc-{{ $key }}-help"
+                                aria-checked="{{ $rules['defaults'][$key] ? 'true' : 'false' }}"
                                 x-bind:aria-checked="{{ $key }} ? 'true' : 'false'"
                                 x-on:click="{{ $key }} = ! {{ $key }}"
-                                x-bind:class="{{ $key }} ? 'bg-primary' : 'bg-border-strong'"
-                                class="relative h-5 w-8.5 flex-none cursor-pointer rounded-full transition-colors duration-150 ease-standard"
+                                x-bind:class="{ 'bg-primary': {{ $key }}, 'bg-border-strong': ! {{ $key }} }"
+                                class="{{ $rules['defaults'][$key] ? 'bg-primary' : 'bg-border-strong' }} relative h-5 w-8.5 flex-none cursor-pointer rounded-full transition-colors duration-150 ease-standard"
                             >
                                 <span
-                                    x-bind:class="{{ $key }} ? 'left-4' : 'left-0.5'"
-                                    class="absolute top-0.5 size-4 rounded-full bg-canvas shadow-panel transition-[left] duration-150 ease-standard"
+                                    x-bind:class="{ 'left-4': {{ $key }}, 'left-0.5': ! {{ $key }} }"
+                                    class="{{ $rules['defaults'][$key] ? 'left-4' : 'left-0.5' }} absolute top-0.5 size-4 rounded-full bg-canvas shadow-panel transition-[left] duration-150 ease-standard"
                                 ></span>
                             </button>
                         </div>
@@ -214,6 +215,7 @@
                                 type="button"
                                 class="mn-chip"
                                 x-on:click="social = '{{ $key }}'"
+                                aria-pressed="{{ $key === $rules['defaults']['social'] ? 'true' : 'false' }}"
                                 x-bind:aria-pressed="social === '{{ $key }}'"
                             >{{ $label }} ×{{ $decimal->format($rules['multipliers'][$key]) }}</button>
                         @endforeach
@@ -234,9 +236,10 @@
                             <button
                                 type="button"
                                 x-on:click="plan = '{{ $key }}'"
+                                aria-pressed="{{ $key === $rules['defaults']['plan'] ? 'true' : 'false' }}"
                                 x-bind:aria-pressed="plan === '{{ $key }}'"
-                                x-bind:class="plan === '{{ $key }}' ? 'bg-canvas text-text shadow-nav-active' : 'text-text-muted hover:text-text'"
-                                class="{{ $seg }}"
+                                x-bind:class="{ 'bg-canvas text-text shadow-nav-active': plan === '{{ $key }}', 'text-text-muted hover:text-text': plan !== '{{ $key }}' }"
+                                class="{{ $seg }} {{ $key === $rules['defaults']['plan'] ? 'bg-canvas text-text shadow-nav-active' : 'text-text-muted hover:text-text' }}"
                             >{{ $label }}</button>
                         @endforeach
                     </div>

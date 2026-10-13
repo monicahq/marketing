@@ -11,7 +11,6 @@
         ['key' => 'idea', 'type' => 'shortText'],
         ['key' => 'given', 'type' => 'checkbox'],
     ];
-    $controlLabel = 'text-small font-medium';
 @endphp
 
 <section class="px-4 pt-24 md:px-6 lg:pt-30">
@@ -28,7 +27,7 @@
 
         {{-- The template editor, with one field open. --}}
         <div class="rounded-lg bg-identity-5/14 p-4 md:p-10 lg:p-12">
-            <div role="img" aria-label="{{ $room['label'] }}" class="flex flex-col gap-6 rounded-lg border border-border bg-canvas p-5 shadow-pop md:p-8">
+            <div role="img" aria-label="{{ $room['label'] }}" class="mn-pop flex flex-col gap-6 p-5 md:p-8">
                 <div class="flex flex-wrap items-start justify-between gap-4">
                     <div class="flex flex-col gap-1.5">
                         <div class="flex flex-wrap items-center gap-3">
@@ -44,22 +43,22 @@
                     </div>
                 </div>
 
-                <div class="flex gap-7 overflow-x-auto border-b border-border text-base font-medium">
+                <div class="mn-tabs pointer-events-none">
                     @foreach ($room['pages'] as $p => $tabPage)
-                        <span class="{{ $tab }} flex items-center gap-2 {{ $p === 1 ? $tabOn : $tabOff }}">
+                        <span class="mn-tab" @if ($p === 1) aria-selected="true" @endif>
                             {{ $tabPage['name'] }}
-                            <span class="text-micro {{ $p === 1 ? 'rounded-full bg-hover px-1.75 py-px' : '' }}">{{ $tabPage['count'] }}</span>
+                            <span class="mn-tab-count">{{ $tabPage['count'] }}</span>
                         </span>
                     @endforeach
-                    <span class="{{ $tab }} flex items-center gap-1.5 border-transparent text-text-secondary">
+                    <span class="mn-tab text-text-secondary">
                         @include('_partials.icon', ['name' => 'plus', 'size' => 15])
                         {{ $room['addPage'] }}
                     </span>
                 </div>
 
                 <div class="grid items-start gap-5 lg:grid-cols-2">
-                    <div class="{{ $card }} overflow-hidden">
-                        <div class="flex items-center gap-3 border-b border-border px-4 py-3.5">
+                    <div class="{{ $card }}">
+                        <div class="mn-panel-header">
                             <span class="grid size-7 flex-none place-items-center rounded-md bg-identity-5/14 text-identity-5">
                                 @include('_partials.icon', ['name' => 'heart', 'size' => 16])
                             </span>
@@ -92,22 +91,13 @@
                         </div>
                     </div>
 
-                    <div class="{{ $card }} overflow-hidden">
-                        <div class="border-b border-border px-4 py-3.5 text-copy font-semibold">{{ $room['field'] }}</div>
+                    <div class="{{ $card }}">
+                        <div class="mn-panel-header text-copy font-semibold">{{ $room['field'] }}</div>
                         <div class="flex flex-col gap-4 p-4">
-                            <div class="flex flex-col gap-1.5">
-                                <span class="{{ $controlLabel }}">{{ $room['name'] }}</span>
-                                <span class="rounded-md border border-text px-2.5 py-2 text-base outline-3 outline-text/20">{{ $fields['cannotEat'] }}</span>
-                            </div>
-                            <div class="flex flex-col gap-1.5">
-                                <span class="{{ $controlLabel }}">{{ $room['type'] }}</span>
-                                <span class="flex items-center justify-between rounded-md border border-border px-2.5 py-2 text-base">
-                                    {{ $types['multipleChoice'] }}
-                                    @include('_partials.icon', ['name' => 'chevron-down', 'size' => 12])
-                                </span>
-                            </div>
-                            <div class="flex flex-col gap-1.5">
-                                <span class="{{ $controlLabel }}">{{ $room['choices'] }}</span>
+                            @include('_partials.drawn-field', ['label' => $room['name'], 'value' => $fields['cannotEat'], 'focused' => true])
+                            @include('_partials.drawn-field', ['label' => $room['type'], 'value' => $types['multipleChoice'], 'select' => true])
+                            <div class="mn-field">
+                                <span class="mn-label">{{ $room['choices'] }}</span>
                                 <span class="flex flex-wrap gap-1.5">
                                     @foreach ($room['choiceList'] as $choice)
                                         <span class="rounded-full border border-border px-2.5 py-0.75 text-xs font-medium">{{ $choice }}</span>

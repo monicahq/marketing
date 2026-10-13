@@ -223,7 +223,7 @@
             // kind of product.
             'applicationCategory' => 'BusinessApplication',
             'operatingSystem' => 'Web',
-            'inLanguage' => $page->locales,
+            'inLanguage' => array_map(fn ($locale) => $page->languageTag($locale), $page->locales->toArray()),
             'publisher' => ['@id' => $organization],
 
             // True because of the self-hosted offer below: the application is

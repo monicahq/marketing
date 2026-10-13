@@ -9,7 +9,7 @@
     $eventIcons = [['gift', 4], ['people', 2]];
 
     // The first five wedding guests drawn, before "and 38 more".
-    $guests = ['Monica Geller', 'Chandler Bing', 'Ross Geller', 'Rachel Green', 'Phoebe Buffay'];
+    $guests = array_map(fn ($who) => $cast[$who]['full'], ['monica', 'chandler', 'ross', 'rachel', 'phoebe']);
 @endphp
 
 <section class="px-4 pt-22 md:px-6">
@@ -56,7 +56,7 @@
                             'icon' => $eventIcons[$e][0],
                             'tile' => $tiles[$eventIcons[$e][1]],
                             'event' => $event,
-                            'with' => $e === 0 ? array_map($firstName, $friends) : ['Phoebe'],
+                            'with' => $e === 0 ? array_column($friends, 'first') : [$cast['phoebe']['first']],
                             'last' => $loop->last,
                         ])
                     @endforeach

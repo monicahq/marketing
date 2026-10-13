@@ -983,6 +983,21 @@ return [
     ],
 
     /**
+     * The people in the drawings on the feature pages. Every drawing reads a
+     * name from here, so a name is spelled one way per language.
+     * `listSeparator` joins a list of names in running text.
+     */
+    'cast' => [
+        'rachel' => ['first' => "Rachel", 'full' => "Rachel Green"],
+        'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
+        'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
+        'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
+        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
+    ],
+    'listSeparator' => ", ",
+
+    /**
      * The templates page, "Your contacts, your way". Every picture on it is a
      * drawing of the product, so each one carries a `label` that a screen
      * reader reads instead of the drawing itself.
@@ -1130,9 +1145,9 @@ return [
             'label' => "Un seul champ Notre rencontre dans le modèle Amis, rempli avec une histoire différente sur les fiches de trois amis, et le modèle Amis choisi par défaut pour les nouveaux contacts du coffre Amis.",
             'template' => "Modèle Amis",
             'stories' => [
-                'Rachel' => "Entrée au Central Perk en robe de mariée.",
-                'Ross' => "Le frère de Monica, à l’université.",
-                'Joey' => "A répondu à l’annonce pour la chambre libre de Chandler.",
+                'rachel' => "Entrée au Central Perk en robe de mariée.",
+                'ross' => "Le frère de Monica, à l’université.",
+                'joey' => "A répondu à l’annonce pour la chambre libre de Chandler.",
             ],
             'default' => "Modèle par défaut",
             'defaultBody' => "Les nouveaux contacts du coffre Amis commencent ici",
@@ -1306,6 +1321,7 @@ return [
             'close' => "La prochaine fois que vous vous voyez, vous savez où reprendre la dernière conversation.",
             'label' => "Une chronologie dans Monica avec trois entrées pour 2026 : un dîner avec Phoebe le 3 octobre, un appel avec Chandler le 21 septembre, et un week-end à Montauk le 14 août avec Ross, Rachel, Monica, Chandler et Joey. À côté, le week-end à Montauk apparaît dans la chronologie de chacun des cinq.",
             'timeline' => "Chronologie",
+            'year' => "2026",
             'addEvent' => "Ajouter un événement",
             'entries' => ":count entrées",
             'events' => [

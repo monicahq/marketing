@@ -977,6 +977,21 @@ return [
     ],
 
     /**
+     * The people in the drawings on the feature pages. Every drawing reads a
+     * name from here, so a name is spelled one way per language.
+     * `listSeparator` joins a list of names in running text.
+     */
+    'cast' => [
+        'rachel' => ['first' => "Rachel", 'full' => "Rachel Green"],
+        'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
+        'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
+        'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
+        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
+    ],
+    'listSeparator' => ", ",
+
+    /**
      * The templates page, "Your contacts, your way". Every picture on it is a
      * drawing of the product, so each one carries a `label` that a screen
      * reader reads instead of the drawing itself.
@@ -1124,9 +1139,9 @@ return [
             'label' => "Eén veld Hoe we elkaar leerden kennen in het sjabloon Vrienden, ingevuld met een ander verhaal op de pagina’s van drie vrienden, en het sjabloon Vrienden gekozen als standaard voor nieuwe contacten in de kluis Vrienden.",
             'template' => "Sjabloon Vrienden",
             'stories' => [
-                'Rachel' => "Kwam Central Perk binnenlopen in een trouwjurk.",
-                'Ross' => "De broer van Monica, nog van de universiteit.",
-                'Joey' => "Reageerde op de advertentie voor de logeerkamer van Chandler.",
+                'rachel' => "Kwam Central Perk binnenlopen in een trouwjurk.",
+                'ross' => "De broer van Monica, nog van de universiteit.",
+                'joey' => "Reageerde op de advertentie voor de logeerkamer van Chandler.",
             ],
             'default' => "Standaardsjabloon",
             'defaultBody' => "Nieuwe contacten in de kluis Vrienden beginnen hier",
@@ -1300,6 +1315,7 @@ return [
             'close' => "De volgende keer dat jullie elkaar zien, vind je de weg terug naar het vorige gesprek.",
             'label' => "Een tijdlijn in Monica met drie items voor 2026: een etentje met Phoebe op 3 oktober, een telefoontje met Chandler op 21 september en een weekend in Montauk op 14 augustus met Ross, Rachel, Monica, Chandler en Joey. Ernaast staat het weekend in Montauk op de tijdlijn van alle vijf.",
             'timeline' => "Tijdlijn",
+            'year' => "2026",
             'addEvent' => "Een gebeurtenis toevoegen",
             'entries' => ":count items",
             'events' => [

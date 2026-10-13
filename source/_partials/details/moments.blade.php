@@ -11,8 +11,7 @@
     ];
 
     // Everybody who went to Montauk. The weekend is on each of their timelines.
-    $weekend = ['Ross Geller', 'Rachel Green', 'Monica Geller', 'Chandler Bing', 'Joey Tribbiani'];
-    $firstNames = array_map(fn ($name) => explode(' ', $name)[0], $weekend);
+    $weekend = array_map(fn ($who) => $cast[$who], ['ross', 'rachel', 'monica', 'chandler', 'joey']);
 @endphp
 
 <section class="px-4 pt-24 md:px-6 lg:pt-30">
@@ -33,29 +32,20 @@
                     <span class="text-title font-semibold">{{ $moments['timeline'] }}</span>
                     <span class="mn-btn mn-btn-secondary mn-btn-small pointer-events-none">{{ $moments['addEvent'] }}</span>
                 </div>
-                <div class="flex items-baseline gap-2 pt-1.5 pb-2.5 pl-11">
-                    <span class="text-title font-semibold">2026</span>
+                <div class="flex items-baseline gap-2 pt-1.5 pb-2.5 pl-12">
+                    <span class="text-title font-semibold">{{ $moments['year'] }}</span>
                     <span class="{{ $stamp }}">{{ strtr($moments['entries'], [':count' => count($moments['events'])]) }}</span>
                 </div>
 
                 @foreach ($moments['events'] as $e => $event)
-                    <div class="flex gap-4">
-                        <div class="flex flex-none flex-col items-center">
-                            <span class="grid size-7 place-items-center rounded-full {{ $marks[$e]['class'] }}">
-                                @include('_partials.icon', ['name' => $marks[$e]['icon'], 'size' => 14])
-                            </span>
-                            @unless ($loop->last)
-                                <span class="min-h-4 w-px flex-1 bg-border"></span>
-                            @endunless
-                        </div>
-                        <div class="flex flex-col gap-1 pt-1 pb-5 text-base">
-                            <span><strong class="font-semibold">{{ $event['title'] }}</strong> <span class="text-text-muted">· {{ $event['date'] }}</span></span>
-                            <span class="text-text-secondary">{{ $event['body'] }}</span>
-                            @if ($loop->last)
-                                <span class="text-text-muted">{{ strtr($moments['with'], [':names' => implode(', ', $firstNames)]) }}</span>
-                            @endif
-                        </div>
-                    </div>
+                    @include('_partials.timeline.entry', [
+                        'icon' => $marks[$e]['icon'],
+                        'tile' => $marks[$e]['class'],
+                        'event' => ['title' => $event['title'], 'date' => $event['date'], 'note' => $event['body']],
+                        'with' => $loop->last ? array_column($weekend, 'first') : null,
+                        'withLine' => $moments['with'],
+                        'last' => $loop->last,
+                    ])
                 @endforeach
             </div>
 
@@ -64,10 +54,10 @@
                     <span class="text-copy font-semibold">{{ $moments['events'][2]['title'] }}</span>
                     <span class="{{ $stamp }}">{{ strtr($moments['onTimelines'], [':count' => count($weekend)]) }}</span>
                 </div>
-                @foreach ($weekend as $name)
+                @foreach ($weekend as $person)
                     <div class="flex items-center gap-3 px-4.5 py-2.5">
-                        @include('_partials.avatar-initials', ['name' => $name, 'size' => 28])
-                        <span class="text-base font-semibold">{{ $name }}</span>
+                        @include('_partials.avatar-initials', ['name' => $person['full'], 'size' => 28])
+                        <span class="text-base font-semibold">{{ $person['full'] }}</span>
                     </div>
                 @endforeach
             </div>

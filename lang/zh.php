@@ -463,7 +463,7 @@ return [
             'source' => [
                 'title' => "开源",
                 'body' => "审阅我们的代码库，确认我们没有做蠢事。",
-                'comment' => "// What we share with third parties",
+                'comment' => "// 我们与第三方分享的内容",
             ],
             'trackers' => [
                 'title' => "没有广告，没有追踪器那一套烂事",
@@ -1003,6 +1003,22 @@ return [
             ],
         ],
     ],
+
+    /**
+     * The people in the drawings on the feature pages. Every drawing reads a
+     * name from here, so a name is spelled one way per language.
+     * `listSeparator` joins a list of names in running text.
+     */
+    'cast' => [
+        'rachel' => ['first' => "Rachel", 'full' => "Rachel Green"],
+        'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
+        'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
+        'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
+        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
+    ],
+    'listSeparator' => "、",
+
     'templates' => [
         'fields' => [
             'cake' => "最爱的蛋糕",
@@ -1143,9 +1159,9 @@ return [
             'label' => "“朋友”模板中的一个“我们如何认识”字段，在三位朋友的页面上填着各不相同的故事；“朋友”模板被选为“朋友”保险库中新联系人的默认模板。",
             'template' => "“朋友”模板",
             'stories' => [
-                'Rachel' => "穿着婚纱闯进了 Central Perk。",
-                'Ross' => "Monica 的哥哥，大学时就认识。",
-                'Joey' => "应了 Chandler 招租空房的启事。",
+                'rachel' => "穿着婚纱闯进了 Central Perk。",
+                'ross' => "Monica 的哥哥，大学时就认识。",
+                'joey' => "应了 Chandler 招租空房的启事。",
             ],
             'default' => "默认模板",
             'defaultBody' => "“朋友”保险库中的新联系人从这里开始",
@@ -1319,6 +1335,7 @@ return [
             'close' => "下次见面时，你有一条路可以回到上一次的谈话。",
             'label' => "Monica 中的一条时间线，2026 年有三条记录：10 月 3 日和 Phoebe 的晚餐，9 月 21 日和 Chandler 的电话，8 月 14 日和 Ross、Rachel、Monica、Chandler、Joey 一起在 Montauk 度过的周末。旁边显示，Montauk 周末出现在他们五个人的时间线上。",
             'timeline' => "时间线",
+            'year' => "2026",
             'addEvent' => "添加生活事件",
             'entries' => ":count 条记录",
             'events' => [

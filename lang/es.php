@@ -981,6 +981,21 @@ return [
     ],
 
     /**
+     * The people in the drawings on the feature pages. Every drawing reads a
+     * name from here, so a name is spelled one way per language.
+     * `listSeparator` joins a list of names in running text.
+     */
+    'cast' => [
+        'rachel' => ['first' => "Rachel", 'full' => "Rachel Green"],
+        'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
+        'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
+        'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
+        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
+    ],
+    'listSeparator' => ", ",
+
+    /**
      * The templates page, "Your contacts, your way". Every picture on it is a
      * drawing of the product, so each one carries a `label` that a screen
      * reader reads instead of the drawing itself.
@@ -1128,9 +1143,9 @@ return [
             'label' => "Un campo Cómo nos conocimos en la plantilla Amigos, rellenado con una historia distinta en las fichas de tres amigos, y la plantilla Amigos elegida como predeterminada para los contactos nuevos de la bóveda Amigos.",
             'template' => "Plantilla Amigos",
             'stories' => [
-                'Rachel' => "Entró en Central Perk vestida de novia.",
-                'Ross' => "El hermano de Monica, de la universidad.",
-                'Joey' => "Respondió al anuncio de la habitación libre de Chandler.",
+                'rachel' => "Entró en Central Perk vestida de novia.",
+                'ross' => "El hermano de Monica, de la universidad.",
+                'joey' => "Respondió al anuncio de la habitación libre de Chandler.",
             ],
             'default' => "Plantilla predeterminada",
             'defaultBody' => "Los contactos nuevos de la bóveda Amigos empiezan aquí",
@@ -1304,6 +1319,7 @@ return [
             'close' => "La próxima vez que os veáis, tendrás por dónde retomar la última conversación.",
             'label' => "Una cronología en Monica con tres entradas de 2026: una cena con Phoebe el 3 de octubre, una llamada con Chandler el 21 de septiembre y un fin de semana en Montauk el 14 de agosto con Ross, Rachel, Monica, Chandler y Joey. Al lado, el fin de semana en Montauk aparece en la cronología de los cinco.",
             'timeline' => "Cronología",
+            'year' => "2026",
             'addEvent' => "Añadir un acontecimiento",
             'entries' => ":count entradas",
             'events' => [

@@ -10,7 +10,7 @@
     $swatches = ['bg-identity-1', 'bg-identity-2', 'bg-identity-3', 'bg-identity-4', 'bg-identity-5', 'bg-identity-6', 'bg-identity-7', 'bg-identity-8'];
     $chosen = 3;
 
-    $label = 'text-small font-medium';
+    $labelClass = 'text-small font-medium';
 @endphp
 
 <section class="{{ $section }}">
@@ -61,21 +61,21 @@
 
                 <div class="grid grid-cols-[auto_auto_minmax(0,1fr)] items-end gap-3">
                     <div class="flex flex-col gap-1.5">
-                        <span class="{{ $label }}">{{ $traditions['icon'] }}</span>
+                        <span class="{{ $labelClass }}">{{ $traditions['icon'] }}</span>
                         <span class="flex items-center gap-2 rounded-md border border-border px-2.5 py-1.75 text-identity-4">
                             @include('_partials.icon', ['name' => 'gift', 'size' => 16])
                             <span class="text-text-muted">@include('_partials.icon', ['name' => 'chevron-down', 'size' => 14])</span>
                         </span>
                     </div>
                     <div class="flex flex-col gap-1.5">
-                        <span class="{{ $label }}">{{ $traditions['colour'] }}</span>
+                        <span class="{{ $labelClass }}">{{ $traditions['colour'] }}</span>
                         <span class="flex items-center gap-2 rounded-md border border-border px-2.5 py-1.75">
                             <span class="block size-4 rounded-full {{ $swatches[$chosen] }}"></span>
                             <span class="text-text-muted">@include('_partials.icon', ['name' => 'chevron-down', 'size' => 14])</span>
                         </span>
                     </div>
                     <div class="flex min-w-0 flex-col gap-1.5">
-                        <span class="{{ $label }}">{{ $traditions['categoryLabel'] }}</span>
+                        <span class="{{ $labelClass }}">{{ $traditions['categoryLabel'] }}</span>
                         <span class="{{ $box }} truncate py-2">{{ $traditions['category'] }}</span>
                     </div>
                 </div>
