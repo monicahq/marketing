@@ -44,6 +44,7 @@ return [
             'privacy' => "Privacy policy",
             'personalCrm' => "Personal CRM guide",
             'templates' => "Contact templates",
+            'details' => "Contact details",
             'page' => "Page :number",
         ],
 
@@ -124,6 +125,11 @@ return [
         'templates' => [
             'title' => "Your contacts, your way: contact templates in Monica",
             'description' => "Build contact templates with your own fields, sections and tabs. Different templates for friends, family and work, versions you publish when ready, and sections you can share.",
+        ],
+
+        'details' => [
+            'title' => "Remember the details that matter: contact pages in Monica",
+            'description' => "Keep the details people share with you together: what they told you last time, the little things, the people around them, and the moments you shared.",
         ],
 
         'personalCrm' => [
@@ -1163,6 +1169,151 @@ return [
             'download' => "Download",
         ],
 
+    ],
+
+    /**
+     * The details page, "Remember the details that matter". Every picture on
+     * it is a drawing of the product, so each one carries a `label` that a
+     * screen reader reads instead of the drawing itself. The people are the
+     * Friends characters, whose names are not translated and live in the
+     * partials.
+     */
+    'details' => [
+        'hero' => [
+            'title' => "Remember the details that matter.",
+            'lede' => "Their number is in your phone. The name of their new partner, their favourite meal, and what they told you last time might be harder to find.",
+            'close' => "Keep those details together in Monica, ready for the next conversation.",
+            'cta' => "Create your account",
+            'label' => "Rachel Green’s contact page in Monica, open on the General tab. Her partner is Joshua, her favourite meal is Monica’s lasagne without beef, and she works on the buying team at Bloomingdale’s. A note from six days ago says she has an interview in Paris next month.",
+            'vault' => "Personal",
+            'people' => "People",
+            'meta' => [
+                ['label' => "Category", 'value' => "Friends"],
+                ['label' => "Birthday", 'value' => "5 May · in three weeks"],
+                ['label' => "Last in touch", 'value' => "six days ago"],
+            ],
+            'edit' => "Edit contact",
+            'tabs' => ["Overview", "General", "Ways to connect", "Relationships"],
+            'personal' => "Personal details",
+            'rows' => [
+                ['label' => "Partner", 'value' => "Joshua, since February"],
+                ['label' => "Favourite meal", 'value' => "Monica’s lasagne, no beef"],
+                ['label' => "Works at", 'value' => "Bloomingdale’s, buying team"],
+            ],
+            'lastTime' => "What she told you last time",
+            'note' => "Interview in Paris next month, for a job at Louis Vuitton. Hasn’t told her dad yet. Wants to find a flat near the Marais.",
+            'added' => "Added six days ago",
+        ],
+
+        'audition' => [
+            'title' => "“How did the audition go?”",
+            'body' => [
+                "Joey mentioned an audition last week. You remember it mattered to him. Having that detail on his page gives you somewhere to pick up the conversation.",
+                "Keep a record of the things people tell you: a new job, an upcoming move, a project they cannot stop talking about.",
+            ],
+            'label' => "Two notes on Joey Tribbiani’s page: an audition on Thursday for a hospital drama, and a move out of the apartment by the end of the summer. Below them, a reminder due today to ask Joey how the audition went.",
+            'notes' => "Notes",
+            'entries' => [
+                ['text' => "Audition on Thursday for a part in a hospital drama. Second callback. He’s been practising the crying scene on the roof.", 'added' => "Added 8 days ago"],
+                ['text' => "Moving out of the apartment by the end of the summer. Looking at places in Queens.", 'added' => "Added 3 weeks ago"],
+            ],
+            'reminder' => "Ask Joey how the audition went",
+            'today' => "Today",
+            'remembered' => "I remembered",
+            'forgot' => "I forgot",
+        ],
+
+        'little' => [
+            'title' => "The little things deserve a place.",
+            'lead' => "Rachel’s favourite flowers. How Chandler takes his coffee. The name of Ross’s latest research project.",
+            'body' => "Some details are useful. Others simply remind you of who someone is. Keep as much or as little as you want, in your own words.",
+            'cards' => [
+                ['field' => "Favourite flowers", 'value' => "Peonies. Never lilies.", 'note' => "The white ones from the stall on 6th Avenue.", 'label' => "Rachel Green’s favourite flowers: peonies, never lilies. The white ones from the stall on 6th Avenue."],
+                ['field' => "Coffee", 'value' => "Black, two sugars", 'note' => "In the orange mug, if it’s clean.", 'label' => "How Chandler Bing takes his coffee: black, two sugars, in the orange mug if it is clean."],
+                ['field' => "Research project", 'value' => "Sediment layers of the late Cretaceous", 'note' => "Ask about the dig in Montana. Allow twenty minutes.", 'label' => "Ross Geller’s research project: sediment layers of the late Cretaceous. Ask about the dig in Montana, and allow twenty minutes."],
+            ],
+        ],
+
+        'own' => [
+            'title' => "Give every person a page of their own.",
+            'body' => [
+                "Keep contact details, important dates and personal information together. Add a photo, and organise the rest with a template that suits what you want to remember.",
+                "Open Monica Geller’s page before dinner to check her address, her birthday, or the dish you promised to bring.",
+            ],
+            'label' => "Monica Geller’s contact page in Monica: her address and phone number, her birthday and anniversary, and a note from yesterday about the dessert you promised to bring to dinner on Friday.",
+            'meta' => [
+                ['label' => "Category", 'value' => "Friends"],
+                ['label' => "Birthday", 'value' => "22 April"],
+                ['label' => "Reminders", 'value' => "1 today"],
+            ],
+            'connect' => [
+                'title' => "Ways to connect",
+                'rows' => [
+                    ['label' => "Address", 'value' => "90 Bedford Street, Apt 20\nNew York, NY 10014"],
+                    ['label' => "Phone", 'value' => "+1 212 555 0187"],
+                ],
+            ],
+            'dates' => [
+                'title' => "Important dates",
+                'rows' => [
+                    ['label' => "Birthday", 'value' => "22 April 1969"],
+                    ['label' => "Anniversary", 'value' => "15 May, with Chandler"],
+                ],
+            ],
+            'dinner' => [
+                'title' => "Dinner on Friday",
+                'text' => "You promised to bring the dessert. Not the trifle. She has already made a list of acceptable options.",
+                'added' => "Added yesterday",
+            ],
+        ],
+
+        'people' => [
+            'title' => "Leave room for the people around them.",
+            'lead' => "Remembering someone often means remembering their people, too.",
+            'body' => "Link Ross to Monica as his sister, Rachel as his former partner, and Emma as his daughter. When you know someone exists but have not met them yet, you can record the connection with just a name, or without one.",
+            'label' => "Ross Geller’s relationships in Monica. Family: Monica, his sister, and Emma, his daughter. Former partner: Rachel. Not met yet: Charlie, a colleague known only by name, and a cousin from Long Island whose name is not known.",
+            'heading' => "Ross Geller’s people",
+            'add' => "Add",
+            'groups' => [
+                ['title' => "Family", 'people' => [
+                    ['name' => "Monica Geller", 'detail' => "Monica is Ross’s sister."],
+                    ['name' => "Emma Geller-Green", 'detail' => "Emma is Ross’s daughter."],
+                ]],
+                ['title' => "Former partner", 'people' => [
+                    ['name' => "Rachel Green", 'detail' => "Rachel is Ross’s former partner."],
+                ]],
+                ['title' => "Not met yet", 'people' => [
+                    ['name' => "Charlie", 'detail' => "Ross’s colleague · just a name", 'known' => false],
+                    ['name' => "Name not known", 'detail' => "Ross’s cousin, from Long Island", 'known' => false, 'named' => false],
+                ]],
+            ],
+        ],
+
+        'moments' => [
+            'title' => "Keep the moments alongside the details.",
+            'body' => [
+                "A contact page can hold both the everyday facts and the things that happened.",
+                "Record dinner with Phoebe, a call with Chandler, or a trip with the whole group. Add everyone who was there, and the event appears on each person’s timeline.",
+            ],
+            'close' => "Next time you meet, you have a way back to the last conversation.",
+            'label' => "A timeline in Monica with three entries for 2026: dinner with Phoebe on 3 October, a call with Chandler on 21 September, and a weekend in Montauk on 14 August with Ross, Rachel, Monica, Chandler and Joey. Beside it, the Montauk weekend appears on all five of their timelines.",
+            'timeline' => "Timeline",
+            'addEvent' => "Add a life event",
+            'entries' => ":count entries",
+            'events' => [
+                ['title' => "Dinner with Phoebe", 'date' => "3 October", 'body' => "The Thai place on Grove Street. She is writing songs about her taxi again."],
+                ['title' => "Call with Chandler", 'date' => "21 September", 'body' => "Forty minutes. Thinking about leaving the job in data reconfiguration."],
+                ['title' => "A weekend in Montauk", 'date' => "14 August", 'body' => "Rented the beach house again. Joey lost the car keys in the sand."],
+            ],
+            'with' => "With :names",
+            'onTimelines' => "On :count timelines",
+        ],
+
+        'cta' => [
+            'title' => "You do not have to remember everything.",
+            'body' => "Start with one person and a few details you would like to keep. Add more whenever something feels worth remembering.",
+            'button' => "Create your account",
+        ],
     ],
 
     'footer' => [

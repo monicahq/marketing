@@ -23,6 +23,7 @@ return [
             'privacy' => "Datenschutzerklärung",
             'personalCrm' => "Leitfaden persönliches CRM",
             'templates' => "Kontaktvorlagen",
+            'details' => "Kontaktseiten",
             'page' => "Seite :number",
         ],
 
@@ -98,6 +99,11 @@ return [
         'templates' => [
             'title' => "Ihre Kontakte, auf Ihre Art: Kontaktvorlagen in Monica",
             'description' => "Bauen Sie Kontaktvorlagen mit eigenen Feldern, Abschnitten und Tabs. Verschiedene Vorlagen für Freunde, Familie und Beruf, Versionen mit Veröffentlichung, wenn sie fertig sind, und teilbare Abschnitte.",
+        ],
+
+        'details' => [
+            'title' => "Die Details, auf die es ankommt: Kontaktseiten in Monica",
+            'description' => "Halten Sie zusammen, was Menschen Ihnen erzählen: was sie beim letzten Mal gesagt haben, die Kleinigkeiten, die Menschen um sie herum und gemeinsame Momente.",
         ],
 
         'personalCrm' => [
@@ -1136,6 +1142,151 @@ return [
             'staysItems' => ["Ihre 34 Kontakte", "Alles, was auf ihren Seiten steht"],
             'file' => "kleinigkeiten-die-man-sich-merken-sollte.json · 3 KB",
             'download' => "Herunterladen",
+        ],
+    ],
+
+    /**
+     * The details page, "Remember the details that matter". Every picture on
+     * it is a drawing of the product, so each one carries a `label` that a
+     * screen reader reads instead of the drawing itself. The people are the
+     * Friends characters, whose names are not translated and live in the
+     * partials.
+     */
+    'details' => [
+        'hero' => [
+            'title' => "Merken Sie sich die Details, auf die es ankommt.",
+            'lede' => "Die Nummer ist in Ihrem Telefon. Der Name des neuen Partners, das Lieblingsessen und das, was beim letzten Mal erzählt wurde, sind schwerer zu finden.",
+            'close' => "Halten Sie diese Details in Monica zusammen, bereit für das nächste Gespräch.",
+            'cta' => "Konto erstellen",
+            'label' => "Die Kontaktseite von Rachel Green in Monica, geöffnet im Tab „Allgemein“. Ihr Partner ist Joshua, ihr Lieblingsessen ist Monicas Lasagne ohne Rind, und sie arbeitet im Einkauf bei Bloomingdale’s. Eine Notiz von vor sechs Tagen hält fest, dass sie nächsten Monat ein Vorstellungsgespräch in Paris hat.",
+            'vault' => "Privat",
+            'people' => "Personen",
+            'meta' => [
+                ['label' => "Kategorie", 'value' => "Freunde"],
+                ['label' => "Geburtstag", 'value' => "5. Mai · in drei Wochen"],
+                ['label' => "Zuletzt in Kontakt", 'value' => "vor sechs Tagen"],
+            ],
+            'edit' => "Kontakt bearbeiten",
+            'tabs' => ["Übersicht", "Allgemein", "Kontaktwege", "Beziehungen"],
+            'personal' => "Persönliche Angaben",
+            'rows' => [
+                ['label' => "Partner", 'value' => "Joshua, seit Februar"],
+                ['label' => "Lieblingsessen", 'value' => "Monicas Lasagne, ohne Rind"],
+                ['label' => "Arbeitet bei", 'value' => "Bloomingdale’s, im Einkauf"],
+            ],
+            'lastTime' => "Was sie Ihnen letztes Mal erzählt hat",
+            'note' => "Vorstellungsgespräch in Paris nächsten Monat, für eine Stelle bei Louis Vuitton. Hat es ihrem Vater noch nicht gesagt. Sucht eine Wohnung in der Nähe des Marais.",
+            'added' => "Vor sechs Tagen hinzugefügt",
+        ],
+
+        'audition' => [
+            'title' => "„Wie war das Vorsprechen?“",
+            'body' => [
+                "Joey hat letzte Woche ein Vorsprechen erwähnt. Sie wissen noch, dass es ihm wichtig war. Steht das Detail auf seiner Seite, haben Sie einen Anknüpfungspunkt für das Gespräch.",
+                "Halten Sie fest, was Menschen Ihnen erzählen: eine neue Stelle, einen bevorstehenden Umzug, ein Projekt, von dem sie nicht aufhören können zu reden.",
+            ],
+            'label' => "Zwei Notizen auf der Seite von Joey Tribbiani: ein Vorsprechen am Donnerstag für eine Krankenhausserie und ein Auszug aus der Wohnung bis Ende des Sommers. Darunter eine Erinnerung für heute, Joey zu fragen, wie das Vorsprechen lief.",
+            'notes' => "Notizen",
+            'entries' => [
+                ['text' => "Vorsprechen am Donnerstag für eine Rolle in einer Krankenhausserie. Zweite Runde. Er übt die Weinszene auf dem Dach.", 'added' => "Vor 8 Tagen hinzugefügt"],
+                ['text' => "Zieht bis Ende des Sommers aus der Wohnung aus. Sieht sich Wohnungen in Queens an.", 'added' => "Vor 3 Wochen hinzugefügt"],
+            ],
+            'reminder' => "Joey fragen, wie das Vorsprechen lief",
+            'today' => "Heute",
+            'remembered' => "Daran gedacht",
+            'forgot' => "Vergessen",
+        ],
+
+        'little' => [
+            'title' => "Die Kleinigkeiten verdienen einen Platz.",
+            'lead' => "Rachels Lieblingsblumen. Wie Chandler seinen Kaffee trinkt. Der Name von Ross’ neuestem Forschungsprojekt.",
+            'body' => "Manche Details sind nützlich. Andere erinnern Sie einfach daran, wer jemand ist. Halten Sie so viel oder so wenig fest, wie Sie möchten, in Ihren eigenen Worten.",
+            'cards' => [
+                ['field' => "Lieblingsblumen", 'value' => "Pfingstrosen. Nie Lilien.", 'note' => "Die weißen vom Stand an der 6th Avenue.", 'label' => "Rachel Greens Lieblingsblumen: Pfingstrosen, nie Lilien. Die weißen vom Stand an der 6th Avenue."],
+                ['field' => "Kaffee", 'value' => "Schwarz, zwei Stück Zucker", 'note' => "In der orangefarbenen Tasse, wenn sie sauber ist.", 'label' => "Wie Chandler Bing seinen Kaffee trinkt: schwarz, zwei Stück Zucker, in der orangefarbenen Tasse, wenn sie sauber ist."],
+                ['field' => "Forschungsprojekt", 'value' => "Sedimentschichten der späten Kreidezeit", 'note' => "Nach der Grabung in Montana fragen. Zwanzig Minuten einplanen.", 'label' => "Ross Gellers Forschungsprojekt: Sedimentschichten der späten Kreidezeit. Nach der Grabung in Montana fragen und zwanzig Minuten einplanen."],
+            ],
+        ],
+
+        'own' => [
+            'title' => "Geben Sie jedem Menschen eine eigene Seite.",
+            'body' => [
+                "Halten Sie Kontaktdaten, wichtige Daten und persönliche Informationen zusammen. Fügen Sie ein Foto hinzu und ordnen Sie den Rest mit einer Vorlage, die zu dem passt, was Sie sich merken möchten.",
+                "Öffnen Sie vor dem Abendessen die Seite von Monica Geller, um ihre Adresse, ihren Geburtstag oder das Gericht nachzusehen, das Sie mitzubringen versprochen haben.",
+            ],
+            'label' => "Die Kontaktseite von Monica Geller in Monica: ihre Adresse und Telefonnummer, ihr Geburtstag und Hochzeitstag und eine Notiz von gestern über den Nachtisch, den Sie zum Abendessen am Freitag versprochen haben.",
+            'meta' => [
+                ['label' => "Kategorie", 'value' => "Freunde"],
+                ['label' => "Geburtstag", 'value' => "22. April"],
+                ['label' => "Erinnerungen", 'value' => "1 heute"],
+            ],
+            'connect' => [
+                'title' => "Kontaktwege",
+                'rows' => [
+                    ['label' => "Adresse", 'value' => "90 Bedford Street, Apt 20\nNew York, NY 10014"],
+                    ['label' => "Telefon", 'value' => "+1 212 555 0187"],
+                ],
+            ],
+            'dates' => [
+                'title' => "Wichtige Daten",
+                'rows' => [
+                    ['label' => "Geburtstag", 'value' => "22. April 1969"],
+                    ['label' => "Hochzeitstag", 'value' => "15. Mai, mit Chandler"],
+                ],
+            ],
+            'dinner' => [
+                'title' => "Abendessen am Freitag",
+                'text' => "Sie haben versprochen, den Nachtisch mitzubringen. Nicht das Trifle. Sie hat bereits eine Liste annehmbarer Möglichkeiten geschrieben.",
+                'added' => "Gestern hinzugefügt",
+            ],
+        ],
+
+        'people' => [
+            'title' => "Lassen Sie Platz für die Menschen um sie herum.",
+            'lead' => "Sich an jemanden zu erinnern heißt oft auch, sich an seine Menschen zu erinnern.",
+            'body' => "Verknüpfen Sie Ross mit Monica als seiner Schwester, mit Rachel als seiner früheren Partnerin und mit Emma als seiner Tochter. Wenn Sie wissen, dass es jemanden gibt, ihn aber noch nicht kennengelernt haben, halten Sie die Verbindung nur mit einem Namen fest, oder ganz ohne.",
+            'label' => "Die Beziehungen von Ross Geller in Monica. Familie: Monica, seine Schwester, und Emma, seine Tochter. Frühere Partnerin: Rachel. Noch nicht kennengelernt: Charlie, eine Kollegin, von der nur der Name bekannt ist, und ein Cousin aus Long Island, dessen Name nicht bekannt ist.",
+            'heading' => "Ross Gellers Menschen",
+            'add' => "Hinzufügen",
+            'groups' => [
+                ['title' => "Familie", 'people' => [
+                    ['name' => "Monica Geller", 'detail' => "Monica ist Ross’ Schwester."],
+                    ['name' => "Emma Geller-Green", 'detail' => "Emma ist Ross’ Tochter."],
+                ]],
+                ['title' => "Frühere Partnerin", 'people' => [
+                    ['name' => "Rachel Green", 'detail' => "Rachel ist Ross’ frühere Partnerin."],
+                ]],
+                ['title' => "Noch nicht kennengelernt", 'people' => [
+                    ['name' => "Charlie", 'detail' => "Kollegin von Ross · nur ein Name", 'known' => false],
+                    ['name' => "Name unbekannt", 'detail' => "Ross’ Cousin aus Long Island", 'known' => false, 'named' => false],
+                ]],
+            ],
+        ],
+
+        'moments' => [
+            'title' => "Bewahren Sie die Momente neben den Details auf.",
+            'body' => [
+                "Eine Kontaktseite kann beides halten: die alltäglichen Fakten und das, was passiert ist.",
+                "Halten Sie ein Abendessen mit Phoebe fest, ein Telefonat mit Chandler oder einen Ausflug mit der ganzen Clique. Fügen Sie alle hinzu, die dabei waren, und das Ereignis erscheint in der Zeitleiste jeder Person.",
+            ],
+            'close' => "Wenn Sie sich das nächste Mal sehen, finden Sie zurück zum letzten Gespräch.",
+            'label' => "Eine Zeitleiste in Monica mit drei Einträgen für 2026: Abendessen mit Phoebe am 3. Oktober, Telefonat mit Chandler am 21. September und ein Wochenende in Montauk am 14. August mit Ross, Rachel, Monica, Chandler und Joey. Daneben erscheint das Wochenende in Montauk in den Zeitleisten aller fünf.",
+            'timeline' => "Zeitleiste",
+            'addEvent' => "Lebensereignis hinzufügen",
+            'entries' => ":count Einträge",
+            'events' => [
+                ['title' => "Abendessen mit Phoebe", 'date' => "3. Oktober", 'body' => "Das Thai-Restaurant in der Grove Street. Sie schreibt wieder Lieder über ihr Taxi."],
+                ['title' => "Telefonat mit Chandler", 'date' => "21. September", 'body' => "Vierzig Minuten. Er denkt darüber nach, seinen Job in der Datenrekonfiguration zu kündigen."],
+                ['title' => "Ein Wochenende in Montauk", 'date' => "14. August", 'body' => "Wieder das Strandhaus gemietet. Joey hat die Autoschlüssel im Sand verloren."],
+            ],
+            'with' => "Mit :names",
+            'onTimelines' => "In :count Zeitleisten",
+        ],
+
+        'cta' => [
+            'title' => "Sie müssen sich nicht alles merken.",
+            'body' => "Beginnen Sie mit einer Person und ein paar Details, die Sie festhalten möchten. Ergänzen Sie mehr, wann immer etwas es wert scheint.",
+            'button' => "Konto erstellen",
         ],
     ],
 

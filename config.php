@@ -415,6 +415,20 @@ return [
             'pt' => 'recursos/modelos',
             'nl' => 'functies/sjablonen',
         ],
+
+        // "Remember the details that matter": what a contact page holds, from
+        // the little things to the people around someone and what happened
+        // with them. The first item of the header's features menu leads here.
+        // Nested under the features section like the templates page, and like
+        // it, not a tab.
+        'details' => [
+            'en' => 'features/details',
+            'fr' => 'fonctionnalites/details',
+            'de' => 'funktionen/details',
+            'es' => 'funcionalidades/detalles',
+            'pt' => 'recursos/detalhes',
+            'nl' => 'functies/details',
+        ],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -450,6 +464,7 @@ return [
         'privacy' => '2026-08-06',
         'personalCrm' => '2026-08-23',
         'templates' => '2026-10-12',
+        'details' => '2026-10-12',
     ],
 
     // ------------------------------------------------------------------ links

@@ -27,6 +27,7 @@ return [
             'privacy' => "Política de privacidade",
             'personalCrm' => "Guia do CRM pessoal",
             'templates' => "Modelos de contato",
+            'details' => "Fichas de contato",
             'page' => "Página :number",
         ],
 
@@ -102,6 +103,11 @@ return [
         'templates' => [
             'title' => "Seus contatos, do seu jeito: modelos de contato na Monica",
             'description' => "Crie modelos de contato com campos, seções e abas próprios. Modelos diferentes para amigos, família e trabalho, versões publicadas quando você quiser e seções que podem ser compartilhadas.",
+        ],
+
+        'details' => [
+            'title' => "Lembre-se dos detalhes que importam: as fichas de contato na Monica",
+            'description' => "Guarde juntos os detalhes que as pessoas contam para você: o que disseram da última vez, as pequenas coisas, as pessoas ao redor delas e os momentos compartilhados.",
         ],
 
         'personalCrm' => [
@@ -1142,6 +1148,151 @@ return [
             'download' => "Baixar",
         ],
 
+    ],
+
+    /**
+     * The details page, "Remember the details that matter". Every picture on
+     * it is a drawing of the product, so each one carries a `label` that a
+     * screen reader reads instead of the drawing itself. The people are the
+     * Friends characters, whose names are not translated and live in the
+     * partials.
+     */
+    'details' => [
+        'hero' => [
+            'title' => "Lembre-se dos detalhes que importam.",
+            'lede' => "O número está no seu celular. O nome do novo namorado, a comida favorita e o que foi contado da última vez são mais difíceis de encontrar.",
+            'close' => "Guarde esses detalhes juntos na Monica, prontos para a próxima conversa.",
+            'cta' => "Criar a sua conta",
+            'label' => "A ficha de Rachel Green na Monica, aberta na aba Geral. O namorado dela é o Joshua, a comida favorita é a lasanha da Monica sem carne, e ela trabalha na equipe de compras da Bloomingdale’s. Uma nota de seis dias atrás diz que ela tem uma entrevista em Paris no mês que vem.",
+            'vault' => "Pessoal",
+            'people' => "Pessoas",
+            'meta' => [
+                ['label' => "Categoria", 'value' => "Amigos"],
+                ['label' => "Aniversário", 'value' => "5 de maio · daqui a três semanas"],
+                ['label' => "Último contato", 'value' => "seis dias atrás"],
+            ],
+            'edit' => "Editar contato",
+            'tabs' => ["Visão geral", "Geral", "Formas de contato", "Relacionamentos"],
+            'personal' => "Dados pessoais",
+            'rows' => [
+                ['label' => "Namorado", 'value' => "Joshua, desde fevereiro"],
+                ['label' => "Comida favorita", 'value' => "A lasanha da Monica, sem carne"],
+                ['label' => "Trabalha na", 'value' => "Bloomingdale’s, equipe de compras"],
+            ],
+            'lastTime' => "O que ela contou da última vez",
+            'note' => "Entrevista em Paris no mês que vem, para uma vaga na Louis Vuitton. Ainda não contou para o pai. Quer achar um apartamento perto do Marais.",
+            'added' => "Adicionado seis dias atrás",
+        ],
+
+        'audition' => [
+            'title' => "“Como foi o teste?”",
+            'body' => [
+                "Joey comentou sobre um teste na semana passada. Você lembra que era importante para ele. Ter esse detalhe na ficha dele dá um ponto de partida para retomar a conversa.",
+                "Registre o que as pessoas contam para você: um emprego novo, uma mudança chegando, um projeto do qual elas não param de falar.",
+            ],
+            'label' => "Duas notas na ficha de Joey Tribbiani: um teste na quinta-feira para uma série de hospital e a saída do apartamento até o fim do verão. Abaixo, um lembrete para hoje: perguntar ao Joey como foi o teste.",
+            'notes' => "Notas",
+            'entries' => [
+                ['text' => "Teste na quinta-feira para um papel numa série de hospital. Segunda chamada. Ele está ensaiando a cena do choro no terraço.", 'added' => "Adicionado 8 dias atrás"],
+                ['text' => "Vai sair do apartamento até o fim do verão. Está procurando lugares no Queens.", 'added' => "Adicionado 3 semanas atrás"],
+            ],
+            'reminder' => "Perguntar ao Joey como foi o teste",
+            'today' => "Hoje",
+            'remembered' => "Eu lembrei",
+            'forgot' => "Eu esqueci",
+        ],
+
+        'little' => [
+            'title' => "As pequenas coisas merecem um lugar.",
+            'lead' => "As flores favoritas da Rachel. Como o Chandler toma o café. O nome do último projeto de pesquisa do Ross.",
+            'body' => "Alguns detalhes são úteis. Outros simplesmente lembram você de quem alguém é. Guarde tanto ou tão pouco quanto quiser, com as suas próprias palavras.",
+            'cards' => [
+                ['field' => "Flores favoritas", 'value' => "Peônias. Nunca lírios.", 'note' => "As brancas, da banca na 6th Avenue.", 'label' => "As flores favoritas de Rachel Green: peônias, nunca lírios. As brancas, da banca na 6th Avenue."],
+                ['field' => "Café", 'value' => "Preto, dois de açúcar", 'note' => "Na caneca laranja, se estiver limpa.", 'label' => "Como Chandler Bing toma o café: preto, dois de açúcar, na caneca laranja se estiver limpa."],
+                ['field' => "Projeto de pesquisa", 'value' => "Camadas sedimentares do Cretáceo Superior", 'note' => "Pergunte sobre a escavação em Montana. Reserve vinte minutos.", 'label' => "O projeto de pesquisa de Ross Geller: camadas sedimentares do Cretáceo Superior. Pergunte sobre a escavação em Montana e reserve vinte minutos."],
+            ],
+        ],
+
+        'own' => [
+            'title' => "Dê a cada pessoa uma ficha só dela.",
+            'body' => [
+                "Guarde juntos os dados de contato, as datas importantes e as informações pessoais. Adicione uma foto e organize o resto com um modelo que combine com o que você quer lembrar.",
+                "Abra a ficha da Monica Geller antes do jantar para conferir o endereço, o aniversário ou o prato que você prometeu levar.",
+            ],
+            'label' => "A ficha de Monica Geller na Monica: endereço e telefone, aniversário e aniversário de casamento, e uma nota de ontem sobre a sobremesa que você prometeu levar ao jantar de sexta-feira.",
+            'meta' => [
+                ['label' => "Categoria", 'value' => "Amigos"],
+                ['label' => "Aniversário", 'value' => "22 de abril"],
+                ['label' => "Lembretes", 'value' => "1 hoje"],
+            ],
+            'connect' => [
+                'title' => "Formas de contato",
+                'rows' => [
+                    ['label' => "Endereço", 'value' => "90 Bedford Street, Apt 20\nNew York, NY 10014"],
+                    ['label' => "Telefone", 'value' => "+1 212 555 0187"],
+                ],
+            ],
+            'dates' => [
+                'title' => "Datas importantes",
+                'rows' => [
+                    ['label' => "Aniversário", 'value' => "22 de abril de 1969"],
+                    ['label' => "Casamento", 'value' => "15 de maio, com Chandler"],
+                ],
+            ],
+            'dinner' => [
+                'title' => "Jantar de sexta-feira",
+                'text' => "Você prometeu levar a sobremesa. Não o trifle. Ela já fez uma lista de opções aceitáveis.",
+                'added' => "Adicionado ontem",
+            ],
+        ],
+
+        'people' => [
+            'title' => "Deixe espaço para as pessoas ao redor delas.",
+            'lead' => "Lembrar de alguém muitas vezes significa lembrar também das pessoas dela.",
+            'body' => "Ligue o Ross à Monica como irmã, à Rachel como ex-companheira e à Emma como filha. Quando você sabe que alguém existe mas ainda não conheceu a pessoa, pode registrar a ligação só com um nome, ou até sem ele.",
+            'label' => "Os relacionamentos de Ross Geller na Monica. Família: Monica, a irmã, e Emma, a filha. Ex-companheira: Rachel. Ainda não conhecidos: Charlie, uma colega de quem só se sabe o nome, e um primo de Long Island cujo nome não se sabe.",
+            'heading' => "As pessoas de Ross Geller",
+            'add' => "Adicionar",
+            'groups' => [
+                ['title' => "Família", 'people' => [
+                    ['name' => "Monica Geller", 'detail' => "Monica é irmã do Ross."],
+                    ['name' => "Emma Geller-Green", 'detail' => "Emma é filha do Ross."],
+                ]],
+                ['title' => "Ex-companheira", 'people' => [
+                    ['name' => "Rachel Green", 'detail' => "Rachel é ex-companheira do Ross."],
+                ]],
+                ['title' => "Ainda não conhecidos", 'people' => [
+                    ['name' => "Charlie", 'detail' => "Colega do Ross · só um nome", 'known' => false],
+                    ['name' => "Nome desconhecido", 'detail' => "Primo do Ross, de Long Island", 'known' => false, 'named' => false],
+                ]],
+            ],
+        ],
+
+        'moments' => [
+            'title' => "Guarde os momentos junto com os detalhes.",
+            'body' => [
+                "Uma ficha de contato pode guardar tanto os fatos do dia a dia quanto as coisas que aconteceram.",
+                "Registre um jantar com a Phoebe, uma ligação com o Chandler ou uma viagem com a turma toda. Adicione todo mundo que estava lá, e o evento aparece na linha do tempo de cada pessoa.",
+            ],
+            'close' => "Na próxima vez que vocês se encontrarem, você tem um caminho de volta para a última conversa.",
+            'label' => "Uma linha do tempo na Monica com três registros de 2026: jantar com a Phoebe em 3 de outubro, ligação com o Chandler em 21 de setembro e um fim de semana em Montauk em 14 de agosto com Ross, Rachel, Monica, Chandler e Joey. Ao lado, o fim de semana em Montauk aparece na linha do tempo dos cinco.",
+            'timeline' => "Linha do tempo",
+            'addEvent' => "Adicionar um acontecimento",
+            'entries' => ":count registros",
+            'events' => [
+                ['title' => "Jantar com a Phoebe", 'date' => "3 de outubro", 'body' => "O tailandês da Grove Street. Ela está escrevendo músicas sobre o táxi dela de novo."],
+                ['title' => "Ligação com o Chandler", 'date' => "21 de setembro", 'body' => "Quarenta minutos. Está pensando em largar o emprego em reconfiguração de dados."],
+                ['title' => "Um fim de semana em Montauk", 'date' => "14 de agosto", 'body' => "Alugaram de novo a casa de praia. Joey perdeu a chave do carro na areia."],
+            ],
+            'with' => "Com :names",
+            'onTimelines' => "Em :count linhas do tempo",
+        ],
+
+        'cta' => [
+            'title' => "Você não precisa lembrar de tudo.",
+            'body' => "Comece com uma pessoa e alguns detalhes que você gostaria de guardar. Adicione mais sempre que algo parecer digno de lembrar.",
+            'button' => "Criar a sua conta",
+        ],
     ],
 
     'footer' => [

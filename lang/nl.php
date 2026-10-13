@@ -26,6 +26,7 @@ return [
             'privacy' => "Privacybeleid",
             'personalCrm' => "Gids persoonlijke CRM",
             'templates' => "Contactsjablonen",
+            'details' => "Contactpagina’s",
             'page' => "Pagina :number",
         ],
 
@@ -95,6 +96,11 @@ return [
         'templates' => [
             'title' => "Je contacten, op jouw manier: contactsjablonen in Monica",
             'description' => "Bouw contactsjablonen met je eigen velden, secties en tabbladen. Verschillende sjablonen voor vrienden, familie en werk, versies die je publiceert als ze klaar zijn en secties die je kunt delen.",
+        ],
+
+        'details' => [
+            'title' => "Onthoud de details die ertoe doen: contactpagina’s in Monica",
+            'description' => "Bewaar de details die mensen je vertellen bij elkaar: wat ze de vorige keer zeiden, de kleine dingen, de mensen om hen heen en de momenten die jullie deelden.",
         ],
 
         'personalCrm' => [
@@ -1135,6 +1141,151 @@ return [
             'download' => "Download",
         ],
 
+    ],
+
+    /**
+     * The details page, "Remember the details that matter". Every picture on
+     * it is a drawing of the product, so each one carries a `label` that a
+     * screen reader reads instead of the drawing itself. The people are the
+     * Friends characters, whose names are not translated and live in the
+     * partials.
+     */
+    'details' => [
+        'hero' => [
+            'title' => "Onthoud de details die ertoe doen.",
+            'lede' => "Het nummer staat in je telefoon. De naam van de nieuwe partner, het lievelingseten en wat er de vorige keer werd verteld, zijn lastiger terug te vinden.",
+            'close' => "Bewaar die details samen in Monica, klaar voor het volgende gesprek.",
+            'cta' => "Maak je account aan",
+            'label' => "De contactpagina van Rachel Green in Monica, geopend op het tabblad Algemeen. Haar partner is Joshua, haar lievelingseten is Monica’s lasagne zonder rundvlees, en ze werkt bij de inkoop van Bloomingdale’s. Een notitie van zes dagen geleden zegt dat ze volgende maand een sollicitatiegesprek in Parijs heeft.",
+            'vault' => "Persoonlijk",
+            'people' => "Mensen",
+            'meta' => [
+                ['label' => "Categorie", 'value' => "Vrienden"],
+                ['label' => "Verjaardag", 'value' => "5 mei · over drie weken"],
+                ['label' => "Laatste contact", 'value' => "zes dagen geleden"],
+            ],
+            'edit' => "Contact bewerken",
+            'tabs' => ["Overzicht", "Algemeen", "Contactgegevens", "Relaties"],
+            'personal' => "Persoonlijke gegevens",
+            'rows' => [
+                ['label' => "Partner", 'value' => "Joshua, sinds februari"],
+                ['label' => "Lievelingseten", 'value' => "Monica’s lasagne, zonder rundvlees"],
+                ['label' => "Werkt bij", 'value' => "Bloomingdale’s, inkoop"],
+            ],
+            'lastTime' => "Wat ze je de vorige keer vertelde",
+            'note' => "Sollicitatiegesprek in Parijs volgende maand, voor een baan bij Louis Vuitton. Heeft het haar vader nog niet verteld. Zoekt een appartement in de buurt van de Marais.",
+            'added' => "Zes dagen geleden toegevoegd",
+        ],
+
+        'audition' => [
+            'title' => "‘Hoe ging de auditie?’",
+            'body' => [
+                "Joey had het vorige week over een auditie. Je weet nog dat die belangrijk voor hem was. Met dat detail op zijn pagina heb je een plek om het gesprek weer op te pakken.",
+                "Houd bij wat mensen je vertellen: een nieuwe baan, een verhuizing die eraan komt, een project waar ze niet over op kunnen houden.",
+            ],
+            'label' => "Twee notities op de pagina van Joey Tribbiani: een auditie op donderdag voor een ziekenhuisserie, en een verhuizing uit het appartement voor het einde van de zomer. Daaronder een herinnering voor vandaag om Joey te vragen hoe de auditie ging.",
+            'notes' => "Notities",
+            'entries' => [
+                ['text' => "Auditie op donderdag voor een rol in een ziekenhuisserie. Tweede callback. Hij oefent de huilscène op het dak.", 'added' => "8 dagen geleden toegevoegd"],
+                ['text' => "Verhuist voor het einde van de zomer uit het appartement. Kijkt naar woningen in Queens.", 'added' => "3 weken geleden toegevoegd"],
+            ],
+            'reminder' => "Joey vragen hoe de auditie ging",
+            'today' => "Vandaag",
+            'remembered' => "Ik dacht eraan",
+            'forgot' => "Ik vergat het",
+        ],
+
+        'little' => [
+            'title' => "De kleine dingen verdienen een plek.",
+            'lead' => "Rachels lievelingsbloemen. Hoe Chandler zijn koffie drinkt. De naam van Ross’ nieuwste onderzoeksproject.",
+            'body' => "Sommige details zijn handig. Andere herinneren je er gewoon aan wie iemand is. Bewaar zoveel of zo weinig als je wilt, in je eigen woorden.",
+            'cards' => [
+                ['field' => "Lievelingsbloemen", 'value' => "Pioenrozen. Nooit lelies.", 'note' => "De witte, van het kraampje aan 6th Avenue.", 'label' => "Rachel Greens lievelingsbloemen: pioenrozen, nooit lelies. De witte, van het kraampje aan 6th Avenue."],
+                ['field' => "Koffie", 'value' => "Zwart, twee suikers", 'note' => "In de oranje mok, als die schoon is.", 'label' => "Hoe Chandler Bing zijn koffie drinkt: zwart, twee suikers, in de oranje mok als die schoon is."],
+                ['field' => "Onderzoeksproject", 'value' => "Sedimentlagen uit het Laat-Krijt", 'note' => "Vraag naar de opgraving in Montana. Trek twintig minuten uit.", 'label' => "Ross Gellers onderzoeksproject: sedimentlagen uit het Laat-Krijt. Vraag naar de opgraving in Montana en trek twintig minuten uit."],
+            ],
+        ],
+
+        'own' => [
+            'title' => "Geef iedereen een eigen pagina.",
+            'body' => [
+                "Bewaar contactgegevens, belangrijke datums en persoonlijke informatie bij elkaar. Voeg een foto toe en orden de rest met een sjabloon dat past bij wat je wilt onthouden.",
+                "Open voor het etentje de pagina van Monica Geller om haar adres, haar verjaardag of het gerecht dat je beloofde mee te nemen na te kijken.",
+            ],
+            'label' => "De contactpagina van Monica Geller in Monica: haar adres en telefoonnummer, haar verjaardag en trouwdag, en een notitie van gisteren over het dessert dat je beloofde mee te nemen naar het etentje op vrijdag.",
+            'meta' => [
+                ['label' => "Categorie", 'value' => "Vrienden"],
+                ['label' => "Verjaardag", 'value' => "22 april"],
+                ['label' => "Herinneringen", 'value' => "1 vandaag"],
+            ],
+            'connect' => [
+                'title' => "Contactgegevens",
+                'rows' => [
+                    ['label' => "Adres", 'value' => "90 Bedford Street, Apt 20\nNew York, NY 10014"],
+                    ['label' => "Telefoon", 'value' => "+1 212 555 0187"],
+                ],
+            ],
+            'dates' => [
+                'title' => "Belangrijke datums",
+                'rows' => [
+                    ['label' => "Verjaardag", 'value' => "22 april 1969"],
+                    ['label' => "Trouwdag", 'value' => "15 mei, met Chandler"],
+                ],
+            ],
+            'dinner' => [
+                'title' => "Etentje op vrijdag",
+                'text' => "Je hebt beloofd het dessert mee te nemen. Niet de trifle. Ze heeft al een lijst met acceptabele opties gemaakt.",
+                'added' => "Gisteren toegevoegd",
+            ],
+        ],
+
+        'people' => [
+            'title' => "Laat ruimte voor de mensen om hen heen.",
+            'lead' => "Iemand onthouden betekent vaak ook zijn of haar mensen onthouden.",
+            'body' => "Koppel Ross aan Monica als zijn zus, aan Rachel als zijn ex-partner en aan Emma als zijn dochter. Weet je dat iemand bestaat maar heb je die persoon nog niet ontmoet, dan leg je de band vast met alleen een naam, of zelfs zonder.",
+            'label' => "De relaties van Ross Geller in Monica. Familie: Monica, zijn zus, en Emma, zijn dochter. Ex-partner: Rachel. Nog niet ontmoet: Charlie, een collega van wie alleen de naam bekend is, en een neef uit Long Island van wie de naam niet bekend is.",
+            'heading' => "De mensen van Ross Geller",
+            'add' => "Toevoegen",
+            'groups' => [
+                ['title' => "Familie", 'people' => [
+                    ['name' => "Monica Geller", 'detail' => "Monica is de zus van Ross."],
+                    ['name' => "Emma Geller-Green", 'detail' => "Emma is de dochter van Ross."],
+                ]],
+                ['title' => "Ex-partner", 'people' => [
+                    ['name' => "Rachel Green", 'detail' => "Rachel is de ex-partner van Ross."],
+                ]],
+                ['title' => "Nog niet ontmoet", 'people' => [
+                    ['name' => "Charlie", 'detail' => "Collega van Ross · alleen een naam", 'known' => false],
+                    ['name' => "Naam onbekend", 'detail' => "De neef van Ross, uit Long Island", 'known' => false, 'named' => false],
+                ]],
+            ],
+        ],
+
+        'moments' => [
+            'title' => "Bewaar de momenten naast de details.",
+            'body' => [
+                "Een contactpagina kan zowel de alledaagse feiten bevatten als de dingen die gebeurd zijn.",
+                "Leg een etentje met Phoebe vast, een telefoontje met Chandler of een reisje met de hele groep. Voeg iedereen toe die erbij was, en de gebeurtenis verschijnt op ieders tijdlijn.",
+            ],
+            'close' => "De volgende keer dat jullie elkaar zien, vind je de weg terug naar het vorige gesprek.",
+            'label' => "Een tijdlijn in Monica met drie items voor 2026: een etentje met Phoebe op 3 oktober, een telefoontje met Chandler op 21 september en een weekend in Montauk op 14 augustus met Ross, Rachel, Monica, Chandler en Joey. Ernaast staat het weekend in Montauk op de tijdlijn van alle vijf.",
+            'timeline' => "Tijdlijn",
+            'addEvent' => "Een gebeurtenis toevoegen",
+            'entries' => ":count items",
+            'events' => [
+                ['title' => "Etentje met Phoebe", 'date' => "3 oktober", 'body' => "Het Thaise restaurant aan Grove Street. Ze schrijft weer liedjes over haar taxi."],
+                ['title' => "Telefoontje met Chandler", 'date' => "21 september", 'body' => "Veertig minuten. Denkt erover zijn baan in dataherconfiguratie op te zeggen."],
+                ['title' => "Een weekend in Montauk", 'date' => "14 augustus", 'body' => "Het strandhuis weer gehuurd. Joey verloor de autosleutels in het zand."],
+            ],
+            'with' => "Met :names",
+            'onTimelines' => "Op :count tijdlijnen",
+        ],
+
+        'cta' => [
+            'title' => "Je hoeft niet alles te onthouden.",
+            'body' => "Begin met één persoon en een paar details die je wilt bewaren. Voeg meer toe wanneer iets het onthouden waard lijkt.",
+            'button' => "Maak je account aan",
+        ],
     ],
 
     'footer' => [
