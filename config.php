@@ -575,8 +575,6 @@ return [
         'github' => 'https://github.com/monicahq/monica',
         'signIn' => 'https://app.monicahq.com',
         'getStarted' => 'https://app.monicahq.com/register',
-        'createAccount' => '#',
-        'selfHost' => '#',
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',

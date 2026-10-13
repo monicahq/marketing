@@ -103,11 +103,13 @@ Three helpers, and the distinction matters:
 
 ### Adding a locale
 
-1. `$locales`, `localeNames` and `ogLocales` in `config.php`.
+1. `$locales`, `localeNames` and `ogLocales` in `config.php`, and `languageTags` if the bare code is not the right language tag (as `zh` is not: it is `zh-Hans`).
 2. A slug for it on every entry in `routes`.
-3. Copy `lang/en.php`, translate it. That file is also what puts the language in the root's redirect rules, so there is nothing to do for `/`.
-4. Its flag in `source/_partials/flag.blade.php`.
-5. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
+3. One page file per route under `source/<locale>/`, plus `source/<locale>/blog.blade.php` and `source/<locale>/blog/feed.blade.xml`.
+4. Copy `lang/en.php`, translate it. That file is also what puts the language in the root's redirect rules, so there is nothing to do for `/`.
+5. A `source/_posts_<locale>/` holding every post. The sitemap lists every post in every locale, so a missing one fails the dead-link check.
+6. Its flag in `source/_partials/flag.blade.php`.
+7. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
 
 German runs ~30% longer than English, French ~20%, and Portuguese ~20%. Chinese runs much shorter. Don't pin widths to English label lengths.
 
@@ -162,7 +164,7 @@ Tailwind's stock palette, type scale, radii, fonts and shadows are reset to `ini
 - `mn-*` component classes live in Tailwind's `components` layer, so utilities in markup override them. `class="mn-btn mn-btn-primary w-full"` works. The variants are single-dash (`mn-btn-primary`, `mn-btn-secondary`, `mn-btn-ghost`, `mn-btn-small`), as the v3 design system spells them.
 - An `<a class="mn-btn">` carries `no-underline hover:no-underline`, so a button never picks up the link underline whatever the base layer decides next.
 - **No `@apply`.** Repeated markup becomes a Blade partial, not a new CSS class.
-- **Dark mode follows the reader's system setting**, with no toggle. An inline script in `_layouts/base.blade.php` puts `.dark` on `<html>` from `prefers-color-scheme` before the first paint and follows changes. The design system swaps its own values under `.dark`, and every utility follows because `theme.css` points at them. The colour and shadow tokens are `@theme inline`, so a utility writes the design system's variable itself (`var(--card)`) and resolves it on the element: that is what lets a nested `.dark` (the dark panels on the pricing page) turn just one panel dark. A colour that has to stay the same in both themes (the terminal, the inverse surface) is a fixed value in `theme.css`, not a `var()`. An image that needs a night version uses `<picture>` with a `(prefers-color-scheme: dark)` source, as the footer does.
+- **Dark mode follows the reader's system setting**, with no toggle. An inline script in `_partials/color-scheme.blade.php` (included by `_layouts/base.blade.php` and by the 404 page, which has its own head) puts `.dark` on `<html>` from `prefers-color-scheme` before the first paint and follows changes. The design system swaps its own values under `.dark`, and every utility follows because `theme.css` points at them. The colour and shadow tokens are `@theme inline`, so a utility writes the design system's variable itself (`var(--card)`) and resolves it on the element: that is what lets a nested `.dark` (the dark panels on the pricing page) turn just one panel dark. Tailwind's `dark:` variant is redefined in `theme.css` to follow the same class on `<html>` (and only there, so a nested `.dark` panel is not night time), so a `dark:hidden` picture and the colours around it can never disagree. A colour that has to stay the same in both themes (the terminal, the inverse surface) is a fixed value in `theme.css`, not a `var()`. An image that needs a night version uses `<picture>` with a `(prefers-color-scheme: dark)` source, as the footer does.
 - Tailwind scans Blade through the `@source` lines at the bottom of `main.css`. A new template directory outside `source/` needs adding there or its classes get stripped.
 
 ## Templates
@@ -231,7 +233,7 @@ One `@graph` per page, whose nodes reference each other by `@id` instead of repe
 
 - **The `WebPage` type is chosen per page**: `CollectionPage` for the blog index, `AboutPage` for the team page, `WebPage` for everything else including a post, which carries its `BlogPosting` alongside rather than instead.
 - **The breadcrumb trail is built from the route key**, and its labels are `meta.breadcrumb.*` in `lang/`, one per route key, kept apart from `nav` because a nav label is written to be scanned and a crumb is read out in a search result. The homepage gets no trail: a single crumb states that the root is the root.
-- **`SoftwareApplication` is only on the two pages that are about buying the product.** Its four offers (monthly, yearly, lifetime, self-hosted) read their prices from `plans` in `config.php`, as bare numbers, because a crawler wants `9.00` and `USD` while a reader wants `$9`. Those two are the only pair on the site that can disagree without anything failing, so **a price change is an edit in `config.php` and an edit to `pricing.prices` in every `lang/` file.** No `aggregateRating`: there is no review data, and inventing one is the fastest way to a manual action.
+- **`SoftwareApplication` is only on the two pages that are about buying the product.** Its four offers (monthly, yearly, lifetime, self-hosted) read their prices from `plans` in `config.php`, as bare numbers, because a crawler wants `9.00` and `USD` while a reader wants `$9`. Those two are the only pair on the site that can disagree without anything failing, so **a price change is an edit in `config.php` and, in every `lang/` file, an edit to `pricing.prices`, to `meta.pricing.description` (which names the prices in prose), and to the discount answer in the pricing FAQ (which quotes twelve monthly payments).** No `aggregateRating`: there is no review data, and inventing one is the fastest way to a manual action.
 - `scripts/links/check.php` resolves JSON-LD values under the keys in `JSON_LD_URL_KEYS`, which is what checks every breadcrumb `item`. `@id` is deliberately not in that list: it is an identifier spelled like a URL and is never meant to resolve.
 
 Social cards are `source/og/monica-<locale>.png`, one per language, 1200x630. They are generated from `scripts/og/template.html` by `npm run og`, which drives headless Chrome. The PNGs are committed so a build never depends on a browser being installed. **The template mirrors the hero copy by hand**, so when a hero headline changes in `lang/`, update the template and re-run `npm run og`.
@@ -266,7 +268,7 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 ## The blog
 
-`/en/blog/`, ten posts a page, plus a page per post. The 43 posts are the ones imported from the old site, Markdown, one file per post per language.
+`/en/blog/`, ten posts a page, plus a page per post. The 43 posts are Markdown, one file per post per language: most were imported from the old site, and the newest are the rebuild series.
 
 **One collection per locale.** The bodies are translated, so a post is a different file in every language: `source/_posts_en/`, `source/_posts_fr/`, and so on, read by the `posts_en`, `posts_fr`, ... collections that `config.php` builds by looping over `$locales`. Everything else about them (sort order, `perPage`, the helpers) comes from one shared `$postSettings` array, so it cannot drift between languages. One collection per language rather than one with a `locale` field, because Jigsaw's paginator takes a collection and nothing else: it cannot be told to paginate the French eighth of a pile of 344 items, and the French index would otherwise list German posts.
 
