@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 @include('_partials.home.checklist', ['items' => $copy['selfHost']['items']])
-                <a href="{{ $page->links['docs'] }}" class="mn-btn mn-btn-secondary w-full no-underline hover:no-underline">{{ $copy['selfHost']['cta'] }}</a>
+                <a href="{{ $page->links['selfHostingGuide'] }}" class="mn-btn mn-btn-secondary w-full no-underline hover:no-underline">{{ $copy['selfHost']['cta'] }}</a>
             </div>
 
             {{-- Alpine owns the billing period. Everything below renders in the
@@ -82,9 +82,10 @@
                                 <button
                                     type="button"
                                     x-on:click="period = '{{ $period }}'"
+                                    aria-pressed="{{ $period === $billing['period'] ? 'true' : 'false' }}"
                                     x-bind:aria-pressed="period === '{{ $period }}'"
-                                    x-bind:class="period === '{{ $period }}' ? 'bg-canvas text-text shadow-nav-active' : 'text-text-muted hover:text-text'"
-                                    class="{{ $seg }}"
+                                    x-bind:class="{ 'bg-canvas text-text shadow-nav-active': period === '{{ $period }}', 'text-text-muted hover:text-text': period !== '{{ $period }}' }"
+                                    class="{{ $seg }} {{ $period === $billing['period'] ? 'bg-canvas text-text shadow-nav-active' : 'text-text-muted hover:text-text' }}"
                                 >{{ $cloud[$period] }}</button>
                             @endforeach
                         </div>

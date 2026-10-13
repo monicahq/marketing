@@ -47,6 +47,7 @@
                         type="button"
                         class="mn-chip h-7 px-2.5 text-xs"
                         x-on:click="cat = '{{ $key }}'"
+                        aria-pressed="{{ $key === 'all' ? 'true' : 'false' }}"
                         x-bind:aria-pressed="cat === '{{ $key }}'"
                     >{{ $topic }} <span class="mn-chip-count">{{ $counts[$key] ?? 0 }}</span></button>
                 @endforeach
