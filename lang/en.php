@@ -49,6 +49,7 @@ return [
             'timeline' => "Timeline",
             'relationships' => "Relationships",
             'vaults' => "Vaults",
+            'sharing' => "Sharing",
             'page' => "Page :number",
         ],
 
@@ -154,6 +155,11 @@ return [
         'vaults' => [
             'title' => "A place for each part of your life: vaults in Monica",
             'description' => "Keep friends, family and colleagues together or give each group its own space. Each vault has its own contacts, timeline, reminders and default template, all inside your account.",
+        ],
+
+        'sharing' => [
+            'title' => "Share only what you choose: sharing in Monica",
+            'description' => "Share selected sections of a contact’s page through a read-only link. Choose what it shows, give it an end date or a password, see when it was opened, and revoke it at any time.",
         ],
 
         'personalCrm' => [
@@ -1877,6 +1883,137 @@ return [
             'title' => "Separate spaces, still your account.",
             'lead' => "Vaults organise your information within your account. They are yours alone: other people cannot join them or sign in to see what you have recorded.",
             'body' => "Choose where someone belongs before adding them. Contacts cannot currently move between vaults, and relationships connect people within the same vault.",
+        ],
+    ],
+
+    'sharing' => [
+        // Words more than one drawing uses.
+        'optional' => "optional",
+        'stops' => "Stops working",
+        'week' => "In 7 days",
+        'password' => "Password",
+        'cancel' => "Cancel",
+        'address' => "Address",
+        'phone' => "Phone",
+        // The sections of Joey's page, in the order the selection lists them.
+        'sections' => ["Ways to connect", "Food preferences", "Personal details", "Work", "Notes", "Fields you marked sensitive"],
+
+        'hero' => [
+            'title' => "Share only what you choose.",
+            'intro' => "Someone needs an address, a phone number, or a few useful details.",
+            'lede' => "Share selected sections of a contact’s page through a read-only link. Choose what it shows, how long it works, and when to stop access.",
+            'cta' => "Create your account",
+            'label' => "Sharing Joey Tribbiani’s page in Monica, from the Personal vault. The link is read only, always: whoever opens it needs no account, joins nothing, and can change nothing. The link is named Joey’s birthday, it is for Rachel Green, it stops working in 7 days, and no password is set. Going out: 2 of 6 sections and his name, nothing else.",
+            'readOnly' => "Read only, always",
+            'heading' => "Share Joey Tribbiani",
+            'body' => "A private link to this one page. Whoever opens it needs no account, joins nothing, and can change nothing.",
+            'vault' => "Personal · Friends and family",
+            'link' => "The link itself",
+            'linkBody' => "Both of these are for you. Whoever opens the link never sees them.",
+            'name' => "Name this link",
+            'nameValue' => "Joey’s birthday",
+            'who' => "Who it is for",
+            'passwordHint' => "Asked for before the page opens",
+            'out' => "Going out",
+            'summary' => "2 of 6 sections and his name. Nothing else.",
+            'create' => "Create sharing link",
+            'note' => "You can change what it shows afterwards, or revoke it.",
+        ],
+
+        'visitor' => [
+            'title' => "Rachel is organising Joey’s birthday.",
+            'lead' => "She needs his address and phone number. Your notes about his auditions can stay with you.",
+            'body' => "Create a link to Joey’s page and select the sections Rachel needs. She can open it without a Monica account and cannot change anything.",
+            'label' => "Joey Tribbiani’s page as Rachel sees it, shared with her by Monica Geller, read only, until 20 October 2026. Ways to connect: his address, 495 Grove Street, Apt 19, New York, and his phone number. A note explains that this is a page from somebody’s private records, with nothing to sign in to and nothing to reply to.",
+            'by' => "Shared with you by Monica Geller",
+            'until' => "Read only · ends 20 October 2026",
+            'oldAddress' => "495 Grove Street, Apt 19, New York",
+            'notice' => "This is a page from somebody’s private records, shared with you as it stands today. There is nothing to sign in to and nothing to reply to here.",
+        ],
+
+        'selection' => [
+            'title' => "A little or a little more. You decide.",
+            'lead' => "Each link has its own selection of sections. Share contact information with one person and a different set of details with another.",
+            'body' => [
+                "Fields you marked sensitive are excluded by default. You can choose to include them when needed.",
+                "Life events, relationships, reminders, photos, attached files and change history stay out of the shared page.",
+            ],
+            'label' => "Two links to Joey’s page, each with its own sections. For Rachel, Joey’s birthday: ways to connect and food preferences, while personal details, work, notes and the fields you marked sensitive are left out. For the agent, headshots and contracts: ways to connect and work. Never on a shared page: life events, relationships, reminders, photos, attached files and change history.",
+            // Which sections each link shows, by their place in `sections`,
+            // is in the template.
+            'links' => [
+                ['title' => "For Rachel", 'meta' => "Joey’s birthday · 2 sections"],
+                ['title' => "For the agent", 'meta' => "Headshots and contracts · 2 sections"],
+            ],
+            'sensitive' => "Sensitive",
+            'never' => "Never on a shared page",
+            'kept' => ["Life events", "Relationships", "Reminders", "Photos", "Attached files", "Change history"],
+        ],
+
+        'expiry' => [
+            'title' => "Give the link an end date.",
+            'lead' => "Let Rachel’s link work for seven days, thirty days, or three months. You can also leave a link open until you revoke it.",
+            'body' => "Add a password when you want another layer of protection. Anyone holding an unprotected link can open it, so share it with care.",
+            'label' => "Choosing when a link stops working: in 7 days, on 20 October 2026, is selected. The others are in 30 days, on 12 November 2026, in 3 months, on 13 January 2027, and until you revoke it. Below, a password has been set, and is asked for before the page opens.",
+            // The first is the one selected.
+            'options' => [
+                ['label' => "In 7 days", 'date' => "20 October 2026"],
+                ['label' => "In 30 days", 'date' => "12 November 2026"],
+                ['label' => "In 3 months", 'date' => "13 January 2027"],
+            ],
+            'forever' => "Until you revoke it",
+            'hint' => "Asked for before the page opens.",
+        ],
+
+        'send' => [
+            'title' => "Send it your way.",
+            'lead' => "Copy the link and send it through the conversation you already use.",
+            'body' => "Monica does not email the recipient or send an invitation. If you added a password, pass it along separately.",
+            'label' => "A new sharing link in Monica: the link is live. Copy it now, because this is the only time it can be shown in full, so a lost link is replaced rather than recovered. Buttons to copy the link and to open it as a visitor. Nothing is emailed: if you set a password, tell Rachel separately from the address.",
+            'heading' => "The link is live",
+            'warning' => "Copy it now. This is the only time it can be shown in full, so a lost link is replaced rather than recovered.",
+            'copy' => "Copy the link",
+            'open' => "Open it as a visitor",
+            'note' => "Nothing is emailed. If you set a password, tell Rachel separately from the address.",
+        ],
+
+        'update' => [
+            'title' => "Keep the details up to date.",
+            'lead' => "Joey moved. Update his address in Monica, and Rachel sees the new address the next time she opens the shared page.",
+            'body' => "You can also change the sections a link shows, its password or its expiry date without changing the address of the link.",
+            'label' => "Joey’s address being edited in your Monica, to 90 Bedford Street, Apt 20, New York. Beside it, Rachel’s shared page, at the same link, already shows the new address, with the same phone number.",
+            'edit' => "Edit address",
+            'where' => "In your Monica",
+            'newAddress' => "90 Bedford Street, Apt 20, New York",
+            'save' => "Save changes",
+            'shared' => "Rachel’s shared page",
+            'same' => "Same link",
+        ],
+
+        'visits' => [
+            'title' => "See when the link was opened.",
+            'lead' => "Each link keeps a visit history, including when it was opened and roughly where the visit came from. Failed password attempts appear there too.",
+            'body' => "The history records visits, rather than confirming who was behind them. Recipients do not sign in.",
+            'label' => "The visits to a sharing link, 3 in total: opened today at 09:42 from New York, United States; a wrong password today at 09:41, a failed attempt, from New York; and opened yesterday at 21:15 from New York. Locations are approximate, and nothing about the visitor is recorded.",
+            'heading' => "Visits",
+            'total' => "3 in total",
+            // Newest first.
+            'entries' => [
+                ['what' => "Opened", 'when' => "Today at 09:42 · New York, United States"],
+                ['what' => "Wrong password", 'when' => "Today at 09:41 · New York, United States", 'badge' => "Failed attempt"],
+                ['what' => "Opened", 'when' => "Yesterday at 21:15 · New York, United States"],
+            ],
+            'note' => "Locations are approximate. Nothing about the visitor is recorded.",
+        ],
+
+        'revoke' => [
+            'title' => "Stop access when you are done.",
+            'lead' => "The birthday is over. Revoke Rachel’s link, and it stops working immediately.",
+            'body' => "You can revoke a link at any time, even if you originally gave it no end date. If someone needs access again, create a new one.",
+            'label' => "Revoking Rachel’s link in Monica. The link stops working as soon as you press this, and it cannot be undone. Joey’s page stays as it is.",
+            'heading' => "Revoke Rachel’s link?",
+            'warning' => "The link stops working as soon as you press this, and it cannot be undone. Joey’s page stays as it is.",
+            'confirm' => "Revoke this link",
         ],
     ],
 

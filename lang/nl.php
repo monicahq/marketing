@@ -31,6 +31,7 @@ return [
             'timeline' => "Tijdlijn",
             'relationships' => "Relaties",
             'vaults' => "Kluizen",
+            'sharing' => "Delen",
             'page' => "Pagina :number",
         ],
 
@@ -125,6 +126,11 @@ return [
         'vaults' => [
             'title' => "Een plek voor elk deel van je leven: kluizen in Monica",
             'description' => "Houd vrienden, familie en collega’s bij elkaar of geef elke groep een eigen ruimte. Elke kluis heeft eigen contacten, een eigen tijdlijn, eigen herinneringen en een standaardsjabloon, allemaal binnen je account.",
+        ],
+
+        'sharing' => [
+            'title' => "Deel alleen wat jij kiest: delen in Monica",
+            'description' => "Deel geselecteerde secties van een contactpagina via een link met alleen leesrechten. Kies wat hij toont, geef hem een einddatum of een wachtwoord, zie wanneer hij werd geopend en trek hem op elk moment in.",
         ],
 
         'personalCrm' => [
@@ -1849,6 +1855,137 @@ return [
             'title' => "Aparte ruimtes, nog steeds je account.",
             'lead' => "Kluizen ordenen je gegevens binnen je account. Ze zijn alleen van jou: anderen kunnen er niet aan deelnemen of inloggen om te zien wat je hebt vastgelegd.",
             'body' => "Kies waar iemand thuishoort voordat je die persoon toevoegt. Contacten kunnen momenteel niet tussen kluizen worden verplaatst, en relaties verbinden mensen binnen dezelfde kluis.",
+        ],
+    ],
+
+    'sharing' => [
+        // Words more than one drawing uses.
+        'optional' => "optioneel",
+        'stops' => "Werkt niet meer",
+        'week' => "Over 7 dagen",
+        'password' => "Wachtwoord",
+        'cancel' => "Annuleren",
+        'address' => "Adres",
+        'phone' => "Telefoon",
+        // The sections of Joey's page, in the order the selection lists them.
+        'sections' => ["Manieren om contact te leggen", "Eetvoorkeuren", "Persoonlijke gegevens", "Werk", "Notities", "Velden die je als gevoelig markeerde"],
+
+        'hero' => [
+            'title' => "Deel alleen wat jij kiest.",
+            'intro' => "Iemand heeft een adres nodig, een telefoonnummer of een paar handige gegevens.",
+            'lede' => "Deel geselecteerde secties van een contactpagina via een link met alleen leesrechten. Kies wat de link toont, hoe lang hij werkt en wanneer de toegang stopt.",
+            'cta' => "Maak je account aan",
+            'label' => "De pagina van Joey Tribbiani delen in Monica, vanuit de kluis Persoonlijk. De link is altijd alleen-lezen: wie hem opent heeft geen account nodig, wordt nergens lid van en kan niets wijzigen. De link heet Joeys verjaardag, is voor Rachel Green, werkt niet meer na 7 dagen en heeft geen wachtwoord. Wat eruit gaat: 2 van 6 secties en zijn naam, verder niets.",
+            'readOnly' => "Altijd alleen-lezen",
+            'heading' => "Deel Joey Tribbiani",
+            'body' => "Een privélink naar alleen deze pagina. Wie hem opent heeft geen account nodig, wordt nergens lid van en kan niets wijzigen.",
+            'vault' => "Persoonlijk · Vrienden en familie",
+            'link' => "De link zelf",
+            'linkBody' => "Deze twee zijn voor jou. Wie de link opent, ziet ze nooit.",
+            'name' => "Geef deze link een naam",
+            'nameValue' => "Joeys verjaardag",
+            'who' => "Voor wie hij is",
+            'passwordHint' => "Wordt gevraagd voordat de pagina opent",
+            'out' => "Wat eruit gaat",
+            'summary' => "2 van 6 secties en zijn naam. Verder niets.",
+            'create' => "Deellink aanmaken",
+            'note' => "Je kunt achteraf wijzigen wat hij toont, of hem intrekken.",
+        ],
+
+        'visitor' => [
+            'title' => "Rachel organiseert Joeys verjaardag.",
+            'lead' => "Ze heeft zijn adres en telefoonnummer nodig. Je notities over zijn audities blijven bij jou.",
+            'body' => "Maak een link naar Joeys pagina en selecteer de secties die Rachel nodig heeft. Ze kan hem openen zonder Monica-account en kan niets wijzigen.",
+            'label' => "De pagina van Joey Tribbiani zoals Rachel hem ziet, met haar gedeeld door Monica Geller, alleen-lezen, tot 20 oktober 2026. Manieren om contact te leggen: zijn adres, 495 Grove Street, Apt 19, New York, en zijn telefoonnummer. Een opmerking legt uit dat dit een pagina uit iemands privégegevens is, zonder iets om op in te loggen en zonder iets om op te reageren.",
+            'by' => "Met jou gedeeld door Monica Geller",
+            'until' => "Alleen-lezen · eindigt op 20 oktober 2026",
+            'oldAddress' => "495 Grove Street, Apt 19, New York",
+            'notice' => "Dit is een pagina uit iemands privégegevens, met jou gedeeld zoals hij er vandaag uitziet. Hier is niets om op in te loggen en niets om op te reageren.",
+        ],
+
+        'selection' => [
+            'title' => "Een beetje of wat meer. Jij beslist.",
+            'lead' => "Elke link heeft een eigen selectie secties. Deel contactgegevens met de een en een andere set details met de ander.",
+            'body' => [
+                "Velden die je als gevoelig markeerde, worden standaard uitgesloten. Je kunt ze opnemen als dat nodig is.",
+                "Levensgebeurtenissen, relaties, herinneringen, foto’s, bijgevoegde bestanden en wijzigingsgeschiedenis blijven buiten de gedeelde pagina.",
+            ],
+            'label' => "Twee links naar Joeys pagina, elk met eigen secties. Voor Rachel, Joeys verjaardag: manieren om contact te leggen en eetvoorkeuren, terwijl persoonlijke gegevens, werk, notities en de velden die je als gevoelig markeerde buiten beeld blijven. Voor de agent, portretfoto’s en contracten: manieren om contact te leggen en werk. Nooit op een gedeelde pagina: levensgebeurtenissen, relaties, herinneringen, foto’s, bijgevoegde bestanden en wijzigingsgeschiedenis.",
+            // Which sections each link shows, by their place in `sections`,
+            // is in the template.
+            'links' => [
+                ['title' => "Voor Rachel", 'meta' => "Joeys verjaardag · 2 secties"],
+                ['title' => "Voor de agent", 'meta' => "Portretfoto’s en contracten · 2 secties"],
+            ],
+            'sensitive' => "Gevoelig",
+            'never' => "Nooit op een gedeelde pagina",
+            'kept' => ["Levensgebeurtenissen", "Relaties", "Herinneringen", "Foto’s", "Bijgevoegde bestanden", "Wijzigingsgeschiedenis"],
+        ],
+
+        'expiry' => [
+            'title' => "Geef de link een einddatum.",
+            'lead' => "Laat Rachels link zeven dagen werken, dertig dagen of drie maanden. Je kunt een link ook open laten staan tot je hem intrekt.",
+            'body' => "Voeg een wachtwoord toe als je nog een extra beveiligingslaag wilt. Iedereen met een onbeveiligde link kan hem openen, dus deel hem zorgvuldig.",
+            'label' => "Kiezen wanneer een link niet meer werkt: over 7 dagen, op 20 oktober 2026, is geselecteerd. De andere zijn over 30 dagen, op 12 november 2026, over 3 maanden, op 13 januari 2027, en tot je hem intrekt. Daaronder is een wachtwoord ingesteld, dat wordt gevraagd voordat de pagina opent.",
+            // The first is the one selected.
+            'options' => [
+                ['label' => "Over 7 dagen", 'date' => "20 oktober 2026"],
+                ['label' => "Over 30 dagen", 'date' => "12 november 2026"],
+                ['label' => "Over 3 maanden", 'date' => "13 januari 2027"],
+            ],
+            'forever' => "Tot je hem intrekt",
+            'hint' => "Wordt gevraagd voordat de pagina opent.",
+        ],
+
+        'send' => [
+            'title' => "Verstuur hem op jouw manier.",
+            'lead' => "Kopieer de link en stuur hem via het gesprek dat je al gebruikt.",
+            'body' => "Monica mailt de ontvanger niet en verstuurt geen uitnodiging. Heb je een wachtwoord toegevoegd, geef het dan apart door.",
+            'label' => "Een nieuwe deellink in Monica: de link is actief. Kopieer hem nu, want dit is de enige keer dat hij volledig getoond kan worden, dus een kwijtgeraakte link wordt vervangen en niet teruggehaald. Knoppen om de link te kopiëren en om hem als bezoeker te openen. Er wordt niets gemaild: heb je een wachtwoord ingesteld, vertel dat dan aan Rachel, los van het adres.",
+            'heading' => "De link is actief",
+            'warning' => "Kopieer hem nu. Dit is de enige keer dat hij volledig getoond kan worden, dus een kwijtgeraakte link wordt vervangen en niet teruggehaald.",
+            'copy' => "Kopieer de link",
+            'open' => "Open hem als bezoeker",
+            'note' => "Er wordt niets gemaild. Heb je een wachtwoord ingesteld, vertel dat dan aan Rachel, los van het adres.",
+        ],
+
+        'update' => [
+            'title' => "Houd de gegevens actueel.",
+            'lead' => "Joey is verhuisd. Pas zijn adres aan in Monica, en Rachel ziet het nieuwe adres de volgende keer dat ze de gedeelde pagina opent.",
+            'body' => "Je kunt ook de secties die een link toont, het wachtwoord of de einddatum wijzigen zonder het adres van de link te veranderen.",
+            'label' => "Joeys adres wordt bewerkt in jouw Monica, naar 90 Bedford Street, Apt 20, New York. Ernaast toont Rachels gedeelde pagina, op dezelfde link, al het nieuwe adres, met hetzelfde telefoonnummer.",
+            'edit' => "Adres bewerken",
+            'where' => "In jouw Monica",
+            'newAddress' => "90 Bedford Street, Apt 20, New York",
+            'save' => "Wijzigingen opslaan",
+            'shared' => "Rachels gedeelde pagina",
+            'same' => "Dezelfde link",
+        ],
+
+        'visits' => [
+            'title' => "Zie wanneer de link werd geopend.",
+            'lead' => "Elke link houdt een bezoekgeschiedenis bij, met onder meer wanneer hij werd geopend en ongeveer waar het bezoek vandaan kwam. Mislukte wachtwoordpogingen staan er ook in.",
+            'body' => "De geschiedenis legt bezoeken vast, zonder te bevestigen wie erachter zat. Ontvangers loggen niet in.",
+            'label' => "De bezoeken aan een deellink, 3 in totaal: vandaag om 09:42 geopend vanuit New York, Verenigde Staten; vandaag om 09:41 een verkeerd wachtwoord, een mislukte poging, vanuit New York; en gisteren om 21:15 geopend vanuit New York. Locaties zijn bij benadering, en er wordt niets over de bezoeker vastgelegd.",
+            'heading' => "Bezoeken",
+            'total' => "3 in totaal",
+            // Newest first.
+            'entries' => [
+                ['what' => "Geopend", 'when' => "Vandaag om 09:42 · New York, Verenigde Staten"],
+                ['what' => "Verkeerd wachtwoord", 'when' => "Vandaag om 09:41 · New York, Verenigde Staten", 'badge' => "Mislukte poging"],
+                ['what' => "Geopend", 'when' => "Gisteren om 21:15 · New York, Verenigde Staten"],
+            ],
+            'note' => "Locaties zijn bij benadering. Er wordt niets over de bezoeker vastgelegd.",
+        ],
+
+        'revoke' => [
+            'title' => "Stop de toegang als je klaar bent.",
+            'lead' => "De verjaardag is voorbij. Trek Rachels link in, en hij werkt meteen niet meer.",
+            'body' => "Je kunt een link op elk moment intrekken, ook als je hem oorspronkelijk geen einddatum gaf. Heeft iemand opnieuw toegang nodig, maak dan een nieuwe aan.",
+            'label' => "Rachels link intrekken in Monica. De link werkt niet meer zodra je hierop drukt, en dat kan niet ongedaan worden gemaakt. Joeys pagina blijft zoals hij is.",
+            'heading' => "Rachels link intrekken?",
+            'warning' => "De link werkt niet meer zodra je hierop drukt, en dat kan niet ongedaan worden gemaakt. Joeys pagina blijft zoals hij is.",
+            'confirm' => "Deze link intrekken",
         ],
     ],
 

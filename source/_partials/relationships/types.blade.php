@@ -18,7 +18,7 @@
         <div role="img" aria-label="{{ $types['label'] }}" class="grid items-start gap-6 rounded-lg bg-identity-1/14 p-4 md:p-12 lg:grid-cols-2">
             <div class="{{ $window }} flex flex-col gap-4 p-5 md:p-6">
                 <div class="flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-title font-semibold">{{ $types['heading'] }}</span>
+                    <span class="text-heading-sm font-semibold">{{ $types['heading'] }}</span>
                     <span class="{{ $button }} mn-btn-primary">{{ $types['add'] }}</span>
                 </div>
                 @foreach ($types['categories'] as $category)

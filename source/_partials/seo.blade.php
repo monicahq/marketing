@@ -91,10 +91,10 @@
             }
         } else {
             // The two other feature tabs and the templates, details, reminders,
-            // timeline, relationships and vaults pages are nested under
-            // /features/, so the section they belong to is a crumb in its own
-            // right.
-            if (in_array($page->page, ['featuresDashboard', 'featuresJournal', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults'], true)) {
+            // timeline, relationships, vaults and sharing pages are nested
+            // under /features/, so the section they belong to is a crumb in
+            // its own right.
+            if (in_array($page->page, ['featuresDashboard', 'featuresJournal', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing'], true)) {
                 $trail[] = ['name' => $page->t('meta.breadcrumb.features'), 'path' => $page->localePath('features')];
             }
 

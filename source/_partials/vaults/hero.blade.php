@@ -26,7 +26,7 @@
         <div class="mt-16 rounded-lg bg-identity-1/14 p-4 md:p-10 lg:p-14">
             <div role="img" aria-label="{{ $hero['label'] }}" class="{{ $window }} mx-auto flex max-w-[960px] flex-col gap-5 p-4.5 md:p-7">
                 <div class="flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-title font-semibold">{{ $copy['heading'] }}</span>
+                    <span class="text-heading-sm font-semibold">{{ $copy['heading'] }}</span>
                     <span class="{{ $button }} mn-btn-primary">
                         @include('_partials.icon', ['name' => 'plus', 'size' => 16])
                         {{ $hero['new'] }}

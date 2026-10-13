@@ -551,6 +551,21 @@ return [
             'zh' => 'features/vaults',
             'ru' => 'vozmozhnosti/khranilishcha',
         ],
+
+        // "Share only what you choose": read-only links to a few sections of
+        // a contact's page, their end date and password, their visits, and
+        // revoking them. Nested under the features section like the vaults
+        // page, and like it, not a tab.
+        'sharing' => [
+            'en' => 'features/sharing',
+            'fr' => 'fonctionnalites/partage',
+            'de' => 'funktionen/teilen',
+            'es' => 'funcionalidades/compartir',
+            'pt' => 'recursos/compartilhamento',
+            'nl' => 'functies/delen',
+            'zh' => 'features/sharing',
+            'ru' => 'vozmozhnosti/dostup',
+        ],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -591,6 +606,7 @@ return [
         'timeline' => '2026-10-12',
         'relationships' => '2026-10-13',
         'vaults' => '2026-10-13',
+        'sharing' => '2026-10-13',
     ],
 
     // ------------------------------------------------------------------ links

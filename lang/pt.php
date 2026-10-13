@@ -32,6 +32,7 @@ return [
             'timeline' => "Linha do tempo",
             'relationships' => "Relacionamentos",
             'vaults' => "Cofres",
+            'sharing' => "Compartilhamento",
             'page' => "Página :number",
         ],
 
@@ -132,6 +133,11 @@ return [
         'vaults' => [
             'title' => "Um lugar para cada parte da sua vida: os cofres na Monica",
             'description' => "Mantenha amigos, família e colegas juntos ou dê a cada grupo o seu próprio espaço. Cada cofre tem os seus contatos, linha do tempo, lembretes e modelo padrão, tudo dentro da sua conta.",
+        ],
+
+        'sharing' => [
+            'title' => "Compartilhe só o que você escolher: o compartilhamento na Monica",
+            'description' => "Compartilhe seções escolhidas da ficha de um contato por um link somente leitura. Escolha o que ele mostra, dê a ele uma data final ou uma senha, veja quando foi aberto e revogue a qualquer momento.",
         ],
 
         'personalCrm' => [
@@ -1856,6 +1862,137 @@ return [
             'title' => "Espaços separados, ainda a sua conta.",
             'lead' => "Os cofres organizam as suas informações dentro da sua conta. Eles são só seus: outras pessoas não podem entrar neles nem fazer login para ver o que você registrou.",
             'body' => "Escolha onde alguém fica antes de adicioná-lo. Por enquanto, os contatos não podem mudar de cofre, e os relacionamentos ligam pessoas dentro do mesmo cofre.",
+        ],
+    ],
+
+    'sharing' => [
+        // Words more than one drawing uses.
+        'optional' => "opcional",
+        'stops' => "Deixa de funcionar",
+        'week' => "Em 7 dias",
+        'password' => "Senha",
+        'cancel' => "Cancelar",
+        'address' => "Endereço",
+        'phone' => "Telefone",
+        // The sections of Joey's page, in the order the selection lists them.
+        'sections' => ["Formas de contato", "Preferências de comida", "Dados pessoais", "Trabalho", "Notas", "Campos que você marcou como sensíveis"],
+
+        'hero' => [
+            'title' => "Compartilhe só o que você escolher.",
+            'intro' => "Alguém precisa de um endereço, de um telefone ou de alguns detalhes úteis.",
+            'lede' => "Compartilhe seções escolhidas da ficha de um contato por um link somente leitura. Escolha o que ele mostra, por quanto tempo funciona e quando o acesso termina.",
+            'cta' => "Criar a sua conta",
+            'label' => "Compartilhando a ficha de Joey Tribbiani na Monica, a partir do cofre Pessoal. O link é somente leitura, sempre: quem o abre não precisa de conta, não entra em nada e não pode mudar nada. O link se chama Aniversário do Joey, é para Rachel Green, deixa de funcionar em 7 dias e não tem senha. Vai sair: 2 de 6 seções e o nome dele, mais nada.",
+            'readOnly' => "Somente leitura, sempre",
+            'heading' => "Compartilhar Joey Tribbiani",
+            'body' => "Um link privado para esta única ficha. Quem o abre não precisa de conta, não entra em nada e não pode mudar nada.",
+            'vault' => "Pessoal · Amigos e família",
+            'link' => "O link em si",
+            'linkBody' => "Os dois campos abaixo são para você. Quem abre o link nunca os vê.",
+            'name' => "Nome do link",
+            'nameValue' => "Aniversário do Joey",
+            'who' => "Para quem é",
+            'passwordHint' => "Pedida antes de a ficha abrir",
+            'out' => "O que vai sair",
+            'summary' => "2 de 6 seções e o nome dele. Mais nada.",
+            'create' => "Criar link de compartilhamento",
+            'note' => "Depois você pode mudar o que ele mostra ou revogá-lo.",
+        ],
+
+        'visitor' => [
+            'title' => "A Rachel está organizando o aniversário do Joey.",
+            'lead' => "Ela precisa do endereço e do telefone dele. As suas notas sobre os testes dele podem ficar só com você.",
+            'body' => "Crie um link para a ficha do Joey e selecione as seções de que a Rachel precisa. Ela abre sem uma conta na Monica e não pode mudar nada.",
+            'label' => "A ficha de Joey Tribbiani como a Rachel a vê, compartilhada com ela por Monica Geller, somente leitura, até 20 de outubro de 2026. Formas de contato: o endereço dele, 495 Grove Street, Apt 19, Nova York, e o telefone. Um aviso explica que esta é uma página dos registros privados de alguém, sem nada em que entrar e nada a responder.",
+            'by' => "Compartilhado com você por Monica Geller",
+            'until' => "Somente leitura · termina em 20 de outubro de 2026",
+            'oldAddress' => "495 Grove Street, Apt 19, Nova York",
+            'notice' => "Esta é uma página dos registros privados de alguém, compartilhada com você como está hoje. Aqui não há nada em que entrar nem nada a responder.",
+        ],
+
+        'selection' => [
+            'title' => "Um pouco ou um pouco mais. Você decide.",
+            'lead' => "Cada link tem a sua própria seleção de seções. Compartilhe informações de contato com uma pessoa e um conjunto diferente de detalhes com outra.",
+            'body' => [
+                "Os campos que você marcou como sensíveis ficam de fora por padrão. Você pode incluí-los quando precisar.",
+                "Eventos de vida, relacionamentos, lembretes, fotos, arquivos anexados e histórico de alterações nunca aparecem na página compartilhada.",
+            ],
+            'label' => "Dois links para a ficha do Joey, cada um com as suas seções. Para a Rachel, Aniversário do Joey: formas de contato e preferências de comida, enquanto dados pessoais, trabalho, notas e os campos que você marcou como sensíveis ficam de fora. Para o agente, fotos de divulgação e contratos: formas de contato e trabalho. Nunca em uma página compartilhada: eventos de vida, relacionamentos, lembretes, fotos, arquivos anexados e histórico de alterações.",
+            // Which sections each link shows, by their place in `sections`,
+            // is in the template.
+            'links' => [
+                ['title' => "Para a Rachel", 'meta' => "Aniversário do Joey · 2 seções"],
+                ['title' => "Para o agente", 'meta' => "Fotos de divulgação e contratos · 2 seções"],
+            ],
+            'sensitive' => "Sensível",
+            'never' => "Nunca em uma página compartilhada",
+            'kept' => ["Eventos de vida", "Relacionamentos", "Lembretes", "Fotos", "Arquivos anexados", "Histórico de alterações"],
+        ],
+
+        'expiry' => [
+            'title' => "Dê uma data final ao link.",
+            'lead' => "Deixe o link da Rachel funcionar por sete dias, trinta dias ou três meses. Você também pode deixar um link aberto até revogá-lo.",
+            'body' => "Adicione uma senha quando quiser mais uma camada de proteção. Qualquer pessoa com um link sem senha pode abri-lo, então compartilhe com cuidado.",
+            'label' => "Escolhendo quando um link deixa de funcionar: em 7 dias, em 20 de outubro de 2026, está selecionado. As outras opções são em 30 dias, em 12 de novembro de 2026, em 3 meses, em 13 de janeiro de 2027, e até você revogá-lo. Abaixo, uma senha foi definida e é pedida antes de a página abrir.",
+            // The first is the one selected.
+            'options' => [
+                ['label' => "Em 7 dias", 'date' => "20 de outubro de 2026"],
+                ['label' => "Em 30 dias", 'date' => "12 de novembro de 2026"],
+                ['label' => "Em 3 meses", 'date' => "13 de janeiro de 2027"],
+            ],
+            'forever' => "Até você revogá-lo",
+            'hint' => "Pedida antes de a página abrir.",
+        ],
+
+        'send' => [
+            'title' => "Envie do seu jeito.",
+            'lead' => "Copie o link e mande pela conversa que você já usa.",
+            'body' => "A Monica não envia e-mail para quem recebe nem manda convite. Se você definiu uma senha, passe-a separadamente.",
+            'label' => "Um novo link de compartilhamento na Monica: o link está ativo. Copie agora, porque esta é a única vez em que ele pode ser mostrado por inteiro, então um link perdido é substituído, não recuperado. Botões para copiar o link e para abri-lo como visitante. Nada é enviado por e-mail: se você definiu uma senha, avise a Rachel separadamente do endereço.",
+            'heading' => "O link está ativo",
+            'warning' => "Copie agora. Esta é a única vez em que ele pode ser mostrado por inteiro, então um link perdido é substituído, não recuperado.",
+            'copy' => "Copiar o link",
+            'open' => "Abrir como visitante",
+            'note' => "Nada é enviado por e-mail. Se você definiu uma senha, avise a Rachel separadamente do endereço.",
+        ],
+
+        'update' => [
+            'title' => "Mantenha os detalhes em dia.",
+            'lead' => "O Joey se mudou. Atualize o endereço dele na Monica, e a Rachel vê o novo endereço na próxima vez que abrir a página compartilhada.",
+            'body' => "Você também pode mudar as seções que um link mostra, a senha ou a data de término sem mudar o endereço do link.",
+            'label' => "O endereço do Joey sendo editado na sua Monica, para 90 Bedford Street, Apt 20, Nova York. Ao lado, a página compartilhada da Rachel, no mesmo link, já mostra o novo endereço, com o mesmo telefone.",
+            'edit' => "Editar endereço",
+            'where' => "Na sua Monica",
+            'newAddress' => "90 Bedford Street, Apt 20, Nova York",
+            'save' => "Salvar alterações",
+            'shared' => "Página compartilhada da Rachel",
+            'same' => "Mesmo link",
+        ],
+
+        'visits' => [
+            'title' => "Veja quando o link foi aberto.",
+            'lead' => "Cada link guarda um histórico de visitas, com o momento em que foi aberto e, aproximadamente, de onde veio a visita. As tentativas de senha que falharam também aparecem ali.",
+            'body' => "O histórico registra visitas, sem confirmar quem estava por trás delas. Quem recebe o link não faz login.",
+            'label' => "As visitas a um link de compartilhamento, 3 no total: aberto hoje às 09:42, de Nova York, Estados Unidos; uma senha errada hoje às 09:41, uma tentativa que falhou, de Nova York; e aberto ontem às 21:15, de Nova York. Os locais são aproximados, e nada sobre o visitante é registrado.",
+            'heading' => "Visitas",
+            'total' => "3 no total",
+            // Newest first.
+            'entries' => [
+                ['what' => "Aberto", 'when' => "Hoje às 09:42 · Nova York, Estados Unidos"],
+                ['what' => "Senha errada", 'when' => "Hoje às 09:41 · Nova York, Estados Unidos", 'badge' => "Tentativa que falhou"],
+                ['what' => "Aberto", 'when' => "Ontem às 21:15 · Nova York, Estados Unidos"],
+            ],
+            'note' => "Os locais são aproximados. Nada sobre o visitante é registrado.",
+        ],
+
+        'revoke' => [
+            'title' => "Encerre o acesso quando terminar.",
+            'lead' => "O aniversário acabou. Revogue o link da Rachel, e ele deixa de funcionar na hora.",
+            'body' => "Você pode revogar um link a qualquer momento, mesmo que no início não tenha dado a ele uma data final. Se alguém precisar de acesso de novo, crie um novo link.",
+            'label' => "Revogando o link da Rachel na Monica. O link deixa de funcionar assim que você pressiona isto, e não dá para desfazer. A ficha do Joey continua como está.",
+            'heading' => "Revogar o link da Rachel?",
+            'warning' => "O link deixa de funcionar assim que você pressiona isto, e não dá para desfazer. A ficha do Joey continua como está.",
+            'confirm' => "Revogar este link",
         ],
     ],
 

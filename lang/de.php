@@ -28,6 +28,7 @@ return [
             'timeline' => "Zeitleiste",
             'relationships' => "Beziehungen",
             'vaults' => "Tresore",
+            'sharing' => "Teilen",
             'page' => "Seite :number",
         ],
 
@@ -128,6 +129,11 @@ return [
         'vaults' => [
             'title' => "Ein Platz für jeden Teil Ihres Lebens: Tresore in Monica",
             'description' => "Halten Sie Freunde, Familie und Kollegen zusammen oder geben Sie jeder Gruppe einen eigenen Raum. Jeder Tresor hat eigene Kontakte, eine eigene Zeitleiste, eigene Erinnerungen und eine Standardvorlage, alles in Ihrem Konto.",
+        ],
+
+        'sharing' => [
+            'title' => "Teilen Sie nur, was Sie wählen: Teilen in Monica",
+            'description' => "Teilen Sie ausgewählte Abschnitte der Seite eines Kontakts über einen Link, der nur lesen lässt. Sie bestimmen, was er zeigt, geben ihm ein Enddatum oder ein Passwort, sehen, wann er geöffnet wurde, und können ihn jederzeit widerrufen.",
         ],
 
         'personalCrm' => [
@@ -1851,6 +1857,137 @@ return [
             'title' => "Getrennte Räume, trotzdem Ihr Konto.",
             'lead' => "Tresore ordnen Ihre Informationen innerhalb Ihres Kontos. Sie gehören nur Ihnen: Andere können ihnen nicht beitreten oder sich anmelden, um zu sehen, was Sie festgehalten haben.",
             'body' => "Wählen Sie, wohin jemand gehört, bevor Sie ihn hinzufügen. Kontakte können derzeit nicht zwischen Tresoren verschoben werden, und Beziehungen verbinden Menschen im selben Tresor.",
+        ],
+    ],
+
+    'sharing' => [
+        // Wörter, die mehr als eine Zeichnung nutzt.
+        'optional' => "optional",
+        'stops' => "Endet",
+        'week' => "In 7 Tagen",
+        'password' => "Passwort",
+        'cancel' => "Abbrechen",
+        'address' => "Adresse",
+        'phone' => "Telefon",
+        // Die Abschnitte von Joeys Seite, in der Reihenfolge der Auswahl.
+        'sections' => ["Kontaktwege", "Essgewohnheiten", "Persönliche Angaben", "Arbeit", "Notizen", "Als sensibel markierte Felder"],
+
+        'hero' => [
+            'title' => "Teilen Sie nur, was Sie wählen.",
+            'intro' => "Jemand braucht eine Adresse, eine Telefonnummer oder ein paar nützliche Angaben.",
+            'lede' => "Teilen Sie ausgewählte Abschnitte der Seite eines Kontakts über einen Link, der nur lesen lässt. Sie bestimmen, was er zeigt, wie lange er funktioniert und wann der Zugriff endet.",
+            'cta' => "Konto erstellen",
+            'label' => "Die Seite von Joey Tribbiani wird in Monica geteilt, aus dem Tresor „Privat“. Der Link ist immer schreibgeschützt: Wer ihn öffnet, braucht kein Konto, tritt nirgends bei und kann nichts ändern. Der Link heißt „Joeys Geburtstag“, er ist für Rachel Green, er endet in 7 Tagen und es ist kein Passwort gesetzt. Was hinausgeht: 2 von 6 Abschnitten und sein Name, sonst nichts.",
+            'readOnly' => "Immer schreibgeschützt",
+            'heading' => "Joey Tribbiani teilen",
+            'body' => "Ein privater Link zu genau dieser Seite. Wer ihn öffnet, braucht kein Konto, tritt nirgends bei und kann nichts ändern.",
+            'vault' => "Privat · Freunde und Familie",
+            'link' => "Der Link selbst",
+            'linkBody' => "Beides ist für Sie. Wer den Link öffnet, sieht es nie.",
+            'name' => "Link benennen",
+            'nameValue' => "Joeys Geburtstag",
+            'who' => "Für wen er ist",
+            'passwordHint' => "Wird abgefragt, bevor sich die Seite öffnet",
+            'out' => "Was hinausgeht",
+            'summary' => "2 von 6 Abschnitten und sein Name. Sonst nichts.",
+            'create' => "Freigabelink erstellen",
+            'note' => "Sie können später ändern, was er zeigt, oder ihn widerrufen.",
+        ],
+
+        'visitor' => [
+            'title' => "Rachel organisiert Joeys Geburtstag.",
+            'lead' => "Sie braucht seine Adresse und Telefonnummer. Ihre Notizen zu seinen Vorsprechen können bei Ihnen bleiben.",
+            'body' => "Erstellen Sie einen Link zu Joeys Seite und wählen Sie die Abschnitte aus, die Rachel braucht. Sie kann ihn ohne Monica-Konto öffnen und nichts ändern.",
+            'label' => "Die Seite von Joey Tribbiani, so wie Rachel sie sieht, von Monica Geller mit ihr geteilt, schreibgeschützt, bis zum 20. Oktober 2026. Kontaktwege: seine Adresse, 495 Grove Street, Apt 19, New York, und seine Telefonnummer. Ein Hinweis erklärt, dass dies eine Seite aus den privaten Aufzeichnungen einer Person ist, ohne etwas zum Anmelden und ohne etwas zum Antworten.",
+            'by' => "Mit Ihnen geteilt von Monica Geller",
+            'until' => "Schreibgeschützt · endet am 20. Oktober 2026",
+            'oldAddress' => "495 Grove Street, Apt 19, New York",
+            'notice' => "Dies ist eine Seite aus den privaten Aufzeichnungen einer Person, mit Ihnen geteilt, so wie sie heute ist. Hier gibt es nichts zum Anmelden und nichts zum Antworten.",
+        ],
+
+        'selection' => [
+            'title' => "Ein bisschen oder etwas mehr. Sie entscheiden.",
+            'lead' => "Jeder Link hat seine eigene Auswahl an Abschnitten. Teilen Sie Kontaktdaten mit einer Person und andere Angaben mit einer anderen.",
+            'body' => [
+                "Felder, die Sie als sensibel markiert haben, sind standardmäßig ausgeschlossen. Sie können sie bei Bedarf einbeziehen.",
+                "Lebensereignisse, Beziehungen, Erinnerungen, Fotos, angehängte Dateien und der Änderungsverlauf bleiben aus der geteilten Seite heraus.",
+            ],
+            'label' => "Zwei Links zu Joeys Seite, jeder mit eigenen Abschnitten. Für Rachel, Joeys Geburtstag: Kontaktwege und Essgewohnheiten, während persönliche Angaben, Arbeit, Notizen und die als sensibel markierten Felder ausgelassen sind. Für den Agenten, Headshots und Verträge: Kontaktwege und Arbeit. Nie auf einer geteilten Seite: Lebensereignisse, Beziehungen, Erinnerungen, Fotos, angehängte Dateien und Änderungsverlauf.",
+            // Welche Abschnitte jeder Link zeigt, nach ihrer Stelle in
+            // `sections`, steht im Template.
+            'links' => [
+                ['title' => "Für Rachel", 'meta' => "Joeys Geburtstag · 2 Abschnitte"],
+                ['title' => "Für den Agenten", 'meta' => "Headshots und Verträge · 2 Abschnitte"],
+            ],
+            'sensitive' => "Sensibel",
+            'never' => "Nie auf einer geteilten Seite",
+            'kept' => ["Lebensereignisse", "Beziehungen", "Erinnerungen", "Fotos", "Angehängte Dateien", "Änderungsverlauf"],
+        ],
+
+        'expiry' => [
+            'title' => "Geben Sie dem Link ein Enddatum.",
+            'lead' => "Lassen Sie Rachels Link sieben Tage, dreißig Tage oder drei Monate funktionieren. Sie können einen Link auch offen lassen, bis Sie ihn widerrufen.",
+            'body' => "Fügen Sie ein Passwort hinzu, wenn Sie eine weitere Schutzschicht wünschen. Jeder, der einen ungeschützten Link hat, kann ihn öffnen, teilen Sie ihn also mit Bedacht.",
+            'label' => "Auswahl, wann ein Link nicht mehr funktioniert: In 7 Tagen, am 20. Oktober 2026, ist ausgewählt. Die anderen sind in 30 Tagen, am 12. November 2026, in 3 Monaten, am 13. Januar 2027, und bis Sie ihn widerrufen. Darunter ist ein Passwort gesetzt, das abgefragt wird, bevor sich die Seite öffnet.",
+            // Die erste ist die ausgewählte.
+            'options' => [
+                ['label' => "In 7 Tagen", 'date' => "20. Oktober 2026"],
+                ['label' => "In 30 Tagen", 'date' => "12. November 2026"],
+                ['label' => "In 3 Monaten", 'date' => "13. Januar 2027"],
+            ],
+            'forever' => "Bis Sie ihn widerrufen",
+            'hint' => "Wird abgefragt, bevor sich die Seite öffnet.",
+        ],
+
+        'send' => [
+            'title' => "Verschicken Sie ihn, wie Sie möchten.",
+            'lead' => "Kopieren Sie den Link und senden Sie ihn über die Unterhaltung, die Sie ohnehin nutzen.",
+            'body' => "Monica schickt dem Empfänger keine E-Mail und keine Einladung. Wenn Sie ein Passwort gesetzt haben, geben Sie es getrennt weiter.",
+            'label' => "Ein neuer Freigabelink in Monica: Der Link ist aktiv. Kopieren Sie ihn jetzt, denn nur jetzt kann er vollständig angezeigt werden, ein verlorener Link wird also ersetzt statt wiederhergestellt. Schaltflächen zum Kopieren des Links und zum Öffnen als Besucher. Es wird nichts per E-Mail verschickt: Wenn Sie ein Passwort gesetzt haben, sagen Sie es Rachel getrennt von der Adresse.",
+            'heading' => "Der Link ist aktiv",
+            'warning' => "Kopieren Sie ihn jetzt. Nur jetzt kann er vollständig angezeigt werden, ein verlorener Link wird also ersetzt statt wiederhergestellt.",
+            'copy' => "Link kopieren",
+            'open' => "Als Besucher öffnen",
+            'note' => "Es wird nichts per E-Mail verschickt. Wenn Sie ein Passwort gesetzt haben, sagen Sie es Rachel getrennt von der Adresse.",
+        ],
+
+        'update' => [
+            'title' => "Halten Sie die Angaben aktuell.",
+            'lead' => "Joey ist umgezogen. Aktualisieren Sie seine Adresse in Monica, und Rachel sieht die neue Adresse, sobald sie die geteilte Seite das nächste Mal öffnet.",
+            'body' => "Sie können auch die Abschnitte, die ein Link zeigt, sein Passwort oder sein Ablaufdatum ändern, ohne die Adresse des Links zu ändern.",
+            'label' => "Joeys Adresse wird in Ihrem Monica bearbeitet, auf 90 Bedford Street, Apt 20, New York. Daneben zeigt Rachels geteilte Seite unter demselben Link bereits die neue Adresse, mit derselben Telefonnummer.",
+            'edit' => "Adresse bearbeiten",
+            'where' => "In Ihrem Monica",
+            'newAddress' => "90 Bedford Street, Apt 20, New York",
+            'save' => "Änderungen speichern",
+            'shared' => "Rachels geteilte Seite",
+            'same' => "Derselbe Link",
+        ],
+
+        'visits' => [
+            'title' => "Sehen Sie, wann der Link geöffnet wurde.",
+            'lead' => "Jeder Link führt einen Besuchsverlauf, einschließlich wann er geöffnet wurde und ungefähr, woher der Besuch kam. Fehlgeschlagene Passwortversuche erscheinen dort ebenfalls.",
+            'body' => "Der Verlauf hält Besuche fest, ohne zu bestätigen, wer dahintersteckte. Empfänger melden sich nicht an.",
+            'label' => "Die Besuche eines Freigabelinks, insgesamt 3: heute um 09:42 Uhr aus New York, USA geöffnet; heute um 09:41 Uhr ein falsches Passwort, ein fehlgeschlagener Versuch, aus New York; und gestern um 21:15 Uhr aus New York geöffnet. Standorte sind ungefähr, und über den Besucher wird nichts erfasst.",
+            'heading' => "Besuche",
+            'total' => "3 insgesamt",
+            // Neueste zuerst.
+            'entries' => [
+                ['what' => "Geöffnet", 'when' => "Heute um 09:42 Uhr · New York, USA"],
+                ['what' => "Falsches Passwort", 'when' => "Heute um 09:41 Uhr · New York, USA", 'badge' => "Fehlgeschlagener Versuch"],
+                ['what' => "Geöffnet", 'when' => "Gestern um 21:15 Uhr · New York, USA"],
+            ],
+            'note' => "Standorte sind ungefähr. Über den Besucher wird nichts erfasst.",
+        ],
+
+        'revoke' => [
+            'title' => "Beenden Sie den Zugriff, wenn Sie fertig sind.",
+            'lead' => "Der Geburtstag ist vorbei. Widerrufen Sie Rachels Link, und er funktioniert sofort nicht mehr.",
+            'body' => "Sie können einen Link jederzeit widerrufen, auch wenn Sie ihm ursprünglich kein Enddatum gegeben haben. Wenn jemand wieder Zugriff braucht, erstellen Sie einen neuen.",
+            'label' => "Rachels Link wird in Monica widerrufen. Der Link funktioniert nicht mehr, sobald Sie dies drücken, und das lässt sich nicht rückgängig machen. Joeys Seite bleibt, wie sie ist.",
+            'heading' => "Rachels Link widerrufen?",
+            'warning' => "Der Link funktioniert nicht mehr, sobald Sie dies drücken, und das lässt sich nicht rückgängig machen. Joeys Seite bleibt, wie sie ist.",
+            'confirm' => "Diesen Link widerrufen",
         ],
     ],
 
