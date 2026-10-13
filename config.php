@@ -555,6 +555,22 @@ return [
             'zh' => 'features/api',
             'ru' => 'vozmozhnosti/api',
         ],
+
+        // "Personal details deserve a private place": sensitive fields, what
+        // sharing and connected tools can reach, signing in, what
+        // administrators see, and the account's activity. The header's
+        // "Privacy" menu item leads here. Not the privacy policy, which is
+        // the legal document under `privacy`.
+        'privacyFeatures' => [
+            'en' => 'features/privacy',
+            'fr' => 'fonctionnalites/confidentialite',
+            'de' => 'funktionen/privatsphaere',
+            'es' => 'funcionalidades/privacidad',
+            'pt' => 'recursos/privacidade',
+            'nl' => 'functies/privacy',
+            'zh' => 'features/privacy',
+            'ru' => 'vozmozhnosti/privatnost',
+        ],
     ],
 
     /**
@@ -601,6 +617,7 @@ return [
         'vaults' => '2026-10-13',
         'sharing' => '2026-10-13',
         'api' => '2026-10-13',
+        'privacyFeatures' => '2026-10-13',
     ],
 
     // ------------------------------------------------------------------ links

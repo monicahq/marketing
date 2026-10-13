@@ -29,6 +29,7 @@ return [
             'vaults' => "Coffres",
             'sharing' => "Partage",
             'api' => "API et MCP",
+            'privacyFeatures' => "Confidentialité et sécurité",
             'page' => "Page :number",
         ],
 
@@ -122,6 +123,11 @@ return [
         'api' => [
             'title' => "Vos contacts, reliés à vos outils : l’API et le serveur MCP de Monica",
             'description' => "Utilisez Monica avec Claude, ChatGPT, Gemini ou vos propres scripts. Connectez un assistant au serveur MCP de Monica, ou construisez votre propre connexion avec l’API JSON et une clé d’API.",
+        ],
+
+        'privacyFeatures' => [
+            'title' => "Les détails personnels méritent un endroit privé : la confidentialité dans Monica",
+            'description' => "Marquez des champs comme sensibles, partagez seulement certaines sections, contrôlez ce que les clés d’API et les assistants peuvent lire, protégez votre compte avec des clés d’accès et l’authentification à deux facteurs, et consultez son activité.",
         ],
 
         'personalCrm' => [
@@ -2110,6 +2116,159 @@ return [
             'title' => "Commencez par une tâche utile.",
             'body' => "Notez le dîner avec Phoebe. Programmez un rappel pour l’audition de Joey. Ajoutez un contact depuis votre propre script.",
             'connect' => "Connecter un assistant",
+        ],
+    ],
+
+    'privacyFeatures' => [
+        // Words more than one drawing uses.
+        'sensitive' => "Sensible",
+        'phone' => "Téléphone",
+        'healthNote' => "Note de santé",
+
+        'hero' => [
+            'title' => "Les détails personnels méritent un endroit privé.",
+            'lede' => "Vous notez des choses sur les gens parce qu’ils comptent pour vous. Choisissez ce que vous gardez, ce que vous partagez et quels outils peuvent y accéder.",
+            'cta' => "Créer votre compte",
+            'label' => "La fiche de Rachel Green dans Monica, dans le coffre Personnel. Son numéro de téléphone et son anniversaire sont affichés. Sa note de santé est marquée comme sensible : son contenu reste donc masqué derrière un bouton Afficher.",
+            'vault' => "Personnel · Amie",
+            'birthday' => "Anniversaire",
+            'birthdayValue' => "5 mai 1970",
+            'reveal' => "Afficher",
+        ],
+
+        'audience' => [
+            'title' => "Vos contacts ne deviennent pas un public.",
+            'lead' => "Ajouter Chandler à Monica ne lui envoie ni invitation ni message sur ce que vous avez écrit.",
+            'body' => "Votre compte est pour vous. Personne ne rejoint vos coffres, et les personnes que vous notez ne peuvent pas ouvrir leur fiche, sauf si vous choisissez de partager quelque chose avec elles.",
+            'label' => "Chandler Bing a été ajouté au coffre Personnel. Sa fiche contient une note sur son envie de quitter son travail et n’a aucun lien de partage : Chandler ne peut donc pas l’ouvrir.",
+            // :name is Chandler's name, drawn in bold.
+            'added' => ":name a été ajouté à Personnel.",
+            'notes' => "Notes",
+            'notesValue' => "Il pense à quitter son travail dans l’analyse statistique et la reconfiguration de données.",
+            'links' => "Liens de partage",
+            'linksValue' => "Aucun. Chandler ne peut pas ouvrir cette fiche.",
+        ],
+
+        'hidden' => [
+            'title' => "Certains détails doivent rester hors de vue.",
+            'lead' => "Le numéro de téléphone de Rachel et une note privée sur sa santé méritent un traitement différent.",
+            'body' => [
+                "Marquez un champ comme sensible pour que son contenu reste masqué à l’écran jusqu’à ce que vous l’affichiez. Les valeurs sensibles sont exclues des colonnes de la liste de contacts et laissées de côté dans les liens de partage, sauf si vous les incluez explicitement.",
+                "Cela aide à éviter une exposition accidentelle. Toute personne connectée à votre compte peut tout de même afficher ces valeurs.",
+            ],
+            'label' => "Modification du champ Note de santé avec Marquer comme sensible coché : masqué à l’écran jusqu’à ce que vous l’affichiez, et laissé de côté dans les colonnes de la liste et les liens de partage. À côté, la liste de contacts montre des noms et des numéros de téléphone, et explique que Note de santé ne peut pas être ajoutée comme colonne parce qu’elle est sensible.",
+            'edit' => "Modifier le champ",
+            'fieldLabel' => "Libellé",
+            'mark' => "Marquer comme sensible",
+            'markBody' => "Masqué à l’écran jusqu’à ce que vous l’affichiez. Laissé de côté dans les colonnes de la liste et les liens de partage.",
+            'name' => "Nom",
+            'column' => "Note de santé ne peut pas être ajoutée comme colonne parce qu’elle est sensible.",
+        ],
+
+        'share' => [
+            'title' => "Partagez un peu. Gardez le reste.",
+            'lead' => "Rachel a besoin de l’adresse de Joey pour sa fête d’anniversaire. Elle n’a pas besoin de tout le reste de sa fiche.",
+            'body' => "Créez un lien de partage en lecture seule avec les sections choisies, un mot de passe facultatif et une date d’expiration. Changez ce qu’il montre ou révoquez-le quand l’accès n’est plus nécessaire.",
+            'label' => "Un lien de partage nommé Anniversaire de Joey, pour Rachel Green. Il montre Moyens de contact et masque tout le reste de la fiche de Joey. Un mot de passe est demandé avant l’ouverture de la fiche, et le lien prend fin le 20 octobre 2026, dans 7 jours. Des boutons pour le modifier ou le révoquer.",
+            'link' => "Anniversaire de Joey",
+            'change' => "Modifier",
+            'for' => "Pour",
+            'shows' => "Montre",
+            'showsValue' => "Moyens de contact",
+            'hidden' => "Masqué",
+            'hiddenValue' => "Tout le reste de la fiche de Joey",
+            'password' => "Mot de passe",
+            'passwordValue' => "Demandé avant l’ouverture de la fiche",
+            'ends' => "Fin",
+            'endsValue' => "20 octobre 2026, dans 7 jours",
+            'revoke' => "Révoquer ce lien",
+        ],
+
+        'tools' => [
+            'title' => "Connectez vos outils en connaissance de cause.",
+            'lead' => "Une application de carnet d’adresses, un script ou un assistant peut accéder à des informations par la connexion que vous lui donnez.",
+            'body' => [
+                "Choisissez si une clé d’API peut lire les valeurs des champs sensibles, révoquez les clés que vous n’utilisez plus et déconnectez les assistants depuis vos réglages.",
+                "Quand un assistant récupère des informations, il les transmet au service qui l’exécute. Choisissez vos connexions en gardant ces détails en tête.",
+            ],
+            'label' => "Création d’une clé d’API nommée Carnet d’adresses du téléphone, avec Peut lire les valeurs des champs sensibles laissé décoché. En dessous, Claude figure comme assistant connecté, connecté par OAuth, avec un bouton pour le déconnecter.",
+            'create' => "Créer la clé",
+            'keyName' => "Nommer cette clé",
+            'keyValue' => "Carnet d’adresses du téléphone",
+            'sensitive' => "Peut lire les valeurs des champs sensibles",
+            'sensitiveBody' => "Laissez cette option désactivée, sauf si l’outil en a besoin.",
+            'assistants' => "Assistants connectés",
+            'via' => "Connecté par OAuth",
+            'disconnect' => "Déconnecter",
+        ],
+
+        'protect' => [
+            'title' => "Protégez l’entrée.",
+            'lead' => "Utilisez une clé d’accès ou ajoutez l’authentification à deux facteurs à votre compte. Gardez vos codes de récupération en lieu sûr pour pouvoir toujours revenir.",
+            'body' => "Les mots de passe sont stockés sous forme de hachages à sens unique. Les secrets à deux facteurs et les codes de récupération sont chiffrés. Monica stocke aussi les clés d’API et les jetons des liens de partage sous forme de hachages, sans conserver leurs originaux lisibles.",
+            'label' => "Connexion : une clé d’accès sur un MacBook Air, ajoutée il y a 2 jours et active ; une application d’authentification, prête à être activée ; et des codes de récupération, un moyen de revenir si vous perdez votre appareil. Comment Monica les stocke : mots de passe en hachage à sens unique, secrets à deux facteurs et codes de récupération chiffrés, clés d’API et jetons des liens de partage en hachage.",
+            // In the order they are drawn: a passkey, an authenticator app,
+            // recovery codes. The first action is a badge, the others buttons.
+            'methods' => [
+                ['title' => "Clé d’accès", 'body' => "MacBook Air · ajoutée il y a 2 jours", 'action' => "Active"],
+                ['title' => "Application d’authentification", 'body' => "Demander un code à chaque connexion.", 'action' => "L’activer"],
+                ['title' => "Codes de récupération", 'body' => "Un moyen de revenir si vous perdez votre appareil.", 'action' => "Afficher"],
+            ],
+            'stores' => "Comment Monica les stocke",
+            'rows' => [
+                ["Mots de passe", "hachage à sens unique"],
+                ["Secrets à deux facteurs", "chiffrés"],
+                ["Codes de récupération", "chiffrés"],
+                ["Clés d’API", "hachage"],
+                ["Jetons des liens de partage", "hachage"],
+            ],
+        ],
+
+        'admins' => [
+            'title' => "Sachez ce que les administrateurs peuvent voir.",
+            'lead' => "Les écrans d’administration de Monica montrent des informations de compte comme votre nom, votre adresse e-mail, l’activité de connexion et l’espace utilisé.",
+            'body' => [
+                "Ils ne donnent pas accès à vos contacts, à vos rappels, à vos fichiers ni aux détails de vos coffres.",
+                "Cette distinction compte : elle décrit les écrans d’administration. Elle ne signifie pas que l’exploitant du service est techniquement incapable d’accéder aux données stockées sur le serveur.",
+            ],
+            'label' => "Le compte de Monica Geller dans l’espace d’administration : son adresse e-mail, sa dernière connexion aujourd’hui à 08:12 et 48 Mo d’espace utilisé. Les contacts, les rappels, les fichiers et les détails des coffres n’y sont pas affichés.",
+            'space' => "Espace d’administration",
+            'email' => "E-mail",
+            'signIn' => "Dernière connexion",
+            'signInValue' => "Aujourd’hui à 08:12",
+            'storage' => "Espace utilisé",
+            'storageValue' => "48 Mo",
+            'notice' => "Les contacts, les rappels, les fichiers et les détails des coffres ne sont pas affichés ici.",
+        ],
+
+        'hosting' => [
+            'title' => "Choisissez où vit Monica.",
+            'lead' => "Utilisez le service hébergé, ou faites tourner Monica sur votre propre serveur.",
+            'body' => "L’auto-hébergement vous laisse choisir où vos informations sont stockées et qui exploite le service. Il met aussi les mises à jour, la sécurité du serveur et les sauvegardes entre vos mains.",
+            'label' => "Deux façons de faire tourner Monica. Le service hébergé est exploité par Monica, et les mises à jour, la sécurité et les sauvegardes sont gérées pour vous. Sur votre propre serveur, il est exploité par vous ou par la personne de votre choix, et les mises à jour, la sécurité et les sauvegardes sont entre vos mains.",
+            'operated' => "Exploité par",
+            'upkeep' => "Mises à jour, sécurité, sauvegardes",
+            'options' => [
+                ['title' => "Service hébergé", 'operated' => "Monica", 'upkeep' => "Gérées pour vous"],
+                ['title' => "Votre propre serveur", 'operated' => "Vous, ou la personne de votre choix", 'upkeep' => "Entre vos mains"],
+            ],
+        ],
+
+        'logs' => [
+            'title' => "Voyez l’activité de votre compte.",
+            'lead' => "Les journaux de votre compte vous permettent de consulter l’activité enregistrée, avec son heure et son adresse internet. Vous pouvez aussi voir les copies des e-mails que Monica vous a envoyés.",
+            'body' => "Ces enregistrements vous permettent de vérifier ce qui s’est passé quand quelque chose vous semble inhabituel.",
+            'label' => "Le journal d’activité d’un compte Monica : connexion avec une clé d’accès aujourd’hui à 08:12, création d’une clé d’API hier à 19:40, connexion d’un assistant le 11 octobre 2026 à 21:05 depuis une autre adresse, et changement du mot de passe le 7 octobre 2026 à 10:31. Un second onglet liste les e-mails envoyés par Monica.",
+            'activity' => "Activité",
+            'emails' => "E-mails envoyés",
+            // What happened and when, newest first. The addresses beside them
+            // are in the template, because they are not copy.
+            'entries' => [
+                ["Connexion avec une clé d’accès", "Aujourd’hui à 08:12"],
+                ["Création d’une clé d’API", "Hier à 19:40"],
+                ["Connexion d’un assistant", "11 octobre 2026 à 21:05"],
+                ["Changement de votre mot de passe", "7 octobre 2026 à 10:31"],
+            ],
         ],
     ],
 

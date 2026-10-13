@@ -45,6 +45,7 @@ return [
             'vaults' => "Vaults",
             'sharing' => "Sharing",
             'api' => "API and MCP",
+            'privacyFeatures' => "Privacy and security",
             'page' => "Page :number",
         ],
 
@@ -143,6 +144,11 @@ return [
         'api' => [
             'title' => "Your contacts, connected to your tools: the Monica API and MCP server",
             'description' => "Use Monica with Claude, ChatGPT, Gemini or your own scripts. Connect an assistant through Monica’s MCP server, or build your own connection with the JSON API and an API key.",
+        ],
+
+        'privacyFeatures' => [
+            'title' => "Personal details deserve a private place: privacy in Monica",
+            'description' => "Mark fields as sensitive, share only selected sections, control what API keys and assistants can read, protect your account with passkeys and two-factor authentication, and review its activity.",
         ],
 
         'personalCrm' => [
@@ -2130,6 +2136,159 @@ return [
             'title' => "Start with one useful task.",
             'body' => "Record dinner with Phoebe. Set a reminder about Joey’s audition. Add a contact from your own script.",
             'connect' => "Connect an assistant",
+        ],
+    ],
+
+    'privacyFeatures' => [
+        // Words more than one drawing uses.
+        'sensitive' => "Sensitive",
+        'phone' => "Phone",
+        'healthNote' => "Health note",
+
+        'hero' => [
+            'title' => "Personal details deserve a private place.",
+            'lede' => "You record things about people because they matter to you. Choose what you keep, what you share, and which tools can access it.",
+            'cta' => "Create your account",
+            'label' => "Rachel Green’s page in Monica, in the Personal vault. Her phone number and birthday are shown. Her health note is marked sensitive, so its contents stay hidden behind a Reveal button.",
+            'vault' => "Personal · Friend",
+            'birthday' => "Birthday",
+            'birthdayValue' => "5 May 1970",
+            'reveal' => "Reveal",
+        ],
+
+        'audience' => [
+            'title' => "Your contacts do not become an audience.",
+            'lead' => "Adding Chandler to Monica does not send him an invitation or tell him what you wrote.",
+            'body' => "Your account is for you. Nobody joins your vaults, and the people you record cannot open their pages unless you choose to share something with them.",
+            'label' => "Chandler Bing was added to the Personal vault. His page holds a note about leaving his job, and has no sharing links, so Chandler cannot open it.",
+            // :name is Chandler's name, drawn in bold.
+            'added' => ":name was added to Personal.",
+            'notes' => "Notes",
+            'notesValue' => "Thinking about leaving his job in statistical analysis and data reconfiguration.",
+            'links' => "Sharing links",
+            'linksValue' => "None. Chandler cannot open this page.",
+        ],
+
+        'hidden' => [
+            'title' => "Some details should stay out of sight.",
+            'lead' => "Rachel’s phone number and a private note about her health deserve different treatment.",
+            'body' => [
+                "Mark a field as sensitive to keep its contents hidden on screen until you reveal them. Sensitive values are excluded from contact-list columns and left out of sharing links unless you explicitly include them.",
+                "This helps prevent accidental exposure. Anyone signed in to your account can still reveal those values.",
+            ],
+            'label' => "Editing the Health note field with Mark as sensitive ticked: hidden on screen until you reveal it, and left out of list columns and sharing links. Beside it, the contact list shows names and phone numbers, and explains that Health note cannot be added as a column because it is sensitive.",
+            'edit' => "Edit field",
+            'fieldLabel' => "Label",
+            'mark' => "Mark as sensitive",
+            'markBody' => "Hidden on screen until you reveal it. Left out of list columns and sharing links.",
+            'name' => "Name",
+            'column' => "Health note cannot be added as a column because it is sensitive.",
+        ],
+
+        'share' => [
+            'title' => "Share a little. Keep the rest.",
+            'lead' => "Rachel needs Joey’s address for his birthday party. She does not need everything else on his page.",
+            'body' => "Create a read-only sharing link with selected sections, an optional password and an expiry date. Change what it shows or revoke it when access is no longer needed.",
+            'label' => "A sharing link called Joey’s birthday, for Rachel Green. It shows Ways to connect and hides everything else on Joey’s page. A password is asked for before the page opens, and the link ends on 20 October 2026, in 7 days. Buttons to change it or revoke it.",
+            'link' => "Joey’s birthday",
+            'change' => "Change",
+            'for' => "For",
+            'shows' => "Shows",
+            'showsValue' => "Ways to connect",
+            'hidden' => "Hidden",
+            'hiddenValue' => "Everything else on Joey’s page",
+            'password' => "Password",
+            'passwordValue' => "Asked for before the page opens",
+            'ends' => "Ends",
+            'endsValue' => "20 October 2026, in 7 days",
+            'revoke' => "Revoke this link",
+        ],
+
+        'tools' => [
+            'title' => "Connect your tools deliberately.",
+            'lead' => "An address-book app, a script or an assistant can access information through the connection you give it.",
+            'body' => [
+                "Choose whether an API key can read sensitive field values, revoke keys you no longer use, and disconnect assistants from your settings.",
+                "When an assistant retrieves information, it passes that information to the service running it. Choose your connections with those details in mind.",
+            ],
+            'label' => "Creating an API key named Phone address book, with Can read sensitive field values left unticked. Below it, Claude is listed as a connected assistant, connected through OAuth, with a button to disconnect it.",
+            'create' => "Create key",
+            'keyName' => "Name this key",
+            'keyValue' => "Phone address book",
+            'sensitive' => "Can read sensitive field values",
+            'sensitiveBody' => "Leave this off unless the tool needs them.",
+            'assistants' => "Connected assistants",
+            'via' => "Connected through OAuth",
+            'disconnect' => "Disconnect",
+        ],
+
+        'protect' => [
+            'title' => "Protect the way in.",
+            'lead' => "Use a passkey or add two-factor authentication to your account. Keep recovery codes somewhere safe so you have a way back in.",
+            'body' => "Passwords are stored as one-way hashes. Two-factor secrets and recovery codes are encrypted. Monica also stores API keys and sharing-link tokens as hashes rather than keeping their readable originals.",
+            'label' => "Signing in: a passkey on a MacBook Air, added 2 days ago and active; an authenticator app, ready to turn on; and recovery codes, a way back in if you lose your device. How Monica stores it: passwords as a one-way hash, two-factor secrets and recovery codes encrypted, API keys and sharing-link tokens as a hash.",
+            // In the order they are drawn: a passkey, an authenticator app,
+            // recovery codes. The first action is a badge, the others buttons.
+            'methods' => [
+                ['title' => "Passkey", 'body' => "MacBook Air · added 2 days ago", 'action' => "Active"],
+                ['title' => "Authenticator app", 'body' => "Ask for a code every time you sign in.", 'action' => "Turn it on"],
+                ['title' => "Recovery codes", 'body' => "A way back in if you lose your device.", 'action' => "Show"],
+            ],
+            'stores' => "How Monica stores it",
+            'rows' => [
+                ["Passwords", "one-way hash"],
+                ["Two-factor secrets", "encrypted"],
+                ["Recovery codes", "encrypted"],
+                ["API keys", "hash"],
+                ["Sharing-link tokens", "hash"],
+            ],
+        ],
+
+        'admins' => [
+            'title' => "Know what administrators can see.",
+            'lead' => "Monica’s administration screens show account information such as your name, email address, sign-in activity and storage usage.",
+            'body' => [
+                "They do not provide access to your contacts, reminders, files or the details inside your vaults.",
+                "That distinction matters: it describes the administration screens. It does not mean the service operator is technically unable to access data stored on the server.",
+            ],
+            'label' => "Monica Geller’s account in the admin space: her email address, her last sign-in today at 08:12, and 48 MB of storage. Contacts, reminders, files and vault details are not shown there.",
+            'space' => "Admin space",
+            'email' => "Email",
+            'signIn' => "Last sign-in",
+            'signInValue' => "Today at 08:12",
+            'storage' => "Storage",
+            'storageValue' => "48 MB",
+            'notice' => "Contacts, reminders, files and vault details are not shown here.",
+        ],
+
+        'hosting' => [
+            'title' => "Choose where Monica lives.",
+            'lead' => "Use the hosted service, or run Monica on your own server.",
+            'body' => "Self-hosting lets you choose where your information is stored and who operates the service. It also puts updates, server security and backups in your hands.",
+            'label' => "Two ways to run Monica. The hosted service is operated by Monica, and updates, security and backups are handled for you. On your own server, it is operated by you or whoever you choose, and updates, security and backups are in your hands.",
+            'operated' => "Operated by",
+            'upkeep' => "Updates, security, backups",
+            'options' => [
+                ['title' => "Hosted service", 'operated' => "Monica", 'upkeep' => "Handled for you"],
+                ['title' => "Your own server", 'operated' => "You, or whoever you choose", 'upkeep' => "In your hands"],
+            ],
+        ],
+
+        'logs' => [
+            'title' => "See the activity on your account.",
+            'lead' => "Your account logs let you review recorded activity, with its time and internet address. You can also see copies of emails Monica sent you.",
+            'body' => "These records give you a way to check what happened when something looks unfamiliar.",
+            'label' => "The activity log on a Monica account: signed in with a passkey today at 08:12, created an API key yesterday at 19:40, connected an assistant on 11 October 2026 at 21:05 from a different address, and changed the password on 7 October 2026 at 10:31. A second tab lists the emails Monica sent.",
+            'activity' => "Activity",
+            'emails' => "Emails sent",
+            // What happened and when, newest first. The addresses beside them
+            // are in the template, because they are not copy.
+            'entries' => [
+                ["Signed in with a passkey", "Today at 08:12"],
+                ["Created an API key", "Yesterday at 19:40"],
+                ["Connected an assistant", "11 October 2026 at 21:05"],
+                ["Changed your password", "7 October 2026 at 10:31"],
+            ],
         ],
     ],
 

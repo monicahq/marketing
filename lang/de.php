@@ -27,6 +27,7 @@ return [
             'vaults' => "Tresore",
             'sharing' => "Teilen",
             'api' => "API und MCP",
+            'privacyFeatures' => "Datenschutz und Sicherheit",
             'page' => "Seite :number",
         ],
 
@@ -120,6 +121,11 @@ return [
         'api' => [
             'title' => "Ihre Kontakte, verbunden mit Ihren Werkzeugen: der MCP-Server und die API von Monica",
             'description' => "Nutzen Sie Monica mit Claude, ChatGPT, Gemini oder Ihren eigenen Skripten. Verbinden Sie einen Assistenten über den MCP-Server von Monica oder bauen Sie mit der JSON API und einem API-Schlüssel Ihre eigene Verbindung.",
+        ],
+
+        'privacyFeatures' => [
+            'title' => "Persönliche Angaben verdienen einen privaten Ort: Datenschutz in Monica",
+            'description' => "Markieren Sie Felder als sensibel, teilen Sie nur ausgewählte Abschnitte, bestimmen Sie, was API-Schlüssel und Assistenten lesen dürfen, schützen Sie Ihr Konto mit Passkeys und Zwei-Faktor-Authentifizierung und prüfen Sie dessen Aktivität.",
         ],
 
         'personalCrm' => [
@@ -2107,6 +2113,159 @@ return [
             'title' => "Beginnen Sie mit einer nützlichen Aufgabe.",
             'body' => "Halten Sie das Abendessen mit Phoebe fest. Legen Sie eine Erinnerung an Joeys Vorsprechen an. Fügen Sie einen Kontakt aus Ihrem eigenen Skript hinzu.",
             'connect' => "Assistenten verbinden",
+        ],
+    ],
+
+    'privacyFeatures' => [
+        // Wörter, die mehr als eine Zeichnung nutzt.
+        'sensitive' => "Sensibel",
+        'phone' => "Telefon",
+        'healthNote' => "Gesundheitsnotiz",
+
+        'hero' => [
+            'title' => "Persönliche Angaben verdienen einen privaten Ort.",
+            'lede' => "Sie halten Dinge über Menschen fest, weil sie Ihnen wichtig sind. Sie bestimmen, was Sie behalten, was Sie teilen und welche Werkzeuge darauf zugreifen dürfen.",
+            'cta' => "Konto erstellen",
+            'label' => "Rachel Greens Seite in Monica, im Tresor „Privat“. Ihre Telefonnummer und ihr Geburtstag werden angezeigt. Ihre Gesundheitsnotiz ist als sensibel markiert, deshalb bleibt ihr Inhalt hinter der Schaltfläche „Anzeigen“ verborgen.",
+            'vault' => "Privat · Freundin",
+            'birthday' => "Geburtstag",
+            'birthdayValue' => "5. Mai 1970",
+            'reveal' => "Anzeigen",
+        ],
+
+        'audience' => [
+            'title' => "Ihre Kontakte werden nicht zum Publikum.",
+            'lead' => "Wenn Sie Chandler zu Monica hinzufügen, bekommt er keine Einladung und erfährt nicht, was Sie über ihn geschrieben haben.",
+            'body' => "Ihr Konto ist für Sie. Niemand tritt Ihren Tresoren bei, und die Menschen, die Sie festhalten, können ihre Seiten nicht öffnen, solange Sie nicht etwas mit ihnen teilen.",
+            'label' => "Chandler Bing wurde zum Tresor „Privat“ hinzugefügt. Seine Seite enthält eine Notiz über das Aufhören bei seinem Job und hat keine Freigabelinks, deshalb kann Chandler sie nicht öffnen.",
+            // :name is Chandler's name, drawn in bold.
+            'added' => ":name wurde zu „Privat“ hinzugefügt.",
+            'notes' => "Notizen",
+            'notesValue' => "Überlegt, seinen Job in der statistischen Analyse und Datenrekonfiguration aufzugeben.",
+            'links' => "Freigabelinks",
+            'linksValue' => "Keine. Chandler kann diese Seite nicht öffnen.",
+        ],
+
+        'hidden' => [
+            'title' => "Manche Angaben sollten außer Sicht bleiben.",
+            'lead' => "Rachels Telefonnummer und eine private Notiz zu ihrer Gesundheit verdienen eine unterschiedliche Behandlung.",
+            'body' => [
+                "Markieren Sie ein Feld als sensibel, damit sein Inhalt auf dem Bildschirm verborgen bleibt, bis Sie ihn anzeigen. Sensible Werte werden aus den Spalten der Kontaktliste ausgeschlossen und in Freigabelinks weggelassen, es sei denn, Sie nehmen sie ausdrücklich auf.",
+                "Das hilft, versehentliche Offenlegung zu vermeiden. Jeder, der in Ihrem Konto angemeldet ist, kann diese Werte weiterhin anzeigen.",
+            ],
+            'label' => "Das Feld „Gesundheitsnotiz“ wird bearbeitet, „Als sensibel markieren“ ist angehakt: auf dem Bildschirm verborgen, bis Sie es anzeigen, und aus Listenspalten und Freigabelinks weggelassen. Daneben zeigt die Kontaktliste Namen und Telefonnummern und erklärt, dass „Gesundheitsnotiz“ nicht als Spalte hinzugefügt werden kann, weil sie sensibel ist.",
+            'edit' => "Feld bearbeiten",
+            'fieldLabel' => "Bezeichnung",
+            'mark' => "Als sensibel markieren",
+            'markBody' => "Auf dem Bildschirm verborgen, bis Sie es anzeigen. Aus Listenspalten und Freigabelinks weggelassen.",
+            'name' => "Name",
+            'column' => "„Gesundheitsnotiz“ kann nicht als Spalte hinzugefügt werden, weil sie sensibel ist.",
+        ],
+
+        'share' => [
+            'title' => "Teilen Sie ein wenig. Behalten Sie den Rest.",
+            'lead' => "Rachel braucht Joeys Adresse für seine Geburtstagsfeier. Alles andere auf seiner Seite braucht sie nicht.",
+            'body' => "Erstellen Sie einen Freigabelink, der nur lesen lässt, mit ausgewählten Abschnitten, einem optionalen Passwort und einem Enddatum. Ändern Sie, was er zeigt, oder widerrufen Sie ihn, sobald der Zugriff nicht mehr nötig ist.",
+            'label' => "Ein Freigabelink namens „Joeys Geburtstag“, für Rachel Green. Er zeigt „Kontaktwege“ und verbirgt alles andere auf Joeys Seite. Vor dem Öffnen der Seite wird ein Passwort abgefragt, und der Link endet am 20. Oktober 2026, in 7 Tagen. Schaltflächen zum Ändern und zum Widerrufen.",
+            'link' => "Joeys Geburtstag",
+            'change' => "Ändern",
+            'for' => "Für",
+            'shows' => "Zeigt",
+            'showsValue' => "Kontaktwege",
+            'hidden' => "Verborgen",
+            'hiddenValue' => "Alles andere auf Joeys Seite",
+            'password' => "Passwort",
+            'passwordValue' => "Wird abgefragt, bevor sich die Seite öffnet",
+            'ends' => "Endet",
+            'endsValue' => "20. Oktober 2026, in 7 Tagen",
+            'revoke' => "Diesen Link widerrufen",
+        ],
+
+        'tools' => [
+            'title' => "Verbinden Sie Ihre Werkzeuge mit Bedacht.",
+            'lead' => "Eine Adressbuch-App, ein Skript oder ein Assistent kann über die Verbindung, die Sie ihm geben, auf Angaben zugreifen.",
+            'body' => [
+                "Bestimmen Sie, ob ein API-Schlüssel die Werte sensibler Felder lesen darf, widerrufen Sie Schlüssel, die Sie nicht mehr nutzen, und trennen Sie Assistenten in Ihren Einstellungen.",
+                "Wenn ein Assistent Angaben abruft, gibt er sie an den Dienst weiter, der ihn betreibt. Wählen Sie Ihre Verbindungen mit Blick darauf aus.",
+            ],
+            'label' => "Ein API-Schlüssel namens „Telefon-Adressbuch“ wird erstellt, „Darf Werte sensibler Felder lesen“ ist nicht angehakt. Darunter ist Claude als verbundener Assistent aufgeführt, verbunden über OAuth, mit einer Schaltfläche zum Trennen.",
+            'create' => "Schlüssel erstellen",
+            'keyName' => "Diesen Schlüssel benennen",
+            'keyValue' => "Telefon-Adressbuch",
+            'sensitive' => "Darf Werte sensibler Felder lesen",
+            'sensitiveBody' => "Lassen Sie das aus, es sei denn, das Werkzeug braucht sie.",
+            'assistants' => "Verbundene Assistenten",
+            'via' => "Verbunden über OAuth",
+            'disconnect' => "Trennen",
+        ],
+
+        'protect' => [
+            'title' => "Schützen Sie den Zugang.",
+            'lead' => "Nutzen Sie einen Passkey oder fügen Sie Ihrem Konto die Zwei-Faktor-Authentifizierung hinzu. Bewahren Sie Wiederherstellungscodes an einem sicheren Ort auf, damit Sie einen Weg zurück haben.",
+            'body' => "Passwörter werden als Einweg-Hashes gespeichert. Zwei-Faktor-Geheimnisse und Wiederherstellungscodes werden verschlüsselt. Auch API-Schlüssel und Tokens von Freigabelinks speichert Monica als Hashes, statt ihre lesbaren Originale aufzubewahren.",
+            'label' => "Anmelden: ein Passkey auf einem MacBook Air, vor 2 Tagen hinzugefügt und aktiv; eine Authenticator-App, bereit zum Einschalten; und Wiederherstellungscodes, ein Weg zurück, falls Sie Ihr Gerät verlieren. So speichert Monica es: Passwörter als Einweg-Hash, Zwei-Faktor-Geheimnisse und Wiederherstellungscodes verschlüsselt, API-Schlüssel und Tokens von Freigabelinks als Hash.",
+            // In the order they are drawn: a passkey, an authenticator app,
+            // recovery codes. The first action is a badge, the others buttons.
+            'methods' => [
+                ['title' => "Passkey", 'body' => "MacBook Air · vor 2 Tagen hinzugefügt", 'action' => "Aktiv"],
+                ['title' => "Authenticator-App", 'body' => "Bei jeder Anmeldung nach einem Code fragen.", 'action' => "Einschalten"],
+                ['title' => "Wiederherstellungscodes", 'body' => "Ein Weg zurück, falls Sie Ihr Gerät verlieren.", 'action' => "Anzeigen"],
+            ],
+            'stores' => "So speichert Monica es",
+            'rows' => [
+                ["Passwörter", "Einweg-Hash"],
+                ["Zwei-Faktor-Geheimnisse", "verschlüsselt"],
+                ["Wiederherstellungscodes", "verschlüsselt"],
+                ["API-Schlüssel", "Hash"],
+                ["Tokens von Freigabelinks", "Hash"],
+            ],
+        ],
+
+        'admins' => [
+            'title' => "Wissen Sie, was Administratoren sehen können.",
+            'lead' => "Die Verwaltungsbereiche von Monica zeigen Kontoinformationen wie Ihren Namen, Ihre E-Mail-Adresse, die Anmeldeaktivität und die Speichernutzung.",
+            'body' => [
+                "Sie gewähren keinen Zugriff auf Ihre Kontakte, Erinnerungen, Dateien oder die Angaben in Ihren Tresoren.",
+                "Dieser Unterschied ist wichtig: Er beschreibt die Verwaltungsbereiche. Er bedeutet nicht, dass der Betreiber des Dienstes technisch nicht auf die auf dem Server gespeicherten Daten zugreifen kann.",
+            ],
+            'label' => "Monica Gellers Konto im Admin-Bereich: ihre E-Mail-Adresse, ihre letzte Anmeldung heute um 08:12 Uhr und 48 MB Speicher. Kontakte, Erinnerungen, Dateien und Tresordetails werden dort nicht angezeigt.",
+            'space' => "Admin-Bereich",
+            'email' => "E-Mail",
+            'signIn' => "Letzte Anmeldung",
+            'signInValue' => "Heute um 08:12 Uhr",
+            'storage' => "Speicher",
+            'storageValue' => "48 MB",
+            'notice' => "Kontakte, Erinnerungen, Dateien und Tresordetails werden hier nicht angezeigt.",
+        ],
+
+        'hosting' => [
+            'title' => "Wählen Sie, wo Monica zu Hause ist.",
+            'lead' => "Nutzen Sie den gehosteten Dienst oder betreiben Sie Monica auf Ihrem eigenen Server.",
+            'body' => "Beim Selbst-Hosting bestimmen Sie, wo Ihre Angaben gespeichert werden und wer den Dienst betreibt. Außerdem liegen Updates, Serversicherheit und Backups in Ihrer Hand.",
+            'label' => "Zwei Arten, Monica zu betreiben. Der gehostete Dienst wird von Monica betrieben, und Updates, Sicherheit und Backups werden für Sie erledigt. Auf Ihrem eigenen Server betreiben Sie Monica selbst oder jemand, den Sie wählen, und Updates, Sicherheit und Backups liegen in Ihrer Hand.",
+            'operated' => "Betrieben von",
+            'upkeep' => "Updates, Sicherheit, Backups",
+            'options' => [
+                ['title' => "Gehosteter Dienst", 'operated' => "Monica", 'upkeep' => "Wird für Sie erledigt"],
+                ['title' => "Ihr eigener Server", 'operated' => "Sie oder wen Sie wählen", 'upkeep' => "In Ihrer Hand"],
+            ],
+        ],
+
+        'logs' => [
+            'title' => "Sehen Sie die Aktivität in Ihrem Konto.",
+            'lead' => "Die Protokolle Ihres Kontos zeigen Ihnen die aufgezeichnete Aktivität mit Zeit und Internetadresse. Außerdem sehen Sie Kopien der E-Mails, die Monica Ihnen geschickt hat.",
+            'body' => "Diese Einträge helfen Ihnen zu prüfen, was passiert ist, wenn Ihnen etwas unbekannt vorkommt.",
+            'label' => "Das Aktivitätsprotokoll eines Monica-Kontos: heute um 08:12 Uhr mit einem Passkey angemeldet, gestern um 19:40 Uhr einen API-Schlüssel erstellt, am 11. Oktober 2026 um 21:05 Uhr von einer anderen Adresse einen Assistenten verbunden und am 7. Oktober 2026 um 10:31 Uhr das Passwort geändert. Ein zweiter Tab listet die E-Mails auf, die Monica geschickt hat.",
+            'activity' => "Aktivität",
+            'emails' => "Gesendete E-Mails",
+            // What happened and when, newest first. The addresses beside them
+            // are in the template, because they are not copy.
+            'entries' => [
+                ["Mit einem Passkey angemeldet", "Heute um 08:12 Uhr"],
+                ["Einen API-Schlüssel erstellt", "Gestern um 19:40 Uhr"],
+                ["Einen Assistenten verbunden", "11. Oktober 2026 um 21:05 Uhr"],
+                ["Ihr Passwort geändert", "7. Oktober 2026 um 10:31 Uhr"],
+            ],
         ],
     ],
 

@@ -31,6 +31,7 @@ return [
             'vaults' => "Cofres",
             'sharing' => "Compartilhamento",
             'api' => "API e MCP",
+            'privacyFeatures' => "Privacidade e segurança",
             'page' => "Página :number",
         ],
 
@@ -127,6 +128,11 @@ return [
         'api' => [
             'title' => "Seus contatos, conectados às suas ferramentas: a API e o MCP da Monica",
             'description' => "Use a Monica com Claude, ChatGPT, Gemini ou os seus próprios scripts. Conecte pelo MCP ou pela API JSON para encontrar contatos, registrar eventos de vida e criar lembretes, com as chaves e os acessos sob o seu controle.",
+        ],
+
+        'privacyFeatures' => [
+            'title' => "Dados pessoais merecem um lugar privado: a privacidade na Monica",
+            'description' => "Marque campos como sensíveis, compartilhe só seções escolhidas, controle o que chaves de API e assistentes podem ler, proteja a sua conta com passkeys e autenticação em dois fatores e revise a atividade dela.",
         ],
 
         'personalCrm' => [
@@ -2116,6 +2122,159 @@ return [
             'title' => "Comece com uma tarefa útil.",
             'body' => "Registre o jantar com a Phoebe. Crie um lembrete sobre o teste do Joey. Adicione um contato a partir do seu próprio script.",
             'connect' => "Conectar um assistente",
+        ],
+    ],
+
+    'privacyFeatures' => [
+        // Words more than one drawing uses.
+        'sensitive' => "Sensível",
+        'phone' => "Telefone",
+        'healthNote' => "Nota de saúde",
+
+        'hero' => [
+            'title' => "Dados pessoais merecem um lugar privado.",
+            'lede' => "Você registra coisas sobre as pessoas porque elas importam para você. Escolha o que guardar, o que compartilhar e quais ferramentas podem acessar.",
+            'cta' => "Criar a sua conta",
+            'label' => "A ficha de Rachel Green na Monica, no cofre Pessoal. O telefone e o aniversário dela aparecem. A nota de saúde está marcada como sensível, então o conteúdo fica oculto atrás de um botão Revelar.",
+            'vault' => "Pessoal · Amiga",
+            'birthday' => "Aniversário",
+            'birthdayValue' => "5 de maio de 1970",
+            'reveal' => "Revelar",
+        ],
+
+        'audience' => [
+            'title' => "Os seus contatos não viram um público.",
+            'lead' => "Adicionar o Chandler à Monica não envia um convite a ele nem conta o que você escreveu.",
+            'body' => "A sua conta é só sua. Ninguém entra nos seus cofres, e as pessoas que você registra não conseguem abrir as próprias fichas, a menos que você escolha compartilhar algo com elas.",
+            'label' => "Chandler Bing foi adicionado ao cofre Pessoal. A ficha dele tem uma nota sobre deixar o emprego e nenhum link de compartilhamento, então o Chandler não consegue abri-la.",
+            // :name is Chandler's name, drawn in bold.
+            'added' => ":name foi adicionado a Pessoal.",
+            'notes' => "Notas",
+            'notesValue' => "Pensando em deixar o emprego em análise estatística e reconfiguração de dados.",
+            'links' => "Links de compartilhamento",
+            'linksValue' => "Nenhum. O Chandler não consegue abrir esta ficha.",
+        ],
+
+        'hidden' => [
+            'title' => "Alguns detalhes devem ficar fora de vista.",
+            'lead' => "O telefone da Rachel e uma nota privada sobre a saúde dela merecem tratamentos diferentes.",
+            'body' => [
+                "Marque um campo como sensível para manter o conteúdo oculto na tela até você revelá-lo. Os valores sensíveis ficam fora das colunas da lista de contatos e dos links de compartilhamento, a menos que você os inclua de propósito.",
+                "Isso ajuda a evitar exposição acidental. Qualquer pessoa conectada à sua conta ainda pode revelar esses valores.",
+            ],
+            'label' => "Editando o campo Nota de saúde com Marcar como sensível ativado: oculto na tela até você revelá-lo, e fora das colunas da lista e dos links de compartilhamento. Ao lado, a lista de contatos mostra nomes e telefones, e explica que Nota de saúde não pode ser adicionada como coluna porque é sensível.",
+            'edit' => "Editar campo",
+            'fieldLabel' => "Rótulo",
+            'mark' => "Marcar como sensível",
+            'markBody' => "Oculto na tela até você revelar. Fora das colunas da lista e dos links de compartilhamento.",
+            'name' => "Nome",
+            'column' => "Nota de saúde não pode ser adicionada como coluna porque é sensível.",
+        ],
+
+        'share' => [
+            'title' => "Compartilhe um pouco. Guarde o resto.",
+            'lead' => "A Rachel precisa do endereço do Joey para a festa de aniversário dele. Ela não precisa de todo o resto da ficha.",
+            'body' => "Crie um link de compartilhamento somente leitura com seções escolhidas, uma senha opcional e uma data de término. Mude o que ele mostra ou revogue-o quando o acesso não for mais necessário.",
+            'label' => "Um link de compartilhamento chamado Aniversário do Joey, para Rachel Green. Ele mostra Formas de contato e oculta todo o resto da ficha do Joey. Uma senha é pedida antes de a página abrir, e o link termina em 20 de outubro de 2026, em 7 dias. Botões para alterá-lo ou revogá-lo.",
+            'link' => "Aniversário do Joey",
+            'change' => "Alterar",
+            'for' => "Para",
+            'shows' => "Mostra",
+            'showsValue' => "Formas de contato",
+            'hidden' => "Oculto",
+            'hiddenValue' => "Todo o resto da ficha do Joey",
+            'password' => "Senha",
+            'passwordValue' => "Pedida antes de a página abrir",
+            'ends' => "Termina",
+            'endsValue' => "20 de outubro de 2026, em 7 dias",
+            'revoke' => "Revogar este link",
+        ],
+
+        'tools' => [
+            'title' => "Conecte as suas ferramentas com critério.",
+            'lead' => "Um aplicativo de agenda, um script ou um assistente pode acessar informações pela conexão que você der a ele.",
+            'body' => [
+                "Escolha se uma chave de API pode ler os valores dos campos sensíveis, revogue as chaves que você não usa mais e desconecte assistentes nas suas configurações.",
+                "Quando um assistente consulta informações, ele as repassa ao serviço que o executa. Escolha as suas conexões levando isso em conta.",
+            ],
+            'label' => "Criando uma chave de API chamada Agenda do celular, com Pode ler os valores dos campos sensíveis desativado. Abaixo, Claude aparece como assistente conectado, por OAuth, com um botão para desconectá-lo.",
+            'create' => "Criar chave",
+            'keyName' => "Dê um nome a esta chave",
+            'keyValue' => "Agenda do celular",
+            'sensitive' => "Pode ler os valores dos campos sensíveis",
+            'sensitiveBody' => "Deixe desativado, a menos que a ferramenta precise deles.",
+            'assistants' => "Assistentes conectados",
+            'via' => "Conectado por OAuth",
+            'disconnect' => "Desconectar",
+        ],
+
+        'protect' => [
+            'title' => "Proteja a entrada.",
+            'lead' => "Use uma passkey ou adicione a autenticação em dois fatores à sua conta. Guarde os códigos de recuperação em um lugar seguro para ter como voltar a entrar.",
+            'body' => "As senhas são armazenadas como hashes de via única. Os segredos de dois fatores e os códigos de recuperação são criptografados. A Monica também armazena as chaves de API e os tokens dos links de compartilhamento como hashes, em vez de guardar os originais legíveis.",
+            'label' => "Entrando na conta: uma passkey em um MacBook Air, adicionada há 2 dias e ativa; um aplicativo autenticador, pronto para ativar; e códigos de recuperação, um jeito de voltar a entrar se você perder o dispositivo. Como a Monica armazena: senhas como hash de via única, segredos de dois fatores e códigos de recuperação criptografados, chaves de API e tokens de links de compartilhamento como hash.",
+            // In the order they are drawn: a passkey, an authenticator app,
+            // recovery codes. The first action is a badge, the others buttons.
+            'methods' => [
+                ['title' => "Passkey", 'body' => "MacBook Air · adicionada há 2 dias", 'action' => "Ativa"],
+                ['title' => "Aplicativo autenticador", 'body' => "Peça um código a cada vez que entrar.", 'action' => "Ativar"],
+                ['title' => "Códigos de recuperação", 'body' => "Um jeito de voltar a entrar se você perder o dispositivo.", 'action' => "Mostrar"],
+            ],
+            'stores' => "Como a Monica armazena",
+            'rows' => [
+                ["Senhas", "hash de via única"],
+                ["Segredos de dois fatores", "criptografado"],
+                ["Códigos de recuperação", "criptografado"],
+                ["Chaves de API", "hash"],
+                ["Tokens de links de compartilhamento", "hash"],
+            ],
+        ],
+
+        'admins' => [
+            'title' => "Saiba o que os administradores podem ver.",
+            'lead' => "As telas de administração da Monica mostram informações da conta, como o seu nome, o endereço de e-mail, a atividade de login e o espaço usado.",
+            'body' => [
+                "Elas não dão acesso aos seus contatos, lembretes, arquivos nem aos detalhes dentro dos seus cofres.",
+                "Essa distinção importa: ela descreve as telas de administração. Não significa que quem opera o serviço seja tecnicamente incapaz de acessar os dados armazenados no servidor.",
+            ],
+            'label' => "A conta de Monica Geller no espaço de administração: o endereço de e-mail dela, o último login hoje às 08:12 e 48 MB de armazenamento. Contatos, lembretes, arquivos e detalhes dos cofres não aparecem ali.",
+            'space' => "Espaço de administração",
+            'email' => "E-mail",
+            'signIn' => "Último login",
+            'signInValue' => "Hoje às 08:12",
+            'storage' => "Armazenamento",
+            'storageValue' => "48 MB",
+            'notice' => "Contatos, lembretes, arquivos e detalhes dos cofres não aparecem aqui.",
+        ],
+
+        'hosting' => [
+            'title' => "Escolha onde a Monica fica.",
+            'lead' => "Use o serviço hospedado ou rode a Monica no seu próprio servidor.",
+            'body' => "Hospedar por conta própria permite escolher onde as suas informações ficam armazenadas e quem opera o serviço. Também coloca nas suas mãos as atualizações, a segurança do servidor e os backups.",
+            'label' => "Duas formas de rodar a Monica. O serviço hospedado é operado pela Monica, que cuida de atualizações, segurança e backups para você. No seu próprio servidor, ele é operado por você ou por quem você escolher, e atualizações, segurança e backups ficam nas suas mãos.",
+            'operated' => "Operado por",
+            'upkeep' => "Atualizações, segurança, backups",
+            'options' => [
+                ['title' => "Serviço hospedado", 'operated' => "Monica", 'upkeep' => "Cuidamos para você"],
+                ['title' => "Seu próprio servidor", 'operated' => "Você, ou quem você escolher", 'upkeep' => "Nas suas mãos"],
+            ],
+        ],
+
+        'logs' => [
+            'title' => "Veja a atividade da sua conta.",
+            'lead' => "Os registros da sua conta permitem rever a atividade registrada, com o horário e o endereço de internet. Você também vê cópias dos e-mails que a Monica enviou a você.",
+            'body' => "Esses registros ajudam a conferir o que aconteceu quando algo parece desconhecido.",
+            'label' => "O registro de atividade de uma conta da Monica: login com uma passkey hoje às 08:12, chave de API criada ontem às 19:40, assistente conectado em 11 de outubro de 2026 às 21:05 a partir de um endereço diferente e senha alterada em 7 de outubro de 2026 às 10:31. Uma segunda aba lista os e-mails que a Monica enviou.",
+            'activity' => "Atividade",
+            'emails' => "E-mails enviados",
+            // What happened and when, newest first. The addresses beside them
+            // are in the template, because they are not copy.
+            'entries' => [
+                ["Login com uma passkey", "Hoje às 08:12"],
+                ["Chave de API criada", "Ontem às 19:40"],
+                ["Assistente conectado", "11 de outubro de 2026 às 21:05"],
+                ["Senha alterada", "7 de outubro de 2026 às 10:31"],
+            ],
         ],
     ],
 

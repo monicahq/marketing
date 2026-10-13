@@ -9,7 +9,7 @@
     // reminders page for reminders, the timeline page for the timeline, the
     // relationships page for the people around them, the vaults page for
     // vaults, the sharing page for sharing, the API page for assistants and
-    // the API, and the homepage's own section for privacy.
+    // the API, and the privacy page for privacy.
     // The fragments are
     // ids on those sections, so the dead link checker fails if one is renamed.
     // Listed here rather than in `lang/`, because a URL is not copy.
@@ -17,7 +17,7 @@
     $menuLinks = [
         [$details, $page->route('reminders'), $page->route('timeline')],
         [$page->route('relationships'), $page->route('vaults'), $page->route('sharing')],
-        ["{$features}#api", $page->route('api'), "{$home}#privacy"],
+        ["{$features}#api", $page->route('api'), $page->route('privacyFeatures')],
     ];
 
     // One identity colour per column, as the design draws it. Literal class

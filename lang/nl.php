@@ -30,6 +30,7 @@ return [
             'vaults' => "Kluizen",
             'sharing' => "Delen",
             'api' => "API en MCP",
+            'privacyFeatures' => "Privacy en beveiliging",
             'page' => "Pagina :number",
         ],
 
@@ -119,6 +120,11 @@ return [
         'api' => [
             'title' => "Je contacten, verbonden met je tools: de Monica API en MCP-server",
             'description' => "Gebruik Monica met Claude, ChatGPT, Gemini of je eigen scripts. Verbind een assistent via Monica’s MCP-server, of bouw je eigen koppeling met de JSON API en een API-sleutel.",
+        ],
+
+        'privacyFeatures' => [
+            'title' => "Persoonlijke gegevens verdienen een privéplek: privacy in Monica",
+            'description' => "Markeer velden als gevoelig, deel alleen geselecteerde secties, bepaal wat API-sleutels en assistenten mogen lezen, beveilig je account met passkeys en tweestapsverificatie en bekijk de activiteit ervan.",
         ],
 
         'personalCrm' => [
@@ -2101,6 +2107,159 @@ return [
             'title' => "Begin met één nuttige taak.",
             'body' => "Leg het etentje met Phoebe vast. Stel een herinnering in over Joeys auditie. Voeg een contact toe vanuit je eigen script.",
             'connect' => "Verbind een assistent",
+        ],
+    ],
+
+    'privacyFeatures' => [
+        // Words more than one drawing uses.
+        'sensitive' => "Gevoelig",
+        'phone' => "Telefoon",
+        'healthNote' => "Gezondheidsnotitie",
+
+        'hero' => [
+            'title' => "Persoonlijke gegevens verdienen een privéplek.",
+            'lede' => "Je legt dingen over mensen vast omdat ze voor je belangrijk zijn. Kies wat je bewaart, wat je deelt en welke tools erbij mogen.",
+            'cta' => "Maak je account aan",
+            'label' => "Rachel Greens pagina in Monica, in de kluis Persoonlijk. Haar telefoonnummer en verjaardag zijn zichtbaar. Haar gezondheidsnotitie is als gevoelig gemarkeerd, dus de inhoud blijft verborgen achter een knop Tonen.",
+            'vault' => "Persoonlijk · Vriend",
+            'birthday' => "Verjaardag",
+            'birthdayValue' => "5 mei 1970",
+            'reveal' => "Tonen",
+        ],
+
+        'audience' => [
+            'title' => "Je contacten worden geen publiek.",
+            'lead' => "Als je Chandler aan Monica toevoegt, krijgt hij geen uitnodiging en hoort hij niet wat je over hem schreef.",
+            'body' => "Je account is voor jou. Niemand wordt lid van je kluizen, en de mensen die je vastlegt kunnen hun pagina niet openen, tenzij je ervoor kiest iets met hen te delen.",
+            'label' => "Chandler Bing is toegevoegd aan de kluis Persoonlijk. Zijn pagina bevat een notitie over zijn ontslag nemen en heeft geen deellinks, dus Chandler kan hem niet openen.",
+            // :name is Chandler's name, drawn in bold.
+            'added' => ":name is toegevoegd aan Persoonlijk.",
+            'notes' => "Notities",
+            'notesValue' => "Overweegt zijn baan in statistische analyse en data-reconfiguratie op te zeggen.",
+            'links' => "Deellinks",
+            'linksValue' => "Geen. Chandler kan deze pagina niet openen.",
+        ],
+
+        'hidden' => [
+            'title' => "Sommige gegevens horen niet in beeld.",
+            'lead' => "Rachels telefoonnummer en een privénotitie over haar gezondheid verdienen een andere behandeling.",
+            'body' => [
+                "Markeer een veld als gevoelig om de inhoud op het scherm verborgen te houden tot je hem toont. Gevoelige waarden worden uitgesloten van kolommen in de contactlijst en blijven buiten deellinks, tenzij je ze uitdrukkelijk opneemt.",
+                "Dat helpt om per ongeluk tonen te voorkomen. Iedereen die is ingelogd op je account kan die waarden nog steeds tonen.",
+            ],
+            'label' => "Het veld Gezondheidsnotitie bewerken met Markeren als gevoelig aangevinkt: op het scherm verborgen tot je het toont, en buiten kolommen in lijsten en deellinks gehouden. Ernaast toont de contactlijst namen en telefoonnummers, en legt uit dat Gezondheidsnotitie niet als kolom kan worden toegevoegd omdat het gevoelig is.",
+            'edit' => "Veld bewerken",
+            'fieldLabel' => "Label",
+            'mark' => "Markeren als gevoelig",
+            'markBody' => "Op het scherm verborgen tot je het toont. Buiten kolommen in lijsten en deellinks gehouden.",
+            'name' => "Naam",
+            'column' => "Gezondheidsnotitie kan niet als kolom worden toegevoegd omdat het gevoelig is.",
+        ],
+
+        'share' => [
+            'title' => "Deel een beetje. Houd de rest.",
+            'lead' => "Rachel heeft Joeys adres nodig voor zijn verjaardagsfeest. Al het andere op zijn pagina hoeft ze niet te zien.",
+            'body' => "Maak een deellink met alleen leesrechten, met geselecteerde secties, een optioneel wachtwoord en een einddatum. Wijzig wat hij toont of trek hem in zodra toegang niet meer nodig is.",
+            'label' => "Een deellink genaamd Joeys verjaardag, voor Rachel Green. Hij toont Manieren om contact te leggen en verbergt al het andere op Joeys pagina. Er wordt een wachtwoord gevraagd voordat de pagina opent, en de link eindigt op 20 oktober 2026, over 7 dagen. Knoppen om hem te wijzigen of in te trekken.",
+            'link' => "Joeys verjaardag",
+            'change' => "Wijzigen",
+            'for' => "Voor",
+            'shows' => "Toont",
+            'showsValue' => "Manieren om contact te leggen",
+            'hidden' => "Verborgen",
+            'hiddenValue' => "Al het andere op Joeys pagina",
+            'password' => "Wachtwoord",
+            'passwordValue' => "Wordt gevraagd voordat de pagina opent",
+            'ends' => "Eindigt",
+            'endsValue' => "20 oktober 2026, over 7 dagen",
+            'revoke' => "Deze link intrekken",
+        ],
+
+        'tools' => [
+            'title' => "Verbind je tools bewust.",
+            'lead' => "Een adresboek-app, een script of een assistent kan informatie opvragen via de verbinding die je hem geeft.",
+            'body' => [
+                "Kies of een API-sleutel de waarden van gevoelige velden mag lezen, trek sleutels in die je niet meer gebruikt en verbreek de verbinding met assistenten vanuit je instellingen.",
+                "Als een assistent informatie ophaalt, geeft hij die door aan de dienst die hem draait. Kies je verbindingen met die details in gedachten.",
+            ],
+            'label' => "Een API-sleutel aanmaken genaamd Adresboek op telefoon, met Mag waarden van gevoelige velden lezen niet aangevinkt. Eronder staat Claude als verbonden assistent, verbonden via OAuth, met een knop om de verbinding te verbreken.",
+            'create' => "Sleutel aanmaken",
+            'keyName' => "Geef deze sleutel een naam",
+            'keyValue' => "Adresboek op telefoon",
+            'sensitive' => "Mag waarden van gevoelige velden lezen",
+            'sensitiveBody' => "Laat dit uit, tenzij de tool ze nodig heeft.",
+            'assistants' => "Verbonden assistenten",
+            'via' => "Verbonden via OAuth",
+            'disconnect' => "Verbinding verbreken",
+        ],
+
+        'protect' => [
+            'title' => "Beveilig de toegang.",
+            'lead' => "Gebruik een passkey of voeg tweestapsverificatie toe aan je account. Bewaar herstelcodes op een veilige plek, zodat je altijd weer binnen kunt.",
+            'body' => "Wachtwoorden worden opgeslagen als eenrichtingshashes. Geheimen voor tweestapsverificatie en herstelcodes zijn versleuteld. Monica slaat ook API-sleutels en tokens van deellinks op als hashes, in plaats van de leesbare originelen te bewaren.",
+            'label' => "Inloggen: een passkey op een MacBook Air, 2 dagen geleden toegevoegd en actief; een authenticator-app, klaar om aan te zetten; en herstelcodes, een weg terug als je je apparaat kwijtraakt. Zo slaat Monica het op: wachtwoorden als eenrichtingshash, geheimen voor tweestapsverificatie en herstelcodes versleuteld, API-sleutels en tokens van deellinks als hash.",
+            // In the order they are drawn: a passkey, an authenticator app,
+            // recovery codes. The first action is a badge, the others buttons.
+            'methods' => [
+                ['title' => "Passkey", 'body' => "MacBook Air · 2 dagen geleden toegevoegd", 'action' => "Actief"],
+                ['title' => "Authenticator-app", 'body' => "Vraag bij elke login om een code.", 'action' => "Aanzetten"],
+                ['title' => "Herstelcodes", 'body' => "Een weg terug als je je apparaat kwijtraakt.", 'action' => "Tonen"],
+            ],
+            'stores' => "Zo slaat Monica het op",
+            'rows' => [
+                ["Wachtwoorden", "eenrichtingshash"],
+                ["Geheimen voor tweestapsverificatie", "versleuteld"],
+                ["Herstelcodes", "versleuteld"],
+                ["API-sleutels", "hash"],
+                ["Tokens van deellinks", "hash"],
+            ],
+        ],
+
+        'admins' => [
+            'title' => "Weet wat beheerders kunnen zien.",
+            'lead' => "Monica’s beheerschermen tonen accountgegevens zoals je naam, e-mailadres, inlogactiviteit en gebruikte opslagruimte.",
+            'body' => [
+                "Ze geven geen toegang tot je contacten, herinneringen, bestanden of de details in je kluizen.",
+                "Dat onderscheid is belangrijk: het beschrijft de beheerschermen. Het betekent niet dat de beheerder van de dienst technisch geen toegang heeft tot gegevens die op de server staan.",
+            ],
+            'label' => "Monica Gellers account in de beheeromgeving: haar e-mailadres, haar laatste login vandaag om 08:12 en 48 MB opslag. Contacten, herinneringen, bestanden en kluisdetails worden daar niet getoond.",
+            'space' => "Beheeromgeving",
+            'email' => "E-mail",
+            'signIn' => "Laatste login",
+            'signInValue' => "Vandaag om 08:12",
+            'storage' => "Opslag",
+            'storageValue' => "48 MB",
+            'notice' => "Contacten, herinneringen, bestanden en kluisdetails worden hier niet getoond.",
+        ],
+
+        'hosting' => [
+            'title' => "Kies waar Monica draait.",
+            'lead' => "Gebruik de gehoste dienst, of draai Monica op je eigen server.",
+            'body' => "Zelf hosten laat je kiezen waar je gegevens staan en wie de dienst beheert. Updates, serverbeveiliging en back-ups komen dan ook in jouw handen te liggen.",
+            'label' => "Twee manieren om Monica te draaien. De gehoste dienst wordt beheerd door Monica, en updates, beveiliging en back-ups worden voor je geregeld. Op je eigen server beheer je het zelf, of laat je het doen door wie je kiest, en updates, beveiliging en back-ups liggen in jouw handen.",
+            'operated' => "Beheerd door",
+            'upkeep' => "Updates, beveiliging, back-ups",
+            'options' => [
+                ['title' => "Gehoste dienst", 'operated' => "Monica", 'upkeep' => "Voor je geregeld"],
+                ['title' => "Je eigen server", 'operated' => "Jij, of wie je kiest", 'upkeep' => "In jouw handen"],
+            ],
+        ],
+
+        'logs' => [
+            'title' => "Zie de activiteit op je account.",
+            'lead' => "Met de logboeken van je account bekijk je de vastgelegde activiteit, met tijdstip en internetadres. Je ziet ook kopieën van e-mails die Monica je stuurde.",
+            'body' => "Met deze gegevens kun je nagaan wat er gebeurde als iets onbekend lijkt.",
+            'label' => "Het activiteitenlogboek van een Monica-account: vandaag om 08:12 ingelogd met een passkey, gisteren om 19:40 een API-sleutel aangemaakt, op 11 oktober 2026 om 21:05 een assistent verbonden vanaf een ander adres, en op 7 oktober 2026 om 10:31 het wachtwoord gewijzigd. Op een tweede tabblad staan de e-mails die Monica verstuurde.",
+            'activity' => "Activiteit",
+            'emails' => "Verstuurde e-mails",
+            // What happened and when, newest first. The addresses beside them
+            // are in the template, because they are not copy.
+            'entries' => [
+                ["Ingelogd met een passkey", "Vandaag om 08:12"],
+                ["Een API-sleutel aangemaakt", "Gisteren om 19:40"],
+                ["Een assistent verbonden", "11 oktober 2026 om 21:05"],
+                ["Je wachtwoord gewijzigd", "7 oktober 2026 om 10:31"],
+            ],
         ],
     ],
 
