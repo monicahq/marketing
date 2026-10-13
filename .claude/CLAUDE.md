@@ -139,9 +139,9 @@ The design system has its own vocabulary (`--ink`, `--body`, `--hairline`, `--ca
 
 Non-negotiable rules, in rough order of how often they get broken:
 
-- **Shadows are tokens, and there are four.** `shadow-panel` (one pixel under a card's hairline), `shadow-nav-active` (the selected row in a segmented control or a sidebar), `shadow-pop` (what genuinely floats: a menu, a tooltip, the chat card, and the drawn windows on the templates, details, reminders, timeline, relationships, vaults and sharing pages, which lift off their tinted panels) and `shadow-showcase` (ours, the product picture under the homepage headline, and nothing else). Tailwind's stock shadows stay removed. Never a coloured shadow, and never a shadow on hover.
-- **No gradients, no background imagery, no photography.** Flat colour only. **One illustration family**, deliberately: the pandas, at the foot of every page (by day and by night), behind the homepage headline (`_partials/home/top.blade.php`) and on the rule under the blog index heading (`_partials/blog/index.blade.php`, `assets/images/blog-index/garden.webp`). The last two are light mode only until they have night versions. Nothing else gets one.
-- **Two marketing grounds besides the page**: `bg-ground-sage` behind the homepage's agents section, and `bg-ground-cream` for the footer and behind the homepage headline, where it matches the meadow's sky. They are ours, declared at the bottom of `theme.css` with their dark values. Do not add a third. The tinted panels behind the drawings on the templates, details, reminders, timeline, relationships, vaults and sharing pages are not grounds: each is an identity colour at 14% (`bg-identity-1/14`), so it follows dark mode on its own.
+- **Shadows are tokens, and there are four.** `shadow-panel` (one pixel under a card's hairline), `shadow-nav-active` (the selected row in a segmented control or a sidebar), `shadow-pop` (what genuinely floats: a menu, a tooltip, the chat card, and the drawn windows on the templates, details, reminders, timeline, relationships, vaults, sharing and API pages, which lift off their tinted panels) and `shadow-showcase` (ours, the product picture under the homepage headline, and nothing else). Tailwind's stock shadows stay removed. Never a coloured shadow, and never a shadow on hover.
+- **No gradients, no background imagery, no photography.** Flat colour only. The one exception is not ours to flatten: the assistants' own marks on the API page (Claude, OpenAI, Gemini, in `_partials/api/brand.blade.php`) are drawn as each company draws them, Gemini's gradients included. They are inline SVG because OpenAI's is `currentColor` and has to follow dark mode, and they are the only third-party marks on the site. **One illustration family**, deliberately: the pandas, at the foot of every page (by day and by night), behind the homepage headline (`_partials/home/top.blade.php`) and on the rule under the blog index heading (`_partials/blog/index.blade.php`, `assets/images/blog-index/garden.webp`). The last two are light mode only until they have night versions. Nothing else gets one.
+- **Two marketing grounds besides the page**: `bg-ground-sage` behind the homepage's agents section, and `bg-ground-cream` for the footer and behind the homepage headline, where it matches the meadow's sky. They are ours, declared at the bottom of `theme.css` with their dark values. Do not add a third. The tinted panels behind the drawings on the templates, details, reminders, timeline, relationships, vaults, sharing and API pages are not grounds: each is an identity colour at 14% (`bg-identity-1/14`), so it follows dark mode on its own.
 - **Primary actions are near-black** (`--color-primary`). There is no accent colour: links, focus rings and selection are all near black too. `text-accent` still compiles, and resolves to the link colour.
 - **Sentence case everywhere**, including buttons, headings and labels. Uppercase only for 11–12px metadata labels, and applied with the `uppercase` utility so translations stay correct.
 - **No emoji**, ever. No exclamation marks, no "Awesome!", no gamification.
@@ -149,7 +149,7 @@ Non-negotiable rules, in rough order of how often they get broken:
 - **Radii are 6 for a control, 8 for a surface, 4 for marks too small for 6.** Fully round is for a badge, a chip and an avatar only. Ordinary buttons are never pills.
 - **One font: the system stack.** Nothing is downloaded. `source/_assets/fonts/Inter-Variable.woff2` is still on disk only because the social card template loads it.
 - **Every `<img>` carries `width` and `height`**, its file's own pixels, so the browser reserves the box before the bytes arrive and nothing on the page moves. The CSS still does the sizing; the attributes only supply the ratio.
-- **`loading="lazy"` below the fold, `fetchpriority="high"` on nothing but the LCP image.** Today that is one image: the screenshot under the headline on the three feature pages. Handing the hint to a second image tells the browser nothing. The mark in the header is eager because it is in the first screenful of every page; the one in the footer is lazy because it never is.
+- **`loading="lazy"` below the fold, `fetchpriority="high"` on nothing but the LCP image.** Today no page has an image as its LCP, so nothing carries the hint. When one does, give it to that one image only: handing it to a second tells the browser nothing. The mark in the header is eager because it is in the first screenful of every page; the one in the footer is lazy because it never is.
 - **Marketing shows the real product.** No device mockups, browser chrome, stock photography or fabricated screenshots. `_partials/home/product.blade.php` draws the product with the application's own classes and tokens for exactly this reason, and is one `role="img"` with a label, because it is a picture of the interface rather than a working copy. People are drawn with `_partials/avatar-initials.blade.php`, never a generated face.
 
 Voice: address the reader as *you*; Monica refers to itself in the third person. Label actions with verbs ("Add a relationship", not "Create relationship entity"). Relationship direction is always a sentence ("Élise is Marc's partner"), never an arrow.
@@ -187,7 +187,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Relationships page                  | `source/_partials/relationships/`, one partial per section |
 | Vaults page                         | `source/_partials/vaults/`, one partial per section |
 | Sharing page                        | `source/_partials/sharing/`, one partial per section |
-| Features tabs                       | `source/_partials/features/`, screenshots in `source/assets/images/features/` |
+| API and MCP page                    | `source/_partials/api/`, one partial per section; the assistants' marks in `api/brand.blade.php` |
 | Shared partials (icon, flag, header)| `source/_partials/`                                 |
 | Locale pages                        | `source/<locale>/`                                  |
 | Blog posts                          | `source/_posts_<locale>/` (Markdown), images in `source/assets/images/blog/` |
@@ -265,7 +265,7 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 
 ## Known gaps
 
-The homepage, the three features pages, pricing, the v3 teaser, the team page, the blog and the two legal pages exist. The templates page ("Your contacts, your way", route key `templates`) the details page ("Remember the details that matter", route key `details`), the reminders page ("Remember to reach out", route key `reminders`), the timeline page ("Keep the moments worth remembering", route key `timeline`), the relationships page ("Understand how people are connected", route key `relationships`), the vaults page ("A place for each part of your life", route key `vaults`) and the sharing page ("Share only what you choose", route key `sharing`) exist too. Docs, the MCP and API references, the changelog and a contact address are unbuilt; their links are `#` placeholders in `links` in `config.php`, which the dead link checker lists without failing.
+The homepage, pricing, the v3 teaser, the team page, the blog and the two legal pages exist. The templates page ("Your contacts, your way", route key `templates`) the details page ("Remember the details that matter", route key `details`), the reminders page ("Remember to reach out", route key `reminders`), the timeline page ("Keep the moments worth remembering", route key `timeline`), the relationships page ("Understand how people are connected", route key `relationships`), the vaults page ("A place for each part of your life", route key `vaults`), the sharing page ("Share only what you choose", route key `sharing`) and the API and MCP page ("Your contacts, connected to your tools", route key `api`) exist too. Docs, the MCP and API references, the changelog and a contact address are unbuilt; their links are `#` placeholders in `links` in `config.php`, which the dead link checker lists without failing.
 
 `source/_partials/icon.blade.php` holds the product's own glyphs, copied from the v3 design system. Six (`chevron-left`, `code`, `download`, `panel`, `phone`, `rss`) have no product glyph and are drawn on the same grid; replace them if the product ever draws its own. An unknown name fails the build. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 
@@ -303,17 +303,13 @@ Posts have no categories: the two the old site used were dropped on import. Addi
 
 See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
 
-## The features pages
+## The features section
 
-Three tabs (contact management, dashboard, journal), three route keys (`features`, `featuresDashboard`, `featuresJournal`), twenty-four pages once the eight locales are counted.
+`/en/features/` has no page. The route key `features` stays because its slug is the prefix the feature pages nest under (`/en/features/timeline/`), and the header's features menu still links into it while the pages its items describe are written. `pageless` in `config.php` keeps it out of the sitemap.
 
-**The tabs are pages, not a JavaScript widget.** Each one has its own URL, so it can be linked to, indexed and translated, which is what the old site did. `_partials/features/tabs.blade.php` renders the strip on all three, and `aria-current="page"` marks the one being read.
+**The slugs nest**, so `timeline` in English is `features/timeline` and the file is `source/en/features/timeline.blade.php`. The helpers need nothing special for this: they only ever join a slug to a locale prefix. A slug with a slash and a file in a subdirectory are the whole trick.
 
-**The slugs nest**, so `featuresDashboard` in English is `features/dashboard` and the file is `source/en/features/dashboard.blade.php`. The helpers need nothing special for this: they only ever join a slug to a locale prefix. A slug with a slash and a file in a subdirectory are the whole trick.
-
-**One partial builds all three.** `_partials/features/page.blade.php` holds a table of which copy block, which screenshot and whether the API section follows, keyed by the route name, so each of the twenty-four page files is four lines of front matter and an `@include`.
-
-The screenshots came from the old site and were cropped on the way in: the browser window drawn around each one, and the drop shadow behind it, are both things the design system forbids. The annotations that were pinned onto them as red labels are now an ordinary list beside the picture, which is what makes them survive a phone, a screen reader and a translation running longer than English.
+Each feature page is its own route key with its own partials directory (see the table above), and its breadcrumb is Home then the page itself: there is no Features crumb, because there is no Features page.
 
 ## Docs
 

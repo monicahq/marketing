@@ -16,9 +16,6 @@ return [
             'home' => "Accueil",
             'v3' => "Monica v3",
             'pricing' => "Tarifs",
-            'features' => "Fonctionnalités",
-            'featuresDashboard' => "Tableau de bord",
-            'featuresJournal' => "Journal",
             'blog' => "Blog",
             'terms' => "Conditions d’utilisation",
             'team' => "Équipe",
@@ -31,6 +28,7 @@ return [
             'relationships' => "Relations",
             'vaults' => "Coffres",
             'sharing' => "Partage",
+            'api' => "API et MCP",
             'page' => "Page :number",
         ],
 
@@ -86,24 +84,6 @@ return [
             'description' => "Monica v3 est une reconstruction complète du CRM personnel open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source. Avant la fin de 2026.",
         ],
 
-        // Un bloc par onglet des fonctionnalités : chaque onglet a sa propre
-        // URL, et un moteur de recherche qui trouve les trois doit pouvoir les
-        // distinguer.
-        'features' => [
-            'title' => "Gestion des contacts — les fonctionnalités de Monica",
-            'description' => "Notez ce que vous savez des personnes qui comptent pour vous : relations, coordonnées, notes privées, appels, rappels et cadeaux, le tout sur une même fiche de contact.",
-        ],
-
-        'featuresDashboard' => [
-            'title' => "Le tableau de bord — les fonctionnalités de Monica",
-            'description' => "Le tableau de bord de Monica montre qui vous avez consulté en dernier, ce qui arrive ensuite, vos notes favorites et les appels que vous avez passés, pour vous concentrer sur ce qui compte vraiment.",
-        ],
-
-        'featuresJournal' => [
-            'title' => "Le journal — les fonctionnalités de Monica",
-            'description' => "Écrivez des entrées de journal, indiquez comment s’est passée votre journée et relisez les activités avec vos contacts que Monica consigne automatiquement.",
-        ],
-
         'templates' => [
             'title' => "Vos contacts, à votre façon : les modèles de contact de Monica",
             'description' => "Créez des modèles de contact avec vos champs, sections et onglets. Un modèle par cercle, des versions publiées quand vous êtes prêt, des sections à partager.",
@@ -137,6 +117,11 @@ return [
         'sharing' => [
             'title' => "Partagez seulement ce que vous choisissez : le partage dans Monica",
             'description' => "Partagez certaines sections de la fiche d’un contact par un lien en lecture seule. Choisissez ce qu’il montre, donnez-lui une date de fin ou un mot de passe, voyez quand il a été ouvert et révoquez-le à tout moment.",
+        ],
+
+        'api' => [
+            'title' => "Vos contacts, reliés à vos outils : l’API et le serveur MCP de Monica",
+            'description' => "Utilisez Monica avec Claude, ChatGPT, Gemini ou vos propres scripts. Connectez un assistant au serveur MCP de Monica, ou construisez votre propre connexion avec l’API JSON et une clé d’API.",
         ],
 
         'personalCrm' => [
@@ -2011,6 +1996,123 @@ return [
         ],
     ],
 
+    /**
+     * La page API et MCP, « Vos contacts, reliés à vos outils ». Les noms des
+     * assistants (Claude, ChatGPT, Gemini) sont des noms de produits et restent
+     * les mêmes dans toutes les langues, ils sont donc dans le modèle. Les noms
+     * des outils et la requête de l’exemple de code aussi, car c’est du code.
+     */
+    'api' => [
+        // Des mots que plusieurs dessins utilisent.
+        'explore' => "Explorer l’API",
+
+        'hero' => [
+            'title' => "Vos contacts, reliés à vos outils.",
+            'intro' => "Utilisez Monica avec Claude, ChatGPT, Gemini ou vos propres scripts. Retrouvez un contact, notez un moment ou programmez un rappel depuis les outils que vous utilisez déjà.",
+            'lede' => "Connectez-vous par MCP quand votre assistant le permet, ou construisez votre propre connexion avec l’API.",
+            'cta' => "Créer votre compte",
+            'label' => "Une conversation avec Claude sur la semaine à venir, avec Monica connectée. Vous demandez : Joey a son audition mercredi, rappelle-moi mardi prochain de lui demander comment il le vit. Claude utilise l’outil create_reminder de Monica, qui ajoute le rappel Demander à Joey où il en est pour son audition, le mardi 20 octobre, dans le coffre Personnel, et répond que Monica vous le rappellera ce jour-là.",
+            'chat' => "La semaine à venir",
+            'connected' => "Monica connectée",
+            'ask' => "Joey a son audition mercredi. Rappelle-moi mardi prochain de lui demander comment il le vit.",
+            'reminder' => "Demander à Joey où il en est pour son audition",
+            'when' => "Mardi 20 octobre · Personnel",
+            'done' => "C’est fait. Monica vous rappellera mardi 20 octobre de demander à Joey où il en est pour son audition.",
+        ],
+
+        'conversation' => [
+            'title' => "Gardez Monica près de la conversation.",
+            'lead' => "Vous parlez de la semaine à venir avec votre assistant. L’audition de Joey revient dans la discussion. Programmez un rappel pendant que vous y pensez.",
+            'body' => [
+                "Le serveur MCP de Monica donne aux assistants compatibles des outils pour travailler avec votre compte.",
+                "L’assistant utilise les outils disponibles de Monica pour exécuter votre demande.",
+            ],
+            'label' => "Trois exemples de demandes et l’outil Monica que chacune utilise. Retrouve Chandler Bing dans mon coffre Personnel : search_contacts. Note le dîner d’hier avec Phoebe au Central Perk : create_life_event. Rappelle-moi mardi prochain de demander à Joey où il en est pour son audition : create_reminder.",
+            'examples' => "Exemples de demandes",
+            // L’outil que chaque demande utilise est dans le modèle, dans cet ordre.
+            'requests' => [
+                "« Retrouve Chandler Bing dans mon coffre Personnel. »",
+                "« Note le dîner d’hier avec Phoebe au Central Perk. »",
+                "« Rappelle-moi mardi prochain de demander à Joey où il en est pour son audition. »",
+            ],
+        ],
+
+        'assistants' => [
+            'title' => "Claude, ChatGPT, Gemini et bien d’autres.",
+            'lead' => "MCP est un standard de connexion partagé. Il permet aux assistants de travailler avec des applications comme Monica.",
+            'body' => [
+                "Utilisez un client capable de se connecter au serveur MCP distant de Monica. Selon le produit, l’offre et la configuration, il peut s’agir de Claude, de ChatGPT, d’un outil basé sur Gemini ou d’une autre application compatible MCP.",
+                "La prise en charge varie d’un client à l’autre : le nom d’un assistant ne garantit pas à lui seul qu’il peut se connecter. Suivez le guide de connexion de Monica pour vérifier les prérequis.",
+            ],
+            'guide' => "Lire le guide de connexion des assistants",
+            'label' => "Les assistants qui peuvent se connecter à Monica : Claude, ChatGPT, les outils basés sur Gemini et les autres clients compatibles MCP.",
+            'gemini' => "Outils basés sur Gemini",
+            'others' => "Autres clients compatibles MCP",
+        ],
+
+        'scripts' => [
+            'title' => "Vos scripts aussi peuvent participer.",
+            'lead' => "L’API JSON offre à vos propres logiciels un moyen de travailler avec Monica.",
+            'body' => [
+                "Créez des contacts et des coffres, notez des événements de vie, gérez des rappels ou construisez des modèles. Importez des contacts depuis un autre système ou reliez Monica à un flux de travail que vous avez déjà.",
+                "Les requêtes utilisent une clé d’API. Les réponses reviennent en JSON.",
+            ],
+            'label' => "Une requête à l’API de Monica qui crée un contact nommé Gunther dans un coffre, autorisée par une clé d’API, et la réponse : 201 Created, avec l’identifiant du nouveau contact, son prénom et son coffre.",
+        ],
+
+        'coverage' => [
+            'title' => "Utile dès aujourd’hui. Et en progression.",
+            'lead' => "Voici la part de Monica que vous pouvez actuellement atteindre grâce à ces connexions :",
+            'caption' => "La part de Monica que l’API JSON et MCP atteignent",
+            'operations' => "Opérations utilisateur prises en charge",
+            'feature' => "Couverture des fonctionnalités",
+            // L’API JSON d’abord, puis MCP.
+            'operationsValues' => ["55 sur 76", "34 sur 76"],
+            'featureValues' => ["72,4 %", "44,7 %"],
+            'tools' => "Monica propose :tools, couvrant :endpoints.",
+            'toolsCount' => "87 outils MCP",
+            'endpoints' => "60,8 % de ses 143 points d’accès API",
+            'audit' => "Ces chiffres proviennent d’un audit du code source daté du :date. La couverture des fonctionnalités s’appuie sur une liste de 76 opérations utilisateur ; la couverture des points d’accès compte les routes d’API une à une. Ils mesurent la disponibilité, pas la fiabilité ni le taux de réussite d’un assistant.",
+            'date' => "13 octobre 2026",
+        ],
+
+        'scope' => [
+            'title' => "Sachez ce que vous pouvez faire.",
+            'lead' => "Les deux connexions permettent de retrouver et de créer des contacts, de noter des événements de vie, de gérer les rappels manuels et de travailler sur les modèles.",
+            'body' => [
+                "Certaines choses se font encore dans l’application web : lire ou modifier toutes les informations personnalisées d’un contact, gérer les relations entre les personnes et créer des liens de partage.",
+                "L’API permet aussi de gérer les coffres et les onglets de modèle. MCP ne propose pas encore ces opérations.",
+            ],
+            'label' => "Ce que chaque connexion atteint. Par l’API et MCP : retrouver des contacts, créer des contacts, noter des événements de vie, gérer les rappels manuels et travailler sur les modèles. Par l’API seulement, pour l’instant : gérer les coffres et gérer les onglets de modèle. Seulement dans l’application web : toutes les informations personnalisées d’un contact, les relations entre les personnes et les liens de partage.",
+            'groups' => [
+                ['title' => "API et MCP", 'items' => ["Retrouver des contacts", "Créer des contacts", "Noter des événements de vie", "Gérer les rappels manuels", "Travailler sur les modèles"]],
+                ['title' => "API seulement, pour l’instant", 'items' => ["Gérer les coffres", "Gérer les onglets de modèle"]],
+                ['title' => "Dans l’application web", 'items' => ["Toutes les informations personnalisées d’un contact", "Les relations entre les personnes", "Les liens de partage"]],
+            ],
+        ],
+
+        'access' => [
+            'title' => "Vous choisissez l’accès.",
+            'lead' => "Créez et révoquez des clés d’API dans vos réglages. Consultez les assistants connectés et déconnectez-les quand vous avez terminé.",
+            'body' => "Les connexions fonctionnent au sein de votre compte, par les opérations que Monica expose. Les informations qu’un assistant récupère sont transmises au service qui l’exécute, alors choisissez un service à qui vous confiez ces détails.",
+            'label' => "Vos connexions dans les réglages de Monica. Assistants connectés : Claude, utilisé il y a 4 minutes, et ChatGPT, utilisé il y a 3 jours, chacun avec un bouton pour le déconnecter. Clés d’API : une nommée Import depuis l’ancien carnet d’adresses, se terminant par 3f9a, avec un bouton pour la révoquer, et un bouton pour créer une nouvelle clé.",
+            'assistants' => "Assistants connectés",
+            // Claude d’abord, puis ChatGPT.
+            'used' => ["Utilisé il y a 4 minutes", "Utilisé il y a 3 jours"],
+            'disconnect' => "Déconnecter",
+            'keys' => "Clés d’API",
+            'newKey' => "Nouvelle clé",
+            'keyName' => "Import depuis l’ancien carnet d’adresses",
+            'revoke' => "Révoquer",
+        ],
+
+        'closing' => [
+            'title' => "Commencez par une tâche utile.",
+            'body' => "Notez le dîner avec Phoebe. Programmez un rappel pour l’audition de Joey. Ajoutez un contact depuis votre propre script.",
+            'connect' => "Connecter un assistant",
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.
@@ -2197,89 +2299,6 @@ return [
             "Merci de vous intéresser au projet.",
         ],
         'signature' => "Regis Freyd et Alexis Saettler",
-    ],
-
-    /**
-     * Les trois pages de fonctionnalités, qui partagent une barre d’onglets et
-     * une même rangée de conclusion.
-     *
-     * La copie est celle de l’ancien site, phrase par phrase : c’est la copie
-     * marketing du propriétaire, et cette version est une refonte, pas une
-     * réécriture. Les annotations étaient des étiquettes rouges épinglées
-     * autour de la capture d’écran ; ici, elles forment une liste à côté de
-     * l’image, pour survivre à un téléphone, à un lecteur d’écran et à une
-     * traduction plus longue que l’anglais.
-     */
-    'features' => [
-        'tabsLabel' => "Fonctionnalités",
-        'tabs' => [
-            'features' => "Gestion des contacts",
-            'featuresDashboard' => "Tableau de bord complet",
-            'featuresJournal' => "Journal",
-        ],
-
-        'calloutsLabel' => "Sur cet écran",
-
-        'contacts' => [
-            'title' => "Comment les gens gardent le fil de ce qui compte.",
-            'lede' => "Notez ce que vous savez des personnes qui comptent pour vous. Et n’oubliez plus jamais un seul détail à leur sujet.",
-            'imageAlt' => "Une fiche de contact Monica : relations, coordonnées, notes, appels, rappels et cadeaux.",
-            'callouts' => [
-                "Voyez d’un coup d’œil les informations importantes de votre contact",
-                "Indiquez les noms des conjoints, des enfants et même des animaux.",
-                "Ajoutez toutes les façons de joindre cette personne : téléphone, e-mail, pseudo Whatsapp, et bien plus encore.",
-                "Ajoutez des notes, privées, à propos de cette personne.",
-                "Indiquez chaque fois que vous appelez des personnes dont vous avez peu de nouvelles, pour qu’on vous rappelle de les appeler à l’avenir.",
-                "Ajoutez des rappels pour les dates ou les événements importants. Certains rappels sont remplis automatiquement pour vous (les anniversaires, par exemple).",
-                "Gérez les cadeaux offerts ou que vous souhaitez offrir. Indiquez si vous devez de l’argent ou si on vous en doit.",
-            ],
-        ],
-
-        'dashboard' => [
-            'title' => "Voyez rapidement ce qui compte et ce qui arrive ensuite",
-            'lede' => "Pour vous concentrer sur ce qui compte vraiment pour vous.",
-            'imageAlt' => "Le tableau de bord de Monica : contacts consultés récemment, prochains rappels, notes favorites et appels consignés.",
-            'callouts' => [
-                "Voyez qui vous avez consulté en dernier",
-                "La liste des prochains événements ou rappels concernant vos contacts",
-                "Consultez vos notes favorites à propos de vos contacts",
-                "Gardez une trace des appels passés avec les personnes qui comptent pour vous",
-            ],
-        ],
-
-        'journal' => [
-            'title' => "Documentez votre vie. Et voyez comment vous évoluez.",
-            'lede' => "Écrivez des entrées de journal. Indiquez rapidement comment s’est passée votre journée. Historique d’activité automatique.",
-            'imageAlt' => "Le journal de Monica : le déroulé de la journée, les activités consignées avec les contacts et les entrées écrites.",
-            'callouts' => [
-                "Indiquez comment s’est passée votre journée.",
-                "Le journal liste automatiquement toutes les activités avec vos contacts.",
-                "Le journal vous permet aussi d’écrire des entrées. Voyez-le comme votre journal intime en ligne.",
-                "Dans une prochaine version, nous afficherons de belles statistiques sur vos journées et vos activités.",
-            ],
-        ],
-
-        'pillars' => [
-            [
-                'title' => "Tout au même endroit",
-                'body' => "Gérez, organisez et suivez toutes les interactions avec vos contacts à un endroit central.",
-            ],
-            [
-                'title' => "Sur le web",
-                'body' => "Accédez facilement à Monica, hébergée sur vos serveurs ou sur les nôtres.",
-            ],
-            [
-                'title' => "Interface moderne",
-                'body' => "Monica est belle et très simple à utiliser.",
-            ],
-        ],
-
-        'api' => [
-            'title' => "Appréciée des utilisateurs. Adorée des développeurs.",
-            'body' => "Nos utilisateurs apprécient la rapidité et la simplicité du produit. Les développeurs adorent l’API, qui leur permet d’automatiser Monica comme ils l’entendent.",
-            'body2' => "Importez ou exportez facilement vos contacts et leurs données grâce à la puissante API REST de Monica, ou utilisez l’API pour automatiser de nombreuses parties de l’application.",
-            'imageAlt' => "Les routes de l’API de Monica, ouvertes dans un éditeur de code.",
-        ],
     ],
 
     'notFound' => [

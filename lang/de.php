@@ -14,9 +14,6 @@ return [
             'home' => "Startseite",
             'v3' => "Monica v3",
             'pricing' => "Preise",
-            'features' => "Funktionen",
-            'featuresDashboard' => "Dashboard",
-            'featuresJournal' => "Tagebuch",
             'blog' => "Blog",
             'terms' => "Nutzungsbedingungen",
             'team' => "Team",
@@ -29,6 +26,7 @@ return [
             'relationships' => "Beziehungen",
             'vaults' => "Tresore",
             'sharing' => "Teilen",
+            'api' => "API und MCP",
             'page' => "Seite :number",
         ],
 
@@ -84,23 +82,6 @@ return [
             'description' => "Monica v3 ist ein vollständiger Neubau des quelloffenen persönlichen CRM: Einträge, die Sie selbst gestalten, ein mit allem verbundenes Journal, eine vollständige API und eine echte mobile Erfahrung. Weiterhin quelloffen. Vor Ende 2026.",
         ],
 
-        // Ein Block je Funktionen-Tab: jeder Tab hat seine eigene URL, und eine
-        // Suchmaschine, die alle drei findet, soll sie unterscheiden können.
-        'features' => [
-            'title' => "Kontaktverwaltung — die Funktionen von Monica",
-            'description' => "Halten Sie fest, was Sie über die Menschen wissen, die Ihnen wichtig sind: Beziehungen, Kontaktdaten, private Notizen, Anrufe, Erinnerungen und Geschenke, alles auf einem Eintrag.",
-        ],
-
-        'featuresDashboard' => [
-            'title' => "Das Dashboard — die Funktionen von Monica",
-            'description' => "Das Dashboard von Monica zeigt, wen Sie zuletzt angesehen haben, was als Nächstes ansteht, Ihre bevorzugten Notizen und die geführten Anrufe, damit Sie sich auf das Wesentliche konzentrieren können.",
-        ],
-
-        'featuresJournal' => [
-            'title' => "Das Journal — die Funktionen von Monica",
-            'description' => "Schreiben Sie Journaleinträge, halten Sie fest, wie Ihr Tag verlaufen ist, und lesen Sie die Aktivitäten mit Ihren Kontakten, die Monica automatisch protokolliert.",
-        ],
-
         'templates' => [
             'title' => "Ihre Kontakte, auf Ihre Art: Kontaktvorlagen in Monica",
             'description' => "Bauen Sie Kontaktvorlagen mit eigenen Feldern, Abschnitten und Tabs. Verschiedene Vorlagen für Freunde, Familie und Beruf, Versionen mit Veröffentlichung, wenn sie fertig sind, und teilbare Abschnitte.",
@@ -134,6 +115,11 @@ return [
         'sharing' => [
             'title' => "Teilen Sie nur, was Sie wählen: Teilen in Monica",
             'description' => "Teilen Sie ausgewählte Abschnitte der Seite eines Kontakts über einen Link, der nur lesen lässt. Sie bestimmen, was er zeigt, geben ihm ein Enddatum oder ein Passwort, sehen, wann er geöffnet wurde, und können ihn jederzeit widerrufen.",
+        ],
+
+        'api' => [
+            'title' => "Ihre Kontakte, verbunden mit Ihren Werkzeugen: der MCP-Server und die API von Monica",
+            'description' => "Nutzen Sie Monica mit Claude, ChatGPT, Gemini oder Ihren eigenen Skripten. Verbinden Sie einen Assistenten über den MCP-Server von Monica oder bauen Sie mit der JSON API und einem API-Schlüssel Ihre eigene Verbindung.",
         ],
 
         'personalCrm' => [
@@ -2007,6 +1993,123 @@ return [
         ],
     ],
 
+    /**
+     * Die Seite zu API und MCP, „Ihre Kontakte, verbunden mit Ihren Werkzeugen“.
+     * Die Namen der Assistenten (Claude, ChatGPT, Gemini) sind Produktnamen und
+     * in jeder Sprache gleich, deshalb stehen sie im Template. Ebenso die
+     * Werkzeugnamen und die Anfrage im Codebeispiel, denn das ist Code.
+     */
+    'api' => [
+        // Wörter, die mehr als eine Zeichnung nutzt.
+        'explore' => "API ansehen",
+
+        'hero' => [
+            'title' => "Ihre Kontakte, verbunden mit Ihren Werkzeugen.",
+            'intro' => "Nutzen Sie Monica mit Claude, ChatGPT, Gemini oder Ihren eigenen Skripten. Schlagen Sie einen Kontakt nach, halten Sie einen Moment fest oder legen Sie eine Erinnerung an, mit den Werkzeugen, die Sie ohnehin nutzen.",
+            'lede' => "Verbinden Sie sich über MCP, wo Ihr Assistent es unterstützt, oder bauen Sie mit der API Ihre eigene Verbindung.",
+            'cta' => "Konto erstellen",
+            'label' => "Eine Unterhaltung mit Claude über die kommende Woche, mit verbundener Monica. Sie schreiben: Joey hat am Mittwoch sein Vorsprechen, erinnere mich nächsten Dienstag daran, ihn zu fragen, wie er sich dabei fühlt. Claude nutzt das Monica-Werkzeug create_reminder, das die Erinnerung „Joey nach seinem Vorsprechen fragen“ am Dienstag, 20. Oktober, im Tresor „Privat“ anlegt, und antwortet, dass Monica Sie an diesem Tag erinnern wird.",
+            'chat' => "Die kommende Woche",
+            'connected' => "Monica verbunden",
+            'ask' => "Joey hat am Mittwoch sein Vorsprechen. Erinnere mich nächsten Dienstag daran, ihn zu fragen, wie er sich dabei fühlt.",
+            'reminder' => "Joey nach seinem Vorsprechen fragen",
+            'when' => "Dienstag, 20. Oktober · Privat",
+            'done' => "Erledigt. Monica erinnert Sie am Dienstag, 20. Oktober, daran, Joey nach seinem Vorsprechen zu fragen.",
+        ],
+
+        'conversation' => [
+            'title' => "Halten Sie Monica nah an der Unterhaltung.",
+            'lead' => "Sie sprechen mit Ihrem Assistenten über die kommende Woche. Joeys Vorsprechen kommt zur Sprache. Legen Sie eine Erinnerung an, solange Sie daran denken.",
+            'body' => [
+                "Der MCP-Server von Monica gibt kompatiblen Assistenten Werkzeuge, um mit Ihrem Konto zu arbeiten.",
+                "Der Assistent nutzt die verfügbaren Werkzeuge von Monica, um Ihre Anfrage auszuführen.",
+            ],
+            'label' => "Drei Beispielanfragen und das Monica-Werkzeug, das jede nutzt. Suche Chandler Bing in meinem Tresor „Privat“: search_contacts. Halte das Abendessen mit Phoebe gestern im Central Perk fest: create_life_event. Erinnere mich nächsten Dienstag daran, Joey nach seinem Vorsprechen zu fragen: create_reminder.",
+            'examples' => "Beispielanfragen",
+            // Das Werkzeug zu jeder Anfrage steht im Template, in dieser Reihenfolge.
+            'requests' => [
+                "„Suche Chandler Bing in meinem Tresor ‚Privat‘.“",
+                "„Halte das Abendessen mit Phoebe gestern im Central Perk fest.“",
+                "„Erinnere mich nächsten Dienstag daran, Joey nach seinem Vorsprechen zu fragen.“",
+            ],
+        ],
+
+        'assistants' => [
+            'title' => "Claude, ChatGPT, Gemini und Platz für weitere.",
+            'lead' => "MCP ist ein gemeinsamer Verbindungsstandard. Er lässt Assistenten mit Anwendungen wie Monica arbeiten.",
+            'body' => [
+                "Nutzen Sie einen Client, der die Verbindung zum Remote-MCP-Server von Monica unterstützt. Je nach Produkt, Tarif und Einrichtung kann das Claude, ChatGPT, ein Gemini-basiertes Werkzeug oder eine andere MCP-kompatible Anwendung sein.",
+                "Die Unterstützung unterscheidet sich zwischen den Clients: Der Name eines Assistenten allein garantiert nicht, dass er sich verbinden kann. Prüfen Sie die Voraussetzungen in der Verbindungsanleitung von Monica.",
+            ],
+            'guide' => "Anleitung zur Verbindung von Assistenten lesen",
+            'label' => "Die Assistenten, die sich mit Monica verbinden können: Claude, ChatGPT, Gemini-basierte Werkzeuge und andere MCP-kompatible Clients.",
+            'gemini' => "Gemini-basierte Werkzeuge",
+            'others' => "Andere MCP-kompatible Clients",
+        ],
+
+        'scripts' => [
+            'title' => "Auch Ihre Skripte können mitmachen.",
+            'lead' => "Die JSON API gibt Ihrer eigenen Software eine Möglichkeit, mit Monica zu arbeiten.",
+            'body' => [
+                "Legen Sie Kontakte und Tresore an, halten Sie Lebensereignisse fest, verwalten Sie Erinnerungen oder bauen Sie Vorlagen. Übernehmen Sie Kontakte aus einem anderen System oder verbinden Sie Monica mit einem Ablauf, den Sie schon haben.",
+                "Anfragen nutzen einen API-Schlüssel. Antworten kommen als JSON zurück.",
+            ],
+            'label' => "Eine Anfrage an die API von Monica, die in einem Tresor einen Kontakt namens Gunther anlegt, mit einem API-Schlüssel autorisiert, und die Antwort: 201 Created, mit der ID des neuen Kontakts, seinem Vornamen und seinem Tresor.",
+        ],
+
+        'coverage' => [
+            'title' => "Heute nützlich. Es wächst weiter.",
+            'lead' => "So viel von Monica erreichen Sie derzeit über diese Verbindungen:",
+            'caption' => "Wie viel von Monica die JSON API und MCP erreichen",
+            'operations' => "Unterstützte Nutzeraktionen",
+            'feature' => "Funktionsabdeckung",
+            // Zuerst die JSON API, dann MCP.
+            'operationsValues' => ["55 von 76", "34 von 76"],
+            'featureValues' => ["72,4 %", "44,7 %"],
+            'tools' => "Monica bietet :tools und deckt damit :endpoints ab.",
+            'toolsCount' => "87 MCP-Werkzeuge",
+            'endpoints' => "60,8 % seiner 143 API-Endpunkte",
+            'audit' => "Diese Zahlen stammen aus einer Prüfung des Quellcodes vom :date. Die Funktionsabdeckung nutzt eine Checkliste mit 76 Nutzeraktionen, die Endpunktabdeckung zählt einzelne API-Routen. Sie messen die Verfügbarkeit, nicht die Zuverlässigkeit oder die Erfolgsquote eines Assistenten.",
+            'date' => "13. Oktober 2026",
+        ],
+
+        'scope' => [
+            'title' => "Wissen Sie, was möglich ist.",
+            'lead' => "Beide Verbindungen unterstützen das Finden und Anlegen von Kontakten, das Festhalten von Lebensereignissen, die Verwaltung manueller Erinnerungen und die Arbeit an Vorlagen.",
+            'body' => [
+                "Manches geschieht weiterhin in der Web-App: die vollständigen eigenen Angaben eines Kontakts lesen oder bearbeiten, Beziehungen zwischen Menschen verwalten und Freigabelinks erstellen.",
+                "Die API unterstützt außerdem die Verwaltung von Tresoren und Vorlagen-Tabs. MCP bietet diese Aktionen noch nicht.",
+            ],
+            'label' => "Was jede Verbindung erreicht. Über API und MCP: Kontakte finden, Kontakte anlegen, Lebensereignisse festhalten, manuelle Erinnerungen verwalten und Vorlagen bearbeiten. Vorerst nur über die API: Tresore verwalten und Vorlagen-Tabs verwalten. Nur in der Web-App: die vollständigen eigenen Angaben eines Kontakts, Beziehungen zwischen Menschen und Freigabelinks.",
+            'groups' => [
+                ['title' => "API und MCP", 'items' => ["Kontakte finden", "Kontakte anlegen", "Lebensereignisse festhalten", "Manuelle Erinnerungen verwalten", "Vorlagen bearbeiten"]],
+                ['title' => "Vorerst nur API", 'items' => ["Tresore verwalten", "Vorlagen-Tabs verwalten"]],
+                ['title' => "In der Web-App", 'items' => ["Die vollständigen eigenen Angaben eines Kontakts", "Beziehungen zwischen Menschen", "Freigabelinks"]],
+            ],
+        ],
+
+        'access' => [
+            'title' => "Sie bestimmen den Zugriff.",
+            'lead' => "Erstellen und widerrufen Sie API-Schlüssel in Ihren Einstellungen. Prüfen Sie verbundene Assistenten und trennen Sie sie, wenn Sie fertig sind.",
+            'body' => "Verbindungen arbeiten in Ihrem Konto über die Aktionen, die Monica bereitstellt. Angaben, die ein Assistent abruft, gehen an den Dienst, der diesen Assistenten betreibt. Wählen Sie also einen Dienst, dem Sie diese Angaben anvertrauen.",
+            'label' => "Ihre Verbindungen in den Einstellungen von Monica. Verbundene Assistenten: Claude, zuletzt vor 4 Minuten genutzt, und ChatGPT, zuletzt vor 3 Tagen genutzt, jeweils mit einer Schaltfläche zum Trennen. API-Schlüssel: einer namens „Import aus altem Adressbuch“, endet auf 3f9a, mit einer Schaltfläche zum Widerrufen, und eine Schaltfläche zum Erstellen eines neuen Schlüssels.",
+            'assistants' => "Verbundene Assistenten",
+            // Zuerst Claude, dann ChatGPT.
+            'used' => ["Zuletzt vor 4 Minuten genutzt", "Zuletzt vor 3 Tagen genutzt"],
+            'disconnect' => "Trennen",
+            'keys' => "API-Schlüssel",
+            'newKey' => "Neuer Schlüssel",
+            'keyName' => "Import aus altem Adressbuch",
+            'revoke' => "Widerrufen",
+        ],
+
+        'closing' => [
+            'title' => "Beginnen Sie mit einer nützlichen Aufgabe.",
+            'body' => "Halten Sie das Abendessen mit Phoebe fest. Legen Sie eine Erinnerung an Joeys Vorsprechen an. Fügen Sie einen Kontakt aus Ihrem eigenen Skript hinzu.",
+            'connect' => "Assistenten verbinden",
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.
@@ -2193,89 +2296,6 @@ return [
             "Danke, dass Sie sich das Projekt ansehen.",
         ],
         'signature' => "Regis Freyd und Alexis Saettler",
-    ],
-
-    /**
-     * Die drei Funktionsseiten, die sich eine Tab-Leiste und eine abschließende
-     * Reihe teilen.
-     *
-     * Der Text ist der der alten Seite, Satz für Satz: Es ist die Marketing-
-     * Copy des Eigentümers, und dieser Aufbau ist eine Neugestaltung, keine
-     * Neufassung. Die Anmerkungen waren dort rote Etiketten rund um den
-     * Screenshot; hier stehen sie als gewöhnliche Liste daneben, damit sie ein
-     * Telefon, einen Screenreader und eine Übersetzung überstehen, die länger
-     * ausfällt als das Englische.
-     */
-    'features' => [
-        'tabsLabel' => "Funktionen",
-        'tabs' => [
-            'features' => "Kontaktverwaltung",
-            'featuresDashboard' => "Umfassendes Dashboard",
-            'featuresJournal' => "Journal",
-        ],
-
-        'calloutsLabel' => "Auf diesem Bildschirm",
-
-        'contacts' => [
-            'title' => "Wie Menschen im Blick behalten, was wichtig ist.",
-            'lede' => "Halten Sie fest, was Sie über die Menschen wissen, die Ihnen wichtig sind. Und vergessen Sie nie wieder eine Kleinigkeit über sie.",
-            'imageAlt' => "Ein Monica-Kontakteintrag: Beziehungen, Kontaktdaten, Notizen, Anrufe, Erinnerungen und Geschenke.",
-            'callouts' => [
-                "Sehen Sie auf einen Blick die wichtigen Informationen zu Ihrem Kontakt",
-                "Halten Sie die Namen von Partnerinnen und Partnern, Kindern und sogar Haustieren fest.",
-                "Fügen Sie alle Wege hinzu, diese Person zu erreichen: Telefon, E-Mail, Whatsapp-Name und vieles mehr.",
-                "Fügen Sie Notizen zu dieser Person hinzu, die nur Sie sehen.",
-                "Halten Sie jedes Telefonat mit Menschen fest, von denen Sie selten hören, damit Sie später daran erinnert werden, sie anzurufen.",
-                "Fügen Sie Erinnerungen an wichtige Daten oder Ereignisse hinzu. Einige Erinnerungen werden automatisch für Sie angelegt (Geburtstage zum Beispiel).",
-                "Verwalten Sie verschenkte oder geplante Geschenke. Halten Sie fest, ob Sie Geld schulden oder ob Ihnen Geld geschuldet wird.",
-            ],
-        ],
-
-        'dashboard' => [
-            'title' => "Sehen Sie schnell, was wichtig ist und was als Nächstes kommt",
-            'lede' => "Damit Sie sich auf das konzentrieren können, was Ihnen wirklich wichtig ist.",
-            'imageAlt' => "Das Dashboard von Monica: zuletzt angesehene Kontakte, kommende Erinnerungen, bevorzugte Notizen und protokollierte Anrufe.",
-            'callouts' => [
-                "Sehen Sie, wen Sie zuletzt angesehen haben",
-                "Die Liste der nächsten geplanten Ereignisse oder Erinnerungen zu Ihren Kontakten",
-                "Lesen Sie Ihre bevorzugten Notizen zu Ihren Kontakten",
-                "Behalten Sie die Anrufe mit den Menschen im Blick, die Ihnen wichtig sind",
-            ],
-        ],
-
-        'journal' => [
-            'title' => "Dokumentieren Sie Ihr Leben. Und sehen Sie, wie Sie sich entwickeln.",
-            'lede' => "Schreiben Sie Journaleinträge. Halten Sie kurz fest, wie Ihr Tag verlaufen ist. Automatische Aktivitätsprotokolle.",
-            'imageAlt' => "Das Journal von Monica: der Verlauf des Tages, die protokollierten Aktivitäten mit Kontakten und geschriebene Einträge.",
-            'callouts' => [
-                "Halten Sie fest, wie Ihr Tag verlaufen ist.",
-                "Das Journal listet alle Aktivitäten mit Ihren Kontakten automatisch auf.",
-                "Im Journal können Sie auch eigene Einträge schreiben. Betrachten Sie es als Ihr privates Online-Tagebuch.",
-                "In einer künftigen Version zeigen wir schöne Statistiken zu Ihren Tagen und Aktivitäten.",
-            ],
-        ],
-
-        'pillars' => [
-            [
-                'title' => "Alles an einem Ort",
-                'body' => "Verwalten, ordnen und verfolgen Sie alle Interaktionen mit Ihren Kontakten an einem zentralen Ort.",
-            ],
-            [
-                'title' => "Im Web",
-                'body' => "Greifen Sie einfach auf Monica zu, gehostet auf Ihren oder unseren Servern.",
-            ],
-            [
-                'title' => "Moderne Oberfläche",
-                'body' => "Monica ist schön und sehr einfach zu bedienen.",
-            ],
-        ],
-
-        'api' => [
-            'title' => "Geliebt von Nutzern. Verehrt von Entwicklern.",
-            'body' => "Unsere Nutzerinnen und Nutzer schätzen, wie schnell und einfach das Produkt ist. Entwickler lieben die API, mit der sie Monica nach eigenem Ermessen automatisieren können.",
-            'body2' => "Importieren oder exportieren Sie Ihre Kontakte und deren Daten mühelos über die leistungsfähige REST-API von Monica, oder automatisieren Sie damit viele Bereiche der Anwendung.",
-            'imageAlt' => "Die API-Routen von Monica, geöffnet in einem Code-Editor.",
-        ],
     ],
 
     'notFound' => [

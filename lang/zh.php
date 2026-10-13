@@ -27,17 +27,11 @@ return [
          * Kept apart from `nav` on purpose. A nav label is written to be
          * scanned in a bar four items wide; a breadcrumb is read out in a
          * search result and can afford to say what the page is.
-         *
-         * `features` is "Features" both as its own page and as the parent of
-         * the two other tabs, so one URL never carries two names.
          */
         'breadcrumb' => [
             'home' => "首页",
             'v3' => "Monica v3",
             'pricing' => "价格",
-            'features' => "功能",
-            'featuresDashboard' => "强大的仪表盘",
-            'featuresJournal' => "日记",
             'blog' => "博客",
             'terms' => "使用条款",
             'team' => "团队",
@@ -50,6 +44,7 @@ return [
             'relationships' => "关系",
             'vaults' => "保险库",
             'sharing' => "分享",
+            'api' => "API 和 MCP",
             'page' => "第 :number 页",
         ],
 
@@ -110,23 +105,6 @@ return [
             'description' => "Monica v3 是这款开源个人 CRM 的彻底重写：由你设计的记录、与一切相连的日记、完整的 API，以及真正好用的移动端体验。依然开源。将在 2026 年底前推出。",
         ],
 
-        // One block per features tab, because each tab is its own URL and a
-        // crawler that finds all three should be able to tell them apart.
-        'features' => [
-            'title' => "联系人管理：Monica 功能",
-            'description' => "写下你对在乎的人的了解：关系、联系方式、私人笔记、通话、提醒和礼物，全都放在一条联系人记录里。",
-        ],
-
-        'featuresDashboard' => [
-            'title' => "仪表盘：Monica 功能",
-            'description' => "Monica 仪表盘会显示你最近查看过谁、接下来有什么安排、你收藏的笔记和你打过的电话，让你专注于真正重要的事。",
-        ],
-
-        'featuresJournal' => [
-            'title' => "日记：Monica 功能",
-            'description' => "写日记，记录这一天过得怎么样，还可以查看 Monica 为你自动记录的与联系人的活动。",
-        ],
-
         'templates' => [
             'title' => "你的联系人，你做主：Monica 联系人模板",
             'description' => "用你自己的字段、分区和标签页来创建联系人模板。为朋友、家人和工作分别设计模板，准备好再发布版本，还能分享分区。",
@@ -160,6 +138,11 @@ return [
         'sharing' => [
             'title' => "只分享你选定的内容：Monica 分享功能",
             'description' => "通过只读链接分享联系人页面上选定的分区。你来决定它显示什么，可以设置失效日期或密码，看到它何时被打开，并随时撤销。",
+        ],
+
+        'api' => [
+            'title' => "让你的联系人连接你的工具：Monica API 与 MCP 服务器",
+            'description' => "在 Claude、ChatGPT、Gemini 或你自己的脚本里使用 Monica。通过 MCP 或 JSON API 查找联系人、记录生活事件、设置提醒，访问权限由你决定。",
         ],
 
         'personalCrm' => [
@@ -2024,6 +2007,123 @@ return [
         ],
     ],
 
+    /**
+     * The API and MCP page, "Your contacts, connected to your tools". The
+     * assistants' names (Claude, ChatGPT, Gemini) are product names and are
+     * the same in every language, so they are in the template. So are the
+     * tool names and the request in the code sample, which are code.
+     */
+    'api' => [
+        // Words more than one drawing uses.
+        'explore' => "探索 API",
+
+        'hero' => [
+            'title' => "让你的联系人，连接你的工具。",
+            'intro' => "在 Claude、ChatGPT、Gemini 或你自己的脚本里使用 Monica。用你已经在用的工具，查找联系人、记录一个时刻，或设置提醒。",
+            'lede' => "在你的助手支持 MCP 的地方通过 MCP 连接，也可以用 API 搭建你自己的连接。",
+            'cta' => "创建你的账户",
+            'label' => "与 Claude 的一段对话，内容是接下来一周，已连接 Monica。你说：Joey 周三要试镜，下周二提醒我问问他心情怎么样。Claude 使用 Monica 的 create_reminder 工具，在“个人”保险库里添加了提醒“问问 Joey 试镜的事”，日期是 10 月 20 日周二，并回复说 Monica 会在那天提醒你。",
+            'chat' => "接下来的一周",
+            'connected' => "已连接 Monica",
+            'ask' => "Joey 周三要试镜。下周二提醒我问问他心情怎么样。",
+            'reminder' => "问问 Joey 试镜的事",
+            'when' => "10 月 20 日周二 · 个人",
+            'done' => "好了。Monica 会在 10 月 20 日周二提醒你，问问 Joey 试镜的事。",
+        ],
+
+        'conversation' => [
+            'title' => "让 Monica 贴近你的对话。",
+            'lead' => "你正在和助手聊接下来的一周，聊到了 Joey 的试镜。趁着想起来，设一个提醒。",
+            'body' => [
+                "Monica 的 MCP 服务器为兼容的助手提供工具，用来处理你的账户。",
+                "助手会使用 Monica 现有的工具来完成你的请求。",
+            ],
+            'label' => "三个示例请求，以及每个请求用到的 Monica 工具。在我的“个人”保险库里找到 Chandler Bing：search_contacts。记录昨天和 Phoebe 在 Central Perk 吃晚饭：create_life_event。提醒我下周二问问 Joey 试镜的事：create_reminder。",
+            'examples' => "示例请求",
+            // The tool each request uses is in the template, in this order.
+            'requests' => [
+                "“在我的‘个人’保险库里找到 Chandler Bing。”",
+                "“记录昨天和 Phoebe 在 Central Perk 吃晚饭。”",
+                "“提醒我下周二问问 Joey 试镜的事。”",
+            ],
+        ],
+
+        'assistants' => [
+            'title' => "Claude、ChatGPT、Gemini，还有更多可能。",
+            'lead' => "MCP 是一种通用的连接标准，让助手可以和 Monica 这样的应用协同工作。",
+            'body' => [
+                "请使用支持连接 Monica 远程 MCP 服务器的客户端。根据产品、套餐和设置的不同，这可能是 Claude、ChatGPT、基于 Gemini 的工具，或其他兼容 MCP 的应用。",
+                "各个客户端的支持情况并不一致：光有助手的名字，并不能保证它能连接。请按照 Monica 的连接指南确认具体要求。",
+            ],
+            'guide' => "阅读助手连接指南",
+            'label' => "可以连接 Monica 的助手：Claude、ChatGPT、基于 Gemini 的工具，以及其他兼容 MCP 的客户端。",
+            'gemini' => "基于 Gemini 的工具",
+            'others' => "其他兼容 MCP 的客户端",
+        ],
+
+        'scripts' => [
+            'title' => "你的脚本也可以加入。",
+            'lead' => "JSON API 让你自己的软件也能使用 Monica。",
+            'body' => [
+                "创建联系人和保险库，记录生活事件，管理提醒，或构建模板。把联系人从另一个系统导入，或让 Monica 接入你已有的工作流程。",
+                "请求使用 API 密钥，响应以 JSON 返回。",
+            ],
+            'label' => "向 Monica 的 API 发出的一个请求：在某个保险库里创建名为 Gunther 的联系人，使用 API 密钥授权。以及响应：201 Created，包含新联系人的 id、名字和所在的保险库。",
+        ],
+
+        'coverage' => [
+            'title' => "今天已经好用，还在不断完善。",
+            'lead' => "通过这些连接，你目前可以使用 Monica 的这些部分：",
+            'caption' => "JSON API 和 MCP 覆盖了 Monica 的多少功能",
+            'operations' => "支持的用户操作",
+            'feature' => "功能覆盖率",
+            // JSON API first, then MCP.
+            'operationsValues' => ["76 项中的 55 项", "76 项中的 34 项"],
+            'featureValues' => ["72.4%", "44.7%"],
+            'tools' => "Monica 提供 :tools，覆盖 :endpoints。",
+            'toolsCount' => "87 个 MCP 工具",
+            'endpoints' => "143 个 API 端点中的 60.8%",
+            'audit' => "这些数据来自日期为 :date 的源代码审计。功能覆盖率依据一份包含 76 项用户操作的清单；端点覆盖率统计的是单个 API 路由。它们衡量的是可用性，而不是可靠性或助手的成功率。",
+            'date' => "2026 年 10 月 13 日",
+        ],
+
+        'scope' => [
+            'title' => "了解你能做什么。",
+            'lead' => "两种连接都支持查找和创建联系人、记录生活事件、管理手动提醒，以及处理模板。",
+            'body' => [
+                "有些事仍需在网页应用里完成：查看或编辑联系人的全部自定义信息、管理人与人之间的关系，以及创建分享链接。",
+                "API 还支持管理保险库和模板标签页。MCP 暂时还没有提供这些操作。",
+            ],
+            'label' => "每种连接能做什么。API 和 MCP 都可以：查找联系人、创建联系人、记录生活事件、管理手动提醒，以及处理模板。目前只有 API 可以：管理保险库和管理模板标签页。只能在网页应用里完成：联系人的全部自定义信息、人与人之间的关系，以及分享链接。",
+            'groups' => [
+                ['title' => "API 和 MCP", 'items' => ["查找联系人", "创建联系人", "记录生活事件", "管理手动提醒", "处理模板"]],
+                ['title' => "目前仅限 API", 'items' => ["管理保险库", "管理模板标签页"]],
+                ['title' => "在网页应用里", 'items' => ["联系人的全部自定义信息", "人与人之间的关系", "分享链接"]],
+            ],
+        ],
+
+        'access' => [
+            'title' => "访问权限由你决定。",
+            'lead' => "在设置里创建和撤销 API 密钥。查看已连接的助手，用完就断开。",
+            'body' => "连接在你的账户内运行，只通过 Monica 开放的操作工作。助手取得的信息会传给运行该助手的服务，所以请选择你信任的服务来处理这些细节。",
+            'label' => "Monica 设置里的连接。已连接的助手：Claude，4 分钟前使用过；ChatGPT，3 天前使用过，两者各有一个断开按钮。API 密钥：一个名为“从旧通讯录导入”的密钥，以 3f9a 结尾，带有撤销按钮，另有一个创建新密钥的按钮。",
+            'assistants' => "已连接的助手",
+            // Claude first, then ChatGPT.
+            'used' => ["4 分钟前使用", "3 天前使用"],
+            'disconnect' => "断开连接",
+            'keys' => "API 密钥",
+            'newKey' => "新建密钥",
+            'keyName' => "从旧通讯录导入",
+            'revoke' => "撤销",
+        ],
+
+        'closing' => [
+            'title' => "从一件有用的小事开始。",
+            'body' => "记录和 Phoebe 的晚饭。为 Joey 的试镜设一个提醒。用你自己的脚本添加一个联系人。",
+            'connect' => "连接一个助手",
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.
@@ -2225,90 +2325,6 @@ return [
             "感谢你来了解这个项目。",
         ],
         'signature' => "Regis Freyd 和 Alexis Saettler",
-    ],
-
-    /**
-     * The three features pages, which share one tab strip and one closing row.
-     *
-     * The copy is the old site's, sentence for sentence, because it is the
-     * owner's marketing copy and this build is a redesign rather than a
-     * rewrite. The annotations were red labels pinned around the screenshot
-     * there; here they are an ordinary list beside it, so they survive a phone,
-     * a screen reader and a translation that runs longer than English.
-     *
-     * `pillars` and `api` are shared by all three tabs, which is why they sit
-     * outside the per-tab blocks.
-     */
-    'features' => [
-        'tabsLabel' => "功能",
-        'tabs' => [
-            'features' => "联系人管理",
-            'featuresDashboard' => "强大的仪表盘",
-            'featuresJournal' => "日记",
-        ],
-
-        'calloutsLabel' => "此界面中",
-
-        'contacts' => [
-            'title' => "人们如何记住重要的事。",
-            'lede' => "写下你对所关心的人的了解，从此不再忘记关于他们的任何一件事。",
-            'imageAlt' => "Monica 的联系人记录：关系、联系方式、笔记、通话、提醒和礼物。",
-            'callouts' => [
-                "一眼浏览联系人的重要信息",
-                "标注伴侣、孩子，甚至宠物的名字。",
-                "添加联系此人的各种方式：电话、电子邮件、WhatsApp 昵称等等。",
-                "添加关于此人的笔记，仅你自己可见。",
-                "每次给不常联系的人打电话时都记上一笔，以便将来被提醒再打给他们。",
-                "为重要的日期或事件添加提醒。有些提醒会自动为你填好（例如生日）。",
-                "管理已送出或想要送出的礼物。标明你是欠别人钱，还是别人欠你钱。",
-            ],
-        ],
-
-        'dashboard' => [
-            'title' => "快速看到什么重要，接下来有什么",
-            'lede' => "让你专注于真正对你重要的事。",
-            'imageAlt' => "Monica 仪表盘：最近查看的联系人、即将到来的提醒、收藏的笔记和已记录的通话。",
-            'callouts' => [
-                "查看你最近看过谁",
-                "列出关于你的联系人的下一个计划事件或提醒",
-                "查看你收藏的关于联系人的笔记",
-                "记录你与所关心的人之间打过的电话",
-            ],
-        ],
-
-        'journal' => [
-            'title' => "记录你的生活，看见自己的变化。",
-            'lede' => "撰写日记。快速标注这一天过得如何。自动生成的活动记录。",
-            'imageAlt' => "Monica 日记：这一天过得如何、与联系人一起记录的活动，以及撰写的日记。",
-            'callouts' => [
-                "标注你这一天过得如何。",
-                "日记会自动列出你与联系人的所有活动。",
-                "日记还可以让你撰写日记条目。把它当作你私密的在线日记。",
-                "在未来的版本中，我们会展示关于你的日常和活动的精美统计。",
-            ],
-        ],
-
-        'pillars' => [
-            [
-                'title' => "一站式管理",
-                'body' => "在一个集中的地方管理、整理并追踪你与联系人之间的所有互动。",
-            ],
-            [
-                'title' => "基于网页",
-                'body' => "轻松访问 Monica，无论它托管在你的服务器上还是我们的服务器上。",
-            ],
-            [
-                'title' => "现代化界面",
-                'body' => "Monica 美观，而且使用起来非常简单。",
-            ],
-        ],
-
-        'api' => [
-            'title' => "用户喜爱，开发者钟爱。",
-            'body' => "我们的用户对产品的快速和简单感到满意。开发者则喜爱这套 API，它让他们可以按自己的想法自动化 Monica。",
-            'body2' => "借助 Monica 强大的 REST API，轻松导入或导出你的联系人及其数据，也可以用 API 自动化应用中的许多环节。",
-            'imageAlt' => "在代码编辑器中打开的 Monica API 路由。",
-        ],
     ],
 
     'notFound' => [

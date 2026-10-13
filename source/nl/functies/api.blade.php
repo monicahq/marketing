@@ -1,9 +1,9 @@
 ---
 locale: nl
-page: features
+page: api
 ---
 @extends('_layouts.base')
 
 @section('body')
-    @include('_partials.features.page')
+    @include('_partials.api.page')
 @endsection

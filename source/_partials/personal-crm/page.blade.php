@@ -300,7 +300,7 @@
             </div>
 
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="{{ $page->route('features') }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['monica']['currentCta'] }}</a>
+                <a href="{{ $page->route('details') }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['monica']['currentCta'] }}</a>
                 <a href="{{ $page->route('v3') }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['monica']['v3Cta'] }}</a>
                 <a href="{{ $page->route('privacy') }}" class="mn-btn mn-btn-ghost no-underline hover:no-underline">{{ $copy['monica']['privacyCta'] }}</a>
             </div>

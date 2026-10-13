@@ -366,15 +366,11 @@ return [
         ],
 
         /**
-         * The features section is three pages behind one tab strip, so its
-         * slugs nest: /en/features/, /en/features/dashboard/ and
-         * /en/features/journal/. A slug carrying a slash needs nothing special
-         * from the helpers, because they only ever join it to a locale prefix,
-         * and Jigsaw builds a nested directory from a nested source path.
-         *
-         * Three keys rather than one page with client-side tabs: each tab is a
-         * URL somebody can send to a friend, which is what the old site did and
-         * what a crawler needs to index all three.
+         * The features section has no page of its own. Its slug is still the
+         * prefix the feature pages nest under (/en/features/timeline/), and
+         * the header's features menu still links to it while the pages those
+         * items describe are being written, so the key stays. `pageless`
+         * below keeps it out of the sitemap.
          */
         'features' => [
             'en' => 'features',
@@ -385,28 +381,6 @@ return [
             'nl' => 'functies',
             'zh' => 'features',
             'ru' => 'vozmozhnosti',
-        ],
-
-        'featuresDashboard' => [
-            'en' => 'features/dashboard',
-            'fr' => 'fonctionnalites/tableau-de-bord',
-            'de' => 'funktionen/dashboard',
-            'es' => 'funcionalidades/panel',
-            'pt' => 'recursos/painel',
-            'nl' => 'functies/dashboard',
-            'zh' => 'features/dashboard',
-            'ru' => 'vozmozhnosti/panel',
-        ],
-
-        'featuresJournal' => [
-            'en' => 'features/journal',
-            'fr' => 'fonctionnalites/journal',
-            'de' => 'funktionen/tagebuch',
-            'es' => 'funcionalidades/diario',
-            'pt' => 'recursos/diario',
-            'nl' => 'functies/dagboek',
-            'zh' => 'features/journal',
-            'ru' => 'vozmozhnosti/dnevnik',
         ],
 
         // "Blog" is the same word in every language we ship. Declared per locale
@@ -566,7 +540,28 @@ return [
             'zh' => 'features/sharing',
             'ru' => 'vozmozhnosti/dostup',
         ],
+
+        // "Your contacts, connected to your tools": the MCP server and the
+        // JSON API. The header's "Assistants and API" menu item leads here.
+        // API is the same word in every language we ship, so only the
+        // section prefix changes.
+        'api' => [
+            'en' => 'features/api',
+            'fr' => 'fonctionnalites/api',
+            'de' => 'funktionen/api',
+            'es' => 'funcionalidades/api',
+            'pt' => 'recursos/api',
+            'nl' => 'functies/api',
+            'zh' => 'features/api',
+            'ru' => 'vozmozhnosti/api',
+        ],
     ],
+
+    /**
+     * Route keys with no page behind them. The sitemap skips them, because a
+     * sitemap entry is a promise that the URL answers.
+     */
+    'pageless' => ['features'],
 
     // ---------------------------------------------------------------- lastmod
 
@@ -587,15 +582,13 @@ return [
      *
      * Every key in `routes` needs an entry here, except `blog`: the index's
      * lastmod is the newest post it lists, which the sitemap works out from the
-     * archive rather than from a number somebody has to remember.
+     * archive rather than from a number somebody has to remember. A key in
+     * `pageless` needs none either, because it has no page to date.
      */
     'lastmod' => [
         'home' => '2026-10-11',
         'v3' => '2026-08-06',
         'pricing' => '2026-10-12',
-        'features' => '2026-08-06',
-        'featuresDashboard' => '2026-08-06',
-        'featuresJournal' => '2026-08-06',
         'terms' => '2026-08-06',
         'team' => '2026-08-06',
         'privacy' => '2026-08-06',
@@ -607,6 +600,7 @@ return [
         'relationships' => '2026-10-13',
         'vaults' => '2026-10-13',
         'sharing' => '2026-10-13',
+        'api' => '2026-10-13',
     ],
 
     // ------------------------------------------------------------------ links

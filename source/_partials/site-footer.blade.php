@@ -3,7 +3,6 @@
         [
             'label' => $page->t('footer.productLabel'),
             'links' => [
-                ['label' => $page->t('nav.features'), 'href' => $page->route('features')],
                 ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing')],
                 ['label' => $page->t('footer.personalCrm'), 'href' => $page->route('personalCrm')],
                 ['label' => $page->t('nav.v3'), 'href' => $page->route('v3')],

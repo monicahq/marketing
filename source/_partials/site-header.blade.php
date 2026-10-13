@@ -8,15 +8,16 @@
     // shows it best: the details page for what lives on a contact, the
     // reminders page for reminders, the timeline page for the timeline, the
     // relationships page for the people around them, the vaults page for
-    // vaults, and the homepage's own sections for assistants and privacy.
+    // vaults, the sharing page for sharing, the API page for assistants and
+    // the API, and the homepage's own section for privacy.
     // The fragments are
     // ids on those sections, so the dead link checker fails if one is renamed.
     // Listed here rather than in `lang/`, because a URL is not copy.
     $menu = $page->t('nav.menu');
     $menuLinks = [
         [$details, $page->route('reminders'), $page->route('timeline')],
-        [$page->route('relationships'), $page->route('vaults'), $features],
-        ["{$features}#api", "{$home}#agents", "{$home}#privacy"],
+        [$page->route('relationships'), $page->route('vaults'), $page->route('sharing')],
+        ["{$features}#api", $page->route('api'), "{$home}#privacy"],
     ];
 
     // One identity colour per column, as the design draws it. Literal class

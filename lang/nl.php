@@ -17,9 +17,6 @@ return [
             'home' => "Start",
             'v3' => "Monica v3",
             'pricing' => "Prijzen",
-            'features' => "Functies",
-            'featuresDashboard' => "Krachtig dashboard",
-            'featuresJournal' => "Dagboek",
             'blog' => "Blog",
             'terms' => "Gebruiksvoorwaarden",
             'team' => "Team",
@@ -32,6 +29,7 @@ return [
             'relationships' => "Relaties",
             'vaults' => "Kluizen",
             'sharing' => "Delen",
+            'api' => "API en MCP",
             'page' => "Pagina :number",
         ],
 
@@ -83,21 +81,6 @@ return [
             'description' => "Monica v3 is een volledige herbouw van de open source persoonlijke CRM: records die je zelf ontwerpt, een dagboek dat overal aan vastzit, een complete API en een fatsoenlijke mobiele ervaring. Nog steeds open source. Verwacht voor het eind van 2026.",
         ],
 
-        'features' => [
-            'title' => "Contactbeheer — functies van Monica",
-            'description' => "Schrijf op wat je weet over de mensen die je dierbaar zijn: relaties, contactgegevens, privénotities, telefoontjes, herinneringen en cadeaus, allemaal op één contactrecord.",
-        ],
-
-        'featuresDashboard' => [
-            'title' => "Het dashboard — functies van Monica",
-            'description' => "Het dashboard van Monica laat zien wie je het laatst hebt bekeken, wat eraan komt, je favoriete notities en de telefoontjes die je hebt gepleegd, zodat je je kunt richten op wat er echt toe doet.",
-        ],
-
-        'featuresJournal' => [
-            'title' => "Het dagboek — functies van Monica",
-            'description' => "Schrijf dagboeknotities, leg vast hoe je dag was en lees de activiteiten met je contacten die Monica automatisch voor je bijhoudt.",
-        ],
-
         'templates' => [
             'title' => "Je contacten, op jouw manier: contactsjablonen in Monica",
             'description' => "Bouw contactsjablonen met je eigen velden, secties en tabbladen. Verschillende sjablonen voor vrienden, familie en werk, versies die je publiceert als ze klaar zijn en secties die je kunt delen.",
@@ -131,6 +114,11 @@ return [
         'sharing' => [
             'title' => "Deel alleen wat jij kiest: delen in Monica",
             'description' => "Deel geselecteerde secties van een contactpagina via een link met alleen leesrechten. Kies wat hij toont, geef hem een einddatum of een wachtwoord, zie wanneer hij werd geopend en trek hem op elk moment in.",
+        ],
+
+        'api' => [
+            'title' => "Je contacten, verbonden met je tools: de Monica API en MCP-server",
+            'description' => "Gebruik Monica met Claude, ChatGPT, Gemini of je eigen scripts. Verbind een assistent via Monica’s MCP-server, of bouw je eigen koppeling met de JSON API en een API-sleutel.",
         ],
 
         'personalCrm' => [
@@ -2005,6 +1993,117 @@ return [
         ],
     ],
 
+    'api' => [
+        // Words more than one drawing uses.
+        'explore' => "Bekijk de API",
+
+        'hero' => [
+            'title' => "Je contacten, verbonden met je tools.",
+            'intro' => "Gebruik Monica met Claude, ChatGPT, Gemini of je eigen scripts. Zoek een contact op, leg een moment vast of stel een herinnering in vanuit de tools die je al gebruikt.",
+            'lede' => "Verbind via MCP waar je assistent dat ondersteunt, of bouw je eigen koppeling met de API.",
+            'cta' => "Maak je account aan",
+            'label' => "Een gesprek met Claude over de week die komt, met Monica verbonden. Jij vraagt: Joey heeft woensdag zijn auditie, herinner me volgende week dinsdag eraan om te vragen hoe hij zich erbij voelt. Claude gebruikt Monica’s tool create_reminder, die de herinnering Joey vragen naar zijn auditie toevoegt, op dinsdag 20 oktober, in de kluis Persoonlijk, en antwoordt dat Monica je die dag eraan herinnert.",
+            'chat' => "De week die komt",
+            'connected' => "Monica verbonden",
+            'ask' => "Joey heeft woensdag zijn auditie. Herinner me volgende week dinsdag eraan om te vragen hoe hij zich erbij voelt.",
+            'reminder' => "Joey vragen naar zijn auditie",
+            'when' => "Dinsdag 20 oktober · Persoonlijk",
+            'done' => "Klaar. Monica herinnert je op dinsdag 20 oktober eraan om Joey te vragen naar zijn auditie.",
+        ],
+
+        'conversation' => [
+            'title' => "Houd Monica dicht bij het gesprek.",
+            'lead' => "Je praat met je assistent over de week die komt. Joeys auditie komt ter sprake. Stel een herinnering in terwijl je eraan denkt.",
+            'body' => [
+                "Monica’s MCP-server geeft compatibele assistenten tools om met je account te werken.",
+                "De assistent gebruikt de beschikbare tools van Monica om je verzoek uit te voeren.",
+            ],
+            'label' => "Drie voorbeeldverzoeken en de Monica-tool die elk gebruikt. Zoek Chandler Bing in mijn kluis Persoonlijk: search_contacts. Leg vast dat ik gisteren met Phoebe heb gegeten in Central Perk: create_life_event. Herinner me volgende week dinsdag eraan om Joey te vragen naar zijn auditie: create_reminder.",
+            'examples' => "Voorbeeldverzoeken",
+            // The tool each request uses is in the template, in this order.
+            'requests' => [
+                "“Zoek Chandler Bing in mijn kluis Persoonlijk.”",
+                "“Leg vast dat ik gisteren met Phoebe heb gegeten in Central Perk.”",
+                "“Herinner me volgende week dinsdag eraan om Joey te vragen naar zijn auditie.”",
+            ],
+        ],
+
+        'assistants' => [
+            'title' => "Claude, ChatGPT, Gemini en ruimte voor meer.",
+            'lead' => "MCP is een gedeelde verbindingsstandaard. Daarmee kunnen assistenten met applicaties als Monica werken.",
+            'body' => [
+                "Gebruik een client die verbinding met Monica’s externe MCP-server ondersteunt. Afhankelijk van het product, het abonnement en de configuratie kan dat Claude zijn, ChatGPT, een tool op basis van Gemini of een andere MCP-compatibele applicatie.",
+                "De ondersteuning verschilt per client: de naam van een assistent alleen garandeert niet dat hij kan verbinden. Volg de verbindingsgids van Monica om de vereisten te controleren.",
+            ],
+            'guide' => "Lees de verbindingsgids voor assistenten",
+            'label' => "De assistenten die met Monica kunnen verbinden: Claude, ChatGPT, tools op basis van Gemini en andere MCP-compatibele clients.",
+            'gemini' => "Tools op basis van Gemini",
+            'others' => "Andere MCP-compatibele clients",
+        ],
+
+        'scripts' => [
+            'title' => "Je scripts kunnen ook meedoen.",
+            'lead' => "Met de JSON API kan je eigen software met Monica werken.",
+            'body' => [
+                "Maak contacten en kluizen aan, leg levensgebeurtenissen vast, beheer herinneringen of bouw sjablonen. Haal contacten uit een ander systeem binnen of verbind Monica met een workflow die je al hebt.",
+                "Verzoeken gebruiken een API-sleutel. Antwoorden komen terug als JSON.",
+            ],
+            'label' => "Een verzoek aan Monica’s API dat een contact genaamd Gunther in een kluis aanmaakt, geautoriseerd met een API-sleutel, en het antwoord: 201 Created, met de id van het nieuwe contact, zijn voornaam en zijn kluis.",
+        ],
+
+        'coverage' => [
+            'title' => "Nu al nuttig. Nog in groei.",
+            'lead' => "Dit is hoeveel van Monica je op dit moment via deze verbindingen kunt bereiken:",
+            'caption' => "Hoeveel van Monica de JSON API en MCP bereiken",
+            'operations' => "Ondersteunde gebruikersacties",
+            'feature' => "Dekking van functies",
+            // JSON API first, then MCP.
+            'operationsValues' => ["55 van 76", "34 van 76"],
+            'featureValues' => ["72,4%", "44,7%"],
+            'tools' => "Monica biedt :tools, goed voor :endpoints.",
+            'toolsCount' => "87 MCP-tools",
+            'endpoints' => "60,8% van de 143 API-endpoints",
+            'audit' => "Deze cijfers komen uit een audit van de broncode van :date. De dekking van functies gebruikt een checklist van 76 gebruikersacties, de dekking van endpoints telt afzonderlijke API-routes. Ze meten beschikbaarheid, niet betrouwbaarheid of het slagingspercentage van een assistent.",
+            'date' => "13 oktober 2026",
+        ],
+
+        'scope' => [
+            'title' => "Weet wat je kunt doen.",
+            'lead' => "Beide verbindingen ondersteunen het zoeken en aanmaken van contacten, het vastleggen van levensgebeurtenissen, het beheren van handmatige herinneringen en het werken met sjablonen.",
+            'body' => [
+                "Sommige dingen gebeuren nog in de webapp: de volledige aangepaste gegevens van een contact lezen of bewerken, relaties tussen mensen beheren en deellinks aanmaken.",
+                "De API ondersteunt ook het beheren van kluizen en sjabloontabbladen. MCP biedt die acties nog niet.",
+            ],
+            'label' => "Wat elke verbinding bereikt. Via de API en MCP: contacten zoeken, contacten aanmaken, levensgebeurtenissen vastleggen, handmatige herinneringen beheren en met sjablonen werken. Voorlopig alleen via de API: kluizen beheren en sjabloontabbladen beheren. Alleen in de webapp: de volledige aangepaste gegevens van een contact, relaties tussen mensen en deellinks.",
+            'groups' => [
+                ['title' => "API en MCP", 'items' => ["Contacten zoeken", "Contacten aanmaken", "Levensgebeurtenissen vastleggen", "Handmatige herinneringen beheren", "Met sjablonen werken"]],
+                ['title' => "Voorlopig alleen API", 'items' => ["Kluizen beheren", "Sjabloontabbladen beheren"]],
+                ['title' => "In de webapp", 'items' => ["De volledige aangepaste gegevens van een contact", "Relaties tussen mensen", "Deellinks"]],
+            ],
+        ],
+
+        'access' => [
+            'title' => "Jij kiest de toegang.",
+            'lead' => "Maak API-sleutels aan en trek ze in via je instellingen. Bekijk verbonden assistenten en verbreek de verbinding als je klaar bent.",
+            'body' => "Verbindingen werken binnen je account, via de acties die Monica beschikbaar stelt. Informatie die een assistent ophaalt, wordt doorgegeven aan de dienst die die assistent draait, dus kies een dienst die je die gegevens toevertrouwt.",
+            'label' => "Je verbindingen in Monica’s instellingen. Verbonden assistenten: Claude, 4 minuten geleden voor het laatst gebruikt, en ChatGPT, 3 dagen geleden voor het laatst gebruikt, elk met een knop om de verbinding te verbreken. API-sleutels: een genaamd Import uit oud adresboek, eindigend op 3f9a, met een knop om hem in te trekken, en een knop om een nieuwe sleutel aan te maken.",
+            'assistants' => "Verbonden assistenten",
+            // Claude first, then ChatGPT.
+            'used' => ["4 minuten geleden voor het laatst gebruikt", "3 dagen geleden voor het laatst gebruikt"],
+            'disconnect' => "Verbinding verbreken",
+            'keys' => "API-sleutels",
+            'newKey' => "Nieuwe sleutel",
+            'keyName' => "Import uit oud adresboek",
+            'revoke' => "Intrekken",
+        ],
+
+        'closing' => [
+            'title' => "Begin met één nuttige taak.",
+            'body' => "Leg het etentje met Phoebe vast. Stel een herinnering in over Joeys auditie. Voeg een contact toe vanuit je eigen script.",
+            'connect' => "Verbind een assistent",
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.
@@ -2201,87 +2300,6 @@ return [
             "Bedankt dat je een kijkje bij het project hebt genomen.",
         ],
         'signature' => "Regis Freyd en Alexis Saettler",
-    ],
-
-    /**
-     * De drie functiepagina's, die één tabbalk en één afsluitende rij delen.
-     *
-     * De tekst is die van de oude site, zin voor zin, omdat het de marketingtekst
-     * van de eigenaar is en deze build een herontwerp is en geen herschrijving.
-     * De aantekeningen waren daar rode labels rond de schermafbeelding; hier zijn
-     * het een gewone lijst ernaast, zodat ze een telefoon, een schermlezer en een
-     * vertaling die langer uitvalt dan het Engels overleven.
-     */
-    'features' => [
-        'tabsLabel' => "Functies",
-        'tabs' => [
-            'features' => "Contactbeheer",
-            'featuresDashboard' => "Krachtig dashboard",
-            'featuresJournal' => "Dagboek",
-        ],
-
-        'calloutsLabel' => "Op dit scherm",
-
-        'contacts' => [
-            'title' => "Zo houden mensen bij wat belangrijk is.",
-            'lede' => "Schrijf op wat je weet over de mensen die je dierbaar zijn. En vergeet nooit meer iets over ze.",
-            'imageAlt' => "Een contactrecord in Monica: relaties, contactgegevens, notities, telefoontjes, herinneringen en cadeaus.",
-            'callouts' => [
-                "Zie in één oogopslag de belangrijke informatie over je contact",
-                "Noteer de namen van partners, kinderen en zelfs huisdieren.",
-                "Voeg alle manieren toe waarop je deze persoon kunt bereiken: telefoon, e-mail, WhatsApp-naam en veel meer.",
-                "Voeg notities toe over deze persoon, alleen zichtbaar voor jou.",
-                "Noteer elke keer dat je mensen belt die je niet vaak spreekt, zodat je eraan herinnerd kunt worden ze weer te bellen.",
-                "Voeg herinneringen toe voor belangrijke data of gebeurtenissen. Sommige herinneringen worden automatisch voor je ingevuld (verjaardagen bijvoorbeeld).",
-                "Beheer cadeaus die je hebt gegeven of wilt geven. Noteer of je geld schuldig bent of tegoed hebt.",
-            ],
-        ],
-
-        'dashboard' => [
-            'title' => "Zie snel wat belangrijk is en wat eraan komt",
-            'lede' => "Zodat je je kunt richten op wat er echt toe doet.",
-            'imageAlt' => "Het dashboard van Monica: recent bekeken contacten, komende herinneringen, favoriete notities en genoteerde telefoontjes.",
-            'callouts' => [
-                "Zie wie je het laatst hebt bekeken",
-                "Lijst met komende gebeurtenissen of herinneringen over je contacten",
-                "Bekijk je favoriete notities over je contacten",
-                "Houd bij welke telefoontjes je hebt gepleegd met de mensen die je dierbaar zijn",
-            ],
-        ],
-
-        'journal' => [
-            'title' => "Leg je leven vast. En zie hoe je verandert.",
-            'lede' => "Schrijf dagboeknotities. Geef snel aan hoe je dag was. Automatische activiteitenlogboeken.",
-            'imageAlt' => "Het dagboek van Monica: hoe de dag ging, de vastgelegde activiteiten met contacten en geschreven notities.",
-            'callouts' => [
-                "Geef aan hoe je dag was.",
-                "Het dagboek toont automatisch alle activiteiten met je contacten.",
-                "In het dagboek kun je ook zelf notities schrijven. Zie het als je privédagboek online.",
-                "In een volgende versie tonen we mooie statistieken over je dagen en activiteiten.",
-            ],
-        ],
-
-        'pillars' => [
-            [
-                'title' => "Alles op één plek",
-                'body' => "Beheer, ordent en volg alle contactmomenten met je contacten op één centrale plek.",
-            ],
-            [
-                'title' => "Via het web",
-                'body' => "Gebruik Monica eenvoudig, gehost op jouw servers of de onze.",
-            ],
-            [
-                'title' => "Moderne interface",
-                'body' => "Monica ziet er mooi uit en is heel eenvoudig te gebruiken.",
-            ],
-        ],
-
-        'api' => [
-            'title' => "Geliefd bij gebruikers. Aanbeden door ontwikkelaars.",
-            'body' => "Onze gebruikers zijn blij met hoe snel en eenvoudig het product is. Ontwikkelaars houden van de API waarmee ze Monica naar eigen inzicht kunnen automatiseren.",
-            'body2' => "Importeer of exporteer je contacten en hun gegevens eenvoudig met de krachtige REST-API van Monica, of gebruik de API om allerlei onderdelen van de applicatie te automatiseren.",
-            'imageAlt' => "De API-routes van Monica, geopend in een code-editor.",
-        ],
     ],
 
     'notFound' => [
