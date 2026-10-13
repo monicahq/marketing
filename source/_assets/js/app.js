@@ -184,7 +184,7 @@ Alpine.start();
  * native <details>, so they open, close and take focus with no script at all.
  * What <details> does not do on its own is close when the reader presses
  * Escape or clicks somewhere else, which is what a menu is expected to do.
- * These two listeners add that to any <details data-menu>.
+ * These listeners add that to any <details data-menu>.
  *
  * On the document rather than on each menu, so they survive Turbo swapping
  * <body> without having to be bound again. */
@@ -192,7 +192,18 @@ const openMenus = () => document.querySelectorAll('details[data-menu][open]');
 
 document.addEventListener('click', (event) => {
     openMenus().forEach((menu) => {
-        if (!menu.contains(event.target)) menu.open = false;
+        // A link inside the menu closes it too: a same-page `#fragment` is not
+        // a navigation, so nothing else would, and the panel would sit open
+        // over the section it just jumped to.
+        if (!menu.contains(event.target) || event.target.closest('a')) menu.open = false;
+    });
+});
+
+/* Turbo snapshots the page as it leaves it, and Back restores the snapshot, so
+ * a menu open at that moment would come back open. */
+document.addEventListener('turbo:before-cache', () => {
+    openMenus().forEach((menu) => {
+        menu.open = false;
     });
 });
 
