@@ -442,6 +442,19 @@ return [
             'pt' => 'recursos/lembretes',
             'nl' => 'functies/herinneringen',
         ],
+
+        // "Keep the moments worth remembering": life events, the timeline
+        // they make, and the types and fields behind them. The header's
+        // "Timeline" menu item leads here. Nested under the features section
+        // like the reminders page, and like it, not a tab.
+        'timeline' => [
+            'en' => 'features/timeline',
+            'fr' => 'fonctionnalites/chronologie',
+            'de' => 'funktionen/zeitleiste',
+            'es' => 'funcionalidades/cronologia',
+            'pt' => 'recursos/linha-do-tempo',
+            'nl' => 'functies/tijdlijn',
+        ],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -479,6 +492,7 @@ return [
         'templates' => '2026-10-12',
         'details' => '2026-10-12',
         'reminders' => '2026-10-12',
+        'timeline' => '2026-10-12',
     ],
 
     // ------------------------------------------------------------------ links

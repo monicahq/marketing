@@ -46,6 +46,7 @@ return [
             'templates' => "Contact templates",
             'details' => "Contact details",
             'reminders' => "Reminders",
+            'timeline' => "Timeline",
             'page' => "Page :number",
         ],
 
@@ -136,6 +137,11 @@ return [
         'reminders' => [
             'title' => "Remember to reach out: reminders in Monica",
             'description' => "Set a reminder for a birthday, a big day or a friend you mean to call. Once or on a rhythm, in their time zone, by email or in Monica, and a record of what you remembered.",
+        ],
+
+        'timeline' => [
+            'title' => "Keep the moments worth remembering: the timeline in Monica",
+            'description' => "Record what happened, who was there and the details you want to keep. Life events on everyone’s timeline at once, your own event types and fields, and a look back year by year.",
         ],
 
         'personalCrm' => [
@@ -1483,6 +1489,165 @@ return [
             'title' => "A little help with the follow-through.",
             'body' => "You thought of calling Chandler. Give that thought a day and time.",
             'button' => "Create your account",
+        ],
+    ],
+
+    'timeline' => [
+        // Words more than one drawing uses.
+        'with' => "With :names",
+        'add' => "Add a life event",
+        'optional' => "optional",
+
+        'hero' => [
+            'title' => "Keep the moments worth remembering.",
+            'intro' => "Dinner with friends. A new job. The afternoon everyone still talks about.",
+            'lede' => "Record what happened, who was there, and the details you want to keep. Monica brings those moments together in a timeline you can return to.",
+            'cta' => "Create your account",
+            'label' => "The timeline of a Personal vault in Monica, 102 entries, with 2 that need your attention. In 2026: Thanksgiving at Monica’s on 26 November, at 90 Bedford Street, New York, where Joey wore the stretchy trousers and nobody mentioned the trifle, with Rachel, Ross, Chandler, Joey and Phoebe. And a coffee with Phoebe on 3 October that was meant to be quick, until three hours later she had planned your whole spring. Beside it, from earlier that year, Monica and Chandler’s wedding on 15 May: at the Moondance Diner, then the roof, with Joey as officiant, ordained online, and 43 guests.",
+            'vault' => "Personal",
+            'tabs' => ["Your timeline", "Needs your attention"],
+            'year' => "2026",
+            'count' => "2 entries",
+            'events' => [
+                ['title' => "Thanksgiving at Monica’s", 'date' => "26/11", 'place' => "90 Bedford Street, New York", 'note' => "Joey wore the stretchy trousers. Nobody mentioned the trifle."],
+                ['title' => "Coffee with Phoebe", 'date' => "03/10", 'note' => "Meant to be quick. Three hours later, she had planned my whole spring."],
+            ],
+            'earlier' => "Earlier that year",
+            'wedding' => [
+                'title' => "Monica and Chandler’s wedding",
+                'type' => "Marriage · 15 May",
+                'facts' => [
+                    ['label' => "Where", 'value' => "The Moondance Diner, then the roof"],
+                    ['label' => "Officiant", 'value' => "Joey, ordained online"],
+                ],
+                'more' => "and 38 more",
+            ],
+        ],
+
+        'milestones' => [
+            'title' => "Big milestones. Ordinary Tuesdays.",
+            'body' => [
+                "Monica and Chandler’s wedding deserves an entry. So does a coffee with Phoebe that turned into a three-hour conversation.",
+                "Choose from 40 built-in event types, including calls, meals, visits, trips and new jobs. There is room for everyday moments as well as the occasions everyone puts in a calendar.",
+            ],
+            'label' => "The first step of adding a life event in Monica: choose what happened. Five categories, with Relationships and family selected, and its event types: call, message, meal, visit, time together, marriage and birth, each with the number of fields it asks for.",
+            'step' => "Step 1 of 2 · Choose what happened",
+            'categoriesTitle' => "Categories",
+            'categories' => ["Relationships and family", "Work and education", "Health and wellbeing", "Leisure and culture", "Travel and experiences"],
+            'types' => [
+                ['name' => "Call", 'fields' => "3 fields"],
+                ['name' => "Message", 'fields' => "3 fields"],
+                ['name' => "Meal", 'fields' => "3 fields"],
+                ['name' => "Visit", 'fields' => "2 fields"],
+                ['name' => "Time together", 'fields' => "1 field"],
+                ['name' => "Marriage", 'fields' => "3 fields"],
+                ['name' => "Birth", 'fields' => "1 field"],
+            ],
+        ],
+
+        'moment' => [
+            'title' => "One moment. Everyone who was there.",
+            'lead' => "Thanksgiving at Monica’s involved Rachel, Ross, Chandler, Joey and Phoebe. You should only have to record it once.",
+            'body' => "Add the people who took part, and the event appears on each person’s timeline. If you update the details later, the same change appears on every timeline it belongs to.",
+            'label' => "Thanksgiving at Monica’s, 26 November 2026, recorded once with Rachel, Ross, Chandler, Joey and Phoebe. Below it, three of their timelines, each showing the same Thanksgiving: Rachel’s, above a call on 12 November; Joey’s, above an audition on 14 October; and Phoebe’s, above a coffee with Phoebe on 3 October.",
+            'event' => "Thanksgiving at Monica’s",
+            'when' => "26 November 2026 · recorded once",
+            'date' => "26/11",
+            'timeline' => ":name’s timeline",
+            // The entry under Thanksgiving on each timeline, in the order the
+            // template draws them: Rachel, Joey, Phoebe.
+            'before' => ["Call · 12/11", "Audition · 14/10", "Coffee with Phoebe · 03/10"],
+        ],
+
+        'story' => [
+            'title' => "Keep more than the date.",
+            'lead' => "Where did you go? What made it memorable?",
+            'body' => "Add a place, a description and the details that fit the occasion. A walk in the Hudson Highlands becomes more than a date when you remember that Chandler carried both twins for the last two miles.",
+            'close' => "Write a short line or keep the whole story.",
+            'label' => "The second step of adding a life event in Monica, the details of time together: a walk in the Hudson Highlands, New York, on 15 May 2010. The description is being written: six miles, and Chandler carried both twins for the last two. Ross explained the rock formations the whole way up. Lunch at the ridge.",
+            'heading' => "Time together",
+            'step' => "Step 2 of 2 · The details",
+            'what' => ['label' => "What happened", 'value' => "A walk in the Hudson Highlands"],
+            'when' => ['label' => "When", 'value' => "15 May 2010"],
+            'where' => ['label' => "Where", 'value' => "Hudson Highlands, New York"],
+            'description' => ['label' => "Description", 'value' => "Six miles, and Chandler carried both twins for the last two. Ross explained the rock formations the whole way up. Lunch at the ridge."],
+            'back' => "Back",
+            'add' => "Add the life event",
+        ],
+
+        'years' => [
+            'title' => "Look back, year by year.",
+            'body' => [
+                "Your vault’s timeline brings the events you recorded together, with the most recent first and older entries grouped by year.",
+                "Follow the story from swimming lessons to the first day of school. Open a person’s page to see the events they took part in.",
+            ],
+            'close' => "The dates give you the order. Your notes bring the memories back.",
+            'label' => "A timeline in Monica, most recent first, grouped by year. 2010: a walk in the Hudson Highlands on 15 May. 2009: the twins start kindergarten on 8 September, and Erica breaks her arm on 11 June. 2008: swimming lessons on 17 July. Each entry has its place and a note.",
+            // Newest first. Each event's icon and colour is in the template,
+            // in this order.
+            'years' => [
+                ['year' => "2010", 'count' => "1 entry", 'events' => [
+                    ['title' => "A walk in the Hudson Highlands", 'date' => "15/05", 'place' => "Hudson Highlands, New York", 'note' => "Six miles, and Chandler carried both twins for the last two."],
+                ]],
+                ['year' => "2009", 'count' => "2 entries", 'events' => [
+                    ['title' => "The twins start kindergarten", 'date' => "08/09", 'place' => "An elementary school, Westchester", 'note' => "Jack and Judy drove up to see them go in."],
+                    ['title' => "Erica breaks her arm", 'date' => "11/06", 'place' => "A hospital, Westchester", 'note' => "Off the climbing frame, trying to beat Jack to the top."],
+                ]],
+                ['year' => "2008", 'count' => "1 entry", 'events' => [
+                    ['title' => "Swimming lessons", 'date' => "17/07", 'place' => "A pool, Westchester", 'note' => "Joey offered to teach them. Monica hired somebody."],
+                ]],
+            ],
+        ],
+
+        'traditions' => [
+            'title' => "Make room for your own traditions.",
+            'lead' => "“Meal” works. “Monica’s Thanksgiving” might fit better.",
+            'body' => "Create your own event types, organise them into categories, and choose an icon and colour so they are easy to spot. You can also change the types Monica provides or switch off the ones you do not use.",
+            'label' => "The life event types in Monica. Two of your own in the category Our traditions, Monica’s Thanksgiving and Christmas tree night, then Meal, supplied by Monica, and Interview, switched off. Beside them, Monica’s Thanksgiving being edited: offered when recording, a gift icon, an orange colour picked from eight, in the category Our traditions.",
+            'heading' => "Life event types",
+            'add' => "Add a type",
+            'category' => "Our traditions",
+            'types' => [
+                ['name' => "Monica’s Thanksgiving"],
+                ['name' => "Christmas tree night"],
+                ['name' => "Meal", 'badge' => "Supplied"],
+                ['name' => "Interview", 'status' => "Switched off"],
+            ],
+            'offered' => "Offered when recording",
+            'icon' => "Icon",
+            'colour' => "Colour",
+            'categoryLabel' => "Category",
+        ],
+
+        'fields' => [
+            'title' => "Choose the details each event holds.",
+            'lead' => "A call and a Thanksgiving dinner need different details.",
+            'body' => [
+                "For calls with Rachel, you might keep the channel and a note about what you discussed. For Thanksgiving, you might add who hosted, what you brought, and whether Joey finished the turkey.",
+                "Add your own fields, arrange them in groups, and choose which are required. Changes apply to events you record from then on; earlier entries keep the fields they were recorded with.",
+            ],
+            'label' => "The fields of two life event types in Monica. Call has three: channel, a dropdown of phone, video or voice call in an app; direction, a dropdown; and what you discussed, long text. Monica’s Thanksgiving has three in a group called The dinner: who hosted, a contact, required; what you brought, short text; and did Joey finish the turkey, a dropdown of yes, no or with help, being edited. Saving applies to events recorded from now on, and last year’s entry keeps its fields.",
+            'count' => "3 fields",
+            'required' => "Required",
+            'call' => [
+                'name' => "Call",
+                'rows' => [
+                    ['label' => "Channel", 'type' => "Dropdown", 'options' => ["Phone", "Video", "Voice call in an app"]],
+                    ['label' => "Direction", 'type' => "Dropdown"],
+                    ['label' => "What you discussed", 'type' => "Long text"],
+                ],
+            ],
+            'thanksgiving' => [
+                'name' => "Monica’s Thanksgiving",
+                'group' => "The dinner",
+                'rows' => [
+                    ['label' => "Who hosted", 'type' => "Contact"],
+                    ['label' => "What you brought", 'type' => "Short text"],
+                    ['label' => "Did Joey finish the turkey?", 'type' => "Dropdown", 'options' => ["Yes", "No", "With help"]],
+                ],
+                'note' => "Applies to events you record from now on. Last year’s entry keeps its fields.",
+                'save' => "Save changes",
+            ],
         ],
     ],
 

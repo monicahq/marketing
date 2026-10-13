@@ -28,6 +28,7 @@ return [
             'templates' => "Contactsjablonen",
             'details' => "Contactpagina’s",
             'reminders' => "Herinneringen",
+            'timeline' => "Tijdlijn",
             'page' => "Pagina :number",
         ],
 
@@ -107,6 +108,11 @@ return [
         'reminders' => [
             'title' => "Vergeet niet van je te laten horen: herinneringen in Monica",
             'description' => "Stel een herinnering in voor een verjaardag, een belangrijke dag of een vriend die je al lang wilt bellen. Eenmalig of met een vast ritme, in hun tijdzone, per e-mail of in Monica, en met een overzicht van wat je onthield.",
+        ],
+
+        'timeline' => [
+            'title' => "Bewaar de momenten die het onthouden waard zijn: de tijdlijn in Monica",
+            'description' => "Leg vast wat er gebeurde, wie erbij was en de details die je wilt bewaren. Levensgebeurtenissen op ieders tijdlijn tegelijk, je eigen soorten en velden, en een terugblik jaar na jaar.",
         ],
 
         'personalCrm' => [
@@ -1455,6 +1461,165 @@ return [
             'title' => "Een steuntje in de rug om het ook echt te doen.",
             'body' => "Je dacht eraan om Chandler te bellen. Geef die gedachte een dag en een tijdstip.",
             'button' => "Maak je account aan",
+        ],
+    ],
+
+    'timeline' => [
+        // Words more than one drawing uses.
+        'with' => "Met :names",
+        'add' => "Een levensgebeurtenis toevoegen",
+        'optional' => "optioneel",
+
+        'hero' => [
+            'title' => "Bewaar de momenten die het onthouden waard zijn.",
+            'intro' => "Een etentje met vrienden. Een nieuwe baan. De middag waar iedereen het nog over heeft.",
+            'lede' => "Leg vast wat er gebeurde, wie erbij was en de details die je wilt bewaren. Monica brengt die momenten samen in een tijdlijn waar je altijd naar terug kunt.",
+            'cta' => "Maak je account aan",
+            'label' => "De tijdlijn van een kluis Persoonlijk in Monica, 102 items, waarvan 2 aandacht nodig hebben. In 2026: Thanksgiving bij Monica op 26 november, op 90 Bedford Street, New York, waar Joey de stretchbroek droeg en niemand de trifle noemde, met Rachel, Ross, Chandler, Joey en Phoebe. En een koffie met Phoebe op 3 oktober die kort zou duren, tot ze drie uur later je hele voorjaar had gepland. Ernaast, van eerder dat jaar, de bruiloft van Monica en Chandler op 15 mei: in de Moondance Diner, daarna op het dak, met Joey als ceremoniemeester, online gewijd, en 43 gasten.",
+            'vault' => "Persoonlijk",
+            'tabs' => ["Je tijdlijn", "Heeft aandacht nodig"],
+            'year' => "2026",
+            'count' => "2 items",
+            'events' => [
+                ['title' => "Thanksgiving bij Monica", 'date' => "26-11", 'place' => "90 Bedford Street, New York", 'note' => "Joey droeg de stretchbroek. Niemand noemde de trifle."],
+                ['title' => "Koffie met Phoebe", 'date' => "03-10", 'note' => "Het zou kort duren. Drie uur later had ze mijn hele voorjaar gepland."],
+            ],
+            'earlier' => "Eerder dat jaar",
+            'wedding' => [
+                'title' => "Bruiloft van Monica en Chandler",
+                'type' => "Huwelijk · 15 mei",
+                'facts' => [
+                    ['label' => "Waar", 'value' => "De Moondance Diner, daarna het dak"],
+                    ['label' => "Ceremoniemeester", 'value' => "Joey, online gewijd"],
+                ],
+                'more' => "en nog 38",
+            ],
+        ],
+
+        'milestones' => [
+            'title' => "Grote mijlpalen. Gewone dinsdagen.",
+            'body' => [
+                "De bruiloft van Monica en Chandler verdient een item. Een koffie met Phoebe die uitliep op een gesprek van drie uur ook.",
+                "Kies uit 40 ingebouwde soorten gebeurtenissen, waaronder telefoontjes, maaltijden, bezoekjes, reizen en nieuwe banen. Er is ruimte voor alledaagse momenten, naast de gelegenheden die iedereen in een agenda zet.",
+            ],
+            'label' => "De eerste stap bij het toevoegen van een levensgebeurtenis in Monica: kies wat er gebeurde. Vijf categorieën, met Relaties en familie geselecteerd, en de bijbehorende soorten: telefoontje, bericht, maaltijd, bezoek, tijd samen, huwelijk en geboorte, elk met het aantal velden dat erbij hoort.",
+            'step' => "Stap 1 van 2 · Kies wat er gebeurde",
+            'categoriesTitle' => "Categorieën",
+            'categories' => ["Relaties en familie", "Werk en opleiding", "Gezondheid en welzijn", "Vrije tijd en cultuur", "Reizen en belevenissen"],
+            'types' => [
+                ['name' => "Telefoontje", 'fields' => "3 velden"],
+                ['name' => "Bericht", 'fields' => "3 velden"],
+                ['name' => "Maaltijd", 'fields' => "3 velden"],
+                ['name' => "Bezoek", 'fields' => "2 velden"],
+                ['name' => "Tijd samen", 'fields' => "1 veld"],
+                ['name' => "Huwelijk", 'fields' => "3 velden"],
+                ['name' => "Geboorte", 'fields' => "1 veld"],
+            ],
+        ],
+
+        'moment' => [
+            'title' => "Eén moment. Iedereen die erbij was.",
+            'lead' => "Bij Thanksgiving bij Monica waren Rachel, Ross, Chandler, Joey en Phoebe. Dat hoor je maar één keer vast te leggen.",
+            'body' => "Voeg de mensen toe die meededen, en de gebeurtenis verschijnt op ieders tijdlijn. Pas je de details later aan, dan verschijnt dezelfde wijziging op elke tijdlijn waar ze bij hoort.",
+            'label' => "Thanksgiving bij Monica, 26 november 2026, één keer vastgelegd met Rachel, Ross, Chandler, Joey en Phoebe. Daaronder drie van hun tijdlijnen, die allemaal dezelfde Thanksgiving tonen: die van Rachel, boven een telefoontje op 12 november; die van Joey, boven een auditie op 14 oktober; en die van Phoebe, boven een koffie met Phoebe op 3 oktober.",
+            'event' => "Thanksgiving bij Monica",
+            'when' => "26 november 2026 · één keer vastgelegd",
+            'date' => "26-11",
+            'timeline' => "Tijdlijn van :name",
+            // The entry under Thanksgiving on each timeline, in the order the
+            // template draws them: Rachel, Joey, Phoebe.
+            'before' => ["Telefoontje · 12-11", "Auditie · 14-10", "Koffie met Phoebe · 03-10"],
+        ],
+
+        'story' => [
+            'title' => "Bewaar meer dan de datum.",
+            'lead' => "Waar ging je heen? Wat maakte het onvergetelijk?",
+            'body' => "Voeg een plek toe, een beschrijving en de details die bij de gelegenheid passen. Een wandeling door de Hudson Highlands is meer dan een datum als je je herinnert dat Chandler de laatste drie kilometer allebei de tweelingen droeg.",
+            'close' => "Schrijf een korte regel of bewaar het hele verhaal.",
+            'label' => "De tweede stap bij het toevoegen van een levensgebeurtenis in Monica, de details van tijd samen: een wandeling door de Hudson Highlands, New York, op 15 mei 2010. De beschrijving wordt geschreven: tien kilometer, en Chandler droeg allebei de tweelingen de laatste drie. Ross legde de hele weg omhoog de rotsformaties uit. Lunch op de bergrug.",
+            'heading' => "Tijd samen",
+            'step' => "Stap 2 van 2 · De details",
+            'what' => ['label' => "Wat er gebeurde", 'value' => "Een wandeling door de Hudson Highlands"],
+            'when' => ['label' => "Wanneer", 'value' => "15 mei 2010"],
+            'where' => ['label' => "Waar", 'value' => "Hudson Highlands, New York"],
+            'description' => ['label' => "Beschrijving", 'value' => "Tien kilometer, en Chandler droeg allebei de tweelingen de laatste drie. Ross legde de hele weg omhoog de rotsformaties uit. Lunch op de bergrug."],
+            'back' => "Terug",
+            'add' => "De levensgebeurtenis toevoegen",
+        ],
+
+        'years' => [
+            'title' => "Kijk terug, jaar na jaar.",
+            'body' => [
+                "De tijdlijn van je kluis brengt de gebeurtenissen die je vastlegde samen, met de nieuwste bovenaan en oudere items per jaar gegroepeerd.",
+                "Volg het verhaal van de zwemlessen tot de eerste schooldag. Open de pagina van een persoon om te zien waar die bij betrokken was.",
+            ],
+            'close' => "De data geven je de volgorde. Je notities brengen de herinneringen terug.",
+            'label' => "Een tijdlijn in Monica, de nieuwste bovenaan, per jaar gegroepeerd. 2010: een wandeling door de Hudson Highlands op 15 mei. 2009: de tweeling begint op 8 september aan de kleuterschool, en Erica breekt op 11 juni haar arm. 2008: zwemlessen op 17 juli. Elk item heeft zijn plek en een notitie.",
+            // Newest first. Each event's icon and colour is in the template,
+            // in this order.
+            'years' => [
+                ['year' => "2010", 'count' => "1 item", 'events' => [
+                    ['title' => "Een wandeling door de Hudson Highlands", 'date' => "15-05", 'place' => "Hudson Highlands, New York", 'note' => "Tien kilometer, en Chandler droeg allebei de tweelingen de laatste drie."],
+                ]],
+                ['year' => "2009", 'count' => "2 items", 'events' => [
+                    ['title' => "De tweeling begint aan de kleuterschool", 'date' => "08-09", 'place' => "Een basisschool, Westchester", 'note' => "Jack en Judy reden erheen om te zien hoe ze naar binnen gingen."],
+                    ['title' => "Erica breekt haar arm", 'date' => "11-06", 'place' => "Een ziekenhuis, Westchester", 'note' => "Van het klimrek, toen ze Jack naar de top wilde verslaan."],
+                ]],
+                ['year' => "2008", 'count' => "1 item", 'events' => [
+                    ['title' => "Zwemlessen", 'date' => "17-07", 'place' => "Een zwembad, Westchester", 'note' => "Joey bood aan ze les te geven. Monica huurde iemand in."],
+                ]],
+            ],
+        ],
+
+        'traditions' => [
+            'title' => "Maak ruimte voor je eigen tradities.",
+            'lead' => "‘Maaltijd’ werkt. ‘Thanksgiving bij Monica’ past misschien beter.",
+            'body' => "Maak je eigen soorten gebeurtenissen, deel ze in categorieën in en kies een pictogram en kleur zodat ze makkelijk te herkennen zijn. Je kunt ook de soorten van Monica aanpassen of uitzetten wat je niet gebruikt.",
+            'label' => "De soorten levensgebeurtenissen in Monica. Twee eigen soorten in de categorie Onze tradities, Thanksgiving bij Monica en Kerstboomavond, daarna Maaltijd, geleverd door Monica, en Sollicitatiegesprek, uitgezet. Ernaast wordt Thanksgiving bij Monica bewerkt: aangeboden bij het vastleggen, een cadeaupictogram, een oranje kleur gekozen uit acht, in de categorie Onze tradities.",
+            'heading' => "Soorten levensgebeurtenissen",
+            'add' => "Een soort toevoegen",
+            'category' => "Onze tradities",
+            'types' => [
+                ['name' => "Thanksgiving bij Monica"],
+                ['name' => "Kerstboomavond"],
+                ['name' => "Maaltijd", 'badge' => "Standaard"],
+                ['name' => "Sollicitatiegesprek", 'status' => "Uitgezet"],
+            ],
+            'offered' => "Aangeboden bij het vastleggen",
+            'icon' => "Pictogram",
+            'colour' => "Kleur",
+            'categoryLabel' => "Categorie",
+        ],
+
+        'fields' => [
+            'title' => "Kies welke details elke gebeurtenis bewaart.",
+            'lead' => "Een telefoontje en een Thanksgiving-diner vragen om andere details.",
+            'body' => [
+                "Bij telefoontjes met Rachel bewaar je misschien het kanaal en een notitie over wat jullie bespraken. Bij Thanksgiving voeg je toe wie er gastheer was, wat je meebracht en of Joey de kalkoen heeft opgegeten.",
+                "Voeg je eigen velden toe, zet ze in groepen en kies welke verplicht zijn. Wijzigingen gelden voor gebeurtenissen die je vanaf dan vastlegt. Eerdere items houden de velden waarmee ze zijn vastgelegd.",
+            ],
+            'label' => "De velden van twee soorten levensgebeurtenissen in Monica. Telefoontje heeft er drie: kanaal, een keuzelijst met telefoon, video of spraakoproep in een app; richting, een keuzelijst; en wat jullie bespraken, lange tekst. Thanksgiving bij Monica heeft er drie in een groep die Het diner heet: wie er gastheer was, een contact, verplicht; wat je meebracht, korte tekst; en heeft Joey de kalkoen opgegeten, een keuzelijst met ja, nee of met hulp, die wordt bewerkt. Opslaan geldt voor gebeurtenissen die je vanaf nu vastlegt, en het item van vorig jaar houdt zijn velden.",
+            'count' => "3 velden",
+            'required' => "Verplicht",
+            'call' => [
+                'name' => "Telefoontje",
+                'rows' => [
+                    ['label' => "Kanaal", 'type' => "Keuzelijst", 'options' => ["Telefoon", "Video", "Spraakoproep in een app"]],
+                    ['label' => "Richting", 'type' => "Keuzelijst"],
+                    ['label' => "Wat jullie bespraken", 'type' => "Lange tekst"],
+                ],
+            ],
+            'thanksgiving' => [
+                'name' => "Thanksgiving bij Monica",
+                'group' => "Het diner",
+                'rows' => [
+                    ['label' => "Wie was gastheer", 'type' => "Contact"],
+                    ['label' => "Wat je meebracht", 'type' => "Korte tekst"],
+                    ['label' => "Heeft Joey de kalkoen opgegeten?", 'type' => "Keuzelijst", 'options' => ["Ja", "Nee", "Met hulp"]],
+                ],
+                'note' => "Geldt voor gebeurtenissen die je vanaf nu vastlegt. Het item van vorig jaar houdt zijn velden.",
+                'save' => "Wijzigingen opslaan",
+            ],
         ],
     ],
 

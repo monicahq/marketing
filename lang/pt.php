@@ -29,6 +29,7 @@ return [
             'templates' => "Modelos de contato",
             'details' => "Fichas de contato",
             'reminders' => "Lembretes",
+            'timeline' => "Linha do tempo",
             'page' => "Página :number",
         ],
 
@@ -114,6 +115,11 @@ return [
         'reminders' => [
             'title' => "Lembre-se de procurar as pessoas: os lembretes na Monica",
             'description' => "Crie um lembrete para um aniversário, um dia importante ou um amigo para quem você quer ligar. Uma vez ou com um ritmo, no fuso horário da pessoa, por e-mail ou na Monica, e um registro do que você lembrou.",
+        ],
+
+        'timeline' => [
+            'title' => "Guarde os momentos que valem a pena lembrar: a linha do tempo na Monica",
+            'description' => "Registre o que aconteceu, quem estava lá e os detalhes que você quer guardar. Eventos de vida na linha do tempo de todos de uma vez, seus próprios tipos de evento e campos, e um olhar para trás ano a ano.",
         ],
 
         'personalCrm' => [
@@ -1462,6 +1468,165 @@ return [
             'title' => "Uma ajudinha para ir até o fim.",
             'body' => "Você pensou em ligar para o Chandler. Dê a essa ideia um dia e uma hora.",
             'button' => "Criar a sua conta",
+        ],
+    ],
+
+    'timeline' => [
+        // Words more than one drawing uses.
+        'with' => "Com :names",
+        'add' => "Adicionar um evento de vida",
+        'optional' => "opcional",
+
+        'hero' => [
+            'title' => "Guarde os momentos que valem a pena lembrar.",
+            'intro' => "Um jantar com os amigos. Um emprego novo. A tarde de que todo mundo ainda fala.",
+            'lede' => "Registre o que aconteceu, quem estava lá e os detalhes que você quer guardar. A Monica reúne esses momentos em uma linha do tempo para você voltar a ela quando quiser.",
+            'cta' => "Criar a sua conta",
+            'label' => "A linha do tempo de um cofre Pessoal na Monica, com 102 registros, 2 deles pedindo a sua atenção. Em 2026: o Dia de Ação de Graças na casa da Monica em 26 de novembro, na 90 Bedford Street, New York, em que o Joey usou a calça elástica e ninguém falou do trifle, com Rachel, Ross, Chandler, Joey e Phoebe. E um café com a Phoebe em 3 de outubro que ia ser rápido, até que três horas depois ela tinha planejado a sua primavera inteira. Ao lado, do começo daquele ano, o casamento da Monica e do Chandler em 15 de maio: no Moondance Diner, depois no terraço, com o Joey como celebrante, ordenado pela internet, e 43 convidados.",
+            'vault' => "Pessoal",
+            'tabs' => ["Sua linha do tempo", "Pede a sua atenção"],
+            'year' => "2026",
+            'count' => "2 registros",
+            'events' => [
+                ['title' => "Ação de Graças na casa da Monica", 'date' => "26/11", 'place' => "90 Bedford Street, New York", 'note' => "O Joey usou a calça elástica. Ninguém falou do trifle."],
+                ['title' => "Café com a Phoebe", 'date' => "03/10", 'note' => "Ia ser rápido. Três horas depois, ela tinha planejado a minha primavera inteira."],
+            ],
+            'earlier' => "Do começo do ano",
+            'wedding' => [
+                'title' => "Casamento da Monica e do Chandler",
+                'type' => "Casamento · 15 de maio",
+                'facts' => [
+                    ['label' => "Onde", 'value' => "O Moondance Diner, depois o terraço"],
+                    ['label' => "Celebrante", 'value' => "Joey, ordenado pela internet"],
+                ],
+                'more' => "e mais 38",
+            ],
+        ],
+
+        'milestones' => [
+            'title' => "Grandes marcos. Terças-feiras comuns.",
+            'body' => [
+                "O casamento da Monica e do Chandler merece um registro. Um café com a Phoebe que virou uma conversa de três horas também.",
+                "Escolha entre 40 tipos de evento prontos, incluindo ligações, refeições, visitas, viagens e empregos novos. Há espaço para os momentos do dia a dia e para as ocasiões que todo mundo marca no calendário.",
+            ],
+            'label' => "O primeiro passo para adicionar um evento de vida na Monica: escolher o que aconteceu. Cinco categorias, com Relações e família selecionada, e os seus tipos de evento: ligação, mensagem, refeição, visita, tempo juntos, casamento e nascimento, cada um com o número de campos que pede.",
+            'step' => "Passo 1 de 2 · Escolha o que aconteceu",
+            'categoriesTitle' => "Categorias",
+            'categories' => ["Relações e família", "Trabalho e estudos", "Saúde e bem-estar", "Lazer e cultura", "Viagens e experiências"],
+            'types' => [
+                ['name' => "Ligação", 'fields' => "3 campos"],
+                ['name' => "Mensagem", 'fields' => "3 campos"],
+                ['name' => "Refeição", 'fields' => "3 campos"],
+                ['name' => "Visita", 'fields' => "2 campos"],
+                ['name' => "Tempo juntos", 'fields' => "1 campo"],
+                ['name' => "Casamento", 'fields' => "3 campos"],
+                ['name' => "Nascimento", 'fields' => "1 campo"],
+            ],
+        ],
+
+        'moment' => [
+            'title' => "Um momento. Todos que estavam lá.",
+            'lead' => "O Dia de Ação de Graças na casa da Monica reuniu Rachel, Ross, Chandler, Joey e Phoebe. Você só deveria precisar registrar uma vez.",
+            'body' => "Adicione as pessoas que participaram, e o evento aparece na linha do tempo de cada uma. Se você atualizar os detalhes depois, a mesma mudança aparece em todas as linhas do tempo a que ele pertence.",
+            'label' => "O Dia de Ação de Graças na casa da Monica, 26 de novembro de 2026, registrado uma vez com Rachel, Ross, Chandler, Joey e Phoebe. Abaixo, três das linhas do tempo deles, cada uma mostrando o mesmo Dia de Ação de Graças: a da Rachel, acima de uma ligação em 12 de novembro; a do Joey, acima de um teste em 14 de outubro; e a da Phoebe, acima de um café com a Phoebe em 3 de outubro.",
+            'event' => "Ação de Graças na casa da Monica",
+            'when' => "26 de novembro de 2026 · registrado uma vez",
+            'date' => "26/11",
+            'timeline' => "Linha do tempo de :name",
+            // The entry under Thanksgiving on each timeline, in the order the
+            // template draws them: Rachel, Joey, Phoebe.
+            'before' => ["Ligação · 12/11", "Teste · 14/10", "Café com a Phoebe · 03/10"],
+        ],
+
+        'story' => [
+            'title' => "Guarde mais do que a data.",
+            'lead' => "Aonde vocês foram? O que tornou esse momento especial?",
+            'body' => "Adicione um lugar, uma descrição e os detalhes que combinam com a ocasião. Uma caminhada nas Hudson Highlands vira mais do que uma data quando você se lembra de que o Chandler carregou os dois gêmeos nas últimas duas milhas.",
+            'close' => "Escreva uma frase curta ou guarde a história inteira.",
+            'label' => "O segundo passo para adicionar um evento de vida na Monica, os detalhes do tempo juntos: uma caminhada nas Hudson Highlands, New York, em 15 de maio de 2010. A descrição está sendo escrita: seis milhas, e o Chandler carregou os dois gêmeos nas últimas duas. O Ross explicou as formações rochosas durante toda a subida. Almoço no alto da encosta.",
+            'heading' => "Tempo juntos",
+            'step' => "Passo 2 de 2 · Os detalhes",
+            'what' => ['label' => "O que aconteceu", 'value' => "Uma caminhada nas Hudson Highlands"],
+            'when' => ['label' => "Quando", 'value' => "15 de maio de 2010"],
+            'where' => ['label' => "Onde", 'value' => "Hudson Highlands, New York"],
+            'description' => ['label' => "Descrição", 'value' => "Seis milhas, e o Chandler carregou os dois gêmeos nas últimas duas. O Ross explicou as formações rochosas durante toda a subida. Almoço no alto da encosta."],
+            'back' => "Voltar",
+            'add' => "Adicionar o evento de vida",
+        ],
+
+        'years' => [
+            'title' => "Olhe para trás, ano a ano.",
+            'body' => [
+                "A linha do tempo do seu cofre reúne os eventos que você registrou, com os mais recentes primeiro e os mais antigos agrupados por ano.",
+                "Acompanhe a história das aulas de natação ao primeiro dia de escola. Abra a ficha de uma pessoa para ver os eventos de que ela participou.",
+            ],
+            'close' => "As datas dão a ordem. As suas notas trazem as lembranças de volta.",
+            'label' => "Uma linha do tempo na Monica, com os mais recentes primeiro, agrupada por ano. 2010: uma caminhada nas Hudson Highlands em 15 de maio. 2009: os gêmeos começam o jardim de infância em 8 de setembro, e a Erica quebra o braço em 11 de junho. 2008: aulas de natação em 17 de julho. Cada registro tem o seu lugar e uma nota.",
+            // Newest first. Each event's icon and colour is in the template,
+            // in this order.
+            'years' => [
+                ['year' => "2010", 'count' => "1 registro", 'events' => [
+                    ['title' => "Uma caminhada nas Hudson Highlands", 'date' => "15/05", 'place' => "Hudson Highlands, New York", 'note' => "Seis milhas, e o Chandler carregou os dois gêmeos nas últimas duas."],
+                ]],
+                ['year' => "2009", 'count' => "2 registros", 'events' => [
+                    ['title' => "Os gêmeos começam o jardim de infância", 'date' => "08/09", 'place' => "Uma escola primária, Westchester", 'note' => "O Jack e a Judy foram de carro para vê-los entrar."],
+                    ['title' => "A Erica quebra o braço", 'date' => "11/06", 'place' => "Um hospital, Westchester", 'note' => "Caiu do trepa-trepa, tentando chegar ao topo antes do Jack."],
+                ]],
+                ['year' => "2008", 'count' => "1 registro", 'events' => [
+                    ['title' => "Aulas de natação", 'date' => "17/07", 'place' => "Uma piscina, Westchester", 'note' => "O Joey se ofereceu para ensiná-los. A Monica contratou outra pessoa."],
+                ]],
+            ],
+        ],
+
+        'traditions' => [
+            'title' => "Abra espaço para as suas próprias tradições.",
+            'lead' => "“Refeição” funciona. “Ação de Graças da Monica” talvez combine mais.",
+            'body' => "Crie os seus próprios tipos de evento, organize-os em categorias e escolha um ícone e uma cor para encontrá-los com facilidade. Você também pode alterar os tipos que a Monica oferece ou desativar os que não usa.",
+            'label' => "Os tipos de evento de vida na Monica. Dois deles criados por você, na categoria Nossas tradições, Ação de Graças da Monica e Noite da árvore de Natal, depois Refeição, oferecido pela Monica, e Entrevista, desativado. Ao lado, o Ação de Graças da Monica sendo editado: oferecido ao registrar, um ícone de presente, uma cor laranja escolhida entre oito, na categoria Nossas tradições.",
+            'heading' => "Tipos de evento de vida",
+            'add' => "Adicionar um tipo",
+            'category' => "Nossas tradições",
+            'types' => [
+                ['name' => "Ação de Graças da Monica"],
+                ['name' => "Noite da árvore de Natal"],
+                ['name' => "Refeição", 'badge' => "Oferecido"],
+                ['name' => "Entrevista", 'status' => "Desativado"],
+            ],
+            'offered' => "Oferecido ao registrar",
+            'icon' => "Ícone",
+            'colour' => "Cor",
+            'categoryLabel' => "Categoria",
+        ],
+
+        'fields' => [
+            'title' => "Escolha os detalhes que cada evento guarda.",
+            'lead' => "Uma ligação e um jantar de Ação de Graças pedem detalhes diferentes.",
+            'body' => [
+                "Para as ligações com a Rachel, você pode guardar o canal e uma nota sobre o que conversaram. Para o Dia de Ação de Graças, pode adicionar quem recebeu, o que você levou e se o Joey terminou o peru.",
+                "Adicione os seus próprios campos, organize-os em grupos e escolha quais são obrigatórios. As mudanças valem para os eventos que você registrar daí em diante; os registros anteriores mantêm os campos com que foram feitos.",
+            ],
+            'label' => "Os campos de dois tipos de evento de vida na Monica. Ligação tem três: canal, uma lista com telefone, vídeo ou chamada de voz em um aplicativo; direção, uma lista; e o que vocês conversaram, texto longo. Ação de Graças da Monica tem três em um grupo chamado O jantar: quem recebeu, um contato, obrigatório; o que você levou, texto curto; e o Joey terminou o peru, uma lista com sim, não ou com ajuda, sendo editada. Ao salvar, a mudança vale para os eventos registrados daqui em diante, e o registro do ano passado mantém os seus campos.",
+            'count' => "3 campos",
+            'required' => "Obrigatório",
+            'call' => [
+                'name' => "Ligação",
+                'rows' => [
+                    ['label' => "Canal", 'type' => "Lista", 'options' => ["Telefone", "Vídeo", "Chamada de voz em um aplicativo"]],
+                    ['label' => "Direção", 'type' => "Lista"],
+                    ['label' => "O que vocês conversaram", 'type' => "Texto longo"],
+                ],
+            ],
+            'thanksgiving' => [
+                'name' => "Ação de Graças da Monica",
+                'group' => "O jantar",
+                'rows' => [
+                    ['label' => "Quem recebeu", 'type' => "Contato"],
+                    ['label' => "O que você levou", 'type' => "Texto curto"],
+                    ['label' => "O Joey terminou o peru?", 'type' => "Lista", 'options' => ["Sim", "Não", "Com ajuda"]],
+                ],
+                'note' => "Vale para os eventos que você registrar daqui em diante. O registro do ano passado mantém os seus campos.",
+                'save' => "Salvar alterações",
+            ],
         ],
     ],
 

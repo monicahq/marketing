@@ -25,6 +25,7 @@ return [
             'templates' => "Kontaktvorlagen",
             'details' => "Kontaktseiten",
             'reminders' => "Erinnerungen",
+            'timeline' => "Zeitleiste",
             'page' => "Seite :number",
         ],
 
@@ -110,6 +111,11 @@ return [
         'reminders' => [
             'title' => "Denken Sie daran, sich zu melden: Erinnerungen in Monica",
             'description' => "Legen Sie eine Erinnerung für einen Geburtstag, einen großen Tag oder einen Freund an, den Sie anrufen wollten. Einmalig oder in einem Rhythmus, in deren Zeitzone, per E-Mail oder in Monica, und mit einem Verlauf dessen, woran Sie gedacht haben.",
+        ],
+
+        'timeline' => [
+            'title' => "Halten Sie die Momente fest, die es wert sind: die Zeitleiste in Monica",
+            'description' => "Halten Sie fest, was passiert ist, wer dabei war und welche Details Sie behalten möchten. Lebensereignisse auf der Zeitleiste aller Beteiligten zugleich, eigene Ereignistypen und Felder und ein Rückblick Jahr für Jahr.",
         ],
 
         'personalCrm' => [
@@ -1457,6 +1463,165 @@ return [
             'title' => "Ein wenig Hilfe beim Dranbleiben.",
             'body' => "Sie hatten daran gedacht, Chandler anzurufen. Geben Sie diesem Gedanken einen Tag und eine Uhrzeit.",
             'button' => "Konto erstellen",
+        ],
+    ],
+
+    'timeline' => [
+        // Words more than one drawing uses.
+        'with' => "Mit :names",
+        'add' => "Lebensereignis hinzufügen",
+        'optional' => "optional",
+
+        'hero' => [
+            'title' => "Halten Sie die Momente fest, die es wert sind.",
+            'intro' => "Ein Abendessen mit Freunden. Ein neuer Job. Der Nachmittag, von dem alle noch erzählen.",
+            'lede' => "Halten Sie fest, was passiert ist, wer dabei war und welche Details Sie behalten möchten. Monica führt diese Momente in einer Zeitleiste zusammen, zu der Sie jederzeit zurückkehren können.",
+            'cta' => "Konto erstellen",
+            'label' => "Die Zeitleiste des Tresors „Privat“ in Monica, 102 Einträge, davon 2, die Ihre Aufmerksamkeit brauchen. 2026: Thanksgiving bei Monica am 26. November, in der 90 Bedford Street, New York, wo Joey die dehnbare Hose trug und niemand den Trifle erwähnte, mit Rachel, Ross, Chandler, Joey und Phoebe. Und ein Kaffee mit Phoebe am 3. Oktober, der kurz sein sollte, bis sie drei Stunden später Ihr ganzes Frühjahr geplant hatte. Daneben, aus dem Jahr davor, die Hochzeit von Monica und Chandler am 15. Mai: im Moondance Diner, dann auf dem Dach, mit Joey als Trauredner, online ordiniert, und 43 Gästen.",
+            'vault' => "Privat",
+            'tabs' => ["Ihre Zeitleiste", "Braucht Ihre Aufmerksamkeit"],
+            'year' => "2026",
+            'count' => "2 Einträge",
+            'events' => [
+                ['title' => "Thanksgiving bei Monica", 'date' => "26.11.", 'place' => "90 Bedford Street, New York", 'note' => "Joey trug die dehnbare Hose. Niemand erwähnte den Trifle."],
+                ['title' => "Kaffee mit Phoebe", 'date' => "03.10.", 'note' => "Sollte kurz sein. Drei Stunden später hatte sie mein ganzes Frühjahr geplant."],
+            ],
+            'earlier' => "Früher im Jahr",
+            'wedding' => [
+                'title' => "Hochzeit von Monica und Chandler",
+                'type' => "Eheschließung · 15. Mai",
+                'facts' => [
+                    ['label' => "Wo", 'value' => "Der Moondance Diner, dann das Dach"],
+                    ['label' => "Trauredner", 'value' => "Joey, online ordiniert"],
+                ],
+                'more' => "und 38 weitere",
+            ],
+        ],
+
+        'milestones' => [
+            'title' => "Große Meilensteine. Ganz normale Dienstage.",
+            'body' => [
+                "Die Hochzeit von Monica und Chandler verdient einen Eintrag. Ein Kaffee mit Phoebe, der zu einem dreistündigen Gespräch wurde, auch.",
+                "Wählen Sie aus 40 eingebauten Ereignistypen, darunter Anrufe, Mahlzeiten, Besuche, Reisen und neue Jobs. Es ist Platz für Alltägliches ebenso wie für die Anlässe, die jeder in den Kalender einträgt.",
+            ],
+            'label' => "Der erste Schritt beim Hinzufügen eines Lebensereignisses in Monica: wählen, was passiert ist. Fünf Kategorien, „Beziehungen und Familie“ ist ausgewählt, mit seinen Ereignistypen: Anruf, Nachricht, Mahlzeit, Besuch, gemeinsame Zeit, Eheschließung und Geburt, jeweils mit der Zahl der Felder, nach denen er fragt.",
+            'step' => "Schritt 1 von 2 · Wählen, was passiert ist",
+            'categoriesTitle' => "Kategorien",
+            'categories' => ["Beziehungen und Familie", "Beruf und Ausbildung", "Gesundheit und Wohlbefinden", "Freizeit und Kultur", "Reisen und Erlebnisse"],
+            'types' => [
+                ['name' => "Anruf", 'fields' => "3 Felder"],
+                ['name' => "Nachricht", 'fields' => "3 Felder"],
+                ['name' => "Mahlzeit", 'fields' => "3 Felder"],
+                ['name' => "Besuch", 'fields' => "2 Felder"],
+                ['name' => "Gemeinsame Zeit", 'fields' => "1 Feld"],
+                ['name' => "Eheschließung", 'fields' => "3 Felder"],
+                ['name' => "Geburt", 'fields' => "1 Feld"],
+            ],
+        ],
+
+        'moment' => [
+            'title' => "Ein Moment. Alle, die dabei waren.",
+            'lead' => "Bei Thanksgiving bei Monica waren Rachel, Ross, Chandler, Joey und Phoebe dabei. Sie sollten es nur einmal festhalten müssen.",
+            'body' => "Fügen Sie die Menschen hinzu, die teilgenommen haben, und das Ereignis erscheint auf der Zeitleiste jeder Person. Wenn Sie die Details später ändern, erscheint dieselbe Änderung auf jeder Zeitleiste, zu der es gehört.",
+            'label' => "Thanksgiving bei Monica, 26. November 2026, einmal festgehalten mit Rachel, Ross, Chandler, Joey und Phoebe. Darunter drei ihrer Zeitleisten, die alle dasselbe Thanksgiving zeigen: Rachels, über einem Anruf am 12. November; Joeys, über einem Vorsprechen am 14. Oktober; und Phoebes, über einem Kaffee mit Phoebe am 3. Oktober.",
+            'event' => "Thanksgiving bei Monica",
+            'when' => "26. November 2026 · einmal festgehalten",
+            'date' => "26.11.",
+            'timeline' => "Zeitleiste von :name",
+            // The entry under Thanksgiving on each timeline, in the order the
+            // template draws them: Rachel, Joey, Phoebe.
+            'before' => ["Anruf · 12.11.", "Vorsprechen · 14.10.", "Kaffee mit Phoebe · 03.10."],
+        ],
+
+        'story' => [
+            'title' => "Behalten Sie mehr als das Datum.",
+            'lead' => "Wohin ging es? Was hat es unvergesslich gemacht?",
+            'body' => "Fügen Sie einen Ort, eine Beschreibung und die Details hinzu, die zum Anlass passen. Eine Wanderung in den Hudson Highlands wird mehr als ein Datum, wenn Sie sich daran erinnern, dass Chandler die letzten zwei Meilen beide Zwillinge getragen hat.",
+            'close' => "Schreiben Sie eine kurze Zeile oder behalten Sie die ganze Geschichte.",
+            'label' => "Der zweite Schritt beim Hinzufügen eines Lebensereignisses in Monica, die Details zur gemeinsamen Zeit: eine Wanderung in den Hudson Highlands, New York, am 15. Mai 2010. Die Beschreibung wird gerade geschrieben: sechs Meilen, und Chandler hat die letzten zwei beide Zwillinge getragen. Ross hat den ganzen Aufstieg lang die Felsformationen erklärt. Mittagessen am Grat.",
+            'heading' => "Gemeinsame Zeit",
+            'step' => "Schritt 2 von 2 · Die Details",
+            'what' => ['label' => "Was passiert ist", 'value' => "Eine Wanderung in den Hudson Highlands"],
+            'when' => ['label' => "Wann", 'value' => "15. Mai 2010"],
+            'where' => ['label' => "Wo", 'value' => "Hudson Highlands, New York"],
+            'description' => ['label' => "Beschreibung", 'value' => "Sechs Meilen, und Chandler hat die letzten zwei beide Zwillinge getragen. Ross hat den ganzen Aufstieg lang die Felsformationen erklärt. Mittagessen am Grat."],
+            'back' => "Zurück",
+            'add' => "Lebensereignis hinzufügen",
+        ],
+
+        'years' => [
+            'title' => "Blicken Sie zurück, Jahr für Jahr.",
+            'body' => [
+                "Die Zeitleiste Ihres Tresors führt die Ereignisse zusammen, die Sie festgehalten haben, das neueste zuerst und ältere Einträge nach Jahren gruppiert.",
+                "Verfolgen Sie die Geschichte vom Schwimmkurs bis zum ersten Schultag. Öffnen Sie die Seite einer Person, um die Ereignisse zu sehen, an denen sie beteiligt war.",
+            ],
+            'close' => "Die Daten geben die Reihenfolge vor. Ihre Notizen holen die Erinnerungen zurück.",
+            'label' => "Eine Zeitleiste in Monica, das neueste zuerst, nach Jahren gruppiert. 2010: eine Wanderung in den Hudson Highlands am 15. Mai. 2009: Die Zwillinge kommen am 8. September in den Kindergarten, und Erica bricht sich am 11. Juni den Arm. 2008: Schwimmkurs am 17. Juli. Jeder Eintrag hat seinen Ort und eine Notiz.",
+            // Newest first. Each event's icon and colour is in the template,
+            // in this order.
+            'years' => [
+                ['year' => "2010", 'count' => "1 Eintrag", 'events' => [
+                    ['title' => "Eine Wanderung in den Hudson Highlands", 'date' => "15.05.", 'place' => "Hudson Highlands, New York", 'note' => "Sechs Meilen, und Chandler hat die letzten zwei beide Zwillinge getragen."],
+                ]],
+                ['year' => "2009", 'count' => "2 Einträge", 'events' => [
+                    ['title' => "Die Zwillinge kommen in den Kindergarten", 'date' => "08.09.", 'place' => "Eine Grundschule, Westchester", 'note' => "Jack und Judy sind hingefahren, um zuzusehen, wie sie hineingehen."],
+                    ['title' => "Erica bricht sich den Arm", 'date' => "11.06.", 'place' => "Ein Krankenhaus, Westchester", 'note' => "Vom Klettergerüst gefallen, beim Versuch, vor Jack oben zu sein."],
+                ]],
+                ['year' => "2008", 'count' => "1 Eintrag", 'events' => [
+                    ['title' => "Schwimmkurs", 'date' => "17.07.", 'place' => "Ein Schwimmbad, Westchester", 'note' => "Joey bot an, es ihnen beizubringen. Monica engagierte jemanden."],
+                ]],
+            ],
+        ],
+
+        'traditions' => [
+            'title' => "Schaffen Sie Platz für Ihre eigenen Traditionen.",
+            'lead' => "„Mahlzeit“ funktioniert. „Monicas Thanksgiving“ passt vielleicht besser.",
+            'body' => "Legen Sie eigene Ereignistypen an, ordnen Sie sie in Kategorien und wählen Sie ein Symbol und eine Farbe, damit sie leicht zu finden sind. Sie können auch die Typen ändern, die Monica mitbringt, oder die ausschalten, die Sie nicht brauchen.",
+            'label' => "Die Typen von Lebensereignissen in Monica. Zwei eigene in der Kategorie „Unsere Traditionen“, Monicas Thanksgiving und Weihnachtsbaumabend, dann Mahlzeit, von Monica mitgebracht, und Vorstellungsgespräch, ausgeschaltet. Daneben wird Monicas Thanksgiving bearbeitet: beim Festhalten angeboten, ein Geschenksymbol, eine orange Farbe aus acht, in der Kategorie „Unsere Traditionen“.",
+            'heading' => "Typen von Lebensereignissen",
+            'add' => "Typ hinzufügen",
+            'category' => "Unsere Traditionen",
+            'types' => [
+                ['name' => "Monicas Thanksgiving"],
+                ['name' => "Weihnachtsbaumabend"],
+                ['name' => "Mahlzeit", 'badge' => "Mitgeliefert"],
+                ['name' => "Vorstellungsgespräch", 'status' => "Ausgeschaltet"],
+            ],
+            'offered' => "Beim Festhalten angeboten",
+            'icon' => "Symbol",
+            'colour' => "Farbe",
+            'categoryLabel' => "Kategorie",
+        ],
+
+        'fields' => [
+            'title' => "Wählen Sie, welche Details jedes Ereignis enthält.",
+            'lead' => "Ein Anruf und ein Thanksgiving-Essen brauchen unterschiedliche Details.",
+            'body' => [
+                "Bei Anrufen mit Rachel halten Sie vielleicht den Kanal fest und eine Notiz dazu, worüber Sie gesprochen haben. Bei Thanksgiving könnten Sie ergänzen, wer eingeladen hat, was Sie mitgebracht haben und ob Joey den Truthahn aufgegessen hat.",
+                "Fügen Sie eigene Felder hinzu, ordnen Sie sie in Gruppen und legen Sie fest, welche Pflicht sind. Änderungen gelten für Ereignisse, die Sie ab dann festhalten. Frühere Einträge behalten die Felder, mit denen sie festgehalten wurden.",
+            ],
+            'label' => "Die Felder von zwei Typen von Lebensereignissen in Monica. Anruf hat drei: Kanal, eine Auswahl aus Telefon, Video oder Sprachanruf in einer App; Richtung, eine Auswahl; und worüber Sie gesprochen haben, langer Text. Monicas Thanksgiving hat drei in einer Gruppe namens „Das Essen“: wer eingeladen hat, ein Kontakt, Pflichtfeld; was Sie mitgebracht haben, kurzer Text; und ob Joey den Truthahn aufgegessen hat, eine Auswahl aus Ja, Nein oder Mit Hilfe, gerade in Bearbeitung. Speichern gilt für Ereignisse, die ab jetzt festgehalten werden, und der Eintrag vom letzten Jahr behält seine Felder.",
+            'count' => "3 Felder",
+            'required' => "Pflicht",
+            'call' => [
+                'name' => "Anruf",
+                'rows' => [
+                    ['label' => "Kanal", 'type' => "Auswahl", 'options' => ["Telefon", "Video", "Sprachanruf in einer App"]],
+                    ['label' => "Richtung", 'type' => "Auswahl"],
+                    ['label' => "Worüber Sie gesprochen haben", 'type' => "Langer Text"],
+                ],
+            ],
+            'thanksgiving' => [
+                'name' => "Monicas Thanksgiving",
+                'group' => "Das Essen",
+                'rows' => [
+                    ['label' => "Wer hat eingeladen", 'type' => "Kontakt"],
+                    ['label' => "Was Sie mitgebracht haben", 'type' => "Kurzer Text"],
+                    ['label' => "Hat Joey den Truthahn aufgegessen?", 'type' => "Auswahl", 'options' => ["Ja", "Nein", "Mit Hilfe"]],
+                ],
+                'note' => "Gilt für Ereignisse, die Sie ab jetzt festhalten. Der Eintrag vom letzten Jahr behält seine Felder.",
+                'save' => "Änderungen speichern",
+            ],
         ],
     ],
 
