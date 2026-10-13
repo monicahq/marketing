@@ -30,6 +30,7 @@ return [
             'details' => "Fichas de contato",
             'reminders' => "Lembretes",
             'timeline' => "Linha do tempo",
+            'relationships' => "Relacionamentos",
             'page' => "Página :number",
         ],
 
@@ -120,6 +121,11 @@ return [
         'timeline' => [
             'title' => "Guarde os momentos que valem a pena lembrar: a linha do tempo na Monica",
             'description' => "Registre o que aconteceu, quem estava lá e os detalhes que você quer guardar. Eventos de vida na linha do tempo de todos de uma vez, seus próprios tipos de evento e campos, e um olhar para trás ano a ano.",
+        ],
+
+        'relationships' => [
+            'title' => "Entenda como as pessoas estão ligadas: os relacionamentos na Monica",
+            'description' => "Acompanhe as pessoas ao redor de alguém, com relacionamentos que fazem sentido dos dois lados. Árvores genealógicas, pessoas que você ainda não conheceu, relacionamentos passados e os seus próprios tipos de relacionamento.",
         ],
 
         'personalCrm' => [
@@ -1627,6 +1633,126 @@ return [
                 'note' => "Vale para os eventos que você registrar daqui em diante. O registro do ano passado mantém os seus campos.",
                 'save' => "Salvar alterações",
             ],
+        ],
+    ],
+
+    'relationships' => [
+        // Words more than one drawing uses.
+        'add' => "Adicionar um relacionamento",
+        'sibling' => "Irmão",
+
+        'hero' => [
+            'title' => "Entenda como as pessoas estão ligadas.",
+            'intro' => "A irmã dela. O companheiro dele. O amigo que apresentou vocês.",
+            'lede' => "Acompanhe as pessoas ao redor de alguém, com relacionamentos que fazem sentido dos dois lados.",
+            'cta' => "Criar a sua conta",
+            'label' => "Os relacionamentos de Ross Geller na Monica, 8 no total. Família: Monica Geller, a irmã; Jack Geller, o pai; Judy Geller, a mãe; e Emma Geller-Green, a filha. Romântico: Rachel Green, a companheira. Amigos: Chandler Bing, Joey Tribbiani e Phoebe Buffay.",
+            'count' => "8 relacionamentos",
+            // The people in each group are in the template, in this order.
+            'groups' => [
+                ['title' => "Família", 'roles' => ["Irmã", "Pai", "Mãe", "Filha"]],
+                ['title' => "Romântico", 'roles' => ["Companheira"]],
+                ['title' => "Amigos", 'roles' => ["Amigo", "Amigo", "Amiga"]],
+            ],
+        ],
+
+        'sides' => [
+            'title' => "A irmã do Ross é a Monica. O irmão da Monica é o Ross.",
+            'lead' => "Adicione um relacionamento uma vez, e a Monica o mostra na página das duas pessoas.",
+            'body' => "Escolha o tipo, confira quem ocupa cada papel e ligue as duas pessoas. Família, amigos, companheiros e colegas de trabalho têm todos o seu lugar.",
+            'label' => "Adicionando um relacionamento na Monica. O tipo é irmão nos dois lados, Ross Geller é um dos irmãos e Monica Geller está sendo escolhida como o outro, com um botão para trocar os dois papéis. Abaixo, o resultado nas duas páginas: na página do Ross, Monica Geller, a irmã; na página da Monica, Ross Geller, o irmão.",
+            'typeLabel' => "Tipo de relacionamento",
+            'type' => "Irmão ↔ Irmão",
+            'swap' => "Trocar os dois papéis",
+            'cancel' => "Cancelar",
+            'submit' => "Adicionar relacionamento",
+            // One card per person, Ross's first.
+            'pages' => [
+                ['title' => "Na página do Ross", 'role' => "Irmã"],
+                ['title' => "Na página da Monica", 'role' => "Irmão"],
+            ],
+        ],
+
+        'tree' => [
+            'title' => "Algumas ligações são mais fáceis de ver.",
+            'body' => [
+                "Uma árvore genealógica reúne pais, companheiros e filhos, para você acompanhar as ligações sem precisar montá-las a partir de notas.",
+                "Abra a página do Ross para ver onde a Monica, os pais dele e a Emma se encaixam. A família mais próxima dele também aparece na visão geral.",
+            ],
+            'label' => "A árvore genealógica de Ross Geller na Monica: os pais, Jack e Judy Geller, acima dele; a irmã, Monica Geller, e a companheira, Rachel Green, ao lado; e a filha, Emma Geller-Green, abaixo. Só filiação e parcerias são desenhadas. Ao lado, a família mais próxima na visão geral dele: os pais, Jack, 68 anos, e Judy, 66; a irmã, Monica, 57; a companheira atual, Rachel, 57; e a filha, Emma, 24.",
+            'heading' => "Árvore genealógica",
+            'note' => "Só filiação e parcerias são desenhadas aqui. Amigos e colegas de trabalho ficam na lista.",
+            'family' => "Família mais próxima",
+            'add' => "Adicionar",
+            'groups' => ["Pais", "Irmãos", "Companheira atual", "Filhos"],
+        ],
+
+        'unknown' => [
+            'title' => "Você ainda não precisa conhecer todo mundo.",
+            'lead' => "O Joey mencionou uma irmã. Você quer lembrar da ligação, mesmo sem nunca ter conhecido ela.",
+            'body' => [
+                "Escolha alguém que já está na Monica, adicione alguém pelo nome ou registre uma pessoa sem nome quando tudo o que você sabe é o papel dela.",
+                "Você pode manter alguém como contato parcial, fora da sua lista principal de contatos, quando só precisa da pessoa pela ligação.",
+            ],
+            'label' => "Adicionando um relacionamento ao Joey Tribbiani na Monica: um irmão, com três jeitos de dizer quem. Não sei o nome está selecionado, o que registra o papel e mais nada. As outras opções são Sei o nome e escolher alguém que já está anotado. Abaixo, uma caixa desmarcada para criar uma ficha de contato para essa pessoa.",
+            'subtitle' => "Diga como alguém está ligado ao Joey Tribbiani.",
+            // The first is the one selected.
+            'options' => [
+                ['title' => "Não sei o nome", 'hint' => "Registra o papel e mais nada"],
+                ['title' => "Sei o nome", 'hint' => "Só o primeiro nome já basta"],
+                ['title' => "Escolher alguém que já está anotado", 'hint' => "Liga duas pessoas que você já guarda"],
+            ],
+            'record' => [
+                'title' => "Criar uma ficha de contato para essa pessoa",
+                'hint' => "Deixe desmarcado e ela fica fora da sua lista de pessoas, mas com uma página própria do mesmo jeito.",
+            ],
+        ],
+
+        'history' => [
+            'title' => "Os relacionamentos têm uma história.",
+            'lead' => "As pessoas ficam juntas. Depois se separam. As ligações mudam.",
+            'body' => "Registre quando um relacionamento começou ou terminou e guarde os passados junto com os atuais. As ex-companheiras do Ross continuam fazendo parte da história dele.",
+            'label' => "O histórico romântico de Ross Geller na Monica. Atual: Rachel Green, companheira desde 6 de maio de 2004. Passados, os dois encerrados: Emily Waltham, esposa de 1998 a 1999, e Carol Willick, esposa de 1987 a 1993. Ao lado, as datas do casamento com Emily sendo preenchidas: início em 1998, fim em 1999.",
+            'heading' => "Histórico romântico",
+            'current' => "Atual",
+            'past' => "Passados",
+            // The people are in the template, in this order: Rachel, Emily, Carol.
+            'partners' => ["Companheira · desde 6 de maio de 2004", "Esposa · de 1998 a 1999", "Esposa · de 1987 a 1993"],
+            'ended' => "Encerrado",
+            'started' => "Início",
+            'endedLabel' => "Fim",
+            'optional' => "opcional",
+        ],
+
+        'types' => [
+            'title' => "Use as palavras que combinam.",
+            'lead' => "“Amigo” é um começo. Às vezes “Colega de apartamento” diz mais.",
+            'body' => [
+                "Crie os seus próprios tipos de relacionamento e organize-os em categorias. Escolha se o relacionamento é descrito igual dos dois lados, como a Monica e a Rachel sendo colegas de apartamento, ou de forma diferente, como padrinho e afilhado.",
+                "Você também pode ajustar o texto e a ordem dos tipos existentes e deixar de oferecer os que não usa mais, sem apagar os relacionamentos já registrados.",
+            ],
+            'label' => "Os tipos de relacionamento na Monica. Em Amigos, que vem com a sua conta: Amigo, padrão; Colega de apartamento, seu; e Correspondente, que não é mais oferecido. Em Padrinhos, uma categoria sua: Padrinho e afilhado, seu. Ao lado, Colega de apartamento sendo editado: é descrito igual dos dois lados, então Monica Geller é colega de apartamento de Rachel Green, e Rachel Green é colega de apartamento de Monica Geller.",
+            'heading' => "Tipos de relacionamento",
+            'add' => "Adicionar um tipo",
+            'categories' => [
+                ['name' => "Amigos", 'note' => "Vem com a sua conta", 'types' => [
+                    ['name' => "Amigo", 'pair' => "Amigo ↔ Amigo", 'badge' => "Padrão"],
+                    ['name' => "Colega de apartamento", 'pair' => "Colega de apartamento ↔ Colega de apartamento", 'badge' => "Seu"],
+                    ['name' => "Correspondente", 'pair' => "Correspondente ↔ Correspondente", 'badge' => "Não oferecido"],
+                ]],
+                ['name' => "Padrinhos", 'note' => "Sua categoria", 'types' => [
+                    ['name' => "Padrinho / Afilhado", 'pair' => "Padrinho → Afilhado", 'badge' => "Seu"],
+                ]],
+            ],
+            'reads' => "Como é descrito",
+            // The first is the one selected.
+            'options' => [
+                ['title' => "Igual dos dois lados", 'hint' => "As duas pessoas são descritas com a mesma palavra, como em Irmão ou Amigo."],
+                ['title' => "Diferente em cada lado", 'hint' => "Cada pessoa é descrita com uma palavra diferente, como em Pai e Filho."],
+            ],
+            'roleLabel' => "Papel, nos dois lados",
+            'role' => "Colega de apartamento",
+            'sentences' => ["Monica Geller é colega de apartamento de Rachel Green.", "Rachel Green é colega de apartamento de Monica Geller."],
         ],
     ],
 

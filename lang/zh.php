@@ -47,6 +47,7 @@ return [
             'details' => "联系人详情",
             'reminders' => "提醒",
             'timeline' => "时间线",
+            'relationships' => "关系",
             'page' => "第 :number 页",
         ],
 
@@ -142,6 +143,11 @@ return [
         'timeline' => [
             'title' => "留住值得记住的时刻：Monica 时间线",
             'description' => "记录发生了什么、有谁在场，以及你想留下的细节。生活事件同时出现在每个人的时间线上，可以自定义事件类型和字段，还能逐年回顾。",
+        ],
+
+        'relationships' => [
+            'title' => "看清人与人之间的联系：Monica 关系功能",
+            'description' => "记下某个人身边的人，让每一段关系从两边看都说得通。家谱、还没见过的人、过去的关系，以及你自己的关系类型。",
         ],
 
         'personalCrm' => [
@@ -1641,6 +1647,126 @@ return [
             ],
         ],
     ],
+    'relationships' => [
+        // Words more than one drawing uses.
+        'add' => "添加关系",
+        'sibling' => "兄弟姐妹",
+
+        'hero' => [
+            'title' => "看清人与人之间的联系。",
+            'intro' => "她的姐姐。他的伴侣。介绍你们认识的那位朋友。",
+            'lede' => "记下某个人身边的人，让每一段关系从两边看都说得通。",
+            'cta' => "创建你的账户",
+            'label' => "Monica 中 Ross Geller 的关系，共 8 条。家人：他的妹妹 Monica Geller、他的父亲 Jack Geller、他的母亲 Judy Geller，以及他的女儿 Emma Geller-Green。恋爱：他的伴侣 Rachel Green。朋友：Chandler Bing、Joey Tribbiani 和 Phoebe Buffay。",
+            'count' => "8 条关系",
+            // The people in each group are in the template, in this order.
+            'groups' => [
+                ['title' => "家人", 'roles' => ["妹妹", "父亲", "母亲", "女儿"]],
+                ['title' => "恋爱", 'roles' => ["伴侣"]],
+                ['title' => "朋友", 'roles' => ["朋友", "朋友", "朋友"]],
+            ],
+        ],
+
+        'sides' => [
+            'title' => "Ross 的妹妹是 Monica。Monica 的哥哥是 Ross。",
+            'lead' => "只需添加一次关系，Monica 就会在两个人的页面上都显示出来。",
+            'body' => "选择类型，确认每个人担任的角色，再把两个人关联起来。家人、朋友、伴侣和同事，都有各自的位置。",
+            'label' => "在 Monica 中添加一段关系。类型是兄弟姐妹，双方都一样，Ross Geller 是其中一方，正在选择 Monica Geller 作为另一方，旁边有一个按钮可以交换两个角色。下方是两个人页面上的结果：在 Ross 的页面上是他的妹妹 Monica Geller，在 Monica 的页面上是她的哥哥 Ross Geller。",
+            'typeLabel' => "关系类型",
+            'type' => "兄弟姐妹 ↔ 兄弟姐妹",
+            'swap' => "交换两个角色",
+            'cancel' => "取消",
+            'submit' => "添加关系",
+            // One card per person, Ross's first.
+            'pages' => [
+                ['title' => "在 Ross 的页面上", 'role' => "妹妹"],
+                ['title' => "在 Monica 的页面上", 'role' => "哥哥"],
+            ],
+        ],
+
+        'tree' => [
+            'title' => "有些联系，一眼就能看清。",
+            'body' => [
+                "家谱把父母、伴侣和子女放在一起，你不必再从零散的笔记里拼凑，就能顺着联系看下去。",
+                "打开 Ross 的页面，就能看到 Monica、他的父母和 Emma 各自在哪个位置。他的直系亲属也会显示在他的概览里。",
+            ],
+            'label' => "Monica 中 Ross Geller 的家谱：他的父母 Jack 和 Judy Geller 在他上方，他的妹妹 Monica Geller 和伴侣 Rachel Green 在他身旁，他的女儿 Emma Geller-Green 在他下方。这里只画出亲子关系和伴侣关系。旁边是他概览中的直系亲属：父母 Jack（68 岁）和 Judy（66 岁），妹妹 Monica（57 岁），现任伴侣 Rachel（57 岁），以及女儿 Emma（24 岁）。",
+            'heading' => "家谱",
+            'note' => "这里只画出亲子关系和伴侣关系。朋友和同事留在列表里。",
+            'family' => "直系亲属",
+            'add' => "添加",
+            'groups' => ["父母", "兄弟姐妹", "现任伴侣", "子女"],
+        ],
+
+        'unknown' => [
+            'title' => "你不必现在就认识每一个人。",
+            'lead' => "Joey 提到过一个姐妹。哪怕你从没见过她，也想记住这层联系。",
+            'body' => [
+                "选择 Monica 里已有的人，按名字添加一个人，或者在只知道对方角色时，记录一位没有名字的人。",
+                "如果你只是为了记住这层联系，可以把对方保留为部分联系人，不放进你的主联系人列表。",
+            ],
+            'label' => "在 Monica 中为 Joey Tribbiani 添加关系：一位兄弟姐妹，有三种方式说明是谁。选中的是“我不知道对方的名字”，只记录角色，不记别的。其他两种是“我知道对方的名字”，以及选择已经记下的人。下方有一个未勾选的复选框，用来为这个人创建联系人记录。",
+            'subtitle' => "说明某个人和 Joey Tribbiani 是什么关系。",
+            // The first is the one selected.
+            'options' => [
+                ['title' => "我不知道对方的名字", 'hint' => "只记录角色，不记别的"],
+                ['title' => "我知道对方的名字", 'hint' => "只写名字也够了"],
+                ['title' => "选择已经记下的人", 'hint' => "把你已有的两个人关联起来"],
+            ],
+            'record' => [
+                'title' => "为这个人创建联系人记录",
+                'hint' => "不勾选的话，对方不会出现在你的联系人列表里，但仍然有一个属于自己的页面。",
+            ],
+        ],
+
+        'history' => [
+            'title' => "关系是有历史的。",
+            'lead' => "人们会走到一起，也会分开。联系会变。",
+            'body' => "记下一段关系何时开始、何时结束，把过去的关系和现在的放在一起。Ross 的前任伴侣依然是他故事的一部分。",
+            'label' => "Monica 中 Ross Geller 的恋爱历史。现在：Rachel Green，他的伴侣，从 2004 年 5 月 6 日起。过去，均已结束：Emily Waltham，他的配偶，1998 年至 1999 年；Carol Willick，他的配偶，1987 年至 1993 年。旁边正在填写他与 Emily 婚姻的日期：开始于 1998 年，结束于 1999 年。",
+            'heading' => "恋爱历史",
+            'current' => "现在",
+            'past' => "过去",
+            // The people are in the template, in this order: Rachel, Emily, Carol.
+            'partners' => ["伴侣 · 自 2004 年 5 月 6 日起", "配偶 · 1998 年至 1999 年", "配偶 · 1987 年至 1993 年"],
+            'ended' => "已结束",
+            'started' => "开始",
+            'endedLabel' => "结束",
+            'optional' => "可选",
+        ],
+
+        'types' => [
+            'title' => "用合适的词。",
+            'lead' => "“朋友”只是个开头。有时候，“室友”说得更多。",
+            'body' => [
+                "创建你自己的关系类型，并按类别整理。你可以选择这段关系从两边看是同一个词，比如 Monica 和 Rachel 互为室友；还是各用不同的词，比如教父母和教子女。",
+                "你还可以调整现有类型的措辞和顺序，也可以不再提供用不上的类型，而不会删掉已经记录的关系。",
+            ],
+            'label' => "Monica 中的关系类型。在“朋友”中，随账户提供：朋友，系统提供；室友，你自己的；笔友，不再提供。在“教父母”中，你自己的类别：教父母和教子女，你自己的。旁边是正在编辑的“室友”：从两边看是同一个词，所以 Monica Geller 是 Rachel Green 的室友，Rachel Green 也是 Monica Geller 的室友。",
+            'heading' => "关系类型",
+            'add' => "添加类型",
+            'categories' => [
+                ['name' => "朋友", 'note' => "随账户提供", 'types' => [
+                    ['name' => "朋友", 'pair' => "朋友 ↔ 朋友", 'badge' => "系统提供"],
+                    ['name' => "室友", 'pair' => "室友 ↔ 室友", 'badge' => "你的"],
+                    ['name' => "笔友", 'pair' => "笔友 ↔ 笔友", 'badge' => "不再提供"],
+                ]],
+                ['name' => "教父母", 'note' => "你的类别", 'types' => [
+                    ['name' => "教父母 / 教子女", 'pair' => "教父母 → 教子女", 'badge' => "你的"],
+                ]],
+            ],
+            'reads' => "读起来是",
+            // The first is the one selected.
+            'options' => [
+                ['title' => "两边一样", 'hint' => "两个人用同一个词来描述，比如兄弟姐妹或朋友。"],
+                ['title' => "两边不同", 'hint' => "两个人各用不同的词来描述，比如父母和子女。"],
+            ],
+            'roleLabel' => "角色，两边相同",
+            'role' => "室友",
+            'sentences' => ["Monica Geller 是 Rachel Green 的室友。", "Rachel Green 是 Monica Geller 的室友。"],
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.

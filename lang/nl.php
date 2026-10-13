@@ -29,6 +29,7 @@ return [
             'details' => "Contactpagina’s",
             'reminders' => "Herinneringen",
             'timeline' => "Tijdlijn",
+            'relationships' => "Relaties",
             'page' => "Pagina :number",
         ],
 
@@ -113,6 +114,11 @@ return [
         'timeline' => [
             'title' => "Bewaar de momenten die het onthouden waard zijn: de tijdlijn in Monica",
             'description' => "Leg vast wat er gebeurde, wie erbij was en de details die je wilt bewaren. Levensgebeurtenissen op ieders tijdlijn tegelijk, je eigen soorten en velden, en een terugblik jaar na jaar.",
+        ],
+
+        'relationships' => [
+            'title' => "Begrijp hoe mensen met elkaar verbonden zijn: relaties in Monica",
+            'description' => "Houd bij wie er rond iemand staan, met relaties die kloppen vanuit beide kanten. Stambomen, mensen die je nog niet hebt ontmoet, eerdere relaties en je eigen soorten relaties.",
         ],
 
         'personalCrm' => [
@@ -1620,6 +1626,126 @@ return [
                 'note' => "Geldt voor gebeurtenissen die je vanaf nu vastlegt. Het item van vorig jaar houdt zijn velden.",
                 'save' => "Wijzigingen opslaan",
             ],
+        ],
+    ],
+
+    'relationships' => [
+        // Words more than one drawing uses.
+        'add' => "Een relatie toevoegen",
+        'sibling' => "Broer of zus",
+
+        'hero' => [
+            'title' => "Begrijp hoe mensen met elkaar verbonden zijn.",
+            'intro' => "Haar zus. Zijn partner. De vriend die jullie aan elkaar voorstelde.",
+            'lede' => "Houd bij wie er rond iemand staan, met relaties die kloppen vanuit beide kanten.",
+            'cta' => "Maak je account aan",
+            'label' => "De relaties van Ross Geller in Monica, 8 in totaal. Familie: Monica Geller, zijn zus; Jack Geller, zijn vader; Judy Geller, zijn moeder; en Emma Geller-Green, zijn dochter. Romantisch: Rachel Green, zijn partner. Vrienden: Chandler Bing, Joey Tribbiani en Phoebe Buffay.",
+            'count' => "8 relaties",
+            // The people in each group are in the template, in this order.
+            'groups' => [
+                ['title' => "Familie", 'roles' => ["Zus", "Vader", "Moeder", "Dochter"]],
+                ['title' => "Romantisch", 'roles' => ["Partner"]],
+                ['title' => "Vrienden", 'roles' => ["Vriend", "Vriend", "Vriend"]],
+            ],
+        ],
+
+        'sides' => [
+            'title' => "Ross’ zus is Monica. Monica’s broer is Ross.",
+            'lead' => "Voeg een relatie één keer toe, en Monica toont haar op de pagina van beide mensen.",
+            'body' => "Kies de soort, controleer wie welke rol heeft en koppel de twee mensen. Familie, vrienden, partners en collega’s hebben allemaal een plek.",
+            'label' => "Een relatie toevoegen in Monica. De soort is broer of zus aan beide kanten, Ross Geller is de ene broer of zus en Monica Geller wordt gekozen als de andere, met een knop om de twee rollen om te wisselen. Daaronder het resultaat op beide pagina’s: op de pagina van Ross, Monica Geller, zijn zus; op de pagina van Monica, Ross Geller, haar broer.",
+            'typeLabel' => "Soort relatie",
+            'type' => "Broer of zus ↔ Broer of zus",
+            'swap' => "De twee rollen omwisselen",
+            'cancel' => "Annuleren",
+            'submit' => "Relatie toevoegen",
+            // One card per person, Ross's first.
+            'pages' => [
+                ['title' => "Op de pagina van Ross", 'role' => "Zus"],
+                ['title' => "Op de pagina van Monica", 'role' => "Broer"],
+            ],
+        ],
+
+        'tree' => [
+            'title' => "Sommige verbanden zie je makkelijker.",
+            'body' => [
+                "Een stamboom brengt ouders, partners en kinderen samen, zodat je de verbanden kunt volgen zonder ze uit notities bij elkaar te zoeken.",
+                "Open de pagina van Ross om te zien waar Monica, zijn ouders en Emma in het plaatje passen. Zijn directe familie staat ook op zijn overzicht.",
+            ],
+            'label' => "De stamboom van Ross Geller in Monica: zijn ouders Jack en Judy Geller boven hem, zijn zus Monica Geller en zijn partner Rachel Green naast hem, en zijn dochter Emma Geller-Green onder hem. Alleen afstamming en partnerschappen worden getekend. Ernaast zijn directe familie op zijn overzicht: zijn ouders Jack, 68, en Judy, 66; zijn zus Monica, 57; zijn huidige partner Rachel, 57; en zijn dochter Emma, 24.",
+            'heading' => "Stamboom",
+            'note' => "Hier worden alleen afstamming en partnerschappen getekend. Vrienden en collega’s blijven in de lijst.",
+            'family' => "Directe familie",
+            'add' => "Toevoegen",
+            'groups' => ["Ouders", "Broers en zussen", "Huidige partner", "Kinderen"],
+        ],
+
+        'unknown' => [
+            'title' => "Je hoeft nog niet iedereen te kennen.",
+            'lead' => "Joey had het over een zus. Je wilt het verband onthouden, ook al heb je haar nooit ontmoet.",
+            'body' => [
+                "Kies iemand die al in Monica staat, voeg iemand toe met een naam, of leg een naamloze persoon vast als je alleen de rol kent.",
+                "Je kunt iemand bewaren als gedeeltelijk contact, buiten je hoofdlijst met contacten, als je die persoon alleen nodig hebt voor het verband.",
+            ],
+            'label' => "Een relatie toevoegen aan Joey Tribbiani in Monica: een broer of zus, met drie manieren om te zeggen wie. Ik ken hun naam niet is geselecteerd, waarmee alleen de rol wordt vastgelegd. De andere zijn Ik ken hun naam, en kies iemand die al is opgeschreven. Daaronder een niet aangevinkt vakje om een contactkaart voor deze persoon te maken.",
+            'subtitle' => "Zeg hoe iemand met Joey Tribbiani verbonden is.",
+            // The first is the one selected.
+            'options' => [
+                ['title' => "Ik ken hun naam niet", 'hint' => "Legt alleen de rol vast"],
+                ['title' => "Ik ken hun naam", 'hint' => "Een voornaam alleen is genoeg"],
+                ['title' => "Kies iemand die al is opgeschreven", 'hint' => "Koppelt twee mensen die je al bijhoudt"],
+            ],
+            'record' => [
+                'title' => "Maak een contactkaart voor deze persoon",
+                'hint' => "Laat je dit uit, dan blijft die persoon buiten je lijst met mensen, maar heeft hij of zij toch een eigen pagina.",
+            ],
+        ],
+
+        'history' => [
+            'title' => "Relaties hebben een geschiedenis.",
+            'lead' => "Mensen komen bij elkaar. Ze gaan uit elkaar. Verbanden veranderen.",
+            'body' => "Leg vast wanneer een relatie begon of eindigde, en bewaar eerdere relaties naast huidige. De ex-partners van Ross blijven deel van zijn verhaal.",
+            'label' => "De romantische geschiedenis van Ross Geller in Monica. Huidig: Rachel Green, zijn partner sinds 6 mei 2004. Eerder, beide beëindigd: Emily Waltham, zijn echtgenote van 1998 tot 1999, en Carol Willick, zijn echtgenote van 1987 tot 1993. Ernaast de data van zijn huwelijk met Emily die worden ingevoerd: begonnen 1998, beëindigd 1999.",
+            'heading' => "Romantische geschiedenis",
+            'current' => "Huidig",
+            'past' => "Eerder",
+            // The people are in the template, in this order: Rachel, Emily, Carol.
+            'partners' => ["Partner · sinds 6 mei 2004", "Echtgenote · 1998 tot 1999", "Echtgenote · 1987 tot 1993"],
+            'ended' => "Beëindigd",
+            'started' => "Begonnen",
+            'endedLabel' => "Beëindigd",
+            'optional' => "optioneel",
+        ],
+
+        'types' => [
+            'title' => "Gebruik de woorden die passen.",
+            'lead' => "“Vriend” is een begin. Soms zegt “Huisgenoot” meer.",
+            'body' => [
+                "Maak je eigen soorten relaties en orden ze in categorieën. Kies of de relatie van beide kanten hetzelfde leest, zoals Monica en Rachel die huisgenoten zijn, of anders, zoals een peetouder en een petekind.",
+                "Je kunt ook de formulering en volgorde van bestaande soorten aanpassen, en soorten die je niet meer gebruikt niet meer aanbieden, zonder de al vastgelegde relaties te verwijderen.",
+            ],
+            'label' => "De soorten relaties in Monica. Bij Vrienden, meegeleverd met je account: Vriend, meegeleverd; Huisgenoot, je eigen; en Penvriend, niet meer aangeboden. Bij Peetouders, je eigen categorie: Peetouder en petekind, je eigen. Ernaast wordt Huisgenoot bewerkt: het leest van beide kanten hetzelfde, dus Monica Geller is de huisgenoot van Rachel Green, en Rachel Green is de huisgenoot van Monica Geller.",
+            'heading' => "Soorten relaties",
+            'add' => "Een soort toevoegen",
+            'categories' => [
+                ['name' => "Vrienden", 'note' => "Meegeleverd met je account", 'types' => [
+                    ['name' => "Vriend", 'pair' => "Vriend ↔ Vriend", 'badge' => "Meegeleverd"],
+                    ['name' => "Huisgenoot", 'pair' => "Huisgenoot ↔ Huisgenoot", 'badge' => "Van jou"],
+                    ['name' => "Penvriend", 'pair' => "Penvriend ↔ Penvriend", 'badge' => "Niet aangeboden"],
+                ]],
+                ['name' => "Peetouders", 'note' => "Je eigen categorie", 'types' => [
+                    ['name' => "Peetouder / Petekind", 'pair' => "Peetouder → Petekind", 'badge' => "Van jou"],
+                ]],
+            ],
+            'reads' => "Hoe het leest",
+            // The first is the one selected.
+            'options' => [
+                ['title' => "Van beide kanten hetzelfde", 'hint' => "Beide mensen worden met hetzelfde woord beschreven, zoals bij Broer of zus of Vriend."],
+                ['title' => "Aan elke kant anders", 'hint' => "Elke persoon wordt met een ander woord beschreven, zoals bij Ouder en Kind."],
+            ],
+            'roleLabel' => "Rol, aan beide kanten",
+            'role' => "Huisgenoot",
+            'sentences' => ["Monica Geller is de huisgenoot van Rachel Green.", "Rachel Green is de huisgenoot van Monica Geller."],
         ],
     ],
 

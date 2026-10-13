@@ -47,6 +47,7 @@ return [
             'details' => "Contact details",
             'reminders' => "Reminders",
             'timeline' => "Timeline",
+            'relationships' => "Relationships",
             'page' => "Page :number",
         ],
 
@@ -142,6 +143,11 @@ return [
         'timeline' => [
             'title' => "Keep the moments worth remembering: the timeline in Monica",
             'description' => "Record what happened, who was there and the details you want to keep. Life events on everyone’s timeline at once, your own event types and fields, and a look back year by year.",
+        ],
+
+        'relationships' => [
+            'title' => "Understand how people are connected: relationships in Monica",
+            'description' => "Keep track of the people around someone, with relationships that read correctly from both sides. Family trees, people you have not met yet, past relationships and your own relationship types.",
         ],
 
         'personalCrm' => [
@@ -1648,6 +1654,126 @@ return [
                 'note' => "Applies to events you record from now on. Last year’s entry keeps its fields.",
                 'save' => "Save changes",
             ],
+        ],
+    ],
+
+    'relationships' => [
+        // Words more than one drawing uses.
+        'add' => "Add a relationship",
+        'sibling' => "Sibling",
+
+        'hero' => [
+            'title' => "Understand how people are connected.",
+            'intro' => "Her sister. His partner. The friend who introduced you.",
+            'lede' => "Keep track of the people around someone, with relationships that make sense from both sides.",
+            'cta' => "Create your account",
+            'label' => "Ross Geller’s relationships in Monica, 8 of them. Family: Monica Geller, his sister; Jack Geller, his father; Judy Geller, his mother; and Emma Geller-Green, his daughter. Romantic: Rachel Green, his partner. Friends: Chandler Bing, Joey Tribbiani and Phoebe Buffay.",
+            'count' => "8 relationships",
+            // The people in each group are in the template, in this order.
+            'groups' => [
+                ['title' => "Family", 'roles' => ["Sister", "Father", "Mother", "Daughter"]],
+                ['title' => "Romantic", 'roles' => ["Partner"]],
+                ['title' => "Friends", 'roles' => ["Friend", "Friend", "Friend"]],
+            ],
+        ],
+
+        'sides' => [
+            'title' => "Ross’s sister is Monica. Monica’s brother is Ross.",
+            'lead' => "Add a relationship once, and Monica shows it on both people’s pages.",
+            'body' => "Choose the type, check who holds each role, and link the two people. Family, friends, partners and colleagues all have a place.",
+            'label' => "Adding a relationship in Monica. The type is sibling on both sides, Ross Geller is one sibling and Monica Geller is being chosen as the other, with a button to swap the two roles. Below it, the result on both pages: on Ross’s page, Monica Geller, his sister; on Monica’s page, Ross Geller, her brother.",
+            'typeLabel' => "Relationship type",
+            'type' => "Sibling ↔ Sibling",
+            'swap' => "Swap the two roles",
+            'cancel' => "Cancel",
+            'submit' => "Add relationship",
+            // One card per person, Ross's first.
+            'pages' => [
+                ['title' => "On Ross’s page", 'role' => "Sister"],
+                ['title' => "On Monica’s page", 'role' => "Brother"],
+            ],
+        ],
+
+        'tree' => [
+            'title' => "Some connections are easier to see.",
+            'body' => [
+                "A family tree brings parents, partners and children together, so you can follow the connections without piecing them together from notes.",
+                "Open Ross’s page to see where Monica, his parents and Emma fit into the picture. His immediate family is also shown on his overview.",
+            ],
+            'label' => "Ross Geller’s family tree in Monica: his parents Jack and Judy Geller above him, his sister Monica Geller and his partner Rachel Green beside him, and his daughter Emma Geller-Green below. Only parentage and partnerships are drawn. Beside it, his immediate family on his overview: his parents Jack, 68, and Judy, 66; his sister Monica, 57; his current partner Rachel, 57; and his daughter Emma, 24.",
+            'heading' => "Family tree",
+            'note' => "Only parentage and partnerships are drawn here. Friends and colleagues stay in the list.",
+            'family' => "Immediate family",
+            'add' => "Add",
+            'groups' => ["Parents", "Siblings", "Current partner", "Children"],
+        ],
+
+        'unknown' => [
+            'title' => "You do not need to know everybody yet.",
+            'lead' => "Joey mentioned a sister. You want to remember the connection, even if you have never met her.",
+            'body' => [
+                "Choose someone already in Monica, add someone by name, or record an unnamed person when all you know is their role.",
+                "You can keep someone as a partial contact, outside your main contact list, when you only need them for the connection.",
+            ],
+            'label' => "Adding a relationship to Joey Tribbiani in Monica: a sibling, with three ways to say who. I do not know their name is selected, which records the role and nothing else. The others are I know their name, and choose someone already written down. Below, an unticked box to create a contact record for this person.",
+            'subtitle' => "Say how somebody is connected to Joey Tribbiani.",
+            // The first is the one selected.
+            'options' => [
+                ['title' => "I do not know their name", 'hint' => "Records the role and nothing else"],
+                ['title' => "I know their name", 'hint' => "A first name on its own is enough"],
+                ['title' => "Choose someone already written down", 'hint' => "Links two people you already keep"],
+            ],
+            'record' => [
+                'title' => "Create a contact record for this person",
+                'hint' => "Leave it off and they stay out of your list of people, with a page of their own all the same.",
+            ],
+        ],
+
+        'history' => [
+            'title' => "Relationships have a history.",
+            'lead' => "People get together. They separate. Connections change.",
+            'body' => "Record when a relationship started or ended, and keep past relationships alongside current ones. Ross’s former partners remain part of his story.",
+            'label' => "Ross Geller’s romantic history in Monica. Current: Rachel Green, his partner since 6 May 2004. Past, both ended: Emily Waltham, his spouse from 1998 to 1999, and Carol Willick, his spouse from 1987 to 1993. Beside it, the dates of his marriage to Emily being entered: started 1998, ended 1999.",
+            'heading' => "Romantic history",
+            'current' => "Current",
+            'past' => "Past",
+            // The people are in the template, in this order: Rachel, Emily, Carol.
+            'partners' => ["Partner · since 6 May 2004", "Spouse · 1998 to 1999", "Spouse · 1987 to 1993"],
+            'ended' => "Ended",
+            'started' => "Started",
+            'endedLabel' => "Ended",
+            'optional' => "optional",
+        ],
+
+        'types' => [
+            'title' => "Use the words that fit.",
+            'lead' => "“Friend” is a start. Sometimes “Roommate” says more.",
+            'body' => [
+                "Create your own relationship types and organise them into categories. Choose whether the relationship reads the same from both sides, like Monica and Rachel being roommates, or differently, like a godparent and godchild.",
+                "You can also adjust the wording and order of existing types, and stop offering ones you no longer use without removing the relationships already recorded.",
+            ],
+            'label' => "The relationship types in Monica. In Friends, supplied with your account: Friend, supplied; Roommate, your own; and Pen pal, no longer offered. In Godparents, your own category: Godparent and godchild, your own. Beside them, Roommate being edited: it reads the same from both sides, so Monica Geller is Rachel Green’s roommate, and Rachel Green is Monica Geller’s roommate.",
+            'heading' => "Relationship types",
+            'add' => "Add a type",
+            'categories' => [
+                ['name' => "Friends", 'note' => "Supplied with your account", 'types' => [
+                    ['name' => "Friend", 'pair' => "Friend ↔ Friend", 'badge' => "Supplied"],
+                    ['name' => "Roommate", 'pair' => "Roommate ↔ Roommate", 'badge' => "Yours"],
+                    ['name' => "Pen pal", 'pair' => "Pen pal ↔ Pen pal", 'badge' => "Not offered"],
+                ]],
+                ['name' => "Godparents", 'note' => "Your category", 'types' => [
+                    ['name' => "Godparent / Godchild", 'pair' => "Godparent → Godchild", 'badge' => "Yours"],
+                ]],
+            ],
+            'reads' => "How it reads",
+            // The first is the one selected.
+            'options' => [
+                ['title' => "The same from both sides", 'hint' => "Both people are described with the same word, as with Sibling or Friend."],
+                ['title' => "Different on each side", 'hint' => "Each person is described with a different word, as with Parent and Child."],
+            ],
+            'roleLabel' => "Role, on both sides",
+            'role' => "Roommate",
+            'sentences' => ["Monica Geller is Rachel Green’s roommate.", "Rachel Green is Monica Geller’s roommate."],
         ],
     ],
 

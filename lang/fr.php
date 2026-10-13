@@ -28,6 +28,7 @@ return [
             'details' => "Fiches de contact",
             'reminders' => "Rappels",
             'timeline' => "Chronologie",
+            'relationships' => "Relations",
             'page' => "Page :number",
         ],
 
@@ -119,6 +120,11 @@ return [
         'timeline' => [
             'title' => "Gardez les moments qui comptent : la chronologie dans Monica",
             'description' => "Notez ce qui s’est passé, qui était là et les détails que vous voulez garder. Des événements de vie dans la chronologie de chacun en une seule fois, vos propres types d’événements et de champs, et un regard en arrière année par année.",
+        ],
+
+        'relationships' => [
+            'title' => "Comprenez comment les gens sont liés : les relations dans Monica",
+            'description' => "Gardez une trace des personnes qui entourent quelqu’un, avec des relations qui se lisent correctement des deux côtés. Arbres généalogiques, personnes que vous n’avez pas encore rencontrées, relations passées et vos propres types de relation.",
         ],
 
         'personalCrm' => [
@@ -1626,6 +1632,126 @@ return [
                 'note' => "S’applique aux événements que vous notez à partir de maintenant. L’entrée de l’an dernier garde ses champs.",
                 'save' => "Enregistrer les modifications",
             ],
+        ],
+    ],
+
+    'relationships' => [
+        // Mots que plusieurs dessins utilisent.
+        'add' => "Ajouter une relation",
+        'sibling' => "Frère ou sœur",
+
+        'hero' => [
+            'title' => "Comprenez comment les gens sont liés.",
+            'intro' => "Sa sœur. Son compagnon. L’ami qui vous a présentés.",
+            'lede' => "Gardez une trace des personnes qui entourent quelqu’un, avec des relations qui ont du sens des deux côtés.",
+            'cta' => "Créer votre compte",
+            'label' => "Les relations de Ross Geller dans Monica, 8 au total. Famille : Monica Geller, sa sœur ; Jack Geller, son père ; Judy Geller, sa mère ; et Emma Geller-Green, sa fille. Couple : Rachel Green, sa compagne. Amis : Chandler Bing, Joey Tribbiani et Phoebe Buffay.",
+            'count' => "8 relations",
+            // Les personnes de chaque groupe sont dans le modèle, dans cet ordre.
+            'groups' => [
+                ['title' => "Famille", 'roles' => ["Sœur", "Père", "Mère", "Fille"]],
+                ['title' => "Couple", 'roles' => ["Compagne"]],
+                ['title' => "Amis", 'roles' => ["Ami", "Ami", "Amie"]],
+            ],
+        ],
+
+        'sides' => [
+            'title' => "La sœur de Ross, c’est Monica. Le frère de Monica, c’est Ross.",
+            'lead' => "Ajoutez une relation une seule fois, et Monica l’affiche sur la fiche des deux personnes.",
+            'body' => "Choisissez le type, vérifiez qui tient chaque rôle, et reliez les deux personnes. La famille, les amis, les conjoints et les collègues ont tous leur place.",
+            'label' => "L’ajout d’une relation dans Monica. Le type est frère ou sœur des deux côtés, Ross Geller est l’un des deux et Monica Geller est en train d’être choisie comme l’autre, avec un bouton pour échanger les deux rôles. En dessous, le résultat sur les deux fiches : sur la fiche de Ross, Monica Geller, sa sœur ; sur la fiche de Monica, Ross Geller, son frère.",
+            'typeLabel' => "Type de relation",
+            'type' => "Frère ou sœur ↔ Frère ou sœur",
+            'swap' => "Échanger les deux rôles",
+            'cancel' => "Annuler",
+            'submit' => "Ajouter la relation",
+            // Une carte par personne, celle de Ross d’abord.
+            'pages' => [
+                ['title' => "Sur la fiche de Ross", 'role' => "Sœur"],
+                ['title' => "Sur la fiche de Monica", 'role' => "Frère"],
+            ],
+        ],
+
+        'tree' => [
+            'title' => "Certains liens se voient mieux.",
+            'body' => [
+                "Un arbre généalogique réunit parents, conjoints et enfants, pour que vous suiviez les liens sans les reconstituer à partir de notes.",
+                "Ouvrez la fiche de Ross pour voir où Monica, ses parents et Emma s’inscrivent dans le tableau. Sa famille proche apparaît aussi dans sa vue d’ensemble.",
+            ],
+            'label' => "L’arbre généalogique de Ross Geller dans Monica : ses parents Jack et Judy Geller au-dessus de lui, sa sœur Monica Geller et sa compagne Rachel Green à côté, et sa fille Emma Geller-Green en dessous. Seuls la filiation et les couples sont dessinés. À côté, sa famille proche dans sa vue d’ensemble : ses parents Jack, 68 ans, et Judy, 66 ans ; sa sœur Monica, 57 ans ; sa compagne actuelle Rachel, 57 ans ; et sa fille Emma, 24 ans.",
+            'heading' => "Arbre généalogique",
+            'note' => "Seuls la filiation et les couples sont dessinés ici. Les amis et les collègues restent dans la liste.",
+            'family' => "Famille proche",
+            'add' => "Ajouter",
+            'groups' => ["Parents", "Frères et sœurs", "Compagne actuelle", "Enfants"],
+        ],
+
+        'unknown' => [
+            'title' => "Vous n’avez pas besoin de connaître tout le monde.",
+            'lead' => "Joey a parlé d’une sœur. Vous voulez retenir le lien, même si vous ne l’avez jamais rencontrée.",
+            'body' => [
+                "Choisissez quelqu’un déjà dans Monica, ajoutez quelqu’un par son nom, ou notez une personne sans nom quand vous ne connaissez que son rôle.",
+                "Vous pouvez garder quelqu’un comme contact partiel, en dehors de votre liste principale de contacts, quand vous n’avez besoin de lui que pour le lien.",
+            ],
+            'label' => "L’ajout d’une relation à Joey Tribbiani dans Monica : un frère ou une sœur, avec trois façons de dire qui. Je ne connais pas son nom est sélectionné, ce qui note le rôle et rien d’autre. Les autres sont Je connais son nom, et Choisir quelqu’un déjà noté. En dessous, une case décochée pour créer une fiche de contact pour cette personne.",
+            'subtitle' => "Dites comment quelqu’un est lié à Joey Tribbiani.",
+            // La première est celle qui est sélectionnée.
+            'options' => [
+                ['title' => "Je ne connais pas son nom", 'hint' => "Note le rôle et rien d’autre"],
+                ['title' => "Je connais son nom", 'hint' => "Un simple prénom suffit"],
+                ['title' => "Choisir quelqu’un déjà noté", 'hint' => "Relie deux personnes que vous gardez déjà"],
+            ],
+            'record' => [
+                'title' => "Créer une fiche de contact pour cette personne",
+                'hint' => "Laissez-la décochée et la personne reste hors de votre liste de contacts, avec tout de même une page à elle.",
+            ],
+        ],
+
+        'history' => [
+            'title' => "Les relations ont une histoire.",
+            'lead' => "Les gens se mettent ensemble. Ils se séparent. Les liens changent.",
+            'body' => "Notez quand une relation a commencé ou pris fin, et gardez les relations passées à côté des relations actuelles. Les anciennes compagnes de Ross font toujours partie de son histoire.",
+            'label' => "L’historique amoureux de Ross Geller dans Monica. Actuelle : Rachel Green, sa compagne depuis le 6 mai 2004. Passées, toutes deux terminées : Emily Waltham, son épouse de 1998 à 1999, et Carol Willick, son épouse de 1987 à 1993. À côté, les dates de son mariage avec Emily en cours de saisie : début 1998, fin 1999.",
+            'heading' => "Historique amoureux",
+            'current' => "Actuelle",
+            'past' => "Passées",
+            // Les personnes sont dans le modèle, dans cet ordre : Rachel, Emily, Carol.
+            'partners' => ["Compagne · depuis le 6 mai 2004", "Épouse · de 1998 à 1999", "Épouse · de 1987 à 1993"],
+            'ended' => "Terminée",
+            'started' => "Début",
+            'endedLabel' => "Fin",
+            'optional' => "facultatif",
+        ],
+
+        'types' => [
+            'title' => "Utilisez les mots qui conviennent.",
+            'lead' => "«Ami » est un début. Parfois, «Colocataire » en dit plus.",
+            'body' => [
+                "Créez vos propres types de relation et rangez-les en catégories. Choisissez si la relation se lit pareil des deux côtés, comme Monica et Rachel qui sont colocataires, ou différemment, comme un parrain ou une marraine et son filleul ou sa filleule.",
+                "Vous pouvez aussi ajuster la formulation et l’ordre des types existants, et cesser de proposer ceux que vous n’utilisez plus sans supprimer les relations déjà notées.",
+            ],
+            'label' => "Les types de relation dans Monica. Dans Amis, fournie avec votre compte : Ami, fourni ; Colocataire, le vôtre ; et Correspondant, qui n’est plus proposé. Dans Parrains et marraines, votre propre catégorie : Parrain ou marraine et filleul ou filleule, le vôtre. À côté, Colocataire en cours de modification : il se lit pareil des deux côtés, donc Monica Geller est la colocataire de Rachel Green, et Rachel Green est la colocataire de Monica Geller.",
+            'heading' => "Types de relation",
+            'add' => "Ajouter un type",
+            'categories' => [
+                ['name' => "Amis", 'note' => "Fournie avec votre compte", 'types' => [
+                    ['name' => "Ami", 'pair' => "Ami ↔ Ami", 'badge' => "Fourni"],
+                    ['name' => "Colocataire", 'pair' => "Colocataire ↔ Colocataire", 'badge' => "Le vôtre"],
+                    ['name' => "Correspondant", 'pair' => "Correspondant ↔ Correspondant", 'badge' => "Non proposé"],
+                ]],
+                ['name' => "Parrains et marraines", 'note' => "Votre catégorie", 'types' => [
+                    ['name' => "Parrain ou marraine / Filleul ou filleule", 'pair' => "Parrain ou marraine → Filleul ou filleule", 'badge' => "Le vôtre"],
+                ]],
+            ],
+            'reads' => "Comment elle se lit",
+            // La première est celle qui est sélectionnée.
+            'options' => [
+                ['title' => "Pareil des deux côtés", 'hint' => "Les deux personnes sont décrites avec le même mot, comme avec Frère ou sœur ou Ami."],
+                ['title' => "Différent de chaque côté", 'hint' => "Chaque personne est décrite avec un mot différent, comme avec Parent et Enfant."],
+            ],
+            'roleLabel' => "Rôle, des deux côtés",
+            'role' => "Colocataire",
+            'sentences' => ["Monica Geller est la colocataire de Rachel Green.", "Rachel Green est la colocataire de Monica Geller."],
         ],
     ],
 

@@ -3,7 +3,6 @@
     $groupTitle = $eyebrow . ' px-4.5 pt-3.5 pb-1 text-text-muted';
 @endphp
 
-{{-- The header's "Relationships" item lands on this section. --}}
 <section id="people" class="scroll-mt-20 px-4 pt-24 md:px-6 lg:pt-30">
     <div class="{{ $container }} grid items-center gap-14 lg:grid-cols-2">
         {{-- Ross Geller's relationships, from family to people he has only

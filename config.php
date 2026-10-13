@@ -521,6 +521,21 @@ return [
             'zh' => 'features/timeline',
             'ru' => 'vozmozhnosti/khronologiya',
         ],
+
+        // "Understand how people are connected": relationships, the family
+        // tree they draw, and the types behind them. The header's
+        // "Relationships" menu item leads here. Nested under the features
+        // section like the timeline page, and like it, not a tab.
+        'relationships' => [
+            'en' => 'features/relationships',
+            'fr' => 'fonctionnalites/relations',
+            'de' => 'funktionen/beziehungen',
+            'es' => 'funcionalidades/relaciones',
+            'pt' => 'recursos/relacionamentos',
+            'nl' => 'functies/relaties',
+            'zh' => 'features/relationships',
+            'ru' => 'vozmozhnosti/otnosheniya',
+        ],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -559,6 +574,7 @@ return [
         'details' => '2026-10-12',
         'reminders' => '2026-10-12',
         'timeline' => '2026-10-12',
+        'relationships' => '2026-10-13',
     ],
 
     // ------------------------------------------------------------------ links
