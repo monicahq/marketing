@@ -90,10 +90,10 @@
                 ];
             }
         } else {
-            // The two other feature tabs, the templates page and the details
-            // page are nested under /features/, so the section they belong to
-            // is a crumb in its own right.
-            if (in_array($page->page, ['featuresDashboard', 'featuresJournal', 'templates', 'details'], true)) {
+            // The two other feature tabs, the templates page, the details page
+            // and the reminders page are nested under /features/, so the
+            // section they belong to is a crumb in its own right.
+            if (in_array($page->page, ['featuresDashboard', 'featuresJournal', 'templates', 'details', 'reminders'], true)) {
                 $trail[] = ['name' => $page->t('meta.breadcrumb.features'), 'path' => $page->localePath('features')];
             }
 

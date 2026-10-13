@@ -119,9 +119,9 @@ The design system has its own vocabulary (`--ink`, `--body`, `--hairline`, `--ca
 
 Non-negotiable rules, in rough order of how often they get broken:
 
-- **Shadows are tokens, and there are four.** `shadow-panel` (one pixel under a card's hairline), `shadow-nav-active` (the selected row in a segmented control or a sidebar), `shadow-pop` (what genuinely floats: a menu, a tooltip, the chat card, and the drawn windows on the templates and details pages, which lift off their tinted panels) and `shadow-showcase` (ours, the product picture under the homepage headline, and nothing else). Tailwind's stock shadows stay removed. Never a coloured shadow, and never a shadow on hover.
+- **Shadows are tokens, and there are four.** `shadow-panel` (one pixel under a card's hairline), `shadow-nav-active` (the selected row in a segmented control or a sidebar), `shadow-pop` (what genuinely floats: a menu, a tooltip, the chat card, and the drawn windows on the templates, details and reminders pages, which lift off their tinted panels) and `shadow-showcase` (ours, the product picture under the homepage headline, and nothing else). Tailwind's stock shadows stay removed. Never a coloured shadow, and never a shadow on hover.
 - **No gradients, no background imagery, no photography.** Flat colour only. **One illustration family**, deliberately: the pandas, at the foot of every page (by day and by night), behind the homepage headline (`_partials/home/top.blade.php`) and on the rule under the blog index heading (`_partials/blog/index.blade.php`, `assets/images/blog-index/garden.webp`). The last two are light mode only until they have night versions. Nothing else gets one.
-- **Two marketing grounds besides the page**: `bg-ground-sage` behind the homepage's agents section, and `bg-ground-cream` for the footer and behind the homepage headline, where it matches the meadow's sky. They are ours, declared at the bottom of `theme.css` with their dark values. Do not add a third. The tinted panels behind the drawings on the templates and details pages are not grounds: each is an identity colour at 14% (`bg-identity-1/14`), so it follows dark mode on its own.
+- **Two marketing grounds besides the page**: `bg-ground-sage` behind the homepage's agents section, and `bg-ground-cream` for the footer and behind the homepage headline, where it matches the meadow's sky. They are ours, declared at the bottom of `theme.css` with their dark values. Do not add a third. The tinted panels behind the drawings on the templates, details and reminders pages are not grounds: each is an identity colour at 14% (`bg-identity-1/14`), so it follows dark mode on its own.
 - **Primary actions are near-black** (`--color-primary`). There is no accent colour: links, focus rings and selection are all near black too. `text-accent` still compiles, and resolves to the link colour.
 - **Sentence case everywhere**, including buttons, headings and labels. Uppercase only for 11–12px metadata labels, and applied with the `uppercase` utility so translations stay correct.
 - **No emoji**, ever. No exclamation marks, no "Awesome!", no gamification.
@@ -162,6 +162,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Homepage sections                   | `source/_partials/home/`                            |
 | Templates page                      | `source/_partials/templates/`, one partial per section |
 | Details page                        | `source/_partials/details/`, one partial per section |
+| Reminders page                      | `source/_partials/reminders/`, one partial per section |
 | Features tabs                       | `source/_partials/features/`, screenshots in `source/assets/images/features/` |
 | Shared partials (icon, flag, header)| `source/_partials/`                                 |
 | Locale pages                        | `source/<locale>/`                                  |
@@ -240,7 +241,7 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 
 ## Known gaps
 
-The homepage, the three features pages, pricing, the v3 teaser, the team page, the blog and the two legal pages exist. The templates page ("Your contacts, your way", route key `templates`) and the details page ("Remember the details that matter", route key `details`) exist too. Docs, the MCP and API references, the changelog and a contact address are unbuilt; their links are `#` placeholders in `links` in `config.php`, which the dead link checker lists without failing.
+The homepage, the three features pages, pricing, the v3 teaser, the team page, the blog and the two legal pages exist. The templates page ("Your contacts, your way", route key `templates`) the details page ("Remember the details that matter", route key `details`) and the reminders page ("Remember to reach out", route key `reminders`) exist too. Docs, the MCP and API references, the changelog and a contact address are unbuilt; their links are `#` placeholders in `links` in `config.php`, which the dead link checker lists without failing.
 
 `source/_partials/icon.blade.php` holds the product's own glyphs, copied from the v3 design system. Six (`chevron-left`, `code`, `download`, `panel`, `phone`, `rss`) have no product glyph and are drawn on the same grid; replace them if the product ever draws its own. An unknown name fails the build. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 

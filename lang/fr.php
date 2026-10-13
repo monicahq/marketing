@@ -26,6 +26,7 @@ return [
             'personalCrm' => "Guide du CRM personnel",
             'templates' => "Modèles de contact",
             'details' => "Fiches de contact",
+            'reminders' => "Rappels",
             'page' => "Page :number",
         ],
 
@@ -107,6 +108,11 @@ return [
         'details' => [
             'title' => "Retenez les détails qui comptent : les fiches de contact dans Monica",
             'description' => "Gardez ensemble les détails que les gens vous confient : ce qu’ils vous ont dit la dernière fois, les petites choses, leurs proches et les moments partagés.",
+        ],
+
+        'reminders' => [
+            'title' => "Pensez à donner des nouvelles : les rappels dans Monica",
+            'description' => "Programmez un rappel pour un anniversaire, un grand jour ou un ami que vous voulez appeler. Une fois ou à intervalles réguliers, dans son fuseau horaire, par e-mail ou dans Monica, avec une trace de ce à quoi vous avez pensé.",
         ],
 
         'personalCrm' => [
@@ -1290,6 +1296,170 @@ return [
         'cta' => [
             'title' => "Vous n’avez pas besoin de tout retenir.",
             'body' => "Commencez par une personne et quelques détails que vous aimeriez garder. Ajoutez-en d’autres dès que quelque chose vous semble digne d’être retenu.",
+            'button' => "Créer votre compte",
+        ],
+    ],
+
+    'reminders' => [
+        // Words more than one drawing uses.
+        'remembered' => "J’y ai pensé",
+        'forgot' => "J’ai oublié",
+        'overdue' => "En retard",
+        'today' => "Aujourd’hui",
+        'add' => "Ajouter un rappel",
+        'day' => "Jour",
+        'at' => "À",
+        'timeZone' => "Fuseau horaire",
+        'repeats' => "Répétition",
+        'says' => "Message",
+        'optional' => "facultatif",
+
+        'hero' => [
+            'title' => "Pensez à donner des nouvelles.",
+            'lede' => "Un anniversaire. Un grand jour. Un ami que vous voulez appeler depuis un moment.",
+            'close' => "Programmez un rappel dans Monica et recevez un petit signal le moment venu.",
+            'cta' => "Créer votre compte",
+            'label' => "Les rappels d’une coffre Personnel dans Monica, trois cette semaine. En retard : appeler Phoebe, il y a deux jours, avec des boutons pour répondre J’y ai pensé ou J’ai oublié. Dans les sept prochains jours : demander à Joey comment s’est passée l’audition, mardi, et l’anniversaire de Chandler dans cinq jours. À côté, l’e-mail que Monica envoie mardi à 09:00 pour vous rappeler de penser à Joey, avec un bouton pour ouvrir sa fiche.",
+            'vault' => "Personnel",
+            'count' => "3 rappels cette semaine",
+            'overdueTitle' => "En retard",
+            'overdue' => [
+                ['text' => "Appeler Phoebe", 'when' => "il y a 2 jours"],
+            ],
+            'upcomingTitle' => "Sept prochains jours",
+            'upcoming' => [
+                ['text' => "Demander à Joey comment s’est passée l’audition.", 'when' => "mardi"],
+                ['text' => "Anniversaire de Chandler", 'when' => "dans 5 jours"],
+            ],
+            'inbox' => "Dans votre boîte de réception, mardi 09:00",
+            'from' => "De la part de Monica",
+            'email' => "Vous avez demandé qu’on vous parle de Joey Tribbiani aujourd’hui.",
+            'open' => "Ouvrir la fiche de Joey",
+        ],
+
+        'once' => [
+            'title' => "L’audition de Joey a lieu mardi.",
+            'lead' => "Vous ne pouvez pas lui obtenir le rôle. Vous pouvez penser à lui demander comment ça s’est passé.",
+            'body' => "Ajoutez un rappel sur la fiche de Joey, choisissez le jour et l’heure, et écrivez ce que Monica doit vous dire : « Demander à Joey comment s’est passée l’audition. »",
+            'label' => "L’ajout d’un rappel sur la fiche de Joey Tribbiani dans Monica : le mardi 14 octobre à 18:00, il dira « Demander à Joey comment s’est passée l’audition. » Il n’a lieu qu’une fois.",
+            'heading' => "Ajouter un rappel pour Joey",
+            'day' => "mardi 14 octobre",
+            'at' => "18:00",
+            'says' => "Demander à Joey comment s’est passée l’audition.",
+            'summary' => "Rappel le :when, une seule fois.",
+            'when' => "mardi 14 octobre à 18:00",
+            'cancel' => "Annuler",
+        ],
+
+        'yearly' => [
+            'title' => "Certaines dates reviennent chaque année.",
+            'body' => "Enregistrez l’anniversaire de Chandler et activez un rappel pour cette date. Monica vous le rappellera le jour même, chaque année.",
+            'close' => "Si vous corrigez la date plus tard, le rappel suit.",
+            'label' => "L’anniversaire de Chandler Bing dans Monica, le 8 avril 1968, avec un rappel activé pour cette date. Il se répète chaque année à 09:00, heure de New York, et dira « Anniversaire de Chandler ». Le prochain aura lieu le 8 avril 2027.",
+            'birthday' => "Anniversaire",
+            'date' => "8 avril 1968",
+            'noYear' => "Je ne connais pas l’année",
+            'remind' => "Me rappeler cette date",
+            'repeats' => "Chaque année",
+            'at' => "09:00",
+            'zone' => "New York",
+            'says' => "Anniversaire de Chandler",
+            'summary' => "Prochain rappel le :when, le jour même.",
+            'when' => "8 avril 2027 à 09:00",
+        ],
+
+        'habit' => [
+            'title' => "Faites de la prise de nouvelles une habitude.",
+            'lead' => "Appeler Phoebe tous les mois. Prendre des nouvelles de Rachel toutes les trois semaines.",
+            'body' => "Un rappel peut n’avoir lieu qu’une fois, ou revenir toutes les quelques semaines, tous les quelques mois ou tous les quelques ans. Choisissez le rythme qui convient à chaque personne.",
+            'label' => "Deux rappels récurrents dans Monica : appeler Phoebe, tous les mois, prochain le 3 novembre, et prendre des nouvelles de Rachel, toutes les trois semaines, prochain le 24 octobre. À côté, le menu qui choisit la répétition d’un rappel, réglé sur toutes les 3 semaines.",
+            'rows' => [
+                ['text' => "Appeler Phoebe", 'detail' => "3 novembre · dans trois semaines · Tous les mois"],
+                ['text' => "Prendre des nouvelles de Rachel", 'detail' => "24 octobre · dans onze jours · Toutes les 3 semaines"],
+            ],
+            'options' => ["Une fois", "Toutes les semaines", "Toutes les 3 semaines", "Tous les mois", "Tous les ans"],
+            // The option drawn as chosen, counted from zero.
+            'chosen' => 2,
+        ],
+
+        'zone' => [
+            'title' => "Votre heure, où qu’ils soient.",
+            'lead' => "Chaque rappel a sa propre heure et son propre fuseau horaire.",
+            'body' => "Si Ross est à Londres, vous pouvez caler un rappel sur sa journée. Il garde ce fuseau horaire même si vous voyagez ou modifiez vos propres réglages.",
+            'label' => "Un rappel dans Monica pour souhaiter bonne chance à Ross Geller pour sa conférence, le jeudi 23 octobre à 08:30, heure de Londres. Il est 08:30 pour Ross à Londres et 03:30 pour vous à New York.",
+            'heading' => "Souhaiter bonne chance à Ross pour sa conférence",
+            'day' => "jeudi 23 octobre",
+            'at' => "08:30",
+            'zone' => "Londres",
+            'them' => "Ross à Londres",
+            'you' => "Vous à New York",
+            'yours' => "03:30",
+        ],
+
+        'channels' => [
+            'title' => "Choisissez comment le rappel vous parvient.",
+            'lead' => "Recevez vos rappels par e-mail ou pendant que vous utilisez Monica.",
+            'body' => "Telegram et les SMS sont aussi disponibles lorsqu’ils sont activés sur votre instance Monica. Choisissez les canaux qui vous conviennent, et envoyez-vous un test pour vérifier qu’ils sont connectés.",
+            'label' => "Les paramètres de notification dans Monica. L’e-mail est connecté, avec un bouton pour envoyer un test. Les notifications dans Monica sont activées. Telegram et les SMS sont activés sur cette instance, chacun avec un bouton pour se connecter.",
+            'heading' => "Notifications",
+            'sub' => "Où vos rappels vous parviennent",
+            'rows' => [
+                ['name' => "E-mail", 'detail' => "monica@geller.example", 'status' => "Connecté", 'action' => "Envoyer un test"],
+                ['name' => "Dans Monica", 'detail' => "La cloche en haut de chaque page", 'status' => "Activé"],
+                ['name' => "Telegram", 'detail' => "Activé sur cette instance", 'action' => "Connecter"],
+                ['name' => "SMS", 'detail' => "Activé sur cette instance", 'action' => "Connecter"],
+            ],
+        ],
+
+        'answer' => [
+            'title' => "Y avez-vous pensé ?",
+            'body' => "Quand le jour d’un rappel arrive, vous pouvez dire à Monica comment ça s’est passé.",
+            'remembered' => [
+                'body' => "Vous avez appelé Chandler, souhaité un bon anniversaire à Rachel ou demandé à Joey comment s’est passée l’audition. Indiquez que vous y avez pensé dès le jour même.",
+                'label' => "Un rappel prévu aujourd’hui dans Monica : demander à Joey comment s’est passée l’audition, mardi 14 octobre à 18:00, une seule fois, avec un bouton pour répondre J’y ai pensé.",
+                'reminder' => "Demander à Joey comment s’est passée l’audition.",
+                'detail' => "mardi 14 octobre · 18:00 · Une seule fois",
+            ],
+            'forgot' => [
+                'body' => "La journée vous a échappé. À partir du lendemain, vous pouvez indiquer que vous avez oublié.",
+                'label' => "Un rappel en retard dans Monica : l’anniversaire de Phoebe, le 16 février, il y a deux jours. Il se répète chaque année et reviendra le 16 février 2027. Des boutons pour répondre J’y ai pensé ou J’ai oublié.",
+                'reminder' => "Anniversaire de Phoebe",
+                'detail' => "16 février · il y a 2 jours · Chaque année · prochain le 16 février 2027",
+            ],
+            'notes' => [
+                "Votre réponse range cette occurrence dans votre historique. Sans réponse, elle reste en retard pour que vous puissiez y revenir.",
+                "Pour les rappels récurrents, la date suivante revient quand même. Oublier l’anniversaire de Phoebe cette année n’annule pas le rappel de l’année prochaine.",
+            ],
+        ],
+
+        'attention' => [
+            'title' => "Voyez ce qui demande votre attention.",
+            'body' => [
+                "Retrouvez les rappels d’une personne sur sa fiche, ou ouvrez les rappels de votre coffre pour voir tout le monde ensemble.",
+                "Voyez ce qui est en retard, ce qui est prévu aujourd’hui et ce qui arrive. Parcourez votre historique pour revoir les rappels auxquels vous avez pensé et ceux que vous avez oubliés.",
+            ],
+            'label' => "La page des rappels d’un coffre dans Monica. Sur 24 rappels au cours des 12 derniers mois, 75 % ont été honorés et 25 % oubliés. Des filtres : tous 5, en retard 1, aujourd’hui 1, à venir 3 et historique 18. En retard : appeler Phoebe, 11 octobre, il y a deux jours, tous les mois. À venir, du plus proche au plus lointain : demander à Joey comment s’est passée l’audition demain, prendre des nouvelles de Rachel dans onze jours, et l’anniversaire de Chandler le 8 avril 2027, qui suit sa date d’anniversaire.",
+            'heading' => "Rappels",
+            'stats' => [
+                ['value' => "75 %", 'label' => "honorés"],
+                ['value' => "25 %", 'label' => "oubliés"],
+            ],
+            'period' => "sur 24 rappels au cours des 12 derniers mois",
+            'filters' => ["Tous", "En retard", "Aujourd’hui", "À venir", "Historique"],
+            'overdueNote' => "Le jour est passé sans réponse.",
+            'overdue' => ['text' => "Appeler Phoebe", 'detail' => "11 octobre · il y a 2 jours · Tous les mois"],
+            'upcomingTitle' => "À venir",
+            'upcomingNote' => "Du plus proche au plus lointain.",
+            'upcoming' => [
+                ['text' => "Demander à Joey comment s’est passée l’audition.", 'detail' => "14 octobre · demain · Une seule fois"],
+                ['text' => "Prendre des nouvelles de Rachel", 'detail' => "24 octobre · dans onze jours · Toutes les 3 semaines"],
+                ['text' => "Anniversaire de Chandler", 'detail' => "8 avril 2027 · dans 6 mois · Chaque année · Suit l’anniversaire"],
+            ],
+        ],
+
+        'cta' => [
+            'title' => "Un petit coup de pouce pour passer à l’acte.",
+            'body' => "Vous avez pensé à appeler Chandler. Donnez à cette pensée un jour et une heure.",
             'button' => "Créer votre compte",
         ],
     ],

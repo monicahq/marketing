@@ -429,6 +429,19 @@ return [
             'pt' => 'recursos/detalhes',
             'nl' => 'functies/details',
         ],
+
+        // "Remember to reach out": reminders, once or on a rhythm, and how the
+        // nudge reaches you. The header's "Reminders" menu item leads here.
+        // Nested under the features section like the details page, and like
+        // it, not a tab.
+        'reminders' => [
+            'en' => 'features/reminders',
+            'fr' => 'fonctionnalites/rappels',
+            'de' => 'funktionen/erinnerungen',
+            'es' => 'funcionalidades/recordatorios',
+            'pt' => 'recursos/lembretes',
+            'nl' => 'functies/herinneringen',
+        ],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -465,6 +478,7 @@ return [
         'personalCrm' => '2026-08-23',
         'templates' => '2026-10-12',
         'details' => '2026-10-12',
+        'reminders' => '2026-10-12',
     ],
 
     // ------------------------------------------------------------------ links

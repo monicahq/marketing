@@ -6,14 +6,14 @@
     // The features menu, one destination per item, in the order of
     // `nav.menu.groups` in `lang/`. Each item goes to the page or section that
     // shows it best: the details page for what lives on a contact and for the
-    // people around them, the dashboard for reminders, the journal for the
-    // timeline, and the homepage's own sections for assistants and privacy.
+    // people around them, the reminders page for reminders, the journal for
+    // the timeline, and the homepage's own sections for assistants and privacy.
     // The fragments are
     // ids on those sections, so the dead link checker fails if one is renamed.
     // Listed here rather than in `lang/`, because a URL is not copy.
     $menu = $page->t('nav.menu');
     $menuLinks = [
-        [$details, $page->route('featuresDashboard'), $page->route('featuresJournal')],
+        [$details, $page->route('reminders'), $page->route('featuresJournal')],
         ["{$details}#people", $features, $features],
         ["{$features}#api", "{$home}#agents", "{$home}#privacy"],
     ];

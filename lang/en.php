@@ -45,6 +45,7 @@ return [
             'personalCrm' => "Personal CRM guide",
             'templates' => "Contact templates",
             'details' => "Contact details",
+            'reminders' => "Reminders",
             'page' => "Page :number",
         ],
 
@@ -130,6 +131,11 @@ return [
         'details' => [
             'title' => "Remember the details that matter: contact pages in Monica",
             'description' => "Keep the details people share with you together: what they told you last time, the little things, the people around them, and the moments you shared.",
+        ],
+
+        'reminders' => [
+            'title' => "Remember to reach out: reminders in Monica",
+            'description' => "Set a reminder for a birthday, a big day or a friend you mean to call. Once or on a rhythm, in their time zone, by email or in Monica, and a record of what you remembered.",
         ],
 
         'personalCrm' => [
@@ -1312,6 +1318,170 @@ return [
         'cta' => [
             'title' => "You do not have to remember everything.",
             'body' => "Start with one person and a few details you would like to keep. Add more whenever something feels worth remembering.",
+            'button' => "Create your account",
+        ],
+    ],
+
+    'reminders' => [
+        // Words more than one drawing uses.
+        'remembered' => "I remembered",
+        'forgot' => "I forgot",
+        'overdue' => "Overdue",
+        'today' => "Today",
+        'add' => "Add a reminder",
+        'day' => "Day",
+        'at' => "At",
+        'timeZone' => "Time zone",
+        'repeats' => "Repeats",
+        'says' => "It will say",
+        'optional' => "optional",
+
+        'hero' => [
+            'title' => "Remember to reach out.",
+            'lede' => "A birthday. A big day. A friend you have been meaning to call.",
+            'close' => "Set a reminder in Monica and get a nudge when it is time.",
+            'cta' => "Create your account",
+            'label' => "The reminders in a Personal vault in Monica, three this week. Overdue: call Phoebe, two days ago, with buttons to answer I remembered or I forgot. In the next seven days: ask Joey about the audition on Tuesday, and Chandler’s birthday in five days. Beside it, the email Monica sends on Tuesday at 09:00 to remind you about Joey, with a button to open his page.",
+            'vault' => "Personal",
+            'count' => "3 reminders this week",
+            'overdueTitle' => "Overdue",
+            'overdue' => [
+                ['text' => "Call Phoebe", 'when' => "2 days ago"],
+            ],
+            'upcomingTitle' => "Next seven days",
+            'upcoming' => [
+                ['text' => "Ask Joey about the audition.", 'when' => "Tuesday"],
+                ['text' => "Chandler’s birthday", 'when' => "5 days from now"],
+            ],
+            'inbox' => "In your inbox, Tuesday 09:00",
+            'from' => "From Monica",
+            'email' => "You asked to be reminded about Joey Tribbiani today.",
+            'open' => "Open Joey’s page",
+        ],
+
+        'once' => [
+            'title' => "Joey’s audition is on Tuesday.",
+            'lead' => "You cannot get him the part. You can remember to ask how it went.",
+            'body' => "Add a reminder to Joey’s page, choose the day and time, and write what you want Monica to tell you: “Ask Joey about the audition.”",
+            'label' => "Adding a reminder on Joey Tribbiani’s page in Monica: on Tuesday 14 October at 18:00, it will say “Ask Joey about the audition.” It happens once.",
+            'heading' => "Add a reminder for Joey",
+            'day' => "Tuesday 14 October",
+            'at' => "18:00",
+            'says' => "Ask Joey about the audition.",
+            'summary' => "Reminder on :when, once.",
+            'when' => "Tuesday 14 October at 18:00",
+            'cancel' => "Cancel",
+        ],
+
+        'yearly' => [
+            'title' => "Some dates come around every year.",
+            'body' => "Save Chandler’s birthday and turn on a reminder for that date. Monica will remind you on the day, each year.",
+            'close' => "If you correct the date later, the reminder follows it.",
+            'label' => "Chandler Bing’s birthday in Monica, 8 April 1968, with a reminder turned on for the date. It repeats every year at 09:00, New York time, and will say “Chandler’s birthday”. The next one is on 8 April 2027.",
+            'birthday' => "Birthday",
+            'date' => "8 April 1968",
+            'noYear' => "I do not know the year",
+            'remind' => "Remind me about this date",
+            'repeats' => "Every year",
+            'at' => "09:00",
+            'zone' => "New York",
+            'says' => "Chandler’s birthday",
+            'summary' => "Next reminder on :when, on the day.",
+            'when' => "8 April 2027 at 09:00",
+        ],
+
+        'habit' => [
+            'title' => "Make keeping in touch a habit.",
+            'lead' => "Call Phoebe every month. Catch up with Rachel every three weeks.",
+            'body' => "Reminders can happen once, or repeat every few weeks, months or years. Choose a rhythm that makes sense for each person.",
+            'label' => "Two repeating reminders in Monica: call Phoebe, every month, next on 3 November, and catch up with Rachel, every three weeks, next on 24 October. Beside them, the menu that chooses how a reminder repeats, set to every 3 weeks.",
+            'rows' => [
+                ['text' => "Call Phoebe", 'detail' => "3 November · in three weeks · Every month"],
+                ['text' => "Catch up with Rachel", 'detail' => "24 October · in eleven days · Every 3 weeks"],
+            ],
+            'options' => ["Once", "Every week", "Every 3 weeks", "Every month", "Every year"],
+            // The option drawn as chosen, counted from zero.
+            'chosen' => 2,
+        ],
+
+        'zone' => [
+            'title' => "Your time, wherever they are.",
+            'lead' => "Each reminder has its own time and time zone.",
+            'body' => "If Ross is away in London, you can set a reminder around his day. It keeps that time zone even if you travel or change your own settings.",
+            'label' => "A reminder in Monica to wish Ross Geller luck with the lecture, on Thursday 23 October at 08:30, London time. That is 08:30 for Ross in London and 03:30 for you in New York.",
+            'heading' => "Wish Ross luck with the lecture",
+            'day' => "Thursday 23 October",
+            'at' => "08:30",
+            'zone' => "London",
+            'them' => "Ross in London",
+            'you' => "You in New York",
+            'yours' => "03:30",
+        ],
+
+        'channels' => [
+            'title' => "Choose how the nudge reaches you.",
+            'lead' => "Receive reminders by email or while you are using Monica.",
+            'body' => "Telegram and text messages are also available when enabled on your Monica instance. Choose the channels that work for you, and send yourself a test to check they are connected.",
+            'label' => "Notification settings in Monica. Email is connected, with a button to send a test. Notifications in Monica are on. Telegram and text messages are enabled on this instance, each with a button to connect.",
+            'heading' => "Notifications",
+            'sub' => "Where your reminders reach you",
+            'rows' => [
+                ['name' => "Email", 'detail' => "monica@geller.example", 'status' => "Connected", 'action' => "Send a test"],
+                ['name' => "In Monica", 'detail' => "The bell at the top of every page", 'status' => "On"],
+                ['name' => "Telegram", 'detail' => "Enabled on this instance", 'action' => "Connect"],
+                ['name' => "Text message", 'detail' => "Enabled on this instance", 'action' => "Connect"],
+            ],
+        ],
+
+        'answer' => [
+            'title' => "Did you remember?",
+            'body' => "When a reminder’s day arrives, you can tell Monica how it went.",
+            'remembered' => [
+                'body' => "You called Chandler, wished Rachel a happy birthday, or asked Joey about the audition. Mark it as remembered from the day itself.",
+                'label' => "A reminder due today in Monica: ask Joey about the audition, Tuesday 14 October at 18:00, one time, with a button to answer I remembered.",
+                'reminder' => "Ask Joey about the audition.",
+                'detail' => "Tuesday 14 October · 18:00 · One time",
+            ],
+            'forgot' => [
+                'body' => "The day got away from you. From the following day, you can mark it as forgotten.",
+                'label' => "An overdue reminder in Monica: Phoebe’s birthday, 16 February, two days ago. It repeats every year and comes around again on 16 February 2027. Buttons answer I remembered or I forgot.",
+                'reminder' => "Phoebe’s birthday",
+                'detail' => "16 February · 2 days ago · Every year · next on 16 February 2027",
+            ],
+            'notes' => [
+                "Your answer moves that occurrence into your history. Leave it unanswered, and it stays overdue so you can come back to it.",
+                "For repeating reminders, the next date still comes around. Forgetting Phoebe’s birthday this year does not cancel next year’s nudge.",
+            ],
+        ],
+
+        'attention' => [
+            'title' => "See what needs your attention.",
+            'body' => [
+                "Find a person’s reminders on their page, or open your vault’s reminders to see everyone together.",
+                "See what is overdue, what is due today, and what is coming up. Look back through your history to see the reminders you remembered and the ones you forgot.",
+            ],
+            'label' => "A vault’s reminders page in Monica. Of 24 reminders in the last 12 months, 75% were remembered and 25% forgotten. Filters for all 5, overdue 1, today 1, upcoming 3 and history 18. Overdue: call Phoebe, 11 October, two days ago, every month. Upcoming, soonest first: ask Joey about the audition tomorrow, catch up with Rachel in eleven days, and Chandler’s birthday on 8 April 2027, which follows his birthday.",
+            'heading' => "Reminders",
+            'stats' => [
+                ['value' => "75%", 'label' => "remembered"],
+                ['value' => "25%", 'label' => "forgot"],
+            ],
+            'period' => "of 24 reminders in the last 12 months",
+            'filters' => ["All", "Overdue", "Today", "Upcoming", "History"],
+            'overdueNote' => "The day has passed without an answer.",
+            'overdue' => ['text' => "Call Phoebe", 'detail' => "11 October · 2 days ago · Every month"],
+            'upcomingTitle' => "Upcoming",
+            'upcomingNote' => "Soonest first.",
+            'upcoming' => [
+                ['text' => "Ask Joey about the audition.", 'detail' => "14 October · tomorrow · One time"],
+                ['text' => "Catch up with Rachel", 'detail' => "24 October · in eleven days · Every 3 weeks"],
+                ['text' => "Chandler’s birthday", 'detail' => "8 April 2027 · 6 months from now · Every year · Follows Birthday"],
+            ],
+        ],
+
+        'cta' => [
+            'title' => "A little help with the follow-through.",
+            'body' => "You thought of calling Chandler. Give that thought a day and time.",
             'button' => "Create your account",
         ],
     ],

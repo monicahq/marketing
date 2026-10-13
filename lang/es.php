@@ -24,6 +24,7 @@ return [
             'personalCrm' => "Guía del CRM personal",
             'templates' => "Plantillas de contacto",
             'details' => "Fichas de contacto",
+            'reminders' => "Recordatorios",
             'page' => "Página :number",
         ],
 
@@ -105,6 +106,11 @@ return [
         'details' => [
             'title' => "Recuerda los detalles que importan: las fichas de contacto en Monica",
             'description' => "Guarda juntos los detalles que la gente te cuenta: lo que te dijeron la última vez, las pequeñas cosas, las personas de su entorno y los momentos compartidos.",
+        ],
+
+        'reminders' => [
+            'title' => "Acuérdate de dar señales de vida: los recordatorios en Monica",
+            'description' => "Crea un recordatorio para un cumpleaños, un día importante o un amigo al que quieres llamar. Una vez o con regularidad, en su zona horaria, por correo o en Monica, y un registro de lo que recordaste.",
         ],
 
         'personalCrm' => [
@@ -1288,6 +1294,170 @@ return [
         'cta' => [
             'title' => "No tienes que recordarlo todo.",
             'body' => "Empieza con una persona y unos pocos detalles que te gustaría guardar. Añade más cuando algo te parezca digno de recordar.",
+            'button' => "Crear tu cuenta",
+        ],
+    ],
+
+    'reminders' => [
+        // Words more than one drawing uses.
+        'remembered' => "Me acordé",
+        'forgot' => "Lo olvidé",
+        'overdue' => "Vencido",
+        'today' => "Hoy",
+        'add' => "Añadir un recordatorio",
+        'day' => "Día",
+        'at' => "A las",
+        'timeZone' => "Zona horaria",
+        'repeats' => "Se repite",
+        'says' => "Dirá",
+        'optional' => "opcional",
+
+        'hero' => [
+            'title' => "Acuérdate de dar señales de vida.",
+            'lede' => "Un cumpleaños. Un día importante. Un amigo al que llevas tiempo queriendo llamar.",
+            'close' => "Crea un recordatorio en Monica y recibe un aviso cuando llegue el momento.",
+            'cta' => "Crear tu cuenta",
+            'label' => "Los recordatorios de una bóveda Personal en Monica, tres esta semana. Vencido: llamar a Phoebe, hace dos días, con botones para responder Me acordé o Lo olvidé. En los próximos siete días: preguntarle a Joey por la audición el martes, y el cumpleaños de Chandler dentro de cinco días. Al lado, el correo que Monica envía el martes a las 09:00 para recordarte lo de Joey, con un botón para abrir su ficha.",
+            'vault' => "Personal",
+            'count' => "3 recordatorios esta semana",
+            'overdueTitle' => "Vencidos",
+            'overdue' => [
+                ['text' => "Llamar a Phoebe", 'when' => "hace 2 días"],
+            ],
+            'upcomingTitle' => "Próximos siete días",
+            'upcoming' => [
+                ['text' => "Preguntarle a Joey por la audición.", 'when' => "Martes"],
+                ['text' => "Cumpleaños de Chandler", 'when' => "dentro de 5 días"],
+            ],
+            'inbox' => "En tu bandeja de entrada, martes 09:00",
+            'from' => "De Monica",
+            'email' => "Pediste que te recordáramos hoy lo de Joey Tribbiani.",
+            'open' => "Abrir la ficha de Joey",
+        ],
+
+        'once' => [
+            'title' => "La audición de Joey es el martes.",
+            'lead' => "No puedes conseguirle el papel. Sí puedes acordarte de preguntarle qué tal le fue.",
+            'body' => "Añade un recordatorio en la ficha de Joey, elige el día y la hora y escribe lo que quieres que Monica te diga: «Preguntarle a Joey por la audición.»",
+            'label' => "Añadir un recordatorio en la ficha de Joey Tribbiani en Monica: el martes 14 de octubre a las 18:00, dirá «Preguntarle a Joey por la audición.» Ocurre una sola vez.",
+            'heading' => "Añadir un recordatorio para Joey",
+            'day' => "Martes 14 de octubre",
+            'at' => "18:00",
+            'says' => "Preguntarle a Joey por la audición.",
+            'summary' => "Recordatorio el :when, una sola vez.",
+            'when' => "martes 14 de octubre a las 18:00",
+            'cancel' => "Cancelar",
+        ],
+
+        'yearly' => [
+            'title' => "Algunas fechas vuelven cada año.",
+            'body' => "Guarda el cumpleaños de Chandler y activa un recordatorio para esa fecha. Monica te avisará ese mismo día, cada año.",
+            'close' => "Si más adelante corriges la fecha, el recordatorio la sigue.",
+            'label' => "El cumpleaños de Chandler Bing en Monica, el 8 de abril de 1968, con un recordatorio activado para esa fecha. Se repite cada año a las 09:00, hora de Nueva York, y dirá «Cumpleaños de Chandler». El próximo es el 8 de abril de 2027.",
+            'birthday' => "Cumpleaños",
+            'date' => "8 de abril de 1968",
+            'noYear' => "No sé el año",
+            'remind' => "Recordarme esta fecha",
+            'repeats' => "Cada año",
+            'at' => "09:00",
+            'zone' => "Nueva York",
+            'says' => "Cumpleaños de Chandler",
+            'summary' => "Próximo recordatorio el :when, ese mismo día.",
+            'when' => "8 de abril de 2027 a las 09:00",
+        ],
+
+        'habit' => [
+            'title' => "Haz de mantener el contacto un hábito.",
+            'lead' => "Llamar a Phoebe cada mes. Ponerte al día con Rachel cada tres semanas.",
+            'body' => "Los recordatorios pueden ocurrir una sola vez o repetirse cada pocas semanas, meses o años. Elige el ritmo que tenga sentido para cada persona.",
+            'label' => "Dos recordatorios periódicos en Monica: llamar a Phoebe, cada mes, el próximo el 3 de noviembre, y ponerte al día con Rachel, cada tres semanas, el próximo el 24 de octubre. Al lado, el menú que elige cómo se repite un recordatorio, con cada 3 semanas seleccionado.",
+            'rows' => [
+                ['text' => "Llamar a Phoebe", 'detail' => "3 de noviembre · dentro de tres semanas · Cada mes"],
+                ['text' => "Ponerte al día con Rachel", 'detail' => "24 de octubre · dentro de once días · Cada 3 semanas"],
+            ],
+            'options' => ["Una vez", "Cada semana", "Cada 3 semanas", "Cada mes", "Cada año"],
+            // The option drawn as chosen, counted from zero.
+            'chosen' => 2,
+        ],
+
+        'zone' => [
+            'title' => "Tu hora, estén donde estén.",
+            'lead' => "Cada recordatorio tiene su propia hora y su propia zona horaria.",
+            'body' => "Si Ross está de viaje en Londres, puedes programar un recordatorio según su día. Conserva esa zona horaria aunque tú viajes o cambies tus propios ajustes.",
+            'label' => "Un recordatorio en Monica para desearle suerte a Ross Geller con la conferencia, el jueves 23 de octubre a las 08:30, hora de Londres. Son las 08:30 para Ross en Londres y las 03:30 para ti en Nueva York.",
+            'heading' => "Desearle suerte a Ross con la conferencia",
+            'day' => "Jueves 23 de octubre",
+            'at' => "08:30",
+            'zone' => "Londres",
+            'them' => "Ross en Londres",
+            'you' => "Tú en Nueva York",
+            'yours' => "03:30",
+        ],
+
+        'channels' => [
+            'title' => "Elige cómo te llega el aviso.",
+            'lead' => "Recibe los recordatorios por correo o mientras usas Monica.",
+            'body' => "Telegram y los mensajes de texto también están disponibles si están activados en tu instancia de Monica. Elige los canales que te vengan bien y envíate una prueba para comprobar que están conectados.",
+            'label' => "Los ajustes de notificaciones en Monica. El correo está conectado, con un botón para enviar una prueba. Las notificaciones en Monica están activadas. Telegram y los mensajes de texto están habilitados en esta instancia, cada uno con un botón para conectarlo.",
+            'heading' => "Notificaciones",
+            'sub' => "Dónde te llegan los recordatorios",
+            'rows' => [
+                ['name' => "Correo electrónico", 'detail' => "monica@geller.example", 'status' => "Conectado", 'action' => "Enviar una prueba"],
+                ['name' => "En Monica", 'detail' => "La campana en la parte superior de cada página", 'status' => "Activado"],
+                ['name' => "Telegram", 'detail' => "Habilitado en esta instancia", 'action' => "Conectar"],
+                ['name' => "Mensaje de texto", 'detail' => "Habilitado en esta instancia", 'action' => "Conectar"],
+            ],
+        ],
+
+        'answer' => [
+            'title' => "¿Te acordaste?",
+            'body' => "Cuando llega el día de un recordatorio, puedes contarle a Monica cómo fue.",
+            'remembered' => [
+                'body' => "Llamaste a Chandler, felicitaste a Rachel por su cumpleaños o le preguntaste a Joey por la audición. Márcalo como recordado ese mismo día.",
+                'label' => "Un recordatorio para hoy en Monica: preguntarle a Joey por la audición, martes 14 de octubre a las 18:00, una sola vez, con un botón para responder Me acordé.",
+                'reminder' => "Preguntarle a Joey por la audición.",
+                'detail' => "Martes 14 de octubre · 18:00 · Una sola vez",
+            ],
+            'forgot' => [
+                'body' => "El día se te escapó. A partir del día siguiente, puedes marcarlo como olvidado.",
+                'label' => "Un recordatorio vencido en Monica: el cumpleaños de Phoebe, 16 de febrero, hace dos días. Se repite cada año y vuelve el 16 de febrero de 2027. Hay botones para responder Me acordé o Lo olvidé.",
+                'reminder' => "Cumpleaños de Phoebe",
+                'detail' => "16 de febrero · hace 2 días · Cada año · el próximo el 16 de febrero de 2027",
+            ],
+            'notes' => [
+                "Tu respuesta pasa esa ocasión a tu historial. Si no respondes, sigue vencido para que puedas volver a él.",
+                "En los recordatorios periódicos, la siguiente fecha llega igualmente. Olvidar el cumpleaños de Phoebe este año no cancela el aviso del año que viene.",
+            ],
+        ],
+
+        'attention' => [
+            'title' => "Mira lo que requiere tu atención.",
+            'body' => [
+                "Encuentra los recordatorios de una persona en su ficha, o abre los recordatorios de tu bóveda para verlos todos juntos.",
+                "Mira lo que está vencido, lo que toca hoy y lo que se acerca. Repasa tu historial para ver los recordatorios de los que te acordaste y los que olvidaste.",
+            ],
+            'label' => "La página de recordatorios de una bóveda en Monica. De 24 recordatorios en los últimos 12 meses, el 75% se recordaron y el 25% se olvidaron. Filtros para todos 5, vencidos 1, hoy 1, próximos 3 e historial 18. Vencido: llamar a Phoebe, 11 de octubre, hace dos días, cada mes. Próximos, del más cercano al más lejano: preguntarle a Joey por la audición mañana, ponerte al día con Rachel dentro de once días y el cumpleaños de Chandler el 8 de abril de 2027, que sigue su cumpleaños.",
+            'heading' => "Recordatorios",
+            'stats' => [
+                ['value' => "75%", 'label' => "recordados"],
+                ['value' => "25%", 'label' => "olvidados"],
+            ],
+            'period' => "de 24 recordatorios en los últimos 12 meses",
+            'filters' => ["Todos", "Vencidos", "Hoy", "Próximos", "Historial"],
+            'overdueNote' => "El día pasó sin respuesta.",
+            'overdue' => ['text' => "Llamar a Phoebe", 'detail' => "11 de octubre · hace 2 días · Cada mes"],
+            'upcomingTitle' => "Próximos",
+            'upcomingNote' => "Del más cercano al más lejano.",
+            'upcoming' => [
+                ['text' => "Preguntarle a Joey por la audición.", 'detail' => "14 de octubre · mañana · Una sola vez"],
+                ['text' => "Ponerte al día con Rachel", 'detail' => "24 de octubre · dentro de once días · Cada 3 semanas"],
+                ['text' => "Cumpleaños de Chandler", 'detail' => "8 de abril de 2027 · dentro de 6 meses · Cada año · Sigue el cumpleaños"],
+            ],
+        ],
+
+        'cta' => [
+            'title' => "Un poco de ayuda para pasar a la acción.",
+            'body' => "Pensaste en llamar a Chandler. Dale a esa idea un día y una hora.",
             'button' => "Crear tu cuenta",
         ],
     ],

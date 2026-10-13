@@ -109,6 +109,7 @@
   --color-danger-hover: var(--danger-hover);
   --color-danger-active: var(--danger-hover);
   --color-danger-subtle: var(--danger-tint);
+  --color-danger-edge: var(--danger-edge);
   --color-focus: var(--focus-ring);
   --color-backdrop: var(--scrim);
 

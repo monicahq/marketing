@@ -28,6 +28,7 @@ return [
             'personalCrm' => "Guia do CRM pessoal",
             'templates' => "Modelos de contato",
             'details' => "Fichas de contato",
+            'reminders' => "Lembretes",
             'page' => "Página :number",
         ],
 
@@ -108,6 +109,11 @@ return [
         'details' => [
             'title' => "Lembre-se dos detalhes que importam: as fichas de contato na Monica",
             'description' => "Guarde juntos os detalhes que as pessoas contam para você: o que disseram da última vez, as pequenas coisas, as pessoas ao redor delas e os momentos compartilhados.",
+        ],
+
+        'reminders' => [
+            'title' => "Lembre-se de procurar as pessoas: os lembretes na Monica",
+            'description' => "Crie um lembrete para um aniversário, um dia importante ou um amigo para quem você quer ligar. Uma vez ou com um ritmo, no fuso horário da pessoa, por e-mail ou na Monica, e um registro do que você lembrou.",
         ],
 
         'personalCrm' => [
@@ -1291,6 +1297,170 @@ return [
         'cta' => [
             'title' => "Você não precisa lembrar de tudo.",
             'body' => "Comece com uma pessoa e alguns detalhes que você gostaria de guardar. Adicione mais sempre que algo parecer digno de lembrar.",
+            'button' => "Criar a sua conta",
+        ],
+    ],
+
+    'reminders' => [
+        // Words more than one drawing uses.
+        'remembered' => "Eu lembrei",
+        'forgot' => "Eu esqueci",
+        'overdue' => "Atrasado",
+        'today' => "Hoje",
+        'add' => "Adicionar um lembrete",
+        'day' => "Dia",
+        'at' => "Às",
+        'timeZone' => "Fuso horário",
+        'repeats' => "Repetição",
+        'says' => "Vai dizer",
+        'optional' => "opcional",
+
+        'hero' => [
+            'title' => "Lembre-se de procurar as pessoas.",
+            'lede' => "Um aniversário. Um dia importante. Um amigo para quem você está querendo ligar faz tempo.",
+            'close' => "Crie um lembrete na Monica e receba um aviso quando chegar a hora.",
+            'cta' => "Criar a sua conta",
+            'label' => "Os lembretes de um cofre Pessoal na Monica, três nesta semana. Atrasado: ligar para a Phoebe, dois dias atrás, com botões para responder Eu lembrei ou Eu esqueci. Nos próximos sete dias: perguntar ao Joey como foi o teste, na terça-feira, e o aniversário do Chandler, daqui a cinco dias. Ao lado, o e-mail que a Monica envia na terça-feira às 09:00 para lembrar você do Joey, com um botão para abrir a ficha dele.",
+            'vault' => "Pessoal",
+            'count' => "3 lembretes nesta semana",
+            'overdueTitle' => "Atrasados",
+            'overdue' => [
+                ['text' => "Ligar para a Phoebe", 'when' => "2 dias atrás"],
+            ],
+            'upcomingTitle' => "Próximos sete dias",
+            'upcoming' => [
+                ['text' => "Perguntar ao Joey como foi o teste.", 'when' => "Terça-feira"],
+                ['text' => "Aniversário do Chandler", 'when' => "Daqui a 5 dias"],
+            ],
+            'inbox' => "Na sua caixa de entrada, terça-feira às 09:00",
+            'from' => "Da Monica",
+            'email' => "Você pediu para ser lembrado hoje sobre Joey Tribbiani.",
+            'open' => "Abrir a ficha do Joey",
+        ],
+
+        'once' => [
+            'title' => "O teste do Joey é na terça-feira.",
+            'lead' => "Você não pode conseguir o papel para ele. Mas pode se lembrar de perguntar como foi.",
+            'body' => "Adicione um lembrete na ficha do Joey, escolha o dia e a hora e escreva o que você quer que a Monica diga: “Perguntar ao Joey como foi o teste.”",
+            'label' => "Adicionando um lembrete na ficha de Joey Tribbiani na Monica: na terça-feira, 14 de outubro, às 18:00, ele vai dizer “Perguntar ao Joey como foi o teste.” Acontece uma vez.",
+            'heading' => "Adicionar um lembrete para o Joey",
+            'day' => "Terça-feira, 14 de outubro",
+            'at' => "18:00",
+            'says' => "Perguntar ao Joey como foi o teste.",
+            'summary' => "Lembrete em :when, uma vez.",
+            'when' => "terça-feira, 14 de outubro, às 18:00",
+            'cancel' => "Cancelar",
+        ],
+
+        'yearly' => [
+            'title' => "Algumas datas voltam todo ano.",
+            'body' => "Salve o aniversário do Chandler e ative um lembrete para essa data. A Monica vai lembrar você no próprio dia, todos os anos.",
+            'close' => "Se você corrigir a data depois, o lembrete acompanha a mudança.",
+            'label' => "O aniversário de Chandler Bing na Monica, 8 de abril de 1968, com um lembrete ativado para a data. Ele se repete todo ano às 09:00, no horário de Nova York, e vai dizer “Aniversário do Chandler”. O próximo é em 8 de abril de 2027.",
+            'birthday' => "Aniversário",
+            'date' => "8 de abril de 1968",
+            'noYear' => "Não sei o ano",
+            'remind' => "Lembrar-me desta data",
+            'repeats' => "Todo ano",
+            'at' => "09:00",
+            'zone' => "Nova York",
+            'says' => "Aniversário do Chandler",
+            'summary' => "Próximo lembrete em :when, no próprio dia.",
+            'when' => "8 de abril de 2027 às 09:00",
+        ],
+
+        'habit' => [
+            'title' => "Faça de manter contato um hábito.",
+            'lead' => "Ligar para a Phoebe todo mês. Pôr a conversa em dia com a Rachel a cada três semanas.",
+            'body' => "Os lembretes podem acontecer uma vez ou se repetir a cada algumas semanas, meses ou anos. Escolha um ritmo que faça sentido para cada pessoa.",
+            'label' => "Dois lembretes recorrentes na Monica: ligar para a Phoebe, todo mês, o próximo em 3 de novembro, e pôr a conversa em dia com a Rachel, a cada três semanas, o próximo em 24 de outubro. Ao lado, o menu que escolhe como um lembrete se repete, definido como a cada 3 semanas.",
+            'rows' => [
+                ['text' => "Ligar para a Phoebe", 'detail' => "3 de novembro · daqui a três semanas · Todo mês"],
+                ['text' => "Pôr a conversa em dia com a Rachel", 'detail' => "24 de outubro · daqui a onze dias · A cada 3 semanas"],
+            ],
+            'options' => ["Uma vez", "Toda semana", "A cada 3 semanas", "Todo mês", "Todo ano"],
+            // The option drawn as chosen, counted from zero.
+            'chosen' => 2,
+        ],
+
+        'zone' => [
+            'title' => "No seu horário, onde quer que elas estejam.",
+            'lead' => "Cada lembrete tem a sua própria hora e o seu próprio fuso horário.",
+            'body' => "Se o Ross estiver fora, em Londres, você pode criar um lembrete pensando no dia dele. Ele mantém esse fuso horário mesmo se você viajar ou mudar as suas próprias configurações.",
+            'label' => "Um lembrete na Monica para desejar boa sorte ao Ross Geller na palestra, na quinta-feira, 23 de outubro, às 08:30, no horário de Londres. São 08:30 para o Ross em Londres e 03:30 para você em Nova York.",
+            'heading' => "Desejar boa sorte ao Ross na palestra",
+            'day' => "Quinta-feira, 23 de outubro",
+            'at' => "08:30",
+            'zone' => "Londres",
+            'them' => "Ross em Londres",
+            'you' => "Você em Nova York",
+            'yours' => "03:30",
+        ],
+
+        'channels' => [
+            'title' => "Escolha como o aviso chega até você.",
+            'lead' => "Receba lembretes por e-mail ou enquanto estiver usando a Monica.",
+            'body' => "Telegram e mensagens de texto também estão disponíveis quando ativados na sua instância da Monica. Escolha os canais que funcionam para você e envie um teste para conferir se estão conectados.",
+            'label' => "Configurações de notificação na Monica. O e-mail está conectado, com um botão para enviar um teste. As notificações na Monica estão ativadas. Telegram e mensagens de texto estão ativados nesta instância, cada um com um botão para conectar.",
+            'heading' => "Notificações",
+            'sub' => "Onde os seus lembretes chegam até você",
+            'rows' => [
+                ['name' => "E-mail", 'detail' => "monica@geller.example", 'status' => "Conectado", 'action' => "Enviar um teste"],
+                ['name' => "Na Monica", 'detail' => "O sino no topo de cada página", 'status' => "Ativado"],
+                ['name' => "Telegram", 'detail' => "Ativado nesta instância", 'action' => "Conectar"],
+                ['name' => "Mensagem de texto", 'detail' => "Ativado nesta instância", 'action' => "Conectar"],
+            ],
+        ],
+
+        'answer' => [
+            'title' => "Você lembrou?",
+            'body' => "Quando chega o dia de um lembrete, você pode contar para a Monica como foi.",
+            'remembered' => [
+                'body' => "Você ligou para o Chandler, deu parabéns à Rachel ou perguntou ao Joey como foi o teste. Marque como lembrado no próprio dia.",
+                'label' => "Um lembrete para hoje na Monica: perguntar ao Joey como foi o teste, terça-feira, 14 de outubro, às 18:00, uma vez, com um botão para responder Eu lembrei.",
+                'reminder' => "Perguntar ao Joey como foi o teste.",
+                'detail' => "Terça-feira, 14 de outubro · 18:00 · Uma vez",
+            ],
+            'forgot' => [
+                'body' => "O dia passou sem você perceber. A partir do dia seguinte, você pode marcar como esquecido.",
+                'label' => "Um lembrete atrasado na Monica: o aniversário da Phoebe, 16 de fevereiro, dois dias atrás. Ele se repete todo ano e volta em 16 de fevereiro de 2027. Botões para responder Eu lembrei ou Eu esqueci.",
+                'reminder' => "Aniversário da Phoebe",
+                'detail' => "16 de fevereiro · 2 dias atrás · Todo ano · próximo em 16 de fevereiro de 2027",
+            ],
+            'notes' => [
+                "A sua resposta move essa ocorrência para o seu histórico. Se você não responder, ela continua atrasada para que você possa voltar a ela.",
+                "Nos lembretes recorrentes, a próxima data continua chegando. Esquecer o aniversário da Phoebe este ano não cancela o aviso do ano que vem.",
+            ],
+        ],
+
+        'attention' => [
+            'title' => "Veja o que precisa da sua atenção.",
+            'body' => [
+                "Encontre os lembretes de uma pessoa na ficha dela, ou abra os lembretes do seu cofre para ver todo mundo junto.",
+                "Veja o que está atrasado, o que vence hoje e o que está por vir. Consulte o seu histórico para ver os lembretes de que você lembrou e os que você esqueceu.",
+            ],
+            'label' => "A página de lembretes de um cofre na Monica. Dos 24 lembretes dos últimos 12 meses, 75% foram lembrados e 25% esquecidos. Filtros para todos 5, atrasados 1, hoje 1, próximos 3 e histórico 18. Atrasado: ligar para a Phoebe, 11 de outubro, dois dias atrás, todo mês. Próximos, os mais próximos primeiro: perguntar ao Joey como foi o teste amanhã, pôr a conversa em dia com a Rachel daqui a onze dias e o aniversário do Chandler em 8 de abril de 2027, que acompanha o aniversário dele.",
+            'heading' => "Lembretes",
+            'stats' => [
+                ['value' => "75%", 'label' => "lembrados"],
+                ['value' => "25%", 'label' => "esquecidos"],
+            ],
+            'period' => "de 24 lembretes nos últimos 12 meses",
+            'filters' => ["Todos", "Atrasados", "Hoje", "Próximos", "Histórico"],
+            'overdueNote' => "O dia passou sem resposta.",
+            'overdue' => ['text' => "Ligar para a Phoebe", 'detail' => "11 de outubro · 2 dias atrás · Todo mês"],
+            'upcomingTitle' => "Próximos",
+            'upcomingNote' => "Os mais próximos primeiro.",
+            'upcoming' => [
+                ['text' => "Perguntar ao Joey como foi o teste.", 'detail' => "14 de outubro · amanhã · Uma vez"],
+                ['text' => "Pôr a conversa em dia com a Rachel", 'detail' => "24 de outubro · daqui a onze dias · A cada 3 semanas"],
+                ['text' => "Aniversário do Chandler", 'detail' => "8 de abril de 2027 · daqui a 6 meses · Todo ano · Acompanha o aniversário"],
+            ],
+        ],
+
+        'cta' => [
+            'title' => "Uma ajudinha para ir até o fim.",
+            'body' => "Você pensou em ligar para o Chandler. Dê a essa ideia um dia e uma hora.",
             'button' => "Criar a sua conta",
         ],
     ],

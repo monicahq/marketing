@@ -27,6 +27,7 @@ return [
             'personalCrm' => "Gids persoonlijke CRM",
             'templates' => "Contactsjablonen",
             'details' => "Contactpagina’s",
+            'reminders' => "Herinneringen",
             'page' => "Pagina :number",
         ],
 
@@ -101,6 +102,11 @@ return [
         'details' => [
             'title' => "Onthoud de details die ertoe doen: contactpagina’s in Monica",
             'description' => "Bewaar de details die mensen je vertellen bij elkaar: wat ze de vorige keer zeiden, de kleine dingen, de mensen om hen heen en de momenten die jullie deelden.",
+        ],
+
+        'reminders' => [
+            'title' => "Vergeet niet van je te laten horen: herinneringen in Monica",
+            'description' => "Stel een herinnering in voor een verjaardag, een belangrijke dag of een vriend die je al lang wilt bellen. Eenmalig of met een vast ritme, in hun tijdzone, per e-mail of in Monica, en met een overzicht van wat je onthield.",
         ],
 
         'personalCrm' => [
@@ -1284,6 +1290,170 @@ return [
         'cta' => [
             'title' => "Je hoeft niet alles te onthouden.",
             'body' => "Begin met één persoon en een paar details die je wilt bewaren. Voeg meer toe wanneer iets het onthouden waard lijkt.",
+            'button' => "Maak je account aan",
+        ],
+    ],
+
+    'reminders' => [
+        // Words more than one drawing uses.
+        'remembered' => "Ik dacht eraan",
+        'forgot' => "Ik vergat het",
+        'overdue' => "Te laat",
+        'today' => "Vandaag",
+        'add' => "Een herinnering toevoegen",
+        'day' => "Dag",
+        'at' => "Om",
+        'timeZone' => "Tijdzone",
+        'repeats' => "Herhaling",
+        'says' => "Tekst",
+        'optional' => "optioneel",
+
+        'hero' => [
+            'title' => "Vergeet niet van je te laten horen.",
+            'lede' => "Een verjaardag. Een belangrijke dag. Een vriend die je al zo lang wilt bellen.",
+            'close' => "Zet een herinnering in Monica en krijg een seintje als het zover is.",
+            'cta' => "Maak je account aan",
+            'label' => "De herinneringen in de kluis Persoonlijk in Monica, drie deze week. Te laat: Phoebe bellen, twee dagen geleden, met knoppen om te antwoorden met Ik dacht eraan of Ik vergat het. In de komende zeven dagen: Joey vragen naar de auditie, op dinsdag, en de verjaardag van Chandler, over vijf dagen. Ernaast de e-mail die Monica dinsdag om 09:00 stuurt om je aan Joey te herinneren, met een knop om zijn pagina te openen.",
+            'vault' => "Persoonlijk",
+            'count' => "3 herinneringen deze week",
+            'overdueTitle' => "Te laat",
+            'overdue' => [
+                ['text' => "Phoebe bellen", 'when' => "2 dagen geleden"],
+            ],
+            'upcomingTitle' => "Komende zeven dagen",
+            'upcoming' => [
+                ['text' => "Joey vragen naar de auditie.", 'when' => "Dinsdag"],
+                ['text' => "Verjaardag van Chandler", 'when' => "Over 5 dagen"],
+            ],
+            'inbox' => "In je inbox, dinsdag 09:00",
+            'from' => "Van Monica",
+            'email' => "Je wilde vandaag herinnerd worden aan Joey Tribbiani.",
+            'open' => "Pagina van Joey openen",
+        ],
+
+        'once' => [
+            'title' => "Joeys auditie is op dinsdag.",
+            'lead' => "Je kunt hem de rol niet bezorgen. Je kunt wel onthouden om te vragen hoe het ging.",
+            'body' => "Voeg een herinnering toe aan de pagina van Joey, kies de dag en het tijdstip, en schrijf op wat Monica je moet vertellen: ‘Joey vragen naar de auditie.’",
+            'label' => "Een herinnering toevoegen op de pagina van Joey Tribbiani in Monica: op dinsdag 14 oktober om 18:00 met de tekst ‘Joey vragen naar de auditie.’ Het gebeurt één keer.",
+            'heading' => "Een herinnering voor Joey toevoegen",
+            'day' => "dinsdag 14 oktober",
+            'at' => "18:00",
+            'says' => "Joey vragen naar de auditie.",
+            'summary' => "Herinnering op :when, eenmalig.",
+            'when' => "dinsdag 14 oktober om 18:00",
+            'cancel' => "Annuleren",
+        ],
+
+        'yearly' => [
+            'title' => "Sommige datums komen elk jaar terug.",
+            'body' => "Bewaar de verjaardag van Chandler en zet een herinnering aan voor die datum. Monica herinnert je er elk jaar op de dag zelf aan.",
+            'close' => "Pas je de datum later aan, dan schuift de herinnering mee.",
+            'label' => "De verjaardag van Chandler Bing in Monica, 8 april 1968, met een herinnering aangezet voor de datum. Die herhaalt zich elk jaar om 09:00, New Yorkse tijd, met de tekst ‘Verjaardag van Chandler’. De volgende is op 8 april 2027.",
+            'birthday' => "Verjaardag",
+            'date' => "8 april 1968",
+            'noYear' => "Ik weet het jaar niet",
+            'remind' => "Herinner me aan deze datum",
+            'repeats' => "Elk jaar",
+            'at' => "09:00",
+            'zone' => "New York",
+            'says' => "Verjaardag van Chandler",
+            'summary' => "Volgende herinnering op :when, op de dag zelf.",
+            'when' => "8 april 2027 om 09:00",
+        ],
+
+        'habit' => [
+            'title' => "Maak van contact houden een gewoonte.",
+            'lead' => "Bel Phoebe elke maand. Spreek Rachel elke drie weken.",
+            'body' => "Een herinnering kan één keer plaatsvinden, of zich om de paar weken, maanden of jaren herhalen. Kies voor iedereen een ritme dat past.",
+            'label' => "Twee terugkerende herinneringen in Monica: Phoebe bellen, elke maand, volgende op 3 november, en bijpraten met Rachel, elke drie weken, volgende op 24 oktober. Ernaast het menu waarin je kiest hoe een herinnering zich herhaalt, ingesteld op elke 3 weken.",
+            'rows' => [
+                ['text' => "Phoebe bellen", 'detail' => "3 november · over drie weken · Elke maand"],
+                ['text' => "Bijpraten met Rachel", 'detail' => "24 oktober · over elf dagen · Elke 3 weken"],
+            ],
+            'options' => ["Eenmalig", "Elke week", "Elke 3 weken", "Elke maand", "Elk jaar"],
+            // The option drawn as chosen, counted from zero.
+            'chosen' => 2,
+        ],
+
+        'zone' => [
+            'title' => "Jouw tijd, waar zij ook zijn.",
+            'lead' => "Elke herinnering heeft een eigen tijdstip en tijdzone.",
+            'body' => "Is Ross in Londen, dan stem je een herinnering af op zijn dag. De tijdzone blijft staan, ook als jij op reis gaat of je eigen instellingen wijzigt.",
+            'label' => "Een herinnering in Monica om Ross Geller succes te wensen met de lezing, op donderdag 23 oktober om 08:30, Londense tijd. Dat is 08:30 voor Ross in Londen en 03:30 voor jou in New York.",
+            'heading' => "Ross succes wensen met de lezing",
+            'day' => "donderdag 23 oktober",
+            'at' => "08:30",
+            'zone' => "Londen",
+            'them' => "Ross in Londen",
+            'you' => "Jij in New York",
+            'yours' => "03:30",
+        ],
+
+        'channels' => [
+            'title' => "Kies hoe het seintje je bereikt.",
+            'lead' => "Ontvang herinneringen per e-mail of terwijl je Monica gebruikt.",
+            'body' => "Telegram en sms zijn ook beschikbaar als ze op je Monica-installatie zijn ingeschakeld. Kies de kanalen die bij je passen en stuur jezelf een test om te controleren of ze verbonden zijn.",
+            'label' => "Meldingsinstellingen in Monica. E-mail is verbonden, met een knop om een test te sturen. Meldingen in Monica staan aan. Telegram en sms zijn ingeschakeld op deze installatie, elk met een knop om te verbinden.",
+            'heading' => "Meldingen",
+            'sub' => "Waar je herinneringen je bereiken",
+            'rows' => [
+                ['name' => "E-mail", 'detail' => "monica@geller.example", 'status' => "Verbonden", 'action' => "Test sturen"],
+                ['name' => "In Monica", 'detail' => "De bel bovenaan elke pagina", 'status' => "Aan"],
+                ['name' => "Telegram", 'detail' => "Ingeschakeld op deze installatie", 'action' => "Verbinden"],
+                ['name' => "Sms", 'detail' => "Ingeschakeld op deze installatie", 'action' => "Verbinden"],
+            ],
+        ],
+
+        'answer' => [
+            'title' => "Dacht je eraan?",
+            'body' => "Breekt de dag van een herinnering aan, dan kun je Monica laten weten hoe het ging.",
+            'remembered' => [
+                'body' => "Je hebt Chandler gebeld, Rachel gefeliciteerd met haar verjaardag of Joey naar de auditie gevraagd. Markeer het op de dag zelf als onthouden.",
+                'label' => "Een herinnering voor vandaag in Monica: Joey vragen naar de auditie, dinsdag 14 oktober om 18:00, eenmalig, met een knop om te antwoorden met Ik dacht eraan.",
+                'reminder' => "Joey vragen naar de auditie.",
+                'detail' => "dinsdag 14 oktober · 18:00 · Eenmalig",
+            ],
+            'forgot' => [
+                'body' => "De dag is je ontglipt. Vanaf de dag erna kun je de herinnering als vergeten markeren.",
+                'label' => "Een te late herinnering in Monica: de verjaardag van Phoebe, 16 februari, twee dagen geleden. Die herhaalt zich elk jaar en komt terug op 16 februari 2027. Knoppen om te antwoorden met Ik dacht eraan of Ik vergat het.",
+                'reminder' => "Verjaardag van Phoebe",
+                'detail' => "16 februari · 2 dagen geleden · Elk jaar · volgende op 16 februari 2027",
+            ],
+            'notes' => [
+                "Je antwoord verplaatst die keer naar je geschiedenis. Laat je de herinnering onbeantwoord, dan blijft die te laat staan, zodat je er later op terug kunt komen.",
+                "Bij een terugkerende herinnering komt de volgende datum gewoon weer. Vergeet je dit jaar de verjaardag van Phoebe, dan vervalt het seintje van volgend jaar niet.",
+            ],
+        ],
+
+        'attention' => [
+            'title' => "Zie wat je aandacht nodig heeft.",
+            'body' => [
+                "Vind de herinneringen van iemand op diens pagina, of open de herinneringen van je kluis om iedereen bij elkaar te zien.",
+                "Zie wat te laat is, wat vandaag aan de beurt is en wat eraan komt. Blader terug door je geschiedenis om te zien aan welke herinneringen je dacht en welke je vergat.",
+            ],
+            'label' => "De herinneringenpagina van een kluis in Monica. Van 24 herinneringen in de afgelopen 12 maanden werd 75% onthouden en 25% vergeten. Filters voor alle 5, te laat 1, vandaag 1, binnenkort 3 en geschiedenis 18. Te laat: Phoebe bellen, 11 oktober, twee dagen geleden, elke maand. Binnenkort, eerstvolgende bovenaan: Joey vragen naar de auditie, morgen, bijpraten met Rachel, over elf dagen, en de verjaardag van Chandler op 8 april 2027, die zijn verjaardag volgt.",
+            'heading' => "Herinneringen",
+            'stats' => [
+                ['value' => "75%", 'label' => "onthouden"],
+                ['value' => "25%", 'label' => "vergeten"],
+            ],
+            'period' => "van 24 herinneringen in de afgelopen 12 maanden",
+            'filters' => ["Alle", "Te laat", "Vandaag", "Binnenkort", "Geschiedenis"],
+            'overdueNote' => "De dag is voorbij zonder antwoord.",
+            'overdue' => ['text' => "Phoebe bellen", 'detail' => "11 oktober · 2 dagen geleden · Elke maand"],
+            'upcomingTitle' => "Binnenkort",
+            'upcomingNote' => "Eerstvolgende bovenaan.",
+            'upcoming' => [
+                ['text' => "Joey vragen naar de auditie.", 'detail' => "14 oktober · morgen · Eenmalig"],
+                ['text' => "Bijpraten met Rachel", 'detail' => "24 oktober · over elf dagen · Elke 3 weken"],
+                ['text' => "Verjaardag van Chandler", 'detail' => "8 april 2027 · over 6 maanden · Elk jaar · Volgt Verjaardag"],
+            ],
+        ],
+
+        'cta' => [
+            'title' => "Een steuntje in de rug om het ook echt te doen.",
+            'body' => "Je dacht eraan om Chandler te bellen. Geef die gedachte een dag en een tijdstip.",
             'button' => "Maak je account aan",
         ],
     ],

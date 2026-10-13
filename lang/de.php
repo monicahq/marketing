@@ -24,6 +24,7 @@ return [
             'personalCrm' => "Leitfaden persönliches CRM",
             'templates' => "Kontaktvorlagen",
             'details' => "Kontaktseiten",
+            'reminders' => "Erinnerungen",
             'page' => "Seite :number",
         ],
 
@@ -104,6 +105,11 @@ return [
         'details' => [
             'title' => "Die Details, auf die es ankommt: Kontaktseiten in Monica",
             'description' => "Halten Sie zusammen, was Menschen Ihnen erzählen: was sie beim letzten Mal gesagt haben, die Kleinigkeiten, die Menschen um sie herum und gemeinsame Momente.",
+        ],
+
+        'reminders' => [
+            'title' => "Denken Sie daran, sich zu melden: Erinnerungen in Monica",
+            'description' => "Legen Sie eine Erinnerung für einen Geburtstag, einen großen Tag oder einen Freund an, den Sie anrufen wollten. Einmalig oder in einem Rhythmus, in deren Zeitzone, per E-Mail oder in Monica, und mit einem Verlauf dessen, woran Sie gedacht haben.",
         ],
 
         'personalCrm' => [
@@ -1286,6 +1292,170 @@ return [
         'cta' => [
             'title' => "Sie müssen sich nicht alles merken.",
             'body' => "Beginnen Sie mit einer Person und ein paar Details, die Sie festhalten möchten. Ergänzen Sie mehr, wann immer etwas es wert scheint.",
+            'button' => "Konto erstellen",
+        ],
+    ],
+
+    'reminders' => [
+        // Words more than one drawing uses.
+        'remembered' => "Daran gedacht",
+        'forgot' => "Vergessen",
+        'overdue' => "Überfällig",
+        'today' => "Heute",
+        'add' => "Erinnerung hinzufügen",
+        'day' => "Tag",
+        'at' => "Uhrzeit",
+        'timeZone' => "Zeitzone",
+        'repeats' => "Wiederholung",
+        'says' => "Text der Erinnerung",
+        'optional' => "optional",
+
+        'hero' => [
+            'title' => "Denken Sie daran, sich zu melden.",
+            'lede' => "Ein Geburtstag. Ein großer Tag. Ein Freund, den Sie schon lange anrufen wollten.",
+            'close' => "Legen Sie in Monica eine Erinnerung an und bekommen Sie einen Anstoß, wenn es so weit ist.",
+            'cta' => "Konto erstellen",
+            'label' => "Die Erinnerungen im Tresor „Privat“ in Monica, drei in dieser Woche. Überfällig: Phoebe anrufen, vor zwei Tagen, mit Schaltflächen für die Antworten „Daran gedacht“ oder „Vergessen“. In den nächsten sieben Tagen: Joey am Dienstag nach dem Vorsprechen fragen und Chandlers Geburtstag in fünf Tagen. Daneben die E-Mail, die Monica am Dienstag um 09:00 schickt, um Sie an Joey zu erinnern, mit einer Schaltfläche, die seine Seite öffnet.",
+            'vault' => "Privat",
+            'count' => "3 Erinnerungen diese Woche",
+            'overdueTitle' => "Überfällig",
+            'overdue' => [
+                ['text' => "Phoebe anrufen", 'when' => "vor 2 Tagen"],
+            ],
+            'upcomingTitle' => "Nächste sieben Tage",
+            'upcoming' => [
+                ['text' => "Joey nach dem Vorsprechen fragen.", 'when' => "Dienstag"],
+                ['text' => "Chandlers Geburtstag", 'when' => "in 5 Tagen"],
+            ],
+            'inbox' => "In Ihrem Posteingang, Dienstag, 09:00",
+            'from' => "Von Monica",
+            'email' => "Sie wollten heute an Joey Tribbiani erinnert werden.",
+            'open' => "Joeys Seite öffnen",
+        ],
+
+        'once' => [
+            'title' => "Joeys Vorsprechen ist am Dienstag.",
+            'lead' => "Die Rolle können Sie ihm nicht verschaffen. Aber Sie können daran denken, zu fragen, wie es lief.",
+            'body' => "Fügen Sie auf Joeys Seite eine Erinnerung hinzu, wählen Sie Tag und Uhrzeit und schreiben Sie, was Monica Ihnen sagen soll: „Joey nach dem Vorsprechen fragen.“",
+            'label' => "Eine Erinnerung auf der Seite von Joey Tribbiani in Monica hinzufügen: am Dienstag, 14. Oktober, um 18:00 lautet sie „Joey nach dem Vorsprechen fragen.“ Sie kommt einmal.",
+            'heading' => "Erinnerung für Joey hinzufügen",
+            'day' => "Dienstag, 14. Oktober",
+            'at' => "18:00",
+            'says' => "Joey nach dem Vorsprechen fragen.",
+            'summary' => "Erinnerung am :when, einmalig.",
+            'when' => "Dienstag, 14. Oktober, um 18:00",
+            'cancel' => "Abbrechen",
+        ],
+
+        'yearly' => [
+            'title' => "Manche Daten kehren jedes Jahr wieder.",
+            'body' => "Speichern Sie Chandlers Geburtstag und schalten Sie eine Erinnerung für dieses Datum ein. Monica erinnert Sie jedes Jahr am Tag selbst daran.",
+            'close' => "Korrigieren Sie das Datum später, zieht die Erinnerung mit.",
+            'label' => "Der Geburtstag von Chandler Bing in Monica, 8. April 1968, mit eingeschalteter Erinnerung für das Datum. Sie wiederholt sich jedes Jahr um 09:00 New Yorker Zeit und lautet „Chandlers Geburtstag“. Die nächste kommt am 8. April 2027.",
+            'birthday' => "Geburtstag",
+            'date' => "8. April 1968",
+            'noYear' => "Ich kenne das Jahr nicht",
+            'remind' => "An dieses Datum erinnern",
+            'repeats' => "Jedes Jahr",
+            'at' => "09:00",
+            'zone' => "New York",
+            'says' => "Chandlers Geburtstag",
+            'summary' => "Nächste Erinnerung am :when, am Tag selbst.",
+            'when' => "8. April 2027 um 09:00",
+        ],
+
+        'habit' => [
+            'title' => "Machen Sie das In-Kontakt-Bleiben zur Gewohnheit.",
+            'lead' => "Phoebe jeden Monat anrufen. Sich alle drei Wochen bei Rachel melden.",
+            'body' => "Erinnerungen können einmalig sein oder sich alle paar Wochen, Monate oder Jahre wiederholen. Wählen Sie für jede Person einen passenden Rhythmus.",
+            'label' => "Zwei wiederkehrende Erinnerungen in Monica: Phoebe anrufen, jeden Monat, die nächste am 3. November, und sich bei Rachel melden, alle drei Wochen, die nächste am 24. Oktober. Daneben das Menü, das festlegt, wie sich eine Erinnerung wiederholt, eingestellt auf alle 3 Wochen.",
+            'rows' => [
+                ['text' => "Phoebe anrufen", 'detail' => "3. November · in drei Wochen · Jeden Monat"],
+                ['text' => "Bei Rachel melden", 'detail' => "24. Oktober · in elf Tagen · Alle 3 Wochen"],
+            ],
+            'options' => ["Einmalig", "Jede Woche", "Alle 3 Wochen", "Jeden Monat", "Jedes Jahr"],
+            // The option drawn as chosen, counted from zero.
+            'chosen' => 2,
+        ],
+
+        'zone' => [
+            'title' => "Die richtige Zeit, wo auch immer sie sind.",
+            'lead' => "Jede Erinnerung hat ihre eigene Uhrzeit und Zeitzone.",
+            'body' => "Ist Ross gerade in London, können Sie eine Erinnerung nach seinem Tag ausrichten. Sie behält diese Zeitzone, auch wenn Sie verreisen oder Ihre eigenen Einstellungen ändern.",
+            'label' => "Eine Erinnerung in Monica, Ross Geller Glück für die Vorlesung zu wünschen, am Donnerstag, 23. Oktober, um 08:30 Londoner Zeit. Das ist 08:30 für Ross in London und 03:30 für Sie in New York.",
+            'heading' => "Ross Glück für die Vorlesung wünschen",
+            'day' => "Donnerstag, 23. Oktober",
+            'at' => "08:30",
+            'zone' => "London",
+            'them' => "Ross in London",
+            'you' => "Sie in New York",
+            'yours' => "03:30",
+        ],
+
+        'channels' => [
+            'title' => "Wählen Sie, wie der Anstoß Sie erreicht.",
+            'lead' => "Erhalten Sie Erinnerungen per E-Mail oder während Sie Monica nutzen.",
+            'body' => "Telegram und SMS stehen ebenfalls zur Verfügung, wenn sie auf Ihrer Monica-Instanz aktiviert sind. Wählen Sie die Kanäle, die zu Ihnen passen, und schicken Sie sich einen Test, um zu prüfen, ob sie verbunden sind.",
+            'label' => "Die Benachrichtigungseinstellungen in Monica. E-Mail ist verbunden, mit einer Schaltfläche, die einen Test sendet. Benachrichtigungen in Monica sind eingeschaltet. Telegram und SMS sind auf dieser Instanz aktiviert, jeweils mit einer Schaltfläche zum Verbinden.",
+            'heading' => "Benachrichtigungen",
+            'sub' => "Wo Ihre Erinnerungen Sie erreichen",
+            'rows' => [
+                ['name' => "E-Mail", 'detail' => "monica@geller.example", 'status' => "Verbunden", 'action' => "Test senden"],
+                ['name' => "In Monica", 'detail' => "Die Glocke oben auf jeder Seite", 'status' => "Ein"],
+                ['name' => "Telegram", 'detail' => "Auf dieser Instanz aktiviert", 'action' => "Verbinden"],
+                ['name' => "SMS", 'detail' => "Auf dieser Instanz aktiviert", 'action' => "Verbinden"],
+            ],
+        ],
+
+        'answer' => [
+            'title' => "Haben Sie daran gedacht?",
+            'body' => "Ist der Tag einer Erinnerung gekommen, können Sie Monica sagen, wie es gelaufen ist.",
+            'remembered' => [
+                'body' => "Sie haben Chandler angerufen, Rachel zum Geburtstag gratuliert oder Joey nach dem Vorsprechen gefragt. Antworten Sie noch am selben Tag mit „Daran gedacht“.",
+                'label' => "Eine heute fällige Erinnerung in Monica: Joey nach dem Vorsprechen fragen, Dienstag, 14. Oktober, 18:00, einmalig, mit einer Schaltfläche für die Antwort „Daran gedacht“.",
+                'reminder' => "Joey nach dem Vorsprechen fragen.",
+                'detail' => "Dienstag, 14. Oktober · 18:00 · Einmalig",
+            ],
+            'forgot' => [
+                'body' => "Der Tag ist Ihnen durchgerutscht. Ab dem Folgetag können Sie die Erinnerung als vergessen markieren.",
+                'label' => "Eine überfällige Erinnerung in Monica: Phoebes Geburtstag, 16. Februar, vor zwei Tagen. Sie wiederholt sich jedes Jahr und kommt am 16. Februar 2027 wieder. Schaltflächen für die Antworten „Daran gedacht“ oder „Vergessen“.",
+                'reminder' => "Phoebes Geburtstag",
+                'detail' => "16. Februar · vor 2 Tagen · Jedes Jahr · nächste am 16. Februar 2027",
+            ],
+            'notes' => [
+                "Ihre Antwort verschiebt diesen Termin in Ihren Verlauf. Bleibt er unbeantwortet, bleibt er überfällig, damit Sie darauf zurückkommen können.",
+                "Bei wiederkehrenden Erinnerungen kommt der nächste Termin trotzdem. Vergessen Sie Phoebes Geburtstag in diesem Jahr, entfällt der Anstoß im nächsten Jahr nicht.",
+            ],
+        ],
+
+        'attention' => [
+            'title' => "Sehen Sie, was Ihre Aufmerksamkeit braucht.",
+            'body' => [
+                "Die Erinnerungen einer Person finden Sie auf ihrer Seite. Oder öffnen Sie die Erinnerungen Ihres Tresors, um alle zusammen zu sehen.",
+                "Sehen Sie, was überfällig ist, was heute fällig ist und was bevorsteht. Blättern Sie in Ihrem Verlauf zurück, um zu sehen, an welche Erinnerungen Sie gedacht und welche Sie vergessen haben.",
+            ],
+            'label' => "Die Erinnerungsseite eines Tresors in Monica. Von 24 Erinnerungen in den letzten 12 Monaten wurde an 75% gedacht, 25% wurden vergessen. Filter für Alle 5, Überfällig 1, Heute 1, Bevorstehend 3 und Verlauf 18. Überfällig: Phoebe anrufen, 11. Oktober, vor zwei Tagen, jeden Monat. Bevorstehend, die nächsten zuerst: Joey morgen nach dem Vorsprechen fragen, sich in elf Tagen bei Rachel melden und Chandlers Geburtstag am 8. April 2027, der seinem Geburtstag folgt.",
+            'heading' => "Erinnerungen",
+            'stats' => [
+                ['value' => "75%", 'label' => "daran gedacht"],
+                ['value' => "25%", 'label' => "vergessen"],
+            ],
+            'period' => "von 24 Erinnerungen in den letzten 12 Monaten",
+            'filters' => ["Alle", "Überfällig", "Heute", "Bevorstehend", "Verlauf"],
+            'overdueNote' => "Der Tag ist ohne Antwort verstrichen.",
+            'overdue' => ['text' => "Phoebe anrufen", 'detail' => "11. Oktober · vor 2 Tagen · Jeden Monat"],
+            'upcomingTitle' => "Bevorstehend",
+            'upcomingNote' => "Die nächsten zuerst.",
+            'upcoming' => [
+                ['text' => "Joey nach dem Vorsprechen fragen.", 'detail' => "14. Oktober · morgen · Einmalig"],
+                ['text' => "Bei Rachel melden", 'detail' => "24. Oktober · in elf Tagen · Alle 3 Wochen"],
+                ['text' => "Chandlers Geburtstag", 'detail' => "8. April 2027 · in 6 Monaten · Jedes Jahr · Folgt dem Geburtstag"],
+            ],
+        ],
+
+        'cta' => [
+            'title' => "Ein wenig Hilfe beim Dranbleiben.",
+            'body' => "Sie hatten daran gedacht, Chandler anzurufen. Geben Sie diesem Gedanken einen Tag und eine Uhrzeit.",
             'button' => "Konto erstellen",
         ],
     ],
