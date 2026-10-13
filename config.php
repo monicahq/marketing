@@ -11,7 +11,7 @@ use Illuminate\Support\Arr;
  * behaviour lives, because Jigsaw has no locale routing of its own.
  */
 
-$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl', 'zh'];
+$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl', 'zh', 'ru'];
 
 /**
  * How the blog is chunked, in one place.
@@ -131,7 +131,13 @@ $postSettings = [
     'readingMinutes' => function ($post) {
         $text = strip_tags($post->getContent());
         $characters = preg_match_all('/\p{Han}/u', $text);
-        $words = str_word_count(preg_replace('/\p{Han}/u', ' ', $text));
+        $text = preg_replace('/\p{Han}/u', ' ', $text);
+
+        // str_word_count only knows Latin letters, so a Russian post would
+        // count as almost no words at all. Cyrillic words are counted on
+        // their own and taken out before it runs.
+        $cyrillic = preg_match_all('/\p{Cyrillic}+/u', $text);
+        $words = $cyrillic + str_word_count(preg_replace('/\p{Cyrillic}+/u', ' ', $text));
 
         return max(1, (int) ceil($characters / 300 + $words / 200));
     },
@@ -280,6 +286,7 @@ return [
         'pt' => 'Português',
         'nl' => 'Nederlands',
         'zh' => '简体中文',
+        'ru' => 'Русский',
     ],
 
     /**
@@ -306,6 +313,9 @@ return [
         // Simplified Chinese is the script of the mainland, so the territory
         // is CN.
         'zh' => 'zh_CN',
+
+        // The copy is written for Russia, so the territory is RU.
+        'ru' => 'ru_RU',
     ],
 
     /**
@@ -327,7 +337,9 @@ return [
      * Every URL is locale-prefixed and every slug is translated, except in
      * Chinese, which keeps the English slugs: a slug in Chinese characters is
      * percent-encoded into something nobody can read, and pinyin slugs are
-     * rare on Chinese sites. A page is
+     * rare on Chinese sites. Russian is translated and then transliterated
+     * (/ru/tseny/), for the same reason and because that is what Russian
+     * sites do. A page is
      * referenced by its key, never by a hard-coded path, so a slug can be
      * corrected in one place.
      *
@@ -335,12 +347,12 @@ return [
      * named after that locale's slug. See .claude/CLAUDE.md.
      */
     'routes' => [
-        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => '', 'zh' => ''],
+        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => '', 'zh' => '', 'ru' => ''],
 
         // "v3" is the product's version number, so it is the same word in every
         // language. Slugs are still declared per locale, because the next page
         // added will not be.
-        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3', 'zh' => 'v3'],
+        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3', 'zh' => 'v3', 'ru' => 'v3'],
 
         'pricing' => [
             'en' => 'pricing',
@@ -350,6 +362,7 @@ return [
             'pt' => 'precos',
             'nl' => 'prijzen',
             'zh' => 'pricing',
+            'ru' => 'tseny',
         ],
 
         /**
@@ -371,6 +384,7 @@ return [
             'pt' => 'recursos',
             'nl' => 'functies',
             'zh' => 'features',
+            'ru' => 'vozmozhnosti',
         ],
 
         'featuresDashboard' => [
@@ -381,6 +395,7 @@ return [
             'pt' => 'recursos/painel',
             'nl' => 'functies/dashboard',
             'zh' => 'features/dashboard',
+            'ru' => 'vozmozhnosti/panel',
         ],
 
         'featuresJournal' => [
@@ -391,12 +406,13 @@ return [
             'pt' => 'recursos/diario',
             'nl' => 'functies/dagboek',
             'zh' => 'features/journal',
+            'ru' => 'vozmozhnosti/dnevnik',
         ],
 
         // "Blog" is the same word in every language we ship. Declared per locale
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.
-        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog', 'zh' => 'blog'],
+        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog', 'zh' => 'blog', 'ru' => 'blog'],
 
         'terms' => [
             'en' => 'terms',
@@ -406,6 +422,7 @@ return [
             'pt' => 'termos-de-uso',
             'nl' => 'gebruiksvoorwaarden',
             'zh' => 'terms',
+            'ru' => 'usloviya',
         ],
 
         'team' => [
@@ -416,6 +433,7 @@ return [
             'pt' => 'equipe',
             'nl' => 'team',
             'zh' => 'team',
+            'ru' => 'komanda',
         ],
 
         'privacy' => [
@@ -426,6 +444,7 @@ return [
             'pt' => 'privacidade',
             'nl' => 'privacybeleid',
             'zh' => 'privacy',
+            'ru' => 'konfidentsialnost',
         ],
 
         // The guide that answers the question the nav asks. Its slug says
@@ -439,6 +458,7 @@ return [
             'pt' => 'crm-pessoal',
             'nl' => 'persoonlijke-crm',
             'zh' => 'personal-crm',
+            'ru' => 'lichnaya-crm',
         ],
 
         // "Your contacts, your way": what a contact template is and what you
@@ -453,6 +473,7 @@ return [
             'pt' => 'recursos/modelos',
             'nl' => 'functies/sjablonen',
             'zh' => 'features/templates',
+            'ru' => 'vozmozhnosti/shablony',
         ],
 
         // "Remember the details that matter": what a contact page holds, from
@@ -468,6 +489,7 @@ return [
             'pt' => 'recursos/detalhes',
             'nl' => 'functies/details',
             'zh' => 'features/details',
+            'ru' => 'vozmozhnosti/detali',
         ],
 
         // "Remember to reach out": reminders, once or on a rhythm, and how the
@@ -482,6 +504,7 @@ return [
             'pt' => 'recursos/lembretes',
             'nl' => 'functies/herinneringen',
             'zh' => 'features/reminders',
+            'ru' => 'vozmozhnosti/napominaniya',
         ],
 
         // "Keep the moments worth remembering": life events, the timeline
@@ -496,6 +519,7 @@ return [
             'pt' => 'recursos/linha-do-tempo',
             'nl' => 'functies/tijdlijn',
             'zh' => 'features/timeline',
+            'ru' => 'vozmozhnosti/khronologiya',
         ],
     ],
 

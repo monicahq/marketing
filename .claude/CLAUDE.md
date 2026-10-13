@@ -1,6 +1,6 @@
 # Monica marketing site: working notes for Claude
 
-Marketing site for **Monica**, the personal CRM. Static [Jigsaw](https://jigsaw.tighten.com) + Tailwind 4 site, built on the Monica design system, shipping in seven languages (English, French, German, Spanish, Portuguese, Dutch and Simplified Chinese).
+Marketing site for **Monica**, the personal CRM. Static [Jigsaw](https://jigsaw.tighten.com) + Tailwind 4 site, built on the Monica design system, shipping in eight languages (English, French, German, Spanish, Portuguese, Dutch, Simplified Chinese and Russian).
 The owner is not a Jigsaw expert, so explain Jigsaw-specific choices briefly, and prefer boring, idiomatic Jigsaw over clever setups.
 
 ## Guidelines for Git and GitHub
@@ -120,6 +120,14 @@ Simplified Chinese is the one locale whose code does not say enough on its own, 
 - **`readingMinutes()` counts Chinese characters on their own**, at 300 a minute, because `str_word_count` sees almost nothing in a language without spaces.
 
 The copy addresses the reader as 你, uses full-width punctuation, and puts a space between Chinese and Latin words or numbers (`Monica 是一个开源的个人 CRM`).
+
+### Russian
+
+- **Its slugs are translated and then transliterated** (`/ru/tseny/`, `/ru/vozmozhnosti/`), because a slug in Cyrillic is percent-encoded into something unreadable, and Latin transliteration is what Russian sites do. The language tag is the bare `ru`.
+- **A number never needs a plural form.** Russian has three (1 напоминание, 2 напоминания, 5 напоминаний) and `t()` cannot choose between them, so every string with `:count` is phrased as a label and a number (`Полей: :count`, `Время чтения: :count мин`). Keep it that way when adding one.
+- **`readingMinutes()` counts Cyrillic words on their own**, because `str_word_count` only knows Latin letters and would put every Russian post at one minute.
+
+The copy addresses the reader as «вы», lowercase, uses «ёлочки» quotes and writes ё. Monica stays in Latin script, is never declined, and takes feminine agreement (`Monica напомнит`).
 
 ## The design system is the authority
 
@@ -260,7 +268,7 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 `/en/blog/`, ten posts a page, plus a page per post. The 43 posts are the ones imported from the old site, Markdown, one file per post per language.
 
-**One collection per locale.** The bodies are translated, so a post is a different file in every language: `source/_posts_en/`, `source/_posts_fr/`, and so on, read by the `posts_en`, `posts_fr`, ... collections that `config.php` builds by looping over `$locales`. Everything else about them (sort order, `perPage`, the helpers) comes from one shared `$postSettings` array, so it cannot drift between languages. One collection per language rather than one with a `locale` field, because Jigsaw's paginator takes a collection and nothing else: it cannot be told to paginate the French seventh of a pile of 301 items, and the French index would otherwise list German posts.
+**One collection per locale.** The bodies are translated, so a post is a different file in every language: `source/_posts_en/`, `source/_posts_fr/`, and so on, read by the `posts_en`, `posts_fr`, ... collections that `config.php` builds by looping over `$locales`. Everything else about them (sort order, `perPage`, the helpers) comes from one shared `$postSettings` array, so it cannot drift between languages. One collection per language rather than one with a `locale` field, because Jigsaw's paginator takes a collection and nothing else: it cannot be told to paginate the French eighth of a pile of 344 items, and the French index would otherwise list German posts.
 
 `locale` is a collection setting, so it is stated once per language rather than 39 times, and `$page->locale` is set before `_layouts/post.blade.php` runs. That is what `t()`, the `<html lang>` attribute, the canonical and the hreflang cluster read, and none of them has to know a collection is involved.
 
@@ -276,7 +284,7 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 **`updated` is the one fact about a post that may differ between languages.** It is optional front matter, it feeds `$post->lastmodDate()` and through it the sitemap's `lastmod`, and it falls back to `date` because a post nobody has touched was last modified when it was published. Per locale on purpose: the slug and the date are the same fact in every language, but a French translation corrected on its own should say so without moving the others. Set it only for a change a reader would notice.
 
-**Images go through `bodyHtml()`, never `getContent()`.** It is the rendered Markdown with every `<img>` given its intrinsic `width` and `height` (read off the file with `getimagesize()` at build time), plus `loading="lazy"` and `decoding="async"`. `![alt](src)` is all an author can write, so the alternative is raw `<img>` tags in 301 Markdown files repeating numbers that are already facts about the files on disk. Both the post page and the index card render through it, and `feedContent()` is built on top of it. Lazy on all of them without exception: every image in this collection is inside a post body, under a title, a lede and a byline, and the index carries ten whole posts at once.
+**Images go through `bodyHtml()`, never `getContent()`.** It is the rendered Markdown with every `<img>` given its intrinsic `width` and `height` (read off the file with `getimagesize()` at build time), plus `loading="lazy"` and `decoding="async"`. `![alt](src)` is all an author can write, so the alternative is raw `<img>` tags in 344 Markdown files repeating numbers that are already facts about the files on disk. Both the post page and the index card render through it, and `feedContent()` is built on top of it. Lazy on all of them without exception: every image in this collection is inside a post body, under a title, a lede and a byline, and the index carries ten whole posts at once.
 
 **Alt text is per locale and describes the screenshot.** It lives in the Markdown, so it is translated with the body. Say what the screen shows and what state it is in ("the life events tab on a contact, empty, offering to add the first one"), not what the file is. `![image]` is not alt text.
 
@@ -292,13 +300,13 @@ See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
 
 ## The features pages
 
-Three tabs (contact management, dashboard, journal), three route keys (`features`, `featuresDashboard`, `featuresJournal`), twenty-one pages once the seven locales are counted.
+Three tabs (contact management, dashboard, journal), three route keys (`features`, `featuresDashboard`, `featuresJournal`), twenty-four pages once the eight locales are counted.
 
 **The tabs are pages, not a JavaScript widget.** Each one has its own URL, so it can be linked to, indexed and translated, which is what the old site did. `_partials/features/tabs.blade.php` renders the strip on all three, and `aria-current="page"` marks the one being read.
 
 **The slugs nest**, so `featuresDashboard` in English is `features/dashboard` and the file is `source/en/features/dashboard.blade.php`. The helpers need nothing special for this: they only ever join a slug to a locale prefix. A slug with a slash and a file in a subdirectory are the whole trick.
 
-**One partial builds all three.** `_partials/features/page.blade.php` holds a table of which copy block, which screenshot and whether the API section follows, keyed by the route name, so each of the twenty-one page files is four lines of front matter and an `@include`.
+**One partial builds all three.** `_partials/features/page.blade.php` holds a table of which copy block, which screenshot and whether the API section follows, keyed by the route name, so each of the twenty-four page files is four lines of front matter and an `@include`.
 
 The screenshots came from the old site and were cropped on the way in: the browser window drawn around each one, and the drop shadow behind it, are both things the design system forbids. The annotations that were pinned onto them as red labels are now an ordinary list beside the picture, which is what makes them survive a phone, a screen reader and a translation running longer than English.
 

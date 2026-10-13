@@ -73,5 +73,11 @@
                 <polygon points="18.44,16.75 19.8,17.26 20.71,16.13 20.64,17.58 22,18.09 20.6,18.48 20.53,19.93 19.73,18.71 18.33,19.1 19.24,17.96"></polygon>
             </g>
             @break
+
+        @case('ru')
+            <rect width="60" height="13.34" fill="#fff"></rect>
+            <rect y="13.33" width="60" height="13.34" fill="#0039a6"></rect>
+            <rect y="26.66" width="60" height="13.34" fill="#d52b1e"></rect>
+            @break
     @endswitch
 </svg>
