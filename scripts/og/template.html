@@ -35,7 +35,7 @@
         --color-text-secondary: #525252;
         --color-text-muted: #737373;
         --color-border: #e2e2e2;
-        --font-sans: Inter, ui-sans-serif, -apple-system, sans-serif;
+        --font-sans: Inter, ui-sans-serif, -apple-system, 'PingFang SC', sans-serif;
         --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
       }
 
@@ -159,12 +159,19 @@
           title: 'Onthoud de mensen die je dierbaar zijn.',
           foot: ['Open source', 'In eigen beheer', 'Je gegevens blijven van jou'],
         },
+        zh: {
+          eyebrow: '开源的个人 CRM',
+          title: '记住你在乎的人。',
+          foot: ['开源', '可自托管', '你的数据始终属于你'],
+        },
       };
 
       const locale = new URLSearchParams(location.search).get('locale') ?? 'en';
       const copy = COPY[locale] ?? COPY.en;
 
-      document.documentElement.lang = locale;
+      // "zh" alone leaves the glyph shapes to the browser's guess, which may be
+      // Traditional or Japanese. The site says zh-Hans, and so does the card.
+      document.documentElement.lang = locale === 'zh' ? 'zh-Hans' : locale;
       document.querySelector('[data-slot="eyebrow"]').textContent = copy.eyebrow;
       document.querySelector('[data-slot="title"]').textContent = copy.title;
       document.querySelector('[data-slot="foot"]').innerHTML = copy.foot

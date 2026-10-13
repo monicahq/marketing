@@ -6,7 +6,7 @@
     hreflang links to the other three translations.
 --}}
 <!DOCTYPE html>
-<html lang="{{ $page->locale }}">
+<html lang="{{ $page->languageTag() }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

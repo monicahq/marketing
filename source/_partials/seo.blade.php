@@ -134,7 +134,7 @@
                 // @id across the whole site, so letting the current page fill
                 // it in would describe the same thing fifty different ways.
                 'description' => $page->t('meta.home.description'),
-                'inLanguage' => $page->locale,
+                'inLanguage' => $page->languageTag(),
                 'publisher' => ['@id' => $organization],
             ],
             array_filter([
@@ -143,7 +143,7 @@
                 'url' => $canonical,
                 'name' => $title,
                 'description' => $description,
-                'inLanguage' => $page->locale,
+                'inLanguage' => $page->languageTag(),
                 'isPartOf' => ['@id' => $website],
                 'breadcrumb' => count($trail) > 1 ? ['@id' => $breadcrumb] : null,
                 'datePublished' => $isPost ? $page->isoDate() : null,
@@ -270,7 +270,7 @@
             'headline' => $page->title,
             'description' => $description,
             'datePublished' => $page->isoDate(),
-            'inLanguage' => $page->locale,
+            'inLanguage' => $page->languageTag(),
             'author' => ['@type' => 'Person', 'name' => $page->author],
             'publisher' => ['@id' => $organization],
         ];
@@ -285,7 +285,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
 @foreach ($alternates as $alternate)
-    <link rel="alternate" hreflang="{{ $alternate['locale'] }}" href="{{ $alternate['absolute'] }}">
+    <link rel="alternate" hreflang="{{ $page->languageTag($alternate['locale']) }}" href="{{ $alternate['absolute'] }}">
 @endforeach
 <link rel="alternate" hreflang="x-default" href="{{ $page->absolute($page->canonicalPath($page->defaultLocale, $number)) }}">
 

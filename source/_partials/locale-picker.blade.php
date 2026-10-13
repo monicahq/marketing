@@ -27,8 +27,8 @@
         @foreach ($page->alternates() as $alternate)
             <a
                 href="{{ $alternate['href'] }}"
-                hreflang="{{ $alternate['locale'] }}"
-                lang="{{ $alternate['locale'] }}"
+                hreflang="{{ $page->languageTag($alternate['locale']) }}"
+                lang="{{ $page->languageTag($alternate['locale']) }}"
                 data-turbo="false"
                 @if ($alternate['locale'] === $page->locale) aria-current="true" @endif
                 class="flex items-center gap-3 rounded-xs px-3 py-2 text-small text-text no-underline hover:bg-hover hover:text-text hover:no-underline {{ $alternate['locale'] === $page->locale ? 'bg-hover font-medium' : '' }}"

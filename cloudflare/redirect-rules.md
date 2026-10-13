@@ -71,6 +71,11 @@ prints the rules it would send, which is what CI does on every pull request.
   the expression.
 - `substring(..., 0, 2)` folds a tag to its language, so `fr-CA` and `fr-CH` both
   read as `fr`. Every locale here is a plain two-letter language.
+- **Chinese is folded too, script and all.** `zh-CN`, `zh-TW`, `zh-HK` and
+`zh-Hant` all read as `zh` and land on the Simplified copy, including readers of
+Traditional Chinese. That is deliberate: Simplified is far closer to what they
+read than English is, and telling the scripts apart would take a rule per
+variant for a language we publish in one script.
 - `lower()` because the header is case insensitive and `FR-ca` is a legal way to
   write it.
 - **The language set is not in the JSON.** The expressions carry a

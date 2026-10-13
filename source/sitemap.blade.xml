@@ -103,7 +103,7 @@
         <loc>{{ $page->absolute($entry['path']($locale)) }}</loc>
         <lastmod>{{ $entry['lastmod']($locale) }}</lastmod>
 @foreach ($entry['locales'] as $alternate)
-        <xhtml:link rel="alternate" hreflang="{{ $alternate }}" href="{{ $page->absolute($entry['path']($alternate)) }}"/>
+        <xhtml:link rel="alternate" hreflang="{{ $page->languageTag($alternate) }}" href="{{ $page->absolute($entry['path']($alternate)) }}"/>
 @endforeach
         <xhtml:link rel="alternate" hreflang="x-default" href="{{ $page->absolute($entry['path']($page->defaultLocale)) }}"/>
     </url>

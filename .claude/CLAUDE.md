@@ -1,6 +1,6 @@
 # Monica marketing site: working notes for Claude
 
-Marketing site for **Monica**, the personal CRM. Static [Jigsaw](https://jigsaw.tighten.com) + Tailwind 4 site, built on the Monica design system, shipping in five languages.
+Marketing site for **Monica**, the personal CRM. Static [Jigsaw](https://jigsaw.tighten.com) + Tailwind 4 site, built on the Monica design system, shipping in seven languages (English, French, German, Spanish, Portuguese, Dutch and Simplified Chinese).
 The owner is not a Jigsaw expert, so explain Jigsaw-specific choices briefly, and prefer boring, idiomatic Jigsaw over clever setups.
 
 ## Guidelines for Git and GitHub
@@ -109,7 +109,17 @@ Three helpers, and the distinction matters:
 4. Its flag in `source/_partials/flag.blade.php`.
 5. Regenerate the social cards: add it to `scripts/og/template.html` and `scripts/og/generate.sh`, then `npm run og`.
 
-German runs ~30% longer than English, French ~20%, and Portuguese ~20%. Don't pin widths to English label lengths.
+German runs ~30% longer than English, French ~20%, and Portuguese ~20%. Chinese runs much shorter. Don't pin widths to English label lengths.
+
+### Chinese
+
+Simplified Chinese is the one locale whose code does not say enough on its own, and three things follow from it:
+
+- **The URL prefix is `zh`, the language tag is `zh-Hans`.** A bare `zh` lets a browser draw the page with Traditional or Japanese glyph shapes. `languageTags` in `config.php` maps the one locale that needs it, and `$page->languageTag()` is what `<html lang>`, hreflang (in the head, the sitemap and the locale picker), `inLanguage` and the feed read. Never print `$page->locale` where a language tag is meant.
+- **Its slugs are the English ones** (`/zh/pricing/`). A slug in Chinese characters is percent-encoded into something unreadable, and pinyin slugs are rare on Chinese sites.
+- **`readingMinutes()` counts Chinese characters on their own**, at 300 a minute, because `str_word_count` sees almost nothing in a language without spaces.
+
+The copy addresses the reader as 你, uses full-width punctuation, and puts a space between Chinese and Latin words or numbers (`Monica 是一个开源的个人 CRM`).
 
 ## The design system is the authority
 
@@ -248,15 +258,15 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 ## The blog
 
-`/en/blog/`, ten posts a page, plus a page per post. The 39 posts are the ones imported from the old site, Markdown, one file per post per language.
+`/en/blog/`, ten posts a page, plus a page per post. The 43 posts are the ones imported from the old site, Markdown, one file per post per language.
 
-**One collection per locale.** The bodies are translated, so a post is a different file in every language: `source/_posts_en/`, `source/_posts_fr/`, and so on, read by the `posts_en`, `posts_fr`, ... collections that `config.php` builds by looping over `$locales`. Everything else about them (sort order, `perPage`, the helpers) comes from one shared `$postSettings` array, so it cannot drift between languages. Five collections rather than one with a `locale` field, because Jigsaw's paginator takes a collection and nothing else: it cannot be told to paginate the French tenth of a pile of 195 items, and the French index would otherwise list German posts.
+**One collection per locale.** The bodies are translated, so a post is a different file in every language: `source/_posts_en/`, `source/_posts_fr/`, and so on, read by the `posts_en`, `posts_fr`, ... collections that `config.php` builds by looping over `$locales`. Everything else about them (sort order, `perPage`, the helpers) comes from one shared `$postSettings` array, so it cannot drift between languages. One collection per language rather than one with a `locale` field, because Jigsaw's paginator takes a collection and nothing else: it cannot be told to paginate the French seventh of a pile of 301 items, and the French index would otherwise list German posts.
 
 `locale` is a collection setting, so it is stated once per language rather than 39 times, and `$page->locale` is set before `_layouts/post.blade.php` runs. That is what `t()`, the `<html lang>` attribute, the canonical and the hreflang cluster read, and none of them has to know a collection is involved.
 
 **A template that needs the archive names it from the locale**: `$posts = ${'posts_' . $page->lang()}`, in `_layouts/post.blade.php` (for "keep reading"), `_partials/blog/index.blade.php` and `_partials/blog/feed.blade.php`. The sidebar partials are included from the index and inherit `$posts` from it. The sitemap deliberately uses `$posts_en`: slugs are identical across languages, so the English archive is the list of slugs, and a translation missing from one locale becomes a dead-link failure rather than a silent gap.
 
-**The slug does not change between languages.** `/de/blog/life-events/` is the German page. Only `title` and `description` are translated in the front matter; the slug, the date and the author are the same fact in five files. That is what lets one `postPath()` serve the canonical, the hreflang cluster, the sitemap and the feed without a per-locale slug table.
+**The slug does not change between languages.** `/de/blog/life-events/` is the German page. Only `title` and `description` are translated in the front matter; the slug, the date and the author are the same fact in every language's file. That is what lets one `postPath()` serve the canonical, the hreflang cluster, the sitemap and the feed without a per-locale slug table.
 
 **URLs go through `canonicalPath()`.** Three shapes live behind it: an ordinary page named by its route key, the paginated index, and a post. The canonical, the hreflang cluster, the sitemap and the dead-link checker all call it, so they cannot drift apart. `blogPath($locale, $n)` and `postPath($slug, $locale)` are the two building blocks.
 
@@ -264,9 +274,9 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 **Dates are timestamps.** YAML reads an unquoted `date: 2018-10-12` as a date and hands it back as ten digits, so anything that displays a date or gives one to a crawler calls `$post->isoDate()`. `readingMinutes()` and `authorInitials()` are collection helpers alongside it.
 
-**`updated` is the one fact about a post that may differ between languages.** It is optional front matter, it feeds `$post->lastmodDate()` and through it the sitemap's `lastmod`, and it falls back to `date` because a post nobody has touched was last modified when it was published. Per locale on purpose: the slug and the date are the same fact in five files, but a French translation corrected on its own should say so without moving the other four. Set it only for a change a reader would notice.
+**`updated` is the one fact about a post that may differ between languages.** It is optional front matter, it feeds `$post->lastmodDate()` and through it the sitemap's `lastmod`, and it falls back to `date` because a post nobody has touched was last modified when it was published. Per locale on purpose: the slug and the date are the same fact in every language, but a French translation corrected on its own should say so without moving the others. Set it only for a change a reader would notice.
 
-**Images go through `bodyHtml()`, never `getContent()`.** It is the rendered Markdown with every `<img>` given its intrinsic `width` and `height` (read off the file with `getimagesize()` at build time), plus `loading="lazy"` and `decoding="async"`. `![alt](src)` is all an author can write, so the alternative is raw `<img>` tags in 195 Markdown files repeating numbers that are already facts about the files on disk. Both the post page and the index card render through it, and `feedContent()` is built on top of it. Lazy on all of them without exception: every image in this collection is inside a post body, under a title, a lede and a byline, and the index carries ten whole posts at once.
+**Images go through `bodyHtml()`, never `getContent()`.** It is the rendered Markdown with every `<img>` given its intrinsic `width` and `height` (read off the file with `getimagesize()` at build time), plus `loading="lazy"` and `decoding="async"`. `![alt](src)` is all an author can write, so the alternative is raw `<img>` tags in 301 Markdown files repeating numbers that are already facts about the files on disk. Both the post page and the index card render through it, and `feedContent()` is built on top of it. Lazy on all of them without exception: every image in this collection is inside a post body, under a title, a lede and a byline, and the index carries ten whole posts at once.
 
 **Alt text is per locale and describes the screenshot.** It lives in the Markdown, so it is translated with the body. Say what the screen shows and what state it is in ("the life events tab on a contact, empty, offering to add the first one"), not what the file is. `![image]` is not alt text.
 
@@ -276,19 +286,19 @@ The homepage, the three features pages, pricing, the v3 teaser, the team page, t
 
 Autodiscovery (`rel="alternate" type="application/rss+xml"`) is in `_layouts/base.blade.php`, so it is on every page rather than only the blog: the page someone is on when they decide to subscribe is rarely the index. It points at the current locale's feed. That is safe under Turbo for the same reason `<html lang>` is: the link is identical across a locale, and crossing locales is a full page load because the locale picker carries `data-turbo="false"`.
 
-Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in **every** `source/_posts_<locale>/` with `title`, `slug`, `date`, `author` and `description` (plus `updated` once it has been changed), and nothing else to register. The same slug and the same date in all five, the title, the description and the body translated. A post present in one language and missing in another fails the dead-link check, because the sitemap lists it for every locale.
+Posts have no categories: the two the old site used were dropped on import. Adding a post means a Markdown file in **every** `source/_posts_<locale>/` with `title`, `slug`, `date`, `author` and `description` (plus `updated` once it has been changed), and nothing else to register. The same slug and the same date in all of them, the title, the description and the body translated. A post present in one language and missing in another fails the dead-link check, because the sitemap lists it for every locale.
 
 See the [collections docs](https://jigsaw.tighten.com/docs/collections/).
 
 ## The features pages
 
-Three tabs (contact management, dashboard, journal), three route keys (`features`, `featuresDashboard`, `featuresJournal`), fifteen pages once the five locales are counted.
+Three tabs (contact management, dashboard, journal), three route keys (`features`, `featuresDashboard`, `featuresJournal`), twenty-one pages once the seven locales are counted.
 
 **The tabs are pages, not a JavaScript widget.** Each one has its own URL, so it can be linked to, indexed and translated, which is what the old site did. `_partials/features/tabs.blade.php` renders the strip on all three, and `aria-current="page"` marks the one being read.
 
 **The slugs nest**, so `featuresDashboard` in English is `features/dashboard` and the file is `source/en/features/dashboard.blade.php`. The helpers need nothing special for this: they only ever join a slug to a locale prefix. A slug with a slash and a file in a subdirectory are the whole trick.
 
-**One partial builds all three.** `_partials/features/page.blade.php` holds a table of which copy block, which screenshot and whether the API section follows, keyed by the route name, so each of the fifteen page files is four lines of front matter and an `@include`.
+**One partial builds all three.** `_partials/features/page.blade.php` holds a table of which copy block, which screenshot and whether the API section follows, keyed by the route name, so each of the twenty-one page files is four lines of front matter and an `@include`.
 
 The screenshots came from the old site and were cropped on the way in: the browser window drawn around each one, and the drop shadow behind it, are both things the design system forbids. The annotations that were pinned onto them as red labels are now an ordinary list beside the picture, which is what makes them survive a phone, a screen reader and a translation running longer than English.
 

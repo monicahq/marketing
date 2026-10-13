@@ -11,7 +11,7 @@ use Illuminate\Support\Arr;
  * behaviour lives, because Jigsaw has no locale routing of its own.
  */
 
-$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl'];
+$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl', 'zh'];
 
 /**
  * How the blog is chunked, in one place.
@@ -122,11 +122,18 @@ $postSettings = [
      *
      * Counted on the translated body, so a German page states how long the
      * German text takes, which is the only number that is true on that page.
+     *
+     * Chinese has no spaces between words, so `str_word_count` sees almost
+     * nothing in it. Its characters are counted on their own, at 300 a
+     * minute, and the Latin words left once they are removed (product names,
+     * code) at the usual rate.
      */
     'readingMinutes' => function ($post) {
-        $words = str_word_count(strip_tags($post->getContent()));
+        $text = strip_tags($post->getContent());
+        $characters = preg_match_all('/\p{Han}/u', $text);
+        $words = str_word_count(preg_replace('/\p{Han}/u', ' ', $text));
 
-        return max(1, (int) ceil($words / 200));
+        return max(1, (int) ceil($characters / 300 + $words / 200));
     },
 
     /**
@@ -272,6 +279,7 @@ return [
         'es' => 'Español',
         'pt' => 'Português',
         'nl' => 'Nederlands',
+        'zh' => '简体中文',
     ],
 
     /**
@@ -294,10 +302,32 @@ return [
         // territory is NL. hreflang stays the bare "nl", which is what a reader
         // searching in either variant should match.
         'nl' => 'nl_NL',
+
+        // Simplified Chinese is the script of the mainland, so the territory
+        // is CN.
+        'zh' => 'zh_CN',
     ],
 
     /**
-     * Every URL is locale-prefixed and every slug is translated. A page is
+     * The language tag a browser and a crawler read, in `<html lang>`,
+     * hreflang, `inLanguage` and the feed. It is the locale code itself unless
+     * listed here, through `languageTag()`.
+     *
+     * Chinese is the one exception. A bare "zh" names the language but not
+     * the script, so a browser left to guess may draw the page with
+     * Traditional or Japanese glyph shapes. "zh-Hans" says Simplified. The
+     * URL prefix stays the bare "zh", because that is what the root's
+     * redirect rule reads off Accept-Language.
+     */
+    'languageTags' => [
+        'zh' => 'zh-Hans',
+    ],
+
+    /**
+     * Every URL is locale-prefixed and every slug is translated, except in
+     * Chinese, which keeps the English slugs: a slug in Chinese characters is
+     * percent-encoded into something nobody can read, and pinyin slugs are
+     * rare on Chinese sites. A page is
      * referenced by its key, never by a hard-coded path, so a slug can be
      * corrected in one place.
      *
@@ -305,12 +335,12 @@ return [
      * named after that locale's slug. See .claude/CLAUDE.md.
      */
     'routes' => [
-        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => ''],
+        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => '', 'zh' => ''],
 
         // "v3" is the product's version number, so it is the same word in every
         // language. Slugs are still declared per locale, because the next page
         // added will not be.
-        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3'],
+        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3', 'zh' => 'v3'],
 
         'pricing' => [
             'en' => 'pricing',
@@ -319,6 +349,7 @@ return [
             'es' => 'precios',
             'pt' => 'precos',
             'nl' => 'prijzen',
+            'zh' => 'pricing',
         ],
 
         /**
@@ -339,6 +370,7 @@ return [
             'es' => 'funcionalidades',
             'pt' => 'recursos',
             'nl' => 'functies',
+            'zh' => 'features',
         ],
 
         'featuresDashboard' => [
@@ -348,6 +380,7 @@ return [
             'es' => 'funcionalidades/panel',
             'pt' => 'recursos/painel',
             'nl' => 'functies/dashboard',
+            'zh' => 'features/dashboard',
         ],
 
         'featuresJournal' => [
@@ -357,12 +390,13 @@ return [
             'es' => 'funcionalidades/diario',
             'pt' => 'recursos/diario',
             'nl' => 'functies/dagboek',
+            'zh' => 'features/journal',
         ],
 
         // "Blog" is the same word in every language we ship. Declared per locale
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.
-        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog'],
+        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog', 'zh' => 'blog'],
 
         'terms' => [
             'en' => 'terms',
@@ -371,6 +405,7 @@ return [
             'es' => 'condiciones-de-uso',
             'pt' => 'termos-de-uso',
             'nl' => 'gebruiksvoorwaarden',
+            'zh' => 'terms',
         ],
 
         'team' => [
@@ -380,6 +415,7 @@ return [
             'es' => 'equipo',
             'pt' => 'equipe',
             'nl' => 'team',
+            'zh' => 'team',
         ],
 
         'privacy' => [
@@ -389,6 +425,7 @@ return [
             'es' => 'privacidad',
             'pt' => 'privacidade',
             'nl' => 'privacybeleid',
+            'zh' => 'privacy',
         ],
 
         // The guide that answers the question the nav asks. Its slug says
@@ -401,6 +438,7 @@ return [
             'es' => 'crm-personal',
             'pt' => 'crm-pessoal',
             'nl' => 'persoonlijke-crm',
+            'zh' => 'personal-crm',
         ],
 
         // "Your contacts, your way": what a contact template is and what you
@@ -414,6 +452,7 @@ return [
             'es' => 'funcionalidades/plantillas',
             'pt' => 'recursos/modelos',
             'nl' => 'functies/sjablonen',
+            'zh' => 'features/templates',
         ],
 
         // "Remember the details that matter": what a contact page holds, from
@@ -428,6 +467,7 @@ return [
             'es' => 'funcionalidades/detalles',
             'pt' => 'recursos/detalhes',
             'nl' => 'functies/details',
+            'zh' => 'features/details',
         ],
 
         // "Remember to reach out": reminders, once or on a rhythm, and how the
@@ -441,6 +481,7 @@ return [
             'es' => 'funcionalidades/recordatorios',
             'pt' => 'recursos/lembretes',
             'nl' => 'functies/herinneringen',
+            'zh' => 'features/reminders',
         ],
 
         // "Keep the moments worth remembering": life events, the timeline
@@ -454,6 +495,7 @@ return [
             'es' => 'funcionalidades/cronologia',
             'pt' => 'recursos/linha-do-tempo',
             'nl' => 'functies/tijdlijn',
+            'zh' => 'features/timeline',
         ],
     ],
 
@@ -668,6 +710,17 @@ return [
      */
     'lang' => function ($page) {
         return $page->locale ?: $page->defaultLocale;
+    },
+
+    /**
+     * The language tag for a locale, the current page's by default. See
+     * `languageTags`: it is the locale code except where the code alone does
+     * not say enough.
+     */
+    'languageTag' => function ($page, ?string $locale = null) {
+        $locale ??= $page->lang();
+
+        return $page->languageTags[$locale] ?? $locale;
     },
 
     /**
