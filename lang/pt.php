@@ -26,6 +26,7 @@ return [
             'team' => "Equipe",
             'privacy' => "Política de privacidade",
             'personalCrm' => "Guia do CRM pessoal",
+            'templates' => "Modelos de contato",
             'page' => "Página :number",
         ],
 
@@ -96,6 +97,11 @@ return [
         'featuresJournal' => [
             'title' => "O diário — recursos da Monica",
             'description' => "Escreva entradas de diário, registre como foi o seu dia e leia as atividades com os seus contatos que a Monica registra automaticamente para você.",
+        ],
+
+        'templates' => [
+            'title' => "Seus contatos, do seu jeito: modelos de contato na Monica",
+            'description' => "Crie modelos de contato com campos, seções e abas próprios. Modelos diferentes para amigos, família e trabalho, versões publicadas quando você quiser e seções que podem ser compartilhadas.",
         ],
 
         'personalCrm' => [
@@ -939,6 +945,203 @@ return [
                 ['q' => "Quanta informação eu deveria registrar?", 'a' => "Comece pelo mínimo que resolve o seu problema. Datas, algumas anotações e um lembrete de vez em quando bastam para muita gente. Acrescente estrutura só quando ela valer o custo de manutenção."],
             ],
         ],
+    ],
+
+    /**
+     * The templates page, "Your contacts, your way". Every picture on it is a
+     * drawing of the product, so each one carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The field names and field types are shared by several drawings, so they
+     * are written once under `fields` and `types`.
+     */
+    'templates' => [
+        'fields' => [
+            'cake' => "Bolo favorito",
+            'cannotEat' => "Não pode comer",
+            'coffee' => "Pedido de café",
+            'shoeSize' => "Número do calçado",
+            'nameDay' => "Dia do santo",
+            'giftIdeas' => "Ideias de presente",
+            'idea' => "Ideia",
+            'given' => "Já presenteado",
+            'howWeMet' => "Como nos conhecemos",
+        ],
+        'types' => [
+            'shortText' => "Texto curto",
+            'longText' => "Texto longo",
+            'number' => "Número",
+            'multipleChoice' => "Múltipla escolha",
+            'recurringDate' => "Data recorrente",
+            'repeater' => "Grupo repetível",
+            'checkbox' => "Caixa de seleção",
+        ],
+        'section' => "Pequenas coisas que vale lembrar",
+        'addField' => "Adicionar um campo",
+        'fieldCount' => ":count campos",
+        'publish' => "Publicar esta versão",
+        'draft' => "Rascunho",
+        'published' => "Publicada",
+        'friends' => "Amigos",
+
+        'hero' => [
+            'title' => "Seus contatos, do seu jeito.",
+            'lede' => "Lembre-se do que importa para você. Crie modelos de contato com os seus próprios campos, seções e abas, para que a ficha de cada pessoa tenha espaço para os detalhes que você quer guardar.",
+            'cta' => "Criar a sua conta",
+            'label' => "A ficha de Rachel Green na Monica, aberta na aba Pequenas coisas, ao lado da seção do modelo Amigos que define os campos da ficha.",
+            'meta' => "Modelo Amigos · adicionado há 3 anos",
+            'tabs' => ["Geral", "Formas de contato", "Pequenas coisas", "Planos"],
+            'values' => [
+                'cake' => "Cheesecake da Mama’s Little Bakery, Chicago",
+                'cannotEat' => ["Lagosta", "Cebola crua"],
+                'coffee' => "Latte, no Central Perk",
+                'shoeSize' => "38",
+            ],
+            'story' => "Entrou no Central Perk encharcada, de vestido de noiva, no dia em que largou o Barry no altar. Mudou-se para lá naquela noite.",
+            'behind' => "O modelo por trás dela",
+        ],
+
+        'birthday' => [
+            'title' => "Um aniversário é útil. Saber qual é o bolo favorito também.",
+            'body' => "Uma agenda guarda números de telefone. Talvez você também queira lembrar como se conheceram, o que alguém está tentando alcançar ou qual comida a pessoa não pode comer.",
+            'close' => "Com a Monica, você escolhe o que fica nas fichas dos seus contatos.",
+            'label' => "Um registro de agenda com um número de telefone e um aniversário, e a ficha de Ross Geller na Monica, que também guarda o bolo favorito dele, como vocês se conheceram, o que ele está tentando alcançar e o que ele não pode comer.",
+            'addressBook' => "Uma agenda",
+            'rows' => [
+                ['label' => "Telefone", 'value' => "+1 212 555 0174"],
+                ['label' => "Aniversário", 'value' => "18 de outubro de 1967"],
+            ],
+            'monica' => [
+                ['label' => "Aniversário", 'value' => "18 de outubro · em três semanas"],
+                ['label' => "Bolo favorito", 'value' => "Bolo de cenoura, com nozes extras"],
+                ['label' => "Como nos conhecemos", 'value' => "Irmão da Monica, desde a faculdade"],
+                ['label' => "Objetivo", 'value' => "Estabilidade como professor na NYU"],
+                ['label' => "Não pode comer", 'value' => ["Kiwi", "Lagosta"]],
+            ],
+        ],
+
+        'people' => [
+            'title' => "Pessoas diferentes. Detalhes diferentes.",
+            'close' => "Crie modelos diferentes para as pessoas da sua vida. Cada um pode ter a sua própria estrutura.",
+            'cards' => [
+                [
+                    'title' => "Amigos",
+                    'body' => "As coisas de que eles mais gostam, os planos para o verão e a história de como vocês se conheceram.",
+                    'label' => "Uma ficha criada a partir de um modelo Amigos, com as abas Favoritos, Verão e Nossa história.",
+                    'tabs' => ["Favoritos", "Verão", "Nossa história"],
+                    'rows' => [
+                        ['label' => "Banda", 'value' => "Khruangbin"],
+                        ['label' => "Livro", 'value' => "Os Despojos do Dia"],
+                        ['label' => "Plano de verão", 'value' => "Pedalar pelo Loire, em julho"],
+                    ],
+                ],
+                [
+                    'title' => "Família",
+                    'body' => "As tradições que importam para eles, as datas importantes e a receita que eles vivem prometendo mandar.",
+                    'label' => "Uma ficha criada a partir de um modelo Família, com as abas Tradições, Datas e Receitas.",
+                    'tabs' => ["Tradições", "Datas", "Receitas"],
+                    'rows' => [
+                        ['label' => "Ceia de Natal", 'value' => "Ostras, depois missa do galo"],
+                        ['label' => "Dia do santo", 'value' => "26 de julho"],
+                        ['label' => "Receita prometida", 'value' => "O clafoutis da vovó"],
+                    ],
+                ],
+                [
+                    'title' => "Contatos profissionais",
+                    'body' => "A área de especialidade, onde vocês conversaram pela primeira vez e o assunto que você queria retomar na próxima vez.",
+                    'label' => "Uma ficha criada a partir de um modelo para contatos profissionais, com as abas Trabalho, Formas de contato e Próxima conversa.",
+                    'tabs' => ["Trabalho", "Formas de contato", "Próxima conversa"],
+                    'rows' => [
+                        ['label' => "Especialidade", 'value' => "Cadeias de suprimentos no varejo de alimentos"],
+                        ['label' => "Primeira conversa", 'value' => "Lyon, em um painel sobre logística"],
+                        ['label' => "Retomar na próxima vez", 'value' => "O piloto de cadeia de frio dela"],
+                    ],
+                ],
+            ],
+        ],
+
+        'room' => [
+            'title' => "Abra espaço para o que importa.",
+            'body' => [
+                "Adicione campos de texto, datas, números ou uma escolha em uma lista. Dê a eles nomes que façam sentido para você.",
+                "Reúna campos relacionados em seções, organize essas seções em abas e coloque tudo na ordem que preferir. Para detalhes que aparecem várias vezes, use um grupo repetível.",
+            ],
+            'close' => "Uma seção chamada “Pequenas coisas que vale lembrar”? Perfeitamente razoável.",
+            'label' => "O editor de modelos da Monica, com um rascunho do modelo Amigos aberto na página Pequenas coisas. O campo Não pode comer está selecionado, e o painel ao lado mostra o nome, o tipo e a lista de opções dele.",
+            'version' => "v2 · baseada na v1",
+            'saved' => "Salvo há 4 segundos",
+            'import' => "Importar uma seção",
+            'pages' => [
+                ['name' => "Geral", 'count' => 5],
+                ['name' => "Pequenas coisas", 'count' => 6],
+                ['name' => "Planos", 'count' => 3],
+            ],
+            'addPage' => "Adicionar uma página",
+            'field' => "Campo",
+            'name' => "Nome",
+            'type' => "Tipo",
+            'choices' => "Opções",
+            'choiceList' => ["Amendoim", "Glúten", "Frutos do mar", "Laticínios", "Cebola crua"],
+            'addChoice' => "Adicionar uma opção",
+            'note' => "O que você alterar vale só para este rascunho.",
+        ],
+
+        'reuse' => [
+            'title' => "Crie uma vez. Use de novo.",
+            'body' => [
+                "Um modelo dá a várias fichas a mesma estrutura. Cada pessoa mantém as próprias informações.",
+                "Adicione “Como nos conhecemos” ao seu modelo de amigos, e cada amigo ganha um lugar para uma história diferente. Escolha um modelo padrão para cada cofre e dê aos novos contatos o ponto de partida certo.",
+            ],
+            'label' => "Um único campo Como nos conhecemos no modelo Amigos, preenchido com uma história diferente na ficha de três amigos, e o modelo Amigos escolhido como padrão para novos contatos no cofre Amigos.",
+            'template' => "Modelo Amigos",
+            'stories' => [
+                'Rachel' => "Entrou no Central Perk de vestido de noiva.",
+                'Ross' => "Irmão da Monica, desde a faculdade.",
+                'Joey' => "Respondeu ao anúncio do quarto vago do Chandler.",
+            ],
+            'default' => "Modelo padrão",
+            'defaultBody' => "Os novos contatos do cofre Amigos começam aqui",
+        ],
+
+        'versions' => [
+            'title' => "Mude de ideia sem perder as suas anotações.",
+            'body' => [
+                "Você pode querer adicionar um detalhe, renomear um campo ou mover uma seção. Os seus modelos podem mudar junto com você.",
+                "Prepare um rascunho e publique quando ele estiver pronto. Os contatos existentes continuam na versão atual até você decidir atualizá-los.",
+                "Se você remover um campo de um modelo, as informações que já preencheu são mantidas. Você ainda consegue encontrá-las, e elas voltam à ficha se você trouxer o campo de volta.",
+            ],
+            'label' => "O histórico de versões de um modelo, com um rascunho v3 aguardando publicação enquanto 34 contatos continuam na v2, e a ficha de Rachel Green mantendo o número do calçado de um campo que foi removido, com um botão para trazer o campo de volta.",
+            'history' => "Histórico de versões",
+            'rows' => [
+                ['version' => "v3", 'text' => "Adicionado “Dia do santo”, “Alergias” renomeado para “Não pode comer”", 'status' => 'draft'],
+                ['version' => "v2", 'text' => "Publicada em 2 de junho · 34 contatos", 'status' => 'published'],
+                ['version' => "v1", 'text' => "Publicada em 9 de janeiro · 3 contatos", 'status' => null],
+            ],
+            'notice' => "Publicar a v3 mantém 34 contatos na v2 até você atualizá-los.",
+            'values' => [
+                'cake' => "Cheesecake da Mama’s Little Bakery",
+                'coffee' => "Latte, no Central Perk",
+            ],
+            'kept' => "Mantido de um campo removido",
+            'restore' => "Trazer o campo de volta",
+        ],
+
+        'share' => [
+            'title' => "Compartilhe o modelo. Guarde os detalhes só para você.",
+            'body' => [
+                "Criou algo útil? Exporte um modelo inteiro ou uma única seção para outra pessoa importar na própria conta.",
+                "O arquivo contém a estrutura que você montou, com os rótulos e as listas de opções. Os seus contatos e as informações deles ficam com você.",
+            ],
+            'label' => "Exportação da seção Pequenas coisas que vale lembrar. O arquivo contém a seção, os rótulos e os tipos dos seis campos e a lista de opções de Não pode comer. Os seus 34 contatos e tudo o que está escrito nas fichas deles ficam com você.",
+            'export' => "Exportar esta seção",
+            'inFile' => "No arquivo",
+            'inFileItems' => ["A seção e o nome dela", "6 rótulos e tipos de campo", "A lista de opções de “Não pode comer”"],
+            'stays' => "Fica com você",
+            'staysItems' => ["Os seus 34 contatos", "Tudo o que está escrito nas fichas deles"],
+            'file' => "pequenas-coisas-que-vale-lembrar.json · 3 KB",
+            'download' => "Baixar",
+        ],
+
     ],
 
     'footer' => [

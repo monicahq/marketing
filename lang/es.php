@@ -22,6 +22,7 @@ return [
             'team' => "Equipo",
             'privacy' => "Política de privacidad",
             'personalCrm' => "Guía del CRM personal",
+            'templates' => "Plantillas de contacto",
             'page' => "Página :number",
         ],
 
@@ -93,6 +94,11 @@ return [
         'featuresJournal' => [
             'title' => "El diario — las funcionalidades de Monica",
             'description' => "Escribe entradas de diario, indica cómo ha ido tu día y lee las actividades con tus contactos que Monica registra automáticamente.",
+        ],
+
+        'templates' => [
+            'title' => "Tus contactos, a tu manera: plantillas de contacto en Monica",
+            'description' => "Crea plantillas de contacto con tus propios campos, secciones y pestañas. Plantillas distintas para amigos, familia y trabajo, versiones que publicas cuando están listas y secciones que puedes compartir.",
         ],
 
         'personalCrm' => [
@@ -936,6 +942,203 @@ return [
                 ['q' => "¿Cuánta información debería anotar?", 'a' => "Empieza por el mínimo que resuelva tu problema. Unas fechas, unas cuantas notas y algún recordatorio bastan para mucha gente. Añade estructura solo cuando merezca su coste de mantenimiento."],
             ],
         ],
+    ],
+
+    /**
+     * The templates page, "Your contacts, your way". Every picture on it is a
+     * drawing of the product, so each one carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The field names and field types are shared by several drawings, so they
+     * are written once under `fields` and `types`.
+     */
+    'templates' => [
+        'fields' => [
+            'cake' => "Tarta favorita",
+            'cannotEat' => "No puede comer",
+            'coffee' => "Café de siempre",
+            'shoeSize' => "Talla de calzado",
+            'nameDay' => "Santo",
+            'giftIdeas' => "Ideas de regalo",
+            'idea' => "Idea",
+            'given' => "Ya regalado",
+            'howWeMet' => "Cómo nos conocimos",
+        ],
+        'types' => [
+            'shortText' => "Texto corto",
+            'longText' => "Texto largo",
+            'number' => "Número",
+            'multipleChoice' => "Opción múltiple",
+            'recurringDate' => "Fecha recurrente",
+            'repeater' => "Grupo repetible",
+            'checkbox' => "Casilla",
+        ],
+        'section' => "Pequeñas cosas que merece la pena recordar",
+        'addField' => "Añadir un campo",
+        'fieldCount' => ":count campos",
+        'publish' => "Publicar esta versión",
+        'draft' => "Borrador",
+        'published' => "Publicada",
+        'friends' => "Amigos",
+
+        'hero' => [
+            'title' => "Tus contactos, a tu manera.",
+            'lede' => "Recuerda lo que te importa. Crea plantillas de contacto con tus propios campos, secciones y pestañas, para que la ficha de cada persona tenga sitio para los detalles que quieres conservar.",
+            'cta' => "Crear tu cuenta",
+            'label' => "La ficha de contacto de Rachel Green en Monica, abierta en la pestaña Pequeñas cosas, junto a la sección de la plantilla Amigos que le da sus campos a la ficha.",
+            'meta' => "Plantilla Amigos · añadida hace 3 años",
+            'tabs' => ["General", "Formas de contacto", "Pequeñas cosas", "Planes"],
+            'values' => [
+                'cake' => "Tarta de queso de Mama’s Little Bakery, Chicago",
+                'cannotEat' => ["Langosta", "Cebolla cruda"],
+                'coffee' => "Latte, en Central Perk",
+                'shoeSize' => "38",
+            ],
+            'story' => "Entró en Central Perk empapada y vestida de novia, el día que dejó a Barry en el altar. Esa misma noche se mudó a mi casa.",
+            'behind' => "La plantilla que hay detrás",
+        ],
+
+        'birthday' => [
+            'title' => "Un cumpleaños es útil. Saber cuál es su tarta favorita, también.",
+            'body' => "Una libreta de direcciones guarda números de teléfono. Quizá también quieras recordar cómo os conocisteis, qué meta persigue alguien o qué comida no puede tomar.",
+            'close' => "Con Monica, tú eliges qué cabe en tus fichas de contacto.",
+            'label' => "Una entrada de libreta de direcciones con un número de teléfono y un cumpleaños, y la ficha de Ross Geller en Monica, que además guarda su tarta favorita, cómo os conocisteis, su próxima meta y lo que no puede comer.",
+            'addressBook' => "Una libreta de direcciones",
+            'rows' => [
+                ['label' => "Teléfono", 'value' => "+1 212 555 0174"],
+                ['label' => "Cumpleaños", 'value' => "18 de octubre de 1967"],
+            ],
+            'monica' => [
+                ['label' => "Cumpleaños", 'value' => "18 de octubre · dentro de tres semanas"],
+                ['label' => "Tarta favorita", 'value' => "Tarta de zanahoria, con nueces de más"],
+                ['label' => "Cómo nos conocimos", 'value' => "El hermano de Monica, de la universidad"],
+                ['label' => "Su meta", 'value' => "La titularidad en NYU"],
+                ['label' => "No puede comer", 'value' => ["Kiwi", "Langosta"]],
+            ],
+        ],
+
+        'people' => [
+            'title' => "Personas distintas. Detalles distintos.",
+            'close' => "Crea plantillas diferentes para las personas de tu vida. Cada una puede tener su propia estructura.",
+            'cards' => [
+                [
+                    'title' => "Amigos",
+                    'body' => "Sus cosas favoritas, sus planes para el verano y la historia de cómo os conocisteis.",
+                    'label' => "Una ficha de contacto creada con una plantilla Amigos, con las pestañas Favoritos, Verano y Nuestra historia.",
+                    'tabs' => ["Favoritos", "Verano", "Nuestra historia"],
+                    'rows' => [
+                        ['label' => "Grupo", 'value' => "Khruangbin"],
+                        ['label' => "Libro", 'value' => "Lo que queda del día"],
+                        ['label' => "Plan de verano", 'value' => "Recorrer el Loira en bici, en julio"],
+                    ],
+                ],
+                [
+                    'title' => "Familia",
+                    'body' => "Las tradiciones que les importan, las fechas señaladas y la receta que siempre prometen mandarte.",
+                    'label' => "Una ficha de contacto creada con una plantilla Familia, con las pestañas Tradiciones, Fechas y Recetas.",
+                    'tabs' => ["Tradiciones", "Fechas", "Recetas"],
+                    'rows' => [
+                        ['label' => "Nochebuena", 'value' => "Ostras y después misa del gallo"],
+                        ['label' => "Santo", 'value' => "26 de julio"],
+                        ['label' => "Receta prometida", 'value' => "El clafoutis de la abuela"],
+                    ],
+                ],
+                [
+                    'title' => "Contactos profesionales",
+                    'body' => "Su especialidad, dónde hablasteis por primera vez y el tema que querías retomar la próxima vez.",
+                    'label' => "Una ficha de contacto creada con una plantilla para contactos profesionales, con las pestañas Trabajo, Formas de contacto y Próxima vez.",
+                    'tabs' => ["Trabajo", "Formas de contacto", "Próxima vez"],
+                    'rows' => [
+                        ['label' => "Especialidad", 'value' => "Cadenas de suministro en el comercio de alimentación"],
+                        ['label' => "Primera conversación", 'value' => "Lyon, en una mesa redonda de logística"],
+                        ['label' => "Retomar la próxima vez", 'value' => "Su piloto de cadena de frío"],
+                    ],
+                ],
+            ],
+        ],
+
+        'room' => [
+            'title' => "Haz sitio para lo que importa.",
+            'body' => [
+                "Añade campos de texto, fechas, números o una opción de una lista. Ponles nombres que tengan sentido para ti.",
+                "Reúne los campos relacionados en secciones, organiza esas secciones en pestañas y ordénalo todo como prefieras. Para los detalles que se repiten, usa un grupo repetible.",
+            ],
+            'close' => "¿Una sección llamada «Pequeñas cosas que merece la pena recordar»? Totalmente razonable.",
+            'label' => "El editor de plantillas de Monica, con un borrador de la plantilla Amigos abierto en su página Pequeñas cosas. El campo No puede comer está seleccionado, y el panel de al lado muestra su nombre, su tipo y su lista de opciones.",
+            'version' => "v2 · basada en v1",
+            'saved' => "Guardado hace 4 segundos",
+            'import' => "Importar una sección",
+            'pages' => [
+                ['name' => "General", 'count' => 5],
+                ['name' => "Pequeñas cosas", 'count' => 6],
+                ['name' => "Planes", 'count' => 3],
+            ],
+            'addPage' => "Añadir una página",
+            'field' => "Campo",
+            'name' => "Nombre",
+            'type' => "Tipo",
+            'choices' => "Opciones",
+            'choiceList' => ["Cacahuetes", "Gluten", "Marisco", "Lácteos", "Cebolla cruda"],
+            'addChoice' => "Añadir una opción",
+            'note' => "Lo que cambies se aplica solo a este borrador.",
+        ],
+
+        'reuse' => [
+            'title' => "Constrúyela una vez. Úsala otra vez.",
+            'body' => [
+                "Una plantilla da la misma estructura a varias fichas de contacto. Cada persona conserva su propia información.",
+                "Añade «Cómo nos conocimos» a tu plantilla de amigos y tendrás un sitio para una historia distinta en la ficha de cada amigo. Elige una plantilla predeterminada para cada bóveda y los contactos nuevos empezarán con el punto de partida adecuado.",
+            ],
+            'label' => "Un campo Cómo nos conocimos en la plantilla Amigos, rellenado con una historia distinta en las fichas de tres amigos, y la plantilla Amigos elegida como predeterminada para los contactos nuevos de la bóveda Amigos.",
+            'template' => "Plantilla Amigos",
+            'stories' => [
+                'Rachel' => "Entró en Central Perk vestida de novia.",
+                'Ross' => "El hermano de Monica, de la universidad.",
+                'Joey' => "Respondió al anuncio de la habitación libre de Chandler.",
+            ],
+            'default' => "Plantilla predeterminada",
+            'defaultBody' => "Los contactos nuevos de la bóveda Amigos empiezan aquí",
+        ],
+
+        'versions' => [
+            'title' => "Cambia de opinión sin perder tus notas.",
+            'body' => [
+                "Puede que quieras añadir un detalle, renombrar un campo o mover una sección. Tus plantillas pueden cambiar contigo.",
+                "Prepara un borrador y publícalo cuando esté listo. Los contactos existentes siguen en su versión actual hasta que decidas actualizarlos.",
+                "Si quitas un campo de una plantilla, la información que ya habías escrito se conserva. Sigues pudiendo encontrarla, y vuelve a la ficha si recuperas el campo.",
+            ],
+            'label' => "El historial de versiones de una plantilla, con un borrador v3 a la espera de publicarse mientras 34 contactos siguen en la v2, y la ficha de Rachel Green conservando su talla de calzado de un campo que se quitó, con un botón para recuperar el campo.",
+            'history' => "Historial de versiones",
+            'rows' => [
+                ['version' => "v3", 'text' => "Añadido «Santo», «Alergias» renombrado a «No puede comer»", 'status' => 'draft'],
+                ['version' => "v2", 'text' => "Publicada el 2 de junio · 34 contactos", 'status' => 'published'],
+                ['version' => "v1", 'text' => "Publicada el 9 de enero · 3 contactos", 'status' => null],
+            ],
+            'notice' => "Al publicar la v3, 34 contactos se quedan en la v2 hasta que los actualices.",
+            'values' => [
+                'cake' => "Tarta de queso de Mama’s Little Bakery",
+                'coffee' => "Latte, en Central Perk",
+            ],
+            'kept' => "Conservado de un campo eliminado",
+            'restore' => "Recuperar el campo",
+        ],
+
+        'share' => [
+            'title' => "Comparte la plantilla. Guarda los detalles para ti.",
+            'body' => [
+                "¿Has hecho algo útil? Exporta una plantilla entera o una sola sección para que otra persona la importe en su cuenta.",
+                "El archivo contiene la estructura que construiste, con sus etiquetas y listas de opciones. Tus contactos y su información se quedan contigo.",
+            ],
+            'label' => "Exportación de la sección Pequeñas cosas que merece la pena recordar. El archivo contiene la sección, las etiquetas y los tipos de sus seis campos y la lista de opciones de No puede comer. Tus 34 contactos y todo lo escrito en sus fichas se quedan contigo.",
+            'export' => "Exportar esta sección",
+            'inFile' => "En el archivo",
+            'inFileItems' => ["La sección y su nombre", "Etiquetas y tipos de 6 campos", "La lista de opciones de «No puede comer»"],
+            'stays' => "Se queda contigo",
+            'staysItems' => ["Tus 34 contactos", "Todo lo escrito en sus fichas"],
+            'file' => "pequenas-cosas-que-merece-la-pena-recordar.json · 3 KB",
+            'download' => "Descargar",
+        ],
+
     ],
 
     'footer' => [

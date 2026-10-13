@@ -402,6 +402,19 @@ return [
             'pt' => 'crm-pessoal',
             'nl' => 'persoonlijke-crm',
         ],
+
+        // "Your contacts, your way": what a contact template is and what you
+        // can build with one. The header's "Start here" card leads here. It
+        // nests under the features section like the two tabs above, but is
+        // not a tab: it is a page of its own, with no tab strip.
+        'templates' => [
+            'en' => 'features/templates',
+            'fr' => 'fonctionnalites/modeles',
+            'de' => 'funktionen/vorlagen',
+            'es' => 'funcionalidades/plantillas',
+            'pt' => 'recursos/modelos',
+            'nl' => 'functies/sjablonen',
+        ],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -436,6 +449,7 @@ return [
         'team' => '2026-08-06',
         'privacy' => '2026-08-06',
         'personalCrm' => '2026-08-23',
+        'templates' => '2026-10-12',
     ],
 
     // ------------------------------------------------------------------ links
@@ -458,7 +472,6 @@ return [
         'docs' => '#',
         'api' => '#',
         'mcp' => '#',
-        'templates' => '#',
         'changelog' => '#',
 
         // There is no sales team, which is the joke on the homepage button.

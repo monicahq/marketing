@@ -3,7 +3,7 @@
     only. Kept where it is: it is an argument about the whole product, and
     repeating it under the dashboard and the journal would only dilute it.
 --}}
-<section class="border-t border-border bg-surface-subtle">
+<section id="api" class="scroll-mt-6 border-t border-border bg-surface-subtle">
     <div class="mx-auto w-full max-w-marketing px-4 py-section-sm md:px-8 lg:py-section">
         <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
             <div>

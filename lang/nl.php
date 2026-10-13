@@ -25,6 +25,7 @@ return [
             'team' => "Team",
             'privacy' => "Privacybeleid",
             'personalCrm' => "Gids persoonlijke CRM",
+            'templates' => "Contactsjablonen",
             'page' => "Pagina :number",
         ],
 
@@ -89,6 +90,11 @@ return [
         'featuresJournal' => [
             'title' => "Het dagboek — functies van Monica",
             'description' => "Schrijf dagboeknotities, leg vast hoe je dag was en lees de activiteiten met je contacten die Monica automatisch voor je bijhoudt.",
+        ],
+
+        'templates' => [
+            'title' => "Je contacten, op jouw manier: contactsjablonen in Monica",
+            'description' => "Bouw contactsjablonen met je eigen velden, secties en tabbladen. Verschillende sjablonen voor vrienden, familie en werk, versies die je publiceert als ze klaar zijn en secties die je kunt delen.",
         ],
 
         'personalCrm' => [
@@ -932,6 +938,203 @@ return [
                 ['q' => "Hoeveel moet ik vastleggen?", 'a' => "Begin met het minimum dat je probleem oplost. Wat data, een paar notities en af en toe een herinnering zijn voor veel mensen genoeg. Voeg pas structuur toe als die het onderhoud waard is."],
             ],
         ],
+    ],
+
+    /**
+     * The templates page, "Your contacts, your way". Every picture on it is a
+     * drawing of the product, so each one carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The field names and field types are shared by several drawings, so they
+     * are written once under `fields` and `types`.
+     */
+    'templates' => [
+        'fields' => [
+            'cake' => "Lievelingstaart",
+            'cannotEat' => "Kan niet eten",
+            'coffee' => "Koffiebestelling",
+            'shoeSize' => "Schoenmaat",
+            'nameDay' => "Naamdag",
+            'giftIdeas' => "Cadeau-ideeën",
+            'idea' => "Idee",
+            'given' => "Al gegeven",
+            'howWeMet' => "Hoe we elkaar leerden kennen",
+        ],
+        'types' => [
+            'shortText' => "Korte tekst",
+            'longText' => "Lange tekst",
+            'number' => "Getal",
+            'multipleChoice' => "Meerkeuze",
+            'recurringDate' => "Terugkerende datum",
+            'repeater' => "Herhaalgroep",
+            'checkbox' => "Selectievakje",
+        ],
+        'section' => "Kleine dingen die het onthouden waard zijn",
+        'addField' => "Voeg een veld toe",
+        'fieldCount' => ":count velden",
+        'publish' => "Publiceer deze versie",
+        'draft' => "Concept",
+        'published' => "Gepubliceerd",
+        'friends' => "Vrienden",
+
+        'hero' => [
+            'title' => "Je contacten, op jouw manier.",
+            'lede' => "Onthoud wat voor jou telt. Bouw contactsjablonen met je eigen velden, secties en tabbladen, zodat de pagina van elke persoon ruimte heeft voor de details die je wilt bewaren.",
+            'cta' => "Maak je account aan",
+            'label' => "De contactpagina van Rachel Green in Monica, geopend op het tabblad Kleine dingen, naast de sectie van het sjabloon Vrienden die de pagina haar velden geeft.",
+            'meta' => "Sjabloon Vrienden · 3 jaar geleden toegevoegd",
+            'tabs' => ["Algemeen", "Contact opnemen", "Kleine dingen", "Plannen"],
+            'values' => [
+                'cake' => "Cheesecake van Mama’s Little Bakery, Chicago",
+                'cannotEat' => ["Kreeft", "Rauwe ui"],
+                'coffee' => "Latte, in Central Perk",
+                'shoeSize' => "38",
+            ],
+            'story' => "Kwam kletsnat Central Perk binnenlopen, in een trouwjurk, op de dag dat ze Barry voor het altaar liet staan. Ze trok die avond bij me in.",
+            'behind' => "Het sjabloon erachter",
+        ],
+
+        'birthday' => [
+            'title' => "Een verjaardag is handig. Hun lievelingstaart weten ook.",
+            'body' => "Een adresboek bewaart telefoonnummers. Misschien wil je ook onthouden hoe je elkaar leerde kennen, waar iemand naartoe werkt of welk eten diegene niet kan verdragen.",
+            'close' => "Met Monica kies je zelf wat op je contactpagina’s thuishoort.",
+            'label' => "Een adresboekitem met een telefoonnummer en een verjaardag, en de pagina van Ross Geller in Monica, die ook zijn lievelingstaart bevat, hoe je elkaar leerde kennen, waar hij naartoe werkt en wat hij niet kan eten.",
+            'addressBook' => "Een adresboek",
+            'rows' => [
+                ['label' => "Telefoon", 'value' => "+1 212 555 0174"],
+                ['label' => "Verjaardag", 'value' => "18 oktober 1967"],
+            ],
+            'monica' => [
+                ['label' => "Verjaardag", 'value' => "18 oktober · over drie weken"],
+                ['label' => "Lievelingstaart", 'value' => "Worteltaart, extra walnoten"],
+                ['label' => "Hoe we elkaar leerden kennen", 'value' => "De broer van Monica, nog van de universiteit"],
+                ['label' => "Werkt toe naar", 'value' => "Een vaste aanstelling aan NYU"],
+                ['label' => "Kan niet eten", 'value' => ["Kiwi", "Kreeft"]],
+            ],
+        ],
+
+        'people' => [
+            'title' => "Verschillende mensen. Verschillende details.",
+            'close' => "Maak verschillende sjablonen voor de mensen in je leven. Elk sjabloon kan zijn eigen opbouw hebben.",
+            'cards' => [
+                [
+                    'title' => "Vrienden",
+                    'body' => "Hun favoriete dingen, plannen voor de zomer en het verhaal van hoe je elkaar leerde kennen.",
+                    'label' => "Een contactpagina gebouwd op een sjabloon Vrienden, met de tabbladen Favorieten, Zomer en Ons verhaal.",
+                    'tabs' => ["Favorieten", "Zomer", "Ons verhaal"],
+                    'rows' => [
+                        ['label' => "Band", 'value' => "Khruangbin"],
+                        ['label' => "Boek", 'value' => "De rest van de dag"],
+                        ['label' => "Zomerplan", 'value' => "Fietsen langs de Loire, juli"],
+                    ],
+                ],
+                [
+                    'title' => "Familie",
+                    'body' => "De tradities waar ze om geven, belangrijke data en het recept dat ze steeds beloven op te sturen.",
+                    'label' => "Een contactpagina gebouwd op een sjabloon Familie, met de tabbladen Tradities, Data en Recepten.",
+                    'tabs' => ["Tradities", "Data", "Recepten"],
+                    'rows' => [
+                        ['label' => "Kerstavond", 'value' => "Oesters, daarna de nachtmis"],
+                        ['label' => "Naamdag", 'value' => "26 juli"],
+                        ['label' => "Beloofd recept", 'value' => "De clafoutis van oma"],
+                    ],
+                ],
+                [
+                    'title' => "Zakelijke contacten",
+                    'body' => "Hun vakgebied, waar je voor het eerst met elkaar sprak en het onderwerp dat je een volgende keer wilde oppakken.",
+                    'label' => "Een contactpagina gebouwd op een sjabloon voor zakelijke contacten, met de tabbladen Werk, Contact opnemen en Volgende keer.",
+                    'tabs' => ["Werk", "Contact opnemen", "Volgende keer"],
+                    'rows' => [
+                        ['label' => "Expertise", 'value' => "Toeleveringsketens in de voedingsmiddelenretail"],
+                        ['label' => "Eerste gesprek", 'value' => "Lyon, bij een panel over logistiek"],
+                        ['label' => "Volgende keer oppakken", 'value' => "Haar pilot voor de koudeketen"],
+                    ],
+                ],
+            ],
+        ],
+
+        'room' => [
+            'title' => "Maak ruimte voor wat telt.",
+            'body' => [
+                "Voeg velden toe voor tekst, data, getallen of een keuze uit een lijst. Geef ze namen die voor jou logisch zijn.",
+                "Bundel verwante velden in secties, schik die secties in tabbladen en zet alles in de volgorde die je prettig vindt. Gebruik een herhaalgroep voor details die in meervoud voorkomen.",
+            ],
+            'close' => "Een sectie die “Kleine dingen die het onthouden waard zijn” heet? Volkomen redelijk.",
+            'label' => "De sjablooneditor in Monica, met een concept van het sjabloon Vrienden geopend op de pagina Kleine dingen. Het veld Kan niet eten is geselecteerd en het paneel ernaast toont de naam, het type en de lijst met keuzes.",
+            'version' => "v2 · gebaseerd op v1",
+            'saved' => "4 seconden geleden opgeslagen",
+            'import' => "Importeer een sectie",
+            'pages' => [
+                ['name' => "Algemeen", 'count' => 5],
+                ['name' => "Kleine dingen", 'count' => 6],
+                ['name' => "Plannen", 'count' => 3],
+            ],
+            'addPage' => "Voeg een pagina toe",
+            'field' => "Veld",
+            'name' => "Naam",
+            'type' => "Type",
+            'choices' => "Keuzes",
+            'choiceList' => ["Pinda’s", "Gluten", "Schaaldieren", "Zuivel", "Rauwe ui"],
+            'addChoice' => "Voeg een keuze toe",
+            'note' => "Wat je wijzigt, geldt alleen voor dit concept.",
+        ],
+
+        'reuse' => [
+            'title' => "Bouw het één keer. Gebruik het opnieuw.",
+            'body' => [
+                "Een sjabloon geeft meerdere contactpagina’s dezelfde opbouw. Elke persoon houdt zijn eigen gegevens.",
+                "Voeg “Hoe we elkaar leerden kennen” toe aan je sjabloon Vrienden, en je hebt op de pagina van elke vriend een plek voor een ander verhaal. Kies voor elke kluis een standaardsjabloon, zodat nieuwe contacten met de juiste opzet beginnen.",
+            ],
+            'label' => "Eén veld Hoe we elkaar leerden kennen in het sjabloon Vrienden, ingevuld met een ander verhaal op de pagina’s van drie vrienden, en het sjabloon Vrienden gekozen als standaard voor nieuwe contacten in de kluis Vrienden.",
+            'template' => "Sjabloon Vrienden",
+            'stories' => [
+                'Rachel' => "Kwam Central Perk binnenlopen in een trouwjurk.",
+                'Ross' => "De broer van Monica, nog van de universiteit.",
+                'Joey' => "Reageerde op de advertentie voor de logeerkamer van Chandler.",
+            ],
+            'default' => "Standaardsjabloon",
+            'defaultBody' => "Nieuwe contacten in de kluis Vrienden beginnen hier",
+        ],
+
+        'versions' => [
+            'title' => "Bedenk je, zonder je notities kwijt te raken.",
+            'body' => [
+                "Misschien wil je een detail toevoegen, een veld hernoemen of een sectie verplaatsen. Je sjablonen kunnen met je meeveranderen.",
+                "Maak een concept en publiceer het als het klaar is. Bestaande contacten blijven op hun huidige versie tot je ervoor kiest ze bij te werken.",
+                "Haal een veld uit een sjabloon, en de gegevens die je al hebt ingevuld blijven bewaard. Je kunt ze nog steeds terugvinden, en ze komen terug op de pagina als je het veld terugzet.",
+            ],
+            'label' => "De versiegeschiedenis van een sjabloon, met een concept v3 dat op publicatie wacht terwijl 34 contacten op v2 blijven, en de pagina van Rachel Green die haar schoenmaat bewaart uit een veld dat is verwijderd, met een knop om het veld terug te zetten.",
+            'history' => "Versiegeschiedenis",
+            'rows' => [
+                ['version' => "v3", 'text' => "“Naamdag” toegevoegd, “Allergieën” hernoemd naar “Kan niet eten”", 'status' => 'draft'],
+                ['version' => "v2", 'text' => "Gepubliceerd op 2 juni · 34 contacten", 'status' => 'published'],
+                ['version' => "v1", 'text' => "Gepubliceerd op 9 januari · 3 contacten", 'status' => null],
+            ],
+            'notice' => "Als je v3 publiceert, blijven 34 contacten op v2 tot je ze bijwerkt.",
+            'values' => [
+                'cake' => "Cheesecake van Mama’s Little Bakery",
+                'coffee' => "Latte, in Central Perk",
+            ],
+            'kept' => "Bewaard uit een verwijderd veld",
+            'restore' => "Zet het veld terug",
+        ],
+
+        'share' => [
+            'title' => "Deel het sjabloon. Houd de details voor jezelf.",
+            'body' => [
+                "Iets handigs gemaakt? Exporteer een heel sjabloon of een enkele sectie zodat iemand anders het in zijn eigen account kan importeren.",
+                "Het bestand bevat de opbouw die je hebt gemaakt, inclusief de labels en keuzelijsten. Je contacten en hun gegevens blijven bij jou.",
+            ],
+            'label' => "De sectie Kleine dingen die het onthouden waard zijn wordt geëxporteerd. Het bestand bevat de sectie, de zes veldlabels en veldtypen en de keuzelijst Kan niet eten. Je 34 contacten en alles wat op hun pagina’s staat, blijven bij jou.",
+            'export' => "Exporteer deze sectie",
+            'inFile' => "In het bestand",
+            'inFileItems' => ["De sectie en haar naam", "6 veldlabels en veldtypen", "De keuzelijst “Kan niet eten”"],
+            'stays' => "Blijft bij jou",
+            'staysItems' => ["Je 34 contacten", "Alles wat op hun pagina’s staat"],
+            'file' => "kleine-dingen-die-het-onthouden-waard-zijn.json · 3 KB",
+            'download' => "Download",
+        ],
+
     ],
 
     'footer' => [

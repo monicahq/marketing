@@ -2,15 +2,18 @@
     $home = $page->route('home');
     $features = $page->route('features');
 
-    // The features menu. Every item lands on the features pages for now,
-    // except the API, which has its own (placeholder) destination. The
-    // destinations are listed here rather than in `lang/`, because a URL is
-    // not copy and does not change with the language.
+    // The features menu, one destination per item, in the order of
+    // `nav.menu.groups` in `lang/`. Each item goes to the page or section that
+    // shows it best: the contact page for what lives on a contact, the
+    // dashboard for reminders, the journal for the timeline, and the
+    // homepage's own sections for assistants and privacy. The fragments are
+    // ids on those sections, so the dead link checker fails if one is renamed.
+    // Listed here rather than in `lang/`, because a URL is not copy.
     $menu = $page->t('nav.menu');
     $menuLinks = [
+        [$features, $page->route('featuresDashboard'), $page->route('featuresJournal')],
         [$features, $features, $features],
-        [$features, $features, $features],
-        [$features, $page->links['api'], $features],
+        ["{$features}#api", "{$home}#agents", "{$home}#privacy"],
     ];
 
     // One identity colour per column, as the design draws it. Literal class
@@ -92,7 +95,7 @@
 
                         <div class="flex min-w-0 flex-[1_1_300px] flex-col gap-4 border-border bg-surface-subtle p-6 max-lg:border-t md:p-7 lg:border-l">
                             <span class="text-caption font-medium tracking-[0.08em] text-text-muted uppercase">{{ $menu['start']['label'] }}</span>
-                            <a href="{{ $page->links['templates'] }}" class="flex flex-col gap-4 rounded-lg border border-border bg-canvas p-4.5 text-text no-underline shadow-panel hover:border-border-strong hover:text-text hover:no-underline">
+                            <a href="{{ $page->route('templates') }}" class="flex flex-col gap-4 rounded-lg border border-border bg-canvas p-4.5 text-text no-underline shadow-panel hover:border-border-strong hover:text-text hover:no-underline">
                                 <span class="flex flex-col gap-1">
                                     <span class="text-lede-sm font-semibold tracking-[-0.02em]">{{ $menu['start']['title'] }}</span>
                                     <span class="text-small text-text-secondary">{{ $menu['start']['body'] }}</span>

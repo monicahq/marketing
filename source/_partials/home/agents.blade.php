@@ -2,7 +2,7 @@
     $copy = $page->t('home.agents');
 @endphp
 
-<section class="bg-ground-sage px-4 pt-6 pb-30 md:px-6">
+<section id="agents" class="scroll-mt-6 bg-ground-sage px-4 pt-6 pb-30 md:px-6">
     <div class="mx-auto flex max-w-page flex-wrap items-center gap-14">
         <div class="flex flex-[1_1_340px] flex-col gap-4.5">
             <span class="text-caption font-medium tracking-[0.08em] text-ground-sage-ink uppercase">{{ $copy['eyebrow'] }}</span>

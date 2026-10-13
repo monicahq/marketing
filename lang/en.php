@@ -43,6 +43,7 @@ return [
             'team' => "Team",
             'privacy' => "Privacy policy",
             'personalCrm' => "Personal CRM guide",
+            'templates' => "Contact templates",
             'page' => "Page :number",
         ],
 
@@ -118,6 +119,11 @@ return [
         'featuresJournal' => [
             'title' => "The journal — Monica features",
             'description' => "Write journal entries, record how your day went, and read the activities with your contacts that Monica logs for you automatically.",
+        ],
+
+        'templates' => [
+            'title' => "Your contacts, your way: contact templates in Monica",
+            'description' => "Build contact templates with your own fields, sections and tabs. Different templates for friends, family and work, versions you publish when ready, and sections you can share.",
         ],
 
         'personalCrm' => [
@@ -960,6 +966,203 @@ return [
                 ['q' => "How much information should I record?", 'a' => "Start with the minimum that solves your problem. Dates, a few notes, and the occasional reminder are enough for many people. Add structure only when it earns its maintenance cost."],
             ],
         ],
+    ],
+
+    /**
+     * The templates page, "Your contacts, your way". Every picture on it is a
+     * drawing of the product, so each one carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The field names and field types are shared by several drawings, so they
+     * are written once under `fields` and `types`.
+     */
+    'templates' => [
+        'fields' => [
+            'cake' => "Favourite cake",
+            'cannotEat' => "Cannot eat",
+            'coffee' => "Coffee order",
+            'shoeSize' => "Shoe size",
+            'nameDay' => "Name day",
+            'giftIdeas' => "Gift ideas",
+            'idea' => "Idea",
+            'given' => "Already given",
+            'howWeMet' => "How we met",
+        ],
+        'types' => [
+            'shortText' => "Short text",
+            'longText' => "Long text",
+            'number' => "Number",
+            'multipleChoice' => "Multiple choice",
+            'recurringDate' => "Recurring date",
+            'repeater' => "Repeater",
+            'checkbox' => "Checkbox",
+        ],
+        'section' => "Little things worth remembering",
+        'addField' => "Add a field",
+        'fieldCount' => ":count fields",
+        'publish' => "Publish this version",
+        'draft' => "Draft",
+        'published' => "Published",
+        'friends' => "Friends",
+
+        'hero' => [
+            'title' => "Your contacts, your way.",
+            'lede' => "Remember what matters to you. Build contact templates with your own fields, sections and tabs, so every person’s page has room for the details you want to keep.",
+            'cta' => "Create your account",
+            'label' => "Rachel Green’s contact page in Monica, open on the Little things tab, beside the section of the Friends template that gives the page its fields.",
+            'meta' => "Friends template · added 3 years ago",
+            'tabs' => ["General", "Ways to connect", "Little things", "Plans"],
+            'values' => [
+                'cake' => "Cheesecake from Mama’s Little Bakery, Chicago",
+                'cannotEat' => ["Lobster", "Raw onion"],
+                'coffee' => "Latte, at Central Perk",
+                'shoeSize' => "38",
+            ],
+            'story' => "Ran into Central Perk soaking wet, in a wedding dress, the day she left Barry at the altar. She moved in that night.",
+            'behind' => "The template behind it",
+        ],
+
+        'birthday' => [
+            'title' => "A birthday is useful. So is knowing their favourite cake.",
+            'body' => "An address book keeps phone numbers. You might also want to remember how you met, what someone is working towards, or which food they cannot eat.",
+            'close' => "With Monica, you choose what belongs on your contact pages.",
+            'label' => "An address book entry holding a phone number and a birthday, and Ross Geller’s page in Monica, which also holds his favourite cake, how you met, what he is working towards and what he cannot eat.",
+            'addressBook' => "An address book",
+            'rows' => [
+                ['label' => "Phone", 'value' => "+1 212 555 0174"],
+                ['label' => "Birthday", 'value' => "18 October 1967"],
+            ],
+            'monica' => [
+                ['label' => "Birthday", 'value' => "18 October · in three weeks"],
+                ['label' => "Favourite cake", 'value' => "Carrot cake, extra walnuts"],
+                ['label' => "How we met", 'value' => "Monica’s brother, back in college"],
+                ['label' => "Working towards", 'value' => "Tenure at NYU"],
+                ['label' => "Cannot eat", 'value' => ["Kiwi", "Lobster"]],
+            ],
+        ],
+
+        'people' => [
+            'title' => "Different people. Different details.",
+            'close' => "Create different templates for the people in your life. Each one can have its own structure.",
+            'cards' => [
+                [
+                    'title' => "Friends",
+                    'body' => "Their favourite things, plans for the summer, and the story of how you met.",
+                    'label' => "A contact page built from a Friends template, with the tabs Favourites, Summer and Our story.",
+                    'tabs' => ["Favourites", "Summer", "Our story"],
+                    'rows' => [
+                        ['label' => "Band", 'value' => "Khruangbin"],
+                        ['label' => "Book", 'value' => "The Remains of the Day"],
+                        ['label' => "Summer plan", 'value' => "Cycling the Loire, July"],
+                    ],
+                ],
+                [
+                    'title' => "Family",
+                    'body' => "The traditions they care about, important dates, and the recipe they keep promising to send.",
+                    'label' => "A contact page built from a Family template, with the tabs Traditions, Dates and Recipes.",
+                    'tabs' => ["Traditions", "Dates", "Recipes"],
+                    'rows' => [
+                        ['label' => "Christmas Eve", 'value' => "Oysters, then midnight mass"],
+                        ['label' => "Name day", 'value' => "26 July"],
+                        ['label' => "Promised recipe", 'value' => "Grand-mère’s clafoutis"],
+                    ],
+                ],
+                [
+                    'title' => "Professional contacts",
+                    'body' => "Their area of expertise, where you first spoke, and the subject you wanted to pick up next time.",
+                    'label' => "A contact page built from a template for professional contacts, with the tabs Work, Ways to connect and Next time.",
+                    'tabs' => ["Work", "Ways to connect", "Next time"],
+                    'rows' => [
+                        ['label' => "Expertise", 'value' => "Supply chains in food retail"],
+                        ['label' => "First spoke", 'value' => "Lyon, at a logistics panel"],
+                        ['label' => "Pick up next time", 'value' => "Her cold-chain pilot"],
+                    ],
+                ],
+            ],
+        ],
+
+        'room' => [
+            'title' => "Make room for what matters.",
+            'body' => [
+                "Add fields for text, dates, numbers or a choice from a list. Give them names that make sense to you.",
+                "Gather related fields into sections, arrange those sections in tabs, and put everything in the order you prefer. For details that come in multiples, use a repeating group.",
+            ],
+            'close' => "A section called “Little things worth remembering”? Entirely reasonable.",
+            'label' => "The template editor in Monica, with a draft of the Friends template open on its Little things page. The Cannot eat field is selected, and the panel beside it shows its name, its type and its list of choices.",
+            'version' => "v2 · based on v1",
+            'saved' => "Saved 4 seconds ago",
+            'import' => "Import a section",
+            'pages' => [
+                ['name' => "General", 'count' => 5],
+                ['name' => "Little things", 'count' => 6],
+                ['name' => "Plans", 'count' => 3],
+            ],
+            'addPage' => "Add a page",
+            'field' => "Field",
+            'name' => "Name",
+            'type' => "Type",
+            'choices' => "Choices",
+            'choiceList' => ["Peanuts", "Gluten", "Shellfish", "Dairy", "Raw onion"],
+            'addChoice' => "Add a choice",
+            'note' => "What you change applies to this draft only.",
+        ],
+
+        'reuse' => [
+            'title' => "Build it once. Use it again.",
+            'body' => [
+                "A template gives several contact pages the same structure. Each person keeps their own information.",
+                "Add “How we met” to your friends template, and you have a place for a different story on every friend’s page. Choose a default template for each vault to give new contacts the right starting point.",
+            ],
+            'label' => "One How we met field in the Friends template, filled in with a different story on three friends’ pages, and the Friends template chosen as the default for new contacts in the Friends vault.",
+            'template' => "Friends template",
+            'stories' => [
+                'Rachel' => "Ran into Central Perk in a wedding dress.",
+                'Ross' => "Monica’s brother, back in college.",
+                'Joey' => "Answered the ad for Chandler’s spare room.",
+            ],
+            'default' => "Default template",
+            'defaultBody' => "New contacts in the Friends vault start here",
+        ],
+
+        'versions' => [
+            'title' => "Change your mind without losing your notes.",
+            'body' => [
+                "You may want to add a detail, rename a field or move a section. Your templates can change with you.",
+                "Prepare a draft and publish it when it is ready. Existing contacts stay on their current version until you choose to update them.",
+                "Remove a field from a template, and the information you already entered is kept. You can still find it, and it returns to the page if you bring the field back.",
+            ],
+            'label' => "The version history of a template, with a draft v3 waiting to be published while 34 contacts stay on v2, and Rachel Green’s page keeping her shoe size from a field that was removed, with a button to bring the field back.",
+            'history' => "Version history",
+            'rows' => [
+                ['version' => "v3", 'text' => "Added “Name day”, renamed “Allergies” to “Cannot eat”", 'status' => 'draft'],
+                ['version' => "v2", 'text' => "Published 2 June · 34 contacts", 'status' => 'published'],
+                ['version' => "v1", 'text' => "Published 9 January · 3 contacts", 'status' => null],
+            ],
+            'notice' => "Publishing v3 leaves 34 contacts on v2 until you update them.",
+            'values' => [
+                'cake' => "Cheesecake from Mama’s Little Bakery",
+                'coffee' => "Latte, at Central Perk",
+            ],
+            'kept' => "Kept from a removed field",
+            'restore' => "Bring the field back",
+        ],
+
+        'share' => [
+            'title' => "Share the template. Keep the details to yourself.",
+            'body' => [
+                "Made something useful? Export a whole template or a single section for someone else to import into their account.",
+                "The file contains the structure you built, including its labels and choice lists. Your contacts and their information stay with you.",
+            ],
+            'label' => "Exporting the Little things worth remembering section. The file holds the section, its six field labels and types and the Cannot eat choice list. Your 34 contacts and everything written on their pages stay with you.",
+            'export' => "Export this section",
+            'inFile' => "In the file",
+            'inFileItems' => ["The section and its name", "6 field labels and types", "The “Cannot eat” choice list"],
+            'stays' => "Stays with you",
+            'staysItems' => ["Your 34 contacts", "Everything written on their pages"],
+            'file' => "little-things-worth-remembering.json · 3 KB",
+            'download' => "Download",
+        ],
+
     ],
 
     'footer' => [

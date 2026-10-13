@@ -22,6 +22,7 @@ return [
             'team' => "Team",
             'privacy' => "Datenschutzerklärung",
             'personalCrm' => "Leitfaden persönliches CRM",
+            'templates' => "Kontaktvorlagen",
             'page' => "Seite :number",
         ],
 
@@ -92,6 +93,11 @@ return [
         'featuresJournal' => [
             'title' => "Das Journal — die Funktionen von Monica",
             'description' => "Schreiben Sie Journaleinträge, halten Sie fest, wie Ihr Tag verlaufen ist, und lesen Sie die Aktivitäten mit Ihren Kontakten, die Monica automatisch protokolliert.",
+        ],
+
+        'templates' => [
+            'title' => "Ihre Kontakte, auf Ihre Art: Kontaktvorlagen in Monica",
+            'description' => "Bauen Sie Kontaktvorlagen mit eigenen Feldern, Abschnitten und Tabs. Verschiedene Vorlagen für Freunde, Familie und Beruf, Versionen mit Veröffentlichung, wenn sie fertig sind, und teilbare Abschnitte.",
         ],
 
         'personalCrm' => [
@@ -934,6 +940,202 @@ return [
                 ['q' => "Ist Selbsthosting privater?", 'a' => "Es kann die Zahl der beteiligten Dienstleister senken und Ihnen mehr Kontrolle geben. Es richtet für Sie keine Aktualisierungen, Sicherungen, Verschlüsselung oder Zugriffsrechte ein. Datenschutz und Sicherheit hängen weiter daran, wie das System betrieben wird."],
                 ['q' => "Wie viel sollte ich festhalten?", 'a' => "Beginnen Sie mit dem Minimum, das Ihr Problem löst. Daten, ein paar Notizen und gelegentlich eine Erinnerung reichen vielen Menschen. Fügen Sie Struktur erst hinzu, wenn sie ihre Pflegekosten wert ist."],
             ],
+        ],
+    ],
+
+    /**
+     * The templates page, "Your contacts, your way". Every picture on it is a
+     * drawing of the product, so each one carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The field names and field types are shared by several drawings, so they
+     * are written once under `fields` and `types`.
+     */
+    'templates' => [
+        'fields' => [
+            'cake' => "Lieblingskuchen",
+            'cannotEat' => "Verträgt nicht",
+            'coffee' => "Kaffeebestellung",
+            'shoeSize' => "Schuhgröße",
+            'nameDay' => "Namenstag",
+            'giftIdeas' => "Geschenkideen",
+            'idea' => "Idee",
+            'given' => "Schon geschenkt",
+            'howWeMet' => "Wie wir uns kennengelernt haben",
+        ],
+        'types' => [
+            'shortText' => "Kurztext",
+            'longText' => "Langtext",
+            'number' => "Zahl",
+            'multipleChoice' => "Mehrfachauswahl",
+            'recurringDate' => "Wiederkehrendes Datum",
+            'repeater' => "Wiederholgruppe",
+            'checkbox' => "Kontrollkästchen",
+        ],
+        'section' => "Kleinigkeiten, die man sich merken sollte",
+        'addField' => "Feld hinzufügen",
+        'fieldCount' => ":count Felder",
+        'publish' => "Diese Version veröffentlichen",
+        'draft' => "Entwurf",
+        'published' => "Veröffentlicht",
+        'friends' => "Freunde",
+
+        'hero' => [
+            'title' => "Ihre Kontakte, auf Ihre Art.",
+            'lede' => "Erinnern Sie sich an das, was Ihnen wichtig ist. Bauen Sie Kontaktvorlagen mit eigenen Feldern, Abschnitten und Tabs, damit die Seite jeder Person Platz für die Details hat, die Sie festhalten möchten.",
+            'cta' => "Konto erstellen",
+            'label' => "Die Kontaktseite von Rachel Green in Monica, geöffnet im Tab „Kleinigkeiten“, daneben der Abschnitt der Vorlage „Freunde“, der der Seite ihre Felder gibt.",
+            'meta' => "Vorlage „Freunde“ · vor 3 Jahren hinzugefügt",
+            'tabs' => ["Allgemein", "Kontaktwege", "Kleinigkeiten", "Pläne"],
+            'values' => [
+                'cake' => "Cheesecake aus Mama’s Little Bakery, Chicago",
+                'cannotEat' => ["Hummer", "Rohe Zwiebeln"],
+                'coffee' => "Latte im Central Perk",
+                'shoeSize' => "38",
+            ],
+            'story' => "Kam klatschnass in einem Hochzeitskleid ins Central Perk gestolpert, am Tag, an dem sie Barry am Altar stehen ließ. Noch in derselben Nacht zog sie bei mir ein.",
+            'behind' => "Die Vorlage dahinter",
+        ],
+
+        'birthday' => [
+            'title' => "Ein Geburtstag ist nützlich. Der Lieblingskuchen auch.",
+            'body' => "Ein Adressbuch speichert Telefonnummern. Vielleicht möchten Sie sich aber auch merken, wie Sie sich kennengelernt haben, worauf jemand hinarbeitet oder was sie oder er nicht essen kann.",
+            'close' => "Mit Monica entscheiden Sie, was auf Ihre Kontaktseiten gehört.",
+            'label' => "Ein Adressbucheintrag mit einer Telefonnummer und einem Geburtstag, daneben die Seite von Ross Geller in Monica, die zusätzlich seinen Lieblingskuchen, das Kennenlernen, sein aktuelles Ziel und das, was er nicht essen kann, enthält.",
+            'addressBook' => "Ein Adressbuch",
+            'rows' => [
+                ['label' => "Telefon", 'value' => "+1 212 555 0174"],
+                ['label' => "Geburtstag", 'value' => "18. Oktober 1967"],
+            ],
+            'monica' => [
+                ['label' => "Geburtstag", 'value' => "18. Oktober · in drei Wochen"],
+                ['label' => "Lieblingskuchen", 'value' => "Karottenkuchen, extra viele Walnüsse"],
+                ['label' => "Wie wir uns kennengelernt haben", 'value' => "Monicas Bruder, damals im College"],
+                ['label' => "Worauf er hinarbeitet", 'value' => "Die Festanstellung an der NYU"],
+                ['label' => "Verträgt nicht", 'value' => ["Kiwi", "Hummer"]],
+            ],
+        ],
+
+        'people' => [
+            'title' => "Verschiedene Menschen. Verschiedene Details.",
+            'close' => "Erstellen Sie unterschiedliche Vorlagen für die Menschen in Ihrem Leben. Jede kann ihre eigene Struktur haben.",
+            'cards' => [
+                [
+                    'title' => "Freunde",
+                    'body' => "Ihre Lieblingsdinge, Pläne für den Sommer und die Geschichte, wie Sie sich kennengelernt haben.",
+                    'label' => "Eine Kontaktseite, die aus einer Vorlage „Freunde“ entsteht, mit den Tabs Favoriten, Sommer und Unsere Geschichte.",
+                    'tabs' => ["Favoriten", "Sommer", "Unsere Geschichte"],
+                    'rows' => [
+                        ['label' => "Band", 'value' => "Khruangbin"],
+                        ['label' => "Buch", 'value' => "Was vom Tage übrig blieb"],
+                        ['label' => "Sommerplan", 'value' => "Mit dem Rad an der Loire, Juli"],
+                    ],
+                ],
+                [
+                    'title' => "Familie",
+                    'body' => "Die Traditionen, die ihnen am Herzen liegen, wichtige Daten und das Rezept, das sie immer wieder zu schicken versprechen.",
+                    'label' => "Eine Kontaktseite, die aus einer Vorlage „Familie“ entsteht, mit den Tabs Traditionen, Daten und Rezepte.",
+                    'tabs' => ["Traditionen", "Daten", "Rezepte"],
+                    'rows' => [
+                        ['label' => "Heiligabend", 'value' => "Austern, dann die Christmette"],
+                        ['label' => "Namenstag", 'value' => "26. Juli"],
+                        ['label' => "Versprochenes Rezept", 'value' => "Omas Clafoutis"],
+                    ],
+                ],
+                [
+                    'title' => "Berufliche Kontakte",
+                    'body' => "Ihr Fachgebiet, wo Sie zum ersten Mal miteinander gesprochen haben, und das Thema, das Sie beim nächsten Mal aufgreifen wollten.",
+                    'label' => "Eine Kontaktseite, die aus einer Vorlage für berufliche Kontakte entsteht, mit den Tabs Arbeit, Kontaktwege und Nächstes Mal.",
+                    'tabs' => ["Arbeit", "Kontaktwege", "Nächstes Mal"],
+                    'rows' => [
+                        ['label' => "Fachgebiet", 'value' => "Lieferketten im Lebensmittelhandel"],
+                        ['label' => "Erstes Gespräch", 'value' => "Lyon, bei einem Logistik-Panel"],
+                        ['label' => "Beim nächsten Mal aufgreifen", 'value' => "Ihr Pilotprojekt zur Kühlkette"],
+                    ],
+                ],
+            ],
+        ],
+
+        'room' => [
+            'title' => "Schaffen Sie Platz für das, was zählt.",
+            'body' => [
+                "Fügen Sie Felder für Text, Daten, Zahlen oder eine Auswahl aus einer Liste hinzu. Geben Sie ihnen Namen, die für Sie Sinn ergeben.",
+                "Fassen Sie zusammengehörige Felder zu Abschnitten zusammen, ordnen Sie diese Abschnitte in Tabs an und bringen Sie alles in die Reihenfolge, die Ihnen gefällt. Für Details, die mehrfach vorkommen, gibt es die Wiederholgruppe.",
+            ],
+            'close' => "Ein Abschnitt namens „Kleinigkeiten, die man sich merken sollte“? Völlig vernünftig.",
+            'label' => "Der Vorlageneditor in Monica, mit einem Entwurf der Vorlage „Freunde“ auf der Seite „Kleinigkeiten“. Das Feld „Verträgt nicht“ ist ausgewählt, und das Feld daneben zeigt seinen Namen, seinen Typ und seine Auswahlliste.",
+            'version' => "v2 · basiert auf v1",
+            'saved' => "Vor 4 Sekunden gespeichert",
+            'import' => "Abschnitt importieren",
+            'pages' => [
+                ['name' => "Allgemein", 'count' => 5],
+                ['name' => "Kleinigkeiten", 'count' => 6],
+                ['name' => "Pläne", 'count' => 3],
+            ],
+            'addPage' => "Seite hinzufügen",
+            'field' => "Feld",
+            'name' => "Name",
+            'type' => "Typ",
+            'choices' => "Auswahlmöglichkeiten",
+            'choiceList' => ["Erdnüsse", "Gluten", "Schalentiere", "Milchprodukte", "Rohe Zwiebeln"],
+            'addChoice' => "Auswahlmöglichkeit hinzufügen",
+            'note' => "Änderungen gelten nur für diesen Entwurf.",
+        ],
+
+        'reuse' => [
+            'title' => "Einmal bauen. Immer wieder nutzen.",
+            'body' => [
+                "Eine Vorlage gibt mehreren Kontaktseiten dieselbe Struktur. Jede Person behält ihre eigenen Informationen.",
+                "Fügen Sie Ihrer Freunde-Vorlage „Wie wir uns kennengelernt haben“ hinzu, und Sie haben auf der Seite jedes Freundes Platz für eine andere Geschichte. Legen Sie für jeden Tresor eine Standardvorlage fest, damit neue Kontakte mit der passenden Struktur beginnen.",
+            ],
+            'label' => "Ein Feld „Wie wir uns kennengelernt haben“ in der Vorlage „Freunde“, auf den Seiten dreier Freunde mit je einer anderen Geschichte gefüllt, und die Vorlage „Freunde“ als Standard für neue Kontakte im Tresor „Freunde“.",
+            'template' => "Vorlage „Freunde“",
+            'stories' => [
+                'Rachel' => "Im Hochzeitskleid ins Central Perk gestolpert.",
+                'Ross' => "Monicas Bruder, damals im College.",
+                'Joey' => "Hat auf Chandlers Anzeige für das freie Zimmer geantwortet.",
+            ],
+            'default' => "Standardvorlage",
+            'defaultBody' => "Neue Kontakte im Tresor „Freunde“ beginnen hier",
+        ],
+
+        'versions' => [
+            'title' => "Ändern Sie Ihre Meinung, ohne Ihre Notizen zu verlieren.",
+            'body' => [
+                "Vielleicht möchten Sie ein Detail ergänzen, ein Feld umbenennen oder einen Abschnitt verschieben. Ihre Vorlagen können sich mit Ihnen verändern.",
+                "Bereiten Sie einen Entwurf vor und veröffentlichen Sie ihn, wenn er fertig ist. Bestehende Kontakte bleiben bei ihrer aktuellen Version, bis Sie sich für ein Update entscheiden.",
+                "Entfernen Sie ein Feld aus einer Vorlage, bleiben die bereits eingetragenen Informationen erhalten. Sie können sie weiterhin finden, und sie erscheinen wieder auf der Seite, wenn Sie das Feld zurückholen.",
+            ],
+            'label' => "Der Versionsverlauf einer Vorlage, mit einem Entwurf v3, der auf die Veröffentlichung wartet, während 34 Kontakte bei v2 bleiben, und der Seite von Rachel Green, die ihre Schuhgröße aus einem entfernten Feld behält, mit einer Schaltfläche, um das Feld zurückzuholen.",
+            'history' => "Versionsverlauf",
+            'rows' => [
+                ['version' => "v3", 'text' => "„Namenstag“ hinzugefügt, „Allergien“ in „Verträgt nicht“ umbenannt", 'status' => 'draft'],
+                ['version' => "v2", 'text' => "Veröffentlicht am 2. Juni · 34 Kontakte", 'status' => 'published'],
+                ['version' => "v1", 'text' => "Veröffentlicht am 9. Januar · 3 Kontakte", 'status' => null],
+            ],
+            'notice' => "Wenn Sie v3 veröffentlichen, bleiben 34 Kontakte bei v2, bis Sie sie aktualisieren.",
+            'values' => [
+                'cake' => "Cheesecake aus Mama’s Little Bakery",
+                'coffee' => "Latte im Central Perk",
+            ],
+            'kept' => "Aus einem entfernten Feld behalten",
+            'restore' => "Feld zurückholen",
+        ],
+
+        'share' => [
+            'title' => "Teilen Sie die Vorlage. Behalten Sie die Details für sich.",
+            'body' => [
+                "Etwas Nützliches gebaut? Exportieren Sie eine ganze Vorlage oder einen einzelnen Abschnitt, damit jemand anderes sie in sein Konto importieren kann.",
+                "Die Datei enthält die Struktur, die Sie gebaut haben, samt Beschriftungen und Auswahllisten. Ihre Kontakte und deren Informationen bleiben bei Ihnen.",
+            ],
+            'label' => "Export des Abschnitts „Kleinigkeiten, die man sich merken sollte“. Die Datei enthält den Abschnitt, seine sechs Feldbeschriftungen und Typen sowie die Auswahlliste „Verträgt nicht“. Ihre 34 Kontakte und alles, was auf ihren Seiten steht, bleiben bei Ihnen.",
+            'export' => "Diesen Abschnitt exportieren",
+            'inFile' => "In der Datei",
+            'inFileItems' => ["Der Abschnitt und sein Name", "6 Feldbeschriftungen und Typen", "Die Auswahlliste „Verträgt nicht“"],
+            'stays' => "Bleibt bei Ihnen",
+            'staysItems' => ["Ihre 34 Kontakte", "Alles, was auf ihren Seiten steht"],
+            'file' => "kleinigkeiten-die-man-sich-merken-sollte.json · 3 KB",
+            'download' => "Herunterladen",
         ],
     ],
 

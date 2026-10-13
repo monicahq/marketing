@@ -13,7 +13,7 @@
      surface at section size. Each card ends on a few lines of code or output
      that make its claim concrete. They are plain text, so a screen reader
      reads the claim and the proof alike. --}}
-<section class="bg-surface-inverse px-4 py-30 md:px-6">
+<section id="privacy" class="scroll-mt-6 bg-surface-inverse px-4 py-30 md:px-6">
     <div class="mx-auto flex max-w-page flex-col gap-16">
         <div class="flex max-w-[900px] flex-col gap-5">
             <span class="text-caption font-medium tracking-[0.08em] text-on-inverse-muted uppercase">{{ $copy['eyebrow'] }}</span>
