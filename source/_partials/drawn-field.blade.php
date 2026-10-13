@@ -18,7 +18,7 @@
     <span class="mn-control flex {{ ($multiline ?? false) ? 'h-auto min-h-18 items-start py-2' : 'items-center justify-between gap-2' }} {{ ($focused ?? false) ? 'border-focus ring-3 ring-focus/20' : '' }}">
         <span class="{{ ($multiline ?? false) ? 'text-pretty' : 'truncate' }}">{{ $value }}</span>
         @if ($select ?? false)
-            <span class="flex-none text-text-muted">@include('_partials.icon', ['name' => 'chevron-down', 'size' => 12])</span>
+            <span class="flex-none text-text-muted">@include('_partials.icon', ['name' => 'chevron-down', 'size' => 12, 'label' => null])</span>
         @endif
     </span>
 </div>
