@@ -11,7 +11,7 @@ use Illuminate\Support\Arr;
  * behaviour lives, because Jigsaw has no locale routing of its own.
  */
 
-$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl'];
+$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl', 'zh', 'ru'];
 
 /**
  * How the blog is chunked, in one place.
@@ -122,11 +122,24 @@ $postSettings = [
      *
      * Counted on the translated body, so a German page states how long the
      * German text takes, which is the only number that is true on that page.
+     *
+     * Chinese has no spaces between words, so `str_word_count` sees almost
+     * nothing in it. Its characters are counted on their own, at 300 a
+     * minute, and the Latin words left once they are removed (product names,
+     * code) at the usual rate.
      */
     'readingMinutes' => function ($post) {
-        $words = str_word_count(strip_tags($post->getContent()));
+        $text = strip_tags($post->getContent());
+        $characters = preg_match_all('/\p{Han}/u', $text);
+        $text = preg_replace('/\p{Han}/u', ' ', $text);
 
-        return max(1, (int) ceil($words / 200));
+        // str_word_count only knows Latin letters, so a Russian post would
+        // count as almost no words at all. Cyrillic words are counted on
+        // their own and taken out before it runs.
+        $cyrillic = preg_match_all('/\p{Cyrillic}+/u', $text);
+        $words = $cyrillic + str_word_count(preg_replace('/\p{Cyrillic}+/u', ' ', $text));
+
+        return max(1, (int) ceil($characters / 300 + $words / 200));
     },
 
     /**
@@ -272,6 +285,8 @@ return [
         'es' => 'Español',
         'pt' => 'Português',
         'nl' => 'Nederlands',
+        'zh' => '简体中文',
+        'ru' => 'Русский',
     ],
 
     /**
@@ -294,10 +309,37 @@ return [
         // territory is NL. hreflang stays the bare "nl", which is what a reader
         // searching in either variant should match.
         'nl' => 'nl_NL',
+
+        // Simplified Chinese is the script of the mainland, so the territory
+        // is CN.
+        'zh' => 'zh_CN',
+
+        // The copy is written for Russia, so the territory is RU.
+        'ru' => 'ru_RU',
     ],
 
     /**
-     * Every URL is locale-prefixed and every slug is translated. A page is
+     * The language tag a browser and a crawler read, in `<html lang>`,
+     * hreflang, `inLanguage` and the feed. It is the locale code itself unless
+     * listed here, through `languageTag()`.
+     *
+     * Chinese is the one exception. A bare "zh" names the language but not
+     * the script, so a browser left to guess may draw the page with
+     * Traditional or Japanese glyph shapes. "zh-Hans" says Simplified. The
+     * URL prefix stays the bare "zh", because that is what the root's
+     * redirect rule reads off Accept-Language.
+     */
+    'languageTags' => [
+        'zh' => 'zh-Hans',
+    ],
+
+    /**
+     * Every URL is locale-prefixed and every slug is translated, except in
+     * Chinese, which keeps the English slugs: a slug in Chinese characters is
+     * percent-encoded into something nobody can read, and pinyin slugs are
+     * rare on Chinese sites. Russian is translated and then transliterated
+     * (/ru/tseny/), for the same reason and because that is what Russian
+     * sites do. A page is
      * referenced by its key, never by a hard-coded path, so a slug can be
      * corrected in one place.
      *
@@ -305,12 +347,12 @@ return [
      * named after that locale's slug. See .claude/CLAUDE.md.
      */
     'routes' => [
-        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => ''],
+        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => '', 'zh' => '', 'ru' => ''],
 
         // "v3" is the product's version number, so it is the same word in every
         // language. Slugs are still declared per locale, because the next page
         // added will not be.
-        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3'],
+        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3', 'zh' => 'v3', 'ru' => 'v3'],
 
         'pricing' => [
             'en' => 'pricing',
@@ -319,18 +361,16 @@ return [
             'es' => 'precios',
             'pt' => 'precos',
             'nl' => 'prijzen',
+            'zh' => 'pricing',
+            'ru' => 'tseny',
         ],
 
         /**
-         * The features section is three pages behind one tab strip, so its
-         * slugs nest: /en/features/, /en/features/dashboard/ and
-         * /en/features/journal/. A slug carrying a slash needs nothing special
-         * from the helpers, because they only ever join it to a locale prefix,
-         * and Jigsaw builds a nested directory from a nested source path.
-         *
-         * Three keys rather than one page with client-side tabs: each tab is a
-         * URL somebody can send to a friend, which is what the old site did and
-         * what a crawler needs to index all three.
+         * The features section has no page of its own. Its slug is still the
+         * prefix the feature pages nest under (/en/features/timeline/), and
+         * the header's features menu still links to it while the pages those
+         * items describe are being written, so the key stays. `pageless`
+         * below keeps it out of the sitemap.
          */
         'features' => [
             'en' => 'features',
@@ -339,30 +379,14 @@ return [
             'es' => 'funcionalidades',
             'pt' => 'recursos',
             'nl' => 'functies',
-        ],
-
-        'featuresDashboard' => [
-            'en' => 'features/dashboard',
-            'fr' => 'fonctionnalites/tableau-de-bord',
-            'de' => 'funktionen/dashboard',
-            'es' => 'funcionalidades/panel',
-            'pt' => 'recursos/painel',
-            'nl' => 'functies/dashboard',
-        ],
-
-        'featuresJournal' => [
-            'en' => 'features/journal',
-            'fr' => 'fonctionnalites/journal',
-            'de' => 'funktionen/tagebuch',
-            'es' => 'funcionalidades/diario',
-            'pt' => 'recursos/diario',
-            'nl' => 'functies/dagboek',
+            'zh' => 'features',
+            'ru' => 'vozmozhnosti',
         ],
 
         // "Blog" is the same word in every language we ship. Declared per locale
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.
-        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog'],
+        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog', 'zh' => 'blog', 'ru' => 'blog'],
 
         'terms' => [
             'en' => 'terms',
@@ -371,6 +395,8 @@ return [
             'es' => 'condiciones-de-uso',
             'pt' => 'termos-de-uso',
             'nl' => 'gebruiksvoorwaarden',
+            'zh' => 'terms',
+            'ru' => 'usloviya',
         ],
 
         'team' => [
@@ -380,6 +406,8 @@ return [
             'es' => 'equipo',
             'pt' => 'equipe',
             'nl' => 'team',
+            'zh' => 'team',
+            'ru' => 'komanda',
         ],
 
         'privacy' => [
@@ -389,6 +417,8 @@ return [
             'es' => 'privacidad',
             'pt' => 'privacidade',
             'nl' => 'privacybeleid',
+            'zh' => 'privacy',
+            'ru' => 'konfidentsialnost',
         ],
 
         // The guide that answers the question the nav asks. Its slug says
@@ -401,8 +431,167 @@ return [
             'es' => 'crm-personal',
             'pt' => 'crm-pessoal',
             'nl' => 'persoonlijke-crm',
+            'zh' => 'personal-crm',
+            'ru' => 'lichnaya-crm',
+        ],
+
+        // "Your contacts, your way": what a contact template is and what you
+        // can build with one. The header's "Start here" card leads here. It
+        // nests under the features section like the two tabs above, but is
+        // not a tab: it is a page of its own, with no tab strip.
+        'templates' => [
+            'en' => 'features/templates',
+            'fr' => 'fonctionnalites/modeles',
+            'de' => 'funktionen/vorlagen',
+            'es' => 'funcionalidades/plantillas',
+            'pt' => 'recursos/modelos',
+            'nl' => 'functies/sjablonen',
+            'zh' => 'features/templates',
+            'ru' => 'vozmozhnosti/shablony',
+        ],
+
+        // "Remember the details that matter": what a contact page holds, from
+        // the little things to the people around someone and what happened
+        // with them. The first item of the header's features menu leads here.
+        // Nested under the features section like the templates page, and like
+        // it, not a tab.
+        'details' => [
+            'en' => 'features/details',
+            'fr' => 'fonctionnalites/details',
+            'de' => 'funktionen/details',
+            'es' => 'funcionalidades/detalles',
+            'pt' => 'recursos/detalhes',
+            'nl' => 'functies/details',
+            'zh' => 'features/details',
+            'ru' => 'vozmozhnosti/detali',
+        ],
+
+        // "Remember to reach out": reminders, once or on a rhythm, and how the
+        // nudge reaches you. The header's "Reminders" menu item leads here.
+        // Nested under the features section like the details page, and like
+        // it, not a tab.
+        'reminders' => [
+            'en' => 'features/reminders',
+            'fr' => 'fonctionnalites/rappels',
+            'de' => 'funktionen/erinnerungen',
+            'es' => 'funcionalidades/recordatorios',
+            'pt' => 'recursos/lembretes',
+            'nl' => 'functies/herinneringen',
+            'zh' => 'features/reminders',
+            'ru' => 'vozmozhnosti/napominaniya',
+        ],
+
+        // "Keep the moments worth remembering": life events, the timeline
+        // they make, and the types and fields behind them. The header's
+        // "Timeline" menu item leads here. Nested under the features section
+        // like the reminders page, and like it, not a tab.
+        'timeline' => [
+            'en' => 'features/timeline',
+            'fr' => 'fonctionnalites/chronologie',
+            'de' => 'funktionen/zeitleiste',
+            'es' => 'funcionalidades/cronologia',
+            'pt' => 'recursos/linha-do-tempo',
+            'nl' => 'functies/tijdlijn',
+            'zh' => 'features/timeline',
+            'ru' => 'vozmozhnosti/khronologiya',
+        ],
+
+        // "Understand how people are connected": relationships, the family
+        // tree they draw, and the types behind them. The header's
+        // "Relationships" menu item leads here. Nested under the features
+        // section like the timeline page, and like it, not a tab.
+        'relationships' => [
+            'en' => 'features/relationships',
+            'fr' => 'fonctionnalites/relations',
+            'de' => 'funktionen/beziehungen',
+            'es' => 'funcionalidades/relaciones',
+            'pt' => 'recursos/relacionamentos',
+            'nl' => 'functies/relaties',
+            'zh' => 'features/relationships',
+            'ru' => 'vozmozhnosti/otnosheniya',
+        ],
+
+        // "A place for each part of your life": vaults, what each one keeps
+        // apart, and switching between them. The header's "Vaults" menu item
+        // leads here. Nested under the features section like the
+        // relationships page, and like it, not a tab.
+        'vaults' => [
+            'en' => 'features/vaults',
+            'fr' => 'fonctionnalites/coffres',
+            'de' => 'funktionen/tresore',
+            'es' => 'funcionalidades/bovedas',
+            'pt' => 'recursos/cofres',
+            'nl' => 'functies/kluizen',
+            'zh' => 'features/vaults',
+            'ru' => 'vozmozhnosti/khranilishcha',
+        ],
+
+        // "Share only what you choose": read-only links to a few sections of
+        // a contact's page, their end date and password, their visits, and
+        // revoking them. Nested under the features section like the vaults
+        // page, and like it, not a tab.
+        'sharing' => [
+            'en' => 'features/sharing',
+            'fr' => 'fonctionnalites/partage',
+            'de' => 'funktionen/teilen',
+            'es' => 'funcionalidades/compartir',
+            'pt' => 'recursos/compartilhamento',
+            'nl' => 'functies/delen',
+            'zh' => 'features/sharing',
+            'ru' => 'vozmozhnosti/dostup',
+        ],
+
+        // "Your contacts, connected to your tools": the MCP server and the
+        // JSON API. The header's "Assistants and API" menu item leads here.
+        // API is the same word in every language we ship, so only the
+        // section prefix changes.
+        'api' => [
+            'en' => 'features/api',
+            'fr' => 'fonctionnalites/api',
+            'de' => 'funktionen/api',
+            'es' => 'funcionalidades/api',
+            'pt' => 'recursos/api',
+            'nl' => 'functies/api',
+            'zh' => 'features/api',
+            'ru' => 'vozmozhnosti/api',
+        ],
+
+        // "Personal details deserve a private place": sensitive fields, what
+        // sharing and connected tools can reach, signing in, what
+        // administrators see, and the account's activity. The header's
+        // "Privacy" menu item leads here. Not the privacy policy, which is
+        // the legal document under `privacy`.
+        'privacyFeatures' => [
+            'en' => 'features/privacy',
+            'fr' => 'fonctionnalites/confidentialite',
+            'de' => 'funktionen/privatsphaere',
+            'es' => 'funcionalidades/privacidad',
+            'pt' => 'recursos/privacidade',
+            'nl' => 'functies/privacy',
+            'zh' => 'features/privacy',
+            'ru' => 'vozmozhnosti/privatnost',
+        ],
+
+        // "Your language. Their names.": the interface language, names in the
+        // forms people use, a display name, dates, times, numbers and time
+        // zones. The header's "Languages" menu item leads here.
+        'languages' => [
+            'en' => 'features/languages',
+            'fr' => 'fonctionnalites/langues',
+            'de' => 'funktionen/sprachen',
+            'es' => 'funcionalidades/idiomas',
+            'pt' => 'recursos/idiomas',
+            'nl' => 'functies/talen',
+            'zh' => 'features/languages',
+            'ru' => 'vozmozhnosti/yazyki',
         ],
     ],
+
+    /**
+     * Route keys with no page behind them. The sitemap skips them, because a
+     * sitemap entry is a promise that the URL answers.
+     */
+    'pageless' => ['features'],
 
     // ---------------------------------------------------------------- lastmod
 
@@ -423,19 +612,27 @@ return [
      *
      * Every key in `routes` needs an entry here, except `blog`: the index's
      * lastmod is the newest post it lists, which the sitemap works out from the
-     * archive rather than from a number somebody has to remember.
+     * archive rather than from a number somebody has to remember. A key in
+     * `pageless` needs none either, because it has no page to date.
      */
     'lastmod' => [
-        'home' => '2026-08-06',
+        'home' => '2026-10-11',
         'v3' => '2026-08-06',
-        'pricing' => '2026-08-06',
-        'features' => '2026-08-06',
-        'featuresDashboard' => '2026-08-06',
-        'featuresJournal' => '2026-08-06',
+        'pricing' => '2026-10-12',
         'terms' => '2026-08-06',
         'team' => '2026-08-06',
         'privacy' => '2026-08-06',
         'personalCrm' => '2026-08-23',
+        'templates' => '2026-10-12',
+        'details' => '2026-10-12',
+        'reminders' => '2026-10-12',
+        'timeline' => '2026-10-12',
+        'relationships' => '2026-10-13',
+        'vaults' => '2026-10-13',
+        'sharing' => '2026-10-13',
+        'api' => '2026-10-13',
+        'privacyFeatures' => '2026-10-13',
+        'languages' => '2026-10-13',
     ],
 
     // ------------------------------------------------------------------ links
@@ -452,19 +649,24 @@ return [
         'github' => 'https://github.com/monicahq/monica',
         'signIn' => 'https://app.monicahq.com',
         'getStarted' => 'https://app.monicahq.com/register',
-        'createAccount' => '#',
-        'selfHost' => '#',
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
+        'mcp' => '#',
+        'changelog' => '#',
+
+        // There is no sales team, which is the joke on the homepage button.
+        // It still needs somewhere to go: a contact address, most likely.
+        'contactSales' => '#',
     ],
 
     // ------------------------------------------------------------------ plans
 
     /**
-     * The hosted plan's prices as bare numbers, for the offers in the
+     * The hosted plans' prices as bare numbers, for the offers in the
      * structured data. A crawler wants 9.00 and USD; a reader wants "$9", and
-     * that string stays in `lang/` with the rest of the pricing copy.
+     * that string stays in `lang/` (`pricing.prices`) with the rest of the
+     * pricing copy.
      *
      * Which means the two have to be changed together. They are the only pair
      * on the site that can disagree without anything failing, so a price
@@ -476,6 +678,9 @@ return [
         'currency' => 'USD',
         'monthly' => '9.00',
         'yearly' => '90.00',
+
+        // Paid once, never renewed.
+        'lifetime' => '150.00',
 
         // The application is free; the server is the reader's problem.
         'selfHosted' => '0.00',
@@ -561,6 +766,37 @@ return [
     },
 
     /**
+     * An image's intrinsic size, read off the file: `['width' => …, 'height' => …]`.
+     *
+     * Every <img> carries its own pixels as `width` and `height`, and this is
+     * how a template gets them without repeating numbers that are already a
+     * fact about the file. A missing file fails the build, naming the path,
+     * rather than shipping an image with no box reserved for it.
+     */
+    'imageSize' => function ($page, string $src) {
+        $path = __DIR__ . '/source' . $src;
+        $size = false;
+
+        if (is_file($path) && str_ends_with($path, '.svg')) {
+            // getimagesize() does not read SVG. Its size is the `width` and
+            // `height` on the root element, which every badge here carries.
+            if (preg_match('/<svg\b[^>]*>/', file_get_contents($path), $root)
+                && preg_match('/\bwidth="([\d.]+)"/', $root[0], $w)
+                && preg_match('/\bheight="([\d.]+)"/', $root[0], $h)) {
+                $size = [(int) round($w[1]), (int) round($h[1])];
+            }
+        } elseif (is_file($path)) {
+            $size = getimagesize($path);
+        }
+
+        if (! $size) {
+            throw new Exception("Image [{$src}] is missing or unreadable.");
+        }
+
+        return ['width' => $size[0], 'height' => $size[1]];
+    },
+
+    /**
      * The locale a page is being rendered in.
      *
      * Ordinary pages declare `locale` in their front matter. A post inherits it
@@ -570,6 +806,17 @@ return [
      */
     'lang' => function ($page) {
         return $page->locale ?: $page->defaultLocale;
+    },
+
+    /**
+     * The language tag for a locale, the current page's by default. See
+     * `languageTags`: it is the locale code except where the code alone does
+     * not say enough.
+     */
+    'languageTag' => function ($page, ?string $locale = null) {
+        $locale ??= $page->lang();
+
+        return $page->languageTags[$locale] ?? $locale;
     },
 
     /**

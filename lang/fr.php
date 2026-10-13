@@ -16,14 +16,21 @@ return [
             'home' => "Accueil",
             'v3' => "Monica v3",
             'pricing' => "Tarifs",
-            'features' => "Fonctionnalités",
-            'featuresDashboard' => "Tableau de bord",
-            'featuresJournal' => "Journal",
             'blog' => "Blog",
             'terms' => "Conditions d’utilisation",
             'team' => "Équipe",
             'privacy' => "Politique de confidentialité",
             'personalCrm' => "Guide du CRM personnel",
+            'templates' => "Modèles de contact",
+            'details' => "Fiches de contact",
+            'reminders' => "Rappels",
+            'timeline' => "Chronologie",
+            'relationships' => "Relations",
+            'vaults' => "Coffres",
+            'sharing' => "Partage",
+            'api' => "API et MCP",
+            'privacyFeatures' => "Confidentialité et sécurité",
+            'languages' => "Langues et formats",
             'page' => "Page :number",
         ],
 
@@ -31,6 +38,7 @@ return [
             'monthly' => "Monica hébergée, facturée au mois",
             'yearly' => "Monica hébergée, facturée à l’année",
             'selfHosted' => "Monica auto-hébergée",
+            'lifetime' => "Monica hébergée, à vie",
         ],
 
         'home' => [
@@ -39,8 +47,8 @@ return [
         ],
 
         'pricing' => [
-            'title' => "Tarifs Monica — une offre hébergée, ou l’auto-hébergement gratuit",
-            'description' => "Monica hébergée coûte 9 USD par mois ou 90 USD par an, avec des contacts illimités et aucun tarif au contact. Ou hébergez gratuitement l’application open source sur votre propre infrastructure.",
+            'title' => "Tarifs Monica : l’auto-hébergement gratuit, ou Monica hébergée pour vous",
+            'description' => "Hébergez Monica gratuitement, ou laissez Monica l’héberger pour 9 USD par mois, 90 USD par an ou 150 USD une fois. Chaque offre a toutes les fonctionnalités, des contacts illimités et aucun tarif au contact.",
         ],
 
         'privacy' => [
@@ -78,22 +86,54 @@ return [
             'description' => "Monica v3 est une reconstruction complète du CRM personnel open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source. Avant la fin de 2026.",
         ],
 
-        // Un bloc par onglet des fonctionnalités : chaque onglet a sa propre
-        // URL, et un moteur de recherche qui trouve les trois doit pouvoir les
-        // distinguer.
-        'features' => [
-            'title' => "Gestion des contacts — les fonctionnalités de Monica",
-            'description' => "Notez ce que vous savez des personnes qui comptent pour vous : relations, coordonnées, notes privées, appels, rappels et cadeaux, le tout sur une même fiche de contact.",
+        'templates' => [
+            'title' => "Vos contacts, à votre façon : les modèles de contact de Monica",
+            'description' => "Créez des modèles de contact avec vos champs, sections et onglets. Un modèle par cercle, des versions publiées quand vous êtes prêt, des sections à partager.",
         ],
 
-        'featuresDashboard' => [
-            'title' => "Le tableau de bord — les fonctionnalités de Monica",
-            'description' => "Le tableau de bord de Monica montre qui vous avez consulté en dernier, ce qui arrive ensuite, vos notes favorites et les appels que vous avez passés, pour vous concentrer sur ce qui compte vraiment.",
+        'details' => [
+            'title' => "Retenez les détails qui comptent : les fiches de contact dans Monica",
+            'description' => "Gardez ensemble les détails que les gens vous confient : ce qu’ils vous ont dit la dernière fois, les petites choses, leurs proches et les moments partagés.",
         ],
 
-        'featuresJournal' => [
-            'title' => "Le journal — les fonctionnalités de Monica",
-            'description' => "Écrivez des entrées de journal, indiquez comment s’est passée votre journée et relisez les activités avec vos contacts que Monica consigne automatiquement.",
+        'reminders' => [
+            'title' => "Pensez à donner des nouvelles : les rappels dans Monica",
+            'description' => "Programmez un rappel pour un anniversaire, un grand jour ou un ami que vous voulez appeler. Une fois ou à intervalles réguliers, dans son fuseau horaire, par e-mail ou dans Monica, avec une trace de ce à quoi vous avez pensé.",
+        ],
+
+        'timeline' => [
+            'title' => "Gardez les moments qui comptent : la chronologie dans Monica",
+            'description' => "Notez ce qui s’est passé, qui était là et les détails que vous voulez garder. Des événements de vie dans la chronologie de chacun en une seule fois, vos propres types d’événements et de champs, et un regard en arrière année par année.",
+        ],
+
+        'relationships' => [
+            'title' => "Comprenez comment les gens sont liés : les relations dans Monica",
+            'description' => "Gardez une trace des personnes qui entourent quelqu’un, avec des relations qui se lisent correctement des deux côtés. Arbres généalogiques, personnes que vous n’avez pas encore rencontrées, relations passées et vos propres types de relation.",
+        ],
+
+        'vaults' => [
+            'title' => "Une place pour chaque partie de votre vie : les coffres dans Monica",
+            'description' => "Gardez amis, famille et collègues ensemble, ou donnez à chaque groupe son propre espace. Chaque coffre a ses contacts, sa chronologie, ses rappels et son modèle par défaut, le tout dans votre compte.",
+        ],
+
+        'sharing' => [
+            'title' => "Partagez seulement ce que vous choisissez : le partage dans Monica",
+            'description' => "Partagez certaines sections de la fiche d’un contact par un lien en lecture seule. Choisissez ce qu’il montre, donnez-lui une date de fin ou un mot de passe, voyez quand il a été ouvert et révoquez-le à tout moment.",
+        ],
+
+        'api' => [
+            'title' => "Vos contacts, reliés à vos outils : l’API et le serveur MCP de Monica",
+            'description' => "Utilisez Monica avec Claude, ChatGPT, Gemini ou vos propres scripts. Connectez un assistant au serveur MCP de Monica, ou construisez votre propre connexion avec l’API JSON et une clé d’API.",
+        ],
+
+        'privacyFeatures' => [
+            'title' => "Les détails personnels méritent un endroit privé : la confidentialité dans Monica",
+            'description' => "Marquez des champs comme sensibles, partagez seulement certaines sections, contrôlez ce que les clés d’API et les assistants peuvent lire, protégez votre compte avec des clés d’accès et l’authentification à deux facteurs, et consultez son activité.",
+        ],
+
+        'languages' => [
+            'title' => "Votre langue, leurs noms, vos formats : les langues dans Monica",
+            'description' => "Utilisez Monica dans plus de 30 langues, gardez les noms des gens dans leur écriture d’origine avec une translittération et une prononciation, et choisissez vos formats de date, d’heure et de nombre ainsi que votre fuseau horaire.",
         ],
 
         'personalCrm' => [
@@ -117,171 +157,51 @@ return [
         'pricing' => "Tarifs",
         'blog' => "Blog",
         'docs' => "Documentation",
-        'signIn' => "Se connecter",
-        'getStarted' => "Commencer",
+        'signIn' => "Connexion",
+        'getStarted' => "Inscription",
         'stars' => ":count étoiles",
-    ],
 
-    'hero' => [
-        'eyebrow' => "Le CRM personnel open source",
-        'title' => "Souvenez-vous des gens qui comptent pour vous.",
-        'lede' => "Monica vous aide à garder trace des gens qui traversent votre vie — ce qu’ils vous racontent, les moments que vous partagez et les promesses que vous aviez pourtant l’intention de tenir.",
-        'lede2' => "Privée par conception. Open source. Auto-hébergeable. Aucune publicité, aucune revente de données, aucune notification gênante pour vous « réengager ».",
-        'primaryCta' => "Commencer avec Monica",
-        'githubCta' => "Voir sur GitHub · :count étoiles",
-        'note' => "Auto-hébergement gratuit · Version hébergée disponible",
-    ],
-
-    'proof' => [
-        'starsLabel' => "Étoiles sur GitHub",
-        'since' => "2017",
-        'sinceLabel' => "Open source depuis",
-        'featured' => "Dépôt de la semaine",
-        'featuredLabel' => "Mis en avant plusieurs fois",
-        'launch' => "Product Hunt",
-        'launchLabel' => "Lancement remarqué",
-        'aside' => "Apparemment, beaucoup de gens oublient aussi les anniversaires.",
-    ],
-
-    'notALead' => [
-        'title' => "Un CRM où personne n’est un prospect.",
-        'body' => "Les CRM classiques aident les entreprises à se souvenir de leurs clients. Monica vous aide à vous souvenir de vos amis, de votre famille, de vos collègues, de vos voisins et de tous ceux qui comptent.",
-        'aside' => "L’attention aux autres devient plus simple quand votre mémoire a une sauvegarde.",
-        'listTitle' => "Conservez les détails que vous oublieriez autrement :",
-        'items' => [
-            "ce qui se passe dans leur vie ;",
-            "comment vous vous connaissez ;",
-            "les dates importantes ;",
-            "vos conversations passées ;",
-            "les cadeaux, les dettes, les promesses et les idées ;",
-            "les rappels pour reprendre contact.",
-        ],
-    ],
-
-    'showcase' => [
-        'title' => "Tout sur quelqu’un. Au même endroit.",
-        'aside' => "Les gens sont compliqués. Leurs fiches ont bien le droit d’être un peu compliquées aussi.",
-        'card' => [
-            'name' => "Élise Aubert",
-            'meta' => "Sœur · Lyon · Dernier échange aujourd’hui",
-            'badge' => "Famille",
-            'birthdayLabel' => "Anniversaire",
-            'birthday' => "18 mars · aura 39 ans dans 7 mois",
-            'metLabel' => "Comment vous vous êtes connus",
-            'met' => "De naissance",
-            'relationshipsLabel' => "Relations",
-            'relationships' => [
-                ['initials' => "MC", 'label' => "Élise est la compagne de Marc", 'meta' => "10 ans"],
-                ['initials' => "LA", 'label' => "Élise est le parent de Léa", 'meta' => "Depuis 2019"],
-            ],
-            'recentlyLabel' => "Récemment",
-            'timeline' => [
+        // The features menu: three columns of what Monica does, and a card
+        // pointing at templates, the thing a new reader most often misses.
+        'menu' => [
+            'groups' => [
                 [
-                    'nature' => 'meal',
-                    'title' => "Déjeuner au Petit Sud",
-                    'meta' => "Aujourd’hui · elle envisage de revenir vivre à Lyon",
+                    'title' => "Se souvenir",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "Les détails", 'body' => "Tout sur quelqu’un, au même endroit."],
+                        ['icon' => 'reminder', 'title' => "Rappels", 'body' => "Anniversaires, relances, récurrences."],
+                        ['icon' => 'timeline', 'title' => "Chronologie", 'body' => "Notez-le une fois, pour tous ceux qui étaient là."],
+                    ],
                 ],
                 [
-                    'nature' => 'call',
-                    'title' => "Appel au sujet de Georges",
-                    'meta' => "2 août · 22 minutes",
+                    'title' => "Organiser",
+                    'items' => [
+                        ['icon' => 'relationship', 'title' => "Relations", 'body' => "Arbres généalogiques, et qui connaît qui."],
+                        ['icon' => 'vault', 'title' => "Coffres", 'body' => "Perso et pro, bien séparés."],
+                        ['icon' => 'link', 'title' => "Partage", 'body' => "Partagez quelques sections. Révocable à tout moment."],
+                    ],
+                ],
+                [
+                    'title' => "Connecter et protéger",
+                    'items' => [
+                        ['icon' => 'globe', 'title' => "Langues", 'body' => "Votre langue, leurs noms, vos formats."],
+                        ['icon' => 'key', 'title' => "Assistants et API", 'body' => "Votre agent peut retrouver n’importe qui."],
+                        ['icon' => 'lock', 'title' => "Confidentialité", 'body' => "Clés d’accès, 2FA, champs privés."],
+                    ],
                 ],
             ],
-            'reminder' => "Demander comment s’est passé l’entretien",
-            'reminderMeta' => "Rappel · demain",
-        ],
-        'features' => [
-            [
-                'icon' => 'relationship',
-                'title' => "Relations",
-                'body' => "Comprenez les familles, les couples, les amitiés, les collègues et les liens entre eux.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Notes et journal",
-                'body' => "Retrouvez ce qui s’est passé sans faire défiler six applications de messagerie.",
-            ],
-            [
-                'icon' => 'reminder',
-                'title' => "Rappels",
-                'body' => "Appeler votre mère. Féliciter votre ami. Demander comment s’est passé l’entretien. Monica se souvient ; le mérite reste pour vous.",
-            ],
-            [
-                'icon' => 'activity',
-                'title' => "Activités",
-                'body' => "Gardez l’historique des repas, des appels, des voyages, des événements et des petits moments qui font une relation.",
-            ],
-            [
-                'icon' => 'panel',
-                'title' => "Informations sur mesure",
-                'body' => "Conservez les détails qui comptent pour vous, pas les champs qu’un CRM commercial juge importants.",
+            'start' => [
+                'label' => "Pour commencer",
+                'title' => "Vos contacts, à votre façon",
+                'body' => "Concevez vos propres modèles. Onglets, sections, champs, choix.",
+                'rows' => [
+                    ['label' => "Ami", 'detail' => "Cadeaux, animaux"],
+                    ['label' => "Famille", 'detail' => "Arbre généalogique"],
+                    ['label' => "Travail", 'detail' => "Entreprise, poste"],
+                ],
+                'cta' => "Voir comment fonctionnent les modèles",
             ],
         ],
-    ],
-
-    'notSocial' => [
-        'title' => "Volontairement pas un réseau social.",
-        'body' => "Monica ne recommande pas d’amis, ne classe pas vos relations, n’insère pas de publicité et ne prévient personne que vous avez consulté son profil.",
-        'body2' => "C’est un espace privé pour vos souvenirs et vos relations.",
-        'quote' => "Aucun fil d’actualité. Aucun abonné. Aucune marque qui se prend pour une personne.",
-    ],
-
-    'openSource' => [
-        'title' => "À vous veut dire à vous.",
-        'body' => "Monica est open source depuis le premier jour. Cela ne change pas.",
-        'aside' => "La confiance, c’est utile. Le code source, c’est mieux.",
-        'sourceCta' => "Explorer le code source",
-        'hostingCta' => "Lire le guide d’auto-hébergement",
-        'v3Cta' => "Voir tout ce qui arrive avec Monica v3",
-        'listTitle' => "Avec Monica v3 :",
-        'items' => [
-            "le projet reste entièrement open source ;",
-            "vous pouvez l’exécuter sur votre propre serveur ;",
-            "la version hébergée utilise la même application ;",
-            "vos données peuvent être exportées ;",
-            "le code peut être inspecté, modifié et forké.",
-        ],
-    ],
-
-    'v3' => [
-        'title' => "Monica grandit. À peu près.",
-        'body' => "Monica v3 est reconstruite de fond en comble pour la décennie à venir.",
-        'body2' => "Elle sera plus souple, plus extensible et bien meilleure sur téléphone — tout en préservant les principes de confidentialité et de propriété qui ont rendu Monica utile dès le départ.",
-        'listLabel' => "À venir en v3",
-        'features' => [
-            [
-                'icon' => 'panel',
-                'title' => "Des fiches que vous concevez",
-                'body' => "Choisissez les sections et les champs d’une fiche au lieu d’accepter notre avis pour toujours.",
-            ],
-            [
-                'icon' => 'relationship',
-                'title' => "Plus que des contacts",
-                'body' => "Reliez les gens à des animaux, des entreprises, des logements, des véhicules, des projets et tout ce qui compte dans leur vie.",
-            ],
-            [
-                'icon' => 'journal',
-                'title' => "Un journal relié à tout",
-                'body' => "Consignez un moment une seule fois et reliez-le aux personnes, aux fiches, aux dates et aux rappels concernés.",
-            ],
-            [
-                'icon' => 'tag',
-                'title' => "Des structures créées par la communauté",
-                'body' => "Installez des structures utiles créées par d’autres utilisateurs de Monica, puis modifiez votre copie librement.",
-            ],
-            [
-                'icon' => 'code',
-                'title' => "Une API complète et un serveur MCP",
-                'body' => "Tout ce qui est accessible dans l’interface doit l’être aussi par programmation.",
-            ],
-            [
-                'icon' => 'phone',
-                'title' => "Une vraie expérience mobile",
-                'body' => "D’abord une application web responsive, puis des applications natives iOS et Android.",
-            ],
-        ],
-        'cta' => "Découvrir Monica v3",
-        'note' => "Attendue avant la fin de 2026 · L’accès bêta s’ouvrira progressivement",
     ],
 
     /** La page /v3. La clé `v3` ci-dessus est la section de la page d'accueil. */
@@ -367,7 +287,7 @@ return [
                     'body' => "Navigation au clavier, lecteurs d’écran, localisation et mises en page adaptatives sont des exigences produit, pas du travail remis à plus tard.",
                 ],
                 [
-                    'icon' => 'arrowRight',
+                    'icon' => 'arrow-right',
                     'title' => "Les utilisateurs actuels ne sont pas laissés de côté",
                     'body' => "L’objectif est d’offrir un chemin de migration clair pour les comptes Monica existants : contacts, notes, rappels et autres informations essentielles.",
                 ],
@@ -382,282 +302,457 @@ return [
         ],
     ],
 
-    'founder' => [
-        'title' => "Créée parce que j’ai une mauvaise mémoire.",
-        'body' => "J’ai créé Monica parce que j’oubliais sans cesse des détails sur des gens qui comptaient vraiment pour moi.",
-        'body2' => "Pas parce qu’ils étaient sans importance. Parce que la vie est chargée, que la mémoire est peu fiable et que le cerveau humain n’est apparemment pas livré avec une fonction de recherche.",
-        'body3' => "Monica a commencé comme un projet personnel en 2017. C’est devenu depuis l’un des projets de CRM personnel open source les plus suivis, soutenu et amélioré par des contributeurs du monde entier.",
-        'signature' => "— Régis, fondateur et personne qui oublie encore des choses de temps en temps",
-    ],
-
-    'faq' => [
-        'title' => "Les questions que l’on pose vraiment.",
-        'items' => [
-            [
-                'q' => "Monica est-elle vraiment gratuite ?",
-                'a' => "Le code est gratuit et le restera. Vous pouvez l’exécuter sur votre propre serveur sans rien payer. La version hébergée est un abonnement payant, parce que les serveurs et les sauvegardes ont un coût, et parce qu’elle finance le travail sur le projet open source.",
-            ],
-            [
-                'q' => "Faut-il être technique pour l’utiliser ?",
-                'a' => "Pas pour la version hébergée : vous créez un compte et vous commencez. L’auto-hébergement demande un peu plus : Docker, ou un environnement PHP que vous savez maintenir. La documentation couvre les deux.",
-            ],
-            [
-                'q' => "Qui peut voir mes données sur la version hébergée ?",
-                'a' => "Personne ne les parcourt. Le support ne peut accéder à un compte qu’avec votre autorisation explicite, pour un problème précis. Vos données ne sont jamais vendues, jamais utilisées pour de la publicité et jamais utilisées pour entraîner un modèle.",
-            ],
-            [
-                'q' => "Puis-je récupérer mes données ?",
-                'a' => "À tout moment, intégralement, y compris les structures que vous avez créées. L’export est une fonctionnalité, pas un parcours d’obstacles destiné à vous retenir.",
-            ],
-            [
-                'q' => "Puis-je importer les contacts que j’ai déjà ?",
-                'a' => "Oui — fichiers vCard et CSV. Les doublons vous sont présentés avant toute fusion, parce que fusionner les deux mauvaises personnes est une façon mémorable de gâcher un après-midi.",
-            ],
-            [
-                'q' => "Qu’arrive-t-il à mon compte quand la v3 sortira ?",
-                'a' => "L’objectif est un chemin de migration clair pour les comptes existants, contacts, notes, rappels et autres informations essentielles compris. Rien n’est supprimé et rien ne vous est imposé du jour au lendemain.",
-                'link' => ['label' => "En savoir plus sur Monica v3", 'page' => 'v3'],
-            ],
-            [
-                'q' => "Existe-t-il une application mobile ?",
-                'a' => "L’application web fonctionne déjà sur téléphone. Les applications natives iOS et Android arriveront après la v3 — de vraies applications, pas un site web dans une coquille.",
-            ],
-            [
-                'q' => "Monica fait-elle quelque chose avec l’IA ?",
-                'a' => "Monica v3 expose un serveur MCP : vous pouvez y brancher votre propre assistant sur vos propres données si vous le souhaitez. Monica n’envoie pas vos relations à un modèle de sa propre initiative.",
-            ],
-        ],
-    ],
-
-    'plans' => [
-        'title' => "Notre serveur. Ou le vôtre.",
-        'hosted' => [
-            'title' => "Monica hébergée",
-            'body' => "Pour celles et ceux qui veulent Monica sans gérer de serveur.",
-            'items' => [
-                "mises à jour automatiques ;",
-                "sauvegardes gérées ;",
-                "aucun travail d’infrastructure ;",
-                "soutient le développement du projet open source.",
-            ],
-            'cta' => "Créer un compte",
-        ],
-        'selfHosted' => [
-            'title' => "Auto-héberger Monica",
-            'body' => "Pour celles et ceux qui aiment posséder leur infrastructure, ou qui le prétendent.",
-            'items' => [
-                "contrôle total ;",
-                "code open source ;",
-                "aucun abonnement à Monica ;",
-                "installation avec Docker ou manuelle.",
-            ],
-            'cta' => "Auto-héberger Monica",
-        ],
-    ],
-
-    'finalCta' => [
-        'title' => "Soyez un meilleur ami. Avec un soutien administratif.",
-        'body' => "Retenez les détails importants. Reprenez contact au bon moment. Gardez vos relations hors des bases de données publicitaires.",
-        'primaryCta' => "Commencer avec Monica",
-        'secondaryCta' => "Voir Monica v3",
-        'note' => "Open source · Auto-hébergeable · Sans carte bancaire",
-    ],
-
     /** La page /tarifs. Les prix viennent du design ; à changer ici, par locale. */
-    'pricing' => [
-        'eyebrow' => "Tarifs simples",
-        'title' => "Une seule offre hébergée. Aucun tarif à la relation.",
-        'lede' => "Utilisez Monica sur nos serveurs pour un prix prévisible, ou hébergez-la vous-même gratuitement.",
-        'lede2' => "Nous ne facturons ni au contact, ni au rappel, ni à l’anniversaire important, ni à la personne que vous essayez de ne pas décevoir.",
-        'currency' => "Prix en USD",
-        'taxFootnote' => "Les prix sont affichés en USD. Les taxes applicables sont calculées avant le paiement.",
-
-        'billing' => [
-            'label' => "Périodicité de facturation",
-            'yearly' => "Annuel — 2 mois offerts",
-            'monthly' => "Mensuel",
+    // ---------------------------------------------------------------- home
+    //
+    // The homepage, section by section, in page order. Every person in it is
+    // from Friends, and only from Friends: the product picture is open on
+    // Phoebe, the reminders and the agent are about Rachel, Chandler and Joey.
+    // They keep their names in every language; what is said about them is
+    // translated.
+    //
+    // A sentence with one word in bold is written as three pieces, before, bold
+    // and after, so a translation can move the bold word to wherever its
+    // grammar puts it without anyone writing markup in a copy file.
+    'home' => [
+        'hero' => [
+            'pill' => "Rachel, Ross, Chandler, Joey et le canard",
+            'title' => "Souvenez-vous des gens qui comptent pour vous.",
+            'subtitle' => "Nous sommes un CRM personnel open source.",
+            'lede' => "Privée par conception. Open source. Auto-hébergeable. Aucune publicité, aucune revente de données, aucune notification gênante pour vous « réengager ».",
+            'start' => "Commencer avec Monica",
+            'github' => "Voir sur GitHub",
+            'sales' => "Contacter les ventes",
+            'salesJoke' => "On plaisante.",
+            'salesTruth' => "Nous n’avons pas d’équipe commerciale.",
         ],
 
-        'hosted' => [
-            'title' => "Monica hébergée",
-            'body' => "Pour celles et ceux qui veulent Monica sans entretenir de serveur.",
-            'yearlyPrice' => "90 $",
-            'yearlyPeriod' => "USD / an",
-            'yearlyNote' => "Deux mois offerts en facturation annuelle.",
-            'monthlyPrice' => "9 $",
-            'monthlyPeriod' => "USD / mois",
-            'monthlyNote' => "Facturé au mois. Passez à l’annuel pour deux mois offerts.",
-            'taxNote' => "Des taxes peuvent s’appliquer selon votre pays.",
-            'cta' => "Commencer avec Monica",
-            'trial' => "Essai de 30 jours · Aucune carte bancaire pendant l’essai",
-            'listTitle' => "Tout ce qu’il faut pour se souvenir des gens qui comptent :",
-            'items' => [
-                "contacts illimités ;",
-                "notes illimitées ;",
-                "rappels illimités ;",
-                "activités et entrées de journal illimitées ;",
-                "gestion des relations ;",
-                "champs et sections personnalisés ;",
-                "pièces jointes ;",
-                "export des données ;",
-                "mises à jour automatiques ;",
-                "sauvegardes gérées ;",
-                "support par e-mail ;",
-                "accès depuis téléphone, tablette et ordinateur ;",
-                "toutes les futures fonctionnalités hébergées incluses.",
+        'product' => [
+            // Read out in place of the picture, which is drawn in markup but is
+            // a picture of the product rather than a working copy of it.
+            'label' => "Monica, ouverte sur la fiche de Phoebe Buffay : deux dates importantes, ses relations, la dernière note la concernant et trois idées de cadeaux.",
+            'vault' => "Famille",
+            'nav' => ["Tableau de bord", "Personnes", "Rappels", "Journal", "Idées cadeaux", "Paramètres"],
+            'vaultsLabel' => "Coffres",
+            'vaults' => ["Famille", "Amis", "Central Perk"],
+            'search' => "Rechercher une personne",
+            'add' => "Ajouter une personne",
+            'meta' => "Sœur jumelle d’Ursula · New York · connue depuis 10 ans",
+            'tabs' => ["Aperçu", "Chronologie", "Notes", "Idées cadeaux"],
+            'datesTitle' => "Dates importantes",
+            'dates' => [
+                ['title' => "Anniversaire", 'date' => "16 février 1966", 'when' => "dans quatre mois"],
+                ['title' => "Anniversaire de mariage", 'date' => "12 février 2004", 'when' => "dans quatre mois"],
             ],
-            'aside' => "Aucun supplément pour une grande famille.",
-            'footnote' => "Résiliez quand vous voulez. Vos contacts ne seront pas pris en otage.",
-        ],
-
-        'selfHosted' => [
-            'title' => "Vous préférez votre propre serveur ?",
-            'body' => "Monica est open source et s’installe sur l’infrastructure de votre choix.",
-            'price' => "0 $",
-            'period' => "côté Monica",
-            'aside' => "Votre hébergeur, lui, voudra sans doute de l’argent. Nous n’avons pas encore vaincu le capitalisme.",
-            'cta' => "Voir le guide d’auto-hébergement",
-            'sourceCta' => "Parcourir le code sur GitHub · :count étoiles",
-            'listTitle' => "L’application est gratuite. Vous fournissez le serveur, les mises à jour, les sauvegardes, la supervision, les correctifs de sécurité, et la tranquillité de savoir exactement où vivent vos données.",
-            'items' => [
-                "l’application open source complète ;",
-                "des contacts illimités ;",
-                "autant d’utilisateurs que votre infrastructure le permet ;",
-                "le contrôle total de vos données ;",
-                "l’import et l’export des données ;",
-                "la documentation communautaire ;",
-                "le support communautaire ;",
-                "la possibilité d’inspecter et de modifier le code source.",
+            'relationshipsTitle' => "Relations",
+            'relationships' => [
+                ["Phoebe est la sœur jumelle d’", "Ursula", "."],
+                ["Phoebe est l’épouse de ", "Mike", "."],
             ],
-            'footnote' => "L’édition auto-hébergée n’est pas une démo bridée. C’est Monica, sur votre infrastructure.",
-            'footnote2' => "Les sauvegardes gérées, l’envoi d’e-mails, la supervision de l’infrastructure et le support direct font partie du service hébergé.",
+            'noteTitle' => "Dernière note",
+            'note' => "A écrit une nouvelle chanson sur un chat. Très fière d’elle. Ne surtout pas parler de l’odeur.",
+            'noteWhen' => "Il y a six jours",
+            'giftsTitle' => "Idées cadeaux",
+            'gifts' => ["Cordes de guitare", "Huile de massage", "Litière pour chat inodore"],
         ],
 
-        'compare' => [
-            'title' => "La même Monica. Une autre personne responsable du serveur.",
-            'rowHeader' => "Quoi",
-            'hosted' => "Monica hébergée",
-            'selfHosted' => "Monica auto-hébergée",
-            'rows' => [
-                ['label' => "Logiciel Monica", 'hosted' => "Inclus", 'selfHosted' => "Inclus"],
-                ['label' => "Contacts", 'hosted' => "Illimités", 'selfHosted' => "Illimités"],
-                ['label' => "Mises à jour", 'hosted' => "Automatiques", 'selfHosted' => "Vous les installez"],
-                ['label' => "Sauvegardes", 'hosted' => "Gérées par Monica", 'selfHosted' => "Vous les gérez"],
-                ['label' => "Maintenance du serveur", 'hosted' => "Gérée par Monica", 'selfHosted' => "Vous la gérez"],
-                ['label' => "Emplacement des données", 'hosted' => "Infrastructure Monica", 'selfHosted' => "Votre infrastructure"],
-                ['label' => "Connaissances techniques requises", 'hosted' => "Aucune", 'selfHosted' => "Quelques-unes"],
-                ['label' => "Support", 'hosted' => "Support par e-mail", 'selfHosted' => "Support communautaire"],
-                ['label' => "Coût", 'hosted' => "Abonnement mensuel ou annuel", 'selfHosted' => "Logiciel gratuit plus frais d'hébergement"],
-                ['label' => "Idéal pour", 'hosted' => "Les gens qui veulent que Monica fonctionne", 'selfHosted' => "Les gens qui aiment les serveurs, ou qui y sont contraints"],
+        'awards' => [
+            'label' => "Des inconnus sur Internet approuvent",
+            'github' => "GitHub Trending : dépôt du jour n° 1",
+            'hn' => "Hacker News : n° 65 des liens les plus votés de tous les temps",
+            'ph' => "Product Hunt : produit du jour n° 4",
+        ],
+
+        'agents' => [
+            'eyebrow' => "Serveur MCP et API REST",
+            'title' => "Utilisez Monica comme backend pour vos agents.",
+            'body' => "Monica n’intègre aucune IA, et n’en intégrera jamais, mais nous laissons votre propre agent accéder à vos données — si vous le souhaitez.",
+            'mcp' => "Explorer la doc MCP",
+            'api' => "Explorer l’API",
+            'prompt' => "Qu’est-ce que je pourrais offrir à Rachel pour son anniversaire ?",
+            'answer' => "L’anniversaire de Rachel est dans 23 jours.",
+            'saved' => "Vous avez noté deux idées en juillet :",
+            'ideas' => ["L’écharpe qu’elle a montrée chez Bloomingdale’s", "Tout sauf une liste de pour et de contre"],
+            'ask' => "Note que j’ai pris un café avec Joey au Central Perk aujourd’hui.",
+            'used' => "Monica utilisée",
+            'reply' => "C’est fait. « Café » ajouté à la chronologie de Joey, le 11 octobre.",
+        ],
+
+        'features' => [
+            'title' => "Quelques-unes de nos fonctionnalités",
+            'lede' => "Tout le nécessaire pour noter ce qui se passe dans votre vie",
+            'reminders' => [
+                'title' => "Les anniversaires, avant qu’il soit trop tard.",
+                'body' => "Des rappels pour les dates, les appels et les promesses. Par e-mail, à l’heure.",
+                'rows' => [
+                    ['name' => "Rachel Green", 'what' => "anniversaire", 'when' => "dans 23 jours"],
+                    ['name' => "Chandler Bing", 'what' => "rappeler au sujet de Thanksgiving", 'when' => "demain"],
+                    ['name' => "Joey Tribbiani", 'what' => "rembourser le loyer", 'when' => "six ans de retard"],
+                ],
+            ],
+            'relationships' => [
+                'title' => "Qui est qui, et qui est à qui.",
+                'body' => "Arbres généalogiques, ex, parrains et marraines. Écrits comme des phrases.",
+                'sentences' => [
+                    ["Monica est la sœur de ", "Ross", "."],
+                    ["Ross est le homard de ", "Rachel", "."],
+                    ["Joey est le colocataire de ", "tout le monde", "."],
+                ],
+            ],
+            'gifts' => [
+                'title' => "Des idées cadeaux, notées en juillet.",
+                'body' => "Pour que décembre ne tourne pas à la panique.",
+                'ideas' => ["Un baby-foot", "Ce livre sur les dinosaures"],
+                'crossed' => "Une liste de pour et de contre",
+            ],
+            'notes' => [
+                'title' => "Des notes que vous retrouvez.",
+                'body' => "Cherchez dans toutes les notes, sur chaque personne.",
+                'query' => "allergique",
+                'who' => "Ross :",
+                'match' => "allergique aux kiwis. Monica l’oublie tout le temps.",
+            ],
+            'details' => [
+                'title' => "Se souvient du poussin et du canard.",
+                'body' => "Animaux, enfants, métiers, préférences alimentaires. Les détails qui comptent.",
+                'fields' => [
+                    ['label' => "Animaux", 'value' => "Un poussin et un canard"],
+                    ['label' => "Café", 'value' => "Central Perk, tous les jours"],
+                ],
+            ],
+            'vaults' => [
+                'title' => "Un coffre pour chaque cercle.",
+                'body' => "Famille, amis, travail. Bien séparés, partagés avec qui vous invitez.",
+                'vaults' => [
+                    ['name' => "Famille", 'count' => "24 personnes"],
+                    ['name' => "Amis", 'count' => "61 personnes"],
+                    ['name' => "Central Perk", 'count' => "6 personnes"],
+                ],
             ],
         ],
 
-        'whyPay' => [
-            'title' => "Pourquoi payer si Monica est open source ?",
-            'body' => "L’open source vous permet d’exécuter, d’inspecter, de modifier Monica et d’y contribuer. Il ne fait pas disparaître les serveurs, les sauvegardes, l’envoi d’e-mails, le travail de sécurité ni le support.",
-            'body2' => "Un abonnement hébergé paie l’infrastructure qui fait tourner votre compte et finance le développement continu de Monica pour tout le monde, y compris pour celles et ceux qui l’auto-hébergent.",
-            'quote' => "Vous nous payez pour faire tourner Monica, pas pour déverrouiller vos propres données.",
-            'aside' => "Un serveur, c’est un ordinateur qui envoie des factures.",
-        ],
-
-        'noCharge' => [
-            'title' => "Ce que nous ne facturons pas",
-            'items' => [
-                ['title' => "Plus de contacts", 'body' => "Votre tarif n’augmente pas parce que vous connaissez plus de monde."],
-                ['title' => "Plus de rappels", 'body' => "Se souvenir des anniversaires est déjà assez stressant."],
-                ['title' => "L’export des données", 'body' => "Repartir avec vos données est un droit, pas une option payante."],
-                ['title' => "La confidentialité", 'body' => "Nous ne vendons pas d’option vie privée. La confidentialité est la valeur par défaut."],
-                ['title' => "La résiliation", 'body' => "Aucun frais de résiliation, et aucun appel de rupture protocolaire."],
-                ['title' => "L’utilisation de l’API", 'body' => "L’API fait partie du produit, ce n’est pas une négociation à part."],
+        'privacy' => [
+            'eyebrow' => "Confidentialité",
+            'title' => "Contrairement à tous les autres acteurs du secteur, nous tenons à votre vie privée.",
+            'aside' => "Beaucoup.",
+            'source' => [
+                'title' => "Open source",
+                'body' => "Auditez notre code pour vérifier que nous ne faisons pas de bêtises.",
+                'comment' => "// Ce que nous partageons avec des tiers",
+            ],
+            'trackers' => [
+                'title' => "Ni pub, ni pisteurs, ni conneries",
+                'body' => "Rien à vendre. Personne à qui le vendre.",
+                'label' => "Requêtes vers des tiers",
+                'rows' => ["Publicité", "Statistiques", "Courtiers en données", "Empreinte numérique"],
+            ],
+            'selfHost' => [
+                'title' => "Nous vous conseillons l’auto-hébergement",
+                'body' => "Une seule commande Docker. Votre serveur, vos règles, votre vie privée.",
+                'pulling' => "Téléchargement de l’image… terminé",
+                'running' => "Fonctionne sur votre serveur",
             ],
         ],
 
-        'leaving' => [
-            'title' => "Votre abonnement peut s’arrêter. Votre accès à vos données, non.",
-            'body' => "Vous pouvez exporter vos données à tout moment.",
-            'body2' => "À la résiliation, votre compte reste accessible jusqu’à la fin de la période payée. Ensuite, nous le gardons disponible pendant un délai de grâce défini avant suppression.",
-            'steps' => [
-                ['label' => "Résilier", 'body' => "Votre offre reste active jusqu’à la fin de la période de facturation."],
-                ['label' => "Exporter", 'body' => "Téléchargez vos données avant ou après la résiliation, pendant le délai de grâce."],
-                ['label' => "Supprimer", 'body' => "Supprimez votre compte immédiatement depuis les réglages, quand vous le décidez."],
+        // The prices themselves are not here: the Cloud card reads them from
+        // `pricing.prices`, so the homepage and the pricing page cannot quote
+        // two different numbers.
+        'pricing' => [
+            'badge' => "Sans publicité",
+            'badgeText' => "Vos données sont portables, quelle que soit l’offre.",
+            'title' => "Payez comme vous voulez. Ou pas.",
+            'lede' => "Hébergez-la vous-même gratuitement, ou laissez Monica s’en charger pour vous.",
+            'selfHost' => [
+                'title' => "Auto-hébergement",
+                'price' => "Gratuit",
+                'per' => "pour toujours",
+                'items' => ["Toutes les fonctionnalités, sans limite", "Déploiement Docker en une commande", "Contrôle total de vos données", "Le service informatique, c’est vous"],
+                'cta' => "Lire la documentation",
             ],
-            'note' => "Le délai de grâce, les formats d’export et les délais de suppression sont détaillés dans la politique de conservation.",
-        ],
-
-        'trackRecord' => [
-            'title' => "Open source avant que ce soit une stratégie tarifaire",
-            'body' => "Monica est développée au grand jour depuis 2017.",
-            'body2' => "Le projet a réuni :count étoiles sur GitHub, a été choisi plusieurs fois comme dépôt de la semaine, est arrivé en tête de Product Hunt et a été reconnu par la communauté open source.",
-            'starsLabel' => "Étoiles sur GitHub",
-            'since' => "2017",
-            'sinceLabel' => "Open source depuis",
-            'launch' => "N° 1 du jour",
-            'launchLabel' => "Product Hunt",
-            'featured' => "Dépôt de la semaine",
-            'featuredLabel' => "Mis en avant plusieurs fois",
-            'cta' => "Voir Monica sur GitHub",
+            'cloud' => [
+                'title' => "Cloud",
+                'billingLabel' => "Périodicité de facturation",
+                'monthly' => "Mensuel",
+                'yearly' => "Annuel",
+                'perMonth' => "par mois",
+                'perYear' => "par an",
+                'yearlyNote' => "Deux mois offerts",
+                'lifetime' => "À vie",
+                'once' => "une seule fois",
+                'lifetimeNote' => "Aucun paiement récurrent",
+                'items' => ["Hébergement géré", "Mises à jour et sauvegardes automatiques", "Personnes et coffres illimités", "Résiliable à tout moment"],
+                'cta' => "Commencer avec Monica",
+            ],
         ],
 
         'faq' => [
-            'title' => "Questions sur le paiement de Monica",
+            'title' => "Vos questions, nos réponses.",
             'items' => [
-                ['q' => "Combien coûte Monica ?", 'a' => [
-                    "Monica hébergée coûte 9 USD par mois ou 90 USD par an.",
-                    "Vous pouvez aussi héberger Monica gratuitement sur une infrastructure que vous gérez.",
-                ]],
-                ['q' => "Le prix est-il par utilisateur ou par contact ?", 'a' => "Non. L’offre hébergée a un seul prix par compte et inclut des contacts illimités."],
-                ['q' => "Monica est-elle vraiment open source ?", 'a' => [
-                    "Oui. Le code source de Monica est public, et le projet compte :count étoiles sur GitHub.",
-                    "Monica v3 restera open source et auto-hébergeable.",
-                ], 'link' => ['label' => "En savoir plus sur Monica v3", 'page' => 'v3']],
-                ['q' => "L’auto-hébergement est-il gratuit ?", 'a' => "Monica ne facture pas le logiciel auto-hébergé. Le serveur et les frais d’infrastructure sont à votre charge."],
-                ['q' => "La version hébergée diffère-t-elle de la version auto-hébergée ?", 'a' => [
-                    "Elles utilisent la même application.",
-                    "Le service hébergé comprend l’infrastructure, les mises à jour gérées, les sauvegardes, la supervision, l’envoi d’e-mails et le support. Certaines intégrations qui dépendent de l’infrastructure opérée par Monica peuvent n’exister que sur le service hébergé.",
-                ]],
-                ['q' => "Puis-je passer de l’hébergé à l’auto-hébergé ?", 'a' => "Oui. Vous pouvez exporter vos données Monica et les importer dans une installation auto-hébergée compatible."],
-                ['q' => "Puis-je résilier à tout moment ?", 'a' => "Oui. Résiliez depuis les réglages de votre compte. Votre abonnement reste actif jusqu'à la fin de la période en cours."],
-                ['q' => "Y a-t-il des frais de résiliation ?", 'a' => "Non. Partir ne devrait pas exiger une rançon."],
-                ['q' => "Que se passe-t-il si mon paiement échoue ?", 'a' => [
-                    "Nous vous prévenons et réessayons le paiement avant de restreindre le compte.",
-                    "Vos données ne sont pas supprimées parce qu’une carte a expiré.",
-                ]],
-                ['q' => "Comment fonctionnent les remboursements ?", 'a' => [
-                    "Si vous avez été débité par erreur ou avez oublié de résilier, écrivez-nous dans les 30 jours. Nous examinerons la demande comme des êtres humains raisonnables.",
-                    "Les abonnements annuels peuvent être remboursés dans le délai défini par notre politique de remboursement. Les remboursements ne s’appliquent pas aux comptes ayant gravement abusé du service.",
-                ]],
-                ['q' => "Le prix va-t-il augmenter ?", 'a' => [
-                    "Les prix peuvent évoluer avec Monica, mais nous prévenons les abonnés existants à l’avance.",
-                    "Nous ne changeons pas les prix en silence en espérant que personne ne s’en aperçoive.",
-                ]],
-                ['q' => "Les taxes sont-elles incluses ?", 'a' => "Les prix affichés incluent ou excluent les taxes selon votre pays et la loi applicable. Le montant final est indiqué avant le paiement."],
-                ['q' => "Monica conserve-t-elle mes informations de paiement ?", 'a' => "Les informations de paiement sont traitées par notre prestataire. Monica ne stocke pas les numéros de carte complets."],
-                ['q' => "Mes données servent-elles à la publicité ?", 'a' => "Non. Monica ne vend pas vos données personnelles, n'affiche pas de publicité et n'utilise pas les personnes de votre compte pour construire des profils publicitaires."],
-                ['q' => "Mes données servent-elles à entraîner des modèles d’IA ?", 'a' => "Aucun modèle n'est entraîné sur le contenu privé de votre compte Monica."],
-                ['q' => "Les sauvegardes sont-elles incluses ?", 'a' => [
-                    "Oui, le service hébergé comprend des sauvegardes gérées.",
-                    "Les installations auto-hébergées exigent que vous configuriez et testiez vos propres sauvegardes.",
-                ]],
-                ['q' => "Puis-je tout exporter ?", 'a' => "Vous pouvez exporter contacts, relations, notes, rappels, activités, champs personnalisés et les autres données prises en charge. Les pièces jointes sont incluses selon le format d’export documenté."],
-                ['q' => "Puis-je supprimer mon compte ?", 'a' => "Oui. La suppression du compte se fait depuis les réglages, sans passer par le support."],
-                ['q' => "Proposez-vous des réductions ?", 'a' => "Pas pour l’instant. Nous préférons un prix compréhensible à un système où chacun négocie de son côté."],
-                ['q' => "Proposez-vous une offre à vie ?", 'a' => "Non. Les serveurs continuent d'avoir des dépenses après la fin des campagnes de lancement enthousiastes."],
-                ['q' => "Proposez-vous une offre entreprise ?", 'a' => [
-                    "Aucun rendez-vous commercial n’est nécessaire pour utiliser Monica.",
-                    "Pour les questions de sécurité, d’achats ou d’hébergement en volume, écrivez-nous.",
-                ]],
-                ['q' => "Puis-je payer dans une autre devise ?", 'a' => "La facturation se fait actuellement en USD. Votre banque peut convertir le montant et facturer des frais de change."],
-                ['q' => "S’abonner soutient-il le projet open source ?", 'a' => "Oui. Les abonnements hébergés financent l’infrastructure, la maintenance, le support et le développement open source continu de Monica."],
+                ['q' => "Est-ce un CRM commercial ?", 'a' => "Non. Personne ici n’a de pipeline. Monica est faite pour la famille, les amis et les gens avec qui vous comptez garder le contact."],
+                ['q' => "L’auto-hébergement est-il vraiment gratuit ?", 'a' => "Oui. Toutes les fonctionnalités, sans limite, sous licence AGPL-3.0. Vous fournissez le serveur."],
+                ['q' => "Qui peut voir mes données ?", 'a' => "Vous, et les personnes que vous invitez dans un coffre. Ni publicité, ni traceurs, ni revente de données. En auto-hébergement, elles ne quittent jamais votre serveur."],
+                ['q' => "Puis-je passer du cloud à l’auto-hébergement ?", 'a' => "Oui, dans les deux sens. Exportez tout, importez-le de l’autre côté."],
+                ['q' => "Est-ce que ça marche avec mon agent IA ?", 'a' => "S’il parle MCP, oui. Il existe aussi une API REST complète pour tout le reste."],
+            ],
+        ],
+    ],
+
+    'pricing' => [
+        // The four prices, as a reader sees them. Everything below quotes them
+        // through :free, :monthly, :yearly and :lifetime, and the homepage
+        // reads them from here, so a price change is one edit per language
+        // (plus `plans` in config.php, for the structured data).
+        'prices' => [
+            'free' => "0 $",
+            'monthly' => "9 $",
+            'yearly' => "90 $",
+            'lifetime' => "150 $",
+        ],
+
+        'hero' => [
+            'badge' => "Aucun frais par contact",
+            'badgeText' => "Payez au mois, à l’année, une seule fois, ou jamais.",
+            'title' => "Des tarifs qui se passent de rappel.",
+            'lede' => "Hébergez-la vous-même pour rien. Laissez Monica s’en charger pour :monthly par mois ou :yearly par an. Ou payez :lifetime une fois et n’y pensez plus jamais. Le prix est le même, que vous connaissiez dix personnes ou dix mille.",
+        ],
+
+        'selfHost' => [
+            'eyebrow' => "Première option · gratuite",
+            'title' => "Hébergez-la vous-même. C’est gratuit, et c’est Monica tout entière.",
+            'body' => "Monica est open source. Une seule commande Docker et elle tourne sur votre propre machine : votre serveur, vos règles, toutes les fonctionnalités. Pas d’essai, pas de formule bridée, pas de clé de licence.",
+            'items' => [
+                "Gratuite pour toujours, sous licence AGPL",
+                "Toutes les fonctionnalités de Monica hébergée",
+                "Vos données ne quittent jamais votre matériel",
+                "Les mises à jour quand vous décidez de les récupérer",
+            ],
+            'cta' => "Lire le guide d’auto-hébergement",
+            'terminal' => [
+                'comment' => "# On récupère, on lance, c’est fini.",
+                'pulling' => "Récupération de monica:latest…",
+                'starting' => "Démarrage de la base de données…",
+                'running' => "En service sur http://localhost:8080",
+                'outro' => "# Maintenant, ajoutez votre mère.",
             ],
         ],
 
-        'finalCta' => [
-            'title' => "Votre mémoire a fait assez d’heures non payées.",
-            'body' => "Prenez la version hébergée et laissez-nous gérer l’infrastructure, ou installez Monica sur votre propre serveur.",
-            'body2' => "Dans les deux cas, vos contacts restent des gens, pas des prospects.",
-            'primaryCta' => "Commencer avec Monica",
-            'secondaryCta' => "Auto-héberger Monica",
-            'note' => "Une offre hébergée simple · Auto-hébergement gratuit · Open source",
+        'plans' => [
+            'title' => "Trois façons d’y entrer. Toutes honnêtes.",
+            'lede' => "Faites-la tourner vous-même, payez au fur et à mesure, ou payez une fois. Chaque offre a toutes les fonctionnalités. Vous choisissez seulement qui s’occupe du serveur.",
+            'footnote' => "Prix en USD. Taxes ajoutées au paiement lorsque la loi l’exige. Aucun frais par contact, par rappel ou par coffre, quelle que soit l’offre.",
+
+            'selfHost' => [
+                'title' => "Auto-hébergée",
+                'body' => "Pour celles et ceux qui ont déjà un serveur, ou qui cherchent une excuse pour en avoir un.",
+                'per' => "pour toujours",
+                'items' => [
+                    "Code source complet, AGPL",
+                    "Contacts et coffres illimités",
+                    "Sauvegardes et mises à jour à votre charge",
+                    "Support communautaire",
+                ],
+                'cta' => "Guide d’auto-hébergement",
+            ],
+
+            'hosted' => [
+                'title' => "Hébergée",
+                'badge' => "La plus choisie",
+                'body' => "Pour celles et ceux qui veulent que Monica soit là, tout simplement.",
+                'billingLabel' => "Périodicité de facturation",
+                'monthly' => "Mensuel",
+                'yearly' => "Annuel",
+                'perMonth' => "/ mois",
+                'perYear' => "/ an",
+                'yearlyNote' => "2 mois offerts",
+                'items' => [
+                    "Contacts, rappels et coffres illimités",
+                    "Mises à jour automatiques et sauvegardes quotidiennes",
+                    "Rappels envoyés par e-mail",
+                    "Support par e-mail assuré par de vraies personnes",
+                    "Résiliation à tout moment, export complet",
+                ],
+                'cta' => "Commencer avec Monica",
+            ],
+
+            'lifetime' => [
+                'title' => "À vie",
+                'badge' => "Paiement unique",
+                'body' => "Pour celles et ceux qui préfèrent ne plus jamais y penser.",
+                'per' => "une fois",
+                'items' => [
+                    "Tout ce que propose l’offre hébergée",
+                    "Un seul paiement, aucun renouvellement",
+                    "Toutes les versions futures incluses",
+                    "Passage à l’auto-hébergement quand vous voulez",
+                ],
+                'cta' => "Payer une fois, :lifetime",
+            ],
+        ],
+
+        'calculator' => [
+            'eyebrow' => "Le calculateur de tarif relationnel",
+            'title' => "Combien devrait coûter votre vie sociale ?",
+            'lede' => "Parlez-lui des gens de votre vie. Il pèse onze facteurs profondément personnels et produit un prix juste, sur mesure et parfaitement scientifique.",
+
+            'sliders' => [
+                'people' => ['label' => "Personnes dont vous aimeriez vous souvenir", 'help' => "Dunbar dit 150. Dunbar n’a jamais vu votre belle-famille au complet."],
+                'birthdays' => ['label' => "Anniversaires oubliés l’an dernier", 'help' => "Y compris celui qui vous est revenu à 23 h 48."],
+                'coffee' => ['label' => "Fois où vous avez dit « on se fait un café »", 'help' => "Et puis, pas de café."],
+                'cousins' => ['label' => "Enfants de cousins dont vous ignorez le prénom", 'help' => "Vous savez qu’il y a un Léo. Peut-être deux."],
+                'reminders' => ['label' => "Rappels que vous programmeriez", 'help' => "Monica les envoie tous, sans exception."],
+                'mum' => ['label' => "Appels à votre mère, par mois", 'help' => "Elle l’a remarqué, dans un sens comme dans l’autre."],
+            ],
+
+            'toggles' => [
+                'pretend' => ['label' => "Vous avez déjà fait semblant de vous souvenir d’un prénom", 'help' => "« Ah, salut… toi. »"],
+                'notes' => ['label' => "Vous prenez des notes sur les gens dans votre téléphone", 'help' => "Monica, c’est cette idée, avec les dates en plus."],
+                'dentist' => ['label' => "Vous connaissez le prénom de votre dentiste", 'help' => "Franchement, chapeau."],
+                'belated' => ['label' => "Vous avez déjà souhaité un « joyeux anniversaire en retard »", 'help' => "Tout le monde l’a fait. Certains plus que d’autres."],
+            ],
+
+            'social' => [
+                'label' => "Votre vie sociale",
+                'help' => "Appliquée comme multiplicateur, parce que c’est comme ça que marchent les multiplicateurs.",
+                'options' => [
+                    'hermit' => "Ermite",
+                    'reasonable' => "Raisonnable",
+                    'mayor' => "Maire du village",
+                ],
+            ],
+
+            'quote' => "Votre devis personnalisé",
+            'planLabel' => "Offre",
+            'plans' => [
+                'monthly' => "Mensuel",
+                'yearly' => "Annuel",
+                'lifetime' => "À vie",
+            ],
+
+            // :count is a slider's value, :rate a made-up price per unit.
+            'lines' => [
+                'base' => [
+                    'monthly' => "Monica, au mois",
+                    'yearly' => "Monica, à l’année",
+                    'lifetime' => "Monica, à vie",
+                ],
+                'people' => ":count personnes × :rate",
+                'reminders' => ":count rappels",
+                'birthdays' => ":count anniversaires oubliés × :rate de culpabilité",
+                'coffee' => ":count cafés théoriques × :rate",
+                'cousins' => ":count enfants de cousins anonymes × :rate",
+                'mum' => ":count appels à maman × :rate de crédit",
+                'pretend' => "Supplément pour prénom feint",
+                'notes' => "Migration depuis votre appli de notes",
+                'dentist' => "Bonus de familiarité dentaire",
+                'belated' => "Frais de rattrapage « joyeux anniversaire en retard »",
+                'multiplier' => "Multiplicateur de vie sociale ×:rate",
+                'included' => "inclus",
+                'free' => "gratuit",
+            ],
+
+            'subtotal' => "Sous-total",
+            'refund' => "Tarif relationnel",
+            'refundHelp' => "Ça n’existe pas chez Monica. Retiré intégralement.",
+            'total' => "Votre total",
+            'per' => [
+                'monthly' => "/ mois",
+                'yearly' => "/ an",
+                'lifetime' => "une fois",
+            ],
+
+            'verdicts' => [
+                'birthdays' => ":count anniversaires l’an prochain, tous couverts.",
+                'coffee' => "Allez donc prendre un de ces cafés.",
+                'mum' => "Appelez votre mère. Le devis peut attendre.",
+                'default' => "Le même prix que tout le monde. C’est tout l’intérêt.",
+            ],
+
+            'cta' => "Bloquer ce prix suspect",
+            'reset' => "Tout oublier et recommencer",
+            'footnote' => "Chaque ligne ci-dessus est inventée, sauf le total. Monica coûte le même prix, que vous connaissiez trois personnes ou trois mille, que vous vous souveniez de tous les anniversaires ou d’aucun.",
+        ],
+
+        'promises' => [
+            'people' => [
+                'title' => "Jamais facturé à la personne",
+                'body' => "Rencontrer quelqu’un ne devrait rien vous coûter. Contacts, rappels et coffres sont illimités dans toutes les offres.",
+            ],
+            'export' => [
+                'title' => "Partez avec tout",
+                'body' => "Exportez votre compte entier quand vous voulez, et emportez-le vers une Monica auto-hébergée ou ailleurs. Résilier tient en un bouton.",
+            ],
+            'openSource' => [
+                'title' => "Open source depuis 2017",
+                'body' => "Payer l’hébergement finance les serveurs et les personnes qui continuent de construire Monica, y compris pour tous ceux qui l’hébergent eux-mêmes.",
+            ],
+        ],
+
+        'ninety' => [
+            'eyebrow' => ":yearly en perspective",
+            'title' => "Qu’est-ce qui coûte quatre-vingt-dix dollars ?",
+            'lede' => "Une année de Monica hébergée, à côté de ce qu’on dépense d’habitude après avoir oublié quelque chose.",
+            'about' => "~ :yearly",
+            'items' => [
+                'bouquets' => ['title' => "Trois bouquets d’excuses", 'body' => "Un par anniversaire oublié. Ceux de la station-service, achetés en chemin."],
+                'gift' => ['title' => "Un cadeau en retard, livré en express", 'body' => "L’essentiel du prix, c’est la livraison. La totalité, c’est la culpabilité."],
+                'coffees' => ['title' => "Dix-huit cafés", 'body' => "Ceux que vous deviez prendre. Monica vous rappelle d’en prendre vraiment un."],
+                'streaming' => ['title' => "Six mois d’un service de streaming", 'body' => "Celui dont vous aviez oublié l’abonnement."],
+                'cards' => ['title' => "Une carte pour chaque cousin", 'body' => "Plus les timbres. Plus le temps de retrouver où ils habitent maintenant."],
+                'dinner' => ['title' => "Un dîner pour deux, sans dessert", 'body' => "Celui où vous demandez enfin comment ça va, et où vous écoutez la réponse."],
+                'addressBook' => ['title' => "Un nouveau carnet d’adresses", 'body' => "En cuir, joliment fait, et de nouveau perdu au printemps."],
+                'monica' => ['title' => "Une année à se souvenir de tout le monde", 'body' => "Anniversaires, prénoms des enfants, comment s’est passé l’entretien d’embauche. Ça, c’est Monica."],
+            ],
+            'footnote' => "Prix approximatifs, tirés de l’expérience. Une année de Monica coûte exactement :yearly.",
+        ],
+
+        'faq' => [
+            'eyebrow' => "Questions sur le paiement",
+            'title' => "Questions fréquentes, rarement oubliées.",
+            'intro' => "Chaque réponse commence par la version courte. Ouvrez la longue si la courte a éveillé vos soupçons.",
+            'search' => "Rechercher une question",
+            'categoriesLabel' => "Filtrer les questions par thème",
+            'categories' => [
+                'all' => "Tout",
+                'money' => "Argent",
+                'plans' => "Offres",
+                'selfHosting' => "Auto-hébergement",
+                'data' => "Vos données",
+                'leaving' => "Partir",
+            ],
+            'progress' => [
+                'none' => "0 sur :total lues. Commencez où vous voulez.",
+                'some' => ":count sur :total lues.",
+                'many' => ":count sur :total lues. Vous en savez désormais plus que la plupart des gens qui s’inscrivent.",
+                'all' => "Les :total lues. Vous pourriez répondre au support à notre place.",
+            ],
+            'random' => "Une question au hasard",
+            'emptyTitle' => "Aucune question ne correspond",
+            'emptyBody' => "Essayez un mot plus court, ou écrivez au support. De vraies personnes vous lisent.",
+            'items' => [
+                ['cat' => 'money', 'q' => "Combien coûte Monica ?", 'short' => "Rien, :monthly, :yearly ou :lifetime.", 'a' => "L’auto-hébergement est gratuit. Monica hébergée coûte :monthly par mois ou :yearly par an. L’offre à vie coûte :lifetime, en un seul paiement. Chaque option inclut toutes les fonctionnalités."],
+                ['cat' => 'money', 'q' => "Le prix est-il par utilisateur ou par contact ?", 'short' => "Ni l’un ni l’autre.", 'a' => "Un compte, un prix. Ajoutez autant de contacts, de rappels, de coffres et de notes que vous voulez. Rencontrer de nouvelles personnes ne devrait jamais vous coûter d’argent."],
+                ['cat' => 'money', 'q' => "Les taxes sont-elles incluses ?", 'short' => "Ajoutées au paiement lorsque la loi l’exige.", 'a' => "Si votre pays applique une taxe sur les ventes ou la TVA, elle s’affiche avant le paiement, de sorte que le montant que vous acceptez est celui qui vous est débité."],
+                ['cat' => 'money', 'q' => "Puis-je payer dans une autre devise ?", 'short' => "Les prix sont en dollars américains.", 'a' => "Votre banque convertit le montant au moment du paiement. Le montant en dollars reste le même d’une année sur l’autre."],
+                ['cat' => 'money', 'q' => "Le prix va-t-il augmenter ?", 'short' => "Pas pour l’offre que vous avez déjà.", 'a' => "Si les prix changent pour les nouveaux clients, les abonnements existants gardent leur prix. Nous vous prévenons longtemps à l’avance, par e-mail, avec le chiffre exact."],
+                ['cat' => 'money', 'q' => "Proposez-vous des réductions ?", 'short' => "L’annuel revient deux mois moins cher.", 'a' => "Payer à l’année coûte :yearly au lieu de 108 $. Les étudiants et les associations peuvent écrire au support. L’auto-hébergement reste la plus grosse réduction de toutes : 100 %."],
+                ['cat' => 'plans', 'q' => "Proposez-vous une offre à vie ?", 'short' => "Oui. :lifetime, une seule fois.", 'a' => "L’offre à vie, c’est Monica hébergée sans renouvellement. Elle inclut toutes les versions futures tant que Monica hébergée existe, et vous pouvez passer à l’auto-hébergement à tout moment."],
+                ['cat' => 'plans', 'q' => "La version hébergée diffère-t-elle de la version auto-hébergée ?", 'short' => "C’est la même Monica.", 'a' => "Même code, mêmes fonctionnalités. La seule différence, c’est qui fait tourner le serveur, applique les mises à jour et garde les sauvegardes."],
+                ['cat' => 'plans', 'q' => "Proposez-vous une offre entreprise ?", 'short' => "Non.", 'a' => "Monica est un CRM personnel, pour votre propre vie. Une équipe commerciale sera mieux servie par un outil commercial."],
+                ['cat' => 'selfHosting', 'q' => "Monica est-elle vraiment open source ?", 'short' => "Oui, depuis 2017.", 'a' => "Le code source complet est public, sous licence AGPL. Vous pouvez le lire, l’exécuter, le modifier et y contribuer."],
+                ['cat' => 'selfHosting', 'q' => "L’auto-hébergement est-il gratuit ?", 'short' => "Entièrement.", 'a' => "Pas de clé de licence, pas de fonctionnalité verrouillée, pas d’essai. Vous payez votre propre serveur, si vous en avez un, et votre propre temps."],
+                ['cat' => 'selfHosting', 'q' => "Puis-je passer de l’hébergé à l’auto-hébergé ?", 'short' => "Oui, quand vous voulez.", 'a' => "Exportez votre compte et importez-le dans votre propre Monica. Le format est le même des deux côtés, donc rien ne se perd en route."],
+                ['cat' => 'selfHosting', 'q' => "S’abonner soutient-il le projet open source ?", 'short' => "Directement.", 'a' => "Les revenus de l’hébergement paient les serveurs et les personnes qui continuent de développer Monica, y compris les parties que les auto-hébergeurs utilisent gratuitement."],
+                ['cat' => 'data', 'q' => "Monica conserve-t-elle mes informations de paiement ?", 'short' => "Non.", 'a' => "Les paiements sont traités par le prestataire de paiement. Monica ne voit ni ne conserve jamais votre numéro de carte."],
+                ['cat' => 'data', 'q' => "Mes données servent-elles à la publicité ?", 'short' => "Jamais.", 'a' => "Pas de publicité, pas de traceurs, et aucun tiers ne lit ce que vous écrivez sur votre famille."],
+                ['cat' => 'data', 'q' => "Mes données servent-elles à entraîner des modèles d’IA ?", 'short' => "Non.", 'a' => "Ce que vous écrivez sur les gens de votre vie n’est pas de la matière d’entraînement, ni pour Monica, ni pour quiconque travaille avec Monica."],
+                ['cat' => 'data', 'q' => "Les sauvegardes sont-elles incluses ?", 'short' => "Quotidiennes, sur les offres hébergées.", 'a' => "Les comptes hébergés et à vie sont sauvegardés chaque jour. Sur une Monica auto-hébergée, c’est à vous de planifier les sauvegardes."],
+                ['cat' => 'data', 'q' => "Puis-je tout exporter ?", 'short' => "Tout.", 'a' => "Contacts, notes, rappels, relations, fichiers. L’export est disponible dans toutes les offres, y compris après la résiliation."],
+                ['cat' => 'leaving', 'q' => "Puis-je résilier à tout moment ?", 'short' => "Oui, en un bouton.", 'a' => "Pas d’appel téléphonique, pas de formulaire pour vous retenir. Votre compte reste utilisable jusqu’à la fin de la période payée."],
+                ['cat' => 'leaving', 'q' => "Y a-t-il des frais de résiliation ?", 'short' => "Non.", 'a' => "Résilier ne coûte rien. Revenir non plus."],
+                ['cat' => 'leaving', 'q' => "Que se passe-t-il si mon paiement échoue ?", 'short' => "Rien ne disparaît.", 'a' => "Vous recevez un e-mail et disposez d’un délai de grâce pour mettre à jour votre carte. Vos données restent exactement où elles étaient."],
+                ['cat' => 'leaving', 'q' => "Comment fonctionnent les remboursements ?", 'short' => "Demandez dans les 30 jours.", 'a' => "Si Monica n’est pas faite pour vous, écrivez au support dans les 30 jours suivant le paiement, et il vous est intégralement remboursé."],
+                ['cat' => 'leaving', 'q' => "Puis-je supprimer mon compte ?", 'short' => "Oui, définitivement.", 'a' => "Supprimer votre compte efface vos données des serveurs. Les sauvegardes qui les contiennent expirent selon leur calendrier habituel."],
+            ],
         ],
     ],
 
@@ -884,18 +979,1450 @@ return [
         ],
     ],
 
+    /**
+     * The people in the drawings on the feature pages. Every drawing reads a
+     * name from here, so a name is spelled one way per language.
+     * `listSeparator` joins a list of names in running text.
+     */
+    'cast' => [
+        'rachel' => ['first' => "Rachel", 'full' => "Rachel Green"],
+        'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
+        'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
+        'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
+        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
+    ],
+    'listSeparator' => ", ",
+
+    /**
+     * The templates page, "Your contacts, your way". Every picture on it is a
+     * drawing of the product, so each one carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The field names and field types are shared by several drawings, so they
+     * are written once under `fields` and `types`.
+     */
+    'templates' => [
+        'fields' => [
+            'cake' => "Gâteau préféré",
+            'cannotEat' => "Ne mange pas",
+            'coffee' => "Commande de café",
+            'shoeSize' => "Pointure",
+            'nameDay' => "Fête du prénom",
+            'giftIdeas' => "Idées de cadeaux",
+            'idea' => "Idée",
+            'given' => "Déjà offert",
+            'howWeMet' => "Notre rencontre",
+        ],
+        'types' => [
+            'shortText' => "Texte court",
+            'longText' => "Texte long",
+            'number' => "Nombre",
+            'multipleChoice' => "Choix multiple",
+            'recurringDate' => "Date récurrente",
+            'repeater' => "Groupe répétable",
+            'checkbox' => "Case à cocher",
+        ],
+        'section' => "Petites choses à retenir",
+        'addField' => "Ajouter un champ",
+        'fieldCount' => ":count champs",
+        'publish' => "Publier cette version",
+        'draft' => "Brouillon",
+        'published' => "Publiée",
+        'friends' => "Amis",
+
+        'hero' => [
+            'title' => "Vos contacts, à votre façon.",
+            'lede' => "Retenez ce qui compte pour vous. Créez des modèles de contact avec vos propres champs, sections et onglets, pour que la fiche de chaque personne ait la place des détails que vous voulez garder.",
+            'cta' => "Créer votre compte",
+            'label' => "La fiche de contact de Rachel Green dans Monica, ouverte sur l’onglet Petites choses, à côté de la section du modèle Amis qui donne ses champs à la fiche.",
+            'meta' => "Modèle Amis · ajouté il y a 3 ans",
+            'tabs' => ["Général", "Moyens de contact", "Petites choses", "Projets"],
+            'values' => [
+                'cake' => "Cheesecake de Mama’s Little Bakery, à Chicago",
+                'cannotEat' => ["Homard", "Oignon cru"],
+                'coffee' => "Latte, au Central Perk",
+                'shoeSize' => "38",
+            ],
+            'story' => "Entrée en trombe au Central Perk, trempée, en robe de mariée, le jour où elle a plaqué Barry devant l’autel. Elle a emménagé le soir même.",
+            'behind' => "Le modèle derrière cette fiche",
+        ],
+
+        'birthday' => [
+            'title' => "Un anniversaire, c’est utile. Connaître son gâteau préféré aussi.",
+            'body' => "Un carnet d’adresses garde des numéros de téléphone. Vous aimeriez peut-être aussi retenir comment vous vous êtes rencontrés, ce qu’une personne cherche à accomplir, ou ce qu’elle ne peut pas manger.",
+            'close' => "Avec Monica, vous choisissez ce qui figure sur vos fiches de contact.",
+            'label' => "Une entrée de carnet d’adresses avec un numéro de téléphone et un anniversaire, et la fiche de Ross Geller dans Monica, qui contient aussi son gâteau préféré, comment vous vous êtes rencontrés, ce qu’il cherche à accomplir et ce qu’il ne peut pas manger.",
+            'addressBook' => "Un carnet d’adresses",
+            'rows' => [
+                ['label' => "Téléphone", 'value' => "+1 212 555 0174"],
+                ['label' => "Anniversaire", 'value' => "18 octobre 1967"],
+            ],
+            'monica' => [
+                ['label' => "Anniversaire", 'value' => "18 octobre · dans trois semaines"],
+                ['label' => "Gâteau préféré", 'value' => "Carrot cake, double ration de noix"],
+                ['label' => "Notre rencontre", 'value' => "Le frère de Monica, à l’université"],
+                ['label' => "Objectif", 'value' => "La titularisation à NYU"],
+                ['label' => "Ne mange pas", 'value' => ["Kiwi", "Homard"]],
+            ],
+        ],
+
+        'people' => [
+            'title' => "Des personnes différentes. Des détails différents.",
+            'close' => "Créez des modèles différents pour les personnes de votre vie. Chacun peut avoir sa propre structure.",
+            'cards' => [
+                [
+                    'title' => "Amis",
+                    'body' => "Leurs choses préférées, leurs projets pour l’été et l’histoire de votre rencontre.",
+                    'label' => "Une fiche de contact construite à partir d’un modèle Amis, avec les onglets Préférences, Été et Notre histoire.",
+                    'tabs' => ["Préférences", "Été", "Notre histoire"],
+                    'rows' => [
+                        ['label' => "Groupe", 'value' => "Khruangbin"],
+                        ['label' => "Livre", 'value' => "Les Vestiges du jour"],
+                        ['label' => "Projet d’été", 'value' => "La Loire à vélo, en juillet"],
+                    ],
+                ],
+                [
+                    'title' => "Famille",
+                    'body' => "Les traditions qui leur tiennent à cœur, les dates importantes et la recette qu’ils promettent toujours d’envoyer.",
+                    'label' => "Une fiche de contact construite à partir d’un modèle Famille, avec les onglets Traditions, Dates et Recettes.",
+                    'tabs' => ["Traditions", "Dates", "Recettes"],
+                    'rows' => [
+                        ['label' => "Réveillon de Noël", 'value' => "Huîtres, puis messe de minuit"],
+                        ['label' => "Fête du prénom", 'value' => "26 juillet"],
+                        ['label' => "Recette promise", 'value' => "Le clafoutis de mamie"],
+                    ],
+                ],
+                [
+                    'title' => "Contacts professionnels",
+                    'body' => "Leur domaine d’expertise, l’endroit où vous avez échangé pour la première fois et le sujet que vous vouliez reprendre la prochaine fois.",
+                    'label' => "Une fiche de contact construite à partir d’un modèle pour les contacts professionnels, avec les onglets Travail, Moyens de contact et Prochaine fois.",
+                    'tabs' => ["Travail", "Moyens de contact", "Prochaine fois"],
+                    'rows' => [
+                        ['label' => "Expertise", 'value' => "Chaînes logistiques dans la grande distribution alimentaire"],
+                        ['label' => "Premier échange", 'value' => "Lyon, lors d’une table ronde sur la logistique"],
+                        ['label' => "À reprendre", 'value' => "Son projet pilote de chaîne du froid"],
+                    ],
+                ],
+            ],
+        ],
+
+        'room' => [
+            'title' => "Faites de la place à ce qui compte.",
+            'body' => [
+                "Ajoutez des champs pour du texte, des dates, des nombres ou un choix dans une liste. Donnez-leur des noms qui ont du sens pour vous.",
+                "Regroupez les champs liés en sections, répartissez ces sections en onglets et mettez le tout dans l’ordre que vous préférez. Pour les détails qui reviennent en plusieurs exemplaires, utilisez un groupe répétable.",
+            ],
+            'close' => "Une section « Petites choses à retenir » ? Tout à fait raisonnable.",
+            'label' => "L’éditeur de modèles dans Monica, avec un brouillon du modèle Amis ouvert sur sa page Petites choses. Le champ Ne mange pas est sélectionné, et le panneau à côté affiche son nom, son type et sa liste de choix.",
+            'version' => "v2 · basée sur v1",
+            'saved' => "Enregistré il y a 4 secondes",
+            'import' => "Importer une section",
+            'pages' => [
+                ['name' => "Général", 'count' => 5],
+                ['name' => "Petites choses", 'count' => 6],
+                ['name' => "Projets", 'count' => 3],
+            ],
+            'addPage' => "Ajouter une page",
+            'field' => "Champ",
+            'name' => "Nom",
+            'type' => "Type",
+            'choices' => "Choix",
+            'choiceList' => ["Cacahuètes", "Gluten", "Crustacés", "Produits laitiers", "Oignon cru"],
+            'addChoice' => "Ajouter un choix",
+            'note' => "Ce que vous modifiez s’applique uniquement à ce brouillon.",
+        ],
+
+        'reuse' => [
+            'title' => "Construisez-le une fois. Réutilisez-le.",
+            'body' => [
+                "Un modèle donne la même structure à plusieurs fiches de contact. Chaque personne garde ses propres informations.",
+                "Ajoutez « Notre rencontre » à votre modèle Amis, et vous avez un endroit pour une histoire différente sur la fiche de chaque ami. Choisissez un modèle par défaut pour chaque coffre afin de donner aux nouveaux contacts le bon point de départ.",
+            ],
+            'label' => "Un seul champ Notre rencontre dans le modèle Amis, rempli avec une histoire différente sur les fiches de trois amis, et le modèle Amis choisi par défaut pour les nouveaux contacts du coffre Amis.",
+            'template' => "Modèle Amis",
+            'stories' => [
+                'rachel' => "Entrée au Central Perk en robe de mariée.",
+                'ross' => "Le frère de Monica, à l’université.",
+                'joey' => "A répondu à l’annonce pour la chambre libre de Chandler.",
+            ],
+            'default' => "Modèle par défaut",
+            'defaultBody' => "Les nouveaux contacts du coffre Amis commencent ici",
+        ],
+
+        'versions' => [
+            'title' => "Changez d’avis sans perdre vos notes.",
+            'body' => [
+                "Vous voudrez peut-être ajouter un détail, renommer un champ ou déplacer une section. Vos modèles peuvent évoluer avec vous.",
+                "Préparez un brouillon et publiez-le quand il est prêt. Les contacts existants restent sur leur version actuelle tant que vous ne choisissez pas de les mettre à jour.",
+                "Retirez un champ d’un modèle, et les informations déjà saisies sont conservées. Vous pouvez toujours les retrouver, et elles reviennent sur la fiche si vous remettez le champ.",
+            ],
+            'label' => "L’historique des versions d’un modèle, avec un brouillon v3 en attente de publication pendant que 34 contacts restent sur la v2, et la fiche de Rachel Green qui conserve sa pointure issue d’un champ retiré, avec un bouton pour remettre le champ.",
+            'history' => "Historique des versions",
+            'rows' => [
+                ['version' => "v3", 'text' => "Ajout de « Fête du prénom », « Allergies » renommé en « Ne mange pas »", 'status' => 'draft'],
+                ['version' => "v2", 'text' => "Publiée le 2 juin · 34 contacts", 'status' => 'published'],
+                ['version' => "v1", 'text' => "Publiée le 9 janvier · 3 contacts", 'status' => null],
+            ],
+            'notice' => "La publication de la v3 laisse 34 contacts sur la v2 jusqu’à ce que vous les mettiez à jour.",
+            'values' => [
+                'cake' => "Cheesecake de Mama’s Little Bakery",
+                'coffee' => "Latte, au Central Perk",
+            ],
+            'kept' => "Conservé depuis un champ retiré",
+            'restore' => "Remettre le champ",
+        ],
+
+        'share' => [
+            'title' => "Partagez le modèle. Gardez les détails pour vous.",
+            'body' => [
+                "Vous avez créé quelque chose d’utile ? Exportez un modèle entier ou une seule section pour que quelqu’un d’autre l’importe dans son compte.",
+                "Le fichier contient la structure que vous avez construite, avec ses libellés et ses listes de choix. Vos contacts et leurs informations restent chez vous.",
+            ],
+            'label' => "Export de la section Petites choses à retenir. Le fichier contient la section, les libellés et les types de ses six champs et la liste de choix Ne mange pas. Vos 34 contacts et tout ce qui est écrit sur leurs fiches restent chez vous.",
+            'export' => "Exporter cette section",
+            'inFile' => "Dans le fichier",
+            'inFileItems' => ["La section et son nom", "6 libellés et types de champs", "La liste de choix « Ne mange pas »"],
+            'stays' => "Reste chez vous",
+            'staysItems' => ["Vos 34 contacts", "Tout ce qui est écrit sur leurs fiches"],
+            'file' => "petites-choses-a-retenir.json · 3 Ko",
+            'download' => "Télécharger",
+        ],
+
+    ],
+
+    /**
+     * The details page, "Remember the details that matter". Every picture on
+     * it is a drawing of the product, so each one carries a `label` that a
+     * screen reader reads instead of the drawing itself. The people are the
+     * Friends characters, whose names are not translated and live in the
+     * partials.
+     */
+    'details' => [
+        'hero' => [
+            'title' => "Retenez les détails qui comptent.",
+            'lede' => "Son numéro est dans votre téléphone. Le prénom de son nouveau compagnon, son plat préféré et ce qu’elle vous a raconté la dernière fois sont plus difficiles à retrouver.",
+            'close' => "Gardez ces détails ensemble dans Monica, prêts pour la prochaine conversation.",
+            'cta' => "Créer votre compte",
+            'label' => "La fiche de contact de Rachel Green dans Monica, ouverte sur l’onglet Général. Son compagnon s’appelle Joshua, son plat préféré est la lasagne de Monica sans bœuf, et elle travaille aux achats chez Bloomingdale’s. Une note d’il y a six jours indique qu’elle a un entretien à Paris le mois prochain.",
+            'vault' => "Personnel",
+            'people' => "Personnes",
+            'meta' => [
+                ['label' => "Catégorie", 'value' => "Amis"],
+                ['label' => "Anniversaire", 'value' => "5 mai · dans trois semaines"],
+                ['label' => "Dernier contact", 'value' => "il y a six jours"],
+            ],
+            'edit' => "Modifier le contact",
+            'tabs' => ["Aperçu", "Général", "Moyens de contact", "Relations"],
+            'personal' => "Informations personnelles",
+            'rows' => [
+                ['label' => "Compagnon", 'value' => "Joshua, depuis février"],
+                ['label' => "Plat préféré", 'value' => "La lasagne de Monica, sans bœuf"],
+                ['label' => "Travaille chez", 'value' => "Bloomingdale’s, aux achats"],
+            ],
+            'lastTime' => "Ce qu’elle vous a dit la dernière fois",
+            'note' => "Entretien à Paris le mois prochain, pour un poste chez Louis Vuitton. N’en a pas encore parlé à son père. Cherche un appartement près du Marais.",
+            'added' => "Ajouté il y a six jours",
+        ],
+
+        'audition' => [
+            'title' => "« Comment s’est passée l’audition ? »",
+            'body' => [
+                "Joey a parlé d’une audition la semaine dernière. Vous vous souvenez que c’était important pour lui. Avoir ce détail sur sa fiche vous donne un point de départ pour reprendre la conversation.",
+                "Gardez une trace de ce que les gens vous racontent : un nouveau travail, un déménagement à venir, un projet dont ils ne cessent de parler.",
+            ],
+            'label' => "Deux notes sur la fiche de Joey Tribbiani : une audition jeudi pour une série médicale, et un départ de l’appartement d’ici la fin de l’été. En dessous, un rappel prévu aujourd’hui pour demander à Joey comment s’est passée l’audition.",
+            'notes' => "Notes",
+            'entries' => [
+                ['text' => "Audition jeudi pour un rôle dans une série médicale. Deuxième rappel. Il répète la scène des larmes sur le toit.", 'added' => "Ajouté il y a 8 jours"],
+                ['text' => "Quitte l’appartement d’ici la fin de l’été. Cherche du côté du Queens.", 'added' => "Ajouté il y a 3 semaines"],
+            ],
+            'reminder' => "Demander à Joey comment s’est passée l’audition",
+            'today' => "Aujourd’hui",
+            'remembered' => "J’y ai pensé",
+            'forgot' => "J’ai oublié",
+        ],
+
+        'little' => [
+            'title' => "Les petites choses méritent une place.",
+            'lead' => "Les fleurs préférées de Rachel. Comment Chandler prend son café. Le nom du dernier projet de recherche de Ross.",
+            'body' => "Certains détails sont utiles. D’autres vous rappellent simplement qui est quelqu’un. Gardez-en autant ou aussi peu que vous voulez, avec vos propres mots.",
+            'cards' => [
+                ['field' => "Fleurs préférées", 'value' => "Des pivoines. Jamais de lys.", 'note' => "Les blanches, chez le fleuriste de la 6e Avenue.", 'label' => "Les fleurs préférées de Rachel Green : des pivoines, jamais de lys. Les blanches, chez le fleuriste de la 6e Avenue."],
+                ['field' => "Café", 'value' => "Noir, deux sucres", 'note' => "Dans la tasse orange, si elle est propre.", 'label' => "Comment Chandler Bing prend son café : noir, deux sucres, dans la tasse orange si elle est propre."],
+                ['field' => "Projet de recherche", 'value' => "Les couches sédimentaires du Crétacé supérieur", 'note' => "Lui demander des nouvelles des fouilles au Montana. Prévoir vingt minutes.", 'label' => "Le projet de recherche de Ross Geller : les couches sédimentaires du Crétacé supérieur. Lui demander des nouvelles des fouilles au Montana, et prévoir vingt minutes."],
+            ],
+        ],
+
+        'own' => [
+            'title' => "Donnez à chaque personne sa propre fiche.",
+            'body' => [
+                "Gardez ensemble les coordonnées, les dates importantes et les informations personnelles. Ajoutez une photo, et organisez le reste avec un modèle adapté à ce que vous voulez retenir.",
+                "Ouvrez la fiche de Monica Geller avant le dîner pour vérifier son adresse, son anniversaire ou le plat que vous avez promis d’apporter.",
+            ],
+            'label' => "La fiche de contact de Monica Geller dans Monica : son adresse et son numéro de téléphone, son anniversaire et son anniversaire de mariage, et une note d’hier sur le dessert que vous avez promis d’apporter au dîner de vendredi.",
+            'meta' => [
+                ['label' => "Catégorie", 'value' => "Amis"],
+                ['label' => "Anniversaire", 'value' => "22 avril"],
+                ['label' => "Rappels", 'value' => "1 aujourd’hui"],
+            ],
+            'connect' => [
+                'title' => "Moyens de contact",
+                'rows' => [
+                    ['label' => "Adresse", 'value' => "90 Bedford Street, Apt 20\nNew York, NY 10014"],
+                    ['label' => "Téléphone", 'value' => "+1 212 555 0187"],
+                ],
+            ],
+            'dates' => [
+                'title' => "Dates importantes",
+                'rows' => [
+                    ['label' => "Anniversaire", 'value' => "22 avril 1969"],
+                    ['label' => "Mariage", 'value' => "15 mai, avec Chandler"],
+                ],
+            ],
+            'dinner' => [
+                'title' => "Dîner de vendredi",
+                'text' => "Vous avez promis d’apporter le dessert. Pas le trifle. Elle a déjà dressé une liste des options acceptables.",
+                'added' => "Ajouté hier",
+            ],
+        ],
+
+        'people' => [
+            'title' => "Faites de la place pour leurs proches.",
+            'lead' => "Se souvenir de quelqu’un, c’est souvent se souvenir aussi de ses proches.",
+            'body' => "Reliez Ross à Monica, sa sœur, à Rachel, son ancienne compagne, et à Emma, sa fille. Quand vous savez que quelqu’un existe sans l’avoir encore rencontré, vous pouvez noter le lien avec juste un prénom, ou même sans.",
+            'label' => "Les relations de Ross Geller dans Monica. Famille : Monica, sa sœur, et Emma, sa fille. Ancienne compagne : Rachel. Pas encore rencontrés : Charlie, une collègue dont on ne connaît que le prénom, et un cousin de Long Island dont on ne connaît pas le nom.",
+            'heading' => "Les proches de Ross Geller",
+            'add' => "Ajouter",
+            'groups' => [
+                ['title' => "Famille", 'people' => [
+                    ['name' => "Monica Geller", 'detail' => "Monica est la sœur de Ross."],
+                    ['name' => "Emma Geller-Green", 'detail' => "Emma est la fille de Ross."],
+                ]],
+                ['title' => "Ancienne compagne", 'people' => [
+                    ['name' => "Rachel Green", 'detail' => "Rachel est l’ancienne compagne de Ross."],
+                ]],
+                ['title' => "Pas encore rencontrés", 'people' => [
+                    ['name' => "Charlie", 'detail' => "Collègue de Ross · juste un prénom", 'known' => false],
+                    ['name' => "Nom inconnu", 'detail' => "Le cousin de Ross, de Long Island", 'known' => false, 'named' => false],
+                ]],
+            ],
+        ],
+
+        'moments' => [
+            'title' => "Gardez les moments à côté des détails.",
+            'body' => [
+                "Une fiche de contact peut contenir à la fois les faits du quotidien et ce qui s’est passé.",
+                "Notez un dîner avec Phoebe, un appel avec Chandler ou un voyage avec toute la bande. Ajoutez tous ceux qui étaient là, et l’événement apparaît dans la chronologie de chacun.",
+            ],
+            'close' => "La prochaine fois que vous vous voyez, vous savez où reprendre la dernière conversation.",
+            'label' => "Une chronologie dans Monica avec trois entrées pour 2026 : un dîner avec Phoebe le 3 octobre, un appel avec Chandler le 21 septembre, et un week-end à Montauk le 14 août avec Ross, Rachel, Monica, Chandler et Joey. À côté, le week-end à Montauk apparaît dans la chronologie de chacun des cinq.",
+            'timeline' => "Chronologie",
+            'year' => "2026",
+            'addEvent' => "Ajouter un événement",
+            'entries' => ":count entrées",
+            'events' => [
+                ['title' => "Dîner avec Phoebe", 'date' => "3 octobre", 'body' => "Le restaurant thaï de Grove Street. Elle écrit de nouveau des chansons sur son taxi."],
+                ['title' => "Appel avec Chandler", 'date' => "21 septembre", 'body' => "Quarante minutes. Il pense quitter son poste en reconfiguration de données."],
+                ['title' => "Un week-end à Montauk", 'date' => "14 août", 'body' => "La maison sur la plage, louée de nouveau. Joey a perdu les clés de la voiture dans le sable."],
+            ],
+            'with' => "Avec :names",
+            'onTimelines' => "Dans :count chronologies",
+        ],
+
+        'cta' => [
+            'title' => "Vous n’avez pas besoin de tout retenir.",
+            'body' => "Commencez par une personne et quelques détails que vous aimeriez garder. Ajoutez-en d’autres dès que quelque chose vous semble digne d’être retenu.",
+            'button' => "Créer votre compte",
+        ],
+    ],
+
+    'reminders' => [
+        // Words more than one drawing uses.
+        'remembered' => "J’y ai pensé",
+        'forgot' => "J’ai oublié",
+        'overdue' => "En retard",
+        'today' => "Aujourd’hui",
+        'add' => "Ajouter un rappel",
+        'day' => "Jour",
+        'at' => "À",
+        'timeZone' => "Fuseau horaire",
+        'repeats' => "Répétition",
+        'says' => "Message",
+        'optional' => "facultatif",
+
+        'hero' => [
+            'title' => "Pensez à donner des nouvelles.",
+            'lede' => "Un anniversaire. Un grand jour. Un ami que vous voulez appeler depuis un moment.",
+            'close' => "Programmez un rappel dans Monica et recevez un petit signal le moment venu.",
+            'cta' => "Créer votre compte",
+            'label' => "Les rappels d’une coffre Personnel dans Monica, trois cette semaine. En retard : appeler Phoebe, il y a deux jours, avec des boutons pour répondre J’y ai pensé ou J’ai oublié. Dans les sept prochains jours : demander à Joey comment s’est passée l’audition, mardi, et l’anniversaire de Chandler dans cinq jours. À côté, l’e-mail que Monica envoie mardi à 09:00 pour vous rappeler de penser à Joey, avec un bouton pour ouvrir sa fiche.",
+            'vault' => "Personnel",
+            'count' => "3 rappels cette semaine",
+            'overdueTitle' => "En retard",
+            'overdue' => [
+                ['text' => "Appeler Phoebe", 'when' => "il y a 2 jours"],
+            ],
+            'upcomingTitle' => "Sept prochains jours",
+            'upcoming' => [
+                ['text' => "Demander à Joey comment s’est passée l’audition.", 'when' => "mardi"],
+                ['text' => "Anniversaire de Chandler", 'when' => "dans 5 jours"],
+            ],
+            'inbox' => "Dans votre boîte de réception, mardi 09:00",
+            'from' => "De la part de Monica",
+            'email' => "Vous avez demandé qu’on vous parle de Joey Tribbiani aujourd’hui.",
+            'open' => "Ouvrir la fiche de Joey",
+        ],
+
+        'once' => [
+            'title' => "L’audition de Joey a lieu mardi.",
+            'lead' => "Vous ne pouvez pas lui obtenir le rôle. Vous pouvez penser à lui demander comment ça s’est passé.",
+            'body' => "Ajoutez un rappel sur la fiche de Joey, choisissez le jour et l’heure, et écrivez ce que Monica doit vous dire : « Demander à Joey comment s’est passée l’audition. »",
+            'label' => "L’ajout d’un rappel sur la fiche de Joey Tribbiani dans Monica : le mardi 14 octobre à 18:00, il dira « Demander à Joey comment s’est passée l’audition. » Il n’a lieu qu’une fois.",
+            'heading' => "Ajouter un rappel pour Joey",
+            'day' => "mardi 14 octobre",
+            'at' => "18:00",
+            'says' => "Demander à Joey comment s’est passée l’audition.",
+            'summary' => "Rappel le :when, une seule fois.",
+            'when' => "mardi 14 octobre à 18:00",
+            'cancel' => "Annuler",
+        ],
+
+        'yearly' => [
+            'title' => "Certaines dates reviennent chaque année.",
+            'body' => "Enregistrez l’anniversaire de Chandler et activez un rappel pour cette date. Monica vous le rappellera le jour même, chaque année.",
+            'close' => "Si vous corrigez la date plus tard, le rappel suit.",
+            'label' => "L’anniversaire de Chandler Bing dans Monica, le 8 avril 1968, avec un rappel activé pour cette date. Il se répète chaque année à 09:00, heure de New York, et dira « Anniversaire de Chandler ». Le prochain aura lieu le 8 avril 2027.",
+            'birthday' => "Anniversaire",
+            'date' => "8 avril 1968",
+            'noYear' => "Je ne connais pas l’année",
+            'remind' => "Me rappeler cette date",
+            'repeats' => "Chaque année",
+            'at' => "09:00",
+            'zone' => "New York",
+            'says' => "Anniversaire de Chandler",
+            'summary' => "Prochain rappel le :when, le jour même.",
+            'when' => "8 avril 2027 à 09:00",
+        ],
+
+        'habit' => [
+            'title' => "Faites de la prise de nouvelles une habitude.",
+            'lead' => "Appeler Phoebe tous les mois. Prendre des nouvelles de Rachel toutes les trois semaines.",
+            'body' => "Un rappel peut n’avoir lieu qu’une fois, ou revenir toutes les quelques semaines, tous les quelques mois ou tous les quelques ans. Choisissez le rythme qui convient à chaque personne.",
+            'label' => "Deux rappels récurrents dans Monica : appeler Phoebe, tous les mois, prochain le 3 novembre, et prendre des nouvelles de Rachel, toutes les trois semaines, prochain le 24 octobre. À côté, le menu qui choisit la répétition d’un rappel, réglé sur toutes les 3 semaines.",
+            'rows' => [
+                ['text' => "Appeler Phoebe", 'detail' => "3 novembre · dans trois semaines · Tous les mois"],
+                ['text' => "Prendre des nouvelles de Rachel", 'detail' => "24 octobre · dans onze jours · Toutes les 3 semaines"],
+            ],
+            'options' => ["Une fois", "Toutes les semaines", "Toutes les 3 semaines", "Tous les mois", "Tous les ans"],
+            // The option drawn as chosen, counted from zero.
+            'chosen' => 2,
+        ],
+
+        'zone' => [
+            'title' => "Votre heure, où qu’ils soient.",
+            'lead' => "Chaque rappel a sa propre heure et son propre fuseau horaire.",
+            'body' => "Si Ross est à Londres, vous pouvez caler un rappel sur sa journée. Il garde ce fuseau horaire même si vous voyagez ou modifiez vos propres réglages.",
+            'label' => "Un rappel dans Monica pour souhaiter bonne chance à Ross Geller pour sa conférence, le jeudi 23 octobre à 08:30, heure de Londres. Il est 08:30 pour Ross à Londres et 03:30 pour vous à New York.",
+            'heading' => "Souhaiter bonne chance à Ross pour sa conférence",
+            'day' => "jeudi 23 octobre",
+            'at' => "08:30",
+            'zone' => "Londres",
+            'them' => "Ross à Londres",
+            'you' => "Vous à New York",
+            'yours' => "03:30",
+        ],
+
+        'channels' => [
+            'title' => "Choisissez comment le rappel vous parvient.",
+            'lead' => "Recevez vos rappels par e-mail ou pendant que vous utilisez Monica.",
+            'body' => "Telegram et les SMS sont aussi disponibles lorsqu’ils sont activés sur votre instance Monica. Choisissez les canaux qui vous conviennent, et envoyez-vous un test pour vérifier qu’ils sont connectés.",
+            'label' => "Les paramètres de notification dans Monica. L’e-mail est connecté, avec un bouton pour envoyer un test. Les notifications dans Monica sont activées. Telegram et les SMS sont activés sur cette instance, chacun avec un bouton pour se connecter.",
+            'heading' => "Notifications",
+            'sub' => "Où vos rappels vous parviennent",
+            'rows' => [
+                ['name' => "E-mail", 'detail' => "monica@geller.example", 'status' => "Connecté", 'action' => "Envoyer un test"],
+                ['name' => "Dans Monica", 'detail' => "La cloche en haut de chaque page", 'status' => "Activé"],
+                ['name' => "Telegram", 'detail' => "Activé sur cette instance", 'action' => "Connecter"],
+                ['name' => "SMS", 'detail' => "Activé sur cette instance", 'action' => "Connecter"],
+            ],
+        ],
+
+        'answer' => [
+            'title' => "Y avez-vous pensé ?",
+            'body' => "Quand le jour d’un rappel arrive, vous pouvez dire à Monica comment ça s’est passé.",
+            'remembered' => [
+                'body' => "Vous avez appelé Chandler, souhaité un bon anniversaire à Rachel ou demandé à Joey comment s’est passée l’audition. Indiquez que vous y avez pensé dès le jour même.",
+                'label' => "Un rappel prévu aujourd’hui dans Monica : demander à Joey comment s’est passée l’audition, mardi 14 octobre à 18:00, une seule fois, avec un bouton pour répondre J’y ai pensé.",
+                'reminder' => "Demander à Joey comment s’est passée l’audition.",
+                'detail' => "mardi 14 octobre · 18:00 · Une seule fois",
+            ],
+            'forgot' => [
+                'body' => "La journée vous a échappé. À partir du lendemain, vous pouvez indiquer que vous avez oublié.",
+                'label' => "Un rappel en retard dans Monica : l’anniversaire de Phoebe, le 16 février, il y a deux jours. Il se répète chaque année et reviendra le 16 février 2027. Des boutons pour répondre J’y ai pensé ou J’ai oublié.",
+                'reminder' => "Anniversaire de Phoebe",
+                'detail' => "16 février · il y a 2 jours · Chaque année · prochain le 16 février 2027",
+            ],
+            'notes' => [
+                "Votre réponse range cette occurrence dans votre historique. Sans réponse, elle reste en retard pour que vous puissiez y revenir.",
+                "Pour les rappels récurrents, la date suivante revient quand même. Oublier l’anniversaire de Phoebe cette année n’annule pas le rappel de l’année prochaine.",
+            ],
+        ],
+
+        'attention' => [
+            'title' => "Voyez ce qui demande votre attention.",
+            'body' => [
+                "Retrouvez les rappels d’une personne sur sa fiche, ou ouvrez les rappels de votre coffre pour voir tout le monde ensemble.",
+                "Voyez ce qui est en retard, ce qui est prévu aujourd’hui et ce qui arrive. Parcourez votre historique pour revoir les rappels auxquels vous avez pensé et ceux que vous avez oubliés.",
+            ],
+            'label' => "La page des rappels d’un coffre dans Monica. Sur 24 rappels au cours des 12 derniers mois, 75 % ont été honorés et 25 % oubliés. Des filtres : tous 5, en retard 1, aujourd’hui 1, à venir 3 et historique 18. En retard : appeler Phoebe, 11 octobre, il y a deux jours, tous les mois. À venir, du plus proche au plus lointain : demander à Joey comment s’est passée l’audition demain, prendre des nouvelles de Rachel dans onze jours, et l’anniversaire de Chandler le 8 avril 2027, qui suit sa date d’anniversaire.",
+            'heading' => "Rappels",
+            'stats' => [
+                ['value' => "75 %", 'label' => "honorés"],
+                ['value' => "25 %", 'label' => "oubliés"],
+            ],
+            'period' => "sur 24 rappels au cours des 12 derniers mois",
+            'filters' => ["Tous", "En retard", "Aujourd’hui", "À venir", "Historique"],
+            'overdueNote' => "Le jour est passé sans réponse.",
+            'overdue' => ['text' => "Appeler Phoebe", 'detail' => "11 octobre · il y a 2 jours · Tous les mois"],
+            'upcomingTitle' => "À venir",
+            'upcomingNote' => "Du plus proche au plus lointain.",
+            'upcoming' => [
+                ['text' => "Demander à Joey comment s’est passée l’audition.", 'detail' => "14 octobre · demain · Une seule fois"],
+                ['text' => "Prendre des nouvelles de Rachel", 'detail' => "24 octobre · dans onze jours · Toutes les 3 semaines"],
+                ['text' => "Anniversaire de Chandler", 'detail' => "8 avril 2027 · dans 6 mois · Chaque année · Suit l’anniversaire"],
+            ],
+        ],
+
+        'cta' => [
+            'title' => "Un petit coup de pouce pour passer à l’acte.",
+            'body' => "Vous avez pensé à appeler Chandler. Donnez à cette pensée un jour et une heure.",
+            'button' => "Créer votre compte",
+        ],
+    ],
+
+    'timeline' => [
+        // Mots que plusieurs dessins utilisent.
+        'with' => "Avec :names",
+        'add' => "Ajouter un événement",
+        'optional' => "facultatif",
+
+        'hero' => [
+            'title' => "Gardez les moments qui valent la peine d’être retenus.",
+            'intro' => "Un dîner entre amis. Un nouvel emploi. L’après-midi dont tout le monde parle encore.",
+            'lede' => "Notez ce qui s’est passé, qui était là et les détails que vous voulez garder. Monica réunit ces moments dans une chronologie à laquelle vous pouvez revenir.",
+            'cta' => "Créer votre compte",
+            'label' => "La chronologie d’un coffre Personnel dans Monica, 102 entrées, dont 2 qui demandent votre attention. En 2026 : Thanksgiving chez Monica le 26 novembre, au 90 Bedford Street, New York, où Joey portait le pantalon extensible et où personne n’a parlé du trifle, avec Rachel, Ross, Chandler, Joey et Phoebe. Et un café avec Phoebe le 3 octobre, censé être rapide, jusqu’à ce que, trois heures plus tard, elle ait organisé tout votre printemps. À côté, plus tôt la même année, le mariage de Monica et Chandler le 15 mai : au Moondance Diner, puis sur le toit, avec Joey comme officiant, ordonné en ligne, et 43 invités.",
+            'vault' => "Personnel",
+            'tabs' => ["Votre chronologie", "Demande votre attention"],
+            'year' => "2026",
+            'count' => "2 entrées",
+            'events' => [
+                ['title' => "Thanksgiving chez Monica", 'date' => "26/11", 'place' => "90 Bedford Street, New York", 'note' => "Joey portait le pantalon extensible. Personne n’a parlé du trifle."],
+                ['title' => "Café avec Phoebe", 'date' => "03/10", 'note' => "Censé être rapide. Trois heures plus tard, elle avait organisé tout mon printemps."],
+            ],
+            'earlier' => "Plus tôt la même année",
+            'wedding' => [
+                'title' => "Le mariage de Monica et Chandler",
+                'type' => "Mariage · 15 mai",
+                'facts' => [
+                    ['label' => "Lieu", 'value' => "Le Moondance Diner, puis le toit"],
+                    ['label' => "Officiant", 'value' => "Joey, ordonné en ligne"],
+                ],
+                'more' => "et 38 autres",
+            ],
+        ],
+
+        'milestones' => [
+            'title' => "Les grandes étapes. Les mardis ordinaires.",
+            'body' => [
+                "Le mariage de Monica et Chandler mérite une entrée. Un café avec Phoebe qui s’est transformé en conversation de trois heures aussi.",
+                "Choisissez parmi 40 types d’événements prédéfinis, dont les appels, les repas, les visites, les voyages et les nouveaux emplois. Il y a de la place pour les moments de tous les jours comme pour les grandes occasions que tout le monde note dans un agenda.",
+            ],
+            'label' => "La première étape de l’ajout d’un événement de vie dans Monica : choisir ce qui s’est passé. Cinq catégories, avec Relations et famille sélectionnée, et ses types d’événements : appel, message, repas, visite, moment ensemble, mariage et naissance, chacun avec le nombre de champs qu’il demande.",
+            'step' => "Étape 1 sur 2 · Choisir ce qui s’est passé",
+            'categoriesTitle' => "Catégories",
+            'categories' => ["Relations et famille", "Travail et études", "Santé et bien-être", "Loisirs et culture", "Voyages et expériences"],
+            'types' => [
+                ['name' => "Appel", 'fields' => "3 champs"],
+                ['name' => "Message", 'fields' => "3 champs"],
+                ['name' => "Repas", 'fields' => "3 champs"],
+                ['name' => "Visite", 'fields' => "2 champs"],
+                ['name' => "Moment ensemble", 'fields' => "1 champ"],
+                ['name' => "Mariage", 'fields' => "3 champs"],
+                ['name' => "Naissance", 'fields' => "1 champ"],
+            ],
+        ],
+
+        'moment' => [
+            'title' => "Un moment. Tous ceux qui étaient là.",
+            'lead' => "Thanksgiving chez Monica, c’étaient Rachel, Ross, Chandler, Joey et Phoebe. Vous ne devriez avoir à le noter qu’une seule fois.",
+            'body' => "Ajoutez les personnes qui y ont participé, et l’événement apparaît dans la chronologie de chacune. Si vous modifiez les détails plus tard, le même changement apparaît dans toutes les chronologies concernées.",
+            'label' => "Thanksgiving chez Monica, le 26 novembre 2026, noté une seule fois avec Rachel, Ross, Chandler, Joey et Phoebe. En dessous, trois de leurs chronologies, chacune montrant le même Thanksgiving : celle de Rachel, au-dessus d’un appel le 12 novembre ; celle de Joey, au-dessus d’une audition le 14 octobre ; et celle de Phoebe, au-dessus d’un café avec Phoebe le 3 octobre.",
+            'event' => "Thanksgiving chez Monica",
+            'when' => "26 novembre 2026 · noté une seule fois",
+            'date' => "26/11",
+            'timeline' => "Chronologie de :name",
+            // L’entrée sous Thanksgiving dans chaque chronologie, dans l’ordre
+            // où le modèle les dessine : Rachel, Joey, Phoebe.
+            'before' => ["Appel · 12/11", "Audition · 14/10", "Café avec Phoebe · 03/10"],
+        ],
+
+        'story' => [
+            'title' => "Gardez plus que la date.",
+            'lead' => "Où êtes-vous allés ? Qu’est-ce qui a rendu ce moment mémorable ?",
+            'body' => "Ajoutez un lieu, une description et les détails qui conviennent à l’occasion. Une balade dans les Hudson Highlands devient plus qu’une date quand vous vous rappelez que Chandler a porté les deux jumeaux pendant les deux derniers miles.",
+            'close' => "Écrivez une courte phrase ou gardez toute l’histoire.",
+            'label' => "La deuxième étape de l’ajout d’un événement de vie dans Monica, les détails d’un moment ensemble : une balade dans les Hudson Highlands, New York, le 15 mai 2010. La description est en cours de rédaction : six miles, et Chandler a porté les deux jumeaux pendant les deux derniers. Ross a expliqué les formations rocheuses pendant toute la montée. Déjeuner sur la crête.",
+            'heading' => "Moment ensemble",
+            'step' => "Étape 2 sur 2 · Les détails",
+            'what' => ['label' => "Ce qui s’est passé", 'value' => "Une balade dans les Hudson Highlands"],
+            'when' => ['label' => "Quand", 'value' => "15 mai 2010"],
+            'where' => ['label' => "Où", 'value' => "Hudson Highlands, New York"],
+            'description' => ['label' => "Description", 'value' => "Six miles, et Chandler a porté les deux jumeaux pendant les deux derniers. Ross a expliqué les formations rocheuses pendant toute la montée. Déjeuner sur la crête."],
+            'back' => "Retour",
+            'add' => "Ajouter l’événement",
+        ],
+
+        'years' => [
+            'title' => "Revenez en arrière, année par année.",
+            'body' => [
+                "La chronologie de votre coffre réunit les événements que vous avez notés, les plus récents en premier et les plus anciens regroupés par année.",
+                "Suivez l’histoire des cours de natation à la première rentrée des classes. Ouvrez la fiche d’une personne pour voir les événements auxquels elle a participé.",
+            ],
+            'close' => "Les dates donnent l’ordre. Vos notes font revenir les souvenirs.",
+            'label' => "Une chronologie dans Monica, les plus récents en premier, regroupés par année. 2010 : une balade dans les Hudson Highlands le 15 mai. 2009 : les jumeaux entrent à la maternelle le 8 septembre, et Erica se casse le bras le 11 juin. 2008 : cours de natation le 17 juillet. Chaque entrée a son lieu et une note.",
+            // Du plus récent au plus ancien. L’icône et la couleur de chaque
+            // événement sont dans le modèle, dans cet ordre.
+            'years' => [
+                ['year' => "2010", 'count' => "1 entrée", 'events' => [
+                    ['title' => "Une balade dans les Hudson Highlands", 'date' => "15/05", 'place' => "Hudson Highlands, New York", 'note' => "Six miles, et Chandler a porté les deux jumeaux pendant les deux derniers."],
+                ]],
+                ['year' => "2009", 'count' => "2 entrées", 'events' => [
+                    ['title' => "Les jumeaux entrent à la maternelle", 'date' => "08/09", 'place' => "Une école élémentaire, Westchester", 'note' => "Jack et Judy ont fait le trajet pour les voir entrer."],
+                    ['title' => "Erica se casse le bras", 'date' => "11/06", 'place' => "Un hôpital, Westchester", 'note' => "Tombée du portique, en voulant arriver au sommet avant Jack."],
+                ]],
+                ['year' => "2008", 'count' => "1 entrée", 'events' => [
+                    ['title' => "Cours de natation", 'date' => "17/07", 'place' => "Une piscine, Westchester", 'note' => "Joey a proposé de leur apprendre. Monica a engagé quelqu’un."],
+                ]],
+            ],
+        ],
+
+        'traditions' => [
+            'title' => "Laissez de la place à vos propres traditions.",
+            'lead' => "« Repas » fait l’affaire. « Thanksgiving chez Monica » conviendrait peut-être mieux.",
+            'body' => "Créez vos propres types d’événements, rangez-les dans des catégories, et choisissez une icône et une couleur pour les repérer facilement. Vous pouvez aussi modifier les types fournis par Monica ou désactiver ceux que vous n’utilisez pas.",
+            'label' => "Les types d’événements de vie dans Monica. Deux types à vous dans la catégorie Nos traditions, Thanksgiving chez Monica et Soirée du sapin de Noël, puis Repas, fourni par Monica, et Entretien, désactivé. À côté, Thanksgiving chez Monica en cours de modification : proposé à la saisie, une icône de cadeau, une couleur orange choisie parmi huit, dans la catégorie Nos traditions.",
+            'heading' => "Types d’événements de vie",
+            'add' => "Ajouter un type",
+            'category' => "Nos traditions",
+            'types' => [
+                ['name' => "Thanksgiving chez Monica"],
+                ['name' => "Soirée du sapin de Noël"],
+                ['name' => "Repas", 'badge' => "Fourni"],
+                ['name' => "Entretien", 'status' => "Désactivé"],
+            ],
+            'offered' => "Proposé à la saisie",
+            'icon' => "Icône",
+            'colour' => "Couleur",
+            'categoryLabel' => "Catégorie",
+        ],
+
+        'fields' => [
+            'title' => "Choisissez les détails que chaque événement contient.",
+            'lead' => "Un appel et un dîner de Thanksgiving n’appellent pas les mêmes détails.",
+            'body' => [
+                "Pour les appels avec Rachel, vous pouvez garder le canal et une note sur ce dont vous avez parlé. Pour Thanksgiving, vous pouvez ajouter qui recevait, ce que vous avez apporté, et si Joey a fini la dinde.",
+                "Ajoutez vos propres champs, organisez-les en groupes et choisissez ceux qui sont obligatoires. Les changements s’appliquent aux événements que vous notez à partir de là ; les entrées précédentes gardent les champs avec lesquels elles ont été notées.",
+            ],
+            'label' => "Les champs de deux types d’événements de vie dans Monica. Appel en a trois : le canal, une liste déroulante entre téléphone, vidéo ou appel vocal dans une application ; la direction, une liste déroulante ; et ce dont vous avez parlé, un texte long. Thanksgiving chez Monica en a trois dans un groupe nommé Le dîner : qui recevait, un contact, obligatoire ; ce que vous avez apporté, un texte court ; et Joey a-t-il fini la dinde, une liste déroulante entre oui, non ou avec de l’aide, en cours de modification. L’enregistrement s’applique aux événements notés à partir de maintenant, et l’entrée de l’an dernier garde ses champs.",
+            'count' => "3 champs",
+            'required' => "Obligatoire",
+            'call' => [
+                'name' => "Appel",
+                'rows' => [
+                    ['label' => "Canal", 'type' => "Liste déroulante", 'options' => ["Téléphone", "Vidéo", "Appel vocal dans une application"]],
+                    ['label' => "Direction", 'type' => "Liste déroulante"],
+                    ['label' => "Ce dont vous avez parlé", 'type' => "Texte long"],
+                ],
+            ],
+            'thanksgiving' => [
+                'name' => "Thanksgiving chez Monica",
+                'group' => "Le dîner",
+                'rows' => [
+                    ['label' => "Qui recevait", 'type' => "Contact"],
+                    ['label' => "Ce que vous avez apporté", 'type' => "Texte court"],
+                    ['label' => "Joey a-t-il fini la dinde ?", 'type' => "Liste déroulante", 'options' => ["Oui", "Non", "Avec de l’aide"]],
+                ],
+                'note' => "S’applique aux événements que vous notez à partir de maintenant. L’entrée de l’an dernier garde ses champs.",
+                'save' => "Enregistrer les modifications",
+            ],
+        ],
+    ],
+
+    'relationships' => [
+        // Mots que plusieurs dessins utilisent.
+        'add' => "Ajouter une relation",
+        'sibling' => "Frère ou sœur",
+
+        'hero' => [
+            'title' => "Comprenez comment les gens sont liés.",
+            'intro' => "Sa sœur. Son compagnon. L’ami qui vous a présentés.",
+            'lede' => "Gardez une trace des personnes qui entourent quelqu’un, avec des relations qui ont du sens des deux côtés.",
+            'cta' => "Créer votre compte",
+            'label' => "Les relations de Ross Geller dans Monica, 8 au total. Famille : Monica Geller, sa sœur ; Jack Geller, son père ; Judy Geller, sa mère ; et Emma Geller-Green, sa fille. Couple : Rachel Green, sa compagne. Amis : Chandler Bing, Joey Tribbiani et Phoebe Buffay.",
+            'count' => "8 relations",
+            // Les personnes de chaque groupe sont dans le modèle, dans cet ordre.
+            'groups' => [
+                ['title' => "Famille", 'roles' => ["Sœur", "Père", "Mère", "Fille"]],
+                ['title' => "Couple", 'roles' => ["Compagne"]],
+                ['title' => "Amis", 'roles' => ["Ami", "Ami", "Amie"]],
+            ],
+        ],
+
+        'sides' => [
+            'title' => "La sœur de Ross, c’est Monica. Le frère de Monica, c’est Ross.",
+            'lead' => "Ajoutez une relation une seule fois, et Monica l’affiche sur la fiche des deux personnes.",
+            'body' => "Choisissez le type, vérifiez qui tient chaque rôle, et reliez les deux personnes. La famille, les amis, les conjoints et les collègues ont tous leur place.",
+            'label' => "L’ajout d’une relation dans Monica. Le type est frère ou sœur des deux côtés, Ross Geller est l’un des deux et Monica Geller est en train d’être choisie comme l’autre, avec un bouton pour échanger les deux rôles. En dessous, le résultat sur les deux fiches : sur la fiche de Ross, Monica Geller, sa sœur ; sur la fiche de Monica, Ross Geller, son frère.",
+            'typeLabel' => "Type de relation",
+            'type' => "Frère ou sœur ↔ Frère ou sœur",
+            'swap' => "Échanger les deux rôles",
+            'cancel' => "Annuler",
+            'submit' => "Ajouter la relation",
+            // Une carte par personne, celle de Ross d’abord.
+            'pages' => [
+                ['title' => "Sur la fiche de Ross", 'role' => "Sœur"],
+                ['title' => "Sur la fiche de Monica", 'role' => "Frère"],
+            ],
+        ],
+
+        'tree' => [
+            'title' => "Certains liens se voient mieux.",
+            'body' => [
+                "Un arbre généalogique réunit parents, conjoints et enfants, pour que vous suiviez les liens sans les reconstituer à partir de notes.",
+                "Ouvrez la fiche de Ross pour voir où Monica, ses parents et Emma s’inscrivent dans le tableau. Sa famille proche apparaît aussi dans sa vue d’ensemble.",
+            ],
+            'label' => "L’arbre généalogique de Ross Geller dans Monica : ses parents Jack et Judy Geller au-dessus de lui, sa sœur Monica Geller et sa compagne Rachel Green à côté, et sa fille Emma Geller-Green en dessous. Seuls la filiation et les couples sont dessinés. À côté, sa famille proche dans sa vue d’ensemble : ses parents Jack, 68 ans, et Judy, 66 ans ; sa sœur Monica, 57 ans ; sa compagne actuelle Rachel, 57 ans ; et sa fille Emma, 24 ans.",
+            'heading' => "Arbre généalogique",
+            'note' => "Seuls la filiation et les couples sont dessinés ici. Les amis et les collègues restent dans la liste.",
+            'family' => "Famille proche",
+            'add' => "Ajouter",
+            'groups' => ["Parents", "Frères et sœurs", "Compagne actuelle", "Enfants"],
+        ],
+
+        'unknown' => [
+            'title' => "Vous n’avez pas besoin de connaître tout le monde.",
+            'lead' => "Joey a parlé d’une sœur. Vous voulez retenir le lien, même si vous ne l’avez jamais rencontrée.",
+            'body' => [
+                "Choisissez quelqu’un déjà dans Monica, ajoutez quelqu’un par son nom, ou notez une personne sans nom quand vous ne connaissez que son rôle.",
+                "Vous pouvez garder quelqu’un comme contact partiel, en dehors de votre liste principale de contacts, quand vous n’avez besoin de lui que pour le lien.",
+            ],
+            'label' => "L’ajout d’une relation à Joey Tribbiani dans Monica : un frère ou une sœur, avec trois façons de dire qui. Je ne connais pas son nom est sélectionné, ce qui note le rôle et rien d’autre. Les autres sont Je connais son nom, et Choisir quelqu’un déjà noté. En dessous, une case décochée pour créer une fiche de contact pour cette personne.",
+            'subtitle' => "Dites comment quelqu’un est lié à Joey Tribbiani.",
+            // La première est celle qui est sélectionnée.
+            'options' => [
+                ['title' => "Je ne connais pas son nom", 'hint' => "Note le rôle et rien d’autre"],
+                ['title' => "Je connais son nom", 'hint' => "Un simple prénom suffit"],
+                ['title' => "Choisir quelqu’un déjà noté", 'hint' => "Relie deux personnes que vous gardez déjà"],
+            ],
+            'record' => [
+                'title' => "Créer une fiche de contact pour cette personne",
+                'hint' => "Laissez-la décochée et la personne reste hors de votre liste de contacts, avec tout de même une page à elle.",
+            ],
+        ],
+
+        'history' => [
+            'title' => "Les relations ont une histoire.",
+            'lead' => "Les gens se mettent ensemble. Ils se séparent. Les liens changent.",
+            'body' => "Notez quand une relation a commencé ou pris fin, et gardez les relations passées à côté des relations actuelles. Les anciennes compagnes de Ross font toujours partie de son histoire.",
+            'label' => "L’historique amoureux de Ross Geller dans Monica. Actuelle : Rachel Green, sa compagne depuis le 6 mai 2004. Passées, toutes deux terminées : Emily Waltham, son épouse de 1998 à 1999, et Carol Willick, son épouse de 1987 à 1993. À côté, les dates de son mariage avec Emily en cours de saisie : début 1998, fin 1999.",
+            'heading' => "Historique amoureux",
+            'current' => "Actuelle",
+            'past' => "Passées",
+            // Les personnes sont dans le modèle, dans cet ordre : Rachel, Emily, Carol.
+            'partners' => ["Compagne · depuis le 6 mai 2004", "Épouse · de 1998 à 1999", "Épouse · de 1987 à 1993"],
+            'ended' => "Terminée",
+            'started' => "Début",
+            'endedLabel' => "Fin",
+            'optional' => "facultatif",
+        ],
+
+        'types' => [
+            'title' => "Utilisez les mots qui conviennent.",
+            'lead' => "«Ami » est un début. Parfois, «Colocataire » en dit plus.",
+            'body' => [
+                "Créez vos propres types de relation et rangez-les en catégories. Choisissez si la relation se lit pareil des deux côtés, comme Monica et Rachel qui sont colocataires, ou différemment, comme un parrain ou une marraine et son filleul ou sa filleule.",
+                "Vous pouvez aussi ajuster la formulation et l’ordre des types existants, et cesser de proposer ceux que vous n’utilisez plus sans supprimer les relations déjà notées.",
+            ],
+            'label' => "Les types de relation dans Monica. Dans Amis, fournie avec votre compte : Ami, fourni ; Colocataire, le vôtre ; et Correspondant, qui n’est plus proposé. Dans Parrains et marraines, votre propre catégorie : Parrain ou marraine et filleul ou filleule, le vôtre. À côté, Colocataire en cours de modification : il se lit pareil des deux côtés, donc Monica Geller est la colocataire de Rachel Green, et Rachel Green est la colocataire de Monica Geller.",
+            'heading' => "Types de relation",
+            'add' => "Ajouter un type",
+            'categories' => [
+                ['name' => "Amis", 'note' => "Fournie avec votre compte", 'types' => [
+                    ['name' => "Ami", 'pair' => "Ami ↔ Ami", 'badge' => "Fourni"],
+                    ['name' => "Colocataire", 'pair' => "Colocataire ↔ Colocataire", 'badge' => "Le vôtre"],
+                    ['name' => "Correspondant", 'pair' => "Correspondant ↔ Correspondant", 'badge' => "Non proposé"],
+                ]],
+                ['name' => "Parrains et marraines", 'note' => "Votre catégorie", 'types' => [
+                    ['name' => "Parrain ou marraine / Filleul ou filleule", 'pair' => "Parrain ou marraine → Filleul ou filleule", 'badge' => "Le vôtre"],
+                ]],
+            ],
+            'reads' => "Comment elle se lit",
+            // La première est celle qui est sélectionnée.
+            'options' => [
+                ['title' => "Pareil des deux côtés", 'hint' => "Les deux personnes sont décrites avec le même mot, comme avec Frère ou sœur ou Ami."],
+                ['title' => "Différent de chaque côté", 'hint' => "Chaque personne est décrite avec un mot différent, comme avec Parent et Enfant."],
+            ],
+            'roleLabel' => "Rôle, des deux côtés",
+            'role' => "Colocataire",
+            'sentences' => ["Monica Geller est la colocataire de Rachel Green.", "Rachel Green est la colocataire de Monica Geller."],
+        ],
+    ],
+
+    'vaults' => [
+        // Mots que plusieurs dessins utilisent. La pastille d’un coffre affiche
+        // la première lettre de son nom.
+        'personal' => "Personnel",
+        'work' => "Travail",
+        'default' => "Par défaut",
+        'heading' => "Vos coffres",
+
+        'hero' => [
+            'title' => "Une place pour chaque partie de votre vie.",
+            'intro' => "Les amis et la famille. Les gens que vous connaissez par le travail. Les membres de votre club local.",
+            'lede' => "Gardez-les ensemble ou donnez à chaque groupe son propre espace. Les coffres vous aident à organiser Monica autour de votre vie.",
+            'cta' => "Créer votre compte",
+            'label' => "Vos coffres dans Monica. Personnel, le coffre par défaut, ouvert il y a 1 heure, avec Rachel, Chandler, Ross, Joey et 20 autres, aucune tâche ouverte et 2 dates ce mois-ci. Travail, ouvert il y a 2 jours, avec Marcel, Inès, Sam et 6 autres, 3 tâches ouvertes et 1 date ce mois-ci. Et un espace pour commencer un autre coffre.",
+            'new' => "Nouveau coffre",
+            // Personnel d’abord, puis Travail. Les personnes sont dans le modèle.
+            'vaults' => [
+                ['opened' => "Ouvert il y a 1 heure", 'more' => "et 20 autres"],
+                ['opened' => "Ouvert il y a 2 jours", 'more' => "et 6 autres"],
+            ],
+            'stats' => ["Tâches ouvertes", "Dates ce mois-ci"],
+            'another' => [
+                'title' => "Commencer un autre coffre",
+                'body' => "Le travail, un club, la famille de l’autre côté. Rien de ce qu’il contient n’est visible d’ici.",
+            ],
+        ],
+
+        'one' => [
+            'title' => "Un seul coffre peut suffire.",
+            'lead' => "Monica vous crée un coffre Personnel pour commencer. Vous pouvez y garder tout le monde et continuer ainsi.",
+            'body' => "Quand vous voulez un espace à part, créez un autre coffre. Donnez-lui un nom et une couleur pour le reconnaître facilement.",
+            'label' => "La création d’un coffre dans Monica. Le nom est Travail, la description indique : le restaurant, les fournisseurs et les gens avec qui j’ai fait mes classes. La couleur est le turquoise, choisie parmi huit, et un aperçu montre la pastille Travail dans cette couleur.",
+            'create' => "Créer un coffre",
+            'name' => "Nom",
+            'description' => "Description",
+            'optional' => "facultatif",
+            'value' => "Le restaurant, les fournisseurs et les gens avec qui j’ai fait mes classes.",
+            'colour' => "Couleur",
+            'cancel' => "Annuler",
+            'submit' => "Créer le coffre",
+        ],
+
+        'split' => [
+            'title' => "Central Perk dans l’un. Le restaurant dans l’autre.",
+            'lead' => "Monica Geller pourrait garder Rachel, Chandler et le reste de la bande dans Personnel, et ses collègues du restaurant dans Travail.",
+            'body' => "Chaque coffre a sa propre liste de contacts, ses relations, sa chronologie et ses rappels. Une recherche reste dans le coffre que vous utilisez, pour vous concentrer sur cette partie de votre vie.",
+            'label' => "Deux coffres côte à côte dans Monica. Dans Personnel : Rachel Green, colocataire ; Chandler Bing, compagnon ; Ross Geller, frère ; Joey Tribbiani et Phoebe Buffay, amis. Dans Travail, une recherche de Rachel ne trouve personne, parce que la recherche regarde uniquement dans ce coffre. Ses personnes sont Marcel Duval, sous-chef ; Inès Ortega, cheffe pâtissière ; et Sam Whitfield, propriétaire du restaurant.",
+            'people' => "Personnes",
+            'search' => "Rechercher dans Personnel",
+            'query' => "Rachel",
+            'empty' => [
+                'title' => "Personne ne s’appelle Rachel dans Travail",
+                'body' => "La recherche regarde uniquement dans ce coffre. Passez à un autre coffre pour y chercher.",
+            ],
+            // Les personnes sont dans le modèle, dans cet ordre.
+            'personalRoles' => ["Colocataire", "Compagnon", "Frère", "Ami", "Amie"],
+            'workRoles' => ["Sous-chef", "Cheffe pâtissière", "Propriétaire du restaurant"],
+        ],
+
+        'templates' => [
+            'title' => "Des espaces différents peuvent garder des détails différents.",
+            'lead' => "Vous ne retenez sans doute pas les mêmes choses sur un ami proche et sur un collègue.",
+            'body' => "Choisissez un modèle de contact par défaut pour chaque coffre. Les nouveaux contacts commencent avec la structure que vous avez choisie, qu’il s’agisse de plats préférés et de souvenirs partagés, ou d’un poste et d’un domaine d’expertise.",
+            'label' => "Deux contacts dans Monica, chacun d’un coffre différent. Rachel Green, dans Personnel, utilise le modèle Amis et famille : son plat préféré est le trifle, à condition qu’il ne contienne pas de bœuf, et un souvenir partagé est son arrivée au Central Perk en robe de mariée en 1994. Marcel Duval, dans Travail, utilise le modèle Collègues : son poste est sous-chef et son domaine d’expertise est les sauces et le poisson. En dessous, le modèle par défaut de Travail est réglé sur Collègues.",
+            // Rachel d’abord, puis Marcel.
+            'cards' => [
+                ['template' => "Personnel · modèle Amis et famille", 'fields' => [
+                    ['label' => "Plats préférés", 'value' => "Le trifle, à condition qu’il ne contienne pas de bœuf"],
+                    ['label' => "Souvenirs partagés", 'value' => "Arrivée au Central Perk en robe de mariée, 1994"],
+                ]],
+                ['template' => "Travail · modèle Collègues", 'fields' => [
+                    ['label' => "Poste", 'value' => "Sous-chef"],
+                    ['label' => "Domaine d’expertise", 'value' => "Sauces et poisson"],
+                ]],
+            ],
+            'defaultFor' => "Modèle par défaut de Travail",
+            'choice' => "Collègues",
+        ],
+
+        'switch' => [
+            'title' => "Reprenez là où vous en avez besoin.",
+            'lead' => "Changez de coffre pour voir les personnes, les événements et les rappels qui s’y trouvent.",
+            'body' => "Choisissez un coffre par défaut pour faire de l’espace que vous utilisez le plus votre point de départ.",
+            'label' => "Le sélecteur de coffre dans Monica, ouvert depuis Travail. Vos coffres : Personnel, le coffre par défaut, avec 24 personnes, et Travail, sélectionné, avec 9 personnes, puis tous les coffres. En dessous, le réglage du coffre par défaut, Personnel : le coffre où vous arrivez après la connexion.",
+            'counts' => ["24 personnes", "9 personnes"],
+            'all' => "Tous les coffres",
+            'defaultLabel' => "Coffre par défaut",
+            'hint' => "Le coffre où vous arrivez après la connexion.",
+        ],
+
+        'apart' => [
+            'title' => "Des espaces séparés, toujours votre compte.",
+            'lead' => "Les coffres organisent vos informations au sein de votre compte. Ils sont à vous seul : personne d’autre ne peut les rejoindre ni se connecter pour voir ce que vous avez noté.",
+            'body' => "Choisissez où quelqu’un a sa place avant de l’ajouter. Les contacts ne peuvent pas encore passer d’un coffre à l’autre, et les relations relient des personnes d’un même coffre.",
+        ],
+    ],
+
+    'sharing' => [
+        // Des mots que plusieurs dessins utilisent.
+        'optional' => "facultatif",
+        'stops' => "Cesse de fonctionner",
+        'week' => "Dans 7 jours",
+        'password' => "Mot de passe",
+        'cancel' => "Annuler",
+        'address' => "Adresse",
+        'phone' => "Téléphone",
+        // Les sections de la fiche de Joey, dans l’ordre de la sélection.
+        'sections' => ["Moyens de contact", "Préférences alimentaires", "Informations personnelles", "Travail", "Notes", "Champs marqués comme sensibles"],
+
+        'hero' => [
+            'title' => "Partagez seulement ce que vous choisissez.",
+            'intro' => "Quelqu’un a besoin d’une adresse, d’un numéro de téléphone ou de quelques détails utiles.",
+            'lede' => "Partagez certaines sections de la fiche d’un contact par un lien en lecture seule. Choisissez ce qu’il montre, combien de temps il fonctionne et quand couper l’accès.",
+            'cta' => "Créer votre compte",
+            'label' => "Le partage de la fiche de Joey Tribbiani dans Monica, depuis le coffre Personnel. Le lien est toujours en lecture seule : la personne qui l’ouvre n’a pas besoin de compte, ne rejoint rien et ne peut rien modifier. Le lien s’appelle Anniversaire de Joey, il est destiné à Rachel Green, il cesse de fonctionner dans 7 jours et aucun mot de passe n’est défini. Ce qui part : 2 sections sur 6 et son nom, rien d’autre.",
+            'readOnly' => "Toujours en lecture seule",
+            'heading' => "Partager Joey Tribbiani",
+            'body' => "Un lien privé vers cette seule fiche. La personne qui l’ouvre n’a pas besoin de compte, ne rejoint rien et ne peut rien modifier.",
+            'vault' => "Personnel · Amis et famille",
+            'link' => "Le lien lui-même",
+            'linkBody' => "Ces deux informations sont pour vous. La personne qui ouvre le lien ne les voit jamais.",
+            'name' => "Nommer ce lien",
+            'nameValue' => "Anniversaire de Joey",
+            'who' => "Pour qui",
+            'passwordHint' => "Demandé avant l’ouverture de la fiche",
+            'out' => "Ce qui part",
+            'summary' => "2 sections sur 6 et son nom. Rien d’autre.",
+            'create' => "Créer le lien de partage",
+            'note' => "Vous pourrez ensuite modifier ce qu’il montre, ou le révoquer.",
+        ],
+
+        'visitor' => [
+            'title' => "Rachel organise l’anniversaire de Joey.",
+            'lead' => "Elle a besoin de son adresse et de son numéro de téléphone. Vos notes sur ses auditions peuvent rester chez vous.",
+            'body' => "Créez un lien vers la fiche de Joey et sélectionnez les sections dont Rachel a besoin. Elle peut l’ouvrir sans compte Monica et ne peut rien modifier.",
+            'label' => "La fiche de Joey Tribbiani telle que Rachel la voit, partagée avec elle par Monica Geller, en lecture seule, jusqu’au 20 octobre 2026. Moyens de contact : son adresse, 495 Grove Street, Apt 19, New York, et son numéro de téléphone. Une note explique qu’il s’agit d’une page issue des notes privées de quelqu’un, sans connexion possible et sans réponse à donner.",
+            'by' => "Partagé avec vous par Monica Geller",
+            'until' => "Lecture seule · se termine le 20 octobre 2026",
+            'oldAddress' => "495 Grove Street, Apt 19, New York",
+            'notice' => "Cette page est issue des notes privées de quelqu’un, partagée avec vous telle qu’elle est aujourd’hui. Il n’y a rien à se connecter ici et personne à qui répondre.",
+        ],
+
+        'selection' => [
+            'title' => "Un peu ou un peu plus. Vous décidez.",
+            'lead' => "Chaque lien a sa propre sélection de sections. Partagez les coordonnées avec une personne et un autre ensemble de détails avec une autre.",
+            'body' => [
+                "Les champs que vous avez marqués comme sensibles sont exclus par défaut. Vous pouvez choisir de les inclure quand il le faut.",
+                "Les événements de vie, les relations, les rappels, les photos, les fichiers joints et l’historique des modifications restent hors de la page partagée.",
+            ],
+            'label' => "Deux liens vers la fiche de Joey, chacun avec ses propres sections. Pour Rachel, Anniversaire de Joey : moyens de contact et préférences alimentaires, tandis que les informations personnelles, le travail, les notes et les champs marqués comme sensibles sont laissés de côté. Pour l’agent, Photos d’identité et contrats : moyens de contact et travail. Jamais sur une page partagée : les événements de vie, les relations, les rappels, les photos, les fichiers joints et l’historique des modifications.",
+            // Les sections que montre chaque lien, selon leur place dans
+            // `sections`, sont dans le modèle.
+            'links' => [
+                ['title' => "Pour Rachel", 'meta' => "Anniversaire de Joey · 2 sections"],
+                ['title' => "Pour l’agent", 'meta' => "Photos d’identité et contrats · 2 sections"],
+            ],
+            'sensitive' => "Sensible",
+            'never' => "Jamais sur une page partagée",
+            'kept' => ["Événements de vie", "Relations", "Rappels", "Photos", "Fichiers joints", "Historique des modifications"],
+        ],
+
+        'expiry' => [
+            'title' => "Donnez une date de fin au lien.",
+            'lead' => "Laissez le lien de Rachel fonctionner sept jours, trente jours ou trois mois. Vous pouvez aussi laisser un lien ouvert jusqu’à ce que vous le révoquiez.",
+            'body' => "Ajoutez un mot de passe quand vous voulez une protection de plus. Toute personne qui détient un lien non protégé peut l’ouvrir, alors partagez-le avec soin.",
+            'label' => "Le choix du moment où un lien cesse de fonctionner : dans 7 jours, le 20 octobre 2026, est sélectionné. Les autres sont dans 30 jours, le 12 novembre 2026, dans 3 mois, le 13 janvier 2027, et jusqu’à ce que vous le révoquiez. En dessous, un mot de passe est défini et il est demandé avant l’ouverture de la fiche.",
+            // Le premier est celui qui est sélectionné.
+            'options' => [
+                ['label' => "Dans 7 jours", 'date' => "20 octobre 2026"],
+                ['label' => "Dans 30 jours", 'date' => "12 novembre 2026"],
+                ['label' => "Dans 3 mois", 'date' => "13 janvier 2027"],
+            ],
+            'forever' => "Jusqu’à ce que vous le révoquiez",
+            'hint' => "Demandé avant l’ouverture de la fiche.",
+        ],
+
+        'send' => [
+            'title' => "Envoyez-le à votre façon.",
+            'lead' => "Copiez le lien et envoyez-le dans la conversation que vous utilisez déjà.",
+            'body' => "Monica n’envoie ni e-mail ni invitation au destinataire. Si vous avez ajouté un mot de passe, transmettez-le séparément.",
+            'label' => "Un nouveau lien de partage dans Monica : le lien est actif. Copiez-le maintenant, car c’est la seule fois où il peut être affiché en entier, et un lien perdu se remplace au lieu de se récupérer. Des boutons pour copier le lien et pour l’ouvrir comme un visiteur. Rien n’est envoyé par e-mail : si vous avez défini un mot de passe, dites-le à Rachel séparément de l’adresse.",
+            'heading' => "Le lien est actif",
+            'warning' => "Copiez-le maintenant. C’est la seule fois où il peut être affiché en entier, donc un lien perdu se remplace au lieu de se récupérer.",
+            'copy' => "Copier le lien",
+            'open' => "L’ouvrir comme un visiteur",
+            'note' => "Rien n’est envoyé par e-mail. Si vous avez défini un mot de passe, dites-le à Rachel séparément de l’adresse.",
+        ],
+
+        'update' => [
+            'title' => "Gardez les détails à jour.",
+            'lead' => "Joey a déménagé. Mettez à jour son adresse dans Monica, et Rachel voit la nouvelle adresse la prochaine fois qu’elle ouvre la page partagée.",
+            'body' => "Vous pouvez aussi changer les sections qu’un lien montre, son mot de passe ou sa date d’expiration sans changer l’adresse du lien.",
+            'label' => "L’adresse de Joey en cours de modification dans votre Monica, pour devenir 90 Bedford Street, Apt 20, New York. À côté, la page partagée de Rachel, au même lien, montre déjà la nouvelle adresse, avec le même numéro de téléphone.",
+            'edit' => "Modifier l’adresse",
+            'where' => "Dans votre Monica",
+            'newAddress' => "90 Bedford Street, Apt 20, New York",
+            'save' => "Enregistrer les modifications",
+            'shared' => "La page partagée de Rachel",
+            'same' => "Même lien",
+        ],
+
+        'visits' => [
+            'title' => "Voyez quand le lien a été ouvert.",
+            'lead' => "Chaque lien garde un historique des visites, avec le moment de l’ouverture et l’endroit approximatif d’où venait la visite. Les tentatives de mot de passe échouées y figurent aussi.",
+            'body' => "L’historique enregistre des visites, sans confirmer qui se trouvait derrière. Les destinataires ne se connectent pas.",
+            'label' => "Les visites d’un lien de partage, 3 au total : ouvert aujourd’hui à 09:42 depuis New York, États-Unis ; un mot de passe incorrect aujourd’hui à 09:41, une tentative échouée, depuis New York ; et ouvert hier à 21:15 depuis New York. Les lieux sont approximatifs, et rien sur le visiteur n’est enregistré.",
+            'heading' => "Visites",
+            'total' => "3 au total",
+            // La plus récente d’abord.
+            'entries' => [
+                ['what' => "Ouvert", 'when' => "Aujourd’hui à 09:42 · New York, États-Unis"],
+                ['what' => "Mot de passe incorrect", 'when' => "Aujourd’hui à 09:41 · New York, États-Unis", 'badge' => "Tentative échouée"],
+                ['what' => "Ouvert", 'when' => "Hier à 21:15 · New York, États-Unis"],
+            ],
+            'note' => "Les lieux sont approximatifs. Rien sur le visiteur n’est enregistré.",
+        ],
+
+        'revoke' => [
+            'title' => "Coupez l’accès quand vous avez terminé.",
+            'lead' => "L’anniversaire est passé. Révoquez le lien de Rachel, et il cesse de fonctionner immédiatement.",
+            'body' => "Vous pouvez révoquer un lien à tout moment, même si vous ne lui aviez pas donné de date de fin. Si quelqu’un a de nouveau besoin d’un accès, créez-en un nouveau.",
+            'label' => "La révocation du lien de Rachel dans Monica. Le lien cesse de fonctionner dès que vous appuyez ici, et cela ne peut pas être annulé. La fiche de Joey reste telle quelle.",
+            'heading' => "Révoquer le lien de Rachel ?",
+            'warning' => "Le lien cesse de fonctionner dès que vous appuyez ici, et cela ne peut pas être annulé. La fiche de Joey reste telle quelle.",
+            'confirm' => "Révoquer ce lien",
+        ],
+    ],
+
+    /**
+     * La page API et MCP, « Vos contacts, reliés à vos outils ». Les noms des
+     * assistants (Claude, ChatGPT, Gemini) sont des noms de produits et restent
+     * les mêmes dans toutes les langues, ils sont donc dans le modèle. Les noms
+     * des outils et la requête de l’exemple de code aussi, car c’est du code.
+     */
+    'api' => [
+        // Des mots que plusieurs dessins utilisent.
+        'explore' => "Explorer l’API",
+
+        'hero' => [
+            'title' => "Vos contacts, reliés à vos outils.",
+            'intro' => "Utilisez Monica avec Claude, ChatGPT, Gemini ou vos propres scripts. Retrouvez un contact, notez un moment ou programmez un rappel depuis les outils que vous utilisez déjà.",
+            'lede' => "Connectez-vous par MCP quand votre assistant le permet, ou construisez votre propre connexion avec l’API.",
+            'cta' => "Créer votre compte",
+            'label' => "Une conversation avec Claude sur la semaine à venir, avec Monica connectée. Vous demandez : Joey a son audition mercredi, rappelle-moi mardi prochain de lui demander comment il le vit. Claude utilise l’outil create_reminder de Monica, qui ajoute le rappel Demander à Joey où il en est pour son audition, le mardi 20 octobre, dans le coffre Personnel, et répond que Monica vous le rappellera ce jour-là.",
+            'chat' => "La semaine à venir",
+            'connected' => "Monica connectée",
+            'ask' => "Joey a son audition mercredi. Rappelle-moi mardi prochain de lui demander comment il le vit.",
+            'reminder' => "Demander à Joey où il en est pour son audition",
+            'when' => "Mardi 20 octobre · Personnel",
+            'done' => "C’est fait. Monica vous rappellera mardi 20 octobre de demander à Joey où il en est pour son audition.",
+        ],
+
+        'conversation' => [
+            'title' => "Gardez Monica près de la conversation.",
+            'lead' => "Vous parlez de la semaine à venir avec votre assistant. L’audition de Joey revient dans la discussion. Programmez un rappel pendant que vous y pensez.",
+            'body' => [
+                "Le serveur MCP de Monica donne aux assistants compatibles des outils pour travailler avec votre compte.",
+                "L’assistant utilise les outils disponibles de Monica pour exécuter votre demande.",
+            ],
+            'label' => "Trois exemples de demandes et l’outil Monica que chacune utilise. Retrouve Chandler Bing dans mon coffre Personnel : search_contacts. Note le dîner d’hier avec Phoebe au Central Perk : create_life_event. Rappelle-moi mardi prochain de demander à Joey où il en est pour son audition : create_reminder.",
+            'examples' => "Exemples de demandes",
+            // L’outil que chaque demande utilise est dans le modèle, dans cet ordre.
+            'requests' => [
+                "« Retrouve Chandler Bing dans mon coffre Personnel. »",
+                "« Note le dîner d’hier avec Phoebe au Central Perk. »",
+                "« Rappelle-moi mardi prochain de demander à Joey où il en est pour son audition. »",
+            ],
+        ],
+
+        'assistants' => [
+            'title' => "Claude, ChatGPT, Gemini et bien d’autres.",
+            'lead' => "MCP est un standard de connexion partagé. Il permet aux assistants de travailler avec des applications comme Monica.",
+            'body' => [
+                "Utilisez un client capable de se connecter au serveur MCP distant de Monica. Selon le produit, l’offre et la configuration, il peut s’agir de Claude, de ChatGPT, d’un outil basé sur Gemini ou d’une autre application compatible MCP.",
+                "La prise en charge varie d’un client à l’autre : le nom d’un assistant ne garantit pas à lui seul qu’il peut se connecter. Suivez le guide de connexion de Monica pour vérifier les prérequis.",
+            ],
+            'guide' => "Lire le guide de connexion des assistants",
+            'label' => "Les assistants qui peuvent se connecter à Monica : Claude, ChatGPT, les outils basés sur Gemini et les autres clients compatibles MCP.",
+            'gemini' => "Outils basés sur Gemini",
+            'others' => "Autres clients compatibles MCP",
+        ],
+
+        'scripts' => [
+            'title' => "Vos scripts aussi peuvent participer.",
+            'lead' => "L’API JSON offre à vos propres logiciels un moyen de travailler avec Monica.",
+            'body' => [
+                "Créez des contacts et des coffres, notez des événements de vie, gérez des rappels ou construisez des modèles. Importez des contacts depuis un autre système ou reliez Monica à un flux de travail que vous avez déjà.",
+                "Les requêtes utilisent une clé d’API. Les réponses reviennent en JSON.",
+            ],
+            'label' => "Une requête à l’API de Monica qui crée un contact nommé Gunther dans un coffre, autorisée par une clé d’API, et la réponse : 201 Created, avec l’identifiant du nouveau contact, son prénom et son coffre.",
+        ],
+
+        'coverage' => [
+            'title' => "Utile dès aujourd’hui. Et en progression.",
+            'lead' => "Voici la part de Monica que vous pouvez actuellement atteindre grâce à ces connexions :",
+            'caption' => "La part de Monica que l’API JSON et MCP atteignent",
+            'operations' => "Opérations utilisateur prises en charge",
+            'feature' => "Couverture des fonctionnalités",
+            // L’API JSON d’abord, puis MCP.
+            'operationsValues' => ["55 sur 76", "34 sur 76"],
+            'featureValues' => ["72,4 %", "44,7 %"],
+            'tools' => "Monica propose :tools, couvrant :endpoints.",
+            'toolsCount' => "87 outils MCP",
+            'endpoints' => "60,8 % de ses 143 points d’accès API",
+            'audit' => "Ces chiffres proviennent d’un audit du code source daté du :date. La couverture des fonctionnalités s’appuie sur une liste de 76 opérations utilisateur ; la couverture des points d’accès compte les routes d’API une à une. Ils mesurent la disponibilité, pas la fiabilité ni le taux de réussite d’un assistant.",
+            'date' => "13 octobre 2026",
+        ],
+
+        'scope' => [
+            'title' => "Sachez ce que vous pouvez faire.",
+            'lead' => "Les deux connexions permettent de retrouver et de créer des contacts, de noter des événements de vie, de gérer les rappels manuels et de travailler sur les modèles.",
+            'body' => [
+                "Certaines choses se font encore dans l’application web : lire ou modifier toutes les informations personnalisées d’un contact, gérer les relations entre les personnes et créer des liens de partage.",
+                "L’API permet aussi de gérer les coffres et les onglets de modèle. MCP ne propose pas encore ces opérations.",
+            ],
+            'label' => "Ce que chaque connexion atteint. Par l’API et MCP : retrouver des contacts, créer des contacts, noter des événements de vie, gérer les rappels manuels et travailler sur les modèles. Par l’API seulement, pour l’instant : gérer les coffres et gérer les onglets de modèle. Seulement dans l’application web : toutes les informations personnalisées d’un contact, les relations entre les personnes et les liens de partage.",
+            'groups' => [
+                ['title' => "API et MCP", 'items' => ["Retrouver des contacts", "Créer des contacts", "Noter des événements de vie", "Gérer les rappels manuels", "Travailler sur les modèles"]],
+                ['title' => "API seulement, pour l’instant", 'items' => ["Gérer les coffres", "Gérer les onglets de modèle"]],
+                ['title' => "Dans l’application web", 'items' => ["Toutes les informations personnalisées d’un contact", "Les relations entre les personnes", "Les liens de partage"]],
+            ],
+        ],
+
+        'access' => [
+            'title' => "Vous choisissez l’accès.",
+            'lead' => "Créez et révoquez des clés d’API dans vos réglages. Consultez les assistants connectés et déconnectez-les quand vous avez terminé.",
+            'body' => "Les connexions fonctionnent au sein de votre compte, par les opérations que Monica expose. Les informations qu’un assistant récupère sont transmises au service qui l’exécute, alors choisissez un service à qui vous confiez ces détails.",
+            'label' => "Vos connexions dans les réglages de Monica. Assistants connectés : Claude, utilisé il y a 4 minutes, et ChatGPT, utilisé il y a 3 jours, chacun avec un bouton pour le déconnecter. Clés d’API : une nommée Import depuis l’ancien carnet d’adresses, se terminant par 3f9a, avec un bouton pour la révoquer, et un bouton pour créer une nouvelle clé.",
+            'assistants' => "Assistants connectés",
+            // Claude d’abord, puis ChatGPT.
+            'used' => ["Utilisé il y a 4 minutes", "Utilisé il y a 3 jours"],
+            'disconnect' => "Déconnecter",
+            'keys' => "Clés d’API",
+            'newKey' => "Nouvelle clé",
+            'keyName' => "Import depuis l’ancien carnet d’adresses",
+            'revoke' => "Révoquer",
+        ],
+
+        'closing' => [
+            'title' => "Commencez par une tâche utile.",
+            'body' => "Notez le dîner avec Phoebe. Programmez un rappel pour l’audition de Joey. Ajoutez un contact depuis votre propre script.",
+            'connect' => "Connecter un assistant",
+        ],
+    ],
+
+    'privacyFeatures' => [
+        // Words more than one drawing uses.
+        'sensitive' => "Sensible",
+        'phone' => "Téléphone",
+        'healthNote' => "Note de santé",
+
+        'hero' => [
+            'title' => "Les détails personnels méritent un endroit privé.",
+            'lede' => "Vous notez des choses sur les gens parce qu’ils comptent pour vous. Choisissez ce que vous gardez, ce que vous partagez et quels outils peuvent y accéder.",
+            'cta' => "Créer votre compte",
+            'label' => "La fiche de Rachel Green dans Monica, dans le coffre Personnel. Son numéro de téléphone et son anniversaire sont affichés. Sa note de santé est marquée comme sensible : son contenu reste donc masqué derrière un bouton Afficher.",
+            'vault' => "Personnel · Amie",
+            'birthday' => "Anniversaire",
+            'birthdayValue' => "5 mai 1970",
+            'reveal' => "Afficher",
+        ],
+
+        'audience' => [
+            'title' => "Vos contacts ne deviennent pas un public.",
+            'lead' => "Ajouter Chandler à Monica ne lui envoie ni invitation ni message sur ce que vous avez écrit.",
+            'body' => "Votre compte est pour vous. Personne ne rejoint vos coffres, et les personnes que vous notez ne peuvent pas ouvrir leur fiche, sauf si vous choisissez de partager quelque chose avec elles.",
+            'label' => "Chandler Bing a été ajouté au coffre Personnel. Sa fiche contient une note sur son envie de quitter son travail et n’a aucun lien de partage : Chandler ne peut donc pas l’ouvrir.",
+            // :name is Chandler's name, drawn in bold.
+            'added' => ":name a été ajouté à Personnel.",
+            'notes' => "Notes",
+            'notesValue' => "Il pense à quitter son travail dans l’analyse statistique et la reconfiguration de données.",
+            'links' => "Liens de partage",
+            'linksValue' => "Aucun. Chandler ne peut pas ouvrir cette fiche.",
+        ],
+
+        'hidden' => [
+            'title' => "Certains détails doivent rester hors de vue.",
+            'lead' => "Le numéro de téléphone de Rachel et une note privée sur sa santé méritent un traitement différent.",
+            'body' => [
+                "Marquez un champ comme sensible pour que son contenu reste masqué à l’écran jusqu’à ce que vous l’affichiez. Les valeurs sensibles sont exclues des colonnes de la liste de contacts et laissées de côté dans les liens de partage, sauf si vous les incluez explicitement.",
+                "Cela aide à éviter une exposition accidentelle. Toute personne connectée à votre compte peut tout de même afficher ces valeurs.",
+            ],
+            'label' => "Modification du champ Note de santé avec Marquer comme sensible coché : masqué à l’écran jusqu’à ce que vous l’affichiez, et laissé de côté dans les colonnes de la liste et les liens de partage. À côté, la liste de contacts montre des noms et des numéros de téléphone, et explique que Note de santé ne peut pas être ajoutée comme colonne parce qu’elle est sensible.",
+            'edit' => "Modifier le champ",
+            'fieldLabel' => "Libellé",
+            'mark' => "Marquer comme sensible",
+            'markBody' => "Masqué à l’écran jusqu’à ce que vous l’affichiez. Laissé de côté dans les colonnes de la liste et les liens de partage.",
+            'name' => "Nom",
+            'column' => "Note de santé ne peut pas être ajoutée comme colonne parce qu’elle est sensible.",
+        ],
+
+        'share' => [
+            'title' => "Partagez un peu. Gardez le reste.",
+            'lead' => "Rachel a besoin de l’adresse de Joey pour sa fête d’anniversaire. Elle n’a pas besoin de tout le reste de sa fiche.",
+            'body' => "Créez un lien de partage en lecture seule avec les sections choisies, un mot de passe facultatif et une date d’expiration. Changez ce qu’il montre ou révoquez-le quand l’accès n’est plus nécessaire.",
+            'label' => "Un lien de partage nommé Anniversaire de Joey, pour Rachel Green. Il montre Moyens de contact et masque tout le reste de la fiche de Joey. Un mot de passe est demandé avant l’ouverture de la fiche, et le lien prend fin le 20 octobre 2026, dans 7 jours. Des boutons pour le modifier ou le révoquer.",
+            'link' => "Anniversaire de Joey",
+            'change' => "Modifier",
+            'for' => "Pour",
+            'shows' => "Montre",
+            'showsValue' => "Moyens de contact",
+            'hidden' => "Masqué",
+            'hiddenValue' => "Tout le reste de la fiche de Joey",
+            'password' => "Mot de passe",
+            'passwordValue' => "Demandé avant l’ouverture de la fiche",
+            'ends' => "Fin",
+            'endsValue' => "20 octobre 2026, dans 7 jours",
+            'revoke' => "Révoquer ce lien",
+        ],
+
+        'tools' => [
+            'title' => "Connectez vos outils en connaissance de cause.",
+            'lead' => "Une application de carnet d’adresses, un script ou un assistant peut accéder à des informations par la connexion que vous lui donnez.",
+            'body' => [
+                "Choisissez si une clé d’API peut lire les valeurs des champs sensibles, révoquez les clés que vous n’utilisez plus et déconnectez les assistants depuis vos réglages.",
+                "Quand un assistant récupère des informations, il les transmet au service qui l’exécute. Choisissez vos connexions en gardant ces détails en tête.",
+            ],
+            'label' => "Création d’une clé d’API nommée Carnet d’adresses du téléphone, avec Peut lire les valeurs des champs sensibles laissé décoché. En dessous, Claude figure comme assistant connecté, connecté par OAuth, avec un bouton pour le déconnecter.",
+            'create' => "Créer la clé",
+            'keyName' => "Nommer cette clé",
+            'keyValue' => "Carnet d’adresses du téléphone",
+            'sensitive' => "Peut lire les valeurs des champs sensibles",
+            'sensitiveBody' => "Laissez cette option désactivée, sauf si l’outil en a besoin.",
+            'assistants' => "Assistants connectés",
+            'via' => "Connecté par OAuth",
+            'disconnect' => "Déconnecter",
+        ],
+
+        'protect' => [
+            'title' => "Protégez l’entrée.",
+            'lead' => "Utilisez une clé d’accès ou ajoutez l’authentification à deux facteurs à votre compte. Gardez vos codes de récupération en lieu sûr pour pouvoir toujours revenir.",
+            'body' => "Les mots de passe sont stockés sous forme de hachages à sens unique. Les secrets à deux facteurs et les codes de récupération sont chiffrés. Monica stocke aussi les clés d’API et les jetons des liens de partage sous forme de hachages, sans conserver leurs originaux lisibles.",
+            'label' => "Connexion : une clé d’accès sur un MacBook Air, ajoutée il y a 2 jours et active ; une application d’authentification, prête à être activée ; et des codes de récupération, un moyen de revenir si vous perdez votre appareil. Comment Monica les stocke : mots de passe en hachage à sens unique, secrets à deux facteurs et codes de récupération chiffrés, clés d’API et jetons des liens de partage en hachage.",
+            // In the order they are drawn: a passkey, an authenticator app,
+            // recovery codes. The first action is a badge, the others buttons.
+            'methods' => [
+                ['title' => "Clé d’accès", 'body' => "MacBook Air · ajoutée il y a 2 jours", 'action' => "Active"],
+                ['title' => "Application d’authentification", 'body' => "Demander un code à chaque connexion.", 'action' => "L’activer"],
+                ['title' => "Codes de récupération", 'body' => "Un moyen de revenir si vous perdez votre appareil.", 'action' => "Afficher"],
+            ],
+            'stores' => "Comment Monica les stocke",
+            'rows' => [
+                ["Mots de passe", "hachage à sens unique"],
+                ["Secrets à deux facteurs", "chiffrés"],
+                ["Codes de récupération", "chiffrés"],
+                ["Clés d’API", "hachage"],
+                ["Jetons des liens de partage", "hachage"],
+            ],
+        ],
+
+        'admins' => [
+            'title' => "Sachez ce que les administrateurs peuvent voir.",
+            'lead' => "Les écrans d’administration de Monica montrent des informations de compte comme votre nom, votre adresse e-mail, l’activité de connexion et l’espace utilisé.",
+            'body' => [
+                "Ils ne donnent pas accès à vos contacts, à vos rappels, à vos fichiers ni aux détails de vos coffres.",
+                "Cette distinction compte : elle décrit les écrans d’administration. Elle ne signifie pas que l’exploitant du service est techniquement incapable d’accéder aux données stockées sur le serveur.",
+            ],
+            'label' => "Le compte de Monica Geller dans l’espace d’administration : son adresse e-mail, sa dernière connexion aujourd’hui à 08:12 et 48 Mo d’espace utilisé. Les contacts, les rappels, les fichiers et les détails des coffres n’y sont pas affichés.",
+            'space' => "Espace d’administration",
+            'email' => "E-mail",
+            'signIn' => "Dernière connexion",
+            'signInValue' => "Aujourd’hui à 08:12",
+            'storage' => "Espace utilisé",
+            'storageValue' => "48 Mo",
+            'notice' => "Les contacts, les rappels, les fichiers et les détails des coffres ne sont pas affichés ici.",
+        ],
+
+        'hosting' => [
+            'title' => "Choisissez où vit Monica.",
+            'lead' => "Utilisez le service hébergé, ou faites tourner Monica sur votre propre serveur.",
+            'body' => "L’auto-hébergement vous laisse choisir où vos informations sont stockées et qui exploite le service. Il met aussi les mises à jour, la sécurité du serveur et les sauvegardes entre vos mains.",
+            'label' => "Deux façons de faire tourner Monica. Le service hébergé est exploité par Monica, et les mises à jour, la sécurité et les sauvegardes sont gérées pour vous. Sur votre propre serveur, il est exploité par vous ou par la personne de votre choix, et les mises à jour, la sécurité et les sauvegardes sont entre vos mains.",
+            'operated' => "Exploité par",
+            'upkeep' => "Mises à jour, sécurité, sauvegardes",
+            'options' => [
+                ['title' => "Service hébergé", 'operated' => "Monica", 'upkeep' => "Gérées pour vous"],
+                ['title' => "Votre propre serveur", 'operated' => "Vous, ou la personne de votre choix", 'upkeep' => "Entre vos mains"],
+            ],
+        ],
+
+        'logs' => [
+            'title' => "Voyez l’activité de votre compte.",
+            'lead' => "Les journaux de votre compte vous permettent de consulter l’activité enregistrée, avec son heure et son adresse internet. Vous pouvez aussi voir les copies des e-mails que Monica vous a envoyés.",
+            'body' => "Ces enregistrements vous permettent de vérifier ce qui s’est passé quand quelque chose vous semble inhabituel.",
+            'label' => "Le journal d’activité d’un compte Monica : connexion avec une clé d’accès aujourd’hui à 08:12, création d’une clé d’API hier à 19:40, connexion d’un assistant le 11 octobre 2026 à 21:05 depuis une autre adresse, et changement du mot de passe le 7 octobre 2026 à 10:31. Un second onglet liste les e-mails envoyés par Monica.",
+            'activity' => "Activité",
+            'emails' => "E-mails envoyés",
+            // What happened and when, newest first. The addresses beside them
+            // are in the template, because they are not copy.
+            'entries' => [
+                ["Connexion avec une clé d’accès", "Aujourd’hui à 08:12"],
+                ["Création d’une clé d’API", "Hier à 19:40"],
+                ["Connexion d’un assistant", "11 octobre 2026 à 21:05"],
+                ["Changement de votre mot de passe", "7 octobre 2026 à 10:31"],
+            ],
+        ],
+    ],
+
+    'languages' => [
+        'hero' => [
+            'title' => "Votre langue. Leurs noms.",
+            'lede' => "Utilisez Monica dans une langue où vous vous sentez chez vous. Gardez les noms des gens sous la forme qu’ils utilisent, et choisissez l’affichage des dates, des heures et des nombres.",
+            'body' => "Les personnes de votre vie ne suivent pas toutes les mêmes conventions. Votre carnet d’adresses doit leur laisser de la place.",
+            'cta' => "Créer votre compte",
+            'label' => "La liste des contacts dans Monica, avec l’interface en français. Chandler Bing, Élodie Durand, Dr Ross Geller et Kim Ji-woo y figurent, le nom de Ji-woo étant aussi écrit en hangul.",
+            // The drawing is the product in French, whatever the language of
+            // the page around it, because it shows somebody who chose French.
+            // Leave these four in French in every language file.
+            'window' => [
+                'title' => "Personnes",
+                'search' => "Rechercher",
+                'chandler' => "Anniversaire le 8 avril",
+                'elodie' => "Vue il y a 3 jours",
+                'ross' => "Anniversaire le 18 octobre",
+            ],
+        ],
+
+        'language' => [
+            'title' => "Sentez-vous chez vous.",
+            'lead' => "Monica est disponible dans plus de 30 langues, dont le français, l’espagnol, l’allemand, le japonais, le coréen et le chinois.",
+            'body' => "Choisissez votre langue dans vos préférences. Elle vous suit sur tous les appareils où vous vous connectez, et Monica trie vos contacts selon les règles de tri de cette langue.",
+            'label' => "Le réglage de la langue, ouvert sur une liste de langues écrites chacune dans son écriture, avec le français sélectionné.",
+            'field' => "Langue",
+            // What each language is called in the reader's language, next to
+            // its own name for itself. The keys are language codes.
+            'names' => [
+                'es' => "Espagnol",
+                'de' => "Allemand",
+                'fr' => "Français",
+                'ja' => "Japonais",
+                'ko' => "Coréen",
+                'zh' => "Chinois",
+            ],
+        ],
+
+        'names' => [
+            'title' => "Un nom mérite d’être bien écrit.",
+            'lead' => "Tout le monde n’écrit pas son prénom en premier. Tous les noms ne tiennent pas dans deux cases.",
+            'body' => [
+                "Choisissez le prénom d’abord ou le nom de famille d’abord pour chaque contact, ou laissez Monica suivre votre préférence par défaut. Ajoutez des éléments de nom là où ils servent, ou saisissez le nom complet exactement comme il doit apparaître.",
+                "Il y a aussi de la place pour les titres, les suffixes, les surnoms et les noms de naissance. Ross peut garder son « Dr ». Tous les autres peuvent décider de l’utiliser ou non.",
+            ],
+            'label' => "Deux formes de nom. Celle de Ross Geller a le titre Dr et suit l’ordre des noms par défaut. Celle de Kim Ji-woo est réglée sur le nom de famille d’abord, avec le surnom Jiji.",
+            'optional' => "facultatif",
+            'prefix' => "Titre",
+            'prefixValue' => "Dr",
+            'suffix' => "Suffixe",
+            'suffixPlaceholder' => "Jr, PhD",
+            'first' => "Prénom",
+            'last' => "Nom de famille",
+            'readsAs' => "S’affiche comme",
+            'follow' => "Suivre ma préférence",
+            'familyFirst' => "Nom de famille d’abord",
+            'nickname' => "Surnom",
+            'maiden' => "Nom de naissance",
+        ],
+
+        'forms' => [
+            'title' => "Une personne. Plusieurs façons d’écrire son nom.",
+            'lead' => "Gardez un nom dans son écriture d’origine, à côté d’une autre forme écrite, d’une translittération ou d’un guide de prononciation.",
+            'body' => [
+                "Une translittération vous permet de noter le nom avec un autre système d’écriture. Un guide de prononciation vous aide à vous souvenir de la façon de le dire.",
+                "Ces formes appartiennent au même contact. Vous les saisissez vous-même, avec des étiquettes facultatives de langue et d’écriture pour garder les choses claires.",
+            ],
+            'label' => "Le nom de Kim Ji-woo écrit de trois façons : 김지우 en hangul, Kim Ji-woo en lettres latines, et un guide de prononciation.",
+            'heading' => "Nom",
+            'hint' => "Des façons d’écrire le même nom.",
+            'written' => "Forme écrite · Coréen · Hangul",
+            'transliteration' => "Translittération · Latin",
+            'pronunciation' => "Guide de prononciation",
+            // How Ji-woo's name sounds, spelled for a reader of this language.
+            'pronunciationValue' => "kim dji-ou",
+            'add' => "Ajouter une autre façon d’écrire ce nom",
+        ],
+
+        'display' => [
+            'title' => "Choisissez le nom que vous voulez voir.",
+            'lead' => "Sélectionnez une forme enregistrée comme nom d’affichage du contact. Monica l’utilise dans les listes, les titres de page, les notifications et les initiales.",
+            'body' => "Les autres formes restent sur la fiche du contact. Changer la langue de l’interface ne choisit pas un autre nom à votre place.",
+            'label' => "La translittération Kim Ji-woo est choisie comme nom d’affichage, et apparaît dans la liste des contacts, comme titre de page et dans une notification d’anniversaire.",
+            'written' => "Forme écrite",
+            'transliteration' => "Translittération",
+            'badge' => "Nom d’affichage",
+            'list' => "Liste",
+            'pageTitle' => "Titre de la page",
+            'notification' => "Notification",
+            'birthday' => "L’anniversaire de :name est demain",
+        ],
+
+        'dates' => [
+            'title' => "Des dates que vous n’avez pas à déchiffrer.",
+            'lead' => "Est-ce que 04/05 veut dire le 5 avril ou le 4 mai ? Choisissez le format que vous lisez sans hésiter.",
+            'body' => "Réglez votre format de date, choisissez une horloge sur 12 ou 24 heures, et sélectionnez les séparateurs utilisés dans les nombres. Ces préférences sont indépendantes de votre langue, vous pouvez donc les combiner comme vous le souhaitez.",
+            'label' => "Les réglages des dates, des heures et des nombres, avec le jour avant le mois, l’horloge sur 24 heures et une espace entre les milliers. L’aperçu indique : :preview",
+            'heading' => "Dates, heures et nombres",
+            'format' => "Format de date",
+            'formatLong' => "13 oct. 2026",
+            'clock' => "Horloge",
+            'twelve' => "12 heures · 6:30 pm",
+            'twentyFour' => "24 heures · 18:30",
+            'numbers' => "Nombres",
+            'preview' => "Aperçu",
+            'previewValue' => "Dîner avec Phoebe, 04/05/2026 à 19:00",
+        ],
+
+        'timezone' => [
+            'title' => "Votre journée, dans votre fuseau horaire.",
+            'lead' => "Choisissez votre fuseau horaire en cherchant une ville, avec la carte, ou en reprenant le réglage de votre appareil.",
+            'body' => "Monica affiche les dates et les heures en conséquence. Les rappels existants gardent leur propre fuseau horaire, donc modifier vos préférences ne décale pas discrètement un rappel déjà défini.",
+            'label' => "Choix d’un fuseau horaire en cherchant une ville : Lisbonne est en surbrillance. Dessous, un rappel pour appeler Maman le dimanche à 18:00 garde le fuseau horaire de New York.",
+            'tabs' => ["Chercher une ville", "Carte", "Depuis cet appareil"],
+            // The first letters of the city typed so far. Both cities below
+            // should start with them in this language.
+            'query' => "Lis",
+            'lisbon' => "Lisbonne, Portugal",
+            'lismore' => "Lismore, Australie",
+            'reminder' => "Appeler Maman",
+            'reminderWhen' => "Le dimanche à 18:00 · garde America/New_York",
+        ],
+    ],
+
     'footer' => [
-        'tagline' => "Un CRM personnel privé et open source pour se souvenir des gens qui comptent.",
+        // The closing line ends every page, so it is two short sentences rather
+        // than a pitch. Each one is its own line.
+        'closing' => ["Monica se souvient.", "Vous, allez prendre l’air."],
+        'start' => "Commencer avec Monica",
+        'github' => "Voir sur GitHub",
+
+        'tagline' => "CRM personnel open source. AGPL-3.0.",
         'productLabel' => "Produit",
-        'projectLabel' => "Projet",
-        'github' => "GitHub",
+        'developersLabel' => "Développeurs",
+        'companyLabel' => "Entreprise",
+        'personalCrm' => "Qu’est-ce qu’un CRM personnel ?",
+        'changelog' => "Nouveautés",
+        'mcp' => "MCP",
+        'api' => "API",
+        'contactSales' => "Contacter les ventes",
         'privacy' => "Confidentialité",
         'terms' => "Conditions d’utilisation",
         'team' => "Équipe",
-        'personalCrm' => "Qu’est-ce qu’un CRM personnel ?",
-        'copyright' => "© :year Monica",
-        'since' => "Open source depuis 2017",
-        'ownership' => "Vos données restent les vôtres.",
+
+        'art' => "Une prairie au bord d’un lac, avec des pandas qui se prélassent dans l’herbe et font la sieste dans les arbres",
+        'copyright' => "© :year Monica. Aucun panda n’a été traqué.",
         'languageLabel' => "Changer de langue",
     ],
 
@@ -1060,89 +2587,6 @@ return [
             "Merci de vous intéresser au projet.",
         ],
         'signature' => "Regis Freyd et Alexis Saettler",
-    ],
-
-    /**
-     * Les trois pages de fonctionnalités, qui partagent une barre d’onglets et
-     * une même rangée de conclusion.
-     *
-     * La copie est celle de l’ancien site, phrase par phrase : c’est la copie
-     * marketing du propriétaire, et cette version est une refonte, pas une
-     * réécriture. Les annotations étaient des étiquettes rouges épinglées
-     * autour de la capture d’écran ; ici, elles forment une liste à côté de
-     * l’image, pour survivre à un téléphone, à un lecteur d’écran et à une
-     * traduction plus longue que l’anglais.
-     */
-    'features' => [
-        'tabsLabel' => "Fonctionnalités",
-        'tabs' => [
-            'features' => "Gestion des contacts",
-            'featuresDashboard' => "Tableau de bord complet",
-            'featuresJournal' => "Journal",
-        ],
-
-        'calloutsLabel' => "Sur cet écran",
-
-        'contacts' => [
-            'title' => "Comment les gens gardent le fil de ce qui compte.",
-            'lede' => "Notez ce que vous savez des personnes qui comptent pour vous. Et n’oubliez plus jamais un seul détail à leur sujet.",
-            'imageAlt' => "Une fiche de contact Monica : relations, coordonnées, notes, appels, rappels et cadeaux.",
-            'callouts' => [
-                "Voyez d’un coup d’œil les informations importantes de votre contact",
-                "Indiquez les noms des conjoints, des enfants et même des animaux.",
-                "Ajoutez toutes les façons de joindre cette personne : téléphone, e-mail, pseudo Whatsapp, et bien plus encore.",
-                "Ajoutez des notes, privées, à propos de cette personne.",
-                "Indiquez chaque fois que vous appelez des personnes dont vous avez peu de nouvelles, pour qu’on vous rappelle de les appeler à l’avenir.",
-                "Ajoutez des rappels pour les dates ou les événements importants. Certains rappels sont remplis automatiquement pour vous (les anniversaires, par exemple).",
-                "Gérez les cadeaux offerts ou que vous souhaitez offrir. Indiquez si vous devez de l’argent ou si on vous en doit.",
-            ],
-        ],
-
-        'dashboard' => [
-            'title' => "Voyez rapidement ce qui compte et ce qui arrive ensuite",
-            'lede' => "Pour vous concentrer sur ce qui compte vraiment pour vous.",
-            'imageAlt' => "Le tableau de bord de Monica : contacts consultés récemment, prochains rappels, notes favorites et appels consignés.",
-            'callouts' => [
-                "Voyez qui vous avez consulté en dernier",
-                "La liste des prochains événements ou rappels concernant vos contacts",
-                "Consultez vos notes favorites à propos de vos contacts",
-                "Gardez une trace des appels passés avec les personnes qui comptent pour vous",
-            ],
-        ],
-
-        'journal' => [
-            'title' => "Documentez votre vie. Et voyez comment vous évoluez.",
-            'lede' => "Écrivez des entrées de journal. Indiquez rapidement comment s’est passée votre journée. Historique d’activité automatique.",
-            'imageAlt' => "Le journal de Monica : le déroulé de la journée, les activités consignées avec les contacts et les entrées écrites.",
-            'callouts' => [
-                "Indiquez comment s’est passée votre journée.",
-                "Le journal liste automatiquement toutes les activités avec vos contacts.",
-                "Le journal vous permet aussi d’écrire des entrées. Voyez-le comme votre journal intime en ligne.",
-                "Dans une prochaine version, nous afficherons de belles statistiques sur vos journées et vos activités.",
-            ],
-        ],
-
-        'pillars' => [
-            [
-                'title' => "Tout au même endroit",
-                'body' => "Gérez, organisez et suivez toutes les interactions avec vos contacts à un endroit central.",
-            ],
-            [
-                'title' => "Sur le web",
-                'body' => "Accédez facilement à Monica, hébergée sur vos serveurs ou sur les nôtres.",
-            ],
-            [
-                'title' => "Interface moderne",
-                'body' => "Monica est belle et très simple à utiliser.",
-            ],
-        ],
-
-        'api' => [
-            'title' => "Appréciée des utilisateurs. Adorée des développeurs.",
-            'body' => "Nos utilisateurs apprécient la rapidité et la simplicité du produit. Les développeurs adorent l’API, qui leur permet d’automatiser Monica comme ils l’entendent.",
-            'body2' => "Importez ou exportez facilement vos contacts et leurs données grâce à la puissante API REST de Monica, ou utilisez l’API pour automatiser de nombreuses parties de l’application.",
-            'imageAlt' => "Les routes de l’API de Monica, ouvertes dans un éditeur de code.",
-        ],
     ],
 
     'notFound' => [

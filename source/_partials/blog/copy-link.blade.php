@@ -23,7 +23,7 @@
 >
     <button
         type="button"
-        class="mn-btn mn-btn--secondary mn-btn--sm"
+        class="mn-btn mn-btn-secondary mn-btn-small"
         x-on:click="navigator.clipboard.writeText(window.location.href).then(() => { copied = true; setTimeout(() => copied = false, 2000) })"
         x-text="copied ? labels.copied : labels.copy"
     >{{ $labels['copy'] }}</button>

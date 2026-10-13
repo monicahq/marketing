@@ -57,7 +57,7 @@
             href="{{ $page->blogPath() }}"
             class="mb-8 inline-flex items-center gap-2 text-small text-text-muted no-underline transition-colors duration-100 ease-standard hover:text-text hover:no-underline"
         >
-            @include('_partials.icon', ['name' => 'chevronLeft', 'size' => 14])
+            @include('_partials.icon', ['name' => 'chevron-left', 'size' => 14])
             <span>{{ $page->t('blog.allPosts') }}</span>
         </a>
 

@@ -300,9 +300,9 @@
             </div>
 
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="{{ $page->route('features') }}" class="mn-btn mn-btn--secondary no-underline hover:no-underline">{{ $copy['monica']['currentCta'] }}</a>
-                <a href="{{ $page->route('v3') }}" class="mn-btn mn-btn--secondary no-underline hover:no-underline">{{ $copy['monica']['v3Cta'] }}</a>
-                <a href="{{ $page->route('privacy') }}" class="mn-btn mn-btn--quiet no-underline hover:no-underline">{{ $copy['monica']['privacyCta'] }}</a>
+                <a href="{{ $page->route('details') }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['monica']['currentCta'] }}</a>
+                <a href="{{ $page->route('v3') }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['monica']['v3Cta'] }}</a>
+                <a href="{{ $page->route('privacy') }}" class="mn-btn mn-btn-ghost no-underline hover:no-underline">{{ $copy['monica']['privacyCta'] }}</a>
             </div>
         </div>
     </section>
@@ -317,8 +317,8 @@
             <h2 class="text-heading font-semibold text-pretty lg:text-display-md">{{ $copy['monica']['finalTitle'] }}</h2>
             <p class="mt-5 text-copy-lg leading-[1.65] text-text-secondary text-pretty">{{ $copy['monica']['finalBody'] }}</p>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary no-underline hover:no-underline">{{ $copy['monica']['primaryCta'] }}</a>
-                <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn--secondary no-underline hover:no-underline">{{ $copy['monica']['secondaryCta'] }}</a>
+                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary no-underline hover:no-underline">{{ $copy['monica']['primaryCta'] }}</a>
+                <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['monica']['secondaryCta'] }}</a>
             </div>
         </div>
     </section>

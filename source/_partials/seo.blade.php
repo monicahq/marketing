@@ -90,12 +90,6 @@
                 ];
             }
         } else {
-            // The two other feature tabs are nested under /features/, so the
-            // section they belong to is a crumb in its own right.
-            if (in_array($page->page, ['featuresDashboard', 'featuresJournal'], true)) {
-                $trail[] = ['name' => $page->t('meta.breadcrumb.features'), 'path' => $page->localePath('features')];
-            }
-
             $trail[] = [
                 'name' => $page->t("meta.breadcrumb.{$page->page}"),
                 'path' => $page->localePath($page->page),
@@ -132,7 +126,7 @@
                 // @id across the whole site, so letting the current page fill
                 // it in would describe the same thing fifty different ways.
                 'description' => $page->t('meta.home.description'),
-                'inLanguage' => $page->locale,
+                'inLanguage' => $page->languageTag(),
                 'publisher' => ['@id' => $organization],
             ],
             array_filter([
@@ -141,7 +135,7 @@
                 'url' => $canonical,
                 'name' => $title,
                 'description' => $description,
-                'inLanguage' => $page->locale,
+                'inLanguage' => $page->languageTag(),
                 'isPartOf' => ['@id' => $website],
                 'breadcrumb' => count($trail) > 1 ? ['@id' => $breadcrumb] : null,
                 'datePublished' => $isPost ? $page->isoDate() : null,
@@ -185,8 +179,9 @@
         $pricing = $page->absolute($page->localePath('pricing'));
         $currency = $page->plans['currency'];
 
-        // Both hosted prices are subscriptions, so each says what it buys and
-        // for how long: a bare `price` of 90 would read as a one-off purchase.
+        // The monthly and yearly prices are subscriptions, so each says what it
+        // buys and for how long: a bare `price` of 90 would read as a one-off
+        // purchase.
         $subscription = fn (string $name, string $amount, string $unit) => [
             '@type' => 'Offer',
             'name' => $name,
@@ -220,7 +215,7 @@
             // kind of product.
             'applicationCategory' => 'BusinessApplication',
             'operatingSystem' => 'Web',
-            'inLanguage' => $page->locales,
+            'inLanguage' => array_map(fn ($locale) => $page->languageTag($locale), $page->locales->toArray()),
             'publisher' => ['@id' => $organization],
 
             // True because of the self-hosted offer below: the application is
@@ -231,6 +226,16 @@
             'offers' => [
                 $subscription($page->t('meta.software.monthly'), $page->plans['monthly'], 'MON'),
                 $subscription($page->t('meta.software.yearly'), $page->plans['yearly'], 'ANN'),
+
+                // Paid once, so a bare price is exactly what it is.
+                [
+                    '@type' => 'Offer',
+                    'name' => $page->t('meta.software.lifetime'),
+                    'price' => $page->plans['lifetime'],
+                    'priceCurrency' => $currency,
+                    'url' => $pricing,
+                    'availability' => 'https://schema.org/InStock',
+                ],
                 [
                     '@type' => 'Offer',
                     'name' => $page->t('meta.software.selfHosted'),
@@ -257,7 +262,7 @@
             'headline' => $page->title,
             'description' => $description,
             'datePublished' => $page->isoDate(),
-            'inLanguage' => $page->locale,
+            'inLanguage' => $page->languageTag(),
             'author' => ['@type' => 'Person', 'name' => $page->author],
             'publisher' => ['@id' => $organization],
         ];
@@ -272,7 +277,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
 @foreach ($alternates as $alternate)
-    <link rel="alternate" hreflang="{{ $alternate['locale'] }}" href="{{ $alternate['absolute'] }}">
+    <link rel="alternate" hreflang="{{ $page->languageTag($alternate['locale']) }}" href="{{ $alternate['absolute'] }}">
 @endforeach
 <link rel="alternate" hreflang="x-default" href="{{ $page->absolute($page->canonicalPath($page->defaultLocale, $number)) }}">
 

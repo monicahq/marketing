@@ -1,80 +1,147 @@
 /* ---------------------------------------------------------------------------
-   Tailwind theme — the bridge between the Monica design system and Tailwind.
+   Tailwind theme, the bridge between the Monica design system and Tailwind.
 
    Everything declared in @theme becomes BOTH a CSS custom property and a
    Tailwind utility. `--color-surface-subtle` gives you `bg-surface-subtle`,
    `--text-lede` gives you `text-lede`, `--radius-lg` gives you `rounded-lg`.
 
-   Values are copied verbatim from the design system's token files. Colour
-   names keep their design-system spelling on purpose, so `--color-text-secondary`
-   is `text-text-secondary` in markup — awkward to read, but every utility in the
-   codebase traces back to exactly one token.
+   The design system (design-system/tokens/*.css) declares its own vocabulary
+   on :root: --ink, --body, --hairline, --card, --identity-1 and so on. The
+   colours below point at those names rather than copying their hex values,
+   for two reasons. The utility names this site already uses everywhere
+   (`text-text-secondary`, `border-border`) keep working against the new
+   system without touching a template. And when `.dark` lands on <html>, the
+   design system swaps its own values and every utility follows, because a
+   custom property resolves on the element it is declared on, and that
+   element is <html> in both cases.
 
    Each namespace is reset with `--x-*: initial` first, so Tailwind's stock
-   palette and type scale are gone. If a utility exists, it came from the design
-   system.
+   palette and type scale are gone. If a utility exists, it came from the
+   design system.
    --------------------------------------------------------------------------- */
 
-@theme {
-  /* ---------- Fonts ---------- */
-  --font-*: initial;
-  --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+/* `dark:` follows the same `.dark` class on <html> that the colours do, not
+   Tailwind's default media query, so a picture hidden at night and the
+   ground it sits on can never disagree. Keyed to <html> alone: a nested
+   `.dark` panel on the pricing page is not night time. */
+@custom-variant dark (&:where(html.dark, html.dark *));
 
-  /* ---------- Colour ----------
-     Neutral by design. Primary actions are near-black, never accent blue;
-     the accent is functional only (links, focus, selection). */
+@theme {
+  /* ---------- Fonts ----------
+     The system stack, exactly as tokens/typography.css spells it. Nothing is
+     downloaded: the design system has no webfont, by design. */
+  --font-*: initial;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+}
+
+/* ---------- Colour ----------
+   Cool greys and no accent. The filled button, the link and the focus ring
+   are all the same near black, and it inverts with the theme.
+
+   `inline`, so a utility writes the design system's own variable
+   (`background-color: var(--card)`) rather than ours (`var(--color-surface-
+   subtle)`). The difference shows inside a nested `.dark`, such as the dark
+   panels on the pricing page: our variable is resolved once, on :root, and
+   inherited as a light value, while the design system's is resolved on the
+   element itself, where `.dark` has just redefined it. */
+@theme inline {
   --color-*: initial;
 
-  /* Surfaces */
-  --color-canvas: #ffffff;
-  --color-surface: #ffffff;
-  --color-surface-subtle: #f8f8f8;
-  --color-surface-muted: #f2f2f2;
-  --color-surface-inverse: #171717;
+  /* Surfaces. The page and a panel on it are both white; what separates them
+     is the hairline. `surface-subtle` is the one tinted step. */
+  --color-canvas: var(--canvas);
+  --color-surface: var(--canvas);
+  --color-surface-subtle: var(--card);
+  --color-surface-muted: var(--hover);
+  --color-hover: var(--hover);
 
   /* Borders */
-  --color-border-subtle: #eeeeee;
-  --color-border: #e2e2e2;
-  --color-border-strong: #c9c9c9;
+  --color-border-subtle: var(--hairline-soft);
+  --color-border: var(--hairline);
+  --color-border-strong: var(--hairline-strong);
 
-  /* Text */
-  --color-text: #171717;
-  --color-text-secondary: #525252;
-  --color-text-muted: #737373;
-  --color-text-disabled: #a3a3a3;
-  --color-text-inverse: #ffffff;
+  /* Text, darkest to lightest */
+  --color-text: var(--ink);
+  --color-text-soft: var(--ink-soft);
+  --color-text-secondary: var(--body);
+  --color-text-muted: var(--muted);
+  --color-text-disabled: var(--muted-soft);
+  --color-text-inverse: var(--on-primary);
 
-  /* Text on the inverse surface — the announcement bar and the footer */
-  --color-on-inverse: #d4d4d4;
-  --color-on-inverse-strong: #ffffff;
-  --color-on-inverse-muted: #a3a3a3;
-  --color-on-inverse-border: #333333;
-  --color-on-inverse-raised: #212121;
-  --color-on-inverse-selected: #2a2a2a;
+  /* The inverse surface: the announcement bar and the terminal on the
+     homepage. Fixed rather than themed, so it stays a dark band in both
+     themes, the way the product's admin bar does. */
+  --color-surface-inverse: #18181b;
+  --color-on-inverse: #d4d4d8;
+  --color-on-inverse-strong: #fafafa;
+  --color-on-inverse-muted: #a1a1aa;
+  --color-on-inverse-border: #27272a;
+  --color-on-inverse-raised: #27272a;
+  --color-on-inverse-selected: #3f3f46;
+
+  /* The privacy band on the homepage, which is the inverse surface at section
+     size: its cards sit a step darker than the band, and its code carries two
+     quieter greys, for a comment and for a line number. */
+  --color-surface-inverse-sunken: #09090b;
+  --color-on-inverse-faint: #71717a;
+  --color-on-inverse-dim: #52525b;
+
+  /* The terminal on the homepage: a tool call that succeeded, and a string
+     argument. The design system's dark success green, and its dark amber. */
+  --color-terminal-ok: #4ade80;
+  --color-terminal-string: #fbbf24;
 
   /* Actions */
-  --color-primary: #171717;
-  --color-primary-hover: #2a2a2a;
-  --color-primary-active: #000000;
+  --color-primary: var(--action-primary);
+  --color-primary-hover: var(--action-primary-hover);
+  --color-primary-active: var(--ink);
+  --color-on-primary: var(--action-primary-text);
 
-  /* Accent — functional only: links, focus, selection */
-  --color-accent: #2563eb;
-  --color-accent-subtle: #eff6ff;
+  /* There is no accent colour any more. The names survive so the templates
+     that used them keep compiling; both now resolve to near black. */
+  --color-accent: var(--text-link);
+  --color-accent-subtle: var(--hover);
 
   /* Semantic */
-  --color-success: #15803d;
-  --color-success-subtle: #f0fdf4;
-  --color-warning: #a16207;
-  --color-warning-subtle: #fefce8;
-  --color-danger: #b91c1c;
-  --color-danger-hover: #991b1b;
-  --color-danger-active: #7f1d1d;
-  --color-danger-subtle: #fef2f2;
-  --color-focus: #2563eb;
-  --color-backdrop: rgba(23, 23, 23, 0.45);
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-tint);
+  --color-success-edge: var(--success-edge);
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-tint);
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+  --color-danger-active: var(--danger-hover);
+  --color-danger-subtle: var(--danger-tint);
+  --color-danger-edge: var(--danger-edge);
+  --color-focus: var(--focus-ring);
+  --color-backdrop: var(--scrim);
 
-  /* Activity nature colours — a small dot or icon tint, never a fill behind
+  /* Identity colour: content, not interface. The eight vault colours a user
+     picks in the product, used on the homepage the way the product uses
+     them, to tell one vault or one kind of thing from another. */
+  --color-identity-1: var(--identity-1);
+  --color-identity-2: var(--identity-2);
+  --color-identity-3: var(--identity-3);
+  --color-identity-4: var(--identity-4);
+  --color-identity-5: var(--identity-5);
+  --color-identity-6: var(--identity-6);
+  --color-identity-7: var(--identity-7);
+  --color-identity-8: var(--identity-8);
+
+  /* The two marketing grounds. Ours, not the design system's: declared at the
+     bottom of this file with their dark counterparts. Sage sits behind the
+     agents section on the homepage; cream is the footer. */
+  --color-ground-sage: var(--ground-sage);
+  --color-ground-sage-ink: var(--ground-sage-ink);
+  --color-ground-cream: var(--ground-cream);
+  --color-ground-cream-ink: var(--ground-cream-ink);
+  --color-ground-cream-muted: var(--ground-cream-muted);
+  --color-ground-cream-rule: var(--ground-cream-rule);
+
+  /* Activity nature colours, a small dot or icon tint, never a fill behind
      content, and never the only carrier of meaning. */
   --color-nature-meal: #b45309;
   --color-nature-call: #0369a1;
@@ -82,7 +149,9 @@
   --color-nature-medical: #be123c;
   --color-nature-milestone: #6d28d9;
   --color-nature-record: #4d7c0f;
+}
 
+@theme {
   /* ---------- Type scale ----------
      One family. Marketing display sizes carry tighter tracking; hierarchy is
      built with weight before colour, and size before weight 700. */
@@ -94,8 +163,24 @@
   --text-mono: 12px;
   --text-mono--line-height: 1.5;
 
-  --text-caption: 12px;
+  /* 11px, as tokens/typography.css has it. The design system declares
+     --text-caption on :root as well, so the two have to agree. */
+  --text-caption: 11px;
   --text-caption--line-height: 1.4;
+
+  /* The product's three running sizes, as tokens/typography.css has them.
+     The design system declares the same names on :root, with the same
+     values. 13.5px is the size of a control, a nav row and a sentence in a
+     card; 12.5px is the line under it. */
+  --text-xs: 12.5px;
+  --text-xs--line-height: 1.4;
+
+  --text-base: 13.5px;
+  --text-base--line-height: 1.6;
+
+  --text-xl: 18px;
+  --text-xl--line-height: 1.3;
+  --text-xl--letter-spacing: -0.02em;
 
   --text-small: 13px;
   --text-small--line-height: 1.45;
@@ -148,6 +233,36 @@
   --text-display-xl--line-height: 1.04;
   --text-display-xl--letter-spacing: -0.035em;
 
+  /* The homepage's display sizes. Fluid, because the design draws them as a
+     clamp between a phone and a desktop rather than as two fixed steps. */
+  --text-display-hero: clamp(40px, 6.4vw, 68px);
+  --text-display-hero--line-height: 1.04;
+  --text-display-hero--letter-spacing: -0.04em;
+
+  --text-lede-hero: clamp(18px, 2vw, 21px);
+  --text-lede-hero--line-height: 1.4;
+  --text-lede-hero--letter-spacing: -0.01em;
+
+  --text-display-section: clamp(30px, 3.6vw, 42px);
+  --text-display-section--line-height: 1.1;
+  --text-display-section--letter-spacing: -0.035em;
+
+  --text-display-pricing: clamp(32px, 4.4vw, 52px);
+  --text-display-pricing--line-height: 1.05;
+  --text-display-pricing--letter-spacing: -0.04em;
+
+  --text-display-privacy: clamp(34px, 5.4vw, 68px);
+  --text-display-privacy--line-height: 1.04;
+  --text-display-privacy--letter-spacing: -0.045em;
+
+  --text-display-closing: clamp(32px, 4.6vw, 56px);
+  --text-display-closing--line-height: 1.05;
+  --text-display-closing--letter-spacing: -0.04em;
+
+  --text-price: 40px;
+  --text-price--line-height: 1.1;
+  --text-price--letter-spacing: -0.04em;
+
   /* ---------- Spacing ----------
      4px base unit, matching the design system's --space-* scale exactly:
      p-1 is 4px, p-6 is 24px, p-24 is 96px. Named steps cover the marketing
@@ -158,9 +273,10 @@
   --spacing-region: 32px;
 
   /* ---------- Shape ----------
-     Nothing above 8px on standard surfaces. Ordinary buttons are never pills. */
+     Two numbers: 6 for a control, 8 for a surface, 4 for marks too small for
+     6. Fully round is for a badge, a chip and an avatar, nothing else. */
   --radius-*: initial;
-  --radius-xs: 3px;
+  --radius-xs: 4px;
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
@@ -171,11 +287,13 @@
   --container-marketing: 1200px;
   --container-form: 760px;
   --container-reading: 720px;
+  --container-page: 1120px;
 
   /* ---------- Motion ----------
-     100ms button and row feedback, 150ms menus, 200ms dialogs and panels. */
+     150ms feedback, 170ms menus, 220ms panels, and one easing, the design
+     system's. Nothing bounces or overshoots. */
   --ease-*: initial;
-  --ease-standard: cubic-bezier(0.2, 0, 0.38, 1);
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* ---------- Breakpoints ----------
      The design system's reference values. `lg` is the tablet breakpoint where
@@ -187,11 +305,47 @@
   --breakpoint-xl: 1440px;
 }
 
-/* Monica uses no box shadows anywhere. Removing the utilities makes that a
-   build-time guarantee rather than a code-review question. */
-@theme {
+/* Barely an elevation layer, as tokens/shape.css draws it. `shadow-panel` is
+   the hairline given a little weight; `shadow-pop` is for what genuinely
+   floats, a menu or the chat card over the terminal. The values repeat the
+   design system's exactly, because it declares the same names on :root and
+   the two must agree. Tailwind's stock shadows stay removed.
+
+   `inline` for the same reason as the colours: two of them read design system
+   variables, which have to resolve where the shadow is drawn. */
+@theme inline {
   --shadow-*: initial;
   --inset-shadow-*: initial;
   --drop-shadow-*: initial;
   --text-shadow-*: initial;
+  --shadow-panel: 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-nav-active: inset 0 0 0 1px var(--hairline), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-pop: 0 10px 24px -8px var(--pop-shadow);
+
+  /* Ours, for one thing: the product picture under the homepage headline,
+     lifted off the page behind it. Neutral, like the others: never a
+     coloured shadow, even over the meadow. */
+  --shadow-showcase: 0 30px 60px -30px rgb(0 0 0 / 0.2), 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+/* The two marketing grounds and their dark counterparts. The dark sage is a
+   deep green that keeps the section reading as a band; the dark cream is the
+   navy of the night sky in the footer illustration, so the picture meets its
+   own colour rather than a seam. */
+:root {
+  --ground-sage: #eaf0e2;
+  --ground-sage-ink: #3f5a36;
+  --ground-cream: #faf6e8;
+  --ground-cream-ink: #1d2a17;
+  --ground-cream-muted: #4a5a42;
+  --ground-cream-rule: rgb(29 42 23 / 0.12);
+}
+
+.dark {
+  --ground-sage: #111a12;
+  --ground-sage-ink: #a3c293;
+  --ground-cream: #0f2434;
+  --ground-cream-ink: #eef2f8;
+  --ground-cream-muted: #a7b3c6;
+  --ground-cream-rule: rgb(238 242 248 / 0.14);
 }
