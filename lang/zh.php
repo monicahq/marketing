@@ -445,7 +445,7 @@ return [
             'source' => [
                 'title' => "开源",
                 'body' => "审阅我们的代码库，确认我们没有做蠢事。",
-                'comment' => "// What we share with third parties",
+                'comment' => "// 我们与第三方分享的内容",
             ],
             'trackers' => [
                 'title' => "没有广告，没有追踪器那一套烂事",

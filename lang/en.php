@@ -165,8 +165,8 @@ return [
         'pricing' => "Pricing",
         'blog' => "Blog",
         'docs' => "Documentation",
-        'signIn' => "Login",
-        'getStarted' => "Signup",
+        'signIn' => "Log in",
+        'getStarted' => "Sign up",
         'stars' => ":count stars",
 
         // The features menu: three columns of what Monica does, and a card
