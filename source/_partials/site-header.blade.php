@@ -1,6 +1,5 @@
 @php
     $home = $page->route('home');
-    $features = $page->route('features');
     $details = $page->route('details');
 
     // The features menu, one destination per item, in the order of
@@ -8,16 +7,15 @@
     // shows it best: the details page for what lives on a contact, the
     // reminders page for reminders, the timeline page for the timeline, the
     // relationships page for the people around them, the vaults page for
-    // vaults, the sharing page for sharing, the API page for assistants and
-    // the API, and the privacy page for privacy.
-    // The fragments are
-    // ids on those sections, so the dead link checker fails if one is renamed.
+    // vaults, the sharing page for sharing, the languages page for languages
+    // and formats, the API page for assistants and the API, and the privacy
+    // page for privacy.
     // Listed here rather than in `lang/`, because a URL is not copy.
     $menu = $page->t('nav.menu');
     $menuLinks = [
         [$details, $page->route('reminders'), $page->route('timeline')],
         [$page->route('relationships'), $page->route('vaults'), $page->route('sharing')],
-        ["{$features}#api", $page->route('api'), $page->route('privacyFeatures')],
+        [$page->route('languages'), $page->route('api'), $page->route('privacyFeatures')],
     ];
 
     // One identity colour per column, as the design draws it. Literal class

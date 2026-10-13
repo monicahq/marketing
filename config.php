@@ -571,6 +571,20 @@ return [
             'zh' => 'features/privacy',
             'ru' => 'vozmozhnosti/privatnost',
         ],
+
+        // "Your language. Their names.": the interface language, names in the
+        // forms people use, a display name, dates, times, numbers and time
+        // zones. The header's "Languages" menu item leads here.
+        'languages' => [
+            'en' => 'features/languages',
+            'fr' => 'fonctionnalites/langues',
+            'de' => 'funktionen/sprachen',
+            'es' => 'funcionalidades/idiomas',
+            'pt' => 'recursos/idiomas',
+            'nl' => 'functies/talen',
+            'zh' => 'features/languages',
+            'ru' => 'vozmozhnosti/yazyki',
+        ],
     ],
 
     /**
@@ -618,6 +632,7 @@ return [
         'sharing' => '2026-10-13',
         'api' => '2026-10-13',
         'privacyFeatures' => '2026-10-13',
+        'languages' => '2026-10-13',
     ],
 
     // ------------------------------------------------------------------ links

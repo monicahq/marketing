@@ -30,6 +30,7 @@ return [
             'sharing' => "Partage",
             'api' => "API et MCP",
             'privacyFeatures' => "Confidentialité et sécurité",
+            'languages' => "Langues et formats",
             'page' => "Page :number",
         ],
 
@@ -130,6 +131,11 @@ return [
             'description' => "Marquez des champs comme sensibles, partagez seulement certaines sections, contrôlez ce que les clés d’API et les assistants peuvent lire, protégez votre compte avec des clés d’accès et l’authentification à deux facteurs, et consultez son activité.",
         ],
 
+        'languages' => [
+            'title' => "Votre langue, leurs noms, vos formats : les langues dans Monica",
+            'description' => "Utilisez Monica dans plus de 30 langues, gardez les noms des gens dans leur écriture d’origine avec une translittération et une prononciation, et choisissez vos formats de date, d’heure et de nombre ainsi que votre fuseau horaire.",
+        ],
+
         'personalCrm' => [
             'title' => "Qu’est-ce qu’un CRM personnel ? Le guide pratique — Monica",
             'description' => "Ce qu’est un CRM personnel, en quoi il diffère d’un carnet d’adresses et d’un CRM commercial, quoi y noter, les compromis de confidentialité et comment choisir la bonne approche.",
@@ -178,7 +184,7 @@ return [
                 [
                     'title' => "Connecter et protéger",
                     'items' => [
-                        ['icon' => 'calendar', 'title' => "Synchro et agendas", 'body' => "Carnets d’adresses, agendas, vCards."],
+                        ['icon' => 'globe', 'title' => "Langues", 'body' => "Votre langue, leurs noms, vos formats."],
                         ['icon' => 'key', 'title' => "Assistants et API", 'body' => "Votre agent peut retrouver n’importe qui."],
                         ['icon' => 'lock', 'title' => "Confidentialité", 'body' => "Clés d’accès, 2FA, champs privés."],
                     ],
@@ -2269,6 +2275,129 @@ return [
                 ["Connexion d’un assistant", "11 octobre 2026 à 21:05"],
                 ["Changement de votre mot de passe", "7 octobre 2026 à 10:31"],
             ],
+        ],
+    ],
+
+    'languages' => [
+        'hero' => [
+            'title' => "Votre langue. Leurs noms.",
+            'lede' => "Utilisez Monica dans une langue où vous vous sentez chez vous. Gardez les noms des gens sous la forme qu’ils utilisent, et choisissez l’affichage des dates, des heures et des nombres.",
+            'body' => "Les personnes de votre vie ne suivent pas toutes les mêmes conventions. Votre carnet d’adresses doit leur laisser de la place.",
+            'cta' => "Créer votre compte",
+            'label' => "La liste des contacts dans Monica, avec l’interface en français. Chandler Bing, Élodie Durand, Dr Ross Geller et Kim Ji-woo y figurent, le nom de Ji-woo étant aussi écrit en hangul.",
+            // The drawing is the product in French, whatever the language of
+            // the page around it, because it shows somebody who chose French.
+            // Leave these four in French in every language file.
+            'window' => [
+                'title' => "Personnes",
+                'search' => "Rechercher",
+                'chandler' => "Anniversaire le 8 avril",
+                'elodie' => "Vue il y a 3 jours",
+                'ross' => "Anniversaire le 18 octobre",
+            ],
+        ],
+
+        'language' => [
+            'title' => "Sentez-vous chez vous.",
+            'lead' => "Monica est disponible dans plus de 30 langues, dont le français, l’espagnol, l’allemand, le japonais, le coréen et le chinois.",
+            'body' => "Choisissez votre langue dans vos préférences. Elle vous suit sur tous les appareils où vous vous connectez, et Monica trie vos contacts selon les règles de tri de cette langue.",
+            'label' => "Le réglage de la langue, ouvert sur une liste de langues écrites chacune dans son écriture, avec le français sélectionné.",
+            'field' => "Langue",
+            // What each language is called in the reader's language, next to
+            // its own name for itself. The keys are language codes.
+            'names' => [
+                'es' => "Espagnol",
+                'de' => "Allemand",
+                'fr' => "Français",
+                'ja' => "Japonais",
+                'ko' => "Coréen",
+                'zh' => "Chinois",
+            ],
+        ],
+
+        'names' => [
+            'title' => "Un nom mérite d’être bien écrit.",
+            'lead' => "Tout le monde n’écrit pas son prénom en premier. Tous les noms ne tiennent pas dans deux cases.",
+            'body' => [
+                "Choisissez le prénom d’abord ou le nom de famille d’abord pour chaque contact, ou laissez Monica suivre votre préférence par défaut. Ajoutez des éléments de nom là où ils servent, ou saisissez le nom complet exactement comme il doit apparaître.",
+                "Il y a aussi de la place pour les titres, les suffixes, les surnoms et les noms de naissance. Ross peut garder son « Dr ». Tous les autres peuvent décider de l’utiliser ou non.",
+            ],
+            'label' => "Deux formes de nom. Celle de Ross Geller a le titre Dr et suit l’ordre des noms par défaut. Celle de Kim Ji-woo est réglée sur le nom de famille d’abord, avec le surnom Jiji.",
+            'optional' => "facultatif",
+            'prefix' => "Titre",
+            'prefixValue' => "Dr",
+            'suffix' => "Suffixe",
+            'suffixPlaceholder' => "Jr, PhD",
+            'first' => "Prénom",
+            'last' => "Nom de famille",
+            'readsAs' => "S’affiche comme",
+            'follow' => "Suivre ma préférence",
+            'familyFirst' => "Nom de famille d’abord",
+            'nickname' => "Surnom",
+            'maiden' => "Nom de naissance",
+        ],
+
+        'forms' => [
+            'title' => "Une personne. Plusieurs façons d’écrire son nom.",
+            'lead' => "Gardez un nom dans son écriture d’origine, à côté d’une autre forme écrite, d’une translittération ou d’un guide de prononciation.",
+            'body' => [
+                "Une translittération vous permet de noter le nom avec un autre système d’écriture. Un guide de prononciation vous aide à vous souvenir de la façon de le dire.",
+                "Ces formes appartiennent au même contact. Vous les saisissez vous-même, avec des étiquettes facultatives de langue et d’écriture pour garder les choses claires.",
+            ],
+            'label' => "Le nom de Kim Ji-woo écrit de trois façons : 김지우 en hangul, Kim Ji-woo en lettres latines, et un guide de prononciation.",
+            'heading' => "Nom",
+            'hint' => "Des façons d’écrire le même nom.",
+            'written' => "Forme écrite · Coréen · Hangul",
+            'transliteration' => "Translittération · Latin",
+            'pronunciation' => "Guide de prononciation",
+            // How Ji-woo's name sounds, spelled for a reader of this language.
+            'pronunciationValue' => "kim dji-ou",
+            'add' => "Ajouter une autre façon d’écrire ce nom",
+        ],
+
+        'display' => [
+            'title' => "Choisissez le nom que vous voulez voir.",
+            'lead' => "Sélectionnez une forme enregistrée comme nom d’affichage du contact. Monica l’utilise dans les listes, les titres de page, les notifications et les initiales.",
+            'body' => "Les autres formes restent sur la fiche du contact. Changer la langue de l’interface ne choisit pas un autre nom à votre place.",
+            'label' => "La translittération Kim Ji-woo est choisie comme nom d’affichage, et apparaît dans la liste des contacts, comme titre de page et dans une notification d’anniversaire.",
+            'written' => "Forme écrite",
+            'transliteration' => "Translittération",
+            'badge' => "Nom d’affichage",
+            'list' => "Liste",
+            'pageTitle' => "Titre de la page",
+            'notification' => "Notification",
+            'birthday' => "L’anniversaire de :name est demain",
+        ],
+
+        'dates' => [
+            'title' => "Des dates que vous n’avez pas à déchiffrer.",
+            'lead' => "Est-ce que 04/05 veut dire le 5 avril ou le 4 mai ? Choisissez le format que vous lisez sans hésiter.",
+            'body' => "Réglez votre format de date, choisissez une horloge sur 12 ou 24 heures, et sélectionnez les séparateurs utilisés dans les nombres. Ces préférences sont indépendantes de votre langue, vous pouvez donc les combiner comme vous le souhaitez.",
+            'label' => "Les réglages des dates, des heures et des nombres, avec le jour avant le mois, l’horloge sur 24 heures et une espace entre les milliers. L’aperçu indique : :preview",
+            'heading' => "Dates, heures et nombres",
+            'format' => "Format de date",
+            'formatLong' => "13 oct. 2026",
+            'clock' => "Horloge",
+            'twelve' => "12 heures · 6:30 pm",
+            'twentyFour' => "24 heures · 18:30",
+            'numbers' => "Nombres",
+            'preview' => "Aperçu",
+            'previewValue' => "Dîner avec Phoebe, 04/05/2026 à 19:00",
+        ],
+
+        'timezone' => [
+            'title' => "Votre journée, dans votre fuseau horaire.",
+            'lead' => "Choisissez votre fuseau horaire en cherchant une ville, avec la carte, ou en reprenant le réglage de votre appareil.",
+            'body' => "Monica affiche les dates et les heures en conséquence. Les rappels existants gardent leur propre fuseau horaire, donc modifier vos préférences ne décale pas discrètement un rappel déjà défini.",
+            'label' => "Choix d’un fuseau horaire en cherchant une ville : Lisbonne est en surbrillance. Dessous, un rappel pour appeler Maman le dimanche à 18:00 garde le fuseau horaire de New York.",
+            'tabs' => ["Chercher une ville", "Carte", "Depuis cet appareil"],
+            // The first letters of the city typed so far. Both cities below
+            // should start with them in this language.
+            'query' => "Lis",
+            'lisbon' => "Lisbonne, Portugal",
+            'lismore' => "Lismore, Australie",
+            'reminder' => "Appeler Maman",
+            'reminderWhen' => "Le dimanche à 18:00 · garde America/New_York",
         ],
     ],
 

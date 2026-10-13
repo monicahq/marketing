@@ -74,6 +74,7 @@
         // no glyph for them. First on the list to replace if it ever does.
         'chevron-left' => '<path d="M9.6 4.4 6 8l3.6 3.6"></path>',
         'code' => '<path d="M5.8 4.6 2.6 8l3.2 3.4"></path><path d="M10.2 4.6 13.4 8l-3.2 3.4"></path>',
+        'globe' => '<circle cx="8" cy="8" r="5.6"></circle><line x1="2.4" y1="8" x2="13.6" y2="8"></line><path d="M8 2.4c1.5 1.6 2.3 3.5 2.3 5.6S9.5 12 8 13.6C6.5 12 5.7 10.1 5.7 8S6.5 4 8 2.4Z"></path>',
         'download' => '<line x1="8" y1="2.6" x2="8" y2="10"></line><path d="M4.8 6.8 8 10l3.2-3.2"></path><line x1="2.8" y1="13.2" x2="13.2" y2="13.2"></line>',
         'panel' => '<rect x="2.2" y="3" width="11.6" height="10" rx="1.6"></rect><line x1="10" y1="3" x2="10" y2="13"></line>',
         'phone' => '<path d="M5.8 2.4 7.4 5 6.1 6.3a8 8 0 0 0 3.6 3.6L11 8.6l2.6 1.6v2a1 1 0 0 1-1 1C7.1 12.9 3.1 8.9 2.8 3.4a1 1 0 0 1 1-1z"></path>',

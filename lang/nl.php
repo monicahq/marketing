@@ -31,6 +31,7 @@ return [
             'sharing' => "Delen",
             'api' => "API en MCP",
             'privacyFeatures' => "Privacy en beveiliging",
+            'languages' => "Talen en notaties",
             'page' => "Pagina :number",
         ],
 
@@ -127,6 +128,11 @@ return [
             'description' => "Markeer velden als gevoelig, deel alleen geselecteerde secties, bepaal wat API-sleutels en assistenten mogen lezen, beveilig je account met passkeys en tweestapsverificatie en bekijk de activiteit ervan.",
         ],
 
+        'languages' => [
+            'title' => "Jouw taal, hun namen: talen en notaties in Monica",
+            'description' => "Gebruik Monica in meer dan 30 talen. Schrijf namen in de volgorde en vormen die mensen gebruiken, kies een weergavenaam en stel je eigen voorkeuren in voor datum, tijd, getallen en tijdzone.",
+        ],
+
         'personalCrm' => [
             'title' => "Wat is een persoonlijke CRM? Een praktische gids — Monica",
             'description' => "Wat een persoonlijke CRM is, hoe die verschilt van een adresboek en een sales-CRM, wat je erin zet, welke privacyafwegingen erbij horen en hoe je de juiste aanpak kiest.",
@@ -175,7 +181,7 @@ return [
                 [
                     'title' => "Verbinden en beschermen",
                     'items' => [
-                        ['icon' => 'calendar', 'title' => "Synchronisatie en agenda's", 'body' => "Adresboeken, agenda's, vCards."],
+                        ['icon' => 'globe', 'title' => "Talen", 'body' => "Jouw taal, hun namen, jouw notaties."],
                         ['icon' => 'key', 'title' => "Assistenten en API", 'body' => "Je agent kan mensen opzoeken."],
                         ['icon' => 'lock', 'title' => "Privacy", 'body' => "Passkeys, 2FA, privévelden."],
                     ],
@@ -2260,6 +2266,129 @@ return [
                 ["Een assistent verbonden", "11 oktober 2026 om 21:05"],
                 ["Je wachtwoord gewijzigd", "7 oktober 2026 om 10:31"],
             ],
+        ],
+    ],
+
+    'languages' => [
+        'hero' => [
+            'title' => "Jouw taal. Hun namen.",
+            'lede' => "Gebruik Monica in een taal waarin je je thuis voelt. Bewaar namen in de vorm die mensen zelf gebruiken en kies hoe datums, tijden en getallen eruitzien.",
+            'body' => "De mensen in je leven volgen niet allemaal dezelfde conventies. Je adresboek moet daar ruimte voor laten.",
+            'cta' => "Maak je account aan",
+            'label' => "De contactenlijst in Monica, met de interface in het Frans. Chandler Bing, Élodie Durand, dr. Ross Geller en Kim Ji-woo staan in de lijst, met Ji-woo’s naam ook in hangul geschreven.",
+            // The drawing is the product in French, whatever the language of
+            // the page around it, because it shows somebody who chose French.
+            // Leave these four in French in every language file.
+            'window' => [
+                'title' => "Personnes",
+                'search' => "Rechercher",
+                'chandler' => "Anniversaire le 8 avril",
+                'elodie' => "Vue il y a 3 jours",
+                'ross' => "Anniversaire le 18 octobre",
+            ],
+        ],
+
+        'language' => [
+            'title' => "Voel je thuis.",
+            'lead' => "Monica is beschikbaar in meer dan 30 talen, waaronder Frans, Spaans, Duits, Japans, Koreaans en Chinees.",
+            'body' => "Kies je taal in je voorkeuren. Die volgt je op alle apparaten waarop je inlogt, en Monica sorteert je contacten volgens de sorteerregels van die taal.",
+            'label' => "De taalinstelling, geopend op een lijst met talen die elk in hun eigen schrift staan geschreven, met Frans geselecteerd.",
+            'field' => "Taal",
+            // What each language is called in the reader's language, next to
+            // its own name for itself. The keys are language codes.
+            'names' => [
+                'es' => "Spaans",
+                'de' => "Duits",
+                'fr' => "Frans",
+                'ja' => "Japans",
+                'ko' => "Koreaans",
+                'zh' => "Chinees",
+            ],
+        ],
+
+        'names' => [
+            'title' => "Een naam verdient het om goed geschreven te worden.",
+            'lead' => "Niet iedereen schrijft de voornaam eerst. Niet elke naam past netjes in twee vakjes.",
+            'body' => [
+                "Kies per contact of de voornaam of de achternaam voorop staat, of laat het je standaardvoorkeur volgen. Voeg naamdelen toe waar ze helpen, of vul de volledige naam precies in zoals die moet verschijnen.",
+                "Er is ook ruimte voor voorvoegsels, achtervoegsels, bijnamen en meisjesnamen. Ross mag zijn “dr.” houden. Iedereen anders bepaalt zelf of die het gebruikt.",
+            ],
+            'label' => "Twee naamvormen. Die van Ross Geller heeft het voorvoegsel dr. en volgt de standaardvolgorde. Die van Kim Ji-woo staat op achternaam eerst, met de bijnaam Jiji.",
+            'optional' => "optioneel",
+            'prefix' => "Voorvoegsel",
+            'prefixValue' => "dr.",
+            'suffix' => "Achtervoegsel",
+            'suffixPlaceholder' => "Jr, PhD",
+            'first' => "Voornaam",
+            'last' => "Achternaam",
+            'readsAs' => "Wordt gelezen als",
+            'follow' => "Volg mijn voorkeur",
+            'familyFirst' => "Achternaam eerst",
+            'nickname' => "Bijnaam",
+            'maiden' => "Meisjesnaam",
+        ],
+
+        'forms' => [
+            'title' => "Eén persoon. Meer dan één manier om de naam te schrijven.",
+            'lead' => "Bewaar een naam in het oorspronkelijke schrift naast een andere schrijfwijze, een transliteratie of een uitspraakhulp.",
+            'body' => [
+                "Met een transliteratie leg je de naam vast in een ander schrift. Een uitspraakhulp helpt je onthouden hoe je de naam uitspreekt.",
+                "Deze vormen horen bij hetzelfde contact. Je vult ze zelf in, met optionele labels voor taal en schrift om ze duidelijk te houden.",
+            ],
+            'label' => "De naam van Kim Ji-woo op drie manieren geschreven: 김지우 in hangul, Kim Ji-woo in Latijnse letters en een uitspraakhulp.",
+            'heading' => "Naam",
+            'hint' => "Manieren om dezelfde naam te schrijven.",
+            'written' => "Geschreven vorm · Koreaans · Hangul",
+            'transliteration' => "Transliteratie · Latijns",
+            'pronunciation' => "Uitspraakhulp",
+            // How Ji-woo's name sounds, spelled for a reader of this language.
+            'pronunciationValue' => "kim dzjie-oe",
+            'add' => "Nog een manier toevoegen om deze naam te schrijven",
+        ],
+
+        'display' => [
+            'title' => "Kies de naam die je wilt zien.",
+            'lead' => "Selecteer één opgeslagen vorm als weergavenaam van het contact. Monica gebruikt die in lijsten, paginatitels, meldingen en initialen.",
+            'body' => "De andere vormen blijven bij het contact staan. Als je de taal van de interface wijzigt, wordt er niet stilletjes een andere naam voor je gekozen.",
+            'label' => "De transliteratie Kim Ji-woo is gekozen als weergavenaam en verschijnt in de contactenlijst, als paginatitel en in een verjaardagsmelding.",
+            'written' => "Geschreven vorm",
+            'transliteration' => "Transliteratie",
+            'badge' => "Weergavenaam",
+            'list' => "Lijst",
+            'pageTitle' => "Paginatitel",
+            'notification' => "Melding",
+            'birthday' => ":name is morgen jarig",
+        ],
+
+        'dates' => [
+            'title' => "Datums die je niet hoeft te ontcijferen.",
+            'lead' => "Betekent 04/05 4 mei of 5 april? Kies het formaat dat je prettig vindt om te lezen.",
+            'body' => "Stel je datumnotatie in, kies een 12-uurs of 24-uurs klok en selecteer de scheidingstekens voor getallen. Deze voorkeuren staan los van je taal, dus je kunt ze combineren zoals je wilt.",
+            'label' => "De instellingen voor datums, tijden en getallen, met de dag vóór de maand, de 24-uurs klok en een spatie tussen duizendtallen. Het voorbeeld luidt: :preview",
+            'heading' => "Datums, tijden en getallen",
+            'format' => "Datumnotatie",
+            'formatLong' => "13 okt 2026",
+            'clock' => "Klok",
+            'twelve' => "12-uurs · 6:30 pm",
+            'twentyFour' => "24-uurs · 18:30",
+            'numbers' => "Getallen",
+            'preview' => "Voorbeeld",
+            'previewValue' => "Diner met Phoebe, 04/05/2026 om 19:00",
+        ],
+
+        'timezone' => [
+            'title' => "Jouw dag, in jouw tijdzone.",
+            'lead' => "Kies je tijdzone door een stad te zoeken, de kaart te gebruiken of de instelling van je apparaat over te nemen.",
+            'body' => "Monica toont datums en tijden daarop afgestemd. Bestaande herinneringen houden hun eigen tijdzone, dus als je je voorkeuren wijzigt, verschuift er niet stilletjes een herinnering die je al had ingesteld.",
+            'label' => "Een tijdzone kiezen door een stad te zoeken: Lissabon is gemarkeerd. Daaronder houdt een herinnering om op zondag om 18:00 mama te bellen de tijdzone van New York.",
+            'tabs' => ["Zoek een stad", "Kaart", "Van dit apparaat"],
+            // The first letters of the city typed so far. Both cities below
+            // should start with them in this language.
+            'query' => "Lis",
+            'lisbon' => "Lissabon, Portugal",
+            'lismore' => "Lismore, Australië",
+            'reminder' => "Mama bellen",
+            'reminderWhen' => "Zondag om 18:00 · houdt America/New_York aan",
         ],
     ],
 

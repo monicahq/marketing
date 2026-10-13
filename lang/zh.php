@@ -46,6 +46,7 @@ return [
             'sharing' => "分享",
             'api' => "API 和 MCP",
             'privacyFeatures' => "隐私与安全",
+            'languages' => "语言与格式",
             'page' => "第 :number 页",
         ],
 
@@ -151,6 +152,11 @@ return [
             'description' => "把字段标记为敏感，只分享选定的分区，控制 API 密钥和助手能读取什么，用通行密钥和双重验证保护你的账户，并查看账户的活动。",
         ],
 
+        'languages' => [
+            'title' => "你的语言，他们的名字：Monica 的语言与格式",
+            'description' => "在 30 多种语言中使用 Monica。按人们习惯的顺序和形式书写名字，选择显示名称，并设置你自己的日期、时间、数字和时区偏好。",
+        ],
+
         'personalCrm' => [
             'title' => "什么是个人 CRM？实用指南：Monica",
             'description' => "个人 CRM 是什么，它与通讯录和销售 CRM 有何不同，该存储哪些内容，隐私上的取舍，以及如何选择合适的方式。",
@@ -199,7 +205,7 @@ return [
                 [
                     'title' => "连接与保护",
                     'items' => [
-                        ['icon' => 'calendar', 'title' => "同步与日历", 'body' => "通讯录、日历、vCard。"],
+                        ['icon' => 'globe', 'title' => "语言", 'body' => "你的语言，他们的名字，你的格式。"],
                         ['icon' => 'key', 'title' => "助手与 API", 'body' => "你的智能体可以查找联系人。"],
                         ['icon' => 'lock', 'title' => "隐私", 'body' => "通行密钥、双重验证、私密字段。"],
                     ],
@@ -2280,6 +2286,129 @@ return [
                 ["连接了助手", "2026 年 10 月 11 日 21:05"],
                 ["修改了密码", "2026 年 10 月 7 日 10:31"],
             ],
+        ],
+    ],
+
+    'languages' => [
+        'hero' => [
+            'title' => "你的语言，他们的名字。",
+            'lede' => "用你用着最自在的语言使用 Monica。让每个人的名字保持他们自己使用的形式，并选择日期、时间和数字的显示方式。",
+            'body' => "你生活中的人并不都遵循同一套习惯。你的通讯录应该为此留出空间。",
+            'cta' => "创建你的账户",
+            'label' => "Monica 中的联系人列表，界面为法语。列出了 Chandler Bing、Élodie Durand、Dr. Ross Geller 和 Kim Ji-woo，其中 Ji-woo 的名字还用韩文写出。",
+            // The drawing is the product in French, whatever the language of
+            // the page around it, because it shows somebody who chose French.
+            // Leave these four in French in every language file.
+            'window' => [
+                'title' => "Personnes",
+                'search' => "Rechercher",
+                'chandler' => "Anniversaire le 8 avril",
+                'elodie' => "Vue il y a 3 jours",
+                'ross' => "Anniversaire le 18 octobre",
+            ],
+        ],
+
+        'language' => [
+            'title' => "在这里，像在家一样。",
+            'lead' => "Monica 提供 30 多种语言，包括法语、西班牙语、德语、日语、韩语和中文。",
+            'body' => "在偏好设置中选择你的语言。它会跟随你，出现在你登录的每台设备上，Monica 也会按这种语言的排序规则整理你的联系人。",
+            'label' => "语言设置，展开的列表中每种语言都用自己的文字书写，已选中法语。",
+            'field' => "语言",
+            // What each language is called in the reader's language, next to
+            // its own name for itself. The keys are language codes.
+            'names' => [
+                'es' => "西班牙语",
+                'de' => "德语",
+                'fr' => "法语",
+                'ja' => "日语",
+                'ko' => "韩语",
+                'zh' => "中文",
+            ],
+        ],
+
+        'names' => [
+            'title' => "名字值得被正确书写。",
+            'lead' => "并不是每个人都把名放在前面。也不是每个名字都能整齐地放进两个格子里。",
+            'body' => [
+                "为每位联系人选择先写名还是先写姓，或者让它遵循你的默认偏好。需要时可以分开填写各个部分，也可以直接输入应当显示的完整姓名。",
+                "还有位置留给称谓、后缀、昵称和婚前姓名。Ross 可以保留他的“Dr.”，其他人可以自己决定用不用。",
+            ],
+            'label' => "两种姓名形式。Ross Geller 的带有称谓 Dr.，并遵循默认的姓名顺序。Kim Ji-woo 的设为先写姓，昵称是 Jiji。",
+            'optional' => "可选",
+            'prefix' => "称谓",
+            'prefixValue' => "Dr.",
+            'suffix' => "后缀",
+            'suffixPlaceholder' => "Jr, PhD",
+            'first' => "名",
+            'last' => "姓",
+            'readsAs' => "显示为",
+            'follow' => "遵循我的偏好",
+            'familyFirst' => "先写姓",
+            'nickname' => "昵称",
+            'maiden' => "婚前姓名",
+        ],
+
+        'forms' => [
+            'title' => "同一个人，不止一种写法。",
+            'lead' => "把名字保存为它原本的文字，同时保留另一种写法、音译或发音提示。",
+            'body' => [
+                "音译让你可以用另一种文字记录这个名字。发音提示则帮你记住怎么念。",
+                "这些写法都属于同一位联系人。由你自己填写，还可以加上可选的语言和文字标签，让它们一目了然。",
+            ],
+            'label' => "Kim Ji-woo 的名字有三种写法：韩文 김지우，拉丁字母 Kim Ji-woo，以及一条发音提示。",
+            'heading' => "姓名",
+            'hint' => "同一个名字的不同写法。",
+            'written' => "书写形式 · 韩语 · 韩文",
+            'transliteration' => "音译 · 拉丁字母",
+            'pronunciation' => "发音提示",
+            // How Ji-woo's name sounds, spelled for a reader of this language.
+            'pronunciationValue' => "jin zhi-wu",
+            'add' => "添加这个名字的另一种写法",
+        ],
+
+        'display' => [
+            'title' => "选择你想看到的名字。",
+            'lead' => "选一种已保存的写法作为联系人的显示名称。Monica 会在列表、页面标题、通知和首字母头像中使用它。",
+            'body' => "其他写法仍保留在联系人上。更改界面语言，不会替你换成另一个名字。",
+            'label' => "音译 Kim Ji-woo 被选为显示名称，并出现在联系人列表、页面标题和生日通知中。",
+            'written' => "书写形式",
+            'transliteration' => "音译",
+            'badge' => "显示名称",
+            'list' => "列表",
+            'pageTitle' => "页面标题",
+            'notification' => "通知",
+            'birthday' => ":name 的生日是明天",
+        ],
+
+        'dates' => [
+            'title' => "日期，不必再猜。",
+            'lead' => "04/05 是 4 月 5 日，还是 5 月 4 日？选一种你读起来顺眼的格式。",
+            'body' => "设置日期格式，选择 12 小时制或 24 小时制，并选择数字中使用的分隔符。这些偏好与你的语言相互独立，所以你可以按自己喜欢的方式搭配。",
+            'label' => "日期、时间和数字设置，日在月之前，24 小时制，千位之间用空格分隔。预览显示：:preview",
+            'heading' => "日期、时间和数字",
+            'format' => "日期格式",
+            'formatLong' => "2026年10月13日",
+            'clock' => "时钟",
+            'twelve' => "12 小时制 · 下午 6:30",
+            'twentyFour' => "24 小时制 · 18:30",
+            'numbers' => "数字",
+            'preview' => "预览",
+            'previewValue' => "和 Phoebe 吃晚饭，04/05/2026 19:00",
+        ],
+
+        'timezone' => [
+            'title' => "你的一天，按你的时区。",
+            'lead' => "搜索城市、使用地图，或沿用设备上的设置，来选择你的时区。",
+            'body' => "Monica 会据此显示日期和时间。已有的提醒保留各自的时区，所以更改偏好不会悄悄挪动你早已设好的提醒。",
+            'label' => "通过搜索城市选择时区：已高亮里斯本。下方是每周日 18:00 给妈妈打电话的提醒，它保持纽约时区。",
+            'tabs' => ["搜索城市", "地图", "来自此设备"],
+            // The first letters of the city typed so far. Both cities below
+            // should start with them in this language.
+            'query' => "里",
+            'lisbon' => "里斯本，葡萄牙",
+            'lismore' => "里斯莫尔，澳大利亚",
+            'reminder' => "给妈妈打电话",
+            'reminderWhen' => "每周日 18:00 · 保持 America/New_York",
         ],
     ],
 
