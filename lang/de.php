@@ -27,6 +27,7 @@ return [
             'reminders' => "Erinnerungen",
             'timeline' => "Zeitleiste",
             'relationships' => "Beziehungen",
+            'vaults' => "Tresore",
             'page' => "Seite :number",
         ],
 
@@ -122,6 +123,11 @@ return [
         'relationships' => [
             'title' => "Verstehen Sie, wie Menschen zusammenhängen: Beziehungen in Monica",
             'description' => "Behalten Sie den Überblick über die Menschen um jemanden herum, mit Beziehungen, die von beiden Seiten stimmig klingen. Stammbäume, Menschen, die Sie noch nicht kennen, vergangene Beziehungen und eigene Beziehungstypen.",
+        ],
+
+        'vaults' => [
+            'title' => "Ein Platz für jeden Teil Ihres Lebens: Tresore in Monica",
+            'description' => "Halten Sie Freunde, Familie und Kollegen zusammen oder geben Sie jeder Gruppe einen eigenen Raum. Jeder Tresor hat eigene Kontakte, eine eigene Zeitleiste, eigene Erinnerungen und eine Standardvorlage, alles in Ihrem Konto.",
         ],
 
         'personalCrm' => [
@@ -1748,6 +1754,103 @@ return [
             'roleLabel' => "Rolle, auf beiden Seiten",
             'role' => "Mitbewohner",
             'sentences' => ["Monica Geller ist die Mitbewohnerin von Rachel Green.", "Rachel Green ist die Mitbewohnerin von Monica Geller."],
+        ],
+    ],
+
+    'vaults' => [
+        // Words more than one drawing uses. A vault's tile shows the first
+        // letter of its name.
+        'personal' => "Privat",
+        'work' => "Arbeit",
+        'default' => "Standard",
+        'heading' => "Ihre Tresore",
+
+        'hero' => [
+            'title' => "Ein Platz für jeden Teil Ihres Lebens.",
+            'intro' => "Freunde und Familie. Menschen, die Sie von der Arbeit kennen. Die Mitglieder Ihres Vereins vor Ort.",
+            'lede' => "Halten Sie sie zusammen oder geben Sie jeder Gruppe einen eigenen Raum. Mit Tresoren ordnen Sie Monica nach Ihrem Leben.",
+            'cta' => "Konto erstellen",
+            'label' => "Ihre Tresore in Monica. Privat, der Standard, geöffnet vor 1 Stunde, mit Rachel, Chandler, Ross, Joey und 20 weiteren, keine offenen Aufgaben und 2 Daten in diesem Monat. Arbeit, geöffnet vor 2 Tagen, mit Marcel, Inès, Sam und 6 weiteren, 3 offene Aufgaben und 1 Datum in diesem Monat. Dazu Platz, um einen weiteren Tresor anzulegen.",
+            'new' => "Neuer Tresor",
+            // Personal first, then Work. The people are in the template.
+            'vaults' => [
+                ['opened' => "Geöffnet vor 1 Stunde", 'more' => "und 20 weitere"],
+                ['opened' => "Geöffnet vor 2 Tagen", 'more' => "und 6 weitere"],
+            ],
+            'stats' => ["Offene Aufgaben", "Daten in diesem Monat"],
+            'another' => [
+                'title' => "Weiteren Tresor anlegen",
+                'body' => "Arbeit, ein Verein, die Familie auf der anderen Seite. Nichts davon ist von hier aus sichtbar.",
+            ],
+        ],
+
+        'one' => [
+            'title' => "Vielleicht genügt Ihnen ein Tresor.",
+            'lead' => "Monica beginnt mit einem Tresor „Privat“. Sie können alle dort aufbewahren und es dabei belassen.",
+            'body' => "Wenn Sie einen getrennten Raum möchten, legen Sie einen weiteren Tresor an. Geben Sie ihm einen Namen und eine Farbe, damit er leicht zu erkennen ist.",
+            'label' => "Einen Tresor in Monica anlegen. Der Name ist Arbeit, die Beschreibung lautet: das Restaurant, die Lieferanten und die Leute, mit denen ich gelernt habe. Die Farbe ist Petrol, gewählt aus acht, und eine Vorschau zeigt die Kachel „Arbeit“ in dieser Farbe.",
+            'create' => "Tresor anlegen",
+            'name' => "Name",
+            'description' => "Beschreibung",
+            'optional' => "optional",
+            'value' => "Das Restaurant, die Lieferanten und die Leute, mit denen ich gelernt habe.",
+            'colour' => "Farbe",
+            'cancel' => "Abbrechen",
+            'submit' => "Tresor anlegen",
+        ],
+
+        'split' => [
+            'title' => "Central Perk in einem. Das Restaurant in einem anderen.",
+            'lead' => "Monica Geller könnte Rachel, Chandler und den Rest der Clique in „Privat“ aufbewahren und ihre Kollegen aus dem Restaurant in „Arbeit“.",
+            'body' => "Jeder Tresor hat seine eigene Kontaktliste, Beziehungen, Zeitleiste und Erinnerungen. Eine Suche bleibt in dem Tresor, den Sie gerade nutzen, damit Sie sich auf diesen Teil Ihres Lebens konzentrieren können.",
+            'label' => "Zwei Tresore nebeneinander in Monica. In „Privat“: Rachel Green, Mitbewohnerin; Chandler Bing, Partner; Ross Geller, Bruder; Joey Tribbiani und Phoebe Buffay, Freunde. In „Arbeit“ findet eine Suche nach Rachel niemanden, weil die Suche nur in diesem Tresor sucht. Dort sind Marcel Duval, Sous-Chef; Inès Ortega, Pâtissière; und Sam Whitfield, Restaurantinhaber.",
+            'people' => "Menschen",
+            'search' => "Privat durchsuchen",
+            'query' => "Rachel",
+            'empty' => [
+                'title' => "Niemand namens Rachel in Arbeit",
+                'body' => "Die Suche sucht nur in diesem Tresor. Wechseln Sie zu einem anderen Tresor, um dort zu suchen.",
+            ],
+            // The people are in the template, in this order.
+            'personalRoles' => ["Mitbewohnerin", "Partner", "Bruder", "Freund", "Freundin"],
+            'workRoles' => ["Sous-Chef", "Pâtissière", "Restaurantinhaber"],
+        ],
+
+        'templates' => [
+            'title' => "Verschiedene Räume können verschiedene Details bewahren.",
+            'lead' => "An eine enge Freundin erinnern Sie sich wahrscheinlich an anderes als an einen Kollegen.",
+            'body' => "Wählen Sie für jeden Tresor eine Standardvorlage für Kontakte. Neue Kontakte beginnen mit der Struktur, die Sie gewählt haben, ob das nun Lieblingsspeisen und gemeinsame Erinnerungen sind oder eine Rolle und ein Fachgebiet.",
+            'label' => "Zwei Kontakte in Monica, jeder aus einem anderen Tresor. Rachel Green, in „Privat“, nutzt die Vorlage „Freunde und Familie“: Ihre Lieblingsspeise ist Trifle, solange kein Rindfleisch drin ist, und eine gemeinsame Erinnerung ist ihr Auftritt im Central Perk im Hochzeitskleid 1994. Marcel Duval, in „Arbeit“, nutzt die Vorlage „Kollegen“: Seine Rolle ist Sous-Chef und sein Fachgebiet sind Saucen und Fisch. Darunter ist die Standardvorlage für „Arbeit“ auf „Kollegen“ gesetzt.",
+            // Rachel first, then Marcel.
+            'cards' => [
+                ['template' => "Privat · Vorlage „Freunde und Familie“", 'fields' => [
+                    ['label' => "Lieblingsspeisen", 'value' => "Trifle, solange kein Rindfleisch drin ist"],
+                    ['label' => "Gemeinsame Erinnerungen", 'value' => "Im Hochzeitskleid ins Central Perk gestolpert, 1994"],
+                ]],
+                ['template' => "Arbeit · Vorlage „Kollegen“", 'fields' => [
+                    ['label' => "Rolle", 'value' => "Sous-Chef"],
+                    ['label' => "Fachgebiet", 'value' => "Saucen und Fisch"],
+                ]],
+            ],
+            'defaultFor' => "Standardvorlage für Arbeit",
+            'choice' => "Kollegen",
+        ],
+
+        'switch' => [
+            'title' => "Machen Sie dort weiter, wo Sie gebraucht werden.",
+            'lead' => "Wechseln Sie den Tresor, um die Menschen, Ereignisse und Erinnerungen zu sehen, die dort hingehören.",
+            'body' => "Wählen Sie einen Standardtresor, damit der Raum, den Sie am meisten nutzen, Ihr Ausgangspunkt ist.",
+            'label' => "Der Tresorwechsler in Monica, geöffnet in „Arbeit“. Ihre Tresore: „Privat“, der Standard, mit 24 Menschen, und „Arbeit“, ausgewählt, mit 9 Menschen, dann alle Tresore. Darunter die Einstellung für den Standardtresor, „Privat“: der Tresor, in dem Sie nach der Anmeldung landen.",
+            'counts' => ["24 Menschen", "9 Menschen"],
+            'all' => "Alle Tresore",
+            'defaultLabel' => "Standardtresor",
+            'hint' => "Der Tresor, in dem Sie nach der Anmeldung landen.",
+        ],
+
+        'apart' => [
+            'title' => "Getrennte Räume, trotzdem Ihr Konto.",
+            'lead' => "Tresore ordnen Ihre Informationen innerhalb Ihres Kontos. Sie gehören nur Ihnen: Andere können ihnen nicht beitreten oder sich anmelden, um zu sehen, was Sie festgehalten haben.",
+            'body' => "Wählen Sie, wohin jemand gehört, bevor Sie ihn hinzufügen. Kontakte können derzeit nicht zwischen Tresoren verschoben werden, und Beziehungen verbinden Menschen im selben Tresor.",
         ],
     ],
 

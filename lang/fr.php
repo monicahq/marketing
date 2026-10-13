@@ -29,6 +29,7 @@ return [
             'reminders' => "Rappels",
             'timeline' => "Chronologie",
             'relationships' => "Relations",
+            'vaults' => "Coffres",
             'page' => "Page :number",
         ],
 
@@ -125,6 +126,11 @@ return [
         'relationships' => [
             'title' => "Comprenez comment les gens sont liés : les relations dans Monica",
             'description' => "Gardez une trace des personnes qui entourent quelqu’un, avec des relations qui se lisent correctement des deux côtés. Arbres généalogiques, personnes que vous n’avez pas encore rencontrées, relations passées et vos propres types de relation.",
+        ],
+
+        'vaults' => [
+            'title' => "Une place pour chaque partie de votre vie : les coffres dans Monica",
+            'description' => "Gardez amis, famille et collègues ensemble, ou donnez à chaque groupe son propre espace. Chaque coffre a ses contacts, sa chronologie, ses rappels et son modèle par défaut, le tout dans votre compte.",
         ],
 
         'personalCrm' => [
@@ -1752,6 +1758,103 @@ return [
             'roleLabel' => "Rôle, des deux côtés",
             'role' => "Colocataire",
             'sentences' => ["Monica Geller est la colocataire de Rachel Green.", "Rachel Green est la colocataire de Monica Geller."],
+        ],
+    ],
+
+    'vaults' => [
+        // Mots que plusieurs dessins utilisent. La pastille d’un coffre affiche
+        // la première lettre de son nom.
+        'personal' => "Personnel",
+        'work' => "Travail",
+        'default' => "Par défaut",
+        'heading' => "Vos coffres",
+
+        'hero' => [
+            'title' => "Une place pour chaque partie de votre vie.",
+            'intro' => "Les amis et la famille. Les gens que vous connaissez par le travail. Les membres de votre club local.",
+            'lede' => "Gardez-les ensemble ou donnez à chaque groupe son propre espace. Les coffres vous aident à organiser Monica autour de votre vie.",
+            'cta' => "Créer votre compte",
+            'label' => "Vos coffres dans Monica. Personnel, le coffre par défaut, ouvert il y a 1 heure, avec Rachel, Chandler, Ross, Joey et 20 autres, aucune tâche ouverte et 2 dates ce mois-ci. Travail, ouvert il y a 2 jours, avec Marcel, Inès, Sam et 6 autres, 3 tâches ouvertes et 1 date ce mois-ci. Et un espace pour commencer un autre coffre.",
+            'new' => "Nouveau coffre",
+            // Personnel d’abord, puis Travail. Les personnes sont dans le modèle.
+            'vaults' => [
+                ['opened' => "Ouvert il y a 1 heure", 'more' => "et 20 autres"],
+                ['opened' => "Ouvert il y a 2 jours", 'more' => "et 6 autres"],
+            ],
+            'stats' => ["Tâches ouvertes", "Dates ce mois-ci"],
+            'another' => [
+                'title' => "Commencer un autre coffre",
+                'body' => "Le travail, un club, la famille de l’autre côté. Rien de ce qu’il contient n’est visible d’ici.",
+            ],
+        ],
+
+        'one' => [
+            'title' => "Un seul coffre peut suffire.",
+            'lead' => "Monica vous crée un coffre Personnel pour commencer. Vous pouvez y garder tout le monde et continuer ainsi.",
+            'body' => "Quand vous voulez un espace à part, créez un autre coffre. Donnez-lui un nom et une couleur pour le reconnaître facilement.",
+            'label' => "La création d’un coffre dans Monica. Le nom est Travail, la description indique : le restaurant, les fournisseurs et les gens avec qui j’ai fait mes classes. La couleur est le turquoise, choisie parmi huit, et un aperçu montre la pastille Travail dans cette couleur.",
+            'create' => "Créer un coffre",
+            'name' => "Nom",
+            'description' => "Description",
+            'optional' => "facultatif",
+            'value' => "Le restaurant, les fournisseurs et les gens avec qui j’ai fait mes classes.",
+            'colour' => "Couleur",
+            'cancel' => "Annuler",
+            'submit' => "Créer le coffre",
+        ],
+
+        'split' => [
+            'title' => "Central Perk dans l’un. Le restaurant dans l’autre.",
+            'lead' => "Monica Geller pourrait garder Rachel, Chandler et le reste de la bande dans Personnel, et ses collègues du restaurant dans Travail.",
+            'body' => "Chaque coffre a sa propre liste de contacts, ses relations, sa chronologie et ses rappels. Une recherche reste dans le coffre que vous utilisez, pour vous concentrer sur cette partie de votre vie.",
+            'label' => "Deux coffres côte à côte dans Monica. Dans Personnel : Rachel Green, colocataire ; Chandler Bing, compagnon ; Ross Geller, frère ; Joey Tribbiani et Phoebe Buffay, amis. Dans Travail, une recherche de Rachel ne trouve personne, parce que la recherche regarde uniquement dans ce coffre. Ses personnes sont Marcel Duval, sous-chef ; Inès Ortega, cheffe pâtissière ; et Sam Whitfield, propriétaire du restaurant.",
+            'people' => "Personnes",
+            'search' => "Rechercher dans Personnel",
+            'query' => "Rachel",
+            'empty' => [
+                'title' => "Personne ne s’appelle Rachel dans Travail",
+                'body' => "La recherche regarde uniquement dans ce coffre. Passez à un autre coffre pour y chercher.",
+            ],
+            // Les personnes sont dans le modèle, dans cet ordre.
+            'personalRoles' => ["Colocataire", "Compagnon", "Frère", "Ami", "Amie"],
+            'workRoles' => ["Sous-chef", "Cheffe pâtissière", "Propriétaire du restaurant"],
+        ],
+
+        'templates' => [
+            'title' => "Des espaces différents peuvent garder des détails différents.",
+            'lead' => "Vous ne retenez sans doute pas les mêmes choses sur un ami proche et sur un collègue.",
+            'body' => "Choisissez un modèle de contact par défaut pour chaque coffre. Les nouveaux contacts commencent avec la structure que vous avez choisie, qu’il s’agisse de plats préférés et de souvenirs partagés, ou d’un poste et d’un domaine d’expertise.",
+            'label' => "Deux contacts dans Monica, chacun d’un coffre différent. Rachel Green, dans Personnel, utilise le modèle Amis et famille : son plat préféré est le trifle, à condition qu’il ne contienne pas de bœuf, et un souvenir partagé est son arrivée au Central Perk en robe de mariée en 1994. Marcel Duval, dans Travail, utilise le modèle Collègues : son poste est sous-chef et son domaine d’expertise est les sauces et le poisson. En dessous, le modèle par défaut de Travail est réglé sur Collègues.",
+            // Rachel d’abord, puis Marcel.
+            'cards' => [
+                ['template' => "Personnel · modèle Amis et famille", 'fields' => [
+                    ['label' => "Plats préférés", 'value' => "Le trifle, à condition qu’il ne contienne pas de bœuf"],
+                    ['label' => "Souvenirs partagés", 'value' => "Arrivée au Central Perk en robe de mariée, 1994"],
+                ]],
+                ['template' => "Travail · modèle Collègues", 'fields' => [
+                    ['label' => "Poste", 'value' => "Sous-chef"],
+                    ['label' => "Domaine d’expertise", 'value' => "Sauces et poisson"],
+                ]],
+            ],
+            'defaultFor' => "Modèle par défaut de Travail",
+            'choice' => "Collègues",
+        ],
+
+        'switch' => [
+            'title' => "Reprenez là où vous en avez besoin.",
+            'lead' => "Changez de coffre pour voir les personnes, les événements et les rappels qui s’y trouvent.",
+            'body' => "Choisissez un coffre par défaut pour faire de l’espace que vous utilisez le plus votre point de départ.",
+            'label' => "Le sélecteur de coffre dans Monica, ouvert depuis Travail. Vos coffres : Personnel, le coffre par défaut, avec 24 personnes, et Travail, sélectionné, avec 9 personnes, puis tous les coffres. En dessous, le réglage du coffre par défaut, Personnel : le coffre où vous arrivez après la connexion.",
+            'counts' => ["24 personnes", "9 personnes"],
+            'all' => "Tous les coffres",
+            'defaultLabel' => "Coffre par défaut",
+            'hint' => "Le coffre où vous arrivez après la connexion.",
+        ],
+
+        'apart' => [
+            'title' => "Des espaces séparés, toujours votre compte.",
+            'lead' => "Les coffres organisent vos informations au sein de votre compte. Ils sont à vous seul : personne d’autre ne peut les rejoindre ni se connecter pour voir ce que vous avez noté.",
+            'body' => "Choisissez où quelqu’un a sa place avant de l’ajouter. Les contacts ne peuvent pas encore passer d’un coffre à l’autre, et les relations relient des personnes d’un même coffre.",
         ],
     ],
 

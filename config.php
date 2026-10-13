@@ -536,6 +536,21 @@ return [
             'zh' => 'features/relationships',
             'ru' => 'vozmozhnosti/otnosheniya',
         ],
+
+        // "A place for each part of your life": vaults, what each one keeps
+        // apart, and switching between them. The header's "Vaults" menu item
+        // leads here. Nested under the features section like the
+        // relationships page, and like it, not a tab.
+        'vaults' => [
+            'en' => 'features/vaults',
+            'fr' => 'fonctionnalites/coffres',
+            'de' => 'funktionen/tresore',
+            'es' => 'funcionalidades/bovedas',
+            'pt' => 'recursos/cofres',
+            'nl' => 'functies/kluizen',
+            'zh' => 'features/vaults',
+            'ru' => 'vozmozhnosti/khranilishcha',
+        ],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -575,6 +590,7 @@ return [
         'reminders' => '2026-10-12',
         'timeline' => '2026-10-12',
         'relationships' => '2026-10-13',
+        'vaults' => '2026-10-13',
     ],
 
     // ------------------------------------------------------------------ links

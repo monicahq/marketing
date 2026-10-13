@@ -27,6 +27,7 @@ return [
             'reminders' => "Recordatorios",
             'timeline' => "Cronología",
             'relationships' => "Relaciones",
+            'vaults' => "Bóvedas",
             'page' => "Página :number",
         ],
 
@@ -123,6 +124,11 @@ return [
         'relationships' => [
             'title' => "Entiende cómo se conectan las personas: las relaciones en Monica",
             'description' => "Lleva el registro de las personas que rodean a alguien, con relaciones que se leen bien desde los dos lados. Árboles genealógicos, personas que aún no conoces, relaciones pasadas y tus propios tipos de relación.",
+        ],
+
+        'vaults' => [
+            'title' => "Un sitio para cada parte de tu vida: las bóvedas en Monica",
+            'description' => "Mantén juntos a amigos, familia y colegas, o dale a cada grupo su propio espacio. Cada bóveda tiene sus propios contactos, cronología, recordatorios y plantilla predeterminada, todo dentro de tu cuenta.",
         ],
 
         'personalCrm' => [
@@ -1750,6 +1756,103 @@ return [
             'roleLabel' => "Papel, en los dos lados",
             'role' => "Compañero de piso",
             'sentences' => ["Monica Geller es la compañera de piso de Rachel Green.", "Rachel Green es la compañera de piso de Monica Geller."],
+        ],
+    ],
+
+    'vaults' => [
+        // Words more than one drawing uses. A vault's tile shows the first
+        // letter of its name.
+        'personal' => "Personal",
+        'work' => "Trabajo",
+        'default' => "Predeterminada",
+        'heading' => "Tus bóvedas",
+
+        'hero' => [
+            'title' => "Un sitio para cada parte de tu vida.",
+            'intro' => "Amigos y familia. Personas que conoces del trabajo. Los miembros de tu club.",
+            'lede' => "Mantenlos juntos o dale a cada grupo su propio espacio. Las bóvedas te ayudan a organizar Monica en torno a tu vida.",
+            'cta' => "Crear tu cuenta",
+            'label' => "Tus bóvedas en Monica. Personal, la predeterminada, abierta hace 1 hora, con Rachel, Chandler, Ross, Joey y 20 más, sin tareas abiertas y 2 fechas este mes. Trabajo, abierta hace 2 días, con Marcel, Inès, Sam y 6 más, 3 tareas abiertas y 1 fecha este mes. Y un espacio para empezar otra bóveda.",
+            'new' => "Nueva bóveda",
+            // Personal first, then Work. The people are in the template.
+            'vaults' => [
+                ['opened' => "Abierta hace 1 hora", 'more' => "y 20 más"],
+                ['opened' => "Abierta hace 2 días", 'more' => "y 6 más"],
+            ],
+            'stats' => ["Tareas abiertas", "Fechas este mes"],
+            'another' => [
+                'title' => "Empieza otra bóveda",
+                'body' => "El trabajo, un club, la familia del otro lado. Nada de lo que contenga se ve desde aquí.",
+            ],
+        ],
+
+        'one' => [
+            'title' => "Quizá una sola bóveda sea todo lo que necesitas.",
+            'lead' => "Monica te empieza con una bóveda Personal. Puedes tener ahí a todo el mundo y seguir adelante.",
+            'body' => "Cuando quieras un espacio aparte, crea otra bóveda. Ponle un nombre y un color para reconocerla con facilidad.",
+            'label' => "Creando una bóveda en Monica. El nombre es Trabajo, la descripción dice: el restaurante, los proveedores y las personas con las que me formé. El color es verde azulado, elegido entre ocho, y una vista previa muestra el icono de Trabajo en ese color.",
+            'create' => "Crear una bóveda",
+            'name' => "Nombre",
+            'description' => "Descripción",
+            'optional' => "opcional",
+            'value' => "El restaurante, los proveedores y las personas con las que me formé.",
+            'colour' => "Color",
+            'cancel' => "Cancelar",
+            'submit' => "Crear bóveda",
+        ],
+
+        'split' => [
+            'title' => "Central Perk en una. El restaurante en otra.",
+            'lead' => "Monica Geller podría tener a Rachel, Chandler y el resto del grupo en Personal, y a sus colegas del restaurante en Trabajo.",
+            'body' => "Cada bóveda tiene su propia lista de contactos, relaciones, cronología y recordatorios. Una búsqueda se queda dentro de la bóveda que estás usando, para que puedas centrarte en esa parte de tu vida.",
+            'label' => "Dos bóvedas lado a lado en Monica. En Personal: Rachel Green, compañera de piso; Chandler Bing, pareja; Ross Geller, hermano; Joey Tribbiani y Phoebe Buffay, amigos. En Trabajo, una búsqueda de Rachel no encuentra a nadie, porque la búsqueda mira solo en esta bóveda. Sus personas son Marcel Duval, segundo de cocina; Inès Ortega, pastelera; y Sam Whitfield, dueño del restaurante.",
+            'people' => "Personas",
+            'search' => "Buscar en Personal",
+            'query' => "Rachel",
+            'empty' => [
+                'title' => "Nadie llamado Rachel en Trabajo",
+                'body' => "La búsqueda mira solo en esta bóveda. Cambia a otra bóveda para buscar allí.",
+            ],
+            // The people are in the template, in this order.
+            'personalRoles' => ["Compañera de piso", "Pareja", "Hermano", "Amigo", "Amiga"],
+            'workRoles' => ["Segundo de cocina", "Pastelera", "Dueño del restaurante"],
+        ],
+
+        'templates' => [
+            'title' => "Espacios distintos pueden guardar detalles distintos.",
+            'lead' => "Seguramente recuerdas cosas distintas de un amigo cercano y de un colega.",
+            'body' => "Elige una plantilla de contacto predeterminada para cada bóveda. Los contactos nuevos empiezan con la estructura que elegiste, ya sean las comidas favoritas y los recuerdos compartidos, o un puesto y un área de especialidad.",
+            'label' => "Dos contactos en Monica, cada uno de una bóveda distinta. Rachel Green, en Personal, usa la plantilla Amigos y familia: su comida favorita es el trifle, siempre que no lleve ternera, y un recuerdo compartido es su llegada al Central Perk con un vestido de novia en 1994. Marcel Duval, en Trabajo, usa la plantilla Colegas: su puesto es segundo de cocina y su área de especialidad son las salsas y el pescado. Debajo, la plantilla predeterminada de Trabajo es Colegas.",
+            // Rachel first, then Marcel.
+            'cards' => [
+                ['template' => "Personal · plantilla Amigos y familia", 'fields' => [
+                    ['label' => "Comidas favoritas", 'value' => "Trifle, siempre que no lleve ternera"],
+                    ['label' => "Recuerdos compartidos", 'value' => "Llegó al Central Perk con un vestido de novia, 1994"],
+                ]],
+                ['template' => "Trabajo · plantilla Colegas", 'fields' => [
+                    ['label' => "Puesto", 'value' => "Segundo de cocina"],
+                    ['label' => "Área de especialidad", 'value' => "Salsas y pescado"],
+                ]],
+            ],
+            'defaultFor' => "Plantilla predeterminada de Trabajo",
+            'choice' => "Colegas",
+        ],
+
+        'switch' => [
+            'title' => "Retoma justo donde lo necesites.",
+            'lead' => "Cambia de bóveda para ver las personas, los eventos y los recordatorios que pertenecen a ella.",
+            'body' => "Elige una bóveda predeterminada para que el espacio que más usas sea tu punto de partida.",
+            'label' => "El selector de bóvedas en Monica, abierto estando en Trabajo. Tus bóvedas: Personal, la predeterminada, con 24 personas, y Trabajo, seleccionada, con 9 personas, y después todas las bóvedas. Debajo, el ajuste de bóveda predeterminada, Personal: la bóveda en la que entras al iniciar sesión.",
+            'counts' => ["24 personas", "9 personas"],
+            'all' => "Todas las bóvedas",
+            'defaultLabel' => "Bóveda predeterminada",
+            'hint' => "La bóveda en la que entras al iniciar sesión.",
+        ],
+
+        'apart' => [
+            'title' => "Espacios separados, la misma cuenta.",
+            'lead' => "Las bóvedas organizan tu información dentro de tu cuenta. Son solo tuyas: nadie más puede unirse a ellas ni iniciar sesión para ver lo que has anotado.",
+            'body' => "Elige dónde encaja alguien antes de añadirlo. Por ahora los contactos no pueden pasar de una bóveda a otra, y las relaciones conectan a personas de la misma bóveda.",
         ],
     ],
 

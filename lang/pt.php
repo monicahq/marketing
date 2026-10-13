@@ -31,6 +31,7 @@ return [
             'reminders' => "Lembretes",
             'timeline' => "Linha do tempo",
             'relationships' => "Relacionamentos",
+            'vaults' => "Cofres",
             'page' => "Página :number",
         ],
 
@@ -126,6 +127,11 @@ return [
         'relationships' => [
             'title' => "Entenda como as pessoas estão ligadas: os relacionamentos na Monica",
             'description' => "Acompanhe as pessoas ao redor de alguém, com relacionamentos que fazem sentido dos dois lados. Árvores genealógicas, pessoas que você ainda não conheceu, relacionamentos passados e os seus próprios tipos de relacionamento.",
+        ],
+
+        'vaults' => [
+            'title' => "Um lugar para cada parte da sua vida: os cofres na Monica",
+            'description' => "Mantenha amigos, família e colegas juntos ou dê a cada grupo o seu próprio espaço. Cada cofre tem os seus contatos, linha do tempo, lembretes e modelo padrão, tudo dentro da sua conta.",
         ],
 
         'personalCrm' => [
@@ -1753,6 +1759,103 @@ return [
             'roleLabel' => "Papel, nos dois lados",
             'role' => "Colega de apartamento",
             'sentences' => ["Monica Geller é colega de apartamento de Rachel Green.", "Rachel Green é colega de apartamento de Monica Geller."],
+        ],
+    ],
+
+    'vaults' => [
+        // Words more than one drawing uses. A vault's tile shows the first
+        // letter of its name.
+        'personal' => "Pessoal",
+        'work' => "Trabalho",
+        'default' => "Padrão",
+        'heading' => "Seus cofres",
+
+        'hero' => [
+            'title' => "Um lugar para cada parte da sua vida.",
+            'intro' => "Amigos e família. Pessoas que você conhece do trabalho. Os membros do seu clube.",
+            'lede' => "Mantenha todos juntos ou dê a cada grupo o seu próprio espaço. Os cofres ajudam a organizar a Monica em torno da sua vida.",
+            'cta' => "Criar a sua conta",
+            'label' => "Seus cofres na Monica. Pessoal, o padrão, aberto há 1 hora, com Rachel, Chandler, Ross, Joey e mais 20, nenhuma tarefa aberta e 2 datas neste mês. Trabalho, aberto há 2 dias, com Marcel, Inès, Sam e mais 6, 3 tarefas abertas e 1 data neste mês. E um espaço para começar outro cofre.",
+            'new' => "Novo cofre",
+            // Personal first, then Work. The people are in the template.
+            'vaults' => [
+                ['opened' => "Aberto há 1 hora", 'more' => "e mais 20"],
+                ['opened' => "Aberto há 2 dias", 'more' => "e mais 6"],
+            ],
+            'stats' => ["Tarefas abertas", "Datas neste mês"],
+            'another' => [
+                'title' => "Comece outro cofre",
+                'body' => "Trabalho, um clube, a família do outro lado. Nada do que está nele aparece daqui.",
+            ],
+        ],
+
+        'one' => [
+            'title' => "Um cofre pode ser tudo de que você precisa.",
+            'lead' => "A Monica começa com um cofre Pessoal. Você pode manter todo mundo ali e seguir em frente.",
+            'body' => "Quando quiser um espaço separado, crie outro cofre. Dê a ele um nome e uma cor para reconhecê-lo com facilidade.",
+            'label' => "Criando um cofre na Monica. O nome é Trabalho, a descrição diz: o restaurante, os fornecedores e as pessoas com quem estudei. A cor é azul-petróleo, escolhida entre oito, e uma prévia mostra o ícone de Trabalho nessa cor.",
+            'create' => "Criar um cofre",
+            'name' => "Nome",
+            'description' => "Descrição",
+            'optional' => "opcional",
+            'value' => "O restaurante, os fornecedores e as pessoas com quem estudei.",
+            'colour' => "Cor",
+            'cancel' => "Cancelar",
+            'submit' => "Criar cofre",
+        ],
+
+        'split' => [
+            'title' => "O Central Perk em um. O restaurante em outro.",
+            'lead' => "A Monica Geller pode manter a Rachel, o Chandler e o resto da turma em Pessoal, com os colegas do restaurante em Trabalho.",
+            'body' => "Cada cofre tem a sua própria lista de contatos, relacionamentos, linha do tempo e lembretes. Uma busca fica dentro do cofre que você está usando, para você se concentrar naquela parte da sua vida.",
+            'label' => "Dois cofres lado a lado na Monica. Em Pessoal: Rachel Green, colega de apartamento; Chandler Bing, companheiro; Ross Geller, irmão; Joey Tribbiani e Phoebe Buffay, amigos. Em Trabalho, uma busca por Rachel não encontra ninguém, porque a busca olha só neste cofre. As pessoas dele são Marcel Duval, subchefe; Inès Ortega, confeiteira; e Sam Whitfield, dono do restaurante.",
+            'people' => "Pessoas",
+            'search' => "Buscar em Pessoal",
+            'query' => "Rachel",
+            'empty' => [
+                'title' => "Ninguém chamado Rachel em Trabalho",
+                'body' => "A busca olha só neste cofre. Mude para outro cofre para buscar lá.",
+            ],
+            // The people are in the template, in this order.
+            'personalRoles' => ["Colega de apartamento", "Companheiro", "Irmão", "Amigo", "Amiga"],
+            'workRoles' => ["Subchefe", "Confeiteira", "Dono do restaurante"],
+        ],
+
+        'templates' => [
+            'title' => "Espaços diferentes podem guardar detalhes diferentes.",
+            'lead' => "Você provavelmente lembra de coisas diferentes sobre um amigo próximo e sobre um colega.",
+            'body' => "Escolha um modelo de contato padrão para cada cofre. Os novos contatos começam com a estrutura que você escolheu, seja ela comidas favoritas e memórias compartilhadas, seja um cargo e uma área de especialidade.",
+            'label' => "Dois contatos na Monica, cada um de um cofre diferente. Rachel Green, em Pessoal, usa o modelo Amigos e família: a comida favorita dela é trifle, desde que não leve carne, e uma memória compartilhada é ela chegando ao Central Perk de vestido de noiva em 1994. Marcel Duval, em Trabalho, usa o modelo Colegas: o cargo dele é subchefe e a área de especialidade é molhos e peixes. Abaixo, o modelo padrão de Trabalho está definido como Colegas.",
+            // Rachel first, then Marcel.
+            'cards' => [
+                ['template' => "Pessoal · modelo Amigos e família", 'fields' => [
+                    ['label' => "Comidas favoritas", 'value' => "Trifle, desde que não leve carne"],
+                    ['label' => "Memórias compartilhadas", 'value' => "Chegou ao Central Perk de vestido de noiva, 1994"],
+                ]],
+                ['template' => "Trabalho · modelo Colegas", 'fields' => [
+                    ['label' => "Cargo", 'value' => "Subchefe"],
+                    ['label' => "Área de especialidade", 'value' => "Molhos e peixes"],
+                ]],
+            ],
+            'defaultFor' => "Modelo padrão de Trabalho",
+            'choice' => "Colegas",
+        ],
+
+        'switch' => [
+            'title' => "Retome de onde você precisar.",
+            'lead' => "Troque de cofre para ver as pessoas, os eventos e os lembretes que pertencem a ele.",
+            'body' => "Escolha um cofre padrão para fazer do espaço que você mais usa o seu ponto de partida.",
+            'label' => "O seletor de cofres na Monica, aberto em Trabalho. Seus cofres: Pessoal, o padrão, com 24 pessoas, e Trabalho, selecionado, com 9 pessoas, depois todos os cofres. Abaixo, a configuração do cofre padrão, Pessoal: o cofre em que você entra depois de fazer login.",
+            'counts' => ["24 pessoas", "9 pessoas"],
+            'all' => "Todos os cofres",
+            'defaultLabel' => "Cofre padrão",
+            'hint' => "O cofre em que você entra depois de fazer login.",
+        ],
+
+        'apart' => [
+            'title' => "Espaços separados, ainda a sua conta.",
+            'lead' => "Os cofres organizam as suas informações dentro da sua conta. Eles são só seus: outras pessoas não podem entrar neles nem fazer login para ver o que você registrou.",
+            'body' => "Escolha onde alguém fica antes de adicioná-lo. Por enquanto, os contatos não podem mudar de cofre, e os relacionamentos ligam pessoas dentro do mesmo cofre.",
         ],
     ],
 

@@ -48,6 +48,7 @@ return [
             'reminders' => "Reminders",
             'timeline' => "Timeline",
             'relationships' => "Relationships",
+            'vaults' => "Vaults",
             'page' => "Page :number",
         ],
 
@@ -148,6 +149,11 @@ return [
         'relationships' => [
             'title' => "Understand how people are connected: relationships in Monica",
             'description' => "Keep track of the people around someone, with relationships that read correctly from both sides. Family trees, people you have not met yet, past relationships and your own relationship types.",
+        ],
+
+        'vaults' => [
+            'title' => "A place for each part of your life: vaults in Monica",
+            'description' => "Keep friends, family and colleagues together or give each group its own space. Each vault has its own contacts, timeline, reminders and default template, all inside your account.",
         ],
 
         'personalCrm' => [
@@ -1774,6 +1780,103 @@ return [
             'roleLabel' => "Role, on both sides",
             'role' => "Roommate",
             'sentences' => ["Monica Geller is Rachel Green’s roommate.", "Rachel Green is Monica Geller’s roommate."],
+        ],
+    ],
+
+    'vaults' => [
+        // Words more than one drawing uses. A vault's tile shows the first
+        // letter of its name.
+        'personal' => "Personal",
+        'work' => "Work",
+        'default' => "Default",
+        'heading' => "Your vaults",
+
+        'hero' => [
+            'title' => "A place for each part of your life.",
+            'intro' => "Friends and family. People you know through work. The members of your local club.",
+            'lede' => "Keep them together or give each group its own space. Vaults help you organise Monica around your life.",
+            'cta' => "Create your account",
+            'label' => "Your vaults in Monica. Personal, the default, opened 1 hour ago, with Rachel, Chandler, Ross, Joey and 20 more, no open tasks and 2 dates this month. Work, opened 2 days ago, with Marcel, Inès, Sam and 6 more, 3 open tasks and 1 date this month. And a space to start another vault.",
+            'new' => "New vault",
+            // Personal first, then Work. The people are in the template.
+            'vaults' => [
+                ['opened' => "Opened 1 hour ago", 'more' => "and 20 more"],
+                ['opened' => "Opened 2 days ago", 'more' => "and 6 more"],
+            ],
+            'stats' => ["Open tasks", "Dates this month"],
+            'another' => [
+                'title' => "Start another vault",
+                'body' => "Work, a club, the family on the other side. Nothing in it is visible from here.",
+            ],
+        ],
+
+        'one' => [
+            'title' => "One vault might be all you need.",
+            'lead' => "Monica starts you with a Personal vault. You can keep everyone there and carry on.",
+            'body' => "When you want a separate space, create another vault. Give it a name and a colour so it is easy to recognise.",
+            'label' => "Creating a vault in Monica. The name is Work, the description reads: the restaurant, the suppliers and the people I trained with. The colour is teal, chosen from eight, and a preview shows the Work tile in that colour.",
+            'create' => "Create a vault",
+            'name' => "Name",
+            'description' => "Description",
+            'optional' => "optional",
+            'value' => "The restaurant, the suppliers and the people I trained with.",
+            'colour' => "Colour",
+            'cancel' => "Cancel",
+            'submit' => "Create vault",
+        ],
+
+        'split' => [
+            'title' => "Central Perk in one. The restaurant in another.",
+            'lead' => "Monica Geller might keep Rachel, Chandler and the rest of the group in Personal, with her restaurant colleagues in Work.",
+            'body' => "Each vault has its own contact list, relationships, timeline and reminders. A search stays within the vault you are using, so you can focus on that part of your life.",
+            'label' => "Two vaults side by side in Monica. In Personal: Rachel Green, roommate; Chandler Bing, partner; Ross Geller, brother; Joey Tribbiani and Phoebe Buffay, friends. In Work, a search for Rachel finds nobody, because search looks in this vault only. Its people are Marcel Duval, sous-chef; Inès Ortega, pastry chef; and Sam Whitfield, restaurant owner.",
+            'people' => "People",
+            'search' => "Search Personal",
+            'query' => "Rachel",
+            'empty' => [
+                'title' => "Nobody called Rachel in Work",
+                'body' => "Search looks in this vault only. Switch to another vault to search there.",
+            ],
+            // The people are in the template, in this order.
+            'personalRoles' => ["Roommate", "Partner", "Brother", "Friend", "Friend"],
+            'workRoles' => ["Sous-chef", "Pastry chef", "Restaurant owner"],
+        ],
+
+        'templates' => [
+            'title' => "Different spaces can keep different details.",
+            'lead' => "You probably remember different things about a close friend and a colleague.",
+            'body' => "Choose a default contact template for each vault. New contacts start with the structure you selected, whether that means favourite foods and shared memories or a role and an area of expertise.",
+            'label' => "Two contacts in Monica, each from a different vault. Rachel Green, in Personal, uses the Friends and family template: her favourite food is trifle, as long as it has no beef in it, and a shared memory is her arriving at Central Perk in a wedding dress in 1994. Marcel Duval, in Work, uses the Colleagues template: his role is sous-chef and his area of expertise is sauces and fish. Below, the default template for Work is set to Colleagues.",
+            // Rachel first, then Marcel.
+            'cards' => [
+                ['template' => "Personal · Friends and family template", 'fields' => [
+                    ['label' => "Favourite foods", 'value' => "Trifle, as long as it has no beef in it"],
+                    ['label' => "Shared memories", 'value' => "Arrived at Central Perk in a wedding dress, 1994"],
+                ]],
+                ['template' => "Work · Colleagues template", 'fields' => [
+                    ['label' => "Role", 'value' => "Sous-chef"],
+                    ['label' => "Area of expertise", 'value' => "Sauces and fish"],
+                ]],
+            ],
+            'defaultFor' => "Default template for Work",
+            'choice' => "Colleagues",
+        ],
+
+        'switch' => [
+            'title' => "Pick up where you need to.",
+            'lead' => "Switch vaults to see the people, events and reminders that belong there.",
+            'body' => "Choose a default vault to make the space you use most your starting point.",
+            'label' => "The vault switcher in Monica, open while in Work. Your vaults: Personal, the default, with 24 people, and Work, selected, with 9 people, then all vaults. Below, the default vault setting, Personal: the vault you land in after signing in.",
+            'counts' => ["24 people", "9 people"],
+            'all' => "All vaults",
+            'defaultLabel' => "Default vault",
+            'hint' => "The vault you land in after signing in.",
+        ],
+
+        'apart' => [
+            'title' => "Separate spaces, still your account.",
+            'lead' => "Vaults organise your information within your account. They are yours alone: other people cannot join them or sign in to see what you have recorded.",
+            'body' => "Choose where someone belongs before adding them. Contacts cannot currently move between vaults, and relationships connect people within the same vault.",
         ],
     ],
 

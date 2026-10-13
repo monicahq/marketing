@@ -30,6 +30,7 @@ return [
             'reminders' => "Herinneringen",
             'timeline' => "Tijdlijn",
             'relationships' => "Relaties",
+            'vaults' => "Kluizen",
             'page' => "Pagina :number",
         ],
 
@@ -119,6 +120,11 @@ return [
         'relationships' => [
             'title' => "Begrijp hoe mensen met elkaar verbonden zijn: relaties in Monica",
             'description' => "Houd bij wie er rond iemand staan, met relaties die kloppen vanuit beide kanten. Stambomen, mensen die je nog niet hebt ontmoet, eerdere relaties en je eigen soorten relaties.",
+        ],
+
+        'vaults' => [
+            'title' => "Een plek voor elk deel van je leven: kluizen in Monica",
+            'description' => "Houd vrienden, familie en collega’s bij elkaar of geef elke groep een eigen ruimte. Elke kluis heeft eigen contacten, een eigen tijdlijn, eigen herinneringen en een standaardsjabloon, allemaal binnen je account.",
         ],
 
         'personalCrm' => [
@@ -1746,6 +1752,103 @@ return [
             'roleLabel' => "Rol, aan beide kanten",
             'role' => "Huisgenoot",
             'sentences' => ["Monica Geller is de huisgenoot van Rachel Green.", "Rachel Green is de huisgenoot van Monica Geller."],
+        ],
+    ],
+
+    'vaults' => [
+        // Words more than one drawing uses. A vault's tile shows the first
+        // letter of its name.
+        'personal' => "Persoonlijk",
+        'work' => "Werk",
+        'default' => "Standaard",
+        'heading' => "Je kluizen",
+
+        'hero' => [
+            'title' => "Een plek voor elk deel van je leven.",
+            'intro' => "Vrienden en familie. Mensen die je kent van je werk. De leden van je club in de buurt.",
+            'lede' => "Houd ze bij elkaar of geef elke groep een eigen ruimte. Met kluizen richt je Monica in rond je leven.",
+            'cta' => "Maak je account aan",
+            'label' => "Je kluizen in Monica. Persoonlijk, de standaardkluis, 1 uur geleden geopend, met Rachel, Chandler, Ross, Joey en 20 anderen, geen openstaande taken en 2 data deze maand. Werk, 2 dagen geleden geopend, met Marcel, Inès, Sam en 6 anderen, 3 openstaande taken en 1 datum deze maand. En een plek om nog een kluis te beginnen.",
+            'new' => "Nieuwe kluis",
+            // Personal first, then Work. The people are in the template.
+            'vaults' => [
+                ['opened' => "1 uur geleden geopend", 'more' => "en 20 anderen"],
+                ['opened' => "2 dagen geleden geopend", 'more' => "en 6 anderen"],
+            ],
+            'stats' => ["Openstaande taken", "Data deze maand"],
+            'another' => [
+                'title' => "Begin nog een kluis",
+                'body' => "Werk, een club, de familie aan de andere kant. Niets erin is van hieruit zichtbaar.",
+            ],
+        ],
+
+        'one' => [
+            'title' => "Eén kluis is misschien alles wat je nodig hebt.",
+            'lead' => "Monica geeft je om te beginnen een kluis Persoonlijk. Je kunt daar iedereen in bewaren en gewoon doorgaan.",
+            'body' => "Wil je een aparte ruimte, maak dan nog een kluis aan. Geef hem een naam en een kleur, zodat je hem makkelijk herkent.",
+            'label' => "Een kluis aanmaken in Monica. De naam is Werk, de beschrijving luidt: het restaurant, de leveranciers en de mensen met wie ik leerde koken. De kleur is blauwgroen, gekozen uit acht, en een voorbeeld toont de tegel Werk in die kleur.",
+            'create' => "Een kluis aanmaken",
+            'name' => "Naam",
+            'description' => "Beschrijving",
+            'optional' => "optioneel",
+            'value' => "Het restaurant, de leveranciers en de mensen met wie ik leerde koken.",
+            'colour' => "Kleur",
+            'cancel' => "Annuleren",
+            'submit' => "Kluis aanmaken",
+        ],
+
+        'split' => [
+            'title' => "Central Perk in de ene. Het restaurant in de andere.",
+            'lead' => "Monica Geller bewaart Rachel, Chandler en de rest van de groep misschien in Persoonlijk, en haar collega’s uit het restaurant in Werk.",
+            'body' => "Elke kluis heeft een eigen lijst met contacten, relaties, tijdlijn en herinneringen. Een zoekopdracht blijft binnen de kluis die je gebruikt, zodat je je kunt richten op dat deel van je leven.",
+            'label' => "Twee kluizen naast elkaar in Monica. In Persoonlijk: Rachel Green, huisgenoot; Chandler Bing, partner; Ross Geller, broer; Joey Tribbiani en Phoebe Buffay, vrienden. In Werk vindt een zoekopdracht naar Rachel niemand, omdat zoeken alleen in deze kluis kijkt. De mensen daar zijn Marcel Duval, sous-chef; Inès Ortega, banketbakker; en Sam Whitfield, restauranteigenaar.",
+            'people' => "Mensen",
+            'search' => "Zoeken in Persoonlijk",
+            'query' => "Rachel",
+            'empty' => [
+                'title' => "Niemand met de naam Rachel in Werk",
+                'body' => "Zoeken kijkt alleen in deze kluis. Ga naar een andere kluis om daar te zoeken.",
+            ],
+            // The people are in the template, in this order.
+            'personalRoles' => ["Huisgenoot", "Partner", "Broer", "Vriend", "Vriend"],
+            'workRoles' => ["Sous-chef", "Banketbakker", "Restauranteigenaar"],
+        ],
+
+        'templates' => [
+            'title' => "Verschillende ruimtes kunnen verschillende details bewaren.",
+            'lead' => "Je onthoudt waarschijnlijk andere dingen over een goede vriend dan over een collega.",
+            'body' => "Kies voor elke kluis een standaardsjabloon voor contacten. Nieuwe contacten beginnen met de opzet die je koos, of dat nu lievelingseten en gedeelde herinneringen zijn, of een functie en een vakgebied.",
+            'label' => "Twee contacten in Monica, elk uit een andere kluis. Rachel Green, in Persoonlijk, gebruikt het sjabloon Vrienden en familie: haar lievelingseten is trifle, zolang er geen rundvlees in zit, en een gedeelde herinnering is dat ze in 1994 in een trouwjurk Central Perk binnenkwam. Marcel Duval, in Werk, gebruikt het sjabloon Collega’s: zijn functie is sous-chef en zijn vakgebied is sauzen en vis. Daaronder is het standaardsjabloon voor Werk ingesteld op Collega’s.",
+            // Rachel first, then Marcel.
+            'cards' => [
+                ['template' => "Persoonlijk · Sjabloon Vrienden en familie", 'fields' => [
+                    ['label' => "Lievelingseten", 'value' => "Trifle, zolang er geen rundvlees in zit"],
+                    ['label' => "Gedeelde herinneringen", 'value' => "Kwam Central Perk binnenlopen in een trouwjurk, 1994"],
+                ]],
+                ['template' => "Werk · Sjabloon Collega’s", 'fields' => [
+                    ['label' => "Functie", 'value' => "Sous-chef"],
+                    ['label' => "Vakgebied", 'value' => "Sauzen en vis"],
+                ]],
+            ],
+            'defaultFor' => "Standaardsjabloon voor Werk",
+            'choice' => "Collega’s",
+        ],
+
+        'switch' => [
+            'title' => "Ga verder waar je wilt.",
+            'lead' => "Wissel van kluis om de mensen, gebeurtenissen en herinneringen te zien die erbij horen.",
+            'body' => "Kies een standaardkluis om de ruimte die je het meest gebruikt je startpunt te maken.",
+            'label' => "De kluiswisselaar in Monica, geopend in Werk. Je kluizen: Persoonlijk, de standaardkluis, met 24 mensen, en Werk, geselecteerd, met 9 mensen, daarna alle kluizen. Daaronder de instelling voor de standaardkluis, Persoonlijk: de kluis waarin je na het inloggen terechtkomt.",
+            'counts' => ["24 mensen", "9 mensen"],
+            'all' => "Alle kluizen",
+            'defaultLabel' => "Standaardkluis",
+            'hint' => "De kluis waarin je na het inloggen terechtkomt.",
+        ],
+
+        'apart' => [
+            'title' => "Aparte ruimtes, nog steeds je account.",
+            'lead' => "Kluizen ordenen je gegevens binnen je account. Ze zijn alleen van jou: anderen kunnen er niet aan deelnemen of inloggen om te zien wat je hebt vastgelegd.",
+            'body' => "Kies waar iemand thuishoort voordat je die persoon toevoegt. Contacten kunnen momenteel niet tussen kluizen worden verplaatst, en relaties verbinden mensen binnen dezelfde kluis.",
         ],
     ],
 

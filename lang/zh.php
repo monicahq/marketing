@@ -48,6 +48,7 @@ return [
             'reminders' => "提醒",
             'timeline' => "时间线",
             'relationships' => "关系",
+            'vaults' => "保险库",
             'page' => "第 :number 页",
         ],
 
@@ -148,6 +149,11 @@ return [
         'relationships' => [
             'title' => "看清人与人之间的联系：Monica 关系功能",
             'description' => "记下某个人身边的人，让每一段关系从两边看都说得通。家谱、还没见过的人、过去的关系，以及你自己的关系类型。",
+        ],
+
+        'vaults' => [
+            'title' => "生活的每一部分，各有各的位置：Monica 保险库",
+            'description' => "把朋友、家人和同事放在一起，或者给每个圈子一个单独的空间。每个保险库都有自己的联系人、时间线、提醒和默认模板，全都在你的账户里。",
         ],
 
         'personalCrm' => [
@@ -1764,6 +1770,103 @@ return [
             'roleLabel' => "角色，两边相同",
             'role' => "室友",
             'sentences' => ["Monica Geller 是 Rachel Green 的室友。", "Rachel Green 是 Monica Geller 的室友。"],
+        ],
+    ],
+
+    'vaults' => [
+        // Words more than one drawing uses. A vault's tile shows the first
+        // letter of its name.
+        'personal' => "个人",
+        'work' => "工作",
+        'default' => "默认",
+        'heading' => "你的保险库",
+
+        'hero' => [
+            'title' => "生活的每一部分，各有各的位置。",
+            'intro' => "朋友和家人。工作中认识的人。本地俱乐部的成员。",
+            'lede' => "你可以把他们放在一起，也可以给每个圈子一个单独的空间。保险库帮你围绕自己的生活来整理 Monica。",
+            'cta' => "创建你的账户",
+            'label' => "Monica 中你的保险库。个人，默认保险库，1 小时前打开，有 Rachel、Chandler、Ross、Joey 和另外 20 人，没有待办任务，本月有 2 个日期。工作，2 天前打开，有 Marcel、Inès、Sam 和另外 6 人，3 项待办任务，本月有 1 个日期。还有一处可以新建保险库的空位。",
+            'new' => "新建保险库",
+            // Personal first, then Work. The people are in the template.
+            'vaults' => [
+                ['opened' => "1 小时前打开", 'more' => "另外 20 人"],
+                ['opened' => "2 天前打开", 'more' => "另外 6 人"],
+            ],
+            'stats' => ["待办任务", "本月日期"],
+            'another' => [
+                'title' => "再建一个保险库",
+                'body' => "工作、俱乐部、另一边的家人。里面的内容，在这里都看不到。",
+            ],
+        ],
+
+        'one' => [
+            'title' => "也许一个保险库就够了。",
+            'lead' => "Monica 一开始会给你一个“个人”保险库。你可以把所有人都放在里面，然后继续用下去。",
+            'body' => "想要一个单独的空间时，再创建一个保险库。给它起个名字，选一种颜色，一眼就能认出来。",
+            'label' => "在 Monica 中创建保险库。名称是“工作”，描述是：餐厅、供应商，以及和我一起受训的人。颜色是青绿色，从八种颜色中选出，旁边的预览用这种颜色显示“工作”的图块。",
+            'create' => "创建保险库",
+            'name' => "名称",
+            'description' => "描述",
+            'optional' => "可选",
+            'value' => "餐厅、供应商，以及和我一起受训的人。",
+            'colour' => "颜色",
+            'cancel' => "取消",
+            'submit' => "创建保险库",
+        ],
+
+        'split' => [
+            'title' => "Central Perk 放在一个里，餐厅放在另一个里。",
+            'lead' => "Monica Geller 可能会把 Rachel、Chandler 和朋友圈里的其他人放在“个人”里，把餐厅的同事放在“工作”里。",
+            'body' => "每个保险库都有自己的联系人列表、关系、时间线和提醒。搜索只在你正在使用的保险库里进行，让你专注于生活的那一部分。",
+            'label' => "Monica 中并排的两个保险库。在“个人”中：Rachel Green，室友；Chandler Bing，伴侣；Ross Geller，哥哥；Joey Tribbiani 和 Phoebe Buffay，朋友。在“工作”中，搜索 Rachel 没有找到任何人，因为搜索只在当前保险库里进行。里面的人是 Marcel Duval，副主厨；Inès Ortega，糕点师；Sam Whitfield，餐厅老板。",
+            'people' => "联系人",
+            'search' => "搜索“个人”",
+            'query' => "Rachel",
+            'empty' => [
+                'title' => "“工作”里没有叫 Rachel 的人",
+                'body' => "搜索只在当前保险库里进行。切换到其他保险库，就能在那里搜索。",
+            ],
+            // The people are in the template, in this order.
+            'personalRoles' => ["室友", "伴侣", "哥哥", "朋友", "朋友"],
+            'workRoles' => ["副主厨", "糕点师", "餐厅老板"],
+        ],
+
+        'templates' => [
+            'title' => "不同的空间，可以记不同的细节。",
+            'lead' => "对一位亲密的朋友和一位同事，你记住的事大概并不一样。",
+            'body' => "为每个保险库选择一个默认的联系人模板。新联系人会从你选好的结构开始，不管是爱吃的东西和共同的回忆，还是职位和专长。",
+            'label' => "Monica 中的两位联系人，来自不同的保险库。“个人”里的 Rachel Green 使用“朋友和家人”模板：她爱吃的是 trifle，只要里面没有牛肉，共同的回忆是她 1994 年穿着婚纱来到 Central Perk。“工作”里的 Marcel Duval 使用“同事”模板：他的职位是副主厨，专长是酱汁和鱼类。下方，“工作”的默认模板设为“同事”。",
+            // Rachel first, then Marcel.
+            'cards' => [
+                ['template' => "个人 · “朋友和家人”模板", 'fields' => [
+                    ['label' => "爱吃的东西", 'value' => "Trifle，只要里面没有牛肉"],
+                    ['label' => "共同的回忆", 'value' => "1994 年穿着婚纱来到 Central Perk"],
+                ]],
+                ['template' => "工作 · “同事”模板", 'fields' => [
+                    ['label' => "职位", 'value' => "副主厨"],
+                    ['label' => "专长", 'value' => "酱汁和鱼类"],
+                ]],
+            ],
+            'defaultFor' => "“工作”的默认模板",
+            'choice' => "同事",
+        ],
+
+        'switch' => [
+            'title' => "想从哪里继续，就从哪里继续。",
+            'lead' => "切换保险库，就能看到属于那里的人、事件和提醒。",
+            'body' => "选择一个默认保险库，让你最常用的空间成为起点。",
+            'label' => "Monica 中的保险库切换器，当前在“工作”中。你的保险库：“个人”，默认保险库，24 人；“工作”，已选中，9 人；然后是全部保险库。下方是默认保险库设置，“个人”：登录后进入的保险库。",
+            'counts' => ["24 人", "9 人"],
+            'all' => "全部保险库",
+            'defaultLabel' => "默认保险库",
+            'hint' => "登录后进入的保险库。",
+        ],
+
+        'apart' => [
+            'title' => "空间各自独立，仍是你的账户。",
+            'lead' => "保险库在你的账户内整理信息。它们只属于你：别人无法加入，也无法登录查看你记下的内容。",
+            'body' => "添加某个人之前，先想好他属于哪里。联系人目前不能在保险库之间移动，关系只连接同一个保险库里的人。",
         ],
     ],
 
