@@ -20,7 +20,7 @@
                     <span class="{{ $stamp }}">{{ $update['where'] }}</span>
                 </div>
                 <div class="p-4">
-                    @include('_partials.reminders.field', ['label' => $copy['address'], 'value' => $update['newAddress'], 'focused' => true])
+                    @include('_partials.drawn-field', ['label' => $copy['address'], 'value' => $update['newAddress'], 'focused' => true])
                 </div>
                 <div class="{{ $footer }} px-4">
                     <span class="{{ $button }} mn-btn-primary">{{ $update['save'] }}</span>

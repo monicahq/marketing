@@ -39,8 +39,8 @@
             </div>
 
             <div class="{{ $window }} grid w-full max-w-[340px] grid-cols-2 gap-3 self-end p-4">
-                @include('_partials.reminders.field', ['label' => $history['started'], 'value' => '1998'])
-                @include('_partials.reminders.field', ['label' => $history['endedLabel'], 'optional' => $history['optional'], 'value' => '1999', 'focused' => true])
+                @include('_partials.drawn-field', ['label' => $history['started'], 'value' => '1998'])
+                @include('_partials.drawn-field', ['label' => $history['endedLabel'], 'optional' => $history['optional'], 'value' => '1999', 'focused' => true])
             </div>
         </div>
     </div>

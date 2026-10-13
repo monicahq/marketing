@@ -28,7 +28,7 @@
                     <span class="text-copy font-semibold">{{ $one['create'] }}</span>
                 </div>
                 <div class="flex flex-col gap-4.5 p-4.5">
-                    @include('_partials.reminders.field', ['label' => $one['name'], 'value' => $work['name'], 'focused' => true])
+                    @include('_partials.drawn-field', ['label' => $one['name'], 'value' => $work['name'], 'focused' => true])
                     <div class="flex flex-col gap-1.5">
                         <span class="text-small font-medium">
                             {{ $one['description'] }}

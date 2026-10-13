@@ -41,8 +41,8 @@
                             <span class="text-small text-text-secondary">{{ $hero['linkBody'] }}</span>
                         </div>
                         <div class="grid gap-4 p-4 sm:grid-cols-2">
-                            @include('_partials.reminders.field', ['label' => $hero['name'], 'value' => $hero['nameValue']])
-                            @include('_partials.reminders.field', ['label' => $hero['who'], 'optional' => $copy['optional'], 'value' => 'Rachel Green'])
+                            @include('_partials.drawn-field', ['label' => $hero['name'], 'value' => $hero['nameValue']])
+                            @include('_partials.drawn-field', ['label' => $hero['who'], 'optional' => $copy['optional'], 'value' => 'Rachel Green'])
                             <div class="flex flex-col gap-1.5">
                                 <span class="text-small font-medium">{{ $copy['stops'] }}</span>
                                 @include('_partials.sharing.select', ['value' => $copy['week']])

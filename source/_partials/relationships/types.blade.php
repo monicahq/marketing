@@ -45,7 +45,7 @@
                 @foreach ($types['options'] as $option)
                     @include('_partials.relationships.choice', ['option' => $option, 'selected' => $loop->first])
                 @endforeach
-                @include('_partials.reminders.field', ['label' => $types['roleLabel'], 'value' => $types['role'], 'focused' => true])
+                @include('_partials.drawn-field', ['label' => $types['roleLabel'], 'value' => $types['role'], 'focused' => true])
                 <div class="flex flex-col gap-1.5 rounded-lg border border-border bg-surface-subtle px-4 py-3.5 text-body">
                     @foreach ($types['sentences'] as $sentence)
                         <span>{{ $sentence }}</span>
