@@ -459,6 +459,15 @@ return [
         'api' => '#',
     ],
 
+    /**
+     * Registration on the application is closed while the new version gets
+     * ready. Every sign-up button goes through `_partials/sign-up.blade.php`,
+     * which, while this holds a slug, opens a popover pointing at that post
+     * instead of sending the reader to a form that no longer accepts them.
+     * Set it to null to put the plain links back.
+     */
+    'registrationClosedPost' => 'registration-is-closed',
+
     // ------------------------------------------------------------------ plans
 
     /**

@@ -1165,4 +1165,10 @@ return [
         'title' => "Página não encontrada.",
         'body' => "Este endereço não leva a lugar nenhum. Ele pode ter mudado, ou pode nunca ter existido.",
     ],
+
+    // The popover on every sign-up button while registration is closed.
+    'registrationClosed' => [
+        'message' => "As inscrições estão fechadas por enquanto.",
+        'more' => "Saiba mais",
+    ],
 ];

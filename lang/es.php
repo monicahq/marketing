@@ -1147,4 +1147,10 @@ return [
         'title' => "Página no encontrada.",
         'body' => "Esta dirección no lleva a ninguna parte. Puede que se haya movido, o puede que nunca haya existido.",
     ],
+
+    // The popover on every sign-up button while registration is closed.
+    'registrationClosed' => [
+        'message' => "El registro está cerrado por ahora.",
+        'more' => "Más información",
+    ],
 ];

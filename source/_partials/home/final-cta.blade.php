@@ -4,9 +4,7 @@
         <p class="mt-5 text-copy-lg text-text-secondary text-pretty">{{ $page->t('finalCta.body') }}</p>
 
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary no-underline hover:no-underline">
-                {{ $page->t('finalCta.primaryCta') }}
-            </a>
+            @include('_partials.sign-up', ['label' => $page->t('finalCta.primaryCta'), 'class' => 'mn-btn--primary'])
             <a href="{{ $page->route('v3') }}" class="mn-btn mn-btn--secondary no-underline hover:no-underline">
                 {{ $page->t('finalCta.secondaryCta') }}
             </a>

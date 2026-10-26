@@ -1149,4 +1149,10 @@ return [
         'title' => "Page introuvable.",
         'body' => "Cette adresse ne mène nulle part. Elle a peut-être changé, ou elle n’a peut-être jamais existé.",
     ],
+
+    // The popover on every sign-up button while registration is closed.
+    'registrationClosed' => [
+        'message' => "Les inscriptions sont actuellement fermées.",
+        'more' => "En savoir plus",
+    ],
 ];

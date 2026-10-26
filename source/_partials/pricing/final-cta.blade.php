@@ -6,9 +6,10 @@
         <p class="mt-4 text-copy-lg text-text-secondary text-pretty">{{ $page->t('pricing.finalCta.body2') }}</p>
 
         <div class="mt-8 flex flex-wrap gap-3 max-md:flex-col max-md:items-stretch">
-            <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary no-underline hover:no-underline max-md:w-full">
-                {{ $page->t('pricing.finalCta.primaryCta') }}
-            </a>
+            @include('_partials.sign-up', [
+                'label' => $page->t('pricing.finalCta.primaryCta'),
+                'class' => 'mn-btn--primary max-md:w-full',
+            ])
             <a href="{{ $page->links['selfHost'] }}" class="mn-btn mn-btn--secondary no-underline hover:no-underline max-md:w-full">
                 {{ $page->t('pricing.finalCta.secondaryCta') }}
             </a>
