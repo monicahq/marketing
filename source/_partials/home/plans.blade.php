@@ -1,7 +1,7 @@
 @php
     // Two independent units, so each one earns its border.
     $plans = [
-        $page->t('plans.hosted') + ['href' => $page->links['createAccount'], 'variant' => 'mn-btn--primary'],
+        $page->t('plans.hosted') + ['href' => $page->links['createAccount'], 'variant' => 'mn-btn--primary', 'signUp' => true],
         $page->t('plans.selfHosted') + ['href' => $page->links['selfHost'], 'variant' => 'mn-btn--secondary'],
     ];
 @endphp
@@ -16,9 +16,18 @@
                     <h3 class="text-heading-sm font-semibold">{{ $plan['title'] }}</h3>
                     <p class="mt-3 text-copy text-text-secondary text-pretty">{{ $plan['body'] }}</p>
                     @include('_partials.bullets', ['items' => $plan['items']])
-                    <a href="{{ $plan['href'] }}" class="mn-btn {{ $plan['variant'] }} mt-8 self-start no-underline hover:no-underline">
-                        {{ $plan['cta'] }}
-                    </a>
+                    @if ($plan['signUp'] ?? false)
+                        @include('_partials.sign-up', [
+                            'label' => $plan['cta'],
+                            'class' => $plan['variant'],
+                            'href' => $plan['href'],
+                            'wrapper' => 'mt-8 self-start',
+                        ])
+                    @else
+                        <a href="{{ $plan['href'] }}" class="mn-btn {{ $plan['variant'] }} mt-8 self-start no-underline hover:no-underline">
+                            {{ $plan['cta'] }}
+                        </a>
+                    @endif
                 </div>
             @endforeach
         </div>

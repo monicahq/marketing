@@ -91,9 +91,11 @@
             <a href="{{ $page->links['signIn'] }}" class="mn-btn mn-btn--quiet mn-btn--sm no-underline hover:no-underline">
                 {{ $page->t('nav.signIn') }}
             </a>
-            <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary mn-btn--sm no-underline hover:no-underline">
-                {{ $page->t('nav.getStarted') }}
-            </a>
+            @include('_partials.sign-up', [
+                'label' => $page->t('nav.getStarted'),
+                'class' => 'mn-btn--primary mn-btn--sm',
+                'align' => 'right',
+            ])
         </div>
     </div>
 </header>

@@ -15,9 +15,10 @@
         <p class="mt-4 {{ $lede }}">{{ $page->t('hero.lede2') }}</p>
 
         <div class="mt-8 flex flex-wrap gap-3 max-md:flex-col max-md:items-stretch">
-            <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary {{ $heroButton }}">
-                {{ $page->t('hero.primaryCta') }}
-            </a>
+            @include('_partials.sign-up', [
+                'label' => $page->t('hero.primaryCta'),
+                'class' => 'mn-btn--primary max-md:w-full max-md:justify-center',
+            ])
             <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn--secondary gap-2 {{ $heroButton }}">
                 @include('_partials.icon', ['name' => 'star'])
                 <span>{{ $page->t('hero.githubCta', [':count' => $page->starCount]) }}</span>

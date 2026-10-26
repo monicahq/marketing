@@ -1151,4 +1151,10 @@ return [
         'title' => "Pagina niet gevonden.",
         'body' => "Dit adres leidt nergens heen. Misschien is het verhuisd, of heeft het nooit bestaan.",
     ],
+
+    // The popover on every sign-up button while registration is closed.
+    'registrationClosed' => [
+        'message' => "Registreren is momenteel gesloten.",
+        'more' => "Meer informatie",
+    ],
 ];

@@ -1189,4 +1189,10 @@ return [
         'title' => "Page not found.",
         'body' => "This address does not lead anywhere. It may have moved, or it may never have existed.",
     ],
+
+    // The popover on every sign-up button while registration is closed.
+    'registrationClosed' => [
+        'message' => "Registration is currently closed.",
+        'more' => "More info",
+    ],
 ];

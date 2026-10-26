@@ -317,7 +317,7 @@
             <h2 class="text-heading font-semibold text-pretty lg:text-display-md">{{ $copy['monica']['finalTitle'] }}</h2>
             <p class="mt-5 text-copy-lg leading-[1.65] text-text-secondary text-pretty">{{ $copy['monica']['finalBody'] }}</p>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary no-underline hover:no-underline">{{ $copy['monica']['primaryCta'] }}</a>
+                @include('_partials.sign-up', ['label' => $copy['monica']['primaryCta'], 'class' => 'mn-btn--primary'])
                 <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn--secondary no-underline hover:no-underline">{{ $copy['monica']['secondaryCta'] }}</a>
             </div>
         </div>

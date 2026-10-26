@@ -89,9 +89,11 @@
                     <p class="mt-2 font-mono text-mono text-text-muted">{{ $page->t('pricing.hosted.taxNote') }}</p>
                 </div>
 
-                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn--primary mt-6 self-start no-underline hover:no-underline">
-                    {{ $page->t('pricing.hosted.cta') }}
-                </a>
+                @include('_partials.sign-up', [
+                    'label' => $page->t('pricing.hosted.cta'),
+                    'class' => 'mn-btn--primary',
+                    'wrapper' => 'mt-6 self-start',
+                ])
                 <p class="mt-3 font-mono text-mono text-text-muted">{{ $page->t('pricing.hosted.trial') }}</p>
 
                 <p class="mt-8 text-copy font-medium text-text">{{ $page->t('pricing.hosted.listTitle') }}</p>
