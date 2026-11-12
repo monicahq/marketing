@@ -40,8 +40,12 @@
 
 <header class="relative z-40 border-b border-border bg-canvas">
     {{-- `relative` is on this container rather than on the menu, so the open
-         panel spans the header's width instead of the width of one button. --}}
-    <div class="relative mx-auto flex min-h-15 w-full max-w-page flex-wrap items-center gap-x-8 gap-y-2 px-4 max-lg:py-3 md:px-6">
+         panel spans the header's width instead of the width of one button.
+         The width and the side padding are the application's own docs
+         header (erica, `components/docs/header.blade.php`): 1560px, 16px
+         then 28px, so the two headers line up when a reader crosses from
+         one to the other. Wider than the page below it, on purpose. --}}
+    <div class="relative mx-auto flex min-h-15 w-full max-w-390 flex-wrap items-center gap-x-8 gap-y-2 px-4 max-lg:py-3 sm:px-7">
         <a href="{{ $home }}" class="flex items-center gap-2 text-text no-underline hover:text-text hover:no-underline">
             {{-- `width`/`height` are the SVG's intrinsic ratio, so the browser
                  reserves the right box before it loads; `w-6 h-auto` sizes it. --}}
@@ -71,7 +75,7 @@
                     @include('_partials.icon', ['name' => 'chevron-down', 'size' => 14, 'class' => 'transition-transform duration-150 ease-standard group-open/menu:rotate-180'])
                 </summary>
 
-                <div class="absolute inset-x-4 top-full z-50 pt-2 md:inset-x-6">
+                <div class="absolute inset-x-4 top-full z-50 pt-2 sm:inset-x-7">
                     <div class="flex max-h-[calc(100dvh-140px)] flex-wrap overflow-y-auto rounded-lg border border-border bg-canvas shadow-pop">
                         <div class="grid min-w-0 flex-[3_1_640px] gap-x-6 gap-y-5 p-6 sm:grid-cols-3 md:p-7">
                             @foreach ($menu['groups'] as $g => $group)
