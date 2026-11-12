@@ -156,6 +156,8 @@ return [
         'blog' => "Blog",
         'docs' => "Dokumentation",
         'signIn' => "Anmelden",
+        'toDark' => "Zum dunklen Modus wechseln",
+        'toLight' => "Zum hellen Modus wechseln",
         'getStarted' => "Registrieren",
         'stars' => ":count Sterne",
 

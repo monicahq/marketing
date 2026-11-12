@@ -179,6 +179,8 @@ return [
         'blog' => "博客",
         'docs' => "文档",
         'signIn' => "登录",
+        'toDark' => "切换到深色模式",
+        'toLight' => "切换到浅色模式",
         'getStarted' => "注册",
         'stars' => ":count 星",
 

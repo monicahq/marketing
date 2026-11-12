@@ -155,6 +155,8 @@ return [
         'blog' => "Blog",
         'docs' => "Documentatie",
         'signIn' => "Inloggen",
+        'toDark' => "Overschakelen naar donkere modus",
+        'toLight' => "Overschakelen naar lichte modus",
         'getStarted' => "Aanmelden",
         'stars' => ":count sterren",
 

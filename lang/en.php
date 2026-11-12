@@ -179,6 +179,8 @@ return [
         'blog' => "Blog",
         'docs' => "Documentation",
         'signIn' => "Log in",
+        'toDark' => "Switch to dark mode",
+        'toLight' => "Switch to light mode",
         'getStarted' => "Sign up",
         'stars' => ":count stars",
 

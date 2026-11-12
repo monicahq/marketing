@@ -72,8 +72,9 @@
                     <span class="text-copy font-semibold tracking-[-0.02em]">Monica</span>
                 </div>
                 <span class="text-small text-ground-cream-muted">{{ $page->t('footer.tagline') }}</span>
-                <div class="mt-2">
+                <div class="mt-2 flex items-center gap-2">
                     @include('_partials.locale-picker')
+                    @include('_partials.theme-toggle', ['class' => 'border border-ground-cream-rule text-ground-cream-ink hover:bg-ground-cream-rule/40'])
                 </div>
             </div>
 
@@ -93,23 +94,31 @@
     {{-- Pulled up under the links by 9vw so the hills start behind them, and
          never narrower than 900px, so a phone crops the edges of the meadow
          rather than shrinking the pandas to specks. --}}
-    <picture>
-        <source
-            media="(prefers-color-scheme: dark)"
-            srcset="{{ $night }}"
-            width="{{ $nightSize['width'] }}"
-            height="{{ $nightSize['height'] }}"
-        >
-        <img
-            src="{{ $day }}"
-            alt="{{ $page->t('footer.art') }}"
-            width="{{ $daySize['width'] }}"
-            height="{{ $daySize['height'] }}"
-            loading="lazy"
-            decoding="async"
-            class="relative left-1/2 -mt-[9vw] block h-auto w-full min-w-[900px] -translate-x-1/2"
-        >
-    </picture>
+    {{-- Two images switched by `.dark` on <html>, not a <picture> keyed to
+         the media query, because the theme button can disagree with the
+         system and the meadow has to follow the button. Both are lazy, and a
+         browser does not fetch a lazy image that is not displayed, so a
+         reader still downloads only one of them. The night one is hidden
+         from a screen reader by `display: none` like any hidden element, so
+         the alt text is read once. --}}
+    <img
+        src="{{ $day }}"
+        alt="{{ $page->t('footer.art') }}"
+        width="{{ $daySize['width'] }}"
+        height="{{ $daySize['height'] }}"
+        loading="lazy"
+        decoding="async"
+        class="relative left-1/2 -mt-[9vw] block h-auto w-full min-w-[900px] -translate-x-1/2 dark:hidden"
+    >
+    <img
+        src="{{ $night }}"
+        alt="{{ $page->t('footer.art') }}"
+        width="{{ $nightSize['width'] }}"
+        height="{{ $nightSize['height'] }}"
+        loading="lazy"
+        decoding="async"
+        class="relative left-1/2 -mt-[9vw] hidden h-auto w-full min-w-[900px] -translate-x-1/2 dark:block"
+    >
 
     {{-- On a flat band under the meadow rather than over the grass: no
          colour of text is legible against every daisy. --}}

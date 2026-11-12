@@ -160,6 +160,8 @@ return [
         'blog' => "Blog",
         'docs' => "Documentación",
         'signIn' => "Iniciar sesión",
+        'toDark' => "Cambiar al modo oscuro",
+        'toLight' => "Cambiar al modo claro",
         'getStarted' => "Registrarse",
         'stars' => ":count estrellas",
 

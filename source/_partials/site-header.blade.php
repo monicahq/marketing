@@ -131,6 +131,7 @@
         </nav>
 
         <div class="flex items-center gap-2 max-lg:ml-auto">
+            @include('_partials.theme-toggle', ['class' => 'text-text-secondary hover:bg-hover hover:text-text'])
             <a href="{{ $page->links['signIn'] }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">
                 {{ $page->t('nav.signIn') }}
             </a>
