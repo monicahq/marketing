@@ -2445,7 +2445,12 @@ return [
         'lede' => "关于构建 Monica、保护个人数据隐私，以及保持联系的那些小门道。",
 
         'allPosts' => "全部文章",
-        'keepReading' => "继续阅读",
+        'morePosts' => "更多文章",
+        'previousPost' => "上一篇",
+        'nextPost' => "下一篇",
+        'latestPost' => "这是最新的一篇",
+        'firstPost' => "这是第一篇",
+        'seeAllPosts' => "查看全部文章",
         'onThisPage' => "本页内容",
         'latest' => "最新文章",
 

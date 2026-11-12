@@ -2434,7 +2434,12 @@ return [
         'lede' => "Notes sur la construction de Monica, sur la confidentialité des données personnelles et sur la petite mécanique du fait de rester en contact.",
 
         'allPosts' => "Tous les articles",
-        'keepReading' => "À lire ensuite",
+        'morePosts' => "Autres articles",
+        'previousPost' => "Article précédent",
+        'nextPost' => "Article suivant",
+        'latestPost' => "C’est l’article le plus récent",
+        'firstPost' => "C’est le premier article",
+        'seeAllPosts' => "Voir tous les articles",
         'onThisPage' => "Sur cette page",
         'latest' => "Derniers articles",
 

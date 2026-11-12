@@ -2454,7 +2454,12 @@ return [
         'lede' => "Notes on building Monica, keeping personal data private, and the small mechanics of staying in touch.",
 
         'allPosts' => "All posts",
-        'keepReading' => "Keep reading",
+        'morePosts' => "More posts",
+        'previousPost' => "Previous post",
+        'nextPost' => "Next post",
+        'latestPost' => "This is the latest post",
+        'firstPost' => "This is the first post",
+        'seeAllPosts' => "See all posts",
         'onThisPage' => "On this page",
         'latest' => "Latest posts",
 

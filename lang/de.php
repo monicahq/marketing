@@ -2432,7 +2432,12 @@ return [
         'lede' => "Notizen zum Bau von Monica, zum Schutz persönlicher Daten und zur kleinen Mechanik des Kontakthaltens.",
 
         'allPosts' => "Alle Beiträge",
-        'keepReading' => "Weiterlesen",
+        'morePosts' => "Weitere Beiträge",
+        'previousPost' => "Vorheriger Beitrag",
+        'nextPost' => "Nächster Beitrag",
+        'latestPost' => "Das ist der neueste Beitrag",
+        'firstPost' => "Das ist der erste Beitrag",
+        'seeAllPosts' => "Alle Beiträge ansehen",
         'onThisPage' => "Auf dieser Seite",
         'latest' => "Neueste Beiträge",
 

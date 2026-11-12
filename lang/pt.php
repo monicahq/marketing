@@ -2440,7 +2440,12 @@ return [
         'lede' => "Notas sobre construir a Monica, manter dados pessoais privados e a pequena mecânica de continuar em contato.",
 
         'allPosts' => "Todos os artigos",
-        'keepReading' => "Continuar lendo",
+        'morePosts' => "Mais artigos",
+        'previousPost' => "Artigo anterior",
+        'nextPost' => "Próximo artigo",
+        'latestPost' => "Este é o artigo mais recente",
+        'firstPost' => "Este é o primeiro artigo",
+        'seeAllPosts' => "Ver todos os artigos",
         'onThisPage' => "Nesta página",
         'latest' => "Artigos recentes",
 

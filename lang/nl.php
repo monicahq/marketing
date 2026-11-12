@@ -2425,7 +2425,12 @@ return [
         'lede' => "Aantekeningen over het bouwen van Monica, het privé houden van persoonlijke gegevens en de kleine mechaniek van contact houden.",
 
         'allPosts' => "Alle berichten",
-        'keepReading' => "Verder lezen",
+        'morePosts' => "Meer berichten",
+        'previousPost' => "Vorig bericht",
+        'nextPost' => "Volgend bericht",
+        'latestPost' => "Dit is het nieuwste bericht",
+        'firstPost' => "Dit is het eerste bericht",
+        'seeAllPosts' => "Alle berichten bekijken",
         'onThisPage' => "Op deze pagina",
         'latest' => "Nieuwste berichten",
 
