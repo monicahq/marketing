@@ -8,7 +8,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica: Erinnern Sie sich an die Menschen, die Ihnen wichtig sind. Das quelloffene persönliche CRM.",
+        'imageAlt' => "Monica ist Ihre persönliche Datenbank. Das quelloffene persönliche CRM.",
 
         'breadcrumb' => [
             'home' => "Startseite",
@@ -315,8 +315,8 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey und die Ente",
-            'title' => "Erinnern Sie sich an die Menschen, die Ihnen wichtig sind.",
-            'subtitle' => "Wir sind ein quelloffenes persönliches CRM.",
+            'title' => "Monica ist Ihre persönliche Datenbank.",
+            'subtitle' => "Speichern Sie die Menschen, die Sie kennen, die Dinge, die Sie besitzen, und alles, woran Sie sich erinnern möchten.",
             'lede' => "Privat von Grund auf. Quelloffen. Selbst hostbar. Keine Werbung, kein Datenverkauf, keine peinlichen Benachrichtigungen zur „Aktivierung“.",
             'start' => "Mit Monica beginnen",
             'github' => "Auf GitHub ansehen",

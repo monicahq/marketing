@@ -12,7 +12,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica: lembre-se das pessoas com quem você se importa. O CRM pessoal de código aberto.",
+        'imageAlt' => "A Monica é o seu banco de dados pessoal. O CRM pessoal de código aberto.",
 
         'breadcrumb' => [
             'home' => "Início",
@@ -322,8 +322,8 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey e o pato",
-            'title' => "Lembre-se das pessoas com quem você se importa.",
-            'subtitle' => "Somos um CRM pessoal de código aberto.",
+            'title' => "A Monica é o seu banco de dados pessoal.",
+            'subtitle' => "Guarde as pessoas que você conhece, as coisas que você tem e tudo o que quer lembrar.",
             'lede' => "Privada por concepção. De código aberto. Com hospedagem própria. Sem anúncios, sem revenda de dados, sem notificações constrangedoras de “engajamento”.",
             'start' => "Começar a usar a Monica",
             'github' => "Ver no GitHub",

@@ -11,7 +11,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica: onthoud de mensen die je dierbaar zijn. De open source persoonlijke CRM.",
+        'imageAlt' => "Monica is je persoonlijke database. De open source persoonlijke CRM.",
 
         'breadcrumb' => [
             'home' => "Start",
@@ -314,8 +314,8 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey en de eend",
-            'title' => "Onthoud de mensen die je dierbaar zijn.",
-            'subtitle' => "We zijn een open source persoonlijke CRM.",
+            'title' => "Monica is je persoonlijke database.",
+            'subtitle' => "Bewaar de mensen die je kent, de dingen die je hebt en alles wat je wilt onthouden.",
             'lede' => "Privé van opzet. Open source. In eigen beheer te draaien. Geen advertenties, geen doorverkoop van gegevens, geen ongemakkelijke meldingen over “betrokkenheid”.",
             'start' => "Begin met Monica",
             'github' => "Bekijk op GitHub",

@@ -18,7 +18,7 @@ return [
      * beside them rather than inside them.
      */
     'meta' => [
-        'imageAlt' => "Monica：记住你在乎的人。开源的个人 CRM。",
+        'imageAlt' => "Monica 是你的个人数据库。开源的个人 CRM。",
 
         /**
          * The page names in a breadcrumb trail: one per route key, plus the
@@ -337,8 +337,8 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel、Ross、Chandler、Joey，还有那只鸭子",
-            'title' => "记住你在乎的人。",
-            'subtitle' => "我们是一个开源的个人 CRM。",
+            'title' => "Monica 是你的个人数据库。",
+            'subtitle' => "记下你认识的人、你拥有的东西，以及你想记住的一切。",
             'lede' => "默认注重隐私。开源。可自托管。没有广告，不转售数据，也没有尴尬的“互动”通知。",
             'start' => "开始使用 Monica",
             'github' => "在 GitHub 上查看",

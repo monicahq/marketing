@@ -10,7 +10,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica : souvenez-vous des gens qui comptent pour vous. Le CRM personnel open source.",
+        'imageAlt' => "Monica est votre base de données personnelle. Le CRM personnel open source.",
 
         'breadcrumb' => [
             'home' => "Accueil",
@@ -317,8 +317,8 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey et le canard",
-            'title' => "Souvenez-vous des gens qui comptent pour vous.",
-            'subtitle' => "Nous sommes un CRM personnel open source.",
+            'title' => "Monica est votre base de données personnelle.",
+            'subtitle' => "Enregistrez les gens que vous connaissez, les choses que vous possédez et tout ce que vous voulez retenir.",
             'lede' => "Privée par conception. Open source. Auto-hébergeable. Aucune publicité, aucune revente de données, aucune notification gênante pour vous « réengager ».",
             'start' => "Commencer avec Monica",
             'github' => "Voir sur GitHub",

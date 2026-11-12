@@ -18,7 +18,7 @@ return [
      * beside them rather than inside them.
      */
     'meta' => [
-        'imageAlt' => "Monica: remember the people you care about. The open-source personal CRM.",
+        'imageAlt' => "Monica is your personal database. The open-source personal CRM.",
 
         /**
          * The page names in a breadcrumb trail: one per route key, plus the
@@ -337,8 +337,8 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey, and the duck",
-            'title' => "Remember the people you care about.",
-            'subtitle' => "We are an open source personal CRM.",
+            'title' => "Monica is your personal database.",
+            'subtitle' => "Store the people you know, the things you own, and everything you want to remember.",
             'lede' => "Private by design. Open source. Self-hostable. No ads, no data resale, no awkward “engagement” notifications.",
             'start' => "Start using Monica",
             'github' => "View on GitHub",

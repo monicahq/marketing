@@ -8,7 +8,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica: recuerda a las personas que te importan. El CRM personal de código abierto.",
+        'imageAlt' => "Monica es tu base de datos personal. El CRM personal de código abierto.",
 
         'breadcrumb' => [
             'home' => "Inicio",
@@ -319,8 +319,8 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey y el pato",
-            'title' => "Recuerda a las personas que te importan.",
-            'subtitle' => "Somos un CRM personal de código abierto.",
+            'title' => "Monica es tu base de datos personal.",
+            'subtitle' => "Guarda a las personas que conoces, las cosas que tienes y todo lo que quieres recordar.",
             'lede' => "Privada por diseño. De código abierto. Alojable por ti. Sin anuncios, sin reventa de datos, sin notificaciones incómodas para «reengancharte».",
             'start' => "Empezar con Monica",
             'github' => "Ver en GitHub",
