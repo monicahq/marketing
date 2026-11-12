@@ -690,6 +690,9 @@ return [
         // Where the Hacker News badge points: the launch thread it ranks.
         'hackerNews' => 'https://news.ycombinator.com/item?id=14497295',
 
+        // Where the Docker Hub badge points: the official image.
+        'dockerHub' => 'https://hub.docker.com/_/monica',
+
         // There is no sales team, which is the joke on the homepage button.
         // It still needs somewhere to go: a contact address, most likely.
         'contactSales' => '#',

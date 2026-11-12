@@ -654,6 +654,19 @@ return [
             'github' => "GitHub Trending：当日第 1 名仓库",
             'hn' => "Hacker News：历史得票最高链接第 65 名",
             'ph' => "Product Hunt：当日第 4 名产品",
+            'docker' => "Docker Hub：1400 万次下载",
+            // The popover under the GitHub badge, on hover or focus.
+            'trendingPopover' => "我们多次登上“当日最佳仓库”“本周最佳仓库”“本月最佳仓库”和“年度最佳仓库”。超酷的，约会时还能拿来当开场白。从来没用。",
+            // The popover under the Hacker News badge: two paragraphs.
+            'hnPopover' => [
+                "没有登上 Hacker News 首页，就不算真正成功。",
+                "我们在首页的第 1 名位置待了整整两天。没错，这是真的。",
+            ],
+
+            // The popover under the Product Hunt badge, which links nowhere on purpose.
+            'phPopover' => "抱歉，这个链接点不了。我们在那个网站上人气很高，但我们讨厌 Product Hunt，不想给他们带去任何流量。",
+            // The popover under the Docker Hub badge.
+            'dockerPopover' => "我们是少数拥有官方 Docker 镜像的项目之一。对开发者来说，这是梦寐以求的认可。",
         ],
 
         'agents' => [

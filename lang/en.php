@@ -656,6 +656,18 @@ return [
             'github' => "GitHub Trending: #1 Repository of the Day",
             'hn' => "Hacker News: #65 Most Voted Links of All Time",
             'ph' => "Product Hunt: #4 Product of the Day",
+            'docker' => "Docker Hub: 14M downloads",
+            // The popover under the GitHub badge, on hover or focus.
+            'trendingPopover' => "We have reached Repo of the day, Repo of the week, Repo of the month and Repo of the year multiple times. It’s super cool, and used as an opening line on a date. Never works.",
+            // The popover under the Hacker News badge: two paragraphs.
+            'hnPopover' => [
+                "If you don’t reach the first page of Hacker News, you haven’t really made it.",
+                "We stayed two days as the #1 story on the homepage. Yes, it’s true.",
+            ],
+            // The popover under the Product Hunt badge, which links nowhere on purpose.
+            'phPopover' => "Sorry, this link isn’t clickable. We were really popular on that site, but we hate Product Hunt and don’t want to send them any traffic.",
+            // The popover under the Docker Hub badge.
+            'dockerPopover' => "We are one of the few official Docker images. This is the holy grail for developers.",
         ],
 
         'agents' => [

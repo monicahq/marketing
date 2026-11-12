@@ -96,13 +96,14 @@
 
   /* The award badges on the homepage, each in its issuer's own colours.
      GitHub Trending has two violets: the ink for the laurel, the mark and the
-     words, the brighter one for the border and the rank. Hacker News and
-     Product Hunt each draw in one colour. Someone else's colours, so the same
+     words, the brighter one for the border and the rank. Hacker News,
+     Product Hunt and Docker Hub each draw in one colour. Someone else's colours, so the same
      in both themes, and used nowhere else. */
   --color-trending-ink: #3609aa;
   --color-trending: #4605f1;
   --color-hacker-news: #f74813;
   --color-product-hunt: #ed5337;
+  --color-docker: #1d63ed;
 
   /* Actions */
   --color-primary: var(--action-primary);
@@ -304,6 +305,10 @@
      system's. Nothing bounces or overshoots. */
   --ease-*: initial;
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  /* The one easing that overshoots, by the owner's decision: the popover
+     under the GitHub badge on the homepage pops open. Nothing else uses it,
+     and `motion-reduce` turns the movement off. */
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* ---------- Breakpoints ----------
      The design system's reference values. `lg` is the tablet breakpoint where

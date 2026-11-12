@@ -633,6 +633,18 @@ return [
             'github' => "GitHub Trending: Repository des Tages, Platz 1",
             'hn' => "Hacker News: Platz 65 der meistgewählten Links aller Zeiten",
             'ph' => "Product Hunt: Produkt des Tages, Platz 4",
+            'docker' => "Docker Hub: 14 Mio. Downloads",
+            // The popover under the GitHub badge, on hover or focus.
+            'trendingPopover' => "Wir waren schon mehrfach Repo des Tages, Repo der Woche, Repo des Monats und Repo des Jahres. Das ist super cool und taugt als Eröffnungssatz beim Date. Funktioniert nie.",
+            // The popover under the Hacker News badge: two paragraphs.
+            'hnPopover' => [
+                "Wer es nicht auf die Startseite von Hacker News schafft, hat es nicht wirklich geschafft.",
+                "Wir waren zwei Tage lang die #1 auf der Startseite. Ja, das stimmt.",
+            ],
+            // The popover under the Product Hunt badge, which links nowhere on purpose.
+            'phPopover' => "Tut uns leid, dieser Link ist nicht klickbar. Wir waren auf dieser Seite richtig beliebt, aber wir hassen Product Hunt und wollen ihnen keinen Traffic schenken.",
+            // The popover under the Docker Hub badge.
+            'dockerPopover' => "Wir gehören zu den wenigen offiziellen Docker-Images. Für Entwickler ist das der heilige Gral.",
         ],
 
         'agents' => [
