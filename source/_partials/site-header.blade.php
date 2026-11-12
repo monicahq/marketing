@@ -131,7 +131,25 @@
         </nav>
 
         <div class="flex items-center gap-2 max-lg:ml-auto">
-            @include('_partials.theme-toggle', ['class' => 'text-text-secondary hover:bg-hover hover:text-text'])
+            {{-- The star count, as laravel.com shows its own. The visible text
+                 is only the number, so the label names the destination too,
+                 and contains the number, so voice control finds it by what a
+                 reader sees. `starCount` is fetched at build time by
+                 bootstrap.php.
+
+                 It and the theme button are left out below `sm`: on a phone
+                 they push the two buttons onto a line of their own under the
+                 logo in German and French. The footer has both a GitHub
+                 button and a theme button at every width. --}}
+            <a
+                href="{{ $page->links['github'] }}"
+                aria-label="{{ $page->t('nav.github', [':count' => $page->starCount]) }}"
+                class="hidden h-9 items-center gap-2 rounded-md px-2.5 text-base font-medium text-text-secondary no-underline transition-colors duration-150 ease-standard hover:bg-hover hover:text-text hover:no-underline sm:flex"
+            >
+                @include('_partials.github-mark', ['size' => 18])
+                <span>{{ $page->starCount }}</span>
+            </a>
+            @include('_partials.theme-toggle', ['class' => 'text-text-secondary hover:bg-hover hover:text-text max-sm:hidden'])
             <a href="{{ $page->links['signIn'] }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">
                 {{ $page->t('nav.signIn') }}
             </a>

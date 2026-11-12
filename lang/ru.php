@@ -184,6 +184,7 @@ return [
         'signIn' => "Войти",
         'toDark' => "Включить тёмную тему",
         'toLight' => "Включить светлую тему",
+        'github' => "Monica на GitHub, звёзд: :count",
         'getStarted' => "Регистрация",
         'stars' => ":count звёзд",
 

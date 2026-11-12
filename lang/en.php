@@ -181,6 +181,7 @@ return [
         'signIn' => "Log in",
         'toDark' => "Switch to dark mode",
         'toLight' => "Switch to light mode",
+        'github' => ":count stars, Monica on GitHub",
         'getStarted' => "Sign up",
         'stars' => ":count stars",
 

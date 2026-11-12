@@ -162,6 +162,7 @@ return [
         'signIn' => "Iniciar sesión",
         'toDark' => "Cambiar al modo oscuro",
         'toLight' => "Cambiar al modo claro",
+        'github' => ":count estrellas, Monica en GitHub",
         'getStarted' => "Registrarse",
         'stars' => ":count estrellas",
 

@@ -158,6 +158,7 @@ return [
         'signIn' => "Anmelden",
         'toDark' => "Zum dunklen Modus wechseln",
         'toLight' => "Zum hellen Modus wechseln",
+        'github' => ":count Sterne, Monica auf GitHub",
         'getStarted' => "Registrieren",
         'stars' => ":count Sterne",
 

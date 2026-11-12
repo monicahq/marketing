@@ -160,6 +160,7 @@ return [
         'signIn' => "Connexion",
         'toDark' => "Passer en mode sombre",
         'toLight' => "Passer en mode clair",
+        'github' => ":count étoiles, Monica sur GitHub",
         'getStarted' => "Inscription",
         'stars' => ":count étoiles",
 

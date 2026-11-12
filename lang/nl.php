@@ -157,6 +157,7 @@ return [
         'signIn' => "Inloggen",
         'toDark' => "Overschakelen naar donkere modus",
         'toLight' => "Overschakelen naar lichte modus",
+        'github' => ":count sterren, Monica op GitHub",
         'getStarted' => "Aanmelden",
         'stars' => ":count sterren",
 

@@ -181,6 +181,7 @@ return [
         'signIn' => "登录",
         'toDark' => "切换到深色模式",
         'toLight' => "切换到浅色模式",
+        'github' => ":count 星，Monica 的 GitHub 仓库",
         'getStarted' => "注册",
         'stars' => ":count 星",
 

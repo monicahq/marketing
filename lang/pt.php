@@ -165,6 +165,7 @@ return [
         'signIn' => "Entrar",
         'toDark' => "Mudar para o modo escuro",
         'toLight' => "Mudar para o modo claro",
+        'github' => ":count estrelas, a Monica no GitHub",
         'getStarted' => "Criar conta",
         'stars' => ":count estrelas",
 
