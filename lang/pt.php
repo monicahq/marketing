@@ -2915,7 +2915,7 @@ return [
                     'name' => "Alexis Saettler",
                     'where' => "Cofundador",
                     'role' => "Mantém a Monica funcionando, em qualquer lugar",
-                    'bio' => "Trabalha na infraestrutura e nas coisas realmente difíceis: as imagens Docker, as versões e tudo o que só falha no servidor de outra pessoa. Revisa o que o Régis entrega.",
+                    'bio' => "Trabalha na infraestrutura e nas coisas realmente difíceis: as imagens Docker, as versões e tudo o que só falha no servidor de outra pessoa. Corrige o que o Régis entrega.",
                     'facts' => [
                         ['k' => "Costuma trabalhar em", 'v' => "Infraestrutura e versões"],
                         ['k' => "Parte favorita", 'v' => "Um build verde"],
