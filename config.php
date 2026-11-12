@@ -424,6 +424,19 @@ return [
             'ru' => 'komanda',
         ],
 
+        // Who makes Monica and why: the two of us, the history, and what will
+        // never be built. Linked from the footer's company column.
+        'about' => [
+            'en' => 'about',
+            'fr' => 'a-propos',
+            'de' => 'ueber-uns',
+            'es' => 'sobre-nosotros',
+            'pt' => 'sobre',
+            'nl' => 'over-ons',
+            'zh' => 'about',
+            'ru' => 'o-nas',
+        ],
+
         'privacy' => [
             'en' => 'privacy',
             'fr' => 'confidentialite',
@@ -635,6 +648,7 @@ return [
         'pricing' => '2026-10-12',
         'terms' => '2026-08-06',
         'team' => '2026-08-06',
+        'about' => '2026-11-12',
         'privacy' => '2026-08-06',
         'personalCrm' => '2026-08-23',
         'templates' => '2026-10-12',

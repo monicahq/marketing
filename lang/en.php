@@ -35,6 +35,7 @@ return [
             'blog' => "Blog",
             'terms' => "Terms of use",
             'team' => "Team",
+            'about' => "About Monica",
             'privacy' => "Privacy policy",
             'personalCrm' => "Personal CRM guide",
             'templates' => "Contact templates",
@@ -75,6 +76,11 @@ return [
         'privacy' => [
             'title' => "Privacy policy — Monica",
             'description' => "How Monica handles your data: what we collect, where it is stored, who can see it, and what happens when you close your account. No ads, no trackers, no data resale.",
+        ],
+
+        'about' => [
+            'title' => "About — Monica",
+            'description' => "Monica is an open-source personal CRM made by two people, Régis and Alexis. No investors, no advertising, no data sold. How it started, and what will never be on the roadmap.",
         ],
 
         'team' => [
@@ -2443,6 +2449,7 @@ return [
         'privacy' => "Privacy",
         'terms' => "Terms",
         'team' => "Team",
+        'about' => "About",
 
         'art' => "A meadow by a lake, with pandas lounging in the grass and napping in the trees",
         'copyright' => "© :year Monica. No pandas were tracked. We wish we could say that Monica is trademarked, but it’s not. Please be nice.",
@@ -2629,6 +2636,131 @@ return [
             "Thanks for checking out the project.",
         ],
         'signature' => "Regis Freyd and Alexis Saettler",
+    ],
+
+    /**
+     * The about page: who makes Monica, how it started, and what it will never
+     * do. The two people are Régis and Alexis in every language, and their
+     * photos are the blog's author photos.
+     */
+    'about' => [
+        'hero' => [
+            'eyebrow' => "About",
+            'title' => "Built by two people.",
+            'lede' => "One wrote the first line. The other made sure it kept running.",
+            'body' => [
+                "Monica is an open-source personal CRM, made by Régis and Alexis. There is no company of fifty behind it, no investors and no growth target written on a whiteboard. There are two people who would like to remember their friends a little better.",
+                "Everything else is the people who use it: the ones who host it themselves, report what broke, translate it into their language and pay for hosting so the two of us can keep working on it.",
+            ],
+            'team' => "Meet the two of us",
+            'history' => "How it started",
+        ],
+
+        'team' => [
+            'title' => "Meet the team",
+            'lede' => "The whole of it.",
+            'people' => [
+                [
+                    'name' => "Régis Freyd",
+                    'where' => "Co-founder",
+                    'role' => "Started Monica, writes most of the code",
+                    'bio' => "Wrote the first version in 2017 to keep track of his own friends and family. Still writes features, answers support and argues for fewer settings.",
+                    'facts' => [
+                        ['k' => "Usually working on", 'v' => "Product and the app"],
+                        ['k' => "Favourite part", 'v' => "Deleting code"],
+                        ['k' => "Least favourite part", 'v' => "Timezones"],
+                    ],
+                ],
+                [
+                    'name' => "Alexis Saettler",
+                    'where' => "Co-founder",
+                    'role' => "Keeps Monica running, everywhere",
+                    'bio' => "Looks after the infrastructure, the Docker images, the releases and the long tail of things that only break on somebody else’s server. Reviews what Régis ships.",
+                    'facts' => [
+                        ['k' => "Usually working on", 'v' => "Infrastructure and releases"],
+                        ['k' => "Favourite part", 'v' => "A green build"],
+                        ['k' => "Least favourite part", 'v' => "Also timezones"],
+                    ],
+                ],
+            ],
+        ],
+
+        'facts' => [
+            'title' => "The company, in numbers",
+            'lede' => "Small ones, mostly. We are fond of them.",
+            'items' => [
+                ['k' => "Started", 'v' => "2017"],
+                ['k' => "People", 'v' => "2"],
+                ['k' => "Offices", 'v' => "None"],
+                ['k' => "Investors", 'v' => "None"],
+                ['k' => "Funded by", 'v' => "Subscriptions"],
+                ['k' => "Licence", 'v' => "AGPL"],
+                ['k' => "Ads shown", 'v' => "0"],
+                ['k' => "Data sold", 'v' => "0"],
+                ['k' => "Birthdays forgotten", 'v' => "Fewer each year"],
+            ],
+        ],
+
+        'history' => [
+            'title' => "The road to Monica",
+            'lede' => "A personal CRM usually starts with a forgotten birthday.",
+            'items' => [
+                ['year' => "2017", 'title' => "The first version.", 'body' => "Régis builds a small app to remember things about the people around him, and puts the code on GitHub."],
+                ['year' => "2017", 'title' => "Hosted Monica opens.", 'body' => "People who would rather not run a server can pay for one. That revenue is still what keeps the project going."],
+                ['year' => "2018", 'title' => "Alexis joins.", 'body' => "First as a contributor, then as the person who keeps Monica installable, upgradable and running on other people’s machines."],
+                ['year' => "Later", 'title' => "Thousands of contributors and translators.", 'body' => "Monica is translated by its users into dozens of languages, and patched by people who wanted one thing to work differently."],
+                ['year' => "2026", 'title' => "Monica v3.", 'body' => "A rewrite: calmer, faster, easier to host, and built on everything learned from the first version."],
+            ],
+        ],
+
+        'why' => [
+            'title' => "Why Monica exists",
+            'body' => [
+                "I wanted somewhere to write down what I know about the people I care about: the name of a friend’s new partner, when someone’s mother had surgery, what we talked about last time. Contacts apps store phone numbers. Note apps forget who a note is about.",
+                "I also did not want any of that sitting in a company’s database that might be sold, shut down or mined for advertising. What you write about your family is the most private data you have.",
+                "So Monica is open source and self-hostable, and the hosted version is paid for by the people who use it. Nobody else is in the room.",
+            ],
+            'signature' => "Régis",
+            'promises' => [
+                ['t' => "Open source", 'b' => "The full source is public under the AGPL."],
+                ['t' => "Self-hostable", 'b' => "One Docker command and it runs on hardware you control."],
+                ['t' => "Funded by users", 'b' => "No investors, no advertising, nobody to answer to but the people who use it."],
+                ['t' => "Your data is yours", 'b' => "Export everything, any time, in full. Delete it and it is gone."],
+            ],
+        ],
+
+        'nos' => [
+            'title' => "Not on the roadmap",
+            'lede' => "Saying no is most of the work.",
+            'items' => [
+                ['t' => "Advertising", 'b' => "Nobody needs an ad next to their grandmother’s birthday."],
+                ['t' => "Selling your data", 'b' => "Not at any price."],
+                ['t' => "A social network", 'b' => "Monica is private. Nobody you add is told about it."],
+                ['t' => "Per-contact pricing", 'b' => "Meeting someone new should not cost you money."],
+                ['t' => "A sales pipeline", 'b' => "There are plenty of CRMs for that. This one is for your life."],
+                ['t' => "Streaks and badges", 'b' => "Calling your mother is not a game."],
+            ],
+        ],
+
+        'openSource' => [
+            'eyebrow' => "Open source",
+            'title' => "The code is public. Including the parts we would rather rewrite.",
+            'body' => "Every commit happens in the open. Read the source, see what happens to your data, file an issue, send a patch, or fork it and run your own. Contributions are welcome, and so is a well-argued disagreement.",
+            'github' => "View on GitHub",
+            'docs' => "Documentation",
+            'items' => [
+                ['t' => "Read the code", 'b' => "Every line, including the server side."],
+                ['t' => "Contribute", 'b' => "Issues, patches and translations are welcome."],
+                ['t' => "Self-host it", 'b' => "Install it, run it, keep the data on your own server."],
+                ['t' => "Built in public", 'b' => "Releases and changes are published on GitHub."],
+            ],
+        ],
+
+        'signOff' => [
+            'title' => "Monica is the address book we always wanted to have.",
+            'body' => "We hope it helps you call someone you have been meaning to call.",
+            'names' => ["Régis", "Alexis"],
+        ],
     ],
 
     'notFound' => [

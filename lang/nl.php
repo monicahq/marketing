@@ -20,6 +20,7 @@ return [
             'blog' => "Blog",
             'terms' => "Gebruiksvoorwaarden",
             'team' => "Team",
+            'about' => "Over Monica",
             'privacy' => "Privacybeleid",
             'personalCrm' => "Gids persoonlijke CRM",
             'templates' => "Contactsjablonen",
@@ -55,6 +56,11 @@ return [
         'privacy' => [
             'title' => "Privacybeleid — Monica",
             'description' => "Hoe Monica met je gegevens omgaat: wat we verzamelen, waar het staat, wie het kan inzien en wat er gebeurt als je je account opzegt. Geen advertenties, geen trackers, geen doorverkoop van gegevens.",
+        ],
+
+        'about' => [
+            'title' => "Over ons — Monica",
+            'description' => "Monica is een open source persoonlijke CRM, gemaakt door twee mensen, Régis en Alexis. Geen investeerders, geen advertenties, geen verkochte gegevens. Hoe het begon, en wat nooit op de roadmap zal staan.",
         ],
 
         'team' => [
@@ -2414,6 +2420,7 @@ return [
         'privacy' => "Privacy",
         'terms' => "Voorwaarden",
         'team' => "Team",
+        'about' => "Over ons",
 
         'art' => "Een weide aan een meer, met panda's die in het gras liggen te luieren en in de bomen een dutje doen",
         'copyright' => "© :year Monica. Er zijn geen panda's gevolgd. We zouden graag zeggen dat Monica een geregistreerd handelsmerk is, maar dat is niet zo. Wees alsjeblieft aardig.",
@@ -2595,6 +2602,131 @@ return [
             "Bedankt dat je een kijkje bij het project hebt genomen.",
         ],
         'signature' => "Regis Freyd en Alexis Saettler",
+    ],
+
+    /**
+     * The about page: who makes Monica, how it started, and what it will never
+     * do. The two people are Régis and Alexis in every language, and their
+     * photos are the blog's author photos.
+     */
+    'about' => [
+        'hero' => [
+            'eyebrow' => "Over ons",
+            'title' => "Gemaakt door twee mensen.",
+            'lede' => "De één schreef de eerste regel. De ander zorgde dat het bleef draaien.",
+            'body' => [
+                "Monica is een open source persoonlijke CRM, gemaakt door Régis en Alexis. Er staat geen bedrijf van vijftig mensen achter, geen investeerders en geen groeidoel op een whiteboard. Er zijn twee mensen die hun vrienden graag wat beter willen onthouden.",
+                "Al het andere zijn de mensen die Monica gebruiken: wie het zelf host, meldt wat er stuk ging, het naar de eigen taal vertaalt en voor hosting betaalt, zodat wij met z’n tweeën door kunnen werken.",
+            ],
+            'team' => "Maak kennis met ons tweeën",
+            'history' => "Hoe het begon",
+        ],
+
+        'team' => [
+            'title' => "Maak kennis met het team",
+            'lede' => "Het geheel.",
+            'people' => [
+                [
+                    'name' => "Régis Freyd",
+                    'where' => "Medeoprichter",
+                    'role' => "Begon Monica, schrijft het grootste deel van de code",
+                    'bio' => "Schreef de eerste versie in 2017 om zijn eigen vrienden en familie bij te houden. Schrijft nog steeds functies, beantwoordt support en pleit voor minder instellingen.",
+                    'facts' => [
+                        ['k' => "Werkt meestal aan", 'v' => "Het product en de app"],
+                        ['k' => "Favoriete onderdeel", 'v' => "Code verwijderen"],
+                        ['k' => "Minst favoriete onderdeel", 'v' => "Tijdzones"],
+                    ],
+                ],
+                [
+                    'name' => "Alexis Saettler",
+                    'where' => "Medeoprichter",
+                    'role' => "Houdt Monica draaiend, overal",
+                    'bio' => "Zorgt voor de infrastructuur, de Docker images, de releases en de lange staart van dingen die alleen op andermans server stukgaan. Bekijkt wat Régis uitbrengt.",
+                    'facts' => [
+                        ['k' => "Werkt meestal aan", 'v' => "Infrastructuur en releases"],
+                        ['k' => "Favoriete onderdeel", 'v' => "Een groene build"],
+                        ['k' => "Minst favoriete onderdeel", 'v' => "Ook tijdzones"],
+                    ],
+                ],
+            ],
+        ],
+
+        'facts' => [
+            'title' => "Het bedrijf in cijfers",
+            'lede' => "Vooral kleine. We zijn er dol op.",
+            'items' => [
+                ['k' => "Gestart", 'v' => "2017"],
+                ['k' => "Mensen", 'v' => "2"],
+                ['k' => "Kantoren", 'v' => "Geen"],
+                ['k' => "Investeerders", 'v' => "Geen"],
+                ['k' => "Gefinancierd door", 'v' => "Abonnementen"],
+                ['k' => "Licentie", 'v' => "AGPL"],
+                ['k' => "Getoonde advertenties", 'v' => "0"],
+                ['k' => "Verkochte gegevens", 'v' => "0"],
+                ['k' => "Vergeten verjaardagen", 'v' => "Elk jaar minder"],
+            ],
+        ],
+
+        'history' => [
+            'title' => "De weg naar Monica",
+            'lede' => "Een persoonlijke CRM begint meestal met een vergeten verjaardag.",
+            'items' => [
+                ['year' => "2017", 'title' => "De eerste versie.", 'body' => "Régis bouwt een kleine app om dingen te onthouden over de mensen om hem heen, en zet de code op GitHub."],
+                ['year' => "2017", 'title' => "Gehoste Monica gaat open.", 'body' => "Wie liever geen server draait, kan er een betalen. Die inkomsten houden het project nog steeds draaiend."],
+                ['year' => "2018", 'title' => "Alexis komt erbij.", 'body' => "Eerst als bijdrager, daarna als de persoon die Monica installeerbaar, te upgraden en draaiend houdt op andermans machines."],
+                ['year' => "Later", 'title' => "Duizenden bijdragers en vertalers.", 'body' => "Monica wordt door gebruikers in tientallen talen vertaald, en gepatcht door mensen die één ding anders wilden."],
+                ['year' => "2026", 'title' => "Monica v3.", 'body' => "Een herbouw: rustiger, sneller, makkelijker te hosten, en gebouwd op alles wat we van de eerste versie hebben geleerd."],
+            ],
+        ],
+
+        'why' => [
+            'title' => "Waarom Monica bestaat",
+            'body' => [
+                "Ik wilde een plek om op te schrijven wat ik weet over de mensen om wie ik geef: de naam van de nieuwe partner van een vriend, wanneer iemands moeder geopereerd werd, waar we de vorige keer over praatten. Contacten apps bewaren telefoonnummers. Notitie apps vergeten over wie een notitie gaat.",
+                "Ik wilde ook niet dat dat alles in de database van een bedrijf staat dat verkocht, opgedoekt of voor advertenties uitgemolken kan worden. Wat je over je familie schrijft, zijn de meest persoonlijke gegevens die je hebt.",
+                "Dus is Monica open source en zelf te hosten, en wordt de gehoste versie betaald door de mensen die het gebruiken. Niemand anders zit aan tafel.",
+            ],
+            'signature' => "Régis",
+            'promises' => [
+                ['t' => "Open source", 'b' => "De volledige broncode is openbaar onder de AGPL."],
+                ['t' => "Zelf te hosten", 'b' => "Eén Docker opdracht en het draait op hardware die je zelf beheert."],
+                ['t' => "Gefinancierd door gebruikers", 'b' => "Geen investeerders, geen advertenties, niemand om verantwoording aan af te leggen behalve de mensen die het gebruiken."],
+                ['t' => "Je gegevens zijn van jou", 'b' => "Exporteer alles, altijd, volledig. Verwijder het en het is weg."],
+            ],
+        ],
+
+        'nos' => [
+            'title' => "Niet op de roadmap",
+            'lede' => "Nee zeggen is het meeste werk.",
+            'items' => [
+                ['t' => "Advertenties", 'b' => "Niemand heeft een advertentie nodig naast de verjaardag van oma."],
+                ['t' => "Je gegevens verkopen", 'b' => "Voor geen enkele prijs."],
+                ['t' => "Een sociaal netwerk", 'b' => "Monica is privé. Niemand die je toevoegt, krijgt het te horen."],
+                ['t' => "Prijs per contact", 'b' => "Iemand nieuw leren kennen hoort geen geld te kosten."],
+                ['t' => "Een verkooppijplijn", 'b' => "Daar zijn genoeg CRM’s voor. Deze is voor je leven."],
+                ['t' => "Reeksen en badges", 'b' => "Je moeder bellen is geen spel."],
+            ],
+        ],
+
+        'openSource' => [
+            'eyebrow' => "Open source",
+            'title' => "De code is openbaar. Ook de delen die we liever herschrijven.",
+            'body' => "Elke commit gebeurt in de open. Lees de broncode, zie wat er met je gegevens gebeurt, meld een probleem, stuur een patch, of fork het en draai je eigen versie. Bijdragen zijn welkom, en een goed beargumenteerd meningsverschil ook.",
+            'github' => "Bekijk op GitHub",
+            'docs' => "Documentatie",
+            'items' => [
+                ['t' => "Lees de code", 'b' => "Elke regel, ook de serverkant."],
+                ['t' => "Draag bij", 'b' => "Meldingen, patches en vertalingen zijn welkom."],
+                ['t' => "Host het zelf", 'b' => "Installeer het, draai het, houd de gegevens op je eigen server."],
+                ['t' => "Openlijk gebouwd", 'b' => "Releases en wijzigingen worden op GitHub gepubliceerd."],
+            ],
+        ],
+
+        'signOff' => [
+            'title' => "Monica is het adresboek dat we altijd al wilden hebben.",
+            'body' => "We hopen dat het je helpt iemand te bellen die je al een tijd wilde bellen.",
+            'names' => ["Régis", "Alexis"],
+        ],
     ],
 
     'notFound' => [

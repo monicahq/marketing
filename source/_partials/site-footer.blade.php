@@ -20,6 +20,7 @@
         [
             'label' => $page->t('footer.companyLabel'),
             'links' => [
+                ['label' => $page->t('footer.about'), 'href' => $page->route('about')],
                 ['label' => $page->t('nav.blog'), 'href' => $page->route('blog')],
                 ['label' => $page->t('footer.team'), 'href' => $page->route('team')],
                 ['label' => $page->t('footer.contactSales'), 'href' => $page->links['contactSales']],

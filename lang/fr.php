@@ -19,6 +19,7 @@ return [
             'blog' => "Blog",
             'terms' => "Conditions d’utilisation",
             'team' => "Équipe",
+            'about' => "À propos de Monica",
             'privacy' => "Politique de confidentialité",
             'personalCrm' => "Guide du CRM personnel",
             'templates' => "Modèles de contact",
@@ -54,6 +55,11 @@ return [
         'privacy' => [
             'title' => "Politique de confidentialité — Monica",
             'description' => "Comment Monica traite vos données : ce que nous collectons, où c’est stocké, qui peut y accéder et ce qui se passe quand vous fermez votre compte. Pas de publicité, pas de traceurs, pas de revente de données.",
+        ],
+
+        'about' => [
+            'title' => "À propos — Monica",
+            'description' => "Qui fabrique Monica, comment tout a commencé et ce que nous ne ferons jamais. Deux personnes, pas d’investisseurs, un CRM personnel open source.",
         ],
 
         'team' => [
@@ -2423,6 +2429,7 @@ return [
         'privacy' => "Confidentialité",
         'terms' => "Conditions d’utilisation",
         'team' => "Équipe",
+        'about' => "À propos",
 
         'art' => "Une prairie au bord d’un lac, avec des pandas qui se prélassent dans l’herbe et font la sieste dans les arbres",
         'copyright' => "© :year Monica. Aucun panda n’a été traqué. Nous aimerions pouvoir dire que Monica est une marque déposée, mais ce n’est pas le cas. Merci d’être sympa.",
@@ -2594,6 +2601,131 @@ return [
             "Merci de vous intéresser au projet.",
         ],
         'signature' => "Regis Freyd et Alexis Saettler",
+    ],
+
+    /**
+     * The about page: who makes Monica, how it started, and what it will never
+     * do. The two people are Régis and Alexis in every language, and their
+     * photos are the blog's author photos.
+     */
+    'about' => [
+        'hero' => [
+            'eyebrow' => "À propos",
+            'title' => "Fait par deux personnes.",
+            'lede' => "L’un a écrit la première ligne. L’autre a veillé à ce que ça continue de tourner.",
+            'body' => [
+                "Monica est un CRM personnel open source, fait par Régis et Alexis. Il n’y a pas derrière une entreprise de cinquante personnes, ni investisseurs, ni objectif de croissance écrit sur un tableau blanc. Il y a deux personnes qui aimeraient se souvenir un peu mieux de leurs amis.",
+                "Tout le reste, ce sont les gens qui l’utilisent : ceux qui l’hébergent eux-mêmes, signalent ce qui ne marche pas, la traduisent dans leur langue et paient l’hébergement pour que nous puissions continuer à y travailler.",
+            ],
+            'team' => "Faire notre connaissance",
+            'history' => "Comment tout a commencé",
+        ],
+
+        'team' => [
+            'title' => "Rencontrez l’équipe",
+            'lede' => "Elle tient tout entière ici.",
+            'people' => [
+                [
+                    'name' => "Régis Freyd",
+                    'where' => "Cofondateur",
+                    'role' => "A lancé Monica, écrit la plus grande partie du code",
+                    'bio' => "A écrit la première version en 2017 pour garder la trace de ses propres amis et de sa famille. Écrit toujours des fonctionnalités, répond au support et plaide pour moins de réglages.",
+                    'facts' => [
+                        ['k' => "Travaille surtout sur", 'v' => "Le produit et l’application"],
+                        ['k' => "Partie préférée", 'v' => "Supprimer du code"],
+                        ['k' => "Partie la moins aimée", 'v' => "Les fuseaux horaires"],
+                    ],
+                ],
+                [
+                    'name' => "Alexis Saettler",
+                    'where' => "Cofondateur",
+                    'role' => "Fait tourner Monica, partout",
+                    'bio' => "S’occupe de l’infrastructure, des images Docker, des versions et de la longue traîne de problèmes qui n’apparaissent que sur le serveur de quelqu’un d’autre. Relit ce que livre Régis.",
+                    'facts' => [
+                        ['k' => "Travaille surtout sur", 'v' => "L’infrastructure et les versions"],
+                        ['k' => "Partie préférée", 'v' => "Un build au vert"],
+                        ['k' => "Partie la moins aimée", 'v' => "Aussi les fuseaux horaires"],
+                    ],
+                ],
+            ],
+        ],
+
+        'facts' => [
+            'title' => "L’entreprise en chiffres",
+            'lede' => "Des petits, pour la plupart. Nous y tenons.",
+            'items' => [
+                ['k' => "Lancement", 'v' => "2017"],
+                ['k' => "Personnes", 'v' => "2"],
+                ['k' => "Bureaux", 'v' => "Aucun"],
+                ['k' => "Investisseurs", 'v' => "Aucun"],
+                ['k' => "Financée par", 'v' => "Les abonnements"],
+                ['k' => "Licence", 'v' => "AGPL"],
+                ['k' => "Publicités affichées", 'v' => "0"],
+                ['k' => "Données vendues", 'v' => "0"],
+                ['k' => "Anniversaires oubliés", 'v' => "Moins chaque année"],
+            ],
+        ],
+
+        'history' => [
+            'title' => "Le chemin vers Monica",
+            'lede' => "Un CRM personnel commence en général par un anniversaire oublié.",
+            'items' => [
+                ['year' => "2017", 'title' => "La première version.", 'body' => "Régis construit une petite application pour se souvenir de choses sur les gens autour de lui, et met le code sur GitHub."],
+                ['year' => "2017", 'title' => "Monica hébergée ouvre.", 'body' => "Ceux qui préfèrent ne pas gérer un serveur peuvent en payer un. Ces revenus font toujours vivre le projet."],
+                ['year' => "2018", 'title' => "Alexis nous rejoint.", 'body' => "D’abord comme contributeur, puis comme la personne qui garde Monica installable, mettable à jour et fonctionnelle sur les machines des autres."],
+                ['year' => "Plus tard", 'title' => "Des milliers de contributeurs et de traducteurs.", 'body' => "Monica est traduite par ses utilisateurs dans des dizaines de langues, et corrigée par des gens qui voulaient qu’une chose fonctionne autrement."],
+                ['year' => "2026", 'title' => "Monica v3.", 'body' => "Une réécriture : plus calme, plus rapide, plus simple à héberger, et construite sur tout ce que la première version nous a appris."],
+            ],
+        ],
+
+        'why' => [
+            'title' => "Pourquoi Monica existe",
+            'body' => [
+                "Je voulais un endroit où noter ce que je sais des gens qui comptent pour moi : le nom du nouveau compagnon d’un ami, la date de l’opération de la mère de quelqu’un, ce dont nous avons parlé la dernière fois. Les applications de contacts stockent des numéros de téléphone. Les applications de notes oublient de qui parle une note.",
+                "Je ne voulais pas non plus que tout cela dorme dans la base de données d’une entreprise qui pourrait la vendre, fermer ou exploiter à des fins publicitaires. Ce que vous écrivez sur votre famille est la donnée la plus privée que vous ayez.",
+                "Alors Monica est open source et auto-hébergeable, et la version hébergée est payée par ceux qui l’utilisent. Personne d’autre n’est dans la pièce.",
+            ],
+            'signature' => "Régis",
+            'promises' => [
+                ['t' => "Open source", 'b' => "Le code source complet est public sous licence AGPL."],
+                ['t' => "Auto-hébergeable", 'b' => "Une seule commande Docker et elle tourne sur un matériel que vous contrôlez."],
+                ['t' => "Financée par ses utilisateurs", 'b' => "Pas d’investisseurs, pas de publicité, personne à qui rendre des comptes sauf ceux qui l’utilisent."],
+                ['t' => "Vos données vous appartiennent", 'b' => "Exportez tout, quand vous voulez, en entier. Supprimez-les et elles disparaissent."],
+            ],
+        ],
+
+        'nos' => [
+            'title' => "Pas dans la feuille de route",
+            'lede' => "Dire non, c’est l’essentiel du travail.",
+            'items' => [
+                ['t' => "La publicité", 'b' => "Personne n’a besoin d’une pub à côté de l’anniversaire de sa grand-mère."],
+                ['t' => "La revente de vos données", 'b' => "À aucun prix."],
+                ['t' => "Un réseau social", 'b' => "Monica est privée. Personne parmi ceux que vous ajoutez n’en est informé."],
+                ['t' => "Un prix par contact", 'b' => "Rencontrer quelqu’un de nouveau ne devrait pas vous coûter d’argent."],
+                ['t' => "Un pipeline de vente", 'b' => "Les CRM pour ça ne manquent pas. Celui-ci est pour votre vie."],
+                ['t' => "Séries et badges", 'b' => "Appeler sa mère n’est pas un jeu."],
+            ],
+        ],
+
+        'openSource' => [
+            'eyebrow' => "Open source",
+            'title' => "Le code est public. Y compris les parties que nous préférerions réécrire.",
+            'body' => "Chaque commit se fait au grand jour. Lisez le code, voyez ce qu’il advient de vos données, ouvrez un ticket, envoyez un correctif, ou forkez-le et faites tourner le vôtre. Les contributions sont les bienvenues, tout comme un désaccord bien argumenté.",
+            'github' => "Voir sur GitHub",
+            'docs' => "Documentation",
+            'items' => [
+                ['t' => "Lire le code", 'b' => "Chaque ligne, y compris côté serveur."],
+                ['t' => "Contribuer", 'b' => "Tickets, correctifs et traductions sont les bienvenus."],
+                ['t' => "L’héberger soi-même", 'b' => "Installez-la, lancez-la, gardez les données sur votre propre serveur."],
+                ['t' => "Construite en public", 'b' => "Les versions et les changements sont publiés sur GitHub."],
+            ],
+        ],
+
+        'signOff' => [
+            'title' => "Monica est le carnet d’adresses que nous avons toujours voulu avoir.",
+            'body' => "Nous espérons qu’elle vous aidera à appeler quelqu’un que vous vouliez appeler depuis longtemps.",
+            'names' => ["Régis", "Alexis"],
+        ],
     ],
 
     'notFound' => [
