@@ -2484,7 +2484,6 @@ return [
             'body' => "A private, open-source personal CRM for remembering the people who matter. Self-host it, or let us run it.",
             'bodyPost' => "Keep track of the people in your life without handing them to an advertising database.",
             'cta' => "Get started",
-            'note' => "30-day trial · No credit card required",
         ],
 
 

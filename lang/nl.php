@@ -2452,7 +2452,6 @@ return [
             'body' => "Een privé, open source persoonlijke CRM om de mensen te onthouden die tellen. Draai het zelf, of laat ons het draaien.",
             'bodyPost' => "Houd bij wat er speelt bij de mensen in je leven zonder ze aan een advertentiedatabase te geven.",
             'cta' => "Aan de slag",
-            'note' => "30 dagen proberen · Geen creditcard nodig",
         ],
 
 

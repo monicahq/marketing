@@ -2464,7 +2464,6 @@ return [
             'body' => "Un CRM personnel privé et open source pour se souvenir des gens qui comptent. Auto-hébergez-le, ou laissez-nous nous en charger.",
             'bodyPost' => "Gardez le fil des gens de votre vie sans les confier à une base de données publicitaire.",
             'cta' => "Commencer",
-            'note' => "Essai de 30 jours · Aucune carte bancaire requise",
         ],
 
 

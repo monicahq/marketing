@@ -2462,7 +2462,6 @@ return [
             'body' => "Ein privates, quelloffenes persönliches CRM, um sich an die Menschen zu erinnern, die zählen. Selbst hosten, oder uns machen lassen.",
             'bodyPost' => "Behalten Sie die Menschen in Ihrem Leben im Blick, ohne sie einer Werbedatenbank zu überlassen.",
             'cta' => "Loslegen",
-            'note' => "30 Tage testen · Keine Kreditkarte nötig",
         ],
 
 

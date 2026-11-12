@@ -2467,7 +2467,6 @@ return [
             'body' => "Un CRM personal privado y de código abierto para recordar a las personas que importan. Aloja tú la instancia, o deja que la llevemos nosotros.",
             'bodyPost' => "Sigue el hilo de las personas de tu vida sin entregarlas a una base de datos publicitaria.",
             'cta' => "Empezar",
-            'note' => "Prueba de 30 días · Sin tarjeta de crédito",
         ],
 
 

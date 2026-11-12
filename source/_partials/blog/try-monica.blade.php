@@ -24,6 +24,4 @@
         'class' => 'mn-btn-primary mn-btn-small w-full justify-center',
         'wrapper' => 'mt-1',
     ])
-
-    <span class="text-center font-mono text-mono text-text-muted">{{ $page->t('blog.tryMonica.note') }}</span>
 </div>

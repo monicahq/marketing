@@ -2470,7 +2470,6 @@ return [
             'body' => "Um CRM pessoal privado e de código aberto para lembrar das pessoas que importam. Hospede você mesmo, ou deixe com a gente.",
             'bodyPost' => "Acompanhe as pessoas da sua vida sem entregá-las a um banco de dados de publicidade.",
             'cta' => "Começar",
-            'note' => "Teste de 30 dias · Sem cartão de crédito",
         ],
 
 
