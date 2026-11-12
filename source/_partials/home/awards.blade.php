@@ -5,8 +5,9 @@
     // GitHub one is 3:1 where the other two are 5:1, so at one common height
     // it reads as the small one. Each carries its own height instead, chosen
     // so the three look like a set. Literal classes, for Tailwind's scanner.
+    // A badge with an `href` links to the ranking it claims.
     $badges = [
-        ['src' => '/assets/images/awards/award-github.webp', 'alt' => $copy['github'], 'height' => 'h-18'],
+        ['src' => '/assets/images/awards/award-github.webp', 'alt' => $copy['github'], 'height' => 'h-18', 'href' => $page->links['trending']],
         ['src' => '/assets/images/awards/hacker-news.svg', 'alt' => $copy['hn'], 'height' => 'h-13'],
         ['src' => '/assets/images/awards/product-hunt.svg', 'alt' => $copy['ph'], 'height' => 'h-13'],
     ];
@@ -18,6 +19,9 @@
         <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-4">
             @foreach ($badges as $badge)
                 @php $size = $page->imageSize($badge['src']); @endphp
+                @if (isset($badge['href']))
+                    <a href="{{ $badge['href'] }}" class="block rounded-md">
+                @endif
                 <img
                     src="{{ $badge['src'] }}"
                     alt="{{ $badge['alt'] }}"
@@ -27,6 +31,9 @@
                     decoding="async"
                     class="block w-auto {{ $badge['height'] }}"
                 >
+                @if (isset($badge['href']))
+                    </a>
+                @endif
             @endforeach
         </div>
     </div>
