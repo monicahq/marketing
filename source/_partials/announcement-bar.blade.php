@@ -2,7 +2,7 @@
      page itself. --}}
 @if ($page->page !== 'v3')
 <div class="bg-surface-inverse text-on-inverse">
-    <div class="mx-auto flex w-full max-w-marketing flex-wrap items-center gap-4 px-4 py-3 max-md:flex-col max-md:items-start max-md:gap-2 md:px-8">
+    <div class="mx-auto flex w-full max-w-390 flex-wrap items-center gap-4 px-4 py-3 max-md:flex-col max-md:items-start max-md:gap-2 sm:px-7">
         <span class="text-small font-semibold text-on-inverse-strong">{{ $page->t('announcement.headline') }}</span>
         <span class="text-small text-on-inverse-muted">{{ $page->t('announcement.detail') }}</span>
         <a
