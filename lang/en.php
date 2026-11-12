@@ -2663,7 +2663,7 @@ return [
                 [
                     'name' => "Régis Freyd",
                     'where' => "Co-founder",
-                    'role' => "Started Monica, writes most of the code",
+                    'role' => "Started Monica, writes most of the bugs",
                     'bio' => "Wrote the first version in 2017 to keep track of his own friends and family. Still writes features, answers support and argues for fewer settings.",
                     'facts' => [
                         ['k' => "Usually working on", 'v' => "Product and the app"],

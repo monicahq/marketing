@@ -2629,7 +2629,7 @@ return [
                 [
                     'name' => "Régis Freyd",
                     'where' => "Medeoprichter",
-                    'role' => "Begon Monica, schrijft het grootste deel van de code",
+                    'role' => "Begon Monica, schrijft het grootste deel van de bugs",
                     'bio' => "Schreef de eerste versie in 2017 om zijn eigen vrienden en familie bij te houden. Schrijft nog steeds functies, beantwoordt support en pleit voor minder instellingen.",
                     'facts' => [
                         ['k' => "Werkt meestal aan", 'v' => "Het product en de app"],

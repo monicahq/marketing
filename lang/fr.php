@@ -2628,7 +2628,7 @@ return [
                 [
                     'name' => "Régis Freyd",
                     'where' => "Cofondateur",
-                    'role' => "A lancé Monica, écrit la plus grande partie du code",
+                    'role' => "A lancé Monica, écrit l’essentiel des bugs",
                     'bio' => "A écrit la première version en 2017 pour garder la trace de ses propres amis et de sa famille. Écrit toujours des fonctionnalités, répond au support et plaide pour moins de réglages.",
                     'facts' => [
                         ['k' => "Travaille surtout sur", 'v' => "Le produit et l’application"],
