@@ -50,7 +50,7 @@
                 @endforeach
             </h2>
             <div class="flex flex-wrap justify-center gap-2.5">
-                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary no-underline hover:no-underline">{{ $page->t('footer.start') }}</a>
+                @include('_partials.sign-up', ['label' => $page->t('footer.start'), 'class' => 'mn-btn-primary'])
                 <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $page->t('footer.github') }}</a>
             </div>
         </div>
