@@ -218,6 +218,20 @@ $postSettings = [
         );
     },
 
+    /**
+     * The author's photo, or null for an author without one, who keeps the
+     * initials. Keyed by the `author` front matter exactly as the posts
+     * spell it. The files are 96px squares, three times the largest circle
+     * they are drawn in (32px under a post title), cut from the 460px
+     * originals in the application's repository.
+     */
+    'authorAvatar' => function ($post) {
+        return [
+            'Regis Freyd' => '/assets/images/authors/regis.webp',
+            'Alexis Saettler' => '/assets/images/authors/alexis.webp',
+        ][$post->author] ?? null;
+    },
+
     /** "Regis Freyd" becomes "RF", for the avatar circle. */
     'authorInitials' => function ($post) {
         return collect(preg_split('/\s+/', trim($post->author)))
