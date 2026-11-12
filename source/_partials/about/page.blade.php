@@ -8,6 +8,14 @@
         '/assets/images/authors/alexis.webp',
     ];
 
+    // The large cut-out portraits in the team section, each with a retina
+    // copy at twice the pixels, and the identity colour of its arch. The
+    // classes are literal so Tailwind's scanner sees them.
+    $portraits = [
+        ['src' => '/assets/images/about/regis.webp', 'src2x' => '/assets/images/about/regis@2x.webp', 'arch' => 'bg-identity-3/14', 'dot' => 'bg-identity-3', 'row' => 'md:flex-row'],
+        ['src' => '/assets/images/about/alexis.webp', 'src2x' => '/assets/images/about/alexis@2x.webp', 'arch' => 'bg-identity-1/14', 'dot' => 'bg-identity-1', 'row' => 'md:flex-row-reverse'],
+    ];
+
     // Shared by every section. The page is a single reading column, narrower
     // than the feature pages, because it is mostly prose.
     $container = 'mx-auto w-full max-w-form';
