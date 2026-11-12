@@ -30,10 +30,10 @@
                  images rather than a <picture>, so the night one follows
                  the theme button and not only the system setting. Below
                  the fold, so both are lazy, and the hidden one is never
-                 fetched. It takes the whole of the text column rather than
-                 the prose measure, so the picture is not shrunk to a line
+                 fetched. It spans both columns, so it sits centred on the page
+                 rather than under the text, and is not shrunk to a line
                  length. --}}
-            <div class="border-t border-border-subtle pt-5 lg:col-start-2 lg:mt-3">
+            <div class="border-t border-border-subtle pt-5 lg:col-span-2 lg:mt-3">
                 <img
                     src="{{ $earthDay }}"
                     alt="{{ $page->t('team.art') }}"
