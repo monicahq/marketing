@@ -2422,7 +2422,7 @@ return [
         'team' => "Équipe",
 
         'art' => "Une prairie au bord d’un lac, avec des pandas qui se prélassent dans l’herbe et font la sieste dans les arbres",
-        'copyright' => "© :year Monica. Aucun panda n’a été traqué.",
+        'copyright' => "© :year Monica. Aucun panda n’a été traqué. Nous aimerions pouvoir dire que Monica est une marque déposée, mais ce n’est pas le cas. Merci d’être sympa.",
         'languageLabel' => "Changer de langue",
     ],
 

@@ -2428,7 +2428,7 @@ return [
         'team' => "Equipe",
 
         'art' => "Um campo à beira de um lago, com pandas deitados na grama e cochilando nas árvores",
-        'copyright' => "© :year Monica. Nenhum panda foi rastreado.",
+        'copyright' => "© :year Monica. Nenhum panda foi rastreado. Gostaríamos de dizer que a Monica é uma marca registrada, mas não é. Por favor, seja gentil.",
         'languageLabel' => "Mudar de idioma",
     ],
 

@@ -2413,7 +2413,7 @@ return [
         'team' => "Team",
 
         'art' => "Een weide aan een meer, met panda's die in het gras liggen te luieren en in de bomen een dutje doen",
-        'copyright' => "© :year Monica. Er zijn geen panda's gevolgd.",
+        'copyright' => "© :year Monica. Er zijn geen panda's gevolgd. We zouden graag zeggen dat Monica een geregistreerd handelsmerk is, maar dat is niet zo. Wees alsjeblieft aardig.",
         'languageLabel' => "Taal wijzigen",
     ],
 

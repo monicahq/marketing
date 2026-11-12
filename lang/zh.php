@@ -2433,7 +2433,7 @@ return [
         'team' => "团队",
 
         'art' => "湖边的一片草地，熊猫们在草丛中闲躺，在树上小憩",
-        'copyright' => "© :year Monica。没有熊猫被追踪。",
+        'copyright' => "© :year Monica。没有熊猫被追踪。我们很想说 Monica 是注册商标，但它并不是。请友善一点。",
         'languageLabel' => "切换语言",
     ],
 

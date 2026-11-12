@@ -2425,7 +2425,7 @@ return [
         'team' => "Equipo",
 
         'art' => "Un prado junto a un lago, con pandas tumbados en la hierba y echando la siesta en los árboles",
-        'copyright' => "© :year Monica. No se rastreó a ningún panda.",
+        'copyright' => "© :year Monica. No se rastreó a ningún panda. Nos encantaría decir que Monica es una marca registrada, pero no lo es. Por favor, sé amable.",
         'languageLabel' => "Cambiar de idioma",
     ],
 

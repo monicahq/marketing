@@ -2420,7 +2420,7 @@ return [
         'team' => "Team",
 
         'art' => "Eine Wiese an einem See, mit Pandas, die im Gras faulenzen und in den Bäumen dösen",
-        'copyright' => "© :year Monica. Es wurden keine Pandas getrackt.",
+        'copyright' => "© :year Monica. Es wurden keine Pandas getrackt. Wir würden gern sagen, dass Monica eine eingetragene Marke ist, aber das ist sie nicht. Bitte seien Sie nett.",
         'languageLabel' => "Sprache wechseln",
     ],
 

@@ -2442,7 +2442,7 @@ return [
         'team' => "Team",
 
         'art' => "A meadow by a lake, with pandas lounging in the grass and napping in the trees",
-        'copyright' => "© :year Monica. No pandas were tracked.",
+        'copyright' => "© :year Monica. No pandas were tracked. We wish we could say that Monica is trademarked, but it’s not. Please be nice.",
         'languageLabel' => "Change language",
     ],
 

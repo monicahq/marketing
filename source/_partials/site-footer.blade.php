@@ -114,6 +114,6 @@
     {{-- On a flat band under the meadow rather than over the grass: no
          colour of text is legible against every daisy. --}}
     <div class="flex justify-center bg-ground-sage px-6 py-3.5">
-        <span class="text-xs text-ground-sage-ink">{{ $page->t('footer.copyright', [':year' => $page->year]) }}</span>
+        <span class="text-xs text-ground-sage-ink">{{ $page->t('footer.copyright', [':year' => '2017–' . $page->year]) }}</span>
     </div>
 </footer>
