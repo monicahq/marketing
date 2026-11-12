@@ -2641,7 +2641,7 @@ return [
                     'name' => "Alexis Saettler",
                     'where' => "Medeoprichter",
                     'role' => "Houdt Monica draaiend, overal",
-                    'bio' => "Zorgt voor de infrastructuur, de Docker images, de releases en de lange staart van dingen die alleen op andermans server stukgaan. Bekijkt wat Régis uitbrengt.",
+                    'bio' => "Werkt aan de infrastructuur en aan de echt moeilijke dingen: de Docker images, de releases en alles wat alleen op andermans server stukgaat. Bekijkt wat Régis uitbrengt.",
                     'facts' => [
                         ['k' => "Werkt meestal aan", 'v' => "Infrastructuur en releases"],
                         ['k' => "Favoriete onderdeel", 'v' => "Een groene build"],

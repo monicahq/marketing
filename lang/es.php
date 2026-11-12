@@ -2643,7 +2643,7 @@ return [
                     'name' => "Alexis Saettler",
                     'where' => "Cofundador",
                     'role' => "Mantiene Monica funcionando, en todas partes",
-                    'bio' => "Se ocupa de la infraestructura, las imágenes de Docker, las versiones y la larga cola de problemas que solo aparecen en el servidor de otra persona. Revisa lo que publica Régis.",
+                    'bio' => "Trabaja en la infraestructura y en las cosas realmente difíciles: las imágenes de Docker, las versiones y todo lo que solo falla en el servidor de otra persona. Revisa lo que publica Régis.",
                     'facts' => [
                         ['k' => "Suele trabajar en", 'v' => "Infraestructura y versiones"],
                         ['k' => "Parte favorita", 'v' => "Una compilación en verde"],

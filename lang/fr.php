@@ -2640,7 +2640,7 @@ return [
                     'name' => "Alexis Saettler",
                     'where' => "Cofondateur",
                     'role' => "Fait tourner Monica, partout",
-                    'bio' => "S’occupe de l’infrastructure, des images Docker, des versions et de la longue traîne de problèmes qui n’apparaissent que sur le serveur de quelqu’un d’autre. Relit ce que livre Régis.",
+                    'bio' => "S’occupe de l’infrastructure et des sujets vraiment difficiles : les images Docker, les versions, et tout ce qui ne casse que sur le serveur de quelqu’un d’autre. Relit ce que livre Régis.",
                     'facts' => [
                         ['k' => "Travaille surtout sur", 'v' => "L’infrastructure et les versions"],
                         ['k' => "Partie préférée", 'v' => "Un build au vert"],

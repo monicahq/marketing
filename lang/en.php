@@ -2675,7 +2675,7 @@ return [
                     'name' => "Alexis Saettler",
                     'where' => "Co-founder",
                     'role' => "Keeps Monica running, everywhere",
-                    'bio' => "Looks after the infrastructure, the Docker images, the releases and the long tail of things that only break on somebody else’s server. Reviews what Régis ships.",
+                    'bio' => "Works on the infrastructure and the really hard things: the Docker images, the releases, and everything that only breaks on somebody else’s server. Reviews what Régis ships.",
                     'facts' => [
                         ['k' => "Usually working on", 'v' => "Infrastructure and releases"],
                         ['k' => "Favourite part", 'v' => "A green build"],

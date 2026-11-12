@@ -2638,7 +2638,7 @@ return [
                     'name' => "Alexis Saettler",
                     'where' => "Mitgründer",
                     'role' => "Hält Monica am Laufen, überall",
-                    'bio' => "Kümmert sich um die Infrastruktur, die Docker-Images, die Releases und den langen Schwanz an Problemen, die nur auf dem Server von jemand anderem auftreten. Prüft, was Régis ausliefert.",
+                    'bio' => "Arbeitet an der Infrastruktur und an den wirklich schwierigen Dingen: den Docker-Images, den Releases und allem, was nur auf dem Server von jemand anderem auftritt. Prüft, was Régis ausliefert.",
                     'facts' => [
                         ['k' => "Arbeitet meist an", 'v' => "Infrastruktur und Releases"],
                         ['k' => "Lieblingsteil", 'v' => "Ein grüner Build"],
