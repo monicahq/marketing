@@ -69,6 +69,17 @@
         'divider' => '<rect x="2.4" y="2.6" width="11.2" height="3.2" rx="1"></rect><line x1="1.8" y1="8" x2="14.2" y2="8"></line><rect x="2.4" y="10.2" width="11.2" height="3.2" rx="1"></rect>',
         'heading' => '<line x1="3" y1="4.8" x2="9.6" y2="4.8"></line><line x1="3" y1="8.4" x2="13" y2="8.4"></line><line x1="3" y1="11.6" x2="13" y2="11.6"></line>',
         'swatch' => '<circle cx="8" cy="8" r="5.6"></circle><path d="M8 2.4a5.6 5.6 0 0 1 0 11.2Z" fill="currentColor" stroke="none"></path>',
+        'folder' => '<path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h2.6l1.5 1.6h4.9A1.5 1.5 0 0 1 14 6.1v5.4a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5z"></path>',
+        'bell' => '<path d="M4.2 10.8V7.4a3.8 3.8 0 0 1 7.6 0v3.4l1 1.2H3.2Z"></path><path d="M6.6 13.6a1.6 1.6 0 0 0 2.8 0"></path>',
+        'shop' => '<path d="M2.6 6.2 3.6 2.8h8.8l1 3.4"></path><path d="M2.6 6.2c0 .9.8 1.6 1.8 1.6s1.8-.7 1.8-1.6c0 .9.8 1.6 1.8 1.6s1.8-.7 1.8-1.6c0 .9.8 1.6 1.8 1.6s1.8-.7 1.8-1.6"></path><path d="M3.4 7.8v5.6h9.2V7.8"></path><path d="M6.6 13.4v-3h2.8v3"></path>',
+        'shield' => '<path d="M8 2.2 13 4v3.8c0 3-2.2 5-5 6-2.8-1-5-3-5-6V4Z"></path><path d="m5.8 8 1.5 1.5 3-3"></path>',
+        'home' => '<path d="M2.6 7.4 8 3.2l5.4 4.2"></path><path d="M4 8.6v4.8h8V8.6"></path><path d="M6.8 13.4V10h2.4v3.4"></path>',
+        'health' => '<path d="M6.5 2.6h3v3.9h3.9v3h-3.9v3.9h-3V9.5H2.6v-3h3.9z"></path>',
+        'briefcase' => '<rect x="2.2" y="4.8" width="11.6" height="8.4" rx="1.5"></rect><path d="M6 4.8V3.6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1.2"></path><line x1="2.2" y1="8.4" x2="13.8" y2="8.4"></line>',
+        'food' => '<path d="M4.6 2.6v3.3a1.5 1.5 0 0 1-3 0V2.6"></path><line x1="3.1" y1="6.4" x2="3.1" y2="13.4"></line><path d="M10.4 2.6c1.7 1.3 2.6 3 2.6 4.9h-2.6z"></path><line x1="11.7" y1="7.5" x2="11.7" y2="13.4"></line>',
+        'ball' => '<circle cx="8" cy="8" r="5.6"></circle><path d="M4 4a7.6 7.6 0 0 1 0 8"></path><path d="M12 4a7.6 7.6 0 0 0 0 8"></path>',
+        'plane' => '<path d="M13.6 2.6 2.4 7.1l4.3 1.6 1.5 4.4z"></path><path d="M6.7 8.7 13.6 2.6"></path>',
+        'book' => '<path d="M3.4 2.6h7.2a2 2 0 0 1 2 2v8.8H5.4a2 2 0 0 1-2-2z"></path><line x1="5.4" y1="11.2" x2="12.6" y2="11.2"></line>',
 
         // Drawn for this site, on the product's grid, because the product has
         // no glyph for them. First on the list to replace if it ever does.
