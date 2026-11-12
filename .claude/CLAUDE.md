@@ -40,6 +40,8 @@ Before claiming a change works, run `npm run build` and check the output in `bui
 
 It **fails a production build and only warns on a local one**. A page in progress legitimately links to things nobody has written yet, and a watch loop that refuses to rebuild is a watch loop nobody keeps running. Nothing reaches the web without `npm run build`, so that is where it is strict. `.github/workflows/ci.yml` runs a production build on every pull request, which is what turns a dead link into a red cross.
 
+The same workflow publishes every pull request from this repository as a Cloudflare Pages preview, at `https://<branch>.marketing-1a2.pages.dev`, and a push to `main` as the live site. Both are uploads of the `build_production/` that GitHub Actions built. Cloudflare's own Git builds are switched off in the dashboard (Settings, Build, Branch control), because a Pages build image has no PHP: they published empty deployments that answered 404 everywhere. Do not switch them back on.
+
 What it checks, all of it against the files on disk and none of it over the network:
 
 - Every `href`, `src`, `form` action, social tag and JSON-LD URL resolves to a file the build wrote. Absolute URLs on our own domain count, so a hand-built canonical is checked like any other link.
