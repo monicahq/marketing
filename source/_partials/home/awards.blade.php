@@ -1,15 +1,42 @@
 @php
     $copy = $page->t('home.awards');
 
-    // The badges as their issuers drew them. They do not share a shape: the
-    // GitHub one is 3:1 where the other two are 5:1, so at one common height
-    // it reads as the small one. Each carries its own height instead, chosen
-    // so the three look like a set. Literal classes, for Tailwind's scanner.
-    // A badge with an `href` links to the ranking it claims.
+    // The badges in their issuers' look, drawn in HTML by `awards/badge`. Their
+    // words are the issuers' and stay in English, as the badges themselves
+    // do; `label` is the translated sentence a screen reader hears instead.
+    // Colour classes are literal strings, for Tailwind's scanner. A badge
+    // with an `href` links to the ranking it claims.
     $badges = [
-        ['src' => '/assets/images/awards/award-github.webp', 'alt' => $copy['github'], 'height' => 'h-18', 'href' => $page->links['trending']],
-        ['src' => '/assets/images/awards/hacker-news.svg', 'alt' => $copy['hn'], 'height' => 'h-13'],
-        ['src' => '/assets/images/awards/product-hunt.svg', 'alt' => $copy['ph'], 'height' => 'h-13'],
+        [
+            'rank' => '1',
+            'kicker' => 'GitHub Trending',
+            'title' => 'Repository Of The Day',
+            'label' => $copy['github'],
+            'href' => $page->links['trending'],
+            'github' => true,
+            'ink' => 'text-trending-ink',
+            'accent' => 'border-trending',
+            'rankColor' => 'text-trending',
+        ],
+        [
+            'rank' => '65',
+            'kicker' => 'Hacker News',
+            'title' => '#65 Most Voted Links Of All Time',
+            'label' => $copy['hn'],
+            'href' => $page->links['hackerNews'],
+            'ink' => 'text-hacker-news',
+            'accent' => 'border-hacker-news',
+            'rankColor' => 'text-hacker-news',
+        ],
+        [
+            'rank' => '4',
+            'kicker' => 'Product Hunt',
+            'title' => '#4 Product Of The Day',
+            'label' => $copy['ph'],
+            'ink' => 'text-product-hunt',
+            'accent' => 'border-product-hunt',
+            'rankColor' => 'text-product-hunt',
+        ],
     ];
 @endphp
 
@@ -18,22 +45,7 @@
         <span class="text-caption font-medium tracking-[0.08em] text-ground-sage-ink uppercase">{{ $copy['label'] }}</span>
         <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-4">
             @foreach ($badges as $badge)
-                @php $size = $page->imageSize($badge['src']); @endphp
-                @if (isset($badge['href']))
-                    <a href="{{ $badge['href'] }}" class="block rounded-md">
-                @endif
-                <img
-                    src="{{ $badge['src'] }}"
-                    alt="{{ $badge['alt'] }}"
-                    width="{{ $size['width'] }}"
-                    height="{{ $size['height'] }}"
-                    loading="lazy"
-                    decoding="async"
-                    class="block w-auto {{ $badge['height'] }}"
-                >
-                @if (isset($badge['href']))
-                    </a>
-                @endif
+                @include('_partials.home.awards.badge', $badge)
             @endforeach
         </div>
     </div>

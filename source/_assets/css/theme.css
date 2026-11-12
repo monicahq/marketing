@@ -94,6 +94,16 @@
   --color-terminal-ok: #4ade80;
   --color-terminal-string: #fbbf24;
 
+  /* The award badges on the homepage, each in its issuer's own colours.
+     GitHub Trending has two violets: the ink for the laurel, the mark and the
+     words, the brighter one for the border and the rank. Hacker News and
+     Product Hunt each draw in one colour. Someone else's colours, so the same
+     in both themes, and used nowhere else. */
+  --color-trending-ink: #3609aa;
+  --color-trending: #4605f1;
+  --color-hacker-news: #f74813;
+  --color-product-hunt: #ed5337;
+
   /* Actions */
   --color-primary: var(--action-primary);
   --color-primary-hover: var(--action-primary-hover);
