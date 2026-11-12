@@ -2620,7 +2620,7 @@ return [
             "A Monica é hoje um projeto de código aberto saudável. Tivemos a sorte de contar com uma ótima comunidade, com dezenas de pessoas contribuindo e centenas de contribuições de código. Ele também gera um pouco de dinheiro: cada dólar que ganhamos com este projeto é reinvestido nele, para pagar as contas e ajudar no desenvolvimento.",
             "Obrigado por dar uma olhada no projeto.",
         ],
-        'signature' => "Regis Freyd e Alexis Saettler",
+        'art' => "Um globo visto de cima do Atlântico: um panda sob a bandeira do Québec, outro junto à torre Eiffel na França e um avião de papel que segue a linha pontilhada entre os dois",
     ],
 
     /**

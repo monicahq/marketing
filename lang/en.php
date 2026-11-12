@@ -2635,7 +2635,7 @@ return [
             "Monica is now an healthy open source project. We've been fortunate enough to have a great community, with dozens of contributors and hundreds of code contributions. It also generates a bit of money - every dollar we make on this project is reinvested in the project, to pay the bills and help further development.",
             "Thanks for checking out the project.",
         ],
-        'signature' => "Regis Freyd and Alexis Saettler",
+        'art' => "A globe seen from above the Atlantic: a panda under the Québec flag, another by the Eiffel Tower in France, and a paper plane flying the dotted line between them",
     ],
 
     /**

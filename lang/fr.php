@@ -2600,7 +2600,7 @@ return [
             "Monica est aujourd’hui un projet open source en bonne santé. Nous avons la chance d’avoir une belle communauté, avec des dizaines de contributeurs et des centaines de contributions au code. Le projet rapporte aussi un peu d’argent : chaque dollar gagné y est réinvesti, pour payer les factures et faire avancer le développement.",
             "Merci de vous intéresser au projet.",
         ],
-        'signature' => "Regis Freyd et Alexis Saettler",
+        'art' => "Un globe vu au-dessus de l’Atlantique : un panda sous le drapeau du Québec, un autre près de la tour Eiffel en France, et un avion en papier qui suit la ligne pointillée entre les deux",
     ],
 
     /**

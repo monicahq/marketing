@@ -2603,7 +2603,7 @@ return [
             "Monica es hoy un proyecto de código abierto con buena salud. Hemos tenido la suerte de contar con una gran comunidad, con decenas de personas colaboradoras y cientos de contribuciones al código. También genera algo de dinero: cada dólar que ganamos con el proyecto se reinvierte en él, para pagar las facturas y seguir desarrollándolo.",
             "Gracias por interesarte por el proyecto.",
         ],
-        'signature' => "Regis Freyd y Alexis Saettler",
+        'art' => "Un globo terráqueo visto desde sobre el Atlántico: un panda bajo la bandera de Québec, otro junto a la torre Eiffel en Francia y un avión de papel que sigue la línea de puntos entre ambos",
     ],
 
     /**

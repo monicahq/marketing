@@ -2598,7 +2598,7 @@ return [
             "Monica ist heute ein gesundes Open-Source-Projekt. Wir hatten das Glück, eine großartige Community zu bekommen, mit Dutzenden Mitwirkenden und Hunderten Code-Beiträgen. Es wirft auch ein wenig Geld ab: Jeder Dollar, den wir mit diesem Projekt verdienen, fließt zurück in das Projekt, um die Rechnungen zu bezahlen und die Entwicklung voranzubringen.",
             "Danke, dass Sie sich das Projekt ansehen.",
         ],
-        'signature' => "Regis Freyd und Alexis Saettler",
+        'art' => "Ein Globus aus der Sicht über dem Atlantik: ein Panda unter der Flagge von Québec, ein weiterer am Eiffelturm in Frankreich und ein Papierflieger, der der gepunkteten Linie zwischen beiden folgt",
     ],
 
     /**

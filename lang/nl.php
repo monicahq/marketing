@@ -2601,7 +2601,7 @@ return [
             "Monica is inmiddels een gezond open source project. We hebben het geluk gehad een geweldige gemeenschap te krijgen, met tientallen bijdragers en honderden bijdragen aan de code. Het levert ook een beetje geld op, en elke dollar die we met dit project verdienen wordt in het project geherinvesteerd, om de rekeningen te betalen en de verdere ontwikkeling te steunen.",
             "Bedankt dat je een kijkje bij het project hebt genomen.",
         ],
-        'signature' => "Regis Freyd en Alexis Saettler",
+        'art' => "Een wereldbol gezien vanaf boven de Atlantische Oceaan: een panda onder de vlag van Québec, een andere bij de Eiffeltoren in Frankrijk en een papieren vliegtuigje dat de stippellijn tussen beide volgt",
     ],
 
     /**
