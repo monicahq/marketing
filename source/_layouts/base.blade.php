@@ -11,6 +11,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @include('_partials.color-scheme')
+        @include('_partials.cookie-notice-state')
 
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
         <link rel="icon" href="/favicon.ico">
@@ -62,5 +63,7 @@
         </main>
 
         @include('_partials.site-footer')
+
+        @include('_partials.cookie-notice')
     </body>
 </html>

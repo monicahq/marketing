@@ -175,6 +175,16 @@ return [
         'cta' => "See what is coming",
     ],
 
+    // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
+    'cookies' => [
+        'label' => "Cookie notice",
+        'title' => "Legally-required cookie banner",
+        'body' => "Monica doesn’t stalk your relationships. No third-party cookies, no creepy ad trackers, just a tiny in-house cookie.",
+        'private' => "Your private life stays private.",
+        'europe' => "Europe will be happy",
+        'close' => "Close the cookie notice",
+    ],
+
     'nav' => [
         'label' => "Main",
         'product' => "Product",

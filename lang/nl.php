@@ -151,6 +151,16 @@ return [
         'cta' => "Bekijk wat eraan komt",
     ],
 
+    // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
+    'cookies' => [
+        'label' => "Cookiemelding",
+        'title' => "Wettelijk verplichte cookiebanner",
+        'body' => "Monica stalkt je relaties niet. Geen cookies van derden, geen enge advertentietrackers, alleen één klein huisgemaakt koekje.",
+        'private' => "Je privéleven blijft privé.",
+        'europe' => "Europa zal er blij mee zijn",
+        'close' => "Sluit de cookiemelding",
+    ],
+
     'nav' => [
         'label' => "Hoofdmenu",
         'product' => "Product",

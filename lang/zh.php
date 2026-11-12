@@ -175,6 +175,16 @@ return [
         'cta' => "看看有什么新变化",
     ],
 
+    // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
+    'cookies' => [
+        'label' => "Cookie 提示",
+        'title' => "法律规定必须有的 Cookie 横幅",
+        'body' => "Monica 不会跟踪你的人际关系。没有第三方 Cookie，没有吓人的广告追踪器，只有一块自家烤的小饼干。",
+        'private' => "你的私人生活依然属于你自己。",
+        'europe' => "欧洲会很满意",
+        'close' => "关闭 Cookie 提示",
+    ],
+
     'nav' => [
         'label' => "主导航",
         'product' => "产品",

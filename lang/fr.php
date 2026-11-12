@@ -154,6 +154,16 @@ return [
         'cta' => "Découvrir ce qui arrive",
     ],
 
+    // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
+    'cookies' => [
+        'label' => "Bandeau des cookies",
+        'title' => "Bandeau cookies légalement obligatoire",
+        'body' => "Monica ne traque pas vos relations. Pas de cookies tiers, pas de traceurs publicitaires louches, juste un tout petit cookie maison.",
+        'private' => "Votre vie privée reste privée.",
+        'europe' => "L’Europe sera ravie",
+        'close' => "Fermer le bandeau des cookies",
+    ],
+
     'nav' => [
         'label' => "Principale",
         'product' => "Produit",

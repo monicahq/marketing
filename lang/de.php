@@ -152,6 +152,16 @@ return [
         'cta' => "Sehen, was kommt",
     ],
 
+    // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
+    'cookies' => [
+        'label' => "Cookie-Hinweis",
+        'title' => "Gesetzlich vorgeschriebenes Cookie-Banner",
+        'body' => "Monica spioniert Ihre Beziehungen nicht aus. Keine Cookies von Dritten, keine unheimlichen Werbetracker, nur ein winziges hauseigenes Cookie.",
+        'private' => "Ihr Privatleben bleibt privat.",
+        'europe' => "Europa wird sich freuen",
+        'close' => "Cookie-Hinweis schließen",
+    ],
+
     'nav' => [
         'label' => "Haupt",
         'product' => "Produkt",
