@@ -596,6 +596,49 @@ return [
                 'overdue' => "Overdue",
                 'reminderWhen' => "11/11/2026 · yesterday",
             ],
+
+            'group' => [
+                'label' => "The page of the Central Perk regulars group: its seven members, a note to write about it, and what the group did together since 1994.",
+                'title' => "Central Perk regulars",
+                'description' => "The six of them on the orange couch, and the man behind the counter.",
+                'members' => "7 people belong to it",
+                'since' => "Since 22/09/1994",
+                'edit' => "Edit the group",
+                'tabs' => ["Overview", "Members", "Files"],
+                'activity' => "Activity",
+                'note' => "Note",
+                'question' => "What do you want to remember about the group?",
+                'placeholder' => "Where they usually meet, who has the spare key, what to bring.",
+                'savedOn' => "Saved on the group only. It does not appear on anybody’s own page.",
+                'save' => "Save the note",
+                'remindersEmpty' => "Nothing to be reminded of. Something like organising the next game, or sending the holiday card.",
+                'files' => "Files",
+                'filesEmpty' => "A group photo, a schedule or a registration form, kept with the group.",
+                'history' => "Shared history",
+                'historyHint' => "What the group did together and what you noted about it, newest first.",
+                // Newest first: 2004, 1999, 1994. A note has no place and nobody "with".
+                'years' => [
+                    [
+                        'count' => "2 entries",
+                        'events' => [
+                            ['title' => "One last coffee on the orange couch", 'date' => "06/05", 'place' => "Central Perk, New York", 'body' => "Monica and Chandler moved out the same week. Gunther kept their mugs."],
+                            ['title' => "Phoebe’s Thursday set", 'date' => "15/03", 'place' => "", 'body' => "Smelly Cat is the closer. Asking for it before then is not welcome."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 entry",
+                        'events' => [
+                            ['title' => "Joey’s first review, read out loud", 'date' => "12/03", 'place' => "Central Perk, New York", 'body' => "Rachel read it twice. Joey framed the good half."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 entry",
+                        'events' => [
+                            ['title' => "The first coffee together", 'date' => "22/09", 'place' => "Central Perk, New York", 'body' => "Rachel came in wearing a wedding dress. Everybody stayed."],
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         'awards' => [

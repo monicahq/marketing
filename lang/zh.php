@@ -595,6 +595,48 @@ return [
                 'overdue' => "已逾期",
                 'reminderWhen' => "2026年11月11日 · 昨天",
             ],
+            'group' => [
+                'label' => "Central Perk 常客小组的页面：它的七位成员、一条关于小组的笔记，以及这个小组自 1994 年以来一起做过的事。",
+                'title' => "Central Perk 常客",
+                'description' => "橙色沙发上的六个人，和柜台后面的那个人。",
+                'members' => "共 7 位成员",
+                'since' => "自 1994年9月22日起",
+                'edit' => "编辑小组",
+                'tabs' => ["概览", "成员", "文件"],
+                'activity' => "动态",
+                'note' => "笔记",
+                'question' => "你想记住这个小组的什么？",
+                'placeholder' => "他们通常在哪里碰头，谁有备用钥匙，该带些什么。",
+                'savedOn' => "只保存在小组上，不会出现在任何人自己的页面里。",
+                'save' => "保存笔记",
+                'remindersEmpty' => "没有需要提醒的事。比如组织下一场比赛，或者寄出节日贺卡。",
+                'files' => "文件",
+                'filesEmpty' => "一张合影、一份日程表或一份报名表，和小组放在一起。",
+                'history' => "共同的经历",
+                'historyHint' => "小组一起做过的事，以及你为此写下的笔记，最新的在前。",
+                // Newest first: 2004, 1999, 1994. A note has no place and nobody "with".
+                'years' => [
+                    [
+                        'count' => "2 条记录",
+                        'events' => [
+                            ['title' => "在橙色沙发上喝最后一杯咖啡", 'date' => "5月6日", 'place' => "Central Perk, New York", 'body' => "Monica 和 Chandler 在同一周搬走了。Gunther 留下了他们的马克杯。"],
+                            ['title' => "Phoebe 周四的演出", 'date' => "3月15日", 'place' => "", 'body' => "Smelly Cat 是压轴曲。在那之前点这首歌不受欢迎。"],
+                        ],
+                    ],
+                    [
+                        'count' => "1 条记录",
+                        'events' => [
+                            ['title' => "Joey 的第一篇影评，当众朗读", 'date' => "3月12日", 'place' => "Central Perk, New York", 'body' => "Rachel 读了两遍。Joey 把好评的那一半装了框。"],
+                        ],
+                    ],
+                    [
+                        'count' => "1 条记录",
+                        'events' => [
+                            ['title' => "第一次一起喝咖啡", 'date' => "9月22日", 'place' => "Central Perk, New York", 'body' => "Rachel 穿着婚纱走了进来。所有人都留了下来。"],
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         'awards' => [

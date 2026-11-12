@@ -578,6 +578,48 @@ return [
                 'overdue' => "Atrasados",
                 'reminderWhen' => "11/11/2026 · ayer",
             ],
+
+            'group' => [
+                'label' => "La página del grupo Los habituales del Central Perk: sus siete miembros, una nota para escribir sobre él y lo que el grupo ha hecho juntos desde 1994.",
+                'title' => "Los habituales del Central Perk",
+                'description' => "Los seis en el sofá naranja, y el hombre detrás de la barra.",
+                'members' => "7 personas forman parte",
+                'since' => "Desde el 22/09/1994",
+                'edit' => "Editar el grupo",
+                'tabs' => ["Resumen", "Miembros", "Archivos"],
+                'activity' => "Actividad",
+                'note' => "Nota",
+                'question' => "¿Qué quieres recordar sobre el grupo?",
+                'placeholder' => "Dónde suelen quedar, quién tiene la llave de repuesto, qué llevar.",
+                'savedOn' => "Guardada solo en el grupo. No aparece en la página de nadie.",
+                'save' => "Guardar la nota",
+                'remindersEmpty' => "Nada que recordar. Algo como organizar la próxima partida o enviar la felicitación de las fiestas.",
+                'files' => "Archivos",
+                'filesEmpty' => "Una foto de grupo, un horario o un formulario de inscripción, guardados con el grupo.",
+                'history' => "Historia compartida",
+                'historyHint' => "Lo que el grupo hizo junto y lo que anotaste al respecto, de lo más reciente a lo más antiguo.",
+                'years' => [
+                    [
+                        'count' => "2 entradas",
+                        'events' => [
+                            ['title' => "Un último café en el sofá naranja", 'date' => "06/05", 'place' => "Central Perk, New York", 'body' => "Monica y Chandler se mudaron la misma semana. Gunther se quedó con sus tazas."],
+                            ['title' => "El concierto del jueves de Phoebe", 'date' => "15/03", 'place' => "", 'body' => "Smelly Cat es la canción de cierre. Pedirla antes no es bienvenido."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 entrada",
+                        'events' => [
+                            ['title' => "La primera reseña de Joey, leída en voz alta", 'date' => "12/03", 'place' => "Central Perk, New York", 'body' => "Rachel la leyó dos veces. Joey enmarcó la mitad buena."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 entrada",
+                        'events' => [
+                            ['title' => "El primer café juntos", 'date' => "22/09", 'place' => "Central Perk, New York", 'body' => "Rachel entró vestida de novia. Todos se quedaron."],
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         'awards' => [

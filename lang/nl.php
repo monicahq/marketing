@@ -572,6 +572,48 @@ return [
                 'overdue' => "Achterstallig",
                 'reminderWhen' => "11-11-2026 · gisteren",
             ],
+            'group' => [
+                'label' => "De pagina van de groep Vaste gasten van Central Perk: de zeven leden, een notitie om erover te schrijven en wat de groep sinds 1994 samen heeft gedaan.",
+                'title' => "Vaste gasten van Central Perk",
+                'description' => "De zes op de oranje bank, en de man achter de bar.",
+                'members' => "7 mensen horen erbij",
+                'since' => "Sinds 22-09-1994",
+                'edit' => "De groep bewerken",
+                'tabs' => ["Overzicht", "Leden", "Bestanden"],
+                'activity' => "Activiteit",
+                'note' => "Notitie",
+                'question' => "Wat wil je onthouden over de groep?",
+                'placeholder' => "Waar ze meestal afspreken, wie de reservesleutel heeft, wat je moet meenemen.",
+                'savedOn' => "Alleen bewaard bij de groep. Het verschijnt niet op andermans eigen pagina.",
+                'save' => "De notitie opslaan",
+                'remindersEmpty' => "Niets om aan herinnerd te worden. Iets als het volgende spelletje organiseren, of de kerstkaart versturen.",
+                'files' => "Bestanden",
+                'filesEmpty' => "Een groepsfoto, een schema of een inschrijfformulier, bewaard bij de groep.",
+                'history' => "Gedeelde geschiedenis",
+                'historyHint' => "Wat de groep samen deed en wat je erover noteerde, nieuwste eerst.",
+                // Newest first: 2004, 1999, 1994. A note has no place and nobody "with".
+                'years' => [
+                    [
+                        'count' => "2 items",
+                        'events' => [
+                            ['title' => "Nog één laatste koffie op de oranje bank", 'date' => "06-05", 'place' => "Central Perk, New York", 'body' => "Monica en Chandler gingen in dezelfde week weg. Gunther bewaarde hun mokken."],
+                            ['title' => "Phoebe’s optreden op donderdag", 'date' => "15-03", 'place' => "", 'body' => "Smelly Cat is het slotnummer. Er eerder om vragen wordt niet gewaardeerd."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 item",
+                        'events' => [
+                            ['title' => "Joey’s eerste recensie, hardop voorgelezen", 'date' => "12-03", 'place' => "Central Perk, New York", 'body' => "Rachel las hem twee keer. Joey liet de goede helft inlijsten."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 item",
+                        'events' => [
+                            ['title' => "De eerste koffie samen", 'date' => "22-09", 'place' => "Central Perk, New York", 'body' => "Rachel kwam binnen in een trouwjurk. Iedereen bleef."],
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         'awards' => [

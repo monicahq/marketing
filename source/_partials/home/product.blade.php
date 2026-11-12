@@ -4,7 +4,8 @@
     $meadow = '/assets/images/home/meadow-day.webp';
     $meadowSize = $page->imageSize($meadow);
 
-    // The six screens a reader can open from the sidebar, in sidebar order.
+    // The screens a reader can open from the sidebar, in sidebar order, then
+    // Chandler Bing's page, which opens from any person's name.
     // Each one shows itself while its radio is checked. The classes are
     // literal strings so Tailwind's scanner can see them.
     $screens = [
@@ -15,6 +16,7 @@
         'possessions' => 'group-has-[#mn-screen-possessions:checked]/product:flex',
         'knowledge' => 'group-has-[#mn-screen-knowledge:checked]/product:flex',
         'profile' => 'group-has-[#mn-screen-profile:checked]/product:flex',
+        'group' => 'group-has-[#mn-screen-group:checked]/product:flex',
     ];
     $crumbs = [
         'dashboard' => null,
@@ -24,6 +26,7 @@
         'possessions' => $copy['nav']['possessions'],
         'knowledge' => $copy['nav']['knowledge'],
         'profile' => [$copy['nav']['people'], 'Chandler Bing'],
+        'group' => [$copy['nav']['groups'], $copy['group']['title']],
     ];
 
     // The sidebar, as the application draws it. A null screen is a section
@@ -37,7 +40,7 @@
         'people' => [
             ['screen' => 'people', 'icon' => 'people', 'count' => 25],
             ['screen' => null, 'label' => 'animals', 'icon' => 'pet', 'count' => null],
-            ['screen' => null, 'label' => 'groups', 'icon' => 'family', 'count' => null],
+            ['screen' => 'group', 'label' => 'groups', 'icon' => 'family', 'count' => null],
         ],
         'things' => [
             ['screen' => 'possessions', 'icon' => 'key', 'count' => 10],
@@ -141,7 +144,7 @@
                                         @checked($item['screen'] === 'dashboard')
                                     >
                                     @include('_partials.icon', ['name' => $item['icon'], 'class' => $item['icon'] === 'pet' ? 'text-identity-3' : ''])
-                                    <span class="flex-1">{{ $copy['nav'][$item['screen']] }}</span>
+                                    <span class="flex-1">{{ $copy['nav'][$item['label'] ?? $item['screen']] }}</span>
                                     @if ($item['count'])
                                         <span aria-hidden="true" class="text-small text-text-muted tabular-nums">{{ $item['count'] }}</span>
                                     @endif
@@ -169,7 +172,7 @@
         <div class="flex min-h-0 min-w-0 flex-1 flex-col">
             <div aria-hidden="true" class="flex h-13 flex-none items-center gap-4 border-b border-border px-5">
                 @foreach ($screens as $screen => $shows)
-                    <div class="hidden min-w-0 items-center gap-2 text-base font-semibold whitespace-nowrap text-text lg:shrink-0 {{ $shows }}">
+                    <div class="hidden min-w-0 shrink items-center gap-2 text-base font-semibold whitespace-nowrap text-text {{ $shows }}">
                         <span class="grid size-5.5 flex-none place-items-center rounded-xs bg-identity-1 text-caption font-semibold text-white">{{ mb_substr($copy['vault'], 0, 1) }}</span>
                         <span class="truncate">{{ $copy['vault'] }}</span>
                         @foreach ((array) $crumbs[$screen] as $crumb)
@@ -178,7 +181,7 @@
                         @endforeach
                     </div>
                 @endforeach
-                <div class="flex h-8 w-56 min-w-0 shrink items-center rounded-md border border-border px-2.5 text-small text-text-muted max-lg:hidden">{{ $copy['search'] }}</div>
+                <div class="flex h-8 w-56 min-w-24 shrink-[3] items-center overflow-hidden rounded-md border border-border px-2.5 text-small text-text-muted max-lg:hidden">{{ $copy['search'] }}</div>
                 <div class="flex-1"></div>
                 <div class="flex flex-none items-center gap-4 text-small whitespace-nowrap text-text-secondary max-xl:hidden">
                     <span class="flex items-center gap-1.5">@include('_partials.icon', ['name' => 'journal', 'size' => 14]) {{ $copy['docs'] }}</span>

@@ -576,6 +576,48 @@ return [
                 'overdue' => "En retard",
                 'reminderWhen' => "11/11/2026 · hier",
             ],
+
+            'group' => [
+                'label' => "La page du groupe Les habitués du Central Perk : ses sept membres, une note à écrire à son sujet, et ce que le groupe a vécu ensemble depuis 1994.",
+                'title' => "Les habitués du Central Perk",
+                'description' => "Les six sur le canapé orange, et l’homme derrière le comptoir.",
+                'members' => "7 personnes en font partie",
+                'since' => "Depuis le 22/09/1994",
+                'edit' => "Modifier le groupe",
+                'tabs' => ["Aperçu", "Membres", "Fichiers"],
+                'activity' => "Activité",
+                'note' => "Note",
+                'question' => "Que voulez-vous retenir à propos du groupe ?",
+                'placeholder' => "Où ils se retrouvent d’habitude, qui a le double des clés, quoi apporter.",
+                'savedOn' => "Enregistrée sur le groupe uniquement. Elle n’apparaît sur la page de personne.",
+                'save' => "Enregistrer la note",
+                'remindersEmpty' => "Rien à rappeler. Par exemple organiser la prochaine partie, ou envoyer la carte de vœux.",
+                'files' => "Fichiers",
+                'filesEmpty' => "Une photo de groupe, un planning ou un formulaire d’inscription, gardés avec le groupe.",
+                'history' => "Histoire commune",
+                'historyHint' => "Ce que le groupe a fait ensemble et ce que vous en avez noté, du plus récent au plus ancien.",
+                'years' => [
+                    [
+                        'count' => "2 entrées",
+                        'events' => [
+                            ['title' => "Un dernier café sur le canapé orange", 'date' => "06/05", 'place' => "Central Perk, New York", 'body' => "Monica et Chandler ont déménagé la même semaine. Gunther a gardé leurs tasses."],
+                            ['title' => "Le set du jeudi de Phoebe", 'date' => "15/03", 'place' => "", 'body' => "Smelly Cat est le morceau de la fin. La réclamer avant n’est pas bienvenu."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 entrée",
+                        'events' => [
+                            ['title' => "La première critique de Joey, lue à voix haute", 'date' => "12/03", 'place' => "Central Perk, New York", 'body' => "Rachel l’a lue deux fois. Joey a encadré la bonne moitié."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 entrée",
+                        'events' => [
+                            ['title' => "Le premier café ensemble", 'date' => "22/09", 'place' => "Central Perk, New York", 'body' => "Rachel est entrée en robe de mariée. Tout le monde est resté."],
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         'awards' => [

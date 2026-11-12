@@ -24,7 +24,7 @@
         [$c['children'], 2, [['Erica Bing', 22], ['Jack Bing', 22]]],
         [$c['partner'], 1, [['Monica Geller', 57]]],
     ];
-    $cardHead = 'flex items-center gap-3 border-b border-border px-4 py-3 text-body font-semibold text-text';
+    $cardHead = 'flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-border px-4 py-3 text-body font-semibold text-text';
     $cardIcon = 'grid size-8 flex-none place-items-center rounded-md border border-border text-text-secondary';
     $group = 'flex items-center gap-2 px-4 pt-3.5 pb-1 text-caption font-medium tracking-[0.08em] text-text-muted uppercase';
 @endphp
@@ -94,7 +94,11 @@
                 @foreach ($c['groups'] as $g => $item)
                     <div class="flex items-center gap-3 border-border-subtle px-4 py-2.5 not-last:border-b">
                         <div class="min-w-0 flex-1 text-base">
-                            <div class="font-semibold text-text">{{ $item['name'] }}</div>
+                            @if ($g === 0)
+                                <label for="mn-screen-group" class="{{ $toProfile }} font-semibold text-text">{{ $item['name'] }}</label>
+                            @else
+                                <div class="font-semibold text-text">{{ $item['name'] }}</div>
+                            @endif
                             <div class="text-small text-text-muted">{{ $item['meta'] }}</div>
                         </div>
                         @if ($g > 0)

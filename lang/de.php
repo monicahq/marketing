@@ -574,6 +574,48 @@ return [
                 'overdue' => "Überfällig",
                 'reminderWhen' => "11.11.2026 · gestern",
             ],
+
+            'group' => [
+                'label' => "Die Seite der Gruppe Stammgäste im Central Perk: ihre sieben Mitglieder, eine Notiz dazu und was die Gruppe seit 1994 gemeinsam erlebt hat.",
+                'title' => "Stammgäste im Central Perk",
+                'description' => "Die sechs auf dem orangefarbenen Sofa und der Mann hinter dem Tresen.",
+                'members' => "7 Menschen gehören dazu",
+                'since' => "Seit 22.09.1994",
+                'edit' => "Gruppe bearbeiten",
+                'tabs' => ["Übersicht", "Mitglieder", "Dateien"],
+                'activity' => "Aktivität",
+                'note' => "Notiz",
+                'question' => "Was möchten Sie sich über die Gruppe merken?",
+                'placeholder' => "Wo sie sich meistens treffen, wer den Ersatzschlüssel hat, was man mitbringen soll.",
+                'savedOn' => "Nur bei der Gruppe gespeichert. Sie erscheint auf keiner persönlichen Seite.",
+                'save' => "Notiz speichern",
+                'remindersEmpty' => "Nichts, woran erinnert werden muss. Zum Beispiel das nächste Spiel organisieren oder die Weihnachtskarte verschicken.",
+                'files' => "Dateien",
+                'filesEmpty' => "Ein Gruppenfoto, ein Zeitplan oder ein Anmeldeformular, bei der Gruppe aufbewahrt.",
+                'history' => "Gemeinsame Geschichte",
+                'historyHint' => "Was die Gruppe gemeinsam gemacht hat und was Sie dazu notiert haben, das Neueste zuerst.",
+                'years' => [
+                    [
+                        'count' => "2 Einträge",
+                        'events' => [
+                            ['title' => "Ein letzter Kaffee auf dem orangefarbenen Sofa", 'date' => "06.05.", 'place' => "Central Perk, New York", 'body' => "Monica und Chandler sind in derselben Woche ausgezogen. Gunther hat ihre Tassen behalten."],
+                            ['title' => "Phoebes Donnerstagsauftritt", 'date' => "15.03.", 'place' => "", 'body' => "Smelly Cat ist der Schlusssong. Ihn vorher zu verlangen, ist unerwünscht."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 Eintrag",
+                        'events' => [
+                            ['title' => "Joeys erste Kritik, laut vorgelesen", 'date' => "12.03.", 'place' => "Central Perk, New York", 'body' => "Rachel hat sie zweimal gelesen. Joey hat die gute Hälfte gerahmt."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 Eintrag",
+                        'events' => [
+                            ['title' => "Der erste gemeinsame Kaffee", 'date' => "22.09.", 'place' => "Central Perk, New York", 'body' => "Rachel kam im Hochzeitskleid herein. Alle sind geblieben."],
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         'awards' => [

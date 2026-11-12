@@ -581,6 +581,48 @@ return [
                 'overdue' => "Atrasados",
                 'reminderWhen' => "11/11/2026 · ontem",
             ],
+
+            'group' => [
+                'label' => "A página do grupo Frequentadores do Central Perk: seus sete membros, uma nota para escrever sobre ele e o que o grupo fez junto desde 1994.",
+                'title' => "Frequentadores do Central Perk",
+                'description' => "Os seis no sofá laranja e o homem atrás do balcão.",
+                'members' => "7 pessoas fazem parte",
+                'since' => "Desde 22/09/1994",
+                'edit' => "Editar o grupo",
+                'tabs' => ["Visão geral", "Membros", "Arquivos"],
+                'activity' => "Atividade",
+                'note' => "Nota",
+                'question' => "O que você quer lembrar sobre o grupo?",
+                'placeholder' => "Onde costumam se encontrar, quem tem a chave reserva, o que levar.",
+                'savedOn' => "Salva só no grupo. Não aparece na página de ninguém.",
+                'save' => "Salvar a nota",
+                'remindersEmpty' => "Nada para lembrar. Algo como organizar o próximo jogo ou enviar o cartão de fim de ano.",
+                'files' => "Arquivos",
+                'filesEmpty' => "Uma foto do grupo, um cronograma ou uma ficha de inscrição, guardados com o grupo.",
+                'history' => "História compartilhada",
+                'historyHint' => "O que o grupo fez junto e o que você anotou sobre isso, do mais recente ao mais antigo.",
+                'years' => [
+                    [
+                        'count' => "2 registros",
+                        'events' => [
+                            ['title' => "Um último café no sofá laranja", 'date' => "06/05", 'place' => "Central Perk, New York", 'body' => "Monica e Chandler se mudaram na mesma semana. Gunther ficou com as canecas deles."],
+                            ['title' => "O show de quinta da Phoebe", 'date' => "15/03", 'place' => "", 'body' => "Smelly Cat é a música final. Pedir antes disso não é bem-vindo."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 registro",
+                        'events' => [
+                            ['title' => "A primeira crítica do Joey, lida em voz alta", 'date' => "12/03", 'place' => "Central Perk, New York", 'body' => "A Rachel leu duas vezes. O Joey emoldurou a metade boa."],
+                        ],
+                    ],
+                    [
+                        'count' => "1 registro",
+                        'events' => [
+                            ['title' => "O primeiro café juntos", 'date' => "22/09", 'place' => "Central Perk, New York", 'body' => "A Rachel entrou de vestido de noiva. Todo mundo ficou."],
+                        ],
+                    ],
+                ],
+            ],
         ],
 
         'awards' => [
