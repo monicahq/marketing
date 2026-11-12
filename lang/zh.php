@@ -2626,10 +2626,4 @@ return [
         'title' => "页面未找到。",
         'body' => "这个地址没有指向任何地方。它可能已被移走，也可能从未存在过。",
     ],
-
-    // The popover on every sign-up button while registration is closed.
-    'registrationClosed' => [
-        'message' => "目前暂停注册。",
-        'more' => "了解详情",
-    ],
 ];

@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 @include('_partials.home.checklist', ['items' => $cloud['items']])
-                @include('_partials.sign-up', ['label' => $cloud['cta'], 'class' => 'mn-btn-primary w-full', 'wrapper' => 'w-full'])
+                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary w-full no-underline hover:no-underline">{{ $cloud['cta'] }}</a>
             </div>
         </div>
     </div>

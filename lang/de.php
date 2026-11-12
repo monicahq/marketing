@@ -2598,10 +2598,4 @@ return [
         'title' => "Seite nicht gefunden.",
         'body' => "Diese Adresse führt nirgendwohin. Sie wurde vielleicht verschoben, oder es gab sie nie.",
     ],
-
-    // The popover on every sign-up button while registration is closed.
-    'registrationClosed' => [
-        'message' => "Die Registrierung ist derzeit geschlossen.",
-        'more' => "Mehr erfahren",
-    ],
 ];

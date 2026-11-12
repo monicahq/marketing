@@ -2,7 +2,7 @@
     $send = $copy['send'];
 
     // A made-up link on the application's own host, where shared pages live.
-    $url = 'https://app.monicahq.com/s/1EG4dAysYFjtwL55uhOJlWxuv0ctmoDebDVWs0rg';
+    $url = 'https://my.monicahq.com/s/1EG4dAysYFjtwL55uhOJlWxuv0ctmoDebDVWs0rg';
 @endphp
 
 <section class="{{ $section }}">

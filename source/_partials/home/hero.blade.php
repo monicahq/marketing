@@ -22,7 +22,7 @@
         <p class="max-w-[600px] text-lede-sm leading-relaxed text-text-secondary text-pretty">{{ $copy['lede'] }}</p>
 
         <div class="flex flex-wrap justify-center gap-2.5 pt-2">
-            @include('_partials.sign-up', ['label' => $copy['start'], 'class' => 'mn-btn-primary'])
+            <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary no-underline hover:no-underline">{{ $copy['start'] }}</a>
             <a href="{{ $page->links['github'] }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['github'] }}</a>
 
             {{-- The joke: there is no sales team. The tooltip says so on hover

@@ -82,7 +82,7 @@
                     <span class="ml-auto text-xs font-medium text-success" x-text="plans[period].note">{{ $billing['plans']['yearly']['note'] }}</span>
                 </div>
                 @include('_partials.home.checklist', ['items' => $hosted['items']])
-                @include('_partials.sign-up', ['label' => $hosted['cta'], 'class' => 'mn-btn-primary w-full', 'wrapper' => 'w-full'])
+                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary w-full no-underline hover:no-underline">{{ $hosted['cta'] }}</a>
             </div>
 
             <div class="{{ $card }} bg-canvas shadow-panel">
@@ -98,7 +98,7 @@
                     <span class="text-text-muted">{{ $plans['lifetime']['per'] }}</span>
                 </div>
                 @include('_partials.home.checklist', ['items' => $plans['lifetime']['items']])
-                @include('_partials.sign-up', ['label' => $plans['lifetime']['cta'], 'class' => 'mn-btn-secondary w-full', 'wrapper' => 'w-full'])
+                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-secondary w-full no-underline hover:no-underline">{{ $plans['lifetime']['cta'] }}</a>
             </div>
         </div>
 

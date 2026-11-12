@@ -282,7 +282,7 @@
                             <span class="text-text-muted" x-text="quote.per">{{ $default['per'] }}</span>
                         </div>
                     </div>
-                    @include('_partials.sign-up', ['label' => $calc['cta'], 'class' => 'mn-btn-primary w-full', 'wrapper' => 'w-full'])
+                    <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary w-full no-underline hover:no-underline">{{ $calc['cta'] }}</a>
                     <button
                         type="button"
                         x-on:click="reset()"

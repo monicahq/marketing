@@ -8,7 +8,7 @@
             <h2 class="max-w-[640px] text-display-section font-semibold text-balance">{{ $cta['title'] }}</h2>
             <p class="max-w-[560px] text-copy-lg text-text-soft text-pretty">{{ $cta['body'] }}</p>
             <div class="pt-2">
-                @include('_partials.sign-up', ['label' => $cta['button'], 'class' => 'mn-btn-primary'])
+                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary no-underline hover:no-underline">{{ $cta['button'] }}</a>
             </div>
         </div>
     </div>

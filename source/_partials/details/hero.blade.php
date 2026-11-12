@@ -10,7 +10,7 @@
             <p class="max-w-[640px] text-lede text-text-secondary text-pretty">{{ $hero['lede'] }}</p>
             <p class="max-w-[640px] text-lede font-medium text-text text-pretty">{{ $hero['close'] }}</p>
             <div class="pt-2">
-                @include('_partials.sign-up', ['label' => $hero['cta'], 'class' => 'mn-btn-primary'])
+                <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary no-underline hover:no-underline">{{ $hero['cta'] }}</a>
             </div>
         </div>
 

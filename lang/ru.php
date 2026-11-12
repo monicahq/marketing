@@ -2622,10 +2622,4 @@ return [
         'title' => "Страница не найдена.",
         'body' => "Этот адрес никуда не ведёт. Возможно, страницу перенесли, а возможно, её никогда и не было.",
     ],
-
-    // The popover on every sign-up button while registration is closed.
-    'registrationClosed' => [
-        'message' => "Регистрация сейчас закрыта.",
-        'more' => "Подробнее",
-    ],
 ];

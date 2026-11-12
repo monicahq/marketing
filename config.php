@@ -655,14 +655,14 @@ return [
      * ⚠️ The '#' entries are placeholders carried over from the design. They
      * need real destinations before launch.
      *
-     * The application itself lives at app.monicahq.com. Anything that sends a
+     * The application itself lives at my.monicahq.com. Anything that sends a
      * reader into it belongs on that host, not on this one: it is a different
      * origin, so Turbo leaves those links alone and they load normally.
      */
     'links' => [
         'github' => 'https://github.com/monicahq/monica',
-        'signIn' => 'https://app.monicahq.com',
-        'getStarted' => 'https://app.monicahq.com/register',
+        'signIn' => 'https://my.monicahq.com/login',
+        'getStarted' => 'https://my.monicahq.com/register',
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
@@ -673,15 +673,6 @@ return [
         // It still needs somewhere to go: a contact address, most likely.
         'contactSales' => '#',
     ],
-
-    /**
-     * Registration on the application is closed while the new version gets
-     * ready. Every sign-up button goes through `_partials/sign-up.blade.php`,
-     * which, while this holds a slug, opens a popover pointing at that post
-     * instead of sending the reader to a form that no longer accepts them.
-     * Set it to null to put the plain links back.
-     */
-    'registrationClosedPost' => 'registration-is-closed',
 
     // ------------------------------------------------------------------ plans
 
