@@ -67,43 +67,9 @@
     $webPage = $canonical . '#webpage';
     $breadcrumb = $canonical . '#breadcrumb';
 
-    /**
-     * Where this page sits in the site, ending with the page itself.
-     *
-     * The homepage gets no trail: a one-item breadcrumb states that the root
-     * is the root. Everything else starts there and adds what its URL already
-     * says, so /en/features/dashboard/ reads Home, Features, Powerful
-     * dashboard, in that order.
-     */
-    $trail = [];
-
-    if ($page->page !== 'home') {
-        $trail[] = ['name' => $page->t('meta.breadcrumb.home'), 'path' => $page->localePath('home')];
-
-        if ($isPost) {
-            $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
-            $trail[] = ['name' => $page->title, 'path' => $page->postPath($page->slug)];
-        } elseif ($isArticle) {
-            $trail[] = ['name' => $page->t('meta.breadcrumb.handbook'), 'path' => $page->localePath('handbook')];
-            $trail[] = ['name' => $page->title, 'path' => $page->handbookPath($page->slug)];
-        } elseif ($page->page === 'blog') {
-            $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
-
-            // Page 2 is a page of the list, not the list, which is the same
-            // distinction the title and the canonical already make.
-            if ($number > 1) {
-                $trail[] = [
-                    'name' => $page->t('meta.breadcrumb.page', [':number' => $number]),
-                    'path' => $page->blogPath(null, $number),
-                ];
-            }
-        } else {
-            $trail[] = [
-                'name' => $page->t("meta.breadcrumb.{$page->page}"),
-                'path' => $page->localePath($page->page),
-            ];
-        }
-    }
+    // Where this page sits in the site. The bar under the header draws the
+    // same trail (`_partials/breadcrumb.blade.php`), from the same helper.
+    $trail = $page->breadcrumbTrail($number);
 
     /**
      * What kind of page this is, where schema.org has a word for it. The blog

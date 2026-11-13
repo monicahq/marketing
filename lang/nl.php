@@ -34,6 +34,7 @@ return [
             'privacyFeatures' => "Privacy en beveiliging",
             'languages' => "Talen en notaties",
             'page' => "Pagina :number",
+            'label' => "Kruimelpad",
         ],
 
         'software' => [
@@ -2703,7 +2704,6 @@ return [
         'title' => "Blog",
         'lede' => "Aantekeningen over het bouwen van Monica, het privé houden van persoonlijke gegevens en de kleine mechaniek van contact houden.",
 
-        'allPosts' => "Alle berichten",
         'morePosts' => "Meer berichten",
         'previousPost' => "Vorig bericht",
         'nextPost' => "Volgend bericht",

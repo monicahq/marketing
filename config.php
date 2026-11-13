@@ -1037,6 +1037,53 @@ return [
     },
 
     /**
+     * Where this page sits in the site, ending with the page itself: a list of
+     * ['name' => ..., 'path' => ...], root-relative.
+     *
+     * One source for both readers of it, the BreadcrumbList in the JSON-LD and
+     * the bar under the header, so what a search result shows and what the
+     * page shows cannot disagree.
+     *
+     * The homepage gets no trail: a one-item breadcrumb states that the root
+     * is the root. Everything else starts there and adds what its URL already
+     * says. `$number` is the page of the blog index, which Jigsaw only hands
+     * to the template, so the caller passes it in.
+     */
+    'breadcrumbTrail' => function ($page, int $number = 1) {
+        if ($page->page === 'home') {
+            return [];
+        }
+
+        $trail = [['name' => $page->t('meta.breadcrumb.home'), 'path' => $page->localePath('home')]];
+
+        if ($page->page === 'post') {
+            $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
+            $trail[] = ['name' => $page->title, 'path' => $page->postPath($page->slug)];
+        } elseif ($page->page === 'handbookArticle') {
+            $trail[] = ['name' => $page->t('meta.breadcrumb.handbook'), 'path' => $page->localePath('handbook')];
+            $trail[] = ['name' => $page->title, 'path' => $page->handbookPath($page->slug)];
+        } elseif ($page->page === 'blog') {
+            $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
+
+            // Page 2 is a page of the list, not the list, which is the same
+            // distinction the title and the canonical already make.
+            if ($number > 1) {
+                $trail[] = [
+                    'name' => $page->t('meta.breadcrumb.page', [':number' => $number]),
+                    'path' => $page->blogPath(null, $number),
+                ];
+            }
+        } else {
+            $trail[] = [
+                'name' => $page->t("meta.breadcrumb.{$page->page}"),
+                'path' => $page->localePath($page->page),
+            ];
+        }
+
+        return $trail;
+    },
+
+    /**
      * When the page behind a route key was last changed: `$page->lastmodFor('pricing')`.
      *
      * Throws on a key with no entry, the same way `t()` throws on a missing

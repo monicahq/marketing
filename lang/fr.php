@@ -33,6 +33,7 @@ return [
             'privacyFeatures' => "Confidentialité et sécurité",
             'languages' => "Langues et formats",
             'page' => "Page :number",
+            'label' => "Fil d’Ariane",
         ],
 
         'software' => [
@@ -2712,7 +2713,6 @@ return [
         'title' => "Blog",
         'lede' => "Notes sur la construction de Monica, sur la confidentialité des données personnelles et sur la petite mécanique du fait de rester en contact.",
 
-        'allPosts' => "Tous les articles",
         'morePosts' => "Autres articles",
         'previousPost' => "Article précédent",
         'nextPost' => "Article suivant",

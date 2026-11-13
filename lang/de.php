@@ -31,6 +31,7 @@ return [
             'privacyFeatures' => "Datenschutz und Sicherheit",
             'languages' => "Sprachen und Formate",
             'page' => "Seite :number",
+            'label' => "Navigationspfad",
         ],
 
         'software' => [
@@ -2710,7 +2711,6 @@ return [
         'title' => "Blog",
         'lede' => "Notizen zum Bau von Monica, zum Schutz persönlicher Daten und zur kleinen Mechanik des Kontakthaltens.",
 
-        'allPosts' => "Alle Beiträge",
         'morePosts' => "Weitere Beiträge",
         'previousPost' => "Vorheriger Beitrag",
         'nextPost' => "Nächster Beitrag",

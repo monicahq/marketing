@@ -49,6 +49,7 @@ return [
             'privacyFeatures' => "隐私与安全",
             'languages' => "语言与格式",
             'page' => "第 :number 页",
+            'label' => "面包屑导航",
         ],
 
         /**
@@ -2723,7 +2724,6 @@ return [
         'title' => "博客",
         'lede' => "关于构建 Monica、保护个人数据隐私，以及保持联系的那些小门道。",
 
-        'allPosts' => "全部文章",
         'morePosts' => "更多文章",
         'previousPost' => "上一篇",
         'nextPost' => "下一篇",

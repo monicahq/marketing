@@ -31,6 +31,7 @@ return [
             'privacyFeatures' => "Privacidad",
             'languages' => "Idiomas y formatos",
             'page' => "Página :number",
+            'label' => "Ruta de navegación",
         ],
 
         'software' => [
@@ -2715,7 +2716,6 @@ return [
         'title' => "Blog",
         'lede' => "Notas sobre la construcción de Monica, sobre mantener privados los datos personales y sobre la pequeña mecánica de seguir en contacto.",
 
-        'allPosts' => "Todos los artículos",
         'morePosts' => "Más artículos",
         'previousPost' => "Artículo anterior",
         'nextPost' => "Artículo siguiente",

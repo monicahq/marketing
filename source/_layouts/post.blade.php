@@ -52,15 +52,7 @@
 @extends('_layouts.base')
 
 @section('body')
-    <div class="mx-auto w-full max-w-marketing px-4 pt-8 pb-24 md:px-8">
-        <a
-            href="{{ $page->blogPath() }}"
-            class="mb-8 inline-flex items-center gap-2 text-small text-text-muted no-underline transition-colors duration-100 ease-standard hover:text-text hover:no-underline"
-        >
-            @include('_partials.icon', ['name' => 'chevron-left', 'size' => 14])
-            <span>{{ $page->t('blog.allPosts') }}</span>
-        </a>
-
+    <div class="mx-auto w-full max-w-marketing px-4 pt-12 pb-24 md:px-8">
         <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16">
             <main class="min-w-0">
                 <article>

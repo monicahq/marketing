@@ -56,6 +56,7 @@
 
     <body class="min-h-screen bg-canvas font-sans text-text">
         @include('_partials.site-header')
+        @include('_partials.breadcrumb')
 
         <main>
             @yield('body')

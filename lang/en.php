@@ -22,7 +22,8 @@ return [
 
         /**
          * The page names in a breadcrumb trail: one per route key, plus the
-         * root and the label a page of the blog index gets.
+         * root, the label a page of the blog index gets, and `label`, which names
+         * the trail under the header to a screen reader.
          *
          * Kept apart from `nav` on purpose. A nav label is written to be
          * scanned in a bar four items wide; a breadcrumb is read out in a
@@ -50,6 +51,7 @@ return [
             'languages' => "Languages and formats",
             'handbook' => "Handbook",
             'page' => "Page :number",
+            'label' => "Breadcrumb",
         ],
 
         /**
@@ -2744,7 +2746,6 @@ return [
         'title' => "Blog",
         'lede' => "Notes on building Monica, keeping personal data private, and the small mechanics of staying in touch.",
 
-        'allPosts' => "All posts",
         'morePosts' => "More posts",
         'previousPost' => "Previous post",
         'nextPost' => "Next post",
