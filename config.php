@@ -707,6 +707,31 @@ return [
      */
     'pageless' => ['features'],
 
+    // ------------------------------------------------------------------ llms
+
+    /**
+     * Which section of /llms.txt each page is listed under, in order.
+     *
+     * llms.txt is the map of the site written for a language model rather than
+     * a crawler (llmstxt.org): a title, a summary, then sections of links with
+     * one line of description each. source/llms.blade.txt builds it from this
+     * map, so a page's title and description are the ones its head already
+     * carries (`meta.breadcrumb.<key>` and `meta.<key>.description` in English).
+     *
+     * Every key in `routes` has to be placed here, except those in `pageless`.
+     * A page added to `routes` and forgotten here fails the build, naming the
+     * key, the same way `lastmod` does. The handbook's articles and the blog's
+     * posts need nothing: they are listed under their index automatically.
+     */
+    'llms' => [
+        'Product' => ['home', 'pricing', 'personalCrm', 'v3'],
+        'Features' => ['templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
+        'Company' => ['about', 'team'],
+        'Handbook' => ['handbook'],
+        'Blog' => ['blog'],
+        'Legal' => ['terms', 'privacy'],
+    ],
+
     // ---------------------------------------------------------------- lastmod
 
     /**

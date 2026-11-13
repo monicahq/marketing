@@ -102,6 +102,7 @@ Three helpers, and the distinction matters:
 2. Create one Blade file per locale, named after that locale's slug.
 3. Add its copy to every `lang/` file.
 4. Add its key to the `lastmod` map in `config.php`. The sitemap throws without it.
+5. Add its key to a section of `llms` in `config.php`, so it is listed in `/llms.txt`. The build throws without it. The `llms-txt` skill covers this.
 
 ### Adding a locale
 
@@ -207,6 +208,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Production domain                   | `config.production.php`                             |
 | Root language redirect              | `cloudflare/redirect-rules.json`, applied by `scripts/cloudflare/apply-redirect-rules.sh` |
 | Star count fetch                    | `bootstrap.php`                                     |
+| `/llms.txt` for language models     | `source/llms.blade.txt`, sections in `llms` in `config.php`; see the `llms-txt` skill |
 | Dead link checking                  | `scripts/links/check.php`, wired up in `bootstrap.php` |
 | Locale drift check                  | `bootstrap.php`, against `cloudflare/redirect-rules.json` |
 | Design tokens to Tailwind           | `source/_assets/css/theme.css`                      |

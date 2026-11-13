@@ -1,0 +1,86 @@
+---
+locale: en
+---
+{{--
+    /llms.txt: the site described for a language model, after llmstxt.org and
+    the shape Stripe's docs use. A title, a one-paragraph summary, then one
+    section per entry of `llms` in config.php, each line a link and the
+    description that page already gives a search engine.
+
+    English only, with a line saying where the other languages are: a model
+    reads English, and eight copies of the same list would only be noise.
+
+    Built from `routes` the way the sitemap is, so a new page cannot be left
+    out: a route key placed in no section of `llms` fails the build below.
+    Handbook articles and blog posts are listed under their index, the
+    articles as their Markdown files, which read better to a model.
+
+    Named .blade.txt so Jigsaw writes llms.txt.
+--}}
+@php
+    $placed = collect($page->llms)->flatten();
+    $missing = collect($page->routes)->keys()
+        ->reject(fn ($key) => collect($page->pageless)->contains($key) || $placed->contains($key));
+
+    if ($missing->isNotEmpty()) {
+        throw new Exception('Page [' . $missing->implode(', ') . "] is not listed in /llms.txt. Add it to a section of 'llms' in config.php.");
+    }
+
+    $line = fn (string $title, string $url, ?string $description = null) =>
+        "- [{$title}]({$url})" . ($description ? ": {$description}" : '');
+
+    $languages = collect($page->locales)
+        ->reject(fn ($locale) => $locale === $page->defaultLocale)
+        ->map(fn ($locale) => $page->localeNames[$locale] . ' (' . $page->absolute($page->localePath('home', $locale)) . ')')
+        ->implode(', ');
+
+    $sections = [];
+
+    foreach ($page->llms as $section => $keys) {
+        $lines = [];
+
+        foreach ($keys as $key) {
+            $lines[] = $line(
+                $page->t("meta.breadcrumb.{$key}"),
+                $page->absolute($page->localePath($key, $page->defaultLocale)),
+                $page->t("meta.{$key}.description"),
+            );
+
+            if ($key === 'handbook') {
+                foreach ($page->handbookSections as $handbookSection) {
+                    foreach ($handbook_en->where('section', $handbookSection)->sortBy('order') as $article) {
+                        $markdown = rtrim($page->handbookPath($article->slug, $page->defaultLocale), '/') . '.md';
+                        $lines[] = $line($article->title, $page->absolute($markdown), $article->description);
+                    }
+                }
+            }
+
+            if ($key === 'blog') {
+                foreach ($posts_en as $post) {
+                    $lines[] = $line($post->title, $page->absolute($page->postPath($post->slug, $page->defaultLocale)), $post->description);
+                }
+            }
+        }
+
+        $sections[$section] = $lines;
+    }
+@endphp
+# Monica
+
+> {!! $page->t('meta.home.description') !!}
+
+Monica is your personal database: a private, open-source place to document your contacts, everything you own, and everything you need to remember. It can be self-hosted for free, or used on the hosted service at https://my.monicahq.com. The source code is at {!! $page->links['github'] !!}.
+
+This file lists the marketing site in English. Every page also exists in {!! $languages !!}.
+
+## Documentation
+
+The product documentation (installing and self-hosting Monica, using it, the API and the MCP server) lives with the application, and has its own llms.txt:
+
+- [Monica documentation](https://my.monicahq.com/llms.txt): Everything about installing, self-hosting and using Monica, and its API and MCP server.
+@foreach ($sections as $section => $lines)
+
+## {!! $section !!}
+
+{!! implode("\n", $lines) !!}
+@endforeach
