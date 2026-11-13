@@ -1,0 +1,145 @@
+/* Cool greys, and nothing else until something has gone right or wrong.
+   Values are shadcn's; the vocabulary is Monica's. Every hex in the system lives here. */
+:root {
+  /* Surfaces. The page is white and a panel on it is white too: what separates
+     them is the hairline and one pixel of shadow under it. */
+  --page: #ffffff;
+  --canvas: #ffffff;
+  --card: #fafafa;
+  --sunken: #fafafa;
+  --input: #ffffff;
+
+  --hairline: #e4e4e7;
+  --hairline-strong: #d4d4d8;
+  --hairline-soft: #f4f4f5;
+  --hover: #f4f4f5;
+  --scrim: rgb(9 9 11 / 0.5);
+
+  /* Text ramp, measured. ink, ink-soft, body, muted, placeholder each meet
+     4.5:1 on page, canvas and card. muted-soft is for marks, never sentences. */
+  --ink: #09090b;
+  --ink-soft: #27272a;
+  --body: #52525b;
+  --muted: #71717a;
+  --muted-soft: #a1a1aa;
+  --placeholder: #71717a;
+
+  --focus: #09090b;
+  --focus-ring: #09090b;
+
+  /* No accent colour. The filled button, the link and the focus ring are all
+     the same near black, and it inverts with the theme. */
+  --primary: #18181b;
+  --on-primary: #fafafa;
+  --action-primary: #18181b;
+  --action-primary-hover: #27272a;
+  --action-primary-text: #fafafa;
+  --text-link: #09090b;
+  --text-link-hover: #09090b;
+
+  /* Semantic colour: the word, the ground it sits on, the hairline around it. */
+  --success: #15803d;
+  --success-tint: #f0fdf4;
+  --success-edge: #bbf7d0;
+  --warning: #b45309;
+  --warning-tint: #fffbeb;
+  --warning-edge: #fde68a;
+  --warning-ring: #d8b96e;
+  --danger: #b91c1c;
+  --danger-hover: #991b1b;
+  --danger-tint: #fef2f2;
+  --danger-edge: #fecaca;
+
+  /* The bar at the top: the page colour at 85% with an 8px blur behind it. */
+  --topbar: #ffffff;
+  --topbar-hairline: #e4e4e7;
+
+  --pop-shadow: rgba(9, 9, 11, 0.16);
+  --quote-shadow: rgba(9, 9, 11, 0.14);
+  --quote-bands: #f4f4f5, #efeff2, #eceaef, #f0edee, #f4f2f0, #fafafa; /* @kind other */
+
+  /* The world map on the time zone screen. Four surfaces, no other user.
+     The blue is a map token, not a brand colour. */
+  --map-water: #f3f1ec;
+  --map-land: #d6d3cb;
+  --map-coast: #f3f1ec;
+  --map-graticule: rgb(29 29 32 / 0.09);
+  --map-band: rgb(63 95 208 / 0.13);
+  --map-marker: #3f5fd0;
+
+  /* Identity colour: content, not interface. The eight vault colours, stored in
+     the database (VaultColourEnum, EntityType::COLOURS). Re-hueing them is a
+     data migration, not a design change. */
+  --identity-1: #3f5fd0;
+  --identity-2: #4f8a49;
+  --identity-3: #9a6a24;
+  --identity-4: #9a3f2b;
+  --identity-5: #6b4fa8;
+  --identity-6: #2f7f86;
+  --identity-7: #a8447a;
+  --identity-8: #4a4a52;
+
+  color-scheme: light;
+}
+
+/* The same ramp inverted. The semantic hues are lifted rather than repeated:
+   a green that reads as text on paper is 3.9:1 on a dark ground. */
+.dark {
+  --page: #09090b;
+  --canvas: #09090b;
+  --card: #18181b;
+  --sunken: #18181b;
+  --input: #09090b;
+
+  --hairline: #27272a;
+  --hairline-strong: #3f3f46;
+  --hairline-soft: #1f1f23;
+  --hover: #27272a;
+  --scrim: rgb(0 0 0 / 0.7);
+
+  --ink: #fafafa;
+  --ink-soft: #e4e4e7;
+  --body: #d4d4d8;
+  --muted: #a1a1aa;
+  --muted-soft: #71717a;
+  --placeholder: #a1a1aa;
+
+  --focus: #d4d4d8;
+  --focus-ring: #d4d4d8;
+
+  --primary: #fafafa;
+  --on-primary: #18181b;
+  --action-primary: #fafafa;
+  --action-primary-hover: #ffffff;
+  --action-primary-text: #18181b;
+  --text-link: #fafafa;
+  --text-link-hover: #ffffff;
+
+  --success: #4ade80;
+  --success-tint: #0c2318;
+  --success-edge: #14532d;
+  --warning: #fbbf24;
+  --warning-tint: #271a06;
+  --warning-edge: #78350f;
+  --warning-ring: #78350f;
+  --danger: #f87171;
+  --danger-hover: #fca5a5;
+  --danger-tint: #2a1214;
+  --danger-edge: #7f1d1d;
+
+  --topbar: #09090b;
+  --topbar-hairline: #27272a;
+
+  --pop-shadow: rgba(0, 0, 0, 0.6);
+  --quote-shadow: rgba(0, 0, 0, 0.5);
+  --quote-bands: #18181b, #1b1b1f, #1f1d22, #201e1e, #1e1d1a, #18181b; /* @kind other */
+
+  --map-water: #17171a;
+  --map-land: #35343a;
+  --map-coast: #17171a;
+  --map-graticule: rgb(240 240 238 / 0.1);
+  --map-band: rgb(147 167 240 / 0.18);
+  --map-marker: #93a7f0;
+
+  color-scheme: dark;
+}

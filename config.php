@@ -11,7 +11,7 @@ use Illuminate\Support\Arr;
  * behaviour lives, because Jigsaw has no locale routing of its own.
  */
 
-$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl'];
+$locales = ['en', 'fr', 'de', 'es', 'pt', 'nl', 'zh', 'ru'];
 
 /**
  * How the blog is chunked, in one place.
@@ -122,11 +122,24 @@ $postSettings = [
      *
      * Counted on the translated body, so a German page states how long the
      * German text takes, which is the only number that is true on that page.
+     *
+     * Chinese has no spaces between words, so `str_word_count` sees almost
+     * nothing in it. Its characters are counted on their own, at 300 a
+     * minute, and the Latin words left once they are removed (product names,
+     * code) at the usual rate.
      */
     'readingMinutes' => function ($post) {
-        $words = str_word_count(strip_tags($post->getContent()));
+        $text = strip_tags($post->getContent());
+        $characters = preg_match_all('/\p{Han}/u', $text);
+        $text = preg_replace('/\p{Han}/u', ' ', $text);
 
-        return max(1, (int) ceil($words / 200));
+        // str_word_count only knows Latin letters, so a Russian post would
+        // count as almost no words at all. Cyrillic words are counted on
+        // their own and taken out before it runs.
+        $cyrillic = preg_match_all('/\p{Cyrillic}+/u', $text);
+        $words = $cyrillic + str_word_count(preg_replace('/\p{Cyrillic}+/u', ' ', $text));
+
+        return max(1, (int) ceil($characters / 300 + $words / 200));
     },
 
     /**
@@ -205,6 +218,20 @@ $postSettings = [
         );
     },
 
+    /**
+     * The author's photo, or null for an author without one, who keeps the
+     * initials. Keyed by the `author` front matter exactly as the posts
+     * spell it. The files are 96px squares, three times the largest circle
+     * they are drawn in (32px under a post title), cut from the 460px
+     * originals in the application's repository.
+     */
+    'authorAvatar' => function ($post) {
+        return [
+            'Regis Freyd' => '/assets/images/authors/regis.webp',
+            'Alexis Saettler' => '/assets/images/authors/alexis.webp',
+        ][$post->author] ?? null;
+    },
+
     /** "Regis Freyd" becomes "RF", for the avatar circle. */
     'authorInitials' => function ($post) {
         return collect(preg_split('/\s+/', trim($post->author)))
@@ -212,6 +239,71 @@ $postSettings = [
             ->take(2)
             ->map(fn ($word) => mb_strtoupper(mb_substr($word, 0, 1)))
             ->implode('');
+    },
+];
+
+/**
+ * The handbook's slug in each locale it exists in.
+ *
+ * English only for now. Every other page lists all eight locales; this one
+ * lists the ones the handbook has actually been written in, and both the route
+ * below and the collections are built from it, so a translation arrives by
+ * adding its slug here and its directory of articles, `source/_handbook_fr/`.
+ * The sitemap, hreflang and the locale picker read the route's own locales, so
+ * none of them offers a French handbook before one exists.
+ */
+$handbookSlugs = ['en' => 'handbook'];
+
+/**
+ * Everything a handbook collection is, apart from its locale and its path.
+ * Shared by every locale, like $postSettings, so they cannot drift apart.
+ */
+$handbookSettings = [
+    'extends' => '_layouts.handbook-article',
+
+    /** Within a section. The sections themselves are ordered by `handbookSections`. */
+    'sort' => 'order',
+
+    /** Names the SEO shape in _partials/seo.blade.php, as `page` does elsewhere. */
+    'page' => 'handbookArticle',
+
+    /**
+     * Jigsaw writes each article a second time as plain Markdown, next to its
+     * page: /en/handbook/principles/ and /en/handbook/principles.md. That file
+     * is what "View as Markdown" opens and what the two assistants are asked
+     * to read. The title becomes its first heading; a contents list would only
+     * repeat the three headings the longest article has.
+     */
+    'output_markdown' => ['table_of_contents' => false],
+
+    /** Words in the rendered body, tags removed, which is what a reader reads. */
+    'wordCount' => function ($article) {
+        return str_word_count(html_entity_decode(strip_tags($article->getContent()), ENT_QUOTES, 'UTF-8'));
+    },
+
+    /** 200 words a minute, floored at one, as the blog counts them. */
+    'readingMinutes' => function ($article) {
+        return max(1, (int) round($article->wordCount() / 200));
+    },
+
+    /**
+     * The article as Markdown, in the same shape as the .md file Jigsaw
+     * writes: the title as a heading, then the body as it was written. For the
+     * "Copy for LLM" button, which cannot fetch the file and still count as a
+     * click for the clipboard in every browser.
+     */
+    'markdown' => function ($article) {
+        $file = collect(glob(__DIR__ . "/source/_handbook_{$article->locale}/*.md"))
+            ->first(fn ($path) => preg_match('/^slug:\s*' . preg_quote($article->slug, '/') . '\s*$/m', file_get_contents($path)));
+
+        $body = $file ? preg_replace('/\A---.*?^---\s*/sm', '', file_get_contents($file)) : '';
+
+        return "# {$article->title}\n\n" . trim($body) . "\n";
+    },
+
+    /** For the sitemap. `updated` is required: there is no publication date to fall back to. */
+    'lastmodDate' => function ($article) use ($isoDay) {
+        return $isoDay($article->updated);
     },
 ];
 
@@ -253,7 +345,23 @@ return [
             'locale' => $locale,
             'path' => "{$locale}/blog/{slug}",
         ],
-    ])->all(),
+    ])->merge(
+        // One handbook collection per locale it is written in, read from
+        // source/_handbook_<locale>/ and written under that locale's slug.
+        collect($handbookSlugs)->mapWithKeys(fn ($slug, $locale) => [
+            "handbook_{$locale}" => $handbookSettings + [
+                'locale' => $locale,
+                'path' => "{$locale}/{$slug}/{slug}",
+            ],
+        ]),
+    )->all(),
+
+    /**
+     * The handbook's sections, in the order the table of contents lists them.
+     * An article names its section in its front matter; the section's title
+     * is `handbook.sections.<key>` in lang/.
+     */
+    'handbookSections' => ['general', 'marketing'],
 
     /** The blog's two sizes, for templates that reproduce the paginator's arithmetic. */
     'postsPerPage' => $perPage,
@@ -272,6 +380,8 @@ return [
         'es' => 'Español',
         'pt' => 'Português',
         'nl' => 'Nederlands',
+        'zh' => '简体中文',
+        'ru' => 'Русский',
     ],
 
     /**
@@ -294,10 +404,37 @@ return [
         // territory is NL. hreflang stays the bare "nl", which is what a reader
         // searching in either variant should match.
         'nl' => 'nl_NL',
+
+        // Simplified Chinese is the script of the mainland, so the territory
+        // is CN.
+        'zh' => 'zh_CN',
+
+        // The copy is written for Russia, so the territory is RU.
+        'ru' => 'ru_RU',
     ],
 
     /**
-     * Every URL is locale-prefixed and every slug is translated. A page is
+     * The language tag a browser and a crawler read, in `<html lang>`,
+     * hreflang, `inLanguage` and the feed. It is the locale code itself unless
+     * listed here, through `languageTag()`.
+     *
+     * Chinese is the one exception. A bare "zh" names the language but not
+     * the script, so a browser left to guess may draw the page with
+     * Traditional or Japanese glyph shapes. "zh-Hans" says Simplified. The
+     * URL prefix stays the bare "zh", because that is what the root's
+     * redirect rule reads off Accept-Language.
+     */
+    'languageTags' => [
+        'zh' => 'zh-Hans',
+    ],
+
+    /**
+     * Every URL is locale-prefixed and every slug is translated, except in
+     * Chinese, which keeps the English slugs: a slug in Chinese characters is
+     * percent-encoded into something nobody can read, and pinyin slugs are
+     * rare on Chinese sites. Russian is translated and then transliterated
+     * (/ru/tseny/), for the same reason and because that is what Russian
+     * sites do. A page is
      * referenced by its key, never by a hard-coded path, so a slug can be
      * corrected in one place.
      *
@@ -305,12 +442,12 @@ return [
      * named after that locale's slug. See .claude/CLAUDE.md.
      */
     'routes' => [
-        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => ''],
+        'home' => ['en' => '', 'fr' => '', 'de' => '', 'es' => '', 'pt' => '', 'nl' => '', 'zh' => '', 'ru' => ''],
 
         // "v3" is the product's version number, so it is the same word in every
         // language. Slugs are still declared per locale, because the next page
         // added will not be.
-        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3'],
+        'v3' => ['en' => 'v3', 'fr' => 'v3', 'de' => 'v3', 'es' => 'v3', 'pt' => 'v3', 'nl' => 'v3', 'zh' => 'v3', 'ru' => 'v3'],
 
         'pricing' => [
             'en' => 'pricing',
@@ -319,18 +456,16 @@ return [
             'es' => 'precios',
             'pt' => 'precos',
             'nl' => 'prijzen',
+            'zh' => 'pricing',
+            'ru' => 'tseny',
         ],
 
         /**
-         * The features section is three pages behind one tab strip, so its
-         * slugs nest: /en/features/, /en/features/dashboard/ and
-         * /en/features/journal/. A slug carrying a slash needs nothing special
-         * from the helpers, because they only ever join it to a locale prefix,
-         * and Jigsaw builds a nested directory from a nested source path.
-         *
-         * Three keys rather than one page with client-side tabs: each tab is a
-         * URL somebody can send to a friend, which is what the old site did and
-         * what a crawler needs to index all three.
+         * The features section has no page of its own. Its slug is still the
+         * prefix the feature pages nest under (/en/features/timeline/), and
+         * the header's features menu still links to it while the pages those
+         * items describe are being written, so the key stays. `pageless`
+         * below keeps it out of the sitemap.
          */
         'features' => [
             'en' => 'features',
@@ -339,30 +474,14 @@ return [
             'es' => 'funcionalidades',
             'pt' => 'recursos',
             'nl' => 'functies',
-        ],
-
-        'featuresDashboard' => [
-            'en' => 'features/dashboard',
-            'fr' => 'fonctionnalites/tableau-de-bord',
-            'de' => 'funktionen/dashboard',
-            'es' => 'funcionalidades/panel',
-            'pt' => 'recursos/painel',
-            'nl' => 'functies/dashboard',
-        ],
-
-        'featuresJournal' => [
-            'en' => 'features/journal',
-            'fr' => 'fonctionnalites/journal',
-            'de' => 'funktionen/tagebuch',
-            'es' => 'funcionalidades/diario',
-            'pt' => 'recursos/diario',
-            'nl' => 'functies/dagboek',
+            'zh' => 'features',
+            'ru' => 'vozmozhnosti',
         ],
 
         // "Blog" is the same word in every language we ship. Declared per locale
         // anyway, so the day one of them wants a different word it is an edit
         // here rather than a new mechanism.
-        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog'],
+        'blog' => ['en' => 'blog', 'fr' => 'blog', 'de' => 'blog', 'es' => 'blog', 'pt' => 'blog', 'nl' => 'blog', 'zh' => 'blog', 'ru' => 'blog'],
 
         'terms' => [
             'en' => 'terms',
@@ -371,6 +490,8 @@ return [
             'es' => 'condiciones-de-uso',
             'pt' => 'termos-de-uso',
             'nl' => 'gebruiksvoorwaarden',
+            'zh' => 'terms',
+            'ru' => 'usloviya',
         ],
 
         'team' => [
@@ -380,6 +501,21 @@ return [
             'es' => 'equipo',
             'pt' => 'equipe',
             'nl' => 'team',
+            'zh' => 'team',
+            'ru' => 'komanda',
+        ],
+
+        // Who makes Monica and why: the two of us, the history, and what will
+        // never be built. Linked from the footer's company column.
+        'about' => [
+            'en' => 'about',
+            'fr' => 'a-propos',
+            'de' => 'ueber-uns',
+            'es' => 'sobre-nosotros',
+            'pt' => 'sobre',
+            'nl' => 'over-ons',
+            'zh' => 'about',
+            'ru' => 'o-nas',
         ],
 
         'privacy' => [
@@ -389,6 +525,8 @@ return [
             'es' => 'privacidad',
             'pt' => 'privacidade',
             'nl' => 'privacybeleid',
+            'zh' => 'privacy',
+            'ru' => 'konfidentsialnost',
         ],
 
         // The guide that answers the question the nav asks. Its slug says
@@ -401,7 +539,197 @@ return [
             'es' => 'crm-personal',
             'pt' => 'crm-pessoal',
             'nl' => 'persoonlijke-crm',
+            'zh' => 'personal-crm',
+            'ru' => 'lichnaya-crm',
         ],
+
+        // "Your contacts, your way": what a contact template is and what you
+        // can build with one. The header's "Start here" card leads here. It
+        // nests under the features section like the two tabs above, but is
+        // not a tab: it is a page of its own, with no tab strip.
+        'templates' => [
+            'en' => 'features/templates',
+            'fr' => 'fonctionnalites/modeles',
+            'de' => 'funktionen/vorlagen',
+            'es' => 'funcionalidades/plantillas',
+            'pt' => 'recursos/modelos',
+            'nl' => 'functies/sjablonen',
+            'zh' => 'features/templates',
+            'ru' => 'vozmozhnosti/shablony',
+        ],
+
+        // "Remember the details that matter": what a contact page holds, from
+        // the little things to the people around someone and what happened
+        // with them. The first item of the header's features menu leads here.
+        // Nested under the features section like the templates page, and like
+        // it, not a tab.
+        'details' => [
+            'en' => 'features/details',
+            'fr' => 'fonctionnalites/details',
+            'de' => 'funktionen/details',
+            'es' => 'funcionalidades/detalles',
+            'pt' => 'recursos/detalhes',
+            'nl' => 'functies/details',
+            'zh' => 'features/details',
+            'ru' => 'vozmozhnosti/detali',
+        ],
+
+        // "Remember to reach out": reminders, once or on a rhythm, and how the
+        // nudge reaches you. The header's "Reminders" menu item leads here.
+        // Nested under the features section like the details page, and like
+        // it, not a tab.
+        'reminders' => [
+            'en' => 'features/reminders',
+            'fr' => 'fonctionnalites/rappels',
+            'de' => 'funktionen/erinnerungen',
+            'es' => 'funcionalidades/recordatorios',
+            'pt' => 'recursos/lembretes',
+            'nl' => 'functies/herinneringen',
+            'zh' => 'features/reminders',
+            'ru' => 'vozmozhnosti/napominaniya',
+        ],
+
+        // "Keep the moments worth remembering": life events, the timeline
+        // they make, and the types and fields behind them. The header's
+        // "Timeline" menu item leads here. Nested under the features section
+        // like the reminders page, and like it, not a tab.
+        'timeline' => [
+            'en' => 'features/timeline',
+            'fr' => 'fonctionnalites/chronologie',
+            'de' => 'funktionen/zeitleiste',
+            'es' => 'funcionalidades/cronologia',
+            'pt' => 'recursos/linha-do-tempo',
+            'nl' => 'functies/tijdlijn',
+            'zh' => 'features/timeline',
+            'ru' => 'vozmozhnosti/khronologiya',
+        ],
+
+        // "Understand how people are connected": relationships, the family
+        // tree they draw, and the types behind them. The header's
+        // "Relationships" menu item leads here. Nested under the features
+        // section like the timeline page, and like it, not a tab.
+        'relationships' => [
+            'en' => 'features/relationships',
+            'fr' => 'fonctionnalites/relations',
+            'de' => 'funktionen/beziehungen',
+            'es' => 'funcionalidades/relaciones',
+            'pt' => 'recursos/relacionamentos',
+            'nl' => 'functies/relaties',
+            'zh' => 'features/relationships',
+            'ru' => 'vozmozhnosti/otnosheniya',
+        ],
+
+        // "A place for each part of your life": vaults, what each one keeps
+        // apart, and switching between them. The header's "Vaults" menu item
+        // leads here. Nested under the features section like the
+        // relationships page, and like it, not a tab.
+        'vaults' => [
+            'en' => 'features/vaults',
+            'fr' => 'fonctionnalites/coffres',
+            'de' => 'funktionen/tresore',
+            'es' => 'funcionalidades/bovedas',
+            'pt' => 'recursos/cofres',
+            'nl' => 'functies/kluizen',
+            'zh' => 'features/vaults',
+            'ru' => 'vozmozhnosti/khranilishcha',
+        ],
+
+        // "Share only what you choose": read-only links to a few sections of
+        // a contact's page, their end date and password, their visits, and
+        // revoking them. Nested under the features section like the vaults
+        // page, and like it, not a tab.
+        'sharing' => [
+            'en' => 'features/sharing',
+            'fr' => 'fonctionnalites/partage',
+            'de' => 'funktionen/teilen',
+            'es' => 'funcionalidades/compartir',
+            'pt' => 'recursos/compartilhamento',
+            'nl' => 'functies/delen',
+            'zh' => 'features/sharing',
+            'ru' => 'vozmozhnosti/dostup',
+        ],
+
+        // "Your contacts, connected to your tools": the MCP server and the
+        // JSON API. The header's "Assistants and API" menu item leads here.
+        // API is the same word in every language we ship, so only the
+        // section prefix changes.
+        'api' => [
+            'en' => 'features/api',
+            'fr' => 'fonctionnalites/api',
+            'de' => 'funktionen/api',
+            'es' => 'funcionalidades/api',
+            'pt' => 'recursos/api',
+            'nl' => 'functies/api',
+            'zh' => 'features/api',
+            'ru' => 'vozmozhnosti/api',
+        ],
+
+        // "Personal details deserve a private place": sensitive fields, what
+        // sharing and connected tools can reach, signing in, what
+        // administrators see, and the account's activity. The header's
+        // "Privacy" menu item leads here. Not the privacy policy, which is
+        // the legal document under `privacy`.
+        'privacyFeatures' => [
+            'en' => 'features/privacy',
+            'fr' => 'fonctionnalites/confidentialite',
+            'de' => 'funktionen/privatsphaere',
+            'es' => 'funcionalidades/privacidad',
+            'pt' => 'recursos/privacidade',
+            'nl' => 'functies/privacy',
+            'zh' => 'features/privacy',
+            'ru' => 'vozmozhnosti/privatnost',
+        ],
+
+        // "Your language. Their names.": the interface language, names in the
+        // forms people use, a display name, dates, times, numbers and time
+        // zones. The header's "Languages" menu item leads here.
+        'languages' => [
+            'en' => 'features/languages',
+            'fr' => 'fonctionnalites/langues',
+            'de' => 'funktionen/sprachen',
+            'es' => 'funcionalidades/idiomas',
+            'pt' => 'recursos/idiomas',
+            'nl' => 'functies/talen',
+            'zh' => 'features/languages',
+            'ru' => 'vozmozhnosti/yazyki',
+        ],
+
+        // How the project is run and why, as its maintainer writes it down.
+        // The only route not in every locale: see $handbookSlugs above. The
+        // header and the footer link to it from every language, landing on
+        // the default locale's copy where theirs does not exist yet.
+        'handbook' => $handbookSlugs,
+    ],
+
+    /**
+     * Route keys with no page behind them. The sitemap skips them, because a
+     * sitemap entry is a promise that the URL answers.
+     */
+    'pageless' => ['features'],
+
+    // ------------------------------------------------------------------ llms
+
+    /**
+     * Which section of /llms.txt each page is listed under, in order.
+     *
+     * llms.txt is the map of the site written for a language model rather than
+     * a crawler (llmstxt.org): a title, a summary, then sections of links with
+     * one line of description each. source/llms.blade.txt builds it from this
+     * map, so a page's title and description are the ones its head already
+     * carries (`meta.breadcrumb.<key>` and `meta.<key>.description` in English).
+     *
+     * Every key in `routes` has to be placed here, except those in `pageless`.
+     * A page added to `routes` and forgotten here fails the build, naming the
+     * key, the same way `lastmod` does. The handbook's articles and the blog's
+     * posts need nothing: they are listed under their index automatically.
+     */
+    'llms' => [
+        'Product' => ['home', 'pricing', 'personalCrm', 'v3'],
+        'Features' => ['templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
+        'Company' => ['about', 'team'],
+        'Handbook' => ['handbook'],
+        'Blog' => ['blog'],
+        'Legal' => ['terms', 'privacy'],
     ],
 
     // ---------------------------------------------------------------- lastmod
@@ -423,19 +751,29 @@ return [
      *
      * Every key in `routes` needs an entry here, except `blog`: the index's
      * lastmod is the newest post it lists, which the sitemap works out from the
-     * archive rather than from a number somebody has to remember.
+     * archive rather than from a number somebody has to remember. A key in
+     * `pageless` needs none either, because it has no page to date.
      */
     'lastmod' => [
-        'home' => '2026-08-06',
+        'home' => '2026-10-11',
         'v3' => '2026-08-06',
-        'pricing' => '2026-08-06',
-        'features' => '2026-08-06',
-        'featuresDashboard' => '2026-08-06',
-        'featuresJournal' => '2026-08-06',
+        'pricing' => '2026-10-12',
         'terms' => '2026-08-06',
         'team' => '2026-08-06',
+        'about' => '2026-11-12',
         'privacy' => '2026-08-06',
         'personalCrm' => '2026-08-23',
+        'templates' => '2026-10-12',
+        'details' => '2026-10-12',
+        'reminders' => '2026-10-12',
+        'timeline' => '2026-10-12',
+        'relationships' => '2026-10-13',
+        'vaults' => '2026-10-13',
+        'sharing' => '2026-10-13',
+        'api' => '2026-10-13',
+        'privacyFeatures' => '2026-10-13',
+        'languages' => '2026-10-13',
+        'handbook' => '2026-11-12',
     ],
 
     // ------------------------------------------------------------------ links
@@ -444,36 +782,42 @@ return [
      * ⚠️ The '#' entries are placeholders carried over from the design. They
      * need real destinations before launch.
      *
-     * The application itself lives at app.monicahq.com. Anything that sends a
+     * The application itself lives at my.monicahq.com. Anything that sends a
      * reader into it belongs on that host, not on this one: it is a different
      * origin, so Turbo leaves those links alone and they load normally.
      */
     'links' => [
         'github' => 'https://github.com/monicahq/monica',
-        'signIn' => 'https://app.monicahq.com',
-        'getStarted' => 'https://app.monicahq.com/register',
-        'createAccount' => '#',
-        'selfHost' => '#',
+        'signIn' => 'https://my.monicahq.com/login',
+        'getStarted' => 'https://my.monicahq.com/register',
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
-    ],
+        'mcp' => '#',
+        'changelog' => '#',
 
-    /**
-     * Registration on the application is closed while the new version gets
-     * ready. Every sign-up button goes through `_partials/sign-up.blade.php`,
-     * which, while this holds a slug, opens a popover pointing at that post
-     * instead of sending the reader to a form that no longer accepts them.
-     * Set it to null to put the plain links back.
-     */
-    'registrationClosedPost' => 'registration-is-closed',
+        // Where the "Repository of the day" badge on the homepage points: the
+        // ranking itself, so the claim can be checked.
+        'trending' => 'https://trendshift.io/repositories/697',
+
+        // Where the Hacker News badge points: the launch thread it ranks.
+        'hackerNews' => 'https://news.ycombinator.com/item?id=14497295',
+
+        // Where the Docker Hub badge points: the official image.
+        'dockerHub' => 'https://hub.docker.com/_/monica',
+
+        // There is no sales team, which is the joke on the homepage button.
+        // It still needs somewhere to go: a contact address, most likely.
+        'contactSales' => '#',
+    ],
 
     // ------------------------------------------------------------------ plans
 
     /**
-     * The hosted plan's prices as bare numbers, for the offers in the
+     * The hosted plans' prices as bare numbers, for the offers in the
      * structured data. A crawler wants 9.00 and USD; a reader wants "$9", and
-     * that string stays in `lang/` with the rest of the pricing copy.
+     * that string stays in `lang/` (`pricing.prices`) with the rest of the
+     * pricing copy.
      *
      * Which means the two have to be changed together. They are the only pair
      * on the site that can disagree without anything failing, so a price
@@ -485,6 +829,9 @@ return [
         'currency' => 'USD',
         'monthly' => '9.00',
         'yearly' => '90.00',
+
+        // Paid once, never renewed.
+        'lifetime' => '150.00',
 
         // The application is free; the server is the reader's problem.
         'selfHosted' => '0.00',
@@ -564,9 +911,56 @@ return [
         return $page->localePath($key, $locale);
     },
 
+    /**
+     * The locale a link to a route key lands in from this page: the page's own
+     * when the route exists in it, the default locale otherwise. Only the
+     * handbook can tell the two apart today. A link whose answer differs from
+     * `lang()` crosses languages, so it carries `data-turbo="false"`, as the
+     * locale picker's do, and an `hreflang`.
+     */
+    'routeLocale' => function ($page, string $key) {
+        return isset($page->routes[$key][$page->lang()]) ? $page->lang() : $page->defaultLocale;
+    },
+
+    /** A handbook article: /en/handbook/principles/. */
+    'handbookPath' => function ($page, string $slug, ?string $locale = null) {
+        return $page->localePath('handbook', $locale ?: $page->lang()) . "{$slug}/";
+    },
+
     /** Absolute URL. Crawlers and scrapers do not resolve relative ones. */
     'absolute' => function ($page, string $path) {
         return rtrim($page->baseUrl, '/') . '/' . ltrim($path, '/');
+    },
+
+    /**
+     * An image's intrinsic size, read off the file: `['width' => …, 'height' => …]`.
+     *
+     * Every <img> carries its own pixels as `width` and `height`, and this is
+     * how a template gets them without repeating numbers that are already a
+     * fact about the file. A missing file fails the build, naming the path,
+     * rather than shipping an image with no box reserved for it.
+     */
+    'imageSize' => function ($page, string $src) {
+        $path = __DIR__ . '/source' . $src;
+        $size = false;
+
+        if (is_file($path) && str_ends_with($path, '.svg')) {
+            // getimagesize() does not read SVG. Its size is the `width` and
+            // `height` on the root element, which every badge here carries.
+            if (preg_match('/<svg\b[^>]*>/', file_get_contents($path), $root)
+                && preg_match('/\bwidth="([\d.]+)"/', $root[0], $w)
+                && preg_match('/\bheight="([\d.]+)"/', $root[0], $h)) {
+                $size = [(int) round($w[1]), (int) round($h[1])];
+            }
+        } elseif (is_file($path)) {
+            $size = getimagesize($path);
+        }
+
+        if (! $size) {
+            throw new Exception("Image [{$src}] is missing or unreadable.");
+        }
+
+        return ['width' => $size[0], 'height' => $size[1]];
     },
 
     /**
@@ -579,6 +973,17 @@ return [
      */
     'lang' => function ($page) {
         return $page->locale ?: $page->defaultLocale;
+    },
+
+    /**
+     * The language tag for a locale, the current page's by default. See
+     * `languageTags`: it is the locale code except where the code alone does
+     * not say enough.
+     */
+    'languageTag' => function ($page, ?string $locale = null) {
+        $locale ??= $page->lang();
+
+        return $page->languageTags[$locale] ?? $locale;
     },
 
     /**
@@ -624,7 +1029,58 @@ return [
             return $page->blogPath($locale, $number);
         }
 
+        if ($page->page === 'handbookArticle') {
+            return $page->handbookPath($page->slug, $locale);
+        }
+
         return $page->localePath($page->page, $locale);
+    },
+
+    /**
+     * Where this page sits in the site, ending with the page itself: a list of
+     * ['name' => ..., 'path' => ...], root-relative.
+     *
+     * One source for both readers of it, the BreadcrumbList in the JSON-LD and
+     * the bar under the header, so what a search result shows and what the
+     * page shows cannot disagree.
+     *
+     * The homepage gets no trail: a one-item breadcrumb states that the root
+     * is the root. Everything else starts there and adds what its URL already
+     * says. `$number` is the page of the blog index, which Jigsaw only hands
+     * to the template, so the caller passes it in.
+     */
+    'breadcrumbTrail' => function ($page, int $number = 1) {
+        if ($page->page === 'home') {
+            return [];
+        }
+
+        $trail = [['name' => $page->t('meta.breadcrumb.home'), 'path' => $page->localePath('home')]];
+
+        if ($page->page === 'post') {
+            $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
+            $trail[] = ['name' => $page->title, 'path' => $page->postPath($page->slug)];
+        } elseif ($page->page === 'handbookArticle') {
+            $trail[] = ['name' => $page->t('meta.breadcrumb.handbook'), 'path' => $page->localePath('handbook')];
+            $trail[] = ['name' => $page->title, 'path' => $page->handbookPath($page->slug)];
+        } elseif ($page->page === 'blog') {
+            $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
+
+            // Page 2 is a page of the list, not the list, which is the same
+            // distinction the title and the canonical already make.
+            if ($number > 1) {
+                $trail[] = [
+                    'name' => $page->t('meta.breadcrumb.page', [':number' => $number]),
+                    'path' => $page->blogPath(null, $number),
+                ];
+            }
+        } else {
+            $trail[] = [
+                'name' => $page->t("meta.breadcrumb.{$page->page}"),
+                'path' => $page->localePath($page->page),
+            ];
+        }
+
+        return $trail;
     },
 
     /**
@@ -657,12 +1113,15 @@ return [
     'alternates' => function ($page, ?string $key = null, int $number = 1) {
         $routeKey = $key;
 
-        if ($routeKey === null && ! in_array($page->page, ['blog', 'post'], true)) {
+        if ($routeKey === null && ! in_array($page->page, ['blog', 'post', 'handbookArticle'], true)) {
             $routeKey = $page->page;
         }
 
-        $locales = $routeKey
-            ? collect($page->routes[$routeKey])->keys()->all()
+        // An article exists in the locales the handbook does, and no others.
+        $localesFrom = $routeKey ?? ($page->page === 'handbookArticle' ? 'handbook' : null);
+
+        $locales = $localesFrom
+            ? collect($page->routes[$localesFrom])->keys()->all()
             : $page->locales;
 
         return collect($locales)

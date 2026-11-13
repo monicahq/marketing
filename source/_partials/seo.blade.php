@@ -13,10 +13,15 @@
     //
     // A post is the exception: its title and description are the post's own, in
     // the language it was written in, so there is nothing in lang/ to look up.
+    // A handbook article is the same exception, in its own frame.
     $isPost = $page->page === 'post';
+    $isArticle = $page->page === 'handbookArticle';
 
     if ($isPost) {
         $title = $page->t('meta.post.title', [':title' => $page->title]);
+        $description = $page->description;
+    } elseif ($isArticle) {
+        $title = $page->t('meta.handbookArticle.title', [':title' => $page->title]);
         $description = $page->description;
     } else {
         $title = $page->t("meta.{$page->page}.title");
@@ -62,54 +67,17 @@
     $webPage = $canonical . '#webpage';
     $breadcrumb = $canonical . '#breadcrumb';
 
-    /**
-     * Where this page sits in the site, ending with the page itself.
-     *
-     * The homepage gets no trail: a one-item breadcrumb states that the root
-     * is the root. Everything else starts there and adds what its URL already
-     * says, so /en/features/dashboard/ reads Home, Features, Powerful
-     * dashboard, in that order.
-     */
-    $trail = [];
-
-    if ($page->page !== 'home') {
-        $trail[] = ['name' => $page->t('meta.breadcrumb.home'), 'path' => $page->localePath('home')];
-
-        if ($isPost) {
-            $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
-            $trail[] = ['name' => $page->title, 'path' => $page->postPath($page->slug)];
-        } elseif ($page->page === 'blog') {
-            $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
-
-            // Page 2 is a page of the list, not the list, which is the same
-            // distinction the title and the canonical already make.
-            if ($number > 1) {
-                $trail[] = [
-                    'name' => $page->t('meta.breadcrumb.page', [':number' => $number]),
-                    'path' => $page->blogPath(null, $number),
-                ];
-            }
-        } else {
-            // The two other feature tabs are nested under /features/, so the
-            // section they belong to is a crumb in its own right.
-            if (in_array($page->page, ['featuresDashboard', 'featuresJournal'], true)) {
-                $trail[] = ['name' => $page->t('meta.breadcrumb.features'), 'path' => $page->localePath('features')];
-            }
-
-            $trail[] = [
-                'name' => $page->t("meta.breadcrumb.{$page->page}"),
-                'path' => $page->localePath($page->page),
-            ];
-        }
-    }
+    // Where this page sits in the site. The bar under the header draws the
+    // same trail (`_partials/breadcrumb.blade.php`), from the same helper.
+    $trail = $page->breadcrumbTrail($number);
 
     /**
      * What kind of page this is, where schema.org has a word for it. The blog
-     * index is a list of other pages and the team page is about the people
-     * behind the product; everything else is an ordinary WebPage, including a
+     * index is a list of other pages and the team and about pages are about the
+     * people behind the product; everything else is an ordinary WebPage, including a
      * post, which carries its BlogPosting as a separate node.
      */
-    $webPageType = ['blog' => 'CollectionPage', 'team' => 'AboutPage'][$page->page] ?? 'WebPage';
+    $webPageType = ['blog' => 'CollectionPage', 'handbook' => 'CollectionPage', 'team' => 'AboutPage', 'about' => 'AboutPage'][$page->page] ?? 'WebPage';
 
     $structuredData = [
         '@context' => 'https://schema.org',
@@ -132,7 +100,7 @@
                 // @id across the whole site, so letting the current page fill
                 // it in would describe the same thing fifty different ways.
                 'description' => $page->t('meta.home.description'),
-                'inLanguage' => $page->locale,
+                'inLanguage' => $page->languageTag(),
                 'publisher' => ['@id' => $organization],
             ],
             array_filter([
@@ -141,7 +109,7 @@
                 'url' => $canonical,
                 'name' => $title,
                 'description' => $description,
-                'inLanguage' => $page->locale,
+                'inLanguage' => $page->languageTag(),
                 'isPartOf' => ['@id' => $website],
                 'breadcrumb' => count($trail) > 1 ? ['@id' => $breadcrumb] : null,
                 'datePublished' => $isPost ? $page->isoDate() : null,
@@ -185,8 +153,9 @@
         $pricing = $page->absolute($page->localePath('pricing'));
         $currency = $page->plans['currency'];
 
-        // Both hosted prices are subscriptions, so each says what it buys and
-        // for how long: a bare `price` of 90 would read as a one-off purchase.
+        // The monthly and yearly prices are subscriptions, so each says what it
+        // buys and for how long: a bare `price` of 90 would read as a one-off
+        // purchase.
         $subscription = fn (string $name, string $amount, string $unit) => [
             '@type' => 'Offer',
             'name' => $name,
@@ -220,7 +189,7 @@
             // kind of product.
             'applicationCategory' => 'BusinessApplication',
             'operatingSystem' => 'Web',
-            'inLanguage' => $page->locales,
+            'inLanguage' => array_map(fn ($locale) => $page->languageTag($locale), $page->locales->toArray()),
             'publisher' => ['@id' => $organization],
 
             // True because of the self-hosted offer below: the application is
@@ -231,6 +200,16 @@
             'offers' => [
                 $subscription($page->t('meta.software.monthly'), $page->plans['monthly'], 'MON'),
                 $subscription($page->t('meta.software.yearly'), $page->plans['yearly'], 'ANN'),
+
+                // Paid once, so a bare price is exactly what it is.
+                [
+                    '@type' => 'Offer',
+                    'name' => $page->t('meta.software.lifetime'),
+                    'price' => $page->plans['lifetime'],
+                    'priceCurrency' => $currency,
+                    'url' => $pricing,
+                    'availability' => 'https://schema.org/InStock',
+                ],
                 [
                     '@type' => 'Offer',
                     'name' => $page->t('meta.software.selfHosted'),
@@ -257,7 +236,7 @@
             'headline' => $page->title,
             'description' => $description,
             'datePublished' => $page->isoDate(),
-            'inLanguage' => $page->locale,
+            'inLanguage' => $page->languageTag(),
             'author' => ['@type' => 'Person', 'name' => $page->author],
             'publisher' => ['@id' => $organization],
         ];
@@ -272,7 +251,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
 @foreach ($alternates as $alternate)
-    <link rel="alternate" hreflang="{{ $alternate['locale'] }}" href="{{ $alternate['absolute'] }}">
+    <link rel="alternate" hreflang="{{ $page->languageTag($alternate['locale']) }}" href="{{ $alternate['absolute'] }}">
 @endforeach
 <link rel="alternate" hreflang="x-default" href="{{ $page->absolute($page->canonicalPath($page->defaultLocale, $number)) }}">
 

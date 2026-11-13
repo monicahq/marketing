@@ -19,11 +19,5 @@
 
     <p class="text-body leading-[1.6] text-text-secondary">{{ $body }}</p>
 
-    @include('_partials.sign-up', [
-        'label' => $page->t('blog.tryMonica.cta'),
-        'class' => 'mn-btn--primary mn-btn--sm w-full justify-center',
-        'wrapper' => 'mt-1',
-    ])
-
-    <span class="text-center font-mono text-mono text-text-muted">{{ $page->t('blog.tryMonica.note') }}</span>
+    <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary mn-btn-small w-full justify-center mt-1 no-underline hover:no-underline">{{ $page->t('blog.tryMonica.cta') }}</a>
 </div>

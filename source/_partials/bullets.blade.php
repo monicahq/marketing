@@ -2,7 +2,7 @@
     A quiet list: no markers from the browser, a 6px dot drawn on the
     pseudo-element so long items wrap flush under their own text.
 
-    @include('_partials.bullets', ['items' => $page->t('notALead.items')])
+    @include('_partials.bullets', ['items' => $copy['fit']['good']])
 --}}
 <ul class="mt-6 flex list-none flex-col gap-3 p-0">
     @foreach ($items as $item)

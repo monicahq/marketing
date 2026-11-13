@@ -40,7 +40,7 @@
         <title>{{ $page->t('meta.blog.title') }}</title>
         <link>{{ $page->absolute($page->blogPath()) }}</link>
         <description>{{ $page->t('meta.blog.description') }}</description>
-        <language>{{ $page->locale }}</language>
+        <language>{{ $page->languageTag() }}</language>
         <atom:link href="{{ $self }}" rel="self" type="application/rss+xml"/>
 @if ($updated)
         <lastBuildDate>{{ $updated }}</lastBuildDate>

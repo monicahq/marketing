@@ -7,7 +7,7 @@
     cluster all read it without knowing a collection is involved.
 
     What this template does have to work out is which archive the post belongs
-    to, for "keep reading" below. The collections are one per language, so the
+    to, for the previous and next post below. The collections are one per language, so the
     name is built from the locale: a French post is a neighbour of French posts.
 --}}
 @php
@@ -16,11 +16,11 @@
     $posts = $posts->sortByDesc('date')->values();
     $position = $posts->search(fn ($item) => $item->slug === $page->slug);
 
-    // The two neighbours in time, older first, so "keep reading" is the rest of
-    // the archive rather than a second copy of the index's top two.
-    $related = collect([$posts->get($position + 1), $posts->get($position - 1)])
-        ->filter()
-        ->take(2);
+    // The two neighbours in time, for the pager at the end. The archive is
+    // newest first, so the older post is the next index and the newer one the
+    // previous. Either is null at an end of the archive.
+    $older = $posts->get($position + 1);
+    $newer = $position > 0 ? $posts->get($position - 1) : null;
 
     // Headings carry no ids of their own: the Markdown parser does not add them
     // and the design needs them to anchor "on this page". Both jobs are done in
@@ -52,15 +52,7 @@
 @extends('_layouts.base')
 
 @section('body')
-    <div class="mx-auto w-full max-w-marketing px-4 pt-8 pb-24 md:px-8">
-        <a
-            href="{{ $page->blogPath() }}"
-            class="mb-8 inline-flex items-center gap-2 text-small text-text-muted no-underline transition-colors duration-100 ease-standard hover:text-text hover:no-underline"
-        >
-            @include('_partials.icon', ['name' => 'chevronLeft', 'size' => 14])
-            <span>{{ $page->t('blog.allPosts') }}</span>
-        </a>
-
+    <div class="mx-auto w-full max-w-marketing px-4 pt-12 pb-24 md:px-8">
         <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16">
             <main class="min-w-0">
                 <article>
@@ -82,26 +74,7 @@
                     <div class="mn-prose mt-8">{!! $body !!}</div>
                 </article>
 
-                @if ($related->isNotEmpty())
-                    <section class="mt-12">
-                        <h2 class="mb-5 text-title font-semibold">{{ $page->t('blog.keepReading') }}</h2>
-
-                        <div class="grid gap-6 sm:grid-cols-2">
-                            @foreach ($related as $item)
-                                <div class="flex flex-col gap-2 border-t border-border pt-4">
-                                    <span class="font-mono text-mono text-text-muted">{{ $item->isoDate() }}</span>
-                                    <a
-                                        href="{{ $page->postPath($item->slug) }}"
-                                        class="text-title font-semibold tracking-[-0.02em] text-text no-underline hover:text-text hover:underline hover:underline-offset-2"
-                                    >{{ $item->title }}</a>
-                                    <p class="max-w-[64ch] text-body leading-[1.65] text-text-secondary text-pretty">
-                                        {{ $item->description }}
-                                    </p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </section>
-                @endif
+                @include('_partials.blog.pager', ['previous' => $older, 'next' => $newer])
             </main>
 
             <aside class="flex flex-col gap-6 lg:sticky lg:top-6">
