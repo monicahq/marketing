@@ -8,7 +8,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica ist Ihre persönliche Datenbank. Das quelloffene persönliche CRM.",
+        'imageAlt' => "Monica ist Ihr persönliches CRM und Ihre Datenbank. Das quelloffene persönliche CRM.",
 
         'breadcrumb' => [
             'home' => "Startseite",
@@ -41,8 +41,8 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica — das quelloffene persönliche CRM",
-            'description' => "Monica hilft Ihnen, sich an die Menschen zu erinnern, die Ihnen wichtig sind: was in ihrem Leben passiert, wichtige Daten, frühere Gespräche und wann Sie sich wieder melden sollten. Privat, quelloffen, selbst hostbar.",
+            'title' => "Monica — Ihre persönliche Datenbank und quelloffenes persönliches CRM",
+            'description' => "Monica ist Ihre persönliche Datenbank: Halten Sie Ihre Kontakte fest, alles, was Sie besitzen, und alles, woran Sie sich erinnern müssen. Privat, quelloffen, selbst hostbar.",
         ],
 
         'pricing' => [
@@ -57,7 +57,7 @@ return [
 
         'about' => [
             'title' => "Über uns — Monica",
-            'description' => "Wer Monica macht, wie alles anfing und was wir nie tun werden. Zwei Personen, keine Investoren, ein quelloffenes persönliches CRM.",
+            'description' => "Wer Monica macht, wie alles anfing und was wir nie tun werden. Zwei Personen, keine Investoren, eine quelloffene persönliche Datenbank.",
         ],
 
         'team' => [
@@ -67,7 +67,7 @@ return [
 
         'terms' => [
             'title' => "Nutzungsbedingungen — Monica",
-            'description' => "Die Nutzungsbedingungen von Monica, dem quelloffenen persönlichen CRM: was der Dienst abdeckt, Ihre Rechte an Ihren Daten, Ihre Pflichten und das rechtliche Kleingedruckte.",
+            'description' => "Die Nutzungsbedingungen von Monica, der quelloffenen persönlichen Datenbank: was der Dienst abdeckt, Ihre Rechte an Ihren Daten, Ihre Pflichten und das rechtliche Kleingedruckte.",
         ],
 
         'blog' => [
@@ -87,7 +87,7 @@ return [
 
         'v3' => [
             'title' => "Monica v3 — neu gebaut für die nächsten zehn Jahre",
-            'description' => "Monica v3 ist ein vollständiger Neubau des quelloffenen persönlichen CRM: Einträge, die Sie selbst gestalten, ein mit allem verbundenes Journal, eine vollständige API und eine echte mobile Erfahrung. Weiterhin quelloffen. Vor Ende 2026.",
+            'description' => "Monica v3 ist ein vollständiger Neubau der quelloffenen persönlichen Datenbank: Einträge, die Sie selbst gestalten, ein mit allem verbundenes Journal, eine vollständige API und eine echte mobile Erfahrung. Weiterhin quelloffen. Vor Ende 2026.",
         ],
 
         'templates' => [
@@ -144,12 +144,6 @@ return [
             'title' => "Was ist ein persönliches CRM? Ein praktischer Leitfaden — Monica",
             'description' => "Was ein persönliches CRM ist, wie es sich von einem Adressbuch und einem Vertriebs-CRM unterscheidet, was hineingehört, welche Abwägungen der Datenschutz verlangt und wie Sie den passenden Ansatz wählen.",
         ],
-    ],
-
-    'announcement' => [
-        'headline' => "Monica v3 kommt vor Ende 2026.",
-        'detail' => "Von Grund auf neu gebaut. Weiterhin quelloffen.",
-        'cta' => "Sehen, was kommt",
     ],
 
     // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
@@ -335,7 +329,7 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey und die Ente",
-            'title' => "Monica ist Ihre persönliche Datenbank.",
+            'title' => "Monica ist Ihr persönliches CRM und Ihre Datenbank.",
             'subtitle' => "Speichern Sie die Menschen, die Sie kennen, die Dinge, die Sie besitzen, und alles, woran Sie sich erinnern möchten.",
             'lede' => "Privat von Grund auf. Quelloffen. Selbst hostbar. Keine Werbung, kein Datenverkauf, keine peinlichen Benachrichtigungen zur „Aktivierung“.",
             'start' => "Mit Monica beginnen",
@@ -2693,7 +2687,7 @@ return [
         'start' => "Mit Monica beginnen",
         'github' => "Auf GitHub ansehen",
 
-        'tagline' => "Quelloffenes persönliches CRM. AGPL-3.0.",
+        'tagline' => "Ihre quelloffene persönliche Datenbank. AGPL-3.0.",
         'productLabel' => "Produkt",
         'developersLabel' => "Entwickler",
         'companyLabel' => "Unternehmen",
@@ -2744,7 +2738,7 @@ return [
 
         'tryMonica' => [
             'title' => "Monica ausprobieren",
-            'body' => "Ein privates, quelloffenes persönliches CRM, um sich an die Menschen zu erinnern, die zählen. Selbst hosten, oder uns machen lassen.",
+            'body' => "Eine private, quelloffene persönliche Datenbank für Ihre Kontakte, alles, was Sie besitzen, und alles, woran Sie sich erinnern müssen. Selbst hosten, oder uns machen lassen.",
             'bodyPost' => "Behalten Sie die Menschen in Ihrem Leben im Blick, ohne sie einer Werbedatenbank zu überlassen.",
             'cta' => "Loslegen",
         ],

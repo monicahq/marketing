@@ -18,7 +18,7 @@ return [
      * beside them rather than inside them.
      */
     'meta' => [
-        'imageAlt' => "Monica is your personal database. The open-source personal CRM.",
+        'imageAlt' => "Monica is your personal CRM and database. The open-source personal CRM.",
 
         /**
          * The page names in a breadcrumb trail: one per route key, plus the
@@ -65,8 +65,8 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica — the open-source personal CRM",
-            'description' => "Monica helps you remember the people you care about: what is happening in their life, important dates, previous conversations, and when to get back in touch. Private, open source, self-hostable.",
+            'title' => "Monica — your personal database and open-source personal CRM",
+            'description' => "Monica is your personal database: document your contacts, everything you own, and everything you need to remember. Private, open source, self-hostable.",
         ],
 
         'pricing' => [
@@ -81,7 +81,7 @@ return [
 
         'about' => [
             'title' => "About — Monica",
-            'description' => "Monica is an open-source personal CRM made by two people, Régis and Alexis. No investors, no advertising, no data sold. How it started, and what will never be on the roadmap.",
+            'description' => "Monica is an open-source personal database made by two people, Régis and Alexis. No investors, no advertising, no data sold. How it started, and what will never be on the roadmap.",
         ],
 
         'team' => [
@@ -91,7 +91,7 @@ return [
 
         'terms' => [
             'title' => "Terms of use — Monica",
-            'description' => "The terms of use for Monica, the open-source personal CRM: what the service covers, your rights over your data, your responsibilities, and the legal small print.",
+            'description' => "The terms of use for Monica, the open-source personal database: what the service covers, your rights over your data, your responsibilities, and the legal small print.",
         ],
 
         'blog' => [
@@ -121,7 +121,7 @@ return [
 
         'v3' => [
             'title' => "Monica v3 — rebuilt for the next ten years",
-            'description' => "Monica v3 is a ground-up rebuild of the open-source personal CRM: records you design, a journal connected to everything, a complete API, and a proper mobile experience. Still open source. Coming before the end of 2026.",
+            'description' => "Monica v3 is a ground-up rebuild of the open-source personal database: records you design, a journal connected to everything, a complete API, and a proper mobile experience. Still open source. Coming before the end of 2026.",
         ],
 
         'templates' => [
@@ -178,12 +178,6 @@ return [
             'title' => "What is a personal CRM? A practical guide — Monica",
             'description' => "What a personal CRM is, how it differs from an address book and sales CRM, what to store, the privacy tradeoffs, and how to choose the right approach.",
         ],
-    ],
-
-    'announcement' => [
-        'headline' => "Monica v3 is coming before the end of 2026.",
-        'detail' => "Rebuilt from scratch. Still open source.",
-        'cta' => "See what is coming",
     ],
 
     // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
@@ -368,7 +362,7 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey, and the duck",
-            'title' => "Monica is your personal database.",
+            'title' => "Monica is your personal CRM and database.",
             'subtitle' => "Store the people you know, the things you own, and everything you want to remember.",
             'lede' => "Private by design. Open source. Self-hostable. No ads, no data resale, no awkward “engagement” notifications.",
             'start' => "Start using Monica",
@@ -2727,7 +2721,7 @@ return [
         'start' => "Start using Monica",
         'github' => "View on GitHub",
 
-        'tagline' => "Open source personal CRM. AGPL-3.0.",
+        'tagline' => "Your open-source personal database. AGPL-3.0.",
         'productLabel' => "Product",
         'developersLabel' => "Developers",
         'companyLabel' => "Company",
@@ -2778,7 +2772,7 @@ return [
 
         'tryMonica' => [
             'title' => "Try Monica",
-            'body' => "A private, open-source personal CRM for remembering the people who matter. Self-host it, or let us run it.",
+            'body' => "A private, open-source personal database for your contacts, everything you own, and everything you need to remember. Self-host it, or let us run it.",
             'bodyPost' => "Keep track of the people in your life without handing them to an advertising database.",
             'cta' => "Get started",
         ],

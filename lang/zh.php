@@ -18,7 +18,7 @@ return [
      * beside them rather than inside them.
      */
     'meta' => [
-        'imageAlt' => "Monica 是你的个人数据库。开源的个人 CRM。",
+        'imageAlt' => "Monica 是你的个人 CRM 和数据库。开源的个人 CRM。",
 
         /**
          * The page names in a breadcrumb trail: one per route key, plus the
@@ -64,8 +64,8 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica：开源的个人 CRM",
-            'description' => "Monica 帮你记住你在乎的人：他们生活中正在发生什么、重要的日子、之前聊过的内容，以及什么时候该再联系。注重隐私，开源，可自托管。",
+            'title' => "Monica：你的个人数据库和开源个人 CRM",
+            'description' => "Monica 是你的个人数据库：记录你的联系人、你拥有的一切，以及你需要记住的一切。注重隐私，开源，可自托管。",
         ],
 
         'pricing' => [
@@ -80,7 +80,7 @@ return [
 
         'about' => [
             'title' => "关于 — Monica",
-            'description' => "Monica 是一个开源的个人 CRM，由两个人 Régis 和 Alexis 打造。没有投资人，没有广告，不出售数据。它是怎么开始的，以及哪些事永远不会出现在路线图上。",
+            'description' => "Monica 是一个开源的个人数据库，由两个人 Régis 和 Alexis 打造。没有投资人，没有广告，不出售数据。它是怎么开始的，以及哪些事永远不会出现在路线图上。",
         ],
 
         'team' => [
@@ -90,7 +90,7 @@ return [
 
         'terms' => [
             'title' => "使用条款：Monica",
-            'description' => "开源个人 CRM Monica 的使用条款：服务涵盖的范围、你对自己数据的权利、你的责任，以及法律细则。",
+            'description' => "开源个人数据库 Monica 的使用条款：服务涵盖的范围、你对自己数据的权利、你的责任，以及法律细则。",
         ],
 
         'blog' => [
@@ -110,7 +110,7 @@ return [
 
         'v3' => [
             'title' => "Monica v3：为未来十年重新打造",
-            'description' => "Monica v3 是这款开源个人 CRM 的彻底重写：由你设计的记录、与一切相连的日记、完整的 API，以及真正好用的移动端体验。依然开源。将在 2026 年底前推出。",
+            'description' => "Monica v3 是这款开源个人数据库的彻底重写：由你设计的记录、与一切相连的日记、完整的 API，以及真正好用的移动端体验。依然开源。将在 2026 年底前推出。",
         ],
 
         'templates' => [
@@ -167,12 +167,6 @@ return [
             'title' => "什么是个人 CRM？实用指南：Monica",
             'description' => "个人 CRM 是什么，它与通讯录和销售 CRM 有何不同，该存储哪些内容，隐私上的取舍，以及如何选择合适的方式。",
         ],
-    ],
-
-    'announcement' => [
-        'headline' => "Monica v3 将在 2026 年底前推出。",
-        'detail' => "从头重建。依然开源。",
-        'cta' => "看看有什么新变化",
     ],
 
     // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
@@ -357,7 +351,7 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel、Ross、Chandler、Joey，还有那只鸭子",
-            'title' => "Monica 是你的个人数据库。",
+            'title' => "Monica 是你的个人 CRM 和数据库。",
             'subtitle' => "记下你认识的人、你拥有的东西，以及你想记住的一切。",
             'lede' => "默认注重隐私。开源。可自托管。没有广告，不转售数据，也没有尴尬的“互动”通知。",
             'start' => "开始使用 Monica",
@@ -2706,7 +2700,7 @@ return [
         'start' => "开始使用 Monica",
         'github' => "在 GitHub 上查看",
 
-        'tagline' => "开源个人 CRM。AGPL-3.0。",
+        'tagline' => "你的开源个人数据库。AGPL-3.0。",
         'productLabel' => "产品",
         'developersLabel' => "开发者",
         'companyLabel' => "公司",
@@ -2757,7 +2751,7 @@ return [
 
         'tryMonica' => [
             'title' => "试试 Monica",
-            'body' => "一款私密、开源的个人 CRM，帮你记住重要的人。可以自托管，也可以交给我们来运行。",
+            'body' => "一款私密、开源的个人数据库，用来记录你的联系人、你拥有的一切，以及你需要记住的一切。可以自托管，也可以交给我们来运行。",
             'bodyPost' => "记录你生活中的人，而不必把他们交给广告数据库。",
             'cta' => "开始使用",
         ],

@@ -10,7 +10,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica est votre base de données personnelle. Le CRM personnel open source.",
+        'imageAlt' => "Monica est votre CRM personnel et votre base de données. Le CRM personnel open source.",
 
         'breadcrumb' => [
             'home' => "Accueil",
@@ -43,8 +43,8 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica — le CRM personnel open source",
-            'description' => "Monica vous aide à vous souvenir des gens qui comptent : ce qui se passe dans leur vie, les dates importantes, vos conversations passées et le moment de reprendre contact. Privé, open source, auto-hébergeable.",
+            'title' => "Monica — votre base de données personnelle et CRM personnel open source",
+            'description' => "Monica est votre base de données personnelle : documentez vos contacts, tout ce que vous possédez et tout ce dont vous devez vous souvenir. Privée, open source, auto-hébergeable.",
         ],
 
         'pricing' => [
@@ -59,7 +59,7 @@ return [
 
         'about' => [
             'title' => "À propos — Monica",
-            'description' => "Qui fabrique Monica, comment tout a commencé et ce que nous ne ferons jamais. Deux personnes, pas d’investisseurs, un CRM personnel open source.",
+            'description' => "Qui fabrique Monica, comment tout a commencé et ce que nous ne ferons jamais. Deux personnes, pas d’investisseurs, une base de données personnelle open source.",
         ],
 
         'team' => [
@@ -69,7 +69,7 @@ return [
 
         'terms' => [
             'title' => "Conditions d’utilisation — Monica",
-            'description' => "Les conditions d’utilisation de Monica, le CRM personnel open source : ce que couvre le service, vos droits sur vos données, vos responsabilités et les mentions légales.",
+            'description' => "Les conditions d’utilisation de Monica, la base de données personnelle open source : ce que couvre le service, vos droits sur vos données, vos responsabilités et les mentions légales.",
         ],
 
         'blog' => [
@@ -89,7 +89,7 @@ return [
 
         'v3' => [
             'title' => "Monica v3 — reconstruite pour les dix prochaines années",
-            'description' => "Monica v3 est une reconstruction complète du CRM personnel open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source. Avant la fin de 2026.",
+            'description' => "Monica v3 est une reconstruction complète de la base de données personnelle open source : des fiches que vous concevez, un journal relié à tout le reste, une API complète et une vraie expérience mobile. Toujours open source. Avant la fin de 2026.",
         ],
 
         'templates' => [
@@ -146,12 +146,6 @@ return [
             'title' => "Qu’est-ce qu’un CRM personnel ? Le guide pratique — Monica",
             'description' => "Ce qu’est un CRM personnel, en quoi il diffère d’un carnet d’adresses et d’un CRM commercial, quoi y noter, les compromis de confidentialité et comment choisir la bonne approche.",
         ],
-    ],
-
-    'announcement' => [
-        'headline' => "Monica v3 arrive avant la fin de 2026.",
-        'detail' => "Reconstruite de zéro. Toujours open source.",
-        'cta' => "Découvrir ce qui arrive",
     ],
 
     // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
@@ -337,7 +331,7 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey et le canard",
-            'title' => "Monica est votre base de données personnelle.",
+            'title' => "Monica est votre CRM personnel et votre base de données.",
             'subtitle' => "Enregistrez les gens que vous connaissez, les choses que vous possédez et tout ce que vous voulez retenir.",
             'lede' => "Privée par conception. Open source. Auto-hébergeable. Aucune publicité, aucune revente de données, aucune notification gênante pour vous « réengager ».",
             'start' => "Commencer avec Monica",
@@ -2695,7 +2689,7 @@ return [
         'start' => "Commencer avec Monica",
         'github' => "Voir sur GitHub",
 
-        'tagline' => "CRM personnel open source. AGPL-3.0.",
+        'tagline' => "Votre base de données personnelle open source. AGPL-3.0.",
         'productLabel' => "Produit",
         'developersLabel' => "Développeurs",
         'companyLabel' => "Entreprise",
@@ -2746,7 +2740,7 @@ return [
 
         'tryMonica' => [
             'title' => "Essayer Monica",
-            'body' => "Un CRM personnel privé et open source pour se souvenir des gens qui comptent. Auto-hébergez-le, ou laissez-nous nous en charger.",
+            'body' => "Une base de données personnelle privée et open source pour vos contacts, tout ce que vous possédez et tout ce dont vous devez vous souvenir. Auto-hébergez-la, ou laissez-nous nous en charger.",
             'bodyPost' => "Gardez le fil des gens de votre vie sans les confier à une base de données publicitaire.",
             'cta' => "Commencer",
         ],

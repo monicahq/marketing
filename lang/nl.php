@@ -11,7 +11,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica is je persoonlijke database. De open source persoonlijke CRM.",
+        'imageAlt' => "Monica is je persoonlijke CRM en database. De open source persoonlijke CRM.",
 
         'breadcrumb' => [
             'home' => "Start",
@@ -44,8 +44,8 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica — de open source persoonlijke CRM",
-            'description' => "Monica helpt je de mensen te onthouden die je dierbaar zijn: wat er in hun leven speelt, belangrijke data, eerdere gesprekken en wanneer je weer contact opneemt. Privé, open source, in eigen beheer te draaien.",
+            'title' => "Monica — je persoonlijke database en open source persoonlijke CRM",
+            'description' => "Monica is je persoonlijke database: leg je contacten vast, alles wat je bezit en alles wat je moet onthouden. Privé, open source, zelf te hosten.",
         ],
 
         'pricing' => [
@@ -60,7 +60,7 @@ return [
 
         'about' => [
             'title' => "Over ons — Monica",
-            'description' => "Monica is een open source persoonlijke CRM, gemaakt door twee mensen, Régis en Alexis. Geen investeerders, geen advertenties, geen verkochte gegevens. Hoe het begon, en wat nooit op de roadmap zal staan.",
+            'description' => "Monica is een open source persoonlijke database, gemaakt door twee mensen, Régis en Alexis. Geen investeerders, geen advertenties, geen verkochte gegevens. Hoe het begon, en wat nooit op de roadmap zal staan.",
         ],
 
         'team' => [
@@ -70,7 +70,7 @@ return [
 
         'terms' => [
             'title' => "Gebruiksvoorwaarden — Monica",
-            'description' => "De gebruiksvoorwaarden van Monica, de open source persoonlijke CRM: wat de dienst omvat, je rechten op je gegevens, je verantwoordelijkheden en de juridische kleine lettertjes.",
+            'description' => "De gebruiksvoorwaarden van Monica, de open source persoonlijke database: wat de dienst omvat, je rechten op je gegevens, je verantwoordelijkheden en de juridische kleine lettertjes.",
         ],
 
         'blog' => [
@@ -86,7 +86,7 @@ return [
 
         'v3' => [
             'title' => "Monica v3 — herbouwd voor de komende tien jaar",
-            'description' => "Monica v3 is een volledige herbouw van de open source persoonlijke CRM: records die je zelf ontwerpt, een dagboek dat overal aan vastzit, een complete API en een fatsoenlijke mobiele ervaring. Nog steeds open source. Verwacht voor het eind van 2026.",
+            'description' => "Monica v3 is een volledige herbouw van de open source persoonlijke database: records die je zelf ontwerpt, een dagboek dat overal aan vastzit, een complete API en een fatsoenlijke mobiele ervaring. Nog steeds open source. Verwacht voor het eind van 2026.",
         ],
 
         'templates' => [
@@ -143,12 +143,6 @@ return [
             'title' => "Wat is een persoonlijke CRM? Een praktische gids — Monica",
             'description' => "Wat een persoonlijke CRM is, hoe die verschilt van een adresboek en een sales-CRM, wat je erin zet, welke privacyafwegingen erbij horen en hoe je de juiste aanpak kiest.",
         ],
-    ],
-
-    'announcement' => [
-        'headline' => "Monica v3 komt voor het eind van 2026.",
-        'detail' => "Opnieuw opgebouwd. Nog steeds open source.",
-        'cta' => "Bekijk wat eraan komt",
     ],
 
     // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
@@ -334,7 +328,7 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey en de eend",
-            'title' => "Monica is je persoonlijke database.",
+            'title' => "Monica is je persoonlijke CRM en database.",
             'subtitle' => "Bewaar de mensen die je kent, de dingen die je hebt en alles wat je wilt onthouden.",
             'lede' => "Privé van opzet. Open source. In eigen beheer te draaien. Geen advertenties, geen doorverkoop van gegevens, geen ongemakkelijke meldingen over “betrokkenheid”.",
             'start' => "Begin met Monica",
@@ -2686,7 +2680,7 @@ return [
         'start' => "Begin met Monica",
         'github' => "Bekijk op GitHub",
 
-        'tagline' => "Open source persoonlijke CRM. AGPL-3.0.",
+        'tagline' => "Je open source persoonlijke database. AGPL-3.0.",
         'productLabel' => "Product",
         'developersLabel' => "Ontwikkelaars",
         'companyLabel' => "Bedrijf",
@@ -2734,7 +2728,7 @@ return [
 
         'tryMonica' => [
             'title' => "Probeer Monica",
-            'body' => "Een privé, open source persoonlijke CRM om de mensen te onthouden die tellen. Draai het zelf, of laat ons het draaien.",
+            'body' => "Een privé, open source persoonlijke database voor je contacten, alles wat je bezit en alles wat je moet onthouden. Draai het zelf, of laat ons het draaien.",
             'bodyPost' => "Houd bij wat er speelt bij de mensen in je leven zonder ze aan een advertentiedatabase te geven.",
             'cta' => "Aan de slag",
         ],

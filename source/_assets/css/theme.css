@@ -71,9 +71,9 @@
   --color-text-disabled: var(--muted-soft);
   --color-text-inverse: var(--on-primary);
 
-  /* The inverse surface: the announcement bar and the terminal on the
-     homepage. Fixed rather than themed, so it stays a dark band in both
-     themes, the way the product's admin bar does. */
+  /* The inverse surface: the terminal on the homepage. Fixed rather than
+     themed, so it stays dark in both themes, the way the product's admin
+     bar does. */
   --color-surface-inverse: #18181b;
   --color-on-inverse: #d4d4d8;
   --color-on-inverse-strong: #fafafa;

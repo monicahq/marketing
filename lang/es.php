@@ -8,7 +8,7 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica es tu base de datos personal. El CRM personal de código abierto.",
+        'imageAlt' => "Monica es tu CRM personal y tu base de datos. El CRM personal de código abierto.",
 
         'breadcrumb' => [
             'home' => "Inicio",
@@ -41,8 +41,8 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica — el CRM personal de código abierto",
-            'description' => "Monica te ayuda a recordar a las personas que te importan: qué está pasando en su vida, las fechas importantes, vuestras conversaciones anteriores y cuándo volver a hablar. Privado, de código abierto, alojable por ti.",
+            'title' => "Monica — tu base de datos personal y CRM personal de código abierto",
+            'description' => "Monica es tu base de datos personal: documenta tus contactos, todo lo que tienes y todo lo que necesitas recordar. Privada, de código abierto, autoalojable.",
         ],
 
         'pricing' => [
@@ -57,7 +57,7 @@ return [
 
         'about' => [
             'title' => "Sobre nosotros — Monica",
-            'description' => "Quién hace Monica, cómo empezó todo y qué no haremos nunca. Dos personas, sin inversores, un CRM personal de código abierto.",
+            'description' => "Quién hace Monica, cómo empezó todo y qué no haremos nunca. Dos personas, sin inversores, una base de datos personal de código abierto.",
         ],
 
         'team' => [
@@ -67,7 +67,7 @@ return [
 
         'terms' => [
             'title' => "Condiciones de uso — Monica",
-            'description' => "Las condiciones de uso de Monica, el CRM personal de código abierto: qué cubre el servicio, tus derechos sobre tus datos, tus responsabilidades y la letra pequeña legal.",
+            'description' => "Las condiciones de uso de Monica, la base de datos personal de código abierto: qué cubre el servicio, tus derechos sobre tus datos, tus responsabilidades y la letra pequeña legal.",
         ],
 
         'blog' => [
@@ -87,7 +87,7 @@ return [
 
         'v3' => [
             'title' => "Monica v3 — reconstruida para los próximos diez años",
-            'description' => "Monica v3 es una reconstrucción completa del CRM personal de código abierto: fichas que diseñas tú, un diario conectado con todo lo demás, una API completa y una experiencia móvil de verdad. Sigue siendo de código abierto. Antes de que acabe 2026.",
+            'description' => "Monica v3 es una reconstrucción completa de la base de datos personal de código abierto: fichas que diseñas tú, un diario conectado con todo lo demás, una API completa y una experiencia móvil de verdad. Sigue siendo de código abierto. Antes de que acabe 2026.",
         ],
 
         // Un bloque por pestaña de funcionalidades: cada pestaña tiene su
@@ -148,12 +148,6 @@ return [
             'title' => "¿Qué es un CRM personal? Una guía práctica — Monica",
             'description' => "Qué es un CRM personal, en qué se diferencia de una libreta de direcciones y de un CRM de ventas, qué guardar, los compromisos de privacidad y cómo elegir el enfoque adecuado.",
         ],
-    ],
-
-    'announcement' => [
-        'headline' => "Monica v3 llega antes de que acabe 2026.",
-        'detail' => "Reconstruida desde cero. Sigue siendo de código abierto.",
-        'cta' => "Ver lo que viene",
     ],
 
     // The cookie notice in the bottom right corner (`_partials/cookie-notice`).
@@ -339,7 +333,7 @@ return [
     'home' => [
         'hero' => [
             'pill' => "Rachel, Ross, Chandler, Joey y el pato",
-            'title' => "Monica es tu base de datos personal.",
+            'title' => "Monica es tu CRM personal y tu base de datos.",
             'subtitle' => "Guarda a las personas que conoces, las cosas que tienes y todo lo que quieres recordar.",
             'lede' => "Privada por diseño. De código abierto. Alojable por ti. Sin anuncios, sin reventa de datos, sin notificaciones incómodas para «reengancharte».",
             'start' => "Empezar con Monica",
@@ -2698,7 +2692,7 @@ return [
         'start' => "Empezar con Monica",
         'github' => "Ver en GitHub",
 
-        'tagline' => "CRM personal de código abierto. AGPL-3.0.",
+        'tagline' => "Tu base de datos personal de código abierto. AGPL-3.0.",
         'productLabel' => "Producto",
         'developersLabel' => "Desarrolladores",
         'companyLabel' => "Empresa",
@@ -2749,7 +2743,7 @@ return [
 
         'tryMonica' => [
             'title' => "Probar Monica",
-            'body' => "Un CRM personal privado y de código abierto para recordar a las personas que importan. Aloja tú la instancia, o deja que la llevemos nosotros.",
+            'body' => "Una base de datos personal privada y de código abierto para tus contactos, todo lo que tienes y todo lo que necesitas recordar. Aloja tú la instancia, o deja que la llevemos nosotros.",
             'bodyPost' => "Sigue el hilo de las personas de tu vida sin entregarlas a una base de datos publicitaria.",
             'cta' => "Empezar",
         ],

@@ -55,7 +55,6 @@
     </head>
 
     <body class="min-h-screen bg-canvas font-sans text-text">
-        @include('_partials.announcement-bar')
         @include('_partials.site-header')
 
         <main>
