@@ -29,9 +29,22 @@
 
     // The plain links after the menu. `current` names the route keys that mark
     // the link as the page being read; a post is a blog page too.
+    //
+    // The handbook is written in fewer languages than the site, so from a
+    // page in any other one it lands on the default locale's copy. That link
+    // crosses languages, and carries `hreflang` and `data-turbo="false"` for
+    // the reason the locale picker's links do.
+    $handbookLocale = $page->routeLocale('handbook');
+
     $navItems = [
         ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing'), 'current' => ['pricing']],
         ['label' => $page->t('nav.blog'), 'href' => $page->route('blog'), 'current' => ['blog', 'post']],
+        [
+            'label' => $page->t('nav.handbook'),
+            'href' => $page->route('handbook', $handbookLocale),
+            'current' => ['handbook', 'handbookArticle'],
+            'locale' => $handbookLocale,
+        ],
         ['label' => $page->t('nav.docs'), 'href' => $page->links['docs'], 'current' => []],
     ];
 
@@ -129,6 +142,10 @@
                 <a
                     href="{{ $item['href'] }}"
                     @if (in_array($page->page, $item['current'], true)) aria-current="page" @endif
+                    @if (($item['locale'] ?? $page->lang()) !== $page->lang())
+                        hreflang="{{ $page->languageTag($item['locale']) }}"
+                        data-turbo="false"
+                    @endif
                     class="{{ $navLink }}"
                 >{{ $item['label'] }}</a>
             @endforeach

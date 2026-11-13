@@ -169,6 +169,7 @@ return [
         'features' => "Functies",
         'pricing' => "Prijzen",
         'blog' => "Blog",
+        'handbook' => "Handboek",
         'docs' => "Documentatie",
         'signIn' => "Inloggen",
         'toDark' => "Overschakelen naar donkere modus",

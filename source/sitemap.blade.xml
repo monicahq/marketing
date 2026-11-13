@@ -96,6 +96,25 @@
             'lastmod' => fn ($locale) => ($archives[$locale]->get($slug) ?: $post)->lastmodDate(),
         ];
     }
+
+    // The handbook's articles, in the locales the handbook is written in and
+    // no others, which is what its route lists. An article keeps its slug
+    // across them, as a post does, so the default locale's collection is the
+    // list of slugs and each locale dates its own copy.
+    $handbookLocales = collect($page->routes['handbook'])->keys()->all();
+    $handbooks = [];
+
+    foreach ($handbookLocales as $locale) {
+        $handbooks[$locale] = collect(${'handbook_' . $locale})->keyBy('slug');
+    }
+
+    foreach ($handbooks[$page->defaultLocale] as $slug => $article) {
+        $entries[] = [
+            'path' => fn ($locale) => $page->handbookPath($slug, $locale),
+            'locales' => $handbookLocales,
+            'lastmod' => fn ($locale) => ($handbooks[$locale]->get($slug) ?: $article)->lastmodDate(),
+        ];
+    }
 @endphp
 {{-- The XML declaration is echoed, because a literal <?xml would be parsed
      as a PHP open tag. --}}

@@ -172,6 +172,7 @@ return [
         'features' => "Fonctionnalités",
         'pricing' => "Tarifs",
         'blog' => "Blog",
+        'handbook' => "Manuel",
         'docs' => "Documentation",
         'signIn' => "Connexion",
         'toDark' => "Passer en mode sombre",

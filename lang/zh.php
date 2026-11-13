@@ -193,6 +193,7 @@ return [
         'features' => "功能",
         'pricing' => "价格",
         'blog' => "博客",
+        'handbook' => "手册",
         'docs' => "文档",
         'signIn' => "登录",
         'toDark' => "切换到深色模式",

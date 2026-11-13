@@ -48,6 +48,7 @@ return [
             'api' => "API and MCP",
             'privacyFeatures' => "Privacy and security",
             'languages' => "Languages and formats",
+            'handbook' => "Handbook",
             'page' => "Page :number",
         ],
 
@@ -102,6 +103,16 @@ return [
         // frame the site puts around them.
         'post' => [
             'title' => ":title — the Monica blog",
+        ],
+
+        'handbook' => [
+            'title' => "The Monica handbook — how the project is run",
+            'description' => "What the project is, the principles behind it, how it makes money, why it is open source, and how marketing and priorities are decided. Written by its maintainer.",
+        ],
+
+        // Like a post, an article brings its own title and description.
+        'handbookArticle' => [
+            'title' => ":title — the Monica handbook",
         ],
 
         // Page 2 of a list is not the list. Without this, four pages of the
@@ -193,6 +204,7 @@ return [
         'features' => "Features",
         'pricing' => "Pricing",
         'blog' => "Blog",
+        'handbook' => "Handbook",
         'docs' => "Documentation",
         'signIn' => "Log in",
         'toDark' => "Switch to dark mode",
@@ -3044,5 +3056,100 @@ return [
     'notFound' => [
         'title' => "Page not found.",
         'body' => "This address does not lead anywhere. It may have moved, or it may never have existed.",
+    ],
+
+    /**
+     * The handbook (`_layouts/handbook`, `_partials/handbook/`). English only
+     * for now: the handbook exists in the locales listed in $handbookSlugs in
+     * config.php, so these keys are only ever read in English. They move to
+     * the other files with the articles themselves.
+     *
+     * The articles are Markdown in source/_handbook_en/; this is only the
+     * frame around them.
+     */
+    'handbook' => [
+        'title' => "Our handbook",
+        'intro' => "This handbook explains what I do, how I think and how I want to move this project forward. Brace yourself, it's very good. At least I think so.",
+        'art' => "A panda reading a book, sitting between a pile of books and a cup of coffee",
+        'contents' => "Table of contents",
+        'sections' => [
+            'general' => "General information",
+            'marketing' => "Marketing",
+        ],
+        'articles' => ":count articles",
+        'words' => ":count words",
+        'minutes' => ":count min read",
+
+        'actions' => [
+            'label' => "Use this article elsewhere",
+            'copy' => "Copy for LLM",
+            'copied' => "Copied as Markdown",
+            'markdown' => "View as Markdown",
+            'claude' => "Open in Claude",
+            'chatgpt' => "Open in ChatGPT",
+
+            // The question each assistant is opened with. :url is the
+            // article's Markdown file.
+            'prompt' => "Read :url and help me understand it. I may have questions about it.",
+        ],
+
+        'writtenBy' => "Written by",
+        'author' => "Régis Freyd",
+        'authorRole' => "Co-founder",
+
+        // :percent is the article's length as a share of the book's.
+        'comparison' => "This represents only :percent of the number of words in :title by :author",
+
+        // One book per article, picked from the article's slug, so the same
+        // article always compares itself to the same book. Word counts are
+        // rounded, as the comparison is.
+        'books' => [
+            ['title' => "Don Quixote", 'author' => "Miguel de Cervantes", 'words' => 430000],
+            ['title' => "A Tale of Two Cities", 'author' => "Charles Dickens", 'words' => 135000],
+            ['title' => "The Lord of the Rings", 'author' => "J.R.R. Tolkien", 'words' => 455000],
+            ['title' => "The Little Prince", 'author' => "Antoine de Saint-Exupéry", 'words' => 16000],
+            ['title' => "Harry Potter and the Philosopher's Stone", 'author' => "J.K. Rowling", 'words' => 77000],
+            ['title' => "The Hobbit", 'author' => "J.R.R. Tolkien", 'words' => 95000],
+            ['title' => "And Then There Were None", 'author' => "Agatha Christie", 'words' => 66000],
+            ['title' => "Dream of the Red Chamber", 'author' => "Cao Xueqin", 'words' => 845000],
+            ['title' => "The Catcher in the Rye", 'author' => "J.D. Salinger", 'words' => 73000],
+            ['title' => "The Da Vinci Code", 'author' => "Dan Brown", 'words' => 138000],
+        ],
+
+        'factTitle' => "Random fact, so we don't die stupid",
+
+        // One per article, picked from its slug like the book above.
+        'facts' => [
+            "The first computer virus was created in 1983 and was called 'Elk Cloner.' It infected Apple II computers via floppy disks.",
+            "The first webcam was used at the University of Cambridge to monitor a coffee pot, ensuring researchers wouldn't make a wasted trip for an empty pot.",
+            "The original name of Windows was 'Interface Manager.' Thankfully, they went with something catchier.",
+            "The first website ever created is still online. It was created by Tim Berners-Lee in 1991 and is about the World Wide Web project itself.",
+            "The Firefox logo isn’t a fox. It’s a red panda. The name 'Firefox' is a nickname for the red panda.",
+            "The first email ever sent was by Ray Tomlinson to himself in 1971. It was a test message containing random letters.",
+            "In the 1950s, computers were referred to as 'electronic brains,' and programming was considered 'women's work.'",
+            "The term 'bug' in software originated when a real moth caused a malfunction in the Harvard Mark II computer in 1947.",
+            "Amazon was originally called 'Cadabra,' as in 'abracadabra.' It was changed because it sounded too much like 'cadaver.'",
+            "The first computer mouse was made of wood. It was invented by Doug Engelbart in 1964.",
+            "There are more than 1.5 billion websites on the internet, but less than 200 million are active.",
+            "The QWERTY keyboard layout was designed to slow down typing to prevent mechanical typewriters from jamming.",
+            "The first domain ever registered was Symbolics.com on March 15, 1985. It's still active today.",
+            "The '@' symbol was chosen for email addresses because it was rarely used in computing, so it wouldn't conflict with existing protocols.",
+            "The term 'surfing the internet' was coined in 1992 by librarian Jean Armour Polly, who wrote an article titled 'Surfing the Internet.'",
+            "CAPTCHA stands for 'Completely Automated Public Turing test to tell Computers and Humans Apart.'",
+            "The first 1GB hard drive, announced in 1980, weighed over 500 pounds and cost $40,000.",
+            "Google was initially called 'Backrub' because the system checked backlinks to estimate the importance of sites.",
+            "The first YouTube video, titled 'Me at the zoo,' was uploaded on April 23, 2005, by one of the platform's co-founders, Jawed Karim.",
+            "The most common password in 2023 is still '123456,' followed closely by 'password.'",
+            "The original Space Invaders game caused a shortage of 100-yen coins in Japan due to its popularity.",
+            "The first computer programmer was Ada Lovelace in the 1840s, before computers were even built.",
+            "The term 'spam' for unwanted emails comes from a Monty Python sketch where the word is repeatedly mentioned.",
+            "The first search engine ever was called 'Archie,' created in 1990 to index FTP sites.",
+            "The first online transaction was a sale of marijuana between Stanford and MIT students in the early 1970s, over ARPANET.",
+            "The longest-running computer program is the 'Doomsday Flight' simulation, running since 1973 to test airline software.",
+            "The '404 error' was named after a room at CERN where the original web servers were located.",
+            "The first computer game ever created was 'Spacewar!' in 1962, developed by Steve Russell at MIT.",
+            "The word 'robot' comes from the Czech word 'robota,' meaning 'forced labor' or 'drudgery.'",
+            "The '@' symbol is called 'snail' in Italian and 'monkey's tail' in Dutch.",
+        ],
     ],
 ];

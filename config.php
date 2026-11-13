@@ -242,6 +242,71 @@ $postSettings = [
     },
 ];
 
+/**
+ * The handbook's slug in each locale it exists in.
+ *
+ * English only for now. Every other page lists all eight locales; this one
+ * lists the ones the handbook has actually been written in, and both the route
+ * below and the collections are built from it, so a translation arrives by
+ * adding its slug here and its directory of articles, `source/_handbook_fr/`.
+ * The sitemap, hreflang and the locale picker read the route's own locales, so
+ * none of them offers a French handbook before one exists.
+ */
+$handbookSlugs = ['en' => 'handbook'];
+
+/**
+ * Everything a handbook collection is, apart from its locale and its path.
+ * Shared by every locale, like $postSettings, so they cannot drift apart.
+ */
+$handbookSettings = [
+    'extends' => '_layouts.handbook-article',
+
+    /** Within a section. The sections themselves are ordered by `handbookSections`. */
+    'sort' => 'order',
+
+    /** Names the SEO shape in _partials/seo.blade.php, as `page` does elsewhere. */
+    'page' => 'handbookArticle',
+
+    /**
+     * Jigsaw writes each article a second time as plain Markdown, next to its
+     * page: /en/handbook/principles/ and /en/handbook/principles.md. That file
+     * is what "View as Markdown" opens and what the two assistants are asked
+     * to read. The title becomes its first heading; a contents list would only
+     * repeat the three headings the longest article has.
+     */
+    'output_markdown' => ['table_of_contents' => false],
+
+    /** Words in the rendered body, tags removed, which is what a reader reads. */
+    'wordCount' => function ($article) {
+        return str_word_count(html_entity_decode(strip_tags($article->getContent()), ENT_QUOTES, 'UTF-8'));
+    },
+
+    /** 200 words a minute, floored at one, as the blog counts them. */
+    'readingMinutes' => function ($article) {
+        return max(1, (int) round($article->wordCount() / 200));
+    },
+
+    /**
+     * The article as Markdown, in the same shape as the .md file Jigsaw
+     * writes: the title as a heading, then the body as it was written. For the
+     * "Copy for LLM" button, which cannot fetch the file and still count as a
+     * click for the clipboard in every browser.
+     */
+    'markdown' => function ($article) {
+        $file = collect(glob(__DIR__ . "/source/_handbook_{$article->locale}/*.md"))
+            ->first(fn ($path) => preg_match('/^slug:\s*' . preg_quote($article->slug, '/') . '\s*$/m', file_get_contents($path)));
+
+        $body = $file ? preg_replace('/\A---.*?^---\s*/sm', '', file_get_contents($file)) : '';
+
+        return "# {$article->title}\n\n" . trim($body) . "\n";
+    },
+
+    /** For the sitemap. `updated` is required: there is no publication date to fall back to. */
+    'lastmodDate' => function ($article) use ($isoDay) {
+        return $isoDay($article->updated);
+    },
+];
+
 return [
     'baseUrl' => '',
     'production' => false,
@@ -280,7 +345,23 @@ return [
             'locale' => $locale,
             'path' => "{$locale}/blog/{slug}",
         ],
-    ])->all(),
+    ])->merge(
+        // One handbook collection per locale it is written in, read from
+        // source/_handbook_<locale>/ and written under that locale's slug.
+        collect($handbookSlugs)->mapWithKeys(fn ($slug, $locale) => [
+            "handbook_{$locale}" => $handbookSettings + [
+                'locale' => $locale,
+                'path' => "{$locale}/{$slug}/{slug}",
+            ],
+        ]),
+    )->all(),
+
+    /**
+     * The handbook's sections, in the order the table of contents lists them.
+     * An article names its section in its front matter; the section's title
+     * is `handbook.sections.<key>` in lang/.
+     */
+    'handbookSections' => ['general', 'marketing'],
 
     /** The blog's two sizes, for templates that reproduce the paginator's arithmetic. */
     'postsPerPage' => $perPage,
@@ -612,6 +693,12 @@ return [
             'zh' => 'features/languages',
             'ru' => 'vozmozhnosti/yazyki',
         ],
+
+        // How the project is run and why, as its maintainer writes it down.
+        // The only route not in every locale: see $handbookSlugs above. The
+        // header and the footer link to it from every language, landing on
+        // the default locale's copy where theirs does not exist yet.
+        'handbook' => $handbookSlugs,
     ],
 
     /**
@@ -661,6 +748,7 @@ return [
         'api' => '2026-10-13',
         'privacyFeatures' => '2026-10-13',
         'languages' => '2026-10-13',
+        'handbook' => '2026-11-12',
     ],
 
     // ------------------------------------------------------------------ links
@@ -798,6 +886,22 @@ return [
         return $page->localePath($key, $locale);
     },
 
+    /**
+     * The locale a link to a route key lands in from this page: the page's own
+     * when the route exists in it, the default locale otherwise. Only the
+     * handbook can tell the two apart today. A link whose answer differs from
+     * `lang()` crosses languages, so it carries `data-turbo="false"`, as the
+     * locale picker's do, and an `hreflang`.
+     */
+    'routeLocale' => function ($page, string $key) {
+        return isset($page->routes[$key][$page->lang()]) ? $page->lang() : $page->defaultLocale;
+    },
+
+    /** A handbook article: /en/handbook/principles/. */
+    'handbookPath' => function ($page, string $slug, ?string $locale = null) {
+        return $page->localePath('handbook', $locale ?: $page->lang()) . "{$slug}/";
+    },
+
     /** Absolute URL. Crawlers and scrapers do not resolve relative ones. */
     'absolute' => function ($page, string $path) {
         return rtrim($page->baseUrl, '/') . '/' . ltrim($path, '/');
@@ -900,6 +1004,10 @@ return [
             return $page->blogPath($locale, $number);
         }
 
+        if ($page->page === 'handbookArticle') {
+            return $page->handbookPath($page->slug, $locale);
+        }
+
         return $page->localePath($page->page, $locale);
     },
 
@@ -933,12 +1041,15 @@ return [
     'alternates' => function ($page, ?string $key = null, int $number = 1) {
         $routeKey = $key;
 
-        if ($routeKey === null && ! in_array($page->page, ['blog', 'post'], true)) {
+        if ($routeKey === null && ! in_array($page->page, ['blog', 'post', 'handbookArticle'], true)) {
             $routeKey = $page->page;
         }
 
-        $locales = $routeKey
-            ? collect($page->routes[$routeKey])->keys()->all()
+        // An article exists in the locales the handbook does, and no others.
+        $localesFrom = $routeKey ?? ($page->page === 'handbookArticle' ? 'handbook' : null);
+
+        $locales = $localesFrom
+            ? collect($page->routes[$localesFrom])->keys()->all()
             : $page->locales;
 
         return collect($locales)

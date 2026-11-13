@@ -13,10 +13,15 @@
     //
     // A post is the exception: its title and description are the post's own, in
     // the language it was written in, so there is nothing in lang/ to look up.
+    // A handbook article is the same exception, in its own frame.
     $isPost = $page->page === 'post';
+    $isArticle = $page->page === 'handbookArticle';
 
     if ($isPost) {
         $title = $page->t('meta.post.title', [':title' => $page->title]);
+        $description = $page->description;
+    } elseif ($isArticle) {
+        $title = $page->t('meta.handbookArticle.title', [':title' => $page->title]);
         $description = $page->description;
     } else {
         $title = $page->t("meta.{$page->page}.title");
@@ -78,6 +83,9 @@
         if ($isPost) {
             $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
             $trail[] = ['name' => $page->title, 'path' => $page->postPath($page->slug)];
+        } elseif ($isArticle) {
+            $trail[] = ['name' => $page->t('meta.breadcrumb.handbook'), 'path' => $page->localePath('handbook')];
+            $trail[] = ['name' => $page->title, 'path' => $page->handbookPath($page->slug)];
         } elseif ($page->page === 'blog') {
             $trail[] = ['name' => $page->t('meta.breadcrumb.blog'), 'path' => $page->blogPath()];
 
@@ -103,7 +111,7 @@
      * people behind the product; everything else is an ordinary WebPage, including a
      * post, which carries its BlogPosting as a separate node.
      */
-    $webPageType = ['blog' => 'CollectionPage', 'team' => 'AboutPage', 'about' => 'AboutPage'][$page->page] ?? 'WebPage';
+    $webPageType = ['blog' => 'CollectionPage', 'handbook' => 'CollectionPage', 'team' => 'AboutPage', 'about' => 'AboutPage'][$page->page] ?? 'WebPage';
 
     $structuredData = [
         '@context' => 'https://schema.org',

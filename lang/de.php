@@ -170,6 +170,7 @@ return [
         'features' => "Funktionen",
         'pricing' => "Preise",
         'blog' => "Blog",
+        'handbook' => "Handbuch",
         'docs' => "Dokumentation",
         'signIn' => "Anmelden",
         'toDark' => "Zum dunklen Modus wechseln",

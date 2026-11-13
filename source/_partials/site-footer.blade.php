@@ -1,4 +1,7 @@
 @php
+    // Written in fewer languages than the site: see the header.
+    $handbookLocale = $page->routeLocale('handbook');
+
     $columns = [
         [
             'label' => $page->t('footer.productLabel'),
@@ -22,6 +25,7 @@
             'links' => [
                 ['label' => $page->t('footer.about'), 'href' => $page->route('about')],
                 ['label' => $page->t('nav.blog'), 'href' => $page->route('blog')],
+                ['label' => $page->t('nav.handbook'), 'href' => $page->route('handbook', $handbookLocale), 'locale' => $handbookLocale],
                 ['label' => $page->t('footer.team'), 'href' => $page->route('team')],
                 ['label' => $page->t('footer.contactSales'), 'href' => $page->links['contactSales']],
                 ['label' => $page->t('footer.privacy'), 'href' => $page->route('privacy')],
@@ -84,7 +88,13 @@
                     <div class="flex flex-col gap-2.5 text-base">
                         <span class="text-caption font-medium tracking-[0.08em] text-ground-cream-muted uppercase">{{ $column['label'] }}</span>
                         @foreach ($column['links'] as $link)
-                            <a href="{{ $link['href'] }}" class="text-ground-cream-ink no-underline hover:text-ground-cream-ink hover:underline">{{ $link['label'] }}</a>
+                            <a
+                                href="{{ $link['href'] }}"
+                                @if (($link['locale'] ?? $page->lang()) !== $page->lang())
+                                    hreflang="{{ $page->languageTag($link['locale']) }}"
+                                    data-turbo="false"
+                                @endif
+                                class="text-ground-cream-ink no-underline hover:text-ground-cream-ink hover:underline">{{ $link['label'] }}</a>
                         @endforeach
                     </div>
                 @endforeach

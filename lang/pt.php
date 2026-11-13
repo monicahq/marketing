@@ -177,6 +177,7 @@ return [
         'features' => "Recursos",
         'pricing' => "Preços",
         'blog' => "Blog",
+        'handbook' => "Manual",
         'docs' => "Documentação",
         'signIn' => "Entrar",
         'toDark' => "Mudar para o modo escuro",
