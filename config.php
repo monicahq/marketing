@@ -805,7 +805,7 @@ return [
         'signIn' => 'https://my.monicahq.com/login',
         'getStarted' => 'https://my.monicahq.com/register',
         'selfHostingGuide' => '#',
-        'docs' => '#',
+        'docs' => 'https://my.monicahq.com/docs',
         'api' => 'https://my.monicahq.com/docs/api/introduction',
         'mcp' => 'https://my.monicahq.com/docs/mcp',
         'changelog' => '#',
