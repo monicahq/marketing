@@ -30,6 +30,7 @@ return [
             'api' => "API y MCP",
             'privacyFeatures' => "Privacidad",
             'languages' => "Idiomas y formatos",
+            'contribute' => "Colaborar",
             'page' => "Página :number",
             'label' => "Ruta de navegación",
         ],
@@ -64,6 +65,11 @@ return [
         'team' => [
             'title' => "Equipo — Monica",
             'description' => "Monica la construyen dos personas en Montreal, con cientos de personas colaboradoras de código abierto. Por qué hacemos un CRM personal que no daña las relaciones humanas.",
+        ],
+
+        'contribute' => [
+            'title' => "Colaborar — Monica",
+            'description' => "Monica es de código abierto, construida en noches y fines de semana desde 2017. Cómo puedes ayudar: revisar la documentación, traducir la aplicación y gastar tus propios tokens de IA en nuestros issues abiertos.",
         ],
 
         'terms' => [
@@ -171,6 +177,7 @@ return [
         'blog' => "Blog",
         'handbook' => "Manual",
         'docs' => "Documentación",
+        'contribute' => "Colaborar",
         'signIn' => "Iniciar sesión",
         'toDark' => "Cambiar al modo oscuro",
         'toLight' => "Cambiar al modo claro",
@@ -3000,6 +3007,46 @@ return [
             'title' => "Monica es la agenda de contactos que siempre quisimos tener.",
             'body' => "Esperamos que te ayude a llamar a alguien a quien llevas tiempo queriendo llamar.",
             'names' => ["Régis", "Alexis"],
+        ],
+    ],
+
+    // The contribute page, at /en/contribute/. The links are in `links` in config.php.
+    'contribute' => [
+        'imageAlt' => "Un panda con sombrero de copa que te señala, sobre las palabras: I need you to improve me",
+        'badge' => "Código abierto",
+        'since' => "Noches y fines de semana, desde 2017.",
+        'title' => "Ayúdanos a mantener Monica en marcha.",
+        'lede' => "En la era de la IA, es difícil saber hacia dónde irá el código abierto. Como ahora puedes reemplazar casi cualquier software con unos pocos prompts, ¿qué significa mantener proyectos de código abierto hoy en día?",
+        'body' => [
+            "Sinceramente, no lo sabemos. Sigue siendo nuestra pasión, y por eso queremos trabajar en ello por las noches y los fines de semana. Nos da la sensación de aportar algo bueno al mundo.",
+            "Quizá tus motivos sean otros, pero aun así puede que quieras contribuir a Monica de alguna manera.",
+        ],
+        // :sponsor is replaced by a link whose text is `sponsorLink`.
+        'sponsor' => "Aunque puedes :sponsor, también puedes colaborar de otras maneras.",
+        'sponsorLink' => "contribuir al proyecto económicamente",
+
+        'docs' => [
+            'title' => "Revisa nuestra documentación para asegurarte de que sea correcta.",
+            'body' => "Envía un issue o incluso un pull request con los cambios que quieras proponer.",
+            'link' => "Lee nuestras pautas para pull requests",
+        ],
+
+        'translate' => [
+            'title' => "Ayúdanos a traducir la aplicación y el sitio de marketing.",
+            'body' => "Todas las traducciones están directamente en el código. Admitimos muchos idiomas, pero con total transparencia: todos están hechos por IA. Así que puede que no sean muy precisos y, obviamente, no entendemos la mayoría. Si necesitas añadir un idioma nuevo, abre un issue y lo haremos realidad.",
+        ],
+
+        // :tracker and :skills are replaced by links whose text is
+        // `trackerLink` and `skillsLink`.
+        'tokens' => [
+            'eyebrow' => "Esta es importante",
+            'title' => "Gasta tus propios tokens.",
+            'body' => "Creemos que el futuro de las contribuciones al código abierto gira en torno a los tokens. Tenemos muchos bugs abiertos en nuestro :tracker. También tenemos muchas funciones que nos gustaría implementar. Así que apunta Claude o ChatGPT a uno de estos issues. Usa por favor nuestras skills de la :skills para seguir estrictamente nuestras pautas.",
+            'trackerLink' => "gestor de bugs",
+            'skillsLink' => "carpeta de skills",
+            'closing' => "Que gastes tus propios tokens en lugar de los nuestros será una ayuda enorme. Creemos que es lo que más nos ayudará.",
+            'issues' => "Ver los issues abiertos",
+            'skillsButton' => "Abrir la carpeta de skills",
         ],
     ],
 

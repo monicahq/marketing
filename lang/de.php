@@ -30,6 +30,7 @@ return [
             'api' => "API und MCP",
             'privacyFeatures' => "Datenschutz und Sicherheit",
             'languages' => "Sprachen und Formate",
+            'contribute' => "Mitmachen",
             'page' => "Seite :number",
             'label' => "Navigationspfad",
         ],
@@ -64,6 +65,11 @@ return [
         'team' => [
             'title' => "Team — Monica",
             'description' => "Monica wird von zwei Personen in Montreal gebaut, mit Hunderten von Open-Source-Mitwirkenden. Warum wir ein persönliches CRM bauen, das menschlichen Beziehungen nicht schadet.",
+        ],
+
+        'contribute' => [
+            'title' => "Mitmachen — Monica",
+            'description' => "Monica ist quelloffen und wird seit 2017 nachts und an Wochenenden gebaut. So können Sie helfen: die Dokumentation prüfen, die App übersetzen und Ihre eigenen KI-Tokens für unsere offenen Issues einsetzen.",
         ],
 
         'terms' => [
@@ -167,6 +173,7 @@ return [
         'blog' => "Blog",
         'handbook' => "Handbuch",
         'docs' => "Dokumentation",
+        'contribute' => "Mitmachen",
         'signIn' => "Anmelden",
         'toDark' => "Zum dunklen Modus wechseln",
         'toLight' => "Zum hellen Modus wechseln",
@@ -2995,6 +3002,46 @@ return [
             'title' => "Monica ist das Adressbuch, das wir uns immer gewünscht haben.",
             'body' => "Wir hoffen, es hilft Ihnen, jemanden anzurufen, den Sie schon lange anrufen wollten.",
             'names' => ["Régis", "Alexis"],
+        ],
+    ],
+
+    // The contribute page, at /en/contribute/. The links are in `links` in config.php.
+    'contribute' => [
+        'imageAlt' => "Ein Panda mit Zylinder zeigt auf Sie, über den Worten: I need you to improve me",
+        'badge' => "Quelloffen",
+        'since' => "Nachts und an Wochenenden, seit 2017.",
+        'title' => "Helfen Sie uns, Monica am Laufen zu halten.",
+        'lede' => "Im Zeitalter der KI ist es schwer zu sagen, wohin sich Open Source entwickelt. Da sich inzwischen fast jede Software mit ein paar Prompts ersetzen lässt, stellt sich die Frage: Was bedeutet es heute, quelloffene Projekte zu pflegen?",
+        'body' => [
+            "Ehrlich gesagt wissen wir es nicht. Es ist weiterhin unsere Leidenschaft, und deshalb arbeiten wir nachts und an Wochenenden daran. Es gibt uns das Gefühl, der Welt etwas Gutes zu geben.",
+            "Vielleicht haben Sie andere Gründe, möchten aber trotzdem irgendwie zu Monica beitragen.",
+        ],
+        // :sponsor is replaced by a link whose text is `sponsorLink`.
+        'sponsor' => "Sie können :sponsor, aber es gibt auch andere Wege, mitzumachen.",
+        'sponsorLink' => "das Projekt finanziell unterstützen",
+
+        'docs' => [
+            'title' => "Prüfen Sie unsere Dokumentation auf Richtigkeit.",
+            'body' => "Reichen Sie ein Issue oder sogar einen Pull Request für jede Änderung ein, die Sie vornehmen möchten.",
+            'link' => "Unsere Richtlinien für Pull Requests lesen",
+        ],
+
+        'translate' => [
+            'title' => "Helfen Sie uns, die App und die Marketing-Website zu übersetzen.",
+            'body' => "Alle Übersetzungen stehen direkt im Code. Wir unterstützen viele Sprachen, aber wir sagen es ganz offen: Sie stammen alle von einer KI. Sie sind daher vielleicht nicht besonders genau, und die meisten dieser Sprachen verstehen wir natürlich nicht. Wenn Sie eine neue Sprache hinzufügen möchten, eröffnen Sie ein Issue, dann sorgen wir dafür.",
+        ],
+
+        // :tracker and :skills are replaced by links whose text is
+        // `trackerLink` and `skillsLink`.
+        'tokens' => [
+            'eyebrow' => "Das hier ist wichtig",
+            'title' => "Setzen Sie Ihre eigenen Tokens ein.",
+            'body' => "Wir glauben, dass die Zukunft von Open-Source-Beiträgen auf Tokens beruht. In unserem :tracker sind viele Bugs offen. Außerdem gibt es viele Funktionen, die wir gern umsetzen würden. Zeigen Sie also Claude oder ChatGPT auf eines dieser Issues. Bitte nutzen Sie die Skills in unserem :skills, damit unsere Richtlinien strikt eingehalten werden.",
+            'trackerLink' => "Bugtracker",
+            'skillsLink' => "Skills-Ordner",
+            'closing' => "Wenn Sie Ihre eigenen Tokens statt unserer einsetzen, hilft uns das enorm. Wir glauben, dass uns genau das am meisten weiterbringt.",
+            'issues' => "Offene Issues ansehen",
+            'skillsButton' => "Skills-Ordner öffnen",
         ],
     ],
 

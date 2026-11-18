@@ -518,6 +518,19 @@ return [
             'ru' => 'o-nas',
         ],
 
+        // How to contribute to the project: docs, translations, tokens. Linked from the
+        // header and from the footer's company column.
+        'contribute' => [
+            'en' => 'contribute',
+            'fr' => 'contribuer',
+            'de' => 'mitmachen',
+            'es' => 'colaborar',
+            'pt' => 'contribuir',
+            'nl' => 'bijdragen',
+            'zh' => 'contribute',
+            'ru' => 'uchastie',
+        ],
+
         'privacy' => [
             'en' => 'privacy',
             'fr' => 'confidentialite',
@@ -726,7 +739,7 @@ return [
     'llms' => [
         'Product' => ['home', 'pricing', 'personalCrm', 'v3'],
         'Features' => ['templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
-        'Company' => ['about', 'team'],
+        'Company' => ['about', 'team', 'contribute'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
         'Legal' => ['terms', 'privacy'],
@@ -761,6 +774,7 @@ return [
         'terms' => '2026-08-06',
         'team' => '2026-08-06',
         'about' => '2026-11-12',
+        'contribute' => '2026-11-18',
         'privacy' => '2026-08-06',
         'personalCrm' => '2026-08-23',
         'templates' => '2026-10-12',
@@ -792,8 +806,8 @@ return [
         'getStarted' => 'https://my.monicahq.com/register',
         'selfHostingGuide' => '#',
         'docs' => '#',
-        'api' => '#',
-        'mcp' => '#',
+        'api' => 'https://my.monicahq.com/docs/api/introduction',
+        'mcp' => 'https://my.monicahq.com/docs/mcp',
         'changelog' => '#',
 
         // Where the "Repository of the day" badge on the homepage points: the
@@ -809,6 +823,13 @@ return [
         // There is no sales team, which is the joke on the homepage button.
         // It still needs somewhere to go: a contact address, most likely.
         'contactSales' => '#',
+
+        // The contribute page (route key `contribute`): sponsoring, the docs'
+        // pull request guidelines, the issue tracker and the skills folder.
+        'sponsor' => 'https://github.com/sponsors/monicahq',
+        'docsGuidelines' => '#',
+        'issues' => 'https://github.com/monicahq/monica/issues',
+        'skills' => 'https://github.com/monicahq/monica/tree/main/.claude',
     ],
 
     // ------------------------------------------------------------------ plans

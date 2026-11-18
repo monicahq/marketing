@@ -50,6 +50,7 @@ return [
             'privacyFeatures' => "Privacy and security",
             'languages' => "Languages and formats",
             'handbook' => "Handbook",
+            'contribute' => "Contribute",
             'page' => "Page :number",
             'label' => "Breadcrumb",
         ],
@@ -89,6 +90,11 @@ return [
         'team' => [
             'title' => "Team — Monica",
             'description' => "Monica is built by two people in Montreal, with hundreds of open-source contributors. Why we build a personal CRM that does not harm human relationships.",
+        ],
+
+        'contribute' => [
+            'title' => "Contribute — Monica",
+            'description' => "Monica is open source, built on nights and weekends since 2017. How you can help: review the documentation, translate the app, and spend your own AI tokens on our open issues.",
         ],
 
         'terms' => [
@@ -202,6 +208,7 @@ return [
         'blog' => "Blog",
         'handbook' => "Handbook",
         'docs' => "Documentation",
+        'contribute' => "Contribute",
         'signIn' => "Log in",
         'toDark' => "Switch to dark mode",
         'toLight' => "Switch to light mode",
@@ -3045,6 +3052,46 @@ return [
             'title' => "Monica is the address book we always wanted to have.",
             'body' => "We hope it helps you call someone you have been meaning to call.",
             'names' => ["Régis", "Alexis"],
+        ],
+    ],
+
+    // The contribute page, at /en/contribute/. The links are in `links` in config.php.
+    'contribute' => [
+        'imageAlt' => "A panda in a top hat pointing at you, above the words: I need you to improve me",
+        'badge' => "Open source",
+        'since' => "Nights and weekends, since 2017.",
+        'title' => "Help us keep Monica going.",
+        'lede' => "In the age of AI, it’s difficult to know where open source will go. Since you can now basically replace any software with a few prompts, what does it mean to maintain open source projects these days?",
+        'body' => [
+            "Honestly, we don’t know. It’s still our passion, and that’s why we want to work on it during nights and weekends. It gives us a sense of contributing something good to the world.",
+            "Your reasons might be different, but you still might want to contribute to Monica somehow.",
+        ],
+        // :sponsor is replaced by a link whose text is `sponsorLink`.
+        'sponsor' => "While you can :sponsor, you can also contribute in other ways.",
+        'sponsorLink' => "contribute to the project financially",
+
+        'docs' => [
+            'title' => "Review our documentation to make sure it’s accurate.",
+            'body' => "Submit an issue or even a pull request for any changes you would like to make.",
+            'link' => "Read our guidelines for pull requests",
+        ],
+
+        'translate' => [
+            'title' => "Help us translate the app and the marketing site.",
+            'body' => "All translations are directly in the code. We do support many languages, but full disclosure: they are all done by AI. So they might not be super accurate, and obviously, we don’t understand most of them. If you need to add a new language, open an issue, and we will make it happen.",
+        ],
+
+        // :tracker and :skills are replaced by links whose text is
+        // `trackerLink` and `skillsLink`.
+        'tokens' => [
+            'eyebrow' => "This one is big",
+            'title' => "Spend your own tokens.",
+            'body' => "We do believe that the future of open source contributions revolves around tokens. We have many open bugs in our :tracker. We also have many features we would like to implement. So, point Claude or ChatGPT to one of these issues. Please do use our skills in the :skills to strictly follow our guidelines.",
+            'trackerLink' => "bug tracker",
+            'skillsLink' => "skills folder",
+            'closing' => "Spending your own tokens instead of ours will be a tremendous help. We believe this is what will help us the most.",
+            'issues' => "Browse open issues",
+            'skillsButton' => "Open the skills folder",
         ],
     ],
 

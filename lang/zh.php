@@ -48,6 +48,7 @@ return [
             'api' => "API 和 MCP",
             'privacyFeatures' => "隐私与安全",
             'languages' => "语言与格式",
+            'contribute' => "参与贡献",
             'page' => "第 :number 页",
             'label' => "面包屑导航",
         ],
@@ -87,6 +88,11 @@ return [
         'team' => [
             'title' => "团队：Monica",
             'description' => "Monica 由两个人在蒙特利尔打造，背后还有数百位开源贡献者。为什么我们要做一个不伤害人际关系的个人 CRM。",
+        ],
+
+        'contribute' => [
+            'title' => "参与贡献 — Monica",
+            'description' => "Monica 是开源项目，自 2017 年起利用夜晚和周末打造。你可以怎样帮忙：审阅文档、翻译应用，以及把你自己的 AI token 用在我们未解决的 issue 上。",
         ],
 
         'terms' => [
@@ -190,6 +196,7 @@ return [
         'blog' => "博客",
         'handbook' => "手册",
         'docs' => "文档",
+        'contribute' => "参与贡献",
         'signIn' => "登录",
         'toDark' => "切换到深色模式",
         'toLight' => "切换到浅色模式",
@@ -3023,6 +3030,46 @@ return [
             'title' => "Monica 是我们一直想要的那本通讯录。",
             'body' => "希望它能帮你给那个一直想联系的人打个电话。",
             'names' => ["Régis", "Alexis"],
+        ],
+    ],
+
+    // The contribute page, at /en/contribute/. The links are in `links` in config.php.
+    'contribute' => [
+        'imageAlt' => "一只戴礼帽的熊猫指着你，上方写着：我需要你来改进我",
+        'badge' => "开源",
+        'since' => "自 2017 年起，利用夜晚和周末。",
+        'title' => "帮助我们让 Monica 继续走下去。",
+        'lede' => "在 AI 时代，很难预料开源会走向何方。既然现在几乎任何软件都能用几个提示词替换掉，维护开源项目还有什么意义？",
+        'body' => [
+            "说实话，我们也不知道。开源仍然是我们的热情所在，所以我们愿意在夜晚和周末继续投入。它让我们觉得自己为这个世界贡献了一点美好的东西。",
+            "你的理由可能不同，但你或许仍然想以某种方式为 Monica 做出贡献。",
+        ],
+        // :sponsor is replaced by a link whose text is `sponsorLink`.
+        'sponsor' => "你可以:sponsor，也可以用其他方式参与贡献。",
+        'sponsorLink' => "在资金上支持这个项目",
+
+        'docs' => [
+            'title' => "审阅我们的文档，确保内容准确。",
+            'body' => "任何你想做的修改，都可以提交 issue，甚至直接提交 pull request。",
+            'link' => "阅读我们的 pull request 指南",
+        ],
+
+        'translate' => [
+            'title' => "帮助我们翻译应用和营销网站。",
+            'body' => "所有翻译都直接放在代码里。我们支持很多语言，但坦白说：它们全部由 AI 完成。所以可能不够准确，而且我们当然看不懂其中大部分。如果你需要新增一种语言，请开一个 issue，我们会让它实现。",
+        ],
+
+        // :tracker and :skills are replaced by links whose text is
+        // `trackerLink` and `skillsLink`.
+        'tokens' => [
+            'eyebrow' => "这一项很重要",
+            'title' => "花你自己的 token。",
+            'body' => "我们相信，开源贡献的未来与 token 息息相关。我们的:tracker里有许多未解决的 bug，也有许多想要实现的功能。所以，请让 Claude 或 ChatGPT 去处理其中一个 issue。请务必使用我们:skills里的 skills，严格遵循我们的规范。",
+            'trackerLink' => "缺陷追踪器",
+            'skillsLink' => "skills 文件夹",
+            'closing' => "用你自己的 token 而不是我们的，会是极大的帮助。我们相信这对我们的帮助最大。",
+            'issues' => "浏览未解决的 issue",
+            'skillsButton' => "打开 skills 文件夹",
         ],
     ],
 

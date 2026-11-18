@@ -46,6 +46,7 @@
             'locale' => $handbookLocale,
         ],
         ['label' => $page->t('nav.docs'), 'href' => $page->links['docs'], 'current' => []],
+        ['label' => $page->t('nav.contribute'), 'href' => $page->route('contribute'), 'current' => ['contribute']],
     ];
 
     $navLink = 'flex items-center gap-1 rounded-md px-2.5 py-2 text-base font-medium text-text-secondary no-underline transition-colors duration-150 ease-standard hover:bg-hover hover:text-text hover:no-underline aria-[current=page]:text-text';

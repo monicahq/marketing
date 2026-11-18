@@ -32,6 +32,7 @@ return [
             'api' => "API et MCP",
             'privacyFeatures' => "Confidentialité et sécurité",
             'languages' => "Langues et formats",
+            'contribute' => "Contribuer",
             'page' => "Page :number",
             'label' => "Fil d’Ariane",
         ],
@@ -66,6 +67,11 @@ return [
         'team' => [
             'title' => "Équipe — Monica",
             'description' => "Monica est construite par deux personnes à Montréal, avec des centaines de contributeurs open source. Pourquoi nous bâtissons un CRM personnel qui ne nuit pas aux relations humaines.",
+        ],
+
+        'contribute' => [
+            'title' => "Contribuer — Monica",
+            'description' => "Monica est open source, construite sur des nuits et des week-ends depuis 2017. Comment vous pouvez aider : relire la documentation, traduire l’application et dépenser vos propres tokens d’IA sur nos tickets ouverts.",
         ],
 
         'terms' => [
@@ -169,6 +175,7 @@ return [
         'blog' => "Blog",
         'handbook' => "Manuel",
         'docs' => "Documentation",
+        'contribute' => "Contribuer",
         'signIn' => "Connexion",
         'toDark' => "Passer en mode sombre",
         'toLight' => "Passer en mode clair",
@@ -2997,6 +3004,46 @@ return [
             'title' => "Monica est le carnet d’adresses que nous avons toujours voulu avoir.",
             'body' => "Nous espérons qu’elle vous aidera à appeler quelqu’un que vous vouliez appeler depuis longtemps.",
             'names' => ["Régis", "Alexis"],
+        ],
+    ],
+
+    // The contribute page, at /en/contribute/. The links are in `links` in config.php.
+    'contribute' => [
+        'imageAlt' => "Un panda en haut-de-forme qui vous montre du doigt, au-dessus des mots : I need you to improve me",
+        'badge' => "Open source",
+        'since' => "Des nuits et des week-ends, depuis 2017.",
+        'title' => "Aidez-nous à faire vivre Monica.",
+        'lede' => "À l’ère de l’IA, il est difficile de savoir où ira l’open source. Puisque vous pouvez désormais remplacer n’importe quel logiciel avec quelques prompts, que signifie maintenir des projets open source aujourd’hui ?",
+        'body' => [
+            "Honnêtement, nous ne savons pas. C’est toujours notre passion, et c’est pourquoi nous voulons y travailler les nuits et les week-ends. Cela nous donne le sentiment d’apporter quelque chose de bien au monde.",
+            "Vos raisons sont peut-être différentes, mais vous avez peut-être quand même envie de contribuer à Monica.",
+        ],
+        // :sponsor is replaced by a link whose text is `sponsorLink`.
+        'sponsor' => "Vous pouvez :sponsor, mais il existe aussi d’autres façons de contribuer.",
+        'sponsorLink' => "soutenir financièrement le projet",
+
+        'docs' => [
+            'title' => "Relisez notre documentation pour vous assurer qu’elle est exacte.",
+            'body' => "Ouvrez un ticket, ou même une pull request, pour toute modification que vous souhaitez proposer.",
+            'link' => "Lire nos consignes pour les pull requests",
+        ],
+
+        'translate' => [
+            'title' => "Aidez-nous à traduire l’application et le site marketing.",
+            'body' => "Toutes les traductions sont directement dans le code. Nous prenons en charge de nombreuses langues, mais en toute transparence : elles sont toutes faites par IA. Elles ne sont donc peut-être pas très précises, et nous ne comprenons évidemment pas la plupart d’entre elles. Si vous devez ajouter une nouvelle langue, ouvrez un ticket et nous la ferons exister.",
+        ],
+
+        // :tracker and :skills are replaced by links whose text is
+        // `trackerLink` and `skillsLink`.
+        'tokens' => [
+            'eyebrow' => "Celle-ci est importante",
+            'title' => "Dépensez vos propres tokens.",
+            'body' => "Nous croyons que l’avenir des contributions open source passe par les tokens. Nous avons de nombreux bugs ouverts dans notre :tracker. Nous avons aussi beaucoup de fonctionnalités que nous aimerions développer. Alors, indiquez à Claude ou à ChatGPT l’un de ces tickets. Utilisez bien nos skills dans le :skills pour suivre strictement nos consignes.",
+            'trackerLink' => "outil de suivi des bugs",
+            'skillsLink' => "dossier des skills",
+            'closing' => "Dépenser vos propres tokens plutôt que les nôtres nous aidera énormément. Nous pensons que c’est ce qui nous aidera le plus.",
+            'issues' => "Parcourir les tickets ouverts",
+            'skillsButton' => "Ouvrir le dossier des skills",
         ],
     ],
 

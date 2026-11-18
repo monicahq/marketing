@@ -33,6 +33,7 @@ return [
             'api' => "API en MCP",
             'privacyFeatures' => "Privacy en beveiliging",
             'languages' => "Talen en notaties",
+            'contribute' => "Bijdragen",
             'page' => "Pagina :number",
             'label' => "Kruimelpad",
         ],
@@ -67,6 +68,11 @@ return [
         'team' => [
             'title' => "Team — Monica",
             'description' => "Monica wordt gebouwd door twee mensen in Montreal, met honderden open source bijdragers. Waarom we een persoonlijke CRM bouwen die menselijke relaties geen schade toebrengt.",
+        ],
+
+        'contribute' => [
+            'title' => "Bijdragen — Monica",
+            'description' => "Monica is open source, gebouwd in nachten en weekenden sinds 2017. Hoe je kunt helpen: de documentatie nalopen, de app vertalen en je eigen AI-tokens besteden aan onze openstaande issues.",
         ],
 
         'terms' => [
@@ -166,6 +172,7 @@ return [
         'blog' => "Blog",
         'handbook' => "Handboek",
         'docs' => "Documentatie",
+        'contribute' => "Bijdragen",
         'signIn' => "Inloggen",
         'toDark' => "Overschakelen naar donkere modus",
         'toLight' => "Overschakelen naar lichte modus",
@@ -2998,6 +3005,46 @@ return [
             'title' => "Monica is het adresboek dat we altijd al wilden hebben.",
             'body' => "We hopen dat het je helpt iemand te bellen die je al een tijd wilde bellen.",
             'names' => ["Régis", "Alexis"],
+        ],
+    ],
+
+    // The contribute page, at /en/contribute/. The links are in `links` in config.php.
+    'contribute' => [
+        'imageAlt' => "Een panda met hoge hoed die naar je wijst, boven de woorden: ik moet beter worden",
+        'badge' => "Open source",
+        'since' => "In nachten en weekenden, sinds 2017.",
+        'title' => "Help ons Monica gaande te houden.",
+        'lede' => "In het tijdperk van AI is het moeilijk te zeggen waar open source naartoe gaat. Nu je vrijwel elke software met een paar prompts kunt vervangen, wat betekent het dan nog om open sourceprojecten te onderhouden?",
+        'body' => [
+            "Eerlijk gezegd weten we het niet. Het blijft onze passie, en daarom willen we er in nachten en weekenden aan werken. Het geeft ons het gevoel iets goeds bij te dragen aan de wereld.",
+            "Jouw redenen zijn misschien anders, maar misschien wil je toch op de een of andere manier bijdragen aan Monica.",
+        ],
+        // :sponsor is replaced by a link whose text is `sponsorLink`.
+        'sponsor' => "Je kunt :sponsor, maar je kunt ook op andere manieren bijdragen.",
+        'sponsorLink' => "het project financieel steunen",
+
+        'docs' => [
+            'title' => "Loop onze documentatie na om te controleren of die klopt.",
+            'body' => "Dien een issue in, of zelfs een pull request, voor elke wijziging die je wilt doorvoeren.",
+            'link' => "Lees onze richtlijnen voor pull requests",
+        ],
+
+        'translate' => [
+            'title' => "Help ons de app en de marketingsite te vertalen.",
+            'body' => "Alle vertalingen staan direct in de code. We ondersteunen veel talen, maar volledige openheid: ze zijn allemaal door AI gemaakt. Ze zijn dus misschien niet superaccuraat, en we begrijpen de meeste er natuurlijk niet van. Als je een nieuwe taal wilt toevoegen, open dan een issue, dan regelen wij het.",
+        ],
+
+        // :tracker and :skills are replaced by links whose text is
+        // `trackerLink` and `skillsLink`.
+        'tokens' => [
+            'eyebrow' => "Dit is een grote",
+            'title' => "Besteed je eigen tokens.",
+            'body' => "Wij geloven dat de toekomst van open source bijdragen draait om tokens. We hebben veel openstaande bugs in onze :tracker. We hebben ook veel functies die we graag willen bouwen. Wijs Claude of ChatGPT dus naar een van die issues. Gebruik onze skills in de :skills, zodat de richtlijnen strikt gevolgd worden.",
+            'trackerLink' => "bugtracker",
+            'skillsLink' => "skillsmap",
+            'closing' => "Je eigen tokens besteden in plaats van die van ons is een enorme hulp. Wij geloven dat dit ons het meest helpt.",
+            'issues' => "Bekijk openstaande issues",
+            'skillsButton' => "Open de skillsmap",
         ],
     ],
 
