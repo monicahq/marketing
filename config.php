@@ -808,7 +808,7 @@ return [
         'docs' => 'https://my.monicahq.com/docs',
         'api' => 'https://my.monicahq.com/docs/api/introduction',
         'mcp' => 'https://my.monicahq.com/docs/mcp',
-        'changelog' => '#',
+        'changelog' => 'https://my.monicahq.com/changelog',
 
         // Where the "Repository of the day" badge on the homepage points: the
         // ranking itself, so the claim can be checked.
