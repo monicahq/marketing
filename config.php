@@ -361,7 +361,7 @@ return [
      * An article names its section in its front matter; the section's title
      * is `handbook.sections.<key>` in lang/.
      */
-    'handbookSections' => ['general', 'marketing'],
+    'handbookSections' => ['general', 'product', 'engineering', 'community', 'privacy', 'marketing', 'business', 'relationships'],
 
     /** The blog's two sizes, for templates that reproduce the paginator's arithmetic. */
     'postsPerPage' => $perPage,
@@ -787,7 +787,7 @@ return [
         'api' => '2026-10-13',
         'privacyFeatures' => '2026-10-13',
         'languages' => '2026-10-13',
-        'handbook' => '2026-11-12',
+        'handbook' => '2026-11-18',
     ],
 
     // ------------------------------------------------------------------ links

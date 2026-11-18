@@ -2,7 +2,7 @@
 title: Where are we going with this
 slug: where
 section: general
-order: 6
+order: 5
 description: The one scope of the project, what it will never become, and why every new option has to earn its place.
 updated: 2026-11-18
 ---

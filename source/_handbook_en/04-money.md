@@ -1,8 +1,8 @@
 ---
 title: How does this project make money
 slug: money
-section: general
-order: 4
+section: business
+order: 1
 description: Why making money is not the goal, how the hosted version pays for itself, and a note on venture capital.
 updated: 2026-11-18
 ---

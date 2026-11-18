@@ -3116,7 +3116,13 @@ return [
         'contents' => "Table of contents",
         'sections' => [
             'general' => "General information",
+            'product' => "Product",
+            'engineering' => "Engineering",
+            'community' => "Community and open source",
+            'privacy' => "Privacy and security",
             'marketing' => "Marketing",
+            'business' => "Running a business",
+            'relationships' => "Human relationships",
         ],
         'articles' => ":count articles",
         'words' => ":count words",

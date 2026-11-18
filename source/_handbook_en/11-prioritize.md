@@ -1,8 +1,8 @@
 ---
 title: How do we prioritize features?
 slug: prioritize
-section: marketing
-order: 5
+section: product
+order: 2
 description: How we balance bugs, our own interests, community requests, long-term maintenance, and the ambition to keep Monica enjoyable to build.
 updated: 2026-11-18
 ---

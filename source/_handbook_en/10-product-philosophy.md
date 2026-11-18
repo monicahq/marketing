@@ -1,8 +1,8 @@
 ---
 title: Product philosophy
 slug: product-philosophy
-section: marketing
-order: 4
+section: product
+order: 1
 description: Simple to use, built by iteration, problem first, smart defaults over options, and never a shortcut around the work relationships take.
 updated: 2026-11-18
 ---

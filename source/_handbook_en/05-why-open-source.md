@@ -2,7 +2,7 @@
 title: Why open source
 slug: why-open-source
 section: general
-order: 5
+order: 4
 description: Why the code is public under the AGPL, from better code and outside contributions to trust and a project that can outlive its founders.
 updated: 2026-11-18
 ---
