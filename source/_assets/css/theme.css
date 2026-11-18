@@ -97,13 +97,14 @@
   /* The award badges on the homepage, each in its issuer's own colours.
      GitHub Trending has two violets: the ink for the laurel, the mark and the
      words, the brighter one for the border and the rank. Hacker News,
-     Product Hunt and Docker Hub each draw in one colour. Someone else's colours, so the same
-     in both themes, and used nowhere else. */
-  --color-trending-ink: #3609aa;
-  --color-trending: #4605f1;
-  --color-hacker-news: #f74813;
-  --color-product-hunt: #ed5337;
-  --color-docker: #1d63ed;
+     Product Hunt and Docker Hub each draw in one colour. Someone else's
+     colours, used nowhere else, and lightened in dark mode (values at the
+     bottom of this file) so the deep violet and blue stay legible. */
+  --color-trending-ink: var(--award-trending-ink);
+  --color-trending: var(--award-trending);
+  --color-hacker-news: var(--award-hacker-news);
+  --color-product-hunt: var(--award-product-hunt);
+  --color-docker: var(--award-docker);
 
   /* Actions */
   --color-primary: var(--action-primary);
@@ -363,4 +364,22 @@
   --ground-cream-ink: #eef2f8;
   --ground-cream-muted: #a7b3c6;
   --ground-cream-rule: rgb(238 242 248 / 0.14);
+}
+
+/* The award badges: their issuers' own colours on a light page, the same
+   hues lightened on a dark one. */
+:root {
+  --award-trending-ink: #3609aa;
+  --award-trending: #4605f1;
+  --award-hacker-news: #f74813;
+  --award-product-hunt: #ed5337;
+  --award-docker: #1d63ed;
+}
+
+.dark {
+  --award-trending-ink: #b9a6ff;
+  --award-trending: #9d7bff;
+  --award-hacker-news: #ff7a4d;
+  --award-product-hunt: #ff7b63;
+  --award-docker: #6aa1ff;
 }
