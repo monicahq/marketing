@@ -1,8 +1,16 @@
 @php
     $start = $copy['start'];
 
-    // The clients Monica's MCP documentation has a setup guide for.
-    $clients = ['ChatGPT', 'Claude Desktop', 'Claude Code', 'Cursor', 'Codex', 'VS Code'];
+    // The clients Monica's MCP documentation has a setup guide for, each with
+    // its mark (see _partials/ai-memory/client-mark).
+    $clients = [
+        'ChatGPT' => 'openai',
+        'Claude Desktop' => 'claude',
+        'Claude Code' => 'claudecode',
+        'Cursor' => 'cursor',
+        'Codex' => 'codex',
+        'VS Code' => 'vscode',
+    ];
 @endphp
 
 <section class="{{ $section }}">
@@ -40,9 +48,9 @@
                 </div>
             </div>
             <ul aria-label="{{ $start['clientsLabel'] }}" class="grid grid-cols-2 gap-2">
-                @foreach ($clients as $client)
-                    <li class="flex items-center gap-2 rounded-md border border-border bg-canvas px-3 py-2.5 text-base font-medium">
-                        @include('_partials.icon', ['name' => 'check', 'size' => 14, 'class' => 'text-success'])
+                @foreach ($clients as $client => $markName)
+                    <li class="flex items-center gap-2.5 rounded-md border border-border bg-canvas px-3 py-2.5 text-base font-medium">
+                        @include('_partials.ai-memory.client-mark', ['name' => $markName, 'size' => 16])
                         {{ $client }}
                     </li>
                 @endforeach
