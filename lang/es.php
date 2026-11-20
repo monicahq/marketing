@@ -954,7 +954,7 @@ return [
                     ['text' => "Monica es compatible con los siguientes navegadores:"],
                     ['items' => [
                         "Edge (última versión)",
-                        "Firefox (50+)",
+                        "Firefox (última versión)",
                         "Chrome (última versión)",
                         "Safari (última versión)",
                     ]],

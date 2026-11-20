@@ -953,7 +953,7 @@ return [
                     ['text' => "Monica unterstützt die folgenden Browser:"],
                     ['items' => [
                         "Edge (neueste Version)",
-                        "Firefox (50+)",
+                        "Firefox (neueste Version)",
                         "Chrome (neueste Version)",
                         "Safari (neueste Version)",
                     ]],

@@ -946,7 +946,7 @@ return [
                     ['text' => "Monica ondersteunt de volgende browsers:"],
                     ['items' => [
                         "Edge (laatste versie)",
-                        "Firefox (50+)",
+                        "Firefox (laatste versie)",
                         "Chrome (laatste versie)",
                         "Safari (laatste versie)",
                     ]],
