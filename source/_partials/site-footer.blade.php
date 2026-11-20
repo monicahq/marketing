@@ -26,6 +26,7 @@
                 // can reach is not a terms page.
                 ['label' => $page->t('footer.terms'), 'href' => $page->route('terms')],
                 ['label' => $page->t('footer.team'), 'href' => $page->route('team')],
+                ['label' => $page->t('footer.support'), 'href' => $page->route('support')],
             ],
         ],
     ];

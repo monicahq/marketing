@@ -46,3 +46,21 @@ window.Alpine = Alpine;
  * of that would bind every directive twice. (A project using Turbo's morph
  * refreshes does need the hook, because morph patches nodes in place.) */
 Alpine.start();
+
+/* The support address, decoded in the browser so it never sits in the HTML
+ * where a scraper could read it. `data-email` holds the address reversed and
+ * base64-encoded; see _partials/support/email.blade.php for the markup.
+ *
+ * On `turbo:load`, which fires on the first page load as well as after every
+ * Turbo visit, because Turbo swaps in a fresh <body> each time. The attribute is
+ * removed once decoded, so a page restored from Turbo's cache is not decoded
+ * twice. */
+document.addEventListener('turbo:load', () => {
+  for (const link of document.querySelectorAll('a[data-email]')) {
+    const address = atob(link.dataset.email).split('').reverse().join('');
+
+    link.href = `mailto:${address}`;
+    if (link.hasAttribute('data-email-text')) link.textContent = address;
+    link.removeAttribute('data-email');
+  }
+});

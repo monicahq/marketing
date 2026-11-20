@@ -391,6 +391,17 @@ return [
             'nl' => 'privacybeleid',
         ],
 
+        // "Support" is the word French, German and Dutch readers use too, so
+        // only Spanish and Portuguese translate it.
+        'support' => [
+            'en' => 'support',
+            'fr' => 'support',
+            'de' => 'support',
+            'es' => 'soporte',
+            'pt' => 'suporte',
+            'nl' => 'support',
+        ],
+
         // The guide that answers the question the nav asks. Its slug says
         // "personal CRM" in each language rather than transliterating the
         // English one, because that is the phrase a reader searches for.
@@ -436,6 +447,7 @@ return [
         'team' => '2026-08-06',
         'privacy' => '2026-11-20',
         'personalCrm' => '2026-08-23',
+        'support' => '2026-11-20',
     ],
 
     // ------------------------------------------------------------------ links
@@ -457,6 +469,31 @@ return [
         'selfHostingGuide' => '#',
         'docs' => '#',
         'api' => '#',
+    ],
+
+    // ---------------------------------------------------------------- support
+
+    /**
+     * The support address, in two halves so that the whole address is never
+     * written down anywhere a template could print it by accident.
+     *
+     * It never reaches the HTML in readable form either: the support page
+     * prints it reversed and base64-encoded, and app.js turns it back into a
+     * mailto link in the browser. See _partials/support/email.blade.php.
+     */
+    'supportEmail' => ['support', 'monicahq.com'],
+
+    /**
+     * The four documentation entries on the support page, in the order of
+     * `support.docs` in lang/. The documentation lives inside the application,
+     * on my.monicahq.com, so these are external links and Turbo leaves them
+     * alone.
+     */
+    'supportDocs' => [
+        ['href' => 'https://my.monicahq.com/docs/guide', 'icon' => 'journal'],
+        ['href' => 'https://my.monicahq.com/docs/api', 'icon' => 'key'],
+        ['href' => 'https://my.monicahq.com/docs/mcp', 'icon' => 'layers'],
+        ['href' => 'https://my.monicahq.com/docs/dav', 'icon' => 'device'],
     ],
 
     /**

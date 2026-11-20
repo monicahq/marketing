@@ -23,6 +23,7 @@ return [
             'blog' => "Blog",
             'terms' => "Gebruiksvoorwaarden",
             'team' => "Team",
+            'support' => "Support",
             'privacy' => "Privacybeleid",
             'personalCrm' => "Gids persoonlijke CRM",
             'page' => "Pagina :number",
@@ -52,6 +53,11 @@ return [
         'team' => [
             'title' => "Team — Monica",
             'description' => "Monica wordt gebouwd door twee mensen in Montreal, met honderden open source bijdragers. Waarom we een persoonlijke CRM bouwen die menselijke relaties geen schade toebrengt.",
+        ],
+
+        'support' => [
+            'title' => "Support — Monica",
+            'description' => "Schrijf de mensen die Monica bouwen, van maandag tot en met vrijdag, of begin met de documentatie: Monica gebruiken, de API, MCP, en CardDAV en CalDAV.",
         ],
 
         'terms' => [
@@ -886,6 +892,7 @@ return [
         'privacy' => "Privacy",
         'terms' => "Voorwaarden",
         'team' => "Team",
+        'support' => "Support",
         'personalCrm' => "Wat is een persoonlijke CRM?",
         'copyright' => "© :year Monica",
         'since' => "Open source sinds 2017",
@@ -1149,6 +1156,38 @@ return [
             'body' => "Onze gebruikers zijn blij met hoe snel en eenvoudig het product is. Ontwikkelaars houden van de API waarmee ze Monica naar eigen inzicht kunnen automatiseren.",
             'body2' => "Importeer of exporteer je contacten en hun gegevens eenvoudig met de krachtige REST-API van Monica, of gebruik de API om allerlei onderdelen van de applicatie te automatiseren.",
             'imageAlt' => "De API-routes van Monica, geopend in een code-editor.",
+        ],
+    ],
+
+    /**
+     * The support page. The address itself is not here: it lives in
+     * config.php and never reaches the HTML in readable form. See
+     * _partials/support/email.blade.php.
+     *
+     * `docs` is in the same order as `supportDocs` in config.php, which
+     * holds each entry's URL and icon.
+     */
+    'support' => [
+        'eyebrow' => "Support",
+        'title' => "Hulp bij Monica, van de mensen die het bouwen",
+        'lede' => "Schrijf ons over alles wat niet werkt zoals je verwacht, of begin met de documentatie die in de app zit.",
+
+        'contactTitle' => "Contact met support",
+        'emailLabel' => "E-mail",
+        'emailHelp' => "Vertel ons wat je aan het doen was, wat je verwachtte en wat er in plaats daarvan gebeurde. Een screenshot helpt meer dan je denkt.",
+        'emailButton' => "Schrijf naar support",
+        'hoursLabel' => "Openingstijden",
+        'hours' => "8.00 tot 18.00 uur",
+        'days' => "Maandag tot en met vrijdag",
+        'hoursHelp' => "Een bericht dat buiten deze tijden binnenkomt, wordt op de volgende werkdag gelezen.",
+
+        'docsTitle' => "Documentatie",
+        'docsLede' => "Vier handleidingen en naslagwerken, beschikbaar in de app zodra je bent ingelogd.",
+        'docs' => [
+            ['kind' => "Handleiding", 'title' => "Monica gebruiken", 'description' => "Waar elk onderdeel van het product voor dient, van je eerste contact tot herinneringen, sjablonen en een contact delen met iemand."],
+            ['kind' => "Naslag", 'title' => "API", 'description' => "Lees en schrijf je contacten vanuit je eigen scripts. Elk endpoint, met voorbeelden in cURL, JavaScript en PHP."],
+            ['kind' => "Naslag", 'title' => "MCP", 'description' => "Koppel een assistent aan je instantie zodat die je adresboek kan lezen en er mensen in kan vastleggen, met de toegang die jij hebt."],
+            ['kind' => "Handleiding", 'title' => "CardDAV en CalDAV", 'description' => "Houd de contacten- en agenda-apps op je telefoon en computer gelijk met Monica."],
         ],
     ],
 
