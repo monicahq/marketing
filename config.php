@@ -432,9 +432,9 @@ return [
         'features' => '2026-08-06',
         'featuresDashboard' => '2026-08-06',
         'featuresJournal' => '2026-08-06',
-        'terms' => '2026-08-06',
+        'terms' => '2026-11-20',
         'team' => '2026-08-06',
-        'privacy' => '2026-08-06',
+        'privacy' => '2026-11-20',
         'personalCrm' => '2026-08-23',
     ],
 

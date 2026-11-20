@@ -945,7 +945,7 @@ return [
     'terms' => [
         'title' => "Nuestras condiciones de uso",
         'updated' => "Última actualización: :date",
-        'updatedOn' => "12 de abril de 2018",
+        'updatedOn' => "20 de noviembre de 2026",
 
         'sections' => [
             [
@@ -981,7 +981,7 @@ return [
                     ['text' => "Debes tener al menos 18 años para crear una cuenta y usar el sitio."],
                     ['text' => "No debes abusar del sitio publicando a sabiendas código malicioso que pueda perjudicarte a ti o a otras personas usuarias."],
                     ['text' => "Solo debes usar el sitio para hacer cosas ampliamente aceptadas como moralmente buenas."],
-                    ['text' => "No puedes hacer peticiones automatizadas al sitio."],
+                    ['text' => "No puedes hacer peticiones automatizadas al sitio, con una excepción: puedes usar la API de Monica, su servidor MCP y las integraciones y plugins que Monica publica para Claude, ChatGPT, Gemini y otros asistentes y agentes compatibles, tal como describe su documentación. Ese acceso sigue sujeto a estas condiciones y a unos límites razonables que mantienen el servicio disponible para todo el mundo."],
                     ['text' => "No puedes abusar del sistema de invitaciones."],
                     ['text' => "Eres responsable de mantener tu cuenta segura."],
                     ['text' => "Me reservo el derecho de cerrar las cuentas que abusen del sistema (miles de contactos con cientos de miles de recordatorios, por ejemplo) o que lo usen de forma poco razonable."],
@@ -1005,7 +1005,7 @@ return [
     'privacy' => [
         'title' => "Nuestra política de privacidad",
         'updated' => "Última actualización: :date",
-        'updatedOn' => "30 de mayo de 2019",
+        'updatedOn' => "20 de noviembre de 2026",
 
         'sections' => [
             [
@@ -1014,16 +1014,20 @@ return [
                     ['text' => "Monica viene en dos modalidades: puedes usar nuestra versión alojada, o descargarla y ejecutarla tú. En este segundo caso no rastreamos absolutamente nada. Ni siquiera sabemos que has descargado el producto. Haz con él lo que quieras (pero respeta las leyes de tu país)."],
                     ['text' => "Cuando creas tu cuenta en nuestra versión alojada, facilitas al sitio información sobre ti que recogemos. Incluye tu nombre, tu dirección de correo y tu contraseña, que se cifra antes de almacenarse. No almacenamos ninguna otra información personal."],
                     ['text' => "Cuando inicias sesión en el servicio, usamos cookies para recordar tus credenciales. Ese es el único propósito de las cookies."],
-                    ['text' => "Monica funciona en Fortrabbit y somos los únicos, aparte del personal de Fortrabbit, con acceso a esos servidores."],
+                    ['text' => "La versión alojada de Monica funciona en Laravel Cloud. Aparte de nosotros, solo Laravel Cloud y los proveedores de infraestructura en los que se apoya tienen acceso a esos servidores."],
                     ['text' => "Hacemos copias de seguridad de la base de datos cada hora."],
                     ['text' => "Tu contraseña se cifra con bcrypt, un algoritmo de hash de contraseñas muy seguro. También puedes activar la autenticación en dos pasos en tu cuenta si quieres una capa de seguridad adicional. Al margen de esos mecanismos de cifrado, tus datos no están cifrados en la base de datos. Si alguien accede a la base de datos, podrá leer tus datos. Hacemos todo lo posible para que eso no ocurra nunca, pero puede ocurrir."],
                     ['text' => "Si se produce una filtración de datos, avisaremos a las personas usuarias afectadas para advertirlas."],
-                    ['text' => "Los correos transaccionales se envían a través de Postmark."],
-                    ['text' => "Usamos una herramienta de código abierto llamada Sentry para seguir los errores que se producen en producción. Su servicio registra los errores, pero no tienen acceso a ninguna información salvo el identificador de la cuenta, que me permite depurar qué está pasando."],
+                    ['text' => "Los correos transaccionales se envían a través de Resend."],
+                    ['text' => "Usamos Sentry y Laravel Nightwatch para seguir los errores y los problemas de rendimiento que se producen en producción. Registran los detalles técnicos de cada problema, junto con el identificador de la cuenta, lo que nos permite entender qué está pasando."],
                     ['text' => "El sitio no muestra publicidad ahora mismo y nunca la mostrará. Tampoco vende datos a terceros, con o sin tu consentimiento, ni tiene intención de hacerlo. Sencillamente estamos en contra. A la mierda la publicidad."],
                     ['text' => "No usamos servicios de rastreo de terceros, como Google Analytics o Intercom, que sigan comportamientos o datos de las personas usuarias, ni en el sitio de marketing ni en la versión alojada. Estamos profundamente en contra de sus principios, porque usarían esos datos para perfilarte, algo a lo que nos oponemos por completo."],
                     ['text' => "Todos los datos que pones en Monica te pertenecen. No tenemos ningún derecho sobre ellos. Por favor, no pongas ahí nada ilegal, o tendremos problemas."],
                     ['text' => "Toda la información sobre los contactos que pones en Monica es privada y tuya. No cruzamos información entre cuentas ni usamos información de una cuenta para rellenar otra (a diferencia de Facebook, por ejemplo)."],
+                    ['text' => "Puedes conectar tu cuenta a un asistente o agente externo, como Claude, ChatGPT, Gemini o cualquier otra aplicación compatible con MCP, a través del servidor MCP de Monica, de la API o de una de las integraciones y plugins que publicamos. No se conecta nada sin que lo configures tú: un asistente solo obtiene acceso después de que lo apruebes desde tu cuenta de Monica, y una clave de API solo funciona una vez que la has creado. Al crear una clave de API, también eliges si puede leer el valor de los campos marcados como sensibles."],
+                    ['text' => "Una vez conectado, un asistente trabaja dentro de tu cuenta mediante las operaciones que Monica pone a su disposición, para hacer lo que le pides. Según tu petición, puede obtener la información que necesita, como nombres, datos de contacto, notas, acontecimientos vitales, recordatorios, plantillas o bóvedas, y puede crear o modificar información en tu cuenta en tu nombre. Nunca enviamos tus datos a un asistente por iniciativa propia: solo recibe lo que obtiene al atender tus peticiones."],
+                    ['text' => "La información que obtiene un asistente sale de Monica y la trata la empresa que lo gestiona (Anthropic en el caso de Claude, OpenAI en el de ChatGPT, Google en el de Gemini, o el proveedor de la herramienta que hayas elegido), según sus propias condiciones y su propia política de privacidad, no según esta. Esa empresa puede conservarla, por ejemplo en tu historial de conversaciones. Elige un asistente al que confiarías estos datos."],
+                    ['text' => "Puedes revocar este acceso en cualquier momento. Tus ajustes muestran cada asistente conectado y te permiten desconectarlo, así como revocar cualquier clave de API que hayas creado. En cuanto lo haces, ese asistente o esa clave ya no puede acceder a tu cuenta. También puedes quitar la conexión desde los ajustes del propio asistente. La información que ya obtuvo se queda en la empresa que lo gestiona: bórrala allí, por ejemplo eliminando la conversación."],
                     ['text' => "Usamos Stripe para cobrar los pagos que dan acceso a la versión de pago. No almacenamos en nuestros servidores datos de tarjetas ni nada relativo a las transacciones en sí. Sin embargo, tal como prevé la biblioteca de código abierto que usamos para procesar los pagos (Laravel Cashier), guardamos los 4 últimos dígitos de la tarjeta y el nombre de la marca (VISA o MasterCard). Como usuario, Stripe te identifica mediante un número aleatorio que ellos generan y utilizan."],
                     ['text' => "En cuanto a los pagos, puedes volver al plan gratuito cuando quieras. Al hacerlo, Stripe se actualiza automáticamente y no tenemos forma de volver a cobrarte, ni aunque quisiéramos. Cuanto menos tratemos con información de pago, más contentos estamos."],
                     ['text' => "Puedes exportar tus datos en cualquier momento. También puedes usar la API para exportarlos todos si sabes cómo hacerlo. Y puedes pedirnos que lo hagamos nosotros y te los enviemos. Tus datos se exportarán en formato SQL."],

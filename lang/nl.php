@@ -937,7 +937,7 @@ return [
     'terms' => [
         'title' => "Onze gebruiksvoorwaarden",
         'updated' => "Laatste wijziging: :date",
-        'updatedOn' => "12 april 2018",
+        'updatedOn' => "20 november 2026",
 
         'sections' => [
             [
@@ -973,7 +973,7 @@ return [
                     ['text' => "Je moet minstens 18 jaar zijn om een account aan te maken en de site te gebruiken."],
                     ['text' => "Je mag de site niet misbruiken door bewust kwaadaardige code te plaatsen die jou of andere gebruikers schade kan berokkenen."],
                     ['text' => "Je gebruikt de site uitsluitend voor dingen die algemeen als moreel goed worden beschouwd."],
-                    ['text' => "Je mag geen geautomatiseerde verzoeken naar de site sturen."],
+                    ['text' => "Je mag geen geautomatiseerde verzoeken naar de site sturen, met één uitzondering: je mag de API van Monica, de MCP-server en de integraties en plugins die Monica publiceert voor Claude, ChatGPT, Gemini en andere compatibele assistenten en agents gebruiken zoals hun documentatie beschrijft. Die toegang blijft onderworpen aan deze voorwaarden en aan redelijke grenzen die de dienst voor iedereen beschikbaar houden."],
                     ['text' => "Je mag het uitnodigingssysteem niet misbruiken."],
                     ['text' => "Je bent zelf verantwoordelijk voor de beveiliging van je account."],
                     ['text' => "Ik behoud me het recht voor accounts te sluiten die het systeem misbruiken (duizenden contacten met honderdduizenden herinneringen bijvoorbeeld) of het op een onredelijke manier gebruiken."],
@@ -1000,7 +1000,7 @@ return [
     'privacy' => [
         'title' => "Ons privacybeleid",
         'updated' => "Laatste wijziging: :date",
-        'updatedOn' => "6 augustus 2026",
+        'updatedOn' => "20 november 2026",
 
         'sections' => [
             [
@@ -1009,16 +1009,20 @@ return [
                     ['text' => "Monica bestaat in twee smaken: je kunt onze gehoste versie gebruiken, of het downloaden en zelf draaien. In dat laatste geval houden we helemaal niets bij. We weten niet eens dat je het product hebt gedownload. Doe ermee wat je wilt (maar respecteer je lokale wetgeving)."],
                     ['text' => "Als je een account aanmaakt op onze gehoste versie, geef je de site informatie over jezelf die wij verzamelen. Dat zijn je naam, je e-mailadres en je wachtwoord, dat versleuteld wordt voordat het wordt opgeslagen. We slaan geen andere persoonsgegevens op."],
                     ['text' => "Als je inlogt op de dienst, gebruiken we cookies om je inloggegevens te onthouden. Dat is het enige doel van de cookies."],
-                    ['text' => "Monica draait op Fortrabbit en wij zijn, afgezien van de medewerkers van Fortrabbit, de enigen die toegang hebben tot die servers."],
+                    ['text' => "De gehoste versie van Monica draait op Laravel Cloud. Naast ons hebben alleen Laravel Cloud en de infrastructuuraanbieders waarop het steunt toegang tot die servers."],
                     ['text' => "We maken elk uur een back-up van de database."],
                     ['text' => "Je wachtwoord wordt versleuteld met bcrypt, een zeer veilig algoritme om wachtwoorden te hashen. Je kunt ook tweefactorauthenticatie op je account inschakelen als je een extra beveiligingslaag wilt. Afgezien van die versleutelingsmechanismen zijn je gegevens in de database niet versleuteld. Als iemand toegang krijgt tot de database, kan die je gegevens lezen. We doen ons uiterste best om dat te voorkomen, maar het kan gebeuren."],
                     ['text' => "Als er een datalek plaatsvindt, nemen we contact op met de betrokken gebruikers om ze voor het lek te waarschuwen."],
-                    ['text' => "Transactionele e-mails worden verstuurd via Postmark."],
-                    ['text' => "We gebruiken een open source tool genaamd Sentry om fouten bij te houden die in productie optreden. Hun dienst legt de fouten vast, maar ze hebben geen toegang tot enige informatie behalve het account-ID, waarmee ik kan uitzoeken wat er aan de hand is."],
+                    ['text' => "Transactionele e-mails worden verstuurd via Resend."],
+                    ['text' => "We gebruiken Sentry en Laravel Nightwatch om fouten en prestatieproblemen bij te houden die in productie optreden. Ze leggen technische details van elk probleem vast, samen met het account-ID, waarmee we kunnen uitzoeken wat er aan de hand is."],
                     ['text' => "De site toont op dit moment geen advertenties en zal dat ook nooit doen. Hij verkoopt ook geen gegevens aan derden, met of zonder je toestemming, en is dat ook niet van plan. Wij zijn daar gewoon tegen. Fuck advertenties."],
                     ['text' => "We gebruiken geen trackers van derden, zoals Google Analytics of Intercom, die het gedrag of de gegevens van gebruikers volgen, niet op de marketingsite en niet op de gehoste versie. We zijn diep gekant tegen hun uitgangspunten, omdat ze die gegevens zouden gebruiken om je te profileren, en daar zijn wij volledig tegen."],
                     ['text' => "Alle gegevens die je in Monica zet, zijn van jou. Wij hebben er geen enkel recht op. Zet er alsjeblieft geen illegale dingen in, want dan zijn wij in de problemen."],
                     ['text' => "Alle informatie over de contacten die je in Monica zet, is privé voor jou. We leggen geen verbanden tussen accounts en gebruiken informatie uit het ene account niet om een ander account te vullen (in tegenstelling tot bijvoorbeeld Facebook)."],
+                    ['text' => "Je kunt je account koppelen aan een externe assistent of agent, zoals Claude, ChatGPT, Gemini of een andere toepassing die MCP ondersteunt, via de MCP-server van Monica, de API of een van de integraties en plugins die we publiceren. Er wordt niets gekoppeld zonder dat je het zelf instelt: een assistent krijgt pas toegang nadat je die vanuit je Monica-account hebt goedgekeurd, en een API-sleutel werkt pas als je die hebt aangemaakt. Bij het aanmaken van een API-sleutel kies je ook of die de waarden van velden die als gevoelig zijn gemarkeerd mag lezen."],
+                    ['text' => "Eenmaal gekoppeld werkt een assistent binnen je account via de handelingen die Monica beschikbaar stelt, om te doen wat je vraagt. Afhankelijk van je verzoek kan die de informatie ophalen die nodig is, zoals namen, contactgegevens, notities, levensgebeurtenissen, herinneringen, sjablonen of kluizen, en kan die namens jou informatie in je account aanmaken of wijzigen. We sturen je gegevens nooit uit onszelf naar een assistent: die ontvangt alleen wat hij ophaalt terwijl hij je verzoeken uitvoert."],
+                    ['text' => "Informatie die een assistent ophaalt, verlaat Monica en wordt verwerkt door het bedrijf dat de assistent draait (Anthropic voor Claude, OpenAI voor ChatGPT, Google voor Gemini, of de aanbieder van het hulpmiddel dat je hebt gekozen), volgens de eigen voorwaarden en het eigen privacybeleid van dat bedrijf, niet volgens dit beleid. Dat bedrijf kan de informatie bewaren, bijvoorbeeld in je gespreksgeschiedenis. Kies een assistent die je deze gegevens toevertrouwt."],
+                    ['text' => "Je kunt deze toegang op elk moment intrekken. In je instellingen staat elke gekoppelde assistent, die je daar kunt ontkoppelen, en kun je elke API-sleutel intrekken die je hebt aangemaakt. Zodra je dat doet, kan die assistent of sleutel niet meer bij je account. Je kunt de koppeling ook verwijderen in de instellingen van de assistent zelf. Informatie die al is opgehaald, blijft bij het bedrijf dat de assistent draait: verwijder die daar, bijvoorbeeld door het gesprek te verwijderen."],
                     ['text' => "We gebruiken Stripe om betalingen voor de betaalde versie te innen. We slaan geen creditcardgegevens of iets over de transacties zelf op onze servers op. Wel bewaren we, conform de open source bibliotheek die we gebruiken om betalingen te verwerken (Laravel Cashier), de laatste 4 cijfers van de creditcard en de merknaam (VISA of MasterCard). Als gebruiker word je bij Stripe geïdentificeerd met een willekeurig nummer dat zij genereren en gebruiken."],
                     ['text' => "Wat betalingen betreft: je kunt wanneer je wilt teruggaan naar het gratis abonnement. Als je dat doet, wordt Stripe automatisch bijgewerkt en hebben we geen enkele manier meer om je opnieuw te belasten, ook al zouden we dat willen. Hoe minder we met betaalgegevens te maken hebben, hoe gelukkiger we zijn."],
                     ['text' => "Je kunt je gegevens op elk moment exporteren. Je kunt ook de API gebruiken om al je gegevens te exporteren als je weet hoe dat moet. Je kunt ons ook vragen dit zelf te doen en het naar je op te sturen. Je gegevens worden geëxporteerd in SQL-formaat."],

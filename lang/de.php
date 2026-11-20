@@ -944,7 +944,7 @@ return [
     'terms' => [
         'title' => "Unsere Nutzungsbedingungen",
         'updated' => "Letzte Aktualisierung: :date",
-        'updatedOn' => "12. April 2018",
+        'updatedOn' => "20. November 2026",
 
         'sections' => [
             [
@@ -980,7 +980,7 @@ return [
                     ['text' => "Sie müssen mindestens 18 Jahre alt sein, um ein Konto anzulegen und die Website zu nutzen."],
                     ['text' => "Sie dürfen die Website nicht missbrauchen, indem Sie wissentlich Schadcode veröffentlichen, der Ihnen oder anderen Nutzerinnen und Nutzern schaden könnte."],
                     ['text' => "Sie dürfen die Website ausschließlich für Zwecke nutzen, die allgemein als moralisch gut gelten."],
-                    ['text' => "Sie dürfen keine automatisierten Anfragen an die Website stellen."],
+                    ['text' => "Sie dürfen keine automatisierten Anfragen an die Website stellen, mit einer Ausnahme: Sie dürfen die API von Monica, den MCP-Server sowie die von Monica veröffentlichten Integrationen und Plugins für Claude, ChatGPT, Gemini und andere kompatible Assistenten und Agenten so nutzen, wie es ihre Dokumentation beschreibt. Dieser Zugriff unterliegt weiterhin diesen Bedingungen und angemessenen Grenzen, die den Dienst für alle verfügbar halten."],
                     ['text' => "Sie dürfen das Einladungssystem nicht missbrauchen."],
                     ['text' => "Für die Sicherheit Ihres Kontos sind Sie selbst verantwortlich."],
                     ['text' => "Ich behalte mir das Recht vor, Konten zu schließen, die das System missbrauchen (etwa Tausende Kontakte mit Hunderttausenden Erinnerungen) oder es in unangemessener Weise nutzen."],
@@ -1004,7 +1004,7 @@ return [
     'privacy' => [
         'title' => "Unsere Datenschutzrichtlinie",
         'updated' => "Letzte Aktualisierung: :date",
-        'updatedOn' => "30. Mai 2019",
+        'updatedOn' => "20. November 2026",
 
         'sections' => [
             [
@@ -1013,16 +1013,20 @@ return [
                     ['text' => "Monica gibt es in zwei Varianten: Sie können unsere gehostete Version nutzen oder sie herunterladen und selbst betreiben. Im zweiten Fall verfolgen wir überhaupt nichts. Wir wissen nicht einmal, dass Sie das Produkt heruntergeladen haben. Machen Sie damit, was Sie wollen (aber halten Sie sich an das Recht Ihres Landes)."],
                     ['text' => "Wenn Sie Ihr Konto in unserer gehosteten Version anlegen, geben Sie der Website Informationen über sich, die wir erheben. Dazu gehören Ihr Name, Ihre E-Mail-Adresse und Ihr Passwort, das vor der Speicherung verschlüsselt wird. Weitere personenbezogene Daten speichern wir nicht."],
                     ['text' => "Wenn Sie sich beim Dienst anmelden, verwenden wir Cookies, um Ihre Anmeldedaten zu speichern. Das ist der einzige Zweck der Cookies."],
-                    ['text' => "Monica läuft auf Fortrabbit, und außer den Beschäftigten von Fortrabbit haben nur wir Zugriff auf diese Server."],
+                    ['text' => "Die gehostete Version von Monica läuft auf Laravel Cloud. Außer uns haben nur Laravel Cloud und die Infrastrukturanbieter, auf die es sich stützt, Zugriff auf diese Server."],
                     ['text' => "Wir sichern die Datenbank stündlich."],
                     ['text' => "Ihr Passwort wird mit bcrypt verschlüsselt, einem sehr sicheren Verfahren zum Hashen von Passwörtern. Sie können für Ihr Konto zusätzlich die Zwei-Faktor-Authentifizierung aktivieren, wenn Sie eine weitere Sicherheitsebene möchten. Abgesehen von diesen Verschlüsselungsmechanismen sind Ihre Daten in der Datenbank nicht verschlüsselt. Wer Zugriff auf die Datenbank erlangt, kann Ihre Daten lesen. Wir tun unser Bestes, damit das nie passiert, aber es kann passieren."],
                     ['text' => "Kommt es zu einer Datenpanne, benachrichtigen wir die betroffenen Nutzerinnen und Nutzer, um sie zu warnen."],
-                    ['text' => "Transaktions-E-Mails werden über Postmark zugestellt."],
-                    ['text' => "Wir verwenden ein Open-Source-Werkzeug namens Sentry, um Fehler im Produktivbetrieb zu verfolgen. Deren Dienst zeichnet die Fehler auf, hat aber außer der Konto-ID, mit der ich das Problem nachvollziehen kann, keinen Zugriff auf Informationen."],
+                    ['text' => "Transaktions-E-Mails werden über Resend versendet."],
+                    ['text' => "Wir verwenden Sentry und Laravel Nightwatch, um Fehler und Leistungsprobleme im Produktivbetrieb zu verfolgen. Sie zeichnen technische Details zu jedem Problem auf, zusammen mit der Konto-ID, mit der wir nachvollziehen können, was passiert."],
                     ['text' => "Die Website zeigt derzeit keine Werbung und wird das auch nie tun. Sie verkauft auch keine Daten an Dritte, mit oder ohne Ihre Einwilligung, und hat das auch nicht vor. Wir sind schlicht dagegen. Scheiß auf Werbung."],
                     ['text' => "Wir setzen keine Tracking-Dienste Dritter wie Google Analytics oder Intercom ein, die Nutzerverhalten oder Nutzerdaten verfolgen, weder auf der Marketing-Website noch in der gehosteten Version. Wir lehnen deren Prinzipien zutiefst ab, denn sie würden diese Daten nutzen, um ein Profil von Ihnen zu erstellen, was wir vollkommen ablehnen."],
                     ['text' => "Alle Daten, die Sie in Monica ablegen, gehören Ihnen. Wir haben keinerlei Rechte daran. Bitte legen Sie dort nichts Illegales ab, sonst bekommen wir Ärger."],
                     ['text' => "Alle Informationen über die Kontakte, die Sie in Monica ablegen, sind allein Ihre. Wir verknüpfen keine Informationen zwischen Konten und verwenden keine Information aus einem Konto, um ein anderes zu füllen (anders als etwa Facebook)."],
+                    ['text' => "Sie können Ihr Konto mit einem externen Assistenten oder Agenten verbinden, etwa Claude, ChatGPT, Gemini oder einer anderen Anwendung, die MCP unterstützt, über den MCP-Server von Monica, die API oder eine der Integrationen und Plugins, die wir veröffentlichen. Nichts wird verbunden, ohne dass Sie es selbst einrichten: Ein Assistent erhält erst Zugriff, nachdem Sie ihn in Ihrem Monica-Konto bestätigt haben, und ein API-Schlüssel funktioniert erst, wenn Sie ihn erstellt haben. Beim Erstellen eines API-Schlüssels legen Sie außerdem fest, ob er die Werte von als sensibel markierten Feldern lesen darf."],
+                    ['text' => "Ist ein Assistent verbunden, arbeitet er in Ihrem Konto über die Operationen, die Monica bereitstellt, um auszuführen, worum Sie ihn bitten. Je nach Anfrage kann er die Informationen abrufen, die er dafür braucht, etwa Namen, Kontaktdaten, Notizen, Lebensereignisse, Erinnerungen, Vorlagen oder Tresore, und er kann in Ihrem Namen Informationen in Ihrem Konto anlegen oder ändern. Wir senden Ihre Daten nie von uns aus an einen Assistenten: Er erhält nur, was er abruft, während er Ihre Anfragen ausführt."],
+                    ['text' => "Informationen, die ein Assistent abruft, verlassen Monica und werden von dem Unternehmen verarbeitet, das ihn betreibt (Anthropic für Claude, OpenAI für ChatGPT, Google für Gemini oder der Anbieter des Werkzeugs, das Sie gewählt haben), nach dessen eigenen Bedingungen und Datenschutzerklärung, nicht nach dieser. Dieses Unternehmen kann sie aufbewahren, zum Beispiel in Ihrem Gesprächsverlauf. Wählen Sie einen Assistenten, dem Sie diese Informationen anvertrauen."],
+                    ['text' => "Sie können diesen Zugriff jederzeit widerrufen. Ihre Einstellungen listen jeden verbundenen Assistenten auf und lassen Sie ihn trennen, und sie lassen Sie jeden API-Schlüssel widerrufen, den Sie erstellt haben. Danach kann dieser Assistent oder Schlüssel nicht mehr auf Ihr Konto zugreifen. Sie können die Verbindung auch in den Einstellungen des Assistenten selbst entfernen. Informationen, die er bereits abgerufen hat, bleiben bei dem Unternehmen, das ihn betreibt: Löschen Sie sie dort, zum Beispiel indem Sie das Gespräch löschen."],
                     ['text' => "Für Zahlungen zum Zugang zur kostenpflichtigen Version nutzen wir Stripe. Wir speichern auf unseren Servern weder Kreditkartendaten noch irgendetwas zu den Transaktionen selbst. Wie es die quelloffene Bibliothek vorsieht, mit der wir Zahlungen abwickeln (Laravel Cashier), speichern wir jedoch die letzten 4 Ziffern der Kreditkarte und den Namen des Anbieters (VISA oder MasterCard). Als Nutzerin oder Nutzer werden Sie bei Stripe über eine von dort erzeugte Zufallsnummer identifiziert."],
                     ['text' => "Zu den Zahlungen: Sie können jederzeit auf den kostenlosen Tarif zurückwechseln. Wenn Sie das tun, wird Stripe automatisch aktualisiert, und wir haben keine Möglichkeit mehr, Ihnen etwas zu berechnen, selbst wenn wir es wollten. Je weniger wir mit Zahlungsdaten zu tun haben, desto glücklicher sind wir."],
                     ['text' => "Sie können Ihre Daten jederzeit exportieren. Sie können dafür auch die API nutzen, wenn Sie wissen, wie das geht. Und Sie können uns bitten, das selbst zu übernehmen und Ihnen die Daten zuzuschicken. Ihre Daten werden im SQL-Format exportiert."],
