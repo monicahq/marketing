@@ -2793,14 +2793,15 @@ return [
     ],
 
     /**
-     * Copied verbatim from the terms published at monicahq.com/terms. This is
-     * the authoritative wording; the other three locales are translations of
-     * it. Change it here first.
+     * Started as the terms published at monicahq.com/terms, then updated in
+     * November 2026 to allow the API, the MCP server and the integrations and
+     * plugins Monica publishes. This is the authoritative wording; the other
+     * locales are translations of it. Change it here first.
      */
     'terms' => [
         'title' => "Our terms of use",
         'updated' => "Last update: :date",
-        'updatedOn' => "April 12, 2018",
+        'updatedOn' => "November 20, 2026",
 
         'sections' => [
             [
@@ -2808,8 +2809,8 @@ return [
                 'blocks' => [
                     ['text' => "Monica supports the following browsers:"],
                     ['items' => [
-                        "Internet Explorer (11+)",
-                        "Firefox (50+)",
+                        "Edge (latest)",
+                        "Firefox (latest)",
                         "Chrome (latest)",
                         "Safari (latest)",
                     ]],
@@ -2821,10 +2822,10 @@ return [
                 'blocks' => [
                     ['text' => "You don't have to provide your real name when you register to an account. You do however need a valid email address if you want to upgrade your account to the paid version, or receive reminders by email."],
                     ['text' => "You have the right to close your account at any time."],
-                    ['text' => "You have the right to export your data at any time, in the SQL format."],
+                    ['text' => "You have the right to export your data at any time, in the JSON format."],
                     ['text' => "Your data will not be intentionally shown to other users or shared with third parties."],
                     ['text' => "Your personal data will not be shared with anyone without your consent."],
-                    ['text' => "Your data is backed up every hour."],
+                    ['text' => "Your data is backed up every day."],
                     ['text' => "If the site ceases operation, you will receive an opportunity to export all your data before the site dies."],
                     ['text' => "Any new features that affect privacy will be strictly opt-in."],
                 ],
@@ -2836,7 +2837,7 @@ return [
                     ['text' => "You have to be at least 18+ to create an account and use the site."],
                     ['text' => "You must not abuse the site by knowingly posting malicious code that could harm you or the other users."],
                     ['text' => "You must only use the site to do things that are widely accepted as morally good."],
-                    ['text' => "You may not make automated requests to the site."],
+                    ['text' => "You may not make automated requests to the site, with one exception: you may use Monica's API, its MCP server, and the integrations and plugins published by Monica for Claude, ChatGPT, Gemini and other compatible assistants and agents, as their documentation describes. That access remains subject to these terms, and to reasonable limits that keep the service available to everyone."],
                     ['text' => "You may not abuse the invitation system."],
                     ['text' => "You are responsible for keeping your account secure."],
                     ['text' => "I reserve the right to close accounts that abuse the system (thousands of contacts with hundred of thousands of reminders for instance) or use it in an unreasonable manner."],
@@ -2853,9 +2854,10 @@ return [
     ],
 
     /**
-     * Copied verbatim from the policy published at monicahq.com/privacy. This
-     * is the authoritative wording; the other three locales are translations of
-     * it. Change it here first.
+     * Started as the policy published at monicahq.com/privacy, then updated in
+     * November 2026 for the new hosting and for connecting an external
+     * assistant. This is the authoritative wording; the other locales are
+     * translations of it. Change it here first.
      *
      * One untitled section: the published policy is a flat run of paragraphs
      * with no headings, and inventing some would be editing a legal document.
@@ -2863,7 +2865,7 @@ return [
     'privacy' => [
         'title' => "Our privacy policy",
         'updated' => "Last update: :date",
-        'updatedOn' => "Aug 06, 2026",
+        'updatedOn' => "Nov 20, 2026",
 
         'sections' => [
             [
@@ -2872,19 +2874,24 @@ return [
                     ['text' => "Monica comes in two flavors: you can either use our hosted version, or download it and run it yourself. In the latter case, we do not track anything at all. We don't know that you've even downloaded the product. Do whatever you want with it (but respect your local laws)."],
                     ['text' => "When you create your account on our hosted version, you are giving the site information about yourself that we collect. This includes your name, your email address and your password, that is encrypted before being stored. We do not store any other personal information."],
                     ['text' => "When you login to the service, we are using cookies to remember your login credentials. This is the only purpose of the cookies."],
-                    ['text' => "Monica runs on Fortrabbit and we are the only ones, apart from Fortrabbit's employees, who have access to those servers."],
-                    ['text' => "We do hourly backups of the database."],
+                    ['text' => "The hosted version of Monica runs on Laravel Cloud. Apart from us, only Laravel Cloud and the infrastructure providers it relies on have access to those servers."],
+                    ['text' => "We do daily backups of the database."],
                     ['text' => "Your password is encrypted with bcrypt, a password hashing algorithm that is highly secure. You can also activate two factor authentication on your account if you need an extra layer of security. Apart from those encryption mechanisms, your data is not encrypted in the database. If someone gets access to the database, they will be able to read your data. We do our best to make sure that this never happens, but it can happen."],
                     ['text' => "If a data breach happens, we will contact the users who are affected to warn them about the breach."],
-                    ['text' => "Transactional emails are served through Postmark."],
-                    ['text' => "We use an open-source tool called Sentry to track errors that happen in production. Their service records the errors, but they don't have access to any information apart from the account ID, which lets me debug what's going on."],
+                    ['text' => "Transactional emails are sent through Resend."],
+                    ['text' => "We use Sentry to track errors that happen in production. It records the errors along with the account ID, which lets us debug what's going on."],
+                    ['text' => "We also use Laravel Nightwatch, a service of Laravel Holdings Inc., to monitor the application and to find and diagnose errors and performance problems. Nightwatch processes this data on our behalf. It receives technical information about the requests made to Monica (your IP address, the HTTP headers and your browser's user agent), your account ID, and the subject and recipient of the notifications we send. It identifies you by your account ID, not by your name. We rely on our legitimate interest in keeping the service secure and working well: detecting bugs, diagnosing errors and improving performance. This data is stored in the United States and deleted after 30 days."],
                     ['text' => "The site does not currently and will never show ads. It also does not, and don't intend to, sell data to a third party, with or without your consent. We are just against this. Fuck ads."],
                     ['text' => "We do not use any tracking third parties, like Google Analytics or Intercom, that track user behaviours or data, neither on the marketing site or the hosted version. We are deeply against their principles as they would use those data to profile you, which we are totally against."],
                     ['text' => "All the data you put on Monica belongs to you. We do not have any rights on it. Please don't put illegal stuff on it, otherwise we'd be in trouble."],
                     ['text' => "All the information about the contacts you put on Monica are private to you. We do not cross link information between accounts or use one information in an account to populate another account (unlike Facebook for instance)."],
+                    ['text' => "You can connect your account to an external assistant or agent, such as Claude, ChatGPT, Gemini or any other application that supports MCP, through Monica's MCP server, the API, or one of the integrations and plugins we publish. Nothing is connected unless you set it up yourself: an assistant only gets access after you approve it from your Monica account, and an API key only works once you have created it. When you create an API key, you also choose whether it can read the values of fields marked sensitive."],
+                    ['text' => "Once connected, an assistant works within your account through the operations Monica makes available, to carry out what you ask of it. Depending on your request, it can retrieve the information it needs, such as names, contact details, notes, life events, reminders, templates or vaults, and it can create or change information in your account on your behalf. We never send your data to an assistant ourselves: it only receives what it retrieves while acting on your requests."],
+                    ['text' => "Information an assistant retrieves leaves Monica and is processed by the company that runs it (Anthropic for Claude, OpenAI for ChatGPT, Google for Gemini, or the provider of whichever tool you chose), under that company's own terms and privacy policy, not this one. That company may keep it, for instance in your conversation history. Choose an assistant you trust with these details."],
+                    ['text' => "You can revoke this access at any time. Your settings list every connected assistant and let you disconnect it, and let you revoke any API key you created. Once you do, that assistant or key can no longer reach your account. You can also remove the connection from the assistant's own settings. Information it already retrieved stays with the company that runs it: delete it there, for instance by deleting the conversation."],
                     ['text' => "We use Stripe to collect payments made to access the paid version. We do not store credit card information or anything concerning the transactions themselves on our servers. However, as per the open-source library we use to process the payments (Laravel Cashier), we store the last 4 digits of the credit card, the brand name (VISA or MasterCard). As a user, you are identified on Stripe by a random number that they generate and use."],
-                    ['text' => "Regarding the payments, you can downgrade to the free plan whenever you like. When you do, Stripe is automatically updated and we have no way to charge you again, even if we would like to. The less we deal with payment information, the happier we are."],
-                    ['text' => "You can export your data at any time. You can also use the API to export all your data if you know how to do it. You can also request that we process this ourselves and send it to you. Your data will be exported in the SQL format."],
+                    ['text' => "Regarding the payments, you can downgrade or cancel your subscription whenever you like, and delete your account too. When you cancel, Stripe is automatically updated and we have no way to charge you again, even if we would like to. The less we deal with payment information, the happier we are."],
+                    ['text' => "You can export your data at any time. You can also use the API to export all your data if you know how to do it. You can also request that we process this ourselves and send it to you. Your data will be exported in the JSON format."],
                     ['text' => "When you close your account, we immediately destroy all your personal information from the production database, but your information is kept in the backups that we keep for 30 days. After 30 days, your information will be completely destroyed. While you have control over this, we can delete an account for you if you ask us."],
                     ['text' => "In certain situations, we may be required to disclose personal data in response to lawful requests by public authorities, including to meet national security or law enforcement requirements. We just hope that this never happens."],
                     ['text' => "If you violate the terms of use we will terminate your account and notify you about it. However if you follow the \"don't be a dick\" policy, nothing should ever happen to you and we'll all be happy."],
