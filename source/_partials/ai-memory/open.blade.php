@@ -1,14 +1,12 @@
 @php($open = $copy['open'])
 
-{{-- The design keeps a place beside this for a panda in its own library,
-     not drawn yet. Until it is, the copy stands in two columns. --}}
 <section class="{{ $section }}">
-    <div class="{{ $container }} grid items-start gap-x-14 gap-y-6 lg:grid-cols-2">
-        <div class="flex flex-col gap-4">
+    <div class="{{ $container }} {{ $split }}">
+        @include('_partials.ai-memory.illustration', ['item' => $copy['illustrations']['open'], 'frame' => 'aspect-square max-h-[440px]'])
+
+        <div class="flex flex-col gap-4.5">
             <h2 class="{{ $title }}">{{ $open['title'] }}</h2>
             <p class="{{ $closing }}">{{ $open['lead'] }}</p>
-        </div>
-        <div class="flex flex-col gap-4">
             @foreach ($open['body'] as $paragraphText)
                 <p class="{{ $paragraph }}">{{ $paragraphText }}</p>
             @endforeach

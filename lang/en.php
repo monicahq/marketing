@@ -2751,6 +2751,29 @@ return [
         'tent' => "Camping tent",
         'due' => "Due back 5 December",
 
+        /**
+         * Where the illustrations go until they are drawn: the reference, the
+         * name and the brief the design gives each one, shown in a dashed
+         * frame exactly as the design draws its placeholders.
+         */
+        'illustrations' => [
+            'hero' => [
+                'ref' => "I01 · Illustration",
+                'title' => "Shared memory",
+                'brief' => "Panda tending a small personal library, three softly coloured paths connecting neutral assistant symbols to it. People, a notebook, a box of belongings. One shared home, not a brain or a robot.",
+            ],
+            'problem' => [
+                'ref' => "I02 · Illustration · Optional",
+                'title' => "Islands and a bridge",
+                'brief' => "Two islands with separate notebooks, bridged to one central library where a panda organizes them. No suggestion of importing or syncing conversations.",
+            ],
+            'open' => [
+                'ref' => "I04 · Illustration",
+                'title' => "Panda in its own library",
+                'brief' => "A small wooden library or garden shed, notebooks and belongings neatly organized. Independence, not protection: no padlocks or shields.",
+            ],
+        ],
+
         'hero' => [
             'eyebrow' => "Open-source personal AI memory",
             'title' => "One memory for your AI assistants.",

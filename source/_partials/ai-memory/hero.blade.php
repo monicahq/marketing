@@ -1,8 +1,5 @@
 @php($hero = $copy['hero'])
 
-{{-- The design keeps a place under the headline for a panda illustration
-     that has not been drawn yet. Until it is, the headline stands alone
-     and the first picture on the page is the conversation in `how`. --}}
 <section class="px-4 pt-22 md:px-6">
     <div class="{{ $container }}">
         <div class="mx-auto flex max-w-[760px] flex-col items-center gap-6 text-center">
@@ -16,5 +13,7 @@
             </div>
             <p class="{{ $note }}">{{ $hero['note'] }}</p>
         </div>
+
+        @include('_partials.ai-memory.illustration', ['item' => $copy['illustrations']['hero'], 'frame' => 'mt-16 min-h-60 md:aspect-[16/7]'])
     </div>
 </section>
