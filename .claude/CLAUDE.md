@@ -162,6 +162,7 @@ Partials take data through the `@include` array: `@include('_partials.icon', ['n
 | Blog templates                      | `source/_layouts/post.blade.php`, `source/_partials/blog/` |
 | Blog post body styling              | `source/_assets/css/prose.css`                      |
 | Blog RSS feed                       | `source/_partials/blog/feed.blade.php`, `source/<locale>/blog/feed.blade.xml` |
+| Support page                        | `source/_partials/support/`, address and doc links in `config.php` |
 | Terms and privacy policy            | `source/_partials/legal/document.blade.php`, copy in `lang/<locale>.php` |
 | Copy                                | `lang/<locale>.php`                                 |
 | Routes, helpers, links, locales     | `config.php`                                        |
@@ -223,6 +224,7 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 - **Turbo swaps `<body>` and leaves `<head>` and `<html>` alone.** Anything that has to change with the page and lives outside `<body>` will not. That is why the locale picker's links carry `data-turbo="false"`: a Turbo visit across languages would serve French copy in a document still declaring `lang="en"`. Add it to any link or form Turbo has no business handling, such as one posting to somebody else's endpoint.
 - **Both prefetchers are on, and they are not interchangeable.** Turbo's own prefetch (on by default since Turbo 8) holds the in-flight fetch in its cache and swaps it into the visit on click, so it is the only one a Turbo visit can consume. instant.page issues `<link rel="prefetch">`, which warms the HTTP cache that an ordinary browser navigation reads, which is what the `data-turbo="false"` locale links do. Turning either off leaves one class of link fetching on click.
 - **No `turbo:load` hook re-initialising Alpine.** Turbo replaces the whole `<body>`, which Alpine's own MutationObserver already sees; calling `Alpine.initTree` on top would bind every directive twice. A setup using Turbo's morph refreshes would need the hook, because morph patches nodes in place.
+- **The support address is never in the HTML as text.** `supportEmail` in `config.php` is printed by `_partials/support/email.blade.php` reversed and base64-encoded in `data-email`, and `app.js` turns it into a `mailto:` link on `turbo:load`. Without JavaScript the address is still readable, written backwards and drawn the right way round by `unicode-bidi: bidi-override`. Never write the address into a template or a `lang/` file, and leave it out of the JSON-LD.
 - The FAQ and the language menu are still native `<details>` and must stay that way. Reach for Alpine only when a native element genuinely cannot do the job, and ask first.
 - **Anything Alpine touches is server-rendered in its default state first.** Bind with `x-text` wrapped around real content (`<span x-text="plans[period].price">$90</span>`), never an empty element filled in on load. A control that does nothing without Alpine carries `js-only`, which `_layouts/base.blade.php` hides inside a `<noscript>` block, so a reader without JavaScript is not offered a dead button.
 - Alpine state comes from `lang/` through one `json_encode` into `x-data`, so copy never gets hard-coded into an expression. Blade escapes the quotes and the browser decodes them; see `_partials/pricing/plans.blade.php`.
@@ -232,7 +234,7 @@ Failures keep the fallback in `config.php` and print a warning rather than break
 
 ## Known gaps
 
-The homepage, the three features pages, pricing, the v3 teaser, the team page, the blog and the two legal pages exist. Docs are unbuilt; that nav link is the design's `#` placeholder in `config.php`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
+The homepage, the three features pages, pricing, the v3 teaser, the team page, the support page, the blog and the two legal pages exist. Docs are unbuilt; that nav link is the design's `#` placeholder in `config.php`. The icons in `source/_partials/icon.blade.php` are the design system's placeholder geometry. Monica's real repository SVGs were never supplied and must replace them behind the same include. Never substitute a third-party icon library; §9.1 of the specification forbids it.
 
 ## The blog
 
