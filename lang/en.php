@@ -50,6 +50,7 @@ return [
             'api' => "API and MCP",
             'privacyFeatures' => "Privacy and security",
             'languages' => "Languages and formats",
+            'aiMemory' => "AI memory",
             'handbook' => "Handbook",
             'contribute' => "Contribute",
             'page' => "Page :number",
@@ -186,6 +187,11 @@ return [
         'languages' => [
             'title' => "Your language, their names: languages and formats in Monica",
             'description' => "Use Monica in more than 30 languages. Write names in the order and forms people use, choose a display name, and set your own date, time, number and time zone preferences.",
+        ],
+
+        'aiMemory' => [
+            'title' => "One memory for your AI assistants: personal AI memory with Monica",
+            'description' => "Monica gives Claude, ChatGPT and other compatible assistants a shared, persistent personal memory through its MCP server. Open source, self-hostable, and usable without AI.",
         ],
 
         'personalCrm' => [
@@ -2726,6 +2732,304 @@ return [
             'lismore' => "Lismore, Australia",
             'reminder' => "Call Mum",
             'reminderWhen' => "Sundays at 18:00 · keeps America/New_York",
+        ],
+    ],
+
+    /**
+     * The AI memory page, "One memory for your AI assistants" (route key
+     * `aiMemory`). The pictures on it are drawings of the product and of two
+     * assistants talking to it, so each carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The example runs through the page: a camping tent lent to Alex, due
+     * back on 5 December. Keep the name, the object and the date in step
+     * between `how`, `see` and `structure`.
+     */
+    'aiMemory' => [
+        // Words more than one drawing uses.
+        'borrower' => "Alex",
+        'tent' => "Camping tent",
+        'due' => "Due back 5 December",
+
+        'hero' => [
+            'eyebrow' => "Open-source personal AI memory",
+            'title' => "One memory for your AI assistants.",
+            'lede' => "Your AI assistants may change. Your memories shouldn’t have to.",
+            'body' => "Monica gives compatible AI assistants a shared, persistent personal memory: a place to save your relationships, knowledge, belongings and everyday life. One that you can open, organize and use yourself, even without AI.",
+            'cta' => "Get started for free",
+            'how' => "See how it works",
+            'note' => "Open source. Self-hostable. MCP access included on free accounts.",
+        ],
+
+        'problem' => [
+            'title' => "Your life doesn’t belong in a single chat.",
+            'body' => [
+                "You tell your AI assistant about your family, your preferences, your projects and the things you care about. Over time, that information becomes useful context for the conversations that follow.",
+                "But you may use more than one assistant. You may switch providers, start a new conversation, or simply want to look something up without asking AI at all.",
+                "That’s why Monica gives your personal information a home of its own. Instead of relying exclusively on the memory built into each assistant, you can save information in Monica and retrieve it through compatible assistants whenever you need it.",
+            ],
+            'closing' => "Less repeating yourself. More continuity across the tools you choose to use.",
+        ],
+
+        'how' => [
+            'title' => "Tell one assistant. Ask another.",
+            'lead' => "With Monica, personal AI memory can persist across conversations and across compatible AI platforms. Save a piece of information today, and ask a different connected assistant to look it up later.",
+            'connected' => "Monica connected",
+            'steps' => [
+                [
+                    'title' => "Save something with Claude",
+                    'prompt' => "I lent my camping tent to Alex today. He’s bringing it back on December 5. Save that in Monica.",
+                    'body' => "Your assistant records the loan, the borrower and the expected return date in your Monica account.",
+                    'label' => "A conversation with Claude, with Monica connected. You ask Claude to save that you lent your camping tent to Alex, due back on 5 December. Claude uses Monica’s create-possession-loan tool and confirms the loan is saved.",
+                    'reply' => "Saved. Monica now shows your camping tent on loan to Alex until 5 December.",
+                ],
+                [
+                    'title' => "See it in Monica",
+                    'prompt' => null,
+                    'body' => "The loan is a real record in Monica, linked to the tent and the person who borrowed it. You can open it directly and review or update it yourself.",
+                    'label' => "The camping tent’s page in Monica, stored in the garage. Its loans section shows it lent to Alex, due back on 5 December.",
+                    'reply' => null,
+                ],
+                [
+                    'title' => "Retrieve it with ChatGPT",
+                    'prompt' => "Check Monica. Who has my camping tent?",
+                    'body' => "Your connected assistant can look up the recorded loan and tell you who has the tent and when it is expected back.",
+                    'label' => "A new conversation with ChatGPT, with Monica connected. You ask who has your camping tent. ChatGPT uses Monica’s list-possession-loans tool and answers that Alex has it, due back on 5 December.",
+                    'reply' => "Alex has your camping tent. It’s due back on 5 December.",
+                ],
+            ],
+            'garage' => "Stored in the garage",
+            'loans' => "Loans",
+            'onLoan' => "On loan",
+            'closing' => "The conversation changed. The memory stayed.",
+            'note' => "This example uses two assistants connected to the same Monica account. Assistant compatibility and access may depend on their configuration and subscription. Saving and retrieving information requires the assistant to use Monica’s tools.",
+        ],
+
+        'remember' => [
+            'title' => "A personal AI memory for everyday life.",
+            'lead' => "Your life is more than a collection of conversations. Monica gives your assistants places to store different kinds of personal information, from the people you know to the things you own.",
+            'try' => "Try asking",
+            // The glyph and the page each item links to are in the template,
+            // in this order.
+            'items' => [
+                [
+                    'title' => "People and relationships",
+                    'body' => "Keep track of the people in your life, how they are related to each other and the moments you share. Record new connections and family relationships, and retrieve information before your next conversation.",
+                    'ask' => "“My brother and his wife just had a baby named Louise. Record their new family relationship in Monica.”",
+                ],
+                [
+                    'title' => "Personal knowledge",
+                    'body' => "Create a personal knowledge base with folders, notes and lists. Save useful instructions, recommendations, ideas and reference information so you can find them again.",
+                    'ask' => "“Save these instructions for resetting my router in my Home notes.”",
+                ],
+                [
+                    'title' => "Your belongings",
+                    'body' => "Keep a record of what you own, what it cost, where it is, when it was serviced and who borrowed it.",
+                    'ask' => "“Record my new camera in Monica. I paid $1,200 for it and keep it in the office cupboard.”",
+                ],
+                [
+                    'title' => "Life events",
+                    'body' => "Build a timeline of the experiences, milestones and moments that matter, including the people you shared them with.",
+                    'ask' => "“Log our trip to Lisbon with Marc and Léa last week.”",
+                ],
+                [
+                    'title' => "Your preferences",
+                    'body' => "Keep a note of your tastes, habits and preferences that your assistants can look up when helping you make decisions.",
+                    'ask' => "“Save in my preferences note that I prefer window seats and vegetarian meals.”",
+                ],
+                [
+                    'title' => "Things to remember",
+                    'body' => "Create reminders for important commitments and recurring occasions. Monica can remind you through its own reminder system, independently of your assistant.",
+                    'ask' => "“Create a reminder in Monica to call my dad every other Sunday.”",
+                ],
+            ],
+        ],
+
+        'see' => [
+            'title' => "A memory you can actually see.",
+            'body' => [
+                "Monica is a personal AI memory app you can use directly. The information your assistants save doesn’t disappear into a conversation. It becomes part of your personal records in Monica.",
+                "Open a contact. Review a life event. Update a note. Find something you own. Correct information that is no longer accurate.",
+                "You don’t need to talk to an AI assistant every time you want to consult your own information. Monica works as a standalone application, with or without a connected assistant.",
+            ],
+            'closing' => "Your assistants can use Monica. But Monica is built for you.",
+            'label' => "A camera’s page in Monica, in the office cupboard. Bought on 3 March 2025 for $1,200. Its maintenance timeline shows the sensor cleaned on 12 September 2026, and its next service due in March 2027.",
+            'camera' => "Camera",
+            'place' => "Office cupboard",
+            'facts' => [
+                ['Purchased', "3 March 2025"],
+                ['Price', "$1,200"],
+                ['Location', "Office cupboard"],
+            ],
+            'maintenance' => "Maintenance",
+            'entries' => [
+                ["Sensor cleaned", "12 September 2026"],
+                ["Firmware updated", "2 May 2026"],
+            ],
+            'next' => "Next service due March 2027",
+        ],
+
+        'structure' => [
+            'title' => "More than a list of memories.",
+            'lead' => "Your life has structure. Your memory should too.",
+            'body' => [
+                "Monica stores information in meaningful records. People can have family relationships. Life events can involve several people. Belongings can have locations, maintenance records and loans. Notes and lists can organize useful information by topic.",
+                "When a compatible assistant looks something up, it can retrieve these records and follow supported relationships to understand more of the context. When something changes, it can update supported records rather than simply adding another version of the same fact.",
+                "And when you want to organize information in your own way, Monica offers customizable templates and record types.",
+            ],
+            'label' => "Diagram: Alex is linked to a camping tent through a loan, and to a dinner through participation",
+            'belonging' => "Belonging",
+            'garage' => "Stored in the garage",
+            'loan' => "Loan",
+            'dueShort' => "due 5 December",
+            'person' => "Person",
+            'tookPart' => "Took part",
+            'withYou' => "with you",
+            'event' => "Life event · 14 November",
+            'dinner' => "Dinner together",
+            'caption' => "How records connect in Monica. A diagram, not an application screen.",
+            'closing' => "A personal database for real life, not just a collection of chat summaries.",
+        ],
+
+        'retrieval' => [
+            'title' => "Useful today. Still useful months from now.",
+            'lead' => "Persistent AI memory becomes valuable when you need information again. Ask your connected assistant to check Monica, whether you’re preparing for a meeting, looking after your home or making plans.",
+            'badge' => "Example",
+            'ask' => "Ask",
+            'items' => [
+                [
+                    'title' => "Before a meeting",
+                    'ask' => "“Check Monica. When did I last meet Daniel, and what did we discuss?”",
+                    'body' => "Retrieve previous life events and available contact information to prepare for your next conversation.",
+                ],
+                [
+                    'title' => "Before a service appointment",
+                    'ask' => "“Look up my car’s maintenance history in Monica. When was its last service?”",
+                    'body' => "Find recorded maintenance dates, costs and next due dates without digging through old conversations.",
+                ],
+                [
+                    'title' => "Before planning a trip",
+                    'ask' => "“Check my travel preferences note in Monica before suggesting an itinerary.”",
+                    'body' => "Bring your saved preferences into a new conversation, even if you’re using a different compatible assistant.",
+                ],
+            ],
+            'note' => "Examples of requests you can make once the relevant information has been saved in Monica.",
+        ],
+
+        'visibility' => [
+            'title' => "See what your AI assistants actually do.",
+            'body' => [
+                "Connecting an assistant to your personal information is a meaningful decision. You should be able to review what it does with that access.",
+                "Monica records calls made by connected assistants. You can review which assistant made a request, when it happened, the tool it used and the recorded request and response, with sensitive values masked. The assistant call history is available for 90 days.",
+                "You can disconnect individual assistants or revoke their API keys without deleting your saved information or disconnecting your other assistants.",
+            ],
+            'warningTitle' => "Know what you’re granting access to.",
+            'warning' => "A connected assistant generally has access across your account, rather than only to a selected vault or a read-only view. Fields marked sensitive are withheld from assistants connected through OAuth sign-in. Only connect assistants you trust.",
+            'label' => "Monica’s assistant call history. Three calls are listed: ChatGPT used list-possession-loans today at 09:14, Claude used create-possession-loan yesterday at 18:02, and Claude used search-records yesterday at 17:58. The ChatGPT call is expanded, showing its request and response, with a sensitive value masked. Below, the connected assistants, Claude and ChatGPT, each with a Disconnect button.",
+            'history' => "Assistant call history",
+            'kept' => "Last 90 days",
+            'calls' => [
+                ['ChatGPT', 'list-possession-loans', "Today at 09:14"],
+                ['Claude', 'create-possession-loan', "Yesterday at 18:02"],
+                ['Claude', 'search-records', "Yesterday at 17:58"],
+            ],
+            'request' => "Request",
+            'response' => "Response",
+            'assistants' => "Connected assistants",
+            'used' => ["Last used yesterday", "Last used today"],
+            'disconnect' => "Disconnect",
+        ],
+
+        'start' => [
+            'title' => "Connect your AI assistant in three steps.",
+            'lead' => "You don’t need to build your own memory infrastructure. Monica provides a ready-to-use personal information app and a remote AI memory MCP server.",
+            'step' => "Step :number",
+            'steps' => [
+                [
+                    'title' => "Create your Monica account",
+                    'body' => "Start with a free hosted account, or run Monica on your own infrastructure if you prefer to self-host.",
+                ],
+                [
+                    'title' => "Connect your assistant",
+                    'body' => "Monica uses the Model Context Protocol (MCP), an open standard that allows compatible assistants to interact with external applications. Follow the setup guide for your client. Supported connection methods include OAuth sign-in and API keys.",
+                ],
+                [
+                    'title' => "Save your first memory",
+                    'body' => "Ask your assistant to save something in Monica. Then open Monica to see the record, or ask your assistant to retrieve it in another conversation.",
+                ],
+            ],
+            'starter' => "Starter prompt",
+            'starterPrompt' => "“Add my sister Julie to Monica and record that I called her today.”",
+            'clientsTitle' => "Looking for AI memory for ChatGPT and Claude?",
+            'clients' => [
+                "Monica provides setup guides for ChatGPT, Claude Desktop, Claude Code, Cursor, Codex and VS Code. You can connect multiple compatible remote MCP clients to the same account and access the same saved information from each of them.",
+                "Client support, available operations and setup requirements depend on the assistant and its plan. Monica uses remote MCP over Streamable HTTP, so clients must support that transport and a compatible authentication method.",
+            ],
+            'guides' => "Read the MCP setup guides",
+            'account' => "Create a free account",
+            'clientsLabel' => "Clients with a setup guide",
+        ],
+
+        'open' => [
+            'title' => "Open-source AI memory. On your terms.",
+            'lead' => "Your choice of AI assistant shouldn’t determine where your personal information lives.",
+            'body' => [
+                "Monica is open source under the AGPL-3.0 license. You can use the hosted service or set up your own instance with Docker. The MCP server is available on self-hosted instances too, so you can build a self-hosted AI memory on infrastructure you manage.",
+                "Monica doesn’t run its own AI model. Its job is to store and organize your information and make it accessible to the compatible assistants you connect.",
+                "If you change assistants or providers, the information you’ve saved in Monica stays there. Connect another compatible assistant when you need it. And if you stop using AI altogether, you can still use Monica directly.",
+            ],
+            'closing' => "The assistants may change. Your life doesn’t.",
+            'github' => "Explore Monica on GitHub",
+            'selfHosting' => "Learn about self-hosting",
+        ],
+
+        'compare' => [
+            'title' => "How Monica fits into the world of AI memory.",
+            'lead' => "Different approaches to memory solve different problems. Monica is designed to give your personal information a home that exists outside any individual conversation or assistant.",
+            'items' => [
+                [
+                    'title' => "Built-in assistant memory",
+                    'body' => "Built-in memory can help an assistant personalize its responses. Its behavior depends on the provider, the settings and the information available to that assistant. Monica offers a separate place to keep personal records that compatible assistants can access on request.",
+                ],
+                [
+                    'title' => "Developer-oriented memory infrastructure",
+                    'body' => "AI memory infrastructure often focuses on helping developers build applications and agent workflows. Monica is a finished personal information management app with a human-facing interface and a native MCP server. It does not require you to build your own application to get started.",
+                ],
+                [
+                    'title' => "Monica’s personal AI memory",
+                    'body' => "Monica combines structured personal records, an interface you can use yourself, multiple assistant connections and a history of assistant calls. It is designed for people who want to keep useful personal information independently of any one AI provider.",
+                ],
+            ],
+            'notice' => "Monica complements an assistant’s existing memory. It does not automatically import, replace or synchronize that memory, and it does not perform automatic memory extraction or semantic retrieval itself.",
+        ],
+
+        'faq' => [
+            'title' => "Frequently asked questions about AI memory.",
+            'items' => [
+                ['q' => "What is AI memory?", 'a' => "AI memory is a way for an assistant to use information beyond the current conversation. With Monica, that information is stored in a separate personal database. A connected assistant can save supported information there and retrieve it through Monica’s tools later."],
+                ['q' => "Can I share AI memory across platforms?", 'a' => "Yes. Multiple compatible assistants can connect to the same Monica account. Information saved by one assistant can then be retrieved by another, provided it has access and uses Monica’s tools. This is independent of each assistant’s built-in memory."],
+                ['q' => "Can I use Monica as AI memory for ChatGPT or Claude?", 'a' => "Monica provides setup guides for ChatGPT and Claude, as well as other remote MCP clients. The available connection options and supported operations depend on your assistant’s capabilities, configuration and subscription. See the MCP documentation for setup instructions."],
+                ['q' => "Does Monica automatically remember everything I tell my assistant?", 'a' => "No. Monica does not read or monitor your conversations. Information is saved when your assistant calls a Monica tool to save it. You can explicitly ask your assistant to save something in Monica or check Monica when answering a question. Whether it does so automatically depends on the assistant."],
+                ['q' => "What information can an assistant save in Monica?", 'a' => "Assistants can create supported records such as people by name, family relationships, life events, reminders, Knowledge notes and lists, belongings, loans and locations. Some operations are currently limited through MCP, including writing contact details such as phone numbers, birthdays and contact notes. Those details can be managed directly in Monica."],
+                ['q' => "How does Monica search my personal memory?", 'a' => "Assistants can use keyword search for supported records, find notes and lists, and browse or filter other information. Monica does not provide semantic or vector search. The assistant determines which tools and search terms to use."],
+                ['q' => "What is an AI memory MCP server?", 'a' => "An MCP server exposes tools that compatible AI assistants can call. Monica’s remote MCP server lets assistants read and write supported personal records, so Monica can act as a persistent personal memory outside the assistant itself."],
+                ['q' => "Can I use Monica without AI?", 'a' => "Yes. Monica is a standalone personal information management application. You can create, view, edit and organize records directly without connecting an assistant."],
+                ['q' => "Can I self-host my AI memory?", 'a' => "Yes. Monica is open source under AGPL-3.0 and can be deployed on your own infrastructure using Docker. Its MCP server is also available on self-hosted instances. You are responsible for securing and maintaining your own deployment."],
+                ['q' => "Does Monica use my personal information to train AI models?", 'a' => "Monica does not operate or train AI models. When a connected assistant retrieves information, that information is sent to the assistant. Its provider’s privacy, retention and training policies then apply."],
+                ['q' => "Can I control which information an assistant accesses?", 'a' => "You can revoke each assistant connection independently. Fields marked sensitive are hidden from assistants connected through OAuth sign-in. Connections otherwise generally have account-wide access; per-vault and read-only access are not currently available."],
+                ['q' => "Can I export my personal memory?", 'a' => "Monica supports account and vault JSON exports and individual contact Markdown exports. Knowledge and possession records are not currently included in the account or vault JSON export."],
+                ['q' => "Is Monica’s AI memory free?", 'a' => "MCP access is included on free hosted accounts, subject to standard free-plan limits. Self-hosted instances have no Monica-imposed plan limits. An AI assistant provider may have its own subscription requirements or usage limits."],
+                ['q' => "What happens if I switch AI assistants?", 'a' => "The information you’ve saved in Monica stays in your account. You can disconnect the previous assistant and connect another compatible one, without moving your Monica records into a different memory system."],
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Give your memories a home of their own.",
+            'body' => "One place for the people, knowledge and everyday details that matter to you. Accessible to you and the compatible AI assistants you choose.",
+            'lead' => "Start building your personal AI memory with Monica.",
+            'cta' => "Get started for free",
+            'selfHosting' => "Explore self-hosting",
+            'note' => "Open source. Independent of any single AI assistant. Built for humans.",
         ],
     ],
 

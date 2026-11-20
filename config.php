@@ -721,6 +721,14 @@ return [
             'ru' => 'vozmozhnosti/yazyki',
         ],
 
+        // "One memory for your AI assistants": Monica as a personal memory
+        // that several AI assistants share through its MCP server. A page of
+        // its own rather than a feature page, so it sits at the top level.
+        // English only until its copy is translated: like the handbook, a
+        // route declared in fewer locales is left out of the others'
+        // sitemap, hreflang and locale picker.
+        'aiMemory' => ['en' => 'ai-memory'],
+
         // How the project is run and why, as its maintainer writes it down.
         // The only route not in every locale: see $handbookSlugs above. The
         // header and the footer link to it from every language, landing on
@@ -751,7 +759,7 @@ return [
      * posts need nothing: they are listed under their index automatically.
      */
     'llms' => [
-        'Product' => ['home', 'pricing', 'personalCrm', 'v3'],
+        'Product' => ['home', 'pricing', 'aiMemory', 'personalCrm', 'v3'],
         'Features' => ['templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
@@ -801,6 +809,7 @@ return [
         'api' => '2026-10-13',
         'privacyFeatures' => '2026-10-13',
         'languages' => '2026-10-13',
+        'aiMemory' => '2026-11-20',
         'handbook' => '2026-11-18',
         'support' => '2026-11-20',
     ],
