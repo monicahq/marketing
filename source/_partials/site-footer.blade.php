@@ -28,6 +28,7 @@
                 ['label' => $page->t('nav.handbook'), 'href' => $page->route('handbook', $handbookLocale), 'locale' => $handbookLocale],
                 ['label' => $page->t('footer.team'), 'href' => $page->route('team')],
                 ['label' => $page->t('nav.contribute'), 'href' => $page->route('contribute')],
+                ['label' => $page->t('footer.support'), 'href' => $page->route('support')],
                 ['label' => $page->t('footer.contactSales'), 'href' => $page->links['contactSales']],
                 ['label' => $page->t('footer.privacy'), 'href' => $page->route('privacy')],
                 ['label' => $page->t('footer.terms'), 'href' => $page->route('terms')],

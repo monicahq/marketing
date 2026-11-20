@@ -73,11 +73,12 @@
 
     /**
      * What kind of page this is, where schema.org has a word for it. The blog
-     * index is a list of other pages and the team and about pages are about the
-     * people behind the product; everything else is an ordinary WebPage, including a
+     * index is a list of other pages, the team and about pages are about the
+     * people behind the product, and the support page is how to reach them;
+     * everything else is an ordinary WebPage, including a
      * post, which carries its BlogPosting as a separate node.
      */
-    $webPageType = ['blog' => 'CollectionPage', 'handbook' => 'CollectionPage', 'team' => 'AboutPage', 'about' => 'AboutPage'][$page->page] ?? 'WebPage';
+    $webPageType = ['blog' => 'CollectionPage', 'handbook' => 'CollectionPage', 'team' => 'AboutPage', 'about' => 'AboutPage', 'support' => 'ContactPage'][$page->page] ?? 'WebPage';
 
     $structuredData = [
         '@context' => 'https://schema.org',

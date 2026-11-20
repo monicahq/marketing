@@ -35,6 +35,7 @@ return [
             'blog' => "博客",
             'terms' => "使用条款",
             'team' => "团队",
+            'support' => "支持",
             'about' => "关于 Monica",
             'privacy' => "隐私政策",
             'personalCrm' => "个人 CRM 指南",
@@ -93,6 +94,11 @@ return [
         'contribute' => [
             'title' => "参与贡献 — Monica",
             'description' => "Monica 是开源项目，自 2017 年起利用夜晚和周末打造。你可以怎样帮忙：审阅文档、翻译应用，以及把你自己的 AI token 用在我们未解决的 issue 上。",
+        ],
+
+        'support' => [
+            'title' => "支持 — Monica",
+            'description' => "写信给打造 Monica 的人（周一至周五），或者先查看文档：使用 Monica、API、MCP，以及 CardDAV 和 CalDAV。",
         ],
 
         'terms' => [
@@ -2720,6 +2726,7 @@ return [
         'privacy' => "隐私",
         'terms' => "条款",
         'team' => "团队",
+        'support' => "支持",
         'about' => "关于",
 
         'art' => "湖边的一片草地，熊猫们在草丛中闲躺，在树上小憩",
@@ -3075,6 +3082,38 @@ return [
             'closing' => "用你自己的 token 而不是我们的，会是极大的帮助。我们相信这对我们的帮助最大。",
             'issues' => "浏览未解决的 issue",
             'skillsButton' => "打开 skills 文件夹",
+        ],
+    ],
+
+    /**
+     * The support page. The address itself is not here: it lives in
+     * config.php and never reaches the HTML in readable form. See
+     * _partials/support/email.blade.php.
+     *
+     * `docs` is in the same order as `supportDocs` in config.php, which
+     * holds each entry's URL and icon.
+     */
+    'support' => [
+        'eyebrow' => "支持",
+        'title' => "需要帮助？来找打造 Monica 的人",
+        'lede' => "如果有任何地方不符合你的预期，请写信告诉我们，或者先看看应用内自带的文档。",
+
+        'contactTitle' => "联系支持团队",
+        'emailLabel' => "电子邮件",
+        'emailHelp' => "请告诉我们你当时在做什么、你期望发生什么，以及实际发生了什么。附上截图会比你想象的更有帮助。",
+        'emailButton' => "写信给支持团队",
+        'hoursLabel' => "服务时间",
+        'hours' => "8:00 至 18:00",
+        'days' => "周一至周五",
+        'hoursHelp' => "在这些时间之外发送的邮件，会在下一个工作日阅读。",
+
+        'docsTitle' => "文档",
+        'docsLede' => "四份指南和参考资料，登录后即可在应用内查看。",
+        'docs' => [
+            ['kind' => "指南", 'title' => "使用 Monica", 'description' => "产品每个部分的用途，从你的第一位联系人，到提醒、模板，以及与他人共享联系人。"],
+            ['kind' => "参考", 'title' => "API", 'description' => "用你自己的脚本读取和写入联系人。涵盖每个端点，并附有 cURL、JavaScript 和 PHP 示例。"],
+            ['kind' => "参考", 'title' => "MCP", 'description' => "让助手连接到你的实例，它就能读取你的通讯录并在其中记录人物，权限与你相同。"],
+            ['kind' => "指南", 'title' => "CardDAV 和 CalDAV", 'description' => "让手机和电脑上的通讯录与日历应用与 Monica 保持同步。"],
         ],
     ],
 

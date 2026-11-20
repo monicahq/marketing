@@ -542,6 +542,20 @@ return [
             'ru' => 'konfidentsialnost',
         ],
 
+        // "Support" is the word French, German and Dutch readers use too, so
+        // only Spanish, Portuguese and Russian translate it. Chinese keeps the
+        // English slug, as every Chinese page does.
+        'support' => [
+            'en' => 'support',
+            'fr' => 'support',
+            'de' => 'support',
+            'es' => 'soporte',
+            'pt' => 'suporte',
+            'nl' => 'support',
+            'zh' => 'support',
+            'ru' => 'podderzhka',
+        ],
+
         // The guide that answers the question the nav asks. Its slug says
         // "personal CRM" in each language rather than transliterating the
         // English one, because that is the phrase a reader searches for.
@@ -739,7 +753,7 @@ return [
     'llms' => [
         'Product' => ['home', 'pricing', 'personalCrm', 'v3'],
         'Features' => ['templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
-        'Company' => ['about', 'team', 'contribute'],
+        'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
         'Legal' => ['terms', 'privacy'],
@@ -788,6 +802,7 @@ return [
         'privacyFeatures' => '2026-10-13',
         'languages' => '2026-10-13',
         'handbook' => '2026-11-18',
+        'support' => '2026-11-20',
     ],
 
     // ------------------------------------------------------------------ links
@@ -830,6 +845,31 @@ return [
         'docsGuidelines' => '#',
         'issues' => 'https://github.com/monicahq/monica/issues',
         'skills' => 'https://github.com/monicahq/monica/tree/main/.claude',
+    ],
+
+    // ---------------------------------------------------------------- support
+
+    /**
+     * The support address, in two halves so that the whole address is never
+     * written down anywhere a template could print it by accident.
+     *
+     * It never reaches the HTML in readable form either: the support page
+     * prints it reversed and base64-encoded, and app.js turns it back into a
+     * mailto link in the browser. See _partials/support/email.blade.php.
+     */
+    'supportEmail' => ['support', 'monicahq.com'],
+
+    /**
+     * The four documentation cards on the support page, in the order of
+     * `support.docs` in lang/. The documentation lives inside the application,
+     * on my.monicahq.com, so these are external links and Turbo leaves them
+     * alone. `tone` is the identity colour of the card's icon tile.
+     */
+    'supportDocs' => [
+        ['href' => 'https://my.monicahq.com/docs/guide', 'icon' => 'journal', 'tone' => 'identity-1'],
+        ['href' => 'https://my.monicahq.com/docs/api', 'icon' => 'key', 'tone' => 'identity-5'],
+        ['href' => 'https://my.monicahq.com/docs/mcp', 'icon' => 'layers', 'tone' => 'identity-6'],
+        ['href' => 'https://my.monicahq.com/docs/dav', 'icon' => 'device', 'tone' => 'identity-7'],
     ],
 
     // ------------------------------------------------------------------ plans

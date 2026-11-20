@@ -17,6 +17,7 @@ return [
             'blog' => "Blog",
             'terms' => "Condiciones de uso",
             'team' => "Equipo",
+            'support' => "Soporte",
             'about' => "Sobre Monica",
             'privacy' => "Política de privacidad",
             'personalCrm' => "Guía del CRM personal",
@@ -70,6 +71,11 @@ return [
         'contribute' => [
             'title' => "Colaborar — Monica",
             'description' => "Monica es de código abierto, construida en noches y fines de semana desde 2017. Cómo puedes ayudar: revisar la documentación, traducir la aplicación y gastar tus propios tokens de IA en nuestros issues abiertos.",
+        ],
+
+        'support' => [
+            'title' => "Soporte — Monica",
+            'description' => "Escribe a las personas que desarrollan Monica, de lunes a viernes, o empieza por la documentación: usar Monica, la API, MCP, y CardDAV y CalDAV.",
         ],
 
         'terms' => [
@@ -2712,6 +2718,7 @@ return [
         'privacy' => "Privacidad",
         'terms' => "Condiciones de uso",
         'team' => "Equipo",
+        'support' => "Soporte",
         'about' => "Sobre nosotros",
 
         'art' => "Un prado junto a un lago, con pandas tumbados en la hierba y echando la siesta en los árboles",
@@ -3052,6 +3059,38 @@ return [
             'closing' => "Que gastes tus propios tokens en lugar de los nuestros será una ayuda enorme. Creemos que es lo que más nos ayudará.",
             'issues' => "Ver los issues abiertos",
             'skillsButton' => "Abrir la carpeta de skills",
+        ],
+    ],
+
+    /**
+     * The support page. The address itself is not here: it lives in
+     * config.php and never reaches the HTML in readable form. See
+     * _partials/support/email.blade.php.
+     *
+     * `docs` is in the same order as `supportDocs` in config.php, which
+     * holds each entry's URL and icon.
+     */
+    'support' => [
+        'eyebrow' => "Soporte",
+        'title' => "Ayuda con Monica, de las personas que la desarrollan",
+        'lede' => "Escríbenos sobre cualquier cosa que no funcione como esperas, o empieza por la documentación incluida en la aplicación.",
+
+        'contactTitle' => "Contactar con soporte",
+        'emailLabel' => "Correo electrónico",
+        'emailHelp' => "Cuéntanos qué estabas haciendo, qué esperabas y qué pasó en su lugar. Una captura de pantalla ayuda más de lo que crees.",
+        'emailButton' => "Escribir a soporte",
+        'hoursLabel' => "Horario de atención",
+        'hours' => "8:00 a 18:00",
+        'days' => "De lunes a viernes",
+        'hoursHelp' => "Un mensaje enviado fuera de este horario se lee el siguiente día laborable.",
+
+        'docsTitle' => "Documentación",
+        'docsLede' => "Cuatro guías y referencias, disponibles en la aplicación una vez que inicias sesión.",
+        'docs' => [
+            ['kind' => "Guía", 'title' => "Usar Monica", 'description' => "Para qué sirve cada parte del producto, desde tu primer contacto hasta los recordatorios, las plantillas y compartir un contacto con alguien."],
+            ['kind' => "Referencia", 'title' => "API", 'description' => "Lee y escribe tus contactos desde tus propios scripts. Cada endpoint, con ejemplos en cURL, JavaScript y PHP."],
+            ['kind' => "Referencia", 'title' => "MCP", 'description' => "Conecta un asistente a tu instancia para que pueda leer tu directorio y registrar personas en él, con el acceso que tú tienes."],
+            ['kind' => "Guía", 'title' => "CardDAV y CalDAV", 'description' => "Mantén las aplicaciones de contactos y calendario de tu teléfono y tu ordenador sincronizadas con Monica."],
         ],
     ],
 
