@@ -50,7 +50,7 @@ return [
 
         'pricing' => [
             'title' => "Precios de Monica: autoalojamiento gratis, o deja que Monica la aloje",
-            'description' => "Aloja Monica gratis, o deja que Monica la aloje por 9 USD al mes, 90 USD al año o 150 USD una sola vez. Todos los planes tienen todas las funciones, contactos ilimitados y ningún precio por contacto.",
+            'description' => "Aloja Monica gratis, o deja que Monica la aloje por 9 USD al mes, 90 USD al año o 250 USD una sola vez. Todos los planes tienen todas las funciones, contactos ilimitados y ningún precio por contacto.",
         ],
 
         'privacy' => [
@@ -803,7 +803,7 @@ return [
             'free' => "0 $",
             'monthly' => "9 $",
             'yearly' => "90 $",
-            'lifetime' => "150 $",
+            'lifetime' => "250 $",
         ],
 
         'hero' => [

@@ -790,9 +790,9 @@ return [
      * `pageless` needs none either, because it has no page to date.
      */
     'lastmod' => [
-        'home' => '2026-10-11',
+        'home' => '2026-11-20',
         'v3' => '2026-08-06',
-        'pricing' => '2026-10-12',
+        'pricing' => '2026-11-20',
         'terms' => '2026-11-20',
         'team' => '2026-08-06',
         'about' => '2026-11-12',
@@ -901,7 +901,7 @@ return [
         'yearly' => '90.00',
 
         // Paid once, never renewed.
-        'lifetime' => '150.00',
+        'lifetime' => '250.00',
 
         // The application is free; the server is the reader's problem.
         'selfHosted' => '0.00',

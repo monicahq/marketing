@@ -54,7 +54,7 @@ return [
 
         'pricing' => [
             'title' => "Preços da Monica: hospedagem própria de graça, ou deixe a Monica hospedar",
-            'description' => "Hospede a Monica de graça, ou deixe a Monica hospedar por 9 USD por mês, 90 USD por ano ou 150 USD uma única vez. Todos os planos têm todos os recursos, contatos ilimitados e nenhuma cobrança por contato.",
+            'description' => "Hospede a Monica de graça, ou deixe a Monica hospedar por 9 USD por mês, 90 USD por ano ou 250 USD uma única vez. Todos os planos têm todos os recursos, contatos ilimitados e nenhuma cobrança por contato.",
         ],
 
         'privacy' => [
@@ -806,7 +806,7 @@ return [
             'free' => "US\$ 0",
             'monthly' => "US\$ 9",
             'yearly' => "US\$ 90",
-            'lifetime' => "US\$ 150",
+            'lifetime' => "US\$ 250",
         ],
 
         'hero' => [

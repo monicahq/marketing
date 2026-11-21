@@ -53,7 +53,7 @@ return [
 
         'pricing' => [
             'title' => "Prijzen van Monica: gratis in eigen beheer, of laat Monica het hosten",
-            'description' => "Draai Monica gratis in eigen beheer, of laat Monica het hosten voor 9 USD per maand, 90 USD per jaar of eenmalig 150 USD. Elk abonnement heeft elke functie, onbeperkt contacten en geen prijs per contact.",
+            'description' => "Draai Monica gratis in eigen beheer, of laat Monica het hosten voor 9 USD per maand, 90 USD per jaar of eenmalig 250 USD. Elk abonnement heeft elke functie, onbeperkt contacten en geen prijs per contact.",
         ],
 
         'privacy' => [
@@ -798,7 +798,7 @@ return [
             'free' => "$0",
             'monthly' => "$9",
             'yearly' => "$90",
-            'lifetime' => "$150",
+            'lifetime' => "$250",
         ],
 
         'hero' => [

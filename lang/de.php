@@ -50,7 +50,7 @@ return [
 
         'pricing' => [
             'title' => "Monica-Preise: kostenlos selbst hosten, oder Monica hosten lassen",
-            'description' => "Hosten Sie Monica kostenlos selbst, oder lassen Sie Monica sie für 9 USD im Monat, 90 USD im Jahr oder einmalig 150 USD hosten. Jeder Tarif enthält jede Funktion, unbegrenzte Kontakte und keinen Preis pro Kontakt.",
+            'description' => "Hosten Sie Monica kostenlos selbst, oder lassen Sie Monica sie für 9 USD im Monat, 90 USD im Jahr oder einmalig 250 USD hosten. Jeder Tarif enthält jede Funktion, unbegrenzte Kontakte und keinen Preis pro Kontakt.",
         ],
 
         'privacy' => [
@@ -799,7 +799,7 @@ return [
             'free' => "0 $",
             'monthly' => "9 $",
             'yearly' => "90 $",
-            'lifetime' => "150 $",
+            'lifetime' => "250 $",
         ],
 
         'hero' => [

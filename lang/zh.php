@@ -73,7 +73,7 @@ return [
 
         'pricing' => [
             'title' => "Monica 价格：免费自托管，或交给 Monica 托管",
-            'description' => "免费自托管 Monica，或交给 Monica 托管：每月 \$9，每年 \$90，或一次性 \$150。每个方案都包含全部功能，联系人数量不限，也不按联系人计费。",
+            'description' => "免费自托管 Monica，或交给 Monica 托管：每月 \$9，每年 \$90，或一次性 \$250。每个方案都包含全部功能，联系人数量不限，也不按联系人计费。",
         ],
 
         'privacy' => [
@@ -821,7 +821,7 @@ return [
             'free' => "\$0",
             'monthly' => "\$9",
             'yearly' => "\$90",
-            'lifetime' => "\$150",
+            'lifetime' => "\$250",
         ],
 
         'hero' => [

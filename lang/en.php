@@ -76,7 +76,7 @@ return [
 
         'pricing' => [
             'title' => "Monica pricing: self-host for free, or let Monica host it",
-            'description' => "Self-host Monica for free, or let Monica host it for $9 USD a month, $90 a year or $150 once. Every plan has every feature, with unlimited contacts and no per-contact pricing.",
+            'description' => "Self-host Monica for free, or let Monica host it for $9 USD a month, $90 a year or $250 once. Every plan has every feature, with unlimited contacts and no per-contact pricing.",
         ],
 
         'privacy' => [
@@ -840,7 +840,7 @@ return [
             'free' => "$0",
             'monthly' => "$9",
             'yearly' => "$90",
-            'lifetime' => "$150",
+            'lifetime' => "$250",
         ],
 
         'hero' => [

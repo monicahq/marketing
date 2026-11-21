@@ -52,7 +52,7 @@ return [
 
         'pricing' => [
             'title' => "Tarifs Monica : l’auto-hébergement gratuit, ou Monica hébergée pour vous",
-            'description' => "Hébergez Monica gratuitement, ou laissez Monica l’héberger pour 9 USD par mois, 90 USD par an ou 150 USD une fois. Chaque offre a toutes les fonctionnalités, des contacts illimités et aucun tarif au contact.",
+            'description' => "Hébergez Monica gratuitement, ou laissez Monica l’héberger pour 9 USD par mois, 90 USD par an ou 250 USD une fois. Chaque offre a toutes les fonctionnalités, des contacts illimités et aucun tarif au contact.",
         ],
 
         'privacy' => [
@@ -801,7 +801,7 @@ return [
             'free' => "0 $",
             'monthly' => "9 $",
             'yearly' => "90 $",
-            'lifetime' => "150 $",
+            'lifetime' => "250 $",
         ],
 
         'hero' => [
