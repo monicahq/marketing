@@ -35,7 +35,7 @@
                     <div class="rounded-l-lg border border-r-0 border-border bg-canvas px-4 py-1">
                         @foreach ($copy['reminders']['rows'] as $r => $row)
                             <div class="flex items-center gap-3 border-border-subtle py-2.5 not-last:border-b">
-                                @include('_partials.avatar-initials', ['name' => $reminderFaces[$r], 'size' => 28])
+                                @include('_partials.home.product.avatar', ['name' => $reminderFaces[$r], 'size' => 28])
                                 <span class="flex-1 text-base"><strong class="font-semibold">{{ $row['name'] }}</strong> <span class="text-text-muted">· {{ $row['what'] }}</span></span>
                                 <span class="text-xs text-text-secondary">{{ $row['when'] }}</span>
                             </div>
