@@ -10,7 +10,6 @@
     $closing = 'text-copy-lg font-medium text-text text-pretty';
     $eyebrow = 'text-caption font-semibold tracking-[0.06em] uppercase';
     $note = 'text-small text-text-muted text-pretty';
-    $quote = 'rounded-lg border border-border bg-surface-subtle px-3.5 py-3 text-body text-text-soft';
 
     // The drawings. A drawn window lifts off its tinted panel as the design
     // system's popover does.

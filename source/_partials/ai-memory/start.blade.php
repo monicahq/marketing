@@ -27,10 +27,7 @@
                     <h3 class="text-lede-sm font-semibold tracking-[-0.01em]">{{ $step['title'] }}</h3>
                     <p class="text-body text-text-secondary text-pretty">{{ $step['body'] }}</p>
                     @if ($loop->last)
-                        <div class="{{ $quote }} flex flex-col gap-1">
-                            <span class="text-caption font-semibold tracking-[0.06em] text-text-muted uppercase">{{ $start['starter'] }}</span>
-                            <span>{{ $start['starterPrompt'] }}</span>
-                        </div>
+                        @include('_partials.ai-memory.prompt', ['text' => $start['starterPrompt'], 'label' => $start['starter']])
                     @endif
                 </li>
             @endforeach

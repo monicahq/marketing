@@ -15,10 +15,7 @@
                         <span class="mn-badge mn-badge-neutral">{{ $retrieval['badge'] }}</span>
                     </div>
                     <div class="flex flex-col gap-3 p-5">
-                        <div class="{{ $quote }} flex flex-col gap-1">
-                            <span class="text-caption font-semibold tracking-[0.06em] text-text-muted uppercase">{{ $retrieval['ask'] }}</span>
-                            <span>{{ $item['ask'] }}</span>
-                        </div>
+                        @include('_partials.ai-memory.prompt', ['text' => $item['ask'], 'label' => $retrieval['ask']])
                         <p class="text-body text-text-secondary text-pretty">{{ $item['body'] }}</p>
                     </div>
                 </article>

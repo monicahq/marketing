@@ -3,7 +3,7 @@
      draws its placeholders. `item` is one entry of `aiMemory.illustrations`,
      `frame` sizes the frame.
 
-     @include('_partials.ai-memory.illustration', ['item' => $copy['illustrations']['hero'], 'frame' => 'aspect-[16/7]']) --}}
+     @include('_partials.ai-memory.illustration', ['item' => $copy['illustrations']['problem'], 'frame' => 'aspect-square']) --}}
 <div class="flex flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-border-strong bg-surface-subtle p-6 text-center text-text-muted {{ $frame ?? '' }}">
     @include('_partials.icon', ['name' => 'memory', 'size' => 24])
     <span class="font-mono text-caption tracking-[0.06em] uppercase">{{ $item['ref'] }}</span>

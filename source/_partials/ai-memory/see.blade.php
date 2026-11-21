@@ -2,14 +2,14 @@
 
 <section class="{{ $section }}">
     <div class="{{ $container }} {{ $split }}">
-        {{-- A camera's page in Monica: what it cost, where it is, and when it
+        {{-- A recliner's page in Monica: what it cost, where it is, and when it
              was last looked after. One picture, read out by its label. --}}
         <div role="img" aria-label="{{ $see['label'] }}" class="rounded-lg bg-identity-3/14 p-4 md:p-10">
             <div class="{{ $window }} mx-auto max-w-[480px]">
                 <div class="{{ $windowTitle }}">
                     <span class="{{ $markTile }} bg-surface-subtle">@include('_partials.icon', ['name' => 'tag', 'size' => 15])</span>
                     <div class="flex min-w-0 flex-1 flex-col gap-px">
-                        <span class="text-body font-semibold">{{ $see['camera'] }}</span>
+                        <span class="text-body font-semibold">{{ $see['item'] }}</span>
                         <span class="flex items-center gap-1 {{ $stamp }}">@include('_partials.icon', ['name' => 'place', 'size' => 12]){{ $see['place'] }}</span>
                     </div>
                 </div>

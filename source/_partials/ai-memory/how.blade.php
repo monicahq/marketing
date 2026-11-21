@@ -27,7 +27,7 @@
                         <h3 class="text-copy font-semibold">{{ $step['title'] }}</h3>
                     </div>
                     @if ($step['prompt'])
-                        <blockquote class="{{ $quote }}">{{ $step['prompt'] }}</blockquote>
+                        @include('_partials.ai-memory.prompt', ['text' => $step['prompt']])
                     @endif
                     <p class="text-body text-text-secondary text-pretty">{{ $step['body'] }}</p>
 
@@ -57,16 +57,16 @@
                         @else
                             <div class="{{ $window }}">
                                 <div class="{{ $windowTitle }}">
-                                    <span class="{{ $markTile }} bg-surface-subtle">@include('_partials.icon', ['name' => 'tag', 'size' => 15])</span>
+                                    <span class="{{ $markTile }} bg-surface-subtle">@include('_partials.icon', ['name' => 'book', 'size' => 15])</span>
                                     <div class="flex min-w-0 flex-1 flex-col gap-px">
-                                        <span class="text-base font-semibold">{{ $copy['tent'] }}</span>
+                                        <span class="text-base font-semibold">{{ $copy['book'] }}</span>
                                         <span class="{{ $stamp }}">{{ $how['garage'] }}</span>
                                     </div>
                                 </div>
                                 <div class="flex flex-col gap-2 p-3.5">
                                     <span class="text-xs font-semibold text-text-muted">{{ $how['loans'] }}</span>
                                     <div class="flex items-center gap-2.5">
-                                        @include('_partials.avatar-initials', ['name' => $copy['borrower'], 'size' => 28])
+                                        @include('_partials.home.product.avatar', ['name' => $copy['borrower'], 'size' => 28])
                                         <div class="flex min-w-0 flex-1 flex-col gap-px">
                                             <span class="text-base font-semibold">{{ $copy['borrower'] }}</span>
                                             <span class="{{ $stamp }}">{{ $copy['due'] }}</span>

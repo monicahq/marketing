@@ -1,4 +1,10 @@
-@php($hero = $copy['hero'])
+@php
+    $hero = $copy['hero'];
+    $libraryDay = '/assets/images/ai-memory/library-day.webp';
+    $libraryNight = '/assets/images/ai-memory/library-night.webp';
+    $libraryDaySize = $page->imageSize($libraryDay);
+    $libraryNightSize = $page->imageSize($libraryNight);
+@endphp
 
 <section class="px-4 pt-22 md:px-6">
     <div class="{{ $container }}">
@@ -14,6 +20,30 @@
             <p class="{{ $note }}">{{ $hero['note'] }}</p>
         </div>
 
-        @include('_partials.ai-memory.illustration', ['item' => $copy['illustrations']['hero'], 'frame' => 'mt-16 min-h-60 md:aspect-[16/7]'])
+        {{-- The panda's library, by day and by night, as the pricing hero
+             draws its panda: decorative, because the headline says it. The
+             day one is eager since it sits in the first screenful; the night
+             one is lazy, so a reader in light mode never fetches it. --}}
+        <div class="mx-auto mt-12 max-w-[1100px]">
+            <img
+                src="{{ $libraryDay }}"
+                srcset="{{ $libraryDay }} 1x, {{ str_replace('.webp', '@2x.webp', $libraryDay) }} 2x"
+                alt=""
+                width="{{ $libraryDaySize['width'] }}"
+                height="{{ $libraryDaySize['height'] }}"
+                decoding="async"
+                class="block h-auto w-full dark:hidden"
+            >
+            <img
+                src="{{ $libraryNight }}"
+                srcset="{{ $libraryNight }} 1x, {{ str_replace('.webp', '@2x.webp', $libraryNight) }} 2x"
+                alt=""
+                width="{{ $libraryNightSize['width'] }}"
+                height="{{ $libraryNightSize['height'] }}"
+                loading="lazy"
+                decoding="async"
+                class="hidden h-auto w-full dark:block"
+            >
+        </div>
     </div>
 </section>

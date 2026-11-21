@@ -15,11 +15,11 @@
                  its caption says so. --}}
             <figure class="flex flex-col gap-3">
                 <div role="img" aria-label="{{ $structure['label'] }}" class="flex flex-col items-center rounded-lg bg-identity-5/14 p-6 md:p-10">
-                    @include('_partials.ai-memory.node', ['icon' => 'tag', 'kind' => $structure['belonging'], 'name' => $copy['tent'], 'detail' => $structure['garage']])
+                    @include('_partials.ai-memory.node', ['icon' => 'book', 'kind' => $structure['belonging'], 'name' => $copy['book'], 'detail' => $structure['garage']])
                     @include('_partials.ai-memory.link', ['label' => $structure['loan'], 'detail' => $structure['dueShort']])
                     @include('_partials.ai-memory.node', ['person' => $copy['borrower'], 'kind' => $structure['person'], 'name' => $copy['borrower']])
                     @include('_partials.ai-memory.link', ['label' => $structure['tookPart'], 'detail' => $structure['withYou']])
-                    @include('_partials.ai-memory.node', ['icon' => 'timeline', 'kind' => $structure['event'], 'name' => $structure['dinner']])
+                    @include('_partials.ai-memory.node', ['icon' => 'timeline', 'kind' => $structure['event'], 'name' => $structure['dinner'], 'people' => array_map(fn ($who) => $page->t("cast.{$who}.full"), ['monica', 'rachel', 'ross'])])
                 </div>
                 <figcaption class="{{ $note }} text-center">{{ $structure['caption'] }}</figcaption>
             </figure>

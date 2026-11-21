@@ -40,7 +40,7 @@
                                 <div class="grid gap-2 sm:grid-cols-2">
                                     <div class="flex flex-col gap-1 rounded-md bg-surface-subtle p-2.5">
                                         <span class="{{ $stamp }}">{{ $visibility['request'] }}</span>
-                                        <span class="{{ $mono }} break-all">{"possession": "tent"}</span>
+                                        <span class="{{ $mono }} break-all">{"possession": "{{ $copy['book'] }}"}</span>
                                     </div>
                                     <div class="flex flex-col gap-1 rounded-md bg-surface-subtle p-2.5">
                                         <span class="{{ $stamp }}">{{ $visibility['response'] }}</span>

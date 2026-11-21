@@ -709,7 +709,7 @@ return [
             'ideas' => ["The scarf she pointed at in Bloomingdale’s", "Anything but a list of pros and cons"],
             'ask' => "Log that I had coffee with Joey at Central Perk today.",
             'used' => "Used Monica",
-            'reply' => "Done. Added “Coffee” to Joey’s timeline for 11 October.",
+            'reply' => "Done. Added “Coffee” to Chandler’s timeline for 11 October.",
         ],
 
         'features' => [
@@ -721,7 +721,7 @@ return [
                 'rows' => [
                     ['name' => "Rachel Green", 'what' => "birthday", 'when' => "in 23 days"],
                     ['name' => "Chandler Bing", 'what' => "call back about Thanksgiving", 'when' => "tomorrow"],
-                    ['name' => "Joey Tribbiani", 'what' => "pay back the rent", 'when' => "six years overdue"],
+                    ['name' => "Chandler Bing", 'what' => "pay back the rent", 'when' => "six years overdue"],
                 ],
             ],
             'relationships' => [
@@ -1323,7 +1323,7 @@ return [
         'ross' => ['first' => "Ross", 'full' => "Ross Geller"],
         'monica' => ['first' => "Monica", 'full' => "Monica Geller"],
         'chandler' => ['first' => "Chandler", 'full' => "Chandler Bing"],
-        'joey' => ['first' => "Joey", 'full' => "Joey Tribbiani"],
+        'joey' => ['first' => "Joey", 'full' => "Chandler Bing"],
         'phoebe' => ['first' => "Phoebe", 'full' => "Phoebe Buffay"],
     ],
     'listSeparator' => ", ",
@@ -1565,7 +1565,7 @@ return [
                 "Joey mentioned an audition last week. You remember it mattered to him. Having that detail on his page gives you somewhere to pick up the conversation.",
                 "Keep a record of the things people tell you: a new job, an upcoming move, a project they cannot stop talking about.",
             ],
-            'label' => "Two notes on Joey Tribbiani’s page: an audition on Thursday for a hospital drama, and a move out of the apartment by the end of the summer. Below them, a reminder due today to ask Joey how the audition went.",
+            'label' => "Two notes on Chandler Bing’s page: an audition on Thursday for a hospital drama, and a move out of the apartment by the end of the summer. Below them, a reminder due today to ask Joey how the audition went.",
             'notes' => "Notes",
             'entries' => [
                 ['text' => "Audition on Thursday for a part in a hospital drama. Second callback. He’s been practising the crying scene on the roof.", 'added' => "Added 8 days ago"],
@@ -1704,15 +1704,15 @@ return [
             ],
             'inbox' => "In your inbox, Tuesday 09:00",
             'from' => "From Monica",
-            'email' => "You asked to be reminded about Joey Tribbiani today.",
+            'email' => "You asked to be reminded about Chandler Bing today.",
             'open' => "Open Joey’s page",
         ],
 
         'once' => [
             'title' => "Joey’s audition is on Tuesday.",
             'lead' => "You cannot get him the part. You can remember to ask how it went.",
-            'body' => "Add a reminder to Joey’s page, choose the day and time, and write what you want Monica to tell you: “Ask Joey about the audition.”",
-            'label' => "Adding a reminder on Joey Tribbiani’s page in Monica: on Tuesday 14 October at 18:00, it will say “Ask Joey about the audition.” It happens once.",
+            'body' => "Add a reminder to Chandler’s page, choose the day and time, and write what you want Monica to tell you: “Ask Joey about the audition.”",
+            'label' => "Adding a reminder on Chandler Bing’s page in Monica: on Tuesday 14 October at 18:00, it will say “Ask Joey about the audition.” It happens once.",
             'heading' => "Add a reminder for Joey",
             'day' => "Tuesday 14 October",
             'at' => "18:00",
@@ -2004,7 +2004,7 @@ return [
             'intro' => "Her sister. His partner. The friend who introduced you.",
             'lede' => "Keep track of the people around someone, with relationships that make sense from both sides.",
             'cta' => "Create your account",
-            'label' => "Ross Geller’s relationships in Monica, 8 of them. Family: Monica Geller, his sister; Jack Geller, his father; Judy Geller, his mother; and Emma Geller-Green, his daughter. Romantic: Rachel Green, his partner. Friends: Chandler Bing, Joey Tribbiani and Phoebe Buffay.",
+            'label' => "Ross Geller’s relationships in Monica, 8 of them. Family: Monica Geller, his sister; Jack Geller, his father; Judy Geller, his mother; and Emma Geller-Green, his daughter. Romantic: Rachel Green, his partner. Friends: Chandler Bing, Chandler Bing and Phoebe Buffay.",
             'count' => "8 relationships",
             // The people in each group are in the template, in this order.
             'groups' => [
@@ -2052,8 +2052,8 @@ return [
                 "Choose someone already in Monica, add someone by name, or record an unnamed person when all you know is their role.",
                 "You can keep someone as a partial contact, outside your main contact list, when you only need them for the connection.",
             ],
-            'label' => "Adding a relationship to Joey Tribbiani in Monica: a sibling, with three ways to say who. I do not know their name is selected, which records the role and nothing else. The others are I know their name, and choose someone already written down. Below, an unticked box to create a contact record for this person.",
-            'subtitle' => "Say how somebody is connected to Joey Tribbiani.",
+            'label' => "Adding a relationship to Chandler Bing in Monica: a sibling, with three ways to say who. I do not know their name is selected, which records the role and nothing else. The others are I know their name, and choose someone already written down. Below, an unticked box to create a contact record for this person.",
+            'subtitle' => "Say how somebody is connected to Chandler Bing.",
             // The first is the one selected.
             'options' => [
                 ['title' => "I do not know their name", 'hint' => "Records the role and nothing else"],
@@ -2160,7 +2160,7 @@ return [
             'title' => "Central Perk in one. The restaurant in another.",
             'lead' => "Monica Geller might keep Rachel, Chandler and the rest of the group in Personal, with her restaurant colleagues in Work.",
             'body' => "Each vault has its own contact list, relationships, timeline and reminders. A search stays within the vault you are using, so you can focus on that part of your life.",
-            'label' => "Two vaults side by side in Monica. In Personal: Rachel Green, roommate; Chandler Bing, partner; Ross Geller, brother; Joey Tribbiani and Phoebe Buffay, friends. In Work, a search for Rachel finds nobody, because search looks in this vault only. Its people are Marcel Duval, sous-chef; Inès Ortega, pastry chef; and Sam Whitfield, restaurant owner.",
+            'label' => "Two vaults side by side in Monica. In Personal: Rachel Green, roommate; Chandler Bing, partner; Ross Geller, brother; Chandler Bing and Phoebe Buffay, friends. In Work, a search for Rachel finds nobody, because search looks in this vault only. Its people are Marcel Duval, sous-chef; Inès Ortega, pastry chef; and Sam Whitfield, restaurant owner.",
             'people' => "People",
             'search' => "Search Personal",
             'query' => "Rachel",
@@ -2228,9 +2228,9 @@ return [
             'intro' => "Someone needs an address, a phone number, or a few useful details.",
             'lede' => "Share selected sections of a contact’s page through a read-only link. Choose what it shows, how long it works, and when to stop access.",
             'cta' => "Create your account",
-            'label' => "Sharing Joey Tribbiani’s page in Monica, from the Personal vault. The link is read only, always: whoever opens it needs no account, joins nothing, and can change nothing. The link is named Joey’s birthday, it is for Rachel Green, it stops working in 7 days, and no password is set. Going out: 2 of 6 sections and his name, nothing else.",
+            'label' => "Sharing Chandler Bing’s page in Monica, from the Personal vault. The link is read only, always: whoever opens it needs no account, joins nothing, and can change nothing. The link is named Joey’s birthday, it is for Rachel Green, it stops working in 7 days, and no password is set. Going out: 2 of 6 sections and his name, nothing else.",
             'readOnly' => "Read only, always",
-            'heading' => "Share Joey Tribbiani",
+            'heading' => "Share Chandler Bing",
             'body' => "A private link to this one page. Whoever opens it needs no account, joins nothing, and can change nothing.",
             'vault' => "Personal · Friends and family",
             'link' => "The link itself",
@@ -2248,8 +2248,8 @@ return [
         'visitor' => [
             'title' => "Rachel is organising Joey’s birthday.",
             'lead' => "She needs his address and phone number. Your notes about his auditions can stay with you.",
-            'body' => "Create a link to Joey’s page and select the sections Rachel needs. She can open it without a Monica account and cannot change anything.",
-            'label' => "Joey Tribbiani’s page as Rachel sees it, shared with her by Monica Geller, read only, until 20 October 2026. Ways to connect: his address, 495 Grove Street, Apt 19, New York, and his phone number. A note explains that this is a page from somebody’s private records, with nothing to sign in to and nothing to reply to.",
+            'body' => "Create a link to Chandler’s page and select the sections Rachel needs. She can open it without a Monica account and cannot change anything.",
+            'label' => "Chandler Bing’s page as Rachel sees it, shared with her by Monica Geller, read only, until 20 October 2026. Ways to connect: his address, 495 Grove Street, Apt 19, New York, and his phone number. A note explains that this is a page from somebody’s private records, with nothing to sign in to and nothing to reply to.",
             'by' => "Shared with you by Monica Geller",
             'until' => "Read only · ends 20 October 2026",
             'oldAddress' => "495 Grove Street, Apt 19, New York",
@@ -2263,7 +2263,7 @@ return [
                 "Fields you marked sensitive are excluded by default. You can choose to include them when needed.",
                 "Life events, relationships, reminders, photos, attached files and change history stay out of the shared page.",
             ],
-            'label' => "Two links to Joey’s page, each with its own sections. For Rachel, Joey’s birthday: ways to connect and food preferences, while personal details, work, notes and the fields you marked sensitive are left out. For the agent, headshots and contracts: ways to connect and work. Never on a shared page: life events, relationships, reminders, photos, attached files and change history.",
+            'label' => "Two links to Chandler’s page, each with its own sections. For Rachel, Joey’s birthday: ways to connect and food preferences, while personal details, work, notes and the fields you marked sensitive are left out. For the agent, headshots and contracts: ways to connect and work. Never on a shared page: life events, relationships, reminders, photos, attached files and change history.",
             // Which sections each link shows, by their place in `sections`,
             // is in the template.
             'links' => [
@@ -2357,10 +2357,10 @@ return [
             'intro' => "Use Monica with Claude, ChatGPT, Gemini or your own scripts. Look up a contact, record a moment, or set a reminder from the tools you already use.",
             'lede' => "Connect through MCP where your assistant supports it, or build your own connection with the API.",
             'cta' => "Create your account",
-            'label' => "A conversation with Claude about the week ahead, with Monica connected. You ask: Joey has his audition on Wednesday, remind me next Tuesday to ask him how he’s feeling about it. Claude uses Monica’s create_reminder tool, which adds the reminder Ask Joey about his audition, on Tuesday 20 October, in the Personal vault, and replies that Monica will remind you that day.",
+            'label' => "A conversation with Claude about the week ahead, with Monica connected. You ask: Chandler has his audition on Wednesday, remind me next Tuesday to ask him how he’s feeling about it. Claude uses Monica’s create_reminder tool, which adds the reminder Ask Joey about his audition, on Tuesday 20 October, in the Personal vault, and replies that Monica will remind you that day.",
             'chat' => "The week ahead",
             'connected' => "Monica connected",
-            'ask' => "Joey has his audition on Wednesday. Remind me next Tuesday to ask him how he’s feeling about it.",
+            'ask' => "Chandler has his audition on Wednesday. Remind me next Tuesday to ask him how he’s feeling about it.",
             'reminder' => "Ask Joey about his audition",
             'when' => "Tuesday 20 October · Personal",
             'done' => "Done. Monica will remind you on Tuesday 20 October to ask Joey about his audition.",
@@ -2747,8 +2747,12 @@ return [
      */
     'aiMemory' => [
         // Words more than one drawing uses.
-        'borrower' => "Alex",
-        'tent' => "Camping tent",
+        // The examples are the demo vault's, as on the homepage: the
+        // reader lent Chandler their copy of The Shining, which lives in
+        // the freezer, as it does in his and Joey's flat. Chandler rather
+        // than Joey because the vault has his photo.
+        'borrower' => "Chandler Bing",
+        'book' => "The Shining",
         'due' => "Due back 5 December",
 
         /**
@@ -2757,20 +2761,10 @@ return [
          * frame exactly as the design draws its placeholders.
          */
         'illustrations' => [
-            'hero' => [
-                'ref' => "I01 · Illustration",
-                'title' => "Shared memory",
-                'brief' => "Panda tending a small personal library, three softly coloured paths connecting neutral assistant symbols to it. People, a notebook, a box of belongings. One shared home, not a brain or a robot.",
-            ],
             'problem' => [
                 'ref' => "I02 · Illustration · Optional",
                 'title' => "Islands and a bridge",
                 'brief' => "Two islands with separate notebooks, bridged to one central library where a panda organizes them. No suggestion of importing or syncing conversations.",
-            ],
-            'open' => [
-                'ref' => "I04 · Illustration",
-                'title' => "Panda in its own library",
-                'brief' => "A small wooden library or garden shed, notebooks and belongings neatly organized. Independence, not protection: no padlocks or shields.",
             ],
         ],
 
@@ -2801,27 +2795,27 @@ return [
             'steps' => [
                 [
                     'title' => "Save something with Claude",
-                    'prompt' => "I lent my camping tent to Alex today. He’s bringing it back on December 5. Save that in Monica.",
+                    'prompt' => "I lent my copy of The Shining to Chandler today. He’s bringing it back on December 5. Save that in Monica.",
                     'body' => "Your assistant records the loan, the borrower and the expected return date in your Monica account.",
-                    'label' => "A conversation with Claude, with Monica connected. You ask Claude to save that you lent your camping tent to Alex, due back on 5 December. Claude uses Monica’s create-possession-loan tool and confirms the loan is saved.",
-                    'reply' => "Saved. Monica now shows your camping tent on loan to Alex until 5 December.",
+                    'label' => "A conversation with Claude, with Monica connected. You ask Claude to save that you lent your copy of The Shining to Chandler, due back on 5 December. Claude uses Monica’s create-possession-loan tool and confirms the loan is saved.",
+                    'reply' => "Saved. Monica now shows The Shining on loan to Chandler until 5 December.",
                 ],
                 [
                     'title' => "See it in Monica",
                     'prompt' => null,
-                    'body' => "The loan is a real record in Monica, linked to the tent and the person who borrowed it. You can open it directly and review or update it yourself.",
-                    'label' => "The camping tent’s page in Monica, stored in the garage. Its loans section shows it lent to Alex, due back on 5 December.",
+                    'body' => "The loan is a real record in Monica, linked to the book and the person who borrowed it. You can open it directly and review or update it yourself.",
+                    'label' => "The page of your copy of The Shining in Monica, stored in the freezer. Its loans section shows it lent to Chandler Bing, due back on 5 December.",
                     'reply' => null,
                 ],
                 [
                     'title' => "Retrieve it with ChatGPT",
-                    'prompt' => "Check Monica. Who has my camping tent?",
-                    'body' => "Your connected assistant can look up the recorded loan and tell you who has the tent and when it is expected back.",
-                    'label' => "A new conversation with ChatGPT, with Monica connected. You ask who has your camping tent. ChatGPT uses Monica’s list-possession-loans tool and answers that Alex has it, due back on 5 December.",
-                    'reply' => "Alex has your camping tent. It’s due back on 5 December.",
+                    'prompt' => "Check Monica. Who has my copy of The Shining?",
+                    'body' => "Your connected assistant can look up the recorded loan and tell you who has the book and when it is expected back.",
+                    'label' => "A new conversation with ChatGPT, with Monica connected. You ask who has your copy of The Shining. ChatGPT uses Monica’s list-possession-loans tool and answers that Chandler has it, due back on 5 December.",
+                    'reply' => "Chandler has your copy of The Shining. It’s due back on 5 December.",
                 ],
             ],
-            'garage' => "Stored in the garage",
+            'garage' => "Stored in the freezer",
             'loans' => "Loans",
             'onLoan' => "On loan",
             'closing' => "The conversation changed. The memory stayed.",
@@ -2832,38 +2826,45 @@ return [
             'title' => "A personal AI memory for everyday life.",
             'lead' => "Your life is more than a collection of conversations. Monica gives your assistants places to store different kinds of personal information, from the people you know to the things you own.",
             'try' => "Try asking",
-            // The glyph and the page each item links to are in the template,
-            // in this order.
+            // The glyph, the page each item links to and the colour of its
+            // vignette are in the template, in this order. `chips` are the two
+            // labels drawn in the vignette: what Monica would record.
             'items' => [
                 [
                     'title' => "People and relationships",
                     'body' => "Keep track of the people in your life, how they are related to each other and the moments you share. Record new connections and family relationships, and retrieve information before your next conversation.",
-                    'ask' => "“My brother and his wife just had a baby named Louise. Record their new family relationship in Monica.”",
+                    'ask' => "Ross and Rachel just had a baby girl named Emma. Record that she’s their daughter in Monica.",
+                    'chips' => ["Emma", "Ross and Rachel’s daughter"],
                 ],
                 [
                     'title' => "Personal knowledge",
                     'body' => "Create a personal knowledge base with folders, notes and lists. Save useful instructions, recommendations, ideas and reference information so you can find them again.",
-                    'ask' => "“Save these instructions for resetting my router in my Home notes.”",
+                    'ask' => "Save Phoebe’s grandmother’s chocolate chip cookie recipe in my Recipes notes.",
+                    'chips' => ["Recipes", "Grandma’s cookies"],
                 ],
                 [
                     'title' => "Your belongings",
                     'body' => "Keep a record of what you own, what it cost, where it is, when it was serviced and who borrowed it.",
-                    'ask' => "“Record my new camera in Monica. I paid $1,200 for it and keep it in the office cupboard.”",
+                    'ask' => "Record our new recliner in Monica. We paid $1,200 for it and it’s in the living room, facing the TV.",
+                    'chips' => ["Recliner", '$1,200'],
                 ],
                 [
                     'title' => "Life events",
                     'body' => "Build a timeline of the experiences, milestones and moments that matter, including the people you shared them with.",
-                    'ask' => "“Log our trip to Lisbon with Marc and Léa last week.”",
+                    'ask' => "Log our trip to London for Ross’s wedding, with Chandler and Joey.",
+                    'chips' => ["London", "Ross’s wedding"],
                 ],
                 [
                     'title' => "Your preferences",
                     'body' => "Keep a note of your tastes, habits and preferences that your assistants can look up when helping you make decisions.",
-                    'ask' => "“Save in my preferences note that I prefer window seats and vegetarian meals.”",
+                    'ask' => "Save in my preferences note that I’m vegetarian and always sit on the orange couch at Central Perk.",
+                    'chips' => ["Orange couch", "Vegetarian"],
                 ],
                 [
                     'title' => "Things to remember",
                     'body' => "Create reminders for important commitments and recurring occasions. Monica can remind you through its own reminder system, independently of your assistant.",
-                    'ask' => "“Create a reminder in Monica to call my dad every other Sunday.”",
+                    'ask' => "Create a reminder in Monica to feed the chick and the duck every morning.",
+                    'chips' => ["Chick and duck", "Every morning"],
                 ],
             ],
         ],
@@ -2876,18 +2877,18 @@ return [
                 "You don’t need to talk to an AI assistant every time you want to consult your own information. Monica works as a standalone application, with or without a connected assistant.",
             ],
             'closing' => "Your assistants can use Monica. But Monica is built for you.",
-            'label' => "A camera’s page in Monica, in the office cupboard. Bought on 3 March 2025 for $1,200. Its maintenance timeline shows the sensor cleaned on 12 September 2026, and its next service due in March 2027.",
-            'camera' => "Camera",
-            'place' => "Office cupboard",
+            'label' => "A recliner’s page in Monica, in the living room. Bought on 3 March 2025 for $1,200. Its maintenance timeline shows the leather cleaned on 12 September 2026, and its next service due in March 2027.",
+            'item' => "Recliner",
+            'place' => "Living room",
             'facts' => [
                 ['Purchased', "3 March 2025"],
                 ['Price', "$1,200"],
-                ['Location', "Office cupboard"],
+                ['Location', "Living room"],
             ],
             'maintenance' => "Maintenance",
             'entries' => [
-                ["Sensor cleaned", "12 September 2026"],
-                ["Firmware updated", "2 May 2026"],
+                ["Leather cleaned", "12 September 2026"],
+                ["Footrest repaired", "2 May 2026"],
             ],
             'next' => "Next service due March 2027",
         ],
@@ -2900,16 +2901,16 @@ return [
                 "When a compatible assistant looks something up, it can retrieve these records and follow supported relationships to understand more of the context. When something changes, it can update supported records rather than simply adding another version of the same fact.",
                 "And when you want to organize information in your own way, Monica offers customizable templates and record types.",
             ],
-            'label' => "Diagram: Alex is linked to a camping tent through a loan, and to a dinner through participation",
+            'label' => "Diagram: Chandler Bing is linked to your copy of The Shining through a loan, and to Thanksgiving dinner through participation, with Monica, Rachel and Ross",
             'belonging' => "Belonging",
-            'garage' => "Stored in the garage",
+            'garage' => "Stored in the freezer",
             'loan' => "Loan",
             'dueShort' => "due 5 December",
             'person' => "Person",
             'tookPart' => "Took part",
-            'withYou' => "with you",
-            'event' => "Life event · 14 November",
-            'dinner' => "Dinner together",
+            'withYou' => "with you and three others",
+            'event' => "Life event · 27 November 2025",
+            'dinner' => "Thanksgiving dinner",
             'caption' => "How records connect in Monica. A diagram, not an application screen.",
             'closing' => "A personal database for real life, not just a collection of chat summaries.",
         ],
@@ -2922,17 +2923,17 @@ return [
             'items' => [
                 [
                     'title' => "Before a meeting",
-                    'ask' => "“Check Monica. When did I last meet Daniel, and what did we discuss?”",
+                    'ask' => "Check Monica. When did I last see Janice, and what did we talk about?",
                     'body' => "Retrieve previous life events and available contact information to prepare for your next conversation.",
                 ],
                 [
                     'title' => "Before a service appointment",
-                    'ask' => "“Look up my car’s maintenance history in Monica. When was its last service?”",
+                    'ask' => "Look up the Porsche’s maintenance history in Monica. When was its last service?",
                     'body' => "Find recorded maintenance dates, costs and next due dates without digging through old conversations.",
                 ],
                 [
                     'title' => "Before planning a trip",
-                    'ask' => "“Check my travel preferences note in Monica before suggesting an itinerary.”",
+                    'ask' => "Check my travel preferences note in Monica before booking my flight to Paris.",
                     'body' => "Bring your saved preferences into a new conversation, even if you’re using a different compatible assistant.",
                 ],
             ],
@@ -2982,7 +2983,7 @@ return [
                 ],
             ],
             'starter' => "Starter prompt",
-            'starterPrompt' => "“Add my sister Julie to Monica and record that I called her today.”",
+            'starterPrompt' => "Add Phoebe to Monica and record that she played Smelly Cat at Central Perk tonight.",
             'clientsTitle' => "Looking for AI memory for ChatGPT and Claude?",
             'clients' => [
                 "Monica provides setup guides for ChatGPT, Claude Desktop, Claude Code, Cursor, Codex and VS Code. You can connect multiple compatible remote MCP clients to the same account and access the same saved information from each of them.",
@@ -3023,6 +3024,7 @@ return [
                     'body' => "Monica combines structured personal records, an interface you can use yourself, multiple assistant connections and a history of assistant calls. It is designed for people who want to keep useful personal information independently of any one AI provider.",
                 ],
             ],
+            'goodToKnow' => "Good to know",
             'notice' => "Monica complements an assistant’s existing memory. It does not automatically import, replace or synchronize that memory, and it does not perform automatic memory extraction or semantic retrieval itself.",
         ],
 

@@ -1,8 +1,38 @@
-@php($open = $copy['open'])
+@php
+    $open = $copy['open'];
+    $shedDay = '/assets/images/ai-memory/shed-day.webp';
+    $shedNight = '/assets/images/ai-memory/shed-night.webp';
+    $shedDaySize = $page->imageSize($shedDay);
+    $shedNightSize = $page->imageSize($shedNight);
+@endphp
 
 <section class="{{ $section }}">
     <div class="{{ $container }} {{ $split }}">
-        @include('_partials.ai-memory.illustration', ['item' => $copy['illustrations']['open'], 'frame' => 'aspect-square max-h-[440px]'])
+        {{-- The panda in its own library, by day and by night: decorative,
+             because the heading beside it says it. Both lazy, since the
+             section is far below the fold. --}}
+        <div class="mx-auto w-full max-w-[480px]">
+            <img
+                src="{{ $shedDay }}"
+                srcset="{{ $shedDay }} 1x, {{ str_replace('.webp', '@2x.webp', $shedDay) }} 2x"
+                alt=""
+                width="{{ $shedDaySize['width'] }}"
+                height="{{ $shedDaySize['height'] }}"
+                loading="lazy"
+                decoding="async"
+                class="block h-auto w-full dark:hidden"
+            >
+            <img
+                src="{{ $shedNight }}"
+                srcset="{{ $shedNight }} 1x, {{ str_replace('.webp', '@2x.webp', $shedNight) }} 2x"
+                alt=""
+                width="{{ $shedNightSize['width'] }}"
+                height="{{ $shedNightSize['height'] }}"
+                loading="lazy"
+                decoding="async"
+                class="hidden h-auto w-full dark:block"
+            >
+        </div>
 
         <div class="flex flex-col gap-4.5">
             <h2 class="{{ $title }}">{{ $open['title'] }}</h2>
