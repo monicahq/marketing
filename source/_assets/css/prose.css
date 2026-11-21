@@ -62,19 +62,37 @@
   gap: var(--space-3);
 }
 
+/* The dot is positioned rather than a flex item: an item mixing a link and
+   text is several inline boxes, and as flex items each became a column of its
+   own, so "Getting real, from 37signals" broke into two. */
 .mn-prose li {
-  display: flex;
-  gap: var(--space-3);
+  position: relative;
+  padding-left: calc(5px + var(--space-3));
 }
 
 .mn-prose li::before {
   content: "";
-  flex: none;
+  position: absolute;
+  top: 11px;
+  left: 0;
   width: 5px;
   height: 5px;
-  margin-top: 11px;
   border-radius: 50%;
   background: var(--color-border-strong);
+}
+
+/* Links are as near black as the text around them, so in running prose the
+   underline is the only thing that says a word is a link. Tailwind's preflight
+   removes it everywhere; this puts it back here, in the design system's
+   colours (base.css): a hairline underline that darkens on hover. */
+.mn-prose a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: 3px;
+}
+
+.mn-prose a:hover {
+  text-decoration-color: var(--color-text);
 }
 
 .mn-prose blockquote {
@@ -108,7 +126,7 @@
   margin: var(--space-8) 0;
   padding: var(--space-4) var(--space-5);
   overflow-x: auto;
-  border: var(--border-standard);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface-subtle);
 }
@@ -128,7 +146,7 @@
   width: 100%;
   height: auto;
   margin: var(--space-8) 0;
-  border: var(--border-standard);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 

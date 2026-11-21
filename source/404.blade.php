@@ -8,7 +8,7 @@ permalink: 404.html
 {{--
     Static hosts serve /404.html for anything they cannot find, and it is served
     for every language, so this page cannot know which one the reader wants.
-    Rather than guess, it names all four in their own words and lets them pick.
+    Rather than guess, it names every language in its own words and lets them pick.
 
     Deliberately not extending _layouts.base: a 404 has no canonical, no hreflang
     cluster and no place in the sitemap.
@@ -18,6 +18,7 @@ permalink: 404.html
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        @include('_partials.color-scheme')
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
         <link rel="icon" href="/favicon.ico">
         <title>Page not found &mdash; Monica</title>
@@ -48,9 +49,9 @@ permalink: 404.html
                 @foreach ($page->locales as $locale)
                     <a
                         href="{{ $page->route('home', $locale) }}"
-                        hreflang="{{ $locale }}"
-                        lang="{{ $locale }}"
-                        class="mn-btn mn-btn--secondary gap-2 no-underline hover:no-underline"
+                        hreflang="{{ $page->languageTag($locale) }}"
+                        lang="{{ $page->languageTag($locale) }}"
+                        class="mn-btn mn-btn-secondary gap-2 no-underline hover:no-underline"
                     >
                         @include('_partials.flag', ['flagLocale' => $locale])
                         <span>{{ $page->localeNames[$locale] }}</span>
