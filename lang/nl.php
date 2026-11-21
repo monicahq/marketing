@@ -2699,6 +2699,7 @@ return [
         'developersLabel' => "Ontwikkelaars",
         'companyLabel' => "Bedrijf",
         'personalCrm' => "Wat is een persoonlijke CRM?",
+        'aiMemory' => "AI-geheugen",
         'changelog' => "Wijzigingslog",
         'mcp' => "MCP",
         'api' => "API",

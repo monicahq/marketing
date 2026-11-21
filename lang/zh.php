@@ -2719,6 +2719,7 @@ return [
         'developersLabel' => "开发者",
         'companyLabel' => "公司",
         'personalCrm' => "什么是个人 CRM？",
+        'aiMemory' => "AI 记忆",
         'changelog' => "更新日志",
         'mcp' => "MCP",
         'api' => "API",

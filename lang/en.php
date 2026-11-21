@@ -3070,6 +3070,7 @@ return [
         'developersLabel' => "Developers",
         'companyLabel' => "Company",
         'personalCrm' => "What is a personal CRM?",
+        'aiMemory' => "AI memory",
         'changelog' => "Changelog",
         'mcp' => "MCP",
         'api' => "API",
