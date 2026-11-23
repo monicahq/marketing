@@ -30,7 +30,7 @@ npm run build    # production build into build_production/
 npm run links    # check build_production/ for dead links
 ```
 
-**Vite must run before Jigsaw.** Templates call `vite('source/_assets/css/main.css')`, which reads the manifest, so a bare `vendor/bin/jigsaw build` fails with "The Vite manifest does not exist". The npm scripts handle the ordering: the Jigsaw Vite plugin spawns the Jigsaw build itself.
+**Vite must run before Jigsaw.** Templates call `vite('source/_assets/css/main.css')`, which reads the manifest, so a bare `vendor/bin/jigsaw build` fails with "The Vite manifest does not exist". The npm scripts handle the ordering. `npm run dev` lets the Jigsaw Vite plugin spawn each rebuild. `npm run build` runs `vite build` and then `vendor/bin/jigsaw build production` itself, because the plugin's own build step swallows a failure and exits 0, which once let CI deploy a half-written site with a green tick; `vite.config.js` removes that step on `build`.
 
 Before claiming a change works, run `npm run build` and check the output in `build_production/`. There is no type checker here, so a missing translation key surfaces as a build-time exception rather than a warning.
 
