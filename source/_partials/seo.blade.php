@@ -79,7 +79,7 @@
     $software = $page->absolute('/#software');
     $webPage = $canonical . '#webpage';
     $breadcrumb = $canonical . '#breadcrumb';
-    $isProductPage = in_array($page->page, ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer'], true);
+    $isProductPage = in_array($page->page, ['home', 'pricing', 'people', 'personalData', 'aiMemory', 'mcpServer'], true);
 
     // Where this page sits in the site. The bar under the header draws the
     // same trail (`_partials/breadcrumb.blade.php`), from the same helper.

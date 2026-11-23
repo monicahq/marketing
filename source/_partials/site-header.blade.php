@@ -9,7 +9,7 @@
     // order, because a URL is not copy. `#` marks a page not written yet.
     $menu = $page->t('nav.menu');
     $menuLinks = [
-        ['href' => '#', 'items' => [$page->route('details'), $page->route('relationships'), $page->route('timeline')]],
+        ['href' => $page->route('people'), 'items' => [$page->route('details'), $page->route('relationships'), $page->route('timeline')]],
         ['href' => '#', 'items' => ['#', '#', '#']],
         ['href' => '#', 'items' => ['#', '#', '#']],
     ];

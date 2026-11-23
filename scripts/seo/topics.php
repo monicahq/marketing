@@ -15,6 +15,7 @@ $english = [
     'details' => ['personal contact management software', ['organize contact details', 'remember details about people'], ['contact notes', 'personal contact records']],
     'reminders' => ['birthday reminder app', ['personal follow-up reminders', 'recurring contact reminders'], ['email birthday reminders', 'remember to call friends']],
     'timeline' => ['personal timeline', ['life event tracker', 'relationship timeline'], ['record shared memories', 'custom life events']],
+    'people' => ['personal contact management', ['remember people', 'personal CRM for friends and family'], ['contact details and relationships', 'shared moments and follow-ups']],
     'relationships' => ['track personal relationships', ['family connections', 'relationship history'], ['family tree', 'custom relationship types']],
     'vaults' => ['Monica vaults', ['organize personal and work contacts', 'separate contact lists'], ['personal CRM vaults', 'contact organization']],
     'sharing' => ['share contact details privately', ['read-only contact sharing', 'share selected contact fields'], ['password-protected sharing link', 'revoke contact sharing']],
@@ -33,7 +34,7 @@ $english = [
 
 // Each line follows the route order below. These terms describe the existing
 // translated content; they do not add product claims to it.
-$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook'];
+$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people'];
 $localized = [
     'fr' => <<<'TERMS'
 CRM personnel|base de données personnelle|CRM personnel open source
@@ -61,6 +62,7 @@ logiciel de gestion d’informations personnelles|gestion des données personnel
 mémoire IA personnelle|mémoire IA persistante|mémoire partagée pour assistants IA|mémoire IA open source
 serveur MCP Monica|serveur MCP pour données personnelles|serveur MCP distant|serveur MCP auto-hébergé
 manuel Monica|principes du projet Monica|projet open source indépendant
+gestion des contacts personnels|se souvenir des gens|suivre ses proches
 TERMS,
     'de' => <<<'TERMS'
 persönliches CRM|persönliche Datenbank|Open-Source-CRM
@@ -88,6 +90,7 @@ persönliche Daten verwalten|Software für persönliches Informationsmanagement|
 persönliches KI-Gedächtnis|KI-Gedächtnis für Assistenten|gemeinsames Gedächtnis für KI-Assistenten|KI-Gedächtnis selbst hosten
 Monica MCP-Server|MCP-Server für persönliche Daten|persönliches CRM MCP-Server|MCP-Server selbst hosten
 Monica Handbuch|Prinzipien von Monica|unabhängiges Open-Source-Projekt führen
+persönliche Kontaktverwaltung|sich an Menschen erinnern|Freunde und Familie im Blick behalten
 TERMS,
     'es' => <<<'TERMS'
 CRM personal|base de datos personal|CRM personal de código abierto
@@ -115,6 +118,7 @@ software de gestión de información personal|app de organización personal|base
 memoria de IA personal|memoria persistente para asistentes de IA|memoria compartida para asistentes de IA
 servidor MCP de Monica|servidor MCP de datos personales|servidor MCP de CRM personal
 manual de Monica|principios del proyecto Monica|proyecto de código abierto independiente
+gestor de contactos personales|recordar a la gente|seguir a amigos y familia
 TERMS,
     'pt' => <<<'TERMS'
 CRM pessoal|banco de dados pessoal|CRM pessoal de código aberto
@@ -142,6 +146,7 @@ software de gestão de informações pessoais|organizador de vida pessoal|aplica
 memória de IA pessoal|memória persistente para IA|memória compartilhada para assistentes de IA|memória de IA de código aberto
 servidor MCP da Monica|servidor MCP de dados pessoais|servidor MCP remoto|MCP com OAuth
 manual da Monica|princípios do projeto Monica|projeto de código aberto independente
+gerenciador de contatos pessoais|lembrar das pessoas|acompanhar amigos e família
 TERMS,
     'nl' => <<<'TERMS'
 persoonlijk CRM|persoonlijke database|open source persoonlijk CRM
@@ -169,6 +174,7 @@ persoonlijk informatiebeheer software|persoonlijke gegevens beheren|app om je le
 persoonlijk AI-geheugen|permanent geheugen voor AI-assistenten|gedeeld geheugen voor AI-assistenten
 Monica MCP-server|MCP-server voor persoonlijke gegevens|MCP-server voor persoonlijke CRM|MCP-server zelf hosten
 Monica handboek|principes van Monica|open source project runnen
+persoonlijk contactbeheer|mensen onthouden|vrienden en familie bijhouden
 TERMS,
     'zh' => <<<'TERMS'
 个人 CRM|个人数据库|开源个人 CRM
@@ -196,6 +202,7 @@ Monica 博客|Monica 版本说明|Monica 产品更新
 个人 AI 记忆|AI 助手持久记忆|AI 助手共享记忆
 Monica MCP 服务器|个人数据 MCP 服务器|个人 CRM MCP 服务器
 Monica 手册|Monica 项目原则|独立开源项目运营
+个人联系人管理|记住身边的人|记录亲友信息
 TERMS,
     'ru' => <<<'TERMS'
 персональная CRM|личная база данных|персональная CRM с открытым кодом
@@ -223,6 +230,7 @@ API персональной CRM|Monica API|интеграции Monica
 личная память для ИИ|память для ИИ-ассистента|общая память для нейросетей
 MCP-сервер Monica|MCP-сервер для личных данных|MCP-сервер для персональной CRM
 руководство Monica|принципы проекта Monica|как устроен проект с открытым кодом
+личный менеджер контактов|помнить о людях|следить за друзьями и семьёй
 TERMS,
 ];
 

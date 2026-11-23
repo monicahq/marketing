@@ -8,7 +8,9 @@
     string form is cast rather than duplicated as a second key.
 
     An item may also carry `link`, a label plus a route key, for answers that
-    are better finished by the page that covers them in full.
+    are better finished by the page that covers them in full. When the answer
+    holds `:link`, the link is set there, inside the sentence, instead of
+    after it.
 
     `openFirst` opens the first question, so the list shows what an answer
     looks like before anyone clicks. `container` is the width and gutter, for
@@ -33,11 +35,17 @@
                         @include('_partials.icon', ['name' => 'plus', 'class' => 'text-text-muted transition-transform duration-150 ease-standard group-open:rotate-45'])
                     </summary>
                     <div class="pb-5">
+                        @php
+                            $inline = isset($item['link']) && str_contains(implode(' ', (array) $item['a']), ':link');
+                            $inlineLink = $inline
+                                ? '<a href="' . e($page->route($item['link']['page'])) . '" class="text-text underline decoration-border-strong underline-offset-[3px] hover:text-text hover:decoration-text">' . e($item['link']['label']) . '</a>'
+                                : null;
+                        @endphp
                         @foreach ((array) $item['a'] as $paragraph)
-                            <p class="mt-3 max-w-[600px] text-body leading-relaxed text-text-secondary text-pretty first:mt-0">{{ $paragraph }}</p>
+                            <p class="mt-3 max-w-[600px] text-body leading-relaxed text-text-secondary text-pretty first:mt-0">{!! $inline ? str_replace(':link', $inlineLink, e($paragraph)) : e($paragraph) !!}</p>
                         @endforeach
 
-                        @isset($item['link'])
+                        @if (isset($item['link']) && ! $inline)
                             <a
                                 href="{{ $page->route($item['link']['page']) }}"
                                 class="mt-3 inline-flex items-center gap-2 text-body font-medium text-text underline-offset-[3px]"
@@ -45,7 +53,7 @@
                                 {{ $item['link']['label'] }}
                                 @include('_partials.icon', ['name' => 'arrow-right', 'size' => 14])
                             </a>
-                        @endisset
+                        @endif
                     </div>
                 </details>
             @endforeach

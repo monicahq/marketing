@@ -668,6 +668,21 @@ return [
             'ru' => 'vozmozhnosti/khronologiya',
         ],
 
+        // "Remember the person, not just the phone number": what Monica keeps
+        // about a person, and the way into the details, relationships,
+        // timeline and assistant pages. The header's "People" heading leads
+        // here. Nested under the features section like the pages it leads to.
+        'people' => [
+            'en' => 'features/people',
+            'fr' => 'fonctionnalites/personnes',
+            'de' => 'funktionen/menschen',
+            'es' => 'funcionalidades/personas',
+            'pt' => 'recursos/pessoas',
+            'nl' => 'functies/mensen',
+            'zh' => 'features/people',
+            'ru' => 'vozmozhnosti/lyudi',
+        ],
+
         // "Understand how people are connected": relationships, the family
         // tree they draw, and the types behind them. The header's
         // "Relationships" menu item leads here. Nested under the features
@@ -824,7 +839,7 @@ return [
      */
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
-        'Features' => ['templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
+        'Features' => ['people', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
@@ -867,6 +882,7 @@ return [
         'details' => '2026-10-12',
         'reminders' => '2026-10-12',
         'timeline' => '2026-10-12',
+        'people' => '2026-11-23',
         'relationships' => '2026-10-13',
         'vaults' => '2026-10-13',
         'sharing' => '2026-10-13',
