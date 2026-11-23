@@ -49,11 +49,11 @@
                             <div class="absolute flex flex-col items-center gap-1.5" style="left: {{ $node['x'] }}px; top: {{ $node['y'] }}px; width: {{ $node['w'] }}px">
                                 @if ($node['self'] ?? false)
                                     <span class="flex rounded-full ring-2 ring-text ring-offset-2 ring-offset-canvas">
-                                        @include('_partials.avatar-initials', ['name' => $node['name'], 'size' => 48])
+                                        @include('_partials.home.product.avatar', ['name' => $node['name'], 'size' => 48])
                                     </span>
                                     <span class="text-small font-semibold whitespace-nowrap">{{ $node['name'] }}</span>
                                 @else
-                                    @include('_partials.avatar-initials', ['name' => $node['name'], 'size' => 48])
+                                    @include('_partials.home.product.avatar', ['name' => $node['name'], 'size' => 48])
                                     <span class="text-small whitespace-nowrap text-text-secondary">{{ $node['name'] }}</span>
                                 @endif
                             </div>
@@ -76,7 +76,7 @@
                         <div class="{{ $groupTitle }}">{{ $group }} <span class="ml-1">{{ count($family[$g]) }}</span></div>
                         @foreach ($family[$g] as [$name, $age])
                             <div class="{{ $row }}">
-                                @include('_partials.avatar-initials', ['name' => $name, 'size' => 30])
+                                @include('_partials.home.product.avatar', ['name' => $name, 'size' => 30])
                                 <span class="min-w-0 flex-1 truncate text-body font-semibold">{{ $name }}</span>
                                 <span class="text-small text-text-muted">{{ $age }}</span>
                             </div>

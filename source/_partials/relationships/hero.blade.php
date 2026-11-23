@@ -26,7 +26,7 @@
         <div class="mt-16 rounded-lg bg-identity-5/14 p-4 md:p-10 lg:p-14">
             <div role="img" aria-label="{{ $hero['label'] }}" class="{{ $window }} mx-auto max-w-[760px]">
                 <div class="flex flex-wrap items-center gap-3 border-b border-border px-5 py-4">
-                    @include('_partials.avatar-initials', ['name' => 'Ross Geller', 'size' => 36])
+                    @include('_partials.home.product.avatar', ['name' => 'Ross Geller', 'size' => 36])
                     <div class="flex min-w-0 flex-1 flex-col gap-0.5">
                         <span class="text-heading-sm font-semibold">Ross Geller</span>
                         <span class="{{ $stamp }}">{{ $hero['count'] }}</span>
@@ -46,7 +46,7 @@
                                 </div>
                                 @foreach ($people[$g] as $p => $name)
                                     <div class="{{ $row }}">
-                                        @include('_partials.avatar-initials', ['name' => $name, 'size' => 30])
+                                        @include('_partials.home.product.avatar', ['name' => $name, 'size' => 30])
                                         <span class="min-w-0 flex-1 truncate text-body font-semibold">{{ $name }}</span>
                                         <span class="text-small text-text-secondary">{{ $group['roles'][$p] }}</span>
                                     </div>

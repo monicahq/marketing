@@ -6,7 +6,7 @@
         <div class="rounded-lg bg-identity-6/14 p-5 max-lg:order-last md:p-10">
             <div role="img" aria-label="{{ $unknown['label'] }}" class="{{ $window }}">
                 <div class="flex items-center gap-3 border-b border-border px-4.5 py-3.5">
-                    @include('_partials.avatar-initials', ['name' => 'Joey Tribbiani', 'size' => 28])
+                    @include('_partials.home.product.avatar', ['name' => 'Joey Tribbiani', 'size' => 28])
                     <div class="flex flex-col gap-px">
                         <span class="text-copy font-semibold">{{ $copy['add'] }}</span>
                         <span class="{{ $stamp }}">{{ $unknown['subtitle'] }}</span>

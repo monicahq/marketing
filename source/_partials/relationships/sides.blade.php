@@ -28,7 +28,7 @@
                     <div class="flex flex-col gap-2.5">
                         <span class="{{ $eyebrow }} text-text-muted">{{ $copy['sibling'] }}</span>
                         <div class="flex items-center gap-3">
-                            @include('_partials.avatar-initials', ['name' => 'Ross Geller', 'size' => 30])
+                            @include('_partials.home.product.avatar', ['name' => 'Ross Geller', 'size' => 30])
                             <span class="text-body font-semibold">Ross Geller</span>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="flex flex-col gap-2.5">
                         <span class="{{ $eyebrow }} text-text-muted">{{ $copy['sibling'] }}</span>
                         <span class="{{ $box }} {{ $focused }} flex items-center gap-2.5 py-1.75">
-                            @include('_partials.avatar-initials', ['name' => 'Monica Geller', 'size' => 22])
+                            @include('_partials.home.product.avatar', ['name' => 'Monica Geller', 'size' => 22])
                             Monica Geller
                         </span>
                     </div>
@@ -54,7 +54,7 @@
                     <div class="{{ $window }} flex flex-col gap-2.5 px-4 py-3.5">
                         <span class="{{ $eyebrow }} text-identity-2">{{ $side['title'] }}</span>
                         <div class="flex items-center gap-2.5">
-                            @include('_partials.avatar-initials', ['name' => $shown[$s], 'size' => 28])
+                            @include('_partials.home.product.avatar', ['name' => $shown[$s], 'size' => 28])
                             <div class="flex flex-col gap-px">
                                 <span class="text-body font-semibold">{{ $shown[$s] }}</span>
                                 <span class="{{ $stamp }}">{{ $side['role'] }}</span>

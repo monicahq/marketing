@@ -26,7 +26,7 @@
                         <div class="{{ $eyebrow }} px-4.5 pt-3 pb-1 text-text-muted {{ $p > 0 ? 'border-t border-border' : '' }}">{{ $p === 0 ? $history['current'] : $history['past'] }}</div>
                     @endif
                     <div class="flex flex-wrap items-center gap-3 px-4.5 py-2.5 {{ $p === 2 ? 'border-t border-border-subtle' : '' }} {{ $loop->last || $p === 0 ? 'pb-4' : '' }}">
-                        @include('_partials.avatar-initials', ['name' => $name, 'size' => 32])
+                        @include('_partials.home.product.avatar', ['name' => $name, 'size' => 32])
                         <div class="flex min-w-40 flex-1 flex-col gap-0.5">
                             <span class="text-body font-semibold">{{ $name }}</span>
                             <span class="{{ $stamp }}">{{ $history['partners'][$p] }}</span>
