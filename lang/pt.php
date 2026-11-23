@@ -2715,6 +2715,8 @@ return [
         'companyLabel' => "Empresa",
         'personalCrm' => "O que é um CRM pessoal?",
         'aiMemory' => "Memória para IA",
+        'personalData' => "Gestão de dados pessoais",
+        'mcpServer' => "Servidor MCP",
         'changelog' => "Novidades",
         'mcp' => "MCP",
         'api' => "API",

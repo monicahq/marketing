@@ -2700,6 +2700,8 @@ return [
         'companyLabel' => "Bedrijf",
         'personalCrm' => "Wat is een persoonlijke CRM?",
         'aiMemory' => "AI-geheugen",
+        'personalData' => "Beheer van persoonlijke gegevens",
+        'mcpServer' => "MCP-server",
         'changelog' => "Wijzigingslog",
         'mcp' => "MCP",
         'api' => "API",

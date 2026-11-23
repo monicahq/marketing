@@ -14,7 +14,7 @@
     <div class="flex flex-col gap-2 rounded-lg border border-border-strong bg-canvas py-2.5 pr-2.5 pl-3.5">
         <p class="text-body text-pretty">{{ $text }}</p>
         <span aria-hidden="true" class="grid size-6 place-items-center self-end rounded-md bg-primary text-on-primary">
-            @include('_partials.icon', ['name' => 'arrow-right', 'size' => 14, 'class' => '-rotate-90'])
+            @include('_partials.icon', ['name' => 'arrow-right', 'size' => 14, 'class' => '-rotate-90', 'label' => null])
         </span>
     </div>
 </div>

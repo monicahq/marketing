@@ -51,6 +51,8 @@ return [
             'privacyFeatures' => "Privacy and security",
             'languages' => "Languages and formats",
             'aiMemory' => "AI memory",
+            'personalData' => "Personal data management",
+            'mcpServer' => "MCP server",
             'handbook' => "Handbook",
             'contribute' => "Contribute",
             'page' => "Page :number",
@@ -192,6 +194,16 @@ return [
         'aiMemory' => [
             'title' => "One memory for your AI assistants: personal AI memory with Monica",
             'description' => "Monica gives Claude, ChatGPT and other compatible assistants a shared, persistent personal memory through its MCP server. Open source, self-hostable, and usable without AI.",
+        ],
+
+        'mcpServer' => [
+            'title' => "Monica MCP server: connect AI assistants to your personal data",
+            'description' => "Connect AI assistants to Monica’s open-source personal database with a remote MCP server, 236 tools, OAuth or API keys, and self-hosting support.",
+        ],
+
+        'personalData' => [
+            'title' => "Personal information management software — Monica",
+            'description' => "Organize your contacts, belongings, notes, life events and everyday details in one personal database. Meet Monica, the open-source digital life organizer.",
         ],
 
         'personalCrm' => [
@@ -2741,9 +2753,9 @@ return [
      * assistants talking to it, so each carries a `label` that a screen
      * reader reads instead of the drawing itself.
      *
-     * The example runs through the page: a camping tent lent to Alex, due
-     * back on 5 December. Keep the name, the object and the date in step
-     * between `how`, `see` and `structure`.
+     * The example runs through the page: your copy of The Shining, lent to
+     * Chandler, due back on 5 December. Keep the name, the object and the
+     * date in step between `how`, `see`, `structure` and `visibility`.
      */
     'aiMemory' => [
         // Words more than one drawing uses.
@@ -2877,20 +2889,21 @@ return [
                 "You don’t need to talk to an AI assistant every time you want to consult your own information. Monica works as a standalone application, with or without a connected assistant.",
             ],
             'closing' => "Your assistants can use Monica. But Monica is built for you.",
-            'label' => "A recliner’s page in Monica, in the living room. Bought on 3 March 2025 for $1,200. Its maintenance timeline shows the leather cleaned on 12 September 2026, and its next service due in March 2027.",
-            'item' => "Recliner",
+            // The drawing: the Maintenance section of the recliner's page, as
+            // the application draws it (possessions/maintenance.blade.php).
+            'label' => "The maintenance section of a recliner’s page in Monica. The recliner is furniture, kept in the living room. Two jobs are recorded. A cleaning, Leather cleaned, cost $80: done by Central Perk Upholstery on 12 September 2026, condition used to like new, next due 12 March 2027. A repair, Footrest repaired, cost $45: done by Joey Tribbiani on 2 May 2026, condition damaged to used, no next date scheduled.",
+            'type' => "Furniture",
+            'keptIn' => "kept in",
             'place' => "Living room",
-            'facts' => [
-                ['Purchased', "3 March 2025"],
-                ['Price', "$1,200"],
-                ['Location', "Living room"],
+            'item' => "Recliner",
+            'title' => "Maintenance",
+            'lead' => "The work done on this copy over time, with the condition before and after each job.",
+            'costLabel' => "cost",
+            'parts' => ["Performed by", "Performed", "Condition", "Next due"],
+            'records' => [
+                ['type' => "Cleaning", 'title' => "Leather cleaned", 'cost' => '$80', 'parts' => [["Central Perk Upholstery", true], ["12 September 2026", true], ["Used → Like new", true], ["12 March 2027", true]]],
+                ['type' => "Repair", 'title' => "Footrest repaired", 'cost' => '$45', 'parts' => [["Joey Tribbiani", true], ["2 May 2026", true], ["Damaged → Used", true], ["Not scheduled", false]]],
             ],
-            'maintenance' => "Maintenance",
-            'entries' => [
-                ["Leather cleaned", "12 September 2026"],
-                ["Footrest repaired", "2 May 2026"],
-            ],
-            'next' => "Next service due March 2027",
         ],
 
         'structure' => [
@@ -3058,6 +3071,652 @@ return [
         ],
     ],
 
+    /**
+     * The personal data management page, "Your life. Beautifully organized."
+     * (route key `personalData`). English only, like the AI memory page.
+     *
+     * Its examples come from the demo vault, as the homepage's do, with the
+     * same dry asides: Chandler, Joey's recliner Rosita, Monica's hall
+     * closet, the Moist Maker. The drawings of the product each carry a
+     * `label` that a screen reader reads instead of the drawing itself.
+     */
+    'personalData' => [
+        'hero' => [
+            'eyebrow' => "Personal information management, made human",
+            'title' => "Your life. Beautifully organized.",
+            'lede' => "The people you care about. The things you own. The moments worth remembering. The useful details you can never quite find when you need them.",
+            'body' => "Monica brings your personal information together in one place, so your life doesn’t have to live across scattered notes, spreadsheets and your memory.",
+            'cta' => "Get started for free",
+            'organize' => "See what you can organize",
+            'note' => "Open source · Self-hostable · Built for everyday life",
+        ],
+
+        'problem' => [
+            'eyebrow' => "Sound familiar?",
+            'title' => "The little details are everywhere.",
+            'body' => "You know you wrote down that recommendation. Somewhere. The model number of your washing machine might be in an old email. The name of the guy who always brings your coffee is buried in a conversation (it’s Gunther). And the date of that important moment? You’re pretty sure you remember it.",
+            'lead' => "Your life is full of information worth keeping, but it rarely comes with a good filing system.",
+            'items' => [
+                ['title' => "In too many places", 'body' => "Notes, messages, spreadsheets and half-forgotten documents all hold different pieces of your life."],
+                ['title' => "Hard to find later", 'body' => "Saving something is easy. Remembering where you saved it six months later is the difficult part."],
+                ['title' => "Missing the bigger picture", 'body' => "A name, a place and an event might be connected in real life, even when they’re stored separately."],
+            ],
+            'closing' => "You don’t need another complicated system.",
+            'closingMuted' => "You need one personal place that makes sense.",
+        ],
+
+        'organize' => [
+            'eyebrow' => "One place for real life",
+            'title' => "Everything important, in its place.",
+            'lead' => "Monica is personal information management software built around the things people actually want to remember. Not just documents. Not just tasks. Your people, your knowledge, your possessions and the moments that connect them.",
+            'example' => "Example",
+            'crm' => "Explore Monica’s personal CRM",
+            // The glyph, the colour and the drawing of each item are in the
+            // template, in this order.
+            'items' => [
+                [
+                    'title' => "People and relationships",
+                    'body' => "Keep the people in your life close, even when life gets busy. Save contact details, understand family and other relationships, and revisit the moments you’ve shared.",
+                    'example' => "Remember who introduced you, how you met, and that Ross and Rachel were on a break.",
+                ],
+                [
+                    'title' => "Notes and knowledge",
+                    'body' => "Give useful information a home. Create folders, write notes in Markdown, and keep lists for recommendations, ideas, reference material and the things you want to return to.",
+                    'example' => "Keep a list of books to read, and the one recipe for Thanksgiving leftovers that matters.",
+                ],
+                [
+                    'title' => "Belongings and purchases",
+                    'body' => "Keep track of what you own, where it lives, what it cost and what happened to it over time. Record purchases, maintenance, insurance details and things you’ve lent to others.",
+                    'example' => "Find what you paid for the recliner, or remember who borrowed your Holiday Armadillo costume.",
+                ],
+                [
+                    'title' => "Moments and milestones",
+                    'body' => "Remember more than dates. Keep a personal history of visits, trips, conversations, achievements and important changes, with the people involved.",
+                    'example' => "Look back at the trip to London, or at every Thanksgiving since the one with the turkey on Monica’s head.",
+                ],
+                [
+                    'title' => "Places and spaces",
+                    'body' => "Organize the places where your belongings live, from a home to a room, a cupboard or a shelf. When something moves, update its location.",
+                    'example' => "Know which shelf holds the Christmas lights, and what is really in the hall closet.",
+                ],
+                [
+                    'title' => "Dates and reminders",
+                    'body' => "Some things are worth remembering at the right time. Set one-time or recurring reminders connected to people, and keep track of whether you followed through.",
+                    'example' => "Remember Rachel’s birthday every 5 May, or to call your mom back every Sunday.",
+                ],
+            ],
+            // What the six small drawings show.
+            'screens' => [
+                'contact' => [
+                    'label' => "Chandler Bing’s page in Monica. He lives across the hall in apartment 19, you met when he moved in, his roommate is Joey Tribbiani and his partner is Monica Geller. His last life event is Thanksgiving dinner on 27 November.",
+                    'name' => "Chandler Bing",
+                    'meta' => "Apartment 19, across the hall",
+                    'rows' => [
+                        ['who' => "Joey Tribbiani", 'what' => "Roommate"],
+                        ['who' => "Monica Geller", 'what' => "Partner"],
+                    ],
+                    'last' => "Last seen at Thanksgiving dinner",
+                ],
+                'knowledge' => [
+                    'label' => "A Knowledge folder in Monica called Apartment 20, holding a note named The Moist Maker and a list named Books to read.",
+                    'folder' => "Apartment 20",
+                    'entries' => [
+                        ['kind' => 'note', 'name' => "The Moist Maker", 'meta' => "Note · edited yesterday"],
+                        ['kind' => 'list', 'name' => "Books to read", 'meta' => "List · 2 items"],
+                        ['kind' => 'note', 'name' => "Thanksgiving seating plan", 'meta' => "Note · edited in 1997"],
+                    ],
+                ],
+                'possession' => [
+                    'label' => "A recliner named Rosita in Monica, in the living room facing the TV, bought for $1,200. It has never been lent.",
+                    'name' => "Rosita",
+                    'kind' => "Recliner",
+                    'facts' => [['Location', "Living room"], ['Price', '$1,200']],
+                    'status' => "Never lent",
+                ],
+                'event' => [
+                    'label' => "A life event in Monica: Thanksgiving dinner on 27 November, with Monica, Rachel, Ross and Chandler. Its note says the turkey arrived late.",
+                    'name' => "Thanksgiving dinner",
+                    'date' => "27 November",
+                    'note' => "The turkey arrived late. So did Ross.",
+                ],
+                'places' => [
+                    'label' => "Nested locations in Monica: apartment 20, then the hall closet, which holds the Holiday Armadillo costume and the Christmas lights.",
+                    'path' => ["Apartment 20", "Hall closet"],
+                    'items' => ["Holiday Armadillo costume", "Christmas lights", "Do not ask"],
+                ],
+                'reminder' => [
+                    'label' => "A reminder in Monica for Rachel Green’s birthday, every year on 5 May, by email, next in 23 days.",
+                    'who' => "Rachel Green",
+                    'what' => "Birthday",
+                    'when' => "Every year on 5 May",
+                    'next' => "In 23 days",
+                    'channel' => "By email",
+                ],
+            ],
+        ],
+
+        'questions' => [
+            'eyebrow' => "Built for the questions you actually ask",
+            'title' => "The little things you’ll be glad you kept.",
+            'lead' => "A good personal organization app isn’t about collecting information for its own sake. It’s about being able to find the answer when everyday life asks for it.",
+            'items' => [
+                ['q' => "Who has my Holiday Armadillo costume?", 'a' => "Keep your belongings and loans connected to the people who borrowed them, including the expected return date."],
+                ['q' => "When did I last catch up with Gunther?", 'a' => "Look back at shared moments and get a clearer picture of how you’ve stayed in touch. Even with the people who mostly bring you coffee."],
+                ['q' => "What did we pay for the foosball table?", 'a' => "Keep purchases, identifying details and maintenance history together with the item itself."],
+                ['q' => "Where did I put those London recommendations?", 'a' => "Save ideas and reference notes in organized Knowledge folders and lists, ready when you need them."],
+            ],
+            'closing' => "Not every detail needs to live in your head. Some things just need a reliable place to stay.",
+        ],
+
+        'structure' => [
+            'eyebrow' => "A real app, not just a folder of notes",
+            'title' => "Give your information some structure.",
+            'body' => [
+                "A plain note is useful. But a person isn’t just a note. A possession isn’t just a line in a spreadsheet. And a meaningful event often involves more than one person.",
+                "Monica gives different kinds of personal information their own place. Relationships connect people. Life events have dates and participants. Belongings can carry purchases, insurance records, maintenance history and locations.",
+            ],
+            'closing' => "That structure is what makes Monica a personal database, not merely another place to write things down.",
+            'caption' => "A place for the details, the history and the context behind the things in your life.",
+            'benefits' => [
+                ['title' => "Connected information", 'body' => "Keep the relationships between people, experiences, belongings and places where they naturally belong."],
+                ['title' => "Useful history", 'body' => "See what changed over time, from time spent with a friend to maintenance performed on an item."],
+                ['title' => "Details that make sense", 'body' => "Use the fields and record types that fit the information you’re keeping."],
+            ],
+            // The large drawing: the Timeline section of Rosita's page, as
+            // the application draws it (possessions/timeline.blade.php).
+            'screen' => [
+                'label' => "The timeline of a recliner named Rosita in Monica, a piece of furniture kept in the living room and tagged Do not lend. Beside it, the sections of its page: overview, timeline, transactions, insurance, valuations, provenance, maintenance, loans, locations and documents. The timeline gathers four entries. In 2001, the footrest was repaired by Joey. In 1998, Rosita was kept in the living room of apartment 19, where it still is, insured against accidental damage, and purchased together with the other recliner.",
+                'type' => "Furniture",
+                'keptIn' => "kept in",
+                'place' => "Living room",
+                'name' => "Rosita",
+                'tag' => "Do not lend",
+                'sections' => [
+                    'overview' => "Overview",
+                    'timeline' => "Timeline",
+                    'transactions' => "Transactions",
+                    'insurance' => "Insurance",
+                    'valuations' => "Valuations",
+                    'provenance' => "Provenance",
+                    'maintenance' => "Maintenance",
+                    'loans' => "Loans",
+                    'locations' => "Locations",
+                    'documents' => "Documents",
+                ],
+                'title' => "Timeline",
+                'lead' => "Everything that happened to this possession, gathered from its other sections and kept in order.",
+                'all' => "All",
+                'groups' => [
+                    [
+                        'year' => '2001',
+                        'count' => "1 entry",
+                        'entries' => [
+                            ['section' => 'maintenance', 'noun' => "Maintenance", 'date' => "2 May 2001", 'title' => "Footrest repaired", 'detail' => "Joey Tribbiani · The lever stuck halfway up"],
+                        ],
+                    ],
+                    [
+                        'year' => '1998',
+                        'count' => "3 entries",
+                        'entries' => [
+                            ['section' => 'locations', 'noun' => "Location", 'date' => "14 March 1998", 'badge' => "Here now", 'title' => "Kept in Apartment 19 › Living room", 'detail' => "Facing the TV"],
+                            ['section' => 'insurance', 'noun' => "Insurance", 'date' => "14 March 1998", 'title' => "Covered by Greenwich Mutual", 'detail' => "Accidental damage"],
+                            ['section' => 'transactions', 'noun' => "Transaction", 'date' => "14 March 1998", 'badge' => "Acquisition", 'title' => "Purchase", 'detail' => "Bought together with the other recliner"],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        'yours' => [
+            'eyebrow' => "Your life isn’t a template",
+            'title' => "Organize your information your way.",
+            'body' => "Some people want to keep a record of their family and friends. Others care more about their home, their collections or the knowledge they’ve accumulated over the years.",
+            'closing' => "Monica gives you room for all of it.",
+            'items' => [
+                ['title' => "Separate the different parts of your life", 'body' => "Use vaults to organize distinct areas, such as personal life or work, within your account."],
+                ['title' => "Keep the fields that matter", 'body' => "Choose templates and customize fields to match the people and other records you’re managing."],
+                ['title' => "Create your own kinds of records", 'body' => "Your information doesn’t always fit a predefined category. Monica supports custom record types, so you can shape a personal information manager around what matters to you."],
+            ],
+            // The drawing: Settings, Contacts and more, as the application
+            // draws it (settings/account/entity-types/index.blade.php).
+            'screen' => [
+                'label' => "The Contacts and more settings in Monica. Besides contacts, which are built in and hold 84 profiles, the account has created three kinds of profile of its own: apartments with 2 profiles, pets with 2 profiles and holiday costumes with 3 profiles. Each can be edited, and the rows can be dragged to change their order in the vault navigation.",
+                'title' => "Contacts and more",
+                'description' => "You already have profiles for people. Create other kinds of profiles for the pets, companies, or things you want to remember. Each has its own information, organized into sections, just like a contact.",
+                'create' => "Create a profile type",
+                'createNote' => "Start with a kind, such as “Pets.” You’ll add individual pets, such as “Garfield,” afterward.",
+                'list' => "Your profile types",
+                'listNote' => "Drag a row to change the order in the vault navigation.",
+                'contacts' => "Contacts",
+                'builtIn' => "Built in",
+                'contactsCount' => "84 profiles",
+                'locked' => "Can’t be deleted",
+                'edit' => "Edit",
+                'types' => [
+                    ['name' => "Apartments", 'count' => "2 profiles"],
+                    ['name' => "Pets", 'count' => "2 profiles"],
+                    ['name' => "Holiday costumes", 'count' => "3 profiles"],
+                ],
+            ],
+        ],
+
+        'knowledge' => [
+            'eyebrow' => "A home for what you know",
+            'title' => "Keep knowledge worth coming back to.",
+            'lead' => "A list of favorite books. Directions for taking care of the house. A collection of places to visit. A few notes you wish you’d saved years ago.",
+            'body' => [
+                "Personal knowledge management doesn’t have to mean building an elaborate second brain. Sometimes it simply means writing something down in a place where you know you’ll find it again.",
+                "With Monica, you can organize notes and lists into folders, search their contents and keep your reference information alongside the rest of your personal life.",
+            ],
+            'cta' => "Get started for free",
+            'caption' => "Your notes and lists, organized so they’re useful when you need them.",
+            'screen' => [
+                'label' => "Monica’s Knowledge area. The sidebar lists four folders: Apartment 20, Recipes, Travel ideas and Books. The Recipes folder is open on a note called The Moist Maker, the recipe for Ross’s Thanksgiving leftover sandwich, and a list called Books to read, with Little Women checked and The Shining not yet.",
+                'title' => "Knowledge",
+                'folders' => ["Apartment 20", "Recipes", "Travel ideas", "Books"],
+                'open' => 1,
+                'note' => "The Moist Maker",
+                'noteMeta' => "Note · Markdown",
+                'noteBody' => [
+                    "Ross’s Thanksgiving leftover sandwich.",
+                    "Turkey, cranberry sauce, and an extra slice of gravy-soaked bread in the middle.",
+                    "Do not leave it in the office fridge.",
+                ],
+                'list' => "Books to read",
+                'listItems' => [
+                    ['done' => true, 'name' => "Little Women"],
+                    ['done' => false, 'name' => "The Shining (keep it in the freezer)"],
+                ],
+            ],
+        ],
+
+        'ownership' => [
+            'eyebrow' => "Your information, your choice",
+            'title' => "Personal information deserves a personal home.",
+            'lead' => "Your digital life is yours. The software you use to organize it should respect that.",
+            'body' => [
+                "Monica is an open-source personal information manager that you can use as a hosted application or self-host on your own infrastructure.",
+                "There are no ads built into Monica, and the application works without an AI assistant. You can simply open it, review your information and keep it up to date yourself.",
+            ],
+            'github' => "Explore the open-source project",
+            'items' => [
+                ['title' => "Open source", 'body' => "Inspect the code, contribute to the project, or run an instance yourself."],
+                ['title' => "Self-hostable", 'body' => "Prefer to manage your own infrastructure? Monica can run on your server."],
+                ['title' => "Made for people", 'body' => "Use the app directly, without depending on a chatbot or automation to access your information."],
+            ],
+        ],
+
+        'ai' => [
+            'eyebrow' => "And when you want a little help",
+            'title' => "Your information can work with AI, too.",
+            'body' => [
+                "Monica is useful on its own. But if you use AI assistants, you can also connect compatible assistants to your Monica account through the Model Context Protocol (MCP).",
+                "Ask an assistant to save a note, record a life event or look up something you’ve already stored. The information remains in Monica, where you can see and manage it yourself.",
+            ],
+            'link' => "Discover personal AI memory",
+        ],
+
+        'faq' => [
+            'title' => "A few things you might be wondering.",
+            'items' => [
+                ['q' => "What is personal information management software?", 'a' => "Personal information management software helps you store, organize and find information related to your everyday life. Monica brings together contacts, relationships, notes, lists, belongings, life events, locations and reminders in one application."],
+                ['q' => "How is Monica different from a notes app?", 'a' => "A notes app is a good place to write things down. Monica also gives people, relationships, events and belongings their own structured records. You can still create ordinary notes and lists in Monica’s Knowledge area."],
+                ['q' => "Can Monica help me organize my personal life?", 'a' => "Yes. You can use Monica as a personal organization app to keep track of people, important moments, useful knowledge, possessions, locations and reminders. You choose what to record and how to organize it."],
+                ['q' => "Is Monica a personal database?", 'a' => "Yes. Monica stores different types of personal information as structured records rather than treating everything as a single text document. It also supports customizable templates and custom record types."],
+                ['q' => "Can I use Monica for personal knowledge management?", 'a' => "Yes. Monica includes Knowledge folders, Markdown notes and lists. You can use them to organize reference information, recommendations, instructions and other things you want to remember."],
+                ['q' => "Can I keep track of my belongings?", 'a' => "Yes. Monica can record possessions, purchase transactions, maintenance, insurance information, loans to other people and where items are stored."],
+                ['q' => "Can I use Monica to keep track of friends and family?", 'a' => "Yes. Monica started as a personal CRM, and people and relationships remain central to the application. You can save contact information, relationships, reminders and life events."],
+                ['q' => "Is Monica a family organizer or a shared household account?", 'a' => "Monica can store information about your household and the people in your life, but an account is currently designed for one person. It does not provide a shared multi-user family workspace."],
+                ['q' => "Is Monica open source?", 'a' => "Yes. Monica is open source under the AGPL-3.0 license."],
+                ['q' => "Can I self-host Monica?", 'a' => "Yes. You can run Monica on your own infrastructure instead of using the hosted service. Self-hosting requires you to manage your own server and its security, backups and configuration."],
+                ['q' => "Do I need an AI assistant to use Monica?", 'a' => "No. Monica is a complete application you can use directly. AI connectivity is optional."],
+                ['q' => "Can I connect ChatGPT or Claude to Monica?", 'a' => "Monica includes an MCP server and setup guides for compatible AI clients, including ChatGPT and Claude. Availability can depend on the client and its plan. See the AI memory page and the MCP documentation for details."],
+                ['q' => "Is Monica free?", 'a' => "Monica offers a free hosted tier with limits, as well as paid options. You can also self-host the open-source software. See the pricing page for plan details."],
+                ['q' => "Does Monica import all my contacts and documents automatically?", 'a' => "No. Monica does not currently offer a general-purpose import from Google Contacts, Apple Contacts, CSV files or arbitrary document libraries. You can enter information directly, and certain Monica-format imports are supported."],
+            ],
+        ],
+
+        'closing' => [
+            'eyebrow' => "Keep what matters close",
+            'title' => "A place for everything you don’t want to forget.",
+            'body' => "Your life is made of people, places, things, moments and countless little details. They deserve more than a handful of scattered notes.",
+            'lead' => "Give them a home in Monica.",
+            'cta' => "Get started for free",
+            'crm' => "Explore Monica’s personal CRM",
+            'note' => "Open source · Self-hostable · Made for humans",
+        ],
+    ],
+
+    /**
+     * The MCP server page, "Your personal data, connected to your AI agents"
+     * (route key `mcpServer`). English only, like the AI memory page. The
+     * technical sibling of that page: endpoints, tools, authentication.
+     *
+     * Its examples come from the demo vault, as the homepage's do: the
+     * reader lent Ross their Holiday Armadillo costume, due back on 28
+     * December. Keep the object, the person and the date in step between
+     * `workflow` and `visibility`. Tool names are the product's own.
+     */
+    'mcpServer' => [
+        'endpoint' => "https://my.monicahq.com/mcp",
+        'selfHosted' => "https://YOUR-MONICA-HOST/mcp",
+        'copy' => "Copy",
+        'copied' => "Copied",
+        'costume' => "Holiday Armadillo costume",
+        'borrower' => "Ross Geller",
+        'due' => "Due back 28 December",
+
+        'hero' => [
+            'eyebrow' => "Built-in Model Context Protocol support",
+            'title' => "Your personal data, connected to your AI agents.",
+            'lede' => "Monica comes with a built-in MCP server that lets compatible AI assistants work with your personal data, from contacts and relationships to knowledge, reminders, life events and belongings.",
+            'body' => "A real personal database. A real application. And a direct connection for your agents through the Model Context Protocol.",
+            'connect' => "Connect an AI assistant",
+            'start' => "Get started for free",
+            'tools' => "Explore MCP tools",
+            'trust' => ["Open source", "Remote MCP", "OAuth and API keys", "Self-hostable"],
+            'endpointLabel' => "Hosted MCP endpoint",
+        ],
+
+        'unlocks' => [
+            'title' => "Give your AI assistants something useful to work with.",
+            'body' => [
+                "The Model Context Protocol (MCP) lets AI assistants call tools exposed by other applications.",
+                "With Monica, those tools connect directly to your personal information. An assistant can look up a relationship, create a dated life event, maintain a knowledge note, track a possession or check upcoming reminders, while Monica keeps the records in a structured database you can access yourself.",
+            ],
+            'closing' => "No separate memory service to build. No custom bridge to maintain. The MCP server is part of Monica.",
+            'flow' => [
+                ['title' => "Your AI assistant", 'body' => "Sends an MCP tool request, when it decides to."],
+                ['title' => "Monica MCP server", 'body' => "Authenticates and executes the supported operation."],
+                ['title' => "Your Monica data", 'body' => "Stores and returns structured personal records."],
+            ],
+        ],
+
+        'workflow' => [
+            'title' => "From a conversation to something you can find again.",
+            'steps' => [
+                [
+                    'title' => "Ask your assistant",
+                    'prompt' => "I lent my Holiday Armadillo costume to Ross. He’ll bring it back on December 28. Save this in Monica.",
+                    'body' => "Your assistant uses Monica’s MCP tools to record the loan, connect it to the person and track the expected return date.",
+                    'caption' => "A natural-language request becomes a structured MCP action.",
+                    'label' => "A conversation with Claude, with Monica connected. You ask Claude to save that you lent your Holiday Armadillo costume to Ross, due back on 28 December. Claude calls Monica’s create-possession-loan tool and confirms the loan is saved.",
+                    'reply' => "Saved. Monica shows the costume on loan to Ross until 28 December.",
+                ],
+                [
+                    'title' => "See it in Monica",
+                    'prompt' => null,
+                    'body' => "Open the costume in Monica and see its loan history alongside the rest of the information about that belonging.",
+                    'caption' => "The same record is visible and editable in Monica.",
+                    'label' => "The Holiday Armadillo costume’s page in Monica, stored in the hall closet. Its loans section shows it lent to Ross Geller, due back on 28 December, and an earlier loan to Ross, returned last year.",
+                    'reply' => null,
+                ],
+                [
+                    'title' => "Ask later",
+                    'prompt' => "Check Monica. Who has my armadillo costume, and when should I get it back?",
+                    'body' => "The assistant reads Monica’s records and returns the details you saved.",
+                    'caption' => "Your assistant can retrieve the information in a later conversation.",
+                    'label' => "A new conversation with ChatGPT, with Monica connected. You ask who has your armadillo costume. ChatGPT calls Monica’s list-possession-loans tool and answers that Ross has it, due back on 28 December, and that he has borrowed it before.",
+                    'reply' => "Ross has it, due back on 28 December. It’s the second year running.",
+                ],
+            ],
+            'closet' => "Stored in the hall closet",
+            'loans' => "Loans",
+            'onLoan' => "On loan",
+            'returned' => "Returned last January",
+            'connected' => "Monica connected",
+            'closing' => "The assistant handles the conversation.",
+            'closingMuted' => "Monica keeps the record.",
+        ],
+
+        'tools' => [
+            'title' => "236 MCP tools. One personal database.",
+            'lead' => "Monica exposes 236 registered MCP tools across personal information, relationships, knowledge, everyday events and things you own. Agents can perform supported operations through the same application rules as Monica’s JSON API.",
+            // The glyph and the colour of each card are in the template.
+            'items' => [
+                [
+                    'title' => "People and relationships",
+                    'body' => "Find people, read their profiles, create contacts by name and manage connections between them.",
+                    'prompt' => "Who is Ross related to? Keep it short, he’s been married three times.",
+                    'names' => ['search-records', 'get-contact-markdown', 'create-contact-relationship'],
+                ],
+                [
+                    'title' => "Life events and history",
+                    'body' => "Record calls, meetings, trips, milestones and moments, then retrieve the details later.",
+                    'prompt' => "Log my coffee with Phoebe at Central Perk, and that she played a new song about a cat.",
+                    'names' => ['create-life-event', 'list-life-events', 'get-life-event'],
+                ],
+                [
+                    'title' => "Knowledge and notes",
+                    'body' => "Create and update Markdown notes, organize folders and maintain lists of information worth keeping.",
+                    'prompt' => "Save the Moist Maker recipe in my Recipes notes.",
+                    'names' => ['create-knowledge-note', 'search-knowledge', 'update-knowledge-note'],
+                ],
+                [
+                    'title' => "Belongings and possessions",
+                    'body' => "Keep track of purchases, maintenance, insurance records, locations and loans.",
+                    'prompt' => "Record that the footrest on Rosita was repaired today. Don’t tell Joey who broke it.",
+                    'names' => ['create-possession-maintenance-record', 'list-possessions'],
+                ],
+                [
+                    'title' => "Reminders",
+                    'body' => "Create recurring or one-time reminders, look up upcoming dates and record whether you remembered.",
+                    'prompt' => "Remind me to feed the chick and the duck every morning.",
+                    'names' => ['create-contact-reminder', 'list-vault-reminder-occurrences'],
+                ],
+                [
+                    'title' => "Custom structures",
+                    'body' => "Define and work with custom entity types, templates and structured fields that reflect how you organize your life.",
+                    'prompt' => "Create a record type for my holiday costumes.",
+                    'names' => ['create-entity', 'create-entity-type'],
+                ],
+            ],
+            'stats' => [
+                ['value' => "236", 'label' => "registered MCP tools"],
+                ['value' => "Streamable HTTP", 'label' => "remote transport"],
+                ['value' => "OAuth + API keys", 'label' => "connection methods"],
+                ['value' => "One account", 'label' => "shared across multiple assistants"],
+            ],
+            'docs' => "Browse the complete MCP documentation",
+        ],
+
+        'connect' => [
+            'title' => "Connect with OAuth or an API key.",
+            'lead' => "Monica’s remote MCP server supports two authentication methods, so you can connect through an interactive authorization flow or configure a developer-oriented client with a dedicated key.",
+            'endpoint' => "Endpoint",
+            'firstPrompt' => "First prompt",
+            'oauth' => [
+                'eyebrow' => "Option A · OAuth",
+                'title' => "Connect without copying a secret.",
+                'body' => "For MCP clients that support the interactive OAuth flow, add the Monica MCP endpoint, sign in to your account and approve the connection.",
+                'steps' => [
+                    "Add the Monica remote MCP endpoint in your assistant’s connector settings.",
+                    "Sign in to Monica when prompted.",
+                    "Review the application name and redirect destination.",
+                    "Approve access, then try a first read-only query.",
+                ],
+                'prompt' => "List my Monica vaults.",
+                'caption' => "Authorize each connection through Monica.",
+                'screen' => [
+                    'label' => "Monica’s authorization screen. Claude asks to connect to your Monica account and will be redirected to claude.ai. Two buttons: Deny and Allow.",
+                    'title' => "Claude wants to connect to your Monica account",
+                    'body' => "It will be able to read and change the records in your account, through Monica’s MCP tools.",
+                    'redirect' => "Redirects to",
+                    'host' => "claude.ai",
+                    'deny' => "Deny",
+                    'allow' => "Allow",
+                ],
+            ],
+            'key' => [
+                'eyebrow' => "Option B · API key",
+                'title' => "For developer tools and custom MCP clients.",
+                'body' => "Create a dedicated API key for your assistant in Monica’s account settings. Configure that key as a bearer credential for the remote MCP endpoint, using the instructions for your chosen client.",
+                'header' => "Authorization header concept",
+                'headerNote' => "This is the HTTP header concept, not a universal copy-paste client configuration. The exact syntax depends on the client.",
+                'prompt' => "Find Gunther in my Personal vault.",
+                'caption' => "One key per assistant, each revocable on its own.",
+                'screen' => [
+                    'label' => "Monica’s API keys settings. Two keys are listed: My AI assistant, created today and last used a minute ago, and Cursor on the work laptop, created in October. Each has a Revoke button.",
+                    'title' => "API keys",
+                    'keys' => [
+                        ['name' => "My AI assistant", 'meta' => "Created today · used a minute ago"],
+                        ['name' => "Cursor on the work laptop", 'meta' => "Created 12 October · used yesterday"],
+                    ],
+                    'revoke' => "Revoke",
+                    'create' => "Create a key",
+                ],
+            ],
+            'selfHosted' => "Using your own server? Replace the hosted endpoint with",
+            'guides' => "Read the step-by-step setup guides",
+        ],
+
+        'clients' => [
+            'title' => "Bring the assistant you already use.",
+            'body' => "Monica uses the Model Context Protocol, not a proprietary integration tied to one AI provider. It can be connected to compatible remote MCP clients, and the documentation includes setup instructions for:",
+            'label' => "Clients with a setup guide",
+            'note' => "Different clients support different ways to configure MCP servers, and access may depend on the client or subscription plan. Follow the guide for your setup.",
+            'cta' => "See client setup instructions",
+        ],
+
+        'structured' => [
+            'title' => "Give your agents more than a pile of text.",
+            'body' => [
+                "Monica stores information in records that reflect everyday life. People have relationships and histories. Life events have dates and participants. Possessions can have purchases, maintenance records, locations and loans. Knowledge lives in notes, folders and lists.",
+                "This structure gives your assistant concrete information to look up and update, and gives you a familiar interface to review it yourself.",
+                "An assistant can find a person, open their broader profile as Markdown, follow their relationships, read their life events and return a link to the corresponding Monica page.",
+            ],
+            'callout' => "Structured personal data, available to humans and AI assistants.",
+            'caption' => "Structured records are not locked inside a chat.",
+            'screen' => [
+                'label' => "Ross Geller’s page in Monica. His relationships: Monica Geller, sister; Rachel Green, it’s complicated; Emma, daughter. His life events: became a paleontology professor in 2001, and his third wedding, in Las Vegas, in 1999. He has your Holiday Armadillo costume.",
+                'name' => "Ross Geller",
+                'meta' => "Paleontologist · friend",
+                'relationships' => "Relationships",
+                'rows' => [
+                    ['who' => "Monica Geller", 'what' => "Sister"],
+                    ['who' => "Rachel Green", 'what' => "It’s complicated"],
+                    ['who' => "Emma Geller-Green", 'what' => "Daughter"],
+                ],
+                'events' => "Life events",
+                'entries' => [
+                    ['what' => "Became a professor of paleontology", 'when' => "2001"],
+                    ['what' => "Got married in Las Vegas (third time)", 'when' => "1999"],
+                ],
+                'has' => "Has your Holiday Armadillo costume",
+            ],
+        ],
+
+        'visibility' => [
+            'title' => "Know what your agents accessed.",
+            'lead' => "When you connect an assistant to personal information, visibility matters.",
+            'body' => [
+                "Monica provides a dedicated MCP history showing tool calls made by connected assistants. Review the assistant, the operation, the result and the request and response details available in the history.",
+                "Each connected assistant can be disconnected independently. Revoking one connection does not erase the information already stored in Monica or disconnect your other assistants.",
+            ],
+            'points' => [
+                "Review MCP call history for up to 90 days.",
+                "See actions grouped and filterable by assistant, date, outcome and tool.",
+                "Revoke individual OAuth connections or API keys.",
+                "Mark selected template fields as sensitive; OAuth-connected assistants cannot read those field values.",
+            ],
+            'warning' => "Connected assistants have account-wide access. Monica does not currently offer read-only or per-vault MCP permissions. Review each connection before approving it.",
+            'caption' => "See the calls your assistants make, and disconnect them individually.",
+            'screen' => [
+                'label' => "Monica’s MCP call history, filtered to the last 7 days. Four calls: ChatGPT used list-possession-loans today at 09:14, Claude used create-possession-loan yesterday at 18:02, Cursor used search-knowledge yesterday at 11:30, and Claude used get-contact-markdown on Monday, which failed. The first call is expanded, with a sensitive value masked.",
+                'title' => "MCP history",
+                'filters' => ["All assistants", "Last 7 days", "All outcomes"],
+                'calls' => [
+                    ['ChatGPT', 'openai', 'list-possession-loans', "Today at 09:14", true],
+                    ['Claude', 'claude', 'create-possession-loan', "Yesterday at 18:02", true],
+                    ['Cursor', 'cursor', 'search-knowledge', "Yesterday at 11:30", true],
+                    ['Claude', 'claude', 'get-contact-markdown', "Monday at 22:47", false],
+                ],
+                'request' => "Request",
+                'response' => "Response",
+                'failed' => "Failed",
+            ],
+        ],
+
+        'reference' => [
+            'title' => "Built on an open protocol. Ready for your setup.",
+            'lead' => "Monica exposes a remote MCP endpoint over HTTPS using Streamable HTTP. MCP tools use Monica’s existing application API behavior and account rules, so you work with the same personal records you see in the web application.",
+            'head' => ["Capability", "Monica MCP server"],
+            'rows' => [
+                ["Protocol", "Model Context Protocol (MCP)"],
+                ["Transport", "Remote Streamable HTTP over HTTPS"],
+                ["Endpoint", "/mcp on your hosted or self-hosted Monica instance"],
+                ["Authentication", "OAuth or bearer API key"],
+                ["Tool catalogue", "236 registered tools"],
+                ["MCP primitives", "Tools only; no published MCP resources or prompts"],
+                ["Data", "People, relationships, life events, reminders, notes, lists, possessions, places and more"],
+                ["Hosted request limit", "60 MCP calls per minute per connection"],
+                ["Self-hosted", "Available; no application MCP rate limit"],
+                ["Documentation", "/docs/mcp and /docs/mcp.md"],
+            ],
+            'hosted' => "Remote MCP endpoint",
+            'pattern' => "Self-hosted endpoint pattern",
+            'note' => "Monica is not an MCP framework or an autonomous memory extraction service. Your assistant decides when to invoke a tool and what information to send.",
+            'docs' => "Open MCP documentation",
+            'github' => "Explore the open-source code",
+        ],
+
+        'selfHosting' => [
+            'title' => "Your server. Your personal data. Your choice.",
+            'body' => [
+                "Monica is open source under the AGPL-3.0 license and can be self-hosted. Run the personal database and its built-in MCP server on infrastructure you control, or use Monica’s hosted service and connect to its remote endpoint.",
+                "The same core MCP integration is available to free hosted accounts and self-hosted installations. If you self-host, you manage your server’s deployment, security, backups and availability.",
+            ],
+            'cta' => "Explore self-hosting",
+        ],
+
+        'compare' => [
+            'title' => "Not just an MCP endpoint. A home for the data behind it.",
+            'lead' => "An MCP server is useful when the information behind it stays understandable and manageable. Monica provides the application, the database and the agent connection together.",
+            'head' => ["A standalone MCP integration", "Monica"],
+            'rows' => [
+                ["Connects an assistant to tools", "Yes", "Yes"],
+                ["Includes a usable personal information app", "Depends on implementation", "Yes"],
+                ["Structured people, events and belongings", "Depends on backend", "Built in"],
+                ["Human-readable records", "Depends on backend", "Yes"],
+                ["Individual assistant connection history", "Depends on implementation", "Yes"],
+                ["Open source and self-hostable", "Depends on project", "Yes"],
+            ],
+            'caption' => "What a standalone MCP integration and Monica each provide",
+            'closing' => "Built for the people whose data it stores, not only for the agents that access it.",
+        ],
+
+        'faq' => [
+            'title' => "Frequently asked questions",
+            'items' => [
+                ['q' => "What is the Monica MCP server?", 'a' => "It is Monica’s built-in Model Context Protocol (MCP) server, which lets compatible AI assistants use tools to read and modify supported personal data stored in Monica."],
+                ['q' => "Is Monica an open-source MCP server?", 'a' => "Yes. Monica is an open-source application under the AGPL-3.0 license, and its MCP server is included in the application. You can use the hosted service or self-host Monica."],
+                ['q' => "What is the MCP endpoint URL?", 'a' => "On the hosted service, the remote MCP endpoint is https://my.monicahq.com/mcp. A self-hosted instance exposes /mcp on its own public address."],
+                ['q' => "Does Monica support remote MCP connections?", 'a' => "Yes. Monica uses Streamable HTTP over HTTPS. It does not provide a separate local stdio MCP server. Your client needs remote MCP support."],
+                ['q' => "Can I connect Claude or ChatGPT to Monica?", 'a' => "Monica provides setup instructions for Claude Desktop and ChatGPT, as well as developer-oriented clients. Availability and setup requirements depend on the client and, in some cases, subscription plan. Consult the current MCP documentation for the supported flow."],
+                ['q' => "Does Monica support OAuth authentication?", 'a' => "Yes. Supported clients can use an interactive OAuth authorization flow. Monica also supports bearer API keys for clients that require manual configuration."],
+                ['q' => "Can I use the same Monica data with multiple AI assistants?", 'a' => "Yes. You can connect multiple assistants to a single Monica account. Each connection can be managed and revoked independently, and the assistants can access the same account data within the permissions of their connection."],
+                ['q' => "How many MCP tools does Monica offer?", 'a' => "Monica registers 236 MCP tools. Tool availability varies by account permissions, administrator access and enabled features."],
+                ['q' => "What kinds of data can MCP tools work with?", 'a' => "Supported tools cover people, relationships, life events, reminders, knowledge notes and lists, possessions, places, templates and other personal record types. Not every operation supported by the web application is available through MCP."],
+                ['q' => "Can an assistant save someone’s phone number or birthday in Monica?", 'a' => "Not through the current MCP tools. Assistants can create people by name and manage many related records, but editing a person’s detailed profile fields requires the Monica web interface or JSON API."],
+                ['q' => "Can I give an AI assistant read-only access?", 'a' => "Not currently. Standard connected assistants have broad account-wide access. Monica does not yet provide a read-only or per-vault MCP access setting. Some template fields can be marked sensitive, which prevents OAuth-connected assistants from reading those values."],
+                ['q' => "Does Monica automatically remember everything I tell an assistant?", 'a' => "No. Monica does not listen to your conversations or automatically extract memories. Information is stored or retrieved when your AI assistant calls Monica’s MCP tools."],
+                ['q' => "Is MCP access available on the free plan?", 'a' => "Yes. The MCP server is available on free hosted accounts, subject to the usual account limits and any server-side rate limits. Self-hosting is also available."],
+                ['q' => "Can I see what my AI agent did?", 'a' => "Yes. Monica provides a history of MCP tool calls, including request and response details, retained for up to 90 days. You can also disconnect assistants individually."],
+                ['q' => "Can I use Monica MCP with my self-hosted instance?", 'a' => "Yes. Replace the hosted MCP endpoint with the /mcp endpoint on your instance. You are responsible for making it securely reachable from your MCP client."],
+                ['q' => "Does Monica provide semantic search or automatic memory extraction?", 'a' => "No. Monica provides structured records and keyword search. Any automatic decision to store or retrieve information depends on the connected assistant."],
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Your personal database is ready for your AI agents.",
+            'body' => "Connect a compatible assistant, explore Monica’s MCP tools, and start building a personal information system that works for both you and the agents you choose.",
+            'connect' => "Connect an AI assistant",
+            'start' => "Get started for free",
+            'aiMemory' => "Looking for the human side of AI memory?",
+            'note' => "Open source · Self-hostable · MCP included",
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.
@@ -3071,6 +3730,8 @@ return [
         'companyLabel' => "Company",
         'personalCrm' => "What is a personal CRM?",
         'aiMemory' => "AI memory",
+        'personalData' => "Personal data management",
+        'mcpServer' => "MCP server",
         'changelog' => "Changelog",
         'mcp' => "MCP",
         'api' => "API",

@@ -2,13 +2,17 @@
     // Written in fewer languages than the site: see the header.
     $handbookLocale = $page->routeLocale('handbook');
     $aiMemoryLocale = $page->routeLocale('aiMemory');
+    $personalDataLocale = $page->routeLocale('personalData');
+    $mcpServerLocale = $page->routeLocale('mcpServer');
 
     $columns = [
         [
             'label' => $page->t('footer.productLabel'),
             'links' => [
                 ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing')],
+                ['label' => $page->t('footer.personalData'), 'href' => $page->route('personalData', $personalDataLocale), 'locale' => $personalDataLocale],
                 ['label' => $page->t('footer.aiMemory'), 'href' => $page->route('aiMemory', $aiMemoryLocale), 'locale' => $aiMemoryLocale],
+                ['label' => $page->t('footer.mcpServer'), 'href' => $page->route('mcpServer', $mcpServerLocale), 'locale' => $mcpServerLocale],
                 ['label' => $page->t('footer.personalCrm'), 'href' => $page->route('personalCrm')],
                 ['label' => $page->t('nav.v3'), 'href' => $page->route('v3')],
                 ['label' => $page->t('footer.changelog'), 'href' => $page->links['changelog']],

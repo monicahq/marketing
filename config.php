@@ -729,6 +729,18 @@ return [
         // sitemap, hreflang and locale picker.
         'aiMemory' => ['en' => 'ai-memory'],
 
+        // "Your life. Beautifully organized.": Monica as the one place for
+        // the everyday details of a life, for readers looking for personal
+        // information management rather than a CRM or an AI memory. English
+        // only until its copy is translated, like the AI memory page.
+        'personalData' => ['en' => 'personal-data-management'],
+
+        // "Your personal data, connected to your AI agents": the technical
+        // page about Monica's MCP server, for developers and MCP users, where
+        // the AI memory page tells the same story to everyone else. English
+        // only until its copy is translated.
+        'mcpServer' => ['en' => 'mcp'],
+
         // How the project is run and why, as its maintainer writes it down.
         // The only route not in every locale: see $handbookSlugs above. The
         // header and the footer link to it from every language, landing on
@@ -759,7 +771,7 @@ return [
      * posts need nothing: they are listed under their index automatically.
      */
     'llms' => [
-        'Product' => ['home', 'pricing', 'aiMemory', 'personalCrm', 'v3'],
+        'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
         'Features' => ['templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
@@ -810,6 +822,8 @@ return [
         'privacyFeatures' => '2026-10-13',
         'languages' => '2026-10-13',
         'aiMemory' => '2026-11-20',
+        'personalData' => '2026-11-20',
+        'mcpServer' => '2026-11-20',
         'handbook' => '2026-11-18',
         'support' => '2026-11-20',
     ],

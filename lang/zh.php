@@ -2720,6 +2720,8 @@ return [
         'companyLabel' => "公司",
         'personalCrm' => "什么是个人 CRM？",
         'aiMemory' => "AI 记忆",
+        'personalData' => "个人数据管理",
+        'mcpServer' => "MCP 服务器",
         'changelog' => "更新日志",
         'mcp' => "MCP",
         'api' => "API",
