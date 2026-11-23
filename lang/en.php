@@ -470,45 +470,57 @@ return [
         'getStarted' => "Sign up",
         'stars' => ":count stars",
 
-        // The features menu: three columns of what Monica does, and a card
-        // pointing at templates, the thing a new reader most often misses.
+        // The features menu: people, possessions and knowledge, what every space has, and a card for the MCP server.
         'menu' => [
             'groups' => [
                 [
-                    'title' => "Remember",
+                    'icon' => 'people',
+                    'title' => "People",
+                    'body' => "Everyone you know, and what you know about them.",
                     'items' => [
-                        ['icon' => 'note', 'title' => "The details", 'body' => "Everything about someone, in one place."],
-                        ['icon' => 'reminder', 'title' => "Reminders", 'body' => "Birthdays, follow-ups, repeats."],
-                        ['icon' => 'timeline', 'title' => "Timeline", 'body' => "Log it once. Everyone there gets it."],
-                    ],
-                ],
-                [
-                    'title' => "Organise",
-                    'items' => [
+                        ['icon' => 'profile', 'title' => "Contact details", 'body' => "Phones, addresses, birthdays, pets."],
                         ['icon' => 'relationship', 'title' => "Relationships", 'body' => "Family trees, and who knows whom."],
-                        ['icon' => 'vault', 'title' => "Vaults", 'body' => "Personal and work, kept apart."],
-                        ['icon' => 'link', 'title' => "Sharing", 'body' => "Share a few sections. Revoke any time."],
+                        ['icon' => 'reminder', 'title' => "Timeline & reminders", 'body' => "Log it once, hear about it on time."],
                     ],
                 ],
                 [
-                    'title' => "Connect and protect",
+                    'icon' => 'tag',
+                    'title' => "Possessions",
+                    'body' => "What you own, where it is, and who has it.",
                     'items' => [
-                        ['icon' => 'globe', 'title' => "Languages", 'body' => "Your language, their names, your formats."],
-                        ['icon' => 'key', 'title' => "Assistants and API", 'body' => "Your agent can look people up."],
-                        ['icon' => 'lock', 'title' => "Privacy", 'body' => "Passkeys, 2FA, private fields."],
+                        ['icon' => 'layers', 'title' => "Inventory & collections", 'body' => "Books, records, tools, the lot."],
+                        ['icon' => 'place', 'title' => "Locations", 'body' => "Which room, which shelf, which box."],
+                        ['icon' => 'calendar-repeat', 'title' => "Maintenance & loans", 'body' => "Service dates, and who borrowed what."],
+                    ],
+                ],
+                [
+                    'icon' => 'journal',
+                    'title' => "Knowledge",
+                    'body' => "What you have learned, written down where you will find it.",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "Notes", 'body' => "Write it down, link it to anyone."],
+                        ['icon' => 'tasks', 'title' => "Lists", 'body' => "Gift ideas, packing, things to do."],
+                        ['icon' => 'file', 'title' => "Folders & organisation", 'body' => "Group things the way you think."],
                     ],
                 ],
             ],
-            'start' => [
-                'label' => "Start here",
-                'title' => "Your contacts, your way",
-                'body' => "Design your own templates. Tabs, sections, fields, choices.",
-                'rows' => [
-                    ['label' => "Friend", 'detail' => "Gifts, pets"],
-                    ['label' => "Family", 'detail' => "Family tree"],
-                    ['label' => "Work", 'detail' => "Company, role"],
+            'spaces' => [
+                'label' => "In every space",
+                'items' => [
+                    ['icon' => 'divider', 'title' => "Templates"],
+                    ['icon' => 'vault', 'title' => "Vaults"],
+                    ['icon' => 'link', 'title' => "Sharing"],
+                    ['icon' => 'text', 'title' => "Languages"],
+                    ['icon' => 'lock', 'title' => "Privacy"],
                 ],
-                'cta' => "See how templates work",
+            ],
+            'assistant' => [
+                'label' => "New",
+                'title' => "Use Monica with your AI assistant",
+                'body' => "Ask about the people and things you keep in Monica. You choose which vaults it can read.",
+                'question' => "When is Lucie’s birthday?",
+                'answer' => "14 March, in three weeks. In January she mentioned wanting a new rain jacket.",
+                'cta' => "Connect your assistant",
             ],
         ],
     ],

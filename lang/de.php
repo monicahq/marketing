@@ -440,45 +440,57 @@ return [
         'getStarted' => "Registrieren",
         'stars' => ":count Sterne",
 
-        // The features menu: three columns of what Monica does, and a card
-        // pointing at templates, the thing a new reader most often misses.
+        // Das Funktionsmenü: Menschen, Besitz und Wissen, was jeder Bereich bietet, und eine Karte für den MCP-Server.
         'menu' => [
             'groups' => [
                 [
-                    'title' => "Erinnern",
+                    'icon' => 'people',
+                    'title' => "Menschen",
+                    'body' => "Alle, die Sie kennen, und was Sie über sie wissen.",
                     'items' => [
-                        ['icon' => 'note', 'title' => "Die Details", 'body' => "Alles über einen Menschen, an einem Ort."],
-                        ['icon' => 'reminder', 'title' => "Erinnerungen", 'body' => "Geburtstage, Rückmeldungen, Wiederholungen."],
-                        ['icon' => 'timeline', 'title' => "Zeitleiste", 'body' => "Einmal festhalten. Alle Beteiligten haben es."],
-                    ],
-                ],
-                [
-                    'title' => "Ordnen",
-                    'items' => [
+                        ['icon' => 'profile', 'title' => "Kontaktdaten", 'body' => "Telefonnummern, Adressen, Geburtstage, Haustiere."],
                         ['icon' => 'relationship', 'title' => "Beziehungen", 'body' => "Stammbäume, und wer wen kennt."],
-                        ['icon' => 'vault', 'title' => "Tresore", 'body' => "Privates und Berufliches, getrennt."],
-                        ['icon' => 'link', 'title' => "Teilen", 'body' => "Einzelne Abschnitte teilen. Jederzeit widerrufbar."],
+                        ['icon' => 'reminder', 'title' => "Zeitleiste und Erinnerungen", 'body' => "Einmal festhalten, rechtzeitig daran erinnert werden."],
                     ],
                 ],
                 [
-                    'title' => "Verbinden und schützen",
+                    'icon' => 'tag',
+                    'title' => "Besitz",
+                    'body' => "Was Sie besitzen, wo es ist, und wer es hat.",
                     'items' => [
-                        ['icon' => 'globe', 'title' => "Sprachen", 'body' => "Ihre Sprache, deren Namen, Ihre Formate."],
-                        ['icon' => 'key', 'title' => "Assistenten und API", 'body' => "Ihr Agent kann Menschen nachschlagen."],
-                        ['icon' => 'lock', 'title' => "Datenschutz", 'body' => "Passkeys, 2FA, private Felder."],
+                        ['icon' => 'layers', 'title' => "Inventar und Sammlungen", 'body' => "Bücher, Platten, Werkzeug, alles."],
+                        ['icon' => 'place', 'title' => "Orte", 'body' => "Welcher Raum, welches Regal, welche Kiste."],
+                        ['icon' => 'calendar-repeat', 'title' => "Wartung und Verleih", 'body' => "Wartungstermine, und wer was geliehen hat."],
+                    ],
+                ],
+                [
+                    'icon' => 'journal',
+                    'title' => "Wissen",
+                    'body' => "Was Sie gelernt haben, aufgeschrieben, wo Sie es wiederfinden.",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "Notizen", 'body' => "Aufschreiben und mit jedem verknüpfen."],
+                        ['icon' => 'tasks', 'title' => "Listen", 'body' => "Geschenkideen, Packlisten, Aufgaben."],
+                        ['icon' => 'file', 'title' => "Ordner und Ordnung", 'body' => "Ordnen Sie, wie Sie denken."],
                     ],
                 ],
             ],
-            'start' => [
-                'label' => "Hier anfangen",
-                'title' => "Ihre Kontakte, wie Sie sie wollen",
-                'body' => "Gestalten Sie eigene Vorlagen. Tabs, Abschnitte, Felder, Auswahllisten.",
-                'rows' => [
-                    ['label' => "Freunde", 'detail' => "Geschenke, Haustiere"],
-                    ['label' => "Familie", 'detail' => "Stammbaum"],
-                    ['label' => "Arbeit", 'detail' => "Firma, Rolle"],
+            'spaces' => [
+                'label' => "In jedem Bereich",
+                'items' => [
+                    ['icon' => 'divider', 'title' => "Vorlagen"],
+                    ['icon' => 'vault', 'title' => "Tresore"],
+                    ['icon' => 'link', 'title' => "Teilen"],
+                    ['icon' => 'text', 'title' => "Sprachen"],
+                    ['icon' => 'lock', 'title' => "Datenschutz"],
                 ],
-                'cta' => "So funktionieren Vorlagen",
+            ],
+            'assistant' => [
+                'label' => "Neu",
+                'title' => "Monica mit Ihrem KI-Assistenten nutzen",
+                'body' => "Fragen Sie nach den Menschen und Dingen, die Sie in Monica festhalten. Sie entscheiden, welche Tresore er lesen darf.",
+                'question' => "Wann hat Lucie Geburtstag?",
+                'answer' => "Am 14. März, in drei Wochen. Im Januar hat sie erwähnt, dass sie eine neue Regenjacke möchte.",
+                'cta' => "Assistenten verbinden",
             ],
         ],
     ],

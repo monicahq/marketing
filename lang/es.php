@@ -444,45 +444,57 @@ return [
         'getStarted' => "Registrarse",
         'stars' => ":count estrellas",
 
-        // The features menu: three columns of what Monica does, and a card
-        // pointing at templates, the thing a new reader most often misses.
+        // El menú de funcionalidades: personas, pertenencias y conocimiento, lo que tiene cada espacio, y una tarjeta para el servidor MCP.
         'menu' => [
             'groups' => [
                 [
-                    'title' => "Recordar",
+                    'icon' => 'people',
+                    'title' => "Personas",
+                    'body' => "Todas las personas que conoces, y lo que sabes de ellas.",
                     'items' => [
-                        ['icon' => 'note', 'title' => "Los detalles", 'body' => "Todo sobre alguien, en un solo lugar."],
-                        ['icon' => 'reminder', 'title' => "Recordatorios", 'body' => "Cumpleaños, seguimientos, repeticiones."],
-                        ['icon' => 'timeline', 'title' => "Cronología", 'body' => "Anótalo una vez. Llega a todos los presentes."],
-                    ],
-                ],
-                [
-                    'title' => "Organizar",
-                    'items' => [
+                        ['icon' => 'profile', 'title' => "Datos de contacto", 'body' => "Teléfonos, direcciones, cumpleaños, mascotas."],
                         ['icon' => 'relationship', 'title' => "Relaciones", 'body' => "Árboles genealógicos, y quién conoce a quién."],
-                        ['icon' => 'vault', 'title' => "Bóvedas", 'body' => "Lo personal y lo laboral, por separado."],
-                        ['icon' => 'link', 'title' => "Compartir", 'body' => "Comparte algunas secciones. Revócalo cuando quieras."],
+                        ['icon' => 'reminder', 'title' => "Cronología y recordatorios", 'body' => "Anótalo una vez, entérate a tiempo."],
                     ],
                 ],
                 [
-                    'title' => "Conectar y proteger",
+                    'icon' => 'tag',
+                    'title' => "Pertenencias",
+                    'body' => "Lo que tienes, dónde está y quién lo tiene.",
                     'items' => [
-                        ['icon' => 'globe', 'title' => "Idiomas", 'body' => "Tu idioma, sus nombres, tus formatos."],
-                        ['icon' => 'key', 'title' => "Asistentes y API", 'body' => "Tu agente puede buscar a tus contactos."],
-                        ['icon' => 'lock', 'title' => "Privacidad", 'body' => "Llaves de acceso, 2FA, campos privados."],
+                        ['icon' => 'layers', 'title' => "Inventario y colecciones", 'body' => "Libros, discos, herramientas, todo."],
+                        ['icon' => 'place', 'title' => "Ubicaciones", 'body' => "Qué habitación, qué estante, qué caja."],
+                        ['icon' => 'calendar-repeat', 'title' => "Mantenimiento y préstamos", 'body' => "Fechas de revisión, y quién se llevó qué."],
+                    ],
+                ],
+                [
+                    'icon' => 'journal',
+                    'title' => "Conocimiento",
+                    'body' => "Lo que has aprendido, escrito donde lo vas a encontrar.",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "Notas", 'body' => "Escríbelo y vincúlalo a quien quieras."],
+                        ['icon' => 'tasks', 'title' => "Listas", 'body' => "Ideas de regalos, maletas, cosas por hacer."],
+                        ['icon' => 'file', 'title' => "Carpetas y organización", 'body' => "Agrupa las cosas como tú piensas."],
                     ],
                 ],
             ],
-            'start' => [
-                'label' => "Empieza aquí",
-                'title' => "Tus contactos, a tu manera",
-                'body' => "Diseña tus propias plantillas. Pestañas, secciones, campos, opciones.",
-                'rows' => [
-                    ['label' => "Amistad", 'detail' => "Regalos, mascotas"],
-                    ['label' => "Familia", 'detail' => "Árbol genealógico"],
-                    ['label' => "Trabajo", 'detail' => "Empresa, puesto"],
+            'spaces' => [
+                'label' => "En cada espacio",
+                'items' => [
+                    ['icon' => 'divider', 'title' => "Plantillas"],
+                    ['icon' => 'vault', 'title' => "Bóvedas"],
+                    ['icon' => 'link', 'title' => "Compartir"],
+                    ['icon' => 'text', 'title' => "Idiomas"],
+                    ['icon' => 'lock', 'title' => "Privacidad"],
                 ],
-                'cta' => "Ver cómo funcionan las plantillas",
+            ],
+            'assistant' => [
+                'label' => "Nuevo",
+                'title' => "Usa Monica con tu asistente de IA",
+                'body' => "Pregunta por las personas y las cosas que guardas en Monica. Tú eliges qué bóvedas puede leer.",
+                'question' => "¿Cuándo es el cumpleaños de Lucie?",
+                'answer' => "El 14 de marzo, dentro de tres semanas. En enero comentó que quería un chubasquero nuevo.",
+                'cta' => "Conecta tu asistente",
             ],
         ],
     ],

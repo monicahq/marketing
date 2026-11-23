@@ -439,45 +439,57 @@ return [
         'getStarted' => "Aanmelden",
         'stars' => ":count sterren",
 
-        // The features menu: three columns of what Monica does, and a card
-        // pointing at templates, the thing a new reader most often misses.
+        // Het functiemenu: mensen, bezittingen en kennis, wat elke ruimte heeft, en een kaart voor de MCP-server.
         'menu' => [
             'groups' => [
                 [
-                    'title' => "Onthouden",
+                    'icon' => 'people',
+                    'title' => "Mensen",
+                    'body' => "Iedereen die je kent, en wat je over ze weet.",
                     'items' => [
-                        ['icon' => 'note', 'title' => "De details", 'body' => "Alles over iemand, op één plek."],
-                        ['icon' => 'reminder', 'title' => "Herinneringen", 'body' => "Verjaardagen, opvolgen, terugkerend."],
-                        ['icon' => 'timeline', 'title' => "Tijdlijn", 'body' => "Eén keer vastleggen. Iedereen die erbij was, krijgt het."],
-                    ],
-                ],
-                [
-                    'title' => "Ordenen",
-                    'items' => [
+                        ['icon' => 'profile', 'title' => "Contactgegevens", 'body' => "Telefoonnummers, adressen, verjaardagen, huisdieren."],
                         ['icon' => 'relationship', 'title' => "Relaties", 'body' => "Stambomen, en wie wie kent."],
-                        ['icon' => 'vault', 'title' => "Kluizen", 'body' => "Privé en werk, netjes gescheiden."],
-                        ['icon' => 'link', 'title' => "Delen", 'body' => "Deel een paar secties. Altijd in te trekken."],
+                        ['icon' => 'reminder', 'title' => "Tijdlijn en herinneringen", 'body' => "Eén keer vastleggen, op tijd eraan herinnerd."],
                     ],
                 ],
                 [
-                    'title' => "Verbinden en beschermen",
+                    'icon' => 'tag',
+                    'title' => "Bezittingen",
+                    'body' => "Wat je hebt, waar het ligt, en wie het heeft.",
                     'items' => [
-                        ['icon' => 'globe', 'title' => "Talen", 'body' => "Jouw taal, hun namen, jouw notaties."],
-                        ['icon' => 'key', 'title' => "Assistenten en API", 'body' => "Je agent kan mensen opzoeken."],
-                        ['icon' => 'lock', 'title' => "Privacy", 'body' => "Passkeys, 2FA, privévelden."],
+                        ['icon' => 'layers', 'title' => "Inventaris en collecties", 'body' => "Boeken, platen, gereedschap, alles."],
+                        ['icon' => 'place', 'title' => "Locaties", 'body' => "Welke kamer, welke plank, welke doos."],
+                        ['icon' => 'calendar-repeat', 'title' => "Onderhoud en uitlenen", 'body' => "Onderhoudsdata, en wie wat heeft geleend."],
+                    ],
+                ],
+                [
+                    'icon' => 'journal',
+                    'title' => "Kennis",
+                    'body' => "Wat je hebt geleerd, opgeschreven waar je het terugvindt.",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "Notities", 'body' => "Schrijf het op, koppel het aan iedereen."],
+                        ['icon' => 'tasks', 'title' => "Lijsten", 'body' => "Cadeau-ideeën, paklijsten, dingen om te doen."],
+                        ['icon' => 'file', 'title' => "Mappen en ordening", 'body' => "Groepeer dingen zoals jij denkt."],
                     ],
                 ],
             ],
-            'start' => [
-                'label' => "Begin hier",
-                'title' => "Je contacten, op jouw manier",
-                'body' => "Ontwerp je eigen sjablonen. Tabbladen, secties, velden, keuzes.",
-                'rows' => [
-                    ['label' => "Vriend", 'detail' => "Cadeaus, huisdieren"],
-                    ['label' => "Familie", 'detail' => "Stamboom"],
-                    ['label' => "Werk", 'detail' => "Bedrijf, functie"],
+            'spaces' => [
+                'label' => "In elke ruimte",
+                'items' => [
+                    ['icon' => 'divider', 'title' => "Sjablonen"],
+                    ['icon' => 'vault', 'title' => "Kluizen"],
+                    ['icon' => 'link', 'title' => "Delen"],
+                    ['icon' => 'text', 'title' => "Talen"],
+                    ['icon' => 'lock', 'title' => "Privacy"],
                 ],
-                'cta' => "Zo werken sjablonen",
+            ],
+            'assistant' => [
+                'label' => "Nieuw",
+                'title' => "Gebruik Monica met je AI-assistent",
+                'body' => "Vraag naar de mensen en dingen die je in Monica bewaart. Jij kiest welke kluizen hij mag lezen.",
+                'question' => "Wanneer is Lucie jarig?",
+                'answer' => "Op 14 maart, over drie weken. In januari zei ze dat ze een nieuwe regenjas wilde.",
+                'cta' => "Verbind je assistent",
             ],
         ],
     ],

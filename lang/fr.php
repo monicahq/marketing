@@ -442,45 +442,57 @@ return [
         'getStarted' => "Inscription",
         'stars' => ":count étoiles",
 
-        // The features menu: three columns of what Monica does, and a card
-        // pointing at templates, the thing a new reader most often misses.
+        // Le menu des fonctionnalités : personnes, possessions et connaissances, ce que chaque espace propose, et une carte pour le serveur MCP.
         'menu' => [
             'groups' => [
                 [
-                    'title' => "Se souvenir",
+                    'icon' => 'people',
+                    'title' => "Personnes",
+                    'body' => "Tous ceux que vous connaissez, et ce que vous savez d’eux.",
                     'items' => [
-                        ['icon' => 'note', 'title' => "Les détails", 'body' => "Tout sur quelqu’un, au même endroit."],
-                        ['icon' => 'reminder', 'title' => "Rappels", 'body' => "Anniversaires, relances, récurrences."],
-                        ['icon' => 'timeline', 'title' => "Chronologie", 'body' => "Notez-le une fois, pour tous ceux qui étaient là."],
-                    ],
-                ],
-                [
-                    'title' => "Organiser",
-                    'items' => [
+                        ['icon' => 'profile', 'title' => "Coordonnées", 'body' => "Téléphones, adresses, anniversaires, animaux."],
                         ['icon' => 'relationship', 'title' => "Relations", 'body' => "Arbres généalogiques, et qui connaît qui."],
-                        ['icon' => 'vault', 'title' => "Coffres", 'body' => "Perso et pro, bien séparés."],
-                        ['icon' => 'link', 'title' => "Partage", 'body' => "Partagez quelques sections. Révocable à tout moment."],
+                        ['icon' => 'reminder', 'title' => "Chronologie et rappels", 'body' => "Notez-le une fois, soyez prévenu à temps."],
                     ],
                 ],
                 [
-                    'title' => "Connecter et protéger",
+                    'icon' => 'tag',
+                    'title' => "Possessions",
+                    'body' => "Ce que vous possédez, où c’est, et qui l’a.",
                     'items' => [
-                        ['icon' => 'globe', 'title' => "Langues", 'body' => "Votre langue, leurs noms, vos formats."],
-                        ['icon' => 'key', 'title' => "Assistants et API", 'body' => "Votre agent peut retrouver n’importe qui."],
-                        ['icon' => 'lock', 'title' => "Confidentialité", 'body' => "Clés d’accès, 2FA, champs privés."],
+                        ['icon' => 'layers', 'title' => "Inventaire et collections", 'body' => "Livres, disques, outils, tout le reste."],
+                        ['icon' => 'place', 'title' => "Emplacements", 'body' => "Quelle pièce, quelle étagère, quelle boîte."],
+                        ['icon' => 'calendar-repeat', 'title' => "Entretien et prêts", 'body' => "Dates d’entretien, et qui a emprunté quoi."],
+                    ],
+                ],
+                [
+                    'icon' => 'journal',
+                    'title' => "Connaissances",
+                    'body' => "Ce que vous avez appris, noté là où vous le retrouverez.",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "Notes", 'body' => "Notez-le, reliez-le à n’importe qui."],
+                        ['icon' => 'tasks', 'title' => "Listes", 'body' => "Idées cadeaux, valises, choses à faire."],
+                        ['icon' => 'file', 'title' => "Dossiers et organisation", 'body' => "Rangez les choses comme vous pensez."],
                     ],
                 ],
             ],
-            'start' => [
-                'label' => "Pour commencer",
-                'title' => "Vos contacts, à votre façon",
-                'body' => "Concevez vos propres modèles. Onglets, sections, champs, choix.",
-                'rows' => [
-                    ['label' => "Ami", 'detail' => "Cadeaux, animaux"],
-                    ['label' => "Famille", 'detail' => "Arbre généalogique"],
-                    ['label' => "Travail", 'detail' => "Entreprise, poste"],
+            'spaces' => [
+                'label' => "Dans chaque espace",
+                'items' => [
+                    ['icon' => 'divider', 'title' => "Modèles"],
+                    ['icon' => 'vault', 'title' => "Coffres"],
+                    ['icon' => 'link', 'title' => "Partage"],
+                    ['icon' => 'text', 'title' => "Langues"],
+                    ['icon' => 'lock', 'title' => "Confidentialité"],
                 ],
-                'cta' => "Voir comment fonctionnent les modèles",
+            ],
+            'assistant' => [
+                'label' => "Nouveau",
+                'title' => "Utilisez Monica avec votre assistant IA",
+                'body' => "Posez des questions sur les personnes et les choses que vous gardez dans Monica. Vous choisissez les coffres qu’il peut lire.",
+                'question' => "C’est quand, l’anniversaire de Lucie ?",
+                'answer' => "Le 14 mars, dans trois semaines. En janvier, elle disait vouloir une nouvelle veste de pluie.",
+                'cta' => "Connecter votre assistant",
             ],
         ],
     ],

@@ -463,45 +463,57 @@ return [
         'getStarted' => "注册",
         'stars' => ":count 星",
 
-        // The features menu: three columns of what Monica does, and a card
-        // pointing at templates, the thing a new reader most often misses.
+        // 功能菜单：人、物品和知识，每个空间都有的功能，以及 MCP 服务器的卡片。
         'menu' => [
             'groups' => [
                 [
-                    'title' => "记住",
+                    'icon' => 'people',
+                    'title' => "人",
+                    'body' => "你认识的每个人，以及你对他们的了解。",
                     'items' => [
-                        ['icon' => 'note', 'title' => "详情", 'body' => "关于一个人的一切，集中在一处。"],
-                        ['icon' => 'reminder', 'title' => "提醒", 'body' => "生日、跟进、重复提醒。"],
-                        ['icon' => 'timeline', 'title' => "时间线", 'body' => "记一次，在场的人都有记录。"],
-                    ],
-                ],
-                [
-                    'title' => "整理",
-                    'items' => [
+                        ['icon' => 'profile', 'title' => "联系方式", 'body' => "电话、地址、生日、宠物。"],
                         ['icon' => 'relationship', 'title' => "关系", 'body' => "家谱，以及谁认识谁。"],
-                        ['icon' => 'vault', 'title' => "保险库", 'body' => "个人和工作，彼此分开。"],
-                        ['icon' => 'link', 'title' => "分享", 'body' => "分享部分内容，随时撤销。"],
+                        ['icon' => 'reminder', 'title' => "时间线与提醒", 'body' => "记一次，到时候就会提醒你。"],
                     ],
                 ],
                 [
-                    'title' => "连接与保护",
+                    'icon' => 'tag',
+                    'title' => "物品",
+                    'body' => "你拥有什么、放在哪里、在谁手上。",
                     'items' => [
-                        ['icon' => 'globe', 'title' => "语言", 'body' => "你的语言，他们的名字，你的格式。"],
-                        ['icon' => 'key', 'title' => "助手与 API", 'body' => "你的智能体可以查找联系人。"],
-                        ['icon' => 'lock', 'title' => "隐私", 'body' => "通行密钥、双重验证、私密字段。"],
+                        ['icon' => 'layers', 'title' => "库存与收藏", 'body' => "书、唱片、工具，应有尽有。"],
+                        ['icon' => 'place', 'title' => "位置", 'body' => "哪个房间、哪个架子、哪个箱子。"],
+                        ['icon' => 'calendar-repeat', 'title' => "保养与借出", 'body' => "保养日期，以及谁借了什么。"],
+                    ],
+                ],
+                [
+                    'icon' => 'journal',
+                    'title' => "知识",
+                    'body' => "你学到的东西，记在找得到的地方。",
+                    'items' => [
+                        ['icon' => 'note', 'title' => "笔记", 'body' => "记下来，关联到任何人。"],
+                        ['icon' => 'tasks', 'title' => "清单", 'body' => "礼物点子、行李、待办事项。"],
+                        ['icon' => 'file', 'title' => "文件夹与整理", 'body' => "按你的思路归类。"],
                     ],
                 ],
             ],
-            'start' => [
-                'label' => "从这里开始",
-                'title' => "你的联系人，你做主",
-                'body' => "设计你自己的模板。标签页、分区、字段、选项。",
-                'rows' => [
-                    ['label' => "朋友", 'detail' => "礼物、宠物"],
-                    ['label' => "家人", 'detail' => "家谱"],
-                    ['label' => "工作", 'detail' => "公司、职位"],
+            'spaces' => [
+                'label' => "每个空间都有",
+                'items' => [
+                    ['icon' => 'divider', 'title' => "模板"],
+                    ['icon' => 'vault', 'title' => "保险库"],
+                    ['icon' => 'link', 'title' => "共享"],
+                    ['icon' => 'text', 'title' => "语言"],
+                    ['icon' => 'lock', 'title' => "隐私"],
                 ],
-                'cta' => "看看模板怎么用",
+            ],
+            'assistant' => [
+                'label' => "新功能",
+                'title' => "让你的 AI 助手使用 Monica",
+                'body' => "询问你在 Monica 中记录的人和物。由你决定它能读取哪些保险库。",
+                'question' => "Lucie 的生日是哪天？",
+                'answer' => "3 月 14 日，还有三周。她一月份提到想要一件新雨衣。",
+                'cta' => "连接你的助手",
             ],
         ],
     ],

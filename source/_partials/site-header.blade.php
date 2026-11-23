@@ -2,30 +2,32 @@
     $home = $page->route('home');
     $details = $page->route('details');
 
-    // The features menu, one destination per item, in the order of
-    // `nav.menu.groups` in `lang/`. Each item goes to the page or section that
-    // shows it best: the details page for what lives on a contact, the
-    // reminders page for reminders, the timeline page for the timeline, the
-    // relationships page for the people around them, the vaults page for
-    // vaults, the sharing page for sharing, the languages page for languages
-    // and formats, the API page for assistants and the API, and the privacy
-    // page for privacy.
-    // Listed here rather than in `lang/`, because a URL is not copy.
+    // The features menu: three columns (people, possessions, knowledge),
+    // each a heading link and its items, then a strip of what every space
+    // has, then a card pointing at the MCP server. Copy comes from
+    // `nav.menu` in `lang/`; the destinations are listed here, in the same
+    // order, because a URL is not copy. `#` marks a page not written yet.
     $menu = $page->t('nav.menu');
     $menuLinks = [
-        [$details, $page->route('reminders'), $page->route('timeline')],
-        [$page->route('relationships'), $page->route('vaults'), $page->route('sharing')],
-        [$page->route('languages'), $page->route('api'), $page->route('privacyFeatures')],
+        ['href' => '#', 'items' => [$page->route('details'), $page->route('relationships'), $page->route('timeline')]],
+        ['href' => '#', 'items' => ['#', '#', '#']],
+        ['href' => '#', 'items' => ['#', '#', '#']],
+    ];
+    $spaceLinks = [
+        $page->route('templates'),
+        $page->route('vaults'),
+        $page->route('sharing'),
+        $page->route('languages'),
+        $page->route('privacyFeatures'),
     ];
 
     // One identity colour per column, as the design draws it. Literal class
     // strings, so Tailwind's scanner finds them.
     $groupTones = [
-        ['dot' => 'bg-identity-7', 'tile' => 'bg-identity-7/12 text-identity-7'],
-        ['dot' => 'bg-identity-1', 'tile' => 'bg-identity-1/12 text-identity-1'],
-        ['dot' => 'bg-identity-2', 'tile' => 'bg-identity-2/12 text-identity-2'],
+        ['tile' => 'bg-identity-7/12 text-identity-7', 'icon' => 'text-identity-7'],
+        ['tile' => 'bg-identity-1/12 text-identity-1', 'icon' => 'text-identity-1'],
+        ['tile' => 'bg-identity-2/12 text-identity-2', 'icon' => 'text-identity-2'],
     ];
-    $rowDots = ['bg-identity-1', 'bg-identity-2', 'bg-identity-3'];
 
     // The plain links after the menu. `current` names the route keys that mark
     // the link as the page being read; a post is a blog page too.
@@ -91,50 +93,71 @@
 
                 <div class="absolute inset-x-4 top-full z-50 pt-2 sm:inset-x-7">
                     <div class="flex max-h-[calc(100dvh-140px)] flex-wrap overflow-y-auto rounded-lg border border-border bg-canvas shadow-pop">
-                        <div class="grid min-w-0 flex-[3_1_640px] gap-x-6 gap-y-5 p-6 sm:grid-cols-3 md:p-7">
-                            @foreach ($menu['groups'] as $g => $group)
-                                <div class="flex flex-col gap-1">
-                                    <div class="mb-1.5 flex items-center gap-2 border-b border-border pb-2.5">
-                                        <span class="size-1.5 rounded-full {{ $groupTones[$g]['dot'] }}"></span>
-                                        <span class="text-caption font-medium tracking-[0.08em] text-text-muted uppercase">{{ $group['title'] }}</span>
-                                    </div>
-                                    @foreach ($group['items'] as $i => $item)
-                                        <a href="{{ $menuLinks[$g][$i] }}" class="-mx-2 flex gap-3 rounded-md p-2 text-text no-underline hover:bg-hover hover:text-text hover:no-underline">
-                                            <span class="grid size-7.5 flex-none place-items-center rounded-md {{ $groupTones[$g]['tile'] }}">
-                                                @include('_partials.icon', ['name' => $item['icon']])
+                        <div class="flex min-w-0 flex-[3_1_700px] flex-col">
+                            <div class="grid gap-2 px-5 pt-6 pb-5 sm:grid-cols-3">
+                                @foreach ($menu['groups'] as $g => $group)
+                                    <section class="flex min-w-0 flex-col gap-1">
+                                        <a href="{{ $menuLinks[$g]['href'] }}" class="flex flex-col gap-2.5 rounded-lg p-3 text-text no-underline hover:bg-hover hover:text-text hover:no-underline">
+                                            <span class="flex items-center gap-2.5">
+                                                <span class="grid size-8 flex-none place-items-center rounded-md {{ $groupTones[$g]['tile'] }}">
+                                                    @include('_partials.icon', ['name' => $group['icon'], 'size' => 18])
+                                                </span>
+                                                <span class="text-lede-sm font-semibold tracking-[-0.01em]">{{ $group['title'] }}</span>
+                                                <span class="ml-auto text-text-muted">
+                                                    @include('_partials.icon', ['name' => 'arrow-right', 'size' => 16])
+                                                </span>
                                             </span>
-                                            <span class="flex flex-col gap-px">
-                                                <span class="text-base leading-snug font-semibold">{{ $item['title'] }}</span>
-                                                <span class="text-xs text-text-muted">{{ $item['body'] }}</span>
-                                            </span>
+                                            <span class="text-base leading-snug text-pretty text-text-secondary">{{ $group['body'] }}</span>
                                         </a>
-                                    @endforeach
-                                </div>
-                            @endforeach
+                                        <div class="mx-3 my-1 h-px bg-border-subtle"></div>
+                                        @foreach ($group['items'] as $i => $item)
+                                            <a href="{{ $menuLinks[$g]['items'][$i] }}" class="flex gap-2.5 rounded-md px-3 py-2 text-text no-underline hover:bg-hover hover:text-text hover:no-underline">
+                                                <span class="flex-none pt-px {{ $groupTones[$g]['icon'] }}">
+                                                    @include('_partials.icon', ['name' => $item['icon']])
+                                                </span>
+                                                <span class="flex flex-col gap-0.5">
+                                                    <span class="text-base font-medium">{{ $item['title'] }}</span>
+                                                    <span class="text-xs text-text-muted">{{ $item['body'] }}</span>
+                                                </span>
+                                            </a>
+                                        @endforeach
+                                    </section>
+                                @endforeach
+                            </div>
+
+                            <div class="mt-auto flex flex-wrap items-center gap-2 border-t border-border bg-surface-subtle px-8 py-3.5">
+                                <span class="mr-3 text-caption font-semibold tracking-[0.08em] text-text-muted uppercase">{{ $menu['spaces']['label'] }}</span>
+                                @foreach ($menu['spaces']['items'] as $s => $space)
+                                    <a href="{{ $spaceLinks[$s] }}" class="flex items-center gap-1.5 rounded-md border border-border bg-canvas py-1.25 pr-2 pl-2.5 text-base font-medium text-text no-underline shadow-panel hover:border-border-strong hover:bg-hover hover:text-text hover:no-underline">
+                                        @include('_partials.icon', ['name' => $space['icon'], 'size' => 15])
+                                        {{ $space['title'] }}
+                                        <span class="ml-0.5 text-text-muted">
+                                            @include('_partials.icon', ['name' => 'chevron-right', 'size' => 14])
+                                        </span>
+                                    </a>
+                                @endforeach
+                            </div>
                         </div>
 
-                        <div class="flex min-w-0 flex-[1_1_300px] flex-col gap-4 border-border bg-surface-subtle p-6 max-lg:border-t md:p-7 lg:border-l">
-                            <span class="text-caption font-medium tracking-[0.08em] text-text-muted uppercase">{{ $menu['start']['label'] }}</span>
-                            <a href="{{ $page->route('templates') }}" class="flex flex-col gap-4 rounded-lg border border-border bg-canvas p-4.5 text-text no-underline shadow-panel hover:border-border-strong hover:text-text hover:no-underline">
-                                <span class="flex flex-col gap-1">
-                                    <span class="text-lede-sm font-semibold tracking-[-0.02em]">{{ $menu['start']['title'] }}</span>
-                                    <span class="text-small text-text-secondary">{{ $menu['start']['body'] }}</span>
-                                </span>
+                        <aside class="flex min-w-0 flex-[1_1_300px] flex-col border-border bg-surface-subtle p-6 max-lg:border-t lg:border-l">
+                            <a href="{{ $page->route('mcpServer') }}" class="flex flex-1 flex-col gap-4 rounded-lg border border-border bg-canvas p-5 text-text no-underline shadow-panel hover:border-border-strong hover:bg-hover hover:text-text hover:no-underline">
                                 <span class="flex flex-col gap-1.5">
-                                    @foreach ($menu['start']['rows'] as $r => $row)
-                                        <span class="flex items-center gap-2.5 rounded-md border border-border px-2.5 py-2 text-small">
-                                            <span class="size-2 flex-none rounded-full {{ $rowDots[$r] }}"></span>
-                                            <span class="flex-1 font-medium">{{ $row['label'] }}</span>
-                                            <span class="min-w-0 truncate text-caption text-text-muted normal-case">{{ $row['detail'] }}</span>
-                                        </span>
-                                    @endforeach
+                                    <span class="text-caption font-semibold tracking-[0.08em] text-text-muted uppercase">{{ $menu['assistant']['label'] }}</span>
+                                    <span class="text-lede-sm leading-snug font-semibold tracking-[-0.015em] text-balance">{{ $menu['assistant']['title'] }}</span>
+                                    <span class="text-base text-pretty text-text-secondary">{{ $menu['assistant']['body'] }}</span>
                                 </span>
-                                <span class="flex items-center gap-1.5 text-small font-medium">
-                                    {{ $menu['start']['cta'] }}
-                                    @include('_partials.icon', ['name' => 'arrow-right', 'size' => 14])
+                                {{-- A picture of an exchange with an assistant, not a
+                                     working chat, so it is read as one image. --}}
+                                <span role="img" aria-label="{{ $menu['assistant']['question'] }} {{ $menu['assistant']['answer'] }}" class="flex flex-col gap-2 rounded-md border border-border-subtle bg-surface-subtle p-3">
+                                    <span aria-hidden="true" class="max-w-[85%] self-end rounded-lg bg-primary px-2.5 py-1.75 text-xs leading-snug text-on-primary">{{ $menu['assistant']['question'] }}</span>
+                                    <span aria-hidden="true" class="max-w-[92%] self-start rounded-lg border border-border bg-canvas px-2.5 py-2 text-xs leading-snug text-text-soft">{{ $menu['assistant']['answer'] }}</span>
+                                </span>
+                                <span class="mt-auto flex items-center gap-1.5 text-base font-medium">
+                                    {{ $menu['assistant']['cta'] }}
+                                    @include('_partials.icon', ['name' => 'arrow-right', 'size' => 15])
                                 </span>
                             </a>
-                        </div>
+                        </aside>
                     </div>
                 </div>
             </details>
