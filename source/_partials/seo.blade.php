@@ -255,6 +255,9 @@
     <link rel="alternate" hreflang="{{ $page->languageTag($alternate['locale']) }}" href="{{ $alternate['absolute'] }}">
 @endforeach
 <link rel="alternate" hreflang="x-default" href="{{ $page->absolute($page->canonicalPath($page->defaultLocale, $number)) }}">
+{{-- The page as plain Markdown, for a reader that would rather not parse it.
+     The dead-link check resolves it like any other link. --}}
+<link rel="alternate" type="text/markdown" href="{{ $page->absolute($page->markdownPath($number)) }}">
 
 <meta property="og:type" content="{{ $isPost ? 'article' : 'website' }}">
 @if ($isPost)

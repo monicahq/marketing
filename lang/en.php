@@ -3745,6 +3745,8 @@ return [
         'art' => "A meadow by a lake, with pandas lounging in the grass and napping in the trees",
         'copyright' => "© :year Monica. No pandas were tracked. We wish we could say that Monica is trademarked, but it’s not. Please be nice.",
         'languageLabel' => "Change language",
+        // Under the copyright, on a page that is also published as Markdown.
+        'markdown' => "View as Markdown",
     ],
 
     'blog' => [

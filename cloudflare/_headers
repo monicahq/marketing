@@ -1,0 +1,10 @@
+# Response headers for the static site, copied to the root of the build by an
+# afterBuild listener in bootstrap.php (Jigsaw skips files whose name starts
+# with an underscore, so it cannot live in source/).
+#
+# Every page is also published as Markdown (/fr/tarifs.md). Cloudflare serves
+# those as text/markdown with nosniff, which a browser downloads instead of
+# showing, so "View as Markdown" saved a file. As text/plain it is shown as
+# written, and an assistant reads the same bytes either way.
+/*.md
+  Content-Type: text/plain; charset=utf-8

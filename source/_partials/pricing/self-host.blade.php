@@ -20,8 +20,8 @@
 
         {{-- Plain text, so a screen reader reads the command as written. --}}
         <div class="overflow-hidden rounded-lg border border-border bg-canvas font-mono text-xs leading-[1.8]">
-            <div class="border-b border-border px-3.5 py-2.5 text-text-muted">~/monica</div>
-            <div class="overflow-x-auto px-4.5 py-4 text-text-soft">
+            <div data-md-skip class="border-b border-border px-3.5 py-2.5 text-text-muted">~/monica</div>
+            <div data-md-code class="overflow-x-auto px-4.5 py-4 text-text-soft">
                 <div class="text-text-muted">{{ $terminal['comment'] }}</div>
                 <div class="whitespace-pre"><span class="text-text-muted">$</span> docker run -d -p 8080:80 monica</div>
                 <div class="text-text-muted">&nbsp;&nbsp;{{ $terminal['pulling'] }}</div>

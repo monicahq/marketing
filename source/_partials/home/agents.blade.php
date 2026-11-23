@@ -20,13 +20,13 @@
              stays dark in both themes, because that is what a terminal is. --}}
         <div class="relative min-w-0 flex-[1.3_1_440px] pb-30">
             <div class="overflow-hidden rounded-lg bg-surface-inverse shadow-pop">
-                <div class="flex h-9 items-center gap-1.5 border-b border-on-inverse-border px-3.5">
+                <div data-md-skip class="flex h-9 items-center gap-1.5 border-b border-on-inverse-border px-3.5">
                     <span aria-hidden="true" class="size-2.5 rounded-full bg-on-inverse-selected"></span>
                     <span aria-hidden="true" class="size-2.5 rounded-full bg-on-inverse-selected"></span>
                     <span aria-hidden="true" class="size-2.5 rounded-full bg-on-inverse-selected"></span>
                     <span class="flex-1 text-center font-mono text-mono text-on-inverse-muted">~/projects</span>
                 </div>
-                <div class="overflow-x-auto px-5.5 pt-5 pb-18 font-mono text-small leading-[1.75] text-on-inverse">
+                <div data-md-code class="overflow-x-auto px-5.5 pt-5 pb-18 font-mono text-small leading-[1.75] text-on-inverse">
                     <div><span class="text-on-inverse-muted">&gt;</span> <span class="text-on-inverse-strong">{{ $copy['prompt'] }}</span></div>
                     <div class="h-2.5"></div>
                     <div><span class="text-terminal-ok">●</span> monica · <span class="text-on-inverse-strong">search_contacts</span>(<span class="text-terminal-string">"Rachel"</span>)</div>

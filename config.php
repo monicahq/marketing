@@ -112,6 +112,18 @@ $postSettings = [
      */
     'perFeed' => $perFeed,
 
+    /**
+     * Jigsaw writes each post a second time as plain Markdown, next to its
+     * page: /fr/blog/life-events/ and /fr/blog/life-events.md. A setting of
+     * the collection, so every post in every language gets one without a line
+     * in its front matter. The title becomes its first heading; a contents
+     * list would only repeat the post's own headings.
+     *
+     * Each post page links to its file (see `postMarkdownPath`), which is what
+     * makes the dead-link check fail a build where a post lost its Markdown.
+     */
+    'output_markdown' => ['table_of_contents' => false],
+
     /** Names the SEO shape in _partials/seo.blade.php, as `page` does elsewhere. */
     'page' => 'post',
 
@@ -1085,6 +1097,22 @@ return [
     /** A single post: /fr/blog/life-events/. */
     'postPath' => function ($page, string $slug, ?string $locale = null) {
         return $page->localePath('blog', $locale ?: $page->lang()) . "{$slug}/";
+    },
+
+    /** The same post as plain Markdown: /fr/blog/life-events.md. */
+    'postMarkdownPath' => function ($page, string $slug, ?string $locale = null) {
+        return $page->localePath('blog', $locale ?: $page->lang()) . "{$slug}.md";
+    },
+
+    /**
+     * The current page as plain Markdown: /fr/tarifs/ is /fr/tarifs.md, and
+     * /fr/ is /fr.md. Every page has one. Blog posts and handbook articles get
+     * theirs from Jigsaw, written from their source text, and every other page
+     * from scripts/markdown/pages.php, converted from the built HTML. The
+     * head's `text/markdown` alternate and the footer's link both read it.
+     */
+    'markdownPath' => function ($page, int $number = 1) {
+        return rtrim($page->canonicalPath(null, $number), '/') . '.md';
     },
 
     /**

@@ -28,13 +28,13 @@
                     <p class="{{ $cardBody }}">{{ $copy['source']['body'] }}</p>
                 </div>
                 <div class="{{ $code }}">
-                    <div class="mb-1.5 flex justify-between gap-3 text-on-inverse-faint"><span>app/Privacy.php</span><span>AGPL-3.0</span></div>
-                    <div class="grid grid-cols-[20px_1fr] gap-x-3">
-                        <span class="text-on-inverse-dim">1</span><span class="text-on-inverse-faint">{{ $copy['source']['comment'] }}</span>
-                        <span class="text-on-inverse-dim">2</span><span>public function shared(): array</span>
-                        <span class="text-on-inverse-dim">3</span><span>{</span>
-                        <span class="text-on-inverse-dim">4</span><span class="pl-4">return <span class="text-terminal-ok">[]</span>;</span>
-                        <span class="text-on-inverse-dim">5</span><span>}</span>
+                    <div class="mb-1.5 flex justify-between gap-3 text-on-inverse-faint"><span>app/Privacy.php</span> <span>AGPL-3.0</span></div>
+                    <div data-md-code class="grid grid-cols-[20px_1fr] gap-x-3">
+                        <span data-md-skip class="text-on-inverse-dim">1</span><span class="text-on-inverse-faint">{{ $copy['source']['comment'] }}</span>
+                        <span data-md-skip class="text-on-inverse-dim">2</span><span>public function shared(): array</span>
+                        <span data-md-skip class="text-on-inverse-dim">3</span><span>{</span>
+                        <span data-md-skip class="text-on-inverse-dim">4</span><span class="pl-4">return <span class="text-terminal-ok">[]</span>;</span>
+                        <span data-md-skip class="text-on-inverse-dim">5</span><span>}</span>
                     </div>
                 </div>
             </article>
@@ -48,7 +48,7 @@
                 <div class="{{ $code }}">
                     <div class="mb-1.5 text-on-inverse-faint">{{ $copy['trackers']['label'] }}</div>
                     @foreach ($copy['trackers']['rows'] as $row)
-                        <div class="flex justify-between gap-3"><span class="text-on-inverse-muted">{{ $row }}</span><span class="text-terminal-ok">0</span></div>
+                        <div class="flex justify-between gap-3"><span class="text-on-inverse-muted">{{ $row }}</span> <span class="text-terminal-ok">0</span></div>
                     @endforeach
                 </div>
             </article>
@@ -59,8 +59,8 @@
                     <h3 class="{{ $cardTitle }}">{{ $copy['selfHost']['title'] }}</h3>
                     <p class="{{ $cardBody }}">{{ $copy['selfHost']['body'] }}</p>
                 </div>
-                <div class="{{ $code }}">
-                    <div class="mb-1.5 text-on-inverse-faint">~/monica</div>
+                <div data-md-code class="{{ $code }}">
+                    <div data-md-skip class="mb-1.5 text-on-inverse-faint">~/monica</div>
                     <div><span class="text-on-inverse-faint">$</span> docker run -p 8080:80 monica</div>
                     <div class="text-on-inverse-faint">{{ $copy['selfHost']['pulling'] }}</div>
                     <div class="flex items-center gap-2"><span aria-hidden="true" class="size-1.5 rounded-full bg-terminal-ok"></span><span>{{ $copy['selfHost']['running'] }}</span></div>

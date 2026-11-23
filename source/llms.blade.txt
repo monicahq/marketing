@@ -12,8 +12,8 @@ locale: en
 
     Built from `routes` the way the sitemap is, so a new page cannot be left
     out: a route key placed in no section of `llms` fails the build below.
-    Handbook articles and blog posts are listed under their index, the
-    articles as their Markdown files, which read better to a model.
+    Handbook articles and blog posts are listed under their index, as their
+    Markdown files, which read better to a model.
 
     Named .blade.txt so Jigsaw writes llms.txt.
 --}}
@@ -57,7 +57,7 @@ locale: en
 
             if ($key === 'blog') {
                 foreach ($posts_en as $post) {
-                    $lines[] = $line($post->title, $page->absolute($page->postPath($post->slug, $page->defaultLocale)), $post->description);
+                    $lines[] = $line($post->title, $page->absolute($page->postMarkdownPath($post->slug, $page->defaultLocale)), $post->description);
                 }
             }
         }

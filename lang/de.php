@@ -2722,6 +2722,8 @@ return [
         'art' => "Eine Wiese an einem See, mit Pandas, die im Gras faulenzen und in den Bäumen dösen",
         'copyright' => "© :year Monica. Es wurden keine Pandas getrackt. Wir würden gern sagen, dass Monica eine eingetragene Marke ist, aber das ist sie nicht. Bitte seien Sie nett.",
         'languageLabel' => "Sprache wechseln",
+        // Under the copyright, on a page that is also published as Markdown.
+        'markdown' => "Als Markdown anzeigen",
     ],
 
     'blog' => [

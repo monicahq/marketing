@@ -61,12 +61,13 @@
                     {{-- The title, a dotted leader, and the length, as a printed
                          table of contents draws them. The leader is decoration. --}}
                     <a
+                        data-md-item
                         href="{{ $page->handbookPath($article->slug) }}"
                         class="group flex items-baseline gap-3 py-2.5 text-text no-underline hover:text-text hover:no-underline"
                     >
                         <span class="text-copy leading-snug font-medium underline decoration-border-strong underline-offset-4 group-hover:decoration-text">{{ $article->title }}</span>
                         <span aria-hidden="true" class="min-w-6 flex-[1_1_24px] -translate-y-1 border-b border-dotted border-border-strong"></span>
-                        <span class="text-small whitespace-nowrap text-text-muted tabular-nums">{{ $page->t('handbook.words', [':count' => $article->wordCount()]) }}</span>
+                        <span data-md-skip class="text-small whitespace-nowrap text-text-muted tabular-nums">{{ $page->t('handbook.words', [':count' => $article->wordCount()]) }}</span>
                     </a>
                 @endforeach
             </section>

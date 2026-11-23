@@ -141,7 +141,10 @@
 
     {{-- On a flat band under the meadow rather than over the grass: no
          colour of text is legible against every daisy. --}}
-    <div class="flex justify-center bg-ground-sage px-6 py-3.5">
+    <div class="flex flex-col items-center gap-1 bg-ground-sage px-6 py-3.5 text-center">
         <span class="text-xs text-ground-sage-ink">{{ $page->t('footer.copyright', [':year' => '2017–' . $page->year]) }}</span>
+        {{-- Every page is also published as Markdown (see markdownPath in
+             config.php). Not a page, so not a Turbo visit. --}}
+        <a href="{{ $page->markdownPath(isset($pagination) ? $pagination->currentPage : 1) }}" data-turbo="false" class="text-xs text-ground-sage-ink underline hover:text-ground-sage-ink">{{ $page->t('footer.markdown') }}</a>
     </div>
 </footer>

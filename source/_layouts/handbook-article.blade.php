@@ -23,7 +23,7 @@
     // Jigsaw writes the article as Markdown next to its page (see
     // `output_markdown` in config.php). The assistants are pointed at that
     // file, which reads better to them than the page around it.
-    $markdownPath = rtrim($page->handbookPath($page->slug), '/') . '.md';
+    $markdownPath = $page->markdownPath();
     $prompt = rawurlencode($page->t('handbook.actions.prompt', [':url' => $page->absolute($markdownPath)]));
 
     $action = 'flex h-8 items-center gap-2 rounded-md px-2.5 text-small font-medium text-text-secondary no-underline transition-colors duration-150 ease-standard hover:bg-hover hover:text-text hover:no-underline';

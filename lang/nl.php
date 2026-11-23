@@ -2715,6 +2715,8 @@ return [
         'art' => "Een weide aan een meer, met panda's die in het gras liggen te luieren en in de bomen een dutje doen",
         'copyright' => "© :year Monica. Er zijn geen panda's gevolgd. We zouden graag zeggen dat Monica een geregistreerd handelsmerk is, maar dat is niet zo. Wees alsjeblieft aardig.",
         'languageLabel' => "Taal wijzigen",
+        // Under the copyright, on a page that is also published as Markdown.
+        'markdown' => "Bekijken als Markdown",
     ],
 
     'blog' => [

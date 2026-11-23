@@ -2731,6 +2731,8 @@ return [
         'art' => "Луг у озера: панды валяются в траве и дремлют на деревьях",
         'copyright' => "© :year Monica. Ни одну панду не отслеживали. Хотелось бы сказать, что Monica — зарегистрированная торговая марка, но это не так. Пожалуйста, будьте порядочны.",
         'languageLabel' => "Сменить язык",
+        // Under the copyright, on a page that is also published as Markdown.
+        'markdown' => "Открыть в Markdown",
     ],
 
     'blog' => [
