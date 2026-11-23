@@ -1255,6 +1255,81 @@ return [
     },
 
     /**
+     * The sharing image a page points at: its own card where it has one, the
+     * home page's card of the same locale otherwise. Returns `path`, `type`
+     * and `alt`.
+     *
+     * A page has its own card when lang/en.php gives it a `meta.<key>.ogImage`
+     * block, which is also what `npm run og` reads to draw it into
+     * source/og/<key>-<locale>.jpg. English decides, and the locale's block is
+     * then read through `t()`, so a translation missing its card throws like
+     * any other missing key rather than quietly falling back. The dead-link
+     * check fails a build whose card was never generated.
+     *
+     * Handbook articles and posts have a card each, from their front matter:
+     * `handbook-<slug>-<locale>.jpg` and `blog-<slug>-<locale>.jpg`. The
+     * later pages of the blog share the first page's card.
+     *
+     * `alt` is optional in a card: without one, the image is described by
+     * the words written on it, which is most of what it says.
+     */
+    'ogImage' => function ($page, int $number = 1) {
+        static $english = null;
+        $english ??= require __DIR__ . '/lang/en.php';
+
+        /**
+         * The URL carries a hash of the file: `/og/pricing-fr.jpg?v=3f9a1c2e`.
+         * Facebook, LinkedIn, X and Slack keep an image by its URL for weeks,
+         * whatever the headers say, so a redrawn card only reaches them under
+         * a new URL. An unchanged card keeps its URL and its cached copies.
+         * A missing file gets no hash, and the dead-link check fails the build.
+         */
+        $versioned = function (string $path) {
+            $file = __DIR__ . '/source' . $path;
+
+            return is_file($file) ? $path . '?v=' . substr(md5_file($file), 0, 8) : $path;
+        };
+
+        $key = $page->page;
+
+        // A handbook article's or a post's card is drawn from its own front
+        // matter (see scripts/og/cards.php), and a `card` map there can
+        // override it.
+        if ($key === 'handbookArticle' || $key === 'post') {
+            $card = $page->card ?? [];
+            $card = $card instanceof \TightenCo\Jigsaw\IterableObject ? $card->toArray() : (array) $card;
+
+            return [
+                'path' => $versioned('/og/' . ($key === 'post' ? 'blog' : 'handbook') . "-{$page->slug}-{$page->locale}.jpg"),
+                'type' => 'image/jpeg',
+                'alt' => $card['alt'] ?? implode(' ', array_filter([
+                    'Monica.',
+                    ($card['title'] ?? $page->title) . '.',
+                    $card['description'] ?? $page->description,
+                ])),
+            ];
+        }
+
+        // The later pages of the blog share its first page's card.
+        $own = Arr::has($english, "meta.{$key}.ogImage");
+
+        $key = $own ? $key : 'home';
+        $card = $page->t("meta.{$key}.ogImage");
+        $alt = $card['alt'] ?? implode(' ', array_filter([
+            'Monica.',
+            $card['title'],
+            $card['accent'] ?? null,
+            $card['description'] ?? null,
+        ]));
+
+        return [
+            'path' => $versioned("/og/{$key}-{$page->locale}.jpg"),
+            'type' => 'image/jpeg',
+            'alt' => $alt,
+        ];
+    },
+
+    /**
      * The same page in every locale, for the language menu and hreflang.
      * `href` is for markup, `absolute` is for the head and the sitemap.
      *

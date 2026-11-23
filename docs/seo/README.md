@@ -29,7 +29,7 @@ The H1 headings remain unchanged. Keywords guide the subject of a page; they are
 
 Canonical URLs use the configured production hostname, a language prefix and a trailing slash. They match the page URLs, internal routing, hreflang clusters and sitemap in this branch. This work does not change slugs or add redirects based on differences with production.
 
-The existing branded social image for each language is retained. All eight PNG files measure 1200 by 630 pixels. These are shared language cards, not illustrations created specifically for individual pages. A unique card for every page is not required for these sheets.
+Every page has its own sharing card in every language, `/og/<key>-<locale>.jpg`, drawn from the `meta.<key>.ogImage` copy in `lang/<locale>.php` by `npm run og`. Every handbook article and every blog post has one too, `/og/handbook-<slug>-<locale>.jpg` and `/og/blog-<slug>-<locale>.jpg`, drawn from its front matter. The later pages of the blog index share the first page's card. Every card measures 1200 by 630 pixels. See `.claude/CLAUDE.md`, "Social cards".
 
 ## Structured data
 

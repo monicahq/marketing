@@ -11,7 +11,6 @@
 
 return [
     'meta' => [
-        'imageAlt' => "Monica is je persoonlijke CRM en database. De open source persoonlijke CRM.",
 
         'breadcrumb' => [
             'home' => "Start",
@@ -55,6 +54,14 @@ return [
             'description' => "Monica is je persoonlijke database: leg je contacten, alles wat je bezit en alles wat je moet onthouden vast. Privé, open source, zelf te hosten.",
             'ogTitle' => "Jouw mensen. Jouw spullen. Jouw herinneringen — Monica",
             'ogDescription' => "Bewaar je contacten, bezittingen en alledaagse details bij elkaar in Monica. Een persoonlijke database voor jezelf, of te koppelen aan je AI-assistenten.",
+
+            'ogImage' => [
+                'eyebrow' => "Persoonlijke CRM + AI-geheugen",
+                'title' => "Jouw mensen. Jouw spullen.",
+                'accent' => "Jouw herinneringen.",
+                'description' => "Contacten, bezittingen en alledaagse details, bij elkaar voor jou en je AI-assistenten.",
+                'alt' => "Monica: jouw mensen, jouw spullen, jouw herinneringen. Een panda bergt foto's op in een houten archiefkast, naast kaarten voor contacten, notities en herinneringen.",
+            ],
         ],
 
         'pricing' => [
@@ -62,6 +69,13 @@ return [
             'description' => "Host Monica gratis zelf, of kies hosting voor 9 USD per maand, 90 USD per jaar of eenmalig 250 USD. Alle functies in elk abonnement, zonder kosten per contact.",
             'ogTitle' => "Jouw server of de onze. Jij kiest — Monica",
             'ogDescription' => "Host Monica zelf gratis, of kies maandelijkse, jaarlijkse of levenslange hosting. Elk abonnement bevat alle functies, zonder kosten per contact.",
+
+            'ogImage' => [
+                'eyebrow' => "Prijzen",
+                'title' => "Jouw server of de onze.",
+                'accent' => "Jij kiest.",
+                'description' => "Host Monica zelf gratis, of kies maandelijkse, jaarlijkse of levenslange hosting. Alle functies in elk abonnement.",
+            ],
         ],
 
         'privacy' => [
@@ -69,6 +83,12 @@ return [
             'description' => "Hoe Monica met je gegevens omgaat: wat we verzamelen, waar het staat, wie het ziet en wat er gebeurt als je je account sluit. Geen advertenties of trackers.",
             'ogTitle' => "Privacybeleid — Monica",
             'ogDescription' => "Hoe Monica met je gegevens omgaat: wat we verzamelen, waar het staat, wie het kan zien en wat er gebeurt als je je account sluit. Geen advertenties, geen trackers, geen verkoop van gegevens.",
+
+            'ogImage' => [
+                'eyebrow' => "Juridisch",
+                'title' => "Privacybeleid",
+                'description' => "Wat we verzamelen, waar het staat en wie het kan zien. Geen advertenties, geen trackers, geen verkoop van gegevens.",
+            ],
         ],
 
         'about' => [
@@ -76,6 +96,13 @@ return [
             'description' => "Maak kennis met Régis en Alexis, de mensen achter Monica. Lees hoe deze onafhankelijke, open source persoonlijke database begon en wat de ontwikkeling stuurt.",
             'ogTitle' => "Twee mensen, één persoonlijke database — Monica",
             'ogDescription' => "Maak kennis met de mensen achter Monica, lees hoe het project begon en waarom het open source, onafhankelijk en vrij van advertenties blijft.",
+
+            'ogImage' => [
+                'eyebrow' => "Over Monica",
+                'title' => "Twee mensen,",
+                'accent' => "één persoonlijke database.",
+                'description' => "Hoe het project begon, en waarom het open source, onafhankelijk en vrij van advertenties blijft.",
+            ],
         ],
 
         'team' => [
@@ -83,6 +110,13 @@ return [
             'description' => "Monica wordt gebouwd door twee mensen in Montreal, met honderden open source bijdragers. Waarom we een persoonlijke CRM bouwen die relaties niet schaadt.",
             'ogTitle' => "Monica is een team van 2. Met honderden bijdragers.",
             'ogDescription' => "Monica wordt gebouwd door twee mensen in Montreal, met honderden open source bijdragers. Waarom we een persoonlijke CRM bouwen die menselijke relaties geen schade toebrengt.",
+
+            'ogImage' => [
+                'eyebrow' => "Het team",
+                'title' => "Een team van twee.",
+                'accent' => "Met honderden bijdragers.",
+                'description' => "Gebouwd in Montreal, als persoonlijke CRM die menselijke relaties geen schade toebrengt.",
+            ],
         ],
 
         'contribute' => [
@@ -90,6 +124,13 @@ return [
             'description' => "Help Monica bouwen met code, documentatie, vertalingen of fixes. Praktische manieren om bij te dragen aan een onafhankelijke, open source persoonlijke database.",
             'ogTitle' => "Help ons Monica draaiende te houden.",
             'ogDescription' => "Goede documentatie, zorgvuldige vertalingen en nuttige fixes helpen allemaal. Vind een manier om bij te dragen aan Monica, ook als je geen code schrijft.",
+
+            'ogImage' => [
+                'eyebrow' => "Bijdragen",
+                'title' => "Help ons Monica",
+                'accent' => "draaiende te houden.",
+                'description' => "Documentatie, vertalingen en fixes helpen allemaal, of je nu code schrijft of niet.",
+            ],
         ],
 
         'support' => [
@@ -97,6 +138,13 @@ return [
             'description' => "Schrijf de makers van Monica, van maandag tot vrijdag, of begin met de documentatie: Monica gebruiken, de API, MCP, en CardDAV en CalDAV.",
             'ogTitle' => "Hulp bij Monica, van de mensen die het bouwen",
             'ogDescription' => "Schrijf ons over alles wat niet werkt zoals je verwacht, of begin met de documentatie die in de app zit.",
+
+            'ogImage' => [
+                'eyebrow' => "Support",
+                'title' => "Hulp bij Monica,",
+                'accent' => "van de mensen die het bouwen.",
+                'description' => "Schrijf ons over alles wat niet werkt zoals je verwacht.",
+            ],
         ],
 
         'terms' => [
@@ -104,6 +152,12 @@ return [
             'description' => "De gebruiksvoorwaarden van Monica, de open source persoonlijke database: wat de dienst dekt, je rechten op je gegevens, je plichten en de kleine lettertjes.",
             'ogTitle' => "Gebruiksvoorwaarden — Monica",
             'ogDescription' => "De gebruiksvoorwaarden van Monica, de open source persoonlijke database: wat de dienst dekt, je rechten op je gegevens, je plichten en de kleine lettertjes.",
+
+            'ogImage' => [
+                'eyebrow' => "Juridisch",
+                'title' => "Gebruiksvoorwaarden",
+                'description' => "Wat de dienst dekt, je rechten op je gegevens en je plichten.",
+            ],
         ],
 
         'blog' => [
@@ -111,6 +165,13 @@ return [
             'description' => "Wat we uitbrengen, waarom we het zo bouwen en hoe het is om een klein open source bedrijf te runnen. Geschreven door de makers van Monica.",
             'ogTitle' => "Monica bouwen, beslissing voor beslissing",
             'ogDescription' => "Release-informatie, productkeuzes en af en toe een les uit het runnen van een klein open source project. Geschreven door de makers van Monica.",
+
+            'ogImage' => [
+                'eyebrow' => "Blog",
+                'title' => "Monica bouwen,",
+                'accent' => "beslissing voor beslissing.",
+                'description' => "Release-informatie, productkeuzes en af en toe een les uit een klein open source project.",
+            ],
         ],
 
         'post' => [
@@ -122,6 +183,13 @@ return [
             'description' => "Wat het project is, de principes erachter, hoe het geld verdient, waarom het open source is en hoe prioriteiten worden bepaald. Geschreven door de maker.",
             'ogTitle' => "Het Monica-handboek",
             'ogDescription' => "Hoe Monica wordt gebouwd en gerund: de principes, afwegingen en dagelijkse beslissingen achter een onafhankelijk open source project.",
+
+            'ogImage' => [
+                'eyebrow' => "Handboek",
+                'title' => "Hoe Monica",
+                'accent' => "wordt gebouwd en gerund.",
+                'description' => "De principes, afwegingen en dagelijkse beslissingen achter een onafhankelijk open source project.",
+            ],
         ],
 
         // Like a post, an article brings its own title and description.
@@ -137,6 +205,13 @@ return [
             'description' => "Ontdek de herbouw van Monica v3: eigen records, een verbonden dagboek, een complete API en een betere mobiele ervaring. Open source, verwacht voor eind 2026.",
             'ogTitle' => "Monica v3: wat we opnieuw bouwen",
             'ogDescription' => "Zie wat er komt in Monica v3: records die je zelf ontwerpt, een verbonden dagboek, een complete API en een betere mobiele ervaring. Nog steeds open source.",
+
+            'ogImage' => [
+                'eyebrow' => "Wat er komt",
+                'title' => "Monica v3:",
+                'accent' => "wat we opnieuw bouwen.",
+                'description' => "Records die je zelf ontwerpt, een verbonden dagboek, een complete API en een betere mobiele ervaring.",
+            ],
         ],
 
         'templates' => [
@@ -144,6 +219,13 @@ return [
             'description' => "Bouw contactsjablonen met eigen velden, secties en tabbladen. Aparte sjablonen voor vrienden, familie en werk, en versies die je publiceert als ze klaar zijn.",
             'ogTitle' => "Je contacten, op jouw manier — Monica",
             'ogDescription' => "Onthoud wat voor jou telt. Bouw contactsjablonen met eigen velden, secties en tabbladen, zodat de pagina van iedereen ruimte heeft voor de details die je wilt bewaren.",
+
+            'ogImage' => [
+                'eyebrow' => "Sjablonen",
+                'title' => "Je contacten,",
+                'accent' => "op jouw manier.",
+                'description' => "Bouw contactsjablonen met eigen velden, secties en tabbladen.",
+            ],
         ],
 
         'details' => [
@@ -151,6 +233,13 @@ return [
             'description' => "Bewaar de details die mensen met je delen bij elkaar: wat ze je de vorige keer vertelden, de kleine dingen, de mensen om hen heen en de momenten die je deelde.",
             'ogTitle' => "Onthoud de details die ertoe doen — Monica",
             'ogDescription' => "Hun nummer staat in je telefoon. De naam van hun nieuwe partner, hun lievelingsgerecht en wat ze je de vorige keer vertelden zijn lastiger te vinden.",
+
+            'ogImage' => [
+                'eyebrow' => "Details",
+                'title' => "Onthoud de details",
+                'accent' => "die ertoe doen.",
+                'description' => "De naam van hun nieuwe partner, hun lievelingsgerecht en wat ze je de vorige keer vertelden.",
+            ],
         ],
 
         'reminders' => [
@@ -158,6 +247,13 @@ return [
             'description' => "Stel een herinnering in voor een verjaardag, een bijzondere dag of een vriend die je wilt bellen. Eenmalig of terugkerend, per e-mail of in Monica.",
             'ogTitle' => "Denk eraan contact op te nemen — Monica",
             'ogDescription' => "Een verjaardag. Een bijzondere dag. Een vriend die je al een tijd wilt bellen.",
+
+            'ogImage' => [
+                'eyebrow' => "Herinneringen",
+                'title' => "Denk eraan",
+                'accent' => "contact op te nemen.",
+                'description' => "Een verjaardag. Een bijzondere dag. Een vriend die je al een tijd wilt bellen.",
+            ],
         ],
 
         'timeline' => [
@@ -165,6 +261,13 @@ return [
             'description' => "Leg vast wat er gebeurde, wie erbij was en welke details je wilt bewaren. Levensgebeurtenissen op ieders tijdlijn, eigen typen en velden, terugblik per jaar.",
             'ogTitle' => "Bewaar de momenten die het onthouden waard zijn — Monica",
             'ogDescription' => "Leg vast wat er gebeurde, wie erbij was en welke details je wilt bewaren. Monica brengt die momenten samen in een tijdlijn waar je naar terug kunt keren.",
+
+            'ogImage' => [
+                'eyebrow' => "Tijdlijn",
+                'title' => "Bewaar de momenten",
+                'accent' => "die het onthouden waard zijn.",
+                'description' => "Leg vast wat er gebeurde, wie erbij was en welke details je wilt bewaren.",
+            ],
         ],
 
         'relationships' => [
@@ -172,6 +275,13 @@ return [
             'description' => "Houd familie, vrienden en partners bij met wederzijdse relaties, stambomen en relatiegeschiedenis. Definieer relatietypen die passen bij de mensen in je leven.",
             'ogTitle' => "Begrijp hoe mensen met elkaar verbonden zijn — Monica",
             'ogDescription' => "Houd bij wie er om iemand heen staat, met relaties die van beide kanten kloppen.",
+
+            'ogImage' => [
+                'eyebrow' => "Relaties",
+                'title' => "Begrijp hoe mensen",
+                'accent' => "met elkaar verbonden zijn.",
+                'description' => "Houd bij wie er om iemand heen staat, met relaties die van beide kanten kloppen.",
+            ],
         ],
 
         'vaults' => [
@@ -179,6 +289,13 @@ return [
             'description' => "Houd vrienden, familie en collega’s bij elkaar of geef elke groep een eigen ruimte. Elke kluis heeft eigen contacten, tijdlijn, herinneringen en sjabloon.",
             'ogTitle' => "Een plek voor elk deel van je leven — Monica",
             'ogDescription' => "Houd ze bij elkaar of geef elke groep een eigen ruimte. Kluizen helpen je Monica te organiseren rond je leven.",
+
+            'ogImage' => [
+                'eyebrow' => "Kluizen",
+                'title' => "Een plek voor elk",
+                'accent' => "deel van je leven.",
+                'description' => "Houd alles bij elkaar, of geef elke groep een eigen ruimte.",
+            ],
         ],
 
         'sharing' => [
@@ -186,6 +303,13 @@ return [
             'description' => "Deel delen van de pagina van een contact via een link met alleen leesrechten. Kies wat zichtbaar is, stel een einddatum of wachtwoord in en trek hem in.",
             'ogTitle' => "Deel alleen wat je kiest — Monica",
             'ogDescription' => "Deel geselecteerde delen van de pagina van een contact via een link met alleen leesrechten. Kies wat zichtbaar is, hoe lang de link werkt en wanneer de toegang stopt.",
+
+            'ogImage' => [
+                'eyebrow' => "Delen",
+                'title' => "Deel alleen",
+                'accent' => "wat je kiest.",
+                'description' => "Links met alleen leesrechten naar de delen van een contactpagina die jij kiest, zo lang als jij wilt.",
+            ],
         ],
 
         'api' => [
@@ -193,6 +317,13 @@ return [
             'description' => "Gebruik Monica met Claude, ChatGPT, Gemini of eigen scripts. Koppel een assistent via de MCP-server, of bouw zelf een koppeling met de JSON API.",
             'ogTitle' => "Je contacten, verbonden met je tools — Monica",
             'ogDescription' => "Gebruik Monica met Claude, ChatGPT, Gemini of je eigen scripts. Zoek een contact op, leg een moment vast of stel een herinnering in vanuit de tools die je al gebruikt.",
+
+            'ogImage' => [
+                'eyebrow' => "API en MCP",
+                'title' => "Je contacten,",
+                'accent' => "verbonden met je tools.",
+                'description' => "Gebruik Monica met Claude, ChatGPT, Gemini of je eigen scripts.",
+            ],
         ],
 
         'privacyFeatures' => [
@@ -200,6 +331,13 @@ return [
             'description' => "Beheer gevoelige velden, gedeelde secties en toegang van assistenten in Monica. Beveilig je account met passkeys en tweestapsverificatie.",
             'ogTitle' => "Persoonlijke gegevens verdienen een privéplek — Monica",
             'ogDescription' => "Je legt dingen over mensen vast omdat ze voor je tellen. Kies wat je bewaart, wat je deelt en welke tools erbij kunnen.",
+
+            'ogImage' => [
+                'eyebrow' => "Privacy",
+                'title' => "Persoonlijke gegevens verdienen",
+                'accent' => "een privéplek.",
+                'description' => "Kies wat je bewaart, wat je deelt en welke tools erbij kunnen.",
+            ],
         ],
 
         'languages' => [
@@ -207,6 +345,13 @@ return [
             'description' => "Gebruik Monica in meer dan 30 talen. Schrijf namen in de volgorde en vormen die mensen gebruiken en stel datum-, tijd-, getal- en tijdzonevoorkeuren in.",
             'ogTitle' => "Jouw taal. Hun namen — Monica",
             'ogDescription' => "Gebruik Monica in een taal waarin je je thuis voelt. Bewaar namen in de vorm die mensen zelf gebruiken en kies hoe datums, tijden en getallen verschijnen.",
+
+            'ogImage' => [
+                'eyebrow' => "Talen",
+                'title' => "Jouw taal.",
+                'accent' => "Hun namen.",
+                'description' => "Gebruik Monica in een taal waarin je je thuis voelt, en bewaar namen zoals mensen ze schrijven.",
+            ],
         ],
 
         'aiMemory' => [
@@ -214,6 +359,13 @@ return [
             'description' => "Monica geeft Claude, ChatGPT en andere compatibele assistenten via MCP een gedeeld, blijvend persoonlijk geheugen. Open source en ook zonder AI te gebruiken.",
             'ogTitle' => "Je assistenten wisselen. Je geheugen blijft van jou — Monica",
             'ogDescription' => "Geef compatibele AI-assistenten een gedeelde plek voor je mensen en alledaagse details. Open Monica om die herinneringen zelf te ordenen, met of zonder AI.",
+
+            'ogImage' => [
+                'eyebrow' => "AI-geheugen",
+                'title' => "Je assistenten wisselen.",
+                'accent' => "Je geheugen blijft van jou.",
+                'description' => "Een gedeelde plek waar compatibele AI-assistenten je mensen en alledaagse details onthouden.",
+            ],
         ],
 
         'mcpServer' => [
@@ -221,6 +373,13 @@ return [
             'description' => "Verbind AI-assistenten met Monica’s open source persoonlijke database via een externe MCP-server met 236 tools, OAuth of API-sleutels en hosten in eigen beheer.",
             'ogTitle' => "Je persoonlijke gegevens, verbonden met je AI-agents — Monica",
             'ogDescription' => "Verbind een compatibele assistent met Monica via MCP. Lees en werk gestructureerde persoonlijke records bij met afgebakende toegang, via OAuth of API-sleutel.",
+
+            'ogImage' => [
+                'eyebrow' => "MCP-server",
+                'title' => "Je persoonlijke gegevens,",
+                'accent' => "verbonden met je AI-agents.",
+                'description' => "Lees en werk gestructureerde persoonlijke records bij met afgebakende toegang, via OAuth of een API-sleutel.",
+            ],
         ],
 
         'personalData' => [
@@ -228,6 +387,13 @@ return [
             'description' => "Orden contacten, bezittingen, notities, levensgebeurtenissen en alledaagse details in één persoonlijke database. Monica is de open source levensorganizer.",
             'ogTitle' => "Een thuis voor de details van je leven — Monica",
             'ogDescription' => "Mensen, notities, bezittingen, belangrijke momenten en herinneringen. Eén persoonlijke plek voor alles wat je niet wilt vergeten.",
+
+            'ogImage' => [
+                'eyebrow' => "Beheer van persoonlijke gegevens",
+                'title' => "Een thuis voor de details",
+                'accent' => "van je leven.",
+                'description' => "Mensen, notities, bezittingen, belangrijke momenten en herinneringen, op één persoonlijke plek.",
+            ],
         ],
 
         'personalCrm' => [
@@ -235,6 +401,13 @@ return [
             'description' => "Wat een persoonlijke CRM is, hoe het verschilt van een adresboek en een sales-CRM, wat je bewaart, de privacyafwegingen en hoe je de juiste aanpak kiest.",
             'ogTitle' => "Wat is een persoonlijke CRM, en zou je er een gebruiken? — Monica",
             'ogDescription' => "Een adresboek onthoudt een nummer. Een persoonlijke CRM helpt je de persoon te onthouden. Lees wat je bewaart, wat je weglaat en hoe je er een kiest.",
+
+            'ogImage' => [
+                'eyebrow' => "Gids",
+                'title' => "Wat is een persoonlijke CRM,",
+                'accent' => "en zou je er een gebruiken?",
+                'description' => "Een adresboek onthoudt een nummer. Een persoonlijke CRM helpt je de persoon te onthouden.",
+            ],
         ],
     ],
 

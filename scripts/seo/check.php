@@ -172,7 +172,7 @@ foreach ($iterator as $file) {
         'H1' => $h1,
         'OG title' => $value('og:title'),
         'OG description' => $value('og:description'),
-        'OG image' => $value('og:image') . ' (1200 × 630, shared brand card for this language)',
+        'OG image' => $value('og:image') . (str_contains($value('og:image'), '/og/home-') && $route !== 'home' ? ' (1200 × 630, the homepage card for this language)' : ' (1200 × 630, card for this page)'),
         'Schema' => implode(', ', $types),
         'Primary keyword' => $primary,
         'Secondary keywords' => implode(', ', $secondary) ?: 'No additional target',

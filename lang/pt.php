@@ -12,7 +12,6 @@
 
 return [
     'meta' => [
-        'imageAlt' => "A Monica é o seu CRM pessoal e banco de dados. O CRM pessoal de código aberto.",
 
         'breadcrumb' => [
             'home' => "Início",
@@ -56,6 +55,14 @@ return [
             'description' => "A Monica é o seu banco de dados pessoal: seus contatos, suas coisas e tudo de que precisa se lembrar. Privada, de código aberto e auto-hospedável.",
             'ogTitle' => "Suas pessoas. Suas coisas. Suas memórias — Monica",
             'ogDescription' => "Reúna seus contatos, seus bens e os detalhes do dia a dia na Monica. Um banco de dados pessoal que você usa sozinho ou conecta aos seus assistentes de IA.",
+
+            'ogImage' => [
+                'eyebrow' => "CRM pessoal + memória de IA",
+                'title' => "Suas pessoas. Suas coisas.",
+                'accent' => "Suas memórias.",
+                'description' => "Contatos, bens e detalhes do dia a dia, reunidos para você e seus assistentes de IA.",
+                'alt' => "Monica: suas pessoas, suas coisas, suas memórias. Um panda arquiva fotos em um gaveteiro de madeira, ao lado de cartões de contatos, notas e memórias.",
+            ],
         ],
 
         'pricing' => [
@@ -63,6 +70,13 @@ return [
             'description' => "Auto-hospede a Monica de graça ou escolha hospedagem por 9 USD por mês, 90 USD por ano ou 250 USD uma única vez. Todos os recursos, sem preço por contato.",
             'ogTitle' => "Seu servidor ou o nosso. Você escolhe — Monica",
             'ogDescription' => "Hospede a Monica você mesmo, de graça, ou escolha hospedagem mensal, anual ou vitalícia. Todos os planos incluem todos os recursos, sem preço por contato.",
+
+            'ogImage' => [
+                'eyebrow' => "Preços",
+                'title' => "Seu servidor ou o nosso.",
+                'accent' => "Você escolhe.",
+                'description' => "Hospede a Monica você mesmo, de graça, ou escolha hospedagem mensal, anual ou vitalícia. Todos os recursos em todos os planos.",
+            ],
         ],
 
         'privacy' => [
@@ -70,6 +84,12 @@ return [
             'description' => "Como a Monica trata seus dados: o que coletamos, onde ficam guardados, quem pode vê-los e o que acontece ao encerrar sua conta. Sem anúncios, sem rastreadores.",
             'ogTitle' => "Política de privacidade — Monica",
             'ogDescription' => "Como a Monica trata seus dados: o que coletamos, onde ficam guardados, quem pode vê-los e o que acontece ao encerrar sua conta. Sem anúncios, sem rastreadores, sem revenda de dados.",
+
+            'ogImage' => [
+                'eyebrow' => "Jurídico",
+                'title' => "Política de privacidade",
+                'description' => "O que coletamos, onde fica guardado e quem pode ver. Sem anúncios, sem rastreadores, sem revenda de dados.",
+            ],
         ],
 
         'about' => [
@@ -77,6 +97,13 @@ return [
             'description' => "Conheça Régis e Alexis, as pessoas por trás da Monica. Como nasceu este banco de dados pessoal independente e de código aberto e o que guia seu desenvolvimento.",
             'ogTitle' => "Duas pessoas, um banco de dados pessoal — Monica",
             'ogDescription' => "Conheça as pessoas por trás da Monica, veja como o projeto começou e por que ele continua de código aberto, independente e sem publicidade.",
+
+            'ogImage' => [
+                'eyebrow' => "Sobre a Monica",
+                'title' => "Duas pessoas,",
+                'accent' => "um banco de dados pessoal.",
+                'description' => "Como o projeto começou e por que ele continua de código aberto, independente e sem publicidade.",
+            ],
         ],
 
         'team' => [
@@ -84,6 +111,13 @@ return [
             'description' => "A Monica é feita por duas pessoas em Montreal, com centenas de colaboradores. Por que criamos um CRM pessoal que não prejudica as relações humanas.",
             'ogTitle' => "A Monica é uma equipe de 2. Com centenas de colaboradores.",
             'ogDescription' => "A Monica é feita por duas pessoas em Montreal, com centenas de colaboradores de código aberto. Por que criamos um CRM pessoal que não prejudica as relações humanas.",
+
+            'ogImage' => [
+                'eyebrow' => "A equipe",
+                'title' => "Uma equipe de dois.",
+                'accent' => "Com centenas de colaboradores.",
+                'description' => "Feito em Montreal, como um CRM pessoal que não prejudica as relações humanas.",
+            ],
         ],
 
         'contribute' => [
@@ -91,6 +125,13 @@ return [
             'description' => "Ajude a construir a Monica com código, documentação, traduções ou correções. Formas práticas de apoiar um projeto independente e de código aberto.",
             'ogTitle' => "Ajude-nos a manter a Monica no ar.",
             'ogDescription' => "Boa documentação, traduções cuidadosas e correções úteis ajudam. Encontre um jeito de contribuir com a Monica, escrevendo código ou não.",
+
+            'ogImage' => [
+                'eyebrow' => "Contribua",
+                'title' => "Ajude-nos a manter",
+                'accent' => "a Monica no ar.",
+                'description' => "Documentação, traduções e correções ajudam, escrevendo código ou não.",
+            ],
         ],
 
         'support' => [
@@ -98,6 +139,13 @@ return [
             'description' => "Escreva para quem faz a Monica, de segunda a sexta, ou comece pela documentação: usar a Monica, a API, o MCP, CardDAV e CalDAV.",
             'ogTitle' => "Ajuda com a Monica, de quem a faz",
             'ogDescription' => "Escreva para nós se algo não funcionar como você espera, ou comece pela documentação que acompanha o aplicativo.",
+
+            'ogImage' => [
+                'eyebrow' => "Suporte",
+                'title' => "Ajuda com a Monica,",
+                'accent' => "de quem a faz.",
+                'description' => "Escreva para nós sobre qualquer coisa que não funcione como você espera.",
+            ],
         ],
 
         'terms' => [
@@ -105,6 +153,12 @@ return [
             'description' => "Os termos de uso da Monica, o banco de dados pessoal de código aberto: o que o serviço cobre, seus direitos, suas responsabilidades e as letras miúdas.",
             'ogTitle' => "Termos de uso — Monica",
             'ogDescription' => "Os termos de uso da Monica, o banco de dados pessoal de código aberto: o que o serviço cobre, seus direitos sobre seus dados, suas responsabilidades e as letras miúdas jurídicas.",
+
+            'ogImage' => [
+                'eyebrow' => "Jurídico",
+                'title' => "Termos de uso",
+                'description' => "O que o serviço cobre, seus direitos sobre seus dados e suas responsabilidades.",
+            ],
         ],
 
         'blog' => [
@@ -112,6 +166,13 @@ return [
             'description' => "O que lançamos, por que construímos assim e como é de verdade tocar uma pequena empresa de código aberto. Escrito por quem faz a Monica.",
             'ogTitle' => "Construindo a Monica, uma decisão por vez",
             'ogDescription' => "Novidades, decisões de produto e uma ou outra lição de tocar um pequeno projeto de código aberto. Escrito pelas pessoas que constroem a Monica.",
+
+            'ogImage' => [
+                'eyebrow' => "Blog",
+                'title' => "Construindo a Monica,",
+                'accent' => "uma decisão por vez.",
+                'description' => "Novidades, decisões de produto e uma ou outra lição de tocar um pequeno projeto de código aberto.",
+            ],
         ],
 
         // Um artigo traz o próprio título e a própria descrição, então aqui
@@ -125,6 +186,13 @@ return [
             'description' => "O que é o projeto, seus princípios, como ganha dinheiro, por que é de código aberto e como marketing e prioridades são decididos. Escrito por seu mantenedor.",
             'ogTitle' => "O manual da Monica",
             'ogDescription' => "Como a Monica é construída e conduzida: os princípios, as escolhas e as decisões do dia a dia de um projeto independente de código aberto.",
+
+            'ogImage' => [
+                'eyebrow' => "Manual",
+                'title' => "Como a Monica",
+                'accent' => "é construída e conduzida.",
+                'description' => "Os princípios, as escolhas e as decisões do dia a dia de um projeto independente de código aberto.",
+            ],
         ],
 
         // Como um artigo do blog, um artigo do manual traz o próprio título e
@@ -143,6 +211,13 @@ return [
             'description' => "Conheça a reconstrução da Monica v3: registros próprios, diário conectado, API completa e melhor experiência no celular. Código aberto, antes do fim de 2026.",
             'ogTitle' => "Monica v3: o que estamos reconstruindo",
             'ogDescription' => "Veja o que vem na Monica v3: registros que você desenha, um diário conectado, uma API completa e melhor experiência no celular. Continua de código aberto.",
+
+            'ogImage' => [
+                'eyebrow' => "O que vem por aí",
+                'title' => "Monica v3:",
+                'accent' => "o que estamos reconstruindo.",
+                'description' => "Registros que você desenha, um diário conectado, uma API completa e melhor experiência no celular.",
+            ],
         ],
 
         // Um bloco por aba de recursos: cada aba tem a própria URL, e um
@@ -153,6 +228,13 @@ return [
             'description' => "Crie modelos de contato com seus campos, seções e abas. Modelos para amigos, família e trabalho, publicados quando quiser, e seções compartilháveis.",
             'ogTitle' => "Seus contatos, do seu jeito — Monica",
             'ogDescription' => "Lembre-se do que importa para você. Crie modelos de contato com seus próprios campos, seções e abas, para que a ficha de cada pessoa tenha espaço para os detalhes que você quer guardar.",
+
+            'ogImage' => [
+                'eyebrow' => "Modelos",
+                'title' => "Seus contatos,",
+                'accent' => "do seu jeito.",
+                'description' => "Crie modelos de contato com seus próprios campos, seções e abas.",
+            ],
         ],
 
         'details' => [
@@ -160,6 +242,13 @@ return [
             'description' => "Reúna os detalhes que as pessoas compartilham com você: o que contaram da última vez, as pequenas coisas, quem está ao redor delas e os momentos vividos juntos.",
             'ogTitle' => "Lembre-se dos detalhes que importam — Monica",
             'ogDescription' => "O número está no seu telefone. O nome do novo parceiro, a comida favorita e o que a pessoa contou da última vez podem ser mais difíceis de achar.",
+
+            'ogImage' => [
+                'eyebrow' => "Detalhes",
+                'title' => "Lembre-se dos detalhes",
+                'accent' => "que importam.",
+                'description' => "O nome do novo parceiro, a comida favorita e o que a pessoa contou da última vez.",
+            ],
         ],
 
         'reminders' => [
@@ -167,6 +256,13 @@ return [
             'description' => "Crie um lembrete para um aniversário, um dia importante ou um amigo a quem você quer ligar. Uma vez ou com ritmo, no fuso da pessoa, por e-mail ou na Monica.",
             'ogTitle' => "Lembre-se de entrar em contato — Monica",
             'ogDescription' => "Um aniversário. Um dia importante. Um amigo para quem você anda querendo ligar.",
+
+            'ogImage' => [
+                'eyebrow' => "Lembretes",
+                'title' => "Lembre-se de",
+                'accent' => "entrar em contato.",
+                'description' => "Um aniversário. Um dia importante. Um amigo para quem você anda querendo ligar.",
+            ],
         ],
 
         'timeline' => [
@@ -174,6 +270,13 @@ return [
             'description' => "Registre o que aconteceu, quem estava lá e os detalhes que quer guardar. Eventos na linha do tempo de todos, tipos e campos próprios e um retrospecto ano a ano.",
             'ogTitle' => "Guarde os momentos que valem a lembrança — Monica",
             'ogDescription' => "Registre o que aconteceu, quem estava lá e os detalhes que você quer guardar. A Monica reúne esses momentos em uma linha do tempo a que você pode voltar.",
+
+            'ogImage' => [
+                'eyebrow' => "Linha do tempo",
+                'title' => "Guarde os momentos",
+                'accent' => "que valem a lembrança.",
+                'description' => "Registre o que aconteceu, quem estava lá e os detalhes que você quer guardar.",
+            ],
         ],
 
         'relationships' => [
@@ -181,6 +284,13 @@ return [
             'description' => "Acompanhe família, amigos e parceiros com relações de mão dupla, árvores genealógicas e histórico. Defina tipos de relação que combinem com sua vida.",
             'ogTitle' => "Entenda como as pessoas se conectam — Monica",
             'ogDescription' => "Acompanhe as pessoas ao redor de alguém, com relações que fazem sentido dos dois lados.",
+
+            'ogImage' => [
+                'eyebrow' => "Relações",
+                'title' => "Entenda como as pessoas",
+                'accent' => "se conectam.",
+                'description' => "Acompanhe as pessoas ao redor de alguém, com relações que fazem sentido dos dois lados.",
+            ],
         ],
 
         'vaults' => [
@@ -188,6 +298,13 @@ return [
             'description' => "Mantenha amigos, família e colegas juntos ou dê a cada grupo seu espaço. Cada cofre tem seus contatos, linha do tempo, lembretes e modelo padrão.",
             'ogTitle' => "Um lugar para cada parte da sua vida — Monica",
             'ogDescription' => "Mantenha todos juntos ou dê a cada grupo seu próprio espaço. Os cofres ajudam a organizar a Monica em torno da sua vida.",
+
+            'ogImage' => [
+                'eyebrow' => "Cofres",
+                'title' => "Um lugar para cada",
+                'accent' => "parte da sua vida.",
+                'description' => "Mantenha todos juntos ou dê a cada grupo seu próprio espaço.",
+            ],
         ],
 
         'sharing' => [
@@ -195,6 +312,13 @@ return [
             'description' => "Compartilhe seções escolhidas da ficha de um contato por um link somente leitura. Defina o que ele mostra, com data final ou senha, e revogue quando quiser.",
             'ogTitle' => "Compartilhe só o que você escolher — Monica",
             'ogDescription' => "Compartilhe seções escolhidas da ficha de um contato por um link somente leitura. Escolha o que ele mostra, por quanto tempo funciona e quando encerrar o acesso.",
+
+            'ogImage' => [
+                'eyebrow' => "Compartilhamento",
+                'title' => "Compartilhe só",
+                'accent' => "o que você escolher.",
+                'description' => "Links somente leitura para as seções da ficha que você escolher, pelo tempo que decidir.",
+            ],
         ],
 
         'api' => [
@@ -202,6 +326,13 @@ return [
             'description' => "Use a Monica com Claude, ChatGPT, Gemini ou seus scripts. Conecte um assistente pelo servidor MCP da Monica ou crie sua conexão com a API JSON e uma chave.",
             'ogTitle' => "Seus contatos, conectados às suas ferramentas — Monica",
             'ogDescription' => "Use a Monica com Claude, ChatGPT, Gemini ou seus próprios scripts. Consulte um contato, registre um momento ou crie um lembrete nas ferramentas que você já usa.",
+
+            'ogImage' => [
+                'eyebrow' => "API e MCP",
+                'title' => "Seus contatos,",
+                'accent' => "conectados às suas ferramentas.",
+                'description' => "Use a Monica com Claude, ChatGPT, Gemini ou seus próprios scripts.",
+            ],
         ],
 
         'privacyFeatures' => [
@@ -209,6 +340,13 @@ return [
             'description' => "Controle campos sensíveis, seções compartilhadas e o acesso de assistentes na Monica. Proteja sua conta com passkeys e verificação em duas etapas.",
             'ogTitle' => "Detalhes pessoais merecem um lugar privado — Monica",
             'ogDescription' => "Você registra coisas sobre as pessoas porque elas importam para você. Escolha o que guarda, o que compartilha e quais ferramentas podem acessar.",
+
+            'ogImage' => [
+                'eyebrow' => "Privacidade",
+                'title' => "Detalhes pessoais merecem",
+                'accent' => "um lugar privado.",
+                'description' => "Escolha o que guarda, o que compartilha e quais ferramentas podem acessar.",
+            ],
         ],
 
         'languages' => [
@@ -216,6 +354,13 @@ return [
             'description' => "Use a Monica em mais de 30 idiomas. Escreva nomes na ordem e nas formas que as pessoas usam e defina suas preferências de data, hora, números e fuso horário.",
             'ogTitle' => "Seu idioma. Os nomes deles — Monica",
             'ogDescription' => "Use a Monica em um idioma em que você se sinta em casa. Guarde os nomes das pessoas nas formas que elas usam e escolha como datas, horas e números aparecem.",
+
+            'ogImage' => [
+                'eyebrow' => "Idiomas",
+                'title' => "Seu idioma.",
+                'accent' => "Os nomes deles.",
+                'description' => "Use a Monica em um idioma em que você se sinta em casa e guarde os nomes como as pessoas os escrevem.",
+            ],
         ],
 
         'aiMemory' => [
@@ -223,6 +368,13 @@ return [
             'description' => "A Monica dá ao Claude, ao ChatGPT e a outros assistentes uma memória pessoal compartilhada e persistente pelo servidor MCP. Código aberto e auto-hospedável.",
             'ogTitle' => "Seus assistentes podem mudar. Sua memória continua sua — Monica",
             'ogDescription' => "Dê aos assistentes de IA compatíveis um lugar comum para lembrar das suas pessoas e dos detalhes do dia a dia. Abra a Monica para organizar essas memórias você mesmo, com ou sem IA.",
+
+            'ogImage' => [
+                'eyebrow' => "Memória de IA",
+                'title' => "Seus assistentes podem mudar.",
+                'accent' => "Sua memória continua sua.",
+                'description' => "Um lugar comum onde assistentes de IA compatíveis lembram das suas pessoas e do dia a dia.",
+            ],
         ],
 
         'mcpServer' => [
@@ -230,6 +382,13 @@ return [
             'description' => "Conecte assistentes de IA ao banco de dados pessoal da Monica: servidor MCP remoto, 236 ferramentas, OAuth ou chaves de API e auto-hospedagem.",
             'ogTitle' => "Seus dados pessoais, conectados aos seus agentes de IA — Monica",
             'ogDescription' => "Conecte um assistente compatível à Monica pelo MCP. Leia e atualize registros pessoais estruturados com acesso controlado, usando OAuth ou uma chave de API.",
+
+            'ogImage' => [
+                'eyebrow' => "Servidor MCP",
+                'title' => "Seus dados pessoais,",
+                'accent' => "conectados aos seus agentes de IA.",
+                'description' => "Leia e atualize registros pessoais estruturados com acesso controlado, via OAuth ou chave de API.",
+            ],
         ],
 
         'personalData' => [
@@ -237,6 +396,13 @@ return [
             'description' => "Organize contatos, bens, notas, eventos de vida e detalhes do dia a dia em um só banco de dados pessoal. Conheça a Monica, organizador de vida de código aberto.",
             'ogTitle' => "Um lar para os detalhes da sua vida — Monica",
             'ogDescription' => "Pessoas, notas, bens, momentos importantes e lembretes. Um lugar pessoal para tudo o que você não quer esquecer.",
+
+            'ogImage' => [
+                'eyebrow' => "Gestão de dados pessoais",
+                'title' => "Um lar para os detalhes",
+                'accent' => "da sua vida.",
+                'description' => "Pessoas, notas, bens, momentos importantes e lembretes, em um lugar pessoal.",
+            ],
         ],
 
         'personalCrm' => [
@@ -244,6 +410,13 @@ return [
             'description' => "O que é um CRM pessoal, como ele difere de uma agenda e de um CRM de vendas, o que guardar, os dilemas de privacidade e como escolher a abordagem certa.",
             'ogTitle' => "O que é um CRM pessoal, e você usaria um? — Monica",
             'ogDescription' => "Uma agenda lembra um número. Um CRM pessoal ajuda a lembrar da pessoa. Veja o que guardar, o que deixar de fora e como escolher um.",
+
+            'ogImage' => [
+                'eyebrow' => "Guia",
+                'title' => "O que é um CRM pessoal,",
+                'accent' => "e você usaria um?",
+                'description' => "Uma agenda lembra um número. Um CRM pessoal ajuda a lembrar da pessoa.",
+            ],
         ],
     ],
 

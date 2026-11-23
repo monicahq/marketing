@@ -18,7 +18,6 @@ return [
      * beside them rather than inside them.
      */
     'meta' => [
-        'imageAlt' => "Monica 是你的个人 CRM 和数据库。开源的个人 CRM。",
 
         /**
          * The page names in a breadcrumb trail: one per route key, plus the
@@ -75,6 +74,14 @@ return [
             'description' => "Monica 是你的个人数据库：记录联系人、你拥有的一切，以及所有需要记住的事。私密、开源、可自托管。",
             'ogTitle' => "你的人。你的物。你的记忆 — Monica",
             'ogDescription' => "在 Monica 中把联系人、物品和日常细节放在一起。一个个人数据库，可以自己使用，也可以连接你的 AI 助手。",
+
+            'ogImage' => [
+                'eyebrow' => "个人 CRM + AI 记忆",
+                'title' => "你的人。你的物。",
+                'accent' => "你的记忆。",
+                'description' => "联系人、物品和日常细节，为你和你的 AI 助手集中保存。",
+                'alt' => "Monica：你的人、你的物、你的记忆。一只熊猫把照片放进木制文件柜，旁边是联系人、笔记和记忆卡片。",
+            ],
         ],
 
         'pricing' => [
@@ -82,6 +89,13 @@ return [
             'description' => "免费自托管 Monica，或选择托管：每月 \$9、每年 \$90，或一次性 \$250。所有方案包含全部功能，不按联系人收费。",
             'ogTitle' => "你的服务器，或我们的。由你选择 — Monica",
             'ogDescription' => "免费自托管 Monica，或选择按月、按年或终身托管。所有方案包含全部功能，不按联系人收费。",
+
+            'ogImage' => [
+                'eyebrow' => "价格",
+                'title' => "你的服务器，或我们的。",
+                'accent' => "由你选择。",
+                'description' => "免费自托管 Monica，或选择按月、按年或终身托管。所有方案包含全部功能。",
+            ],
         ],
 
         'privacy' => [
@@ -89,6 +103,12 @@ return [
             'description' => "Monica 如何处理你的数据：我们收集什么、存放在哪里、谁能看到，以及你关闭账户后会发生什么。没有广告，没有追踪器，不转售数据。",
             'ogTitle' => "隐私政策 — Monica",
             'ogDescription' => "Monica 如何处理你的数据：我们收集什么、存放在哪里、谁能看到，以及你关闭账户后会发生什么。没有广告，没有追踪器，不转售数据。",
+
+            'ogImage' => [
+                'eyebrow' => "法律",
+                'title' => "隐私政策",
+                'description' => "我们收集什么、存放在哪里、谁能看到。没有广告，没有追踪器，不转售数据。",
+            ],
         ],
 
         'about' => [
@@ -96,6 +116,13 @@ return [
             'description' => "认识 Régis 和 Alexis，他们是 Monica 背后的人。了解这个独立的开源个人数据库如何开始，以及什么在指引它的开发。",
             'ogTitle' => "两个人，一个个人数据库 — Monica",
             'ogDescription' => "认识 Monica 背后的人，了解项目如何开始，以及它为何保持开源、独立、没有广告。",
+
+            'ogImage' => [
+                'eyebrow' => "关于 Monica",
+                'title' => "两个人，",
+                'accent' => "一个个人数据库。",
+                'description' => "项目如何开始，以及它为何保持开源、独立、没有广告。",
+            ],
         ],
 
         'team' => [
@@ -103,6 +130,13 @@ return [
             'description' => "Monica 由两个人在蒙特利尔打造，背后还有数百位开源贡献者。为什么我们要做一个不伤害人际关系的个人 CRM。",
             'ogTitle' => "Monica 是两个人的团队，加上数百位贡献者。",
             'ogDescription' => "Monica 由两个人在蒙特利尔打造，背后还有数百位开源贡献者。为什么我们要做一个不伤害人际关系的个人 CRM。",
+
+            'ogImage' => [
+                'eyebrow' => "团队",
+                'title' => "一个两人团队。",
+                'accent' => "加上数百位贡献者。",
+                'description' => "在蒙特利尔打造，一个不伤害人际关系的个人 CRM。",
+            ],
         ],
 
         'contribute' => [
@@ -110,6 +144,13 @@ return [
             'description' => "用代码、文档、翻译或修复帮助构建 Monica。了解为这个独立的开源个人数据库做贡献的实用方式。",
             'ogTitle' => "帮我们把 Monica 继续做下去。",
             'ogDescription' => "好文档、用心的翻译和有用的修复都有帮助。无论你是否写代码，都能找到参与 Monica 的方式。",
+
+            'ogImage' => [
+                'eyebrow' => "参与贡献",
+                'title' => "帮我们把",
+                'accent' => "Monica 继续做下去。",
+                'description' => "文档、翻译和修复都有帮助，无论你是否写代码。",
+            ],
         ],
 
         'support' => [
@@ -117,6 +158,13 @@ return [
             'description' => "周一至周五给打造 Monica 的人写信，或先看文档：使用 Monica、API、MCP，以及 CardDAV 和 CalDAV。",
             'ogTitle' => "Monica 的帮助，来自打造它的人",
             'ogDescription' => "任何不符合你预期的地方都可以写信告诉我们，或者先看应用内自带的文档。",
+
+            'ogImage' => [
+                'eyebrow' => "支持",
+                'title' => "Monica 的帮助，",
+                'accent' => "来自打造它的人。",
+                'description' => "任何不符合你预期的地方，都可以写信告诉我们。",
+            ],
         ],
 
         'terms' => [
@@ -124,6 +172,12 @@ return [
             'description' => "Monica（开源个人数据库）的使用条款：服务范围、你对数据的权利、你的责任，以及法律细则。",
             'ogTitle' => "使用条款 — Monica",
             'ogDescription' => "Monica（开源个人数据库）的使用条款：服务范围、你对数据的权利、你的责任，以及法律细则。",
+
+            'ogImage' => [
+                'eyebrow' => "法律",
+                'title' => "使用条款",
+                'description' => "服务范围、你对数据的权利，以及你的责任。",
+            ],
         ],
 
         'blog' => [
@@ -131,6 +185,13 @@ return [
             'description' => "我们发布了什么、为什么这样做，以及经营一家小型开源公司的真实样子。由打造 Monica 的人撰写。",
             'ogTitle' => "打造 Monica，一次一个决定",
             'ogDescription' => "版本更新、产品决策，以及经营小型开源项目时偶尔得到的教训。由打造 Monica 的人撰写。",
+
+            'ogImage' => [
+                'eyebrow' => "博客",
+                'title' => "打造 Monica，",
+                'accent' => "一次一个决定。",
+                'description' => "版本更新、产品决策，以及经营小型开源项目时偶尔得到的教训。",
+            ],
         ],
 
         // A post brings its own title and description, so this is only the
@@ -144,6 +205,13 @@ return [
             'description' => "项目是什么、背后的原则、如何盈利、为什么开源，以及营销和优先事项如何决定。由维护者撰写。",
             'ogTitle' => "Monica 手册",
             'ogDescription' => "Monica 如何构建和运营：一个独立开源项目背后的原则、取舍和日常决定。",
+
+            'ogImage' => [
+                'eyebrow' => "手册",
+                'title' => "Monica",
+                'accent' => "如何构建和运营。",
+                'description' => "一个独立开源项目背后的原则、取舍和日常决定。",
+            ],
         ],
 
         // Like a post, an article brings its own title and description.
@@ -161,6 +229,13 @@ return [
             'description' => "了解 Monica v3 的重新构建：自定义记录、互联的日记、完整的 API 和更好的移动体验。开源，将于 2026 年底前推出。",
             'ogTitle' => "Monica v3：我们正在重建什么",
             'ogDescription' => "看看 Monica v3 带来什么：由你设计的记录、互联的日记、完整的 API 和更好的移动体验。依然开源。",
+
+            'ogImage' => [
+                'eyebrow' => "接下来",
+                'title' => "Monica v3：",
+                'accent' => "我们正在重建什么。",
+                'description' => "由你设计的记录、互联的日记、完整的 API 和更好的移动体验。",
+            ],
         ],
 
         'templates' => [
@@ -168,6 +243,13 @@ return [
             'description' => "用你自己的字段、分区和标签页构建联系人模板。为朋友、家人和工作使用不同模板，准备好再发布版本。",
             'ogTitle' => "你的联系人，你的方式 — Monica",
             'ogDescription' => "记住对你重要的事。用自己的字段、分区和标签页构建联系人模板，让每个人的页面都有地方放你想保留的细节。",
+
+            'ogImage' => [
+                'eyebrow' => "模板",
+                'title' => "你的联系人，",
+                'accent' => "你的方式。",
+                'description' => "用自己的字段、分区和标签页构建联系人模板。",
+            ],
         ],
 
         'details' => [
@@ -175,6 +257,13 @@ return [
             'description' => "把别人告诉你的细节放在一起：他们上次说过的话、小事、身边的人，以及你们共度的时刻。",
             'ogTitle' => "记住重要的细节 — Monica",
             'ogDescription' => "他们的号码在你的手机里。但新伴侣的名字、最爱的菜，以及他们上次告诉你的事，可能更难找到。",
+
+            'ogImage' => [
+                'eyebrow' => "细节",
+                'title' => "记住",
+                'accent' => "重要的细节。",
+                'description' => "新伴侣的名字、最爱的菜，以及他们上次告诉你的事。",
+            ],
         ],
 
         'reminders' => [
@@ -182,6 +271,13 @@ return [
             'description' => "为生日、重要的日子或一直想联系的朋友设置提醒。可以只提醒一次或按节奏重复，通过邮件或在 Monica 中提醒。",
             'ogTitle' => "记得去联系 — Monica",
             'ogDescription' => "一个生日。一个重要的日子。一位你一直想联系的朋友。",
+
+            'ogImage' => [
+                'eyebrow' => "提醒",
+                'title' => "记得",
+                'accent' => "去联系。",
+                'description' => "一个生日。一个重要的日子。一位你一直想联系的朋友。",
+            ],
         ],
 
         'timeline' => [
@@ -189,6 +285,13 @@ return [
             'description' => "记录发生了什么、谁在场，以及你想保留的细节。人生事件同时出现在每个人的时间线上，还有自定义类型和字段。",
             'ogTitle' => "留住值得记住的时刻 — Monica",
             'ogDescription' => "记录发生了什么、谁在场，以及你想保留的细节。Monica 把这些时刻汇集到一条你可以随时回看的时间线上。",
+
+            'ogImage' => [
+                'eyebrow' => "时间线",
+                'title' => "留住",
+                'accent' => "值得记住的时刻。",
+                'description' => "记录发生了什么、谁在场，以及你想保留的细节。",
+            ],
         ],
 
         'relationships' => [
@@ -196,6 +299,13 @@ return [
             'description' => "用双向关系、家谱和关系历史记录家人、朋友和伴侣。自定义适合你生活中每个人的关系类型。",
             'ogTitle' => "理解人与人如何联系 — Monica",
             'ogDescription' => "记录某个人身边的人，让关系从双方看都说得通。",
+
+            'ogImage' => [
+                'eyebrow' => "关系",
+                'title' => "理解人与人",
+                'accent' => "如何联系。",
+                'description' => "记录某个人身边的人，让关系从双方看都说得通。",
+            ],
         ],
 
         'vaults' => [
@@ -203,6 +313,13 @@ return [
             'description' => "把朋友、家人和同事放在一起，或给每个群体单独的空间。每个保险库有自己的联系人、时间线、提醒和默认模板。",
             'ogTitle' => "为生活的每个部分留一个位置 — Monica",
             'ogDescription' => "放在一起，或给每个群体单独的空间。保险库帮你围绕自己的生活来整理 Monica。",
+
+            'ogImage' => [
+                'eyebrow' => "保险库",
+                'title' => "为生活的每个部分",
+                'accent' => "留一个位置。",
+                'description' => "全部放在一起，或给每个群体单独的空间。",
+            ],
         ],
 
         'sharing' => [
@@ -210,6 +327,13 @@ return [
             'description' => "通过只读链接分享联系人页面的选定分区。选择展示什么，设置截止日期或密码，查看何时被打开，随时撤销。",
             'ogTitle' => "只分享你选择的内容 — Monica",
             'ogDescription' => "通过只读链接分享联系人页面的选定分区。选择它展示什么、有效多久，以及何时停止访问。",
+
+            'ogImage' => [
+                'eyebrow' => "分享",
+                'title' => "只分享",
+                'accent' => "你选择的内容。",
+                'description' => "用只读链接分享联系人页面中你选定的分区，有效期由你决定。",
+            ],
         ],
 
         'api' => [
@@ -217,6 +341,13 @@ return [
             'description' => "让 Monica 配合 Claude、ChatGPT、Gemini 或你自己的脚本使用。通过 MCP 服务器连接助手，或用 JSON API 自建连接。",
             'ogTitle' => "你的联系人，连接你的工具 — Monica",
             'ogDescription' => "让 Monica 配合 Claude、ChatGPT、Gemini 或你自己的脚本使用。在你已有的工具里查找联系人、记录时刻或设置提醒。",
+
+            'ogImage' => [
+                'eyebrow' => "API 和 MCP",
+                'title' => "你的联系人，",
+                'accent' => "连接你的工具。",
+                'description' => "让 Monica 配合 Claude、ChatGPT、Gemini 或你自己的脚本使用。",
+            ],
         ],
 
         'privacyFeatures' => [
@@ -224,6 +355,13 @@ return [
             'description' => "在 Monica 中控制敏感字段、分享的分区和助手访问。用通行密钥和双重验证保护账户，并查看其活动。",
             'ogTitle' => "个人细节值得一个私密的地方 — Monica",
             'ogDescription' => "你记录关于别人的事，是因为他们对你重要。选择保留什么、分享什么，以及哪些工具可以访问。",
+
+            'ogImage' => [
+                'eyebrow' => "隐私",
+                'title' => "个人细节值得",
+                'accent' => "一个私密的地方。",
+                'description' => "选择保留什么、分享什么，以及哪些工具可以访问。",
+            ],
         ],
 
         'languages' => [
@@ -231,6 +369,13 @@ return [
             'description' => "以 30 多种语言使用 Monica。按人们使用的顺序和形式书写姓名，选择显示名称，设置日期、时间、数字和时区偏好。",
             'ogTitle' => "你的语言。他们的名字 — Monica",
             'ogDescription' => "用让你有归属感的语言使用 Monica。按人们使用的形式保存姓名，并选择日期、时间和数字的显示方式。",
+
+            'ogImage' => [
+                'eyebrow' => "语言",
+                'title' => "你的语言。",
+                'accent' => "他们的名字。",
+                'description' => "用让你有归属感的语言使用 Monica，并按人们的写法保存姓名。",
+            ],
         ],
 
         'aiMemory' => [
@@ -238,6 +383,13 @@ return [
             'description' => "通过 MCP 服务器，让 Claude、ChatGPT 等兼容助手共用一份持久的个人记忆。开源，可自托管，无需 AI 也能用。",
             'ogTitle' => "助手可以换，你的记忆属于你 — Monica",
             'ogDescription' => "给兼容的 AI 助手一个共享的地方，记住你身边的人和日常细节。你也可以打开 Monica 亲自整理，有没有 AI 都行。",
+
+            'ogImage' => [
+                'eyebrow' => "AI 记忆",
+                'title' => "助手可以换。",
+                'accent' => "你的记忆属于你。",
+                'description' => "一个共享的地方，让兼容的 AI 助手记住你身边的人和日常细节。",
+            ],
         ],
 
         'mcpServer' => [
@@ -245,6 +397,13 @@ return [
             'description' => "用远程 MCP 服务器、236 个工具、OAuth 或 API 密钥，把 AI 助手连接到 Monica 的开源个人数据库，也支持自托管。",
             'ogTitle' => "你的个人数据，连接你的 AI 智能体 — Monica",
             'ogDescription' => "通过 MCP 把兼容的助手连接到 Monica。用 OAuth 或 API 密钥，在授权范围内读取和更新结构化的个人记录。",
+
+            'ogImage' => [
+                'eyebrow' => "MCP 服务器",
+                'title' => "你的个人数据，",
+                'accent' => "连接你的 AI 智能体。",
+                'description' => "通过 OAuth 或 API 密钥，在授权范围内读取和更新结构化的个人记录。",
+            ],
         ],
 
         'personalData' => [
@@ -252,6 +411,13 @@ return [
             'description' => "把联系人、物品、笔记、生活事件和日常细节整理在一个个人数据库里。认识 Monica，开源的数字生活整理工具。",
             'ogTitle' => "给生活细节一个家 — Monica",
             'ogDescription' => "人、笔记、物品、重要时刻和提醒。一个属于你的地方，放下所有你不想忘记的事。",
+
+            'ogImage' => [
+                'eyebrow' => "个人数据管理",
+                'title' => "给生活细节",
+                'accent' => "一个家。",
+                'description' => "人、笔记、物品、重要时刻和提醒，都在一个属于你的地方。",
+            ],
         ],
 
         'personalCrm' => [
@@ -259,6 +425,13 @@ return [
             'description' => "什么是个人 CRM，它与通讯录和销售 CRM 有何不同，该存什么，隐私上的取舍，以及如何选择合适的做法。",
             'ogTitle' => "什么是个人 CRM，你会用吗？ — Monica",
             'ogDescription' => "通讯录记住号码，个人 CRM 帮你记住这个人。了解该保留什么、省略什么，以及如何选择。",
+
+            'ogImage' => [
+                'eyebrow' => "指南",
+                'title' => "什么是个人 CRM，",
+                'accent' => "你会用吗？",
+                'description' => "通讯录记住号码，个人 CRM 帮你记住这个人。",
+            ],
         ],
     ],
 

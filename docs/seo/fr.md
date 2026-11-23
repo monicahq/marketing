@@ -16,7 +16,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica est votre CRM personnel et votre base de données. |
 | OG title | Vos proches. Vos affaires. Vos souvenirs — Monica |
 | OG description | Réunissez vos contacts, vos biens et vos détails du quotidien dans Monica. Une base de données personnelle, utilisable seule ou reliée à vos assistants IA. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/home-fr.jpg?v=52059dc8 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, SoftwareApplication |
 | Primary keyword | CRM personnel |
 | Secondary keywords | base de données personnelle, CRM personnel open source |
@@ -35,7 +35,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Fait par deux personnes. |
 | OG title | Deux personnes, une base de données personnelle — Monica |
 | OG description | Rencontrez les personnes derrière Monica, découvrez comment le projet a démarré et pourquoi il reste open source, indépendant et sans publicité. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/about-fr.jpg?v=adae0f9f (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, AboutPage, BreadcrumbList |
 | Primary keyword | à propos de Monica |
 | Secondary keywords | projet Monica open source, CRM personnel indépendant |
@@ -54,7 +54,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Blog |
 | OG title | Construire Monica, une décision à la fois |
 | OG description | Nouveautés, décisions produit et leçons occasionnelles tirées de la vie d’un petit projet open source. Écrit par les personnes qui construisent Monica. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-fr.jpg?v=5b6e10cf (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, CollectionPage, BreadcrumbList |
 | Primary keyword | blog Monica |
 | Secondary keywords | nouveautés Monica, notes de version Monica |
@@ -73,7 +73,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Rétrospective de l'année |
 | OG title | Rétrospective de l'année |
 | OG description | Comment s'est passée l'année 2017. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-2017-year-review-fr.jpg?v=16d3cb76 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Rétrospective de l'année |
 | Secondary keywords | No additional target |
@@ -92,7 +92,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | 50 000 contacts |
 | OG title | 50 000 contacts |
 | OG description | Monica vient d'atteindre un joli cap. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-50000-contacts-fr.jpg?v=1890e9cd (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | 50 000 contacts |
 | Secondary keywords | No additional target |
@@ -111,7 +111,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Une nouvelle Monica arrive |
 | OG title | Une nouvelle Monica arrive |
 | OG description | Une toute nouvelle version majeure arrive. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-a-new-version-is-coming-fr.jpg?v=9dd2ada7 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Une nouvelle Monica arrive |
 | Secondary keywords | No additional target |
@@ -130,7 +130,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Ajouter une date sans connaître l'année |
 | OG title | Ajouter une date sans connaître l'année |
 | OG description | Un changement simple, mais énorme. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-birthdays-without-year-fr.jpg?v=7fd3cb77 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Ajouter une date sans connaître l'année |
 | Secondary keywords | No additional target |
@@ -149,7 +149,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Chandler est en bêta |
 | OG title | Chandler est en bêta |
 | OG description | La nouvelle version majeure est disponible en bêta. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-fr.jpg?v=2a3201e0 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler est en bêta |
 | Secondary keywords | No additional target |
@@ -168,7 +168,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les conversations arrivent |
 | OG title | Les conversations arrivent |
 | OG description | Une façon de consigner ce que vous échangez sur les réseaux sociaux ou par SMS |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-conversations-fr.jpg?v=907d7a94 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Les conversations arrivent |
 | Secondary keywords | No additional target |
@@ -187,7 +187,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les genres personnalisés arrivent |
 | OG title | Les genres personnalisés arrivent |
 | OG description | Vous pouvez désormais définir facilement autant de genres que vous le souhaitez. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-custom-genders-fr.jpg?v=f8b38f65 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Les genres personnalisés arrivent |
 | Secondary keywords | No additional target |
@@ -206,7 +206,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Avez-vous vraiment besoin d'importer vos données ? |
 | OG title | Avez-vous vraiment besoin d'importer vos données ? |
 | OG description | Vous n'avez sans doute pas besoin de suivre vos interactions sociales avec plus de 500 amis. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-do-we-need-import-fr.jpg?v=365c9f4b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Avez-vous vraiment besoin d'importer vos données ? |
 | Secondary keywords | No additional target |
@@ -225,7 +225,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Ne soyez pas plus malin que moi |
 | OG title | Ne soyez pas plus malin que moi |
 | OG description | La plupart des sites pensent à la place de leurs utilisateurs. Ne le faites pas. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-dont-be-smarter-than-me-fr.jpg?v=09a45eab (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Ne soyez pas plus malin que moi |
 | Secondary keywords | No additional target |
@@ -244,7 +244,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les notes favorites arrivent |
 | OG title | Les notes favorites arrivent |
 | OG description | Les notes se modifient désormais sur place et peuvent être mises en favori pour apparaître sur le tableau de bord. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-inline-notes-fr.jpg?v=51d14216 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Les notes favorites arrivent |
 | Secondary keywords | No additional target |
@@ -263,7 +263,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Building Monica : nous avons construit le navigateur de base de données que nous voulions pour Laravel |
 | OG title | Building Monica : nous avons construit le navigateur de base de données que nous voulions pour Laravel |
 | OG description | En reconstruisant Monica, nous avons créé un petit navigateur de base de données en lecture seule pour Laravel, et nous avons décidé de le publier comme paquet indépendant. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-laradb-fr.jpg?v=4d472707 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Building Monica : nous avons construit le navigateur de base de données que nous voulions pour Laravel |
 | Secondary keywords | No additional target |
@@ -282,7 +282,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi Laravel ? |
 | OG title | Pourquoi Laravel ? |
 | OG description | Pourquoi avoir choisi Laravel pour construire ce projet ? |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-laravel-fr.jpg?v=5406a8d2 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Pourquoi Laravel ? |
 | Secondary keywords | No additional target |
@@ -301,7 +301,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les événements de vie arrivent |
 | OG title | Les événements de vie arrivent |
 | OG description | Une façon d'ajouter une frise des principaux événements de la vie de vos contacts |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-life-events-fr.jpg?v=5ddc188a (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Les événements de vie arrivent |
 | Secondary keywords | No additional target |
@@ -320,7 +320,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Marquer un cadeau comme offert |
 | OG title | Marquer un cadeau comme offert |
 | OG description | Vous pouvez désormais marquer facilement un cadeau comme offert. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-mark-gift-offered-fr.jpg?v=bd3e4a09 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Marquer un cadeau comme offert |
 | Secondary keywords | No additional target |
@@ -339,7 +339,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | L'application mobile est là |
 | OG title | L'application mobile est là |
 | OG description | L'application mobile officielle a atterri. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-mobile-application-fr.jpg?v=833308aa (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | L'application mobile est là |
 | Secondary keywords | No additional target |
@@ -358,7 +358,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Building Monica : modéliser les relations entre les personnes |
 | OG title | Building Monica : modéliser les relations entre les personnes |
 | OG description | Décider ce qu'est réellement une relation s'est révélé être l'un des problèmes les plus difficiles de la reconstruction de Monica. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-modeling-relationships-fr.jpg?v=f804aa8b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Building Monica : modéliser les relations entre les personnes |
 | Secondary keywords | No additional target |
@@ -377,7 +377,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica en 2018 |
 | OG title | Monica en 2018 |
 | OG description | Ce que nous souhaitons accomplir en 2018. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-monica-in-2018-fr.jpg?v=957b88e4 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica en 2018 |
 | Secondary keywords | No additional target |
@@ -396,7 +396,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Quitter Stripe pour notre propre portail client |
 | OG title | Quitter Stripe pour notre propre portail client |
 | OG description | Nous avons décidé de quitter Stripe pour Paddle. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-moving-away-from-Stripe-with-our-own-customer-portal-fr.jpg?v=a716fee5 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Quitter Stripe pour notre propre portail client |
 | Secondary keywords | No additional target |
@@ -415,7 +415,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Le support multi-utilisateur arrive |
 | OG title | Le support multi-utilisateur arrive |
 | OG description | Monica prend désormais en charge plusieurs utilisateurs dans un même compte. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-multi-user-support-fr.jpg?v=b58fe3ef (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Le support multi-utilisateur arrive |
 | Secondary keywords | No additional target |
@@ -434,7 +434,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Une nouvelle version de Monica arrive en 2026 |
 | OG title | Une nouvelle version de Monica arrive en 2026 |
 | OG description | Nous lancerons la nouvelle version de Monica avant la fin de 2026. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-new-version-of-monica-in-2026-fr.jpg?v=d40987d6 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Une nouvelle version de Monica arrive en 2026 |
 | Secondary keywords | No additional target |
@@ -453,7 +453,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | La nouvelle version est prête à être testée |
 | OG title | La nouvelle version est prête à être testée |
 | OG description | La nouvelle version de Monica est ouverte aux tests. Inscrivez-vous sur la liste d'attente et nous vous laisserons entrer. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-new-version-ready-for-testing-fr.jpg?v=c39ed5c9 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | La nouvelle version est prête à être testée |
 | Secondary keywords | No additional target |
@@ -472,7 +472,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les notifications arrivent |
 | OG title | Les notifications arrivent |
 | OG description | Soyez prévenu quelques jours à l'avance qu'un événement approche. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-notifications-fr.jpg?v=da0ac77d (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Les notifications arrivent |
 | Secondary keywords | No additional target |
@@ -491,7 +491,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Notre première récompense |
 | OG title | Notre première récompense |
 | OG description | Nous avons remporté le prix Open Source Rookie of the Year. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-our-first-award-fr.jpg?v=795aa90c (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Notre première récompense |
 | Secondary keywords | No additional target |
@@ -510,7 +510,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Blog |
 | OG title | Blog Monica : nouveautés et décisions produit (page 2 sur 5) |
 | OG description | Parcourez la page 2 sur 5 du blog Monica : nouveautés, décisions produit et notes des personnes qui développent Monica. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-fr.jpg?v=5b6e10cf (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, CollectionPage, BreadcrumbList |
 | Primary keyword | blog Monica |
 | Secondary keywords | nouveautés Monica, notes de version Monica |
@@ -529,7 +529,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Blog |
 | OG title | Blog Monica : nouveautés et décisions produit (page 3 sur 5) |
 | OG description | Parcourez la page 3 sur 5 du blog Monica : nouveautés, décisions produit et notes des personnes qui développent Monica. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-fr.jpg?v=5b6e10cf (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, CollectionPage, BreadcrumbList |
 | Primary keyword | blog Monica |
 | Secondary keywords | nouveautés Monica, notes de version Monica |
@@ -548,7 +548,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Blog |
 | OG title | Blog Monica : nouveautés et décisions produit (page 4 sur 5) |
 | OG description | Parcourez la page 4 sur 5 du blog Monica : nouveautés, décisions produit et notes des personnes qui développent Monica. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-fr.jpg?v=5b6e10cf (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, CollectionPage, BreadcrumbList |
 | Primary keyword | blog Monica |
 | Secondary keywords | nouveautés Monica, notes de version Monica |
@@ -567,7 +567,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Blog |
 | OG title | Blog Monica : nouveautés et décisions produit (page 5 sur 5) |
 | OG description | Parcourez la page 5 sur 5 du blog Monica : nouveautés, décisions produit et notes des personnes qui développent Monica. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-fr.jpg?v=5b6e10cf (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, CollectionPage, BreadcrumbList |
 | Primary keyword | blog Monica |
 | Secondary keywords | nouveautés Monica, notes de version Monica |
@@ -586,7 +586,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | À propos de la conception produit |
 | OG title | À propos de la conception produit |
 | OG description | Une bonne conception produit : valeur pour l'utilisateur > facilité d'usage > rapidité > design. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-product-design-fr.jpg?v=0493399f (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | À propos de la conception produit |
 | Secondary keywords | No additional target |
@@ -605,7 +605,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les inscriptions sont actuellement fermées |
 | OG title | Les inscriptions sont actuellement fermées |
 | OG description | Nous avons désactivé les inscriptions sur la première version de Monica pendant que nous préparons l'ouverture de la nouvelle. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-registration-is-closed-fr.jpg?v=454c11f6 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Les inscriptions sont actuellement fermées |
 | Secondary keywords | No additional target |
@@ -624,7 +624,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | État des applications mobiles |
 | OG title | État des applications mobiles |
 | OG description | Nous avons retiré les applications mobiles des stores |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-state-mobile-apps-fr.jpg?v=0cfe505d (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | État des applications mobiles |
 | Secondary keywords | No additional target |
@@ -643,7 +643,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Point d'étape, septembre 2017 |
 | OG title | Point d'étape, septembre 2017 |
 | OG description | Où en est Monica en septembre 2017 ? |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-status-september-2017-fr.jpg?v=e3b8bd4b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Point d'étape, septembre 2017 |
 | Secondary keywords | No additional target |
@@ -662,7 +662,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Gardez le contact avec ceux que vous aimez |
 | OG title | Gardez le contact avec ceux que vous aimez |
 | OG description | Recevez un email à intervalle régulier pour garder le contact avec vos proches |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-stay-in-touch-fr.jpg?v=84a603ee (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Gardez le contact avec ceux que vous aimez |
 | Secondary keywords | No additional target |
@@ -681,7 +681,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Sur le fait d'avoir trop de réglages |
 | OG title | Sur le fait d'avoir trop de réglages |
 | OG description | Est-ce acceptable d'avoir trop de réglages ? |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-too-many-settings-fr.jpg?v=0e2424e1 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Sur le fait d'avoir trop de réglages |
 | Secondary keywords | No additional target |
@@ -700,7 +700,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les traductions passent la vitesse supérieure |
 | OG title | Les traductions passent la vitesse supérieure |
 | OG description | Nous utilisons désormais un outil simple pour gérer les traductions. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-translations-fr.jpg?v=1da69818 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Les traductions passent la vitesse supérieure |
 | Secondary keywords | No additional target |
@@ -719,7 +719,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 2.16 et la suite pour Monica |
 | OG title | Monica 2.16 et la suite pour Monica |
 | OG description | Une nouvelle façon d'ajouter des activités et la suite de notre produit. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v.2.16.0-fr.jpg?v=2222694d (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 2.16 et la suite pour Monica |
 | Secondary keywords | No additional target |
@@ -738,7 +738,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 0.2.0 avec vCard |
 | OG title | Monica 0.2.0 avec vCard |
 | OG description | La version 0.2.0 permet d'importer vos données depuis Google Contacts, au format vCard. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v0.2.0-fr.jpg?v=6d38b932 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 0.2.0 avec vCard |
 | Secondary keywords | No additional target |
@@ -757,7 +757,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 0.3.0 avec les tags |
 | OG title | Monica 0.3.0 avec les tags |
 | OG description | La version 0.3.0 permet d'organiser vos contacts avec des tags. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v0.3.0-fr.jpg?v=95463470 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 0.3.0 avec les tags |
 | Secondary keywords | No additional target |
@@ -776,7 +776,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 0.4.0 avec les appels téléphoniques |
 | OG title | Monica 0.4.0 avec les appels téléphoniques |
 | OG description | La version 0.4.0 permet de garder une trace de vos appels téléphoniques. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v0.4.0-fr.jpg?v=7a6a4bb3 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 0.4.0 avec les appels téléphoniques |
 | Secondary keywords | No additional target |
@@ -795,7 +795,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 0.5.0 avec le suivi des versions et la recherche |
 | OG title | Monica 0.5.0 avec le suivi des versions et la recherche |
 | OG description | La version 0.5.0 vous prévient quand une nouvelle version est disponible et vous permet de chercher vos contacts. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v0.5.0-fr.jpg?v=dffc8237 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 0.5.0 avec le suivi des versions et la recherche |
 | Secondary keywords | No additional target |
@@ -814,7 +814,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 0.6.3 avec une meilleure gestion des contacts et le Markdown |
 | OG title | Monica 0.6.3 avec une meilleure gestion des contacts et le Markdown |
 | OG description | La version 0.6.3 apporte la fonctionnalité la plus demandée. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v0.6.3-fr.jpg?v=a472fb25 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 0.6.3 avec une meilleure gestion des contacts et le Markdown |
 | Secondary keywords | No additional target |
@@ -833,7 +833,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 1.0.0 avec l'API, les rencontres et les contacts décédés |
 | OG title | Monica 1.0.0 avec l'API, les rencontres et les contacts décédés |
 | OG description | La plus grosse version que nous ayons jamais publiée. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v1.0.0-fr.jpg?v=be051923 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 1.0.0 avec l'API, les rencontres et les contacts décédés |
 | Secondary keywords | No additional target |
@@ -852,7 +852,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les champs de contact multiples arrivent |
 | OG title | Les champs de contact multiples arrivent |
 | OG description | Vous pouvez désormais avoir autant de champs de contact que vous le souhaitez par contact. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v1.1.0-fr.jpg?v=9526d26f (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Les champs de contact multiples arrivent |
 | Secondary keywords | No additional target |
@@ -871,7 +871,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Une meilleure façon de gérer les tâches |
 | OG title | Une meilleure façon de gérer les tâches |
 | OG description | Les tâches s'ajoutent désormais en ligne et se modifient sur place. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v1.2.0-fr.jpg?v=c6f775c0 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Une meilleure façon de gérer les tâches |
 | Secondary keywords | No additional target |
@@ -890,7 +890,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 2.0.0 avec de meilleures relations |
 | OG title | Monica 2.0.0 avec de meilleures relations |
 | OG description | Une meilleure gestion des relations, et bien plus encore. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v2.0.0-fr.jpg?v=3ac4fafc (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 2.0.0 avec de meilleures relations |
 | Secondary keywords | No additional target |
@@ -909,7 +909,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 2.10.0 avec l'envoi de documents |
 | OG title | Monica 2.10.0 avec l'envoi de documents |
 | OG description | Une nouvelle façon d'envoyer des documents |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v2.10.0-fr.jpg?v=d4165fb5 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 2.10.0 avec l'envoi de documents |
 | Secondary keywords | No additional target |
@@ -928,7 +928,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 2.11.0 |
 | OG title | Monica 2.11.0 |
 | OG description | Les émotions, l'envoi de photos, une sécurité renforcée et une meilleure gestion des appels. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v2.11.0-fr.jpg?v=4e3e5dd3 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 2.11.0 |
 | Secondary keywords | No additional target |
@@ -947,7 +947,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica 2.4.0 |
 | OG title | Monica 2.4.0 |
 | OG description | Beaucoup de petites fonctionnalités sont livrées dans cette version. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-v2.4.0-fr.jpg?v=a003978e (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Monica 2.4.0 |
 | Secondary keywords | No additional target |
@@ -966,7 +966,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Nous reconstruisons Monica |
 | OG title | Nous reconstruisons Monica |
 | OG description | Nous reconstruisons Monica de zéro, et cette nouvelle série va documenter comment. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-we-are-rebuilding-monica-fr.jpg?v=bd94ce15 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Nous reconstruisons Monica |
 | Secondary keywords | No additional target |
@@ -985,7 +985,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi l'open source ? Vous êtes fou ? |
 | OG title | Pourquoi l'open source ? Vous êtes fou ? |
 | OG description | Les avantages et les inconvénients de publier son produit grand public en open source. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/blog-why-open-source-fr.jpg?v=017a652f (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Pourquoi l'open source ? Vous êtes fou ? |
 | Secondary keywords | No additional target |
@@ -1004,7 +1004,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Nos conditions d’utilisation |
 | OG title | Conditions d’utilisation — Monica |
 | OG description | Les conditions d’utilisation de Monica, la base de données personnelle open source : ce que couvre le service, vos droits sur vos données, vos responsabilités et les mentions légales. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/terms-fr.jpg?v=1c1eaec7 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | conditions d’utilisation Monica |
 | Secondary keywords | conditions du service Monica |
@@ -1023,7 +1023,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Notre politique de confidentialité |
 | OG title | Politique de confidentialité — Monica |
 | OG description | Comment Monica traite vos données : ce que nous collectons, où elles sont stockées, qui peut les voir, et ce qui se passe à la fermeture du compte. Ni pub, ni traceurs, ni revente de données. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/privacy-fr.jpg?v=3d6d14cc (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | politique de confidentialité Monica |
 | Secondary keywords | données personnelles Monica |
@@ -1042,7 +1042,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Aidez-nous à faire vivre Monica. |
 | OG title | Aidez-nous à faire vivre Monica. |
 | OG description | Une bonne documentation, des traductions soignées et des correctifs utiles aident tous. Trouvez comment contribuer à Monica, que vous écriviez du code ou non. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/contribute-fr.jpg?v=7c046b46 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | contribuer à Monica |
 | Secondary keywords | traduire Monica, documentation Monica |
@@ -1061,7 +1061,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Qu’est-ce qu’un CRM personnel ? |
 | OG title | Qu’est-ce qu’un CRM personnel, et en voudriez-vous un ? — Monica |
 | OG description | Un carnet d’adresses retient un numéro. Un CRM personnel aide à se souvenir de la personne. Découvrez quoi garder, quoi laisser de côté et comment choisir. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/personalCrm-fr.jpg?v=81eb5746 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | qu’est-ce qu’un CRM personnel |
 | Secondary keywords | guide du CRM personnel, CRM personnel ou carnet d’adresses |
@@ -1080,7 +1080,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica, c’est une équipe de 2. Et des centaines de contributeurs. |
 | OG title | Monica, c’est une équipe de 2. Et des centaines de contributeurs. |
 | OG description | Monica est développée par deux personnes à Montréal, avec des centaines de contributeurs open source. Pourquoi nous créons un CRM personnel qui ne nuit pas aux relations humaines. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/team-fr.jpg?v=74823841 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, AboutPage, BreadcrumbList |
 | Primary keyword | équipe Monica |
 | Secondary keywords | créateurs de Monica, contributeurs Monica |
@@ -1099,7 +1099,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Vos contacts, reliés à vos outils. |
 | OG title | Vos contacts, reliés à vos outils — Monica |
 | OG description | Utilisez Monica avec Claude, ChatGPT, Gemini ou vos propres scripts. Retrouvez un contact, notez un moment ou programmez un rappel depuis les outils que vous utilisez déjà. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/api-fr.jpg?v=ca9ffbcf (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | API de CRM personnel |
 | Secondary keywords | API Monica, intégrations Monica |
@@ -1118,7 +1118,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Gardez les moments qui valent la peine d’être retenus. |
 | OG title | Gardez les moments qui valent d’être retenus — Monica |
 | OG description | Notez ce qui s’est passé, qui était là et les détails que vous voulez garder. Monica réunit ces moments dans une chronologie où revenir. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/timeline-fr.jpg?v=0b362a96 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | chronologie personnelle |
 | Secondary keywords | suivi des événements de vie, souvenirs partagés |
@@ -1137,7 +1137,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Une place pour chaque partie de votre vie. |
 | OG title | Une place pour chaque part de votre vie — Monica |
 | OG description | Gardez-les ensemble ou donnez à chaque groupe son espace. Les coffres aident à organiser Monica autour de votre vie. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/vaults-fr.jpg?v=3c8c346f (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | coffres Monica |
 | Secondary keywords | séparer contacts personnels et professionnels, organiser ses contacts |
@@ -1156,7 +1156,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les détails personnels méritent un endroit privé. |
 | OG title | Les détails personnels méritent un lieu privé — Monica |
 | OG description | Vous notez des choses sur les gens parce qu’elles comptent pour vous. Choisissez ce que vous gardez, ce que vous partagez et quels outils peuvent y accéder. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/privacyFeatures-fr.jpg?v=8ccb5615 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | confidentialité du CRM personnel |
 | Secondary keywords | contrôle d’accès aux contacts, sécurité Monica |
@@ -1175,7 +1175,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Retenez les détails qui comptent. |
 | OG title | Retenez les détails qui comptent — Monica |
 | OG description | Leur numéro est dans votre téléphone. Le prénom de leur nouveau partenaire, leur plat préféré ou ce qu’ils vous ont dit la dernière fois sont peut-être plus difficiles à retrouver. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/details-fr.jpg?v=7ffc86fd (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | gestion des contacts personnels |
 | Secondary keywords | organiser ses contacts, notes sur les contacts |
@@ -1194,7 +1194,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Votre langue. Leurs noms. |
 | OG title | Votre langue. Leurs noms — Monica |
 | OG description | Utilisez Monica dans une langue où vous vous sentez chez vous. Gardez les noms des gens sous les formes qu’ils emploient, et choisissez l’affichage des dates, heures et nombres. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/languages-fr.jpg?v=48c8c518 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | CRM personnel multilingue |
 | Secondary keywords | formats des noms, langues de Monica |
@@ -1213,7 +1213,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Vos contacts, à votre façon. |
 | OG title | Vos contacts, à votre façon — Monica |
 | OG description | Retenez ce qui compte pour vous. Créez des modèles de contact avec vos propres champs, sections et onglets, pour que la fiche de chacun accueille les détails que vous voulez garder. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/templates-fr.jpg?v=3aa5e400 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | modèles de contact |
 | Secondary keywords | champs de contact personnalisés, modèles de CRM personnel |
@@ -1232,7 +1232,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Partagez seulement ce que vous choisissez. |
 | OG title | Ne partagez que ce que vous choisissez — Monica |
 | OG description | Partagez des sections choisies d’une fiche de contact par un lien en lecture seule. Choisissez ce qu’il montre, sa durée de validité et quand couper l’accès. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/sharing-fr.jpg?v=664c8ab2 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | partage privé de coordonnées |
 | Secondary keywords | partage de contact en lecture seule, lien de partage protégé |
@@ -1251,7 +1251,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pensez à donner des nouvelles. |
 | OG title | Pensez à donner des nouvelles — Monica |
 | OG description | Un anniversaire. Une grande date. Un ami que vous voulez appeler depuis longtemps. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/reminders-fr.jpg?v=7352f36b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | rappels d’anniversaire |
 | Secondary keywords | rappels de suivi personnel, rappels récurrents |
@@ -1270,7 +1270,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comprenez comment les gens sont liés. |
 | OG title | Comprenez comment les gens sont liés — Monica |
 | OG description | Suivez les personnes qui entourent quelqu’un, avec des relations qui ont du sens des deux côtés. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/relationships-fr.jpg?v=f505b495 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | relations personnelles |
 | Secondary keywords | liens familiaux, historique des relations |
@@ -1289,7 +1289,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Votre vie. Joliment organisée. |
 | OG title | Un foyer pour les détails de votre vie — Monica |
 | OG description | Personnes, notes, biens, moments importants et rappels. Un endroit personnel pour tout ce que vous ne voulez pas oublier. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/personalData-fr.jpg?v=9e33b408 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | logiciel de gestion d’informations personnelles |
 | Secondary keywords | gestion des données personnelles, application d’organisation personnelle, base de données personnelle |
@@ -1308,7 +1308,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Notre manuel |
 | OG title | Le manuel de Monica |
 | OG description | Comment Monica est construite et dirigée : les principes, les arbitrages et les décisions quotidiennes d’un projet open source indépendant. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-fr.jpg?v=00f85eb7 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, CollectionPage, BreadcrumbList |
 | Primary keyword | manuel Monica |
 | Secondary keywords | principes du projet Monica, projet open source indépendant |
@@ -1327,7 +1327,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment nous utilisons l’IA pour construire Monica |
 | OG title | Comment nous utilisons l’IA pour construire Monica |
 | OG description | L’aide au codage devrait faciliter la compréhension d’un changement, pas rendre la compréhension facultative. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-ai-development-fr.jpg?v=94a87dd6 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment nous utilisons l’IA pour construire Monica |
 | Secondary keywords | No additional target |
@@ -1346,7 +1346,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Notre relation avec l’IA |
 | OG title | Notre relation avec l’IA |
 | OG description | Rester curieux des outils utiles sans leur donner d’autorité sur les personnes ni sur leurs souvenirs. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-ai-fr.jpg?v=77cb46e7 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Notre relation avec l’IA |
 | Secondary keywords | No additional target |
@@ -1365,7 +1365,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Nous ne sommes pas en concurrence pour votre attention |
 | OG title | Nous ne sommes pas en concurrence pour votre attention |
 | OG description | Une visite réussie dans Monica peut être une visite très courte. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-attention-fr.jpg?v=51608c60 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Nous ne sommes pas en concurrence pour votre attention |
 | Secondary keywords | No additional target |
@@ -1384,7 +1384,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pour qui nous construisons Monica |
 | OG title | Pour qui nous construisons Monica |
 | OG description | Des gens qui veulent un endroit pour ce qu’ils savent de leur vie, sans manière imposée de la vivre. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-audience-fr.jpg?v=2244a884 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pour qui nous construisons Monica |
 | Secondary keywords | No additional target |
@@ -1403,7 +1403,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Nous ne voulons pas automatiser les amitiés |
 | OG title | Nous ne voulons pas automatiser les amitiés |
 | OG description | On peut vous aider à vous souvenir de la conversation ; être la personne qui y participe reste votre travail. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-automating-friendships-fr.jpg?v=81c5cd44 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Nous ne voulons pas automatiser les amitiés |
 | Secondary keywords | No additional target |
@@ -1422,7 +1422,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Utiliser Monica fait-il de vous un meilleur ami ? |
 | OG title | Utiliser Monica fait-il de vous un meilleur ami ? |
 | OG description | Se rappeler un détail peut soutenir l’attention portée aux autres, mais tenir un registre n’est pas la même chose que s’en soucier. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-better-friend-fr.jpg?v=726ac171 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Utiliser Monica fait-il de vous un meilleur ami ? |
 | Secondary keywords | No additional target |
@@ -1441,7 +1441,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | La technologie ennuyeuse est une bonne technologie |
 | OG title | La technologie ennuyeuse est une bonne technologie |
 | OG description | Réserver notre appétit pour les problèmes difficiles aux parties de Monica qui en ont vraiment besoin. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-boring-technology-fr.jpg?v=c34a1edd (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | La technologie ennuyeuse est une bonne technologie |
 | Secondary keywords | No additional target |
@@ -1460,7 +1460,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | L’épuisement des mainteneurs est bien réel |
 | OG title | L’épuisement des mainteneurs est bien réel |
 | OG description | Un projet construit sur du temps libre consomme du temps réel, et l’enthousiasme n’est pas une ressource illimitée. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-burnout-fr.jpg?v=be076259 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | L’épuisement des mainteneurs est bien réel |
 | Secondary keywords | No additional target |
@@ -1479,7 +1479,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Nous ne voulons pas rendre la résiliation difficile |
 | OG title | Nous ne voulons pas rendre la résiliation difficile |
 | OG description | Un abonnement devrait continuer parce que quelqu’un le veut, pas parce qu’il n’a pas réussi à trouver la sortie. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-cancelling-fr.jpg?v=548a20d5 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Nous ne voulons pas rendre la résiliation difficile |
 | Secondary keywords | No additional target |
@@ -1498,7 +1498,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Le code est un passif |
 | OG title | Le code est un passif |
 | OG description | La valeur, c’est ce que le logiciel permet aux gens de faire ; le code, c’est ce dont nous devons nous occuper. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-code-liability-fr.jpg?v=621935f1 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Le code est un passif |
 | Secondary keywords | No additional target |
@@ -1517,7 +1517,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous ne nous comparons pas à nos concurrents |
 | OG title | Pourquoi nous ne nous comparons pas à nos concurrents |
 | OG description | Nous pouvons apprendre d’autres produits sans faire de leurs listes de fonctionnalités nos consignes. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-competitors-fr.jpg?v=5715a047 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous ne nous comparons pas à nos concurrents |
 | Secondary keywords | No additional target |
@@ -1536,7 +1536,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment contribuer à Monica |
 | OG title | Comment contribuer à Monica |
 | OG description | Le code est une façon d’aider un projet qui dépend de bien plus que du code. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-contributing-fr.jpg?v=e9d69ffa (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment contribuer à Monica |
 | Secondary keywords | No additional target |
@@ -1555,7 +1555,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Le coût de fonctionnement de Monica |
 | OG title | Le coût de fonctionnement de Monica |
 | OG description | Infrastructure, services externes, maintenance, et le coût qui apparaît rarement sur une facture. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-costs-fr.jpg?v=2537703b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Le coût de fonctionnement de Monica |
 | Secondary keywords | No additional target |
@@ -1574,7 +1574,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Utiliser Monica, n’est-ce pas un peu dérangeant ? |
 | OG title | Utiliser Monica, n’est-ce pas un peu dérangeant ? |
 | OG description | Parfois, le malaise mérite d’être écouté plutôt que d’être écarté à force d’explications. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-creepy-fr.jpg?v=8b971087 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Utiliser Monica, n’est-ce pas un peu dérangeant ? |
 | Secondary keywords | No additional target |
@@ -1593,7 +1593,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les dépendances sont des engagements |
 | OG title | Les dépendances sont des engagements |
 | OG description | Un paquet peut faire gagner un week-end et réclamer de l’attention pendant des années. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-dependencies-fr.jpg?v=cbcea6c6 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Les dépendances sont des engagements |
 | Secondary keywords | No additional target |
@@ -1612,7 +1612,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Que se passe-t-il si Monica disparaît ? |
 | OG title | Que se passe-t-il si Monica disparaît ? |
 | OG description | L’open source laisse des options ouvertes ; il ne fait pas tourner un service par magie. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-disappearing-fr.jpg?v=72cc3bd4 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Que se passe-t-il si Monica disparaît ? |
 | Secondary keywords | No additional target |
@@ -1631,7 +1631,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment nous donner votre avis |
 | OG title | Comment nous donner votre avis |
 | OG description | Dites-nous ce qui s’est passé, ce que vous attendiez et pourquoi cela comptait ; gardez pour vous les archives familiales privées. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-feedback-fr.jpg?v=6b30fa02 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment nous donner votre avis |
 | Secondary keywords | No additional target |
@@ -1650,7 +1650,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous oublions les gens |
 | OG title | Pourquoi nous oublions les gens |
 | OG description | Une mauvaise mémoire a été le début de Monica, pas une théorie sur l’attention que les gens se portent. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-forgetting-fr.jpg?v=633281ea (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous oublions les gens |
 | Secondary keywords | No additional target |
@@ -1669,7 +1669,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Logiciel libre ne veut pas dire tout gratuit |
 | OG title | Logiciel libre ne veut pas dire tout gratuit |
 | OG description | La liberté d’utiliser et de modifier le code ne supprime pas le coût de son développement et de son exploitation. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-free-software-fr.jpg?v=eda0065b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Logiciel libre ne veut pas dire tout gratuit |
 | Secondary keywords | No additional target |
@@ -1688,7 +1688,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Documenter sa vie pour son futur soi |
 | OG title | Documenter sa vie pour son futur soi |
 | OG description | Quelques mots de contexte aujourd’hui peuvent rendre un souvenir compréhensible des années plus tard. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-future-self-fr.jpg?v=75e45623 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Documenter sa vie pour son futur soi |
 | Secondary keywords | No additional target |
@@ -1707,7 +1707,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | La réalité des étoiles GitHub |
 | OG title | La réalité des étoiles GitHub |
 | OG description | C’est agréable que les gens aiment le projet ; une étoile n’a pourtant qu’une capacité assez limitée à le maintenir. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-github-stars-fr.jpg?v=ddf569a3 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | La réalité des étoiles GitHub |
 | Secondary keywords | No additional target |
@@ -1726,7 +1726,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment savoir qu’une fonctionnalité est suffisamment bonne |
 | OG title | Comment savoir qu’une fonctionnalité est suffisamment bonne |
 | OG description | Terminer une version utile sans prétendre que le polissage et la sécurité relèvent du même travail. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-good-enough-fr.jpg?v=53663603 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment savoir qu’une fonctionnalité est suffisamment bonne |
 | Secondary keywords | No additional target |
@@ -1745,7 +1745,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | La croissance n’est pas tout |
 | OG title | La croissance n’est pas tout |
 | OG description | Que davantage de gens découvrent Monica n’est utile que si nous pouvons continuer à bien les servir. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-growth-fr.jpg?v=cb15c160 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | La croissance n’est pas tout |
 | Secondary keywords | No additional target |
@@ -1764,7 +1764,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Concevoir pour des humains imparfaits |
 | OG title | Concevoir pour des humains imparfaits |
 | OG description | Des anniversaires inconnus, des familles compliquées, et l’attente déraisonnable que de vraies personnes se comportent comme des lignes de base de données. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-imperfect-humans-fr.jpg?v=b4033f81 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Concevoir pour des humains imparfaits |
 | Secondary keywords | No additional target |
@@ -1783,7 +1783,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment nous envisageons les intégrations |
 | OG title | Comment nous envisageons les intégrations |
 | OG description | Le bouton est la partie facile ; ce sont les années qui suivent le bouton où les choses deviennent intéressantes. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-integrations-fr.jpg?v=aeaed199 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment nous envisageons les intégrations |
 | Secondary keywords | No additional target |
@@ -1802,7 +1802,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous ne voulons pas d’investisseurs |
 | OG title | Pourquoi nous ne voulons pas d’investisseurs |
 | OG description | L’argent peut acheter de la capacité, mais il change aussi les attentes auxquelles le projet doit répondre. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-investors-fr.jpg?v=bf070c7d (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous ne voulons pas d’investisseurs |
 | Secondary keywords | No additional target |
@@ -1821,7 +1821,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Le travail invisible de la maintenance d’un projet open source |
 | OG title | Le travail invisible de la maintenance d’un projet open source |
 | OG description | Une partie du travail le plus utile sur Monica ne produit absolument rien qui mérite une capture d’écran de version. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-invisible-work-fr.jpg?v=a1f595c5 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Le travail invisible de la maintenance d’un projet open source |
 | Secondary keywords | No additional target |
@@ -1840,7 +1840,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous utilisons Laravel |
 | OG title | Pourquoi nous utilisons Laravel |
 | OG description | Un framework familier, des conventions utiles, et plus de temps pour les parties de Monica qui sont vraiment Monica. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-laravel-fr.jpg?v=d55dca5a (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous utilisons Laravel |
 | Secondary keywords | No additional target |
@@ -1859,7 +1859,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Nous voulons que vous puissiez partir |
 | OG title | Nous voulons que vous puissiez partir |
 | OG description | Des années d’informations personnelles ne devraient pas devenir une raison d’avoir peur de changer de logiciel. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-leaving-fr.jpg?v=785b6867 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Nous voulons que vous puissiez partir |
 | Secondary keywords | No additional target |
@@ -1878,7 +1878,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Toutes les relations n’ont pas besoin d’être entretenues |
 | OG title | Toutes les relations n’ont pas besoin d’être entretenues |
 | OG description | Un long silence entre deux conversations est une information, pas un verdict. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-letting-go-fr.jpg?v=a66d4649 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Toutes les relations n’ont pas besoin d’être entretenues |
 | Secondary keywords | No additional target |
@@ -1897,7 +1897,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Open source ne veut pas dire que nous vous devons quoi que ce soit |
 | OG title | Open source ne veut pas dire que nous vous devons quoi que ce soit |
 | OG description | Un code public vous donne des libertés ; il ne vous donne pas la propriété des soirées de quelqu’un d’autre. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-maintainer-boundaries-fr.jpg?v=edbadef7 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Open source ne veut pas dire que nous vous devons quoi que ce soit |
 | Secondary keywords | No additional target |
@@ -1916,7 +1916,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment j’envisage le marketing |
 | OG title | Comment j’envisage le marketing |
 | OG description | Comment nous abordons le marketing, en parlant du produit, en restant sincères, en respectant l’intelligence des gens et en gardant de l’humilité. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-marketing-fr.jpg?v=2f2a5caa (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment j’envisage le marketing |
 | Secondary keywords | No additional target |
@@ -1935,7 +1935,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment ce projet gagne de l’argent |
 | OG title | Comment ce projet gagne de l’argent |
 | OG description | Pourquoi gagner de l’argent n’est pas le but, comment la version hébergée finance ses propres coûts, et un mot sur le capital-risque. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-money-fr.jpg?v=cb911a1e (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment ce projet gagne de l’argent |
 | Secondary keywords | No additional target |
@@ -1954,7 +1954,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | La beauté d’un monolithe |
 | OG title | La beauté d’un monolithe |
 | OG description | Garder le travail lié au même endroit jusqu’à ce qu’un vrai problème nous donne une raison de le séparer. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-monolith-fr.jpg?v=53830bcc (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | La beauté d’un monolithe |
 | Secondary keywords | No additional target |
@@ -1973,7 +1973,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Ce que nous ne construirons jamais |
 | OG title | Ce que nous ne construirons jamais |
 | OG description | Certaines idées échouent au test de Monica avant même que quelqu’un ouvre un éditeur. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-never-build-fr.jpg?v=92958003 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Ce que nous ne construirons jamais |
 | Secondary keywords | No additional target |
@@ -1992,7 +1992,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Construire pour les 20 prochaines années |
 | OG title | Construire pour les 20 prochaines années |
 | OG description | Penser aux vieux souvenirs, aux futurs mainteneurs et à un logiciel qui ne devrait pas dépendre d’une seule personne pour toujours. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-next-20-years-fr.jpg?v=2091e702 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Construire pour les 20 prochaines années |
 | Secondary keywords | No additional target |
@@ -2011,7 +2011,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Nous ne sommes pas pour tout le monde |
 | OG title | Nous ne sommes pas pour tout le monde |
 | OG description | Aider les bonnes personnes à reconnaître Monica, c’est aussi aider les autres à l’écarter. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-not-for-everyone-fr.jpg?v=8bb8ac3d (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Nous ne sommes pas pour tout le monde |
 | Secondary keywords | No additional target |
@@ -2030,7 +2030,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | L’open source à l’ère de l’IA |
 | OG title | L’open source à l’ère de l’IA |
 | OG description | Générer une implémentation est plus facile que d’en hériter la responsabilité. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-open-source-ai-fr.jpg?v=b4f41d0c (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | L’open source à l’ère de l’IA |
 | Secondary keywords | No additional target |
@@ -2049,7 +2049,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | L’éthique de documenter la vie des autres |
 | OG title | L’éthique de documenter la vie des autres |
 | OG description | Vous pouvez posséder un compte sans avoir le droit illimité de consigner tout ce que vous apprenez sur quelqu’un. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-other-peoples-lives-fr.jpg?v=7bb588d7 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | L’éthique de documenter la vie des autres |
 | Secondary keywords | No additional target |
@@ -2068,7 +2068,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Notre obsession pour les pandas |
 | OG title | Notre obsession pour les pandas |
 | OG description | Un projet personnel a le droit d’avoir une personnalité, y compris un intérêt un peu excessif pour un seul animal. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-pandas-fr.jpg?v=89168c3e (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Notre obsession pour les pandas |
 | Secondary keywords | No additional target |
@@ -2087,7 +2087,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment nous pensons les prix |
 | OG title | Comment nous pensons les prix |
 | OG description | Un prix devrait être assez compréhensible pour que payer Monica n’exige ni calculatrice ni licence en achats. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-pricing-fr.jpg?v=3c399908 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment nous pensons les prix |
 | Secondary keywords | No additional target |
@@ -2106,7 +2106,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Principes |
 | OG title | Principes |
 | OG description | Les livres et les entreprises qui ont façonné la manière dont ce projet est construit, et les principes qui guident son développement. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-principles-fr.jpg?v=78a5d94d (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Principes |
 | Secondary keywords | No additional target |
@@ -2125,7 +2125,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment priorisons-nous les fonctionnalités ? |
 | OG title | Comment priorisons-nous les fonctionnalités ? |
 | OG description | Comment nous arbitrons entre les bugs, nos propres envies, les demandes de la communauté, la maintenance à long terme et l’ambition de garder Monica agréable à construire. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-prioritize-fr.jpg?v=15e1f0ca (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment priorisons-nous les fonctionnalités ? |
 | Secondary keywords | No additional target |
@@ -2144,7 +2144,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Philosophie produit |
 | OG title | Philosophie produit |
 | OG description | Simple à utiliser, construit par itérations, en partant du problème, des bonnes valeurs par défaut plutôt que des options, et jamais un raccourci pour contourner le travail qu’exigent les relations. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-product-philosophy-fr.jpg?v=2cf2e0c5 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Philosophie produit |
 | Secondary keywords | No additional target |
@@ -2163,7 +2163,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Qui nous sommes et ce qu’est ce projet |
 | OG title | Qui nous sommes et ce qu’est ce projet |
 | OG description | Pourquoi ce projet existe, qui y travaille, et à quoi s’attendre d’un projet personnel construit le soir et le week-end. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-project-fr.jpg?v=13519d68 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Qui nous sommes et ce qu’est ce projet |
 | Secondary keywords | No additional target |
@@ -2182,7 +2182,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Le code est écrit pour des humains |
 | OG title | Le code est écrit pour des humains |
 | OG description | Un futur contributeur devrait pouvoir suivre une relation sans avoir d’abord à résoudre une énigme. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-readable-code-fr.jpg?v=376ee0f0 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Le code est écrit pour des humains |
 | Secondary keywords | No additional target |
@@ -2201,7 +2201,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous rejetons des pull requests |
 | OG title | Pourquoi nous rejetons des pull requests |
 | OG description | Une contribution réfléchie peut quand même ne pas être le bon ajout pour Monica. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-rejecting-pull-requests-fr.jpg?v=57836f7d (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous rejetons des pull requests |
 | Secondary keywords | No additional target |
@@ -2220,7 +2220,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | L’art de retirer des fonctionnalités |
 | OG title | L’art de retirer des fonctionnalités |
 | OG description | Un produit plus petit peut être un meilleur produit, mais supprimer le flux de travail de quelqu’un d’autre demande du soin. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-removing-features-fr.jpg?v=c254ed3f (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | L’art de retirer des fonctionnalités |
 | Secondary keywords | No additional target |
@@ -2239,7 +2239,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous avons réécrit Monica |
 | OG title | Pourquoi nous avons réécrit Monica |
 | OG description | Presque dix ans d’apprentissage ont changé les questions auxquelles nous voulions que le produit réponde. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-rewrite-fr.jpg?v=04dd58cd (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous avons réécrit Monica |
 | Secondary keywords | No additional target |
@@ -2258,7 +2258,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous n’avons pas de feuille de route |
 | OG title | Pourquoi nous n’avons pas de feuille de route |
 | OG description | Une direction est utile ; un calendrier plein de promesses sur des soirées et des week-ends l’est moins. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-roadmap-fr.jpg?v=4814dd9c (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous n’avons pas de feuille de route |
 | Secondary keywords | No additional target |
@@ -2277,7 +2277,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Les gens ne sont pas des prospects commerciaux |
 | OG title | Les gens ne sont pas des prospects commerciaux |
 | OG description | Monica a emprunté un nom de catégorie aux logiciels d’entreprise, pas leur raison de suivre les gens. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-sales-leads-fr.jpg?v=c71767b4 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Les gens ne sont pas des prospects commerciaux |
 | Secondary keywords | No additional target |
@@ -2296,7 +2296,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | La sécurité n’est jamais terminée |
 | OG title | La sécurité n’est jamais terminée |
 | OG description | Les informations personnelles méritent un soin continu, des explications précises et une saine méfiance envers les promesses absolues. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-security-fr.jpg?v=a4d5597c (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | La sécurité n’est jamais terminée |
 | Secondary keywords | No additional target |
@@ -2315,7 +2315,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous encourageons l’auto-hébergement |
 | OG title | Pourquoi nous encourageons l’auto-hébergement |
 | OG description | Parfois, le bon résultat est d’utiliser Monica sans nous payer pour la faire tourner. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-self-hosting-fr.jpg?v=e0381016 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous encourageons l’auto-hébergement |
 | Secondary keywords | No additional target |
@@ -2334,7 +2334,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Livrer vaut mieux que ne pas livrer |
 | OG title | Livrer vaut mieux que ne pas livrer |
 | OG description | Pourquoi publier une fonctionnalité pas encore polie vaut mieux que retenir une version parfaite, et pourquoi la valeur compte plus que le soin du détail. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-shipping-fr.jpg?v=4a8e1781 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Livrer vaut mieux que ne pas livrer |
 | Secondary keywords | No additional target |
@@ -2353,7 +2353,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | La valeur des informations apparemment insignifiantes |
 | OG title | La valeur des informations apparemment insignifiantes |
 | OG description | Certains détails ne deviennent précieux qu’après le moment où l’on pouvait encore poser la question. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-small-details-fr.jpg?v=4723ede7 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | La valeur des informations apparemment insignifiantes |
 | Secondary keywords | No additional target |
@@ -2372,7 +2372,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Réseaux sociaux |
 | OG title | Réseaux sociaux |
 | OG description | Partager ce que nous construisons sans transformer les réseaux sociaux en un nouvel emploi à plein temps. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-social-media-fr.jpg?v=b2df0fb6 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Réseaux sociaux |
 | Secondary keywords | No additional target |
@@ -2391,7 +2391,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Nous ne voulons pas devenir une grande entreprise |
 | OG title | Nous ne voulons pas devenir une grande entreprise |
 | OG description | Garder agréablement courte la distance entre un problème et la personne qui peut le résoudre. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-staying-small-fr.jpg?v=800a1d3e (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Nous ne voulons pas devenir une grande entreprise |
 | Secondary keywords | No additional target |
@@ -2410,7 +2410,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | À quoi ressemble le succès |
 | OG title | À quoi ressemble le succès |
 | OG description | Se souvenir de quelque chose qui compte, payer les factures, et avoir encore envie de travailler sur Monica demain. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-success-fr.jpg?v=69694aca (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | À quoi ressemble le succès |
 | Secondary keywords | No additional target |
@@ -2429,7 +2429,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment nous abordons le support client |
 | OG title | Comment nous abordons le support client |
 | OG description | Un petit projet devrait être clair sur sa capacité sans se servir de sa petite taille comme excuse pour être désinvolte. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-support-fr.jpg?v=3540723a (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment nous abordons le support client |
 | Secondary keywords | No additional target |
@@ -2448,7 +2448,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | La dette technique n’est pas toujours mauvaise |
 | OG title | La dette technique n’est pas toujours mauvaise |
 | OG description | Un raccourci délibéré peut aider ; un raccourci dont personne ne se souvient est plus difficile à rembourser. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-technical-debt-fr.jpg?v=8e8be73d (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | La dette technique n’est pas toujours mauvaise |
 | Secondary keywords | No additional target |
@@ -2467,7 +2467,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Comment nous abordons les tests |
 | OG title | Comment nous abordons les tests |
 | OG description | La confiance devrait suivre les conséquences d’une erreur, surtout quand cette erreur pourrait faire perdre les souvenirs de quelqu’un. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-testing-fr.jpg?v=4f903730 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Comment nous abordons les tests |
 | Secondary keywords | No additional target |
@@ -2486,7 +2486,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous ne vous pistons pas sur internet |
 | OG title | Pourquoi nous ne vous pistons pas sur internet |
 | OG description | Découvrir un CRM personnel ne devrait pas vouloir dire être suivi partout par lui. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-tracking-fr.jpg?v=1ede6a75 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous ne vous pistons pas sur internet |
 | Secondary keywords | No additional target |
@@ -2505,7 +2505,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Vous ne devriez pas avoir à nous croire sur parole |
 | OG title | Vous ne devriez pas avoir à nous croire sur parole |
 | OG description | Le code public rend les questions possibles ; il ne rend pas chaque réponse automatiquement rassurante. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-verify-trust-fr.jpg?v=20b7f004 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Vous ne devriez pas avoir à nous croire sur parole |
 | Secondary keywords | No additional target |
@@ -2524,7 +2524,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Où allons-nous avec tout ça |
 | OG title | Où allons-nous avec tout ça |
 | OG description | L’unique périmètre du projet, ce qu’il ne deviendra jamais, et pourquoi chaque nouvelle option doit mériter sa place. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-where-fr.jpg?v=4a6e4b4b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Où allons-nous avec tout ça |
 | Secondary keywords | No additional target |
@@ -2543,7 +2543,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi l’open source |
 | OG title | Pourquoi l’open source |
 | OG description | Pourquoi le code est public sous licence AGPL, d’un meilleur code et des contributions extérieures à la confiance et à un projet capable de survivre à ses fondateurs. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-why-open-source-fr.jpg?v=adf44b95 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi l’open source |
 | Secondary keywords | No additional target |
@@ -2562,7 +2562,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Pourquoi nous construisons des logiciels |
 | OG title | Pourquoi nous construisons des logiciels |
 | OG description | Le plaisir particulier de transformer une petite frustration personnelle en quelque chose qu’une autre personne peut utiliser. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-why-we-build-fr.jpg?v=4029099c (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Pourquoi nous construisons des logiciels |
 | Secondary keywords | No additional target |
@@ -2581,7 +2581,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Écrire pour Monica |
 | OG title | Écrire pour Monica |
 | OG description | Les deux tons de voix, l’un pour l’interface et l’autre pour le marketing, et les principes de clarté, de personnalité et d’humilité qu’ils partagent. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-writing-fr.jpg?v=3d3ae01b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Écrire pour Monica |
 | Secondary keywords | No additional target |
@@ -2600,7 +2600,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Vos données ne sont pas notre affaire |
 | OG title | Vos données ne sont pas notre affaire |
 | OG description | Le service hébergé peut rapporter de l’argent sans traiter les informations qu’il contient comme une marchandise. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/handbook-your-data-fr.jpg?v=0456d8fa (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, Article |
 | Primary keyword | Vos données ne sont pas notre affaire |
 | Secondary keywords | No additional target |
@@ -2619,7 +2619,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Vos données personnelles, reliées à vos agents IA. |
 | OG title | Vos données personnelles, reliées à vos agents IA — Monica |
 | OG description | Connectez un assistant compatible à Monica par MCP. Lisez et modifiez des fiches personnelles structurées avec un accès délimité, par OAuth ou clé d’API. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/mcpServer-fr.jpg?v=bd0b9c6a (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | serveur MCP Monica |
 | Secondary keywords | serveur MCP pour données personnelles, serveur MCP distant, serveur MCP auto-hébergé |
@@ -2638,7 +2638,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Une seule mémoire pour vos assistants IA. |
 | OG title | Vos assistants changent. Votre mémoire reste à vous — Monica |
 | OG description | Donnez aux assistants IA compatibles un endroit commun pour retenir vos proches et vos détails du quotidien. Ouvrez Monica pour organiser ces souvenirs vous-même, avec ou sans IA. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/aiMemory-fr.jpg?v=6ad7e5ad (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | mémoire IA personnelle |
 | Secondary keywords | mémoire IA persistante, mémoire partagée pour assistants IA, mémoire IA open source |
@@ -2657,7 +2657,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | De l’aide sur Monica, par les personnes qui la développent |
 | OG title | De l’aide pour Monica, de la part de ceux qui la développent |
 | OG description | Écrivez-nous pour tout ce qui ne fonctionne pas comme vous l’attendez, ou commencez par la documentation fournie dans l’application. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/support-fr.jpg?v=8a69b1e1 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, ContactPage, BreadcrumbList |
 | Primary keyword | support Monica |
 | Secondary keywords | aide Monica, documentation Monica |
@@ -2676,7 +2676,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Des tarifs qui se passent de rappel. |
 | OG title | Votre serveur ou le nôtre. À vous de choisir — Monica |
 | OG description | Hébergez Monica vous-même gratuitement, ou choisissez l’hébergement mensuel, annuel ou à vie. Toutes les offres incluent chaque fonction, sans tarif au contact. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/pricing-fr.jpg?v=879d5b6b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | tarifs Monica |
 | Secondary keywords | CRM auto-hébergé gratuit, hébergement Monica |
@@ -2695,7 +2695,7 @@ Search targets are editorial choices without search-volume estimates. They are n
 | H1 | Monica est reconstruite pour les dix prochaines années. |
 | OG title | Monica v3 : ce que nous reconstruisons |
 | OG description | Découvrez ce qui arrive dans Monica v3 : des fiches que vous concevez, un journal relié, une API complète et une meilleure expérience mobile. Toujours open source. |
-| OG image | https://www.monicahq.com/og/monica-fr.png (1200 × 630, shared brand card for this language) |
+| OG image | https://www.monicahq.com/og/v3-fr.jpg?v=3e55cf21 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica v3 |
 | Secondary keywords | refonte de Monica, nouveautés Monica |
