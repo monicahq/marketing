@@ -274,6 +274,10 @@
 {{-- The page as plain Markdown, for a reader that would rather not parse it.
      The dead-link check resolves it like any other link. --}}
 <link rel="alternate" type="text/markdown" href="{{ $page->absolute($page->markdownPath($number)) }}">
+{{-- The whole site described for a language model. An agent finds it through a
+     link on a page it already reads far more often than by guessing the path,
+     so every page points at it. English only, as the file itself is. --}}
+<link rel="alternate" type="text/plain" title="llms.txt" href="{{ $page->absolute('/llms.txt') }}">
 
 <meta property="og:type" content="{{ ($isPost || $isArticle) ? 'article' : 'website' }}">
 @if ($isPost)

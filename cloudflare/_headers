@@ -14,3 +14,10 @@
 /*.md
   Content-Type: text/plain; charset=utf-8
   X-Robots-Tag: noindex
+
+# /llms.txt describes the whole site for a language model. The head of every
+# page links to it already; the same relation as a header reaches an agent
+# that reads headers and never parses the HTML. Relative, so a preview points
+# at its own copy rather than at production.
+/*
+  Link: </llms.txt>; rel="alternate"; type="text/plain"; title="llms.txt"
