@@ -1,8 +1,10 @@
 @php
     $copy = $page->t('home.product');
 
-    $meadow = '/assets/images/home/meadow-day.webp';
-    $meadowSize = $page->imageSize($meadow);
+    $meadowDay = '/assets/images/home/meadow-day.webp';
+    $meadowDaySize = $page->imageSize($meadowDay);
+    $meadowNight = '/assets/images/home/meadow-night.webp';
+    $meadowNightSize = $page->imageSize($meadowNight);
 
     // The screens a reader can open from the sidebar, in sidebar order, then
     // Chandler Bing's page, which opens from any person's name.
@@ -104,15 +106,33 @@
 
          Never narrower than 900px, like the footer's, so a phone crops the
          edges instead of shrinking the pandas. Decoration: the footer already
-         describes the meadow. --}}
-    <div aria-hidden="true" class="absolute bottom-[58%] left-1/2 h-[1100px] w-full min-w-[900px] -translate-x-1/2 lg:h-[max(960px,56.25vw)] dark:hidden">
+         describes the meadow.
+
+         By day and by night, as the footer's: two pictures, `dark:` deciding
+         which one shows, so they follow the theme button rather than the
+         system setting. Both 16:9, which is what the lg height above assumes,
+         and the night one is cropped to put the pandas, the lake and the
+         grass's edge where the day one has them. Both lazy, because a
+         `display: none` picture that is not lazy is downloaded anyway: lazy is
+         what lets a reader fetch only the one they see. --}}
+    <div aria-hidden="true" class="absolute bottom-[58%] left-1/2 h-[1100px] w-full min-w-[900px] -translate-x-1/2 lg:h-[max(960px,56.25vw)]">
         <img
-            src="{{ $meadow }}"
+            src="{{ $meadowDay }}"
             alt=""
-            width="{{ $meadowSize['width'] }}"
-            height="{{ $meadowSize['height'] }}"
+            width="{{ $meadowDaySize['width'] }}"
+            height="{{ $meadowDaySize['height'] }}"
+            loading="lazy"
             decoding="async"
-            class="block size-full object-cover object-bottom"
+            class="block size-full object-cover object-bottom dark:hidden"
+        >
+        <img
+            src="{{ $meadowNight }}"
+            alt=""
+            width="{{ $meadowNightSize['width'] }}"
+            height="{{ $meadowNightSize['height'] }}"
+            loading="lazy"
+            decoding="async"
+            class="hidden size-full object-cover object-bottom dark:block"
         >
     </div>
 
