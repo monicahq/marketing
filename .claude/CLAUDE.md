@@ -248,13 +248,13 @@ One `@graph` per page, whose nodes reference each other by `@id` instead of repe
 | `WebSite` | every page | `/#website` |
 | `WebPage` | every page | `<canonical>#webpage` |
 | `BreadcrumbList` | any page with more than one crumb | `<canonical>#breadcrumb` |
-| `SoftwareApplication` | homepage, pricing, the people page and product landing pages | `/#software` |
+| `SoftwareApplication` | homepage, pricing, the people and details pages and product landing pages | `/#software` |
 | `BlogPosting` | posts | `<canonical>#post` |
 | `Article` | handbook articles | `<canonical>#article` |
 
 - **The `WebPage` type is chosen per page**: `CollectionPage` for the blog index, `AboutPage` for the team and about pages, `WebPage` for everything else including a post, which carries its `BlogPosting` alongside rather than instead.
 - **The breadcrumb trail is built from the route key**, and its labels are `meta.breadcrumb.*` in `lang/`, one per route key, kept apart from `nav` because a nav label is written to be scanned and a crumb is read out in a search result. The homepage gets no trail: a single crumb states that the root is the root.
-- **`SoftwareApplication` is on the homepage, pricing and the people, personal data, AI memory and MCP product landing pages.** Its four offers (monthly, yearly, lifetime, self-hosted) read their prices from `plans` in `config.php`, as bare numbers, because a crawler wants `9.00` and `USD` while a reader wants `$9`. Keep structured offers and displayed prices consistent, so **a price change is an edit in `config.php` and, in every `lang/` file, an edit to `pricing.prices`, to `meta.pricing.description` (which names the prices in prose), and to the discount answer in the pricing FAQ (which quotes twelve monthly payments).** No `aggregateRating`: there is no review data, and inventing one is the fastest way to a manual action.
+- **`SoftwareApplication` is on the homepage, pricing and the people, details, personal data, AI memory and MCP product landing pages.** Its four offers (monthly, yearly, lifetime, self-hosted) read their prices from `plans` in `config.php`, as bare numbers, because a crawler wants `9.00` and `USD` while a reader wants `$9`. Keep structured offers and displayed prices consistent, so **a price change is an edit in `config.php` and, in every `lang/` file, an edit to `pricing.prices`, to `meta.pricing.description` (which names the prices in prose), and to the discount answer in the pricing FAQ (which quotes twelve monthly payments).** No `aggregateRating`: there is no review data, and inventing one is the fastest way to a manual action.
 - `scripts/links/check.php` resolves JSON-LD values under the keys in `JSON_LD_URL_KEYS`, which is what checks every breadcrumb `item`. `@id` is deliberately not in that list: it is an identifier spelled like a URL and is never meant to resolve.
 
 ### Social cards
@@ -352,7 +352,7 @@ An article's front matter is `title`, `slug`, `section` (a key of `handbookSecti
 
 **The slugs nest**, so `timeline` in English is `features/timeline` and the file is `source/en/features/timeline.blade.php`. The helpers need nothing special for this: they only ever join a slug to a locale prefix. A slug with a slash and a file in a subdirectory are the whole trick.
 
-Each feature page is its own route key with its own partials directory (see the table above), and its breadcrumb is Home then the page itself: there is no Features crumb, because there is no Features page.
+Each feature page is its own route key with its own partials directory (see the table above), and its breadcrumb is Home then the page itself: there is no Features crumb, because there is no Features page. A page that goes deeper into another names that one between the two, from `breadcrumbParents` in `config.php` (the details page sits under the people page), and the JSON-LD trail follows, since both read `breadcrumbTrail()`.
 
 ## Docs
 

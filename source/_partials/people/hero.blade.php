@@ -55,8 +55,10 @@
 
                 <div class="flex flex-col gap-6 p-4 text-body md:p-7">
                     <div class="flex flex-wrap items-start gap-5">
-                        <span class="flex-none rounded-full p-0.75 max-sm:hidden">
+                        {{-- Rachel is a favourite in the demo vault: the ring and the star. --}}
+                        <span class="relative flex-none rounded-full border-2 border-warning/40 p-0.75 max-sm:hidden">
                             @include('_partials.home.product.avatar', ['name' => 'Rachel Green', 'size' => 88])
+                            <span class="absolute -right-0.5 -bottom-0.5 grid size-6.5 place-items-center rounded-full border-2 border-canvas bg-warning text-white">@include('_partials.icon', ['name' => 'star-filled', 'size' => 13])</span>
                         </span>
                         <div class="min-w-60 flex-1">
                             <div class="flex items-center justify-between gap-3">

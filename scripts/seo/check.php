@@ -130,7 +130,7 @@ foreach ($iterator as $file) {
     } elseif ($route === 'handbookArticle') {
         $required[] = 'Article';
     }
-    if (in_array($route, ['home', 'pricing', 'people', 'personalData', 'aiMemory', 'mcpServer'], true)) {
+    if (in_array($route, ['home', 'pricing', 'people', 'details', 'personalData', 'aiMemory', 'mcpServer'], true)) {
         $required[] = 'SoftwareApplication';
     }
     if ($route !== 'home') {

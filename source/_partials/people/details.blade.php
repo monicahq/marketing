@@ -29,11 +29,11 @@
                     </div>
                     <div class="{{ $row }}">
                         <span class="text-small text-text-muted">{{ $ui['phones'] }}</span>
-                        <div class="{{ $entry }}"><span class="flex flex-wrap items-center gap-1.75"><span dir="ltr">+1 212-555-0148</span><span class="{{ $badge }}">{{ $ui['mobile'] }}</span></span></div>
+                        <div class="{{ $entry }}"><span class="flex flex-wrap items-center gap-1.75"><span dir="ltr">+1 212-555-0105</span><span class="{{ $badge }}">{{ $ui['home'] }}</span></span></div>
                     </div>
                     <div class="{{ $row }}">
                         <span class="text-small text-text-muted">{{ $ui['emails'] }}</span>
-                        <div class="{{ $entry }}"><span class="flex flex-wrap items-center gap-1.75"><span>rachel@example.com</span><span class="{{ $badge }}">{{ $ui['personal'] }}</span></span></div>
+                        <div class="{{ $entry }}"><span class="flex flex-wrap items-center gap-1.75"><span class="break-all">rachel.green@fortunata.example</span><span class="{{ $badge }}">{{ $ui['personal'] }}</span></span></div>
                     </div>
                 </div>
 

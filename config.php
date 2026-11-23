@@ -879,7 +879,7 @@ return [
         'privacy' => '2026-11-20',
         'personalCrm' => '2026-08-23',
         'templates' => '2026-10-12',
-        'details' => '2026-10-12',
+        'details' => '2026-11-23',
         'reminders' => '2026-10-12',
         'timeline' => '2026-10-12',
         'people' => '2026-11-23',
@@ -1205,6 +1205,14 @@ return [
     },
 
     /**
+     * The page each feature page goes deeper into, for its breadcrumb: route
+     * key to route key. A page left out hangs straight off the homepage.
+     */
+    'breadcrumbParents' => [
+        'details' => 'people',
+    ],
+
+    /**
      * Where this page sits in the site, ending with the page itself: a list of
      * ['name' => ..., 'path' => ...], root-relative.
      *
@@ -1242,6 +1250,15 @@ return [
                 ];
             }
         } else {
+            // A page that goes deeper into another one names it first: the
+            // details page sits under the people page.
+            if ($parent = $page->breadcrumbParents[$page->page] ?? null) {
+                $trail[] = [
+                    'name' => $page->t("meta.breadcrumb.{$parent}"),
+                    'path' => $page->localePath($parent),
+                ];
+            }
+
             $trail[] = [
                 'name' => $page->t("meta.breadcrumb.{$page->page}"),
                 'path' => $page->localePath($page->page),

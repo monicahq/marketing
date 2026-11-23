@@ -4,7 +4,7 @@
     // Shared by every section.
     $container = 'mx-auto w-full max-w-page';
     $narrow = 'mx-auto w-full max-w-[1040px]';
-    $split = 'grid items-center gap-x-18 gap-y-12 lg:grid-cols-2';
+    $split = 'grid grid-cols-1 items-center gap-x-18 gap-y-12 lg:grid-cols-2';
     $title = 'text-display-section font-semibold text-balance';
     $paragraph = 'text-copy text-text-secondary text-pretty';
     $closing = 'text-copy font-medium text-text text-pretty';
