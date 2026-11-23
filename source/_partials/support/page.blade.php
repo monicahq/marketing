@@ -26,7 +26,7 @@
     $container = 'mx-auto w-full max-w-page';
     $heading = 'text-xl font-semibold text-text';
     $note = 'text-base text-text-secondary text-pretty';
-    $label = 'flex items-center gap-2 text-base font-medium text-text-muted';
+    $caption = 'flex items-center gap-2 text-base font-medium text-text-muted';
 @endphp
 
 <section class="px-4 pt-22 md:px-6">
@@ -47,7 +47,7 @@
              bottom edge to the right edge when the panel goes side by side. --}}
         <div class="grid overflow-hidden rounded-lg border border-border bg-canvas shadow-panel md:grid-cols-2">
             <div class="flex flex-col gap-3.5 border-border p-7 max-md:border-b md:border-r">
-                <div class="{{ $label }}">
+                <div class="{{ $caption }}">
                     @include('_partials.icon', ['name' => 'mail', 'size' => 16])
                     <span>{{ $page->t('support.emailLabel') }}</span>
                 </div>
@@ -68,7 +68,7 @@
             </div>
 
             <div class="flex flex-col gap-3.5 bg-surface-subtle p-7">
-                <div class="{{ $label }}">
+                <div class="{{ $caption }}">
                     @include('_partials.icon', ['name' => 'clock', 'size' => 16])
                     <span>{{ $page->t('support.hoursLabel') }}</span>
                 </div>
