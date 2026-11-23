@@ -33,7 +33,7 @@
         <div class="flex flex-col gap-4.5">
             <h2 class="{{ $title }}">{{ $moments['title'] }}</h2>
             <p class="{{ $paragraph }}">{{ $moments['body'] }}</p>
-            <a href="{{ $page->route('timeline') }}" class="{{ $more }}">
+            <a href="{{ $page->route('timelineReminders') }}" class="{{ $more }}">
                 {{ $moments['link'] }}
                 @include('_partials.icon', ['name' => 'arrow-right', 'size' => 15])
             </a>

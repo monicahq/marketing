@@ -2,11 +2,11 @@
     $hero = $copy['hero'];
     $screen = $hero['screen'];
 
-    // Possessions and knowledge have no page yet, so their links are `#`.
+    // Knowledge has no page yet, so its link is `#`.
     $body = str_replace(
         [':possessions', ':knowledge'],
         [
-            '<a href="#" class="' . $inline . '">' . e($hero['possessions']) . '</a>',
+            '<a href="' . e($page->route('possessions')) . '" class="' . $inline . '">' . e($hero['possessions']) . '</a>',
             '<a href="#" class="' . $inline . '">' . e($hero['knowledge']) . '</a>',
         ],
         e($hero['body']),

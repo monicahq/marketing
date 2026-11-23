@@ -683,6 +683,47 @@ return [
             'ru' => 'vozmozhnosti/lyudi',
         ],
 
+        // "Know your things a little better.": the possessions pillar,
+        // what Monica keeps about the things you own, where they are and
+        // what happened to them. The header's "Possessions" heading leads here.
+        'possessions' => [
+            'en' => 'features/possessions',
+            'fr' => 'fonctionnalites/possessions',
+            'de' => 'funktionen/besitz',
+            'es' => 'funcionalidades/pertenencias',
+            'pt' => 'recursos/pertences',
+            'nl' => 'functies/bezittingen',
+            'zh' => 'features/possessions',
+            'ru' => 'vozmozhnosti/veshchi',
+        ],
+
+        // "Keep an inventory that fits your things.": possession types, their
+        // fields and tags. The header's "Inventory & tags" item leads here.
+        'inventory' => [
+            'en' => 'features/inventory',
+            'fr' => 'fonctionnalites/inventaire',
+            'de' => 'funktionen/inventar',
+            'es' => 'funcionalidades/inventario',
+            'pt' => 'recursos/inventario',
+            'nl' => 'functies/inventaris',
+            'zh' => 'features/inventory',
+            'ru' => 'vozmozhnosti/inventar',
+        ],
+
+        // "Keep the moments. Remember the next one.": the short page that
+        // sends a reader on to the timeline page or the reminders page, kept
+        // apart because a moment and a reminder are separate records.
+        'timelineReminders' => [
+            'en' => 'features/timeline-and-reminders',
+            'fr' => 'fonctionnalites/chronologie-et-rappels',
+            'de' => 'funktionen/zeitleiste-und-erinnerungen',
+            'es' => 'funcionalidades/cronologia-y-recordatorios',
+            'pt' => 'recursos/linha-do-tempo-e-lembretes',
+            'nl' => 'functies/tijdlijn-en-herinneringen',
+            'zh' => 'features/timeline-and-reminders',
+            'ru' => 'vozmozhnosti/khronologiya-i-napominaniya',
+        ],
+
         // "Understand how people are connected": relationships, the family
         // tree they draw, and the types behind them. The header's
         // "Relationships" menu item leads here. Nested under the features
@@ -839,7 +880,7 @@ return [
      */
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
-        'Features' => ['people', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
+        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
@@ -883,6 +924,9 @@ return [
         'reminders' => '2026-10-12',
         'timeline' => '2026-10-12',
         'people' => '2026-11-23',
+        'timelineReminders' => '2026-11-23',
+        'possessions' => '2026-11-23',
+        'inventory' => '2026-11-23',
         'relationships' => '2026-10-13',
         'vaults' => '2026-10-13',
         'sharing' => '2026-10-13',
@@ -1210,6 +1254,11 @@ return [
      */
     'breadcrumbParents' => [
         'details' => 'people',
+        'relationships' => 'people',
+        'timelineReminders' => 'people',
+        'timeline' => 'people',
+        'reminders' => 'people',
+        'inventory' => 'possessions',
     ],
 
     /**

@@ -38,7 +38,7 @@
                 <div class="{{ $group }} mn-panel-header-danger text-danger">{{ $hero['overdueTitle'] }}</div>
                 @foreach ($hero['overdue'] as $i => $reminder)
                     <div class="flex flex-wrap items-center gap-3.5 px-5 py-3.5">
-                        @include('_partials.avatar-initials', ['name' => $overdueNames[$i], 'size' => 36])
+                        @include('_partials.home.product.avatar', ['name' => $overdueNames[$i], 'size' => 36])
                         <div class="{{ $person }} min-w-35">
                             <span class="text-body font-semibold">{{ $overdueNames[$i] }}</span>
                             <span class="text-small text-text-secondary">{{ $reminder['text'] }}</span>
@@ -55,7 +55,7 @@
                 <div class="divide-y divide-border-subtle">
                     @foreach ($hero['upcoming'] as $i => $reminder)
                         <div class="flex items-center gap-3.5 px-5 py-3.5">
-                            @include('_partials.avatar-initials', ['name' => $upcomingNames[$i], 'size' => 36])
+                            @include('_partials.home.product.avatar', ['name' => $upcomingNames[$i], 'size' => 36])
                             <div class="{{ $person }}">
                                 <span class="text-body font-semibold">{{ $upcomingNames[$i] }}</span>
                                 <span class="text-small text-text-secondary">{{ $reminder['text'] }}</span>

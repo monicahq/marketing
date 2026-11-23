@@ -83,7 +83,7 @@
                     </dl>
                     <div class="flex flex-wrap items-center gap-1.5 border-t border-border-subtle px-4.5 pt-3 pb-4">
                         @foreach ($guests as $guest)
-                            @include('_partials.avatar-initials', ['name' => $guest, 'size' => 26])
+                            @include('_partials.home.product.avatar', ['name' => $guest, 'size' => 26])
                         @endforeach
                         <span class="ml-1.5 {{ $stamp }}">{{ $hero['wedding']['more'] }}</span>
                     </div>

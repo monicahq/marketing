@@ -25,6 +25,7 @@
         'note' => '<path d="M4 2.4h5.2L12.4 5.6V13.6H4z"></path><line x1="6.2" y1="8" x2="10.2" y2="8"></line><line x1="6.2" y1="10.6" x2="10.2" y2="10.6"></line>',
         'reminder' => '<path d="M4.4 11.2V7.6a3.6 3.6 0 0 1 7.2 0v3.6"></path><line x1="3" y1="11.2" x2="13" y2="11.2"></line><path d="M6.8 13.1a1.6 1.6 0 0 0 2.4 0"></path>',
         'activity' => '<path d="M2.2 8.6h3L6.8 4l2.4 8 1.6-3.4h3"></path>',
+        'car' => '<path d="M2.4 10.6V8.2l1.4-3.2a1.2 1.2 0 0 1 1.1-.7h6.2a1.2 1.2 0 0 1 1.1.7l1.4 3.2v2.4"></path><line x1="2.6" y1="8.2" x2="13.4" y2="8.2"></line><circle cx="4.9" cy="10.9" r="1.2"></circle><circle cx="11.1" cy="10.9" r="1.2"></circle>',
         'place' => '<path d="M8 14c2.6-3 4-5.1 4-7A4 4 0 0 0 4 7c0 1.9 1.4 4 4 7Z"></path><circle cx="8" cy="6.9" r="1.5"></circle>',
         'pet' => '<ellipse cx="4.9" cy="5.6" rx="1.3" ry="1.7"></ellipse><ellipse cx="8.6" cy="4.4" rx="1.3" ry="1.8"></ellipse><ellipse cx="12" cy="6.3" rx="1.3" ry="1.6"></ellipse><path d="M8.2 8.4c2 0 3.6 1.4 3.6 3 0 1.2-1 1.9-2.2 1.6-1-.3-1.8-.3-2.8 0-1.2.3-2.2-.4-2.2-1.6 0-1.6 1.6-3 3.6-3Z"></path>',
         'organization' => '<path d="M3 13.4V3.6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v9.8"></path><path d="M10 6.6h2.9a1 1 0 0 1 1 1v5.8"></path><line x1="5.2" y1="5.4" x2="7.8" y2="5.4"></line><line x1="5.2" y1="8" x2="7.8" y2="8"></line><line x1="1.8" y1="13.4" x2="14.2" y2="13.4"></line>',

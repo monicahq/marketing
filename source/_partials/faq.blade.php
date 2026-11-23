@@ -7,7 +7,8 @@
     `a` is one paragraph or several. Pricing answers often need two, so the
     string form is cast rather than duplicated as a second key.
 
-    An item may also carry `link`, a label plus a route key, for answers that
+    An item may also carry `link`, a label plus a route key (or an `href`, for
+    a page not written yet), for answers that
     are better finished by the page that covers them in full. When the answer
     holds `:link`, the link is set there, inside the sentence, instead of
     after it.
@@ -38,7 +39,7 @@
                         @php
                             $inline = isset($item['link']) && str_contains(implode(' ', (array) $item['a']), ':link');
                             $inlineLink = $inline
-                                ? '<a href="' . e($page->route($item['link']['page'])) . '" class="text-text underline decoration-border-strong underline-offset-[3px] hover:text-text hover:decoration-text">' . e($item['link']['label']) . '</a>'
+                                ? '<a href="' . e($item['link']['href'] ?? $page->route($item['link']['page'])) . '" class="text-text underline decoration-border-strong underline-offset-[3px] hover:text-text hover:decoration-text">' . e($item['link']['label']) . '</a>'
                                 : null;
                         @endphp
                         @foreach ((array) $item['a'] as $paragraph)
@@ -47,7 +48,7 @@
 
                         @if (isset($item['link']) && ! $inline)
                             <a
-                                href="{{ $page->route($item['link']['page']) }}"
+                                href="{{ $item['link']['href'] ?? $page->route($item['link']['page']) }}"
                                 class="mt-3 inline-flex items-center gap-2 text-body font-medium text-text underline-offset-[3px]"
                             >
                                 {{ $item['link']['label'] }}

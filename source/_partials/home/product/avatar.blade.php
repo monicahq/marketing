@@ -9,14 +9,16 @@
     fetched.
 
     @include('_partials.home.product.avatar', ['name' => 'Chandler Bing', 'size' => 30])
+    @include('_partials.home.product.avatar', ['name' => $cast['rachel']['full'], 'size' => 30])
 --}}
 @php
-    $photos = [
-        'Chandler Bing' => 'chandler-bing',
-        'Monica Geller' => 'monica-geller',
-        'Rachel Green' => 'rachel-green',
-        'Ross Geller' => 'ross-geller',
-    ];
+    // By name as the demo vault spells it, and as `cast` spells it in the
+    // page's language, so a drawing that writes "Рейчел Грин" still finds her.
+    $photos = [];
+    foreach (['chandler' => 'chandler-bing', 'monica' => 'monica-geller', 'rachel' => 'rachel-green', 'ross' => 'ross-geller'] as $who => $file) {
+        $photos[ucwords(str_replace('-', ' ', $file))] = $file;
+        $photos[$page->t("cast.{$who}.full")] = $file;
+    }
     $photo = $photos[$name] ?? null;
 @endphp
 @if ($photo)

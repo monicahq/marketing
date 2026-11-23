@@ -12,7 +12,7 @@
         <div class="rounded-lg bg-identity-2/14 p-5 md:p-10">
             <div role="img" aria-label="{{ $once['label'] }}" class="{{ $window }}">
                 <div class="{{ $windowTitle }}">
-                    @include('_partials.avatar-initials', ['name' => $cast['joey']['full'], 'size' => 28])
+                    @include('_partials.home.product.avatar', ['name' => $cast['joey']['full'], 'size' => 28])
                     <span class="text-copy font-semibold">{{ $once['heading'] }}</span>
                 </div>
                 <div class="flex flex-col gap-4 p-4.5">

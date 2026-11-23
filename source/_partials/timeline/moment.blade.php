@@ -31,7 +31,7 @@
                 <div class="flex flex-wrap gap-1.5">
                     @foreach ($friends as $friend)
                         <span class="flex items-center gap-1.5 rounded-full border border-border py-0.75 pr-2.5 pl-0.75 text-xs font-medium">
-                            @include('_partials.avatar-initials', ['name' => $friend['full'], 'size' => 20])
+                            @include('_partials.home.product.avatar', ['name' => $friend['full'], 'size' => 20])
                             {{ $friend['first'] }}
                         </span>
                     @endforeach
@@ -42,7 +42,7 @@
                 @foreach ($timelines as $i => $person)
                     <div class="mn-panel flex flex-col gap-3 p-4">
                         <div class="flex items-center gap-2">
-                            @include('_partials.avatar-initials', ['name' => $person['full'], 'size' => 24])
+                            @include('_partials.home.product.avatar', ['name' => $person['full'], 'size' => 24])
                             <span class="text-base font-semibold">{{ strtr($moment['timeline'], [':name' => $person['first']]) }}</span>
                         </div>
                         <div class="{{ $entry }} border-identity-4/30">

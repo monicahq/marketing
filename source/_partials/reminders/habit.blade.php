@@ -18,7 +18,7 @@
             <div class="{{ $window }} divide-y divide-border-subtle">
                 @foreach ($habit['rows'] as $i => $row)
                     <div class="flex items-center gap-3.5 px-4.5 py-4">
-                        @include('_partials.avatar-initials', ['name' => $names[$i], 'size' => 36])
+                        @include('_partials.home.product.avatar', ['name' => $names[$i], 'size' => 36])
                         <div class="flex min-w-0 flex-col gap-1">
                             <span class="text-body font-semibold">{{ $row['text'] }}</span>
                             <span class="{{ $stamp }}">{{ $row['detail'] }}</span>

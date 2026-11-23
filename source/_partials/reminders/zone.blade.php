@@ -10,7 +10,7 @@
         <div class="rounded-lg bg-identity-6/14 p-5 max-lg:order-last md:p-10">
             <div role="img" aria-label="{{ $zone['label'] }}" class="{{ $window }}">
                 <div class="{{ $windowTitle }}">
-                    @include('_partials.avatar-initials', ['name' => $cast['ross']['full'], 'size' => 28])
+                    @include('_partials.home.product.avatar', ['name' => $cast['ross']['full'], 'size' => 28])
                     <span class="text-copy font-semibold">{{ $zone['heading'] }}</span>
                 </div>
                 <div class="grid gap-3 p-4.5 sm:grid-cols-3">

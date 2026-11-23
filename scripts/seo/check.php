@@ -130,7 +130,7 @@ foreach ($iterator as $file) {
     } elseif ($route === 'handbookArticle') {
         $required[] = 'Article';
     }
-    if (in_array($route, ['home', 'pricing', 'people', 'details', 'personalData', 'aiMemory', 'mcpServer'], true)) {
+    if (in_array($route, ['home', 'pricing', 'people', 'details', 'timelineReminders', 'possessions', 'inventory', 'personalData', 'aiMemory', 'mcpServer'], true)) {
         $required[] = 'SoftwareApplication';
     }
     if ($route !== 'home') {
@@ -152,7 +152,7 @@ foreach ($iterator as $file) {
     // generic CRM phrase across every historical post and handbook essay.
     [$primary, $secondary, $supporting] = $topics[$locale][$route] ?? [$h1, [], []];
     $intent = match ($route) {
-        'home', 'people', 'personalData', 'aiMemory', 'mcpServer', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages' => 'Evaluate the product or a specific use case',
+        'home', 'people', 'timelineReminders', 'possessions', 'inventory', 'personalData', 'aiMemory', 'mcpServer', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages' => 'Evaluate the product or a specific use case',
         'pricing' => 'Compare hosting options and prices',
         'personalCrm' => 'Understand personal CRM and decide whether it is useful',
         'support' => 'Find help or documentation',

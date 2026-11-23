@@ -16,6 +16,9 @@ $english = [
     'reminders' => ['birthday reminder app', ['personal follow-up reminders', 'recurring contact reminders'], ['email birthday reminders', 'remember to call friends']],
     'timeline' => ['personal timeline', ['life event tracker', 'relationship timeline'], ['record shared memories', 'custom life events']],
     'people' => ['personal contact management', ['remember people', 'personal CRM for friends and family'], ['contact details and relationships', 'shared moments and follow-ups']],
+    'timelineReminders' => ['personal timeline and reminders', ['follow-up reminders', 'shared life events'], ['contact timeline', 'remember to follow up']],
+    'possessions' => ['personal inventory app', ['possession management', 'keep track of belongings'], ['home inventory', 'item locations and loans']],
+    'inventory' => ['personal inventory with tags', ['possession types', 'custom inventory fields'], ['book collection inventory', 'organise belongings with tags']],
     'relationships' => ['track personal relationships', ['family connections', 'relationship history'], ['family tree', 'custom relationship types']],
     'vaults' => ['Monica vaults', ['organize personal and work contacts', 'separate contact lists'], ['personal CRM vaults', 'contact organization']],
     'sharing' => ['share contact details privately', ['read-only contact sharing', 'share selected contact fields'], ['password-protected sharing link', 'revoke contact sharing']],
@@ -34,7 +37,7 @@ $english = [
 
 // Each line follows the route order below. These terms describe the existing
 // translated content; they do not add product claims to it.
-$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people'];
+$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory'];
 $localized = [
     'fr' => <<<'TERMS'
 CRM personnel|base de données personnelle|CRM personnel open source
@@ -63,6 +66,9 @@ mémoire IA personnelle|mémoire IA persistante|mémoire partagée pour assistan
 serveur MCP Monica|serveur MCP pour données personnelles|serveur MCP distant|serveur MCP auto-hébergé
 manuel Monica|principes du projet Monica|projet open source indépendant
 gestion des contacts personnels|se souvenir des gens|suivre ses proches
+chronologie et rappels|rappels de suivi|événements de vie partagés
+inventaire personnel|gestion des objets|emplacements et prêts
+inventaire avec étiquettes|types d’objets|champs personnalisés
 TERMS,
     'de' => <<<'TERMS'
 persönliches CRM|persönliche Datenbank|Open-Source-CRM
@@ -91,6 +97,9 @@ persönliches KI-Gedächtnis|KI-Gedächtnis für Assistenten|gemeinsames Gedäch
 Monica MCP-Server|MCP-Server für persönliche Daten|persönliches CRM MCP-Server|MCP-Server selbst hosten
 Monica Handbuch|Prinzipien von Monica|unabhängiges Open-Source-Projekt führen
 persönliche Kontaktverwaltung|sich an Menschen erinnern|Freunde und Familie im Blick behalten
+Zeitleiste und Erinnerungen|Erinnerungen zum Nachfassen|gemeinsame Lebensereignisse
+persönliches Inventar|Besitz verwalten|Orte und Verleih
+Inventar mit Schlagwörtern|Besitztypen|eigene Felder
 TERMS,
     'es' => <<<'TERMS'
 CRM personal|base de datos personal|CRM personal de código abierto
@@ -119,6 +128,9 @@ memoria de IA personal|memoria persistente para asistentes de IA|memoria compart
 servidor MCP de Monica|servidor MCP de datos personales|servidor MCP de CRM personal
 manual de Monica|principios del proyecto Monica|proyecto de código abierto independiente
 gestor de contactos personales|recordar a la gente|seguir a amigos y familia
+cronología y recordatorios|recordatorios de seguimiento|eventos vitales compartidos
+inventario personal|gestión de pertenencias|ubicaciones y préstamos
+inventario con etiquetas|tipos de pertenencia|campos personalizados
 TERMS,
     'pt' => <<<'TERMS'
 CRM pessoal|banco de dados pessoal|CRM pessoal de código aberto
@@ -147,6 +159,9 @@ memória de IA pessoal|memória persistente para IA|memória compartilhada para 
 servidor MCP da Monica|servidor MCP de dados pessoais|servidor MCP remoto|MCP com OAuth
 manual da Monica|princípios do projeto Monica|projeto de código aberto independente
 gerenciador de contatos pessoais|lembrar das pessoas|acompanhar amigos e família
+linha do tempo e lembretes|lembretes de acompanhamento|eventos de vida compartilhados
+inventário pessoal|gestão de pertences|locais e empréstimos
+inventário com etiquetas|tipos de pertence|campos personalizados
 TERMS,
     'nl' => <<<'TERMS'
 persoonlijk CRM|persoonlijke database|open source persoonlijk CRM
@@ -175,6 +190,9 @@ persoonlijk AI-geheugen|permanent geheugen voor AI-assistenten|gedeeld geheugen 
 Monica MCP-server|MCP-server voor persoonlijke gegevens|MCP-server voor persoonlijke CRM|MCP-server zelf hosten
 Monica handboek|principes van Monica|open source project runnen
 persoonlijk contactbeheer|mensen onthouden|vrienden en familie bijhouden
+tijdlijn en herinneringen|herinneringen om op te volgen|gedeelde levensgebeurtenissen
+persoonlijke inventaris|spullen beheren|plekken en uitlenen
+inventaris met labels|soorten bezittingen|eigen velden
 TERMS,
     'zh' => <<<'TERMS'
 个人 CRM|个人数据库|开源个人 CRM
@@ -203,6 +221,9 @@ Monica 博客|Monica 版本说明|Monica 产品更新
 Monica MCP 服务器|个人数据 MCP 服务器|个人 CRM MCP 服务器
 Monica 手册|Monica 项目原则|独立开源项目运营
 个人联系人管理|记住身边的人|记录亲友信息
+时间线与提醒|跟进提醒|共同的人生事件
+个人物品清单|物品管理|位置和借出
+带标签的物品清单|物品类型|自定义字段
 TERMS,
     'ru' => <<<'TERMS'
 персональная CRM|личная база данных|персональная CRM с открытым кодом
@@ -231,6 +252,9 @@ API персональной CRM|Monica API|интеграции Monica
 MCP-сервер Monica|MCP-сервер для личных данных|MCP-сервер для персональной CRM
 руководство Monica|принципы проекта Monica|как устроен проект с открытым кодом
 личный менеджер контактов|помнить о людях|следить за друзьями и семьёй
+хронология и напоминания|напоминания о делах|общие события
+личный инвентарь|учёт вещей|места и займы
+инвентарь с метками|типы вещей|свои поля
 TERMS,
 ];
 
