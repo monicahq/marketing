@@ -6,5 +6,11 @@
 # those as text/markdown with nosniff, which a browser downloads instead of
 # showing, so "View as Markdown" saved a file. As text/plain it is shown as
 # written, and an assistant reads the same bytes either way.
+#
+# They are noindex because each one repeats a page that is already indexed, in
+# the same language, so a search engine would weigh the two against each other.
+# noindex does not stop anything from fetching them: an assistant still reads
+# them, and /llms.txt still lists them.
 /*.md
   Content-Type: text/plain; charset=utf-8
+  X-Robots-Tag: noindex
