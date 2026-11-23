@@ -145,7 +145,9 @@ final class PageMarkdown
         foreach ($main->querySelectorAll('[data-md-code]') as $code) {
             $lines = [];
 
-            foreach ($code->children as $line) {
+            // Walked by sibling rather than through `children`, which PHP has
+            // only from 8.5, and CI builds on 8.4.
+            for ($line = $code->firstElementChild; $line !== null; $line = $line->nextElementSibling) {
                 $indent = preg_match('/(^|\s)pl-/', $line->getAttribute('class') ?? '') ? '    ' : '';
                 $lines[] = $indent . str_replace("\u{00A0}", ' ', trim($line->textContent, " \n\r\t"));
             }
