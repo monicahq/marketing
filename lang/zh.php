@@ -49,6 +49,10 @@ return [
             'api' => "API 和 MCP",
             'privacyFeatures' => "隐私与安全",
             'languages' => "语言与格式",
+            'aiMemory' => "AI 记忆",
+            'personalData' => "个人数据管理",
+            'mcpServer' => "MCP 服务器",
+            'handbook' => "手册",
             'contribute' => "参与贡献",
             'page' => "第 :number 页",
             'label' => "面包屑导航",
@@ -67,48 +71,66 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica：你的个人数据库和开源个人 CRM",
-            'description' => "Monica 是你的个人数据库：记录你的联系人、你拥有的一切，以及你需要记住的一切。注重隐私，开源，可自托管。",
+            'title' => "开源个人 CRM 与个人数据库 — Monica",
+            'description' => "Monica 是你的个人数据库：记录联系人、你拥有的一切，以及所有需要记住的事。私密、开源、可自托管。",
+            'ogTitle' => "你的人。你的物。你的记忆 — Monica",
+            'ogDescription' => "在 Monica 中把联系人、物品和日常细节放在一起。一个个人数据库，可以自己使用，也可以连接你的 AI 助手。",
         ],
 
         'pricing' => [
-            'title' => "Monica 价格：免费自托管，或交给 Monica 托管",
-            'description' => "免费自托管 Monica，或交给 Monica 托管：每月 \$9，每年 \$90，或一次性 \$250。每个方案都包含全部功能，联系人数量不限，也不按联系人计费。",
+            'title' => "Monica 价格：托管方案与免费自托管",
+            'description' => "免费自托管 Monica，或选择托管：每月 \$9、每年 \$90，或一次性 \$250。所有方案包含全部功能，不按联系人收费。",
+            'ogTitle' => "你的服务器，或我们的。由你选择 — Monica",
+            'ogDescription' => "免费自托管 Monica，或选择按月、按年或终身托管。所有方案包含全部功能，不按联系人收费。",
         ],
 
         'privacy' => [
-            'title' => "隐私政策：Monica",
-            'description' => "Monica 如何处理你的数据：我们收集什么、数据存放在哪里、谁能看到，以及你关闭账户后会发生什么。没有广告，没有追踪器，不转售数据。",
+            'title' => "隐私政策 — Monica",
+            'description' => "Monica 如何处理你的数据：我们收集什么、存放在哪里、谁能看到，以及你关闭账户后会发生什么。没有广告，没有追踪器，不转售数据。",
+            'ogTitle' => "隐私政策 — Monica",
+            'ogDescription' => "Monica 如何处理你的数据：我们收集什么、存放在哪里、谁能看到，以及你关闭账户后会发生什么。没有广告，没有追踪器，不转售数据。",
         ],
 
         'about' => [
-            'title' => "关于 — Monica",
-            'description' => "Monica 是一个开源的个人数据库，由两个人 Régis 和 Alexis 打造。没有投资人，没有广告，不出售数据。它是怎么开始的，以及哪些事永远不会出现在路线图上。",
+            'title' => "关于 Monica：一个独立的开源项目",
+            'description' => "认识 Régis 和 Alexis，他们是 Monica 背后的人。了解这个独立的开源个人数据库如何开始，以及什么在指引它的开发。",
+            'ogTitle' => "两个人，一个个人数据库 — Monica",
+            'ogDescription' => "认识 Monica 背后的人，了解项目如何开始，以及它为何保持开源、独立、没有广告。",
         ],
 
         'team' => [
-            'title' => "团队：Monica",
+            'title' => "团队 — Monica",
             'description' => "Monica 由两个人在蒙特利尔打造，背后还有数百位开源贡献者。为什么我们要做一个不伤害人际关系的个人 CRM。",
+            'ogTitle' => "Monica 是两个人的团队，加上数百位贡献者。",
+            'ogDescription' => "Monica 由两个人在蒙特利尔打造，背后还有数百位开源贡献者。为什么我们要做一个不伤害人际关系的个人 CRM。",
         ],
 
         'contribute' => [
-            'title' => "参与贡献 — Monica",
-            'description' => "Monica 是开源项目，自 2017 年起利用夜晚和周末打造。你可以怎样帮忙：审阅文档、翻译应用，以及把你自己的 AI token 用在我们未解决的 issue 上。",
+            'title' => "参与 Monica：代码、文档和翻译",
+            'description' => "用代码、文档、翻译或修复帮助构建 Monica。了解为这个独立的开源个人数据库做贡献的实用方式。",
+            'ogTitle' => "帮我们把 Monica 继续做下去。",
+            'ogDescription' => "好文档、用心的翻译和有用的修复都有帮助。无论你是否写代码，都能找到参与 Monica 的方式。",
         ],
 
         'support' => [
-            'title' => "支持 — Monica",
-            'description' => "写信给打造 Monica 的人（周一至周五），或者先查看文档：使用 Monica、API、MCP，以及 CardDAV 和 CalDAV。",
+            'title' => "Monica 支持与文档",
+            'description' => "周一至周五给打造 Monica 的人写信，或先看文档：使用 Monica、API、MCP，以及 CardDAV 和 CalDAV。",
+            'ogTitle' => "Monica 的帮助，来自打造它的人",
+            'ogDescription' => "任何不符合你预期的地方都可以写信告诉我们，或者先看应用内自带的文档。",
         ],
 
         'terms' => [
-            'title' => "使用条款：Monica",
-            'description' => "开源个人数据库 Monica 的使用条款：服务涵盖的范围、你对自己数据的权利、你的责任，以及法律细则。",
+            'title' => "使用条款 — Monica",
+            'description' => "Monica（开源个人数据库）的使用条款：服务范围、你对数据的权利、你的责任，以及法律细则。",
+            'ogTitle' => "使用条款 — Monica",
+            'ogDescription' => "Monica（开源个人数据库）的使用条款：服务范围、你对数据的权利、你的责任，以及法律细则。",
         ],
 
         'blog' => [
-            'title' => "Monica 博客：发布说明与产品决策",
-            'description' => "我们发布了什么，为什么这样做，以及经营一家小型开源公司到底是什么样子。由打造 Monica 的人撰写。",
+            'title' => "Monica 博客：版本更新与产品决策",
+            'description' => "我们发布了什么、为什么这样做，以及经营一家小型开源公司的真实样子。由打造 Monica 的人撰写。",
+            'ogTitle' => "打造 Monica，一次一个决定",
+            'ogDescription' => "版本更新、产品决策，以及经营小型开源项目时偶尔得到的教训。由打造 Monica 的人撰写。",
         ],
 
         // A post brings its own title and description, so this is only the
@@ -117,68 +139,126 @@ return [
             'title' => ":title：Monica 博客",
         ],
 
+        'handbook' => [
+            'title' => "Monica 手册：这个项目如何运作",
+            'description' => "项目是什么、背后的原则、如何盈利、为什么开源，以及营销和优先事项如何决定。由维护者撰写。",
+            'ogTitle' => "Monica 手册",
+            'ogDescription' => "Monica 如何构建和运营：一个独立开源项目背后的原则、取舍和日常决定。",
+        ],
+
+        // Like a post, an article brings its own title and description.
+        'handbookArticle' => [
+            'title' => ":title：Monica 手册",
+        ],
+
         // Page 2 of a list is not the list. Without this, four pages of the
         // blog compete for one result under one title.
         'paginated' => ":title（第 :page 页，共 :total 页）",
+        'paginatedDescription' => "浏览 Monica 博客第 :page 页，共 :total 页：版本更新、产品决策，以及打造 Monica 的人的记录。",
 
         'v3' => [
-            'title' => "Monica v3：为未来十年重新打造",
-            'description' => "Monica v3 是这款开源个人数据库的彻底重写：由你设计的记录、与一切相连的日记、完整的 API，以及真正好用的移动端体验。依然开源。将在 2026 年底前推出。",
+            'title' => "Monica v3：为未来十年重新构建",
+            'description' => "了解 Monica v3 的重新构建：自定义记录、互联的日记、完整的 API 和更好的移动体验。开源，将于 2026 年底前推出。",
+            'ogTitle' => "Monica v3：我们正在重建什么",
+            'ogDescription' => "看看 Monica v3 带来什么：由你设计的记录、互联的日记、完整的 API 和更好的移动体验。依然开源。",
         ],
 
         'templates' => [
-            'title' => "你的联系人，你做主：Monica 联系人模板",
-            'description' => "用你自己的字段、分区和标签页来创建联系人模板。为朋友、家人和工作分别设计模板，准备好再发布版本，还能分享分区。",
+            'title' => "联系人模板与自定义字段 — Monica",
+            'description' => "用你自己的字段、分区和标签页构建联系人模板。为朋友、家人和工作使用不同模板，准备好再发布版本。",
+            'ogTitle' => "你的联系人，你的方式 — Monica",
+            'ogDescription' => "记住对你重要的事。用自己的字段、分区和标签页构建联系人模板，让每个人的页面都有地方放你想保留的细节。",
         ],
 
         'details' => [
-            'title' => "记住重要的细节：Monica 联系人页面",
-            'description' => "把别人告诉你的细节放在一起：他们上次说了什么、那些小事、他们身边的人，以及你们共度的时刻。",
+            'title' => "个人联系人管理软件 — Monica",
+            'description' => "把别人告诉你的细节放在一起：他们上次说过的话、小事、身边的人，以及你们共度的时刻。",
+            'ogTitle' => "记住重要的细节 — Monica",
+            'ogDescription' => "他们的号码在你的手机里。但新伴侣的名字、最爱的菜，以及他们上次告诉你的事，可能更难找到。",
         ],
 
         'reminders' => [
-            'title' => "记得主动联系：Monica 提醒",
-            'description' => "为生日、重要的日子或一位你想打电话的朋友设置提醒。可以只提醒一次，也可以按周期重复，按对方的时区，通过邮件或在 Monica 中提醒，并留下你记得做过什么的记录。",
+            'title' => "生日提醒与个人跟进 — Monica",
+            'description' => "为生日、重要的日子或一直想联系的朋友设置提醒。可以只提醒一次或按节奏重复，通过邮件或在 Monica 中提醒。",
+            'ogTitle' => "记得去联系 — Monica",
+            'ogDescription' => "一个生日。一个重要的日子。一位你一直想联系的朋友。",
         ],
 
         'timeline' => [
-            'title' => "留住值得记住的时刻：Monica 时间线",
-            'description' => "记录发生了什么、有谁在场，以及你想留下的细节。生活事件同时出现在每个人的时间线上，可以自定义事件类型和字段，还能逐年回顾。",
+            'title' => "个人时间线与人生事件 — Monica",
+            'description' => "记录发生了什么、谁在场，以及你想保留的细节。人生事件同时出现在每个人的时间线上，还有自定义类型和字段。",
+            'ogTitle' => "留住值得记住的时刻 — Monica",
+            'ogDescription' => "记录发生了什么、谁在场，以及你想保留的细节。Monica 把这些时刻汇集到一条你可以随时回看的时间线上。",
         ],
 
         'relationships' => [
-            'title' => "看清人与人之间的联系：Monica 关系功能",
-            'description' => "记下某个人身边的人，让每一段关系从两边看都说得通。家谱、还没见过的人、过去的关系，以及你自己的关系类型。",
+            'title' => "个人关系与家庭联系 — Monica",
+            'description' => "用双向关系、家谱和关系历史记录家人、朋友和伴侣。自定义适合你生活中每个人的关系类型。",
+            'ogTitle' => "理解人与人如何联系 — Monica",
+            'ogDescription' => "记录某个人身边的人，让关系从双方看都说得通。",
         ],
 
         'vaults' => [
-            'title' => "生活的每一部分，各有各的位置：Monica 保险库",
-            'description' => "把朋友、家人和同事放在一起，或者给每个圈子一个单独的空间。每个保险库都有自己的联系人、时间线、提醒和默认模板，全都在你的账户里。",
+            'title' => "用独立保险库整理联系人 — Monica",
+            'description' => "把朋友、家人和同事放在一起，或给每个群体单独的空间。每个保险库有自己的联系人、时间线、提醒和默认模板。",
+            'ogTitle' => "为生活的每个部分留一个位置 — Monica",
+            'ogDescription' => "放在一起，或给每个群体单独的空间。保险库帮你围绕自己的生活来整理 Monica。",
         ],
 
         'sharing' => [
-            'title' => "只分享你选定的内容：Monica 分享功能",
-            'description' => "通过只读链接分享联系人页面上选定的分区。你来决定它显示什么，可以设置失效日期或密码，看到它何时被打开，并随时撤销。",
+            'title' => "私密分享选定的联系人详情 — Monica",
+            'description' => "通过只读链接分享联系人页面的选定分区。选择展示什么，设置截止日期或密码，查看何时被打开，随时撤销。",
+            'ogTitle' => "只分享你选择的内容 — Monica",
+            'ogDescription' => "通过只读链接分享联系人页面的选定分区。选择它展示什么、有效多久，以及何时停止访问。",
         ],
 
         'api' => [
-            'title' => "让你的联系人连接你的工具：Monica API 与 MCP 服务器",
-            'description' => "在 Claude、ChatGPT、Gemini 或你自己的脚本里使用 Monica。通过 MCP 或 JSON API 查找联系人、记录生活事件、设置提醒，访问权限由你决定。",
+            'title' => "个人 CRM API 与助手集成 — Monica",
+            'description' => "让 Monica 配合 Claude、ChatGPT、Gemini 或你自己的脚本使用。通过 MCP 服务器连接助手，或用 JSON API 自建连接。",
+            'ogTitle' => "你的联系人，连接你的工具 — Monica",
+            'ogDescription' => "让 Monica 配合 Claude、ChatGPT、Gemini 或你自己的脚本使用。在你已有的工具里查找联系人、记录时刻或设置提醒。",
         ],
 
         'privacyFeatures' => [
-            'title' => "个人的细节，值得一个私密的地方：Monica 隐私与安全",
-            'description' => "把字段标记为敏感，只分享选定的分区，控制 API 密钥和助手能读取什么，用通行密钥和双重验证保护你的账户，并查看账户的活动。",
+            'title' => "个人 CRM 的隐私与安全控制 — Monica",
+            'description' => "在 Monica 中控制敏感字段、分享的分区和助手访问。用通行密钥和双重验证保护账户，并查看其活动。",
+            'ogTitle' => "个人细节值得一个私密的地方 — Monica",
+            'ogDescription' => "你记录关于别人的事，是因为他们对你重要。选择保留什么、分享什么，以及哪些工具可以访问。",
         ],
 
         'languages' => [
-            'title' => "你的语言，他们的名字：Monica 的语言与格式",
-            'description' => "在 30 多种语言中使用 Monica。按人们习惯的顺序和形式书写名字，选择显示名称，并设置你自己的日期、时间、数字和时区偏好。",
+            'title' => "多语言个人 CRM 与姓名格式 — Monica",
+            'description' => "以 30 多种语言使用 Monica。按人们使用的顺序和形式书写姓名，选择显示名称，设置日期、时间、数字和时区偏好。",
+            'ogTitle' => "你的语言。他们的名字 — Monica",
+            'ogDescription' => "用让你有归属感的语言使用 Monica。按人们使用的形式保存姓名，并选择日期、时间和数字的显示方式。",
+        ],
+
+        'aiMemory' => [
+            'title' => "个人 AI 记忆，供你的助手共用 — Monica",
+            'description' => "通过 MCP 服务器，让 Claude、ChatGPT 等兼容助手共用一份持久的个人记忆。开源，可自托管，无需 AI 也能用。",
+            'ogTitle' => "助手可以换，你的记忆属于你 — Monica",
+            'ogDescription' => "给兼容的 AI 助手一个共享的地方，记住你身边的人和日常细节。你也可以打开 Monica 亲自整理，有没有 AI 都行。",
+        ],
+
+        'mcpServer' => [
+            'title' => "MCP 服务器，连接你的个人数据 — Monica",
+            'description' => "用远程 MCP 服务器、236 个工具、OAuth 或 API 密钥，把 AI 助手连接到 Monica 的开源个人数据库，也支持自托管。",
+            'ogTitle' => "你的个人数据，连接你的 AI 智能体 — Monica",
+            'ogDescription' => "通过 MCP 把兼容的助手连接到 Monica。用 OAuth 或 API 密钥，在授权范围内读取和更新结构化的个人记录。",
+        ],
+
+        'personalData' => [
+            'title' => "个人信息管理软件 — Monica",
+            'description' => "把联系人、物品、笔记、生活事件和日常细节整理在一个个人数据库里。认识 Monica，开源的数字生活整理工具。",
+            'ogTitle' => "给生活细节一个家 — Monica",
+            'ogDescription' => "人、笔记、物品、重要时刻和提醒。一个属于你的地方，放下所有你不想忘记的事。",
         ],
 
         'personalCrm' => [
-            'title' => "什么是个人 CRM？实用指南：Monica",
-            'description' => "个人 CRM 是什么，它与通讯录和销售 CRM 有何不同，该存储哪些内容，隐私上的取舍，以及如何选择合适的方式。",
+            'title' => "什么是个人 CRM？实用指南 — Monica",
+            'description' => "什么是个人 CRM，它与通讯录和销售 CRM 有何不同，该存什么，隐私上的取舍，以及如何选择合适的做法。",
+            'ogTitle' => "什么是个人 CRM，你会用吗？ — Monica",
+            'ogDescription' => "通讯录记住号码，个人 CRM 帮你记住这个人。了解该保留什么、省略什么，以及如何选择。",
         ],
     ],
 
@@ -2707,6 +2787,976 @@ return [
         ],
     ],
 
+    /**
+     * The AI memory page, "One memory for your AI assistants" (route key
+     * `aiMemory`). The pictures on it are drawings of the product and of two
+     * assistants talking to it, so each carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The example runs through the page: your copy of The Shining, lent to
+     * Chandler, due back on 5 December. Keep the name, the object and the
+     * date in step between `how`, `see`, `structure` and `visibility`.
+     */
+    'aiMemory' => [
+        // Words more than one drawing uses.
+        // The examples are the demo vault's, as on the homepage: the
+        // reader lent Chandler their copy of The Shining, which lives in
+        // the freezer, as it does in his and Joey's flat. Chandler rather
+        // than Joey because the vault has his photo.
+        'borrower' => "Chandler Bing",
+        'book' => "《闪灵》",
+        'due' => "12 月 5 日前归还",
+
+        /**
+         * Where the illustrations go until they are drawn: the reference, the
+         * name and the brief the design gives each one, shown in a dashed
+         * frame exactly as the design draws its placeholders.
+         */
+        'illustrations' => [
+            'problem' => [
+                'ref' => "I02 · 插图 · 可选",
+                'title' => "岛屿与桥",
+                'brief' => "两座岛各有各的笔记本，用桥连到中央的一座图书馆，一只熊猫在那里整理它们。不要暗示导入或同步对话。",
+            ],
+        ],
+
+        'hero' => [
+            'eyebrow' => "开源的个人 AI 记忆",
+            'title' => "给你的 AI 助手，一份共用的记忆。",
+            'lede' => "你的 AI 助手可能会换，你的记忆不该跟着换。",
+            'body' => "Monica 为兼容的 AI 助手提供一份共享、持久的个人记忆：一个存放你的人际关系、知识、物品和日常生活的地方。你自己也可以打开它、整理它、使用它，哪怕完全不用 AI。",
+            'cta' => "免费开始",
+            'how' => "看看它如何运作",
+            'note' => "开源。可自托管。免费账户也包含 MCP 访问。",
+        ],
+
+        'problem' => [
+            'title' => "你的生活，不该困在某一次对话里。",
+            'body' => [
+                "你会告诉 AI 助手你的家人、你的偏好、你的项目，以及你在乎的事。久而久之，这些信息会成为之后对话里有用的背景。",
+                "但你可能不止用一个助手。你可能会换服务商，开一段新对话，或者只是想查点东西，根本不想问 AI。",
+                "所以 Monica 给你的个人信息一个属于它自己的家。你不必只依赖每个助手内置的记忆，而是可以把信息存进 Monica，需要时再通过兼容的助手取回。",
+            ],
+            'closing' => "少重复几遍。在你选用的各种工具之间，多一份连贯。",
+        ],
+
+        'how' => [
+            'title' => "告诉一个助手，问另一个助手。",
+            'lead' => "有了 Monica，个人 AI 记忆可以跨对话、跨兼容的 AI 平台保留下来。今天存下一条信息，之后让另一个已连接的助手去查。",
+            'connected' => "已连接 Monica",
+            'steps' => [
+                [
+                    'title' => "用 Claude 存下一件事",
+                    'prompt' => "我今天把我那本《闪灵》借给 Chandler 了。他 12 月 5 日还。把这个存到 Monica 里。",
+                    'body' => "你的助手会在你的 Monica 账户里记录这次借出、借用的人和预计归还的日期。",
+                    'label' => "与 Claude 的一段对话，已连接 Monica。你请 Claude 记下：你把自己的那本《闪灵》借给了 Chandler，12 月 5 日归还。Claude 使用 Monica 的 create-possession-loan 工具，并确认借出已保存。",
+                    'reply' => "已保存。Monica 现在显示《闪灵》借给了 Chandler，12 月 5 日归还。",
+                ],
+                [
+                    'title' => "在 Monica 里查看",
+                    'prompt' => null,
+                    'body' => "这次借出是 Monica 里的一条真实记录，关联着这本书和借书的人。你可以直接打开它，自己查看或更新。",
+                    'label' => "Monica 中你那本《闪灵》的页面，存放在冰箱冷冻室里。它的借出部分显示这本书借给了 Chandler Bing，12 月 5 日归还。",
+                    'reply' => null,
+                ],
+                [
+                    'title' => "用 ChatGPT 取回",
+                    'prompt' => "查一下 Monica。我那本《闪灵》在谁手里？",
+                    'body' => "你已连接的助手可以查到记录下来的借出，告诉你书在谁手里、预计什么时候还。",
+                    'label' => "与 ChatGPT 的一段新对话，已连接 Monica。你问你那本《闪灵》在谁手里。ChatGPT 使用 Monica 的 list-possession-loans 工具，回答说在 Chandler 手里，12 月 5 日归还。",
+                    'reply' => "你的《闪灵》在 Chandler 那里。12 月 5 日归还。",
+                ],
+            ],
+            'garage' => "存放在冰箱冷冻室",
+            'loans' => "借出",
+            'onLoan' => "已借出",
+            'closing' => "对话换了，记忆还在。",
+            'note' => "这个例子用的是连接到同一个 Monica 账户的两个助手。助手的兼容性和访问权限可能取决于它们的配置和订阅。存入和取回信息，需要助手使用 Monica 的工具。",
+        ],
+
+        'remember' => [
+            'title' => "为日常生活准备的个人 AI 记忆。",
+            'lead' => "你的生活不只是一堆对话。Monica 给你的助手准备了不同的地方，用来存放不同类型的个人信息，从你认识的人到你拥有的东西。",
+            'try' => "试着这样问",
+            // The glyph, the page each item links to and the colour of its
+            // vignette are in the template, in this order. `chips` are the two
+            // labels drawn in the vignette: what Monica would record.
+            'items' => [
+                [
+                    'title' => "人和关系",
+                    'body' => "记住你生活里的人、他们彼此之间的关系，以及你们共度的时刻。记录新的相识和家人关系，并在下一次交谈前取回相关信息。",
+                    'ask' => "Ross 和 Rachel 刚刚有了一个女儿，叫 Emma。在 Monica 里记录她是他们的女儿。",
+                    'chips' => ["Emma", "Ross 和 Rachel 的女儿"],
+                ],
+                [
+                    'title' => "个人知识",
+                    'body' => "用文件夹、笔记和清单建立你自己的知识库。把有用的说明、推荐、想法和参考信息存下来，以后还能找到。",
+                    'ask' => "把 Phoebe 奶奶的巧克力脆片饼干食谱存进我的“食谱”笔记。",
+                    'chips' => ["食谱", "奶奶的饼干"],
+                ],
+                [
+                    'title' => "你的物品",
+                    'body' => "记录你拥有什么、花了多少钱、放在哪里、什么时候保养过，以及谁借走了。",
+                    'ask' => "在 Monica 里记录我们新买的躺椅。花了 \$1,200，放在客厅，对着电视。",
+                    'chips' => ["躺椅", '$1,200'],
+                ],
+                [
+                    'title' => "生活事件",
+                    'body' => "为那些重要的经历、里程碑和时刻建立一条时间线，包括和你共度这些时刻的人。",
+                    'ask' => "记录我们去伦敦参加 Ross 婚礼的旅行，Chandler 和 Joey 也在。",
+                    'chips' => ["伦敦", "Ross 的婚礼"],
+                ],
+                [
+                    'title' => "你的偏好",
+                    'body' => "记下你的口味、习惯和偏好，让你的助手在帮你做决定时可以查阅。",
+                    'ask' => "在我的偏好笔记里记一下：我吃素，在 Central Perk 总是坐橙色沙发。",
+                    'chips' => ["橙色沙发", "吃素"],
+                ],
+                [
+                    'title' => "要记得的事",
+                    'body' => "为重要的约定和周期性的场合创建提醒。Monica 可以用它自己的提醒系统提醒你，不依赖你的助手。",
+                    'ask' => "在 Monica 里创建一个提醒，每天早上喂小鸡和小鸭。",
+                    'chips' => ["小鸡和小鸭", "每天早上"],
+                ],
+            ],
+        ],
+
+        'see' => [
+            'title' => "一份你真的看得见的记忆。",
+            'body' => [
+                "Monica 是一个可以直接使用的个人 AI 记忆应用。你的助手存下的信息不会消失在某次对话里，而是成为你在 Monica 里的个人记录的一部分。",
+                "打开一个联系人。查看一个生活事件。更新一条笔记。找到你拥有的某样东西。更正不再准确的信息。",
+                "你不必每次想查自己的信息，都去和 AI 助手对话。Monica 是一个独立的应用，连不连助手都能用。",
+            ],
+            'closing' => "你的助手可以使用 Monica。但 Monica 是为你而造的。",
+            // The drawing: the Maintenance section of the recliner's page, as
+            // the application draws it (possessions/maintenance.blade.php).
+            'label' => "Monica 中一张躺椅页面的维护部分。躺椅属于家具，放在客厅。记录了两项工作。一次清洁，皮面清洁，费用 \$80：由 Central Perk Upholstery 于 2026 年 9 月 12 日完成，状况从使用过变为几乎全新，下次到期 2027 年 3 月 12 日。一次维修，脚踏维修，费用 \$45：由 Joey Tribbiani 于 2026 年 5 月 2 日完成，状况从损坏变为使用过，没有安排下次日期。",
+            'type' => "家具",
+            'keptIn' => "存放在",
+            'place' => "客厅",
+            'item' => "躺椅",
+            'title' => "维护",
+            'lead' => "这件物品随时间做过的工作，以及每次工作前后的状况。",
+            'costLabel' => "费用",
+            'parts' => ["执行人", "执行日期", "状况", "下次到期"],
+            'records' => [
+                ['type' => "清洁", 'title' => "皮面清洁", 'cost' => '$80', 'parts' => [["Central Perk Upholstery", true], ["2026 年 9 月 12 日", true], ["使用过 → 几乎全新", true], ["2027 年 3 月 12 日", true]]],
+                ['type' => "维修", 'title' => "脚踏维修", 'cost' => '$45', 'parts' => [["Joey Tribbiani", true], ["2026 年 5 月 2 日", true], ["损坏 → 使用过", true], ["未安排", false]]],
+            ],
+        ],
+
+        'structure' => [
+            'title' => "不只是一份记忆清单。",
+            'lead' => "你的生活有结构。你的记忆也应该有。",
+            'body' => [
+                "Monica 把信息存进有意义的记录里。人与人之间可以有家人关系。生活事件可以涉及好几个人。物品可以有位置、维护记录和借出记录。笔记和清单可以按主题整理有用的信息。",
+                "兼容的助手查找信息时，可以取回这些记录，并沿着受支持的关系去了解更多背景。信息有变化时，它可以更新受支持的记录，而不是把同一个事实再添加一个版本。",
+                "当你想用自己的方式整理信息时，Monica 还提供可自定义的模板和记录类型。",
+            ],
+            'label' => "示意图：Chandler Bing 通过一次借出与你的那本《闪灵》相连，并通过参与与感恩节晚餐相连，同时还有 Monica、Rachel 和 Ross",
+            'belonging' => "物品",
+            'garage' => "存放在冰箱冷冻室",
+            'loan' => "借出",
+            'dueShort' => "12 月 5 日归还",
+            'person' => "联系人",
+            'tookPart' => "参与了",
+            'withYou' => "和你，以及另外三个人",
+            'event' => "生活事件 · 2025 年 11 月 27 日",
+            'dinner' => "感恩节晚餐",
+            'caption' => "记录在 Monica 里如何相互连接。这是示意图，不是应用的界面。",
+            'closing' => "一个为真实生活准备的个人数据库，而不只是一堆聊天摘要。",
+        ],
+
+        'retrieval' => [
+            'title' => "今天有用，几个月后依然有用。",
+            'lead' => "持久的 AI 记忆，在你需要再次用到信息时才显出价值。无论你在准备一场会面、照看家里，还是在做计划，都可以让已连接的助手去查 Monica。",
+            'badge' => "示例",
+            'ask' => "问",
+            'items' => [
+                [
+                    'title' => "会面之前",
+                    'ask' => "查一下 Monica。我上次见 Janice 是什么时候，我们聊了什么？",
+                    'body' => "取回之前的生活事件和已有的联系信息，为下一次交谈做准备。",
+                ],
+                [
+                    'title' => "去保养之前",
+                    'ask' => "在 Monica 里查一下那辆保时捷的保养记录。上次保养是什么时候？",
+                    'body' => "找到已记录的保养日期、费用和下次到期日，不用再翻旧对话。",
+                ],
+                [
+                    'title' => "规划旅行之前",
+                    'ask' => "订去巴黎的机票之前，先查一下 Monica 里我的旅行偏好笔记。",
+                    'body' => "把你存下的偏好带进一段新对话，即使你用的是另一个兼容的助手。",
+                ],
+            ],
+            'note' => "这些是在相关信息已存入 Monica 之后，你可以提出的请求示例。",
+        ],
+
+        'visibility' => [
+            'title' => "看清你的 AI 助手到底做了什么。",
+            'body' => [
+                "把助手连接到你的个人信息，是一个重要的决定。你应该能查看它用这份访问权限做了什么。",
+                "Monica 会记录已连接助手发出的调用。你可以查看是哪个助手发出的请求、发生在什么时候、用了哪个工具，以及记录下来的请求和响应（敏感值会被遮盖）。助手调用历史保留 90 天。",
+                "你可以单独断开某个助手，或撤销它们的 API 密钥，而不会删除你已存下的信息，也不会断开你的其他助手。",
+            ],
+            'warningTitle' => "了解你授予的是什么访问权限。",
+            'warning' => "已连接的助手通常可以访问你的整个账户，而不是只访问选定的保险库，也不是只读视图。标记为敏感的字段，不会提供给通过 OAuth 登录连接的助手。只连接你信任的助手。",
+            'label' => "Monica 的助手调用历史。列出三次调用：ChatGPT 今天 09:14 使用了 list-possession-loans，Claude 昨天 18:02 使用了 create-possession-loan，Claude 昨天 17:58 使用了 search-records。ChatGPT 的那次调用已展开，显示它的请求和响应，其中一个敏感值被遮盖。下方是已连接的助手 Claude 和 ChatGPT，各有一个断开连接按钮。",
+            'history' => "助手调用历史",
+            'kept' => "最近 90 天",
+            'calls' => [
+                ['ChatGPT', 'list-possession-loans', "今天 09:14"],
+                ['Claude', 'create-possession-loan', "昨天 18:02"],
+                ['Claude', 'search-records', "昨天 17:58"],
+            ],
+            'request' => "请求",
+            'response' => "响应",
+            'assistants' => "已连接的助手",
+            'used' => ["昨天使用过", "今天使用过"],
+            'disconnect' => "断开连接",
+        ],
+
+        'start' => [
+            'title' => "三步连接你的 AI 助手。",
+            'lead' => "你不需要自己搭建记忆基础设施。Monica 提供开箱即用的个人信息应用，以及一个远程的 AI 记忆 MCP 服务器。",
+            'step' => "第 :number 步",
+            'steps' => [
+                [
+                    'title' => "创建你的 Monica 账户",
+                    'body' => "从免费的托管账户开始，或者如果你想自托管，就在自己的基础设施上运行 Monica。",
+                ],
+                [
+                    'title' => "连接你的助手",
+                    'body' => "Monica 使用 Model Context Protocol（MCP），这是一个开放标准，让兼容的助手可以与外部应用交互。请按你所用客户端的连接指南操作。支持的连接方式包括 OAuth 登录和 API 密钥。",
+                ],
+                [
+                    'title' => "存下你的第一条记忆",
+                    'body' => "让你的助手在 Monica 里存点什么。然后打开 Monica 查看这条记录，或者在另一段对话里让你的助手取回它。",
+                ],
+            ],
+            'starter' => "起步提示词",
+            'starterPrompt' => "把 Phoebe 加到 Monica 里，并记录她今晚在 Central Perk 唱了《Smelly Cat》。",
+            'clientsTitle' => "在找 ChatGPT 和 Claude 的 AI 记忆吗？",
+            'clients' => [
+                "Monica 为 ChatGPT、Claude Desktop、Claude Code、Cursor、Codex 和 VS Code 提供连接指南。你可以把多个兼容的远程 MCP 客户端连到同一个账户，并从每一个客户端访问同样的已存信息。",
+                "客户端的支持情况、可用的操作和设置要求，取决于助手及其套餐。Monica 使用基于 Streamable HTTP 的远程 MCP，所以客户端必须支持这种传输方式和兼容的认证方式。",
+            ],
+            'guides' => "阅读 MCP 连接指南",
+            'account' => "创建免费账户",
+            'clientsLabel' => "有连接指南的客户端",
+        ],
+
+        'open' => [
+            'title' => "开源的 AI 记忆。由你做主。",
+            'lead' => "你选哪个 AI 助手，不该决定你的个人信息存在哪里。",
+            'body' => [
+                "Monica 以 AGPL-3.0 许可开源。你可以使用托管服务，也可以用 Docker 搭建自己的实例。MCP 服务器在自托管实例上同样可用，所以你可以在自己管理的基础设施上搭建一份自托管的 AI 记忆。",
+                "Monica 不运行自己的 AI 模型。它的工作是存储和整理你的信息，并让你连接的兼容助手可以访问。",
+                "如果你换了助手或服务商，你存在 Monica 里的信息依然在那里。需要时，再连接另一个兼容的助手。如果你干脆不再用 AI，也仍然可以直接使用 Monica。",
+            ],
+            'closing' => "助手可以换。你的生活不会。",
+            'github' => "在 GitHub 上了解 Monica",
+            'selfHosting' => "了解自托管",
+        ],
+
+        'compare' => [
+            'title' => "Monica 在 AI 记忆的世界里处于什么位置。",
+            'lead' => "不同的记忆方式解决不同的问题。Monica 的设计，是让你的个人信息有一个独立于任何单次对话或助手的家。",
+            'items' => [
+                [
+                    'title' => "助手内置的记忆",
+                    'body' => "内置记忆可以帮助助手让回答更贴近你。它的表现取决于服务商、设置，以及该助手能获得的信息。Monica 另外提供一个保存个人记录的地方，兼容的助手可以按需访问。",
+                ],
+                [
+                    'title' => "面向开发者的记忆基础设施",
+                    'body' => "AI 记忆基础设施通常侧重于帮助开发者构建应用和智能体工作流。Monica 是一个成品的个人信息管理应用，有面向人的界面，也有原生的 MCP 服务器。你不需要自己构建应用就能开始。",
+                ],
+                [
+                    'title' => "Monica 的个人 AI 记忆",
+                    'body' => "Monica 把结构化的个人记录、你自己就能使用的界面、多个助手连接，以及助手调用历史结合在一起。它是为想把有用的个人信息独立于任何一家 AI 服务商保存的人设计的。",
+                ],
+            ],
+            'goodToKnow' => "需要了解",
+            'notice' => "Monica 是对助手现有记忆的补充。它不会自动导入、替代或同步那份记忆，自己也不会进行自动记忆提取或语义检索。",
+        ],
+
+        'faq' => [
+            'title' => "关于 AI 记忆的常见问题。",
+            'items' => [
+                ['q' => "什么是 AI 记忆？", 'a' => "AI 记忆是让助手使用当前对话之外的信息的一种方式。在 Monica 里，这些信息存放在一个独立的个人数据库中。已连接的助手可以把受支持的信息存进去，之后再通过 Monica 的工具取回。"],
+                ['q' => "可以跨平台共享 AI 记忆吗？", 'a' => "可以。多个兼容的助手可以连接到同一个 Monica 账户。一个助手存下的信息，另一个助手也可以取回，前提是它有访问权限并使用 Monica 的工具。这与各个助手的内置记忆无关。"],
+                ['q' => "可以把 Monica 用作 ChatGPT 或 Claude 的 AI 记忆吗？", 'a' => "Monica 为 ChatGPT 和 Claude，以及其他远程 MCP 客户端提供了连接指南。可用的连接选项和支持的操作，取决于你的助手的能力、配置和订阅。设置说明请查看 MCP 文档。"],
+                ['q' => "Monica 会自动记住我告诉助手的一切吗？", 'a' => "不会。Monica 不会读取或监控你的对话。信息是在你的助手调用 Monica 的工具去保存时才会存入。你可以明确要求助手把某件事存进 Monica，或者在回答问题时去查 Monica。至于它会不会自动这样做，取决于助手。"],
+                ['q' => "助手可以在 Monica 里存哪些信息？", 'a' => "助手可以创建受支持的记录，例如按姓名创建联系人、家人关系、生活事件、提醒、知识库笔记和清单、物品、借出和位置。目前通过 MCP 有些操作还受限，包括写入电话号码、生日和联系人笔记这类联系信息。这些信息可以直接在 Monica 里管理。"],
+                ['q' => "Monica 如何搜索我的个人记忆？", 'a' => "助手可以对受支持的记录使用关键词搜索，查找笔记和清单，并浏览或筛选其他信息。Monica 不提供语义搜索或向量搜索。用哪些工具和搜索词，由助手决定。"],
+                ['q' => "什么是 AI 记忆 MCP 服务器？", 'a' => "MCP 服务器开放一些工具，供兼容的 AI 助手调用。Monica 的远程 MCP 服务器让助手可以读取和写入受支持的个人记录，因此 Monica 可以作为助手之外的持久个人记忆。"],
+                ['q' => "不用 AI 也能使用 Monica 吗？", 'a' => "可以。Monica 是一个独立的个人信息管理应用。你可以直接创建、查看、编辑和整理记录，不必连接助手。"],
+                ['q' => "我可以自托管我的 AI 记忆吗？", 'a' => "可以。Monica 以 AGPL-3.0 许可开源，可以用 Docker 部署在你自己的基础设施上。它的 MCP 服务器在自托管实例上也可用。保护和维护你自己的部署，是你的责任。"],
+                ['q' => "Monica 会用我的个人信息训练 AI 模型吗？", 'a' => "Monica 不运行也不训练 AI 模型。已连接的助手取回信息时，这些信息会发送给该助手，适用其服务商的隐私、保留和训练政策。"],
+                ['q' => "我能控制助手可以访问哪些信息吗？", 'a' => "你可以单独撤销每个助手的连接。标记为敏感的字段，不会提供给通过 OAuth 登录连接的助手。除此之外，连接通常可以访问整个账户，目前不提供按保险库或只读的访问。"],
+                ['q' => "我可以导出我的个人记忆吗？", 'a' => "Monica 支持账户和保险库的 JSON 导出，以及单个联系人的 Markdown 导出。知识库和物品记录目前不包含在账户或保险库的 JSON 导出中。"],
+                ['q' => "Monica 的 AI 记忆免费吗？", 'a' => "免费的托管账户包含 MCP 访问，受免费方案的常规限制约束。自托管实例没有 Monica 施加的方案限制。AI 助手的服务商可能有它自己的订阅要求或使用限制。"],
+                ['q' => "如果我换了 AI 助手会怎样？", 'a' => "你存在 Monica 里的信息会留在你的账户中。你可以断开之前的助手，连接另一个兼容的助手，不必把 Monica 里的记录迁移到别的记忆系统里。"],
+            ],
+        ],
+
+        'closing' => [
+            'title' => "给你的记忆一个属于它们自己的家。",
+            'body' => "把对你重要的人、知识和日常细节放在一个地方。你，以及你选择的兼容 AI 助手，都可以访问。",
+            'lead' => "用 Monica 开始建立你的个人 AI 记忆。",
+            'cta' => "免费开始",
+            'selfHosting' => "了解自托管",
+            'note' => "开源。不依赖任何单一的 AI 助手。为人而造。",
+        ],
+    ],
+
+    /**
+     * The personal data management page, "Your life. Beautifully organized."
+     * (route key `personalData`). English only, like the AI memory page.
+     *
+     * Its examples come from the demo vault, as the homepage's do, with the
+     * same dry asides: Chandler, Joey's recliner Rosita, Monica's hall
+     * closet, the Moist Maker. The drawings of the product each carry a
+     * `label` that a screen reader reads instead of the drawing itself.
+     */
+    'personalData' => [
+        'hero' => [
+            'eyebrow' => "有人情味的个人信息管理",
+            'title' => "你的生活，井井有条，赏心悦目。",
+            'lede' => "你在乎的人。你拥有的东西。值得记住的时刻。还有那些总在需要时找不到的有用细节。",
+            'body' => "Monica 把你的个人信息汇集到一个地方，让你的生活不必散落在各处的笔记、表格和你的记忆里。",
+            'cta' => "免费开始",
+            'organize' => "看看你能整理什么",
+            'note' => "开源 · 可自托管 · 为日常生活而造",
+        ],
+
+        'problem' => [
+            'eyebrow' => "是不是很熟悉？",
+            'title' => "那些小细节，到处都是。",
+            'body' => "你知道自己把那条推荐记下来了。在某个地方。洗衣机的型号可能在一封旧邮件里。总是给你送咖啡的那个人叫什么，埋在某段对话里（他叫 Gunther）。至于那个重要时刻的日期？你很确定自己记得。",
+            'lead' => "你的生活里有很多值得保存的信息，却很少有一套好用的归档方式。",
+            'items' => [
+                ['title' => "散落在太多地方", 'body' => "笔记、消息、表格和快被遗忘的文档，各自装着你生活的不同片段。"],
+                ['title' => "事后很难找到", 'body' => "存下来很容易。难的是六个月后还记得存在哪里。"],
+                ['title' => "看不到全貌", 'body' => "一个名字、一个地点和一件事，在现实中可能彼此相关，存起来却各是各的。"],
+            ],
+            'closing' => "你不需要另一套复杂的系统。",
+            'closingMuted' => "你需要一个说得通的个人空间。",
+        ],
+
+        'organize' => [
+            'eyebrow' => "真实生活的一站式空间",
+            'title' => "重要的一切，各归其位。",
+            'lead' => "Monica 是围绕人们真正想记住的东西构建的个人信息管理软件。不只是文档，不只是任务。而是你的人、你的知识、你的物品，以及把它们连在一起的时刻。",
+            'example' => "示例",
+            'crm' => "了解 Monica 的个人 CRM",
+            // The glyph, the colour and the drawing of each item are in the
+            // template, in this order.
+            'items' => [
+                [
+                    'title' => "人和关系",
+                    'body' => "即使生活忙碌，也让生活里的人离你很近。保存联系信息，理解家人和其他关系，回顾你们共度的时刻。",
+                    'example' => "记住是谁介绍你们认识的、你们怎么认识的，以及 Ross 和 Rachel 当时是“暂时分开”。",
+                ],
+                [
+                    'title' => "笔记和知识",
+                    'body' => "给有用的信息一个家。创建文件夹，用 Markdown 写笔记，为推荐、想法、参考资料和你想回头再看的东西建立清单。",
+                    'example' => "列一份想读的书单，再留一份真正重要的感恩节剩菜食谱。",
+                ],
+                [
+                    'title' => "物品和购买",
+                    'body' => "记录你拥有什么、放在哪里、花了多少钱，以及它随时间发生了什么。记录购买、维护、保险信息，以及你借给别人的东西。",
+                    'example' => "查到那张躺椅花了多少钱，或者想起是谁借走了你的节日犰狳服装。",
+                ],
+                [
+                    'title' => "时刻和里程碑",
+                    'body' => "记住的不只是日期。留下一份个人的历史：拜访、旅行、谈话、成就和重要的变化，以及其中的人。",
+                    'example' => "回顾那次伦敦之旅，或者自那只火鸡扣在 Monica 头上的那次以来的每一个感恩节。",
+                ],
+                [
+                    'title' => "地点和空间",
+                    'body' => "整理你的物品放在哪里，从一所房子到一个房间、一个柜子或一层架子。东西挪了地方，就更新它的位置。",
+                    'example' => "知道圣诞彩灯放在哪一层架子上，也知道走廊储物柜里到底有什么。",
+                ],
+                [
+                    'title' => "日期和提醒",
+                    'body' => "有些事值得在合适的时候被记起。设置与联系人相关的一次性或周期性提醒，并记下你有没有做到。",
+                    'example' => "每年 5 月 5 日记得 Rachel 的生日，或者每个周日记得给你妈妈回电话。",
+                ],
+            ],
+            // What the six small drawings show.
+            'screens' => [
+                'contact' => [
+                    'label' => "Monica 中 Chandler Bing 的页面。他住在对门的 19 号公寓，你们是他搬进来时认识的，他的室友是 Joey Tribbiani，他的伴侣是 Monica Geller。他最近的生活事件是 11 月 27 日的感恩节晚餐。",
+                    'name' => "Chandler Bing",
+                    'meta' => "19 号公寓，对门",
+                    'rows' => [
+                        ['who' => "Joey Tribbiani", 'what' => "室友"],
+                        ['who' => "Monica Geller", 'what' => "伴侣"],
+                    ],
+                    'last' => "上次见面是在感恩节晚餐",
+                ],
+                'knowledge' => [
+                    'label' => "Monica 中名为“20 号公寓”的知识库文件夹，里面有一篇名为 The Moist Maker 的笔记和一份名为“想读的书”的清单。",
+                    'folder' => "20 号公寓",
+                    'entries' => [
+                        ['kind' => 'note', 'name' => "The Moist Maker", 'meta' => "笔记 · 昨天编辑"],
+                        ['kind' => 'list', 'name' => "想读的书", 'meta' => "清单 · 2 项"],
+                        ['kind' => 'note', 'name' => "感恩节座位表", 'meta' => "笔记 · 1997 年编辑"],
+                    ],
+                ],
+                'possession' => [
+                    'label' => "Monica 中一张名为 Rosita 的躺椅，放在客厅，对着电视，购买价 \$1,200。它从未借出。",
+                    'name' => "Rosita",
+                    'kind' => "躺椅",
+                    'facts' => [['位置', "客厅"], ['价格', '$1,200']],
+                    'status' => "从未借出",
+                ],
+                'event' => [
+                    'label' => "Monica 中的一个生活事件：11 月 27 日的感恩节晚餐，参加的有 Monica、Rachel、Ross 和 Chandler。它的笔记写着火鸡来晚了。",
+                    'name' => "感恩节晚餐",
+                    'date' => "11 月 27 日",
+                    'note' => "火鸡来晚了。Ross 也是。",
+                ],
+                'places' => [
+                    'label' => "Monica 中嵌套的位置：20 号公寓，然后是走廊储物柜，里面放着节日犰狳服装和圣诞彩灯。",
+                    'path' => ["20 号公寓", "走廊储物柜"],
+                    'items' => ["节日犰狳服装", "圣诞彩灯", "别问"],
+                ],
+                'reminder' => [
+                    'label' => "Monica 中 Rachel Green 生日的提醒，每年 5 月 5 日，通过邮件发送，下一次在 23 天后。",
+                    'who' => "Rachel Green",
+                    'what' => "生日",
+                    'when' => "每年 5 月 5 日",
+                    'next' => "23 天后",
+                    'channel' => "通过邮件",
+                ],
+            ],
+        ],
+
+        'questions' => [
+            'eyebrow' => "为你真正会问的问题而造",
+            'title' => "那些你会庆幸自己留住的小事。",
+            'lead' => "一个好的个人整理应用，不是为了收集信息而收集信息。而是在日常生活需要答案时，你能找到它。",
+            'items' => [
+                ['q' => "谁拿了我的节日犰狳服装？", 'a' => "让你的物品和借出记录与借走它们的人关联起来，包括预计归还的日期。"],
+                ['q' => "我上次和 Gunther 聊天是什么时候？", 'a' => "回顾共度的时刻，更清楚地看到你们是怎样保持联系的。即使对方主要是给你送咖啡的人。"],
+                ['q' => "桌上足球台我们花了多少钱？", 'a' => "把购买记录、识别信息和维护历史，与物品本身放在一起。"],
+                ['q' => "我把那些伦敦的推荐放哪儿了？", 'a' => "把想法和参考笔记存进有条理的知识库文件夹和清单，需要时随时可用。"],
+            ],
+            'closing' => "不是每个细节都得装在你脑子里。有些事只是需要一个可靠的地方待着。",
+        ],
+
+        'structure' => [
+            'eyebrow' => "是一个真正的应用，不只是一个笔记文件夹",
+            'title' => "给你的信息一些结构。",
+            'body' => [
+                "普通的笔记有用。但一个人不只是一条笔记。一件物品不只是表格里的一行。一件有意义的事，往往也不止涉及一个人。",
+                "Monica 给不同种类的个人信息各自的位置。关系把人连起来。生活事件有日期和参与者。物品可以带有购买记录、保险记录、维护历史和位置。",
+            ],
+            'closing' => "正是这种结构，让 Monica 成为一个个人数据库，而不只是另一个写东西的地方。",
+            'caption' => "一个放细节、历史，以及你生活中这些事物背后的背景的地方。",
+            'benefits' => [
+                ['title' => "相互关联的信息", 'body' => "让人、经历、物品和地点之间的关系，待在它们本来所属的地方。"],
+                ['title' => "有用的历史", 'body' => "看看随时间发生了什么变化，从和朋友共度的时间，到对一件物品做过的维护。"],
+                ['title' => "说得通的细节", 'body' => "使用适合你所保存信息的字段和记录类型。"],
+            ],
+            // The large drawing: the Timeline section of Rosita's page, as
+            // the application draws it (possessions/timeline.blade.php).
+            'screen' => [
+                'label' => "Monica 中一张名为 Rosita 的躺椅的时间线，这是一件家具，放在客厅，标签为“不外借”。旁边是它页面的各个部分：概览、时间线、交易、保险、估值、来历、维护、借出、位置和文档。时间线汇集了四条记录。2001 年，脚踏由 Joey 修好。1998 年，Rosita 放在 19 号公寓的客厅里（现在仍在那里），投保了意外损坏险，并与另一张躺椅一起购买。",
+                'type' => "家具",
+                'keptIn' => "存放在",
+                'place' => "客厅",
+                'name' => "Rosita",
+                'tag' => "不外借",
+                'sections' => [
+                    'overview' => "概览",
+                    'timeline' => "时间线",
+                    'transactions' => "交易",
+                    'insurance' => "保险",
+                    'valuations' => "估值",
+                    'provenance' => "来历",
+                    'maintenance' => "维护",
+                    'loans' => "借出",
+                    'locations' => "位置",
+                    'documents' => "文档",
+                ],
+                'title' => "时间线",
+                'lead' => "这件物品发生过的一切，从它的其他部分汇集而来，并按顺序排好。",
+                'all' => "全部",
+                'groups' => [
+                    [
+                        'year' => '2001',
+                        'count' => "1 条记录",
+                        'entries' => [
+                            ['section' => 'maintenance', 'noun' => "维护", 'date' => "2001 年 5 月 2 日", 'title' => "脚踏维修", 'detail' => "Joey Tribbiani · 拉杆卡在半途"],
+                        ],
+                    ],
+                    [
+                        'year' => '1998',
+                        'count' => "3 条记录",
+                        'entries' => [
+                            ['section' => 'locations', 'noun' => "位置", 'date' => "1998 年 3 月 14 日", 'badge' => "现在在这里", 'title' => "存放在 19 号公寓 › 客厅", 'detail' => "对着电视"],
+                            ['section' => 'insurance', 'noun' => "保险", 'date' => "1998 年 3 月 14 日", 'title' => "由 Greenwich Mutual 承保", 'detail' => "意外损坏"],
+                            ['section' => 'transactions', 'noun' => "交易", 'date' => "1998 年 3 月 14 日", 'badge' => "获得", 'title' => "购买", 'detail' => "与另一张躺椅一起购买"],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        'yours' => [
+            'eyebrow' => "你的生活不是一个模板",
+            'title' => "用你自己的方式整理信息。",
+            'body' => "有些人想记录家人和朋友。另一些人更在意自己的家、收藏，或多年积累的知识。",
+            'closing' => "Monica 为这一切都留出了空间。",
+            'items' => [
+                ['title' => "把生活的不同部分分开", 'body' => "用保险库在你的账户里整理不同的领域，比如个人生活或工作。"],
+                ['title' => "保留重要的字段", 'body' => "选择模板并自定义字段，来匹配你要管理的人和其他记录。"],
+                ['title' => "创建你自己的记录种类", 'body' => "你的信息并不总是适合某个预设的类别。Monica 支持自定义记录类型，让你围绕自己在乎的事，塑造一个个人信息管理工具。"],
+            ],
+            // The drawing: Settings, Contacts and more, as the application
+            // draws it (settings/account/entity-types/index.blade.php).
+            'screen' => [
+                'label' => "Monica 中的“联系人及更多”设置。除了内置的、有 84 份档案的联系人，这个账户还创建了三种自己的档案：有 2 份档案的公寓、有 2 份档案的宠物，以及有 3 份档案的节日服装。每一种都可以编辑，拖动各行可以改变它们在保险库导航中的顺序。",
+                'title' => "联系人及更多",
+                'description' => "你已经有了人的档案。还可以为你想记住的宠物、公司或物品，创建其他种类的档案。每种档案都有自己的信息，分成不同部分，就像联系人一样。",
+                'create' => "创建档案类型",
+                'createNote' => "先从一个种类开始，比如“宠物”。之后再添加具体的宠物，比如“Garfield”。",
+                'list' => "你的档案类型",
+                'listNote' => "拖动一行，改变它在保险库导航中的顺序。",
+                'contacts' => "联系人",
+                'builtIn' => "内置",
+                'contactsCount' => "84 份档案",
+                'locked' => "无法删除",
+                'edit' => "编辑",
+                'types' => [
+                    ['name' => "公寓", 'count' => "2 份档案"],
+                    ['name' => "宠物", 'count' => "2 份档案"],
+                    ['name' => "节日服装", 'count' => "3 份档案"],
+                ],
+            ],
+        ],
+
+        'knowledge' => [
+            'eyebrow' => "给你所知道的一个家",
+            'title' => "留下值得回头再看的知识。",
+            'lead' => "一份喜欢的书单。照看房子的说明。一份想去的地方的合集。几条你希望多年前就存下的笔记。",
+            'body' => [
+                "个人知识管理不一定意味着搭建一个繁复的第二大脑。有时，它只是把一件事写下来，放在你知道以后找得到的地方。",
+                "用 Monica，你可以把笔记和清单整理进文件夹，搜索它们的内容，并把参考信息与你个人生活的其余部分放在一起。",
+            ],
+            'cta' => "免费开始",
+            'caption' => "你的笔记和清单，整理得井然有序，需要时就能派上用场。",
+            'screen' => [
+                'label' => "Monica 的知识库区域。侧边栏列出四个文件夹：20 号公寓、食谱、旅行灵感和书。“食谱”文件夹已打开，里面有一篇名为 The Moist Maker 的笔记，是 Ross 的感恩节剩菜三明治食谱，还有一份名为“想读的书”的清单，《小妇人》已勾选，《闪灵》还没有。",
+                'title' => "知识库",
+                'folders' => ["20 号公寓", "食谱", "旅行灵感", "书"],
+                'open' => 1,
+                'note' => "The Moist Maker",
+                'noteMeta' => "笔记 · Markdown",
+                'noteBody' => [
+                    "Ross 的感恩节剩菜三明治。",
+                    "火鸡肉、蔓越莓酱，中间再夹一片吸饱肉汁的面包。",
+                    "不要把它放在办公室的冰箱里。",
+                ],
+                'list' => "想读的书",
+                'listItems' => [
+                    ['done' => true, 'name' => "《小妇人》"],
+                    ['done' => false, 'name' => "《闪灵》（放在冷冻室里）"],
+                ],
+            ],
+        ],
+
+        'ownership' => [
+            'eyebrow' => "你的信息，你来选",
+            'title' => "个人信息，值得一个属于个人的家。",
+            'lead' => "你的数字生活是你的。你用来整理它的软件，应该尊重这一点。",
+            'body' => [
+                "Monica 是一个开源的个人信息管理工具，你可以把它当作托管应用来用，也可以自托管在你自己的基础设施上。",
+                "Monica 里没有内置广告，应用在没有 AI 助手的情况下也能用。你完全可以直接打开它，查看你的信息，自己保持更新。",
+            ],
+            'github' => "了解这个开源项目",
+            'items' => [
+                ['title' => "开源", 'body' => "查看代码、为项目做贡献，或者自己运行一个实例。"],
+                ['title' => "可自托管", 'body' => "想自己管理基础设施？Monica 可以运行在你的服务器上。"],
+                ['title' => "为人而造", 'body' => "直接使用应用，不必依赖聊天机器人或自动化来访问你的信息。"],
+            ],
+        ],
+
+        'ai' => [
+            'eyebrow' => "当你想要一点帮助时",
+            'title' => "你的信息也可以和 AI 配合。",
+            'body' => [
+                "Monica 本身就很有用。但如果你使用 AI 助手，也可以通过 Model Context Protocol（MCP），把兼容的助手连接到你的 Monica 账户。",
+                "让助手存一条笔记、记录一个生活事件，或查找你已经存下的东西。这些信息仍留在 Monica 里，你可以自己查看和管理。",
+            ],
+            'link' => "了解个人 AI 记忆",
+        ],
+
+        'faq' => [
+            'title' => "你可能想知道的几件事。",
+            'items' => [
+                ['q' => "什么是个人信息管理软件？", 'a' => "个人信息管理软件帮助你存储、整理和查找与日常生活相关的信息。Monica 把联系人、关系、笔记、清单、物品、生活事件、位置和提醒汇集在一个应用里。"],
+                ['q' => "Monica 和笔记应用有什么不同？", 'a' => "笔记应用是写东西的好地方。Monica 还给人、关系、事件和物品各自有结构化的记录。你仍然可以在 Monica 的知识库里创建普通的笔记和清单。"],
+                ['q' => "Monica 能帮我整理个人生活吗？", 'a' => "能。你可以把 Monica 当作个人整理应用，来记录人、重要时刻、有用的知识、物品、位置和提醒。记录什么、怎么整理，由你决定。"],
+                ['q' => "Monica 是个人数据库吗？", 'a' => "是。Monica 把不同类型的个人信息存成结构化的记录，而不是把一切当作一份文本文档。它还支持可自定义的模板和自定义记录类型。"],
+                ['q' => "我可以用 Monica 做个人知识管理吗？", 'a' => "可以。Monica 包含知识库文件夹、Markdown 笔记和清单。你可以用它们整理参考信息、推荐、说明，以及其他你想记住的东西。"],
+                ['q' => "我可以记录自己的物品吗？", 'a' => "可以。Monica 可以记录物品、购买交易、维护、保险信息、借给别人的记录，以及物品存放的位置。"],
+                ['q' => "我可以用 Monica 记录朋友和家人吗？", 'a' => "可以。Monica 起初是个人 CRM，人和关系仍然是这个应用的核心。你可以保存联系信息、关系、提醒和生活事件。"],
+                ['q' => "Monica 是家庭整理工具，还是共享的家庭账户吗？", 'a' => "Monica 可以存放关于你的家庭和你生活里的人的信息，但目前一个账户是为一个人设计的。它不提供多人共享的家庭工作空间。"],
+                ['q' => "Monica 是开源的吗？", 'a' => "是。Monica 以 AGPL-3.0 许可开源。"],
+                ['q' => "我可以自托管 Monica 吗？", 'a' => "可以。你可以在自己的基础设施上运行 Monica，而不使用托管服务。自托管需要你自己管理服务器及其安全、备份和配置。"],
+                ['q' => "使用 Monica 需要 AI 助手吗？", 'a' => "不需要。Monica 是一个完整的应用，你可以直接使用。连接 AI 是可选的。"],
+                ['q' => "我可以把 ChatGPT 或 Claude 连接到 Monica 吗？", 'a' => "Monica 包含 MCP 服务器，并为兼容的 AI 客户端提供连接指南，包括 ChatGPT 和 Claude。是否可用可能取决于客户端及其套餐。详情请见 AI 记忆页面和 MCP 文档。"],
+                ['q' => "Monica 免费吗？", 'a' => "Monica 提供有限制的免费托管档，也有付费选项。你还可以自托管这个开源软件。方案详情请见价格页面。"],
+                ['q' => "Monica 会自动导入我所有的联系人和文档吗？", 'a' => "不会。Monica 目前不提供从 Google 通讯录、Apple 通讯录、CSV 文件或任意文档库的通用导入。你可以直接输入信息，并支持某些 Monica 格式的导入。"],
+            ],
+        ],
+
+        'closing' => [
+            'eyebrow' => "把重要的东西放在身边",
+            'title' => "一个放下你所有不想忘记的东西的地方。",
+            'body' => "你的生活由人、地点、物品、时刻和无数的小细节组成。它们值得的，不止是几条散落的笔记。",
+            'lead' => "在 Monica 里，给它们一个家。",
+            'cta' => "免费开始",
+            'crm' => "了解 Monica 的个人 CRM",
+            'note' => "开源 · 可自托管 · 为人而造",
+        ],
+    ],
+
+    /**
+     * The MCP server page, "Your personal data, connected to your AI agents"
+     * (route key `mcpServer`). English only, like the AI memory page. The
+     * technical sibling of that page: endpoints, tools, authentication.
+     *
+     * Its examples come from the demo vault, as the homepage's do: the
+     * reader lent Ross their Holiday Armadillo costume, due back on 28
+     * December. Keep the object, the person and the date in step between
+     * `workflow` and `visibility`. Tool names are the product's own.
+     */
+    'mcpServer' => [
+        'endpoint' => "https://my.monicahq.com/mcp",
+        'selfHosted' => "https://YOUR-MONICA-HOST/mcp",
+        'copy' => "复制",
+        'copied' => "已复制",
+        'costume' => "节日犰狳服装",
+        'borrower' => "Ross Geller",
+        'due' => "12 月 28 日前归还",
+
+        'hero' => [
+            'eyebrow' => "内置 Model Context Protocol 支持",
+            'title' => "你的个人数据，连接你的 AI 智能体。",
+            'lede' => "Monica 自带一个内置的 MCP 服务器，让兼容的 AI 助手可以处理你的个人数据，从联系人和关系，到知识、提醒、生活事件和物品。",
+            'body' => "一个真正的个人数据库。一个真正的应用。还有一条通过 Model Context Protocol 直达你的智能体的连接。",
+            'connect' => "连接 AI 助手",
+            'start' => "免费开始",
+            'tools' => "了解 MCP 工具",
+            'trust' => ["开源", "远程 MCP", "OAuth 和 API 密钥", "可自托管"],
+            'endpointLabel' => "托管版 MCP 端点",
+        ],
+
+        'unlocks' => [
+            'title' => "给你的 AI 助手一些有用的东西去处理。",
+            'body' => [
+                "Model Context Protocol（MCP）让 AI 助手可以调用其他应用开放的工具。",
+                "有了 Monica，这些工具直接连到你的个人信息。助手可以查找一段关系、创建一个有日期的生活事件、维护一条知识笔记、记录一件物品，或查看即将到来的提醒，而 Monica 把这些记录保存在一个你自己也能访问的结构化数据库里。",
+            ],
+            'closing' => "不用另外搭建记忆服务。不用维护自定义的桥接。MCP 服务器就是 Monica 的一部分。",
+            'flow' => [
+                ['title' => "你的 AI 助手", 'body' => "在它决定这样做的时候，发出 MCP 工具请求。"],
+                ['title' => "Monica MCP 服务器", 'body' => "验证身份，并执行受支持的操作。"],
+                ['title' => "你的 Monica 数据", 'body' => "存储并返回结构化的个人记录。"],
+            ],
+        ],
+
+        'workflow' => [
+            'title' => "从一段对话，到之后还能找到的东西。",
+            'steps' => [
+                [
+                    'title' => "问你的助手",
+                    'prompt' => "我把节日犰狳服装借给 Ross 了。他 12 月 28 日还。把这个存到 Monica 里。",
+                    'body' => "你的助手使用 Monica 的 MCP 工具来记录这次借出，把它关联到那个人，并跟踪预计归还的日期。",
+                    'caption' => "一句自然语言的请求，变成一次结构化的 MCP 操作。",
+                    'label' => "与 Claude 的一段对话，已连接 Monica。你请 Claude 记下：你把节日犰狳服装借给了 Ross，12 月 28 日归还。Claude 调用 Monica 的 create-possession-loan 工具，并确认借出已保存。",
+                    'reply' => "已保存。Monica 显示这件服装借给了 Ross，12 月 28 日归还。",
+                ],
+                [
+                    'title' => "在 Monica 里查看",
+                    'prompt' => null,
+                    'body' => "在 Monica 里打开这件服装，和这件物品的其他信息一起，看到它的借出历史。",
+                    'caption' => "同一条记录，在 Monica 里可见，也可以编辑。",
+                    'label' => "Monica 中节日犰狳服装的页面，存放在走廊储物柜里。它的借出部分显示这件服装借给了 Ross Geller，12 月 28 日归还，另有一次更早借给 Ross 的记录，已在去年归还。",
+                    'reply' => null,
+                ],
+                [
+                    'title' => "之后再问",
+                    'prompt' => "查一下 Monica。我的犰狳服装在谁手里，我该什么时候拿回来？",
+                    'body' => "助手读取 Monica 的记录，返回你存下的详细信息。",
+                    'caption' => "你的助手可以在之后的对话里取回这些信息。",
+                    'label' => "与 ChatGPT 的一段新对话，已连接 Monica。你问你的犰狳服装在谁手里。ChatGPT 调用 Monica 的 list-possession-loans 工具，回答说在 Ross 手里，12 月 28 日归还，而且他以前也借过。",
+                    'reply' => "在 Ross 那里，12 月 28 日归还。这已经是连续第二年了。",
+                ],
+            ],
+            'closet' => "存放在走廊储物柜",
+            'loans' => "借出",
+            'onLoan' => "已借出",
+            'returned' => "去年 1 月已归还",
+            'connected' => "已连接 Monica",
+            'closing' => "助手负责对话。",
+            'closingMuted' => "Monica 负责记录。",
+        ],
+
+        'tools' => [
+            'title' => "236 个 MCP 工具。一个个人数据库。",
+            'lead' => "Monica 开放了 236 个已注册的 MCP 工具，涵盖个人信息、关系、知识、日常事件和你拥有的东西。智能体可以通过与 Monica 的 JSON API 相同的应用规则，执行受支持的操作。",
+            // The glyph and the colour of each card are in the template.
+            'items' => [
+                [
+                    'title' => "人和关系",
+                    'body' => "查找联系人、读取他们的档案、按姓名创建联系人，并管理他们之间的联系。",
+                    'prompt' => "Ross 和谁有亲戚关系？说简短点，他已经结过三次婚了。",
+                    'names' => ['search-records', 'get-contact-markdown', 'create-contact-relationship'],
+                ],
+                [
+                    'title' => "生活事件和历史",
+                    'body' => "记录通话、会面、旅行、里程碑和重要时刻，之后再取回详情。",
+                    'prompt' => "记录我和 Phoebe 在 Central Perk 喝咖啡，她还唱了一首关于猫的新歌。",
+                    'names' => ['create-life-event', 'list-life-events', 'get-life-event'],
+                ],
+                [
+                    'title' => "知识和笔记",
+                    'body' => "创建和更新 Markdown 笔记，整理文件夹，维护值得保存的信息清单。",
+                    'prompt' => "把 Moist Maker 的食谱存进我的“食谱”笔记。",
+                    'names' => ['create-knowledge-note', 'search-knowledge', 'update-knowledge-note'],
+                ],
+                [
+                    'title' => "物品",
+                    'body' => "记录购买、维护、保险记录、位置和借出。",
+                    'prompt' => "记录 Rosita 的脚踏今天修好了。别告诉 Joey 是谁弄坏的。",
+                    'names' => ['create-possession-maintenance-record', 'list-possessions'],
+                ],
+                [
+                    'title' => "提醒",
+                    'body' => "创建周期性或一次性的提醒，查看即将到来的日期，并记录你有没有记得。",
+                    'prompt' => "提醒我每天早上喂小鸡和小鸭。",
+                    'names' => ['create-contact-reminder', 'list-vault-reminder-occurrences'],
+                ],
+                [
+                    'title' => "自定义结构",
+                    'body' => "定义并使用自定义实体类型、模板和结构化字段，反映你整理生活的方式。",
+                    'prompt' => "为我的节日服装创建一个记录类型。",
+                    'names' => ['create-entity', 'create-entity-type'],
+                ],
+            ],
+            'stats' => [
+                ['value' => "236", 'label' => "个已注册的 MCP 工具"],
+                ['value' => "Streamable HTTP", 'label' => "远程传输"],
+                ['value' => "OAuth + API 密钥", 'label' => "连接方式"],
+                ['value' => "一个账户", 'label' => "可在多个助手之间共用"],
+            ],
+            'docs' => "浏览完整的 MCP 文档",
+        ],
+
+        'connect' => [
+            'title' => "用 OAuth 或 API 密钥连接。",
+            'lead' => "Monica 的远程 MCP 服务器支持两种认证方式，你可以通过交互式的授权流程连接，也可以为面向开发者的客户端配置一个专用密钥。",
+            'endpoint' => "端点",
+            'firstPrompt' => "第一条提示词",
+            'oauth' => [
+                'eyebrow' => "方式 A · OAuth",
+                'title' => "无需复制密钥就能连接。",
+                'body' => "对于支持交互式 OAuth 流程的 MCP 客户端，添加 Monica 的 MCP 端点，登录你的账户，并批准这次连接。",
+                'steps' => [
+                    "在你助手的连接器设置里，添加 Monica 的远程 MCP 端点。",
+                    "出现提示时，登录 Monica。",
+                    "核对应用名称和重定向目的地。",
+                    "批准访问，然后试一个只读的查询。",
+                ],
+                'prompt' => "列出我的 Monica 保险库。",
+                'caption' => "每个连接，都通过 Monica 授权。",
+                'screen' => [
+                    'label' => "Monica 的授权界面。Claude 请求连接到你的 Monica 账户，并将重定向到 claude.ai。两个按钮：拒绝和允许。",
+                    'title' => "Claude 想要连接到你的 Monica 账户",
+                    'body' => "它将能够通过 Monica 的 MCP 工具，读取和修改你账户中的记录。",
+                    'redirect' => "重定向到",
+                    'host' => "claude.ai",
+                    'deny' => "拒绝",
+                    'allow' => "允许",
+                ],
+            ],
+            'key' => [
+                'eyebrow' => "方式 B · API 密钥",
+                'title' => "适用于开发者工具和自定义 MCP 客户端。",
+                'body' => "在 Monica 的账户设置里，为你的助手创建一个专用的 API 密钥。按你所选客户端的说明，把这个密钥配置为远程 MCP 端点的 Bearer 凭据。",
+                'header' => "Authorization 请求头示意",
+                'headerNote' => "这是 HTTP 请求头的概念示意，不是通用的、可直接复制粘贴的客户端配置。具体语法取决于客户端。",
+                'prompt' => "在我的“个人”保险库里找到 Gunther。",
+                'caption' => "每个助手一个密钥，各自可单独撤销。",
+                'screen' => [
+                    'label' => "Monica 的 API 密钥设置。列出两个密钥：“我的 AI 助手”，今天创建，一分钟前使用过；以及“工作笔记本上的 Cursor”，10 月创建。每个都有一个撤销按钮。",
+                    'title' => "API 密钥",
+                    'keys' => [
+                        ['name' => "我的 AI 助手", 'meta' => "今天创建 · 一分钟前使用"],
+                        ['name' => "工作笔记本上的 Cursor", 'meta' => "10 月 12 日创建 · 昨天使用"],
+                    ],
+                    'revoke' => "撤销",
+                    'create' => "创建密钥",
+                ],
+            ],
+            'selfHosted' => "用你自己的服务器？把托管版端点换成",
+            'guides' => "阅读分步连接指南",
+        ],
+
+        'clients' => [
+            'title' => "带上你已经在用的助手。",
+            'body' => "Monica 使用 Model Context Protocol，而不是绑定某一家 AI 服务商的专有集成。它可以连接到兼容的远程 MCP 客户端，文档里包含以下客户端的设置说明：",
+            'label' => "有连接指南的客户端",
+            'note' => "不同客户端配置 MCP 服务器的方式不同，访问权限也可能取决于客户端或订阅方案。请按照适合你的设置的指南操作。",
+            'cta' => "查看客户端设置说明",
+        ],
+
+        'structured' => [
+            'title' => "给你的智能体的，不只是一堆文字。",
+            'body' => [
+                "Monica 把信息存进反映日常生活的记录里。人有关系和经历。生活事件有日期和参与者。物品可以有购买记录、维护记录、位置和借出记录。知识存放在笔记、文件夹和清单里。",
+                "这样的结构，让你的助手有具体的信息可以查找和更新，也让你有一个熟悉的界面，自己来查看。",
+                "助手可以找到一个人，以 Markdown 打开他更完整的档案，沿着他的关系查看，读取他的生活事件，并返回对应 Monica 页面的链接。",
+            ],
+            'callout' => "结构化的个人数据，人和 AI 助手都能使用。",
+            'caption' => "结构化的记录，不会被锁在聊天里。",
+            'screen' => [
+                'label' => "Monica 中 Ross Geller 的页面。他的关系：Monica Geller，妹妹；Rachel Green，关系复杂；Emma，女儿。他的生活事件：2001 年成为古生物学教授，以及 1999 年在拉斯维加斯的第三次婚礼。他借走了你的节日犰狳服装。",
+                'name' => "Ross Geller",
+                'meta' => "古生物学家 · 朋友",
+                'relationships' => "关系",
+                'rows' => [
+                    ['who' => "Monica Geller", 'what' => "妹妹"],
+                    ['who' => "Rachel Green", 'what' => "关系复杂"],
+                    ['who' => "Emma Geller-Green", 'what' => "女儿"],
+                ],
+                'events' => "生活事件",
+                'entries' => [
+                    ['what' => "成为古生物学教授", 'when' => "2001"],
+                    ['what' => "在拉斯维加斯结婚（第三次）", 'when' => "1999"],
+                ],
+                'has' => "借走了你的节日犰狳服装",
+            ],
+        ],
+
+        'visibility' => [
+            'title' => "知道你的智能体访问了什么。",
+            'lead' => "当你把助手连接到个人信息时，可见性很重要。",
+            'body' => [
+                "Monica 提供专门的 MCP 历史，显示已连接助手发出的工具调用。你可以查看助手、操作、结果，以及历史中可用的请求和响应详情。",
+                "每个已连接的助手都可以单独断开。撤销一个连接，不会抹去已经存在 Monica 里的信息，也不会断开你的其他助手。",
+            ],
+            'points' => [
+                "查看最长 90 天的 MCP 调用历史。",
+                "按助手、日期、结果和工具分组并筛选操作。",
+                "撤销单个 OAuth 连接或 API 密钥。",
+                "把选定的模板字段标记为敏感；通过 OAuth 连接的助手无法读取这些字段的值。",
+            ],
+            'warning' => "已连接的助手可以访问整个账户。Monica 目前不提供只读或按保险库的 MCP 权限。批准每个连接之前，请先检查。",
+            'caption' => "查看你的助手发出的调用，并逐个断开它们。",
+            'screen' => [
+                'label' => "Monica 的 MCP 调用历史，筛选为最近 7 天。共四次调用：ChatGPT 今天 09:14 使用了 list-possession-loans，Claude 昨天 18:02 使用了 create-possession-loan，Cursor 昨天 11:30 使用了 search-knowledge，Claude 周一使用了 get-contact-markdown，失败了。第一次调用已展开，其中一个敏感值被遮盖。",
+                'title' => "MCP 历史",
+                'filters' => ["所有助手", "最近 7 天", "所有结果"],
+                'calls' => [
+                    ['ChatGPT', 'openai', 'list-possession-loans', "今天 09:14", true],
+                    ['Claude', 'claude', 'create-possession-loan', "昨天 18:02", true],
+                    ['Cursor', 'cursor', 'search-knowledge', "昨天 11:30", true],
+                    ['Claude', 'claude', 'get-contact-markdown', "周一 22:47", false],
+                ],
+                'request' => "请求",
+                'response' => "响应",
+                'failed' => "失败",
+            ],
+        ],
+
+        'reference' => [
+            'title' => "建立在开放协议之上。为你的环境做好准备。",
+            'lead' => "Monica 通过 HTTPS 开放一个使用 Streamable HTTP 的远程 MCP 端点。MCP 工具沿用 Monica 现有的应用 API 行为和账户规则，所以你处理的，就是你在网页应用里看到的同一批个人记录。",
+            'head' => ["能力", "Monica MCP 服务器"],
+            'rows' => [
+                ["协议", "Model Context Protocol（MCP）"],
+                ["传输", "基于 HTTPS 的远程 Streamable HTTP"],
+                ["端点", "托管版或自托管 Monica 实例上的 /mcp"],
+                ["认证", "OAuth 或 Bearer API 密钥"],
+                ["工具目录", "236 个已注册的工具"],
+                ["MCP 原语", "只有工具；没有公开的 MCP 资源或提示词"],
+                ["数据", "人、关系、生活事件、提醒、笔记、清单、物品、地点等"],
+                ["托管版请求限制", "每个连接每分钟 60 次 MCP 调用"],
+                ["自托管", "可用；应用不设 MCP 速率限制"],
+                ["文档", "/docs/mcp 和 /docs/mcp.md"],
+            ],
+            'hosted' => "远程 MCP 端点",
+            'pattern' => "自托管端点格式",
+            'note' => "Monica 不是 MCP 框架，也不是自动提取记忆的服务。助手自己决定何时调用工具，以及发送什么信息。",
+            'docs' => "打开 MCP 文档",
+            'github' => "了解开源代码",
+        ],
+
+        'selfHosting' => [
+            'title' => "你的服务器。你的个人数据。你来选。",
+            'body' => [
+                "Monica 以 AGPL-3.0 许可开源，可以自托管。在你控制的基础设施上运行个人数据库及其内置的 MCP 服务器，或者使用 Monica 的托管服务，连接到它的远程端点。",
+                "免费托管账户和自托管安装都可使用同样的核心 MCP 集成。如果你自托管，服务器的部署、安全、备份和可用性由你负责。",
+            ],
+            'cta' => "了解自托管",
+        ],
+
+        'compare' => [
+            'title' => "不只是一个 MCP 端点。是它背后数据的家。",
+            'lead' => "只有当背后的信息依然容易理解、便于管理时，MCP 服务器才有用。Monica 把应用、数据库和智能体连接放在一起提供。",
+            'head' => ["独立的 MCP 集成", "Monica"],
+            'rows' => [
+                ["把助手连接到工具", "是", "是"],
+                ["包含好用的个人信息应用", "取决于实现", "是"],
+                ["结构化的人、事件和物品", "取决于后端", "内置"],
+                ["人能读懂的记录", "取决于后端", "是"],
+                ["单个助手的连接历史", "取决于实现", "是"],
+                ["开源且可自托管", "取决于项目", "是"],
+            ],
+            'caption' => "独立的 MCP 集成与 Monica 各自提供的内容",
+            'closing' => "为数据所属的人而造，而不只是为访问它的智能体。",
+        ],
+
+        'faq' => [
+            'title' => "常见问题",
+            'items' => [
+                ['q' => "什么是 Monica MCP 服务器？", 'a' => "它是 Monica 内置的 Model Context Protocol（MCP）服务器，让兼容的 AI 助手可以使用工具，读取和修改存放在 Monica 里的受支持的个人数据。"],
+                ['q' => "Monica 是开源的 MCP 服务器吗？", 'a' => "是。Monica 是以 AGPL-3.0 许可开源的应用，它的 MCP 服务器包含在应用里。你可以使用托管服务，也可以自托管 Monica。"],
+                ['q' => "MCP 端点的网址是什么？", 'a' => "在托管服务上，远程 MCP 端点是 https://my.monicahq.com/mcp。自托管实例会在它自己的公开地址上开放 /mcp。"],
+                ['q' => "Monica 支持远程 MCP 连接吗？", 'a' => "支持。Monica 使用基于 HTTPS 的 Streamable HTTP。它不提供单独的本地 stdio MCP 服务器。你的客户端需要支持远程 MCP。"],
+                ['q' => "我可以把 Claude 或 ChatGPT 连接到 Monica 吗？", 'a' => "Monica 为 Claude Desktop 和 ChatGPT，以及面向开发者的客户端提供设置说明。是否可用和设置要求，取决于客户端，有时还取决于订阅方案。请查阅最新的 MCP 文档，了解受支持的流程。"],
+                ['q' => "Monica 支持 OAuth 认证吗？", 'a' => "支持。受支持的客户端可以使用交互式的 OAuth 授权流程。对于需要手动配置的客户端，Monica 也支持 Bearer API 密钥。"],
+                ['q' => "我可以让多个 AI 助手使用同一份 Monica 数据吗？", 'a' => "可以。你可以把多个助手连接到同一个 Monica 账户。每个连接都可以单独管理和撤销，助手可以在其连接的权限范围内访问同一份账户数据。"],
+                ['q' => "Monica 提供多少个 MCP 工具？", 'a' => "Monica 注册了 236 个 MCP 工具。工具是否可用，取决于账户权限、管理员权限和已启用的功能。"],
+                ['q' => "MCP 工具可以处理哪些数据？", 'a' => "受支持的工具涵盖人、关系、生活事件、提醒、知识库笔记和清单、物品、地点、模板，以及其他个人记录类型。网页应用支持的操作，并非都能通过 MCP 使用。"],
+                ['q' => "助手可以在 Monica 里存某个人的电话号码或生日吗？", 'a' => "目前的 MCP 工具还不行。助手可以按姓名创建联系人，并管理许多相关的记录，但编辑一个人的详细档案字段，需要使用 Monica 的网页界面或 JSON API。"],
+                ['q' => "我可以给 AI 助手只读权限吗？", 'a' => "目前不行。标准的已连接助手拥有范围广泛的、覆盖整个账户的访问权限。Monica 还没有提供只读或按保险库的 MCP 访问设置。部分模板字段可以标记为敏感，这样通过 OAuth 连接的助手就无法读取这些值。"],
+                ['q' => "Monica 会自动记住我告诉助手的一切吗？", 'a' => "不会。Monica 不会监听你的对话，也不会自动提取记忆。信息是在你的 AI 助手调用 Monica 的 MCP 工具时才被存储或取回。"],
+                ['q' => "免费方案可以使用 MCP 吗？", 'a' => "可以。免费的托管账户可以使用 MCP 服务器，受常规账户限制和服务器端速率限制约束。也可以选择自托管。"],
+                ['q' => "我能看到我的 AI 智能体做了什么吗？", 'a' => "能。Monica 提供 MCP 工具调用的历史，包括请求和响应详情，最长保留 90 天。你也可以单独断开各个助手。"],
+                ['q' => "我可以在自托管实例上使用 Monica MCP 吗？", 'a' => "可以。把托管版的 MCP 端点换成你实例上的 /mcp 端点。要让你的 MCP 客户端能安全地访问到它，是你的责任。"],
+                ['q' => "Monica 提供语义搜索或自动记忆提取吗？", 'a' => "不提供。Monica 提供结构化的记录和关键词搜索。任何自动存储或取回信息的决定，都取决于已连接的助手。"],
+            ],
+        ],
+
+        'closing' => [
+            'title' => "你的个人数据库，已为你的 AI 智能体准备就绪。",
+            'body' => "连接一个兼容的助手，了解 Monica 的 MCP 工具，开始建立一个对你和你所选的智能体都好用的个人信息系统。",
+            'connect' => "连接 AI 助手",
+            'start' => "免费开始",
+            'aiMemory' => "想了解 AI 记忆面向人的那一面？",
+            'note' => "开源 · 可自托管 · 内置 MCP",
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.
@@ -3125,5 +4175,105 @@ return [
     'notFound' => [
         'title' => "页面未找到。",
         'body' => "这个地址没有指向任何地方。它可能已被移走，也可能从未存在过。",
+    ],
+
+    /**
+     * The handbook (`_layouts/handbook`, `_partials/handbook/`). Read in the
+     * locales listed in $handbookSlugs in config.php, so a locale that drops
+     * out of that list can lose this block with its articles.
+     *
+     * The articles are Markdown in source/_handbook_<locale>/; this is only
+     * the frame around them.
+     */
+    'handbook' => [
+        'title' => "我们的手册",
+        'intro' => "这本手册讲的是我做什么、怎么想，以及我想如何推进这个项目。做好准备，它写得很棒。至少我这么觉得。",
+        'art' => "一只熊猫坐在一摞书和一杯咖啡之间读书",
+        'contents' => "目录",
+        'sections' => [
+            'general' => "概况",
+            'product' => "产品",
+            'engineering' => "工程",
+            'community' => "社区与开源",
+            'privacy' => "隐私与安全",
+            'marketing' => "营销",
+            'business' => "经营一门生意",
+            'relationships' => "人际关系",
+        ],
+        'articles' => ":count 篇文章",
+        'words' => ":count 字",
+        'minutes' => "阅读约 :count 分钟",
+
+        'actions' => [
+            'label' => "在别处使用这篇文章",
+            'copy' => "复制给 LLM",
+            'copied' => "已复制为 Markdown",
+            'markdown' => "查看 Markdown 版本",
+            'claude' => "在 Claude 中打开",
+            'chatgpt' => "在 ChatGPT 中打开",
+
+            // The question each assistant is opened with. :url is the
+            // article's Markdown file.
+            'prompt' => "阅读 :url，并帮我理解它。我可能会有一些问题。",
+        ],
+
+        'writtenBy' => "作者",
+        'author' => "Régis Freyd",
+        'authorRole' => "联合创始人",
+
+        // :percent is the article's length as a share of the book's.
+        'comparison' => "这只占 :author 所著《:title》字数的 :percent",
+
+        // One book per article, picked from the article's slug, so the same
+        // article always compares itself to the same book. Word counts are
+        // rounded, as the comparison is.
+        'books' => [
+            ['title' => "堂吉诃德", 'author' => "塞万提斯", 'words' => 430000],
+            ['title' => "双城记", 'author' => "查尔斯·狄更斯", 'words' => 135000],
+            ['title' => "魔戒", 'author' => "托尔金", 'words' => 455000],
+            ['title' => "小王子", 'author' => "圣埃克苏佩里", 'words' => 16000],
+            ['title' => "哈利·波特与魔法石", 'author' => "J.K. 罗琳", 'words' => 77000],
+            ['title' => "霍比特人", 'author' => "托尔金", 'words' => 95000],
+            ['title' => "无人生还", 'author' => "阿加莎·克里斯蒂", 'words' => 66000],
+            ['title' => "红楼梦", 'author' => "曹雪芹", 'words' => 845000],
+            ['title' => "麦田里的守望者", 'author' => "J.D. 塞林格", 'words' => 73000],
+            ['title' => "达·芬奇密码", 'author' => "丹·布朗", 'words' => 138000],
+        ],
+
+        'factTitle' => "随机冷知识，免得我们蠢死",
+
+        // One per article, picked from its slug like the book above.
+        'facts' => [
+            "第一个计算机病毒诞生于 1983 年，名叫“Elk Cloner”。它通过软盘感染 Apple II 电脑。",
+            "第一台网络摄像头用在剑桥大学，用来监控一个咖啡壶，免得研究人员白跑一趟，去看一只空壶。",
+            "Windows 最初的名字是“Interface Manager”（界面管理器）。幸好他们换了个更好记的。",
+            "有史以来第一个网站至今仍在线。它由 Tim Berners-Lee 于 1991 年创建，内容就是万维网项目本身。",
+            "Firefox 的标志不是狐狸，而是红熊猫。“Firefox”是红熊猫的一个别称。",
+            "第一封电子邮件由 Ray Tomlinson 于 1971 年发给他自己，是一条包含随机字母的测试信息。",
+            "20 世纪 50 年代，计算机被称为“电子大脑”，编程则被视为“女人的活儿”。",
+            "软件里的“bug”一词，源于 1947 年一只真正的飞蛾让哈佛 Mark II 计算机出了故障。",
+            "Amazon 最初叫“Cadabra”，取自“abracadabra”。后来因为听起来太像“cadaver”（尸体）而改了名。",
+            "第一只电脑鼠标是木头做的，由 Doug Engelbart 于 1964 年发明。",
+            "互联网上有超过 15 亿个网站，但活跃的不到 2 亿个。",
+            "QWERTY 键盘布局的设计，是为了放慢打字速度，避免机械打字机卡键。",
+            "第一个注册的域名是 Symbolics.com，注册于 1985 年 3 月 15 日，至今仍在使用。",
+            "电子邮件地址选用“@”符号，是因为它在计算领域很少使用，不会与现有协议冲突。",
+            "“冲浪互联网”一词由图书管理员 Jean Armour Polly 于 1992 年创造，她写了一篇题为“Surfing the Internet”的文章。",
+            "CAPTCHA 是“Completely Automated Public Turing test to tell Computers and Humans Apart”（全自动区分计算机和人类的公开图灵测试）的缩写。",
+            "1980 年发布的第一块 1GB 硬盘，重达 500 多磅，售价 4 万美元。",
+            "Google 最初叫“Backrub”，因为这套系统通过检查反向链接来估计网站的重要性。",
+            "第一个 YouTube 视频题为“Me at the zoo”，由平台联合创始人之一 Jawed Karim 于 2005 年 4 月 23 日上传。",
+            "2023 年最常见的密码仍然是“123456”，紧随其后的是“password”。",
+            "最初的《Space Invaders》游戏太受欢迎，一度造成日本 100 日元硬币短缺。",
+            "第一位计算机程序员是 19 世纪 40 年代的 Ada Lovelace，那时计算机还没造出来。",
+            "垃圾邮件被称为“spam”，源自 Monty Python 的一个短剧，其中这个词被不断重复。",
+            "有史以来第一个搜索引擎叫“Archie”，创建于 1990 年，用来为 FTP 站点建立索引。",
+            "第一笔在线交易，是 20 世纪 70 年代初斯坦福和麻省理工的学生通过 ARPANET 买卖大麻。",
+            "运行时间最长的计算机程序是“Doomsday Flight”模拟，自 1973 年起运行，用来测试航空公司的软件。",
+            "“404 错误”得名于 CERN 的一个房间，最初的网络服务器就放在那里。",
+            "有史以来第一款电脑游戏是 1962 年的《Spacewar》，由 Steve Russell 在麻省理工开发。",
+            "“robot”（机器人）一词来自捷克语“robota”，意思是“强制劳动”或“苦差事”。",
+            "“@”符号在意大利语里叫“蜗牛”，在荷兰语里叫“猴尾巴”。",
+        ],
     ],
 ];

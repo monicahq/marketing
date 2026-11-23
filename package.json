@@ -4,8 +4,10 @@
   "scripts": {
     "dev": "vite",
     "serve": "vendor/bin/jigsaw serve",
-    "build": "vite build && vendor/bin/jigsaw build production",
+    "build": "vite build && vendor/bin/jigsaw build production && php scripts/seo/check.php build_production",
     "links": "php scripts/links/check.php build_production",
+    "seo:check": "php scripts/seo/check.php build_production",
+    "seo:report": "php scripts/seo/check.php build_production --report",
     "og": "bash scripts/og/generate.sh"
   },
   "devDependencies": {

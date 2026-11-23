@@ -72,48 +72,66 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica — your personal database and open-source personal CRM",
+            'title' => "Open-source personal CRM and personal database — Monica",
             'description' => "Monica is your personal database: document your contacts, everything you own, and everything you need to remember. Private, open source, self-hostable.",
+            'ogTitle' => "Your people. Your things. Your memories — Monica",
+            'ogDescription' => "Keep your contacts, belongings and everyday details together in Monica. A personal database you can use yourself or connect to your AI assistants.",
         ],
 
         'pricing' => [
-            'title' => "Monica pricing: self-host for free, or let Monica host it",
-            'description' => "Self-host Monica for free, or let Monica host it for $9 USD a month, $90 a year or $250 once. Every plan has every feature, with unlimited contacts and no per-contact pricing.",
+            'title' => "Monica pricing: hosted plans and free self-hosting",
+            'description' => "Self-host Monica for free, or choose hosting for \$9 USD/month, \$90/year or \$250 once. Every plan includes all features, with no per-contact fees.",
+            'ogTitle' => "Your server or ours. Your choice — Monica",
+            'ogDescription' => "Host Monica yourself for free, or choose monthly, yearly or lifetime hosting. All plans include every feature, with no per-contact fees.",
         ],
 
         'privacy' => [
             'title' => "Privacy policy — Monica",
             'description' => "How Monica handles your data: what we collect, where it is stored, who can see it, and what happens when you close your account. No ads, no trackers, no data resale.",
+            'ogTitle' => "Privacy policy — Monica",
+            'ogDescription' => "How Monica handles your data: what we collect, where it is stored, who can see it, and what happens when you close your account. No ads, no trackers, no data resale.",
         ],
 
         'about' => [
-            'title' => "About — Monica",
-            'description' => "Monica is an open-source personal database made by two people, Régis and Alexis. No investors, no advertising, no data sold. How it started, and what will never be on the roadmap.",
+            'title' => "About Monica: an independent open-source project",
+            'description' => "Meet Régis and Alexis, the people behind Monica. Learn how this independent, open-source personal database started and what guides its development.",
+            'ogTitle' => "Two people, one personal database — Monica",
+            'ogDescription' => "Meet the people behind Monica, see how the project started and learn why it stays open source, independent and free of advertising.",
         ],
 
         'team' => [
             'title' => "Team — Monica",
             'description' => "Monica is built by two people in Montreal, with hundreds of open-source contributors. Why we build a personal CRM that does not harm human relationships.",
+            'ogTitle' => "Monica is a team of 2. With hundreds of contributors.",
+            'ogDescription' => "Monica is built by two people in Montreal, with hundreds of open-source contributors. Why we build a personal CRM that does not harm human relationships.",
         ],
 
         'contribute' => [
-            'title' => "Contribute — Monica",
-            'description' => "Monica is open source, built on nights and weekends since 2017. How you can help: review the documentation, translate the app, and spend your own AI tokens on our open issues.",
+            'title' => "Contribute to Monica: code, docs and translations",
+            'description' => "Help build Monica with code, documentation, translations or fixes. Find practical ways to contribute to an independent, open-source personal database.",
+            'ogTitle' => "Help us keep Monica going.",
+            'ogDescription' => "Good documentation, thoughtful translations and useful fixes all help. Find a way to contribute to Monica, whether or not you write code.",
         ],
 
         'support' => [
-            'title' => "Support — Monica",
+            'title' => "Monica support and documentation",
             'description' => "Write to the people who build Monica, Monday to Friday, or start with the documentation: using Monica, the API, MCP, and CardDAV and CalDAV.",
+            'ogTitle' => "Help with Monica, from the people who build it",
+            'ogDescription' => "Write to us about anything that does not work the way you expect, or start with the documentation that ships inside the app.",
         ],
 
         'terms' => [
             'title' => "Terms of use — Monica",
             'description' => "The terms of use for Monica, the open-source personal database: what the service covers, your rights over your data, your responsibilities, and the legal small print.",
+            'ogTitle' => "Terms of use — Monica",
+            'ogDescription' => "The terms of use for Monica, the open-source personal database: what the service covers, your rights over your data, your responsibilities, and the legal small print.",
         ],
 
         'blog' => [
-            'title' => "The Monica blog — release notes and product decisions",
+            'title' => "Monica blog: release notes and product decisions",
             'description' => "What we ship, why we build it that way, and what running a small open-source company actually looks like. Written by the people making Monica.",
+            'ogTitle' => "Building Monica, one decision at a time",
+            'ogDescription' => "Release notes, product decisions and the occasional lesson from running a small open-source project. Written by the people building Monica.",
         ],
 
         // A post brings its own title and description, so this is only the
@@ -123,8 +141,10 @@ return [
         ],
 
         'handbook' => [
-            'title' => "The Monica handbook — how the project is run",
+            'title' => "The Monica handbook: how the project is run",
             'description' => "What the project is, the principles behind it, how it makes money, why it is open source, and how marketing and priorities are decided. Written by its maintainer.",
+            'ogTitle' => "The Monica handbook",
+            'ogDescription' => "How Monica is built and run: the principles, tradeoffs and everyday decisions behind an independent open-source project.",
         ],
 
         // Like a post, an article brings its own title and description.
@@ -135,80 +155,111 @@ return [
         // Page 2 of a list is not the list. Without this, four pages of the
         // blog compete for one result under one title.
         'paginated' => ":title (page :page of :total)",
+        'paginatedDescription' => "Browse page :page of :total of the Monica blog: release notes, product decisions and notes from the people building Monica.",
 
         'v3' => [
             'title' => "Monica v3 — rebuilt for the next ten years",
-            'description' => "Monica v3 is a ground-up rebuild of the open-source personal database: records you design, a journal connected to everything, a complete API, and a proper mobile experience. Still open source. Coming before the end of 2026.",
+            'description' => "Explore the Monica v3 rebuild: custom records, a connected journal, a complete API and a better mobile experience. Open source, coming before the end of 2026.",
+            'ogTitle' => "Monica v3: what we are rebuilding",
+            'ogDescription' => "See what is coming in Monica v3: records you design, a connected journal, a complete API and a better mobile experience. Still open source.",
         ],
 
         'templates' => [
-            'title' => "Your contacts, your way: contact templates in Monica",
+            'title' => "Contact templates and custom fields — Monica",
             'description' => "Build contact templates with your own fields, sections and tabs. Different templates for friends, family and work, versions you publish when ready, and sections you can share.",
+            'ogTitle' => "Your contacts, your way — Monica",
+            'ogDescription' => "Remember what matters to you. Build contact templates with your own fields, sections and tabs, so every person’s page has room for the details you want to keep.",
         ],
 
         'details' => [
-            'title' => "Remember the details that matter: contact pages in Monica",
+            'title' => "Personal contact management software — Monica",
             'description' => "Keep the details people share with you together: what they told you last time, the little things, the people around them, and the moments you shared.",
+            'ogTitle' => "Remember the details that matter — Monica",
+            'ogDescription' => "Their number is in your phone. The name of their new partner, their favourite meal, and what they told you last time might be harder to find.",
         ],
 
         'reminders' => [
-            'title' => "Remember to reach out: reminders in Monica",
+            'title' => "Birthday reminders and personal follow-ups — Monica",
             'description' => "Set a reminder for a birthday, a big day or a friend you mean to call. Once or on a rhythm, in their time zone, by email or in Monica, and a record of what you remembered.",
+            'ogTitle' => "Remember to reach out — Monica",
+            'ogDescription' => "A birthday. A big day. A friend you have been meaning to call.",
         ],
 
         'timeline' => [
-            'title' => "Keep the moments worth remembering: the timeline in Monica",
+            'title' => "Personal timeline and life events — Monica",
             'description' => "Record what happened, who was there and the details you want to keep. Life events on everyone’s timeline at once, your own event types and fields, and a look back year by year.",
+            'ogTitle' => "Keep the moments worth remembering — Monica",
+            'ogDescription' => "Record what happened, who was there, and the details you want to keep. Monica brings those moments together in a timeline you can return to.",
         ],
 
         'relationships' => [
-            'title' => "Understand how people are connected: relationships in Monica",
-            'description' => "Keep track of the people around someone, with relationships that read correctly from both sides. Family trees, people you have not met yet, past relationships and your own relationship types.",
+            'title' => "Personal relationships and family connections — Monica",
+            'description' => "Track family, friends and partners with two-way relationships, family trees and relationship history. Define relationship types that fit the people in your life.",
+            'ogTitle' => "Understand how people are connected — Monica",
+            'ogDescription' => "Keep track of the people around someone, with relationships that make sense from both sides.",
         ],
 
         'vaults' => [
-            'title' => "A place for each part of your life: vaults in Monica",
+            'title' => "Organize your contacts in separate vaults — Monica",
             'description' => "Keep friends, family and colleagues together or give each group its own space. Each vault has its own contacts, timeline, reminders and default template, all inside your account.",
+            'ogTitle' => "A place for each part of your life — Monica",
+            'ogDescription' => "Keep them together or give each group its own space. Vaults help you organise Monica around your life.",
         ],
 
         'sharing' => [
-            'title' => "Share only what you choose: sharing in Monica",
+            'title' => "Share selected contact details privately — Monica",
             'description' => "Share selected sections of a contact’s page through a read-only link. Choose what it shows, give it an end date or a password, see when it was opened, and revoke it at any time.",
+            'ogTitle' => "Share only what you choose — Monica",
+            'ogDescription' => "Share selected sections of a contact’s page through a read-only link. Choose what it shows, how long it works, and when to stop access.",
         ],
 
         'api' => [
-            'title' => "Your contacts, connected to your tools: the Monica API and MCP server",
+            'title' => "Personal CRM API and assistant integrations — Monica",
             'description' => "Use Monica with Claude, ChatGPT, Gemini or your own scripts. Connect an assistant through Monica’s MCP server, or build your own connection with the JSON API and an API key.",
+            'ogTitle' => "Your contacts, connected to your tools — Monica",
+            'ogDescription' => "Use Monica with Claude, ChatGPT, Gemini or your own scripts. Look up a contact, record a moment, or set a reminder from the tools you already use.",
         ],
 
         'privacyFeatures' => [
-            'title' => "Personal details deserve a private place: privacy in Monica",
-            'description' => "Mark fields as sensitive, share only selected sections, control what API keys and assistants can read, protect your account with passkeys and two-factor authentication, and review its activity.",
+            'title' => "Personal CRM privacy and security controls — Monica",
+            'description' => "Control sensitive fields, shared sections and assistant access in Monica. Protect your account with passkeys and two-factor authentication, and review its activity.",
+            'ogTitle' => "Personal details deserve a private place — Monica",
+            'ogDescription' => "You record things about people because they matter to you. Choose what you keep, what you share, and which tools can access it.",
         ],
 
         'languages' => [
-            'title' => "Your language, their names: languages and formats in Monica",
+            'title' => "Multilingual personal CRM and name formats — Monica",
             'description' => "Use Monica in more than 30 languages. Write names in the order and forms people use, choose a display name, and set your own date, time, number and time zone preferences.",
+            'ogTitle' => "Your language. Their names — Monica",
+            'ogDescription' => "Use Monica in a language you feel at home in. Keep people’s names in the forms they use, and choose how dates, times and numbers appear.",
         ],
 
         'aiMemory' => [
-            'title' => "One memory for your AI assistants: personal AI memory with Monica",
+            'title' => "Personal AI memory for your assistants — Monica",
             'description' => "Monica gives Claude, ChatGPT and other compatible assistants a shared, persistent personal memory through its MCP server. Open source, self-hostable, and usable without AI.",
+            'ogTitle' => "Your assistants may change. Your memory stays yours — Monica",
+            'ogDescription' => "Give compatible AI assistants a shared place to remember your people and everyday details. Open Monica to organize those memories yourself, with or without AI.",
         ],
 
         'mcpServer' => [
-            'title' => "Monica MCP server: connect AI assistants to your personal data",
+            'title' => "Monica MCP server for your personal data",
             'description' => "Connect AI assistants to Monica’s open-source personal database with a remote MCP server, 236 tools, OAuth or API keys, and self-hosting support.",
+            'ogTitle' => "Your personal data, connected to your AI agents — Monica",
+            'ogDescription' => "Connect a compatible assistant to Monica through MCP. Read and update structured personal records with scoped access, using OAuth or an API key.",
         ],
 
         'personalData' => [
             'title' => "Personal information management software — Monica",
             'description' => "Organize your contacts, belongings, notes, life events and everyday details in one personal database. Meet Monica, the open-source digital life organizer.",
+            'ogTitle' => "A home for the details of your life — Monica",
+            'ogDescription' => "People, notes, belongings, important moments, and reminders. One personal place for everything you don't want to forget.",
         ],
 
         'personalCrm' => [
             'title' => "What is a personal CRM? A practical guide — Monica",
             'description' => "What a personal CRM is, how it differs from an address book and sales CRM, what to store, the privacy tradeoffs, and how to choose the right approach.",
+            'ogTitle' => "What is a personal CRM, and would you use one? — Monica",
+            'ogDescription' => "An address book remembers a number. A personal CRM helps you remember the person. Learn what to keep, what to leave out and how to choose one.",
         ],
     ],
 
@@ -4140,13 +4191,12 @@ return [
     ],
 
     /**
-     * The handbook (`_layouts/handbook`, `_partials/handbook/`). English only
-     * for now: the handbook exists in the locales listed in $handbookSlugs in
-     * config.php, so these keys are only ever read in English. They move to
-     * the other files with the articles themselves.
+     * The handbook (`_layouts/handbook`, `_partials/handbook/`). Read in the
+     * locales listed in $handbookSlugs in config.php, so a locale that drops
+     * out of that list can lose this block with its articles.
      *
-     * The articles are Markdown in source/_handbook_en/; this is only the
-     * frame around them.
+     * The articles are Markdown in source/_handbook_<locale>/; this is only
+     * the frame around them.
      */
     'handbook' => [
         'title' => "Our handbook",

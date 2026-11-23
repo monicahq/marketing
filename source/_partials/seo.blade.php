@@ -28,6 +28,11 @@
         $description = $page->t("meta.{$page->page}.description");
     }
 
+    // Articles already have their own editorial title and summary. Landing
+    // pages keep separate search and sharing copy in their locale dictionary.
+    $ogTitle = ($isPost || $isArticle) ? $page->title : $page->t("meta.{$page->page}.ogTitle");
+    $ogDescription = ($isPost || $isArticle) ? $description : $page->t("meta.{$page->page}.ogDescription");
+
     // Jigsaw hands a paginated template its current page as a view variable.
     // `$page->pagination` is a different thing — the front-matter block that
     // asked for pagination in the first place — so it is deliberately not what
@@ -42,6 +47,12 @@
             ':page' => $number,
             ':total' => $pagination->totalPages,
         ]);
+        $description = $page->t('meta.paginatedDescription', [
+            ':page' => $number,
+            ':total' => $pagination->totalPages,
+        ]);
+        $ogTitle = $title;
+        $ogDescription = $description;
     }
 
     $canonical = $page->absolute($page->canonicalPath(null, $number));
@@ -66,6 +77,7 @@
     $software = $page->absolute('/#software');
     $webPage = $canonical . '#webpage';
     $breadcrumb = $canonical . '#breadcrumb';
+    $isProductPage = in_array($page->page, ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer'], true);
 
     // Where this page sits in the site. The bar under the header draws the
     // same trail (`_partials/breadcrumb.blade.php`), from the same helper.
@@ -112,8 +124,11 @@
                 'description' => $description,
                 'inLanguage' => $page->languageTag(),
                 'isPartOf' => ['@id' => $website],
+                'about' => $isProductPage ? ['@id' => $software] : null,
                 'breadcrumb' => count($trail) > 1 ? ['@id' => $breadcrumb] : null,
                 'datePublished' => $isPost ? $page->isoDate() : null,
+                'dateModified' => ($isPost || $isArticle) ? $page->lastmodDate() : null,
+                'primaryImageOfPage' => ['@type' => 'ImageObject', 'url' => $ogImage, 'width' => 1200, 'height' => 630],
             ]),
         ],
     ];
@@ -140,17 +155,14 @@
     }
 
     /**
-     * The product itself, on the two pages that are about buying it.
-     *
-     * Not on every page: SoftwareApplication describes a thing for sale, and
-     * repeating it under a 2017 release note tells a crawler nothing it did
-     * not already learn from the homepage. It keeps one @id on both, so the
-     * two pages describe one application rather than two.
+     * The product itself, on the product landing pages and pricing. The
+     * shared @id identifies one application across its different use cases.
+     * Editorial articles and individual feature pages keep their own types.
      *
      * No aggregateRating. We have no review data, and inventing one is the
      * fastest way to a manual action.
      */
-    if (in_array($page->page, ['home', 'pricing'], true)) {
+    if ($isProductPage) {
         $pricing = $page->absolute($page->localePath('pricing'));
         $currency = $page->plans['currency'];
 
@@ -224,21 +236,23 @@
     }
 
     /**
-     * A post says what it is, when it was written and who by. The body is
-     * translated, so `inLanguage` is the page's locale: the German page is a
-     * German article, not an English one with German chrome.
+     * Editorial pages identify their author and modification date. Only blog
+     * posts have a publication date; the handbook does not invent one from
+     * its last update. Translated articles declare their actual language.
      */
-    if ($isPost) {
+    if ($isPost || $isArticle) {
         $structuredData['@graph'][] = [
-            '@type' => 'BlogPosting',
-            '@id' => $canonical . '#post',
+            '@type' => $isPost ? 'BlogPosting' : 'Article',
+            '@id' => $canonical . ($isPost ? '#post' : '#article'),
             'mainEntityOfPage' => ['@id' => $webPage],
             'isPartOf' => ['@id' => $webPage],
             'headline' => $page->title,
             'description' => $description,
-            'datePublished' => $page->isoDate(),
+            ...($isPost ? ['datePublished' => $page->isoDate()] : []),
+            'dateModified' => $page->lastmodDate(),
             'inLanguage' => $page->languageTag(),
-            'author' => ['@type' => 'Person', 'name' => $page->author],
+            'author' => ['@type' => 'Person', 'name' => $isPost ? $page->author : $page->t('handbook.author')],
+            'image' => $ogImage,
             'publisher' => ['@id' => $organization],
         ];
     }
@@ -259,14 +273,17 @@
      The dead-link check resolves it like any other link. --}}
 <link rel="alternate" type="text/markdown" href="{{ $page->absolute($page->markdownPath($number)) }}">
 
-<meta property="og:type" content="{{ $isPost ? 'article' : 'website' }}">
+<meta property="og:type" content="{{ ($isPost || $isArticle) ? 'article' : 'website' }}">
 @if ($isPost)
     <meta property="article:published_time" content="{{ $page->isoDate() }}">
     <meta property="article:author" content="{{ $page->author }}">
 @endif
+@if ($isPost || $isArticle)
+    <meta property="article:modified_time" content="{{ $page->lastmodDate() }}">
+@endif
 <meta property="og:site_name" content="Monica">
-<meta property="og:title" content="{{ $title }}">
-<meta property="og:description" content="{{ $description }}">
+<meta property="og:title" content="{{ $ogTitle }}">
+<meta property="og:description" content="{{ $ogDescription }}">
 <meta property="og:url" content="{{ $canonical }}">
 <meta property="og:locale" content="{{ $page->ogLocales[$page->locale] }}">
 @foreach ($alternates as $alternate)

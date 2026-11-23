@@ -35,6 +35,10 @@ return [
             'api' => "API e MCP",
             'privacyFeatures' => "Privacidade e segurança",
             'languages' => "Idiomas e formatos",
+            'aiMemory' => "Memória para IA",
+            'personalData' => "Gestão de dados pessoais",
+            'mcpServer' => "Servidor MCP",
+            'handbook' => "Manual",
             'contribute' => "Contribuir",
             'page' => "Página :number",
             'label' => "Trilha de navegação",
@@ -48,48 +52,66 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica — o seu banco de dados pessoal e CRM pessoal de código aberto",
-            'description' => "A Monica é o seu banco de dados pessoal: documente seus contatos, tudo o que você possui e tudo de que precisa se lembrar. Privado, de código aberto, auto-hospedável.",
+            'title' => "CRM pessoal e banco de dados de código aberto — Monica",
+            'description' => "A Monica é o seu banco de dados pessoal: seus contatos, suas coisas e tudo de que precisa se lembrar. Privada, de código aberto e auto-hospedável.",
+            'ogTitle' => "Suas pessoas. Suas coisas. Suas memórias — Monica",
+            'ogDescription' => "Reúna seus contatos, seus bens e os detalhes do dia a dia na Monica. Um banco de dados pessoal que você usa sozinho ou conecta aos seus assistentes de IA.",
         ],
 
         'pricing' => [
-            'title' => "Preços da Monica: hospedagem própria de graça, ou deixe a Monica hospedar",
-            'description' => "Hospede a Monica de graça, ou deixe a Monica hospedar por 9 USD por mês, 90 USD por ano ou 250 USD uma única vez. Todos os planos têm todos os recursos, contatos ilimitados e nenhuma cobrança por contato.",
+            'title' => "Preços da Monica: planos hospedados e auto-hospedagem grátis",
+            'description' => "Auto-hospede a Monica de graça ou escolha hospedagem por 9 USD por mês, 90 USD por ano ou 250 USD uma única vez. Todos os recursos, sem preço por contato.",
+            'ogTitle' => "Seu servidor ou o nosso. Você escolhe — Monica",
+            'ogDescription' => "Hospede a Monica você mesmo, de graça, ou escolha hospedagem mensal, anual ou vitalícia. Todos os planos incluem todos os recursos, sem preço por contato.",
         ],
 
         'privacy' => [
             'title' => "Política de privacidade — Monica",
-            'description' => "Como a Monica trata os seus dados: o que coletamos, onde fica armazenado, quem pode ver e o que acontece quando você encerra a conta. Sem anúncios, sem rastreadores, sem revenda de dados.",
+            'description' => "Como a Monica trata seus dados: o que coletamos, onde ficam guardados, quem pode vê-los e o que acontece ao encerrar sua conta. Sem anúncios, sem rastreadores.",
+            'ogTitle' => "Política de privacidade — Monica",
+            'ogDescription' => "Como a Monica trata seus dados: o que coletamos, onde ficam guardados, quem pode vê-los e o que acontece ao encerrar sua conta. Sem anúncios, sem rastreadores, sem revenda de dados.",
         ],
 
         'about' => [
-            'title' => "Sobre nós — Monica",
-            'description' => "Quem faz a Monica, como tudo começou e o que nunca faremos. Duas pessoas, sem investidores, um banco de dados pessoal de código aberto.",
+            'title' => "Sobre a Monica: um projeto independente de código aberto",
+            'description' => "Conheça Régis e Alexis, as pessoas por trás da Monica. Como nasceu este banco de dados pessoal independente e de código aberto e o que guia seu desenvolvimento.",
+            'ogTitle' => "Duas pessoas, um banco de dados pessoal — Monica",
+            'ogDescription' => "Conheça as pessoas por trás da Monica, veja como o projeto começou e por que ele continua de código aberto, independente e sem publicidade.",
         ],
 
         'team' => [
             'title' => "Equipe — Monica",
-            'description' => "A Monica é feita por duas pessoas em Montreal, com centenas de pessoas contribuindo em código aberto. Por que construímos um CRM pessoal que não faz mal às relações humanas.",
+            'description' => "A Monica é feita por duas pessoas em Montreal, com centenas de colaboradores. Por que criamos um CRM pessoal que não prejudica as relações humanas.",
+            'ogTitle' => "A Monica é uma equipe de 2. Com centenas de colaboradores.",
+            'ogDescription' => "A Monica é feita por duas pessoas em Montreal, com centenas de colaboradores de código aberto. Por que criamos um CRM pessoal que não prejudica as relações humanas.",
         ],
 
         'contribute' => [
-            'title' => "Contribuir — Monica",
-            'description' => "A Monica é de código aberto, construída em noites e fins de semana desde 2017. Como você pode ajudar: revisar a documentação, traduzir o app e gastar seus próprios tokens de IA nas nossas issues abertas.",
+            'title' => "Contribua com a Monica: código, docs e traduções",
+            'description' => "Ajude a construir a Monica com código, documentação, traduções ou correções. Formas práticas de apoiar um projeto independente e de código aberto.",
+            'ogTitle' => "Ajude-nos a manter a Monica no ar.",
+            'ogDescription' => "Boa documentação, traduções cuidadosas e correções úteis ajudam. Encontre um jeito de contribuir com a Monica, escrevendo código ou não.",
         ],
 
         'support' => [
-            'title' => "Suporte — Monica",
-            'description' => "Escreva para as pessoas que desenvolvem o Monica, de segunda a sexta, ou comece pela documentação: usar o Monica, a API, MCP, e CardDAV e CalDAV.",
+            'title' => "Suporte e documentação da Monica",
+            'description' => "Escreva para quem faz a Monica, de segunda a sexta, ou comece pela documentação: usar a Monica, a API, o MCP, CardDAV e CalDAV.",
+            'ogTitle' => "Ajuda com a Monica, de quem a faz",
+            'ogDescription' => "Escreva para nós se algo não funcionar como você espera, ou comece pela documentação que acompanha o aplicativo.",
         ],
 
         'terms' => [
             'title' => "Termos de uso — Monica",
-            'description' => "Os termos de uso da Monica, o banco de dados pessoal de código aberto: o que o serviço cobre, os seus direitos sobre os seus dados, as suas responsabilidades e as letras miúdas jurídicas.",
+            'description' => "Os termos de uso da Monica, o banco de dados pessoal de código aberto: o que o serviço cobre, seus direitos, suas responsabilidades e as letras miúdas.",
+            'ogTitle' => "Termos de uso — Monica",
+            'ogDescription' => "Os termos de uso da Monica, o banco de dados pessoal de código aberto: o que o serviço cobre, seus direitos sobre seus dados, suas responsabilidades e as letras miúdas jurídicas.",
         ],
 
         'blog' => [
-            'title' => "O blog da Monica — notas de versão e decisões de produto",
-            'description' => "O que lançamos, por que construímos desse jeito e como é de verdade tocar uma pequena empresa de código aberto. Escrito por quem faz a Monica.",
+            'title' => "Blog da Monica: novidades e decisões de produto",
+            'description' => "O que lançamos, por que construímos assim e como é de verdade tocar uma pequena empresa de código aberto. Escrito por quem faz a Monica.",
+            'ogTitle' => "Construindo a Monica, uma decisão por vez",
+            'ogDescription' => "Novidades, decisões de produto e uma ou outra lição de tocar um pequeno projeto de código aberto. Escrito pelas pessoas que constroem a Monica.",
         ],
 
         // Um artigo traz o próprio título e a própria descrição, então aqui
@@ -98,71 +120,130 @@ return [
             'title' => ":title — o blog da Monica",
         ],
 
+        'handbook' => [
+            'title' => "O manual da Monica: como o projeto é conduzido",
+            'description' => "O que é o projeto, seus princípios, como ganha dinheiro, por que é de código aberto e como marketing e prioridades são decididos. Escrito por seu mantenedor.",
+            'ogTitle' => "O manual da Monica",
+            'ogDescription' => "Como a Monica é construída e conduzida: os princípios, as escolhas e as decisões do dia a dia de um projeto independente de código aberto.",
+        ],
+
+        // Como um artigo do blog, um artigo do manual traz o próprio título e
+        // a própria descrição.
+        'handbookArticle' => [
+            'title' => ":title — o manual da Monica",
+        ],
+
         // A página 2 de uma lista não é a lista. Sem isso, quatro páginas do
         // blog disputam um mesmo resultado sob um mesmo título.
         'paginated' => ":title (página :page de :total)",
+        'paginatedDescription' => "Explore a página :page de :total do blog da Monica: novidades, decisões de produto e notas de quem desenvolve a Monica.",
 
         'v3' => [
-            'title' => "Monica v3 — reconstruída para os próximos dez anos",
-            'description' => "A Monica v3 é uma reconstrução do zero do banco de dados pessoal de código aberto: fichas que você mesmo desenha, um diário conectado a tudo, uma API completa e uma experiência de verdade no celular. Continua de código aberto. Chega antes do fim de 2026.",
+            'title' => "Monica v3: reconstruída para os próximos dez anos",
+            'description' => "Conheça a reconstrução da Monica v3: registros próprios, diário conectado, API completa e melhor experiência no celular. Código aberto, antes do fim de 2026.",
+            'ogTitle' => "Monica v3: o que estamos reconstruindo",
+            'ogDescription' => "Veja o que vem na Monica v3: registros que você desenha, um diário conectado, uma API completa e melhor experiência no celular. Continua de código aberto.",
         ],
 
         // Um bloco por aba de recursos: cada aba tem a própria URL, e um
         // buscador que encontre as três precisa conseguir distingui-las.
 
         'templates' => [
-            'title' => "Seus contatos, do seu jeito: modelos de contato na Monica",
-            'description' => "Crie modelos de contato com campos, seções e abas próprios. Modelos diferentes para amigos, família e trabalho, versões publicadas quando você quiser e seções que podem ser compartilhadas.",
+            'title' => "Modelos de contato e campos personalizados — Monica",
+            'description' => "Crie modelos de contato com seus campos, seções e abas. Modelos para amigos, família e trabalho, publicados quando quiser, e seções compartilháveis.",
+            'ogTitle' => "Seus contatos, do seu jeito — Monica",
+            'ogDescription' => "Lembre-se do que importa para você. Crie modelos de contato com seus próprios campos, seções e abas, para que a ficha de cada pessoa tenha espaço para os detalhes que você quer guardar.",
         ],
 
         'details' => [
-            'title' => "Lembre-se dos detalhes que importam: as fichas de contato na Monica",
-            'description' => "Guarde juntos os detalhes que as pessoas contam para você: o que disseram da última vez, as pequenas coisas, as pessoas ao redor delas e os momentos compartilhados.",
+            'title' => "Software de gestão de contatos pessoais — Monica",
+            'description' => "Reúna os detalhes que as pessoas compartilham com você: o que contaram da última vez, as pequenas coisas, quem está ao redor delas e os momentos vividos juntos.",
+            'ogTitle' => "Lembre-se dos detalhes que importam — Monica",
+            'ogDescription' => "O número está no seu telefone. O nome do novo parceiro, a comida favorita e o que a pessoa contou da última vez podem ser mais difíceis de achar.",
         ],
 
         'reminders' => [
-            'title' => "Lembre-se de procurar as pessoas: os lembretes na Monica",
-            'description' => "Crie um lembrete para um aniversário, um dia importante ou um amigo para quem você quer ligar. Uma vez ou com um ritmo, no fuso horário da pessoa, por e-mail ou na Monica, e um registro do que você lembrou.",
+            'title' => "Lembretes de aniversário e acompanhamento pessoal — Monica",
+            'description' => "Crie um lembrete para um aniversário, um dia importante ou um amigo a quem você quer ligar. Uma vez ou com ritmo, no fuso da pessoa, por e-mail ou na Monica.",
+            'ogTitle' => "Lembre-se de entrar em contato — Monica",
+            'ogDescription' => "Um aniversário. Um dia importante. Um amigo para quem você anda querendo ligar.",
         ],
 
         'timeline' => [
-            'title' => "Guarde os momentos que valem a pena lembrar: a linha do tempo na Monica",
-            'description' => "Registre o que aconteceu, quem estava lá e os detalhes que você quer guardar. Eventos de vida na linha do tempo de todos de uma vez, seus próprios tipos de evento e campos, e um olhar para trás ano a ano.",
+            'title' => "Linha do tempo pessoal e eventos de vida — Monica",
+            'description' => "Registre o que aconteceu, quem estava lá e os detalhes que quer guardar. Eventos na linha do tempo de todos, tipos e campos próprios e um retrospecto ano a ano.",
+            'ogTitle' => "Guarde os momentos que valem a lembrança — Monica",
+            'ogDescription' => "Registre o que aconteceu, quem estava lá e os detalhes que você quer guardar. A Monica reúne esses momentos em uma linha do tempo a que você pode voltar.",
         ],
 
         'relationships' => [
-            'title' => "Entenda como as pessoas estão ligadas: os relacionamentos na Monica",
-            'description' => "Acompanhe as pessoas ao redor de alguém, com relacionamentos que fazem sentido dos dois lados. Árvores genealógicas, pessoas que você ainda não conheceu, relacionamentos passados e os seus próprios tipos de relacionamento.",
+            'title' => "Relacionamentos pessoais e laços familiares — Monica",
+            'description' => "Acompanhe família, amigos e parceiros com relações de mão dupla, árvores genealógicas e histórico. Defina tipos de relação que combinem com sua vida.",
+            'ogTitle' => "Entenda como as pessoas se conectam — Monica",
+            'ogDescription' => "Acompanhe as pessoas ao redor de alguém, com relações que fazem sentido dos dois lados.",
         ],
 
         'vaults' => [
-            'title' => "Um lugar para cada parte da sua vida: os cofres na Monica",
-            'description' => "Mantenha amigos, família e colegas juntos ou dê a cada grupo o seu próprio espaço. Cada cofre tem os seus contatos, linha do tempo, lembretes e modelo padrão, tudo dentro da sua conta.",
+            'title' => "Organize seus contatos em cofres separados — Monica",
+            'description' => "Mantenha amigos, família e colegas juntos ou dê a cada grupo seu espaço. Cada cofre tem seus contatos, linha do tempo, lembretes e modelo padrão.",
+            'ogTitle' => "Um lugar para cada parte da sua vida — Monica",
+            'ogDescription' => "Mantenha todos juntos ou dê a cada grupo seu próprio espaço. Os cofres ajudam a organizar a Monica em torno da sua vida.",
         ],
 
         'sharing' => [
-            'title' => "Compartilhe só o que você escolher: o compartilhamento na Monica",
-            'description' => "Compartilhe seções escolhidas da ficha de um contato por um link somente leitura. Escolha o que ele mostra, dê a ele uma data final ou uma senha, veja quando foi aberto e revogue a qualquer momento.",
+            'title' => "Compartilhe detalhes de contato com privacidade — Monica",
+            'description' => "Compartilhe seções escolhidas da ficha de um contato por um link somente leitura. Defina o que ele mostra, com data final ou senha, e revogue quando quiser.",
+            'ogTitle' => "Compartilhe só o que você escolher — Monica",
+            'ogDescription' => "Compartilhe seções escolhidas da ficha de um contato por um link somente leitura. Escolha o que ele mostra, por quanto tempo funciona e quando encerrar o acesso.",
         ],
 
         'api' => [
-            'title' => "Seus contatos, conectados às suas ferramentas: a API e o MCP da Monica",
-            'description' => "Use a Monica com Claude, ChatGPT, Gemini ou os seus próprios scripts. Conecte pelo MCP ou pela API JSON para encontrar contatos, registrar eventos de vida e criar lembretes, com as chaves e os acessos sob o seu controle.",
+            'title' => "API de CRM pessoal e integração com assistentes — Monica",
+            'description' => "Use a Monica com Claude, ChatGPT, Gemini ou seus scripts. Conecte um assistente pelo servidor MCP da Monica ou crie sua conexão com a API JSON e uma chave.",
+            'ogTitle' => "Seus contatos, conectados às suas ferramentas — Monica",
+            'ogDescription' => "Use a Monica com Claude, ChatGPT, Gemini ou seus próprios scripts. Consulte um contato, registre um momento ou crie um lembrete nas ferramentas que você já usa.",
         ],
 
         'privacyFeatures' => [
-            'title' => "Dados pessoais merecem um lugar privado: a privacidade na Monica",
-            'description' => "Marque campos como sensíveis, compartilhe só seções escolhidas, controle o que chaves de API e assistentes podem ler, proteja a sua conta com passkeys e autenticação em dois fatores e revise a atividade dela.",
+            'title' => "Privacidade e segurança do CRM pessoal — Monica",
+            'description' => "Controle campos sensíveis, seções compartilhadas e o acesso de assistentes na Monica. Proteja sua conta com passkeys e verificação em duas etapas.",
+            'ogTitle' => "Detalhes pessoais merecem um lugar privado — Monica",
+            'ogDescription' => "Você registra coisas sobre as pessoas porque elas importam para você. Escolha o que guarda, o que compartilha e quais ferramentas podem acessar.",
         ],
 
         'languages' => [
-            'title' => "Seu idioma, os nomes deles: idiomas e formatos na Monica",
-            'description' => "Use a Monica em mais de 30 idiomas, mantenha os nomes das pessoas na forma que elas usam, com transliteração e guia de pronúncia, e escolha o formato de datas, horas, números e fuso horário.",
+            'title' => "CRM pessoal multilíngue e formatos de nome — Monica",
+            'description' => "Use a Monica em mais de 30 idiomas. Escreva nomes na ordem e nas formas que as pessoas usam e defina suas preferências de data, hora, números e fuso horário.",
+            'ogTitle' => "Seu idioma. Os nomes deles — Monica",
+            'ogDescription' => "Use a Monica em um idioma em que você se sinta em casa. Guarde os nomes das pessoas nas formas que elas usam e escolha como datas, horas e números aparecem.",
+        ],
+
+        'aiMemory' => [
+            'title' => "Memória pessoal para IA e seus assistentes — Monica",
+            'description' => "A Monica dá ao Claude, ao ChatGPT e a outros assistentes uma memória pessoal compartilhada e persistente pelo servidor MCP. Código aberto e auto-hospedável.",
+            'ogTitle' => "Seus assistentes podem mudar. Sua memória continua sua — Monica",
+            'ogDescription' => "Dê aos assistentes de IA compatíveis um lugar comum para lembrar das suas pessoas e dos detalhes do dia a dia. Abra a Monica para organizar essas memórias você mesmo, com ou sem IA.",
+        ],
+
+        'mcpServer' => [
+            'title' => "Servidor MCP da Monica para seus dados pessoais",
+            'description' => "Conecte assistentes de IA ao banco de dados pessoal da Monica: servidor MCP remoto, 236 ferramentas, OAuth ou chaves de API e auto-hospedagem.",
+            'ogTitle' => "Seus dados pessoais, conectados aos seus agentes de IA — Monica",
+            'ogDescription' => "Conecte um assistente compatível à Monica pelo MCP. Leia e atualize registros pessoais estruturados com acesso controlado, usando OAuth ou uma chave de API.",
+        ],
+
+        'personalData' => [
+            'title' => "Software de gestão de informações pessoais — Monica",
+            'description' => "Organize contatos, bens, notas, eventos de vida e detalhes do dia a dia em um só banco de dados pessoal. Conheça a Monica, organizador de vida de código aberto.",
+            'ogTitle' => "Um lar para os detalhes da sua vida — Monica",
+            'ogDescription' => "Pessoas, notas, bens, momentos importantes e lembretes. Um lugar pessoal para tudo o que você não quer esquecer.",
         ],
 
         'personalCrm' => [
             'title' => "O que é um CRM pessoal? Um guia prático — Monica",
-            'description' => "O que é um CRM pessoal, como ele se diferencia de uma lista de contatos e de um CRM de vendas, o que guardar, as escolhas de privacidade envolvidas e como escolher a abordagem certa.",
+            'description' => "O que é um CRM pessoal, como ele difere de uma agenda e de um CRM de vendas, o que guardar, os dilemas de privacidade e como escolher a abordagem certa.",
+            'ogTitle' => "O que é um CRM pessoal, e você usaria um? — Monica",
+            'ogDescription' => "Uma agenda lembra um número. Um CRM pessoal ajuda a lembrar da pessoa. Veja o que guardar, o que deixar de fora e como escolher um.",
         ],
     ],
 
@@ -2702,6 +2783,976 @@ return [
         ],
     ],
 
+    /**
+     * The AI memory page, "One memory for your AI assistants" (route key
+     * `aiMemory`). The pictures on it are drawings of the product and of two
+     * assistants talking to it, so each carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The example runs through the page: your copy of The Shining, lent to
+     * Chandler, due back on 5 December. Keep the name, the object and the
+     * date in step between `how`, `see`, `structure` and `visibility`.
+     */
+    'aiMemory' => [
+        // Words more than one drawing uses.
+        // The examples are the demo vault's, as on the homepage: the
+        // reader lent Chandler their copy of The Shining, which lives in
+        // the freezer, as it does in his and Joey's flat. Chandler rather
+        // than Joey because the vault has his photo.
+        'borrower' => "Chandler Bing",
+        'book' => "O Iluminado",
+        'due' => "Devolução em 5 de dezembro",
+
+        /**
+         * Where the illustrations go until they are drawn: the reference, the
+         * name and the brief the design gives each one, shown in a dashed
+         * frame exactly as the design draws its placeholders.
+         */
+        'illustrations' => [
+            'problem' => [
+                'ref' => "I02 · Ilustração · Opcional",
+                'title' => "Ilhas e uma ponte",
+                'brief' => "Duas ilhas com cadernos separados, ligadas por uma ponte a uma biblioteca central onde um panda organiza tudo. Sem qualquer sugestão de importar ou sincronizar conversas.",
+            ],
+        ],
+
+        'hero' => [
+            'eyebrow' => "Memória pessoal de IA de código aberto",
+            'title' => "Uma memória para os seus assistentes de IA.",
+            'lede' => "Seus assistentes de IA podem mudar. Suas memórias não deveriam precisar mudar.",
+            'body' => "A Monica dá aos assistentes de IA compatíveis uma memória pessoal compartilhada e persistente: um lugar para guardar seus relacionamentos, seus conhecimentos, seus bens e o seu dia a dia. Uma memória que você mesmo pode abrir, organizar e usar, até sem IA.",
+            'cta' => "Comece de graça",
+            'how' => "Veja como funciona",
+            'note' => "Código aberto. Auto-hospedável. Acesso MCP incluído nas contas gratuitas.",
+        ],
+
+        'problem' => [
+            'title' => "A sua vida não cabe em uma única conversa.",
+            'body' => [
+                "Você conta ao seu assistente de IA sobre a sua família, as suas preferências, os seus projetos e o que importa para você. Com o tempo, essas informações viram um contexto útil para as conversas seguintes.",
+                "Mas você pode usar mais de um assistente. Pode trocar de provedor, começar uma conversa nova ou simplesmente querer consultar algo sem perguntar a uma IA.",
+                "Por isso a Monica dá às suas informações pessoais um lugar próprio. Em vez de depender só da memória embutida em cada assistente, você pode guardar informações na Monica e recuperá-las pelos assistentes compatíveis sempre que precisar.",
+            ],
+            'closing' => "Menos repetição. Mais continuidade entre as ferramentas que você escolhe usar.",
+        ],
+
+        'how' => [
+            'title' => "Conte a um assistente. Pergunte a outro.",
+            'lead' => "Com a Monica, a memória pessoal de IA pode persistir entre conversas e entre plataformas de IA compatíveis. Guarde uma informação hoje e peça a outro assistente conectado que a consulte depois.",
+            'connected' => "Monica conectada",
+            'steps' => [
+                [
+                    'title' => "Guarde algo com o Claude",
+                    'prompt' => "Hoje emprestei o meu exemplar de O Iluminado ao Chandler. Ele vai devolver no dia 5 de dezembro. Guarde isso na Monica.",
+                    'body' => "O seu assistente registra o empréstimo, quem pegou o livro e a data prevista de devolução na sua conta da Monica.",
+                    'label' => "Uma conversa com o Claude, com a Monica conectada. Você pede que ele guarde que emprestou o seu exemplar de O Iluminado ao Chandler, com devolução em 5 de dezembro. O Claude usa a ferramenta create-possession-loan da Monica e confirma que o empréstimo foi salvo.",
+                    'reply' => "Salvo. A Monica agora mostra O Iluminado emprestado ao Chandler até 5 de dezembro.",
+                ],
+                [
+                    'title' => "Veja na Monica",
+                    'prompt' => null,
+                    'body' => "O empréstimo é um registro de verdade na Monica, ligado ao livro e a quem o pegou. Você pode abri-lo diretamente e revisar ou atualizar por conta própria.",
+                    'label' => "A página do seu exemplar de O Iluminado na Monica, guardado no freezer. A seção de empréstimos mostra que ele foi emprestado a Chandler Bing, com devolução em 5 de dezembro.",
+                    'reply' => null,
+                ],
+                [
+                    'title' => "Recupere com o ChatGPT",
+                    'prompt' => "Consulte a Monica. Quem está com o meu exemplar de O Iluminado?",
+                    'body' => "O seu assistente conectado pode consultar o empréstimo registrado e dizer quem está com o livro e quando ele deve voltar.",
+                    'label' => "Uma nova conversa com o ChatGPT, com a Monica conectada. Você pergunta quem está com o seu exemplar de O Iluminado. O ChatGPT usa a ferramenta list-possession-loans da Monica e responde que o Chandler está com ele, com devolução em 5 de dezembro.",
+                    'reply' => "O Chandler está com o seu exemplar de O Iluminado. A devolução é em 5 de dezembro.",
+                ],
+            ],
+            'garage' => "Guardado no freezer",
+            'loans' => "Empréstimos",
+            'onLoan' => "Emprestado",
+            'closing' => "A conversa mudou. A memória ficou.",
+            'note' => "Este exemplo usa dois assistentes conectados à mesma conta da Monica. A compatibilidade e o acesso dos assistentes podem depender da configuração e da assinatura de cada um. Para guardar e recuperar informações, o assistente precisa usar as ferramentas da Monica.",
+        ],
+
+        'remember' => [
+            'title' => "Uma memória pessoal de IA para o dia a dia.",
+            'lead' => "A sua vida é mais do que um conjunto de conversas. A Monica dá aos seus assistentes lugares para guardar diferentes tipos de informação pessoal, das pessoas que você conhece às coisas que você tem.",
+            'try' => "Experimente pedir",
+            // The glyph, the page each item links to and the colour of its
+            // vignette are in the template, in this order. `chips` are the two
+            // labels drawn in the vignette: what Monica would record.
+            'items' => [
+                [
+                    'title' => "Pessoas e relacionamentos",
+                    'body' => "Acompanhe as pessoas da sua vida, como elas se relacionam entre si e os momentos que vocês compartilham. Registre novas conexões e laços de família e recupere informações antes da sua próxima conversa.",
+                    'ask' => "A Rachel e o Ross acabaram de ter uma menina chamada Emma. Registre na Monica que ela é filha deles.",
+                    'chips' => ["Emma", "Filha de Ross e Rachel"],
+                ],
+                [
+                    'title' => "Conhecimento pessoal",
+                    'body' => "Crie uma base de conhecimento pessoal com pastas, notas e listas. Guarde instruções úteis, recomendações, ideias e material de consulta para encontrar tudo de novo.",
+                    'ask' => "Guarde a receita de cookies com gotas de chocolate da avó da Phoebe nas minhas notas de Receitas.",
+                    'chips' => ["Receitas", "Cookies da vovó"],
+                ],
+                [
+                    'title' => "Os seus bens",
+                    'body' => "Mantenha um registro do que você tem, quanto custou, onde está, quando passou por manutenção e quem pegou emprestado.",
+                    'ask' => "Registre na Monica a nossa nova poltrona reclinável. Pagamos US\$ 1.200 e ela fica na sala, de frente para a TV.",
+                    'chips' => ["Poltrona reclinável", 'US$ 1.200'],
+                ],
+                [
+                    'title' => "Eventos de vida",
+                    'body' => "Monte uma linha do tempo das experiências, dos marcos e dos momentos que importam, incluindo as pessoas com quem você os viveu.",
+                    'ask' => "Registre a nossa viagem a Londres para o casamento do Ross, com o Chandler e o Joey.",
+                    'chips' => ["Londres", "Casamento do Ross"],
+                ],
+                [
+                    'title' => "Suas preferências",
+                    'body' => "Guarde uma nota dos seus gostos, hábitos e preferências, que os seus assistentes podem consultar para ajudar você a decidir.",
+                    'ask' => "Anote nas minhas preferências que sou vegetariano e que sempre me sento no sofá laranja do Central Perk.",
+                    'chips' => ["Sofá laranja", "Vegetariano"],
+                ],
+                [
+                    'title' => "Coisas para lembrar",
+                    'body' => "Crie lembretes para compromissos importantes e ocasiões recorrentes. A Monica pode avisar você pelo próprio sistema de lembretes, independentemente do seu assistente.",
+                    'ask' => "Crie na Monica um lembrete para alimentar o pintinho e o pato toda manhã.",
+                    'chips' => ["Pintinho e pato", "Toda manhã"],
+                ],
+            ],
+        ],
+
+        'see' => [
+            'title' => "Uma memória que você realmente enxerga.",
+            'body' => [
+                "A Monica é um aplicativo de memória pessoal de IA que você pode usar diretamente. As informações que os seus assistentes guardam não somem dentro de uma conversa. Elas passam a fazer parte dos seus registros pessoais na Monica.",
+                "Abra um contato. Revise um evento de vida. Atualize uma nota. Encontre algo que você tem. Corrija uma informação que não está mais certa.",
+                "Você não precisa falar com um assistente de IA toda vez que quiser consultar as suas próprias informações. A Monica funciona como um aplicativo independente, com ou sem um assistente conectado.",
+            ],
+            'closing' => "Os seus assistentes podem usar a Monica. Mas a Monica foi feita para você.",
+            // The drawing: the Maintenance section of the recliner's page, as
+            // the application draws it (possessions/maintenance.blade.php).
+            'label' => "A seção de manutenção da página de uma poltrona reclinável na Monica. A poltrona é um móvel, guardada na sala. Dois serviços estão registrados. Uma limpeza, Couro limpo, custo US\$ 80: feita pela Central Perk Upholstery em 12 de setembro de 2026, condição de usado para como novo, próxima em 12 de março de 2027. Um conserto, Apoio de pés consertado, custo US\$ 45: feito por Joey Tribbiani em 2 de maio de 2026, condição de danificado para usado, sem próxima data agendada.",
+            'type' => "Móvel",
+            'keptIn' => "guardado em",
+            'place' => "Sala",
+            'item' => "Poltrona reclinável",
+            'title' => "Manutenção",
+            'lead' => "O trabalho feito neste exemplar ao longo do tempo, com a condição antes e depois de cada serviço.",
+            'costLabel' => "custo",
+            'parts' => ["Realizado por", "Realizado em", "Condição", "Próxima em"],
+            'records' => [
+                ['type' => "Limpeza", 'title' => "Couro limpo", 'cost' => 'US$ 80', 'parts' => [["Central Perk Upholstery", true], ["12 de setembro de 2026", true], ["Usado → Como novo", true], ["12 de março de 2027", true]]],
+                ['type' => "Conserto", 'title' => "Apoio de pés consertado", 'cost' => 'US$ 45', 'parts' => [["Joey Tribbiani", true], ["2 de maio de 2026", true], ["Danificado → Usado", true], ["Sem data", false]]],
+            ],
+        ],
+
+        'structure' => [
+            'title' => "Mais do que uma lista de memórias.",
+            'lead' => "A sua vida tem estrutura. A sua memória também deveria ter.",
+            'body' => [
+                "A Monica guarda as informações em registros com sentido. Pessoas podem ter laços de família. Eventos de vida podem envolver várias pessoas. Bens podem ter locais, registros de manutenção e empréstimos. Notas e listas podem organizar informações úteis por assunto.",
+                "Quando um assistente compatível consulta algo, ele pode recuperar esses registros e seguir os relacionamentos com suporte para entender mais do contexto. Quando algo muda, ele pode atualizar os registros com suporte em vez de simplesmente acrescentar outra versão do mesmo fato.",
+                "E quando você quiser organizar as informações do seu jeito, a Monica oferece modelos e tipos de registro personalizáveis.",
+            ],
+            'label' => "Diagrama: Chandler Bing está ligado ao seu exemplar de O Iluminado por um empréstimo e ao jantar de Ação de Graças por uma participação, com Monica, Rachel e Ross",
+            'belonging' => "Bem",
+            'garage' => "Guardado no freezer",
+            'loan' => "Empréstimo",
+            'dueShort' => "devolução em 5 de dezembro",
+            'person' => "Pessoa",
+            'tookPart' => "Participou",
+            'withYou' => "com você e três outras pessoas",
+            'event' => "Evento de vida · 27 de novembro de 2025",
+            'dinner' => "Jantar de Ação de Graças",
+            'caption' => "Como os registros se conectam na Monica. Um diagrama, não uma tela do aplicativo.",
+            'closing' => "Um banco de dados pessoal para a vida real, não só um conjunto de resumos de conversas.",
+        ],
+
+        'retrieval' => [
+            'title' => "Útil hoje. Ainda útil daqui a meses.",
+            'lead' => "A memória persistente de IA ganha valor quando você precisa da informação de novo. Peça ao seu assistente conectado que consulte a Monica, seja para se preparar para uma reunião, cuidar da casa ou fazer planos.",
+            'badge' => "Exemplo",
+            'ask' => "Pergunte",
+            'items' => [
+                [
+                    'title' => "Antes de uma reunião",
+                    'ask' => "Consulte a Monica. Quando foi a última vez que vi a Janice e sobre o que conversamos?",
+                    'body' => "Recupere eventos de vida anteriores e as informações de contato disponíveis para se preparar para a sua próxima conversa.",
+                ],
+                [
+                    'title' => "Antes de uma revisão",
+                    'ask' => "Procure na Monica o histórico de manutenção do Porsche. Quando foi a última revisão?",
+                    'body' => "Encontre as datas de manutenção, os custos e as próximas datas previstas sem vasculhar conversas antigas.",
+                ],
+                [
+                    'title' => "Antes de planejar uma viagem",
+                    'ask' => "Consulte na Monica a minha nota de preferências de viagem antes de reservar o voo para Paris.",
+                    'body' => "Leve as suas preferências salvas para uma nova conversa, mesmo que você esteja usando outro assistente compatível.",
+                ],
+            ],
+            'note' => "Exemplos de pedidos que você pode fazer depois que as informações relevantes forem guardadas na Monica.",
+        ],
+
+        'visibility' => [
+            'title' => "Veja o que os seus assistentes de IA realmente fazem.",
+            'body' => [
+                "Conectar um assistente às suas informações pessoais é uma decisão importante. Você deve poder conferir o que ele faz com esse acesso.",
+                "A Monica registra as chamadas feitas pelos assistentes conectados. Você pode conferir qual assistente fez um pedido, quando aconteceu, a ferramenta que ele usou e o pedido e a resposta registrados, com os valores sensíveis ocultados. O histórico de chamadas dos assistentes fica disponível por 90 dias.",
+                "Você pode desconectar assistentes individualmente ou revogar as chaves de API deles sem apagar as informações guardadas nem desconectar os seus outros assistentes.",
+            ],
+            'warningTitle' => "Saiba a que você está dando acesso.",
+            'warning' => "Um assistente conectado geralmente tem acesso a toda a sua conta, e não apenas a um cofre selecionado ou a uma visualização somente leitura. Os campos marcados como sensíveis não são entregues aos assistentes conectados por login OAuth. Conecte apenas assistentes em que você confia.",
+            'label' => "O histórico de chamadas de assistentes da Monica. Três chamadas estão listadas: o ChatGPT usou list-possession-loans hoje às 09:14, o Claude usou create-possession-loan ontem às 18:02 e o Claude usou search-records ontem às 17:58. A chamada do ChatGPT está expandida, mostrando o pedido e a resposta, com um valor sensível ocultado. Abaixo, os assistentes conectados, Claude e ChatGPT, cada um com um botão Desconectar.",
+            'history' => "Histórico de chamadas dos assistentes",
+            'kept' => "Últimos 90 dias",
+            'calls' => [
+                ['ChatGPT', 'list-possession-loans', "Hoje às 09:14"],
+                ['Claude', 'create-possession-loan', "Ontem às 18:02"],
+                ['Claude', 'search-records', "Ontem às 17:58"],
+            ],
+            'request' => "Pedido",
+            'response' => "Resposta",
+            'assistants' => "Assistentes conectados",
+            'used' => ["Usado pela última vez ontem", "Usado pela última vez hoje"],
+            'disconnect' => "Desconectar",
+        ],
+
+        'start' => [
+            'title' => "Conecte o seu assistente de IA em três passos.",
+            'lead' => "Você não precisa montar a sua própria infraestrutura de memória. A Monica oferece um aplicativo de informações pessoais pronto para usar e um servidor MCP remoto de memória de IA.",
+            'step' => "Passo :number",
+            'steps' => [
+                [
+                    'title' => "Crie a sua conta da Monica",
+                    'body' => "Comece com uma conta hospedada gratuita ou rode a Monica na sua própria infraestrutura, se preferir auto-hospedar.",
+                ],
+                [
+                    'title' => "Conecte o seu assistente",
+                    'body' => "A Monica usa o Model Context Protocol (MCP), um padrão aberto que permite a assistentes compatíveis interagir com aplicativos externos. Siga o guia de conexão do seu cliente. Os métodos de conexão com suporte incluem login OAuth e chaves de API.",
+                ],
+                [
+                    'title' => "Guarde a sua primeira memória",
+                    'body' => "Peça ao seu assistente que guarde algo na Monica. Depois abra a Monica para ver o registro ou peça ao assistente que o recupere em outra conversa.",
+                ],
+            ],
+            'starter' => "Pedido inicial",
+            'starterPrompt' => "Adicione a Phoebe à Monica e registre que ela tocou Smelly Cat no Central Perk hoje à noite.",
+            'clientsTitle' => "Procurando memória de IA para ChatGPT e Claude?",
+            'clients' => [
+                "A Monica oferece guias de conexão para ChatGPT, Claude Desktop, Claude Code, Cursor, Codex e VS Code. Você pode conectar vários clientes MCP remotos compatíveis à mesma conta e acessar as mesmas informações guardadas por qualquer um deles.",
+                "O suporte dos clientes, as operações disponíveis e os requisitos de configuração dependem do assistente e do plano dele. A Monica usa MCP remoto sobre Streamable HTTP, então os clientes precisam oferecer esse transporte e um método de autenticação compatível.",
+            ],
+            'guides' => "Leia os guias de conexão do MCP",
+            'account' => "Crie uma conta gratuita",
+            'clientsLabel' => "Clientes com guia de conexão",
+        ],
+
+        'open' => [
+            'title' => "Memória de IA de código aberto. Nos seus termos.",
+            'lead' => "A sua escolha de assistente de IA não deveria determinar onde as suas informações pessoais ficam.",
+            'body' => [
+                "A Monica é de código aberto sob a licença AGPL-3.0. Você pode usar o serviço hospedado ou montar a sua própria instância com Docker. O servidor MCP também está disponível nas instâncias auto-hospedadas, então você pode montar uma memória de IA auto-hospedada em uma infraestrutura que você administra.",
+                "A Monica não roda um modelo de IA próprio. O trabalho dela é guardar e organizar as suas informações e torná-las acessíveis aos assistentes compatíveis que você conectar.",
+                "Se você trocar de assistente ou de provedor, as informações que guardou na Monica continuam lá. Conecte outro assistente compatível quando precisar. E se você deixar de usar IA de vez, ainda pode usar a Monica diretamente.",
+            ],
+            'closing' => "Os assistentes podem mudar. A sua vida não.",
+            'github' => "Conheça a Monica no GitHub",
+            'selfHosting' => "Saiba mais sobre auto-hospedagem",
+        ],
+
+        'compare' => [
+            'title' => "Onde a Monica se encaixa no mundo da memória de IA.",
+            'lead' => "Abordagens diferentes de memória resolvem problemas diferentes. A Monica foi pensada para dar às suas informações pessoais um lugar que existe fora de qualquer conversa ou assistente.",
+            'items' => [
+                [
+                    'title' => "Memória embutida do assistente",
+                    'body' => "A memória embutida pode ajudar um assistente a personalizar as respostas. O comportamento dela depende do provedor, das configurações e das informações disponíveis para aquele assistente. A Monica oferece um lugar separado para guardar registros pessoais que os assistentes compatíveis podem acessar quando solicitados.",
+                ],
+                [
+                    'title' => "Infraestrutura de memória para desenvolvedores",
+                    'body' => "A infraestrutura de memória de IA costuma ajudar desenvolvedores a criar aplicativos e fluxos de agentes. A Monica é um aplicativo pronto de gestão de informações pessoais, com uma interface para pessoas e um servidor MCP nativo. Você não precisa criar o seu próprio aplicativo para começar.",
+                ],
+                [
+                    'title' => "A memória pessoal de IA da Monica",
+                    'body' => "A Monica combina registros pessoais estruturados, uma interface que você mesmo pode usar, várias conexões de assistentes e um histórico das chamadas deles. Ela foi pensada para quem quer guardar informações pessoais úteis independentemente de um único provedor de IA.",
+                ],
+            ],
+            'goodToKnow' => "Bom saber",
+            'notice' => "A Monica complementa a memória que um assistente já tem. Ela não importa, não substitui nem sincroniza essa memória automaticamente, e não faz extração automática de memórias nem busca semântica por conta própria.",
+        ],
+
+        'faq' => [
+            'title' => "Perguntas frequentes sobre memória de IA.",
+            'items' => [
+                ['q' => "O que é memória de IA?", 'a' => "A memória de IA é uma forma de um assistente usar informações além da conversa atual. Com a Monica, essas informações ficam em um banco de dados pessoal separado. Um assistente conectado pode guardar ali as informações com suporte e recuperá-las depois pelas ferramentas da Monica."],
+                ['q' => "Posso compartilhar a memória de IA entre plataformas?", 'a' => "Sim. Vários assistentes compatíveis podem se conectar à mesma conta da Monica. As informações guardadas por um assistente podem então ser recuperadas por outro, desde que ele tenha acesso e use as ferramentas da Monica. Isso é independente da memória embutida de cada assistente."],
+                ['q' => "Posso usar a Monica como memória de IA para o ChatGPT ou o Claude?", 'a' => "A Monica oferece guias de conexão para o ChatGPT e o Claude, além de outros clientes MCP remotos. As opções de conexão e as operações com suporte dependem dos recursos, da configuração e da assinatura do seu assistente. Veja a documentação do MCP para as instruções de configuração."],
+                ['q' => "A Monica se lembra automaticamente de tudo o que eu digo ao meu assistente?", 'a' => "Não. A Monica não lê nem monitora as suas conversas. As informações são guardadas quando o seu assistente chama uma ferramenta da Monica para isso. Você pode pedir explicitamente ao assistente que guarde algo na Monica ou que consulte a Monica ao responder uma pergunta. Se ele faz isso sozinho depende do assistente."],
+                ['q' => "Que informações um assistente pode guardar na Monica?", 'a' => "Os assistentes podem criar registros com suporte, como pessoas pelo nome, laços de família, eventos de vida, lembretes, notas e listas de Conhecimento, bens, empréstimos e locais. Algumas operações são limitadas hoje pelo MCP, incluindo a escrita de dados de contato como telefones, aniversários e notas de contato. Esses dados podem ser gerenciados diretamente na Monica."],
+                ['q' => "Como a Monica busca na minha memória pessoal?", 'a' => "Os assistentes podem usar busca por palavra-chave nos registros com suporte, encontrar notas e listas e navegar ou filtrar outras informações. A Monica não oferece busca semântica nem vetorial. O assistente decide quais ferramentas e quais termos de busca usar."],
+                ['q' => "O que é um servidor MCP de memória de IA?", 'a' => "Um servidor MCP expõe ferramentas que assistentes de IA compatíveis podem chamar. O servidor MCP remoto da Monica permite que os assistentes leiam e escrevam registros pessoais com suporte, de modo que a Monica funcione como uma memória pessoal persistente fora do próprio assistente."],
+                ['q' => "Posso usar a Monica sem IA?", 'a' => "Sim. A Monica é um aplicativo independente de gestão de informações pessoais. Você pode criar, ver, editar e organizar registros diretamente, sem conectar um assistente."],
+                ['q' => "Posso auto-hospedar a minha memória de IA?", 'a' => "Sim. A Monica é de código aberto sob a AGPL-3.0 e pode ser instalada na sua própria infraestrutura com Docker. O servidor MCP dela também está disponível nas instâncias auto-hospedadas. Você é responsável por proteger e manter a sua instalação."],
+                ['q' => "A Monica usa as minhas informações pessoais para treinar modelos de IA?", 'a' => "A Monica não opera nem treina modelos de IA. Quando um assistente conectado recupera informações, elas são enviadas ao assistente. Valem então as políticas de privacidade, de retenção e de treinamento do provedor dele."],
+                ['q' => "Posso controlar quais informações um assistente acessa?", 'a' => "Você pode revogar cada conexão de assistente de forma independente. Os campos marcados como sensíveis ficam ocultos para os assistentes conectados por login OAuth. Fora isso, as conexões geralmente têm acesso a toda a conta; o acesso por cofre e o acesso somente leitura não estão disponíveis no momento."],
+                ['q' => "Posso exportar a minha memória pessoal?", 'a' => "A Monica permite exportar a conta e os cofres em JSON e cada contato em Markdown. Os registros de Conhecimento e de bens não estão incluídos, por enquanto, na exportação JSON da conta ou do cofre."],
+                ['q' => "A memória de IA da Monica é gratuita?", 'a' => "O acesso MCP está incluído nas contas hospedadas gratuitas, sujeito aos limites normais do plano gratuito. As instâncias auto-hospedadas não têm limites de plano impostos pela Monica. O provedor de um assistente de IA pode ter as próprias exigências de assinatura ou limites de uso."],
+                ['q' => "O que acontece se eu trocar de assistente de IA?", 'a' => "As informações que você guardou na Monica continuam na sua conta. Você pode desconectar o assistente anterior e conectar outro compatível, sem precisar mover os seus registros da Monica para outro sistema de memória."],
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Dê um lar às suas memórias.",
+            'body' => "Um só lugar para as pessoas, os conhecimentos e os detalhes do dia a dia que importam para você. Acessível a você e aos assistentes de IA compatíveis que você escolher.",
+            'lead' => "Comece a montar a sua memória pessoal de IA com a Monica.",
+            'cta' => "Comece de graça",
+            'selfHosting' => "Conheça a auto-hospedagem",
+            'note' => "Código aberto. Independente de qualquer assistente de IA. Feita para pessoas.",
+        ],
+    ],
+
+    /**
+     * The personal data management page, "Your life. Beautifully organized."
+     * (route key `personalData`). English only, like the AI memory page.
+     *
+     * Its examples come from the demo vault, as the homepage's do, with the
+     * same dry asides: Chandler, Joey's recliner Rosita, Monica's hall
+     * closet, the Moist Maker. The drawings of the product each carry a
+     * `label` that a screen reader reads instead of the drawing itself.
+     */
+    'personalData' => [
+        'hero' => [
+            'eyebrow' => "Gestão de informações pessoais, com o toque humano",
+            'title' => "Sua vida. Lindamente organizada.",
+            'lede' => "As pessoas de quem você gosta. As coisas que você tem. Os momentos que merecem ser lembrados. Os detalhes úteis que você nunca acha quando precisa.",
+            'body' => "A Monica reúne as suas informações pessoais em um só lugar, para que a sua vida não precise ficar espalhada entre notas soltas, planilhas e a sua memória.",
+            'cta' => "Comece de graça",
+            'organize' => "Veja o que você pode organizar",
+            'note' => "Código aberto · Auto-hospedável · Feita para o dia a dia",
+        ],
+
+        'problem' => [
+            'eyebrow' => "Soa familiar?",
+            'title' => "Os pequenos detalhes estão por toda parte.",
+            'body' => "Você sabe que anotou aquela recomendação. Em algum lugar. O modelo da sua máquina de lavar talvez esteja em um e-mail antigo. O nome do cara que sempre traz o seu café está enterrado em uma conversa (é Gunther). E a data daquele momento importante? Você tem quase certeza de que se lembra.",
+            'lead' => "A sua vida está cheia de informações que valem a pena guardar, mas quase nunca vem com um bom sistema de arquivo.",
+            'items' => [
+                ['title' => "Em lugares demais", 'body' => "Notas, mensagens, planilhas e documentos meio esquecidos guardam, cada um, pedaços diferentes da sua vida."],
+                ['title' => "Difíceis de achar depois", 'body' => "Guardar algo é fácil. Lembrar onde você guardou, seis meses depois, é a parte difícil."],
+                ['title' => "Sem a visão do conjunto", 'body' => "Um nome, um lugar e um evento podem estar ligados na vida real, mesmo quando ficam guardados separados."],
+            ],
+            'closing' => "Você não precisa de outro sistema complicado.",
+            'closingMuted' => "Você precisa de um lugar pessoal que faça sentido.",
+        ],
+
+        'organize' => [
+            'eyebrow' => "Um só lugar para a vida real",
+            'title' => "Tudo o que importa, no seu lugar.",
+            'lead' => "A Monica é um software de gestão de informações pessoais construído em torno do que as pessoas realmente querem lembrar. Não só documentos. Não só tarefas. As suas pessoas, o seu conhecimento, os seus bens e os momentos que ligam tudo isso.",
+            'example' => "Exemplo",
+            'crm' => "Conheça o CRM pessoal da Monica",
+            // The glyph, the colour and the drawing of each item are in the
+            // template, in this order.
+            'items' => [
+                [
+                    'title' => "Pessoas e relacionamentos",
+                    'body' => "Mantenha as pessoas da sua vida por perto, mesmo quando a vida fica corrida. Guarde dados de contato, entenda os laços de família e outros relacionamentos e reviva os momentos que vocês compartilharam.",
+                    'example' => "Lembre quem apresentou vocês, como se conheceram e que o Ross e a Rachel estavam dando um tempo.",
+                ],
+                [
+                    'title' => "Notas e conhecimento",
+                    'body' => "Dê um lar às informações úteis. Crie pastas, escreva notas em Markdown e mantenha listas de recomendações, ideias, material de consulta e coisas a que você quer voltar.",
+                    'example' => "Mantenha uma lista de livros para ler e a única receita de sobras de Ação de Graças que importa.",
+                ],
+                [
+                    'title' => "Bens e compras",
+                    'body' => "Acompanhe o que você tem, onde está, quanto custou e o que aconteceu com isso ao longo do tempo. Registre compras, manutenção, dados de seguro e o que você emprestou a outras pessoas.",
+                    'example' => "Descubra quanto você pagou pela poltrona reclinável ou lembre quem pegou emprestada a sua fantasia de Tatu de Natal.",
+                ],
+                [
+                    'title' => "Momentos e marcos",
+                    'body' => "Lembre mais do que datas. Guarde uma história pessoal de visitas, viagens, conversas, conquistas e mudanças importantes, com as pessoas envolvidas.",
+                    'example' => "Reveja a viagem a Londres ou todos os Dias de Ação de Graças desde aquele em que o peru foi parar na cabeça da Monica.",
+                ],
+                [
+                    'title' => "Lugares e espaços",
+                    'body' => "Organize os lugares onde os seus bens ficam, de uma casa a um cômodo, um armário ou uma prateleira. Quando algo muda de lugar, atualize a localização.",
+                    'example' => "Saiba em que prateleira ficam as luzes de Natal e o que realmente tem no armário do corredor.",
+                ],
+                [
+                    'title' => "Datas e lembretes",
+                    'body' => "Algumas coisas merecem ser lembradas na hora certa. Defina lembretes únicos ou recorrentes ligados a pessoas e acompanhe se você cumpriu o que planejou.",
+                    'example' => "Lembre do aniversário da Rachel todo dia 5 de maio ou de retornar a ligação para a sua mãe todo domingo.",
+                ],
+            ],
+            // What the six small drawings show.
+            'screens' => [
+                'contact' => [
+                    'label' => "A página do Chandler Bing na Monica. Ele mora do outro lado do corredor, no apartamento 19, vocês se conheceram quando ele se mudou, o colega de apartamento dele é o Joey Tribbiani e a parceira dele é a Monica Geller. O último evento de vida dele é o jantar de Ação de Graças, em 27 de novembro.",
+                    'name' => "Chandler Bing",
+                    'meta' => "Apartamento 19, do outro lado do corredor",
+                    'rows' => [
+                        ['who' => "Joey Tribbiani", 'what' => "Colega de apartamento"],
+                        ['who' => "Monica Geller", 'what' => "Parceira"],
+                    ],
+                    'last' => "Visto pela última vez no jantar de Ação de Graças",
+                ],
+                'knowledge' => [
+                    'label' => "Uma pasta de Conhecimento na Monica chamada Apartamento 20, com uma nota chamada A Máquina da Umidade e uma lista chamada Livros para ler.",
+                    'folder' => "Apartamento 20",
+                    'entries' => [
+                        ['kind' => 'note', 'name' => "A Máquina da Umidade", 'meta' => "Nota · editada ontem"],
+                        ['kind' => 'list', 'name' => "Livros para ler", 'meta' => "Lista · 2 itens"],
+                        ['kind' => 'note', 'name' => "Plano de lugares do Dia de Ação de Graças", 'meta' => "Nota · editada em 1997"],
+                    ],
+                ],
+                'possession' => [
+                    'label' => "Uma poltrona reclinável chamada Rosita na Monica, na sala, de frente para a TV, comprada por US\$ 1.200. Nunca foi emprestada.",
+                    'name' => "Rosita",
+                    'kind' => "Poltrona reclinável",
+                    'facts' => [['Local', "Sala"], ['Preço', 'US$ 1.200']],
+                    'status' => "Nunca emprestada",
+                ],
+                'event' => [
+                    'label' => "Um evento de vida na Monica: jantar de Ação de Graças em 27 de novembro, com Monica, Rachel, Ross e Chandler. A nota diz que o peru chegou atrasado.",
+                    'name' => "Jantar de Ação de Graças",
+                    'date' => "27 de novembro",
+                    'note' => "O peru chegou atrasado. O Ross também.",
+                ],
+                'places' => [
+                    'label' => "Locais aninhados na Monica: o apartamento 20 e, dentro dele, o armário do corredor, que guarda a fantasia de Tatu de Natal e as luzes de Natal.",
+                    'path' => ["Apartamento 20", "Armário do corredor"],
+                    'items' => ["Fantasia de Tatu de Natal", "Luzes de Natal", "Não pergunte"],
+                ],
+                'reminder' => [
+                    'label' => "Um lembrete na Monica para o aniversário da Rachel Green, todo ano em 5 de maio, por e-mail, o próximo em 23 dias.",
+                    'who' => "Rachel Green",
+                    'what' => "Aniversário",
+                    'when' => "Todo ano em 5 de maio",
+                    'next' => "Em 23 dias",
+                    'channel' => "Por e-mail",
+                ],
+            ],
+        ],
+
+        'questions' => [
+            'eyebrow' => "Feita para as perguntas que você realmente faz",
+            'title' => "As pequenas coisas que você vai ficar feliz de ter guardado.",
+            'lead' => "Um bom aplicativo de organização pessoal não serve para juntar informação por juntar. Serve para achar a resposta quando o dia a dia pede.",
+            'items' => [
+                ['q' => "Quem está com a minha fantasia de Tatu de Natal?", 'a' => "Mantenha os seus bens e empréstimos ligados a quem pegou emprestado, com a data prevista de devolução."],
+                ['q' => "Quando foi a última vez que conversei com o Gunther?", 'a' => "Reveja os momentos compartilhados e tenha uma ideia mais clara de como vocês se mantiveram em contato. Até com quem, na maior parte do tempo, só traz o seu café."],
+                ['q' => "Quanto pagamos pelo pebolim?", 'a' => "Mantenha compras, dados de identificação e histórico de manutenção junto do próprio item."],
+                ['q' => "Onde coloquei aquelas recomendações de Londres?", 'a' => "Guarde ideias e notas de consulta em pastas e listas organizadas de Conhecimento, prontas para quando você precisar."],
+            ],
+            'closing' => "Nem todo detalhe precisa morar na sua cabeça. Algumas coisas só precisam de um lugar confiável para ficar.",
+        ],
+
+        'structure' => [
+            'eyebrow' => "Um aplicativo de verdade, não só uma pasta de notas",
+            'title' => "Dê alguma estrutura às suas informações.",
+            'body' => [
+                "Uma nota simples é útil. Mas uma pessoa não é só uma nota. Um bem não é só uma linha em uma planilha. E um evento importante costuma envolver mais de uma pessoa.",
+                "A Monica dá a cada tipo de informação pessoal o seu lugar. Relacionamentos ligam pessoas. Eventos de vida têm datas e participantes. Bens podem ter compras, registros de seguro, histórico de manutenção e locais.",
+            ],
+            'closing' => "É essa estrutura que faz da Monica um banco de dados pessoal, e não apenas mais um lugar para anotar coisas.",
+            'caption' => "Um lugar para os detalhes, a história e o contexto por trás das coisas da sua vida.",
+            'benefits' => [
+                ['title' => "Informações conectadas", 'body' => "Mantenha as relações entre pessoas, experiências, bens e lugares onde elas naturalmente pertencem."],
+                ['title' => "Histórico útil", 'body' => "Veja o que mudou ao longo do tempo, do tempo passado com um amigo à manutenção feita em um item."],
+                ['title' => "Detalhes que fazem sentido", 'body' => "Use os campos e os tipos de registro que combinam com as informações que você guarda."],
+            ],
+            // The large drawing: the Timeline section of Rosita's page, as
+            // the application draws it (possessions/timeline.blade.php).
+            'screen' => [
+                'label' => "A linha do tempo de uma poltrona reclinável chamada Rosita na Monica, um móvel guardado na sala e com a etiqueta Não emprestar. Ao lado, as seções da página dela: visão geral, linha do tempo, transações, seguro, avaliações, procedência, manutenção, empréstimos, locais e documentos. A linha do tempo reúne quatro registros. Em 2001, o apoio de pés foi consertado pelo Joey. Em 1998, Rosita ficou na sala do apartamento 19, onde está até hoje, segurada contra danos acidentais, e foi comprada junto com a outra poltrona.",
+                'type' => "Móvel",
+                'keptIn' => "guardado em",
+                'place' => "Sala",
+                'name' => "Rosita",
+                'tag' => "Não emprestar",
+                'sections' => [
+                    'overview' => "Visão geral",
+                    'timeline' => "Linha do tempo",
+                    'transactions' => "Transações",
+                    'insurance' => "Seguro",
+                    'valuations' => "Avaliações",
+                    'provenance' => "Procedência",
+                    'maintenance' => "Manutenção",
+                    'loans' => "Empréstimos",
+                    'locations' => "Locais",
+                    'documents' => "Documentos",
+                ],
+                'title' => "Linha do tempo",
+                'lead' => "Tudo o que aconteceu com este bem, reunido a partir das outras seções e mantido em ordem.",
+                'all' => "Tudo",
+                'groups' => [
+                    [
+                        'year' => '2001',
+                        'count' => "1 registro",
+                        'entries' => [
+                            ['section' => 'maintenance', 'noun' => "Manutenção", 'date' => "2 de maio de 2001", 'title' => "Apoio de pés consertado", 'detail' => "Joey Tribbiani · A alavanca emperrou no meio do caminho"],
+                        ],
+                    ],
+                    [
+                        'year' => '1998',
+                        'count' => "3 registros",
+                        'entries' => [
+                            ['section' => 'locations', 'noun' => "Local", 'date' => "14 de março de 1998", 'badge' => "Aqui agora", 'title' => "Guardada no Apartamento 19 › Sala", 'detail' => "De frente para a TV"],
+                            ['section' => 'insurance', 'noun' => "Seguro", 'date' => "14 de março de 1998", 'title' => "Coberta pela Greenwich Mutual", 'detail' => "Danos acidentais"],
+                            ['section' => 'transactions', 'noun' => "Transação", 'date' => "14 de março de 1998", 'badge' => "Aquisição", 'title' => "Compra", 'detail' => "Comprada junto com a outra poltrona"],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        'yours' => [
+            'eyebrow' => "Sua vida não é um modelo pronto",
+            'title' => "Organize as suas informações do seu jeito.",
+            'body' => "Algumas pessoas querem guardar um registro da família e dos amigos. Outras se importam mais com a casa, com as coleções ou com o conhecimento que acumularam ao longo dos anos.",
+            'closing' => "A Monica dá espaço para tudo isso.",
+            'items' => [
+                ['title' => "Separe as diferentes partes da sua vida", 'body' => "Use cofres para organizar áreas distintas, como a vida pessoal ou o trabalho, dentro da sua conta."],
+                ['title' => "Mantenha os campos que importam", 'body' => "Escolha modelos e personalize os campos para combinar com as pessoas e os outros registros que você gerencia."],
+                ['title' => "Crie os seus próprios tipos de registro", 'body' => "As suas informações nem sempre cabem em uma categoria predefinida. A Monica aceita tipos de registro personalizados, para você moldar um gerenciador de informações pessoais em torno do que importa para você."],
+            ],
+            // The drawing: Settings, Contacts and more, as the application
+            // draws it (settings/account/entity-types/index.blade.php).
+            'screen' => [
+                'label' => "As configurações de Contatos e mais na Monica. Além dos contatos, que são nativos e reúnem 84 perfis, a conta criou três tipos de perfil próprios: apartamentos, com 2 perfis, animais de estimação, com 2 perfis, e fantasias de festa, com 3 perfis. Cada um pode ser editado, e as linhas podem ser arrastadas para mudar a ordem na navegação do cofre.",
+                'title' => "Contatos e mais",
+                'description' => "Você já tem perfis para pessoas. Crie outros tipos de perfil para os animais de estimação, as empresas ou as coisas que você quer lembrar. Cada um tem as próprias informações, organizadas em seções, como um contato.",
+                'create' => "Criar um tipo de perfil",
+                'createNote' => "Comece por um tipo, como “Animais de estimação”. Depois você adiciona cada animal, como “Garfield”.",
+                'list' => "Seus tipos de perfil",
+                'listNote' => "Arraste uma linha para mudar a ordem na navegação do cofre.",
+                'contacts' => "Contatos",
+                'builtIn' => "Nativo",
+                'contactsCount' => "84 perfis",
+                'locked' => "Não pode ser excluído",
+                'edit' => "Editar",
+                'types' => [
+                    ['name' => "Apartamentos", 'count' => "2 perfis"],
+                    ['name' => "Animais de estimação", 'count' => "2 perfis"],
+                    ['name' => "Fantasias de festa", 'count' => "3 perfis"],
+                ],
+            ],
+        ],
+
+        'knowledge' => [
+            'eyebrow' => "Um lar para o que você sabe",
+            'title' => "Guarde conhecimento a que vale a pena voltar.",
+            'lead' => "Uma lista de livros favoritos. Instruções para cuidar da casa. Uma coleção de lugares para visitar. Algumas notas que você gostaria de ter guardado anos atrás.",
+            'body' => [
+                "Gestão de conhecimento pessoal não precisa significar montar um elaborado segundo cérebro. Às vezes significa apenas escrever algo em um lugar onde você sabe que vai encontrar de novo.",
+                "Com a Monica, você pode organizar notas e listas em pastas, buscar no conteúdo delas e manter o seu material de consulta junto com o resto da sua vida pessoal.",
+            ],
+            'cta' => "Comece de graça",
+            'caption' => "Suas notas e listas, organizadas para serem úteis quando você precisar.",
+            'screen' => [
+                'label' => "A área de Conhecimento da Monica. A barra lateral lista quatro pastas: Apartamento 20, Receitas, Ideias de viagem e Livros. A pasta Receitas está aberta em uma nota chamada A Máquina da Umidade, a receita do sanduíche de sobras de Ação de Graças do Ross, e em uma lista chamada Livros para ler, com Mulherzinhas marcado e O Iluminado ainda não.",
+                'title' => "Conhecimento",
+                'folders' => ["Apartamento 20", "Receitas", "Ideias de viagem", "Livros"],
+                'open' => 1,
+                'note' => "A Máquina da Umidade",
+                'noteMeta' => "Nota · Markdown",
+                'noteBody' => [
+                    "O sanduíche de sobras de Ação de Graças do Ross.",
+                    "Peru, molho de cranberry e uma fatia extra de pão embebido em molho no meio.",
+                    "Não deixe na geladeira do escritório.",
+                ],
+                'list' => "Livros para ler",
+                'listItems' => [
+                    ['done' => true, 'name' => "Mulherzinhas"],
+                    ['done' => false, 'name' => "O Iluminado (guarde no freezer)"],
+                ],
+            ],
+        ],
+
+        'ownership' => [
+            'eyebrow' => "Suas informações, sua escolha",
+            'title' => "Informações pessoais merecem um lar pessoal.",
+            'lead' => "A sua vida digital é sua. O software que você usa para organizá-la deveria respeitar isso.",
+            'body' => [
+                "A Monica é um gerenciador de informações pessoais de código aberto que você pode usar como aplicativo hospedado ou auto-hospedar na sua própria infraestrutura.",
+                "Não há anúncios embutidos na Monica, e o aplicativo funciona sem um assistente de IA. Você pode simplesmente abri-lo, revisar as suas informações e mantê-las em dia por conta própria.",
+            ],
+            'github' => "Conheça o projeto de código aberto",
+            'items' => [
+                ['title' => "Código aberto", 'body' => "Inspecione o código, contribua com o projeto ou rode uma instância por conta própria."],
+                ['title' => "Auto-hospedável", 'body' => "Prefere gerenciar a sua própria infraestrutura? A Monica pode rodar no seu servidor."],
+                ['title' => "Feita para pessoas", 'body' => "Use o aplicativo diretamente, sem depender de um chatbot ou de uma automação para acessar as suas informações."],
+            ],
+        ],
+
+        'ai' => [
+            'eyebrow' => "E quando você quiser uma ajudinha",
+            'title' => "Suas informações também podem trabalhar com IA.",
+            'body' => [
+                "A Monica é útil por si só. Mas, se você usa assistentes de IA, também pode conectar assistentes compatíveis à sua conta da Monica pelo Model Context Protocol (MCP).",
+                "Peça a um assistente que guarde uma nota, registre um evento de vida ou procure algo que você já guardou. As informações continuam na Monica, onde você pode ver e gerenciar por conta própria.",
+            ],
+            'link' => "Descubra a memória pessoal de IA",
+        ],
+
+        'faq' => [
+            'title' => "Algumas coisas que você pode estar se perguntando.",
+            'items' => [
+                ['q' => "O que é um software de gestão de informações pessoais?", 'a' => "Um software de gestão de informações pessoais ajuda você a guardar, organizar e encontrar informações da sua vida cotidiana. A Monica reúne contatos, relacionamentos, notas, listas, bens, eventos de vida, locais e lembretes em um só aplicativo."],
+                ['q' => "Como a Monica é diferente de um aplicativo de notas?", 'a' => "Um aplicativo de notas é um bom lugar para anotar coisas. A Monica também dá a pessoas, relacionamentos, eventos e bens os seus próprios registros estruturados. Você ainda pode criar notas e listas comuns na área de Conhecimento da Monica."],
+                ['q' => "A Monica pode me ajudar a organizar a minha vida pessoal?", 'a' => "Sim. Você pode usar a Monica como um aplicativo de organização pessoal para acompanhar pessoas, momentos importantes, conhecimento útil, bens, locais e lembretes. Você escolhe o que registrar e como organizar."],
+                ['q' => "A Monica é um banco de dados pessoal?", 'a' => "Sim. A Monica guarda diferentes tipos de informação pessoal como registros estruturados, em vez de tratar tudo como um único documento de texto. Ela também aceita modelos personalizáveis e tipos de registro personalizados."],
+                ['q' => "Posso usar a Monica para gestão de conhecimento pessoal?", 'a' => "Sim. A Monica inclui pastas de Conhecimento, notas em Markdown e listas. Você pode usá-las para organizar material de consulta, recomendações, instruções e outras coisas que quer lembrar."],
+                ['q' => "Posso acompanhar os meus bens?", 'a' => "Sim. A Monica pode registrar bens, compras, manutenção, dados de seguro, empréstimos a outras pessoas e onde cada item está guardado."],
+                ['q' => "Posso usar a Monica para acompanhar amigos e família?", 'a' => "Sim. A Monica começou como um CRM pessoal, e as pessoas e os relacionamentos continuam no centro do aplicativo. Você pode guardar dados de contato, relacionamentos, lembretes e eventos de vida."],
+                ['q' => "A Monica é um organizador familiar ou uma conta doméstica compartilhada?", 'a' => "A Monica pode guardar informações sobre a sua casa e as pessoas da sua vida, mas uma conta foi pensada, por enquanto, para uma pessoa. Ela não oferece um espaço familiar compartilhado com vários usuários."],
+                ['q' => "A Monica é de código aberto?", 'a' => "Sim. A Monica é de código aberto sob a licença AGPL-3.0."],
+                ['q' => "Posso auto-hospedar a Monica?", 'a' => "Sim. Você pode rodar a Monica na sua própria infraestrutura em vez de usar o serviço hospedado. Auto-hospedar exige que você cuide do seu servidor e da segurança, dos backups e da configuração dele."],
+                ['q' => "Preciso de um assistente de IA para usar a Monica?", 'a' => "Não. A Monica é um aplicativo completo que você pode usar diretamente. A conexão com IA é opcional."],
+                ['q' => "Posso conectar o ChatGPT ou o Claude à Monica?", 'a' => "A Monica inclui um servidor MCP e guias de conexão para clientes de IA compatíveis, incluindo o ChatGPT e o Claude. A disponibilidade pode depender do cliente e do plano dele. Veja a página de memória de IA e a documentação do MCP para os detalhes."],
+                ['q' => "A Monica é gratuita?", 'a' => "A Monica oferece um nível hospedado gratuito, com limites, e opções pagas. Você também pode auto-hospedar o software de código aberto. Veja a página de preços para os detalhes dos planos."],
+                ['q' => "A Monica importa automaticamente todos os meus contatos e documentos?", 'a' => "Não. A Monica não oferece hoje uma importação geral do Google Contatos, dos Contatos da Apple, de arquivos CSV ou de bibliotecas de documentos quaisquer. Você pode digitar as informações diretamente, e algumas importações no formato da Monica são aceitas."],
+            ],
+        ],
+
+        'closing' => [
+            'eyebrow' => "Mantenha por perto o que importa",
+            'title' => "Um lugar para tudo o que você não quer esquecer.",
+            'body' => "A sua vida é feita de pessoas, lugares, coisas, momentos e incontáveis pequenos detalhes. Eles merecem mais do que um punhado de notas espalhadas.",
+            'lead' => "Dê um lar a eles na Monica.",
+            'cta' => "Comece de graça",
+            'crm' => "Conheça o CRM pessoal da Monica",
+            'note' => "Código aberto · Auto-hospedável · Feita para pessoas",
+        ],
+    ],
+
+    /**
+     * The MCP server page, "Your personal data, connected to your AI agents"
+     * (route key `mcpServer`). English only, like the AI memory page. The
+     * technical sibling of that page: endpoints, tools, authentication.
+     *
+     * Its examples come from the demo vault, as the homepage's do: the
+     * reader lent Ross their Holiday Armadillo costume, due back on 28
+     * December. Keep the object, the person and the date in step between
+     * `workflow` and `visibility`. Tool names are the product's own.
+     */
+    'mcpServer' => [
+        'endpoint' => "https://my.monicahq.com/mcp",
+        'selfHosted' => "https://YOUR-MONICA-HOST/mcp",
+        'copy' => "Copiar",
+        'copied' => "Copiado",
+        'costume' => "Fantasia de Tatu de Natal",
+        'borrower' => "Ross Geller",
+        'due' => "Devolução em 28 de dezembro",
+
+        'hero' => [
+            'eyebrow' => "Suporte nativo ao Model Context Protocol",
+            'title' => "Seus dados pessoais, conectados aos seus agentes de IA.",
+            'lede' => "A Monica vem com um servidor MCP embutido que permite a assistentes de IA compatíveis trabalhar com os seus dados pessoais, de contatos e relacionamentos a conhecimento, lembretes, eventos de vida e bens.",
+            'body' => "Um banco de dados pessoal de verdade. Um aplicativo de verdade. E uma conexão direta para os seus agentes pelo Model Context Protocol.",
+            'connect' => "Conectar um assistente de IA",
+            'start' => "Comece de graça",
+            'tools' => "Explorar as ferramentas MCP",
+            'trust' => ["Código aberto", "MCP remoto", "OAuth e chaves de API", "Auto-hospedável"],
+            'endpointLabel' => "Endpoint MCP hospedado",
+        ],
+
+        'unlocks' => [
+            'title' => "Dê aos seus assistentes de IA algo útil com que trabalhar.",
+            'body' => [
+                "O Model Context Protocol (MCP) permite que assistentes de IA chamem ferramentas expostas por outros aplicativos.",
+                "Com a Monica, essas ferramentas se conectam diretamente às suas informações pessoais. Um assistente pode consultar um relacionamento, criar um evento de vida com data, manter uma nota de conhecimento, acompanhar um bem ou conferir os próximos lembretes, enquanto a Monica guarda os registros em um banco de dados estruturado que você mesmo pode acessar.",
+            ],
+            'closing' => "Sem serviço de memória separado para montar. Sem ponte personalizada para manter. O servidor MCP faz parte da Monica.",
+            'flow' => [
+                ['title' => "Seu assistente de IA", 'body' => "Envia um pedido de ferramenta MCP, quando decide fazê-lo."],
+                ['title' => "Servidor MCP da Monica", 'body' => "Autentica e executa a operação com suporte."],
+                ['title' => "Seus dados na Monica", 'body' => "Guarda e devolve registros pessoais estruturados."],
+            ],
+        ],
+
+        'workflow' => [
+            'title' => "De uma conversa a algo que você pode encontrar de novo.",
+            'steps' => [
+                [
+                    'title' => "Peça ao seu assistente",
+                    'prompt' => "Emprestei a minha fantasia de Tatu de Natal ao Ross. Ele vai devolver no dia 28 de dezembro. Guarde isso na Monica.",
+                    'body' => "O seu assistente usa as ferramentas MCP da Monica para registrar o empréstimo, ligá-lo à pessoa e acompanhar a data prevista de devolução.",
+                    'caption' => "Um pedido em linguagem natural vira uma ação MCP estruturada.",
+                    'label' => "Uma conversa com o Claude, com a Monica conectada. Você pede que ele guarde que emprestou a sua fantasia de Tatu de Natal ao Ross, com devolução em 28 de dezembro. O Claude chama a ferramenta create-possession-loan da Monica e confirma que o empréstimo foi salvo.",
+                    'reply' => "Salvo. A Monica mostra a fantasia emprestada ao Ross até 28 de dezembro.",
+                ],
+                [
+                    'title' => "Veja na Monica",
+                    'prompt' => null,
+                    'body' => "Abra a fantasia na Monica e veja o histórico de empréstimos junto com o resto das informações sobre esse bem.",
+                    'caption' => "O mesmo registro pode ser visto e editado na Monica.",
+                    'label' => "A página da fantasia de Tatu de Natal na Monica, guardada no armário do corredor. A seção de empréstimos mostra que ela foi emprestada a Ross Geller, com devolução em 28 de dezembro, e um empréstimo anterior ao Ross, devolvido no ano passado.",
+                    'reply' => null,
+                ],
+                [
+                    'title' => "Pergunte depois",
+                    'prompt' => "Consulte a Monica. Quem está com a minha fantasia de tatu e quando eu devo recebê-la de volta?",
+                    'body' => "O assistente lê os registros da Monica e devolve os detalhes que você guardou.",
+                    'caption' => "Seu assistente pode recuperar as informações em uma conversa posterior.",
+                    'label' => "Uma nova conversa com o ChatGPT, com a Monica conectada. Você pergunta quem está com a sua fantasia de tatu. O ChatGPT chama a ferramenta list-possession-loans da Monica e responde que o Ross está com ela, com devolução em 28 de dezembro, e que ele já a pegou emprestada antes.",
+                    'reply' => "O Ross está com ela, com devolução em 28 de dezembro. É o segundo ano seguido.",
+                ],
+            ],
+            'closet' => "Guardada no armário do corredor",
+            'loans' => "Empréstimos",
+            'onLoan' => "Emprestada",
+            'returned' => "Devolvida em janeiro passado",
+            'connected' => "Monica conectada",
+            'closing' => "O assistente cuida da conversa.",
+            'closingMuted' => "A Monica guarda o registro.",
+        ],
+
+        'tools' => [
+            'title' => "236 ferramentas MCP. Um banco de dados pessoal.",
+            'lead' => "A Monica expõe 236 ferramentas MCP registradas, que cobrem informações pessoais, relacionamentos, conhecimento, acontecimentos do dia a dia e coisas que você tem. Os agentes podem realizar as operações com suporte pelas mesmas regras de aplicação da API JSON da Monica.",
+            // The glyph and the colour of each card are in the template.
+            'items' => [
+                [
+                    'title' => "Pessoas e relacionamentos",
+                    'body' => "Encontre pessoas, leia os perfis delas, crie contatos pelo nome e gerencie as conexões entre elas.",
+                    'prompt' => "Com quem o Ross tem parentesco? Seja breve, ele já casou três vezes.",
+                    'names' => ['search-records', 'get-contact-markdown', 'create-contact-relationship'],
+                ],
+                [
+                    'title' => "Eventos de vida e histórico",
+                    'body' => "Registre ligações, reuniões, viagens, marcos e momentos e recupere os detalhes depois.",
+                    'prompt' => "Registre o meu café com a Phoebe no Central Perk e que ela tocou uma música nova sobre um gato.",
+                    'names' => ['create-life-event', 'list-life-events', 'get-life-event'],
+                ],
+                [
+                    'title' => "Conhecimento e notas",
+                    'body' => "Crie e atualize notas em Markdown, organize pastas e mantenha listas de informações que valem a pena guardar.",
+                    'prompt' => "Guarde a receita da Máquina da Umidade nas minhas notas de Receitas.",
+                    'names' => ['create-knowledge-note', 'search-knowledge', 'update-knowledge-note'],
+                ],
+                [
+                    'title' => "Bens e pertences",
+                    'body' => "Acompanhe compras, manutenção, registros de seguro, locais e empréstimos.",
+                    'prompt' => "Registre que o apoio de pés da Rosita foi consertado hoje. Não conte ao Joey quem quebrou.",
+                    'names' => ['create-possession-maintenance-record', 'list-possessions'],
+                ],
+                [
+                    'title' => "Lembretes",
+                    'body' => "Crie lembretes recorrentes ou únicos, consulte as próximas datas e registre se você lembrou.",
+                    'prompt' => "Me lembre de alimentar o pintinho e o pato toda manhã.",
+                    'names' => ['create-contact-reminder', 'list-vault-reminder-occurrences'],
+                ],
+                [
+                    'title' => "Estruturas personalizadas",
+                    'body' => "Defina e use tipos de entidade, modelos e campos estruturados personalizados que reflitam como você organiza a sua vida.",
+                    'prompt' => "Crie um tipo de registro para as minhas fantasias de festa.",
+                    'names' => ['create-entity', 'create-entity-type'],
+                ],
+            ],
+            'stats' => [
+                ['value' => "236", 'label' => "ferramentas MCP registradas"],
+                ['value' => "Streamable HTTP", 'label' => "transporte remoto"],
+                ['value' => "OAuth + chaves de API", 'label' => "métodos de conexão"],
+                ['value' => "Uma conta", 'label' => "compartilhada entre vários assistentes"],
+            ],
+            'docs' => "Consulte a documentação completa do MCP",
+        ],
+
+        'connect' => [
+            'title' => "Conecte com OAuth ou uma chave de API.",
+            'lead' => "O servidor MCP remoto da Monica aceita dois métodos de autenticação, para você se conectar por um fluxo de autorização interativo ou configurar um cliente voltado a desenvolvedores com uma chave dedicada.",
+            'endpoint' => "Endpoint",
+            'firstPrompt' => "Primeiro pedido",
+            'oauth' => [
+                'eyebrow' => "Opção A · OAuth",
+                'title' => "Conecte sem copiar um segredo.",
+                'body' => "Para clientes MCP que aceitam o fluxo OAuth interativo, adicione o endpoint MCP da Monica, entre na sua conta e aprove a conexão.",
+                'steps' => [
+                    "Adicione o endpoint MCP remoto da Monica nas configurações de conector do seu assistente.",
+                    "Entre na Monica quando for solicitado.",
+                    "Confira o nome do aplicativo e o destino de redirecionamento.",
+                    "Aprove o acesso e experimente uma primeira consulta somente leitura.",
+                ],
+                'prompt' => "Liste os meus cofres da Monica.",
+                'caption' => "Autorize cada conexão pela Monica.",
+                'screen' => [
+                    'label' => "A tela de autorização da Monica. O Claude pede para se conectar à sua conta da Monica e será redirecionado para claude.ai. Dois botões: Negar e Permitir.",
+                    'title' => "O Claude quer se conectar à sua conta da Monica",
+                    'body' => "Ele poderá ler e alterar os registros da sua conta, pelas ferramentas MCP da Monica.",
+                    'redirect' => "Redireciona para",
+                    'host' => "claude.ai",
+                    'deny' => "Negar",
+                    'allow' => "Permitir",
+                ],
+            ],
+            'key' => [
+                'eyebrow' => "Opção B · Chave de API",
+                'title' => "Para ferramentas de desenvolvedor e clientes MCP personalizados.",
+                'body' => "Crie uma chave de API dedicada ao seu assistente nas configurações da conta da Monica. Configure essa chave como credencial bearer do endpoint MCP remoto, seguindo as instruções do cliente que você escolheu.",
+                'header' => "Conceito do cabeçalho Authorization",
+                'headerNote' => "Este é o conceito do cabeçalho HTTP, não uma configuração de cliente para copiar e colar em qualquer lugar. A sintaxe exata depende do cliente.",
+                'prompt' => "Encontre o Gunther no meu cofre Pessoal.",
+                'caption' => "Uma chave por assistente, cada uma revogável por conta própria.",
+                'screen' => [
+                    'label' => "As configurações de chaves de API da Monica. Duas chaves estão listadas: Meu assistente de IA, criada hoje e usada há um minuto, e Cursor no notebook do trabalho, criada em outubro. Cada uma tem um botão Revogar.",
+                    'title' => "Chaves de API",
+                    'keys' => [
+                        ['name' => "Meu assistente de IA", 'meta' => "Criada hoje · usada há um minuto"],
+                        ['name' => "Cursor no notebook do trabalho", 'meta' => "Criada em 12 de outubro · usada ontem"],
+                    ],
+                    'revoke' => "Revogar",
+                    'create' => "Criar uma chave",
+                ],
+            ],
+            'selfHosted' => "Usando o seu próprio servidor? Troque o endpoint hospedado por",
+            'guides' => "Leia os guias de configuração passo a passo",
+        ],
+
+        'clients' => [
+            'title' => "Traga o assistente que você já usa.",
+            'body' => "A Monica usa o Model Context Protocol, e não uma integração proprietária presa a um provedor de IA. Ela pode ser conectada a clientes MCP remotos compatíveis, e a documentação traz instruções de configuração para:",
+            'label' => "Clientes com guia de conexão",
+            'note' => "Cada cliente oferece formas diferentes de configurar servidores MCP, e o acesso pode depender do cliente ou do plano de assinatura. Siga o guia da sua configuração.",
+            'cta' => "Veja as instruções de configuração dos clientes",
+        ],
+
+        'structured' => [
+            'title' => "Dê aos seus agentes mais do que um monte de texto.",
+            'body' => [
+                "A Monica guarda as informações em registros que refletem o dia a dia. Pessoas têm relacionamentos e histórias. Eventos de vida têm datas e participantes. Bens podem ter compras, registros de manutenção, locais e empréstimos. O conhecimento vive em notas, pastas e listas.",
+                "Essa estrutura dá ao seu assistente informações concretas para consultar e atualizar, e dá a você uma interface familiar para revisá-las por conta própria.",
+                "Um assistente pode encontrar uma pessoa, abrir o perfil completo dela em Markdown, seguir os relacionamentos, ler os eventos de vida e devolver um link para a página correspondente na Monica.",
+            ],
+            'callout' => "Dados pessoais estruturados, disponíveis para pessoas e para assistentes de IA.",
+            'caption' => "Os registros estruturados não ficam presos dentro de um chat.",
+            'screen' => [
+                'label' => "A página do Ross Geller na Monica. Os relacionamentos dele: Monica Geller, irmã; Rachel Green, é complicado; Emma, filha. Os eventos de vida dele: virou professor de paleontologia em 2001 e o terceiro casamento, em Las Vegas, em 1999. Ele está com a sua fantasia de Tatu de Natal.",
+                'name' => "Ross Geller",
+                'meta' => "Paleontólogo · amigo",
+                'relationships' => "Relacionamentos",
+                'rows' => [
+                    ['who' => "Monica Geller", 'what' => "Irmã"],
+                    ['who' => "Rachel Green", 'what' => "É complicado"],
+                    ['who' => "Emma Geller-Green", 'what' => "Filha"],
+                ],
+                'events' => "Eventos de vida",
+                'entries' => [
+                    ['what' => "Virou professor de paleontologia", 'when' => "2001"],
+                    ['what' => "Casou em Las Vegas (pela terceira vez)", 'when' => "1999"],
+                ],
+                'has' => "Está com a sua fantasia de Tatu de Natal",
+            ],
+        ],
+
+        'visibility' => [
+            'title' => "Saiba o que os seus agentes acessaram.",
+            'lead' => "Quando você conecta um assistente a informações pessoais, a visibilidade importa.",
+            'body' => [
+                "A Monica oferece um histórico MCP dedicado que mostra as chamadas de ferramentas feitas pelos assistentes conectados. Confira o assistente, a operação, o resultado e os detalhes do pedido e da resposta disponíveis no histórico.",
+                "Cada assistente conectado pode ser desconectado de forma independente. Revogar uma conexão não apaga as informações já guardadas na Monica nem desconecta os seus outros assistentes.",
+            ],
+            'points' => [
+                "Confira o histórico de chamadas MCP por até 90 dias.",
+                "Veja as ações agrupadas e filtráveis por assistente, data, resultado e ferramenta.",
+                "Revogue conexões OAuth ou chaves de API individualmente.",
+                "Marque campos de modelo selecionados como sensíveis; os assistentes conectados por OAuth não conseguem ler os valores desses campos.",
+            ],
+            'warning' => "Os assistentes conectados têm acesso a toda a conta. A Monica não oferece, por enquanto, permissões MCP somente leitura ou por cofre. Confira cada conexão antes de aprová-la.",
+            'caption' => "Veja as chamadas que os seus assistentes fazem e desconecte-os individualmente.",
+            'screen' => [
+                'label' => "O histórico de chamadas MCP da Monica, filtrado pelos últimos 7 dias. Quatro chamadas: o ChatGPT usou list-possession-loans hoje às 09:14, o Claude usou create-possession-loan ontem às 18:02, o Cursor usou search-knowledge ontem às 11:30 e o Claude usou get-contact-markdown na segunda-feira, e falhou. A primeira chamada está expandida, com um valor sensível ocultado.",
+                'title' => "Histórico MCP",
+                'filters' => ["Todos os assistentes", "Últimos 7 dias", "Todos os resultados"],
+                'calls' => [
+                    ['ChatGPT', 'openai', 'list-possession-loans', "Hoje às 09:14", true],
+                    ['Claude', 'claude', 'create-possession-loan', "Ontem às 18:02", true],
+                    ['Cursor', 'cursor', 'search-knowledge', "Ontem às 11:30", true],
+                    ['Claude', 'claude', 'get-contact-markdown', "Segunda-feira às 22:47", false],
+                ],
+                'request' => "Pedido",
+                'response' => "Resposta",
+                'failed' => "Falhou",
+            ],
+        ],
+
+        'reference' => [
+            'title' => "Construído sobre um protocolo aberto. Pronto para a sua configuração.",
+            'lead' => "A Monica expõe um endpoint MCP remoto por HTTPS usando Streamable HTTP. As ferramentas MCP usam o comportamento da API da aplicação e as regras de conta que a Monica já tem, então você trabalha com os mesmos registros pessoais que vê no aplicativo web.",
+            'head' => ["Recurso", "Servidor MCP da Monica"],
+            'rows' => [
+                ["Protocolo", "Model Context Protocol (MCP)"],
+                ["Transporte", "Streamable HTTP remoto sobre HTTPS"],
+                ["Endpoint", "/mcp na sua instância da Monica hospedada ou auto-hospedada"],
+                ["Autenticação", "OAuth ou chave de API bearer"],
+                ["Catálogo de ferramentas", "236 ferramentas registradas"],
+                ["Primitivas MCP", "Somente ferramentas; sem recursos nem prompts MCP publicados"],
+                ["Dados", "Pessoas, relacionamentos, eventos de vida, lembretes, notas, listas, bens, locais e mais"],
+                ["Limite de requisições hospedado", "60 chamadas MCP por minuto por conexão"],
+                ["Auto-hospedado", "Disponível; sem limite de taxa MCP na aplicação"],
+                ["Documentação", "/docs/mcp e /docs/mcp.md"],
+            ],
+            'hosted' => "Endpoint MCP remoto",
+            'pattern' => "Padrão do endpoint auto-hospedado",
+            'note' => "A Monica não é um framework MCP nem um serviço de extração autônoma de memórias. O seu assistente decide quando chamar uma ferramenta e quais informações enviar.",
+            'docs' => "Abrir a documentação do MCP",
+            'github' => "Explore o código-fonte aberto",
+        ],
+
+        'selfHosting' => [
+            'title' => "O seu servidor. Os seus dados pessoais. A sua escolha.",
+            'body' => [
+                "A Monica é de código aberto sob a licença AGPL-3.0 e pode ser auto-hospedada. Rode o banco de dados pessoal e o servidor MCP embutido em uma infraestrutura que você controla ou use o serviço hospedado da Monica e conecte-se ao endpoint remoto dele.",
+                "A mesma integração MCP básica está disponível para contas hospedadas gratuitas e para instalações auto-hospedadas. Se você auto-hospedar, cuida da instalação, da segurança, dos backups e da disponibilidade do seu servidor.",
+            ],
+            'cta' => "Conheça a auto-hospedagem",
+        ],
+
+        'compare' => [
+            'title' => "Não é só um endpoint MCP. É um lar para os dados por trás dele.",
+            'lead' => "Um servidor MCP é útil quando as informações por trás dele continuam compreensíveis e gerenciáveis. A Monica oferece o aplicativo, o banco de dados e a conexão com agentes em conjunto.",
+            'head' => ["Uma integração MCP isolada", "Monica"],
+            'rows' => [
+                ["Conecta um assistente a ferramentas", "Sim", "Sim"],
+                ["Inclui um aplicativo de informações pessoais utilizável", "Depende da implementação", "Sim"],
+                ["Pessoas, eventos e bens estruturados", "Depende do backend", "Nativo"],
+                ["Registros legíveis por pessoas", "Depende do backend", "Sim"],
+                ["Histórico de conexão de cada assistente", "Depende da implementação", "Sim"],
+                ["Código aberto e auto-hospedável", "Depende do projeto", "Sim"],
+            ],
+            'caption' => "O que uma integração MCP isolada e a Monica oferecem, cada uma",
+            'closing' => "Feita para as pessoas cujos dados ela guarda, e não só para os agentes que os acessam.",
+        ],
+
+        'faq' => [
+            'title' => "Perguntas frequentes",
+            'items' => [
+                ['q' => "O que é o servidor MCP da Monica?", 'a' => "É o servidor Model Context Protocol (MCP) embutido na Monica, que permite a assistentes de IA compatíveis usar ferramentas para ler e modificar dados pessoais com suporte guardados na Monica."],
+                ['q' => "A Monica é um servidor MCP de código aberto?", 'a' => "Sim. A Monica é um aplicativo de código aberto sob a licença AGPL-3.0, e o servidor MCP dela está incluído no aplicativo. Você pode usar o serviço hospedado ou auto-hospedar a Monica."],
+                ['q' => "Qual é a URL do endpoint MCP?", 'a' => "No serviço hospedado, o endpoint MCP remoto é https://my.monicahq.com/mcp. Uma instância auto-hospedada expõe /mcp no próprio endereço público."],
+                ['q' => "A Monica aceita conexões MCP remotas?", 'a' => "Sim. A Monica usa Streamable HTTP sobre HTTPS. Ela não oferece um servidor MCP local separado via stdio. O seu cliente precisa aceitar MCP remoto."],
+                ['q' => "Posso conectar o Claude ou o ChatGPT à Monica?", 'a' => "A Monica oferece instruções de configuração para o Claude Desktop e o ChatGPT, além de clientes voltados a desenvolvedores. A disponibilidade e os requisitos de configuração dependem do cliente e, em alguns casos, do plano de assinatura. Consulte a documentação atual do MCP para o fluxo com suporte."],
+                ['q' => "A Monica aceita autenticação OAuth?", 'a' => "Sim. Os clientes com suporte podem usar um fluxo de autorização OAuth interativo. A Monica também aceita chaves de API bearer para clientes que exigem configuração manual."],
+                ['q' => "Posso usar os mesmos dados da Monica com vários assistentes de IA?", 'a' => "Sim. Você pode conectar vários assistentes a uma mesma conta da Monica. Cada conexão pode ser gerenciada e revogada de forma independente, e os assistentes podem acessar os mesmos dados da conta dentro das permissões da conexão deles."],
+                ['q' => "Quantas ferramentas MCP a Monica oferece?", 'a' => "A Monica registra 236 ferramentas MCP. A disponibilidade das ferramentas varia conforme as permissões da conta, o acesso de administrador e os recursos ativados."],
+                ['q' => "Com que tipos de dados as ferramentas MCP podem trabalhar?", 'a' => "As ferramentas com suporte cobrem pessoas, relacionamentos, eventos de vida, lembretes, notas e listas de conhecimento, bens, locais, modelos e outros tipos de registro pessoal. Nem toda operação que o aplicativo web oferece está disponível pelo MCP."],
+                ['q' => "Um assistente pode guardar o telefone ou o aniversário de alguém na Monica?", 'a' => "Não pelas ferramentas MCP atuais. Os assistentes podem criar pessoas pelo nome e gerenciar muitos registros relacionados, mas editar os campos detalhados do perfil de uma pessoa exige a interface web da Monica ou a API JSON."],
+                ['q' => "Posso dar a um assistente de IA acesso somente leitura?", 'a' => "Por enquanto não. Os assistentes conectados comuns têm acesso amplo a toda a conta. A Monica ainda não oferece uma configuração de acesso MCP somente leitura ou por cofre. Alguns campos de modelo podem ser marcados como sensíveis, o que impede os assistentes conectados por OAuth de ler esses valores."],
+                ['q' => "A Monica se lembra automaticamente de tudo o que eu conto a um assistente?", 'a' => "Não. A Monica não escuta as suas conversas nem extrai memórias automaticamente. As informações são guardadas ou recuperadas quando o seu assistente de IA chama as ferramentas MCP da Monica."],
+                ['q' => "O acesso MCP está disponível no plano gratuito?", 'a' => "Sim. O servidor MCP está disponível nas contas hospedadas gratuitas, sujeito aos limites habituais da conta e a eventuais limites de taxa do servidor. A auto-hospedagem também está disponível."],
+                ['q' => "Posso ver o que o meu agente de IA fez?", 'a' => "Sim. A Monica oferece um histórico das chamadas de ferramentas MCP, com os detalhes do pedido e da resposta, mantido por até 90 dias. Você também pode desconectar os assistentes individualmente."],
+                ['q' => "Posso usar o MCP da Monica com a minha instância auto-hospedada?", 'a' => "Sim. Troque o endpoint MCP hospedado pelo endpoint /mcp da sua instância. Você é responsável por torná-lo acessível com segurança a partir do seu cliente MCP."],
+                ['q' => "A Monica oferece busca semântica ou extração automática de memórias?", 'a' => "Não. A Monica oferece registros estruturados e busca por palavra-chave. Qualquer decisão automática de guardar ou recuperar informações depende do assistente conectado."],
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Seu banco de dados pessoal está pronto para os seus agentes de IA.",
+            'body' => "Conecte um assistente compatível, explore as ferramentas MCP da Monica e comece a montar um sistema de informações pessoais que funcione tanto para você quanto para os agentes que você escolher.",
+            'connect' => "Conectar um assistente de IA",
+            'start' => "Comece de graça",
+            'aiMemory' => "Procurando o lado humano da memória de IA?",
+            'note' => "Código aberto · Auto-hospedável · MCP incluído",
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.
@@ -3119,5 +4170,105 @@ return [
     'notFound' => [
         'title' => "Página não encontrada.",
         'body' => "Este endereço não leva a lugar nenhum. Ele pode ter mudado, ou pode nunca ter existido.",
+    ],
+
+    /**
+     * The handbook (`_layouts/handbook`, `_partials/handbook/`). Read in the
+     * locales listed in $handbookSlugs in config.php, so a locale that drops
+     * out of that list can lose this block with its articles.
+     *
+     * The articles are Markdown in source/_handbook_<locale>/; this is only
+     * the frame around them.
+     */
+    'handbook' => [
+        'title' => "Nosso manual",
+        'intro' => "Este manual explica o que eu faço, como eu penso e como quero levar este projeto adiante. Prepare-se, ele é muito bom. Pelo menos acho que sim.",
+        'art' => "Um panda lendo um livro, sentado entre uma pilha de livros e uma xícara de café",
+        'contents' => "Índice",
+        'sections' => [
+            'general' => "Informações gerais",
+            'product' => "Produto",
+            'engineering' => "Engenharia",
+            'community' => "Comunidade e código aberto",
+            'privacy' => "Privacidade e segurança",
+            'marketing' => "Marketing",
+            'business' => "Tocar um negócio",
+            'relationships' => "Relações humanas",
+        ],
+        'articles' => ":count artigos",
+        'words' => ":count palavras",
+        'minutes' => ":count min de leitura",
+
+        'actions' => [
+            'label' => "Use este artigo em outro lugar",
+            'copy' => "Copiar para LLM",
+            'copied' => "Copiado como Markdown",
+            'markdown' => "Ver como Markdown",
+            'claude' => "Abrir no Claude",
+            'chatgpt' => "Abrir no ChatGPT",
+
+            // The question each assistant is opened with. :url is the
+            // article's Markdown file.
+            'prompt' => "Leia :url e me ajude a entendê-lo. Posso ter perguntas sobre ele.",
+        ],
+
+        'writtenBy' => "Escrito por",
+        'author' => "Régis Freyd",
+        'authorRole' => "Cofundador",
+
+        // :percent is the article's length as a share of the book's.
+        'comparison' => "Isto representa apenas :percent do número de palavras em :title, de :author",
+
+        // One book per article, picked from the article's slug, so the same
+        // article always compares itself to the same book. Word counts are
+        // rounded, as the comparison is.
+        'books' => [
+            ['title' => "Dom Quixote", 'author' => "Miguel de Cervantes", 'words' => 430000],
+            ['title' => "Um conto de duas cidades", 'author' => "Charles Dickens", 'words' => 135000],
+            ['title' => "O Senhor dos Anéis", 'author' => "J.R.R. Tolkien", 'words' => 455000],
+            ['title' => "O Pequeno Príncipe", 'author' => "Antoine de Saint-Exupéry", 'words' => 16000],
+            ['title' => "Harry Potter e a Pedra Filosofal", 'author' => "J.K. Rowling", 'words' => 77000],
+            ['title' => "O Hobbit", 'author' => "J.R.R. Tolkien", 'words' => 95000],
+            ['title' => "E não sobrou nenhum", 'author' => "Agatha Christie", 'words' => 66000],
+            ['title' => "Sonho da Câmara Vermelha", 'author' => "Cao Xueqin", 'words' => 845000],
+            ['title' => "O apanhador no campo de centeio", 'author' => "J.D. Salinger", 'words' => 73000],
+            ['title' => "O Código Da Vinci", 'author' => "Dan Brown", 'words' => 138000],
+        ],
+
+        'factTitle' => "Curiosidade aleatória, para não morrermos burros",
+
+        // One per article, picked from its slug like the book above.
+        'facts' => [
+            "O primeiro vírus de computador foi criado em 1983 e se chamava “Elk Cloner”. Ele infectava computadores Apple II por meio de disquetes.",
+            "A primeira webcam foi usada na Universidade de Cambridge para vigiar uma cafeteira, para que os pesquisadores não fizessem uma viagem à toa até uma jarra vazia.",
+            "O nome original do Windows era “Interface Manager”. Felizmente, escolheram algo mais marcante.",
+            "O primeiro site já criado continua no ar. Foi criado por Tim Berners-Lee em 1991 e fala do próprio projeto World Wide Web.",
+            "O logotipo do Firefox não é uma raposa. É um panda-vermelho. O nome “Firefox” é um apelido do panda-vermelho.",
+            "O primeiro e-mail já enviado foi de Ray Tomlinson para si mesmo, em 1971. Era uma mensagem de teste com letras aleatórias.",
+            "Na década de 1950, os computadores eram chamados de “cérebros eletrônicos”, e programar era considerado “trabalho de mulher”.",
+            "O termo “bug” em software surgiu quando uma mariposa de verdade causou uma falha no computador Harvard Mark II, em 1947.",
+            "A Amazon se chamava originalmente “Cadabra”, de “abracadabra”. O nome foi trocado porque soava parecido demais com “cadáver”.",
+            "O primeiro mouse de computador era feito de madeira. Foi inventado por Doug Engelbart em 1964.",
+            "Há mais de 1,5 bilhão de sites na internet, mas menos de 200 milhões estão ativos.",
+            "O layout de teclado QWERTY foi desenhado para retardar a digitação e evitar que as máquinas de escrever mecânicas travassem.",
+            "O primeiro domínio já registrado foi Symbolics.com, em 15 de março de 1985. Ele continua ativo até hoje.",
+            "O símbolo “@” foi escolhido para endereços de e-mail porque era pouco usado em computação e, assim, não entraria em conflito com os protocolos existentes.",
+            "A expressão “surfar na internet” foi criada em 1992 pela bibliotecária Jean Armour Polly, que escreveu um artigo intitulado “Surfing the Internet”.",
+            "CAPTCHA significa “Completely Automated Public Turing test to tell Computers and Humans Apart”.",
+            "O primeiro disco rígido de 1 GB, anunciado em 1980, pesava mais de 225 quilos e custava US\$ 40.000.",
+            "O Google se chamava inicialmente “Backrub”, porque o sistema verificava os backlinks para estimar a importância dos sites.",
+            "O primeiro vídeo do YouTube, intitulado “Me at the zoo”, foi enviado em 23 de abril de 2005 por um dos cofundadores da plataforma, Jawed Karim.",
+            "A senha mais comum em 2023 continua sendo “123456”, seguida de perto por “password”.",
+            "O jogo original Space Invaders causou uma escassez de moedas de 100 ienes no Japão por causa da popularidade dele.",
+            "A primeira programadora de computadores foi Ada Lovelace, na década de 1840, antes mesmo de os computadores serem construídos.",
+            "O termo “spam” para e-mails indesejados vem de um esquete do Monty Python em que a palavra é repetida sem parar.",
+            "O primeiro mecanismo de busca se chamava “Archie” e foi criado em 1990 para indexar sites FTP.",
+            "A primeira transação online foi a venda de maconha entre estudantes de Stanford e do MIT, no início dos anos 1970, pela ARPANET.",
+            "O programa de computador mais antigo em execução é a simulação “Doomsday Flight”, rodando desde 1973 para testar software de companhias aéreas.",
+            "O “erro 404” recebeu esse nome por causa de uma sala do CERN onde ficavam os servidores web originais.",
+            "O primeiro jogo de computador já criado foi “Spacewar!”, em 1962, desenvolvido por Steve Russell no MIT.",
+            "A palavra “robô” vem da palavra tcheca “robota”, que significa “trabalho forçado” ou “labuta”.",
+            "O símbolo “@” é chamado de “caracol” em italiano e de “rabo de macaco” em holandês.",
+        ],
     ],
 ];

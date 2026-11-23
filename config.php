@@ -257,14 +257,24 @@ $postSettings = [
 /**
  * The handbook's slug in each locale it exists in.
  *
- * English only for now. Every other page lists all eight locales; this one
- * lists the ones the handbook has actually been written in, and both the route
- * below and the collections are built from it, so a translation arrives by
- * adding its slug here and its directory of articles, `source/_handbook_fr/`.
- * The sitemap, hreflang and the locale picker read the route's own locales, so
- * none of them offers a French handbook before one exists.
+ * Written in every locale. Unlike every other page, it lists the locales the
+ * handbook has actually been written in, and both the route below and the
+ * collections are built from it, so a locale can drop out by losing its slug
+ * here and its directory of articles, `source/_handbook_fr/`. The sitemap,
+ * hreflang and the locale picker read the route's own locales, so none of them
+ * offers a handbook in a language that has none. The article slugs are the
+ * same in every language, as the blog's are.
  */
-$handbookSlugs = ['en' => 'handbook'];
+$handbookSlugs = [
+    'en' => 'handbook',
+    'fr' => 'manuel',
+    'de' => 'handbuch',
+    'es' => 'manual',
+    'pt' => 'manual',
+    'nl' => 'handboek',
+    'zh' => 'handbook',
+    'ru' => 'rukovodstvo',
+];
 
 /**
  * Everything a handbook collection is, apart from its locale and its path.
@@ -288,14 +298,29 @@ $handbookSettings = [
      */
     'output_markdown' => ['table_of_contents' => false],
 
-    /** Words in the rendered body, tags removed, which is what a reader reads. */
+    /**
+     * Words in the rendered body, tags removed, which is what a reader reads.
+     *
+     * str_word_count only knows Latin letters, so Cyrillic words are counted
+     * on their own, and each Chinese character counts as one, the way a
+     * Chinese text is measured. The blog's readingMinutes() splits them the
+     * same way.
+     */
     'wordCount' => function ($article) {
-        return str_word_count(html_entity_decode(strip_tags($article->getContent()), ENT_QUOTES, 'UTF-8'));
+        $text = html_entity_decode(strip_tags($article->getContent()), ENT_QUOTES, 'UTF-8');
+        $characters = preg_match_all('/\p{Han}/u', $text);
+        $text = preg_replace('/\p{Han}/u', ' ', $text);
+        $cyrillic = preg_match_all('/\p{Cyrillic}+/u', $text);
+
+        return $characters + $cyrillic + str_word_count(preg_replace('/\p{Cyrillic}+/u', ' ', $text));
     },
 
-    /** 200 words a minute, floored at one, as the blog counts them. */
+    /** 200 words or 300 Chinese characters a minute, floored at one, as the blog counts them. */
     'readingMinutes' => function ($article) {
-        return max(1, (int) round($article->wordCount() / 200));
+        $text = html_entity_decode(strip_tags($article->getContent()), ENT_QUOTES, 'UTF-8');
+        $characters = preg_match_all('/\p{Han}/u', $text);
+
+        return max(1, (int) round($characters / 300 + ($article->wordCount() - $characters) / 200));
     },
 
     /**
@@ -736,27 +761,42 @@ return [
         // "One memory for your AI assistants": Monica as a personal memory
         // that several AI assistants share through its MCP server. A page of
         // its own rather than a feature page, so it sits at the top level.
-        // English only until its copy is translated: like the handbook, a
-        // route declared in fewer locales is left out of the others'
-        // sitemap, hreflang and locale picker.
-        'aiMemory' => ['en' => 'ai-memory'],
+        'aiMemory' => [
+            'en' => 'ai-memory',
+            'fr' => 'memoire-ia',
+            'de' => 'ki-gedaechtnis',
+            'es' => 'memoria-ia',
+            'pt' => 'memoria-ia',
+            'nl' => 'ai-geheugen',
+            'zh' => 'ai-memory',
+            'ru' => 'pamyat-ii',
+        ],
 
         // "Your life. Beautifully organized.": Monica as the one place for
         // the everyday details of a life, for readers looking for personal
-        // information management rather than a CRM or an AI memory. English
-        // only until its copy is translated, like the AI memory page.
-        'personalData' => ['en' => 'personal-data-management'],
+        // information management rather than a CRM or an AI memory.
+        'personalData' => [
+            'en' => 'personal-data-management',
+            'fr' => 'gestion-donnees-personnelles',
+            'de' => 'persoenliche-datenverwaltung',
+            'es' => 'gestion-datos-personales',
+            'pt' => 'gestao-dados-pessoais',
+            'nl' => 'persoonlijk-gegevensbeheer',
+            'zh' => 'personal-data-management',
+            'ru' => 'upravlenie-lichnymi-dannymi',
+        ],
 
         // "Your personal data, connected to your AI agents": the technical
         // page about Monica's MCP server, for developers and MCP users, where
-        // the AI memory page tells the same story to everyone else. English
-        // only until its copy is translated.
-        'mcpServer' => ['en' => 'mcp'],
+        // the AI memory page tells the same story to everyone else. "MCP"
+        // is the protocol's name in every language, so the slug is too.
+        'mcpServer' => ['en' => 'mcp', 'fr' => 'mcp', 'de' => 'mcp', 'es' => 'mcp', 'pt' => 'mcp', 'nl' => 'mcp', 'zh' => 'mcp', 'ru' => 'mcp'],
 
         // How the project is run and why, as its maintainer writes it down.
-        // The only route not in every locale: see $handbookSlugs above. The
-        // header and the footer link to it from every language, landing on
-        // the default locale's copy where theirs does not exist yet.
+        // Built from $handbookSlugs above, which names the locales its
+        // articles are written in. The header and the footer link to it
+        // through routeLocale(), which lands on the default locale's copy for
+        // a language that has none.
         'handbook' => $handbookSlugs,
     ],
 

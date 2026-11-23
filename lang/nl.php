@@ -34,6 +34,10 @@ return [
             'api' => "API en MCP",
             'privacyFeatures' => "Privacy en beveiliging",
             'languages' => "Talen en notaties",
+            'aiMemory' => "AI-geheugen",
+            'personalData' => "Beheer van persoonlijke gegevens",
+            'mcpServer' => "MCP-server",
+            'handbook' => "Handboek",
             'contribute' => "Bijdragen",
             'page' => "Pagina :number",
             'label' => "Kruimelpad",
@@ -47,114 +51,190 @@ return [
         ],
 
         'home' => [
-            'title' => "Monica — je persoonlijke database en open source persoonlijke CRM",
-            'description' => "Monica is je persoonlijke database: leg je contacten vast, alles wat je bezit en alles wat je moet onthouden. Privé, open source, zelf te hosten.",
+            'title' => "Open source persoonlijke CRM en database — Monica",
+            'description' => "Monica is je persoonlijke database: leg je contacten, alles wat je bezit en alles wat je moet onthouden vast. Privé, open source, zelf te hosten.",
+            'ogTitle' => "Jouw mensen. Jouw spullen. Jouw herinneringen — Monica",
+            'ogDescription' => "Bewaar je contacten, bezittingen en alledaagse details bij elkaar in Monica. Een persoonlijke database voor jezelf, of te koppelen aan je AI-assistenten.",
         ],
 
         'pricing' => [
-            'title' => "Prijzen van Monica: gratis in eigen beheer, of laat Monica het hosten",
-            'description' => "Draai Monica gratis in eigen beheer, of laat Monica het hosten voor 9 USD per maand, 90 USD per jaar of eenmalig 250 USD. Elk abonnement heeft elke functie, onbeperkt contacten en geen prijs per contact.",
+            'title' => "Monica-prijzen: gehoste abonnementen en gratis zelf hosten",
+            'description' => "Host Monica gratis zelf, of kies hosting voor 9 USD per maand, 90 USD per jaar of eenmalig 250 USD. Alle functies in elk abonnement, zonder kosten per contact.",
+            'ogTitle' => "Jouw server of de onze. Jij kiest — Monica",
+            'ogDescription' => "Host Monica zelf gratis, of kies maandelijkse, jaarlijkse of levenslange hosting. Elk abonnement bevat alle functies, zonder kosten per contact.",
         ],
 
         'privacy' => [
             'title' => "Privacybeleid — Monica",
-            'description' => "Hoe Monica met je gegevens omgaat: wat we verzamelen, waar het staat, wie het kan inzien en wat er gebeurt als je je account opzegt. Geen advertenties, geen trackers, geen doorverkoop van gegevens.",
+            'description' => "Hoe Monica met je gegevens omgaat: wat we verzamelen, waar het staat, wie het ziet en wat er gebeurt als je je account sluit. Geen advertenties of trackers.",
+            'ogTitle' => "Privacybeleid — Monica",
+            'ogDescription' => "Hoe Monica met je gegevens omgaat: wat we verzamelen, waar het staat, wie het kan zien en wat er gebeurt als je je account sluit. Geen advertenties, geen trackers, geen verkoop van gegevens.",
         ],
 
         'about' => [
-            'title' => "Over ons — Monica",
-            'description' => "Monica is een open source persoonlijke database, gemaakt door twee mensen, Régis en Alexis. Geen investeerders, geen advertenties, geen verkochte gegevens. Hoe het begon, en wat nooit op de roadmap zal staan.",
+            'title' => "Over Monica: een onafhankelijk open source project",
+            'description' => "Maak kennis met Régis en Alexis, de mensen achter Monica. Lees hoe deze onafhankelijke, open source persoonlijke database begon en wat de ontwikkeling stuurt.",
+            'ogTitle' => "Twee mensen, één persoonlijke database — Monica",
+            'ogDescription' => "Maak kennis met de mensen achter Monica, lees hoe het project begon en waarom het open source, onafhankelijk en vrij van advertenties blijft.",
         ],
 
         'team' => [
             'title' => "Team — Monica",
-            'description' => "Monica wordt gebouwd door twee mensen in Montreal, met honderden open source bijdragers. Waarom we een persoonlijke CRM bouwen die menselijke relaties geen schade toebrengt.",
+            'description' => "Monica wordt gebouwd door twee mensen in Montreal, met honderden open source bijdragers. Waarom we een persoonlijke CRM bouwen die relaties niet schaadt.",
+            'ogTitle' => "Monica is een team van 2. Met honderden bijdragers.",
+            'ogDescription' => "Monica wordt gebouwd door twee mensen in Montreal, met honderden open source bijdragers. Waarom we een persoonlijke CRM bouwen die menselijke relaties geen schade toebrengt.",
         ],
 
         'contribute' => [
-            'title' => "Bijdragen — Monica",
-            'description' => "Monica is open source, gebouwd in nachten en weekenden sinds 2017. Hoe je kunt helpen: de documentatie nalopen, de app vertalen en je eigen AI-tokens besteden aan onze openstaande issues.",
+            'title' => "Bijdragen aan Monica: code, documentatie en vertalingen",
+            'description' => "Help Monica bouwen met code, documentatie, vertalingen of fixes. Praktische manieren om bij te dragen aan een onafhankelijke, open source persoonlijke database.",
+            'ogTitle' => "Help ons Monica draaiende te houden.",
+            'ogDescription' => "Goede documentatie, zorgvuldige vertalingen en nuttige fixes helpen allemaal. Vind een manier om bij te dragen aan Monica, ook als je geen code schrijft.",
         ],
 
         'support' => [
-            'title' => "Support — Monica",
-            'description' => "Schrijf de mensen die Monica bouwen, van maandag tot en met vrijdag, of begin met de documentatie: Monica gebruiken, de API, MCP, en CardDAV en CalDAV.",
+            'title' => "Monica support en documentatie",
+            'description' => "Schrijf de makers van Monica, van maandag tot vrijdag, of begin met de documentatie: Monica gebruiken, de API, MCP, en CardDAV en CalDAV.",
+            'ogTitle' => "Hulp bij Monica, van de mensen die het bouwen",
+            'ogDescription' => "Schrijf ons over alles wat niet werkt zoals je verwacht, of begin met de documentatie die in de app zit.",
         ],
 
         'terms' => [
             'title' => "Gebruiksvoorwaarden — Monica",
-            'description' => "De gebruiksvoorwaarden van Monica, de open source persoonlijke database: wat de dienst omvat, je rechten op je gegevens, je verantwoordelijkheden en de juridische kleine lettertjes.",
+            'description' => "De gebruiksvoorwaarden van Monica, de open source persoonlijke database: wat de dienst dekt, je rechten op je gegevens, je plichten en de kleine lettertjes.",
+            'ogTitle' => "Gebruiksvoorwaarden — Monica",
+            'ogDescription' => "De gebruiksvoorwaarden van Monica, de open source persoonlijke database: wat de dienst dekt, je rechten op je gegevens, je plichten en de kleine lettertjes.",
         ],
 
         'blog' => [
-            'title' => "De blog van Monica — releasenotes en productkeuzes",
-            'description' => "Wat we uitbrengen, waarom we het zo bouwen en hoe een klein open source bedrijf er werkelijk uitziet. Geschreven door de mensen die Monica maken.",
+            'title' => "Monica-blog: release-informatie en productkeuzes",
+            'description' => "Wat we uitbrengen, waarom we het zo bouwen en hoe het is om een klein open source bedrijf te runnen. Geschreven door de makers van Monica.",
+            'ogTitle' => "Monica bouwen, beslissing voor beslissing",
+            'ogDescription' => "Release-informatie, productkeuzes en af en toe een les uit het runnen van een klein open source project. Geschreven door de makers van Monica.",
         ],
 
         'post' => [
             'title' => ":title — de blog van Monica",
         ],
 
+        'handbook' => [
+            'title' => "Het Monica-handboek: zo draait het project",
+            'description' => "Wat het project is, de principes erachter, hoe het geld verdient, waarom het open source is en hoe prioriteiten worden bepaald. Geschreven door de maker.",
+            'ogTitle' => "Het Monica-handboek",
+            'ogDescription' => "Hoe Monica wordt gebouwd en gerund: de principes, afwegingen en dagelijkse beslissingen achter een onafhankelijk open source project.",
+        ],
+
+        // Like a post, an article brings its own title and description.
+        'handbookArticle' => [
+            'title' => ":title — het Monica-handboek",
+        ],
+
         'paginated' => ":title (pagina :page van :total)",
+        'paginatedDescription' => "Bekijk pagina :page van :total van de Monica-blog: release-informatie, productkeuzes en notities van de mensen die Monica bouwen.",
 
         'v3' => [
-            'title' => "Monica v3 — herbouwd voor de komende tien jaar",
-            'description' => "Monica v3 is een volledige herbouw van de open source persoonlijke database: records die je zelf ontwerpt, een dagboek dat overal aan vastzit, een complete API en een fatsoenlijke mobiele ervaring. Nog steeds open source. Verwacht voor het eind van 2026.",
+            'title' => "Monica v3: herbouwd voor de komende tien jaar",
+            'description' => "Ontdek de herbouw van Monica v3: eigen records, een verbonden dagboek, een complete API en een betere mobiele ervaring. Open source, verwacht voor eind 2026.",
+            'ogTitle' => "Monica v3: wat we opnieuw bouwen",
+            'ogDescription' => "Zie wat er komt in Monica v3: records die je zelf ontwerpt, een verbonden dagboek, een complete API en een betere mobiele ervaring. Nog steeds open source.",
         ],
 
         'templates' => [
-            'title' => "Je contacten, op jouw manier: contactsjablonen in Monica",
-            'description' => "Bouw contactsjablonen met je eigen velden, secties en tabbladen. Verschillende sjablonen voor vrienden, familie en werk, versies die je publiceert als ze klaar zijn en secties die je kunt delen.",
+            'title' => "Contactsjablonen en eigen velden — Monica",
+            'description' => "Bouw contactsjablonen met eigen velden, secties en tabbladen. Aparte sjablonen voor vrienden, familie en werk, en versies die je publiceert als ze klaar zijn.",
+            'ogTitle' => "Je contacten, op jouw manier — Monica",
+            'ogDescription' => "Onthoud wat voor jou telt. Bouw contactsjablonen met eigen velden, secties en tabbladen, zodat de pagina van iedereen ruimte heeft voor de details die je wilt bewaren.",
         ],
 
         'details' => [
-            'title' => "Onthoud de details die ertoe doen: contactpagina’s in Monica",
-            'description' => "Bewaar de details die mensen je vertellen bij elkaar: wat ze de vorige keer zeiden, de kleine dingen, de mensen om hen heen en de momenten die jullie deelden.",
+            'title' => "Persoonlijke contactbeheersoftware — Monica",
+            'description' => "Bewaar de details die mensen met je delen bij elkaar: wat ze je de vorige keer vertelden, de kleine dingen, de mensen om hen heen en de momenten die je deelde.",
+            'ogTitle' => "Onthoud de details die ertoe doen — Monica",
+            'ogDescription' => "Hun nummer staat in je telefoon. De naam van hun nieuwe partner, hun lievelingsgerecht en wat ze je de vorige keer vertelden zijn lastiger te vinden.",
         ],
 
         'reminders' => [
-            'title' => "Vergeet niet van je te laten horen: herinneringen in Monica",
-            'description' => "Stel een herinnering in voor een verjaardag, een belangrijke dag of een vriend die je al lang wilt bellen. Eenmalig of met een vast ritme, in hun tijdzone, per e-mail of in Monica, en met een overzicht van wat je onthield.",
+            'title' => "Verjaardagsherinneringen en persoonlijke opvolging — Monica",
+            'description' => "Stel een herinnering in voor een verjaardag, een bijzondere dag of een vriend die je wilt bellen. Eenmalig of terugkerend, per e-mail of in Monica.",
+            'ogTitle' => "Denk eraan contact op te nemen — Monica",
+            'ogDescription' => "Een verjaardag. Een bijzondere dag. Een vriend die je al een tijd wilt bellen.",
         ],
 
         'timeline' => [
-            'title' => "Bewaar de momenten die het onthouden waard zijn: de tijdlijn in Monica",
-            'description' => "Leg vast wat er gebeurde, wie erbij was en de details die je wilt bewaren. Levensgebeurtenissen op ieders tijdlijn tegelijk, je eigen soorten en velden, en een terugblik jaar na jaar.",
+            'title' => "Persoonlijke tijdlijn en levensgebeurtenissen — Monica",
+            'description' => "Leg vast wat er gebeurde, wie erbij was en welke details je wilt bewaren. Levensgebeurtenissen op ieders tijdlijn, eigen typen en velden, terugblik per jaar.",
+            'ogTitle' => "Bewaar de momenten die het onthouden waard zijn — Monica",
+            'ogDescription' => "Leg vast wat er gebeurde, wie erbij was en welke details je wilt bewaren. Monica brengt die momenten samen in een tijdlijn waar je naar terug kunt keren.",
         ],
 
         'relationships' => [
-            'title' => "Begrijp hoe mensen met elkaar verbonden zijn: relaties in Monica",
-            'description' => "Houd bij wie er rond iemand staan, met relaties die kloppen vanuit beide kanten. Stambomen, mensen die je nog niet hebt ontmoet, eerdere relaties en je eigen soorten relaties.",
+            'title' => "Persoonlijke relaties en familiebanden — Monica",
+            'description' => "Houd familie, vrienden en partners bij met wederzijdse relaties, stambomen en relatiegeschiedenis. Definieer relatietypen die passen bij de mensen in je leven.",
+            'ogTitle' => "Begrijp hoe mensen met elkaar verbonden zijn — Monica",
+            'ogDescription' => "Houd bij wie er om iemand heen staat, met relaties die van beide kanten kloppen.",
         ],
 
         'vaults' => [
-            'title' => "Een plek voor elk deel van je leven: kluizen in Monica",
-            'description' => "Houd vrienden, familie en collega’s bij elkaar of geef elke groep een eigen ruimte. Elke kluis heeft eigen contacten, een eigen tijdlijn, eigen herinneringen en een standaardsjabloon, allemaal binnen je account.",
+            'title' => "Organiseer je contacten in aparte kluizen — Monica",
+            'description' => "Houd vrienden, familie en collega’s bij elkaar of geef elke groep een eigen ruimte. Elke kluis heeft eigen contacten, tijdlijn, herinneringen en sjabloon.",
+            'ogTitle' => "Een plek voor elk deel van je leven — Monica",
+            'ogDescription' => "Houd ze bij elkaar of geef elke groep een eigen ruimte. Kluizen helpen je Monica te organiseren rond je leven.",
         ],
 
         'sharing' => [
-            'title' => "Deel alleen wat jij kiest: delen in Monica",
-            'description' => "Deel geselecteerde secties van een contactpagina via een link met alleen leesrechten. Kies wat hij toont, geef hem een einddatum of een wachtwoord, zie wanneer hij werd geopend en trek hem op elk moment in.",
+            'title' => "Deel geselecteerde contactgegevens privé — Monica",
+            'description' => "Deel delen van de pagina van een contact via een link met alleen leesrechten. Kies wat zichtbaar is, stel een einddatum of wachtwoord in en trek hem in.",
+            'ogTitle' => "Deel alleen wat je kiest — Monica",
+            'ogDescription' => "Deel geselecteerde delen van de pagina van een contact via een link met alleen leesrechten. Kies wat zichtbaar is, hoe lang de link werkt en wanneer de toegang stopt.",
         ],
 
         'api' => [
-            'title' => "Je contacten, verbonden met je tools: de Monica API en MCP-server",
-            'description' => "Gebruik Monica met Claude, ChatGPT, Gemini of je eigen scripts. Verbind een assistent via Monica’s MCP-server, of bouw je eigen koppeling met de JSON API en een API-sleutel.",
+            'title' => "API voor persoonlijke CRM en assistent-integraties — Monica",
+            'description' => "Gebruik Monica met Claude, ChatGPT, Gemini of eigen scripts. Koppel een assistent via de MCP-server, of bouw zelf een koppeling met de JSON API.",
+            'ogTitle' => "Je contacten, verbonden met je tools — Monica",
+            'ogDescription' => "Gebruik Monica met Claude, ChatGPT, Gemini of je eigen scripts. Zoek een contact op, leg een moment vast of stel een herinnering in vanuit de tools die je al gebruikt.",
         ],
 
         'privacyFeatures' => [
-            'title' => "Persoonlijke gegevens verdienen een privéplek: privacy in Monica",
-            'description' => "Markeer velden als gevoelig, deel alleen geselecteerde secties, bepaal wat API-sleutels en assistenten mogen lezen, beveilig je account met passkeys en tweestapsverificatie en bekijk de activiteit ervan.",
+            'title' => "Privacy en beveiliging in je persoonlijke CRM — Monica",
+            'description' => "Beheer gevoelige velden, gedeelde secties en toegang van assistenten in Monica. Beveilig je account met passkeys en tweestapsverificatie.",
+            'ogTitle' => "Persoonlijke gegevens verdienen een privéplek — Monica",
+            'ogDescription' => "Je legt dingen over mensen vast omdat ze voor je tellen. Kies wat je bewaart, wat je deelt en welke tools erbij kunnen.",
         ],
 
         'languages' => [
-            'title' => "Jouw taal, hun namen: talen en notaties in Monica",
-            'description' => "Gebruik Monica in meer dan 30 talen. Schrijf namen in de volgorde en vormen die mensen gebruiken, kies een weergavenaam en stel je eigen voorkeuren in voor datum, tijd, getallen en tijdzone.",
+            'title' => "Meertalige persoonlijke CRM en naamnotaties — Monica",
+            'description' => "Gebruik Monica in meer dan 30 talen. Schrijf namen in de volgorde en vormen die mensen gebruiken en stel datum-, tijd-, getal- en tijdzonevoorkeuren in.",
+            'ogTitle' => "Jouw taal. Hun namen — Monica",
+            'ogDescription' => "Gebruik Monica in een taal waarin je je thuis voelt. Bewaar namen in de vorm die mensen zelf gebruiken en kies hoe datums, tijden en getallen verschijnen.",
+        ],
+
+        'aiMemory' => [
+            'title' => "Persoonlijk AI-geheugen voor je assistenten — Monica",
+            'description' => "Monica geeft Claude, ChatGPT en andere compatibele assistenten via MCP een gedeeld, blijvend persoonlijk geheugen. Open source en ook zonder AI te gebruiken.",
+            'ogTitle' => "Je assistenten wisselen. Je geheugen blijft van jou — Monica",
+            'ogDescription' => "Geef compatibele AI-assistenten een gedeelde plek voor je mensen en alledaagse details. Open Monica om die herinneringen zelf te ordenen, met of zonder AI.",
+        ],
+
+        'mcpServer' => [
+            'title' => "Monica MCP-server voor je persoonlijke gegevens",
+            'description' => "Verbind AI-assistenten met Monica’s open source persoonlijke database via een externe MCP-server met 236 tools, OAuth of API-sleutels en hosten in eigen beheer.",
+            'ogTitle' => "Je persoonlijke gegevens, verbonden met je AI-agents — Monica",
+            'ogDescription' => "Verbind een compatibele assistent met Monica via MCP. Lees en werk gestructureerde persoonlijke records bij met afgebakende toegang, via OAuth of API-sleutel.",
+        ],
+
+        'personalData' => [
+            'title' => "Software voor persoonlijk informatiebeheer — Monica",
+            'description' => "Orden contacten, bezittingen, notities, levensgebeurtenissen en alledaagse details in één persoonlijke database. Monica is de open source levensorganizer.",
+            'ogTitle' => "Een thuis voor de details van je leven — Monica",
+            'ogDescription' => "Mensen, notities, bezittingen, belangrijke momenten en herinneringen. Eén persoonlijke plek voor alles wat je niet wilt vergeten.",
         ],
 
         'personalCrm' => [
             'title' => "Wat is een persoonlijke CRM? Een praktische gids — Monica",
-            'description' => "Wat een persoonlijke CRM is, hoe die verschilt van een adresboek en een sales-CRM, wat je erin zet, welke privacyafwegingen erbij horen en hoe je de juiste aanpak kiest.",
+            'description' => "Wat een persoonlijke CRM is, hoe het verschilt van een adresboek en een sales-CRM, wat je bewaart, de privacyafwegingen en hoe je de juiste aanpak kiest.",
+            'ogTitle' => "Wat is een persoonlijke CRM, en zou je er een gebruiken? — Monica",
+            'ogDescription' => "Een adresboek onthoudt een nummer. Een persoonlijke CRM helpt je de persoon te onthouden. Lees wat je bewaart, wat je weglaat en hoe je er een kiest.",
         ],
     ],
 
@@ -2687,6 +2767,976 @@ return [
         ],
     ],
 
+    /**
+     * The AI memory page, "One memory for your AI assistants" (route key
+     * `aiMemory`). The pictures on it are drawings of the product and of two
+     * assistants talking to it, so each carries a `label` that a screen
+     * reader reads instead of the drawing itself.
+     *
+     * The example runs through the page: your copy of The Shining, lent to
+     * Chandler, due back on 5 December. Keep the name, the object and the
+     * date in step between `how`, `see`, `structure` and `visibility`.
+     */
+    'aiMemory' => [
+        // Words more than one drawing uses.
+        // The examples are the demo vault's, as on the homepage: the
+        // reader lent Chandler their copy of The Shining, which lives in
+        // the freezer, as it does in his and Joey's flat. Chandler rather
+        // than Joey because the vault has his photo.
+        'borrower' => "Chandler Bing",
+        'book' => "The Shining",
+        'due' => "Terug op 5 december",
+
+        /**
+         * Where the illustrations go until they are drawn: the reference, the
+         * name and the brief the design gives each one, shown in a dashed
+         * frame exactly as the design draws its placeholders.
+         */
+        'illustrations' => [
+            'problem' => [
+                'ref' => "I02 · Illustratie · Optioneel",
+                'title' => "Eilanden en een brug",
+                'brief' => "Twee eilanden met aparte notitieboeken, verbonden door een brug met één centrale bibliotheek waar een panda alles ordent. Geen suggestie van gesprekken importeren of synchroniseren.",
+            ],
+        ],
+
+        'hero' => [
+            'eyebrow' => "Open source persoonlijk AI-geheugen",
+            'title' => "Eén geheugen voor je AI-assistenten.",
+            'lede' => "Je AI-assistenten kunnen veranderen. Je herinneringen hoeven dat niet.",
+            'body' => "Monica geeft compatibele AI-assistenten een gedeeld, blijvend persoonlijk geheugen: een plek om je relaties, kennis, bezittingen en dagelijks leven op te slaan. Eén die je zelf kunt openen, ordenen en gebruiken, ook zonder AI.",
+            'cta' => "Begin gratis",
+            'how' => "Zie hoe het werkt",
+            'note' => "Open source. In eigen beheer te draaien. MCP-toegang inbegrepen bij gratis accounts.",
+        ],
+
+        'problem' => [
+            'title' => "Je leven hoort niet in één chat.",
+            'body' => [
+                "Je vertelt je AI-assistent over je familie, je voorkeuren, je projecten en de dingen die je belangrijk vindt. Na verloop van tijd wordt die informatie nuttige context voor de gesprekken die volgen.",
+                "Maar misschien gebruik je meer dan één assistent. Misschien stap je over naar een andere aanbieder, begin je een nieuw gesprek, of wil je gewoon iets opzoeken zonder AI te vragen.",
+                "Daarom geeft Monica je persoonlijke informatie een eigen thuis. In plaats van uitsluitend te vertrouwen op het geheugen dat in elke assistent zit, kun je informatie in Monica bewaren en via compatibele assistenten ophalen wanneer je dat nodig hebt.",
+            ],
+            'closing' => "Minder jezelf herhalen. Meer continuïteit tussen de tools die je kiest.",
+        ],
+
+        'how' => [
+            'title' => "Vertel het de ene assistent. Vraag het de andere.",
+            'lead' => "Met Monica kan persoonlijk AI-geheugen blijven bestaan over gesprekken en over compatibele AI-platforms heen. Bewaar vandaag een stukje informatie en laat een andere verbonden assistent het later opzoeken.",
+            'connected' => "Monica verbonden",
+            'steps' => [
+                [
+                    'title' => "Bewaar iets met Claude",
+                    'prompt' => "Ik heb vandaag mijn exemplaar van The Shining uitgeleend aan Chandler. Hij brengt het op 5 december terug. Leg dat vast in Monica.",
+                    'body' => "Je assistent legt de uitleen, de lener en de verwachte terugbrengdatum vast in je Monica-account.",
+                    'label' => "Een gesprek met Claude, met Monica verbonden. Je vraagt Claude vast te leggen dat je je exemplaar van The Shining aan Chandler hebt uitgeleend, terug op 5 december. Claude gebruikt Monica’s tool create-possession-loan en bevestigt dat de uitleen is opgeslagen.",
+                    'reply' => "Opgeslagen. Monica toont nu The Shining als uitgeleend aan Chandler tot 5 december.",
+                ],
+                [
+                    'title' => "Bekijk het in Monica",
+                    'prompt' => null,
+                    'body' => "De uitleen is een echt record in Monica, gekoppeld aan het boek en aan de persoon die het leende. Je kunt het direct openen en zelf nalopen of aanpassen.",
+                    'label' => "De pagina van je exemplaar van The Shining in Monica, bewaard in de vriezer. In het onderdeel uitleningen staat dat het is uitgeleend aan Chandler Bing, terug op 5 december.",
+                    'reply' => null,
+                ],
+                [
+                    'title' => "Haal het op met ChatGPT",
+                    'prompt' => "Kijk in Monica. Wie heeft mijn exemplaar van The Shining?",
+                    'body' => "Je verbonden assistent kan de vastgelegde uitleen opzoeken en je vertellen wie het boek heeft en wanneer het terugkomt.",
+                    'label' => "Een nieuw gesprek met ChatGPT, met Monica verbonden. Je vraagt wie je exemplaar van The Shining heeft. ChatGPT gebruikt Monica’s tool list-possession-loans en antwoordt dat Chandler het heeft, terug op 5 december.",
+                    'reply' => "Chandler heeft je exemplaar van The Shining. Het moet op 5 december terug zijn.",
+                ],
+            ],
+            'garage' => "Bewaard in de vriezer",
+            'loans' => "Uitleningen",
+            'onLoan' => "Uitgeleend",
+            'closing' => "Het gesprek veranderde. Het geheugen bleef.",
+            'note' => "Dit voorbeeld gebruikt twee assistenten die met hetzelfde Monica-account zijn verbonden. Compatibiliteit en toegang van assistenten kunnen afhangen van hun configuratie en abonnement. Informatie opslaan en ophalen vereist dat de assistent Monica’s tools gebruikt.",
+        ],
+
+        'remember' => [
+            'title' => "Een persoonlijk AI-geheugen voor het dagelijks leven.",
+            'lead' => "Je leven is meer dan een verzameling gesprekken. Monica geeft je assistenten plekken om verschillende soorten persoonlijke informatie op te slaan, van de mensen die je kent tot de dingen die je bezit.",
+            'try' => "Probeer te vragen",
+            // The glyph, the page each item links to and the colour of its
+            // vignette are in the template, in this order. `chips` are the two
+            // labels drawn in the vignette: what Monica would record.
+            'items' => [
+                [
+                    'title' => "Mensen en relaties",
+                    'body' => "Houd bij wie er in je leven zijn, hoe ze met elkaar verbonden zijn en welke momenten je deelt. Leg nieuwe connecties en familierelaties vast en haal informatie op vóór je volgende gesprek.",
+                    'ask' => "Ross en Rachel hebben net een dochtertje gekregen, Emma. Leg in Monica vast dat zij hun dochter is.",
+                    'chips' => ["Emma", "Dochter van Ross en Rachel"],
+                ],
+                [
+                    'title' => "Persoonlijke kennis",
+                    'body' => "Bouw een persoonlijke kennisbank met mappen, notities en lijsten. Bewaar handige instructies, aanbevelingen, ideeën en naslaginformatie zodat je ze terugvindt.",
+                    'ask' => "Bewaar het recept van Phoebes oma voor chocoladekoekjes in mijn notities bij Recepten.",
+                    'chips' => ["Recepten", "Koekjes van oma"],
+                ],
+                [
+                    'title' => "Je bezittingen",
+                    'body' => "Houd bij wat je bezit, wat het kostte, waar het is, wanneer het onderhouden is en wie het leende.",
+                    'ask' => "Leg onze nieuwe fauteuil vast in Monica. We betaalden \$1.200 en hij staat in de woonkamer, gericht op de tv.",
+                    'chips' => ["Fauteuil", '$1.200'],
+                ],
+                [
+                    'title' => "Levensgebeurtenissen",
+                    'body' => "Bouw een tijdlijn van de ervaringen, mijlpalen en momenten die ertoe doen, met de mensen met wie je ze deelde.",
+                    'ask' => "Leg onze reis naar Londen voor Ross’ bruiloft vast, met Chandler en Joey.",
+                    'chips' => ["Londen", "Bruiloft van Ross"],
+                ],
+                [
+                    'title' => "Je voorkeuren",
+                    'body' => "Houd een notitie bij van je smaak, gewoontes en voorkeuren die je assistenten kunnen opzoeken als ze je helpen kiezen.",
+                    'ask' => "Bewaar in mijn voorkeurennotitie dat ik vegetariër ben en in Central Perk altijd op de oranje bank zit.",
+                    'chips' => ["Oranje bank", "Vegetarisch"],
+                ],
+                [
+                    'title' => "Dingen om te onthouden",
+                    'body' => "Maak herinneringen voor belangrijke afspraken en terugkerende gelegenheden. Monica kan je eraan herinneren via het eigen herinneringssysteem, los van je assistent.",
+                    'ask' => "Maak in Monica een herinnering om elke ochtend het kuiken en de eend te voeren.",
+                    'chips' => ["Kuiken en eend", "Elke ochtend"],
+                ],
+            ],
+        ],
+
+        'see' => [
+            'title' => "Een geheugen dat je echt kunt zien.",
+            'body' => [
+                "Monica is een persoonlijke AI-geheugenapp die je rechtstreeks kunt gebruiken. De informatie die je assistenten opslaan verdwijnt niet in een gesprek. Ze wordt onderdeel van je persoonlijke gegevens in Monica.",
+                "Open een contact. Bekijk een levensgebeurtenis. Werk een notitie bij. Zoek iets op wat je bezit. Corrigeer informatie die niet meer klopt.",
+                "Je hoeft niet elke keer met een AI-assistent te praten als je je eigen informatie wilt raadplegen. Monica werkt als zelfstandige applicatie, met of zonder verbonden assistent.",
+            ],
+            'closing' => "Je assistenten kunnen Monica gebruiken. Maar Monica is er voor jou.",
+            // The drawing: the Maintenance section of the recliner's page, as
+            // the application draws it (possessions/maintenance.blade.php).
+            'label' => "Het onderdeel onderhoud op de pagina van een fauteuil in Monica. De fauteuil is meubilair en staat in de woonkamer. Er zijn twee klussen vastgelegd. Een reiniging, Leer gereinigd, kosten \$80: gedaan door Central Perk Upholstery op 12 september 2026, staat van gebruikt naar als nieuw, volgende keer op 12 maart 2027. Een reparatie, Voetsteun gerepareerd, kosten \$45: gedaan door Joey Tribbiani op 2 mei 2026, staat van beschadigd naar gebruikt, geen volgende datum gepland.",
+            'type' => "Meubilair",
+            'keptIn' => "bewaard in",
+            'place' => "Woonkamer",
+            'item' => "Fauteuil",
+            'title' => "Onderhoud",
+            'lead' => "Het werk dat in de loop van de tijd aan dit exemplaar is gedaan, met de staat vóór en na elke klus.",
+            'costLabel' => "kosten",
+            'parts' => ["Uitgevoerd door", "Uitgevoerd", "Staat", "Volgende keer"],
+            'records' => [
+                ['type' => "Reiniging", 'title' => "Leer gereinigd", 'cost' => '$80', 'parts' => [["Central Perk Upholstery", true], ["12 september 2026", true], ["Gebruikt → Als nieuw", true], ["12 maart 2027", true]]],
+                ['type' => "Reparatie", 'title' => "Voetsteun gerepareerd", 'cost' => '$45', 'parts' => [["Joey Tribbiani", true], ["2 mei 2026", true], ["Beschadigd → Gebruikt", true], ["Niet gepland", false]]],
+            ],
+        ],
+
+        'structure' => [
+            'title' => "Meer dan een lijst met herinneringen.",
+            'lead' => "Je leven heeft structuur. Je geheugen ook.",
+            'body' => [
+                "Monica slaat informatie op in betekenisvolle records. Mensen kunnen familierelaties hebben. Levensgebeurtenissen kunnen meerdere mensen betreffen. Bezittingen kunnen locaties, onderhoudsrecords en uitleningen hebben. Notities en lijsten ordenen nuttige informatie per onderwerp.",
+                "Als een compatibele assistent iets opzoekt, kan hij deze records ophalen en ondersteunde relaties volgen om meer van de context te begrijpen. Als er iets verandert, kan hij ondersteunde records bijwerken in plaats van er simpelweg nog een versie van hetzelfde feit naast te zetten.",
+                "En als je informatie op je eigen manier wilt ordenen, biedt Monica aanpasbare sjablonen en recordtypen.",
+            ],
+            'label' => "Diagram: Chandler Bing is via een uitleen gekoppeld aan je exemplaar van The Shining, en via deelname aan het Thanksgiving-diner, met Monica, Rachel en Ross",
+            'belonging' => "Bezitting",
+            'garage' => "Bewaard in de vriezer",
+            'loan' => "Uitleen",
+            'dueShort' => "terug op 5 december",
+            'person' => "Persoon",
+            'tookPart' => "Deed mee",
+            'withYou' => "met jou en drie anderen",
+            'event' => "Levensgebeurtenis · 27 november 2025",
+            'dinner' => "Thanksgiving-diner",
+            'caption' => "Hoe records in Monica met elkaar verbonden zijn. Een diagram, geen scherm van de applicatie.",
+            'closing' => "Een persoonlijke database voor het echte leven, niet alleen een verzameling samenvattingen van chats.",
+        ],
+
+        'retrieval' => [
+            'title' => "Vandaag nuttig. Over maanden nog steeds.",
+            'lead' => "Blijvend AI-geheugen wordt waardevol als je informatie opnieuw nodig hebt. Vraag je verbonden assistent in Monica te kijken, of je nu een afspraak voorbereidt, je huis onderhoudt of plannen maakt.",
+            'badge' => "Voorbeeld",
+            'ask' => "Vraag",
+            'items' => [
+                [
+                    'title' => "Voor een afspraak",
+                    'ask' => "Kijk in Monica. Wanneer heb ik Janice voor het laatst gezien en waar hadden we het over?",
+                    'body' => "Haal eerdere levensgebeurtenissen en beschikbare contactgegevens op om je volgende gesprek voor te bereiden.",
+                ],
+                [
+                    'title' => "Voor een onderhoudsafspraak",
+                    'ask' => "Zoek de onderhoudshistorie van de Porsche op in Monica. Wanneer was de laatste beurt?",
+                    'body' => "Vind vastgelegde onderhoudsdatums, kosten en volgende data zonder door oude gesprekken te graven.",
+                ],
+                [
+                    'title' => "Voor je een reis plant",
+                    'ask' => "Bekijk mijn notitie met reisvoorkeuren in Monica voordat je mijn vlucht naar Parijs boekt.",
+                    'body' => "Neem je bewaarde voorkeuren mee naar een nieuw gesprek, ook als je een andere compatibele assistent gebruikt.",
+                ],
+            ],
+            'note' => "Voorbeelden van verzoeken die je kunt doen zodra de juiste informatie in Monica is bewaard.",
+        ],
+
+        'visibility' => [
+            'title' => "Zie wat je AI-assistenten echt doen.",
+            'body' => [
+                "Een assistent koppelen aan je persoonlijke informatie is een belangrijke beslissing. Je moet kunnen nagaan wat hij met die toegang doet.",
+                "Monica legt de aanroepen van verbonden assistenten vast. Je kunt nalopen welke assistent een verzoek deed, wanneer dat gebeurde, welke tool hij gebruikte en het vastgelegde verzoek en antwoord, met gevoelige waarden afgeschermd. De aanroepgeschiedenis van assistenten blijft 90 dagen beschikbaar.",
+                "Je kunt afzonderlijke assistenten loskoppelen of hun API-sleutels intrekken zonder je bewaarde informatie te verwijderen of je andere assistenten los te koppelen.",
+            ],
+            'warningTitle' => "Weet waartoe je toegang geeft.",
+            'warning' => "Een verbonden assistent heeft doorgaans toegang tot je hele account, niet alleen tot een gekozen kluis of een weergave met alleen leesrechten. Velden die als gevoelig zijn gemarkeerd, worden achtergehouden voor assistenten die via OAuth zijn verbonden. Verbind alleen assistenten die je vertrouwt.",
+            'label' => "De aanroepgeschiedenis van assistenten in Monica. Er staan drie aanroepen: ChatGPT gebruikte list-possession-loans vandaag om 09:14, Claude gebruikte create-possession-loan gisteren om 18:02 en Claude gebruikte search-records gisteren om 17:58. De aanroep van ChatGPT is uitgeklapt en toont verzoek en antwoord, met een gevoelige waarde afgeschermd. Daaronder staan de verbonden assistenten, Claude en ChatGPT, elk met een knop Verbinding verbreken.",
+            'history' => "Aanroepgeschiedenis van assistenten",
+            'kept' => "Laatste 90 dagen",
+            'calls' => [
+                ['ChatGPT', 'list-possession-loans', "Vandaag om 09:14"],
+                ['Claude', 'create-possession-loan', "Gisteren om 18:02"],
+                ['Claude', 'search-records', "Gisteren om 17:58"],
+            ],
+            'request' => "Verzoek",
+            'response' => "Antwoord",
+            'assistants' => "Verbonden assistenten",
+            'used' => ["Gisteren voor het laatst gebruikt", "Vandaag voor het laatst gebruikt"],
+            'disconnect' => "Verbinding verbreken",
+        ],
+
+        'start' => [
+            'title' => "Verbind je AI-assistent in drie stappen.",
+            'lead' => "Je hoeft zelf geen geheugeninfrastructuur te bouwen. Monica biedt een kant-en-klare app voor persoonlijke informatie en een externe MCP-server voor AI-geheugen.",
+            'step' => "Stap :number",
+            'steps' => [
+                [
+                    'title' => "Maak je Monica-account aan",
+                    'body' => "Begin met een gratis gehost account, of draai Monica op je eigen infrastructuur als je liever in eigen beheer werkt.",
+                ],
+                [
+                    'title' => "Verbind je assistent",
+                    'body' => "Monica gebruikt het Model Context Protocol (MCP), een open standaard waarmee compatibele assistenten met externe applicaties kunnen werken. Volg de installatiegids voor jouw client. Ondersteunde verbindingsmethoden zijn inloggen via OAuth en API-sleutels.",
+                ],
+                [
+                    'title' => "Bewaar je eerste herinnering",
+                    'body' => "Vraag je assistent iets in Monica op te slaan. Open daarna Monica om het record te zien, of laat je assistent het in een ander gesprek ophalen.",
+                ],
+            ],
+            'starter' => "Startprompt",
+            'starterPrompt' => "Voeg Phoebe toe aan Monica en leg vast dat ze vanavond Smelly Cat speelde in Central Perk.",
+            'clientsTitle' => "Op zoek naar AI-geheugen voor ChatGPT en Claude?",
+            'clients' => [
+                "Monica biedt installatiegidsen voor ChatGPT, Claude Desktop, Claude Code, Cursor, Codex en VS Code. Je kunt meerdere compatibele externe MCP-clients met hetzelfde account verbinden en er dezelfde bewaarde informatie mee benaderen.",
+                "Ondersteuning door clients, beschikbare acties en installatievereisten hangen af van de assistent en zijn abonnement. Monica gebruikt externe MCP via Streamable HTTP, dus clients moeten dat transport en een compatibele authenticatiemethode ondersteunen.",
+            ],
+            'guides' => "Lees de MCP-installatiegidsen",
+            'account' => "Maak een gratis account aan",
+            'clientsLabel' => "Clients met een installatiegids",
+        ],
+
+        'open' => [
+            'title' => "Open source AI-geheugen. Op jouw voorwaarden.",
+            'lead' => "Je keuze voor een AI-assistent mag niet bepalen waar je persoonlijke informatie staat.",
+            'body' => [
+                "Monica is open source onder de AGPL-3.0-licentie. Je kunt de gehoste dienst gebruiken of je eigen instantie opzetten met Docker. De MCP-server is ook beschikbaar op instanties in eigen beheer, zodat je een AI-geheugen in eigen beheer kunt bouwen op infrastructuur die je zelf beheert.",
+                "Monica draait geen eigen AI-model. De taak van Monica is je informatie op te slaan en te ordenen en toegankelijk te maken voor de compatibele assistenten die je verbindt.",
+                "Als je van assistent of aanbieder wisselt, blijft de informatie die je in Monica hebt bewaard daar staan. Verbind een andere compatibele assistent wanneer je dat nodig hebt. En als je helemaal stopt met AI, kun je Monica nog steeds rechtstreeks gebruiken.",
+            ],
+            'closing' => "De assistenten kunnen veranderen. Je leven niet.",
+            'github' => "Bekijk Monica op GitHub",
+            'selfHosting' => "Lees meer over zelf hosten",
+        ],
+
+        'compare' => [
+            'title' => "Waar Monica past in de wereld van AI-geheugen.",
+            'lead' => "Verschillende benaderingen van geheugen lossen verschillende problemen op. Monica is ontworpen om je persoonlijke informatie een thuis te geven dat buiten elk afzonderlijk gesprek of elke assistent bestaat.",
+            'items' => [
+                [
+                    'title' => "Ingebouwd geheugen van de assistent",
+                    'body' => "Ingebouwd geheugen kan een assistent helpen zijn antwoorden te personaliseren. Het gedrag hangt af van de aanbieder, de instellingen en de informatie waarover die assistent beschikt. Monica biedt een aparte plek voor persoonlijke records waartoe compatibele assistenten op verzoek toegang hebben.",
+                ],
+                [
+                    'title' => "Geheugeninfrastructuur voor ontwikkelaars",
+                    'body' => "AI-geheugeninfrastructuur richt zich vaak op het helpen van ontwikkelaars bij het bouwen van applicaties en agentworkflows. Monica is een kant-en-klare app voor persoonlijk informatiebeheer met een interface voor mensen en een eigen MCP-server. Je hoeft geen eigen applicatie te bouwen om te beginnen.",
+                ],
+                [
+                    'title' => "Monica’s persoonlijke AI-geheugen",
+                    'body' => "Monica combineert gestructureerde persoonlijke records, een interface die je zelf kunt gebruiken, meerdere assistentverbindingen en een geschiedenis van aanroepen door assistenten. Het is ontworpen voor mensen die nuttige persoonlijke informatie los van één AI-aanbieder willen bewaren.",
+                ],
+            ],
+            'goodToKnow' => "Goed om te weten",
+            'notice' => "Monica vult het bestaande geheugen van een assistent aan. Monica importeert, vervangt of synchroniseert dat geheugen niet automatisch, en voert zelf geen automatische geheugenextractie of semantisch zoeken uit.",
+        ],
+
+        'faq' => [
+            'title' => "Veelgestelde vragen over AI-geheugen.",
+            'items' => [
+                ['q' => "Wat is AI-geheugen?", 'a' => "AI-geheugen is een manier waarop een assistent informatie gebruikt buiten het huidige gesprek. Bij Monica staat die informatie in een aparte persoonlijke database. Een verbonden assistent kan er ondersteunde informatie in opslaan en die later via Monica’s tools weer ophalen."],
+                ['q' => "Kan ik AI-geheugen delen tussen platforms?", 'a' => "Ja. Meerdere compatibele assistenten kunnen met hetzelfde Monica-account verbinden. Informatie die de ene assistent bewaart, kan dan door een andere worden opgehaald, mits die toegang heeft en Monica’s tools gebruikt. Dit staat los van het ingebouwde geheugen van elke assistent."],
+                ['q' => "Kan ik Monica gebruiken als AI-geheugen voor ChatGPT of Claude?", 'a' => "Monica biedt installatiegidsen voor ChatGPT en Claude, en voor andere externe MCP-clients. De beschikbare verbindingsopties en ondersteunde acties hangen af van de mogelijkheden, de configuratie en het abonnement van je assistent. Zie de MCP-documentatie voor installatie-instructies."],
+                ['q' => "Onthoudt Monica automatisch alles wat ik mijn assistent vertel?", 'a' => "Nee. Monica leest of bewaakt je gesprekken niet. Informatie wordt bewaard wanneer je assistent een Monica-tool aanroept om die op te slaan. Je kunt je assistent expliciet vragen iets in Monica te bewaren of in Monica te kijken bij het beantwoorden van een vraag. Of hij dat uit zichzelf doet, hangt af van de assistent."],
+                ['q' => "Welke informatie kan een assistent in Monica bewaren?", 'a' => "Assistenten kunnen ondersteunde records aanmaken, zoals mensen op naam, familierelaties, levensgebeurtenissen, herinneringen, notities en lijsten in Kennis, bezittingen, uitleningen en locaties. Sommige acties zijn via MCP op dit moment beperkt, waaronder het schrijven van contactgegevens zoals telefoonnummers, verjaardagen en contactnotities. Die gegevens beheer je rechtstreeks in Monica."],
+                ['q' => "Hoe doorzoekt Monica mijn persoonlijke geheugen?", 'a' => "Assistenten kunnen zoeken op trefwoorden in ondersteunde records, notities en lijsten vinden, en andere informatie doorbladeren of filteren. Monica biedt geen semantisch of vectorzoeken. De assistent bepaalt welke tools en zoektermen hij gebruikt."],
+                ['q' => "Wat is een MCP-server voor AI-geheugen?", 'a' => "Een MCP-server stelt tools beschikbaar die compatibele AI-assistenten kunnen aanroepen. Met Monica’s externe MCP-server kunnen assistenten ondersteunde persoonlijke records lezen en schrijven, zodat Monica kan fungeren als blijvend persoonlijk geheugen buiten de assistent zelf."],
+                ['q' => "Kan ik Monica zonder AI gebruiken?", 'a' => "Ja. Monica is een zelfstandige applicatie voor persoonlijk informatiebeheer. Je kunt records rechtstreeks aanmaken, bekijken, bewerken en ordenen zonder een assistent te verbinden."],
+                ['q' => "Kan ik mijn AI-geheugen in eigen beheer draaien?", 'a' => "Ja. Monica is open source onder AGPL-3.0 en kan met Docker op je eigen infrastructuur worden geïnstalleerd. De MCP-server is ook beschikbaar op instanties in eigen beheer. Je bent zelf verantwoordelijk voor de beveiliging en het onderhoud van je eigen installatie."],
+                ['q' => "Gebruikt Monica mijn persoonlijke informatie om AI-modellen te trainen?", 'a' => "Monica draait of traint geen AI-modellen. Wanneer een verbonden assistent informatie ophaalt, wordt die informatie naar de assistent gestuurd. Daarna gelden het privacy-, bewaar- en trainingsbeleid van de aanbieder."],
+                ['q' => "Kan ik bepalen tot welke informatie een assistent toegang heeft?", 'a' => "Je kunt elke assistentverbinding afzonderlijk intrekken. Velden die als gevoelig zijn gemarkeerd, zijn verborgen voor assistenten die via OAuth zijn verbonden. Verbindingen hebben verder doorgaans toegang tot het hele account; toegang per kluis en toegang met alleen leesrechten zijn op dit moment niet beschikbaar."],
+                ['q' => "Kan ik mijn persoonlijke geheugen exporteren?", 'a' => "Monica ondersteunt JSON-exports van het account en van kluizen, en Markdown-exports van afzonderlijke contacten. Records van Kennis en bezittingen zitten op dit moment niet in de JSON-export van het account of de kluis."],
+                ['q' => "Is Monica’s AI-geheugen gratis?", 'a' => "MCP-toegang is inbegrepen bij gratis gehoste accounts, binnen de gebruikelijke limieten van het gratis abonnement. Instanties in eigen beheer hebben geen door Monica opgelegde abonnementslimieten. Een aanbieder van AI-assistenten kan eigen abonnementsvereisten of gebruikslimieten hanteren."],
+                ['q' => "Wat gebeurt er als ik van AI-assistent wissel?", 'a' => "De informatie die je in Monica hebt bewaard, blijft in je account staan. Je kunt de vorige assistent loskoppelen en een andere compatibele verbinden, zonder je Monica-records naar een ander geheugensysteem te verplaatsen."],
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Geef je herinneringen een eigen thuis.",
+            'body' => "Eén plek voor de mensen, kennis en alledaagse details die voor je tellen. Toegankelijk voor jou en de compatibele AI-assistenten die je kiest.",
+            'lead' => "Begin met het bouwen van je persoonlijke AI-geheugen met Monica.",
+            'cta' => "Begin gratis",
+            'selfHosting' => "Ontdek zelf hosten",
+            'note' => "Open source. Onafhankelijk van één enkele AI-assistent. Gemaakt voor mensen.",
+        ],
+    ],
+
+    /**
+     * The personal data management page, "Your life. Beautifully organized."
+     * (route key `personalData`). English only, like the AI memory page.
+     *
+     * Its examples come from the demo vault, as the homepage's do, with the
+     * same dry asides: Chandler, Joey's recliner Rosita, Monica's hall
+     * closet, the Moist Maker. The drawings of the product each carry a
+     * `label` that a screen reader reads instead of the drawing itself.
+     */
+    'personalData' => [
+        'hero' => [
+            'eyebrow' => "Persoonlijk informatiebeheer, menselijk gemaakt",
+            'title' => "Je leven. Mooi georganiseerd.",
+            'lede' => "De mensen om wie je geeft. De dingen die je bezit. De momenten die het onthouden waard zijn. De handige details die je nooit kunt vinden als je ze nodig hebt.",
+            'body' => "Monica brengt je persoonlijke informatie samen op één plek, zodat je leven niet hoeft te verdwalen tussen losse notities, spreadsheets en je geheugen.",
+            'cta' => "Begin gratis",
+            'organize' => "Zie wat je kunt ordenen",
+            'note' => "Open source · In eigen beheer te draaien · Gemaakt voor het dagelijks leven",
+        ],
+
+        'problem' => [
+            'eyebrow' => "Komt dit bekend voor?",
+            'title' => "De kleine details liggen overal.",
+            'body' => "Je weet zeker dat je die aanbeveling hebt opgeschreven. Ergens. Het modelnummer van je wasmachine staat misschien in een oude e-mail. De naam van de man die altijd je koffie brengt zit begraven in een gesprek (het is Gunther). En de datum van dat belangrijke moment? Die weet je vast nog wel.",
+            'lead' => "Je leven zit vol informatie die het bewaren waard is, maar er hoort zelden een goed archiefsysteem bij.",
+            'items' => [
+                ['title' => "Op te veel plekken", 'body' => "Notities, berichten, spreadsheets en half vergeten documenten bevatten allemaal andere stukjes van je leven."],
+                ['title' => "Later moeilijk te vinden", 'body' => "Iets bewaren is makkelijk. Zes maanden later weten waar je het bewaarde is het lastige deel."],
+                ['title' => "Het grotere plaatje ontbreekt", 'body' => "Een naam, een plek en een gebeurtenis kunnen in het echt met elkaar samenhangen, ook als je ze apart opslaat."],
+            ],
+            'closing' => "Je hebt niet nog een ingewikkeld systeem nodig.",
+            'closingMuted' => "Je hebt één persoonlijke plek nodig die logisch is.",
+        ],
+
+        'organize' => [
+            'eyebrow' => "Eén plek voor het echte leven",
+            'title' => "Alles wat belangrijk is, op zijn plek.",
+            'lead' => "Monica is software voor persoonlijk informatiebeheer, gebouwd rond de dingen die mensen echt willen onthouden. Niet alleen documenten. Niet alleen taken. Je mensen, je kennis, je bezittingen en de momenten die ze verbinden.",
+            'example' => "Voorbeeld",
+            'crm' => "Ontdek Monica’s persoonlijke CRM",
+            // The glyph, the colour and the drawing of each item are in the
+            // template, in this order.
+            'items' => [
+                [
+                    'title' => "Mensen en relaties",
+                    'body' => "Houd de mensen in je leven dichtbij, ook als het druk wordt. Bewaar contactgegevens, begrijp familie- en andere relaties en blik terug op de momenten die je deelde.",
+                    'example' => "Onthoud wie jullie aan elkaar voorstelde, hoe je elkaar leerde kennen en dat Ross en Rachel een pauze hadden.",
+                ],
+                [
+                    'title' => "Notities en kennis",
+                    'body' => "Geef nuttige informatie een thuis. Maak mappen, schrijf notities in Markdown en houd lijsten bij voor aanbevelingen, ideeën, naslagmateriaal en de dingen waar je op terug wilt komen.",
+                    'example' => "Houd een lijst bij van boeken om te lezen, en het ene recept voor Thanksgiving-restjes dat ertoe doet.",
+                ],
+                [
+                    'title' => "Bezittingen en aankopen",
+                    'body' => "Houd bij wat je bezit, waar het staat, wat het kostte en wat er in de loop van de tijd mee gebeurde. Leg aankopen, onderhoud, verzekeringsgegevens en dingen die je hebt uitgeleend vast.",
+                    'example' => "Zoek op wat je voor de fauteuil betaalde, of onthoud wie je Feestdagengordeldier-kostuum leende.",
+                ],
+                [
+                    'title' => "Momenten en mijlpalen",
+                    'body' => "Onthoud meer dan data. Houd een persoonlijke geschiedenis bij van bezoeken, reizen, gesprekken, prestaties en belangrijke veranderingen, met de mensen die erbij waren.",
+                    'example' => "Blik terug op de reis naar Londen, of op elke Thanksgiving sinds die met de kalkoen op Monica’s hoofd.",
+                ],
+                [
+                    'title' => "Plekken en ruimtes",
+                    'body' => "Orden de plekken waar je spullen staan, van een huis tot een kamer, een kast of een plank. Als iets verhuist, werk je de locatie bij.",
+                    'example' => "Weet op welke plank de kerstverlichting ligt en wat er echt in de halkast zit.",
+                ],
+                [
+                    'title' => "Data en herinneringen",
+                    'body' => "Sommige dingen wil je op het juiste moment onthouden. Stel eenmalige of terugkerende herinneringen in die aan mensen gekoppeld zijn en houd bij of je ze hebt opgevolgd.",
+                    'example' => "Denk elke 5 mei aan Rachels verjaardag, of eraan je moeder elke zondag terug te bellen.",
+                ],
+            ],
+            // What the six small drawings show.
+            'screens' => [
+                'contact' => [
+                    'label' => "De pagina van Chandler Bing in Monica. Hij woont aan de overkant van de gang in appartement 19, jullie leerden elkaar kennen toen hij introk, zijn huisgenoot is Joey Tribbiani en zijn partner is Monica Geller. Zijn laatste levensgebeurtenis is het Thanksgiving-diner op 27 november.",
+                    'name' => "Chandler Bing",
+                    'meta' => "Appartement 19, aan de overkant van de gang",
+                    'rows' => [
+                        ['who' => "Joey Tribbiani", 'what' => "Huisgenoot"],
+                        ['who' => "Monica Geller", 'what' => "Partner"],
+                    ],
+                    'last' => "Laatst gezien bij het Thanksgiving-diner",
+                ],
+                'knowledge' => [
+                    'label' => "Een map in Kennis in Monica, Appartement 20, met een notitie The Moist Maker en een lijst Boeken om te lezen.",
+                    'folder' => "Appartement 20",
+                    'entries' => [
+                        ['kind' => 'note', 'name' => "The Moist Maker", 'meta' => "Notitie · gisteren bewerkt"],
+                        ['kind' => 'list', 'name' => "Boeken om te lezen", 'meta' => "Lijst · 2 items"],
+                        ['kind' => 'note', 'name' => "Tafelschikking voor Thanksgiving", 'meta' => "Notitie · bewerkt in 1997"],
+                    ],
+                ],
+                'possession' => [
+                    'label' => "Een fauteuil met de naam Rosita in Monica, in de woonkamer gericht op de tv, gekocht voor \$1.200. Hij is nooit uitgeleend.",
+                    'name' => "Rosita",
+                    'kind' => "Fauteuil",
+                    'facts' => [['Locatie', "Woonkamer"], ['Prijs', '$1.200']],
+                    'status' => "Nooit uitgeleend",
+                ],
+                'event' => [
+                    'label' => "Een levensgebeurtenis in Monica: het Thanksgiving-diner op 27 november, met Monica, Rachel, Ross en Chandler. In de notitie staat dat de kalkoen te laat kwam.",
+                    'name' => "Thanksgiving-diner",
+                    'date' => "27 november",
+                    'note' => "De kalkoen kwam te laat. Ross ook.",
+                ],
+                'places' => [
+                    'label' => "Geneste locaties in Monica: appartement 20, daarna de halkast, waarin het Feestdagengordeldier-kostuum en de kerstverlichting liggen.",
+                    'path' => ["Appartement 20", "Halkast"],
+                    'items' => ["Feestdagengordeldier-kostuum", "Kerstverlichting", "Niet naar vragen"],
+                ],
+                'reminder' => [
+                    'label' => "Een herinnering in Monica voor de verjaardag van Rachel Green, elk jaar op 5 mei, per e-mail, de volgende over 23 dagen.",
+                    'who' => "Rachel Green",
+                    'what' => "Verjaardag",
+                    'when' => "Elk jaar op 5 mei",
+                    'next' => "Over 23 dagen",
+                    'channel' => "Per e-mail",
+                ],
+            ],
+        ],
+
+        'questions' => [
+            'eyebrow' => "Gebouwd voor de vragen die je echt stelt",
+            'title' => "De kleine dingen waarvan je blij bent dat je ze bewaarde.",
+            'lead' => "Een goede app voor persoonlijke organisatie draait niet om informatie verzamelen om het verzamelen. Het gaat erom het antwoord te kunnen vinden wanneer het dagelijks leven erom vraagt.",
+            'items' => [
+                ['q' => "Wie heeft mijn Feestdagengordeldier-kostuum?", 'a' => "Houd je bezittingen en uitleningen gekoppeld aan de mensen die ze leenden, inclusief de verwachte terugbrengdatum."],
+                ['q' => "Wanneer heb ik Gunther voor het laatst gesproken?", 'a' => "Blik terug op gedeelde momenten en krijg een helderder beeld van hoe je contact hebt gehouden. Ook met de mensen die vooral je koffie brengen."],
+                ['q' => "Wat hebben we voor de tafelvoetbaltafel betaald?", 'a' => "Houd aankopen, herkenningsgegevens en onderhoudshistorie samen met het ding zelf."],
+                ['q' => "Waar heb ik die tips voor Londen gelaten?", 'a' => "Bewaar ideeën en naslagnotities in overzichtelijke mappen en lijsten in Kennis, klaar voor als je ze nodig hebt."],
+            ],
+            'closing' => "Niet elk detail hoeft in je hoofd te zitten. Sommige dingen hebben gewoon een betrouwbare plek nodig.",
+        ],
+
+        'structure' => [
+            'eyebrow' => "Een echte app, niet zomaar een map met notities",
+            'title' => "Geef je informatie wat structuur.",
+            'body' => [
+                "Een gewone notitie is nuttig. Maar een persoon is niet zomaar een notitie. Een bezitting is niet zomaar een regel in een spreadsheet. En een betekenisvolle gebeurtenis betreft vaak meer dan één persoon.",
+                "Monica geeft verschillende soorten persoonlijke informatie hun eigen plek. Relaties verbinden mensen. Levensgebeurtenissen hebben data en deelnemers. Bezittingen kunnen aankopen, verzekeringsgegevens, onderhoudshistorie en locaties bevatten.",
+            ],
+            'closing' => "Die structuur maakt van Monica een persoonlijke database, en niet slechts een nieuwe plek om dingen op te schrijven.",
+            'caption' => "Een plek voor de details, de geschiedenis en de context achter de dingen in je leven.",
+            'benefits' => [
+                ['title' => "Verbonden informatie", 'body' => "Houd de relaties tussen mensen, ervaringen, bezittingen en plekken waar ze van nature thuishoren."],
+                ['title' => "Nuttige geschiedenis", 'body' => "Zie wat er in de loop van de tijd veranderde, van tijd met een vriend tot onderhoud aan een voorwerp."],
+                ['title' => "Details die kloppen", 'body' => "Gebruik de velden en recordtypen die passen bij de informatie die je bewaart."],
+            ],
+            // The large drawing: the Timeline section of Rosita's page, as
+            // the application draws it (possessions/timeline.blade.php).
+            'screen' => [
+                'label' => "De tijdlijn van een fauteuil met de naam Rosita in Monica, een meubelstuk in de woonkamer met het label Niet uitlenen. Ernaast staan de onderdelen van de pagina: overzicht, tijdlijn, transacties, verzekering, taxaties, herkomst, onderhoud, uitleningen, locaties en documenten. De tijdlijn verzamelt vier items. In 2001 werd de voetsteun gerepareerd door Joey. In 1998 stond Rosita in de woonkamer van appartement 19, waar hij nog steeds staat, verzekerd tegen onopzettelijke schade, en gekocht samen met de andere fauteuil.",
+                'type' => "Meubilair",
+                'keptIn' => "bewaard in",
+                'place' => "Woonkamer",
+                'name' => "Rosita",
+                'tag' => "Niet uitlenen",
+                'sections' => [
+                    'overview' => "Overzicht",
+                    'timeline' => "Tijdlijn",
+                    'transactions' => "Transacties",
+                    'insurance' => "Verzekering",
+                    'valuations' => "Taxaties",
+                    'provenance' => "Herkomst",
+                    'maintenance' => "Onderhoud",
+                    'loans' => "Uitleningen",
+                    'locations' => "Locaties",
+                    'documents' => "Documenten",
+                ],
+                'title' => "Tijdlijn",
+                'lead' => "Alles wat deze bezitting is overkomen, verzameld uit de andere onderdelen en op volgorde gezet.",
+                'all' => "Alles",
+                'groups' => [
+                    [
+                        'year' => '2001',
+                        'count' => "1 item",
+                        'entries' => [
+                            ['section' => 'maintenance', 'noun' => "Onderhoud", 'date' => "2 mei 2001", 'title' => "Voetsteun gerepareerd", 'detail' => "Joey Tribbiani · De hendel bleef halverwege steken"],
+                        ],
+                    ],
+                    [
+                        'year' => '1998',
+                        'count' => "3 items",
+                        'entries' => [
+                            ['section' => 'locations', 'noun' => "Locatie", 'date' => "14 maart 1998", 'badge' => "Nu hier", 'title' => "Bewaard in Appartement 19 › Woonkamer", 'detail' => "Gericht op de tv"],
+                            ['section' => 'insurance', 'noun' => "Verzekering", 'date' => "14 maart 1998", 'title' => "Gedekt door Greenwich Mutual", 'detail' => "Onopzettelijke schade"],
+                            ['section' => 'transactions', 'noun' => "Transactie", 'date' => "14 maart 1998", 'badge' => "Aanschaf", 'title' => "Aankoop", 'detail' => "Samen met de andere fauteuil gekocht"],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        'yours' => [
+            'eyebrow' => "Je leven is geen sjabloon",
+            'title' => "Orden je informatie op jouw manier.",
+            'body' => "Sommige mensen willen een overzicht van hun familie en vrienden bijhouden. Anderen geven meer om hun huis, hun verzamelingen of de kennis die ze in de loop der jaren hebben opgebouwd.",
+            'closing' => "Monica geeft je ruimte voor alles.",
+            'items' => [
+                ['title' => "Scheid de verschillende delen van je leven", 'body' => "Gebruik kluizen om aparte gebieden, zoals privéleven of werk, binnen je account te ordenen."],
+                ['title' => "Bewaar de velden die ertoe doen", 'body' => "Kies sjablonen en pas velden aan zodat ze passen bij de mensen en andere records die je beheert."],
+                ['title' => "Maak je eigen soorten records", 'body' => "Je informatie past niet altijd in een vooraf bepaalde categorie. Monica ondersteunt eigen recordtypen, zodat je een persoonlijk informatiebeheer kunt vormgeven rond wat voor jou telt."],
+            ],
+            // The drawing: Settings, Contacts and more, as the application
+            // draws it (settings/account/entity-types/index.blade.php).
+            'screen' => [
+                'label' => "De instellingen Contacten en meer in Monica. Naast contacten, die ingebouwd zijn en 84 profielen bevatten, heeft het account drie eigen soorten profielen gemaakt: appartementen met 2 profielen, huisdieren met 2 profielen en feestdagenkostuums met 3 profielen. Elk kan worden bewerkt en de rijen kunnen worden gesleept om hun volgorde in de kluisnavigatie te wijzigen.",
+                'title' => "Contacten en meer",
+                'description' => "Je hebt al profielen voor mensen. Maak andere soorten profielen aan voor de huisdieren, bedrijven of dingen die je wilt onthouden. Elk heeft zijn eigen informatie, onderverdeeld in onderdelen, net als een contact.",
+                'create' => "Een profielsoort aanmaken",
+                'createNote' => "Begin met een soort, zoals “Huisdieren”. Daarna voeg je individuele huisdieren toe, zoals “Garfield”.",
+                'list' => "Je profielsoorten",
+                'listNote' => "Sleep een rij om de volgorde in de kluisnavigatie te wijzigen.",
+                'contacts' => "Contacten",
+                'builtIn' => "Ingebouwd",
+                'contactsCount' => "84 profielen",
+                'locked' => "Kan niet worden verwijderd",
+                'edit' => "Bewerken",
+                'types' => [
+                    ['name' => "Appartementen", 'count' => "2 profielen"],
+                    ['name' => "Huisdieren", 'count' => "2 profielen"],
+                    ['name' => "Feestdagenkostuums", 'count' => "3 profielen"],
+                ],
+            ],
+        ],
+
+        'knowledge' => [
+            'eyebrow' => "Een thuis voor wat je weet",
+            'title' => "Bewaar kennis waar je op terug wilt komen.",
+            'lead' => "Een lijst met favoriete boeken. Aanwijzingen voor het onderhoud van het huis. Een verzameling plekken om te bezoeken. Een paar notities waarvan je wenst dat je ze jaren geleden had bewaard.",
+            'body' => [
+                "Persoonlijk kennisbeheer hoeft niet te betekenen dat je een uitgebreid tweede brein bouwt. Soms betekent het gewoon dat je iets opschrijft op een plek waar je het weer terugvindt.",
+                "Met Monica orden je notities en lijsten in mappen, doorzoek je de inhoud en bewaar je je naslaginformatie naast de rest van je persoonlijke leven.",
+            ],
+            'cta' => "Begin gratis",
+            'caption' => "Je notities en lijsten, zo geordend dat ze nuttig zijn wanneer je ze nodig hebt.",
+            'screen' => [
+                'label' => "Het onderdeel Kennis van Monica. In de zijbalk staan vier mappen: Appartement 20, Recepten, Reisideeën en Boeken. De map Recepten is geopend op een notitie The Moist Maker, het recept voor Ross’ sandwich met Thanksgiving-restjes, en een lijst Boeken om te lezen, met Little Women afgevinkt en The Shining nog niet.",
+                'title' => "Kennis",
+                'folders' => ["Appartement 20", "Recepten", "Reisideeën", "Boeken"],
+                'open' => 1,
+                'note' => "The Moist Maker",
+                'noteMeta' => "Notitie · Markdown",
+                'noteBody' => [
+                    "Ross’ sandwich met Thanksgiving-restjes.",
+                    "Kalkoen, cranberrysaus en in het midden een extra boterham doordrenkt met jus.",
+                    "Niet in de koelkast op kantoor laten staan.",
+                ],
+                'list' => "Boeken om te lezen",
+                'listItems' => [
+                    ['done' => true, 'name' => "Little Women"],
+                    ['done' => false, 'name' => "The Shining (bewaar hem in de vriezer)"],
+                ],
+            ],
+        ],
+
+        'ownership' => [
+            'eyebrow' => "Jouw informatie, jouw keuze",
+            'title' => "Persoonlijke informatie verdient een persoonlijk thuis.",
+            'lead' => "Je digitale leven is van jou. De software waarmee je het ordent hoort dat te respecteren.",
+            'body' => [
+                "Monica is een open source programma voor persoonlijk informatiebeheer dat je als gehoste applicatie kunt gebruiken of in eigen beheer op je eigen infrastructuur kunt draaien.",
+                "Er zit geen reclame in Monica en de applicatie werkt zonder AI-assistent. Je kunt Monica gewoon openen, je informatie nalopen en zelf bijhouden.",
+            ],
+            'github' => "Ontdek het open source project",
+            'items' => [
+                ['title' => "Open source", 'body' => "Bekijk de code, draag bij aan het project of draai zelf een instantie."],
+                ['title' => "In eigen beheer te draaien", 'body' => "Liever je eigen infrastructuur beheren? Monica kan op je eigen server draaien."],
+                ['title' => "Gemaakt voor mensen", 'body' => "Gebruik de app rechtstreeks, zonder afhankelijk te zijn van een chatbot of automatisering om bij je informatie te komen."],
+            ],
+        ],
+
+        'ai' => [
+            'eyebrow' => "En als je een beetje hulp wilt",
+            'title' => "Je informatie kan ook met AI werken.",
+            'body' => [
+                "Monica is op zichzelf al nuttig. Maar als je AI-assistenten gebruikt, kun je compatibele assistenten ook via het Model Context Protocol (MCP) met je Monica-account verbinden.",
+                "Vraag een assistent een notitie te bewaren, een levensgebeurtenis vast te leggen of iets op te zoeken wat je al hebt opgeslagen. De informatie blijft in Monica staan, waar je die zelf kunt zien en beheren.",
+            ],
+            'link' => "Ontdek persoonlijk AI-geheugen",
+        ],
+
+        'faq' => [
+            'title' => "Een paar dingen waar je je misschien over verbaast.",
+            'items' => [
+                ['q' => "Wat is software voor persoonlijk informatiebeheer?", 'a' => "Software voor persoonlijk informatiebeheer helpt je informatie over je dagelijks leven op te slaan, te ordenen en terug te vinden. Monica brengt contacten, relaties, notities, lijsten, bezittingen, levensgebeurtenissen, locaties en herinneringen samen in één applicatie."],
+                ['q' => "Waarin verschilt Monica van een notitie-app?", 'a' => "Een notitie-app is een goede plek om dingen op te schrijven. Monica geeft mensen, relaties, gebeurtenissen en bezittingen bovendien hun eigen gestructureerde records. Gewone notities en lijsten maak je nog steeds in het onderdeel Kennis van Monica."],
+                ['q' => "Kan Monica me helpen mijn persoonlijke leven te organiseren?", 'a' => "Ja. Je kunt Monica gebruiken als app voor persoonlijke organisatie om mensen, belangrijke momenten, nuttige kennis, bezittingen, locaties en herinneringen bij te houden. Jij kiest wat je vastlegt en hoe je het ordent."],
+                ['q' => "Is Monica een persoonlijke database?", 'a' => "Ja. Monica slaat verschillende soorten persoonlijke informatie op als gestructureerde records, in plaats van alles als één tekstdocument te behandelen. Monica ondersteunt ook aanpasbare sjablonen en eigen recordtypen."],
+                ['q' => "Kan ik Monica gebruiken voor persoonlijk kennisbeheer?", 'a' => "Ja. Monica bevat mappen in Kennis, notities in Markdown en lijsten. Daarmee orden je naslaginformatie, aanbevelingen, instructies en andere dingen die je wilt onthouden."],
+                ['q' => "Kan ik mijn bezittingen bijhouden?", 'a' => "Ja. Monica kan bezittingen, aankooptransacties, onderhoud, verzekeringsgegevens, uitleningen aan anderen en de plek waar voorwerpen worden bewaard vastleggen."],
+                ['q' => "Kan ik Monica gebruiken om vrienden en familie bij te houden?", 'a' => "Ja. Monica begon als persoonlijke CRM en mensen en relaties blijven centraal staan in de applicatie. Je kunt contactgegevens, relaties, herinneringen en levensgebeurtenissen bewaren."],
+                ['q' => "Is Monica een gezinsplanner of een gedeeld huishoudaccount?", 'a' => "Monica kan informatie over je huishouden en de mensen in je leven bewaren, maar een account is op dit moment bedoeld voor één persoon. Er is geen gedeelde werkruimte voor meerdere gebruikers in een gezin."],
+                ['q' => "Is Monica open source?", 'a' => "Ja. Monica is open source onder de AGPL-3.0-licentie."],
+                ['q' => "Kan ik Monica in eigen beheer draaien?", 'a' => "Ja. Je kunt Monica op je eigen infrastructuur draaien in plaats van de gehoste dienst te gebruiken. Dan beheer je zelf je server en de beveiliging, back-ups en configuratie ervan."],
+                ['q' => "Heb ik een AI-assistent nodig om Monica te gebruiken?", 'a' => "Nee. Monica is een complete applicatie die je rechtstreeks kunt gebruiken. AI-connectiviteit is optioneel."],
+                ['q' => "Kan ik ChatGPT of Claude met Monica verbinden?", 'a' => "Monica bevat een MCP-server en installatiegidsen voor compatibele AI-clients, waaronder ChatGPT en Claude. De beschikbaarheid kan afhangen van de client en zijn abonnement. Zie de pagina over AI-geheugen en de MCP-documentatie voor details."],
+                ['q' => "Is Monica gratis?", 'a' => "Monica biedt een gratis gehost niveau met limieten, en betaalde opties. Je kunt de open source software ook in eigen beheer draaien. Zie de prijspagina voor de details van de abonnementen."],
+                ['q' => "Importeert Monica al mijn contacten en documenten automatisch?", 'a' => "Nee. Monica biedt op dit moment geen algemene import vanuit Google Contacts, Apple Contacten, CSV-bestanden of willekeurige documentbibliotheken. Je kunt informatie rechtstreeks invoeren en bepaalde imports in het Monica-formaat worden ondersteund."],
+            ],
+        ],
+
+        'closing' => [
+            'eyebrow' => "Houd wat telt dichtbij",
+            'title' => "Een plek voor alles wat je niet wilt vergeten.",
+            'body' => "Je leven bestaat uit mensen, plekken, dingen, momenten en talloze kleine details. Ze verdienen meer dan een handvol losse notities.",
+            'lead' => "Geef ze een thuis in Monica.",
+            'cta' => "Begin gratis",
+            'crm' => "Ontdek Monica’s persoonlijke CRM",
+            'note' => "Open source · In eigen beheer te draaien · Gemaakt voor mensen",
+        ],
+    ],
+
+    /**
+     * The MCP server page, "Your personal data, connected to your AI agents"
+     * (route key `mcpServer`). English only, like the AI memory page. The
+     * technical sibling of that page: endpoints, tools, authentication.
+     *
+     * Its examples come from the demo vault, as the homepage's do: the
+     * reader lent Ross their Holiday Armadillo costume, due back on 28
+     * December. Keep the object, the person and the date in step between
+     * `workflow` and `visibility`. Tool names are the product's own.
+     */
+    'mcpServer' => [
+        'endpoint' => "https://my.monicahq.com/mcp",
+        'selfHosted' => "https://YOUR-MONICA-HOST/mcp",
+        'copy' => "Kopiëren",
+        'copied' => "Gekopieerd",
+        'costume' => "Kostuum van het Feestdagengordeldier",
+        'borrower' => "Ross Geller",
+        'due' => "Terug op 28 december",
+
+        'hero' => [
+            'eyebrow' => "Ingebouwde ondersteuning voor het Model Context Protocol",
+            'title' => "Je persoonlijke gegevens, verbonden met je AI-agents.",
+            'lede' => "Monica wordt geleverd met een ingebouwde MCP-server waarmee compatibele AI-assistenten met je persoonlijke gegevens kunnen werken, van contacten en relaties tot kennis, herinneringen, levensgebeurtenissen en bezittingen.",
+            'body' => "Een echte persoonlijke database. Een echte applicatie. En een directe verbinding voor je agents via het Model Context Protocol.",
+            'connect' => "Verbind een AI-assistent",
+            'start' => "Begin gratis",
+            'tools' => "Ontdek de MCP-tools",
+            'trust' => ["Open source", "Externe MCP", "OAuth en API-sleutels", "In eigen beheer te draaien"],
+            'endpointLabel' => "Gehost MCP-endpoint",
+        ],
+
+        'unlocks' => [
+            'title' => "Geef je AI-assistenten iets nuttigs om mee te werken.",
+            'body' => [
+                "Met het Model Context Protocol (MCP) kunnen AI-assistenten tools aanroepen die andere applicaties beschikbaar stellen.",
+                "Bij Monica zijn die tools rechtstreeks verbonden met je persoonlijke informatie. Een assistent kan een relatie opzoeken, een levensgebeurtenis met datum aanmaken, een kennisnotitie bijhouden, een bezitting bijhouden of aankomende herinneringen bekijken, terwijl Monica de records bewaart in een gestructureerde database waar je zelf bij kunt.",
+            ],
+            'closing' => "Geen aparte geheugendienst om te bouwen. Geen eigen brug om te onderhouden. De MCP-server is onderdeel van Monica.",
+            'flow' => [
+                ['title' => "Je AI-assistent", 'body' => "Stuurt een MCP-toolverzoek, wanneer hij dat besluit."],
+                ['title' => "Monica MCP-server", 'body' => "Authenticeert en voert de ondersteunde actie uit."],
+                ['title' => "Je Monica-gegevens", 'body' => "Bewaart en geeft gestructureerde persoonlijke records terug."],
+            ],
+        ],
+
+        'workflow' => [
+            'title' => "Van een gesprek naar iets wat je kunt terugvinden.",
+            'steps' => [
+                [
+                    'title' => "Vraag het je assistent",
+                    'prompt' => "Ik heb mijn Feestdagengordeldier-kostuum uitgeleend aan Ross. Hij brengt het op 28 december terug. Leg dit vast in Monica.",
+                    'body' => "Je assistent gebruikt Monica’s MCP-tools om de uitleen vast te leggen, aan de persoon te koppelen en de verwachte terugbrengdatum bij te houden.",
+                    'caption' => "Een verzoek in gewone taal wordt een gestructureerde MCP-actie.",
+                    'label' => "Een gesprek met Claude, met Monica verbonden. Je vraagt Claude vast te leggen dat je je Feestdagengordeldier-kostuum aan Ross hebt uitgeleend, terug op 28 december. Claude roept Monica’s tool create-possession-loan aan en bevestigt dat de uitleen is opgeslagen.",
+                    'reply' => "Opgeslagen. Monica toont het kostuum als uitgeleend aan Ross tot 28 december.",
+                ],
+                [
+                    'title' => "Bekijk het in Monica",
+                    'prompt' => null,
+                    'body' => "Open het kostuum in Monica en bekijk de uitleengeschiedenis naast de rest van de informatie over die bezitting.",
+                    'caption' => "Hetzelfde record is zichtbaar en bewerkbaar in Monica.",
+                    'label' => "De pagina van het Feestdagengordeldier-kostuum in Monica, bewaard in de halkast. In het onderdeel uitleningen staat dat het is uitgeleend aan Ross Geller, terug op 28 december, en een eerdere uitleen aan Ross, vorig jaar teruggebracht.",
+                    'reply' => null,
+                ],
+                [
+                    'title' => "Vraag het later",
+                    'prompt' => "Kijk in Monica. Wie heeft mijn gordeldierkostuum en wanneer krijg ik het terug?",
+                    'body' => "De assistent leest Monica’s records en geeft de details terug die je hebt bewaard.",
+                    'caption' => "Je assistent kan de informatie in een later gesprek ophalen.",
+                    'label' => "Een nieuw gesprek met ChatGPT, met Monica verbonden. Je vraagt wie je gordeldierkostuum heeft. ChatGPT roept Monica’s tool list-possession-loans aan en antwoordt dat Ross het heeft, terug op 28 december, en dat hij het al eerder heeft geleend.",
+                    'reply' => "Ross heeft het, terug op 28 december. Het is het tweede jaar op rij.",
+                ],
+            ],
+            'closet' => "Bewaard in de halkast",
+            'loans' => "Uitleningen",
+            'onLoan' => "Uitgeleend",
+            'returned' => "Vorig jaar in januari teruggebracht",
+            'connected' => "Monica verbonden",
+            'closing' => "De assistent regelt het gesprek.",
+            'closingMuted' => "Monica bewaart het record.",
+        ],
+
+        'tools' => [
+            'title' => "236 MCP-tools. Eén persoonlijke database.",
+            'lead' => "Monica stelt 236 geregistreerde MCP-tools beschikbaar voor persoonlijke informatie, relaties, kennis, alledaagse gebeurtenissen en dingen die je bezit. Agents kunnen ondersteunde acties uitvoeren via dezelfde applicatieregels als Monica’s JSON API.",
+            // The glyph and the colour of each card are in the template.
+            'items' => [
+                [
+                    'title' => "Mensen en relaties",
+                    'body' => "Vind mensen, lees hun profielen, maak contacten aan op naam en beheer de verbindingen daartussen.",
+                    'prompt' => "Aan wie is Ross verwant? Houd het kort, hij is drie keer getrouwd geweest.",
+                    'names' => ['search-records', 'get-contact-markdown', 'create-contact-relationship'],
+                ],
+                [
+                    'title' => "Levensgebeurtenissen en geschiedenis",
+                    'body' => "Leg telefoontjes, afspraken, reizen, mijlpalen en momenten vast en haal de details later op.",
+                    'prompt' => "Leg mijn koffie met Phoebe in Central Perk vast, en dat ze een nieuw liedje over een kat speelde.",
+                    'names' => ['create-life-event', 'list-life-events', 'get-life-event'],
+                ],
+                [
+                    'title' => "Kennis en notities",
+                    'body' => "Maak en werk notities in Markdown bij, orden mappen en houd lijsten bij met informatie die het bewaren waard is.",
+                    'prompt' => "Bewaar het recept van de Moist Maker in mijn notities bij Recepten.",
+                    'names' => ['create-knowledge-note', 'search-knowledge', 'update-knowledge-note'],
+                ],
+                [
+                    'title' => "Spullen en bezittingen",
+                    'body' => "Houd aankopen, onderhoud, verzekeringsgegevens, locaties en uitleningen bij.",
+                    'prompt' => "Leg vast dat de voetsteun van Rosita vandaag is gerepareerd. Vertel Joey niet wie hem kapot maakte.",
+                    'names' => ['create-possession-maintenance-record', 'list-possessions'],
+                ],
+                [
+                    'title' => "Herinneringen",
+                    'body' => "Maak terugkerende of eenmalige herinneringen, zoek aankomende data op en leg vast of je eraan dacht.",
+                    'prompt' => "Herinner me eraan elke ochtend het kuiken en de eend te voeren.",
+                    'names' => ['create-contact-reminder', 'list-vault-reminder-occurrences'],
+                ],
+                [
+                    'title' => "Eigen structuren",
+                    'body' => "Definieer en gebruik eigen entiteitstypen, sjablonen en gestructureerde velden die weerspiegelen hoe je je leven organiseert.",
+                    'prompt' => "Maak een recordtype voor mijn feestdagenkostuums.",
+                    'names' => ['create-entity', 'create-entity-type'],
+                ],
+            ],
+            'stats' => [
+                ['value' => "236", 'label' => "geregistreerde MCP-tools"],
+                ['value' => "Streamable HTTP", 'label' => "extern transport"],
+                ['value' => "OAuth + API-sleutels", 'label' => "verbindingsmethoden"],
+                ['value' => "Eén account", 'label' => "gedeeld door meerdere assistenten"],
+            ],
+            'docs' => "Bekijk de volledige MCP-documentatie",
+        ],
+
+        'connect' => [
+            'title' => "Verbind met OAuth of een API-sleutel.",
+            'lead' => "Monica’s externe MCP-server ondersteunt twee authenticatiemethoden, zodat je kunt verbinden via een interactieve autorisatiestroom of een client voor ontwikkelaars kunt instellen met een eigen sleutel.",
+            'endpoint' => "Endpoint",
+            'firstPrompt' => "Eerste prompt",
+            'oauth' => [
+                'eyebrow' => "Optie A · OAuth",
+                'title' => "Verbind zonder een geheim te kopiëren.",
+                'body' => "Voeg voor MCP-clients die de interactieve OAuth-stroom ondersteunen het Monica MCP-endpoint toe, log in op je account en keur de verbinding goed.",
+                'steps' => [
+                    "Voeg het externe Monica MCP-endpoint toe in de connectorinstellingen van je assistent.",
+                    "Log in bij Monica wanneer daarom wordt gevraagd.",
+                    "Controleer de naam van de applicatie en de doorstuurbestemming.",
+                    "Geef toegang en probeer dan een eerste zoekopdracht met alleen leesrechten.",
+                ],
+                'prompt' => "Toon mijn Monica-kluizen.",
+                'caption' => "Autoriseer elke verbinding via Monica.",
+                'screen' => [
+                    'label' => "Het autorisatiescherm van Monica. Claude vraagt om verbinding te maken met je Monica-account en wordt doorgestuurd naar claude.ai. Twee knoppen: Weigeren en Toestaan.",
+                    'title' => "Claude wil verbinding maken met je Monica-account",
+                    'body' => "Claude kan de records in je account lezen en wijzigen, via Monica’s MCP-tools.",
+                    'redirect' => "Stuurt door naar",
+                    'host' => "claude.ai",
+                    'deny' => "Weigeren",
+                    'allow' => "Toestaan",
+                ],
+            ],
+            'key' => [
+                'eyebrow' => "Optie B · API-sleutel",
+                'title' => "Voor ontwikkeltools en eigen MCP-clients.",
+                'body' => "Maak in Monica’s accountinstellingen een eigen API-sleutel voor je assistent aan. Stel die sleutel in als bearer-referentie voor het externe MCP-endpoint, volgens de instructies voor de client van je keuze.",
+                'header' => "Concept van de Authorization-header",
+                'headerNote' => "Dit is het concept van de HTTP-header, geen universele configuratie om te kopiëren en plakken. De exacte syntaxis hangt af van de client.",
+                'prompt' => "Zoek Gunther in mijn kluis Persoonlijk.",
+                'caption' => "Eén sleutel per assistent, elk afzonderlijk in te trekken.",
+                'screen' => [
+                    'label' => "De instellingen voor API-sleutels van Monica. Er staan twee sleutels: Mijn AI-assistent, vandaag aangemaakt en een minuut geleden voor het laatst gebruikt, en Cursor op de werklaptop, in oktober aangemaakt. Elk heeft een knop Intrekken.",
+                    'title' => "API-sleutels",
+                    'keys' => [
+                        ['name' => "Mijn AI-assistent", 'meta' => "Vandaag aangemaakt · een minuut geleden gebruikt"],
+                        ['name' => "Cursor op de werklaptop", 'meta' => "Aangemaakt op 12 oktober · gisteren gebruikt"],
+                    ],
+                    'revoke' => "Intrekken",
+                    'create' => "Een sleutel aanmaken",
+                ],
+            ],
+            'selfHosted' => "Gebruik je je eigen server? Vervang het gehoste endpoint door",
+            'guides' => "Lees de stapsgewijze installatiegidsen",
+        ],
+
+        'clients' => [
+            'title' => "Neem de assistent mee die je al gebruikt.",
+            'body' => "Monica gebruikt het Model Context Protocol, geen eigen koppeling die aan één AI-aanbieder vastzit. Monica kan worden verbonden met compatibele externe MCP-clients en de documentatie bevat installatie-instructies voor:",
+            'label' => "Clients met een installatiegids",
+            'note' => "Verschillende clients ondersteunen verschillende manieren om MCP-servers te configureren en toegang kan afhangen van de client of het abonnement. Volg de gids voor jouw situatie.",
+            'cta' => "Bekijk de installatie-instructies per client",
+        ],
+
+        'structured' => [
+            'title' => "Geef je agents meer dan een stapel tekst.",
+            'body' => [
+                "Monica slaat informatie op in records die het dagelijks leven weerspiegelen. Mensen hebben relaties en geschiedenissen. Levensgebeurtenissen hebben data en deelnemers. Bezittingen kunnen aankopen, onderhoudsrecords, locaties en uitleningen hebben. Kennis staat in notities, mappen en lijsten.",
+                "Die structuur geeft je assistent concrete informatie om op te zoeken en bij te werken, en geeft jou een vertrouwde interface om die zelf na te lopen.",
+                "Een assistent kan een persoon vinden, het bredere profiel als Markdown openen, de relaties volgen, de levensgebeurtenissen lezen en een link naar de bijbehorende Monica-pagina teruggeven.",
+            ],
+            'callout' => "Gestructureerde persoonlijke gegevens, beschikbaar voor mensen en AI-assistenten.",
+            'caption' => "Gestructureerde records zitten niet opgesloten in een chat.",
+            'screen' => [
+                'label' => "De pagina van Ross Geller in Monica. Zijn relaties: Monica Geller, zus; Rachel Green, het is ingewikkeld; Emma, dochter. Zijn levensgebeurtenissen: werd hoogleraar paleontologie in 2001 en zijn derde bruiloft, in Las Vegas, in 1999. Hij heeft je Feestdagengordeldier-kostuum.",
+                'name' => "Ross Geller",
+                'meta' => "Paleontoloog · vriend",
+                'relationships' => "Relaties",
+                'rows' => [
+                    ['who' => "Monica Geller", 'what' => "Zus"],
+                    ['who' => "Rachel Green", 'what' => "Het is ingewikkeld"],
+                    ['who' => "Emma Geller-Green", 'what' => "Dochter"],
+                ],
+                'events' => "Levensgebeurtenissen",
+                'entries' => [
+                    ['what' => "Werd hoogleraar paleontologie", 'when' => "2001"],
+                    ['what' => "Trouwde in Las Vegas (voor de derde keer)", 'when' => "1999"],
+                ],
+                'has' => "Heeft je Feestdagengordeldier-kostuum",
+            ],
+        ],
+
+        'visibility' => [
+            'title' => "Weet wat je agents hebben geraadpleegd.",
+            'lead' => "Als je een assistent met persoonlijke informatie verbindt, is inzicht belangrijk.",
+            'body' => [
+                "Monica biedt een eigen MCP-geschiedenis met de toolaanroepen van verbonden assistenten. Bekijk de assistent, de actie, het resultaat en de details van verzoek en antwoord die in de geschiedenis beschikbaar zijn.",
+                "Elke verbonden assistent kan afzonderlijk worden losgekoppeld. Het intrekken van één verbinding wist de informatie die al in Monica staat niet en koppelt je andere assistenten niet los.",
+            ],
+            'points' => [
+                "Bekijk de MCP-aanroepgeschiedenis tot 90 dagen terug.",
+                "Zie acties gegroepeerd en te filteren op assistent, datum, uitkomst en tool.",
+                "Trek afzonderlijke OAuth-verbindingen of API-sleutels in.",
+                "Markeer geselecteerde sjabloonvelden als gevoelig; assistenten die via OAuth zijn verbonden kunnen de waarden van die velden niet lezen.",
+            ],
+            'warning' => "Verbonden assistenten hebben toegang tot je hele account. Monica biedt op dit moment geen MCP-rechten met alleen leestoegang of per kluis. Bekijk elke verbinding voordat je die goedkeurt.",
+            'caption' => "Zie de aanroepen van je assistenten en koppel ze afzonderlijk los.",
+            'screen' => [
+                'label' => "De MCP-geschiedenis van Monica, gefilterd op de laatste 7 dagen. Vier aanroepen: ChatGPT gebruikte list-possession-loans vandaag om 09:14, Claude gebruikte create-possession-loan gisteren om 18:02, Cursor gebruikte search-knowledge gisteren om 11:30 en Claude gebruikte get-contact-markdown op maandag, wat mislukte. De eerste aanroep is uitgeklapt, met een gevoelige waarde afgeschermd.",
+                'title' => "MCP-geschiedenis",
+                'filters' => ["Alle assistenten", "Laatste 7 dagen", "Alle uitkomsten"],
+                'calls' => [
+                    ['ChatGPT', 'openai', 'list-possession-loans', "Vandaag om 09:14", true],
+                    ['Claude', 'claude', 'create-possession-loan', "Gisteren om 18:02", true],
+                    ['Cursor', 'cursor', 'search-knowledge', "Gisteren om 11:30", true],
+                    ['Claude', 'claude', 'get-contact-markdown', "Maandag om 22:47", false],
+                ],
+                'request' => "Verzoek",
+                'response' => "Antwoord",
+                'failed' => "Mislukt",
+            ],
+        ],
+
+        'reference' => [
+            'title' => "Gebouwd op een open protocol. Klaar voor jouw opzet.",
+            'lead' => "Monica stelt een extern MCP-endpoint beschikbaar via HTTPS met Streamable HTTP. MCP-tools gebruiken het bestaande API-gedrag en de accountregels van Monica, zodat je met dezelfde persoonlijke records werkt die je in de webapplicatie ziet.",
+            'head' => ["Mogelijkheid", "Monica MCP-server"],
+            'rows' => [
+                ["Protocol", "Model Context Protocol (MCP)"],
+                ["Transport", "Extern Streamable HTTP via HTTPS"],
+                ["Endpoint", "/mcp op je gehoste of in eigen beheer draaiende Monica-instantie"],
+                ["Authenticatie", "OAuth of bearer API-sleutel"],
+                ["Toolcatalogus", "236 geregistreerde tools"],
+                ["MCP-primitieven", "Alleen tools; geen gepubliceerde MCP-resources of -prompts"],
+                ["Gegevens", "Mensen, relaties, levensgebeurtenissen, herinneringen, notities, lijsten, bezittingen, plekken en meer"],
+                ["Limiet voor gehoste verzoeken", "60 MCP-aanroepen per minuut per verbinding"],
+                ["In eigen beheer", "Beschikbaar; geen MCP-limiet vanuit de applicatie"],
+                ["Documentatie", "/docs/mcp en /docs/mcp.md"],
+            ],
+            'hosted' => "Extern MCP-endpoint",
+            'pattern' => "Patroon voor een endpoint in eigen beheer",
+            'note' => "Monica is geen MCP-framework en geen autonome dienst voor het afleiden van herinneringen. Je assistent bepaalt wanneer hij een tool aanroept en welke informatie hij meestuurt.",
+            'docs' => "Open de MCP-documentatie",
+            'github' => "Bekijk de open source code",
+        ],
+
+        'selfHosting' => [
+            'title' => "Jouw server. Jouw persoonlijke gegevens. Jouw keuze.",
+            'body' => [
+                "Monica is open source onder de AGPL-3.0-licentie en kan in eigen beheer worden gedraaid. Draai de persoonlijke database en de ingebouwde MCP-server op infrastructuur die je zelf beheert, of gebruik de gehoste dienst van Monica en verbind met het externe endpoint.",
+                "Dezelfde MCP-basisintegratie is beschikbaar voor gratis gehoste accounts en installaties in eigen beheer. Als je zelf host, beheer je de installatie, beveiliging, back-ups en beschikbaarheid van je server.",
+            ],
+            'cta' => "Ontdek zelf hosten",
+        ],
+
+        'compare' => [
+            'title' => "Niet zomaar een MCP-endpoint. Een thuis voor de gegevens erachter.",
+            'lead' => "Een MCP-server is nuttig als de informatie erachter begrijpelijk en beheersbaar blijft. Monica biedt de applicatie, de database en de agentverbinding samen.",
+            'head' => ["Een losse MCP-integratie", "Monica"],
+            'rows' => [
+                ["Verbindt een assistent met tools", "Ja", "Ja"],
+                ["Bevat een bruikbare app voor persoonlijke informatie", "Hangt af van de implementatie", "Ja"],
+                ["Gestructureerde mensen, gebeurtenissen en bezittingen", "Hangt af van de backend", "Ingebouwd"],
+                ["Records die mensen kunnen lezen", "Hangt af van de backend", "Ja"],
+                ["Verbindingsgeschiedenis per assistent", "Hangt af van de implementatie", "Ja"],
+                ["Open source en in eigen beheer te draaien", "Hangt af van het project", "Ja"],
+            ],
+            'caption' => "Wat een losse MCP-integratie en Monica elk bieden",
+            'closing' => "Gebouwd voor de mensen wier gegevens erin staan, niet alleen voor de agents die erbij komen.",
+        ],
+
+        'faq' => [
+            'title' => "Veelgestelde vragen",
+            'items' => [
+                ['q' => "Wat is de Monica MCP-server?", 'a' => "Het is Monica’s ingebouwde Model Context Protocol-server (MCP), waarmee compatibele AI-assistenten via tools ondersteunde persoonlijke gegevens in Monica kunnen lezen en wijzigen."],
+                ['q' => "Is Monica een open source MCP-server?", 'a' => "Ja. Monica is een open source applicatie onder de AGPL-3.0-licentie en de MCP-server zit in de applicatie. Je kunt de gehoste dienst gebruiken of Monica in eigen beheer draaien."],
+                ['q' => "Wat is de URL van het MCP-endpoint?", 'a' => "Bij de gehoste dienst is het externe MCP-endpoint https://my.monicahq.com/mcp. Een instantie in eigen beheer biedt /mcp aan op zijn eigen openbare adres."],
+                ['q' => "Ondersteunt Monica externe MCP-verbindingen?", 'a' => "Ja. Monica gebruikt Streamable HTTP via HTTPS. Er is geen aparte lokale stdio MCP-server. Je client moet externe MCP ondersteunen."],
+                ['q' => "Kan ik Claude of ChatGPT met Monica verbinden?", 'a' => "Monica biedt installatie-instructies voor Claude Desktop en ChatGPT, en voor clients voor ontwikkelaars. De beschikbaarheid en installatievereisten hangen af van de client en soms van het abonnement. Raadpleeg de actuele MCP-documentatie voor de ondersteunde werkwijze."],
+                ['q' => "Ondersteunt Monica OAuth-authenticatie?", 'a' => "Ja. Ondersteunde clients kunnen een interactieve OAuth-autorisatiestroom gebruiken. Monica ondersteunt ook bearer API-sleutels voor clients die handmatige configuratie vereisen."],
+                ['q' => "Kan ik dezelfde Monica-gegevens met meerdere AI-assistenten gebruiken?", 'a' => "Ja. Je kunt meerdere assistenten met één Monica-account verbinden. Elke verbinding kan afzonderlijk worden beheerd en ingetrokken, en de assistenten kunnen binnen de rechten van hun verbinding bij dezelfde accountgegevens."],
+                ['q' => "Hoeveel MCP-tools biedt Monica?", 'a' => "Monica registreert 236 MCP-tools. De beschikbaarheid van tools verschilt per accountrechten, beheerderstoegang en ingeschakelde functies."],
+                ['q' => "Met welke soorten gegevens kunnen MCP-tools werken?", 'a' => "Ondersteunde tools omvatten mensen, relaties, levensgebeurtenissen, herinneringen, kennisnotities en -lijsten, bezittingen, plekken, sjablonen en andere soorten persoonlijke records. Niet elke actie die de webapplicatie ondersteunt is via MCP beschikbaar."],
+                ['q' => "Kan een assistent iemands telefoonnummer of verjaardag in Monica bewaren?", 'a' => "Niet met de huidige MCP-tools. Assistenten kunnen mensen op naam aanmaken en veel gerelateerde records beheren, maar voor het bewerken van de gedetailleerde profielvelden van een persoon is de Monica-webinterface of de JSON API nodig."],
+                ['q' => "Kan ik een AI-assistent alleen leestoegang geven?", 'a' => "Op dit moment niet. Standaard verbonden assistenten hebben brede toegang tot het hele account. Monica biedt nog geen MCP-toegangsinstelling met alleen leesrechten of per kluis. Sommige sjabloonvelden kunnen als gevoelig worden gemarkeerd, waardoor assistenten die via OAuth zijn verbonden die waarden niet kunnen lezen."],
+                ['q' => "Onthoudt Monica automatisch alles wat ik een assistent vertel?", 'a' => "Nee. Monica luistert niet mee met je gesprekken en haalt niet automatisch herinneringen eruit. Informatie wordt opgeslagen of opgehaald wanneer je AI-assistent Monica’s MCP-tools aanroept."],
+                ['q' => "Is MCP-toegang beschikbaar in het gratis abonnement?", 'a' => "Ja. De MCP-server is beschikbaar op gratis gehoste accounts, binnen de gebruikelijke accountlimieten en eventuele limieten aan de serverkant. Zelf hosten kan ook."],
+                ['q' => "Kan ik zien wat mijn AI-agent heeft gedaan?", 'a' => "Ja. Monica biedt een geschiedenis van MCP-toolaanroepen, met details van verzoek en antwoord, die tot 90 dagen wordt bewaard. Je kunt assistenten ook afzonderlijk loskoppelen."],
+                ['q' => "Kan ik Monica MCP gebruiken met mijn instantie in eigen beheer?", 'a' => "Ja. Vervang het gehoste MCP-endpoint door het /mcp-endpoint op je instantie. Je bent zelf verantwoordelijk voor het veilig bereikbaar maken ervan vanuit je MCP-client."],
+                ['q' => "Biedt Monica semantisch zoeken of automatische geheugenextractie?", 'a' => "Nee. Monica biedt gestructureerde records en zoeken op trefwoorden. Een automatische beslissing om informatie op te slaan of op te halen hangt af van de verbonden assistent."],
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Je persoonlijke database is klaar voor je AI-agents.",
+            'body' => "Verbind een compatibele assistent, ontdek Monica’s MCP-tools en begin met het bouwen van een persoonlijk informatiesysteem dat werkt voor jou en voor de agents die je kiest.",
+            'connect' => "Verbind een AI-assistent",
+            'start' => "Begin gratis",
+            'aiMemory' => "Op zoek naar de menselijke kant van AI-geheugen?",
+            'note' => "Open source · In eigen beheer te draaien · MCP inbegrepen",
+        ],
+    ],
+
     'footer' => [
         // The closing line ends every page, so it is two short sentences rather
         // than a pitch. Each one is its own line.
@@ -3100,5 +4150,105 @@ return [
     'notFound' => [
         'title' => "Pagina niet gevonden.",
         'body' => "Dit adres leidt nergens heen. Misschien is het verhuisd, of heeft het nooit bestaan.",
+    ],
+
+    /**
+     * The handbook (`_layouts/handbook`, `_partials/handbook/`). Read in the
+     * locales listed in $handbookSlugs in config.php, so a locale that drops
+     * out of that list can lose this block with its articles.
+     *
+     * The articles are Markdown in source/_handbook_<locale>/; this is only
+     * the frame around them.
+     */
+    'handbook' => [
+        'title' => "Ons handboek",
+        'intro' => "Dit handboek legt uit wat ik doe, hoe ik denk en hoe ik dit project vooruit wil brengen. Zet je schrap, het is erg goed. Dat vind ik tenminste.",
+        'art' => "Een panda die een boek leest, tussen een stapel boeken en een kop koffie",
+        'contents' => "Inhoudsopgave",
+        'sections' => [
+            'general' => "Algemene informatie",
+            'product' => "Product",
+            'engineering' => "Techniek",
+            'community' => "Community en open source",
+            'privacy' => "Privacy en beveiliging",
+            'marketing' => "Marketing",
+            'business' => "Een bedrijf runnen",
+            'relationships' => "Menselijke relaties",
+        ],
+        'articles' => ":count artikelen",
+        'words' => ":count woorden",
+        'minutes' => ":count min leestijd",
+
+        'actions' => [
+            'label' => "Gebruik dit artikel elders",
+            'copy' => "Kopieer voor LLM",
+            'copied' => "Gekopieerd als Markdown",
+            'markdown' => "Bekijk als Markdown",
+            'claude' => "Open in Claude",
+            'chatgpt' => "Open in ChatGPT",
+
+            // The question each assistant is opened with. :url is the
+            // article's Markdown file.
+            'prompt' => "Lees :url en help me het te begrijpen. Misschien heb ik er vragen over.",
+        ],
+
+        'writtenBy' => "Geschreven door",
+        'author' => "Régis Freyd",
+        'authorRole' => "Medeoprichter",
+
+        // :percent is the article's length as a share of the book's.
+        'comparison' => "Dit is slechts :percent van het aantal woorden van :title van :author",
+
+        // One book per article, picked from the article's slug, so the same
+        // article always compares itself to the same book. Word counts are
+        // rounded, as the comparison is.
+        'books' => [
+            ['title' => "Don Quichot", 'author' => "Miguel de Cervantes", 'words' => 430000],
+            ['title' => "Een verhaal van twee steden", 'author' => "Charles Dickens", 'words' => 135000],
+            ['title' => "In de Ban van de Ring", 'author' => "J.R.R. Tolkien", 'words' => 455000],
+            ['title' => "De Kleine Prins", 'author' => "Antoine de Saint-Exupéry", 'words' => 16000],
+            ['title' => "Harry Potter en de Steen der Wijzen", 'author' => "J.K. Rowling", 'words' => 77000],
+            ['title' => "De Hobbit", 'author' => "J.R.R. Tolkien", 'words' => 95000],
+            ['title' => "En toen was er niemand meer", 'author' => "Agatha Christie", 'words' => 66000],
+            ['title' => "De droom van de rode kamer", 'author' => "Cao Xueqin", 'words' => 845000],
+            ['title' => "De vanger in het graan", 'author' => "J.D. Salinger", 'words' => 73000],
+            ['title' => "De Da Vinci Code", 'author' => "Dan Brown", 'words' => 138000],
+        ],
+
+        'factTitle' => "Willekeurig feit, zodat we niet dom doodgaan",
+
+        // One per article, picked from its slug like the book above.
+        'facts' => [
+            "Het eerste computervirus werd in 1983 gemaakt en heette 'Elk Cloner'. Het besmette Apple II-computers via floppy's.",
+            "De eerste webcam werd gebruikt aan de Universiteit van Cambridge om een koffiepot in de gaten te houden, zodat onderzoekers niet voor niets naar een lege pot zouden lopen.",
+            "De oorspronkelijke naam van Windows was 'Interface Manager'. Gelukkig kozen ze iets pakkenders.",
+            "De allereerste website staat nog steeds online. Tim Berners-Lee maakte hem in 1991 en hij gaat over het World Wide Web-project zelf.",
+            "Het Firefox-logo is geen vos. Het is een rode panda. De naam 'Firefox' is een bijnaam voor de rode panda.",
+            "De eerste e-mail ooit werd in 1971 door Ray Tomlinson naar zichzelf gestuurd. Het was een testbericht met willekeurige letters.",
+            "In de jaren vijftig noemde men computers 'elektronische hersenen' en gold programmeren als 'vrouwenwerk'.",
+            "De term 'bug' in software ontstond toen een echte mot in 1947 een storing veroorzaakte in de Harvard Mark II-computer.",
+            "Amazon heette oorspronkelijk 'Cadabra', als in 'abracadabra'. Het werd veranderd omdat het te veel op 'cadaver' leek.",
+            "De eerste computermuis was van hout. Doug Engelbart vond hem uit in 1964.",
+            "Er zijn meer dan 1,5 miljard websites op het internet, maar minder dan 200 miljoen zijn actief.",
+            "De QWERTY-toetsenbordindeling is ontworpen om het typen te vertragen, zodat mechanische typemachines niet vastliepen.",
+            "Het eerste domein ooit was Symbolics.com, geregistreerd op 15 maart 1985. Het is nog steeds actief.",
+            "Het '@'-teken werd gekozen voor e-mailadressen omdat het in de computerwereld zelden werd gebruikt en dus niet in conflict kwam met bestaande protocollen.",
+            "De term 'surfen op internet' werd in 1992 bedacht door bibliothecaresse Jean Armour Polly, die een artikel schreef met de titel 'Surfing the Internet'.",
+            "CAPTCHA staat voor 'Completely Automated Public Turing test to tell Computers and Humans Apart'.",
+            "De eerste harde schijf van 1 GB, aangekondigd in 1980, woog meer dan 200 kilo en kostte 40.000 dollar.",
+            "Google heette aanvankelijk 'Backrub', omdat het systeem backlinks controleerde om het belang van sites in te schatten.",
+            "De eerste YouTube-video, 'Me at the zoo', werd op 23 april 2005 geüpload door een van de medeoprichters van het platform, Jawed Karim.",
+            "Het meest gebruikte wachtwoord in 2023 is nog steeds '123456', op de voet gevolgd door 'password'.",
+            "Het oorspronkelijke spel Space Invaders veroorzaakte in Japan een tekort aan munten van 100 yen vanwege zijn populariteit.",
+            "De eerste computerprogrammeur was Ada Lovelace in de jaren 1840, voordat er zelfs maar computers gebouwd waren.",
+            "De term 'spam' voor ongewenste e-mails komt uit een sketch van Monty Python waarin het woord telkens weer valt.",
+            "De allereerste zoekmachine heette 'Archie', in 1990 gemaakt om FTP-sites te indexeren.",
+            "De eerste online transactie was een verkoop van marihuana tussen studenten van Stanford en MIT in het begin van de jaren zeventig, via ARPANET.",
+            "Het langst draaiende computerprogramma is de simulatie 'Doomsday Flight', die sinds 1973 draait om software van luchtvaartmaatschappijen te testen.",
+            "De '404-fout' is genoemd naar een kamer bij CERN waar de eerste webservers stonden.",
+            "Het eerste computerspel ooit was 'Spacewar!' in 1962, ontwikkeld door Steve Russell bij MIT.",
+            "Het woord 'robot' komt van het Tsjechische woord 'robota', dat 'dwangarbeid' of 'zwoegen' betekent.",
+            "Het '@'-teken heet in het Italiaans 'slak' en in het Nederlands 'apenstaartje'.",
+        ],
     ],
 ];
