@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -475,6 +475,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-new-version-ready-for-testing-zh.jpg?v=477e853b (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | 新版本已开放测试 |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /zh/blog/new-website/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/blog/new-website/ |
+| Canonical | https://www.monicahq.com/zh/blog/new-website/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | 欢迎来到我们的新网站：Monica 博客 |
+| Meta description | 我们的新官网上线了：熊猫、完整的手册、这个博客，以及 100% 静态构建，在世界各地都加载飞快。 |
+| H1 | 欢迎来到我们的新网站 |
+| OG title | 欢迎来到我们的新网站 |
+| OG description | 我们的新官网上线了：熊猫、完整的手册、这个博客，以及 100% 静态构建，在世界各地都加载飞快。 |
+| OG image | https://www.monicahq.com/og/blog-new-website-zh.jpg?v=e91340dd (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | 欢迎来到我们的新网站 |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
@@ -2813,6 +2832,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica 隐私政策 |
 | Secondary keywords | Monica 个人数据 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/sales/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/sales/ |
+| Canonical | https://www.monicahq.com/zh/sales/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | 销售 — Monica |
+| Meta description | Monica 没有销售团队，没有演示，也没有跟进。你可以自己体验产品，查看公开的价格，或者部署在自己的服务器上。 |
+| H1 | 我们的销售团队，正期待着永远不联系你。 |
+| OG title | 认识 Monica 并不存在的销售团队 |
+| OG description | 没有电话。没有会议。没有跟进。只有软件。 |
+| OG image | https://www.monicahq.com/og/sales-zh.jpg?v=22a25bd9 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica 销售 |
+| Secondary keywords | 联系 Monica 销售, Monica 演示 |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 

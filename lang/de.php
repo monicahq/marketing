@@ -17,6 +17,7 @@ return [
             'terms' => "Nutzungsbedingungen",
             'team' => "Team",
             'support' => "Support",
+            'sales' => "Vertrieb",
             'signIn' => "Anmelden",
             'about' => "Über Monica",
             'privacy' => "Datenschutzerklärung",
@@ -166,6 +167,20 @@ return [
                 'title' => "Hilfe zu Monica,",
                 'accent' => "von den Menschen, die sie bauen.",
                 'description' => "Schreiben Sie uns, wenn etwas nicht so funktioniert, wie Sie es erwarten.",
+            ],
+        ],
+
+        'sales' => [
+            'title' => "Vertrieb — Monica",
+            'description' => "Monica hat kein Vertriebsteam, keine Demos und keine Nachfassaktionen. Probieren Sie das Produkt selbst aus, lesen Sie die öffentlichen Preise oder hosten Sie es auf Ihrem eigenen Server.",
+            'ogTitle' => "Lernen Sie das Vertriebsteam kennen, das Monica nicht hat",
+            'ogDescription' => "Keine Anrufe. Keine Meetings. Kein Nachfassen. Nur Software.",
+
+            'ogImage' => [
+                'eyebrow' => "Vertrieb",
+                'title' => "Unser Vertriebsteam",
+                'accent' => "meldet sich nie bei Ihnen.",
+                'description' => "Keine Anrufe. Keine Meetings. Kein Nachfassen. Nur Software.",
             ],
         ],
 
@@ -587,6 +602,7 @@ return [
         'handbook' => "Handbuch",
         'docs' => "Dokumentation",
         'contribute' => "Mitmachen",
+        'sales' => "Vertrieb kontaktieren",
         'signIn' => "Anmelden",
         'toDark' => "Zum dunklen Modus wechseln",
         'toLight' => "Zum hellen Modus wechseln",
@@ -645,6 +661,62 @@ return [
                 'question' => "Wann hat Lucie Geburtstag?",
                 'answer' => "Am 14. März, in drei Wochen. Im Januar hat sie erwähnt, dass sie eine neue Regenjacke möchte.",
                 'cta' => "Assistenten verbinden",
+            ],
+        ],
+
+        // The docs menu: the handbook, the documentation and contributing,
+        // each with three pages inside, a strip of quick links, and a card
+        // for installing Monica on your own server. The destinations are in
+        // _partials/docs-menu.blade.php, in the same order.
+        'docsMenu' => [
+            'label' => "Docs",
+            'inside' => "Inhalt",
+            'groups' => [
+                [
+                    'icon' => 'journal',
+                    'title' => "Handbuch",
+                    'body' => "Wie das Projekt geführt wird und warum es so gebaut ist.",
+                    'items' => [
+                        ['icon' => 'heart', 'title' => "Grundsätze"],
+                        ['icon' => 'coin', 'title' => "Wie Monica Geld verdient"],
+                        ['icon' => 'lock', 'title' => "Datenschutz und Daten"],
+                    ],
+                ],
+                [
+                    'icon' => 'note',
+                    'title' => "Dokumentation",
+                    'body' => "Alles, was Sie brauchen, um Monica einzurichten und optimal zu nutzen.",
+                    'items' => [
+                        ['icon' => 'check-circle', 'title' => "Erste Schritte"],
+                        ['icon' => 'settings', 'title' => "Selbst hosten"],
+                        ['icon' => 'key', 'title' => "API-Referenz"],
+                    ],
+                ],
+                [
+                    'icon' => 'people',
+                    'title' => "Mitmachen",
+                    'body' => "Monica ist Open Source. Helfen Sie mit Code, Worten oder einer Fehlermeldung.",
+                    'items' => [
+                        ['icon' => 'code', 'title' => "Quellcode"],
+                        ['icon' => 'globe', 'title' => "Übersetzungen"],
+                        ['icon' => 'info', 'title' => "Fehler melden"],
+                    ],
+                ],
+            ],
+            'quick' => [
+                'label' => "Schnellzugriff",
+                'items' => [
+                    ['icon' => 'layers', 'title' => "Änderungsprotokoll"],
+                    ['icon' => 'tasks', 'title' => "Roadmap"],
+                    ['icon' => 'mail', 'title' => "Support"],
+                ],
+            ],
+            'start' => [
+                'label' => "Hier starten",
+                'title' => "Monica auf dem eigenen Server installieren",
+                'body' => "Ihre Daten bleiben auf einem Rechner, den Sie kontrollieren. Ein Docker-Befehl, etwa zehn Minuten.",
+                'command' => "docker run monica",
+                'cta' => "Installationsanleitung lesen",
             ],
         ],
     ],
@@ -5959,6 +6031,147 @@ return [
             ['kind' => "Referenz", 'title' => "API", 'description' => "Lesen und schreiben Sie Ihre Kontakte aus Ihren eigenen Skripten. Jeder Endpunkt, mit Beispielen in cURL, JavaScript und PHP."],
             ['kind' => "Referenz", 'title' => "MCP", 'description' => "Verbinden Sie einen Assistenten mit Ihrer Instanz, damit er Ihr Verzeichnis lesen und Personen darin erfassen kann, mit den Rechten, die Sie haben."],
             ['kind' => "Anleitung", 'title' => "CardDAV und CalDAV", 'description' => "Halten Sie die Kontakte- und Kalender-Apps auf Telefon und Computer mit Monica synchron."],
+        ],
+    ],
+
+    /**
+     * The sales page (route key `sales`), about the sales team Monica does
+     * not have. The homepage's "Contact sales" button lands here.
+     *
+     * Every `art` is the alt text of one of the page's illustrations: the
+     * three members of the team, and the panda building software in `why`.
+     *
+     * A link in the copy is a `:placeholder` plus a label and a destination:
+     * `page` is a route key, `external` a key of `links` in config.php.
+     */
+    'sales' => [
+        'hero' => [
+            'eyebrow' => "Vertrieb",
+            'title' => "Unser Vertriebsteam freut sich darauf, Sie nie zu kontaktieren.",
+            'lede' => "Keine Vertriebsmitarbeiter. Keine Erstgespräche. Keine Quartalsziele. Niemand namens Dieter, der fragt, ob Sie nächsten Dienstag 15 Minuten Zeit haben.",
+            'aside' => "Wir sind nur hier, um Software zu bauen.",
+            'cta' => "Vertrieb nicht kontaktieren",
+        ],
+
+        'team' => [
+            'title' => "Unser erstklassiges Vertriebsteam",
+            'lede' => "Lernen Sie die Menschen kennen, die für unseren kommerziellen Erfolg verantwortlich sind.",
+            'members' => [
+                ['role' => "Vertriebsleiter", 'description' => "Derzeit nicht erreichbar. Dauerhaft.", 'art' => "Ein Panda, der in einem Bürostuhl schläft"],
+                ['role' => "Key-Account-Manager", 'description' => "Konzentriert sich auf die Beschaffung von Bambus.", 'art' => "Ein Panda, der friedlich Bambus frisst"],
+                ['role' => "Geschäftsentwicklung", 'description' => "Entwickelt absolut nichts.", 'art' => "Ein junger Panda, der im Gras liegt"],
+            ],
+            'note' => "Keiner von ihnen ist auf LinkedIn.",
+        ],
+
+        'process' => [
+            'title' => "Unser sorgfältig entworfener Vertriebsprozess",
+            'lede' => "Wir haben Jahre damit verbracht, unsere reibungslose, menschenzentrierte Zero-Touch-Vertriebsmethodik zu perfektionieren.",
+            'steps' => [
+                ['stage' => "Entdeckung", 'description' => "Sie entdecken Monica. Wir entdecken Sie nicht."],
+                ['stage' => "Qualifizierung", 'description' => "Sie entscheiden, ob Monica für Sie nützlich ist. Zu Ihrem Budget haben wir keine Meinung."],
+                ['stage' => "Produktvorführung", 'description' => "Sie können das Produkt :link. Revolutionär, wir wissen.", 'link' => ['label' => "selbst ausprobieren", 'external' => "getStarted"]],
+                ['stage' => "Verhandlung", 'description' => "Es gibt nichts zu verhandeln. Unsere :link stehen auf der Website.", 'link' => ['label' => "Preise", 'page' => "pricing"]],
+                ['stage' => "Abschluss", 'description' => "Sie schließen Ihren Browser-Tab. Oder auch nicht."],
+                ['stage' => "Nachfassen", 'description' => "Gibt es nicht."],
+            ],
+            'note' => "Unser gesamter Vertriebsprozess ist so angelegt, dass er ohne unser Zutun abläuft.",
+        ],
+
+        'numbers' => [
+            'title' => "Unsere Leistung in Zahlen",
+            'lede' => "Wir sind unglaublich stolz auf das, was unsere Vertriebsabteilung erreicht hat.",
+            'kpis' => [
+                "Kaltakquise-Anrufe",
+                "Vereinbarte Vertriebstermine",
+                "Vertriebsmitarbeiter",
+                "Unerbetene LinkedIn-Nachrichten",
+                "Gezahlte Vertriebsprovisionen",
+                "Vertriebspräsentationen",
+            ],
+            'chartTitle' => "Jährliche Vertriebsaktivität",
+            'chartRange' => "Q1 bis Q4",
+            'quarters' => ["Q1", "Q2", "Q3", "Q4"],
+            'chartDescription' => "Liniendiagramm der Vertriebsaktivität für jedes Quartal des Jahres. Alle vier Werte sind null, daher verläuft die Linie flach am unteren Rand des Diagramms.",
+            'chartCaption' => "Wir erreichen unsere Ziele konstant, Quartal für Quartal.",
+            'note' => "Für nächstes Jahr erwarten wir ähnliche Ergebnisse.",
+        ],
+
+        'why' => [
+            'title' => "Gute Software sollte keinen Verkäufer brauchen.",
+            'paragraphs' => [
+                "Monica ist ein unabhängiges Open-Source-Projekt. Wir bauen Software, weil es uns Freude macht, und weil wir glauben, dass Menschen bessere Werkzeuge verdienen, um ihr Leben zu dokumentieren.",
+                "Wir wollen Sie nicht davon überzeugen, Monica zu nutzen. Wir wollen Monica so gut machen, dass Sie sich von selbst dafür entscheiden.",
+                "Sie können :explore, unsere :docs lesen, unseren :source prüfen, :selfHost oder unsere :hosted nutzen.",
+                "Die Entscheidung liegt bei Ihnen. Das wird immer so bleiben.",
+            ],
+            'explore' => "das Produkt erkunden",
+            'docs' => "Dokumentation",
+            'source' => "Quellcode",
+            'selfHost' => "es selbst hosten",
+            'hosted' => "gehostete Version",
+            'art' => "Ein Panda, der in aller Ruhe Software entwickelt, mit Laptop, Büchern und einer Tasse Tee",
+            'closing' => "Wir verbringen unsere Zeit lieber damit, Monica zu verbessern, als Sie vom Kauf zu überzeugen.",
+        ],
+
+        'faq' => [
+            'title' => "Häufig gestellte Vertriebsfragen",
+            'items' => [
+                [
+                    'q' => "Kann ich eine Demo buchen?",
+                    'a' => "Nein, aber Sie können in Ihrem eigenen Tempo :link. Niemand sieht Ihnen dabei zu.",
+                    'link' => ['label' => "Monica erkunden", 'page' => "home"],
+                ],
+                ['q' => "Kann ich mit einem Key-Account-Manager sprechen?", 'a' => "Dafür müssten wir zuerst einen einstellen. Das steht derzeit nicht auf unserer Roadmap."],
+                [
+                    'q' => "Bieten Sie individuelle Enterprise-Preise an?",
+                    'a' => "Unsere :link sind bereits öffentlich. Wir fanden, das sei einfacher.",
+                    'link' => ['label' => "Preise", 'page' => "pricing"],
+                ],
+                ['q' => "Meldet sich jemand bei mir?", 'a' => "Auf keinen Fall."],
+                [
+                    'q' => "Kann ich Monica selbst hosten, ohne Sie zu bezahlen?",
+                    'a' => "Selbstverständlich. Wir ermutigen sogar dazu. Unsere Vertriebsabteilung ist verständlicherweise untröstlich.",
+                    'link' => ['label' => "Anleitung zum Selbst-Hosting", 'external' => "selfHostingGuide"],
+                ],
+                [
+                    'q' => "Wie kann ich Monica finanziell unterstützen?",
+                    'a' => "Nutzen Sie unsere :hosted, :sponsor oder :contribute. Wir freuen uns darüber, aber es ist völlig freiwillig.",
+                    'links' => [
+                        'hosted' => ['label' => "gehostete Version", 'page' => "pricing"],
+                        'sponsor' => ['label' => "sponsern Sie das Projekt", 'external' => "sponsor"],
+                        'contribute' => ['label' => "tragen Sie selbst dazu bei", 'page' => "contribute"],
+                    ],
+                ],
+                ['q' => "Stellen Sie Vertriebsmitarbeiter ein?", 'a' => "Bitte schicken Sie uns Ihren Lebenslauf nicht."],
+            ],
+        ],
+
+        'meeting' => [
+            'title' => "Lassen Sie uns nicht reden.",
+            'lede' => "Unser Vertriebsteam hat seinen gesamten Kalender für absolut niemanden freigeräumt.",
+            'fields' => [
+                ['label' => "Vollständiger Name", 'placeholder' => "Geht uns nichts an"],
+                ['label' => "Geschäftliche E-Mail-Adresse", 'placeholder' => "Brauchen wir nicht"],
+                ['label' => "Unternehmensgröße", 'placeholder' => "Unerheblich"],
+                ['label' => "Jahresbudget", 'placeholder' => "Behalten Sie es für sich"],
+            ],
+            'privacy' => "Ihre Daten sind bei uns sicher, weil wir sie nie erhoben haben.",
+            'button' => "Kein Meeting buchen",
+            'doneTitle' => "Herzlichen Glückwunsch.",
+            'done' => [
+                "Ihr Meeting wurde erfolgreich nicht angesetzt.",
+                "Sie erhalten keine Bestätigungs-E-Mail.",
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Immer noch an Monica interessiert?",
+            'lede' => "Wunderbar. Dafür brauchen Sie unsere Erlaubnis nicht.",
+            'explore' => "Monica erkunden",
+            'source' => "Quellcode ansehen",
+            'selfHost' => "Monica selbst hosten",
+            'credit' => "Für diese Seite wurden keine Vertriebsmitarbeiter beschäftigt.",
         ],
     ],
 

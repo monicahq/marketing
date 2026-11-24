@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -475,6 +475,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-new-version-ready-for-testing-nl.jpg?v=e74e0a0e (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | De nieuwe versie is klaar om te testen |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /nl/blog/new-website/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/blog/new-website/ |
+| Canonical | https://www.monicahq.com/nl/blog/new-website/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Welkom op onze nieuwe website — de blog van Monica |
+| Meta description | Onze nieuwe marketingsite staat live: pandas, een compleet handboek, deze blog en een 100% statische build die overal razendsnel laadt. |
+| H1 | Welkom op onze nieuwe website |
+| OG title | Welkom op onze nieuwe website |
+| OG description | Onze nieuwe marketingsite staat live: pandas, een compleet handboek, deze blog en een 100% statische build die overal razendsnel laadt. |
+| OG image | https://www.monicahq.com/og/blog-new-website-nl.jpg?v=e8db5f54 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Welkom op onze nieuwe website |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
@@ -2908,6 +2927,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica v3 |
 | Secondary keywords | Monica herbouw, Monica vernieuwingen |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/verkoop/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/verkoop/ |
+| Canonical | https://www.monicahq.com/nl/verkoop/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Verkoop — Monica |
+| Meta description | Monica heeft geen verkoopteam, geen demo’s en geen opvolgmails. Ontdek het product zelf, lees de openbare prijzen of host het op je eigen server. |
+| H1 | Ons verkoopteam kijkt ernaar uit om nooit contact met je op te nemen. |
+| OG title | Maak kennis met het verkoopteam dat Monica niet heeft |
+| OG description | Geen telefoontjes. Geen afspraken. Geen opvolging. Alleen software. |
+| OG image | https://www.monicahq.com/og/sales-nl.jpg?v=5630a77b (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica verkoop |
+| Secondary keywords | contact met Monica verkoop, Monica demo |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 

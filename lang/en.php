@@ -36,6 +36,7 @@ return [
             'terms' => "Terms of use",
             'team' => "Team",
             'support' => "Support",
+            'sales' => "Sales",
             'signIn' => "Sign in",
             'about' => "About Monica",
             'privacy' => "Privacy policy",
@@ -196,6 +197,20 @@ return [
                 'title' => "Help with Monica,",
                 'accent' => "from the people who build it.",
                 'description' => "Write to us about anything that does not work the way you expect.",
+            ],
+        ],
+
+        'sales' => [
+            'title' => "Sales — Monica",
+            'description' => "Monica has no sales team, no demos and no follow-ups. Explore the product yourself, read the public prices, or host it on your own server.",
+            'ogTitle' => "Meet the sales team Monica does not have",
+            'ogDescription' => "No calls. No meetings. No follow-ups. Just software.",
+
+            'ogImage' => [
+                'eyebrow' => "Sales",
+                'title' => "Our sales team will",
+                'accent' => "never contact you.",
+                'description' => "No calls. No meetings. No follow-ups. Just software.",
             ],
         ],
 
@@ -617,6 +632,7 @@ return [
         'handbook' => "Handbook",
         'docs' => "Documentation",
         'contribute' => "Contribute",
+        'sales' => "Contact sales",
         'signIn' => "Log in",
         'toDark' => "Switch to dark mode",
         'toLight' => "Switch to light mode",
@@ -675,6 +691,62 @@ return [
                 'question' => "When is Lucie’s birthday?",
                 'answer' => "14 March, in three weeks. In January she mentioned wanting a new rain jacket.",
                 'cta' => "Connect your assistant",
+            ],
+        ],
+
+        // The docs menu: the handbook, the documentation and contributing,
+        // each with three pages inside, a strip of quick links, and a card
+        // for installing Monica on your own server. The destinations are in
+        // _partials/docs-menu.blade.php, in the same order.
+        'docsMenu' => [
+            'label' => "Docs",
+            'inside' => "Inside",
+            'groups' => [
+                [
+                    'icon' => 'journal',
+                    'title' => "Handbook",
+                    'body' => "How the project is run, and why it is built the way it is.",
+                    'items' => [
+                        ['icon' => 'heart', 'title' => "Principles"],
+                        ['icon' => 'coin', 'title' => "How Monica makes money"],
+                        ['icon' => 'lock', 'title' => "Privacy and data"],
+                    ],
+                ],
+                [
+                    'icon' => 'note',
+                    'title' => "Documentation",
+                    'body' => "Everything you need to set up Monica and get the most out of it.",
+                    'items' => [
+                        ['icon' => 'check-circle', 'title' => "Getting started"],
+                        ['icon' => 'settings', 'title' => "Self-hosting"],
+                        ['icon' => 'key', 'title' => "API reference"],
+                    ],
+                ],
+                [
+                    'icon' => 'people',
+                    'title' => "Contribute",
+                    'body' => "Monica is open source. Help with code, words or a bug report.",
+                    'items' => [
+                        ['icon' => 'code', 'title' => "Source code"],
+                        ['icon' => 'globe', 'title' => "Translations"],
+                        ['icon' => 'info', 'title' => "Report a bug"],
+                    ],
+                ],
+            ],
+            'quick' => [
+                'label' => "Quick links",
+                'items' => [
+                    ['icon' => 'layers', 'title' => "Changelog"],
+                    ['icon' => 'tasks', 'title' => "Roadmap"],
+                    ['icon' => 'mail', 'title' => "Support"],
+                ],
+            ],
+            'start' => [
+                'label' => "Start here",
+                'title' => "Install Monica on your own server",
+                'body' => "Your data stays on a machine you control. One Docker command, about ten minutes.",
+                'command' => "docker run monica",
+                'cta' => "Read the install guide",
             ],
         ],
     ],
@@ -6006,6 +6078,147 @@ return [
             ['kind' => "Reference", 'title' => "API", 'description' => "Read and write your contacts from your own scripts. Every endpoint, with examples in cURL, JavaScript and PHP."],
             ['kind' => "Reference", 'title' => "MCP", 'description' => "Point an assistant at your instance so it can read your directory and record people in it, with the access you have."],
             ['kind' => "Guide", 'title' => "CardDAV and CalDAV", 'description' => "Keep the contacts and calendar apps on your phone and computer in step with Monica."],
+        ],
+    ],
+
+    /**
+     * The sales page (route key `sales`), about the sales team Monica does
+     * not have. The homepage's "Contact sales" button lands here.
+     *
+     * Every `art` is the alt text of one of the page's illustrations: the
+     * three members of the team, and the panda building software in `why`.
+     *
+     * A link in the copy is a `:placeholder` plus a label and a destination:
+     * `page` is a route key, `external` a key of `links` in config.php.
+     */
+    'sales' => [
+        'hero' => [
+            'eyebrow' => "Sales",
+            'title' => "Our sales team is looking forward to never contacting you.",
+            'lede' => "No sales representatives. No discovery calls. No quarterly targets. No one named Brad asking if you have 15 minutes next Tuesday.",
+            'aside' => "We’re just here to build software.",
+            'cta' => "Don’t contact sales",
+        ],
+
+        'team' => [
+            'title' => "Our world-class sales team",
+            'lede' => "Meet the people responsible for our commercial success.",
+            'members' => [
+                ['role' => "Head of sales", 'description' => "Currently unavailable. Permanently.", 'art' => "A panda asleep in an office chair"],
+                ['role' => "Account executive", 'description' => "Focused on bamboo acquisition.", 'art' => "A panda peacefully eating bamboo"],
+                ['role' => "Business development", 'description' => "Developing absolutely nothing.", 'art' => "A young panda lying in the grass"],
+            ],
+            'note' => "None of them are on LinkedIn.",
+        ],
+
+        'process' => [
+            'title' => "Our carefully designed sales process",
+            'lede' => "We’ve spent years perfecting our frictionless, human-centric, zero-touch sales methodology.",
+            'steps' => [
+                ['stage' => "Discovery", 'description' => "You discover Monica. We don’t discover you."],
+                ['stage' => "Qualification", 'description' => "You decide whether Monica is useful to you. We have no opinion on your budget."],
+                ['stage' => "Product demonstration", 'description' => "You :link yourself. Revolutionary, we know.", 'link' => ['label' => "try the product", 'external' => "getStarted"]],
+                ['stage' => "Negotiation", 'description' => "There is nothing to negotiate. Our :link are on the website.", 'link' => ['label' => "prices", 'page' => "pricing"]],
+                ['stage' => "Closing", 'description' => "You close your browser tab. Or you don’t."],
+                ['stage' => "Follow-up", 'description' => "There isn’t one."],
+            ],
+            'note' => "Our entire sales process is designed to take place without our involvement.",
+        ],
+
+        'numbers' => [
+            'title' => "Our performance in numbers",
+            'lede' => "We’re incredibly proud of what our sales department has accomplished.",
+            'kpis' => [
+                "Cold calls made",
+                "Sales meetings booked",
+                "Sales representatives",
+                "Unsolicited LinkedIn messages",
+                "Sales commissions paid",
+                "Sales presentations",
+            ],
+            'chartTitle' => "Annual sales activity",
+            'chartRange' => "Q1 to Q4",
+            'quarters' => ["Q1", "Q2", "Q3", "Q4"],
+            'chartDescription' => "Line chart of sales activity for each quarter of the year. All four values are zero, so the line stays flat along the bottom of the chart.",
+            'chartCaption' => "Consistently meeting our targets, quarter after quarter.",
+            'note' => "We expect similar results next year.",
+        ],
+
+        'why' => [
+            'title' => "Good software shouldn’t need a salesperson.",
+            'paragraphs' => [
+                "Monica is an independent, open-source project. We build software because we enjoy building it, and because we believe people deserve better tools to document their lives.",
+                "We don’t want to convince you to use Monica. We want to make Monica good enough that you choose to use it.",
+                "You can :explore, read our :docs, inspect our :source, :selfHost, or use our :hosted.",
+                "The decision is yours. It always will be.",
+            ],
+            'explore' => "explore the product",
+            'docs' => "documentation",
+            'source' => "source code",
+            'selfHost' => "host it yourself",
+            'hosted' => "hosted version",
+            'art' => "A panda quietly building software, with a laptop, books and a cup of tea",
+            'closing' => "We’d rather spend our time improving Monica than convincing you to buy it.",
+        ],
+
+        'faq' => [
+            'title' => "Frequently asked sales questions",
+            'items' => [
+                [
+                    'q' => "Can I book a demo?",
+                    'a' => "No, but you can :link at your own pace. Nobody will watch you do it.",
+                    'link' => ['label' => "explore Monica", 'page' => "home"],
+                ],
+                ['q' => "Can I speak to an account executive?", 'a' => "We would need to hire one first. That is not currently on our roadmap."],
+                [
+                    'q' => "Do you offer custom enterprise pricing?",
+                    'a' => "Our :link is already public. We thought that was easier.",
+                    'link' => ['label' => "pricing", 'page' => "pricing"],
+                ],
+                ['q' => "Will someone follow up with me?", 'a' => "Not a chance."],
+                [
+                    'q' => "Can I self-host Monica without paying you?",
+                    'a' => "Absolutely. We actively encourage it. Our sales department is understandably devastated.",
+                    'link' => ['label' => "Self-hosting instructions", 'external' => "selfHostingGuide"],
+                ],
+                [
+                    'q' => "How can I support Monica financially?",
+                    'a' => "Use our :hosted, :sponsor, or :contribute. We appreciate it, but it’s entirely optional.",
+                    'links' => [
+                        'hosted' => ['label' => "hosted version", 'page' => "pricing"],
+                        'sponsor' => ['label' => "sponsor the project", 'external' => "sponsor"],
+                        'contribute' => ['label' => "contribute to it", 'page' => "contribute"],
+                    ],
+                ],
+                ['q' => "Are you hiring salespeople?", 'a' => "Please don’t send us your résumé."],
+            ],
+        ],
+
+        'meeting' => [
+            'title' => "Let’s not talk.",
+            'lede' => "Our sales team has cleared its entire calendar for absolutely no one.",
+            'fields' => [
+                ['label' => "Full name", 'placeholder' => "None of our business"],
+                ['label' => "Work email", 'placeholder' => "We don’t need it"],
+                ['label' => "Company size", 'placeholder' => "Irrelevant"],
+                ['label' => "Annual budget", 'placeholder' => "Keep it to yourself"],
+            ],
+            'privacy' => "Your information is safe with us because we never collected it.",
+            'button' => "Don’t book a meeting",
+            'doneTitle' => "Congratulations.",
+            'done' => [
+                "Your meeting has successfully not been scheduled.",
+                "You will not receive a confirmation email.",
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Still interested in Monica?",
+            'lede' => "That’s wonderful. You don’t need our permission.",
+            'explore' => "Explore Monica",
+            'source' => "View source code",
+            'selfHost' => "Self-host Monica",
+            'credit' => "No salespeople were employed in the making of this page.",
         ],
     ],
 

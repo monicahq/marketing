@@ -29,26 +29,13 @@
         ['tile' => 'bg-identity-2/12 text-identity-2', 'icon' => 'text-identity-2'],
     ];
 
-    // The plain links after the menu. `current` names the route keys that mark
-    // the link as the page being read; a post is a blog page too.
-    //
-    // The handbook is written in fewer languages than the site, so from a
-    // page in any other one it lands on the default locale's copy. That link
-    // crosses languages, and carries `hreflang` and `data-turbo="false"` for
-    // the reason the locale picker's links do.
-    $handbookLocale = $page->routeLocale('handbook');
-
+    // The plain links between the two menus. `current` names the route keys
+    // that mark the link as the page being read; a post is a blog page too.
+    // The handbook, the documentation and contributing live in the docs
+    // menu, after them (_partials/docs-menu.blade.php).
     $navItems = [
         ['label' => $page->t('nav.pricing'), 'href' => $page->route('pricing'), 'current' => ['pricing']],
         ['label' => $page->t('nav.blog'), 'href' => $page->route('blog'), 'current' => ['blog', 'post']],
-        [
-            'label' => $page->t('nav.handbook'),
-            'href' => $page->route('handbook', $handbookLocale),
-            'current' => ['handbook', 'handbookArticle'],
-            'locale' => $handbookLocale,
-        ],
-        ['label' => $page->t('nav.docs'), 'href' => $page->links['docs'], 'current' => []],
-        ['label' => $page->t('nav.contribute'), 'href' => $page->route('contribute'), 'current' => ['contribute']],
     ];
 
     $navLink = 'flex items-center gap-1 rounded-md px-2.5 py-2 text-base font-medium text-text-secondary no-underline transition-colors duration-150 ease-standard hover:bg-hover hover:text-text hover:no-underline aria-[current=page]:text-text';
@@ -183,13 +170,19 @@
                 <a
                     href="{{ $item['href'] }}"
                     @if (in_array($page->page, $item['current'], true)) aria-current="page" @endif
-                    @if (($item['locale'] ?? $page->lang()) !== $page->lang())
-                        hreflang="{{ $page->languageTag($item['locale']) }}"
-                        data-turbo="false"
-                    @endif
                     class="{{ $navLink }}"
                 >{{ $item['label'] }}</a>
             @endforeach
+
+            @include('_partials.docs-menu')
+
+            {{-- After the docs menu, the joke the homepage's button tells:
+                 the sales page, about the sales team Monica does not have. --}}
+            <a
+                href="{{ $page->route('sales') }}"
+                @if ($page->page === 'sales') aria-current="page" @endif
+                class="{{ $navLink }}"
+            >{{ $page->t('nav.sales') }}</a>
         </nav>
 
         <div class="flex items-center gap-2 max-lg:ml-auto">

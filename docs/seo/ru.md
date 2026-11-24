@@ -1,6 +1,6 @@
 # Monica SEO sheets for ru
 
-These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -437,6 +437,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-new-version-ready-for-testing-ru.jpg?v=5729dd65 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Новая версия готова к тестированию |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /ru/blog/new-website/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/blog/new-website/ |
+| Canonical | https://www.monicahq.com/ru/blog/new-website/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Добро пожаловать на наш новый сайт — блог Monica |
+| Meta description | Наш новый маркетинговый сайт запущен: панды, полное руководство, этот блог и 100% статическая сборка, которая быстро загружается везде. |
+| H1 | Добро пожаловать на наш новый сайт |
+| OG title | Добро пожаловать на наш новый сайт |
+| OG description | Наш новый маркетинговый сайт запущен: панды, полное руководство, этот блог и 100% статическая сборка, которая быстро загружается везде. |
+| OG image | https://www.monicahq.com/og/blog-new-website-ru.jpg?v=c3a05c27 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Добро пожаловать на наш новый сайт |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
@@ -1103,6 +1122,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, ContactPage, BreadcrumbList |
 | Primary keyword | поддержка Monica |
 | Secondary keywords | помощь Monica, документация Monica |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
+## /ru/prodazhi/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/prodazhi/ |
+| Canonical | https://www.monicahq.com/ru/prodazhi/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Продажи — Monica |
+| Meta description | В Monica нет отдела продаж, демо и повторных звонков. Изучите продукт сами, посмотрите открытые цены или разверните его на своём сервере. |
+| H1 | Наш отдел продаж с нетерпением ждёт момента, когда ему не придётся с вами связываться. |
+| OG title | Знакомьтесь: отдел продаж, которого у Monica нет |
+| OG description | Никаких звонков. Никаких встреч. Никаких напоминаний. Только софт. |
+| OG image | https://www.monicahq.com/og/sales-ru.jpg?v=75843b38 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | продажи Monica |
+| Secondary keywords | связаться с отделом продаж Monica, демо Monica |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 
