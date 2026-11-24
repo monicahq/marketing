@@ -199,6 +199,64 @@ document.addEventListener('click', (event) => {
     });
 });
 
+/* A <details data-menu data-menu-hover> (the features menu, by the owner's
+ * decision) also opens when a mouse rests on it, and closes a moment after the
+ * mouse leaves it, so the pointer can cross the gap between the button and the
+ * panel. Only a mouse: a touch screen has no hover, and taps keep toggling it
+ * as before. A click on the button of a menu the mouse opened keeps it open,
+ * rather than toggling it shut under the reader's hand, and from then on it
+ * stays open until Escape or a click elsewhere, as a clicked menu does.
+ *
+ * On the document, with `pointerover`/`pointerout` (which bubble, unlike
+ * `pointerenter`), so it survives Turbo swapping <body>. */
+const hoverMenus = new WeakMap(); // menu -> { timer, hovered }
+
+const hoverMenu = (event) => {
+    if (event.pointerType !== 'mouse') return null;
+
+    return event.target.closest?.('details[data-menu-hover]') ?? null;
+};
+
+document.addEventListener('pointerover', (event) => {
+    const menu = hoverMenu(event);
+    if (!menu) return;
+
+    const state = hoverMenus.get(menu) ?? {};
+    clearTimeout(state.timer);
+    // Only on the way in. Moving between the menu's own children fires this
+    // too, and a menu just closed with Escape must not reopen under the mouse.
+    if (!menu.open && !menu.contains(event.relatedTarget)) {
+        menu.open = true;
+        state.hovered = true;
+    }
+    hoverMenus.set(menu, state);
+});
+
+document.addEventListener('pointerout', (event) => {
+    const menu = hoverMenu(event);
+    if (!menu || menu.contains(event.relatedTarget)) return;
+
+    const state = hoverMenus.get(menu);
+    if (!state?.hovered) return;
+
+    state.timer = setTimeout(() => {
+        menu.open = false;
+        state.hovered = false;
+    }, 250);
+});
+
+document.addEventListener('click', (event) => {
+    const summary = event.target.closest('details[data-menu-hover] > summary');
+    if (!summary) return;
+
+    const state = hoverMenus.get(summary.parentElement);
+    if (!state?.hovered) return;
+
+    event.preventDefault();
+    clearTimeout(state.timer);
+    state.hovered = false;
+});
+
 /* Turbo snapshots the page as it leaves it, and Back restores the snapshot, so
  * a menu open at that moment would come back open. */
 document.addEventListener('turbo:before-cache', () => {

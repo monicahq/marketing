@@ -307,8 +307,9 @@
      system's. Nothing bounces or overshoots. */
   --ease-*: initial;
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
-  /* The one easing that overshoots, by the owner's decision: the popover
-     under the GitHub badge on the homepage pops open. Nothing else uses it,
+  /* The one easing that overshoots, by the owner's decision: the popovers
+     under the award badges on the homepage and the features menu in the
+     header pop open. Nothing else uses it,
      and `motion-reduce` turns the movement off. */
   --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
 

@@ -80,23 +80,33 @@
             class="flex min-w-0 flex-1 flex-wrap items-center gap-1 max-lg:order-3 max-lg:basis-full max-lg:-mx-2.5"
         >
             {{-- A native <details>, like the language menu: it opens on a click,
-                 a tap or the keyboard with no script at all. app.js only adds
-                 closing it on Escape or a click elsewhere. It does not open on
-                 hover, because hover is never the only way to an action and a
-                 menu that opens under a passing pointer is one nobody asked
-                 for. --}}
-            <details data-menu class="group/menu">
+                 a tap or the keyboard with no script at all. app.js adds
+                 closing it on Escape or a click elsewhere, and, because of
+                 `data-menu-hover`, opening it when a mouse rests on it, by the
+                 owner's decision. Hover is still not the only way in: a click,
+                 a tap and the keyboard open it as before.
+
+                 The panel pops open, as the award popovers on the homepage do,
+                 by the owner's decision: it grows from 90% at the button's
+                 corner with `ease-pop`. `starting:` is the style it transitions
+                 from when <details> opens and renders it; closing is instant.
+                 Off under `motion-reduce`. --}}
+            <details data-menu data-menu-hover class="group/menu">
                 <summary class="{{ $navLink }} cursor-pointer list-none group-open/menu:bg-hover group-open/menu:text-text [&::-webkit-details-marker]:hidden">
                     {{ $page->t('nav.features') }}
                     @include('_partials.icon', ['name' => 'chevron-down', 'size' => 14, 'class' => 'transition-transform duration-150 ease-standard group-open/menu:rotate-180'])
                 </summary>
 
                 <div class="absolute inset-x-4 top-full z-50 pt-2 sm:inset-x-7">
-                    <div class="flex max-h-[calc(100dvh-140px)] flex-wrap overflow-y-auto rounded-lg border border-border bg-canvas shadow-pop">
+                    <div class="flex max-h-[calc(100dvh-140px)] origin-top-left flex-wrap overflow-y-auto rounded-lg border border-border bg-canvas shadow-pop transition-[opacity,scale] duration-300 ease-pop starting:scale-90 starting:opacity-0 motion-reduce:transition-none">
                         <div class="flex min-w-0 flex-[3_1_700px] flex-col">
-                            <div class="grid gap-2 px-5 pt-6 pb-5 sm:grid-cols-3">
+                            {{-- Each column is a subgrid of the same five rows (heading,
+                                 rule, three items), so a description that wraps to two
+                                 lines in one column pushes the rule and the items down in
+                                 all three, and they stay level across the menu. --}}
+                            <div class="grid gap-2 px-5 pt-6 pb-5 sm:grid-cols-3 sm:gap-y-1">
                                 @foreach ($menu['groups'] as $g => $group)
-                                    <section class="flex min-w-0 flex-col gap-1">
+                                    <section class="flex min-w-0 flex-col gap-1 sm:row-span-5 sm:grid sm:grid-rows-subgrid">
                                         <a href="{{ $menuLinks[$g]['href'] }}" class="flex flex-col gap-2.5 rounded-lg p-3 text-text no-underline hover:bg-hover hover:text-text hover:no-underline">
                                             <span class="flex items-center gap-2.5">
                                                 <span class="grid size-8 flex-none place-items-center rounded-md {{ $groupTones[$g]['tile'] }}">
@@ -139,20 +149,27 @@
                             </div>
                         </div>
 
+                        {{-- Beside the columns when the panel has room, under them when
+                             it has not. Under them, the card is as wide as the panel,
+                             so its copy and its picture sit side by side rather than
+                             stretching one above the other: both halves wrap on their
+                             own width, with no breakpoint, because what decides it is
+                             the panel's width and not the window's. --}}
                         <aside class="flex min-w-0 flex-[1_1_300px] flex-col border-border bg-surface-subtle p-6 max-lg:border-t lg:border-l">
-                            <a href="{{ $page->route('mcpServer') }}" class="flex flex-1 flex-col gap-4 rounded-lg border border-border bg-canvas p-5 text-text no-underline shadow-panel hover:border-border-strong hover:bg-hover hover:text-text hover:no-underline">
-                                <span class="flex flex-col gap-1.5">
+                            <a href="{{ $page->route('mcpServer') }}" class="flex flex-1 flex-wrap content-between gap-4 rounded-lg border border-border bg-canvas p-5 text-text no-underline shadow-panel hover:border-border-strong hover:bg-hover hover:text-text hover:no-underline">
+                                <span class="flex min-w-0 flex-[1_1_240px] flex-col gap-1.5">
                                     <span class="text-caption font-semibold tracking-[0.08em] text-text-muted uppercase">{{ $menu['assistant']['label'] }}</span>
                                     <span class="text-lede-sm leading-snug font-semibold tracking-[-0.015em] text-balance">{{ $menu['assistant']['title'] }}</span>
                                     <span class="text-base text-pretty text-text-secondary">{{ $menu['assistant']['body'] }}</span>
                                 </span>
                                 {{-- A picture of an exchange with an assistant, not a
                                      working chat, so it is read as one image. --}}
-                                <span role="img" aria-label="{{ $menu['assistant']['question'] }} {{ $menu['assistant']['answer'] }}" class="flex flex-col gap-2 rounded-md border border-border-subtle bg-surface-subtle p-3">
+                                <span role="img" aria-label="{{ $menu['assistant']['question'] }} {{ $menu['assistant']['answer'] }}" class="flex min-w-0 flex-[1_1_240px] flex-col justify-center gap-2 rounded-md border border-border-subtle bg-surface-subtle p-3">
                                     <span aria-hidden="true" class="max-w-[85%] self-end rounded-lg bg-primary px-2.5 py-1.75 text-xs leading-snug text-on-primary">{{ $menu['assistant']['question'] }}</span>
                                     <span aria-hidden="true" class="max-w-[92%] self-start rounded-lg border border-border bg-canvas px-2.5 py-2 text-xs leading-snug text-text-soft">{{ $menu['assistant']['answer'] }}</span>
                                 </span>
-                                <span class="mt-auto flex items-center gap-1.5 text-base font-medium">
+                                {{-- Always a row of its own, at the foot of the card. --}}
+                                <span class="mt-auto flex basis-full items-center gap-1.5 text-base font-medium">
                                     {{ $menu['assistant']['cta'] }}
                                     @include('_partials.icon', ['name' => 'arrow-right', 'size' => 15])
                                 </span>
