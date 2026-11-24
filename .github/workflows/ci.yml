@@ -1,6 +1,7 @@
-# Builds the site on every pull request, and publishes it to Cloudflare Pages on
-# every push to main. One workflow, because it is one build: the deploy is the
-# same steps with an upload on the end.
+# Builds the site on every pull request and publishes it to Cloudflare Pages: as
+# a preview under the branch's name for a pull request, as the live site for a
+# push to main. One workflow, because it is one build: the deploy is the same
+# steps with an upload on the end.
 #
 # The build is the check. A missing translation key and a dead link both throw
 # during a production build, so a failure never reaches the deploy step. See
@@ -68,16 +69,27 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         # Cloudflare builds nothing: a Pages build image has no PHP, so it
-        # receives the finished build_production/ directory.
-        if: github.event_name != 'pull_request'
+        # receives the finished build_production/ directory. Its own Git
+        # builds are switched off in the dashboard for that reason: they
+        # published empty deployments, and on a pull request they would race
+        # this step for the same branch alias.
+        #
+        # A push to main publishes the live site. A pull request publishes a
+        # preview under its branch name, at
+        # https://<branch>.marketing-1a2.pages.dev, which Cloudflare serves
+        # with `X-Robots-Tag: noindex`. Explicit `--branch` on both, because
+        # wrangler otherwise infers it from the checkout, which on a pull
+        # request is a detached merge commit.
+        #
+        # Not for a pull request from a fork: it gets no secrets, so the
+        # upload could only fail.
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          # Explicit `--branch`, because wrangler otherwise infers it from the
-          # checkout and publishes a preview instead of the live site.
-          command: pages deploy build_production --project-name=marketing --branch=main
+          command: pages deploy build_production --project-name=marketing --branch=${{ case(github.event_name == 'pull_request', github.head_ref, 'main') }}
 
       # Two zone redirect rules answer `/`, the one URL no file answers. Applied
       # after the upload so the pages they point at exist first, then verified

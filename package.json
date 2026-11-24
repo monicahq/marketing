@@ -4,9 +4,11 @@
   "scripts": {
     "dev": "vite",
     "serve": "vendor/bin/jigsaw serve",
-    "build": "vite build",
+    "build": "vite build && vendor/bin/jigsaw build production && php scripts/seo/check.php build_production",
     "links": "php scripts/links/check.php build_production",
-    "og": "bash scripts/og/generate.sh"
+    "seo:check": "php scripts/seo/check.php build_production",
+    "seo:report": "php scripts/seo/check.php build_production --report",
+    "og": "node scripts/og/pages.mjs"
   },
   "devDependencies": {
     "@tighten/jigsaw-vite-plugin": "^1.0.1",

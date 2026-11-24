@@ -1,0 +1,39 @@
+/* Corners are two numbers. 6 is a control: a button, a field, a nav row, a menu
+   item, an icon tile. 8 is a surface: a card, a panel, a menu, a dialog. 4 is
+   left for marks small enough that 6 reads as a circle. A badge is not on this
+   scale at all, because a badge is fully round, and so is an avatar. */
+:root {
+  --radius-xs: 4px;
+  --radius-control: 6px;
+  --radius-surface: 8px;
+  --radius-full: 9999px;
+
+  /* Base unit 4. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Barely an elevation layer. A card takes one pixel of shadow under its
+     hairline, which is the border given a little weight. */
+  --shadow-panel: 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-nav-active: inset 0 0 0 1px var(--hairline), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-pop: 0 10px 24px -8px var(--pop-shadow);
+  --shadow-quote: 0 18px 40px -22px var(--quote-shadow);
+
+  /* Layout. The reading column is capped: a settings form set across a
+     27-inch monitor is not a better settings form. */
+  --sidebar-width: 248px;
+  --bar-height: 56px;
+  --reading-column: 960px;
+  --wide-column: 1400px;
+  --admin-column: 1120px;
+
+  --control-height: 36px;
+  --control-height-small: 32px;
+}

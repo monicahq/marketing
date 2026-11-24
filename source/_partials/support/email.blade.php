@@ -28,7 +28,7 @@
 @if (($as ?? 'text') === 'button')
     <a
         data-email="{{ $encoded }}"
-        class="js-only mn-btn mn-btn--primary no-underline hover:no-underline {{ $class ?? '' }}"
+        class="js-only mn-btn mn-btn-primary no-underline hover:no-underline {{ $class ?? '' }}"
     >{{ $label }}</a>
 @else
     <a

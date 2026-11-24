@@ -1,6 +1,6 @@
 # Monica Marketing Site
 
-The public marketing site for **Monica**, the personal CRM. Built with [Jigsaw](https://jigsaw.tighten.com) and [Tailwind CSS](https://tailwindcss.com), in English, French, German and Spanish.
+The public marketing site for **Monica**, your personal database. Built with [Jigsaw](https://jigsaw.tighten.com) and [Tailwind CSS](https://tailwindcss.com), in English, French, German and Spanish.
 
 Jigsaw is a static site generator written in PHP. It renders Blade templates to plain HTML files, so what gets deployed is a folder of HTML, CSS and images. No PHP runs in production.
 
@@ -105,7 +105,9 @@ php -S localhost:8001 -t build_production
 | `npm run dev`       | Rebuilds the site as files change, and compiles CSS               |
 | `npm run serve`     | Serves the local build at `localhost:8000`                        |
 | `npm run build`     | Builds the production site into `build_production/`               |
-| `npm run og`        | Regenerates the social sharing images (needs Chrome installed)    |
+| `npm run og`        | Regenerates the social sharing cards (needs Chrome installed)     |
+| `npm run seo:check` | Checks metadata, headings, sharing images and schema in the production build |
+| `npm run seo:report` | Checks the build and regenerates the [SEO sheets](docs/seo/README.md) |
 
 ---
 

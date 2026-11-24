@@ -23,7 +23,19 @@
          flex-wrap: wrapping is decided from the lede's own width, and that
          sentence is long enough that the button would either sit on its own row
          at every width or squeeze the lede into a column beside it. --}}
-    <div class="flex flex-col gap-4 border-b border-border pb-8 sm:flex-row sm:items-start sm:justify-between">
+    <div class="relative flex flex-col gap-4 border-b border-border pb-8 sm:flex-row sm:items-start sm:justify-between">
+        {{-- The pandas' garden, standing on the rule under the heading: the
+             picture's own ground line is its bottom edge, and it is pulled one
+             pixel down to lie over the border. Decoration, so it has no alt
+             text and no pointer events.
+
+             Only from lg, where there is room beside the lede, and light mode
+             only, because there is no night version yet: its grey line and
+             black outlines would vanish into the dark page. --}}
+        <div aria-hidden="true" class="pointer-events-none absolute right-0 -bottom-px hidden lg:block lg:w-110 xl:w-140 dark:hidden">
+            <img src="/assets/images/blog-index/garden.webp" width="1596" height="338" alt="" decoding="async" class="block h-auto w-full">
+        </div>
+
         <div class="min-w-0">
             <h1 class="text-display-md font-semibold">{{ $page->t('blog.title') }}</h1>
             <p class="mt-4 max-w-[56ch] text-lede-md leading-[1.6] text-text-secondary">{{ $page->t('blog.lede') }}</p>
@@ -44,7 +56,7 @@
             type="application/rss+xml"
             data-turbo="false"
             data-no-instant
-            class="mn-btn mn-btn--secondary mn-btn--sm no-underline hover:no-underline"
+            class="relative mn-btn mn-btn-secondary mn-btn-small no-underline hover:no-underline"
         >
             @include('_partials.icon', ['name' => 'rss', 'size' => 14])
             {{ $page->t('blog.rssFeed') }}
@@ -87,7 +99,7 @@
                         <a
                             href="{{ $pagination->previous }}"
                             rel="prev"
-                            class="mn-btn mn-btn--secondary mn-btn--sm no-underline hover:no-underline"
+                            class="mn-btn mn-btn-secondary mn-btn-small no-underline hover:no-underline"
                         >{{ $page->t('blog.newerPosts') }}</a>
                     @endif
 
@@ -95,7 +107,7 @@
                         <a
                             href="{{ $pagination->next }}"
                             rel="next"
-                            class="mn-btn mn-btn--secondary mn-btn--sm no-underline hover:no-underline"
+                            class="mn-btn mn-btn-secondary mn-btn-small no-underline hover:no-underline"
                         >{{ $page->t('blog.olderPosts') }}</a>
                     @endif
                 </div>

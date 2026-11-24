@@ -161,6 +161,68 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
 });
 
 /**
+ * Puts each post's Markdown where its page links to it.
+ *
+ * Jigsaw names the file with pathinfo(), which reads everything after the last
+ * dot of the slug as an extension, so the release notes (`v0.2.0`, `v2.10.0`)
+ * come out as `v0.2.md` and `v2.10.md`. This moves each one to its full slug
+ * before the link check runs, which is what would otherwise fail the build.
+ *
+ * Two slugs that differ only after their last dot (`v1.2.0` and `v1.2.3`)
+ * would have been written to the same file, one over the other. That is not
+ * repairable after the fact, so it fails the build instead.
+ */
+$events->afterBuild(function (Jigsaw $jigsaw) {
+    $destination = $jigsaw->getDestinationPath();
+
+    foreach ($jigsaw->getConfig('locales') as $locale) {
+        $claimed = [];
+
+        foreach ($jigsaw->getCollection("posts_{$locale}") as $post) {
+            $path = trim($post->getPath(), '/');
+            $written = pathinfo($path, PATHINFO_DIRNAME) . '/' . pathinfo($path, PATHINFO_FILENAME) . '.md';
+
+            if ($written === "{$path}.md") {
+                continue;
+            }
+
+            if (isset($claimed[$written])) {
+                throw new Exception("Posts [{$claimed[$written]}] and [{$path}] were both written as Markdown to /{$written}. Rename one slug.");
+            }
+
+            $claimed[$written] = $path;
+        }
+
+        foreach ($claimed as $written => $path) {
+            rename("{$destination}/{$written}", "{$destination}/{$path}.md");
+        }
+    }
+});
+
+/**
+ * Copies cloudflare/_headers to the root of the build, where Cloudflare Pages
+ * reads it. Jigsaw never writes a file whose name starts with an underscore,
+ * so it cannot sit in source/ like robots.txt does. The file says why each
+ * rule is there.
+ */
+$events->afterBuild(function (Jigsaw $jigsaw) {
+    copy(__DIR__ . '/cloudflare/_headers', $jigsaw->getDestinationPath() . '/_headers');
+});
+
+/**
+ * Writes a Markdown copy of every page the build wrote, from the built HTML,
+ * for the pages Jigsaw does not already write one for. After the post files
+ * are in place, so it does not write over them, and before the link check,
+ * which is what fails a build where a page lost its copy. See
+ * scripts/markdown/pages.php.
+ */
+$events->afterBuild(function (Jigsaw $jigsaw) {
+    require_once __DIR__ . '/scripts/markdown/pages.php';
+
+    PageMarkdown::run($jigsaw->getDestinationPath(), $jigsaw->getConfig('baseUrl'));
+});
+
+/**
  * Checks every link the build just wrote, against the build itself.
  *
  * This is the same safety net as a missing translation key: the site has no
