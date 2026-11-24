@@ -4480,17 +4480,7 @@ return [
             'lede' => "Use Monica in a language you feel at home in. Keep people’s names in the forms they use, and choose how dates, times and numbers appear.",
             'body' => "The people in your life do not all follow the same conventions. Your address book should leave room for that.",
             'cta' => "Create your account",
-            'label' => "The contact list in Monica, with the interface in French. Chandler Bing, Élodie Durand, Dr. Ross Geller and Kim Ji-woo are listed, with Ji-woo’s name also written in Hangul.",
-            // The drawing is the product in French, whatever the language of
-            // the page around it, because it shows somebody who chose French.
-            // Leave these four in French in every language file.
-            'window' => [
-                'title' => "Personnes",
-                'search' => "Rechercher",
-                'chandler' => "Anniversaire le 8 avril",
-                'elodie' => "Vue il y a 3 jours",
-                'ross' => "Anniversaire le 18 octobre",
-            ],
+            'alt' => "A drawing of the world with pandas in every corner of it, surrounded by the flags of many countries.",
         ],
 
         'language' => [

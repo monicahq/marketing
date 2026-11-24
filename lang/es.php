@@ -4455,17 +4455,7 @@ return [
             'lede' => "Usa Monica en el idioma en el que te sientas a gusto. Conserva los nombres de las personas en las formas que ellas usan y elige cómo se muestran las fechas, las horas y los números.",
             'body' => "No todas las personas de tu vida siguen las mismas convenciones. Tu libreta de direcciones debería dejar sitio para eso.",
             'cta' => "Crea tu cuenta",
-            'label' => "La lista de contactos de Monica, con la interfaz en francés. Aparecen Chandler Bing, Élodie Durand, el Dr. Ross Geller y Kim Ji-woo, con el nombre de Ji-woo escrito también en hangul.",
-            // The drawing is the product in French, whatever the language of
-            // the page around it, because it shows somebody who chose French.
-            // Leave these four in French in every language file.
-            'window' => [
-                'title' => "Personnes",
-                'search' => "Rechercher",
-                'chandler' => "Anniversaire le 8 avril",
-                'elodie' => "Vue il y a 3 jours",
-                'ross' => "Anniversaire le 18 octobre",
-            ],
+            'alt' => "Un dibujo del mundo con pandas en todos sus rincones, rodeado de las banderas de muchos países.",
         ],
 
         'language' => [

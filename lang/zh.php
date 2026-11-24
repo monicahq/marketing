@@ -4463,17 +4463,7 @@ return [
             'lede' => "用你用着最自在的语言使用 Monica。让每个人的名字保持他们自己使用的形式，并选择日期、时间和数字的显示方式。",
             'body' => "你生活中的人并不都遵循同一套习惯。你的通讯录应该为此留出空间。",
             'cta' => "创建你的账户",
-            'label' => "Monica 中的联系人列表，界面为法语。列出了 Chandler Bing、Élodie Durand、Dr. Ross Geller 和 Kim Ji-woo，其中 Ji-woo 的名字还用韩文写出。",
-            // The drawing is the product in French, whatever the language of
-            // the page around it, because it shows somebody who chose French.
-            // Leave these four in French in every language file.
-            'window' => [
-                'title' => "Personnes",
-                'search' => "Rechercher",
-                'chandler' => "Anniversaire le 8 avril",
-                'elodie' => "Vue il y a 3 jours",
-                'ross' => "Anniversaire le 18 octobre",
-            ],
+            'alt' => "一幅世界地图插画，世界各地都有熊猫，四周插着许多国家的国旗。",
         ],
 
         'language' => [
