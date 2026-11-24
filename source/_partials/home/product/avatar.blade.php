@@ -6,7 +6,7 @@
     picture (the contact page's, 76px). `width`/`height` are the file's own
     pixels; the style sizes it. Lazy, because most of them sit on screens that
     are hidden until a reader opens them, and a hidden lazy image is never
-    fetched.
+    fetched. A caller in the first screenful passes 'loading' => 'eager'.
 
     @include('_partials.home.product.avatar', ['name' => 'Chandler Bing', 'size' => 30])
     @include('_partials.home.product.avatar', ['name' => $cast['rachel']['full'], 'size' => 30])
@@ -28,7 +28,7 @@
         alt=""
         width="80"
         height="80"
-        loading="lazy"
+        loading="{{ $loading ?? 'lazy' }}"
         decoding="async"
         class="flex-none rounded-full object-cover {{ $class ?? '' }}"
         {{-- The size is a number the caller passes, so it cannot be a utility. --}}

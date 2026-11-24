@@ -2,7 +2,8 @@
     $copy = $page->t('home.hero');
 
     // Demonstration people, from Friends like everyone on this page. They keep
-    // their names in every language.
+    // their names in every language. Drawn with the product picture's avatar
+    // partial, so each shows the demo vault's photo where it has one.
     $faces = ['Rachel Green', 'Ross Geller', 'Chandler Bing', 'Joey Tribbiani'];
 @endphp
 
@@ -11,7 +12,8 @@
         <div class="flex items-center gap-3 rounded-full border border-border bg-canvas py-1.5 pr-3.5 pl-1.5 shadow-panel">
             <div class="flex gap-1">
                 @foreach ($faces as $face)
-                    @include('_partials.avatar-initials', ['name' => $face, 'size' => 26, 'class' => 'ring-2 ring-canvas'])
+                    {{-- Eager: this row is the first thing on the page. --}}
+                    @include('_partials.home.product.avatar', ['name' => $face, 'size' => 26, 'loading' => 'eager', 'class' => 'ring-2 ring-canvas'])
                 @endforeach
             </div>
             <span class="text-small font-medium text-text-secondary">{{ $copy['pill'] }}</span>
