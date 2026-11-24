@@ -33,6 +33,7 @@ return [
             'knowledge' => "Conocimiento",
             'notes' => "Notas",
             'lists' => "Listas",
+            'folders' => "Carpetas y organización",
             'relationships' => "Relaciones",
             'vaults' => "Bóvedas",
             'sharing' => "Compartir",
@@ -397,6 +398,19 @@ return [
                 'title' => "Guarda una lista útil.",
                 'description' => "Tus columnas. Tus referencias del día a día.",
                 'alt' => "El panda de Monica archivando fichas en un archivador, con las palabras «Guarda una lista útil.»",
+            ],
+        ],
+
+        'folders' => [
+            'title' => "Organiza notas y listas personales en carpetas — Monica",
+            'description' => "Agrupa por tema las notas y listas de Conocimiento, recorre su contenido y busca la información guardada. Mantén tu conocimiento personal organizado en Monica.",
+            'ogTitle' => "Un lugar para la nota que sabes que guardaste — Monica",
+            'ogDescription' => "Agrupa notas y listas en carpetas sencillas, y luego recórrelas o busca cuando las necesites.",
+            'ogImage' => [
+                'eyebrow' => "Carpetas y organización",
+                'title' => "Encuentra el camino de vuelta.",
+                'description' => "Temas conocidos. Notas y listas juntas.",
+                'alt' => "El panda de Monica archivando fichas en un archivador, con las palabras «Encuentra el camino de vuelta.»",
             ],
         ],
 
@@ -3705,13 +3719,113 @@ return [
                 [
                     'q' => "¿Dónde viven las listas?",
                     'a' => "Cada lista pertenece a una :link dentro de una bóveda.",
-                    'link' => ['label' => "carpeta de Conocimiento", 'href' => '#'],
+                    'link' => ['label' => "carpeta de Conocimiento", 'page' => 'folders'],
                 ],
             ],
         ],
         'cta' => [
             'title' => "Haz una lista a la que de verdad vuelvas.",
             'body' => "Empieza por la próxima recomendación que te den.",
+            'button' => "Empieza a usar Monica",
+        ],
+    ],
+
+    /**
+     * The folders page: the folders of Knowledge and its search. Its Home
+     * folder, its folder names and its paint list are the knowledge page's
+     * (`knowledge.folders`, `knowledge.home`, `knowledge.list`), so the pages
+     * cannot disagree. `ui` holds the folder menu's own words, as Erica
+     * translates them.
+     */
+    'folders' => [
+        'hero' => [
+            'eyebrow' => "Carpetas y organización",
+            'title' => "Da a la información útil un lugar que reconozcas.",
+            'lede' => "Casa. Comida. Viajes. Unos pocos nombres de carpeta familiares pueden marcar la diferencia entre «eso lo guardé» y encontrarlo de verdad.",
+            'body' => "Organiza tu :link en carpetas que reúnen notas y listas.",
+            'knowledge' => "conocimiento personal",
+            'cta' => "Empieza a usar Monica",
+            'label' => "Tres carpetas del índice de Conocimiento, una junto a otra. Casa, con sus notas y listas: Electrodomésticos, Mantenimiento de la casa, Calendario de mantenimiento, Referencias de pintura, Cierre del agua e Información del wifi. Comida y recetas: Cócteles favoritos, Lasaña de la abuela, Recetas y Restaurantes favoritos. Viajes: Lista de deseos de viaje, Lugares por visitar, Países visitados y Recuerdos del viaje a Japón.",
+        ],
+        // The folder menu's own words, as Erica translates them.
+        'ui' => [
+            'rename' => "Renombrar",
+            'moveAbove' => "Mover encima de :other",
+            'moveBelow' => "Mover debajo de :other",
+            'delete' => "Eliminar carpeta",
+        ],
+        // Two more folders of the demo vault, in the shape of `knowledge.home`:
+        // kind, title, the kind line, when it was edited, a note's headings.
+        'food' => [
+            ['note', "Cócteles favoritos", "Nota", "Editada hace 3 meses", ["Negroni", "Margarita"]],
+            ['note', "Lasaña de la abuela", "Nota", "Editada hace 5 días", ["Ingredientes", "Preparación"]],
+            ['list', "Recetas", "Lista de 4 elementos", "Editada hace 2 semanas", []],
+            ['list', "Restaurantes favoritos", "Lista de 3 elementos", "Editada hace 1 mes", []],
+        ],
+        'foodCount' => "4 notas y listas",
+        'travel' => [
+            ['list', "Lista de deseos de viaje", "Lista de 3 elementos", "Editada hace 1 semana", []],
+            ['note', "Lugares por visitar", "Nota", "Editada hace 3 semanas", []],
+            ['list', "Países visitados", "Lista de 4 elementos", "Editada hace 2 meses", []],
+            ['note', "Recuerdos del viaje a Japón", "Nota", "Editada hace 4 meses", ["Tokio", "Kioto"]],
+        ],
+        'travelCount' => "4 notas y listas",
+        'simple' => [
+            'title' => "Empieza sencillo y cambia de idea después.",
+            'body' => "Crea carpetas con nombre para los temas que usas. Renómbralas o reordénalas a medida que crezca tu información. Mueve una nota o lista a otra carpeta cuando tenga más sentido.",
+            'closing' => "Las carpetas tienen un solo nivel. No necesitas recordar qué subcarpeta contiene la subcarpeta que contiene la respuesta. Una pequeña merced.",
+            'label' => "Las carpetas de Conocimiento, todas al mismo nivel, con Casa abierta sobre sus notas y listas. El menú de la carpeta Personal está abierto: renombrar, mover encima de Casa, mover debajo de Viajes o eliminar.",
+        ],
+        'together' => [
+            'title' => "Deja que notas y listas vivan juntas.",
+            'body' => "Una carpeta Casa puede contener una :note que explique dónde está el cierre del agua y una :list de referencias de pintura. Un tema, dos formatos útiles.",
+            'note' => "nota",
+            'list' => "lista",
+            'closing' => "Cada nota y cada lista tiene una carpeta, así que hay un lugar claro donde buscarla más adelante.",
+        ],
+        'search' => [
+            'title' => "Recorre el índice. Busca las palabras.",
+            'body' => "El índice reúne tus carpetas y sus documentos. Las notas pueden mostrar encabezados que llevan a la sección que buscas; las listas muestran su tipo y su número de elementos.",
+            'body2' => "La búsqueda de Conocimiento recorre los títulos y el contenido guardados, incluidas las celdas de las listas. Usa las palabras que recuerdes y abre después el resultado en su contexto.",
+            // A word typed into the search field: it must be written in a
+            // cell of `knowledge.list`, so the search finds the paint list.
+            'query' => "morado",
+            'label' => "Conocimiento, buscado con la palabra morado. De las carpetas solo queda Casa, con la única lista que contiene esa palabra: Referencias de pintura, abierta a su lado, donde el salón está pintado de morado.",
+        ],
+        'vaults' => [
+            'title' => "Mantén espacios separados cuando los necesites.",
+            'body' => "Las carpetas organizan temas dentro de una bóveda. :link separan partes más grandes de tu vida, cada una con sus propios registros de Conocimiento.",
+            'vaults' => "Las bóvedas",
+            'body2' => "Un :link autorizado también puede trabajar con las carpetas, notas y listas admitidas. Después puedes revisar la organización en Monica.",
+            'assistant' => "asistente compatible",
+            // The Work vault's folders: name and count.
+            'work' => [
+                ['name' => "Clientes", 'count' => "5"],
+                ['name' => "Incorporación", 'count' => "3"],
+                ['name' => "Proveedores", 'count' => "2"],
+            ],
+            'label' => "Las carpetas de Conocimiento en dos bóvedas. En Personal: Casa, Personal, Viajes, Salud y forma física, Libros y películas, Comida y recetas, Tecnología, Ideas y proyectos. En Trabajo: Clientes, Incorporación y Proveedores.",
+        ],
+        'faq' => [
+            'title' => "Algunas respuestas útiles.",
+            'items' => [
+                [
+                    'q' => "¿Puedo anidar carpetas?",
+                    'a' => "No. Las carpetas de Conocimiento están por ahora en un único nivel. Las notas y listas aparecen dentro de ellas.",
+                ],
+                [
+                    'q' => "¿Qué pasa cuando elimino una carpeta?",
+                    'a' => "Si contiene notas o listas, Monica pregunta si quieres moverlas a otra carpeta o eliminarlas con ella. La última carpeta se conserva para que Conocimiento tenga siempre dónde poner sus documentos.",
+                ],
+                [
+                    'q' => "¿La búsqueda de Conocimiento abarca toda la cuenta?",
+                    'a' => "Busca en Conocimiento dentro de la bóveda que estás usando. No quiere decir que se busque a la vez en todos los registros de tu cuenta.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Empieza con tres carpetas, o con una sola.",
+            'body' => "El mejor sistema de archivo es el que puedes recordar sin sistema de archivo.",
             'button' => "Empieza a usar Monica",
         ],
     ],

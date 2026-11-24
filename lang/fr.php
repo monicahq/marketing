@@ -35,6 +35,7 @@ return [
             'knowledge' => "Connaissances",
             'notes' => "Notes",
             'lists' => "Listes",
+            'folders' => "Dossiers et organisation",
             'relationships' => "Relations",
             'vaults' => "Coffres",
             'sharing' => "Partage",
@@ -395,6 +396,19 @@ return [
                 'title' => "Gardez une liste utile.",
                 'description' => "Vos colonnes. Vos références du quotidien.",
                 'alt' => "Le panda de Monica qui range des fiches dans un classeur, avec les mots « Gardez une liste utile. »",
+            ],
+        ],
+
+        'folders' => [
+            'title' => "Organiser notes et listes personnelles en dossiers — Monica",
+            'description' => "Regroupez notes et listes des Connaissances par sujet, parcourez leur contenu et recherchez vos informations enregistrées. Gardez vos connaissances personnelles en ordre dans Monica.",
+            'ogTitle' => "Un endroit pour la note que vous savez avoir gardée — Monica",
+            'ogDescription' => "Regroupez notes et listes dans des dossiers simples, puis parcourez-les ou recherchez-y quand vous en avez besoin.",
+            'ogImage' => [
+                'eyebrow' => "Dossiers et organisation",
+                'title' => "Retrouvez votre chemin.",
+                'description' => "Des sujets familiers. Notes et listes ensemble.",
+                'alt' => "Le panda de Monica qui range des fiches dans un classeur, avec les mots « Retrouvez votre chemin. »",
             ],
         ],
 
@@ -3703,13 +3717,113 @@ return [
                 [
                     'q' => "Où vivent les listes ?",
                     'a' => "Chaque liste appartient à un :link dans un coffre.",
-                    'link' => ['label' => "dossier des Connaissances", 'href' => '#'],
+                    'link' => ['label' => "dossier des Connaissances", 'page' => 'folders'],
                 ],
             ],
         ],
         'cta' => [
             'title' => "Créez une liste à laquelle vous reviendrez vraiment.",
             'body' => "Commencez par la prochaine recommandation qu’on vous fera.",
+            'button' => "Commencer avec Monica",
+        ],
+    ],
+
+    /**
+     * The folders page: the folders of Knowledge and its search. Its Home
+     * folder, its folder names and its paint list are the knowledge page's
+     * (`knowledge.folders`, `knowledge.home`, `knowledge.list`), so the pages
+     * cannot disagree. `ui` holds the folder menu's own words, as Erica
+     * translates them.
+     */
+    'folders' => [
+        'hero' => [
+            'eyebrow' => "Dossiers et organisation",
+            'title' => "Donnez aux informations utiles une place que vous reconnaîtrez.",
+            'lede' => "Maison. Cuisine. Voyages. Quelques noms de dossiers familiers peuvent faire la différence entre « je l’ai enregistré » et le retrouver vraiment.",
+            'body' => "Organisez vos :link dans des dossiers qui réunissent notes et listes.",
+            'knowledge' => "connaissances personnelles",
+            'cta' => "Commencer avec Monica",
+            'label' => "Trois dossiers des Connaissances, côte à côte. Maison, avec ses notes et listes : Appareils, Entretien de la maison, Calendrier d’entretien, Références de peinture, Coupure d’eau et Informations Wi-Fi. Cuisine et recettes : Cocktails préférés, Lasagnes de mamie, Recettes et Restaurants préférés. Voyages : Lieux à visiter, Liste d’envies de voyage, Pays visités et Souvenirs du voyage au Japon.",
+        ],
+        // The folder menu's own words, as Erica translates them.
+        'ui' => [
+            'rename' => "Renommer",
+            'moveAbove' => "Déplacer au-dessus de :other",
+            'moveBelow' => "Déplacer en dessous de :other",
+            'delete' => "Supprimer le dossier",
+        ],
+        // Two more folders of the demo vault, in the shape of `knowledge.home`:
+        // kind, title, the kind line, when it was edited, a note's headings.
+        'food' => [
+            ['note', "Cocktails préférés", "Note", "Modifié il y a 3 mois", ["Negroni", "Margarita"]],
+            ['note', "Lasagnes de mamie", "Note", "Modifié il y a 5 jours", ["Ingrédients", "Préparation"]],
+            ['list', "Recettes", "Liste de 4 éléments", "Modifié il y a 2 semaines", []],
+            ['list', "Restaurants préférés", "Liste de 3 éléments", "Modifié il y a 1 mois", []],
+        ],
+        'foodCount' => "4 notes et listes",
+        'travel' => [
+            ['note', "Lieux à visiter", "Note", "Modifié il y a 3 semaines", []],
+            ['list', "Liste d’envies de voyage", "Liste de 3 éléments", "Modifié il y a 1 semaine", []],
+            ['list', "Pays visités", "Liste de 4 éléments", "Modifié il y a 2 mois", []],
+            ['note', "Souvenirs du voyage au Japon", "Note", "Modifié il y a 4 mois", ["Tokyo", "Kyoto"]],
+        ],
+        'travelCount' => "4 notes et listes",
+        'simple' => [
+            'title' => "Commencez simple, puis changez d’avis.",
+            'body' => "Créez des dossiers nommés pour les sujets que vous utilisez. Renommez-les ou réorganisez-les à mesure que vos informations grandissent. Déplacez une note ou une liste dans un autre dossier quand cela a plus de sens.",
+            'closing' => "Les dossiers n’ont qu’un seul niveau. Inutile de vous rappeler quel sous-dossier contient le sous-dossier qui contient la réponse. Une petite grâce.",
+            'label' => "Les dossiers des Connaissances, tous au même niveau, Maison ouvert sur ses notes et listes. Le menu du dossier Perso est ouvert : renommer, déplacer au-dessus de Maison, déplacer en dessous de Voyages, ou supprimer.",
+        ],
+        'together' => [
+            'title' => "Laissez notes et listes vivre ensemble.",
+            'body' => "Un dossier Maison peut contenir une :note qui explique où se trouve la coupure d’eau et une :list de références de peinture. Un sujet, deux formats utiles.",
+            'note' => "note",
+            'list' => "liste",
+            'closing' => "Chaque note et chaque liste a un dossier, donc il y a un endroit clair où la retrouver plus tard.",
+        ],
+        'search' => [
+            'title' => "Parcourez le sommaire. Recherchez les mots.",
+            'body' => "Le sommaire réunit vos dossiers et leurs documents. Les notes peuvent afficher des titres qui mènent à la bonne section ; les listes indiquent leur nature et leur nombre d’éléments.",
+            'body2' => "La recherche des Connaissances parcourt les titres et le contenu enregistrés, y compris les cellules des listes. Utilisez les mots dont vous vous souvenez, puis ouvrez le résultat dans son contexte.",
+            // A word typed into the search field: it must be written in a
+            // cell of `knowledge.list`, so the search finds the paint list.
+            'query' => "violet",
+            'label' => "Les Connaissances, recherchées avec le mot violet. Les dossiers ne gardent que Maison, avec l’unique liste qui contient ce mot : Références de peinture, ouverte à côté, où le salon est peint en violet.",
+        ],
+        'vaults' => [
+            'title' => "Gardez des espaces séparés quand il le faut.",
+            'body' => "Les dossiers organisent les sujets à l’intérieur d’un coffre. :link séparent les grandes parties de votre vie, chacune avec ses propres enregistrements des Connaissances.",
+            'vaults' => "Les coffres",
+            'body2' => "Un :link autorisé peut aussi travailler avec les dossiers, notes et listes pris en charge. Vous pourrez ensuite revoir l’organisation dans Monica.",
+            'assistant' => "assistant compatible",
+            // The Work vault's folders: name and count.
+            'work' => [
+                ['name' => "Clients", 'count' => "5"],
+                ['name' => "Intégration", 'count' => "3"],
+                ['name' => "Fournisseurs", 'count' => "2"],
+            ],
+            'label' => "Les dossiers des Connaissances dans deux coffres. Dans Personnel : Maison, Perso, Voyages, Santé et forme, Livres et films, Cuisine et recettes, Technologie, Idées et projets. Dans Travail : Clients, Intégration et Fournisseurs.",
+        ],
+        'faq' => [
+            'title' => "Quelques réponses utiles.",
+            'items' => [
+                [
+                    'q' => "Puis-je imbriquer des dossiers ?",
+                    'a' => "Non. Les dossiers des Connaissances n’ont pour l’instant qu’un seul niveau. Les notes et les listes apparaissent à l’intérieur.",
+                ],
+                [
+                    'q' => "Que se passe-t-il quand je supprime un dossier ?",
+                    'a' => "S’il contient des notes ou des listes, Monica demande s’il faut les déplacer dans un autre dossier ou les supprimer avec lui. Le dernier dossier est conservé pour que les Connaissances aient toujours un endroit où ranger leurs documents.",
+                ],
+                [
+                    'q' => "La recherche des Connaissances porte-t-elle sur tout le compte ?",
+                    'a' => "Elle cherche dans les Connaissances du coffre que vous utilisez. Cela ne veut pas dire que tous les enregistrements de votre compte sont recherchés ensemble.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Commencez avec trois dossiers, ou un seul.",
+            'body' => "Le meilleur système de classement est celui dont vous vous souvenez sans système de classement.",
             'button' => "Commencer avec Monica",
         ],
     ],

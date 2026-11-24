@@ -37,6 +37,7 @@ return [
             'knowledge' => "Conhecimento",
             'notes' => "Notas",
             'lists' => "Listas",
+            'folders' => "Pastas e organização",
             'relationships' => "Relacionamentos",
             'vaults' => "Cofres",
             'sharing' => "Compartilhamento",
@@ -401,6 +402,19 @@ return [
                 'title' => "Guarde uma lista útil.",
                 'description' => "Suas colunas. Suas referências do dia a dia.",
                 'alt' => "O panda da Monica organizando fichas em um arquivo, com as palavras “Guarde uma lista útil.”",
+            ],
+        ],
+
+        'folders' => [
+            'title' => "Organize notas e listas pessoais em pastas — Monica",
+            'description' => "Agrupe por assunto as notas e listas do Conhecimento, navegue pelo conteúdo e pesquise as informações guardadas. Mantenha seu conhecimento pessoal organizado na Monica.",
+            'ogTitle' => "Um lugar para a nota que você sabe que guardou — Monica",
+            'ogDescription' => "Agrupe notas e listas em pastas simples e depois navegue ou pesquise quando precisar.",
+            'ogImage' => [
+                'eyebrow' => "Pastas e organização",
+                'title' => "Encontre o caminho de volta.",
+                'description' => "Assuntos familiares. Notas e listas juntas.",
+                'alt' => "O panda da Monica organizando fichas em um arquivo, com as palavras “Encontre o caminho de volta.”",
             ],
         ],
 
@@ -3714,13 +3728,113 @@ return [
                 [
                     'q' => "Onde ficam as listas?",
                     'a' => "Toda lista pertence a uma :link dentro de um cofre.",
-                    'link' => ['label' => "pasta do Conhecimento", 'href' => '#'],
+                    'link' => ['label' => "pasta do Conhecimento", 'page' => 'folders'],
                 ],
             ],
         ],
         'cta' => [
             'title' => "Crie uma lista a que você vai mesmo voltar.",
             'body' => "Comece pela próxima recomendação que alguém lhe der.",
+            'button' => "Começar a usar a Monica",
+        ],
+    ],
+
+    /**
+     * The folders page: the folders of Knowledge and its search. Its Home
+     * folder, its folder names and its paint list are the knowledge page's
+     * (`knowledge.folders`, `knowledge.home`, `knowledge.list`), so the pages
+     * cannot disagree. `ui` holds the folder menu's own words, as Erica
+     * translates them.
+     */
+    'folders' => [
+        'hero' => [
+            'eyebrow' => "Pastas e organização",
+            'title' => "Dê às informações úteis um lugar que você reconheça.",
+            'lede' => "Casa. Comida. Viagens. Alguns nomes de pasta familiares podem fazer a diferença entre “eu guardei isso” e realmente achar.",
+            'body' => "Organize seu :link em pastas que reúnem notas e listas.",
+            'knowledge' => "conhecimento pessoal",
+            'cta' => "Começar a usar a Monica",
+            'label' => "Três pastas do sumário do Conhecimento, lado a lado. Casa, com suas notas e listas: Eletrodomésticos, Manutenção da casa, Cronograma de manutenção, Referências de tinta, Fechar a água e Informações do Wi-Fi. Comida e receitas: Drinques favoritos, Lasanha da vovó, Receitas e Restaurantes favoritos. Viagens: Lembranças da viagem ao Japão, Lista de desejos de viagem, Lugares para visitar e Países visitados.",
+        ],
+        // The folder menu's own words, as Erica translates them.
+        'ui' => [
+            'rename' => "Renomear",
+            'moveAbove' => "Mover acima de :other",
+            'moveBelow' => "Mover abaixo de :other",
+            'delete' => "Excluir pasta",
+        ],
+        // Two more folders of the demo vault, in the shape of `knowledge.home`:
+        // kind, title, the kind line, when it was edited, a note's headings.
+        'food' => [
+            ['note', "Drinques favoritos", "Nota", "Editada há 3 meses", ["Negroni", "Margarita"]],
+            ['note', "Lasanha da vovó", "Nota", "Editada há 5 dias", ["Ingredientes", "Modo de preparo"]],
+            ['list', "Receitas", "Lista de 4 itens", "Editada há 2 semanas", []],
+            ['list', "Restaurantes favoritos", "Lista de 3 itens", "Editada há 1 mês", []],
+        ],
+        'foodCount' => "4 notas e listas",
+        'travel' => [
+            ['note', "Lembranças da viagem ao Japão", "Nota", "Editada há 4 meses", ["Tóquio", "Quioto"]],
+            ['list', "Lista de desejos de viagem", "Lista de 3 itens", "Editada há 1 semana", []],
+            ['note', "Lugares para visitar", "Nota", "Editada há 3 semanas", []],
+            ['list', "Países visitados", "Lista de 4 itens", "Editada há 2 meses", []],
+        ],
+        'travelCount' => "4 notas e listas",
+        'simple' => [
+            'title' => "Comece simples e mude de ideia depois.",
+            'body' => "Crie pastas com nome para os assuntos que você usa. Renomeie ou reordene à medida que suas informações crescerem. Mova uma nota ou lista para outra pasta quando isso fizer mais sentido.",
+            'closing' => "As pastas têm um único nível. Você não precisa lembrar qual subpasta contém a subpasta que contém a resposta. Um pequeno alívio.",
+            'label' => "As pastas do Conhecimento, todas no mesmo nível, com Casa aberta nas suas notas e listas. O menu da pasta Pessoal está aberto: renomear, mover acima de Casa, mover abaixo de Viagens ou excluir.",
+        ],
+        'together' => [
+            'title' => "Deixe notas e listas viverem juntas.",
+            'body' => "Uma pasta Casa pode guardar uma :note explicando onde fica o registro geral da água e uma :list de referências de tinta. Um assunto, dois formatos úteis.",
+            'note' => "nota",
+            'list' => "lista",
+            'closing' => "Toda nota e toda lista tem uma pasta, então há um lugar claro para procurá-la depois.",
+        ],
+        'search' => [
+            'title' => "Navegue pelo sumário. Pesquise as palavras.",
+            'body' => "O sumário reúne suas pastas e os documentos delas. As notas podem mostrar títulos que levam à seção certa; as listas mostram o tipo e o número de itens.",
+            'body2' => "A pesquisa do Conhecimento procura nos títulos e no conteúdo guardados, inclusive nas células das listas. Use as palavras de que você se lembra e depois abra o resultado no contexto.",
+            // A word typed into the search field: it must be written in a
+            // cell of `knowledge.list`, so the search finds the paint list.
+            'query' => "roxo",
+            'label' => "O Conhecimento, pesquisado com a palavra roxo. Das pastas sobra só Casa, com a única lista que contém essa palavra: Referências de tinta, aberta ao lado, onde a sala é pintada de roxo.",
+        ],
+        'vaults' => [
+            'title' => "Mantenha espaços separados quando precisar.",
+            'body' => "As pastas organizam assuntos dentro de um cofre. :link separam partes maiores da sua vida, cada uma com seus próprios registros do Conhecimento.",
+            'vaults' => "Os cofres",
+            'body2' => "Um :link autorizado também pode trabalhar com as pastas, notas e listas compatíveis. Depois você pode revisar a organização na Monica.",
+            'assistant' => "assistente compatível",
+            // The Work vault's folders: name and count.
+            'work' => [
+                ['name' => "Clientes", 'count' => "5"],
+                ['name' => "Integração", 'count' => "3"],
+                ['name' => "Fornecedores", 'count' => "2"],
+            ],
+            'label' => "As pastas do Conhecimento em dois cofres. Em Pessoal: Casa, Pessoal, Viagens, Saúde e condicionamento físico, Livros e filmes, Comida e receitas, Tecnologia, Ideias e projetos. Em Trabalho: Clientes, Integração e Fornecedores.",
+        ],
+        'faq' => [
+            'title' => "Algumas respostas úteis.",
+            'items' => [
+                [
+                    'q' => "Posso aninhar pastas?",
+                    'a' => "Não. As pastas do Conhecimento ficam, por enquanto, em um único nível. As notas e listas aparecem dentro delas.",
+                ],
+                [
+                    'q' => "O que acontece quando excluo uma pasta?",
+                    'a' => "Se ela tiver notas ou listas, a Monica pergunta se você quer movê-las para outra pasta ou excluí-las junto. A última pasta é mantida para que o Conhecimento sempre tenha onde colocar seus documentos.",
+                ],
+                [
+                    'q' => "A pesquisa do Conhecimento vale para a conta toda?",
+                    'a' => "Ela pesquisa o Conhecimento dentro do cofre que você está usando. Isso não quer dizer que todos os registros da sua conta sejam pesquisados juntos.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Comece com três pastas, ou só uma.",
+            'body' => "O melhor sistema de arquivamento é aquele de que você se lembra sem sistema de arquivamento.",
             'button' => "Começar a usar a Monica",
         ],
     ],

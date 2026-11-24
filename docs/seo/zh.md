@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1065,6 +1065,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | 个人联系人管理 |
 | Secondary keywords | 整理联系人信息, 联系人笔记 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/folders/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/folders/ |
+| Canonical | https://www.monicahq.com/zh/features/folders/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 用文件夹整理个人笔记和列表 — Monica |
+| Meta description | 按主题归类知识库中的笔记和列表，浏览目录，搜索已保存的信息。在 Monica 中让你的个人知识井井有条。 |
+| H1 | 给有用的信息一个你认得的位置。 |
+| OG title | 给你确定存过的那条笔记一个位置 — Monica |
+| OG description | 把笔记和列表归入简单明了的文件夹，需要时再浏览或搜索。 |
+| OG image | https://www.monicahq.com/og/folders-zh.jpg?v=893cf7d9 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 用文件夹整理笔记 |
+| Secondary keywords | 整理个人知识, 搜索笔记和列表 |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 

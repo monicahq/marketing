@@ -33,6 +33,7 @@ return [
             'knowledge' => "Wissen",
             'notes' => "Notizen",
             'lists' => "Listen",
+            'folders' => "Ordner und Ordnung",
             'relationships' => "Beziehungen",
             'vaults' => "Tresore",
             'sharing' => "Teilen",
@@ -393,6 +394,19 @@ return [
                 'title' => "Führen Sie eine nützliche Liste.",
                 'description' => "Ihre Spalten. Ihre Alltagsangaben.",
                 'alt' => "Der Monica-Panda sortiert Karten in einen Aktenschrank, mit den Worten „Führen Sie eine nützliche Liste.“",
+            ],
+        ],
+
+        'folders' => [
+            'title' => "Persönliche Notizen und Listen in Ordnern ordnen — Monica",
+            'description' => "Fassen Sie Notizen und Listen aus Wissen nach Thema zusammen, blättern Sie durch ihren Inhalt und durchsuchen Sie gespeicherte Informationen. Halten Sie Ihr persönliches Wissen in Monica in Ordnung.",
+            'ogTitle' => "Ein Platz für die Notiz, von der Sie wissen, dass Sie sie gespeichert haben — Monica",
+            'ogDescription' => "Fassen Sie Notizen und Listen in übersichtlichen Ordnern zusammen und blättern oder suchen Sie, wenn Sie sie brauchen.",
+            'ogImage' => [
+                'eyebrow' => "Ordner und Ordnung",
+                'title' => "Finden Sie zurück.",
+                'description' => "Vertraute Themen. Notizen und Listen gemeinsam.",
+                'alt' => "Der Monica-Panda sortiert Karten in einen Aktenschrank, mit den Worten „Finden Sie zurück.“",
             ],
         ],
 
@@ -3700,13 +3714,113 @@ return [
                 [
                     'q' => "Wo liegen Listen?",
                     'a' => "Jede Liste gehört zu einem :link in einem Tresor.",
-                    'link' => ['label' => "Ordner in Wissen", 'href' => '#'],
+                    'link' => ['label' => "Ordner in Wissen", 'page' => 'folders'],
                 ],
             ],
         ],
         'cta' => [
             'title' => "Legen Sie eine Liste an, zu der Sie wirklich zurückkehren.",
             'body' => "Beginnen Sie mit der nächsten Empfehlung, die jemand Ihnen gibt.",
+            'button' => "Mit Monica beginnen",
+        ],
+    ],
+
+    /**
+     * The folders page: the folders of Knowledge and its search. Its Home
+     * folder, its folder names and its paint list are the knowledge page's
+     * (`knowledge.folders`, `knowledge.home`, `knowledge.list`), so the pages
+     * cannot disagree. `ui` holds the folder menu's own words, as Erica
+     * translates them.
+     */
+    'folders' => [
+        'hero' => [
+            'eyebrow' => "Ordner und Ordnung",
+            'title' => "Geben Sie nützlichen Informationen einen Platz, den Sie wiedererkennen.",
+            'lede' => "Zuhause. Essen. Reisen. Ein paar vertraute Ordnernamen können den Unterschied machen zwischen „Das habe ich gespeichert“ und es tatsächlich zu finden.",
+            'body' => "Ordnen Sie Ihr :link in Ordnern, die Notizen und Listen zusammenhalten.",
+            'knowledge' => "persönliches Wissen",
+            'cta' => "Mit Monica beginnen",
+            'label' => "Drei Ordner aus dem Inhaltsverzeichnis von Wissen, nebeneinander. Zuhause, mit seinen Notizen und Listen: Geräte, Instandhaltung des Hauses, Wartungsplan, Farbangaben, Wasser abstellen und WLAN-Informationen. Essen und Rezepte: Lieblingscocktails, Lieblingsrestaurants, Omas Lasagne und Rezepte. Reisen: Besuchte Länder, Erinnerungen an die Japanreise, Orte zum Besuchen und Reisewunschliste.",
+        ],
+        // The folder menu's own words, as Erica translates them.
+        'ui' => [
+            'rename' => "Umbenennen",
+            'moveAbove' => "Über :other verschieben",
+            'moveBelow' => "Unter :other verschieben",
+            'delete' => "Ordner löschen",
+        ],
+        // Two more folders of the demo vault, in the shape of `knowledge.home`:
+        // kind, title, the kind line, when it was edited, a note's headings.
+        'food' => [
+            ['note', "Lieblingscocktails", "Notiz", "Bearbeitet vor 3 Monaten", ["Negroni", "Margarita"]],
+            ['list', "Lieblingsrestaurants", "Liste mit 3 Einträgen", "Bearbeitet vor 1 Monat", []],
+            ['note', "Omas Lasagne", "Notiz", "Bearbeitet vor 5 Tagen", ["Zutaten", "Zubereitung"]],
+            ['list', "Rezepte", "Liste mit 4 Einträgen", "Bearbeitet vor 2 Wochen", []],
+        ],
+        'foodCount' => "4 Notizen und Listen",
+        'travel' => [
+            ['list', "Besuchte Länder", "Liste mit 4 Einträgen", "Bearbeitet vor 2 Monaten", []],
+            ['note', "Erinnerungen an die Japanreise", "Notiz", "Bearbeitet vor 4 Monaten", ["Tokio", "Kyoto"]],
+            ['note', "Orte zum Besuchen", "Notiz", "Bearbeitet vor 3 Wochen", []],
+            ['list', "Reisewunschliste", "Liste mit 3 Einträgen", "Bearbeitet vor 1 Woche", []],
+        ],
+        'travelCount' => "4 Notizen und Listen",
+        'simple' => [
+            'title' => "Fangen Sie einfach an und überlegen Sie es sich später anders.",
+            'body' => "Legen Sie benannte Ordner für die Themen an, die Sie nutzen. Benennen Sie sie um oder ordnen Sie sie neu, wenn Ihre Informationen wachsen. Verschieben Sie eine Notiz oder Liste in einen anderen Ordner, wenn das sinnvoller ist.",
+            'closing' => "Ordner haben nur eine Ebene. Sie müssen sich nicht merken, welcher Unterordner den Unterordner mit der Antwort enthält. Eine kleine Gnade.",
+            'label' => "Die Ordner von Wissen, alle auf derselben Ebene, Zuhause geöffnet auf seinen Notizen und Listen. Das Menü des Ordners Privat ist offen: umbenennen, über Zuhause verschieben, unter Reisen verschieben oder löschen.",
+        ],
+        'together' => [
+            'title' => "Lassen Sie Notizen und Listen zusammenleben.",
+            'body' => "Ein Ordner Zuhause kann eine :note enthalten, die erklärt, wo das Wasser abgestellt wird, und eine :list mit Farbangaben. Ein Thema, zwei nützliche Formate.",
+            'note' => "Notiz",
+            'list' => "Liste",
+            'closing' => "Jede Notiz und jede Liste hat einen Ordner, also gibt es später einen klaren Ort zum Blättern.",
+        ],
+        'search' => [
+            'title' => "Blättern Sie im Inhalt. Suchen Sie nach Wörtern.",
+            'body' => "Das Inhaltsverzeichnis bringt Ihre Ordner und ihre Dokumente zusammen. Notizen können Überschriften zeigen, die zum passenden Abschnitt führen; Listen zeigen ihre Art und die Zahl ihrer Einträge.",
+            'body2' => "Die Suche in Wissen durchsucht gespeicherte Titel und Inhalte, auch Listenzellen. Nutzen Sie die Wörter, an die Sie sich erinnern, und öffnen Sie dann das Ergebnis im Zusammenhang.",
+            // A word typed into the search field: it must be written in a
+            // cell of `knowledge.list`, so the search finds the paint list.
+            'query' => "lila",
+            'label' => "Wissen, durchsucht nach dem Wort lila. Von den Ordnern bleibt nur Zuhause, mit der einen Liste, die das Wort enthält: Farbangaben, daneben geöffnet, wo das Wohnzimmer lila gestrichen ist.",
+        ],
+        'vaults' => [
+            'title' => "Halten Sie getrennte Bereiche, wenn Sie sie brauchen.",
+            'body' => "Ordner ordnen Themen innerhalb eines Tresors. :link trennen größere Teile Ihres Lebens, jeweils mit eigenen Einträgen in Wissen.",
+            'vaults' => "Tresore",
+            'body2' => "Ein :link kann mit Ihrer Freigabe auch mit unterstützten Ordnern, Notizen und Listen arbeiten. Die Ordnung können Sie danach in Monica prüfen.",
+            'assistant' => "kompatibler Assistent",
+            // The Work vault's folders: name and count.
+            'work' => [
+                ['name' => "Kunden", 'count' => "5"],
+                ['name' => "Einarbeitung", 'count' => "3"],
+                ['name' => "Lieferanten", 'count' => "2"],
+            ],
+            'label' => "Die Ordner von Wissen in zwei Tresoren. In Privat: Zuhause, Privat, Reisen, Gesundheit und Fitness, Bücher und Filme, Essen und Rezepte, Technik, Ideen und Projekte. In Arbeit: Kunden, Einarbeitung und Lieferanten.",
+        ],
+        'faq' => [
+            'title' => "Ein paar nützliche Antworten.",
+            'items' => [
+                [
+                    'q' => "Kann ich Ordner verschachteln?",
+                    'a' => "Nein. Ordner in Wissen liegen derzeit auf einer einzigen Ebene. Notizen und Listen erscheinen darin.",
+                ],
+                [
+                    'q' => "Was passiert, wenn ich einen Ordner lösche?",
+                    'a' => "Enthält er Notizen oder Listen, fragt Monica, ob sie in einen anderen Ordner verschoben oder mit ihm gelöscht werden sollen. Der letzte Ordner bleibt erhalten, damit Wissen weiterhin einen Platz für seine Dokumente hat.",
+                ],
+                [
+                    'q' => "Durchsucht die Suche in Wissen das ganze Konto?",
+                    'a' => "Sie durchsucht Wissen im Tresor, den Sie gerade verwenden. Das heißt nicht, dass alle Datensätze Ihres Kontos gemeinsam durchsucht werden.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Beginnen Sie mit drei Ordnern oder auch nur einem.",
+            'body' => "Das beste Ablagesystem ist das, an das Sie sich ohne Ablagesystem erinnern.",
             'button' => "Mit Monica beginnen",
         ],
     ],

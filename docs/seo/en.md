@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1066,6 +1066,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Primary keyword | personal contact management software |
 | Secondary keywords | organize contact details, remember details about people |
 | Supporting keywords | contact notes, personal contact records |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/folders/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/folders/ |
+| Canonical | https://www.monicahq.com/en/features/folders/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Organise personal notes and lists in folders — Monica |
+| Meta description | Group Knowledge notes and lists by topic, browse their contents and search saved information. Keep your personal knowledge organised in Monica. |
+| H1 | Give useful information a place you will recognise. |
+| OG title | A place for the note you know you saved — Monica |
+| OG description | Group notes and lists in straightforward folders, then browse or search when you need them. |
+| OG image | https://www.monicahq.com/og/folders-en.jpg?v=e955fc3e (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | organise notes in folders |
+| Secondary keywords | personal knowledge organisation, search notes and lists |
+| Supporting keywords | note folders, knowledge base search |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/features/inventory/

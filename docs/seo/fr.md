@@ -1,6 +1,6 @@
 # Monica SEO sheets for fr
 
-These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1217,6 +1217,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | gestion des contacts personnels |
 | Secondary keywords | organiser ses contacts, notes sur les contacts |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
+
+## /fr/fonctionnalites/dossiers/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/fonctionnalites/dossiers/ |
+| Canonical | https://www.monicahq.com/fr/fonctionnalites/dossiers/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Organiser notes et listes personnelles en dossiers — Monica |
+| Meta description | Regroupez notes et listes des Connaissances par sujet, parcourez leur contenu et recherchez vos informations enregistrées. Gardez vos connaissances personnelles en ordre dans Monica. |
+| H1 | Donnez aux informations utiles une place que vous reconnaîtrez. |
+| OG title | Un endroit pour la note que vous savez avoir gardée — Monica |
+| OG description | Regroupez notes et listes dans des dossiers simples, puis parcourez-les ou recherchez-y quand vous en avez besoin. |
+| OG image | https://www.monicahq.com/og/folders-fr.jpg?v=59e43989 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | ranger ses notes dans des dossiers |
+| Secondary keywords | organiser ses connaissances, rechercher dans ses notes |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
 

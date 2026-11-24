@@ -24,6 +24,7 @@ $english = [
     'knowledge' => ['personal knowledge base', ['notes and lists', 'organise notes in folders'], ['household instructions', 'reference lists']],
     'notes' => ['personal notes app', ['Markdown notes', 'household instructions'], ['notes with checklists', 'notes in folders']],
     'lists' => ['personal lists with custom columns', ['reading list', 'recommendation list'], ['custom list columns', 'everyday reference tables']],
+    'folders' => ['organise notes in folders', ['personal knowledge organisation', 'search notes and lists'], ['note folders', 'knowledge base search']],
     'relationships' => ['track personal relationships', ['family connections', 'relationship history'], ['family tree', 'custom relationship types']],
     'vaults' => ['Monica vaults', ['organize personal and work contacts', 'separate contact lists'], ['personal CRM vaults', 'contact organization']],
     'sharing' => ['share contact details privately', ['read-only contact sharing', 'share selected contact fields'], ['password-protected sharing link', 'revoke contact sharing']],
@@ -42,7 +43,7 @@ $english = [
 
 // Each line follows the route order below. These terms describe the existing
 // translated content; they do not add product claims to it.
-$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists'];
+$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders'];
 $localized = [
     'fr' => <<<'TERMS'
 CRM personnel|base de données personnelle|CRM personnel open source
@@ -79,6 +80,7 @@ historique d’entretien des objets|suivi des prêts|objets prêtés à des amis
 base de connaissances personnelle|notes et listes|dossiers de notes
 application de notes personnelles|notes en Markdown|instructions pour la maison
 listes personnelles à colonnes|liste de lecture|liste de recommandations
+ranger ses notes dans des dossiers|organiser ses connaissances|rechercher dans ses notes
 TERMS,
     'de' => <<<'TERMS'
 persönliches CRM|persönliche Datenbank|Open-Source-CRM
@@ -115,6 +117,7 @@ Wartungsverlauf von Gegenständen|Verleih verfolgen|an Freunde verliehene Dinge
 persönliche Wissensdatenbank|Notizen und Listen|Notizen in Ordnern
 persönliche Notizen-App|Markdown-Notizen|Anleitungen für zu Hause
 persönliche Listen mit eigenen Spalten|Leseliste|Empfehlungsliste
+Notizen in Ordnern ordnen|persönliches Wissen organisieren|Notizen durchsuchen
 TERMS,
     'es' => <<<'TERMS'
 CRM personal|base de datos personal|CRM personal de código abierto
@@ -151,6 +154,7 @@ registros de mantenimiento|seguimiento de préstamos|cosas prestadas a amigos
 base de conocimiento personal|notas y listas|carpetas de notas
 aplicación de notas personales|notas en Markdown|instrucciones para la casa
 listas personales con columnas|lista de lectura|lista de recomendaciones
+organizar notas en carpetas|organizar el conocimiento personal|buscar en notas y listas
 TERMS,
     'pt' => <<<'TERMS'
 CRM pessoal|banco de dados pessoal|CRM pessoal de código aberto
@@ -187,6 +191,7 @@ registros de manutenção|controle de empréstimos|coisas emprestadas a amigos
 base de conhecimento pessoal|notas e listas|pastas de notas
 aplicativo de notas pessoais|notas em Markdown|instruções da casa
 listas pessoais com colunas|lista de leitura|lista de recomendações
+organizar notas em pastas|organizar o conhecimento pessoal|pesquisar notas e listas
 TERMS,
     'nl' => <<<'TERMS'
 persoonlijk CRM|persoonlijke database|open source persoonlijk CRM
@@ -223,6 +228,7 @@ onderhoudsgeschiedenis van spullen|uitleningen bijhouden|spullen uitgeleend aan 
 persoonlijke kennisbank|notities en lijsten|notities in mappen
 app voor persoonlijke notities|notities in Markdown|instructies voor in huis
 persoonlijke lijsten met eigen kolommen|leeslijst|lijst met aanraders
+notities in mappen ordenen|persoonlijke kennis ordenen|notities doorzoeken
 TERMS,
     'zh' => <<<'TERMS'
 个人 CRM|个人数据库|开源个人 CRM
@@ -259,6 +265,7 @@ Monica 手册|Monica 项目原则|独立开源项目运营
 个人知识库|笔记和列表|文件夹整理笔记
 个人笔记应用|Markdown 笔记|家居说明
 自定义列的个人列表|阅读清单|推荐列表
+用文件夹整理笔记|整理个人知识|搜索笔记和列表
 TERMS,
     'ru' => <<<'TERMS'
 персональная CRM|личная база данных|персональная CRM с открытым кодом
@@ -295,6 +302,7 @@ MCP-сервер Monica|MCP-сервер для личных данных|MCP-с
 личная база знаний|заметки и списки|папки для заметок
 приложение для личных заметок|заметки в Markdown|инструкции по дому
 личные списки со своими столбцами|список для чтения|список рекомендаций
+заметки по папкам|порядок в личных знаниях|поиск по заметкам
 TERMS,
 ];
 

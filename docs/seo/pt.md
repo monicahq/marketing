@@ -1,6 +1,6 @@
 # Monica SEO sheets for pt
 
-These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2718,6 +2718,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | aplicativo de notas pessoais |
 | Secondary keywords | notas em Markdown, instruções da casa |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
+## /pt/recursos/pastas/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/pastas/ |
+| Canonical | https://www.monicahq.com/pt/recursos/pastas/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Organize notas e listas pessoais em pastas — Monica |
+| Meta description | Agrupe por assunto as notas e listas do Conhecimento, navegue pelo conteúdo e pesquise as informações guardadas. Mantenha seu conhecimento pessoal organizado na Monica. |
+| H1 | Dê às informações úteis um lugar que você reconheça. |
+| OG title | Um lugar para a nota que você sabe que guardou — Monica |
+| OG description | Agrupe notas e listas em pastas simples e depois navegue ou pesquise quando precisar. |
+| OG image | https://www.monicahq.com/og/folders-pt.jpg?v=e3257513 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | organizar notas em pastas |
+| Secondary keywords | organizar o conhecimento pessoal, pesquisar notas e listas |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 

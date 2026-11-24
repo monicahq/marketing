@@ -1,6 +1,6 @@
 # Monica SEO sheets for es
 
-These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1084,6 +1084,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | bóvedas de Monica |
 | Secondary keywords | separar contactos personales y profesionales, organizar contactos |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
+## /es/funcionalidades/carpetas/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/funcionalidades/carpetas/ |
+| Canonical | https://www.monicahq.com/es/funcionalidades/carpetas/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Organiza notas y listas personales en carpetas — Monica |
+| Meta description | Agrupa por tema las notas y listas de Conocimiento, recorre su contenido y busca la información guardada. Mantén tu conocimiento personal organizado en Monica. |
+| H1 | Da a la información útil un lugar que reconozcas. |
+| OG title | Un lugar para la nota que sabes que guardaste — Monica |
+| OG description | Agrupa notas y listas en carpetas sencillas, y luego recórrelas o busca cuando las necesites. |
+| OG image | https://www.monicahq.com/og/folders-es.jpg?v=0a15ed56 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | organizar notas en carpetas |
+| Secondary keywords | organizar el conocimiento personal, buscar en notas y listas |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
 

@@ -52,6 +52,7 @@ return [
             'knowledge' => "Knowledge",
             'notes' => "Notes",
             'lists' => "Lists",
+            'folders' => "Folders & organisation",
             'relationships' => "Relationships",
             'vaults' => "Vaults",
             'sharing' => "Sharing",
@@ -423,6 +424,19 @@ return [
                 'title' => "Keep a useful list.",
                 'description' => "Your columns. Your everyday references.",
                 'alt' => "The Monica panda filing cards in a cabinet, with the words “Keep a useful list.”",
+            ],
+        ],
+
+        'folders' => [
+            'title' => "Organise personal notes and lists in folders — Monica",
+            'description' => "Group Knowledge notes and lists by topic, browse their contents and search saved information. Keep your personal knowledge organised in Monica.",
+            'ogTitle' => "A place for the note you know you saved — Monica",
+            'ogDescription' => "Group notes and lists in straightforward folders, then browse or search when you need them.",
+            'ogImage' => [
+                'eyebrow' => "Folders & organisation",
+                'title' => "Find your way back.",
+                'description' => "Familiar topics. Notes and lists together.",
+                'alt' => "The Monica panda filing cards in a cabinet, with the words “Find your way back.”",
             ],
         ],
 
@@ -3731,13 +3745,113 @@ return [
                 [
                     'q' => "Where do lists live?",
                     'a' => "Every list belongs to a :link inside a vault.",
-                    'link' => ['label' => "Knowledge folder", 'href' => '#'],
+                    'link' => ['label' => "Knowledge folder", 'page' => 'folders'],
                 ],
             ],
         ],
         'cta' => [
             'title' => "Make a list you will actually come back to.",
             'body' => "Start with the next recommendation someone gives you.",
+            'button' => "Start using Monica",
+        ],
+    ],
+
+    /**
+     * The folders page: the folders of Knowledge and its search. Its Home
+     * folder, its folder names and its paint list are the knowledge page's
+     * (`knowledge.folders`, `knowledge.home`, `knowledge.list`), so the pages
+     * cannot disagree. `ui` holds the folder menu's own words, as Erica
+     * translates them.
+     */
+    'folders' => [
+        'hero' => [
+            'eyebrow' => "Folders & organisation",
+            'title' => "Give useful information a place you will recognise.",
+            'lede' => "Home. Food. Travel. A few familiar folder names can make the difference between “I saved that” and actually finding it.",
+            'body' => "Organise your :link into folders that hold notes and lists together.",
+            'knowledge' => "personal knowledge",
+            'cta' => "Start using Monica",
+            'label' => "Three folders from Knowledge’s contents, side by side. Home, with its notes and lists: Appliances, Home maintenance, Maintenance schedule, Paint references, Water shutoff and Wi-Fi information. Food and Recipes: Favorite cocktails, Favorite restaurants, Grandma’s lasagna and Recipes. Travel: Countries visited, Japan trip memories, Places to visit and Travel wishlist.",
+        ],
+        // The folder menu's own words, as Erica translates them.
+        'ui' => [
+            'rename' => "Rename",
+            'moveAbove' => "Move above :other",
+            'moveBelow' => "Move below :other",
+            'delete' => "Delete folder",
+        ],
+        // Two more folders of the demo vault, in the shape of `knowledge.home`:
+        // kind, title, the kind line, when it was edited, a note's headings.
+        'food' => [
+            ['note', "Favorite cocktails", "Note", "Edited 3 months ago", ["Negroni", "Margarita"]],
+            ['list', "Favorite restaurants", "List of 3 items", "Edited 1 month ago", []],
+            ['note', "Grandma’s lasagna", "Note", "Edited 5 days ago", ["Ingredients", "Method"]],
+            ['list', "Recipes", "List of 4 items", "Edited 2 weeks ago", []],
+        ],
+        'foodCount' => "4 notes and lists",
+        'travel' => [
+            ['list', "Countries visited", "List of 4 items", "Edited 2 months ago", []],
+            ['note', "Japan trip memories", "Note", "Edited 4 months ago", ["Tokyo", "Kyoto"]],
+            ['note', "Places to visit", "Note", "Edited 3 weeks ago", []],
+            ['list', "Travel wishlist", "List of 3 items", "Edited 1 week ago", []],
+        ],
+        'travelCount' => "4 notes and lists",
+        'simple' => [
+            'title' => "Start simple, then change your mind.",
+            'body' => "Create named folders for the topics you use. Rename or reorder them as your information grows. Move a note or list into another folder when that makes more sense.",
+            'closing' => "Folders use a single level. You do not need to remember which subfolder contains the subfolder containing the answer. A small mercy.",
+            'label' => "The folders of Knowledge, each at the same level, Home open on its notes and lists. The menu of the Personal folder is open: rename it, move it above Home, move it below Travel, or delete it.",
+        ],
+        'together' => [
+            'title' => "Let notes and lists live together.",
+            'body' => "A Home folder can hold a :note explaining where the water shutoff is and a :list of paint references. One topic, two useful formats.",
+            'note' => "note",
+            'list' => "list",
+            'closing' => "Every note and list has a folder, so there is a clear place to browse for it later.",
+        ],
+        'search' => [
+            'title' => "Browse the contents. Search the words.",
+            'body' => "The contents view brings together your folders and their documents. Notes can show headings that lead you to the relevant section; lists show their kind and item count.",
+            'body2' => "Knowledge search looks through saved titles and content, including list cells. Use the words you remember, then open the result in context.",
+            // A word typed into the search field: it must be written in a
+            // cell of `knowledge.list`, so the search finds the paint list.
+            'query' => "purple",
+            'label' => "Knowledge searched for the word purple. The folders keep only Home, with the one list that holds the word: Paint references, open beside them, where the living room is painted purple.",
+        ],
+        'vaults' => [
+            'title' => "Keep separate spaces when you need them.",
+            'body' => "Folders organise topics inside a vault. :link separate larger parts of your life, each with its own Knowledge records.",
+            'vaults' => "Vaults",
+            'body2' => "An authorised :link can also work with supported folders, notes and lists. You can review the organisation in Monica afterwards.",
+            'assistant' => "compatible assistant",
+            // The Work vault's folders: name and count.
+            'work' => [
+                ['name' => "Clients", 'count' => "5"],
+                ['name' => "Onboarding", 'count' => "3"],
+                ['name' => "Suppliers", 'count' => "2"],
+            ],
+            'label' => "The folders of Knowledge in two vaults. In Personal: Home, Personal, Travel, Health and Fitness, Books and Movies, Food and Recipes, Technology, Ideas and Projects. In Work: Clients, Onboarding and Suppliers.",
+        ],
+        'faq' => [
+            'title' => "A few useful answers.",
+            'items' => [
+                [
+                    'q' => "Can I nest folders?",
+                    'a' => "No. Knowledge folders currently sit at a single level. Notes and lists appear inside them.",
+                ],
+                [
+                    'q' => "What happens when I delete a folder?",
+                    'a' => "If it contains notes or lists, Monica asks whether to move them to another folder or delete them with it. The last folder is kept so Knowledge still has somewhere to put its documents.",
+                ],
+                [
+                    'q' => "Is Knowledge search a whole-account search?",
+                    'a' => "It searches Knowledge within the vault you are using. It is not a claim that every record across your account is searched together.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Start with three folders, or just one.",
+            'body' => "The best filing system is the one you can remember without a filing system.",
             'button' => "Start using Monica",
         ],
     ],

@@ -51,6 +51,7 @@ return [
             'knowledge' => "知识",
             'notes' => "笔记",
             'lists' => "列表",
+            'folders' => "文件夹与整理",
             'relationships' => "关系",
             'vaults' => "保险库",
             'sharing' => "分享",
@@ -416,6 +417,19 @@ return [
                 'title' => "留一份有用的列表。",
                 'description' => "你的列。你的日常参考。",
                 'alt' => "Monica 的熊猫正在把卡片放进文件柜，旁边写着“留一份有用的列表。”",
+            ],
+        ],
+
+        'folders' => [
+            'title' => "用文件夹整理个人笔记和列表 — Monica",
+            'description' => "按主题归类知识库中的笔记和列表，浏览目录，搜索已保存的信息。在 Monica 中让你的个人知识井井有条。",
+            'ogTitle' => "给你确定存过的那条笔记一个位置 — Monica",
+            'ogDescription' => "把笔记和列表归入简单明了的文件夹，需要时再浏览或搜索。",
+            'ogImage' => [
+                'eyebrow' => "文件夹与整理",
+                'title' => "找到回来的路。",
+                'description' => "熟悉的主题。笔记和列表在一起。",
+                'alt' => "Monica 的熊猫正在把卡片放进文件柜，旁边写着“找到回来的路。”",
             ],
         ],
 
@@ -3714,13 +3728,113 @@ return [
                 [
                     'q' => "列表放在哪里？",
                     'a' => "每个列表都属于保险库中的一个:link。",
-                    'link' => ['label' => "知识库文件夹", 'href' => '#'],
+                    'link' => ['label' => "知识库文件夹", 'page' => 'folders'],
                 ],
             ],
         ],
         'cta' => [
             'title' => "做一份你真会回来看的列表。",
             'body' => "就从别人给你的下一个推荐开始。",
+            'button' => "开始使用 Monica",
+        ],
+    ],
+
+    /**
+     * The folders page: the folders of Knowledge and its search. Its Home
+     * folder, its folder names and its paint list are the knowledge page's
+     * (`knowledge.folders`, `knowledge.home`, `knowledge.list`), so the pages
+     * cannot disagree. `ui` holds the folder menu's own words, as Erica
+     * translates them.
+     */
+    'folders' => [
+        'hero' => [
+            'eyebrow' => "文件夹与整理",
+            'title' => "给有用的信息一个你认得的位置。",
+            'lede' => "家。美食。旅行。几个熟悉的文件夹名，就能让“我存过的”变成真正找得到。",
+            'body' => "把你的:link整理进文件夹，笔记和列表可以放在一起。",
+            'knowledge' => "个人知识",
+            'cta' => "开始使用 Monica",
+            'label' => "知识库目录中的三个文件夹并排显示。“家”及其中的备注和列表：电器、家居维护、维护计划、涂料参考、关闭水阀和 Wi-Fi 信息。“美食与食谱”：喜欢的鸡尾酒、喜欢的餐厅、奶奶的千层面和食谱。“旅行”：去过的国家、日本旅行回忆、想去的地方和旅行心愿清单。",
+        ],
+        // The folder menu's own words, as Erica translates them.
+        'ui' => [
+            'rename' => "重命名",
+            'moveAbove' => "移到 :other 上方",
+            'moveBelow' => "移到 :other 下方",
+            'delete' => "删除文件夹",
+        ],
+        // Two more folders of the demo vault, in the shape of `knowledge.home`:
+        // kind, title, the kind line, when it was edited, a note's headings.
+        'food' => [
+            ['note', "喜欢的鸡尾酒", "备注", "编辑于 3个月前", ["Negroni", "Margarita"]],
+            ['list', "喜欢的餐厅", "包含 3 个条目的列表", "编辑于 1个月前", []],
+            ['note', "奶奶的千层面", "备注", "编辑于 5天前", ["食材", "做法"]],
+            ['list', "食谱", "包含 4 个条目的列表", "编辑于 2周前", []],
+        ],
+        'foodCount' => "4 个备注和列表",
+        'travel' => [
+            ['list', "去过的国家", "包含 4 个条目的列表", "编辑于 2个月前", []],
+            ['note', "日本旅行回忆", "备注", "编辑于 4个月前", ["东京", "京都"]],
+            ['note', "想去的地方", "备注", "编辑于 3周前", []],
+            ['list', "旅行心愿清单", "包含 3 个条目的列表", "编辑于 1周前", []],
+        ],
+        'travelCount' => "4 个备注和列表",
+        'simple' => [
+            'title' => "先从简单开始，之后再改主意。",
+            'body' => "为你常用的主题建立有名字的文件夹。信息变多时，可以重命名或调整顺序。觉得换个地方更合适，就把笔记或列表移到另一个文件夹。",
+            'closing' => "文件夹只有一层。你不必记得哪个子文件夹里装着装有答案的子文件夹。这算一点小小的仁慈。",
+            'label' => "知识库的各个文件夹处在同一层级，“家”已展开，显示其中的备注和列表。“个人”文件夹的菜单已打开：重命名、移到“家”上方、移到“旅行”下方，或删除。",
+        ],
+        'together' => [
+            'title' => "让笔记和列表住在一起。",
+            'body' => "“家”文件夹里可以放一条:note，说明水阀在哪里，再放一份涂料参考的:list。一个主题，两种实用的形式。",
+            'note' => "笔记",
+            'list' => "列表",
+            'closing' => "每条笔记和每份列表都有所属的文件夹，所以日后总有个明确的地方可以去翻找。",
+        ],
+        'search' => [
+            'title' => "浏览目录。搜索词语。",
+            'body' => "目录视图把你的文件夹和其中的文档汇集在一起。备注可以显示标题，带你跳到相关部分；列表显示其类型和条目数。",
+            'body2' => "知识库搜索会查找已保存的标题和内容，包括列表中的单元格。用你记得的词去搜，再在上下文中打开结果。",
+            // A word typed into the search field: it must be written in a
+            // cell of `knowledge.list`, so the search finds the paint list.
+            'query' => "紫色",
+            'label' => "搜索了“紫色”一词的知识库。文件夹只剩下“家”，其中有唯一包含该词的列表：涂料参考，在旁边打开，客厅刷成了紫色。",
+        ],
+        'vaults' => [
+            'title' => "需要时，就分开保存。",
+            'body' => "文件夹在保险库内部整理主题。:link把你生活中更大的部分分开，各有自己的知识库记录。",
+            'vaults' => "保险库",
+            'body2' => "获得授权的:link也可以处理受支持的文件夹、笔记和列表。之后你可以在 Monica 中检查整理的结果。",
+            'assistant' => "兼容的助手",
+            // The Work vault's folders: name and count.
+            'work' => [
+                ['name' => "客户", 'count' => "5"],
+                ['name' => "入职培训", 'count' => "3"],
+                ['name' => "供应商", 'count' => "2"],
+            ],
+            'label' => "两个保险库中的知识库文件夹。“个人”保险库：家、个人、旅行、健康与健身、图书与电影、美食与食谱、科技、创意与项目。“工作”保险库：客户、入职培训和供应商。",
+        ],
+        'faq' => [
+            'title' => "几个有用的答案。",
+            'items' => [
+                [
+                    'q' => "可以嵌套文件夹吗？",
+                    'a' => "不可以。知识库的文件夹目前只有一层，笔记和列表放在其中。",
+                ],
+                [
+                    'q' => "删除文件夹会怎样？",
+                    'a' => "如果其中有笔记或列表，Monica 会询问是把它们移到另一个文件夹，还是随文件夹一起删除。最后一个文件夹会保留，这样知识库总有地方存放文档。",
+                ],
+                [
+                    'q' => "知识库搜索是整个账号范围的搜索吗？",
+                    'a' => "它只搜索你当前所用保险库中的知识库，并不表示会同时搜索账号里的所有记录。",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "从三个文件夹开始，或者只建一个。",
+            'body' => "最好的归档系统，是不需要归档系统你也记得住的那个。",
             'button' => "开始使用 Monica",
         ],
     ],

@@ -36,6 +36,7 @@ return [
             'knowledge' => "Kennis",
             'notes' => "Notities",
             'lists' => "Lijsten",
+            'folders' => "Mappen en ordening",
             'relationships' => "Relaties",
             'vaults' => "Kluizen",
             'sharing' => "Delen",
@@ -392,6 +393,19 @@ return [
                 'title' => "Bewaar een nuttige lijst.",
                 'description' => "Jouw kolommen. Je alledaagse referenties.",
                 'alt' => "De panda van Monica sorteert kaarten in een archiefkast, met de woorden “Bewaar een nuttige lijst.”",
+            ],
+        ],
+
+        'folders' => [
+            'title' => "Persoonlijke notities en lijsten ordenen in mappen — Monica",
+            'description' => "Groepeer notities en lijsten uit Kennis per onderwerp, blader door de inhoud en doorzoek bewaarde informatie. Houd je persoonlijke kennis geordend in Monica.",
+            'ogTitle' => "Een plek voor de notitie waarvan je weet dat je hem bewaarde — Monica",
+            'ogDescription' => "Groepeer notities en lijsten in eenvoudige mappen, en blader of zoek als je ze nodig hebt.",
+            'ogImage' => [
+                'eyebrow' => "Mappen en ordening",
+                'title' => "Vind de weg terug.",
+                'description' => "Vertrouwde onderwerpen. Notities en lijsten samen.",
+                'alt' => "De panda van Monica sorteert kaarten in een archiefkast, met de woorden “Vind de weg terug.”",
             ],
         ],
 
@@ -3700,13 +3714,113 @@ return [
                 [
                     'q' => "Waar staan lijsten?",
                     'a' => "Elke lijst hoort bij een :link in een kluis.",
-                    'link' => ['label' => "Kennismap", 'href' => '#'],
+                    'link' => ['label' => "Kennismap", 'page' => 'folders'],
                 ],
             ],
         ],
         'cta' => [
             'title' => "Maak een lijst waar je echt op terugkomt.",
             'body' => "Begin met de volgende aanbeveling die iemand je geeft.",
+            'button' => "Begin met Monica",
+        ],
+    ],
+
+    /**
+     * The folders page: the folders of Knowledge and its search. Its Home
+     * folder, its folder names and its paint list are the knowledge page's
+     * (`knowledge.folders`, `knowledge.home`, `knowledge.list`), so the pages
+     * cannot disagree. `ui` holds the folder menu's own words, as Erica
+     * translates them.
+     */
+    'folders' => [
+        'hero' => [
+            'eyebrow' => "Mappen en ordening",
+            'title' => "Geef nuttige informatie een plek die je herkent.",
+            'lede' => "Huis. Eten. Reizen. Een paar vertrouwde mapnamen kunnen het verschil maken tussen “dat heb ik bewaard” en het ook echt terugvinden.",
+            'body' => "Organiseer je :link in mappen die notities en lijsten samen bewaren.",
+            'knowledge' => "persoonlijke kennis",
+            'cta' => "Begin met Monica",
+            'label' => "Drie mappen uit de inhoud van Kennis, naast elkaar. Huis, met zijn notities en lijsten: Apparaten, Onderhoud van het huis, Onderhoudsschema, Verfreferenties, Water afsluiten en Wi-Fi-gegevens. Eten en recepten: Favoriete cocktails, Favoriete restaurants, Oma’s lasagne en Recepten. Reizen: Bezochte landen, Herinneringen aan Japan, Plekken om te bezoeken en Reiswensen.",
+        ],
+        // The folder menu's own words, as Erica translates them.
+        'ui' => [
+            'rename' => "Hernoemen",
+            'moveAbove' => "Boven :other zetten",
+            'moveBelow' => "Onder :other zetten",
+            'delete' => "Map verwijderen",
+        ],
+        // Two more folders of the demo vault, in the shape of `knowledge.home`:
+        // kind, title, the kind line, when it was edited, a note's headings.
+        'food' => [
+            ['note', "Favoriete cocktails", "Notitie", "Bewerkt 3 maanden geleden", ["Negroni", "Margarita"]],
+            ['list', "Favoriete restaurants", "Lijst met 3 items", "Bewerkt 1 maand geleden", []],
+            ['note', "Oma’s lasagne", "Notitie", "Bewerkt 5 dagen geleden", ["Ingrediënten", "Bereiding"]],
+            ['list', "Recepten", "Lijst met 4 items", "Bewerkt 2 weken geleden", []],
+        ],
+        'foodCount' => "4 notities en lijsten",
+        'travel' => [
+            ['list', "Bezochte landen", "Lijst met 4 items", "Bewerkt 2 maanden geleden", []],
+            ['note', "Herinneringen aan Japan", "Notitie", "Bewerkt 4 maanden geleden", ["Tokio", "Kyoto"]],
+            ['note', "Plekken om te bezoeken", "Notitie", "Bewerkt 3 weken geleden", []],
+            ['list', "Reiswensen", "Lijst met 3 items", "Bewerkt 1 week geleden", []],
+        ],
+        'travelCount' => "4 notities en lijsten",
+        'simple' => [
+            'title' => "Begin eenvoudig en bedenk je later nog eens.",
+            'body' => "Maak mappen met een naam voor de onderwerpen die je gebruikt. Hernoem of herorden ze naarmate je informatie groeit. Verplaats een notitie of lijst naar een andere map als dat logischer is.",
+            'closing' => "Mappen hebben één niveau. Je hoeft niet te onthouden welke submap de submap met het antwoord bevat. Een kleine gunst.",
+            'label' => "De mappen van Kennis, allemaal op hetzelfde niveau, met Huis open op zijn notities en lijsten. Het menu van de map Persoonlijk is open: hernoemen, boven Huis zetten, onder Reizen zetten of verwijderen.",
+        ],
+        'together' => [
+            'title' => "Laat notities en lijsten samenwonen.",
+            'body' => "Een map Huis kan een :note bevatten die uitlegt waar je het water afsluit en een :list met verfreferenties. Eén onderwerp, twee nuttige vormen.",
+            'note' => "notitie",
+            'list' => "lijst",
+            'closing' => "Elke notitie en lijst hoort bij een map, dus later is er een duidelijke plek om ernaar te zoeken.",
+        ],
+        'search' => [
+            'title' => "Blader door de inhoud. Zoek op woorden.",
+            'body' => "De inhoudsweergave brengt je mappen en hun documenten samen. Notities kunnen kopjes tonen die je naar het juiste stuk brengen; lijsten tonen hun soort en aantal items.",
+            'body2' => "Zoeken in Kennis doorzoekt bewaarde titels en inhoud, ook cellen van lijsten. Gebruik de woorden die je je herinnert en open het resultaat dan in context.",
+            // A word typed into the search field: it must be written in a
+            // cell of `knowledge.list`, so the search finds the paint list.
+            'query' => "paars",
+            'label' => "Kennis doorzocht op het woord paars. De mappen houden alleen Huis over, met de ene lijst die het woord bevat: Verfreferenties, ernaast geopend, waar de woonkamer paars is geverfd.",
+        ],
+        'vaults' => [
+            'title' => "Houd aparte ruimtes als je ze nodig hebt.",
+            'body' => "Mappen ordenen onderwerpen binnen een kluis. :link scheiden grotere delen van je leven, elk met eigen Kennis-records.",
+            'vaults' => "Kluizen",
+            'body2' => "Een geautoriseerde :link kan ook met ondersteunde mappen, notities en lijsten werken. Je kunt de ordening daarna in Monica nakijken.",
+            'assistant' => "compatibele assistent",
+            // The Work vault's folders: name and count.
+            'work' => [
+                ['name' => "Klanten", 'count' => "5"],
+                ['name' => "Onboarding", 'count' => "3"],
+                ['name' => "Leveranciers", 'count' => "2"],
+            ],
+            'label' => "De mappen van Kennis in twee kluizen. In Persoonlijk: Huis, Persoonlijk, Reizen, Gezondheid en fitness, Boeken en films, Eten en recepten, Technologie, Ideeën en projecten. In Werk: Klanten, Onboarding en Leveranciers.",
+        ],
+        'faq' => [
+            'title' => "Een paar nuttige antwoorden.",
+            'items' => [
+                [
+                    'q' => "Kan ik mappen nesten?",
+                    'a' => "Nee. Mappen in Kennis staan nu op één niveau. Notities en lijsten staan erin.",
+                ],
+                [
+                    'q' => "Wat gebeurt er als ik een map verwijder?",
+                    'a' => "Bevat de map notities of lijsten, dan vraagt Monica of je ze naar een andere map wilt verplaatsen of samen met de map wilt verwijderen. De laatste map blijft bewaard, zodat Kennis altijd een plek heeft voor zijn documenten.",
+                ],
+                [
+                    'q' => "Doorzoekt Kennis mijn hele account?",
+                    'a' => "Het doorzoekt Kennis binnen de kluis die je gebruikt. Het betekent niet dat alle records van je hele account samen worden doorzocht.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Begin met drie mappen, of met één.",
+            'body' => "Het beste ordeningssysteem is het systeem dat je kunt onthouden zonder ordeningssysteem.",
             'button' => "Begin met Monica",
         ],
     ],

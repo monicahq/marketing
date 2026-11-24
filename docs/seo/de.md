@@ -1,6 +1,6 @@
 # Monica SEO sheets for de
 
-These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1160,6 +1160,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | persönliche Notizen-App |
 | Secondary keywords | Markdown-Notizen, Anleitungen für zu Hause |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/funktionen/ordner/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/ordner/ |
+| Canonical | https://www.monicahq.com/de/funktionen/ordner/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persönliche Notizen und Listen in Ordnern ordnen — Monica |
+| Meta description | Fassen Sie Notizen und Listen aus Wissen nach Thema zusammen, blättern Sie durch ihren Inhalt und durchsuchen Sie gespeicherte Informationen. Halten Sie Ihr persönliches Wissen in Monica in Ordnung. |
+| H1 | Geben Sie nützlichen Informationen einen Platz, den Sie wiedererkennen. |
+| OG title | Ein Platz für die Notiz, von der Sie wissen, dass Sie sie gespeichert haben — Monica |
+| OG description | Fassen Sie Notizen und Listen in übersichtlichen Ordnern zusammen und blättern oder suchen Sie, wenn Sie sie brauchen. |
+| OG image | https://www.monicahq.com/og/folders-de.jpg?v=2777dad4 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | Notizen in Ordnern ordnen |
+| Secondary keywords | persönliches Wissen organisieren, Notizen durchsuchen |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 

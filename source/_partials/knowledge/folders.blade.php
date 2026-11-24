@@ -2,8 +2,10 @@
      (knowledge/_folders.blade.php): its title and the plus that adds a note,
      a list or a folder, the search field, Contents, then each folder with its
      notes and lists. A folder whose documents are `null` is drawn folded.
-     The rename and action menus are left out. Reads the page's `$ui`,
-     `$glyphs` and `$sorted`.
+     `menu`, when given, draws each folder's actions button and opens the
+     menu of the folder at `menu['at']` on its `menu['items']`, as Erica's
+     actions menu draws them; without it the buttons are left out. Reads the
+     page's `$ui`, `$glyphs` and `$sorted`.
 
      @include('_partials.knowledge.folders', ['folders' => [['Home', '6', [['note', 'Water shutoff']]]], 'query' => null, 'contents' => true, 'current' => null]) --}}
 @php
@@ -33,11 +35,23 @@
 
         @foreach ($folders as [$name, $count, $documents])
             <div class="mt-1 flex flex-col gap-px">
-                <span class="flex min-h-8 items-center gap-2 rounded-md px-2 py-1.5 text-[13.5px] font-semibold text-text">
-                    @include('_partials.icon', ['name' => 'chevron-down', 'size' => 13, 'class' => 'flex-none text-text-muted ' . ($documents === null ? '-rotate-90' : '')])
-                    @include('_partials.icon', ['name' => 'folder', 'size' => 16, 'class' => 'flex-none text-text-soft'])
-                    <span class="min-w-0 flex-1 truncate">{{ $name }}</span>
-                    <span class="text-xs font-normal text-text-muted">{{ $count }}</span>
+                <span class="relative flex items-center gap-0.5">
+                    <span class="flex min-h-8 min-w-0 flex-1 items-center gap-2 rounded-md px-2 py-1.5 text-[13.5px] font-semibold text-text">
+                        @include('_partials.icon', ['name' => 'chevron-down', 'size' => 13, 'class' => 'flex-none text-text-muted ' . ($documents === null ? '-rotate-90' : '')])
+                        @include('_partials.icon', ['name' => 'folder', 'size' => 16, 'class' => 'flex-none text-text-soft'])
+                        <span class="min-w-0 flex-1 truncate">{{ $name }}</span>
+                        <span class="text-xs font-normal text-text-muted">{{ $count }}</span>
+                    </span>
+                    @isset($menu)
+                        <span class="grid size-7 flex-none place-items-center rounded-md text-text-muted {{ $menu['at'] === $loop->index ? 'bg-hover text-text' : '' }}">@include('_partials.icon', ['name' => 'menu', 'size' => 15])</span>
+                        @if ($menu['at'] === $loop->index)
+                            <span class="absolute end-0 top-[calc(100%+6px)] z-10 flex min-w-52 flex-col rounded-lg border border-border bg-canvas p-1 shadow-pop">
+                                @foreach ($menu['items'] as [$item, $danger])
+                                    <span class="flex min-h-8 items-center rounded-md px-2.5 text-base {{ $danger ? 'text-danger' : 'text-text' }}">{{ $item }}</span>
+                                @endforeach
+                            </span>
+                        @endif
+                    @endisset
                 </span>
                 @foreach ($sorted($documents ?? []) as [$kind, $document])
                     <span class="{{ $entry }} ps-7.5 {{ $document === $current ? $currentEntry : $idle }}">

@@ -12,8 +12,7 @@
             <h2 class="{{ $title }}">{{ $section['title'] }}</h2>
             <p class="{{ $paragraph }}">{{ $section['body'] }}</p>
             <p class="{{ $closing }}">{{ $section['closing'] }}</p>
-            {{-- The folders page is not written yet. --}}
-            <a href="#" class="{{ $more }}">{{ $section['link'] }} @include('_partials.icon', ['name' => 'arrow-right', 'size' => 15])</a>
+            <a href="{{ $page->route('folders') }}" class="{{ $more }}">{{ $section['link'] }} @include('_partials.icon', ['name' => 'arrow-right', 'size' => 15])</a>
         </div>
 
         <div class="rounded-lg bg-identity-3/14 p-4 md:p-10">

@@ -777,6 +777,20 @@ return [
             'ru' => 'vozmozhnosti/spiski',
         ],
 
+        // "Give useful information a place you will recognise.": the folders
+        // of Knowledge and its search. The header's "Folders & organisation"
+        // item leads here.
+        'folders' => [
+            'en' => 'features/folders',
+            'fr' => 'fonctionnalites/dossiers',
+            'de' => 'funktionen/ordner',
+            'es' => 'funcionalidades/carpetas',
+            'pt' => 'recursos/pastas',
+            'nl' => 'functies/mappen',
+            'zh' => 'features/folders',
+            'ru' => 'vozmozhnosti/papki',
+        ],
+
         // "Keep the moments. Remember the next one.": the short page that
         // sends a reader on to the timeline page or the reminders page, kept
         // apart because a moment and a reminder are separate records.
@@ -947,7 +961,7 @@ return [
      */
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
-        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
+        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
@@ -999,6 +1013,7 @@ return [
         'knowledge' => '2026-11-23',
         'notes' => '2026-11-23',
         'lists' => '2026-11-23',
+        'folders' => '2026-11-23',
         'relationships' => '2026-10-13',
         'vaults' => '2026-10-13',
         'sharing' => '2026-10-13',
@@ -1335,6 +1350,7 @@ return [
         'maintenanceLoans' => 'possessions',
         'notes' => 'knowledge',
         'lists' => 'knowledge',
+        'folders' => 'knowledge',
     ],
 
     /**

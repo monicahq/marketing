@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1198,6 +1198,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | locaties van bezittingen |
 | Secondary keywords | waar je spullen liggen, locatiegeschiedenis |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/functies/mappen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/mappen/ |
+| Canonical | https://www.monicahq.com/nl/functies/mappen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persoonlijke notities en lijsten ordenen in mappen — Monica |
+| Meta description | Groepeer notities en lijsten uit Kennis per onderwerp, blader door de inhoud en doorzoek bewaarde informatie. Houd je persoonlijke kennis geordend in Monica. |
+| H1 | Geef nuttige informatie een plek die je herkent. |
+| OG title | Een plek voor de notitie waarvan je weet dat je hem bewaarde — Monica |
+| OG description | Groepeer notities en lijsten in eenvoudige mappen, en blader of zoek als je ze nodig hebt. |
+| OG image | https://www.monicahq.com/og/folders-nl.jpg?v=5b07e3f2 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | notities in mappen ordenen |
+| Secondary keywords | persoonlijke kennis ordenen, notities doorzoeken |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 

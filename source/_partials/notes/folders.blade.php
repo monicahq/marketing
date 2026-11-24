@@ -20,8 +20,7 @@
         <div class="flex flex-col gap-4.5">
             <h2 class="{{ $title }}">{{ $section['title'] }}</h2>
             <p class="{{ $paragraph }}">{{ $section['body'] }}</p>
-            {{-- The folders page is not written yet. --}}
-            <p class="{{ $paragraph }}">{!! $linked($section['body2'], ['link' => [$section['linkLabel'], '#']]) !!}</p>
+            <p class="{{ $paragraph }}">{!! $linked($section['body2'], ['link' => [$section['linkLabel'], $page->route('folders')]]) !!}</p>
         </div>
     </div>
 </section>
