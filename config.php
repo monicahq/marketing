@@ -593,6 +593,19 @@ return [
             'ru' => 'podderzhka',
         ],
 
+        // The sales page, about the sales team Monica does not have. The
+        // homepage's "Contact sales" button and the footer link land here.
+        'sales' => [
+            'en' => 'sales',
+            'fr' => 'ventes',
+            'de' => 'vertrieb',
+            'es' => 'ventas',
+            'pt' => 'vendas',
+            'nl' => 'verkoop',
+            'zh' => 'sales',
+            'ru' => 'prodazhi',
+        ],
+
         // The page between the website and the two sign-in forms, while the
         // new Monica and Monica classic run side by side with separate
         // accounts. The header's sign-in button opens it.
@@ -976,7 +989,7 @@ return [
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
         'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
-        'Company' => ['about', 'team', 'contribute', 'support', 'signIn'],
+        'Company' => ['about', 'team', 'contribute', 'support', 'sales', 'signIn'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
         'Legal' => ['terms', 'privacy'],
@@ -1039,6 +1052,7 @@ return [
         'mcpServer' => '2026-11-20',
         'handbook' => '2026-11-18',
         'support' => '2026-11-20',
+        'sales' => '2026-11-24',
         'signIn' => '2026-11-24',
     ],
 
@@ -1061,6 +1075,8 @@ return [
         'getStarted' => 'https://my.monicahq.com/register',
         'selfHostingGuide' => '#',
         'docs' => 'https://my.monicahq.com/docs',
+        // The guide's first page, which the docs menu's "Getting started" opens.
+        'docsGuide' => 'https://my.monicahq.com/docs/en',
         'api' => 'https://my.monicahq.com/docs/api/introduction',
         'mcp' => 'https://my.monicahq.com/docs/mcp',
         'changelog' => 'https://my.monicahq.com/changelog',
@@ -1074,10 +1090,6 @@ return [
 
         // Where the Docker Hub badge points: the official image.
         'dockerHub' => 'https://hub.docker.com/_/monica',
-
-        // There is no sales team, which is the joke on the homepage button.
-        // It still needs somewhere to go: a contact address, most likely.
-        'contactSales' => '#',
 
         // The contribute page (route key `contribute`): sponsoring, the docs'
         // pull request guidelines, the issue tracker and the skills folder.

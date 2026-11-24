@@ -20,6 +20,7 @@ return [
             'terms' => "Gebruiksvoorwaarden",
             'team' => "Team",
             'support' => "Support",
+            'sales' => "Verkoop",
             'signIn' => "Inloggen",
             'about' => "Over Monica",
             'privacy' => "Privacybeleid",
@@ -169,6 +170,20 @@ return [
                 'title' => "Hulp bij Monica,",
                 'accent' => "van de mensen die het bouwen.",
                 'description' => "Schrijf ons over alles wat niet werkt zoals je verwacht.",
+            ],
+        ],
+
+        'sales' => [
+            'title' => "Verkoop — Monica",
+            'description' => "Monica heeft geen verkoopteam, geen demo’s en geen opvolgmails. Ontdek het product zelf, lees de openbare prijzen of host het op je eigen server.",
+            'ogTitle' => "Maak kennis met het verkoopteam dat Monica niet heeft",
+            'ogDescription' => "Geen telefoontjes. Geen afspraken. Geen opvolging. Alleen software.",
+
+            'ogImage' => [
+                'eyebrow' => "Verkoop",
+                'title' => "Ons verkoopteam neemt",
+                'accent' => "nooit contact met je op.",
+                'description' => "Geen telefoontjes. Geen afspraken. Alleen software.",
             ],
         ],
 
@@ -586,6 +601,7 @@ return [
         'handbook' => "Handboek",
         'docs' => "Documentatie",
         'contribute' => "Bijdragen",
+        'sales' => "Contact met sales",
         'signIn' => "Inloggen",
         'toDark' => "Overschakelen naar donkere modus",
         'toLight' => "Overschakelen naar lichte modus",
@@ -644,6 +660,62 @@ return [
                 'question' => "Wanneer is Lucie jarig?",
                 'answer' => "Op 14 maart, over drie weken. In januari zei ze dat ze een nieuwe regenjas wilde.",
                 'cta' => "Verbind je assistent",
+            ],
+        ],
+
+        // The Docs menu in the header: the handbook, the documentation and how to contribute,
+        // each with three pages inside, a strip of quick links, and a card
+        // for installing Monica on your own server. The destinations are in
+        // _partials/docs-menu.blade.php, in the same order.
+        'docsMenu' => [
+            'label' => "Docs",
+            'inside' => "Inhoud",
+            'groups' => [
+                [
+                    'icon' => 'journal',
+                    'title' => "Handboek",
+                    'body' => "Hoe het project wordt gerund en waarom het zo is gebouwd.",
+                    'items' => [
+                        ['icon' => 'heart', 'title' => "Principes"],
+                        ['icon' => 'coin', 'title' => "Hoe Monica geld verdient"],
+                        ['icon' => 'lock', 'title' => "Privacy en gegevens"],
+                    ],
+                ],
+                [
+                    'icon' => 'note',
+                    'title' => "Documentatie",
+                    'body' => "Alles wat je nodig hebt om Monica in te richten en er het meeste uit te halen.",
+                    'items' => [
+                        ['icon' => 'check-circle', 'title' => "Aan de slag"],
+                        ['icon' => 'settings', 'title' => "Eigen beheer"],
+                        ['icon' => 'key', 'title' => "API-referentie"],
+                    ],
+                ],
+                [
+                    'icon' => 'people',
+                    'title' => "Bijdragen",
+                    'body' => "Monica is open source. Help mee met code, teksten of een bugmelding.",
+                    'items' => [
+                        ['icon' => 'code', 'title' => "Broncode"],
+                        ['icon' => 'globe', 'title' => "Vertalingen"],
+                        ['icon' => 'info', 'title' => "Een bug melden"],
+                    ],
+                ],
+            ],
+            'quick' => [
+                'label' => "Snelle links",
+                'items' => [
+                    ['icon' => 'layers', 'title' => "Wijzigingslog"],
+                    ['icon' => 'tasks', 'title' => "Roadmap"],
+                    ['icon' => 'mail', 'title' => "Support"],
+                ],
+            ],
+            'start' => [
+                'label' => "Begin hier",
+                'title' => "Installeer Monica op je eigen server",
+                'body' => "Je gegevens blijven op een machine die jij beheert. Eén Docker-opdracht, ongeveer tien minuten.",
+                'command' => "docker run monica",
+                'cta' => "Lees de installatiehandleiding",
             ],
         ],
     ],
@@ -5962,6 +6034,147 @@ return [
             ['kind' => "Naslag", 'title' => "API", 'description' => "Lees en schrijf je contacten vanuit je eigen scripts. Elk endpoint, met voorbeelden in cURL, JavaScript en PHP."],
             ['kind' => "Naslag", 'title' => "MCP", 'description' => "Koppel een assistent aan je instantie zodat die je adresboek kan lezen en er mensen in kan vastleggen, met de toegang die jij hebt."],
             ['kind' => "Handleiding", 'title' => "CardDAV en CalDAV", 'description' => "Houd de contacten- en agenda-apps op je telefoon en computer gelijk met Monica."],
+        ],
+    ],
+
+    /**
+     * The sales page (route key `sales`), about the sales team Monica does
+     * not have. The homepage's "Contact sales" button lands here.
+     *
+     * Every `art` is the alt text of one of the page's illustrations: the
+     * three members of the team, and the panda building software in `why`.
+     *
+     * A link in the copy is a `:placeholder` plus a label and a destination:
+     * `page` is a route key, `external` a key of `links` in config.php.
+     */
+    'sales' => [
+        'hero' => [
+            'eyebrow' => "Verkoop",
+            'title' => "Ons verkoopteam kijkt ernaar uit om nooit contact met je op te nemen.",
+            'lede' => "Geen verkopers. Geen kennismakingsgesprekken. Geen kwartaaldoelen. Niemand genaamd Brad die vraagt of je volgende week dinsdag een kwartiertje hebt.",
+            'aside' => "Wij zijn hier alleen om software te bouwen.",
+            'cta' => "Neem geen contact op met verkoop",
+        ],
+
+        'team' => [
+            'title' => "Ons wereldklasse verkoopteam",
+            'lede' => "Maak kennis met de mensen die verantwoordelijk zijn voor ons commerciële succes.",
+            'members' => [
+                ['role' => "Hoofd verkoop", 'description' => "Momenteel niet beschikbaar. Blijvend.", 'art' => "A panda asleep in an office chair"],
+                ['role' => "Accountmanager", 'description' => "Gericht op de acquisitie van bamboe.", 'art' => "A panda peacefully eating bamboo"],
+                ['role' => "Business development", 'description' => "Ontwikkelt absoluut niets.", 'art' => "A young panda lying in the grass"],
+            ],
+            'note' => "Geen van hen staat op LinkedIn.",
+        ],
+
+        'process' => [
+            'title' => "Ons zorgvuldig ontworpen verkoopproces",
+            'lede' => "We hebben jarenlang gewerkt aan onze wrijvingsloze, mensgerichte verkoopmethode zonder enige tussenkomst.",
+            'steps' => [
+                ['stage' => "Ontdekking", 'description' => "Jij ontdekt Monica. Wij ontdekken jou niet."],
+                ['stage' => "Kwalificatie", 'description' => "Jij beslist of Monica nuttig voor je is. Over je budget hebben wij geen mening."],
+                ['stage' => "Productdemonstratie", 'description' => "Je kunt :link, helemaal zelf. Revolutionair, we weten het.", 'link' => ['label' => "het product uitproberen", 'external' => "getStarted"]],
+                ['stage' => "Onderhandeling", 'description' => "Er valt niets te onderhandelen. Onze :link staan op de website.", 'link' => ['label' => "prijzen", 'page' => "pricing"]],
+                ['stage' => "Afsluiting", 'description' => "Jij sluit je browsertabblad. Of niet."],
+                ['stage' => "Opvolging", 'description' => "Die is er niet."],
+            ],
+            'note' => "Ons hele verkoopproces is ontworpen om zonder onze inbreng te verlopen.",
+        ],
+
+        'numbers' => [
+            'title' => "Onze prestaties in cijfers",
+            'lede' => "We zijn ontzettend trots op wat onze verkoopafdeling heeft bereikt.",
+            'kpis' => [
+                "Koude telefoontjes",
+                "Ingeplande verkoopgesprekken",
+                "Verkopers",
+                "Ongevraagde LinkedIn-berichten",
+                "Uitgekeerde verkoopcommissies",
+                "Verkooppresentaties",
+            ],
+            'chartTitle' => "Jaarlijkse verkoopactiviteit",
+            'chartRange' => "K1 tot K4",
+            'quarters' => ["K1", "K2", "K3", "K4"],
+            'chartDescription' => "Lijngrafiek van de verkoopactiviteit per kwartaal van het jaar. Alle vier de waarden zijn nul, dus de lijn blijft vlak onderaan de grafiek lopen.",
+            'chartCaption' => "We halen onze doelen consistent, kwartaal na kwartaal.",
+            'note' => "Volgend jaar verwachten we vergelijkbare resultaten.",
+        ],
+
+        'why' => [
+            'title' => "Goede software heeft geen verkoper nodig.",
+            'paragraphs' => [
+                "Monica is een onafhankelijk open-sourceproject. We bouwen software omdat we het leuk vinden om te bouwen, en omdat we vinden dat mensen betere hulpmiddelen verdienen om hun leven vast te leggen.",
+                "We willen je niet overtuigen om Monica te gebruiken. We willen Monica goed genoeg maken zodat jij er zelf voor kiest.",
+                "Je kunt :explore, onze :docs lezen, onze :source inspecteren, :selfHost of onze :hosted gebruiken.",
+                "De keuze is aan jou. Dat blijft zo.",
+            ],
+            'explore' => "het product verkennen",
+            'docs' => "documentatie",
+            'source' => "broncode",
+            'selfHost' => "het zelf hosten",
+            'hosted' => "gehoste versie",
+            'art' => "A panda quietly building software, with a laptop, books and a cup of tea",
+            'closing' => "We besteden onze tijd liever aan het verbeteren van Monica dan aan je overtuigen om het te kopen.",
+        ],
+
+        'faq' => [
+            'title' => "Veelgestelde verkoopvragen",
+            'items' => [
+                [
+                    'q' => "Kan ik een demo boeken?",
+                    'a' => "Nee, maar je kunt :link in je eigen tempo. Niemand kijkt mee.",
+                    'link' => ['label' => "Monica verkennen", 'page' => "home"],
+                ],
+                ['q' => "Kan ik een accountmanager spreken?", 'a' => "Dan moeten we er eerst een aannemen. Dat staat momenteel niet op onze roadmap."],
+                [
+                    'q' => "Bieden jullie enterprise-prijzen op maat?",
+                    'a' => "Onze :link staan al openbaar. We dachten dat dat makkelijker was.",
+                    'link' => ['label' => "prijzen", 'page' => "pricing"],
+                ],
+                ['q' => "Neemt er iemand contact met me op?", 'a' => "Geen schijn van kans."],
+                [
+                    'q' => "Kan ik Monica zelf hosten zonder jullie te betalen?",
+                    'a' => "Absoluut. We moedigen het actief aan. Onze verkoopafdeling is begrijpelijkerwijs ontroostbaar.",
+                    'link' => ['label' => "Instructies voor zelf hosten", 'external' => "selfHostingGuide"],
+                ],
+                [
+                    'q' => "Hoe kan ik Monica financieel steunen?",
+                    'a' => "Gebruik onze :hosted, :sponsor of :contribute. We waarderen het, maar het is volledig vrijblijvend.",
+                    'links' => [
+                        'hosted' => ['label' => "gehoste versie", 'page' => "pricing"],
+                        'sponsor' => ['label' => "sponsor het project", 'external' => "sponsor"],
+                        'contribute' => ['label' => "draag eraan bij", 'page' => "contribute"],
+                    ],
+                ],
+                ['q' => "Zoeken jullie verkopers?", 'a' => "Stuur ons alsjeblieft geen cv."],
+            ],
+        ],
+
+        'meeting' => [
+            'title' => "Laten we niet praten.",
+            'lede' => "Ons verkoopteam heeft zijn hele agenda vrijgemaakt voor absoluut niemand.",
+            'fields' => [
+                ['label' => "Volledige naam", 'placeholder' => "Gaat jullie niets aan"],
+                ['label' => "Zakelijk e-mailadres", 'placeholder' => "Hebben we niet nodig"],
+                ['label' => "Bedrijfsgrootte", 'placeholder' => "Niet relevant"],
+                ['label' => "Jaarlijks budget", 'placeholder' => "Hou het maar voor jezelf"],
+            ],
+            'privacy' => "Je gegevens zijn veilig bij ons, want we hebben ze nooit verzameld.",
+            'button' => "Boek geen afspraak",
+            'doneTitle' => "Gefeliciteerd.",
+            'done' => [
+                "Je afspraak is met succes niet ingepland.",
+                "Je ontvangt geen bevestigingsmail.",
+            ],
+        ],
+
+        'closing' => [
+            'title' => "Nog steeds geïnteresseerd in Monica?",
+            'lede' => "Fijn. Daar heb je onze toestemming niet voor nodig.",
+            'explore' => "Ontdek Monica",
+            'source' => "Bekijk de broncode",
+            'selfHost' => "Host Monica zelf",
+            'credit' => "Bij het maken van deze pagina zijn geen verkopers in dienst genomen.",
         ],
     ],
 

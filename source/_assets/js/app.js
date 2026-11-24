@@ -180,7 +180,7 @@ Alpine.data('pricingFaq', (state) => ({
  * refreshes does need the hook, because morph patches nodes in place.) */
 Alpine.start();
 
-/* The features menu in the header and the language menu in the footer are
+/* The features and docs menus in the header and the language menu in the footer are
  * native <details>, so they open, close and take focus with no script at all.
  * What <details> does not do on its own is close when the reader presses
  * Escape or clicks somewhere else, which is what a menu is expected to do.
@@ -199,7 +199,7 @@ document.addEventListener('click', (event) => {
     });
 });
 
-/* A <details data-menu data-menu-hover> (the features menu, by the owner's
+/* A <details data-menu data-menu-hover> (the features and docs menus, by the owner's
  * decision) also opens when a mouse rests on it, and closes a moment after the
  * mouse leaves it, so the pointer can cross the gap between the button and the
  * panel. Only a mouse: a touch screen has no hover, and taps keep toggling it
@@ -226,6 +226,12 @@ document.addEventListener('pointerover', (event) => {
     // Only on the way in. Moving between the menu's own children fires this
     // too, and a menu just closed with Escape must not reopen under the mouse.
     if (!menu.open && !menu.contains(event.relatedTarget)) {
+        // The header has two such menus side by side (features and docs).
+        // Moving from one to the other closes the first at once, rather than
+        // after its delay, so the two panels never sit on top of each other.
+        openMenus().forEach((other) => {
+            if (other !== menu) other.open = false;
+        });
         menu.open = true;
         state.hovered = true;
     }

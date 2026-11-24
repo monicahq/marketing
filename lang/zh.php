@@ -35,6 +35,7 @@ return [
             'terms' => "使用条款",
             'team' => "团队",
             'support' => "支持",
+            'sales' => "销售",
             'signIn' => "登录",
             'about' => "关于 Monica",
             'privacy' => "隐私政策",
@@ -189,6 +190,20 @@ return [
                 'title' => "Monica 的帮助，",
                 'accent' => "来自打造它的人。",
                 'description' => "任何不符合你预期的地方，都可以写信告诉我们。",
+            ],
+        ],
+
+        'sales' => [
+            'title' => "销售 — Monica",
+            'description' => "Monica 没有销售团队，没有演示，也没有跟进。你可以自己体验产品，查看公开的价格，或者部署在自己的服务器上。",
+            'ogTitle' => "认识 Monica 并不存在的销售团队",
+            'ogDescription' => "没有电话。没有会议。没有跟进。只有软件。",
+
+            'ogImage' => [
+                'eyebrow' => "销售",
+                'title' => "我们的销售团队",
+                'accent' => "绝不会联系你。",
+                'description' => "没有电话。没有会议。只有软件。",
             ],
         ],
 
@@ -610,6 +625,7 @@ return [
         'handbook' => "手册",
         'docs' => "文档",
         'contribute' => "参与贡献",
+        'sales' => "联系销售",
         'signIn' => "登录",
         'toDark' => "切换到深色模式",
         'toLight' => "切换到浅色模式",
@@ -668,6 +684,62 @@ return [
                 'question' => "Lucie 的生日是哪天？",
                 'answer' => "3 月 14 日，还有三周。她一月份提到想要一件新雨衣。",
                 'cta' => "连接你的助手",
+            ],
+        ],
+
+        // The Docs menu in the header: the handbook, the documentation and how to contribute,
+        // each with three pages inside, a strip of quick links, and a card
+        // for installing Monica on your own server. The destinations are in
+        // _partials/docs-menu.blade.php, in the same order.
+        'docsMenu' => [
+            'label' => "文档",
+            'inside' => "内容",
+            'groups' => [
+                [
+                    'icon' => 'journal',
+                    'title' => "手册",
+                    'body' => "这个项目如何运作，以及为什么要这样构建。",
+                    'items' => [
+                        ['icon' => 'heart', 'title' => "原则"],
+                        ['icon' => 'coin', 'title' => "Monica 如何盈利"],
+                        ['icon' => 'lock', 'title' => "隐私与数据"],
+                    ],
+                ],
+                [
+                    'icon' => 'note',
+                    'title' => "文档",
+                    'body' => "设置 Monica 并充分使用它所需的一切。",
+                    'items' => [
+                        ['icon' => 'check-circle', 'title' => "快速入门"],
+                        ['icon' => 'settings', 'title' => "自托管"],
+                        ['icon' => 'key', 'title' => "API 参考"],
+                    ],
+                ],
+                [
+                    'icon' => 'people',
+                    'title' => "参与贡献",
+                    'body' => "Monica 是开源的。你可以用代码、文字或一份 bug 报告来帮忙。",
+                    'items' => [
+                        ['icon' => 'code', 'title' => "源代码"],
+                        ['icon' => 'globe', 'title' => "翻译"],
+                        ['icon' => 'info', 'title' => "报告 bug"],
+                    ],
+                ],
+            ],
+            'quick' => [
+                'label' => "快速链接",
+                'items' => [
+                    ['icon' => 'layers', 'title' => "更新日志"],
+                    ['icon' => 'tasks', 'title' => "路线图"],
+                    ['icon' => 'mail', 'title' => "支持"],
+                ],
+            ],
+            'start' => [
+                'label' => "从这里开始",
+                'title' => "在你自己的服务器上安装 Monica",
+                'body' => "你的数据留在你掌控的机器上。一条 Docker 命令，大约十分钟。",
+                'command' => "docker run monica",
+                'cta' => "阅读安装指南",
             ],
         ],
     ],
@@ -5987,6 +6059,147 @@ return [
             ['kind' => "参考", 'title' => "API", 'description' => "用你自己的脚本读取和写入联系人。涵盖每个端点，并附有 cURL、JavaScript 和 PHP 示例。"],
             ['kind' => "参考", 'title' => "MCP", 'description' => "让助手连接到你的实例，它就能读取你的通讯录并在其中记录人物，权限与你相同。"],
             ['kind' => "指南", 'title' => "CardDAV 和 CalDAV", 'description' => "让手机和电脑上的通讯录与日历应用与 Monica 保持同步。"],
+        ],
+    ],
+
+    /**
+     * The sales page (route key `sales`), about the sales team Monica does
+     * not have. The homepage's "Contact sales" button lands here.
+     *
+     * Every `art` is the alt text of one of the page's illustrations: the
+     * three members of the team, and the panda building software in `why`.
+     *
+     * A link in the copy is a `:placeholder` plus a label and a destination:
+     * `page` is a route key, `external` a key of `links` in config.php.
+     */
+    'sales' => [
+        'hero' => [
+            'eyebrow' => "销售",
+            'title' => "我们的销售团队，正期待着永远不联系你。",
+            'lede' => "没有销售代表。没有需求沟通电话。没有季度业绩指标。也没有一个叫 Brad 的人问你下周二有没有 15 分钟。",
+            'aside' => "我们只想安心做软件。",
+            'cta' => "不要联系销售",
+        ],
+
+        'team' => [
+            'title' => "我们的世界级销售团队",
+            'lede' => "认识一下为我们的商业成功负责的人。",
+            'members' => [
+                ['role' => "销售负责人", 'description' => "目前无法联系。而且是永久的。", 'art' => "A panda asleep in an office chair"],
+                ['role' => "客户经理", 'description' => "专注于竹子的采购。", 'art' => "A panda peacefully eating bamboo"],
+                ['role' => "业务拓展", 'description' => "什么也没拓展。", 'art' => "A young panda lying in the grass"],
+            ],
+            'note' => "他们都不在 LinkedIn 上。",
+        ],
+
+        'process' => [
+            'title' => "我们精心设计的销售流程",
+            'lede' => "多年来，我们一直在打磨这套无摩擦、以人为本、零接触的销售方法论。",
+            'steps' => [
+                ['stage' => "发现", 'description' => "你发现 Monica。我们不会去发现你。"],
+                ['stage' => "资格审查", 'description' => "你自己判断 Monica 对你有没有用。至于你的预算，我们没有意见。"],
+                ['stage' => "产品演示", 'description' => "你自己:link。很颠覆，我们知道。", 'link' => ['label' => "试用产品", 'external' => "getStarted"]],
+                ['stage' => "谈判", 'description' => "没什么可谈的。我们的:link就写在网站上。", 'link' => ['label' => "价格", 'page' => "pricing"]],
+                ['stage' => "成交", 'description' => "你关掉浏览器标签页。或者不关。"],
+                ['stage' => "跟进", 'description' => "没有这一步。"],
+            ],
+            'note' => "我们整个销售流程的设计目标，就是不需要我们参与。",
+        ],
+
+        'numbers' => [
+            'title' => "用数字看我们的业绩",
+            'lede' => "我们为销售部门取得的成绩感到无比自豪。",
+            'kpis' => [
+                "拨打的陌生电话",
+                "预约的销售会议",
+                "销售代表",
+                "未经请求的 LinkedIn 消息",
+                "发放的销售提成",
+                "销售演示",
+            ],
+            'chartTitle' => "年度销售活动",
+            'chartRange' => "Q1 到 Q4",
+            'quarters' => ["Q1", "Q2", "Q3", "Q4"],
+            'chartDescription' => "全年每个季度销售活动的折线图。四个数值都是零，所以折线一直平贴在图表底部。",
+            'chartCaption' => "一个季度接一个季度，稳定达成目标。",
+            'note' => "我们预计明年也会有类似的成绩。",
+        ],
+
+        'why' => [
+            'title' => "好软件不需要销售。",
+            'paragraphs' => [
+                "Monica 是一个独立的开源项目。我们做软件，是因为我们喜欢做，也因为我们相信人们值得拥有更好的工具来记录自己的生活。",
+                "我们不想说服你使用 Monica。我们想把 Monica 做到足够好，好到你自己选择它。",
+                "你可以:explore、阅读我们的:docs、查看我们的:source、:selfHost，或者使用我们的:hosted。",
+                "决定权在你手里。永远都是。",
+            ],
+            'explore' => "体验产品",
+            'docs' => "文档",
+            'source' => "源代码",
+            'selfHost' => "自己部署",
+            'hosted' => "托管版本",
+            'art' => "A panda quietly building software, with a laptop, books and a cup of tea",
+            'closing' => "比起说服你购买，我们更愿意把时间花在改进 Monica 上。",
+        ],
+
+        'faq' => [
+            'title' => "销售常见问题",
+            'items' => [
+                [
+                    'q' => "我可以预约演示吗？",
+                    'a' => "不可以，但你可以按自己的节奏:link。没有人会盯着你看。",
+                    'link' => ['label' => "体验 Monica", 'page' => "home"],
+                ],
+                ['q' => "我可以和客户经理聊聊吗？", 'a' => "我们得先招一个。这目前不在我们的计划里。"],
+                [
+                    'q' => "你们提供定制的企业价格吗？",
+                    'a' => "我们的:link已经公开了。我们觉得这样更省事。",
+                    'link' => ['label' => "价格", 'page' => "pricing"],
+                ],
+                ['q' => "会有人来跟进我吗？", 'a' => "绝对不会。"],
+                [
+                    'q' => "我可以不付钱给你们，自己部署 Monica 吗？",
+                    'a' => "当然可以。我们积极鼓励这么做。我们的销售部门对此深感痛心，这也可以理解。",
+                    'link' => ['label' => "自托管说明", 'external' => "selfHostingGuide"],
+                ],
+                [
+                    'q' => "我怎样才能在经济上支持 Monica？",
+                    'a' => "使用我们的:hosted、:sponsor，或者:contribute。我们很感激，但这完全是自愿的。",
+                    'links' => [
+                        'hosted' => ['label' => "托管版本", 'page' => "pricing"],
+                        'sponsor' => ['label' => "赞助这个项目", 'external' => "sponsor"],
+                        'contribute' => ['label' => "参与贡献", 'page' => "contribute"],
+                    ],
+                ],
+                ['q' => "你们在招聘销售人员吗？", 'a' => "请不要给我们寄简历。"],
+            ],
+        ],
+
+        'meeting' => [
+            'title' => "我们还是别聊了。",
+            'lede' => "我们的销售团队已经清空了全部日程，不为任何人。",
+            'fields' => [
+                ['label' => "姓名", 'placeholder' => "与我们无关"],
+                ['label' => "工作邮箱", 'placeholder' => "我们用不着"],
+                ['label' => "公司规模", 'placeholder' => "无关紧要"],
+                ['label' => "年度预算", 'placeholder' => "留给你自己吧"],
+            ],
+            'privacy' => "你的信息在我们这里很安全，因为我们从未收集过。",
+            'button' => "不要预约会议",
+            'doneTitle' => "恭喜。",
+            'done' => [
+                "你的会议已成功地没有被安排。",
+                "你不会收到确认邮件。",
+            ],
+        ],
+
+        'closing' => [
+            'title' => "还是对 Monica 感兴趣？",
+            'lede' => "太好了。你不需要我们的许可。",
+            'explore' => "体验 Monica",
+            'source' => "查看源代码",
+            'selfHost' => "自己部署 Monica",
+            'credit' => "制作这个页面的过程中，没有雇用任何销售人员。",
         ],
     ],
 

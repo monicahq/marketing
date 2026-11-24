@@ -32,7 +32,7 @@
                  nothing the button needs to work: the button is still a link. --}}
             <div class="group relative">
                 <a
-                    href="{{ $page->links['contactSales'] }}"
+                    href="{{ $page->route('sales') }}"
                     aria-describedby="sales-joke"
                     class="mn-btn mn-btn-ghost no-underline hover:no-underline"
                 >{{ $copy['sales'] }}</a>

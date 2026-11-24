@@ -11,7 +11,8 @@
     a page not written yet), for answers that
     are better finished by the page that covers them in full. When the answer
     holds `:link`, the link is set there, inside the sentence, instead of
-    after it.
+    after it. An answer that needs several links carries `links`, a map of
+    name => link, and each `:name` in the answer becomes that link.
 
     `openFirst` opens the first question, so the list shows what an answer
     looks like before anyone clicks. `container` is the width and gutter, for
@@ -37,13 +38,20 @@
                     </summary>
                     <div class="pb-5">
                         @php
+                            $anchor = fn (array $link) => '<a href="' . e($link['href'] ?? $page->route($link['page'])) . '" class="text-text underline decoration-border-strong underline-offset-[3px] hover:text-text hover:decoration-text">' . e($link['label']) . '</a>';
                             $inline = isset($item['link']) && str_contains(implode(' ', (array) $item['a']), ':link');
-                            $inlineLink = $inline
-                                ? '<a href="' . e($item['link']['href'] ?? $page->route($item['link']['page'])) . '" class="text-text underline decoration-border-strong underline-offset-[3px] hover:text-text hover:decoration-text">' . e($item['link']['label']) . '</a>'
-                                : null;
+
+                            // Every link set inside the answer: `:link`, and
+                            // one `:name` per entry of `links`.
+                            $inlineLinks = collect($item['links'] ?? [])
+                                ->mapWithKeys(fn ($link, $name) => [':' . $name => $anchor($link)])
+                                ->all();
+                            if ($inline) {
+                                $inlineLinks[':link'] = $anchor($item['link']);
+                            }
                         @endphp
                         @foreach ((array) $item['a'] as $paragraph)
-                            <p class="mt-3 max-w-[600px] text-body leading-relaxed text-text-secondary text-pretty first:mt-0">{!! $inline ? str_replace(':link', $inlineLink, e($paragraph)) : e($paragraph) !!}</p>
+                            <p class="mt-3 max-w-[600px] text-body leading-relaxed text-text-secondary text-pretty first:mt-0">{!! strtr(e($paragraph), $inlineLinks) !!}</p>
                         @endforeach
 
                         @if (isset($item['link']) && ! $inline)
