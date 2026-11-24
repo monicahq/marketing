@@ -51,7 +51,7 @@
         <div class="flex flex-col gap-4.5">
             <h2 class="{{ $title }}">{{ $history['title'] }}</h2>
             <p class="{{ $paragraph }}">{{ $history['body'] }}</p>
-            <a href="#" class="{{ $more }}">
+            <a href="{{ $page->route('maintenanceLoans') }}" class="{{ $more }}">
                 {{ $history['link'] }}
                 @include('_partials.icon', ['name' => 'arrow-right', 'size' => 15])
             </a>

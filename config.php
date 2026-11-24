@@ -710,6 +710,34 @@ return [
             'ru' => 'vozmozhnosti/inventar',
         ],
 
+        // "“Somewhere safe” could use an address.": the places belongings are
+        // kept in, nested, and the stays a possession has had in them. The
+        // header's "Locations" item leads here.
+        'locations' => [
+            'en' => 'features/locations',
+            'fr' => 'fonctionnalites/emplacements',
+            'de' => 'funktionen/standorte',
+            'es' => 'funcionalidades/ubicaciones',
+            'pt' => 'recursos/locais',
+            'nl' => 'functies/locaties',
+            'zh' => 'features/locations',
+            'ru' => 'vozmozhnosti/mesta',
+        ],
+
+        // "Keep the history with the thing.": the maintenance records and the
+        // loans of a possession. The header's "Maintenance & loans" item
+        // leads here.
+        'maintenanceLoans' => [
+            'en' => 'features/maintenance-and-loans',
+            'fr' => 'fonctionnalites/entretien-et-prets',
+            'de' => 'funktionen/wartung-und-verleih',
+            'es' => 'funcionalidades/mantenimiento-y-prestamos',
+            'pt' => 'recursos/manutencao-e-emprestimos',
+            'nl' => 'functies/onderhoud-en-uitlenen',
+            'zh' => 'features/maintenance-and-loans',
+            'ru' => 'vozmozhnosti/obsluzhivanie-i-zaymy',
+        ],
+
         // "Keep the moments. Remember the next one.": the short page that
         // sends a reader on to the timeline page or the reminders page, kept
         // apart because a moment and a reminder are separate records.
@@ -880,7 +908,7 @@ return [
      */
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
-        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
+        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
@@ -927,6 +955,8 @@ return [
         'timelineReminders' => '2026-11-23',
         'possessions' => '2026-11-23',
         'inventory' => '2026-11-23',
+        'locations' => '2026-11-23',
+        'maintenanceLoans' => '2026-11-23',
         'relationships' => '2026-10-13',
         'vaults' => '2026-10-13',
         'sharing' => '2026-10-13',
@@ -1259,6 +1289,8 @@ return [
         'timeline' => 'people',
         'reminders' => 'people',
         'inventory' => 'possessions',
+        'locations' => 'possessions',
+        'maintenanceLoans' => 'possessions',
     ],
 
     /**

@@ -81,6 +81,7 @@
         'ball' => '<circle cx="8" cy="8" r="5.6"></circle><path d="M4 4a7.6 7.6 0 0 1 0 8"></path><path d="M12 4a7.6 7.6 0 0 0 0 8"></path>',
         'plane' => '<path d="M13.6 2.6 2.4 7.1l4.3 1.6 1.5 4.4z"></path><path d="M6.7 8.7 13.6 2.6"></path>',
         'book' => '<path d="M3.4 2.6h7.2a2 2 0 0 1 2 2v8.8H5.4a2 2 0 0 1-2-2z"></path><line x1="5.4" y1="11.2" x2="12.6" y2="11.2"></line>',
+        'music' => '<circle cx="4.4" cy="11.4" r="1.9"></circle><circle cx="11.4" cy="10.2" r="1.9"></circle><line x1="6.3" y1="11.4" x2="6.3" y2="4.4"></line><line x1="13.3" y1="10.2" x2="13.3" y2="3.2"></line><path d="M6.3 4.4 13.3 3.2"></path>',
 
         // Drawn for this site, on the product's grid, because the product has
         // no glyph for them. First on the list to replace if it ever does.

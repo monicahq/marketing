@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 142 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1056,16 +1056,35 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Slug | /en/features/details/ |
 | Canonical | https://www.monicahq.com/en/features/details/ |
 | Search intent | Evaluate the product or a specific use case |
-| SEO title | Personal contact management software — Monica |
-| Meta description | Keep the details people share with you together: what they told you last time, the little things, the people around them, and the moments you shared. |
-| H1 | Remember the details that matter. |
-| OG title | Remember the details that matter — Monica |
-| OG description | Their number is in your phone. The name of their new partner, their favourite meal, and what they told you last time might be harder to find. |
-| OG image | https://www.monicahq.com/og/details-en.jpg?v=391d1773 (1200 × 630, card for this page) |
-| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| SEO title | Contact details and personal context in one place — Monica |
+| Meta description | Save names, contact information, preferences and personal notes in flexible contact pages. Choose the details you want to remember with Monica. |
+| H1 | The little things deserve a place. |
+| OG title | The little things deserve a place — Monica |
+| OG description | Keep the context around someone, from their name to the details that make the next conversation easier. |
+| OG image | https://www.monicahq.com/og/details-en.jpg?v=440ac81f (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | personal contact management software |
 | Secondary keywords | organize contact details, remember details about people |
 | Supporting keywords | contact notes, personal contact records |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/inventory/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/inventory/ |
+| Canonical | https://www.monicahq.com/en/features/inventory/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Personal inventory with custom fields and tags — Monica |
+| Meta description | Build a personal inventory for books, bikes, equipment and everyday belongings. Organise possessions with types, custom fields and tags in Monica. |
+| H1 | Keep an inventory that fits your things. |
+| OG title | A place for the things worth keeping track of — Monica |
+| OG description | An inventory that leaves room for different things, with the details and tags that make sense to you. |
+| OG image | https://www.monicahq.com/og/inventory-en.jpg?v=7026773e (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | personal inventory with tags |
+| Secondary keywords | possession types, custom inventory fields |
+| Supporting keywords | book collection inventory, organise belongings with tags |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/features/languages/
@@ -1085,6 +1104,82 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Primary keyword | multilingual personal CRM |
 | Secondary keywords | contact name formats, personal CRM languages |
 | Supporting keywords | date and time preferences, international contact names |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/locations/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/locations/ |
+| Canonical | https://www.monicahq.com/en/features/locations/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Possession locations and location history — Monica |
+| Meta description | Record where belongings are kept, from a home to a shelf or box. Keep current and past possession locations in Monica’s personal inventory. |
+| H1 | “Somewhere safe” could use an address. |
+| OG title | Where did you put it? Leave yourself a clue — Monica |
+| OG description | Give your belongings recorded locations, and keep the history when they move. |
+| OG image | https://www.monicahq.com/og/locations-en.jpg?v=53472db9 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | possession locations |
+| Secondary keywords | where belongings are kept, location history |
+| Supporting keywords | home inventory locations, track where items are stored |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/maintenance-and-loans/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/maintenance-and-loans/ |
+| Canonical | https://www.monicahq.com/en/features/maintenance-and-loans/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Possession maintenance records and loan tracking — Monica |
+| Meta description | Keep a history of maintenance work and possession loans. Record dates, costs, conditions, borrowers and returns alongside your belongings in Monica. |
+| H1 | Keep the history with the thing. |
+| OG title | Last serviced. Currently borrowed. Finally remembered — Monica |
+| OG description | Keep care records and loans with the things they belong to, from a bicycle repair to a borrowed book. |
+| OG image | https://www.monicahq.com/og/maintenanceLoans-en.jpg?v=ca99f343 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | possession maintenance records |
+| Secondary keywords | loan tracking, track items lent to friends |
+| Supporting keywords | maintenance history, who borrowed what |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/people/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/people/ |
+| Canonical | https://www.monicahq.com/en/features/people/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Personal contact management for everyday life — Monica |
+| Meta description | Keep contact details, relationships, shared moments and follow-ups together. A personal CRM you can use yourself or with compatible AI assistants. |
+| H1 | Remember the person, not just the phone number. |
+| OG title | The people in your life, with a little more context — Monica |
+| OG description | Names, connections and the moments you share. Give your relationships a place in your personal database. |
+| OG image | https://www.monicahq.com/og/people-en.jpg?v=00de78e3 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | personal contact management |
+| Secondary keywords | remember people, personal CRM for friends and family |
+| Supporting keywords | contact details and relationships, shared moments and follow-ups |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/possessions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/possessions/ |
+| Canonical | https://www.monicahq.com/en/features/possessions/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Personal inventory and possession management — Monica |
+| Meta description | Keep records of what you own, where it is, its maintenance and its loans. Organise everyday belongings in Monica, with or without an AI assistant. |
+| H1 | Know your things a little better. |
+| OG title | Your things have a story too — Monica |
+| OG description | What you own, where it lives and what happened to it. Keep the useful details together. |
+| OG image | https://www.monicahq.com/og/possessions-en.jpg?v=93b80b74 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | personal inventory app |
+| Secondary keywords | possession management, keep track of belongings |
+| Supporting keywords | home inventory, item locations and loans |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/features/privacy/
@@ -1180,6 +1275,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Primary keyword | contact templates |
 | Secondary keywords | custom contact fields, personal CRM templates |
 | Supporting keywords | contact sections, contact template versions |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/timeline-and-reminders/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/timeline-and-reminders/ |
+| Canonical | https://www.monicahq.com/en/features/timeline-and-reminders/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Personal timelines and follow-up reminders — Monica |
+| Meta description | Keep a record of shared moments and set reminders for what comes next. Explore Monica’s life events, contact timelines and follow-up reminders. |
+| H1 | Keep the moments. Remember the next one. |
+| OG title | What happened. What you meant to do next — Monica |
+| OG description | Keep shared moments in a timeline and give the next birthday or follow-up a date. |
+| OG image | https://www.monicahq.com/og/timelineReminders-en.jpg?v=a33bb60b (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | personal timeline and reminders |
+| Secondary keywords | follow-up reminders, shared life events |
+| Supporting keywords | contact timeline, remember to follow up |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/features/timeline/

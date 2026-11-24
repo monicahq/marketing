@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 142 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1030,6 +1030,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 
+## /nl/functies/bezittingen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/bezittingen/ |
+| Canonical | https://www.monicahq.com/nl/functies/bezittingen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persoonlijke inventaris en beheer van je spullen — Monica |
+| Meta description | Houd bij wat je hebt, waar het is, het onderhoud en aan wie je het uitleende. Orden je dagelijkse spullen in Monica, met of zonder AI-assistent. |
+| H1 | Ken je spullen net iets beter. |
+| OG title | Ook je spullen hebben een verhaal — Monica |
+| OG description | Wat je hebt, waar het staat en wat ermee gebeurde. Houd de handige details bij elkaar. |
+| OG image | https://www.monicahq.com/og/possessions-nl.jpg?v=0371a66d (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persoonlijke inventaris |
+| Secondary keywords | spullen beheren, plekken en uitlenen |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
 ## /nl/functies/delen/
 
 | Field | Content |
@@ -1056,13 +1075,13 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Slug | /nl/functies/details/ |
 | Canonical | https://www.monicahq.com/nl/functies/details/ |
 | Search intent | Evaluate the product or a specific use case |
-| SEO title | Persoonlijke contactbeheersoftware — Monica |
-| Meta description | Bewaar de details die mensen met je delen bij elkaar: wat ze je de vorige keer vertelden, de kleine dingen, de mensen om hen heen en de momenten die je deelde. |
-| H1 | Onthoud de details die ertoe doen. |
-| OG title | Onthoud de details die ertoe doen — Monica |
-| OG description | Hun nummer staat in je telefoon. De naam van hun nieuwe partner, hun lievelingsgerecht en wat ze je de vorige keer vertelden zijn lastiger te vinden. |
-| OG image | https://www.monicahq.com/og/details-nl.jpg?v=c33df7dd (1200 × 630, card for this page) |
-| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| SEO title | Contactgegevens en persoonlijke context op één plek — Monica |
+| Meta description | Bewaar namen, contactgegevens, voorkeuren en persoonlijke notities op flexibele contactpagina’s. Kies de details die je met Monica wilt onthouden. |
+| H1 | De kleine dingen verdienen een plek. |
+| OG title | De kleine dingen verdienen een plek — Monica |
+| OG description | Bewaar de context rond iemand, van de naam tot de details die het volgende gesprek makkelijker maken. |
+| OG image | https://www.monicahq.com/og/details-nl.jpg?v=2f640043 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | persoonlijk contactbeheer |
 | Secondary keywords | contactgegevens organiseren, contactnotities |
 | Supporting keywords | No additional target |
@@ -1087,6 +1106,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 
+## /nl/functies/inventaris/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/inventaris/ |
+| Canonical | https://www.monicahq.com/nl/functies/inventaris/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persoonlijke inventaris met eigen velden en labels — Monica |
+| Meta description | Maak een persoonlijke inventaris van boeken, fietsen, uitrusting en alledaagse spullen. Orden je bezittingen in Monica met soorten, eigen velden en labels. |
+| H1 | Houd een inventaris bij die bij je spullen past. |
+| OG title | Een plek voor de dingen die het bijhouden waard zijn — Monica |
+| OG description | Een inventaris die ruimte laat voor verschillende dingen, met de details en labels die voor jou logisch zijn. |
+| OG image | https://www.monicahq.com/og/inventory-nl.jpg?v=b39048cf (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | inventaris met labels |
+| Secondary keywords | soorten bezittingen, eigen velden |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
 ## /nl/functies/kluizen/
 
 | Field | Content |
@@ -1103,6 +1141,63 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica kluizen |
 | Secondary keywords | privécontacten en werkcontacten scheiden, contacten organiseren |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/functies/locaties/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/locaties/ |
+| Canonical | https://www.monicahq.com/nl/functies/locaties/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Locaties van bezittingen en locatiegeschiedenis — Monica |
+| Meta description | Leg vast waar spullen worden bewaard, van een huis tot een plank of doos. Houd huidige en eerdere locaties van bezittingen bij in de persoonlijke inventaris van Monica. |
+| H1 | “Ergens veilig” mag best een adres hebben. |
+| OG title | Waar heb je het neergelegd? Laat jezelf een aanwijzing achter — Monica |
+| OG description | Geef je spullen een vastgelegde locatie en bewaar de geschiedenis als ze verhuizen. |
+| OG image | https://www.monicahq.com/og/locations-nl.jpg?v=6198b524 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | locaties van bezittingen |
+| Secondary keywords | waar je spullen liggen, locatiegeschiedenis |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/functies/mensen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/mensen/ |
+| Canonical | https://www.monicahq.com/nl/functies/mensen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persoonlijk contactbeheer voor elke dag — Monica |
+| Meta description | Houd contactgegevens, relaties, gedeelde momenten en opvolging bij elkaar. Een persoonlijke CRM voor jezelf of met compatibele AI-assistenten. |
+| H1 | Onthoud de persoon, niet alleen het telefoonnummer. |
+| OG title | De mensen in je leven, met wat meer context — Monica |
+| OG description | Namen, verbindingen en de momenten die je deelt. Geef je relaties een plek in je persoonlijke database. |
+| OG image | https://www.monicahq.com/og/people-nl.jpg?v=aa22c4e6 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persoonlijk contactbeheer |
+| Secondary keywords | mensen onthouden, vrienden en familie bijhouden |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/functies/onderhoud-en-uitlenen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/onderhoud-en-uitlenen/ |
+| Canonical | https://www.monicahq.com/nl/functies/onderhoud-en-uitlenen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Onderhoudsgeschiedenis en uitleningen van bezittingen — Monica |
+| Meta description | Houd de geschiedenis van onderhoud en uitleningen van bezittingen bij. Leg data, kosten, staat, lener en teruggave vast bij je spullen in Monica. |
+| H1 | Bewaar de geschiedenis bij het ding zelf. |
+| OG title | Laatste beurt. Nu uitgeleend. Eindelijk onthouden — Monica |
+| OG description | Bewaar onderhoud en uitleningen bij de spullen waar ze bij horen, van een fietsreparatie tot een geleend boek. |
+| OG image | https://www.monicahq.com/og/maintenanceLoans-nl.jpg?v=406b9a24 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | onderhoudsgeschiedenis van spullen |
+| Secondary keywords | uitleningen bijhouden, spullen uitgeleend aan vrienden |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 
@@ -1179,6 +1274,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | meertalig persoonlijk CRM |
 | Secondary keywords | naamformaten, Monica talen |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/functies/tijdlijn-en-herinneringen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/tijdlijn-en-herinneringen/ |
+| Canonical | https://www.monicahq.com/nl/functies/tijdlijn-en-herinneringen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persoonlijke tijdlijnen en herinneringen om op te volgen — Monica |
+| Meta description | Bewaar gedeelde momenten en zet herinneringen voor wat er komt. Ontdek de levensgebeurtenissen, contacttijdlijnen en herinneringen van Monica. |
+| H1 | Bewaar de momenten. Denk aan het volgende. |
+| OG title | Wat er gebeurde. Wat je daarna van plan was — Monica |
+| OG description | Bewaar gedeelde momenten in een tijdlijn en geef de volgende verjaardag of opvolging een datum. |
+| OG image | https://www.monicahq.com/og/timelineReminders-nl.jpg?v=57b2fc03 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | tijdlijn en herinneringen |
+| Secondary keywords | herinneringen om op te volgen, gedeelde levensgebeurtenissen |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 

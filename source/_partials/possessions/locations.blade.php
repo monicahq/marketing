@@ -23,21 +23,7 @@
                     </span>
                 </div>
 
-                <div class="{{ $panel }}">
-                    <div class="flex flex-wrap items-start gap-x-4 gap-y-3 p-4">
-                        <span class="{{ $placeMark }}">@include('_partials.icon', ['name' => 'place', 'size' => 16])</span>
-                        <div class="flex min-w-40 flex-1 flex-col gap-1">
-                            <span class="{{ $term }}">{{ $ui['keptNowIn'] }}</span>
-                            <p class="flex flex-wrap items-baseline gap-1.5"><span class="{{ $muted }}">{{ $stays[0]['head'] }}</span><span class="font-semibold text-text">{{ $stays[0]['leaf'] }}</span></p>
-                        </div>
-                        <span class="{{ $secondary }}">{{ $ui['correct'] }}</span>
-                    </div>
-                    <dl class="grid grid-cols-[repeat(auto-fit,minmax(9rem,1fr))] border-t border-border">
-                        <div class="flex flex-col gap-0.75 border-e border-border px-4 py-3.5"><dt class="{{ $term }}">{{ $ui['since'] }}</dt><dd class="text-small font-semibold text-text">{{ $bike['since'] }}</dd></div>
-                        <div class="flex flex-col gap-0.75 border-e border-border px-4 py-3.5"><dt class="{{ $term }}">{{ $ui['timeThere'] }}</dt><dd class="text-small font-semibold text-text">{{ $stays[0]['length'] }}</dd></div>
-                        <div class="flex flex-col gap-0.75 px-4 py-3.5"><dt class="{{ $term }}">{{ $ui['why'] }}</dt><dd class="text-small text-text-muted">{{ $ui['noReason'] }}</dd></div>
-                    </dl>
-                </div>
+                @include('_partials.possessions.kept-now', ['head' => $stays[0]['head'], 'leaf' => $stays[0]['leaf'], 'since' => $bike['since'], 'length' => $stays[0]['length'], 'reason' => null])
 
                 <div class="flex flex-col gap-3">
                     <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -46,25 +32,13 @@
                         <span class="ms-auto text-xs text-text-muted">{{ $ui['newestFirst'] }}</span>
                     </div>
                     @foreach ($stays as $s => $stay)
-                        <div class="{{ $panel }} flex flex-wrap items-start gap-x-4 gap-y-3 p-4">
-                            <span class="{{ $placeMark }}">@include('_partials.icon', ['name' => 'place', 'size' => 15])</span>
-                            <div class="flex min-w-40 flex-1 flex-col gap-1">
-                                <div class="flex flex-wrap items-baseline gap-1.5">
-                                    <span class="{{ $muted }}">{{ $stay['head'] }}</span>
-                                    <span class="font-semibold text-text">{{ $stay['leaf'] }}</span>
-                                    @if ($s === 0)<span class="{{ $badge }} bg-success-subtle text-success">{{ $ui['hereNow'] }}</span>@endif
-                                </div>
-                                <span class="text-small text-text-secondary">{{ $stay['period'] }} <span class="text-text-muted">· {{ $stay['length'] }}</span></span>
-                                <span class="{{ $muted }}">{{ $ui['noReason'] }}</span>
-                            </div>
-                            <span class="flex gap-1.5 max-sm:hidden"><span class="{{ $secondary }}">{{ $ui['correct'] }}</span><span class="{{ $ghost }}">{{ $ui['delete'] }}</span></span>
-                        </div>
+                        @include('_partials.possessions.stay', ['stay' => $stay, 'current' => $s === 0])
                     @endforeach
                 </div>
             </div>
         </div>
 
-        <a href="#" class="{{ $more }} mt-3">
+        <a href="{{ $page->route('locations') }}" class="{{ $more }} mt-3">
             {{ $locations['link'] }}
             @include('_partials.icon', ['name' => 'arrow-right', 'size' => 15])
         </a>

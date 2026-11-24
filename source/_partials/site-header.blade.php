@@ -10,7 +10,7 @@
     $menu = $page->t('nav.menu');
     $menuLinks = [
         ['href' => $page->route('people'), 'items' => [$page->route('details'), $page->route('relationships'), $page->route('timelineReminders')]],
-        ['href' => $page->route('possessions'), 'items' => [$page->route('inventory'), '#', '#']],
+        ['href' => $page->route('possessions'), 'items' => [$page->route('inventory'), $page->route('locations'), $page->route('maintenanceLoans')]],
         ['href' => '#', 'items' => ['#', '#', '#']],
     ];
     $spaceLinks = [

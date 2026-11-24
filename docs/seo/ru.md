@@ -1,6 +1,6 @@
 # Monica SEO sheets for ru
 
-These 142 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2538,13 +2538,13 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Slug | /ru/vozmozhnosti/detali/ |
 | Canonical | https://www.monicahq.com/ru/vozmozhnosti/detali/ |
 | Search intent | Evaluate the product or a specific use case |
-| SEO title | Программа для личного учёта контактов — Monica |
-| Meta description | Храните вместе то, что люди рассказывают вам: что сказали в прошлый раз, мелочи, людей рядом с ними и моменты, которые вы пережили вместе. |
-| H1 | Помните детали, которые важны. |
-| OG title | Помните важные детали — Monica |
-| OG description | Номер есть в телефоне. А имя нового партнёра, любимое блюдо и то, что человек рассказал в прошлый раз, найти сложнее. |
-| OG image | https://www.monicahq.com/og/details-ru.jpg?v=d0103f50 (1200 × 630, card for this page) |
-| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| SEO title | Контактные данные и личный контекст в одном месте — Monica |
+| Meta description | Храните имена, контакты, предпочтения и личные заметки на гибких страницах контактов. Выбирайте детали, которые хотите помнить, вместе с Monica. |
+| H1 | Мелочам тоже нужно место. |
+| OG title | Мелочам тоже нужно место — Monica |
+| OG description | Храните контекст о человеке, от имени до деталей, которые облегчат следующий разговор. |
+| OG image | https://www.monicahq.com/og/details-ru.jpg?v=319741f1 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | управление личными контактами |
 | Secondary keywords | организация контактов, заметки о контактах |
 | Supporting keywords | No additional target |
@@ -2569,6 +2569,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 
+## /ru/vozmozhnosti/inventar/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/inventar/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/inventar/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Личный инвентарь со своими полями и метками — Monica |
+| Meta description | Ведите личный инвентарь книг, велосипедов, техники и повседневных вещей. Наводите порядок в вещах в Monica с помощью типов, своих полей и меток. |
+| H1 | Ведите инвентарь под свои вещи. |
+| OG title | Место для вещей, за которыми стоит следить — Monica |
+| OG description | Инвентарь, в котором есть место для самых разных вещей, с деталями и метками, понятными вам. |
+| OG image | https://www.monicahq.com/og/inventory-ru.jpg?v=130ba9ab (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | инвентарь с метками |
+| Secondary keywords | типы вещей, свои поля |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
 ## /ru/vozmozhnosti/khranilishcha/
 
 | Field | Content |
@@ -2585,6 +2604,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | хранилища Monica |
 | Secondary keywords | разделение личных и рабочих контактов, организация контактов |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
+## /ru/vozmozhnosti/khronologiya-i-napominaniya/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/khronologiya-i-napominaniya/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/khronologiya-i-napominaniya/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Личная хронология и напоминания — Monica |
+| Meta description | Храните общие моменты и ставьте напоминания о том, что будет дальше. Познакомьтесь с событиями, хронологией контактов и напоминаниями Monica. |
+| H1 | Храните моменты. Помните о следующем. |
+| OG title | Что было. Что вы собирались сделать дальше — Monica |
+| OG description | Храните общие моменты в хронологии и дайте дату следующему дню рождения или звонку. |
+| OG image | https://www.monicahq.com/og/timelineReminders-ru.jpg?v=6d9e194b (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | хронология и напоминания |
+| Secondary keywords | напоминания о делах, общие события |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 
@@ -2607,6 +2645,44 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 
+## /ru/vozmozhnosti/lyudi/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/lyudi/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/lyudi/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Личные контакты на каждый день — Monica |
+| Meta description | Контактные данные, связи, общие моменты и дела на потом — в одном месте. Персональная CRM, с которой можно работать самому или вместе с совместимыми ИИ-ассистентами. |
+| H1 | Помните человека, а не только номер телефона. |
+| OG title | Люди в вашей жизни, с чуть большим контекстом — Monica |
+| OG description | Имена, связи и моменты, которые вы разделяете. Дайте своим отношениям место в личной базе данных. |
+| OG image | https://www.monicahq.com/og/people-ru.jpg?v=331718e5 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | личный менеджер контактов |
+| Secondary keywords | помнить о людях, следить за друзьями и семьёй |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
+## /ru/vozmozhnosti/mesta/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/mesta/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/mesta/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Местоположения вещей и история перемещений — Monica |
+| Meta description | Записывайте, где хранятся ваши вещи: от дома до полки или коробки. Храните текущие и прошлые местоположения вещей в личном инвентаре Monica. |
+| H1 | «Где-нибудь в надёжном месте» не помешал бы адрес. |
+| OG title | Куда вы это положили? Оставьте себе подсказку — Monica |
+| OG description | Задайте вещам записанные местоположения и сохраняйте историю, когда они переезжают. |
+| OG image | https://www.monicahq.com/og/locations-ru.jpg?v=7cae6592 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | места хранения вещей |
+| Secondary keywords | где лежат ваши вещи, история мест хранения |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
 ## /ru/vozmozhnosti/napominaniya/
 
 | Field | Content |
@@ -2623,6 +2699,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | напоминания о днях рождения |
 | Secondary keywords | личные напоминания об общении, повторяющиеся напоминания |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
+## /ru/vozmozhnosti/obsluzhivanie-i-zaymy/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/obsluzhivanie-i-zaymy/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/obsluzhivanie-i-zaymy/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Записи об обслуживании вещей и учёт займов — Monica |
+| Meta description | Храните историю обслуживания и займов вещей. Записывайте даты, стоимость, состояние, заёмщиков и возвраты рядом с вашими вещами в Monica. |
+| H1 | Храните историю вместе с вещью. |
+| OG title | Когда обслуживали. У кого сейчас. Наконец-то вспомнили — Monica |
+| OG description | Храните записи об уходе и займах рядом с вещами, к которым они относятся: от ремонта велосипеда до одолженной книги. |
+| OG image | https://www.monicahq.com/og/maintenanceLoans-ru.jpg?v=145b8589 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | история обслуживания вещей |
+| Secondary keywords | учёт займов, вещи, одолженные друзьям |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 
@@ -2680,6 +2775,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | шаблоны контактов |
 | Secondary keywords | собственные поля контактов, шаблоны персональной CRM |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
+## /ru/vozmozhnosti/veshchi/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/veshchi/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/veshchi/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Личный инвентарь и учёт вещей — Monica |
+| Meta description | Храните записи о том, что у вас есть, где оно лежит, как обслуживалось и кому одолжено. Наводите порядок в повседневных вещах в Monica, с ИИ-ассистентом или без. |
+| H1 | Узнайте свои вещи чуть лучше. |
+| OG title | У ваших вещей тоже есть история — Monica |
+| OG description | Что у вас есть, где оно лежит и что с ним было. Храните полезные детали вместе. |
+| OG image | https://www.monicahq.com/og/possessions-ru.jpg?v=07215863 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | личный инвентарь |
+| Secondary keywords | учёт вещей, места и займы |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 

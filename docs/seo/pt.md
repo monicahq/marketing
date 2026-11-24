@@ -1,6 +1,6 @@
 # Monica SEO sheets for pt
 
-These 142 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2500,13 +2500,13 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Slug | /pt/recursos/detalhes/ |
 | Canonical | https://www.monicahq.com/pt/recursos/detalhes/ |
 | Search intent | Evaluate the product or a specific use case |
-| SEO title | Software de gestão de contatos pessoais — Monica |
-| Meta description | Reúna os detalhes que as pessoas compartilham com você: o que contaram da última vez, as pequenas coisas, quem está ao redor delas e os momentos vividos juntos. |
-| H1 | Lembre-se dos detalhes que importam. |
-| OG title | Lembre-se dos detalhes que importam — Monica |
-| OG description | O número está no seu telefone. O nome do novo parceiro, a comida favorita e o que a pessoa contou da última vez podem ser mais difíceis de achar. |
-| OG image | https://www.monicahq.com/og/details-pt.jpg?v=05ea9e95 (1200 × 630, card for this page) |
-| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| SEO title | Dados de contato e contexto pessoal em um só lugar — Monica |
+| Meta description | Salve nomes, dados de contato, preferências e notas pessoais em páginas de contato flexíveis. Escolha os detalhes que você quer lembrar com a Monica. |
+| H1 | As pequenas coisas merecem um lugar. |
+| OG title | As pequenas coisas merecem um lugar — Monica |
+| OG description | Guarde o contexto de alguém, do nome aos detalhes que facilitam a próxima conversa. |
+| OG image | https://www.monicahq.com/og/details-pt.jpg?v=fbb9904f (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | gestão de contatos pessoais |
 | Secondary keywords | organizar contatos, notas sobre contatos |
 | Supporting keywords | No additional target |
@@ -2531,6 +2531,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 
+## /pt/recursos/inventario/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/inventario/ |
+| Canonical | https://www.monicahq.com/pt/recursos/inventario/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Inventário pessoal com campos personalizados e etiquetas — Monica |
+| Meta description | Crie um inventário pessoal de livros, bicicletas, equipamentos e objetos do dia a dia. Organize seus pertences com tipos, campos personalizados e etiquetas na Monica. |
+| H1 | Mantenha um inventário do tamanho das suas coisas. |
+| OG title | Um lugar para as coisas que valem a pena acompanhar — Monica |
+| OG description | Um inventário que deixa espaço para coisas diferentes, com os detalhes e as etiquetas que fazem sentido para você. |
+| OG image | https://www.monicahq.com/og/inventory-pt.jpg?v=7d268a7a (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | inventário com etiquetas |
+| Secondary keywords | tipos de pertence, campos personalizados |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
 ## /pt/recursos/lembretes/
 
 | Field | Content |
@@ -2547,6 +2566,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | lembretes de aniversário |
 | Secondary keywords | lembretes de acompanhamento pessoal, lembretes recorrentes |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
+## /pt/recursos/linha-do-tempo-e-lembretes/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/linha-do-tempo-e-lembretes/ |
+| Canonical | https://www.monicahq.com/pt/recursos/linha-do-tempo-e-lembretes/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Linhas do tempo pessoais e lembretes de acompanhamento — Monica |
+| Meta description | Guarde os momentos compartilhados e crie lembretes para o que vem a seguir. Conheça os eventos de vida, as linhas do tempo dos contatos e os lembretes da Monica. |
+| H1 | Guarde os momentos. Lembre do próximo. |
+| OG title | O que aconteceu. O que você queria fazer depois — Monica |
+| OG description | Guarde momentos compartilhados numa linha do tempo e dê uma data ao próximo aniversário ou retorno. |
+| OG image | https://www.monicahq.com/og/timelineReminders-pt.jpg?v=9162fdad (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | linha do tempo e lembretes |
+| Secondary keywords | lembretes de acompanhamento, eventos de vida compartilhados |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 
@@ -2569,6 +2607,44 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 
+## /pt/recursos/locais/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/locais/ |
+| Canonical | https://www.monicahq.com/pt/recursos/locais/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Locais dos seus pertences e histórico de locais — Monica |
+| Meta description | Registre onde suas coisas ficam guardadas, de uma casa a uma prateleira ou caixa. Mantenha os locais atuais e anteriores dos seus pertences no inventário pessoal da Monica. |
+| H1 | “Em algum lugar seguro” merece um endereço. |
+| OG title | Onde você deixou? Deixe uma pista para si mesmo — Monica |
+| OG description | Dê aos seus pertences locais registrados e mantenha o histórico quando eles mudarem de lugar. |
+| OG image | https://www.monicahq.com/og/locations-pt.jpg?v=11d919c1 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | locais dos pertences |
+| Secondary keywords | onde suas coisas estão guardadas, histórico de locais |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
+## /pt/recursos/manutencao-e-emprestimos/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/manutencao-e-emprestimos/ |
+| Canonical | https://www.monicahq.com/pt/recursos/manutencao-e-emprestimos/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Registros de manutenção e controle de empréstimos dos seus pertences — Monica |
+| Meta description | Mantenha o histórico de manutenção e de empréstimos dos seus pertences. Registre datas, custos, estados, quem pegou emprestado e as devoluções junto das suas coisas na Monica. |
+| H1 | Guarde o histórico junto da coisa. |
+| OG title | Última revisão. Emprestado agora. Enfim lembrado — Monica |
+| OG description | Guarde os registros de cuidado e os empréstimos junto das coisas a que pertencem, do conserto de uma bicicleta a um livro emprestado. |
+| OG image | https://www.monicahq.com/og/maintenanceLoans-pt.jpg?v=096cf451 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | registros de manutenção |
+| Secondary keywords | controle de empréstimos, coisas emprestadas a amigos |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
 ## /pt/recursos/modelos/
 
 | Field | Content |
@@ -2585,6 +2661,44 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | modelos de contato |
 | Secondary keywords | campos de contato personalizados, modelos de CRM pessoal |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
+## /pt/recursos/pertences/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/pertences/ |
+| Canonical | https://www.monicahq.com/pt/recursos/pertences/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Inventário pessoal e gestão de pertences — Monica |
+| Meta description | Guarde registros do que você tem, onde está, da manutenção e dos empréstimos. Organize seus objetos do dia a dia na Monica, com ou sem assistente de IA. |
+| H1 | Conheça suas coisas um pouco melhor. |
+| OG title | Suas coisas também têm história — Monica |
+| OG description | O que você tem, onde fica e o que aconteceu com ele. Guarde os detalhes úteis juntos. |
+| OG image | https://www.monicahq.com/og/possessions-pt.jpg?v=eb682038 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | inventário pessoal |
+| Secondary keywords | gestão de pertences, locais e empréstimos |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
+## /pt/recursos/pessoas/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/pessoas/ |
+| Canonical | https://www.monicahq.com/pt/recursos/pessoas/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Gestão de contatos pessoais para o dia a dia — Monica |
+| Meta description | Reúna dados de contato, relacionamentos, momentos compartilhados e acompanhamentos. Um CRM pessoal para usar sozinho ou com assistentes de IA compatíveis. |
+| H1 | Lembre da pessoa, não só do número de telefone. |
+| OG title | As pessoas da sua vida, com um pouco mais de contexto — Monica |
+| OG description | Nomes, conexões e os momentos que vocês compartilham. Dê aos seus relacionamentos um lugar no seu banco de dados pessoal. |
+| OG image | https://www.monicahq.com/og/people-pt.jpg?v=a2715c8a (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | gerenciador de contatos pessoais |
+| Secondary keywords | lembrar das pessoas, acompanhar amigos e família |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 

@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 142 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1056,15 +1056,34 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Slug | /zh/features/details/ |
 | Canonical | https://www.monicahq.com/zh/features/details/ |
 | Search intent | Evaluate the product or a specific use case |
-| SEO title | 个人联系人管理软件 — Monica |
-| Meta description | 把别人告诉你的细节放在一起：他们上次说过的话、小事、身边的人，以及你们共度的时刻。 |
-| H1 | 记住那些要紧的细节。 |
-| OG title | 记住重要的细节 — Monica |
-| OG description | 他们的号码在你的手机里。但新伴侣的名字、最爱的菜，以及他们上次告诉你的事，可能更难找到。 |
-| OG image | https://www.monicahq.com/og/details-zh.jpg?v=a98c0e5b (1200 × 630, card for this page) |
-| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| SEO title | 联系方式和个人背景集中在一处 — Monica |
+| Meta description | 在灵活的联系人页面里保存姓名、联系方式、喜好和个人笔记。用 Monica 选择你想记住的细节。 |
+| H1 | 小事也值得有个位置。 |
+| OG title | 小事也值得有个位置 — Monica |
+| OG description | 记下一个人的背景，从名字到让下次聊天更轻松的细节。 |
+| OG image | https://www.monicahq.com/og/details-zh.jpg?v=8ef567e3 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | 个人联系人管理 |
 | Secondary keywords | 整理联系人信息, 联系人笔记 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/inventory/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/inventory/ |
+| Canonical | https://www.monicahq.com/zh/features/inventory/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 带自定义字段和标签的个人物品清单 — Monica |
+| Meta description | 为书、自行车、器材和日常物品建立个人清单。在 Monica 中用类型、自定义字段和标签整理物品。 |
+| H1 | 建一份适合你的东西的清单。 |
+| OG title | 给值得记下的东西一个位置 — Monica |
+| OG description | 一份能容纳各种东西的清单，配上对你有意义的细节和标签。 |
+| OG image | https://www.monicahq.com/og/inventory-zh.jpg?v=37511e55 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 带标签的物品清单 |
+| Secondary keywords | 物品类型, 自定义字段 |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 
@@ -1084,6 +1103,82 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | 多语言个人 CRM |
 | Secondary keywords | 姓名格式, Monica 语言 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/locations/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/locations/ |
+| Canonical | https://www.monicahq.com/zh/features/locations/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 物品位置与位置历史 — Monica |
+| Meta description | 记录物品存放在哪里，从一栋房子到一个架子或一只箱子。在 Monica 的个人物品清单中保留物品当前和过去的位置。 |
+| H1 | “某个安全的地方”也该有个地址。 |
+| OG title | 放哪儿了？给自己留个线索 — Monica |
+| OG description | 给你的物品记录位置，搬动时保留历史。 |
+| OG image | https://www.monicahq.com/og/locations-zh.jpg?v=02672676 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 物品位置 |
+| Secondary keywords | 物品存放位置, 位置历史 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/maintenance-and-loans/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/maintenance-and-loans/ |
+| Canonical | https://www.monicahq.com/zh/features/maintenance-and-loans/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 物品维护记录与借出跟踪 — Monica |
+| Meta description | 保留物品的维护历史和借出记录。在 Monica 中，把日期、费用、品相、借用人和归还情况与你的物品记在一起。 |
+| H1 | 把历史和物品放在一起。 |
+| OG title | 上次保养，目前借出，终于记住了 — Monica |
+| OG description | 把维护记录和借出记录与它们所属的物品放在一起，从自行车维修到借出的一本书。 |
+| OG image | https://www.monicahq.com/og/maintenanceLoans-zh.jpg?v=de588adb (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 物品维护记录 |
+| Secondary keywords | 借用记录, 借给朋友的物品 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/people/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/people/ |
+| Canonical | https://www.monicahq.com/zh/features/people/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 日常生活中的个人联系人管理 — Monica |
+| Meta description | 把联系方式、人际关系、共同时刻和后续跟进放在一起。一个你可以自己使用、也可以配合兼容 AI 助手使用的个人 CRM。 |
+| H1 | 记住这个人，而不只是电话号码。 |
+| OG title | 你生活中的人，多一点背景 — Monica |
+| OG description | 名字、联系和你们共同的时刻。在你的个人数据库里给这些关系留一个位置。 |
+| OG image | https://www.monicahq.com/og/people-zh.jpg?v=9fb737e4 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 个人联系人管理 |
+| Secondary keywords | 记住身边的人, 记录亲友信息 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/possessions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/possessions/ |
+| Canonical | https://www.monicahq.com/zh/features/possessions/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 个人物品清单与物品管理 — Monica |
+| Meta description | 记录你拥有的东西、放在哪里、保养情况和借出记录。在 Monica 中整理日常物品，用不用 AI 助手都可以。 |
+| H1 | 多了解一点你的东西。 |
+| OG title | 你的东西也有自己的故事 — Monica |
+| OG description | 你拥有什么、放在哪里、发生过什么。把有用的细节放在一起。 |
+| OG image | https://www.monicahq.com/og/possessions-zh.jpg?v=29509625 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 个人物品清单 |
+| Secondary keywords | 物品管理, 位置和借出 |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 
@@ -1179,6 +1274,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | 联系人模板 |
 | Secondary keywords | 自定义联系人字段, 个人 CRM 模板 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/timeline-and-reminders/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/timeline-and-reminders/ |
+| Canonical | https://www.monicahq.com/zh/features/timeline-and-reminders/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 个人时间线与跟进提醒 — Monica |
+| Meta description | 记录共同的时刻，为接下来的事设好提醒。了解 Monica 的人生事件、联系人时间线和跟进提醒。 |
+| H1 | 记住那些时刻，也记得下一次。 |
+| OG title | 发生了什么，接下来打算做什么 — Monica |
+| OG description | 把共同时刻记进时间线，给下一个生日或跟进定个日期。 |
+| OG image | https://www.monicahq.com/og/timelineReminders-zh.jpg?v=32be1a31 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 时间线与提醒 |
+| Secondary keywords | 跟进提醒, 共同的人生事件 |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 

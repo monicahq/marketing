@@ -5,14 +5,14 @@ These sheets are generated from the rendered build, not from the live website, s
 <!-- sheets:start -->
 | Language | Sheets |
 | --- | --- |
-| English | [142 pages](en.md) |
-| French | [142 pages](fr.md) |
-| German | [142 pages](de.md) |
-| Spanish | [142 pages](es.md) |
-| Portuguese | [142 pages](pt.md) |
-| Dutch | [142 pages](nl.md) |
-| Simplified Chinese | [142 pages](zh.md) |
-| Russian | [142 pages](ru.md) |
+| English | [148 pages](en.md) |
+| French | [148 pages](fr.md) |
+| German | [148 pages](de.md) |
+| Spanish | [148 pages](es.md) |
+| Portuguese | [148 pages](pt.md) |
+| Dutch | [148 pages](nl.md) |
+| Simplified Chinese | [148 pages](zh.md) |
+| Russian | [148 pages](ru.md) |
 <!-- sheets:end -->
 
 ## Search and sharing copy

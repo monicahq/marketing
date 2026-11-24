@@ -1,6 +1,6 @@
 # Monica SEO sheets for de
 
-These 142 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1011,6 +1011,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 
+## /de/funktionen/besitz/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/besitz/ |
+| Canonical | https://www.monicahq.com/de/funktionen/besitz/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persönliches Inventar und Besitzverwaltung — Monica |
+| Meta description | Halten Sie fest, was Sie besitzen, wo es ist, wie es gewartet wurde und wem Sie es geliehen haben. Ordnen Sie Ihre Alltagsdinge in Monica, mit oder ohne KI-Assistenten. |
+| H1 | Kennen Sie Ihre Dinge ein bisschen besser. |
+| OG title | Auch Ihre Dinge haben eine Geschichte — Monica |
+| OG description | Was Sie besitzen, wo es steht und was damit passiert ist. Halten Sie die nützlichen Details zusammen. |
+| OG image | https://www.monicahq.com/og/possessions-de.jpg?v=00127949 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persönliches Inventar |
+| Secondary keywords | Besitz verwalten, Orte und Verleih |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
 ## /de/funktionen/beziehungen/
 
 | Field | Content |
@@ -1037,13 +1056,13 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Slug | /de/funktionen/details/ |
 | Canonical | https://www.monicahq.com/de/funktionen/details/ |
 | Search intent | Evaluate the product or a specific use case |
-| SEO title | Persönliche Kontaktverwaltung — Monica |
-| Meta description | Halten Sie zusammen, was Menschen Ihnen anvertrauen: was sie zuletzt erzählt haben, die kleinen Dinge, die Menschen um sie herum und gemeinsame Momente. |
-| H1 | Merken Sie sich die Details, auf die es ankommt. |
-| OG title | Merken Sie sich die Details, die zählen — Monica |
-| OG description | Die Nummer steht in Ihrem Telefon. Der Name des neuen Partners, das Lieblingsessen und was Ihnen zuletzt erzählt wurde, sind vielleicht schwerer zu finden. |
-| OG image | https://www.monicahq.com/og/details-de.jpg?v=fb715789 (1200 × 630, card for this page) |
-| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| SEO title | Kontaktdaten und persönlicher Zusammenhang an einem Ort — Monica |
+| Meta description | Speichern Sie Namen, Kontaktdaten, Vorlieben und persönliche Notizen auf flexiblen Kontaktseiten. Wählen Sie die Details, an die Sie sich mit Monica erinnern wollen. |
+| H1 | Die kleinen Dinge verdienen einen Platz. |
+| OG title | Die kleinen Dinge verdienen einen Platz — Monica |
+| OG description | Behalten Sie den Zusammenhang rund um einen Menschen, vom Namen bis zu den Details, die das nächste Gespräch leichter machen. |
+| OG image | https://www.monicahq.com/og/details-de.jpg?v=254669b7 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | persönliche Kontaktverwaltung |
 | Secondary keywords | Kontaktdetails organisieren, Kontaktnotizen |
 | Supporting keywords | No additional target |
@@ -1065,6 +1084,44 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Geburtstagserinnerungen |
 | Secondary keywords | persönliche Folgeerinnerungen, wiederkehrende Erinnerungen |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/funktionen/inventar/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/inventar/ |
+| Canonical | https://www.monicahq.com/de/funktionen/inventar/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persönliches Inventar mit eigenen Feldern und Schlagwörtern — Monica |
+| Meta description | Legen Sie ein persönliches Inventar für Bücher, Fahrräder, Ausrüstung und Alltagsdinge an. Ordnen Sie Ihren Besitz in Monica mit Typen, eigenen Feldern und Schlagwörtern. |
+| H1 | Führen Sie ein Inventar, das zu Ihren Dingen passt. |
+| OG title | Ein Platz für die Dinge, die sich zu verfolgen lohnen — Monica |
+| OG description | Ein Inventar, das Platz für verschiedene Dinge lässt, mit den Details und Schlagwörtern, die für Sie Sinn ergeben. |
+| OG image | https://www.monicahq.com/og/inventory-de.jpg?v=ff76737a (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | Inventar mit Schlagwörtern |
+| Secondary keywords | Besitztypen, eigene Felder |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/funktionen/menschen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/menschen/ |
+| Canonical | https://www.monicahq.com/de/funktionen/menschen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persönliche Kontaktverwaltung für den Alltag — Monica |
+| Meta description | Kontaktdaten, Beziehungen, gemeinsame Momente und Nachfassen an einem Ort. Ein persönliches CRM für Sie selbst oder mit kompatiblen KI-Assistenten. |
+| H1 | Erinnern Sie sich an den Menschen, nicht nur an die Telefonnummer. |
+| OG title | Die Menschen in Ihrem Leben, mit etwas mehr Zusammenhang — Monica |
+| OG description | Namen, Verbindungen und die Momente, die Sie teilen. Geben Sie Ihren Beziehungen einen Platz in Ihrer persönlichen Datenbank. |
+| OG image | https://www.monicahq.com/og/people-de.jpg?v=39fca2f2 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persönliche Kontaktverwaltung |
+| Secondary keywords | sich an Menschen erinnern, Freunde und Familie im Blick behalten |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 
@@ -1103,6 +1160,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | mehrsprachiges persönliches CRM |
 | Secondary keywords | Namensformate, Monica Sprachen |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/funktionen/standorte/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/standorte/ |
+| Canonical | https://www.monicahq.com/de/funktionen/standorte/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Standorte von Besitz und Standortverlauf — Monica |
+| Meta description | Halten Sie fest, wo Ihre Dinge aufbewahrt werden, vom Zuhause bis zum Regal oder Karton. Behalten Sie aktuelle und frühere Standorte Ihres Besitzes im persönlichen Inventar von Monica. |
+| H1 | „Irgendwo sicher“ könnte eine Adresse vertragen. |
+| OG title | Wo haben Sie es hingelegt? Hinterlassen Sie sich einen Hinweis — Monica |
+| OG description | Geben Sie Ihren Dingen erfasste Standorte, und behalten Sie den Verlauf, wenn sie umziehen. |
+| OG image | https://www.monicahq.com/og/locations-de.jpg?v=4c96bf92 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | Standorte von Gegenständen |
+| Secondary keywords | wo Dinge aufbewahrt werden, Standortverlauf |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 
@@ -1160,6 +1236,44 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Kontaktvorlagen |
 | Secondary keywords | benutzerdefinierte Kontaktfelder, CRM-Vorlagen |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/funktionen/wartung-und-verleih/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/wartung-und-verleih/ |
+| Canonical | https://www.monicahq.com/de/funktionen/wartung-und-verleih/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Wartungseinträge und Verleih von Besitz nachverfolgen — Monica |
+| Meta description | Behalten Sie den Verlauf von Wartungsarbeiten und Leihgaben Ihres Besitzes. Halten Sie Daten, Kosten, Zustände, Entleiher und Rückgaben neben Ihren Sachen in Monica fest. |
+| H1 | Behalten Sie den Verlauf beim Ding. |
+| OG title | Zuletzt gewartet. Gerade verliehen. Endlich im Kopf — Monica |
+| OG description | Behalten Sie Pflegeeinträge und Leihgaben bei den Dingen, zu denen sie gehören, von der Fahrradreparatur bis zum geliehenen Buch. |
+| OG image | https://www.monicahq.com/og/maintenanceLoans-de.jpg?v=ff4cea52 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | Wartungsverlauf von Gegenständen |
+| Secondary keywords | Verleih verfolgen, an Freunde verliehene Dinge |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/funktionen/zeitleiste-und-erinnerungen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/zeitleiste-und-erinnerungen/ |
+| Canonical | https://www.monicahq.com/de/funktionen/zeitleiste-und-erinnerungen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persönliche Zeitleisten und Erinnerungen zum Nachfassen — Monica |
+| Meta description | Halten Sie gemeinsame Momente fest und stellen Sie Erinnerungen für das Nächste ein. Entdecken Sie Monicas Lebensereignisse, Kontakt-Zeitleisten und Erinnerungen. |
+| H1 | Halten Sie die Momente fest. Denken Sie an den nächsten. |
+| OG title | Was passiert ist. Was Sie danach vorhatten — Monica |
+| OG description | Halten Sie gemeinsame Momente in einer Zeitleiste fest und geben Sie dem nächsten Geburtstag oder Nachfassen ein Datum. |
+| OG image | https://www.monicahq.com/og/timelineReminders-de.jpg?v=529903e9 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | Zeitleiste und Erinnerungen |
+| Secondary keywords | Erinnerungen zum Nachfassen, gemeinsame Lebensereignisse |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 

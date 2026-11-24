@@ -123,6 +123,7 @@
   --color-success-edge: var(--success-edge);
   --color-warning: var(--warning);
   --color-warning-subtle: var(--warning-tint);
+  --color-warning-edge: var(--warning-edge);
   --color-danger: var(--danger);
   --color-danger-hover: var(--danger-hover);
   --color-danger-active: var(--danger-hover);
