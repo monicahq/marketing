@@ -1,6 +1,6 @@
 # Monica SEO sheets for es
 
-These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -437,6 +437,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-new-version-ready-for-testing-es.jpg?v=4d111eb6 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | La nueva versión está lista para probarse |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /es/blog/new-website/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/blog/new-website/ |
+| Canonical | https://www.monicahq.com/es/blog/new-website/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Bienvenido a nuestro nuevo sitio web — el blog de Monica |
+| Meta description | Nuestro nuevo sitio web ya está en línea: pandas, un manual completo, este blog y una compilación 100 % estática que carga rápido en todas partes. |
+| H1 | Bienvenido a nuestro nuevo sitio web |
+| OG title | Bienvenido a nuestro nuevo sitio web |
+| OG description | Nuestro nuevo sitio web ya está en línea: pandas, un manual completo, este blog y una compilación 100 % estática que carga rápido en todas partes. |
+| OG image | https://www.monicahq.com/og/blog-new-website-es.jpg?v=08ff6a2c (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Bienvenido a nuestro nuevo sitio web |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
@@ -2908,6 +2927,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica v3 |
 | Secondary keywords | reconstrucción de Monica, novedades de Monica |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
+## /es/ventas/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/ventas/ |
+| Canonical | https://www.monicahq.com/es/ventas/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Ventas — Monica |
+| Meta description | Monica no tiene equipo comercial, ni demos, ni seguimientos. Explora el producto por tu cuenta, consulta los precios públicos o alójalo en tu propio servidor. |
+| H1 | Nuestro equipo de ventas está deseando no contactarte nunca. |
+| OG title | Conoce al equipo de ventas que Monica no tiene |
+| OG description | Sin llamadas. Sin reuniones. Sin seguimientos. Solo software. |
+| OG image | https://www.monicahq.com/og/sales-es.jpg?v=32dbce7c (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | ventas de Monica |
+| Secondary keywords | contactar con ventas de Monica, demo de Monica |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
 
