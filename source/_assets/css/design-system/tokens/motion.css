@@ -1,0 +1,18 @@
+/* Motion is short and plain: 150ms feedback, 170ms menus, 220ms panels. One
+   easing. Nothing bounces, scales or overshoots. Press does nothing. */
+:root {
+  --duration-fast: 150ms; /* @kind other */
+  --duration-standard: 170ms; /* @kind other */
+  --duration-slow: 220ms; /* @kind other */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --press-translate: 0px;
+}
+
+/* Somebody who asked for less motion gets no motion, rather than faster motion. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms; /* @kind other */
+    --duration-standard: 0ms; /* @kind other */
+    --duration-slow: 0ms; /* @kind other */
+  }
+}

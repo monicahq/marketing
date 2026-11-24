@@ -51,6 +51,16 @@
         },
         {
             "url": "https://www.monicahq.com/",
+            "accept_language": "zh-CN,zh;q=0.9,en;q=0.8",
+            "expect": "https://www.monicahq.com/zh/"
+        },
+        {
+            "url": "https://www.monicahq.com/",
+            "accept_language": "ru-RU,ru;q=0.9,en;q=0.8",
+            "expect": "https://www.monicahq.com/ru/"
+        },
+        {
+            "url": "https://www.monicahq.com/",
             "accept_language": "ja,ko;q=0.8",
             "expect": "https://www.monicahq.com/en/"
         },

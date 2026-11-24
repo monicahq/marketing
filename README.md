@@ -1,6 +1,6 @@
 # Monica Marketing Site
 
-The public marketing site for **Monica**, the personal CRM. Built with [Jigsaw](https://jigsaw.tighten.com) and [Tailwind CSS](https://tailwindcss.com), in English, French, German, Spanish, Portuguese and Dutch.
+The public marketing site for **Monica**, your personal database. Built with [Jigsaw](https://jigsaw.tighten.com) and [Tailwind CSS](https://tailwindcss.com), in English, French, German, Spanish, Portuguese, Dutch, Simplified Chinese and Russian.
 
 Jigsaw is a static site generator written in PHP. It renders Blade templates to plain HTML files, so what gets deployed is a folder of HTML, CSS and images. No PHP runs in production.
 
@@ -79,6 +79,8 @@ On Linux use `xdg-open`, on Windows `start`, or just paste the address into your
 | `http://localhost:8000/es/` | Homepage, Spanish |
 | `http://localhost:8000/pt/` | Homepage, Portuguese |
 | `http://localhost:8000/nl/` | Homepage, Dutch   |
+| `http://localhost:8000/zh/` | Homepage, Simplified Chinese |
+| `http://localhost:8000/ru/` | Homepage, Russian |
 
 Locally it always lands on `/en/`. On the real site the root reads the browser's `Accept-Language` header and sends the reader to their own language instead. That is done by two Cloudflare redirect rules rather than by a file, so a local server never runs them. They live in [`cloudflare/redirect-rules.json`](cloudflare/redirect-rules.json), the deploy applies them, and the file beside it explains them.
 
@@ -108,11 +110,13 @@ The site is hosted on **Cloudflare Pages**, project **`marketing`**, in Monica's
 
 | What happens          | What the workflow does                                                                                                                    |
 | :-------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| Pull request opened or updated | Full production build, no upload. A missing translation key or a dead link fails the check here, before anything ships. The redirect rules are validated with `--dry-run`. |
+| Pull request opened or updated | Full production build, then an upload as a preview. A missing translation key or a dead link fails the check here, before anything ships. The redirect rules are validated with `--dry-run`. |
 | Push to `main`        | The same build, then the upload to Pages, then the root's redirect rules are applied and verified against the live site.                    |
 | "Run workflow" in the Actions tab | The same as a push to `main`. This is how to redeploy without an empty commit, after a flaky network call for instance.         |
 
-A pull request builds but never uploads, so **there are no preview deployments**. Reviewing a change means running it locally.
+**Every pull request gets a preview**, at `https://<branch>.marketing-1a2.pages.dev`, which Cloudflare serves with `X-Robots-Tag: noindex`. A pull request from a fork gets no secrets, so it builds but is not uploaded. The root's redirect rules never run on a preview, since `*.pages.dev` is outside the zone, so `/` there always lands on English.
+
+Cloudflare's own Git builds are switched off in the dashboard (Settings, Build, Branch control). They published empty deployments, because a Pages build image has no PHP. Leave them off.
 
 Two deploys never overlap: a run on `main` waits for the one before it, while a superseded pull request run is cancelled.
 
@@ -120,7 +124,7 @@ Two deploys never overlap: a run on `main` waits for the one before it, while a 
 
 The site answers on both **`www.monicahq.com`** and **`monicahq.com`**, and the apex does not redirect to `www`. The `www` copy is the canonical one, and the canonical tags on the apex pages say so, which is what keeps search engines from seeing two sites.
 
-The domain is written in exactly two places: `baseUrl` in [`config.production.php`](config.production.php), which every canonical URL, hreflang alternate, sitemap entry and social image URL is built from, and one hard-coded line in [`source/robots.txt`](source/robots.txt). Changing the domain means editing those two, and nothing else.
+The domain is written in exactly three places: `baseUrl` in [`config.production.php`](config.production.php), which every canonical URL, hreflang alternate, sitemap entry and social image URL is built from, one hard-coded line in [`source/robots.txt`](source/robots.txt), and the two hostnames in both expressions of [`cloudflare/redirect-rules.json`](cloudflare/redirect-rules.json). Changing the domain means editing those three, and nothing else. A production build fails until the third one is done.
 
 `/` is the one URL no file answers, since every page is locale-prefixed. Two Cloudflare **redirect rules** answer it: they read the browser's `Accept-Language` header and send the reader to their own language, falling back to English. Those rules live in [`cloudflare/redirect-rules.json`](cloudflare/redirect-rules.json), the deploy applies them on every push, and [`cloudflare/redirect-rules.md`](cloudflare/redirect-rules.md) explains them. **Never edit them in the dashboard**, since the next deploy would put them back.
 
@@ -155,7 +159,9 @@ That is the emergency lever. The real fix is to revert the commit on `main` and 
 | `npm run serve`     | Serves the local build at `localhost:8000`                        |
 | `npm run build`     | Builds the production site into `build_production/`               |
 | `npm run links`     | Re-checks `build_production/` for dead links (the build already does it) |
-| `npm run og`        | Regenerates the social sharing images (needs Chrome installed)    |
+| `npm run og`        | Regenerates the social sharing cards (needs Chrome installed)     |
+| `npm run seo:check` | Checks metadata, headings, sharing images and schema in the production build |
+| `npm run seo:report` | Checks the build and regenerates the [SEO sheets](docs/seo/README.md) |
 
 ---
 
@@ -187,13 +193,13 @@ Two places tell you almost everything: the repository's **Actions** tab (did the
 
 **The deploy failed on "Apply the root's redirect rules".** The site itself published, so the pages are live and only the root's language choice may be stale. It is usually an expired `CLOUDFLARE_RULES_API_TOKEN`. Renew the secret and re-run the workflow.
 
-**The build failed on a translation key.** A string was added to `lang/en.php` and not to the other five. The exception names both the key and the language. Every `lang/` file has to carry the same keys.
+**The build failed on a translation key.** A string was added to `lang/en.php` and not to the other seven. The exception names both the key and the language. Every `lang/` file has to carry the same keys.
 
 **The build failed on a dead link.** `scripts/links/check.php` reads the built site and fails on a link that resolves to no file, a fragment that names no id, or a canonical, hreflang or sitemap entry that disagrees with the rest. It names the page and the URL. External links are never fetched, so it cannot fail because somebody else's site is down.
 
 **A blog post is missing in one language.** A post is one Markdown file per language with the same slug and the same date. Missing one fails the build as a dead link, because the sitemap lists every post in every language.
 
-**Sharing a link shows the wrong preview image or text.** The social cards are committed PNGs in `source/og/`, one per language, and their text is copied by hand into `scripts/og/template.html`. If a headline changed, the card did not follow it until somebody ran `npm run og`. Social networks cache previews hard, so also re-scrape the URL with the network's own debugger.
+**Sharing a link shows the wrong preview image or text.** The social cards are committed JPEGs in `source/og/`, one per page and per language. Their text is the `ogImage` block of each page in `lang/`, and a post's or a handbook article's comes from its front matter. If that text changed, the card did not follow it until somebody ran `npm run og` and committed the result. A card's URL carries a hash of its file, so a redrawn card reaches the networks under a new URL, but a link already shared keeps its old preview until the network re-reads the page: re-scrape it with the network's own debugger.
 
 **The GitHub star count looks wrong.** It is read from the GitHub API during the build and floored to the nearest thousand, so `24k+` means at least 24,000. A failed call prints a warning and uses the figure in `config.php`, so an unchanged number after a deploy is the fallback, not a bug.
 

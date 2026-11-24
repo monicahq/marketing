@@ -1,0 +1,50 @@
+{{--
+    Everything inside <head>, shared by the two page shells: _layouts.base
+    (every marketing page) and _layouts.standalone (a page with no site header
+    or footer, such as the sign-in chooser). One copy, so the SEO, the theme
+    script, the stylesheet and the script can never differ between them.
+--}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@include('_partials.color-scheme')
+@include('_partials.cookie-notice-state')
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico">
+<link rel="sitemap" href="/sitemap.xml">
+
+{{-- How a feed reader finds the feed: you paste any page of the site
+     into it and it looks here. On every page rather than only the blog,
+     because the page somebody happens to be standing on when they
+     decide to subscribe is rarely the index. It points at the current
+     locale's feed, so a reader browsing in French subscribes in
+     French. --}}
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="{{ $page->t('meta.blog.title') }}"
+    href="{{ $page->absolute($page->feedPath()) }}"
+>
+
+@include('_partials.seo')
+
+@viteRefresh()
+<link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
+
+{{-- A module, so it is deferred and runs after parsing.
+
+     On every page, not just the ones with an Alpine component: Turbo
+     can only intercept a click on a page that is already running it, so
+     a page without this script is a dead end that navigates the old way.
+     Everything the script enhances is server-rendered in its default
+     state first, so the page is complete before it arrives. --}}
+<script type="module" src="{{ vite('source/_assets/js/app.js') }}"></script>
+
+{{-- Controls that only do something once the script is running carry
+     `js-only`, so they are not offered to a reader who will not get it.
+     Declared here rather than in the stylesheet, because a <noscript>
+     block is the only way to ask about JavaScript in CSS, and alongside
+     the script so the two cannot drift apart. --}}
+<noscript>
+    <style>.js-only { display: none !important }</style>
+</noscript>

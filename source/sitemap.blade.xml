@@ -32,11 +32,16 @@
             continue;
         }
 
+        if (collect($page->pageless)->contains($key)) {
+            continue;
+        }
+
         $lastmod = $page->lastmodFor($key);
 
         $entries[] = [
             'path' => fn ($locale) => $page->localePath($key, $locale),
             'lastmod' => fn ($locale) => $lastmod,
+            'locales' => collect($page->routes[$key])->keys()->all(),
         ];
     }
 
@@ -64,6 +69,7 @@
     for ($number = 1; $number <= $pages; $number++) {
         $entries[] = [
             'path' => fn ($locale) => $page->blogPath($locale, $number),
+            'locales' => $page->locales,
 
             // The newest thing on this page of the list. Page 1 moves whenever
             // a post is published; the last page has not changed since 2017 and
@@ -80,6 +86,7 @@
 
         $entries[] = [
             'path' => fn ($locale) => $page->postPath($slug, $locale),
+            'locales' => $page->locales,
 
             // Falls back to the English post when a locale has not got this one
             // yet. Nothing is hidden by that: the URL is still listed, so the
@@ -89,18 +96,37 @@
             'lastmod' => fn ($locale) => ($archives[$locale]->get($slug) ?: $post)->lastmodDate(),
         ];
     }
+
+    // The handbook's articles, in the locales the handbook is written in and
+    // no others, which is what its route lists. An article keeps its slug
+    // across them, as a post does, so the default locale's collection is the
+    // list of slugs and each locale dates its own copy.
+    $handbookLocales = collect($page->routes['handbook'])->keys()->all();
+    $handbooks = [];
+
+    foreach ($handbookLocales as $locale) {
+        $handbooks[$locale] = collect(${'handbook_' . $locale})->keyBy('slug');
+    }
+
+    foreach ($handbooks[$page->defaultLocale] as $slug => $article) {
+        $entries[] = [
+            'path' => fn ($locale) => $page->handbookPath($slug, $locale),
+            'locales' => $handbookLocales,
+            'lastmod' => fn ($locale) => ($handbooks[$locale]->get($slug) ?: $article)->lastmodDate(),
+        ];
+    }
 @endphp
 {{-- The XML declaration is echoed, because a literal <?xml would be parsed
      as a PHP open tag. --}}
 {!! '<'.'?xml version="1.0" encoding="UTF-8"?'.'>' !!}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 @foreach ($entries as $entry)
-@foreach ($page->locales as $locale)
+@foreach ($entry['locales'] as $locale)
     <url>
         <loc>{{ $page->absolute($entry['path']($locale)) }}</loc>
         <lastmod>{{ $entry['lastmod']($locale) }}</lastmod>
-@foreach ($page->locales as $alternate)
-        <xhtml:link rel="alternate" hreflang="{{ $alternate }}" href="{{ $page->absolute($entry['path']($alternate)) }}"/>
+@foreach ($entry['locales'] as $alternate)
+        <xhtml:link rel="alternate" hreflang="{{ $page->languageTag($alternate) }}" href="{{ $page->absolute($entry['path']($alternate)) }}"/>
 @endforeach
         <xhtml:link rel="alternate" hreflang="x-default" href="{{ $page->absolute($entry['path']($page->defaultLocale)) }}"/>
     </url>

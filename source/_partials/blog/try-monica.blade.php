@@ -19,10 +19,5 @@
 
     <p class="text-body leading-[1.6] text-text-secondary">{{ $body }}</p>
 
-    <a
-        href="{{ $page->links['getStarted'] }}"
-        class="mn-btn mn-btn--primary mn-btn--sm mt-1 justify-center no-underline hover:no-underline"
-    >{{ $page->t('blog.tryMonica.cta') }}</a>
-
-    <span class="text-center font-mono text-mono text-text-muted">{{ $page->t('blog.tryMonica.note') }}</span>
+    <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary mn-btn-small w-full justify-center mt-1 no-underline hover:no-underline">{{ $page->t('blog.tryMonica.cta') }}</a>
 </div>

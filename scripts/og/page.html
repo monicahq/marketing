@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--base-->
+    <title>Monica page card</title>
+    <!--
+      The social card of one page in one locale, 1200x630. Rendered by
+      scripts/og/pages.php, which fills CARD below from the page's
+      `meta.<key>.ogImage` block in lang/<locale>.php and screenshots the
+      result with headless Chrome. Nothing here is part of the site.
+
+      The background is a finished illustration with the Monica mark already
+      drawn in its top left corner and an empty left half. Everything written
+      on it comes from CARD, set with textContent, so no copy is ever parsed
+      as HTML.
+
+      Relative URLs resolve from scripts/og/, through the <base> the generator
+      inserts. Chrome fails a missing font or image silently, so the generator
+      also reads the DOM back and refuses a card that did not load or fit.
+    -->
+    <style>
+      @font-face {
+        font-family: 'Card Serif';
+        src: url('fonts/NotoSerif-Regular.ttf') format('truetype');
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Card Serif';
+        src: url('fonts/NotoSerif-Italic.ttf') format('truetype');
+        font-style: italic;
+      }
+
+      @font-face {
+        font-family: 'Inter';
+        src: url('../../source/_assets/fonts/Inter-Variable.woff2') format('woff2');
+        font-weight: 100 900;
+      }
+
+      :root {
+        --ink: #1b1a19;
+        --body: #5b5853;
+        --accent: #be6513;
+        --ground: #fdfaf7;
+        --serif: 'Card Serif', 'Noto Serif CJK SC', serif;
+        --sans: Inter, 'Noto Sans CJK SC', 'PingFang SC', sans-serif;
+        --mono: 'JetBrains Mono', 'Noto Sans Mono', 'Noto Sans Mono CJK SC', ui-monospace, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+
+      body {
+        position: relative;
+        background: var(--ground) center / cover no-repeat;
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /*
+        The safe area: below the mark, and left of the illustration. That edge
+        is not straight: the headline may run to x=516, just short of the
+        Contacts card and the panda's ear, but lower down the grass and the
+        flowers reach x=430, so the description stops at 420px. The fitter
+        shrinks the type until the copy sits inside both.
+      */
+      .copy {
+        position: absolute;
+        left: 56px;
+        top: 168px;
+        width: 480px;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin: 0 0 30px;
+        font-family: var(--mono);
+        font-size: 17px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .eyebrow::before {
+        content: '';
+        flex: none;
+        width: 36px;
+        height: 1.5px;
+        background: currentColor;
+      }
+
+      /*
+        460px rather than the column's 480: an italic's last letter leans past
+        the box the browser measures, and the third line sits level with the
+        panda's paw.
+      */
+      h1 {
+        max-width: 460px;
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: var(--title-size, 52px);
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+      }
+
+      h1 span {
+        display: block;
+      }
+
+      h1 .accent {
+        font-style: italic;
+        color: var(--accent);
+      }
+
+      /* Chinese has no italic, and a slanted one is a browser's forgery. */
+      :lang(zh) h1 .accent {
+        font-style: normal;
+      }
+
+      .description {
+        max-width: 420px;
+        margin: 24px 0 0;
+        font-family: var(--sans);
+        font-size: var(--description-size, 21px);
+        line-height: 1.45;
+        color: var(--body);
+        text-wrap: pretty;
+      }
+
+      [hidden] {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="copy">
+      <p class="eyebrow" data-slot="eyebrow" hidden></p>
+      <h1>
+        <span data-slot="title"></span>
+        <span class="accent" data-slot="accent" hidden></span>
+      </h1>
+      <p class="description" data-slot="description" hidden></p>
+    </div>
+
+    <script>
+      const CARD = /*CARD*/ null;
+
+      const fill = (slot, text) => {
+        const node = document.querySelector(`[data-slot="${slot}"]`);
+        node.textContent = text ?? '';
+        node.hidden = !text;
+      };
+
+      document.documentElement.lang = CARD.lang;
+      document.body.style.backgroundImage = `url("backgrounds/${CARD.background}")`;
+      fill('eyebrow', CARD.eyebrow);
+      fill('title', CARD.title);
+      fill('accent', CARD.accent);
+      fill('description', CARD.description);
+
+      /*
+        Shrink until it fits: the headline in 2px steps down to 44px, then
+        the description down to 17px, then the headline on down to 36px, so a
+        long description gives way before a short headline does. "Fits" means no line wider than
+        its box (a long German compound) and the block ending above y=505,
+        where the bottom of the safe area meets the rocks. A card that still does not fit is marked, and the
+        generator fails on it rather than shipping clipped copy.
+      */
+      const copy = document.querySelector('.copy');
+      const lines = [...copy.querySelectorAll('h1 span, .description')];
+      const fits = () => copy.offsetTop + copy.scrollHeight <= 505 && lines.every((line) => line.scrollWidth <= line.clientWidth);
+
+      const fit = () => {
+        let title = 52;
+        let description = 21;
+
+        const shrinkTitle = (floor) => {
+          while (!fits() && title > floor) {
+            title -= 2;
+            document.documentElement.style.setProperty('--title-size', `${title}px`);
+          }
+        };
+
+        shrinkTitle(44);
+
+        // An optional description stops at 19px: smaller than that, five
+        // lines of it are a grey block in a link preview, not something read.
+        const floor = CARD.optionalDescription ? 19 : 17;
+
+        while (!fits() && description > floor) {
+          description -= 1;
+          document.documentElement.style.setProperty('--description-size', `${description}px`);
+        }
+
+        // A handbook article's title says what it is on its own, so a
+        // description too long for the card goes, and the headline gets its
+        // full size back, rather than both being squeezed into small print.
+        if (!fits() && CARD.optionalDescription) {
+          document.querySelector('[data-slot="description"]').hidden = true;
+          document.body.dataset.dropped = 'description';
+          title = 52;
+          document.documentElement.style.setProperty('--title-size', `${title}px`);
+        }
+
+        shrinkTitle(36);
+
+        document.body.dataset.fit = fits() ? 'ok' : 'overflow';
+      };
+
+      const background = new Image();
+      const loaded = new Promise((resolve) => {
+        background.onload = () => resolve(true);
+        background.onerror = () => resolve(false);
+      });
+      background.src = `backgrounds/${CARD.background}`;
+
+      Promise.all([document.fonts.ready, loaded]).then(([, ok]) => {
+        const fonts = document.fonts.check('52px "Card Serif"') && document.fonts.check('21px Inter');
+        fit();
+        document.body.dataset.assets = ok && fonts ? 'ok' : 'missing';
+      });
+    </script>
+  </body>
+</html>
