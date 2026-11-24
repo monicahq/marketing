@@ -34,6 +34,7 @@ return [
             'inventory' => "Inventário e etiquetas",
             'locations' => "Locais",
             'maintenanceLoans' => "Manutenção e empréstimos",
+            'knowledge' => "Conhecimento",
             'relationships' => "Relacionamentos",
             'vaults' => "Cofres",
             'sharing' => "Compartilhamento",
@@ -359,6 +360,19 @@ return [
                 'title' => "Guarde um pouco de histórico.",
                 'description' => "Serviço feito. Coisas emprestadas. Detalhes guardados.",
                 'alt' => "O panda da Monica organizando fichas em um arquivo, com as palavras “Guarde um pouco de histórico.”",
+            ],
+        ],
+
+        'knowledge' => [
+            'title' => "Base de conhecimento pessoal com notas e listas — Monica",
+            'description' => "Guarde instruções úteis, recomendações e informações de referência em uma base de conhecimento pessoal. Organize notas e listas em pastas com a Monica.",
+            'ogTitle' => "Um lar para o que você fica feliz de ter anotado — Monica",
+            'ogDescription' => "Guarde o conhecimento do dia a dia em notas e listas, à mão para você e para os assistentes compatíveis que escolher.",
+            'ogImage' => [
+                'eyebrow' => "Conhecimento",
+                'title' => "Guarde o que você sabe.",
+                'description' => "Notas, listas e informações úteis do dia a dia.",
+                'alt' => "O panda da Monica organizando fichas em um arquivo, com as palavras “Guarde o que você sabe.”",
             ],
         ],
 
@@ -3348,6 +3362,148 @@ return [
         'cta' => [
             'title' => "Deixe um registro para a próxima vez que você ficar em dúvida.",
             'body' => "Um reparo ou um empréstimo basta para começar.",
+            'button' => "Começar a usar a Monica",
+        ],
+    ],
+
+    /**
+     * The knowledge page: notes and lists, in folders. Every drawing is a
+     * piece of Erica's Knowledge screens, filled with the demo vault's own
+     * Knowledge (Monica Geller's), to which the water shutoff note and the
+     * paint list are added in her Home folder. `ui` holds the application's
+     * own words, as Erica translates them.
+     */
+    'knowledge' => [
+        'hero' => [
+            'eyebrow' => "Conhecimento",
+            'title' => "Guarde o que você sabe num lugar onde possa encontrar.",
+            'lede' => "A receita. A referência da tinta. As instruções de que você só precisa quando todo mundo está fora.",
+            'body' => "Dê um lar às informações úteis na base de conhecimento pessoal da Monica. Escreva notas, guarde listas e organize tudo em pastas que você vai reconhecer depois.",
+            'cta' => "Começar a usar a Monica",
+            'plans' => "Ver planos",
+            'label' => "O Conhecimento na Monica. Ao lado, as pastas, com Casa aberta nas suas notas e listas: Eletrodomésticos, Manutenção da casa, Cronograma de manutenção, Referências de tinta, Fechar a água e Informações do Wi-Fi. O sumário indica de cada uma o tipo e quando foi editada pela última vez, e as notas mostram seus títulos.",
+        ],
+        'ui' => [
+            'knowledge' => "Conhecimento",
+            'search' => "Pesquisar notas e listas",
+            'contents' => "Sumário",
+            'contentsLead' => "Todas as pastas, notas e listas do Conhecimento. As notas também mostram seus títulos, para que você possa ir direto a um deles.",
+            'summary' => "8 pastas, 18 notas, 14 listas",
+            'note' => "Nota",
+            'list' => "Lista",
+            'edit' => "Editar",
+            'editColumns' => "Editar colunas",
+            'addItem' => "Adicionar um item",
+        ],
+        // The folders, in the order Monica has put them in: Home moved to
+        // the top. `count` is the line beside a folder in the contents.
+        'folders' => [
+            ['name' => "Casa", 'count' => "6"],
+            ['name' => "Pessoal", 'count' => "4"],
+            ['name' => "Viagens", 'count' => "4"],
+            ['name' => "Saúde e condicionamento físico", 'count' => "3"],
+            ['name' => "Livros e filmes", 'count' => "4"],
+            ['name' => "Comida e receitas", 'count' => "4"],
+            ['name' => "Tecnologia", 'count' => "4"],
+            ['name' => "Ideias e projetos", 'count' => "3"],
+        ],
+        'homeCount' => "6 notas e listas",
+        'personalCount' => "4 notas e listas",
+        // The documents of a folder, sorted by title as Erica sorts them in
+        // this language: kind (note or list), title, the kind line, when it
+        // was edited, and a note's headings.
+        'home' => [
+            ['list', "Eletrodomésticos", "Lista de 4 itens", "Editada há 1 mês", []],
+            ['note', "Manutenção da casa", "Nota", "Editada há 2 dias", ["Nesta estação"]],
+            ['list', "Cronograma de manutenção", "Lista de 3 itens", "Editada há 3 semanas", []],
+            ['list', "Referências de tinta", "Lista de 4 itens", "Editada há 3 semanas", []],
+            ['note', "Fechar a água", "Nota", "Editada há 2 semanas", ["Registro geral", "Antes de uma viagem longa"]],
+            ['note', "Informações do Wi-Fi", "Nota", "Editada há 1 mês", []],
+        ],
+        'personal' => [
+            ['note', "Sobre mim", "Nota", "Editada há 2 meses", ["A versão curta", "O que as pessoas deveriam saber"]],
+            ['note', "Coisas favoritas", "Nota", "Editada há 2 meses", []],
+        ],
+        'note' => [
+            'folder' => "Casa",
+            'title' => "Fechar a água",
+            'edited' => "Editada há 2 semanas",
+            'valve' => "Registro geral",
+            'valveBody' => "No armário ao lado da porta de entrada, atrás do aspirador de pó. Gire no sentido horário até parar.",
+            'trip' => "Antes de uma viagem longa",
+            // Each task, and whether it is ticked.
+            'tasks' => [
+                ["Fechar o registro geral", true],
+                ["Fechar a torneira externa, embaixo da pia da cozinha", true],
+                ["Abrir a torneira mais baixa para esvaziar os canos", false],
+            ],
+        ],
+        'list' => [
+            'folder' => "Casa",
+            'title' => "Referências de tinta",
+            'edited' => "Editada há 3 semanas",
+            'count' => "4 itens",
+            'description' => "A tinta de cada cômodo, para que o próximo retoque combine.",
+            'columns' => ["Cômodo", "Cor", "Acabamento"],
+            'items' => [
+                ["Sala", "Roxo, ref. 412", "Casca de ovo"],
+                ["Cozinha", "Verde-sálvia claro, ref. 214", "Semibrilho"],
+                ["Banheiro", "Branco quente", "Brilho suave"],
+                ["Corredor", "Cinza-pedra, ref. 87", "Fosco"],
+            ],
+        ],
+        'notes' => [
+            'title' => "Algum conhecimento precisa de um parágrafo.",
+            'body' => "Guarde instruções, ideias e informações de referência em uma nota. Use títulos, listas e links para que ela fique legível quando você voltar.",
+            'closing' => "“Fechar a água: armário ao lado da porta de entrada” já é uma nota útil. Ela não precisa de prefácio.",
+            'link' => "Conhecer as notas",
+        ],
+        'lists' => [
+            'title' => "Algum conhecimento pede linhas.",
+            'body' => "Livros para ler. Lugares para visitar. O nome e o acabamento da tinta de cada cômodo. Crie uma lista com as colunas de que você precisa e mantenha os detalhes juntos.",
+            'link' => "Conhecer as listas",
+            'label' => "Duas páginas do Conhecimento lado a lado. A nota Fechar a água, na pasta Casa: onde fica o registro geral e como fechá-lo, depois três tarefas antes de uma viagem longa, duas delas marcadas. E a lista Referências de tinta, com uma coluna para o cômodo, a cor e o acabamento, e quatro cômodos.",
+        ],
+        'folderSection' => [
+            'title' => "Dê um lugar a cada assunto.",
+            'body' => "Agrupe notas e listas em pastas com nome. Navegue pelo sumário ou pesquise no Conhecimento palavras das suas informações guardadas.",
+            'closing' => "Comece com algumas pastas que façam sentido para você. “Casa” é um ótimo nome. “Estrutura otimizada de inteligência doméstica” dá bastante trabalho para digitar.",
+            'link' => "Conhecer as pastas e a organização",
+            'query' => "água",
+            'label' => "As pastas do Conhecimento, pesquisadas com a palavra água. Sobra uma pasta, Casa, com a única nota que corresponde: Fechar a água.",
+        ],
+        'assistant' => [
+            'title' => "Informação útil, com ou sem assistente.",
+            'body' => "Um assistente compatível pode pesquisar e trabalhar com os registros do Conhecimento compatíveis, pela sua conexão. Você também pode abri-los, editá-los e organizá-los direto na Monica.",
+            'link' => "Ver como funciona a memória pessoal de IA",
+            'prompt' => "“Encontre na Monica as instruções para fechar a água.”",
+            'name' => "Seu assistente",
+            'connected' => "Monica conectada",
+            'answer' => "Sua nota Fechar a água diz que o registro geral fica no armário ao lado da porta de entrada, atrás do aspirador de pó. Gire no sentido horário até parar.",
+            'label' => "Um pedido a um assistente pelas instruções para fechar a água, e a resposta dele a partir da nota na Monica.",
+        ],
+        'faq' => [
+            'title' => "Algumas respostas úteis.",
+            'items' => [
+                [
+                    'q' => "Em que o Conhecimento difere das notas de um contato?",
+                    'a' => "O Conhecimento guarda informação por assunto. Os :link guardam o contexto de uma pessoa em particular. Use o lugar em que será mais fácil encontrar a informação de novo.",
+                    'link' => ['label' => "dados de contato e notas", 'page' => 'details'],
+                ],
+                [
+                    'q' => "As notas podem apontar direto para contatos ou pertences como registros estruturados?",
+                    'a' => "As notas do Conhecimento guardam por enquanto texto e links comuns da web. Elas não oferecem relações estruturadas com contatos, pertences ou outras notas.",
+                ],
+                [
+                    'q' => "Posso mantê-lo separado das minhas informações de trabalho?",
+                    'a' => "O Conhecimento fica dentro de um :link, então cofres separados podem guardar conjuntos separados de informações.",
+                    'link' => ['label' => "cofre", 'page' => 'vaults'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Guarde uma coisa que você sempre precisa procurar de novo.",
+            'body' => "Você do futuro já tem abas abertas demais.",
             'button' => "Começar a usar a Monica",
         ],
     ],

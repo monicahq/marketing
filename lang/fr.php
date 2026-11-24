@@ -32,6 +32,7 @@ return [
             'inventory' => "Inventaire et étiquettes",
             'locations' => "Emplacements",
             'maintenanceLoans' => "Entretien et prêts",
+            'knowledge' => "Connaissances",
             'relationships' => "Relations",
             'vaults' => "Coffres",
             'sharing' => "Partage",
@@ -353,6 +354,19 @@ return [
                 'title' => "Gardez un peu d’historique.",
                 'description' => "Du travail fait. Des objets prêtés. Des détails gardés.",
                 'alt' => "Le panda de Monica qui range des fiches dans un classeur, avec les mots « Gardez un peu d’historique. »",
+            ],
+        ],
+
+        'knowledge' => [
+            'title' => "Base de connaissances personnelle avec notes et listes — Monica",
+            'description' => "Gardez consignes utiles, recommandations et informations de référence dans une base de connaissances personnelle. Organisez notes et listes en dossiers avec Monica.",
+            'ogTitle' => "Un foyer pour ce que vous êtes content d’avoir noté — Monica",
+            'ogDescription' => "Gardez le savoir du quotidien dans des notes et des listes, à portée de main pour vous et pour les assistants compatibles de votre choix.",
+            'ogImage' => [
+                'eyebrow' => "Connaissances",
+                'title' => "Gardez ce que vous savez.",
+                'description' => "Des notes, des listes et des informations utiles au quotidien.",
+                'alt' => "Le panda de Monica qui range des fiches dans un classeur, avec les mots « Gardez ce que vous savez. »",
             ],
         ],
 
@@ -3337,6 +3351,148 @@ return [
         'cta' => [
             'title' => "Laissez une trace pour la prochaine fois que vous vous poserez la question.",
             'body' => "Une réparation ou un prêt suffit pour commencer.",
+            'button' => "Commencer avec Monica",
+        ],
+    ],
+
+    /**
+     * The knowledge page: notes and lists, in folders. Every drawing is a
+     * piece of Erica's Knowledge screens, filled with the demo vault's own
+     * Knowledge (Monica Geller's), to which the water shutoff note and the
+     * paint list are added in her Home folder. `ui` holds the application's
+     * own words, as Erica translates them.
+     */
+    'knowledge' => [
+        'hero' => [
+            'eyebrow' => "Connaissances",
+            'title' => "Gardez ce que vous savez là où vous pourrez le retrouver.",
+            'lede' => "La recette. La référence de peinture. Les consignes dont vous n’avez besoin que lorsque tout le monde est parti.",
+            'body' => "Donnez un foyer aux informations utiles dans la base de connaissances personnelle de Monica. Écrivez des notes, gardez des listes et rangez-les dans des dossiers que vous reconnaîtrez plus tard.",
+            'cta' => "Commencer avec Monica",
+            'plans' => "Voir les offres",
+            'label' => "Les Connaissances dans Monica. À côté, les dossiers, avec Maison ouvert sur ses notes et listes : Appareils, Entretien de la maison, Calendrier d’entretien, Références de peinture, Coupure d’eau et Informations Wi-Fi. Le sommaire indique pour chacun sa nature et la date de sa dernière modification, et les notes affichent leurs titres.",
+        ],
+        'ui' => [
+            'knowledge' => "Connaissances",
+            'search' => "Rechercher dans les notes et les listes",
+            'contents' => "Sommaire",
+            'contentsLead' => "Chaque dossier, note et liste des Connaissances. Les notes affichent aussi leurs titres, pour aller directement à l’un d’eux.",
+            'summary' => "8 dossiers, 18 notes, 14 listes",
+            'note' => "Note",
+            'list' => "Liste",
+            'edit' => "Éditer",
+            'editColumns' => "Éditer les colonnes",
+            'addItem' => "Ajouter un élément",
+        ],
+        // The folders, in the order Monica has put them in: Home moved to
+        // the top. `count` is the line beside a folder in the contents.
+        'folders' => [
+            ['name' => "Maison", 'count' => "6"],
+            ['name' => "Perso", 'count' => "4"],
+            ['name' => "Voyages", 'count' => "4"],
+            ['name' => "Santé et forme", 'count' => "3"],
+            ['name' => "Livres et films", 'count' => "4"],
+            ['name' => "Cuisine et recettes", 'count' => "4"],
+            ['name' => "Technologie", 'count' => "4"],
+            ['name' => "Idées et projets", 'count' => "3"],
+        ],
+        'homeCount' => "6 notes et listes",
+        'personalCount' => "4 notes et listes",
+        // The documents of a folder, sorted by title as Erica sorts them in
+        // this language: kind (note or list), title, the kind line, when it
+        // was edited, and a note's headings.
+        'home' => [
+            ['list', "Appareils", "Liste de 4 éléments", "Modifié il y a 1 mois", []],
+            ['note', "Entretien de la maison", "Note", "Modifié il y a 2 jours", ["Cette saison"]],
+            ['list', "Calendrier d’entretien", "Liste de 3 éléments", "Modifié il y a 3 semaines", []],
+            ['list', "Références de peinture", "Liste de 4 éléments", "Modifié il y a 3 semaines", []],
+            ['note', "Coupure d’eau", "Note", "Modifié il y a 2 semaines", ["Vanne principale", "Avant un long voyage"]],
+            ['note', "Informations Wi-Fi", "Note", "Modifié il y a 1 mois", []],
+        ],
+        'personal' => [
+            ['note', "À propos de moi", "Note", "Modifié il y a 2 mois", ["La version courte", "Ce que les gens devraient savoir"]],
+            ['note', "Mes choses préférées", "Note", "Modifié il y a 2 mois", []],
+        ],
+        'note' => [
+            'folder' => "Maison",
+            'title' => "Coupure d’eau",
+            'edited' => "Modifié il y a 2 semaines",
+            'valve' => "Vanne principale",
+            'valveBody' => "Dans le placard à côté de la porte d’entrée, derrière l’aspirateur. Tournez-la dans le sens des aiguilles d’une montre jusqu’en butée.",
+            'trip' => "Avant un long voyage",
+            // Each task, and whether it is ticked.
+            'tasks' => [
+                ["Fermer la vanne principale", true],
+                ["Fermer le robinet extérieur, sous l’évier de la cuisine", true],
+                ["Ouvrir le robinet le plus bas pour vider les tuyaux", false],
+            ],
+        ],
+        'list' => [
+            'folder' => "Maison",
+            'title' => "Références de peinture",
+            'edited' => "Modifié il y a 3 semaines",
+            'count' => "4 éléments",
+            'description' => "La peinture de chaque pièce, pour que la prochaine retouche soit assortie.",
+            'columns' => ["Pièce", "Couleur", "Finition"],
+            'items' => [
+                ["Salon", "Violet, réf. 412", "Coquille d’œuf"],
+                ["Cuisine", "Vert sauge pâle, réf. 214", "Satinée"],
+                ["Salle de bain", "Blanc chaud", "Légèrement brillante"],
+                ["Couloir", "Gris pierre, réf. 87", "Mate"],
+            ],
+        ],
+        'notes' => [
+            'title' => "Certains savoirs demandent un paragraphe.",
+            'body' => "Gardez consignes, idées et informations de référence dans une note. Utilisez titres, listes et liens pour que ce soit lisible quand vous y reviendrez.",
+            'closing' => "« Coupure d’eau : placard à côté de la porte d’entrée » est déjà une note utile. Elle n’a pas besoin d’avant-propos.",
+            'link' => "Découvrir les notes",
+        ],
+        'lists' => [
+            'title' => "Certains savoirs tiennent en lignes.",
+            'body' => "Des livres à lire. Des lieux à visiter. Le nom et la finition de la peinture de chaque pièce. Créez une liste avec les colonnes dont vous avez besoin, et gardez les détails ensemble.",
+            'link' => "Découvrir les listes",
+            'label' => "Deux pages des Connaissances côte à côte. La note Coupure d’eau, dans le dossier Maison : où se trouve la vanne principale et comment la fermer, puis trois tâches avant un long voyage, dont deux cochées. Et la liste Références de peinture, avec une colonne pour la pièce, la couleur et la finition, et quatre pièces.",
+        ],
+        'folderSection' => [
+            'title' => "Donnez une place à chaque sujet.",
+            'body' => "Regroupez notes et listes dans des dossiers nommés. Parcourez le sommaire ou recherchez dans les Connaissances les mots de vos informations enregistrées.",
+            'closing' => "Commencez par quelques dossiers qui ont un sens pour vous. « Maison » est un très bon nom. « Cadre d’intelligence domestique optimisée » fait beaucoup à taper.",
+            'link' => "Découvrir les dossiers et l’organisation",
+            'query' => "coupure",
+            'label' => "Les dossiers des Connaissances, recherchés avec le mot coupure. Il ne reste qu’un dossier, Maison, avec l’unique note qui correspond : Coupure d’eau.",
+        ],
+        'assistant' => [
+            'title' => "Des informations utiles, avec ou sans assistant.",
+            'body' => "Un assistant compatible peut chercher dans les enregistrements des Connaissances pris en charge et travailler avec eux, grâce à votre connexion. Vous pouvez aussi les ouvrir, les modifier et les organiser directement dans Monica.",
+            'link' => "Voir comment fonctionne la mémoire IA personnelle",
+            'prompt' => "« Trouve les consignes de coupure d’eau dans Monica. »",
+            'name' => "Votre assistant",
+            'connected' => "Monica connectée",
+            'answer' => "Votre note Coupure d’eau indique que la vanne principale est dans le placard à côté de la porte d’entrée, derrière l’aspirateur. Tournez-la dans le sens des aiguilles d’une montre jusqu’en butée.",
+            'label' => "Une demande à un assistant pour retrouver les consignes de coupure d’eau, et sa réponse tirée de la note dans Monica.",
+        ],
+        'faq' => [
+            'title' => "Quelques réponses utiles.",
+            'items' => [
+                [
+                    'q' => "En quoi les Connaissances diffèrent-elles des notes d’un contact ?",
+                    'a' => "Les Connaissances gardent l’information par sujet. Les :link gardent le contexte d’une personne en particulier. Choisissez l’endroit où l’information sera la plus facile à retrouver.",
+                    'link' => ['label' => "coordonnées et notes d’un contact", 'page' => 'details'],
+                ],
+                [
+                    'q' => "Les notes peuvent-elles renvoyer directement à des contacts ou à des possessions comme des enregistrements structurés ?",
+                    'a' => "Les notes des Connaissances contiennent pour l’instant du texte et des liens web ordinaires. Elles n’offrent pas de relations structurées avec des contacts, des possessions ou d’autres notes.",
+                ],
+                [
+                    'q' => "Puis-je les garder séparées de mes informations professionnelles ?",
+                    'a' => "Les Connaissances vivent dans un :link, donc des coffres distincts peuvent contenir des ensembles d’informations distincts.",
+                    'link' => ['label' => "coffre", 'page' => 'vaults'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Enregistrez une chose que vous devez sans cesse rechercher.",
+            'body' => "Le vous du futur a déjà bien assez d’onglets ouverts.",
             'button' => "Commencer avec Monica",
         ],
     ],

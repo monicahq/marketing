@@ -1,6 +1,6 @@
 # Monica SEO sheets for de
 
-These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1255,6 +1255,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | Wartungsverlauf von Gegenständen |
 | Secondary keywords | Verleih verfolgen, an Freunde verliehene Dinge |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/funktionen/wissen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/wissen/ |
+| Canonical | https://www.monicahq.com/de/funktionen/wissen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persönliche Wissensdatenbank mit Notizen und Listen — Monica |
+| Meta description | Halten Sie nützliche Anleitungen, Empfehlungen und Nachschlagewissen in einer persönlichen Wissensdatenbank fest. Ordnen Sie Notizen und Listen in Ordnern, mit Monica. |
+| H1 | Behalten Sie, was Sie wissen, dort, wo Sie es wiederfinden. |
+| OG title | Ein Zuhause für alles, was Sie gern aufgeschrieben haben — Monica |
+| OG description | Halten Sie Alltagswissen in Notizen und Listen fest, bereit für Sie und die kompatiblen Assistenten Ihrer Wahl. |
+| OG image | https://www.monicahq.com/og/knowledge-de.jpg?v=f5500aa5 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persönliche Wissensdatenbank |
+| Secondary keywords | Notizen und Listen, Notizen in Ordnern |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 

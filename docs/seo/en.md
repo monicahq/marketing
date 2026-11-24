@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1085,6 +1085,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Primary keyword | personal inventory with tags |
 | Secondary keywords | possession types, custom inventory fields |
 | Supporting keywords | book collection inventory, organise belongings with tags |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/knowledge/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/knowledge/ |
+| Canonical | https://www.monicahq.com/en/features/knowledge/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Personal knowledge base with notes and lists — Monica |
+| Meta description | Keep useful instructions, recommendations and reference information in a personal knowledge base. Organise notes and lists in folders with Monica. |
+| H1 | Keep what you know somewhere you can find it. |
+| OG title | A home for the things you are glad you wrote down — Monica |
+| OG description | Keep everyday knowledge in notes and lists, ready for you and the compatible assistants you choose. |
+| OG image | https://www.monicahq.com/og/knowledge-en.jpg?v=c321f646 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | personal knowledge base |
+| Secondary keywords | notes and lists, organise notes in folders |
+| Supporting keywords | household instructions, reference lists |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/features/languages/

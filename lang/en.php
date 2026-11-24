@@ -49,6 +49,7 @@ return [
             'inventory' => "Inventory & tags",
             'locations' => "Locations",
             'maintenanceLoans' => "Maintenance & loans",
+            'knowledge' => "Knowledge",
             'relationships' => "Relationships",
             'vaults' => "Vaults",
             'sharing' => "Sharing",
@@ -381,6 +382,19 @@ return [
                 'title' => "Keep a little history.",
                 'description' => "Work done. Things lent. Details kept.",
                 'alt' => "The Monica panda filing cards in a cabinet, with the words “Keep a little history.”",
+            ],
+        ],
+
+        'knowledge' => [
+            'title' => "Personal knowledge base with notes and lists — Monica",
+            'description' => "Keep useful instructions, recommendations and reference information in a personal knowledge base. Organise notes and lists in folders with Monica.",
+            'ogTitle' => "A home for the things you are glad you wrote down — Monica",
+            'ogDescription' => "Keep everyday knowledge in notes and lists, ready for you and the compatible assistants you choose.",
+            'ogImage' => [
+                'eyebrow' => "Knowledge",
+                'title' => "Keep what you know.",
+                'description' => "Notes, lists and useful everyday information.",
+                'alt' => "The Monica panda filing cards in a cabinet, with the words “Keep what you know.”",
             ],
         ],
 
@@ -3365,6 +3379,148 @@ return [
         'cta' => [
             'title' => "Leave a record for the next time you wonder.",
             'body' => "One repair or one loan is enough to begin.",
+            'button' => "Start using Monica",
+        ],
+    ],
+
+    /**
+     * The knowledge page: notes and lists, in folders. Every drawing is a
+     * piece of Erica's Knowledge screens, filled with the demo vault's own
+     * Knowledge (Monica Geller's), to which the water shutoff note and the
+     * paint list are added in her Home folder. `ui` holds the application's
+     * own words, as Erica translates them.
+     */
+    'knowledge' => [
+        'hero' => [
+            'eyebrow' => "Knowledge",
+            'title' => "Keep what you know somewhere you can find it.",
+            'lede' => "The recipe. The paint reference. The instructions you only need when everyone else is away.",
+            'body' => "Give useful information a home in Monica’s personal knowledge base. Write notes, keep lists and organise them in folders you will recognise later.",
+            'cta' => "Start using Monica",
+            'plans' => "See plans",
+            'label' => "Knowledge in Monica. Beside it, the folders, with Home open on its notes and lists: Appliances, Home maintenance, Maintenance schedule, Paint references, Water shutoff and Wi-Fi information. The contents list each one with its kind and when it was last edited, and the notes show their headings.",
+        ],
+        'ui' => [
+            'knowledge' => "Knowledge",
+            'search' => "Search notes and lists",
+            'contents' => "Contents",
+            'contentsLead' => "Every folder, note and list in Knowledge. Notes also show their headings, so you can go straight to one.",
+            'summary' => "8 folders, 18 notes, 14 lists",
+            'note' => "Note",
+            'list' => "List",
+            'edit' => "Edit",
+            'editColumns' => "Edit columns",
+            'addItem' => "Add an item",
+        ],
+        // The folders, in the order Monica has put them in: Home moved to
+        // the top. `count` is the line beside a folder in the contents.
+        'folders' => [
+            ['name' => "Home", 'count' => "6"],
+            ['name' => "Personal", 'count' => "4"],
+            ['name' => "Travel", 'count' => "4"],
+            ['name' => "Health and Fitness", 'count' => "3"],
+            ['name' => "Books and Movies", 'count' => "4"],
+            ['name' => "Food and Recipes", 'count' => "4"],
+            ['name' => "Technology", 'count' => "4"],
+            ['name' => "Ideas and Projects", 'count' => "3"],
+        ],
+        'homeCount' => "6 notes and lists",
+        'personalCount' => "4 notes and lists",
+        // The documents of a folder, sorted by title as Erica sorts them in
+        // this language: kind (note or list), title, the kind line, when it
+        // was edited, and a note's headings.
+        'home' => [
+            ['list', "Appliances", "List of 4 items", "Edited 1 month ago", []],
+            ['note', "Home maintenance", "Note", "Edited 2 days ago", ["This season"]],
+            ['list', "Maintenance schedule", "List of 3 items", "Edited 3 weeks ago", []],
+            ['list', "Paint references", "List of 4 items", "Edited 3 weeks ago", []],
+            ['note', "Water shutoff", "Note", "Edited 2 weeks ago", ["Main valve", "Before a long trip"]],
+            ['note', "Wi-Fi information", "Note", "Edited 1 month ago", []],
+        ],
+        'personal' => [
+            ['note', "About me", "Note", "Edited 2 months ago", ["The short version", "Things people should know"]],
+            ['note', "Favorite things", "Note", "Edited 2 months ago", []],
+        ],
+        'note' => [
+            'folder' => "Home",
+            'title' => "Water shutoff",
+            'edited' => "Edited 2 weeks ago",
+            'valve' => "Main valve",
+            'valveBody' => "In the cupboard beside the front door, behind the vacuum. Turn it clockwise until it stops.",
+            'trip' => "Before a long trip",
+            // Each task, and whether it is ticked.
+            'tasks' => [
+                ["Turn off the main valve", true],
+                ["Close the outdoor tap, under the kitchen sink", true],
+                ["Open the lowest tap to drain the pipes", false],
+            ],
+        ],
+        'list' => [
+            'folder' => "Home",
+            'title' => "Paint references",
+            'edited' => "Edited 3 weeks ago",
+            'count' => "4 items",
+            'description' => "The paint for each room, so the next touch-up matches.",
+            'columns' => ["Room", "Colour", "Finish"],
+            'items' => [
+                ["Living room", "Purple, ref. 412", "Eggshell"],
+                ["Kitchen", "Pale sage, ref. 214", "Satin"],
+                ["Bathroom", "Warm white", "Soft sheen"],
+                ["Hallway", "Stone grey, ref. 87", "Matt"],
+            ],
+        ],
+        'notes' => [
+            'title' => "Some knowledge needs a paragraph.",
+            'body' => "Keep instructions, ideas and reference information in a note. Use headings, lists and links to make it readable when you come back.",
+            'closing' => "“Water shutoff: cupboard beside the front door” is already a useful note. It does not need a foreword.",
+            'link' => "Explore notes",
+        ],
+        'lists' => [
+            'title' => "Some knowledge belongs in rows.",
+            'body' => "Books to read. Places to visit. The paint name and finish for each room. Create a list with the columns you need, and keep the details together.",
+            'link' => "Explore lists",
+            'label' => "Two pages of Knowledge side by side. The note Water shutoff, in the Home folder: where the main valve is and how to close it, then three tasks before a long trip, two of them ticked. And the list Paint references, with a column for the room, the colour and the finish, and four rooms in it.",
+        ],
+        'folderSection' => [
+            'title' => "Give each topic a place.",
+            'body' => "Group notes and lists in named folders. Browse the contents or search Knowledge for words in your saved information.",
+            'closing' => "Start with a few folders that mean something to you. “Home” is a fine name. “Optimised domestic intelligence framework” is quite a lot to type.",
+            'link' => "Explore folders and organisation",
+            'query' => "shutoff",
+            'label' => "The folders of Knowledge, searched for the word shutoff. One folder is left, Home, with the one note that matches: Water shutoff.",
+        ],
+        'assistant' => [
+            'title' => "Useful information, with or without an assistant.",
+            'body' => "A compatible assistant can search and work with supported Knowledge records through your connection. You can also open, edit and organise them directly in Monica.",
+            'link' => "See how personal AI memory works",
+            'prompt' => "“Find the water shutoff instructions in Monica.”",
+            'name' => "Your assistant",
+            'connected' => "Monica connected",
+            'answer' => "Your note Water shutoff says the main valve is in the cupboard beside the front door, behind the vacuum. Turn it clockwise until it stops.",
+            'label' => "A request to an assistant for the water shutoff instructions, and its answer from the note in Monica.",
+        ],
+        'faq' => [
+            'title' => "A few useful answers.",
+            'items' => [
+                [
+                    'q' => "How is Knowledge different from contact notes?",
+                    'a' => "Knowledge keeps information by topic. :link keep context about a particular person. Use the place that will make the information easiest to find again.",
+                    'link' => ['label' => "Contact details and notes", 'page' => 'details'],
+                ],
+                [
+                    'q' => "Can notes link directly to contacts or possessions as structured records?",
+                    'a' => "Knowledge notes currently hold text and ordinary web links. They do not provide structured relationships to contacts, possessions or other notes.",
+                ],
+                [
+                    'q' => "Can I keep it separate from my work information?",
+                    'a' => "Knowledge lives inside a :link, so separate vaults can hold separate sets of information.",
+                    'link' => ['label' => "vault", 'page' => 'vaults'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Save one thing you keep having to find again.",
+            'body' => "Future you has quite enough tabs open.",
             'button' => "Start using Monica",
         ],
     ],

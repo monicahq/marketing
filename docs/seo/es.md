@@ -1,6 +1,6 @@
 # Monica SEO sheets for es
 
-These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1103,6 +1103,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | compartir datos de contacto en privado |
 | Secondary keywords | compartir contactos en modo lectura, enlace protegido |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
+## /es/funcionalidades/conocimiento/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/funcionalidades/conocimiento/ |
+| Canonical | https://www.monicahq.com/es/funcionalidades/conocimiento/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Base de conocimiento personal con notas y listas — Monica |
+| Meta description | Guarda instrucciones útiles, recomendaciones e información de referencia en una base de conocimiento personal. Organiza notas y listas en carpetas con Monica. |
+| H1 | Guarda lo que sabes en un lugar donde puedas encontrarlo. |
+| OG title | Un hogar para lo que te alegras de haber apuntado — Monica |
+| OG description | Guarda el conocimiento de cada día en notas y listas, listo para ti y para los asistentes compatibles que elijas. |
+| OG image | https://www.monicahq.com/og/knowledge-es.jpg?v=50ad7a94 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | base de conocimiento personal |
+| Secondary keywords | notas y listas, carpetas de notas |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
 

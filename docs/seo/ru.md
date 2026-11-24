@@ -1,6 +1,6 @@
 # Monica SEO sheets for ru
 
-These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2813,6 +2813,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | многоязычная персональная CRM |
 | Secondary keywords | форматы имён, языки Monica |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
+## /ru/vozmozhnosti/znaniya/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/znaniya/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/znaniya/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Личная база знаний с заметками и списками — Monica |
+| Meta description | Храните полезные инструкции, рекомендации и справочные сведения в личной базе знаний. Раскладывайте заметки и списки по папкам в Monica. |
+| H1 | Храните то, что знаете, там, где это можно найти. |
+| OG title | Дом для всего, что вы рады были записать — Monica |
+| OG description | Храните повседневные знания в заметках и списках, чтобы они были под рукой у вас и у совместимых помощников, которых вы выберете. |
+| OG image | https://www.monicahq.com/og/knowledge-ru.jpg?v=91301941 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | личная база знаний |
+| Secondary keywords | заметки и списки, папки для заметок |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 

@@ -1,11 +1,10 @@
 @php($together = $copy['together'])
 
-{{-- Knowledge has no page yet, so its link is `#`. --}}
 <section class="border-y border-border bg-surface-subtle px-4 py-24 md:px-6 lg:py-28">
     <div class="{{ $narrow }} {{ $split }}">
         <div class="flex flex-col gap-4.5">
             <h2 class="{{ $title }}">{{ $together['title'] }}</h2>
-            <p class="{{ $paragraph }}">{!! $linked($together['body'], ['contacts' => [$together['contacts'], $page->route('people')], 'knowledge' => [$together['knowledge'], '#'], 'mcp' => [$together['mcp'], $page->route('mcpServer')]]) !!}</p>
+            <p class="{{ $paragraph }}">{!! $linked($together['body'], ['contacts' => [$together['contacts'], $page->route('people')], 'knowledge' => [$together['knowledge'], $page->route('knowledge')], 'mcp' => [$together['mcp'], $page->route('mcpServer')]]) !!}</p>
             <p class="{{ $closing }}">{{ $together['closing'] }}</p>
         </div>
 

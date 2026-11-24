@@ -33,6 +33,7 @@ return [
             'inventory' => "Inventaris en labels",
             'locations' => "Locaties",
             'maintenanceLoans' => "Onderhoud en uitlenen",
+            'knowledge' => "Kennis",
             'relationships' => "Relaties",
             'vaults' => "Kluizen",
             'sharing' => "Delen",
@@ -350,6 +351,19 @@ return [
                 'title' => "Bewaar een beetje geschiedenis.",
                 'description' => "Werk gedaan. Dingen uitgeleend. Details bewaard.",
                 'alt' => "De panda van Monica sorteert kaarten in een archiefkast, met de woorden “Bewaar een beetje geschiedenis.”",
+            ],
+        ],
+
+        'knowledge' => [
+            'title' => "Persoonlijke kennisbank met notities en lijsten — Monica",
+            'description' => "Bewaar handige instructies, aanbevelingen en naslaginformatie in een persoonlijke kennisbank. Zet notities en lijsten in mappen, met Monica.",
+            'ogTitle' => "Een thuis voor alles wat je blij bent op te hebben geschreven — Monica",
+            'ogDescription' => "Bewaar alledaagse kennis in notities en lijsten, klaar voor jou en de compatibele assistenten die je kiest.",
+            'ogImage' => [
+                'eyebrow' => "Kennis",
+                'title' => "Bewaar wat je weet.",
+                'description' => "Notities, lijsten en nuttige informatie voor elke dag.",
+                'alt' => "De panda van Monica sorteert kaarten in een archiefkast, met de woorden “Bewaar wat je weet.”",
             ],
         ],
 
@@ -3334,6 +3348,148 @@ return [
         'cta' => [
             'title' => "Laat een notitie achter voor de volgende keer dat je het je afvraagt.",
             'body' => "Eén reparatie of één uitlening is genoeg om te beginnen.",
+            'button' => "Begin met Monica",
+        ],
+    ],
+
+    /**
+     * The knowledge page: notes and lists, in folders. Every drawing is a
+     * piece of Erica's Knowledge screens, filled with the demo vault's own
+     * Knowledge (Monica Geller's), to which the water shutoff note and the
+     * paint list are added in her Home folder. `ui` holds the application's
+     * own words, as Erica translates them.
+     */
+    'knowledge' => [
+        'hero' => [
+            'eyebrow' => "Kennis",
+            'title' => "Bewaar wat je weet op een plek waar je het terugvindt.",
+            'lede' => "Het recept. De verfreferentie. De instructies die je alleen nodig hebt als iedereen weg is.",
+            'body' => "Geef nuttige informatie een thuis in de persoonlijke kennisbank van Monica. Schrijf notities, bewaar lijsten en zet ze in mappen die je later herkent.",
+            'cta' => "Begin met Monica",
+            'plans' => "Bekijk de abonnementen",
+            'label' => "Kennis in Monica. Ernaast de mappen, met Huis open op zijn notities en lijsten: Apparaten, Onderhoud van het huis, Onderhoudsschema, Verfreferenties, Water afsluiten en Wi-Fi-gegevens. De inhoud toont van elk de soort en wanneer het voor het laatst is bewerkt, en de notities tonen hun kopjes.",
+        ],
+        'ui' => [
+            'knowledge' => "Kennis",
+            'search' => "Notities en lijsten doorzoeken",
+            'contents' => "Inhoud",
+            'contentsLead' => "Elke map, notitie en lijst in Kennis. Notities tonen ook hun kopjes, zodat je er direct naartoe kunt gaan.",
+            'summary' => "8 mappen, 18 notities, 14 lijsten",
+            'note' => "Notitie",
+            'list' => "Lijst",
+            'edit' => "Bewerken",
+            'editColumns' => "Kolommen bewerken",
+            'addItem' => "Een item toevoegen",
+        ],
+        // The folders, in the order Monica has put them in: Home moved to
+        // the top. `count` is the line beside a folder in the contents.
+        'folders' => [
+            ['name' => "Huis", 'count' => "6"],
+            ['name' => "Persoonlijk", 'count' => "4"],
+            ['name' => "Reizen", 'count' => "4"],
+            ['name' => "Gezondheid en fitness", 'count' => "3"],
+            ['name' => "Boeken en films", 'count' => "4"],
+            ['name' => "Eten en recepten", 'count' => "4"],
+            ['name' => "Technologie", 'count' => "4"],
+            ['name' => "Ideeën en projecten", 'count' => "3"],
+        ],
+        'homeCount' => "6 notities en lijsten",
+        'personalCount' => "4 notities en lijsten",
+        // The documents of a folder, sorted by title as Erica sorts them in
+        // this language: kind (note or list), title, the kind line, when it
+        // was edited, and a note's headings.
+        'home' => [
+            ['list', "Apparaten", "Lijst met 4 items", "Bewerkt 1 maand geleden", []],
+            ['note', "Onderhoud van het huis", "Notitie", "Bewerkt 2 dagen geleden", ["Dit seizoen"]],
+            ['list', "Onderhoudsschema", "Lijst met 3 items", "Bewerkt 3 weken geleden", []],
+            ['list', "Verfreferenties", "Lijst met 4 items", "Bewerkt 3 weken geleden", []],
+            ['note', "Water afsluiten", "Notitie", "Bewerkt 2 weken geleden", ["Hoofdkraan", "Voor een lange reis"]],
+            ['note', "Wi-Fi-gegevens", "Notitie", "Bewerkt 1 maand geleden", []],
+        ],
+        'personal' => [
+            ['note', "Over mij", "Notitie", "Bewerkt 2 maanden geleden", ["De korte versie", "Dingen die mensen moeten weten"]],
+            ['note', "Favoriete dingen", "Notitie", "Bewerkt 2 maanden geleden", []],
+        ],
+        'note' => [
+            'folder' => "Huis",
+            'title' => "Water afsluiten",
+            'edited' => "Bewerkt 2 weken geleden",
+            'valve' => "Hoofdkraan",
+            'valveBody' => "In de kast naast de voordeur, achter de stofzuiger. Draai hem rechtsom tot hij niet verder kan.",
+            'trip' => "Voor een lange reis",
+            // Each task, and whether it is ticked.
+            'tasks' => [
+                ["Zet de hoofdkraan dicht", true],
+                ["Sluit de buitenkraan, onder de gootsteen in de keuken", true],
+                ["Open de laagste kraan om de leidingen leeg te laten lopen", false],
+            ],
+        ],
+        'list' => [
+            'folder' => "Huis",
+            'title' => "Verfreferenties",
+            'edited' => "Bewerkt 3 weken geleden",
+            'count' => "4 items",
+            'description' => "De verf van elke kamer, zodat de volgende bijwerkbeurt past.",
+            'columns' => ["Kamer", "Kleur", "Afwerking"],
+            'items' => [
+                ["Woonkamer", "Paars, ref. 412", "Eierschaal"],
+                ["Keuken", "Bleek saliegroen, ref. 214", "Satijn"],
+                ["Badkamer", "Warm wit", "Zachte glans"],
+                ["Gang", "Steengrijs, ref. 87", "Mat"],
+            ],
+        ],
+        'notes' => [
+            'title' => "Sommige kennis vraagt om een alinea.",
+            'body' => "Bewaar instructies, ideeën en naslaginformatie in een notitie. Gebruik kopjes, lijsten en links om het leesbaar te houden als je terugkomt.",
+            'closing' => "“Water afsluiten: kast naast de voordeur” is al een nuttige notitie. Een voorwoord hoeft niet.",
+            'link' => "Notities verkennen",
+        ],
+        'lists' => [
+            'title' => "Sommige kennis hoort in rijen.",
+            'body' => "Boeken om te lezen. Plekken om te bezoeken. De verfnaam en afwerking van elke kamer. Maak een lijst met de kolommen die je nodig hebt en houd de details bij elkaar.",
+            'link' => "Lijsten verkennen",
+            'label' => "Twee pagina’s van Kennis naast elkaar. De notitie Water afsluiten, in de map Huis: waar de hoofdkraan zit en hoe je hem dichtdraait, daarna drie taken voor een lange reis, twee ervan afgevinkt. En de lijst Verfreferenties, met een kolom voor de kamer, de kleur en de afwerking, en vier kamers erin.",
+        ],
+        'folderSection' => [
+            'title' => "Geef elk onderwerp een plek.",
+            'body' => "Groepeer notities en lijsten in mappen met een naam. Blader door de inhoud of doorzoek Kennis op woorden in je bewaarde informatie.",
+            'closing' => "Begin met een paar mappen die iets voor je betekenen. “Huis” is een prima naam. “Geoptimaliseerd raamwerk voor huishoudelijke intelligentie” is nogal wat om te typen.",
+            'link' => "Mappen en ordening verkennen",
+            'query' => "afsluiten",
+            'label' => "De mappen van Kennis, doorzocht op het woord afsluiten. Er blijft één map over, Huis, met de ene notitie die erbij past: Water afsluiten.",
+        ],
+        'assistant' => [
+            'title' => "Nuttige informatie, met of zonder assistent.",
+            'body' => "Een compatibele assistent kan via jouw verbinding zoeken in ondersteunde Kennis-records en ermee werken. Je kunt ze ook zelf openen, bewerken en ordenen in Monica.",
+            'link' => "Zo werkt persoonlijk AI-geheugen",
+            'prompt' => "“Zoek de instructies voor Water afsluiten in Monica.”",
+            'name' => "Je assistent",
+            'connected' => "Monica verbonden",
+            'answer' => "In je notitie Water afsluiten staat dat de hoofdkraan in de kast naast de voordeur zit, achter de stofzuiger. Draai hem rechtsom tot hij niet verder kan.",
+            'label' => "Een vraag aan een assistent om de instructies voor Water afsluiten, en het antwoord uit de notitie in Monica.",
+        ],
+        'faq' => [
+            'title' => "Een paar nuttige antwoorden.",
+            'items' => [
+                [
+                    'q' => "Wat is het verschil tussen Kennis en contactnotities?",
+                    'a' => "Kennis bewaart informatie per onderwerp. :link geven context over één bepaalde persoon. Gebruik de plek waar je de informatie het makkelijkst terugvindt.",
+                    'link' => ['label' => "Contactgegevens en notities", 'page' => 'details'],
+                ],
+                [
+                    'q' => "Kunnen notities als gestructureerde records direct naar contacten of bezittingen verwijzen?",
+                    'a' => "Notities in Kennis bevatten nu tekst en gewone weblinks. Ze hebben geen gestructureerde relaties met contacten, bezittingen of andere notities.",
+                ],
+                [
+                    'q' => "Kan ik het gescheiden houden van mijn werkinformatie?",
+                    'a' => "Kennis staat in een :link, dus aparte kluizen kunnen aparte verzamelingen informatie bevatten.",
+                    'link' => ['label' => "kluis", 'page' => 'vaults'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Bewaar één ding dat je steeds opnieuw moet zoeken.",
+            'body' => "Toekomstige jij heeft al genoeg tabbladen open.",
             'button' => "Begin met Monica",
         ],
     ],

@@ -738,6 +738,19 @@ return [
             'ru' => 'vozmozhnosti/obsluzhivanie-i-zaymy',
         ],
 
+        // "Keep what you know somewhere you can find it.": notes and lists in
+        // folders. The header's "Knowledge" heading leads here.
+        'knowledge' => [
+            'en' => 'features/knowledge',
+            'fr' => 'fonctionnalites/connaissances',
+            'de' => 'funktionen/wissen',
+            'es' => 'funcionalidades/conocimiento',
+            'pt' => 'recursos/conhecimento',
+            'nl' => 'functies/kennis',
+            'zh' => 'features/knowledge',
+            'ru' => 'vozmozhnosti/znaniya',
+        ],
+
         // "Keep the moments. Remember the next one.": the short page that
         // sends a reader on to the timeline page or the reminders page, kept
         // apart because a moment and a reminder are separate records.
@@ -908,7 +921,7 @@ return [
      */
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
-        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
+        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
@@ -957,6 +970,7 @@ return [
         'inventory' => '2026-11-23',
         'locations' => '2026-11-23',
         'maintenanceLoans' => '2026-11-23',
+        'knowledge' => '2026-11-23',
         'relationships' => '2026-10-13',
         'vaults' => '2026-10-13',
         'sharing' => '2026-10-13',

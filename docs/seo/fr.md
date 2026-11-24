@@ -1,6 +1,6 @@
 # Monica SEO sheets for fr
 
-These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1179,6 +1179,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | confidentialité du CRM personnel |
 | Secondary keywords | contrôle d’accès aux contacts, sécurité Monica |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
+
+## /fr/fonctionnalites/connaissances/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/fonctionnalites/connaissances/ |
+| Canonical | https://www.monicahq.com/fr/fonctionnalites/connaissances/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Base de connaissances personnelle avec notes et listes — Monica |
+| Meta description | Gardez consignes utiles, recommandations et informations de référence dans une base de connaissances personnelle. Organisez notes et listes en dossiers avec Monica. |
+| H1 | Gardez ce que vous savez là où vous pourrez le retrouver. |
+| OG title | Un foyer pour ce que vous êtes content d’avoir noté — Monica |
+| OG description | Gardez le savoir du quotidien dans des notes et des listes, à portée de main pour vous et pour les assistants compatibles de votre choix. |
+| OG image | https://www.monicahq.com/og/knowledge-fr.jpg?v=c094d45f (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | base de connaissances personnelle |
+| Secondary keywords | notes et listes, dossiers de notes |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
 

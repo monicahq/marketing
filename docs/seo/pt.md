@@ -1,6 +1,6 @@
 # Monica SEO sheets for pt
 
-These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2490,6 +2490,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | compartilhar dados de contato em privado |
 | Secondary keywords | compartilhar contatos somente para leitura, link protegido |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
+## /pt/recursos/conhecimento/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/conhecimento/ |
+| Canonical | https://www.monicahq.com/pt/recursos/conhecimento/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Base de conhecimento pessoal com notas e listas — Monica |
+| Meta description | Guarde instruções úteis, recomendações e informações de referência em uma base de conhecimento pessoal. Organize notas e listas em pastas com a Monica. |
+| H1 | Guarde o que você sabe num lugar onde possa encontrar. |
+| OG title | Um lar para o que você fica feliz de ter anotado — Monica |
+| OG description | Guarde o conhecimento do dia a dia em notas e listas, à mão para você e para os assistentes compatíveis que escolher. |
+| OG image | https://www.monicahq.com/og/knowledge-pt.jpg?v=8c6614b5 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | base de conhecimento pessoal |
+| Secondary keywords | notas e listas, pastas de notas |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 

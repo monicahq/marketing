@@ -30,6 +30,7 @@ return [
             'inventory' => "Inventar und Schlagwörter",
             'locations' => "Standorte",
             'maintenanceLoans' => "Wartung und Verleih",
+            'knowledge' => "Wissen",
             'relationships' => "Beziehungen",
             'vaults' => "Tresore",
             'sharing' => "Teilen",
@@ -351,6 +352,19 @@ return [
                 'title' => "Behalten Sie ein wenig Verlauf.",
                 'description' => "Erledigte Arbeit. Verliehene Dinge. Gemerkte Details.",
                 'alt' => "Der Monica-Panda sortiert Karten in einen Aktenschrank, mit den Worten „Behalten Sie ein wenig Verlauf.“",
+            ],
+        ],
+
+        'knowledge' => [
+            'title' => "Persönliche Wissensdatenbank mit Notizen und Listen — Monica",
+            'description' => "Halten Sie nützliche Anleitungen, Empfehlungen und Nachschlagewissen in einer persönlichen Wissensdatenbank fest. Ordnen Sie Notizen und Listen in Ordnern, mit Monica.",
+            'ogTitle' => "Ein Zuhause für alles, was Sie gern aufgeschrieben haben — Monica",
+            'ogDescription' => "Halten Sie Alltagswissen in Notizen und Listen fest, bereit für Sie und die kompatiblen Assistenten Ihrer Wahl.",
+            'ogImage' => [
+                'eyebrow' => "Wissen",
+                'title' => "Behalten Sie, was Sie wissen.",
+                'description' => "Notizen, Listen und nützliche Alltagsinformationen.",
+                'alt' => "Der Monica-Panda sortiert Karten in einen Aktenschrank, mit den Worten „Behalten Sie, was Sie wissen.“",
             ],
         ],
 
@@ -3334,6 +3348,148 @@ return [
         'cta' => [
             'title' => "Hinterlassen Sie einen Eintrag für das nächste Mal, wenn Sie sich fragen.",
             'body' => "Eine Reparatur oder eine Leihgabe genügt für den Anfang.",
+            'button' => "Mit Monica beginnen",
+        ],
+    ],
+
+    /**
+     * The knowledge page: notes and lists, in folders. Every drawing is a
+     * piece of Erica's Knowledge screens, filled with the demo vault's own
+     * Knowledge (Monica Geller's), to which the water shutoff note and the
+     * paint list are added in her Home folder. `ui` holds the application's
+     * own words, as Erica translates them.
+     */
+    'knowledge' => [
+        'hero' => [
+            'eyebrow' => "Wissen",
+            'title' => "Behalten Sie, was Sie wissen, dort, wo Sie es wiederfinden.",
+            'lede' => "Das Rezept. Die Farbangabe. Die Anleitung, die Sie nur brauchen, wenn alle anderen verreist sind.",
+            'body' => "Geben Sie nützlichen Informationen ein Zuhause in Monicas persönlicher Wissensdatenbank. Schreiben Sie Notizen, führen Sie Listen und ordnen Sie beides in Ordnern, die Sie später wiedererkennen.",
+            'cta' => "Mit Monica beginnen",
+            'plans' => "Tarife ansehen",
+            'label' => "Wissen in Monica. Daneben die Ordner, mit Zuhause geöffnet auf seinen Notizen und Listen: Geräte, Instandhaltung des Hauses, Wartungsplan, Farbangaben, Wasser abstellen und WLAN-Informationen. Das Inhaltsverzeichnis nennt zu jedem Eintrag die Art und wann er zuletzt bearbeitet wurde, und die Notizen zeigen ihre Überschriften.",
+        ],
+        'ui' => [
+            'knowledge' => "Wissen",
+            'search' => "Notizen und Listen durchsuchen",
+            'contents' => "Inhalt",
+            'contentsLead' => "Alle Ordner, Notizen und Listen in Wissen. Notizen zeigen auch ihre Überschriften, sodass Sie direkt zu einer springen können.",
+            'summary' => "8 Ordner, 18 Notizen, 14 Listen",
+            'note' => "Notiz",
+            'list' => "Liste",
+            'edit' => "Bearbeiten",
+            'editColumns' => "Spalten bearbeiten",
+            'addItem' => "Einen Eintrag hinzufügen",
+        ],
+        // The folders, in the order Monica has put them in: Home moved to
+        // the top. `count` is the line beside a folder in the contents.
+        'folders' => [
+            ['name' => "Zuhause", 'count' => "6"],
+            ['name' => "Privat", 'count' => "4"],
+            ['name' => "Reisen", 'count' => "4"],
+            ['name' => "Gesundheit und Fitness", 'count' => "3"],
+            ['name' => "Bücher und Filme", 'count' => "4"],
+            ['name' => "Essen und Rezepte", 'count' => "4"],
+            ['name' => "Technik", 'count' => "4"],
+            ['name' => "Ideen und Projekte", 'count' => "3"],
+        ],
+        'homeCount' => "6 Notizen und Listen",
+        'personalCount' => "4 Notizen und Listen",
+        // The documents of a folder, sorted by title as Erica sorts them in
+        // this language: kind (note or list), title, the kind line, when it
+        // was edited, and a note's headings.
+        'home' => [
+            ['list', "Geräte", "Liste mit 4 Einträgen", "Bearbeitet vor 1 Monat", []],
+            ['note', "Instandhaltung des Hauses", "Notiz", "Bearbeitet vor 2 Tagen", ["Diese Saison"]],
+            ['list', "Wartungsplan", "Liste mit 3 Einträgen", "Bearbeitet vor 3 Wochen", []],
+            ['list', "Farbangaben", "Liste mit 4 Einträgen", "Bearbeitet vor 3 Wochen", []],
+            ['note', "Wasser abstellen", "Notiz", "Bearbeitet vor 2 Wochen", ["Hauptventil", "Vor einer langen Reise"]],
+            ['note', "WLAN-Informationen", "Notiz", "Bearbeitet vor 1 Monat", []],
+        ],
+        'personal' => [
+            ['note', "Über mich", "Notiz", "Bearbeitet vor 2 Monaten", ["Die Kurzfassung", "Was man über mich wissen sollte"]],
+            ['note', "Lieblingsdinge", "Notiz", "Bearbeitet vor 2 Monaten", []],
+        ],
+        'note' => [
+            'folder' => "Zuhause",
+            'title' => "Wasser abstellen",
+            'edited' => "Bearbeitet vor 2 Wochen",
+            'valve' => "Hauptventil",
+            'valveBody' => "Im Schrank neben der Haustür, hinter dem Staubsauger. Im Uhrzeigersinn bis zum Anschlag drehen.",
+            'trip' => "Vor einer langen Reise",
+            // Each task, and whether it is ticked.
+            'tasks' => [
+                ["Das Hauptventil schließen", true],
+                ["Den Außenhahn schließen, unter der Küchenspüle", true],
+                ["Den untersten Hahn öffnen, um die Rohre zu entleeren", false],
+            ],
+        ],
+        'list' => [
+            'folder' => "Zuhause",
+            'title' => "Farbangaben",
+            'edited' => "Bearbeitet vor 3 Wochen",
+            'count' => "4 Einträge",
+            'description' => "Die Farbe für jeden Raum, damit die nächste Ausbesserung passt.",
+            'columns' => ["Raum", "Farbe", "Oberfläche"],
+            'items' => [
+                ["Wohnzimmer", "Lila, Nr. 412", "Eierschale"],
+                ["Küche", "Helles Salbeigrün, Nr. 214", "Seidenglanz"],
+                ["Badezimmer", "Warmweiß", "Seidenmatt"],
+                ["Flur", "Steingrau, Nr. 87", "Matt"],
+            ],
+        ],
+        'notes' => [
+            'title' => "Manches Wissen braucht einen Absatz.",
+            'body' => "Halten Sie Anleitungen, Ideen und Nachschlagewissen in einer Notiz fest. Mit Überschriften, Listen und Links bleibt sie lesbar, wenn Sie wiederkommen.",
+            'closing' => "„Wasser abstellen: Schrank neben der Haustür“ ist schon eine nützliche Notiz. Ein Vorwort braucht sie nicht.",
+            'link' => "Notizen entdecken",
+        ],
+        'lists' => [
+            'title' => "Manches Wissen gehört in Zeilen.",
+            'body' => "Bücher, die man lesen will. Orte, die man besuchen will. Name und Oberfläche der Farbe für jeden Raum. Legen Sie eine Liste mit den Spalten an, die Sie brauchen, und halten Sie die Details beisammen.",
+            'link' => "Listen entdecken",
+            'label' => "Zwei Seiten von Wissen nebeneinander. Die Notiz Wasser abstellen im Ordner Zuhause: wo das Hauptventil ist und wie man es schließt, dann drei Aufgaben vor einer langen Reise, zwei davon abgehakt. Und die Liste Farbangaben, mit einer Spalte für Raum, Farbe und Oberfläche und vier Räumen.",
+        ],
+        'folderSection' => [
+            'title' => "Geben Sie jedem Thema seinen Platz.",
+            'body' => "Fassen Sie Notizen und Listen in benannten Ordnern zusammen. Blättern Sie durch das Inhaltsverzeichnis oder suchen Sie in Wissen nach Wörtern in Ihren gespeicherten Informationen.",
+            'closing' => "Beginnen Sie mit ein paar Ordnern, die Ihnen etwas sagen. „Zuhause“ ist ein guter Name. „Optimiertes Rahmenwerk für häusliche Intelligenz“ ist ziemlich viel zu tippen.",
+            'link' => "Ordner und Organisation entdecken",
+            'query' => "abstellen",
+            'label' => "Die Ordner von Wissen, durchsucht nach dem Wort abstellen. Ein Ordner bleibt übrig, Zuhause, mit der einen passenden Notiz: Wasser abstellen.",
+        ],
+        'assistant' => [
+            'title' => "Nützliche Informationen, mit oder ohne Assistent.",
+            'body' => "Ein kompatibler Assistent kann über Ihre Verbindung unterstützte Einträge aus Wissen durchsuchen und mit ihnen arbeiten. Sie können sie auch direkt in Monica öffnen, bearbeiten und ordnen.",
+            'link' => "Sehen, wie das persönliche KI-Gedächtnis funktioniert",
+            'prompt' => "„Finde die Anleitung zum Wasser abstellen in Monica.“",
+            'name' => "Ihr Assistent",
+            'connected' => "Monica verbunden",
+            'answer' => "In Ihrer Notiz Wasser abstellen steht, dass das Hauptventil im Schrank neben der Haustür hinter dem Staubsauger liegt. Im Uhrzeigersinn bis zum Anschlag drehen.",
+            'label' => "Eine Anfrage an einen Assistenten nach der Anleitung zum Wasser abstellen und seine Antwort aus der Notiz in Monica.",
+        ],
+        'faq' => [
+            'title' => "Ein paar nützliche Antworten.",
+            'items' => [
+                [
+                    'q' => "Wie unterscheidet sich Wissen von Kontaktnotizen?",
+                    'a' => "Wissen ordnet Informationen nach Thema. :link halten den Zusammenhang zu einer bestimmten Person fest. Nutzen Sie den Ort, an dem Sie die Information am leichtesten wiederfinden.",
+                    'link' => ['label' => "Kontaktdetails und Notizen", 'page' => 'details'],
+                ],
+                [
+                    'q' => "Können Notizen als strukturierte Datensätze direkt auf Kontakte oder Besitz verweisen?",
+                    'a' => "Notizen in Wissen enthalten derzeit Text und gewöhnliche Weblinks. Strukturierte Beziehungen zu Kontakten, Besitz oder anderen Notizen gibt es nicht.",
+                ],
+                [
+                    'q' => "Kann ich Wissen getrennt von meinen beruflichen Informationen halten?",
+                    'a' => "Wissen liegt in einem :link, deshalb können getrennte Tresore getrennte Informationen enthalten.",
+                    'link' => ['label' => "Tresor", 'page' => 'vaults'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Speichern Sie eine Sache, die Sie ständig wieder suchen müssen.",
+            'body' => "Ihr zukünftiges Ich hat schon genug Tabs offen.",
             'button' => "Mit Monica beginnen",
         ],
     ],

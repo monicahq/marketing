@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1084,6 +1084,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | 带标签的物品清单 |
 | Secondary keywords | 物品类型, 自定义字段 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/knowledge/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/knowledge/ |
+| Canonical | https://www.monicahq.com/zh/features/knowledge/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 含笔记和列表的个人知识库 — Monica |
+| Meta description | 把有用的说明、推荐和参考信息保存在个人知识库里。在 Monica 中用文件夹整理笔记和列表。 |
+| H1 | 把你知道的，放在找得到的地方。 |
+| OG title | 给那些你庆幸自己记下来的事一个家 — Monica |
+| OG description | 把日常知识放进笔记和列表，供你和你选择的兼容助手随时取用。 |
+| OG image | https://www.monicahq.com/og/knowledge-zh.jpg?v=50982f3e (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 个人知识库 |
+| Secondary keywords | 笔记和列表, 文件夹整理笔记 |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 

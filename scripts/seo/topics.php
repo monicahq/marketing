@@ -21,6 +21,7 @@ $english = [
     'inventory' => ['personal inventory with tags', ['possession types', 'custom inventory fields'], ['book collection inventory', 'organise belongings with tags']],
     'locations' => ['possession locations', ['where belongings are kept', 'location history'], ['home inventory locations', 'track where items are stored']],
     'maintenanceLoans' => ['possession maintenance records', ['loan tracking', 'track items lent to friends'], ['maintenance history', 'who borrowed what']],
+    'knowledge' => ['personal knowledge base', ['notes and lists', 'organise notes in folders'], ['household instructions', 'reference lists']],
     'relationships' => ['track personal relationships', ['family connections', 'relationship history'], ['family tree', 'custom relationship types']],
     'vaults' => ['Monica vaults', ['organize personal and work contacts', 'separate contact lists'], ['personal CRM vaults', 'contact organization']],
     'sharing' => ['share contact details privately', ['read-only contact sharing', 'share selected contact fields'], ['password-protected sharing link', 'revoke contact sharing']],
@@ -39,7 +40,7 @@ $english = [
 
 // Each line follows the route order below. These terms describe the existing
 // translated content; they do not add product claims to it.
-$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans'];
+$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge'];
 $localized = [
     'fr' => <<<'TERMS'
 CRM personnel|base de données personnelle|CRM personnel open source
@@ -73,6 +74,7 @@ inventaire personnel|gestion des objets|emplacements et prêts
 inventaire avec étiquettes|types d’objets|champs personnalisés
 emplacements des objets|où sont rangées vos affaires|historique des emplacements
 historique d’entretien des objets|suivi des prêts|objets prêtés à des amis
+base de connaissances personnelle|notes et listes|dossiers de notes
 TERMS,
     'de' => <<<'TERMS'
 persönliches CRM|persönliche Datenbank|Open-Source-CRM
@@ -106,6 +108,7 @@ persönliches Inventar|Besitz verwalten|Orte und Verleih
 Inventar mit Schlagwörtern|Besitztypen|eigene Felder
 Standorte von Gegenständen|wo Dinge aufbewahrt werden|Standortverlauf
 Wartungsverlauf von Gegenständen|Verleih verfolgen|an Freunde verliehene Dinge
+persönliche Wissensdatenbank|Notizen und Listen|Notizen in Ordnern
 TERMS,
     'es' => <<<'TERMS'
 CRM personal|base de datos personal|CRM personal de código abierto
@@ -139,6 +142,7 @@ inventario personal|gestión de pertenencias|ubicaciones y préstamos
 inventario con etiquetas|tipos de pertenencia|campos personalizados
 ubicaciones de pertenencias|dónde guardas tus cosas|historial de ubicaciones
 registros de mantenimiento|seguimiento de préstamos|cosas prestadas a amigos
+base de conocimiento personal|notas y listas|carpetas de notas
 TERMS,
     'pt' => <<<'TERMS'
 CRM pessoal|banco de dados pessoal|CRM pessoal de código aberto
@@ -172,6 +176,7 @@ inventário pessoal|gestão de pertences|locais e empréstimos
 inventário com etiquetas|tipos de pertence|campos personalizados
 locais dos pertences|onde suas coisas estão guardadas|histórico de locais
 registros de manutenção|controle de empréstimos|coisas emprestadas a amigos
+base de conhecimento pessoal|notas e listas|pastas de notas
 TERMS,
     'nl' => <<<'TERMS'
 persoonlijk CRM|persoonlijke database|open source persoonlijk CRM
@@ -205,6 +210,7 @@ persoonlijke inventaris|spullen beheren|plekken en uitlenen
 inventaris met labels|soorten bezittingen|eigen velden
 locaties van bezittingen|waar je spullen liggen|locatiegeschiedenis
 onderhoudsgeschiedenis van spullen|uitleningen bijhouden|spullen uitgeleend aan vrienden
+persoonlijke kennisbank|notities en lijsten|notities in mappen
 TERMS,
     'zh' => <<<'TERMS'
 个人 CRM|个人数据库|开源个人 CRM
@@ -238,6 +244,7 @@ Monica 手册|Monica 项目原则|独立开源项目运营
 带标签的物品清单|物品类型|自定义字段
 物品位置|物品存放位置|位置历史
 物品维护记录|借用记录|借给朋友的物品
+个人知识库|笔记和列表|文件夹整理笔记
 TERMS,
     'ru' => <<<'TERMS'
 персональная CRM|личная база данных|персональная CRM с открытым кодом
@@ -271,6 +278,7 @@ MCP-сервер Monica|MCP-сервер для личных данных|MCP-с
 инвентарь с метками|типы вещей|свои поля
 места хранения вещей|где лежат ваши вещи|история мест хранения
 история обслуживания вещей|учёт займов|вещи, одолженные друзьям
+личная база знаний|заметки и списки|папки для заметок
 TERMS,
 ];
 

@@ -48,6 +48,7 @@ return [
             'inventory' => "清单与标签",
             'locations' => "位置",
             'maintenanceLoans' => "维护与借出",
+            'knowledge' => "知识",
             'relationships' => "关系",
             'vaults' => "保险库",
             'sharing' => "分享",
@@ -374,6 +375,19 @@ return [
                 'title' => "留一点历史。",
                 'description' => "做过的活。借出的东西。留住的细节。",
                 'alt' => "Monica 的熊猫正在把卡片放进文件柜，旁边写着“留一点历史。”",
+            ],
+        ],
+
+        'knowledge' => [
+            'title' => "含笔记和列表的个人知识库 — Monica",
+            'description' => "把有用的说明、推荐和参考信息保存在个人知识库里。在 Monica 中用文件夹整理笔记和列表。",
+            'ogTitle' => "给那些你庆幸自己记下来的事一个家 — Monica",
+            'ogDescription' => "把日常知识放进笔记和列表，供你和你选择的兼容助手随时取用。",
+            'ogImage' => [
+                'eyebrow' => "知识",
+                'title' => "留住你知道的。",
+                'description' => "笔记、列表和日常有用的信息。",
+                'alt' => "Monica 的熊猫正在把卡片放进文件柜，旁边写着“留住你知道的。”",
             ],
         ],
 
@@ -3348,6 +3362,148 @@ return [
         'cta' => [
             'title' => "为下次你想知道时，留一条记录。",
             'body' => "一次维修或一次借出就足够开始。",
+            'button' => "开始使用 Monica",
+        ],
+    ],
+
+    /**
+     * The knowledge page: notes and lists, in folders. Every drawing is a
+     * piece of Erica's Knowledge screens, filled with the demo vault's own
+     * Knowledge (Monica Geller's), to which the water shutoff note and the
+     * paint list are added in her Home folder. `ui` holds the application's
+     * own words, as Erica translates them.
+     */
+    'knowledge' => [
+        'hero' => [
+            'eyebrow' => "知识",
+            'title' => "把你知道的，放在找得到的地方。",
+            'lede' => "那份食谱。那个涂料编号。只有大家都不在时你才用得上的说明。",
+            'body' => "让有用的信息在 Monica 的个人知识库里有个家。写笔记，建列表，再把它们放进以后一眼就能认出的文件夹。",
+            'cta' => "开始使用 Monica",
+            'plans' => "查看方案",
+            'label' => "Monica 中的知识库。旁边是各个文件夹，其中“家”已展开，显示它的备注和列表：电器、家居维护、维护计划、涂料参考、关闭水阀和 Wi-Fi 信息。目录列出每一项的类型和上次编辑的时间，备注还会显示其中的标题。",
+        ],
+        'ui' => [
+            'knowledge' => "知识库",
+            'search' => "搜索备注和列表",
+            'contents' => "目录",
+            'contentsLead' => "知识库中的所有文件夹、备注和列表。备注还会显示其中的标题，方便直接跳转。",
+            'summary' => "8 个文件夹、18 条备注、14 个列表",
+            'note' => "备注",
+            'list' => "列表",
+            'edit' => "编辑",
+            'editColumns' => "编辑列",
+            'addItem' => "添加条目",
+        ],
+        // The folders, in the order Monica has put them in: Home moved to
+        // the top. `count` is the line beside a folder in the contents.
+        'folders' => [
+            ['name' => "家", 'count' => "6"],
+            ['name' => "个人", 'count' => "4"],
+            ['name' => "旅行", 'count' => "4"],
+            ['name' => "健康与健身", 'count' => "3"],
+            ['name' => "图书与电影", 'count' => "4"],
+            ['name' => "美食与食谱", 'count' => "4"],
+            ['name' => "科技", 'count' => "4"],
+            ['name' => "创意与项目", 'count' => "3"],
+        ],
+        'homeCount' => "6 个备注和列表",
+        'personalCount' => "4 个备注和列表",
+        // The documents of a folder, sorted by title as Erica sorts them in
+        // this language: kind (note or list), title, the kind line, when it
+        // was edited, and a note's headings.
+        'home' => [
+            ['list', "电器", "包含 4 个条目的列表", "编辑于 1个月前", []],
+            ['note', "家居维护", "备注", "编辑于 2天前", ["本季"]],
+            ['list', "维护计划", "包含 3 个条目的列表", "编辑于 3周前", []],
+            ['list', "涂料参考", "包含 4 个条目的列表", "编辑于 3周前", []],
+            ['note', "关闭水阀", "备注", "编辑于 2周前", ["总阀", "长途旅行前"]],
+            ['note', "Wi-Fi 信息", "备注", "编辑于 1个月前", []],
+        ],
+        'personal' => [
+            ['note', "关于我", "备注", "编辑于 2个月前", ["简短版本", "大家该知道的事"]],
+            ['note', "喜欢的东西", "备注", "编辑于 2个月前", []],
+        ],
+        'note' => [
+            'folder' => "家",
+            'title' => "关闭水阀",
+            'edited' => "编辑于 2周前",
+            'valve' => "总阀",
+            'valveBody' => "在前门旁的柜子里，吸尘器后面。顺时针拧到底。",
+            'trip' => "长途旅行前",
+            // Each task, and whether it is ticked.
+            'tasks' => [
+                ["关闭总阀", true],
+                ["关闭室外水龙头，在厨房水槽下面", true],
+                ["打开最低处的水龙头，把水管排空", false],
+            ],
+        ],
+        'list' => [
+            'folder' => "家",
+            'title' => "涂料参考",
+            'edited' => "编辑于 3周前",
+            'count' => "4 个条目",
+            'description' => "每个房间用的涂料，下次补漆时才对得上色。",
+            'columns' => ["房间", "颜色", "光泽"],
+            'items' => [
+                ["客厅", "紫色，编号 412", "蛋壳光"],
+                ["厨房", "淡鼠尾草绿，编号 214", "缎光"],
+                ["浴室", "暖白", "柔光"],
+                ["走廊", "石灰灰，编号 87", "哑光"],
+            ],
+        ],
+        'notes' => [
+            'title' => "有些知识需要一段话。",
+            'body' => "把说明、想法和参考信息记在一条笔记里。用标题、列表和链接，让你回头看时读得顺畅。",
+            'closing' => "“关闭水阀：前门旁的柜子”已经是一条有用的笔记。它不需要前言。",
+            'link' => "了解笔记",
+        ],
+        'lists' => [
+            'title' => "有些知识适合排成行。",
+            'body' => "要读的书。要去的地方。每个房间的涂料名称和光泽。按你需要的列建一个列表，把细节放在一起。",
+            'link' => "了解列表",
+            'label' => "并排的两页知识库。备注“关闭水阀”，在“家”文件夹里：总阀在哪里、怎么关，然后是长途旅行前的三项任务，其中两项已勾选。还有列表“涂料参考”，分为房间、颜色和光泽三列，里面有四个房间。",
+        ],
+        'folderSection' => [
+            'title' => "给每个主题一个位置。",
+            'body' => "把笔记和列表归入有名字的文件夹。你可以浏览目录，也可以在知识库中搜索已保存信息里的词。",
+            'closing' => "先建几个对你有意义的文件夹。“家”就是个好名字。“优化的家庭智能框架”打起来可就费劲了。",
+            'link' => "了解文件夹与整理",
+            'query' => "水阀",
+            'label' => "搜索了“水阀”一词的知识库文件夹。只剩下一个文件夹“家”，里面有唯一匹配的备注：关闭水阀。",
+        ],
+        'assistant' => [
+            'title' => "有用的信息，有没有助手都行。",
+            'body' => "兼容的助手可以通过你的连接，搜索并处理受支持的知识库记录。你也可以直接在 Monica 中打开、编辑和整理它们。",
+            'link' => "了解个人 AI 记忆如何运作",
+            'prompt' => "“在 Monica 里找一下关闭水阀的说明。”",
+            'name' => "你的助手",
+            'connected' => "Monica 已连接",
+            'answer' => "你的备注“关闭水阀”写着，总阀在前门旁的柜子里，吸尘器后面。顺时针拧到底。",
+            'label' => "向助手询问关闭水阀的说明，以及它根据 Monica 中的备注给出的回答。",
+        ],
+        'faq' => [
+            'title' => "几个有用的答案。",
+            'items' => [
+                [
+                    'q' => "知识库和联系人备注有什么不同？",
+                    'a' => "知识库按主题保存信息。:link用来记录与某个人有关的背景。请选择最容易日后找到这条信息的地方。",
+                    'link' => ['label' => "联系方式和备注", 'page' => 'details'],
+                ],
+                [
+                    'q' => "笔记可以作为结构化记录直接链接到联系人或物品吗？",
+                    'a' => "知识库中的笔记目前只包含文字和普通网页链接。它们不提供与联系人、物品或其他笔记之间的结构化关系。",
+                ],
+                [
+                    'q' => "我能把它和工作信息分开吗？",
+                    'a' => "知识库位于一个:link之中，所以不同的保险库可以保存不同的信息。",
+                    'link' => ['label' => "保险库", 'page' => 'vaults'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "存下一件你总要反复去找的事。",
+            'body' => "未来的你，已经开了足够多的标签页。",
             'button' => "开始使用 Monica",
         ],
     ],

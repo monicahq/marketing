@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 148 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1122,6 +1122,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | inventaris met labels |
 | Secondary keywords | soorten bezittingen, eigen velden |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/functies/kennis/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/kennis/ |
+| Canonical | https://www.monicahq.com/nl/functies/kennis/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persoonlijke kennisbank met notities en lijsten — Monica |
+| Meta description | Bewaar handige instructies, aanbevelingen en naslaginformatie in een persoonlijke kennisbank. Zet notities en lijsten in mappen, met Monica. |
+| H1 | Bewaar wat je weet op een plek waar je het terugvindt. |
+| OG title | Een thuis voor alles wat je blij bent op te hebben geschreven — Monica |
+| OG description | Bewaar alledaagse kennis in notities en lijsten, klaar voor jou en de compatibele assistenten die je kiest. |
+| OG image | https://www.monicahq.com/og/knowledge-nl.jpg?v=f721f9df (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persoonlijke kennisbank |
+| Secondary keywords | notities en lijsten, notities in mappen |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 
