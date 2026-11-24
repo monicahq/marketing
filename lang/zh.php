@@ -49,6 +49,8 @@ return [
             'locations' => "位置",
             'maintenanceLoans' => "维护与借出",
             'knowledge' => "知识",
+            'notes' => "笔记",
+            'lists' => "列表",
             'relationships' => "关系",
             'vaults' => "保险库",
             'sharing' => "分享",
@@ -388,6 +390,32 @@ return [
                 'title' => "留住你知道的。",
                 'description' => "笔记、列表和日常有用的信息。",
                 'alt' => "Monica 的熊猫正在把卡片放进文件柜，旁边写着“留住你知道的。”",
+            ],
+        ],
+
+        'notes' => [
+            'title' => "个人知识笔记与家庭说明 — Monica",
+            'description' => "用 Markdown、标题、列表和链接写个人笔记。把说明、想法和参考信息保存在 Monica 的知识库文件夹里。",
+            'ogTitle' => "写下来一次，需要时就找得到 — Monica",
+            'ogDescription' => "一个实用的地方，存放那些值得多想一想的说明、想法和细节。",
+            'ogImage' => [
+                'eyebrow' => "知识笔记",
+                'title' => "留一条有用的笔记。",
+                'description' => "说明、想法，以及值得留下的事。",
+                'alt' => "Monica 的熊猫正在把卡片放进文件柜，旁边写着“留一条有用的笔记。”",
+            ],
+        ],
+
+        'lists' => [
+            'title' => "带自定义列的个人列表 — Monica",
+            'description' => "在 Monica 中保存阅读清单、推荐和日常参考表。选择文本列，添加条目，并在知识库文件夹里整理你的列表。",
+            'ogTitle' => "你那些有用的小列表，值得有个家 — Monica",
+            'ogDescription' => "书、地点、涂料参考，还有所有你日后会庆幸留下的行。",
+            'ogImage' => [
+                'eyebrow' => "知识列表",
+                'title' => "留一份有用的列表。",
+                'description' => "你的列。你的日常参考。",
+                'alt' => "Monica 的熊猫正在把卡片放进文件柜，旁边写着“留一份有用的列表。”",
             ],
         ],
 
@@ -3504,6 +3532,195 @@ return [
         'cta' => [
             'title' => "存下一件你总要反复去找的事。",
             'body' => "未来的你，已经开了足够多的标签页。",
+            'button' => "开始使用 Monica",
+        ],
+    ],
+
+    /**
+     * The notes page: the notes of Knowledge. Its drawings show the same
+     * "Water shutoff" note as the knowledge page, read from `knowledge.note`
+     * and `knowledge.home`, so the two pages cannot disagree about it. `ui`
+     * holds the note editor's own words, as Erica translates them.
+     */
+    'notes' => [
+        'hero' => [
+            'eyebrow' => "知识笔记",
+            'title' => "为以后留一条有用的笔记。",
+            'lede' => "怎么关水阀。那道成功的食谱。你希望在到机场之前就能找到的旅行计划。",
+            'body' => "把说明和想法保存在:link中，配上便于日后找回的标题和文件夹。",
+            'knowledge' => "知识库",
+            'cta' => "开始使用 Monica",
+            'label' => "Monica 中的备注“关闭水阀”，位于“家”文件夹。先是标题，然后是小标题“总阀”，说明阀门在哪里、怎么关，再是第二个小标题“长途旅行前”，下面有三项任务，其中两项已勾选。",
+            // The parts of the note named beside it, on a wide screen.
+            'parts' => [
+                'folder' => "文件夹",
+                'title' => "标题",
+                'heading' => "小标题",
+                'checklist' => "清单",
+            ],
+        ],
+        // The note editor's own words, as Erica translates them.
+        'ui' => [
+            'title' => "标题",
+            'folder' => "文件夹",
+            'text' => "文本",
+            'addLink' => "添加链接",
+            'help' => "Markdown：# 表示标题，- 表示项目符号，- [ ] 表示任务，> 表示引用，**粗体**。网址会自动变成链接。",
+            'saveChanges' => "保存更改",
+            'cancel' => "取消",
+            'delete' => "删除",
+        ],
+        'markdown' => [
+            'title' => "保留文字，再加一点刚好够读的结构。",
+            'body' => "笔记支持 Markdown，可用于小标题、强调、列表、清单、引用和网页链接。用它让说明更容易照着做，或者只写几句话也行。",
+            'closing' => "笔记可以很短。“备用钥匙在 Monica 那儿”一句话，就干了一整天的活。",
+            'label' => "同一条备注在编辑器中打开：标题“关闭水阀”，文件夹“家”，正文是 Markdown，两个小标题用 ## 标记，三项任务用 - [x] 和 - [ ] 标记。",
+        ],
+        'headings' => [
+            'title' => "不用重读全文，就能找到要点。",
+            'body' => "给较长的笔记起有描述性的小标题。知识库的目录视图可以显示这些小标题，帮你直接跳到需要的部分。",
+            'body2' => "对于需要重复同一组细节的信息，比如按房间记录的涂料参考，可以试试:link。",
+            'listLabel' => "带列的列表",
+            'label' => "知识库目录中的“家”文件夹，备注“关闭水阀”显示出它的两个小标题：总阀和长途旅行前。点开第二个，就会在该小标题处打开备注，下面是三项任务。",
+        ],
+        'folders' => [
+            'title' => "放在你会想到去找的地方。",
+            'body' => "把笔记放进有名字的文件夹，整理方式变了就移动它，并用知识库搜索来找已保存的词。",
+            'body2' => ":link说明了笔记和列表如何按主题放在一起。",
+            'linkLabel' => "文件夹与整理",
+            'label' => "知识库的文件夹列在备注旁边，“家”已展开，“关闭水阀”标为正在阅读的备注。",
+        ],
+        'assistant' => [
+            'title' => "让助手帮忙处理笔记，而不是由它掌管。",
+            'body' => "一个:link可以创建、读取和更新受支持的笔记。你可以检查结果，并在网页应用中编辑。",
+            'linkLabel' => "兼容的已连接助手",
+            'closing' => "笔记属于你的个人数据库，哪怕你下周换了另一个助手。",
+            'prompt' => "“在 Monica 的‘家’文件夹里存一条笔记：关闭水阀的地方在前门旁的柜子里。”",
+            'name' => "你的助手",
+            'connected' => "Monica 已连接",
+            'answer' => "好了。笔记“关闭水阀”已存入你的“家”文件夹，里面写着阀门在哪里。",
+            'label' => "请助手在 Monica 的“家”文件夹里保存一条笔记，以及笔记保存后它的回答。",
+        ],
+        'faq' => [
+            'title' => "几个有用的答案。",
+            'items' => [
+                [
+                    'q' => "这些是联系人页面上的笔记吗？",
+                    'a' => "不是。这些笔记位于知识库的文件夹中。要记录与某个人有关的背景，请用:link。",
+                    'link' => ['label' => "联系人备注", 'page' => 'details'],
+                ],
+                [
+                    'q' => "能附加文件，或在笔记之间建立反向链接吗？",
+                    'a' => "这些知识库笔记是带 Markdown 格式的文字和普通链接。文件附件和结构化的笔记反向链接不属于这个功能。",
+                ],
+                [
+                    'q' => "可以用清单项吗？",
+                    'a' => "可以。笔记可以包含任务复选框。需要用表格记录重复的信息时，请用知识库列表。",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "写下一件你不该记两遍的事。",
+            'body' => "一条小笔记，能省下不少搜索的功夫。",
+            'button' => "开始使用 Monica",
+        ],
+    ],
+
+    /**
+     * The lists page: the lists of Knowledge. Its paint list is the knowledge
+     * page's (`knowledge.list`), and its paperback of The Shining is the
+     * locations page's (`locations.book`), so the pages cannot disagree.
+     * `ui` holds the list screens' own words, as Erica translates them.
+     */
+    'lists' => [
+        'hero' => [
+            'eyebrow' => "知识列表",
+            'title' => "有些事放进列表里更清楚。",
+            'lede' => "要读的书。想试的餐厅。那些你总说要弄完的房间，各用什么涂料颜色。",
+            'body' => "把重复出现的信息保存在:link的列表里，配上对你有用的列。",
+            'knowledge' => "知识库",
+            'cta' => "开始使用 Monica",
+            'label' => "Monica 中的列表“待读的书”，位于“图书与电影”文件夹，有四列：书名、作者、推荐人和备注。《闪灵》，斯蒂芬·金，Joey 推荐，备注是别把它放进冷冻室。《小妇人》，路易莎·梅·奥尔科特，Rachel 推荐。《侏罗纪公园》，迈克尔·克莱顿，Ross 推荐。",
+        ],
+        // The list screens' own words, as Erica translates them.
+        'ui' => [
+            'list' => "列表",
+            'edit' => "编辑",
+            'editColumns' => "编辑列",
+            'addItem' => "添加条目",
+            'columnsOf' => ":title 的列",
+            'columnsLead' => "列表的每个条目在每一列中各有一段文字。移除某一列会删除其中写下的内容。",
+            'back' => "返回列表",
+            'rename' => "重命名",
+            'newColumn' => "新建列",
+            'newColumnPlaceholder' => "城市、菜系、评分",
+            'addColumn' => "添加列",
+        ],
+        'books' => [
+            'folder' => "图书与电影",
+            'title' => "待读的书",
+            'edited' => "编辑于 4天前",
+            'count' => "3 个条目",
+            'description' => "总有人劝我读的书。",
+            'columns' => ["书名", "作者", "推荐人", "备注"],
+            'items' => [
+                ["闪灵", "斯蒂芬·金", "Joey", "别把它放进冷冻室"],
+                ["小妇人", "路易莎·梅·奥尔科特", "Rachel", "别让 Joey 告诉你结局"],
+                ["侏罗纪公园", "迈克尔·克莱顿", "Ross", "他做了笔记"],
+            ],
+        ],
+        'columns' => [
+            'title' => "决定每一行要放什么。",
+            'body' => "自己给列起名。可以只留标题和备注，也可以加上适合这份列表的细节：城市、菜系、推荐人、颜色编号，或任何你想以文字保存的内容。",
+            'closing' => "列表成形的过程中，你可以添加、重命名和调整列的顺序。先变得有用，再变得井井有条，这完全可以。",
+        ],
+        'references' => [
+            'title' => "把日常参考放在一起。",
+            'body' => "涂料列表可以有房间、颜色和光泽三列。旅行列表可以有地点、区域和为什么去。每个条目保存同样类型的信息，比较细节就更容易。",
+            'body2' => "需要一整套步骤或较长的说明时，可以在同一个文件夹里，把一条:link放在列表旁边。",
+            'note' => "笔记",
+            'label' => "列表“涂料参考”，有房间、颜色和光泽三列，旁边是编辑这些列的页面：房间、颜色和光泽，每一列都有重命名的输入框和移动或移除的菜单，还有一个添加新列的输入框。",
+        ],
+        'ideas' => [
+            'title' => "想读的书单，和你拥有的东西不一样。",
+            'body' => "把想读的书放进列表。想记录你手头某本书的品相、位置或借出历史时，把它放进你的:link。",
+            'inventory' => "清单",
+            'closing' => "两者可以一起用。它们回答的是不同的问题，比有些会议强多了。",
+            'listCaption' => "一本你想读的书",
+            'thingCaption' => "一本你拥有的书",
+            'label' => "同一本书出现两次。作为列表“待读的书”中的一行：《闪灵》，斯蒂芬·金，Joey 推荐。以及作为“图书”类型的一件物品：一本 The Shining 平装本，放在客厅书柜的上层搁板。",
+        ],
+        'assistant' => [
+            'title' => "趁推荐还新鲜，马上添加一个条目。",
+            'body' => "一个:link可以处理受支持的列表、列和条目。保存好的列表仍留在 Monica 中，供你浏览和编辑。",
+            'linkLabel' => "兼容的已连接助手",
+            'prompt' => "“在 Monica 里把这个添加到我的‘待读的书’列表：《闪灵》，斯蒂芬·金，Joey 推荐。”",
+            'name' => "你的助手",
+            'connected' => "Monica 已连接",
+            'answer' => "已把《闪灵》添加到“待读的书”，作者是斯蒂芬·金，推荐人是 Joey。",
+            'label' => "请助手在 Monica 的列表里添加一本书，以及条目添加后它的回答。",
+        ],
+        'faq' => [
+            'title' => "几个有用的答案。",
+            'items' => [
+                [
+                    'q' => "这些是电子表格吗？",
+                    'a' => "它们是带命名文本列和行的列表，不提供电子表格公式或计算字段。",
+                ],
+                [
+                    'q' => "“推荐人”会自动链接到某个联系人吗？",
+                    'a' => "不会。列表的单元格里存的是文字。写在那里的名字不是结构化的联系人关系。",
+                ],
+                [
+                    'q' => "列表放在哪里？",
+                    'a' => "每个列表都属于保险库中的一个:link。",
+                    'link' => ['label' => "知识库文件夹", 'href' => '#'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "做一份你真会回来看的列表。",
+            'body' => "就从别人给你的下一个推荐开始。",
             'button' => "开始使用 Monica",
         ],
     ],

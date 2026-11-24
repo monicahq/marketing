@@ -1,6 +1,6 @@
 # Monica SEO sheets for pt
 
-These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2626,6 +2626,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 
+## /pt/recursos/listas/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/listas/ |
+| Canonical | https://www.monicahq.com/pt/recursos/listas/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Listas pessoais com colunas personalizadas — Monica |
+| Meta description | Guarde listas de leitura, recomendações e tabelas de referência do dia a dia na Monica. Escolha colunas de texto, adicione itens e organize suas listas nas pastas do Conhecimento. |
+| H1 | Algumas coisas fazem mais sentido numa lista. |
+| OG title | Suas listinhas úteis merecem um lar — Monica |
+| OG description | Livros, lugares, referências de tinta e todas as linhas que você vai agradecer por ter guardado. |
+| OG image | https://www.monicahq.com/og/lists-pt.jpg?v=0ccf7c88 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | listas pessoais com colunas |
+| Secondary keywords | lista de leitura, lista de recomendações |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
 ## /pt/recursos/locais/
 
 | Field | Content |
@@ -2680,6 +2699,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | modelos de contato |
 | Secondary keywords | campos de contato personalizados, modelos de CRM pessoal |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
+## /pt/recursos/notas/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/recursos/notas/ |
+| Canonical | https://www.monicahq.com/pt/recursos/notas/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Notas pessoais de conhecimento e instruções da casa — Monica |
+| Meta description | Escreva notas pessoais com Markdown, títulos, listas e links. Guarde instruções, ideias e informações de referência nas pastas do Conhecimento da Monica. |
+| H1 | Deixe uma nota útil para depois. |
+| OG title | Anote uma vez. Encontre quando importar — Monica |
+| OG description | Um lugar prático para as instruções, ideias e detalhes que merecem mais do que um pensamento passageiro. |
+| OG image | https://www.monicahq.com/og/notes-pt.jpg?v=f585bd90 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | aplicativo de notas pessoais |
+| Secondary keywords | notas em Markdown, instruções da casa |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 

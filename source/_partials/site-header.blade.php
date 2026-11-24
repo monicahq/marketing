@@ -11,7 +11,7 @@
     $menuLinks = [
         ['href' => $page->route('people'), 'items' => [$page->route('details'), $page->route('relationships'), $page->route('timelineReminders')]],
         ['href' => $page->route('possessions'), 'items' => [$page->route('inventory'), $page->route('locations'), $page->route('maintenanceLoans')]],
-        ['href' => $page->route('knowledge'), 'items' => ['#', '#', '#']],
+        ['href' => $page->route('knowledge'), 'items' => [$page->route('notes'), $page->route('lists'), '#']],
     ];
     $spaceLinks = [
         $page->route('templates'),

@@ -751,6 +751,32 @@ return [
             'ru' => 'vozmozhnosti/znaniya',
         ],
 
+        // "Leave a useful note for later.": the notes of Knowledge, written
+        // in Markdown. The header's "Notes" item leads here.
+        'notes' => [
+            'en' => 'features/notes',
+            'fr' => 'fonctionnalites/notes',
+            'de' => 'funktionen/notizen',
+            'es' => 'funcionalidades/notas',
+            'pt' => 'recursos/notas',
+            'nl' => 'functies/notities',
+            'zh' => 'features/notes',
+            'ru' => 'vozmozhnosti/zametki',
+        ],
+
+        // "Some things make more sense in a list.": the lists of Knowledge,
+        // with columns of their own. The header's "Lists" item leads here.
+        'lists' => [
+            'en' => 'features/lists',
+            'fr' => 'fonctionnalites/listes',
+            'de' => 'funktionen/listen',
+            'es' => 'funcionalidades/listas',
+            'pt' => 'recursos/listas',
+            'nl' => 'functies/lijsten',
+            'zh' => 'features/lists',
+            'ru' => 'vozmozhnosti/spiski',
+        ],
+
         // "Keep the moments. Remember the next one.": the short page that
         // sends a reader on to the timeline page or the reminders page, kept
         // apart because a moment and a reminder are separate records.
@@ -921,7 +947,7 @@ return [
      */
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
-        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
+        'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
@@ -971,6 +997,8 @@ return [
         'locations' => '2026-11-23',
         'maintenanceLoans' => '2026-11-23',
         'knowledge' => '2026-11-23',
+        'notes' => '2026-11-23',
+        'lists' => '2026-11-23',
         'relationships' => '2026-10-13',
         'vaults' => '2026-10-13',
         'sharing' => '2026-10-13',
@@ -1305,6 +1333,8 @@ return [
         'inventory' => 'possessions',
         'locations' => 'possessions',
         'maintenanceLoans' => 'possessions',
+        'notes' => 'knowledge',
+        'lists' => 'knowledge',
     ],
 
     /**

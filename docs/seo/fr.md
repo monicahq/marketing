@@ -1,6 +1,6 @@
 # Monica SEO sheets for fr
 
-These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1296,6 +1296,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
 
+## /fr/fonctionnalites/listes/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/fonctionnalites/listes/ |
+| Canonical | https://www.monicahq.com/fr/fonctionnalites/listes/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Listes personnelles à colonnes sur mesure — Monica |
+| Meta description | Gardez listes de lecture, recommandations et tableaux de référence du quotidien dans Monica. Choisissez des colonnes de texte, ajoutez des éléments et rangez vos listes dans les dossiers des Connaissances. |
+| H1 | Certaines choses prennent plus de sens dans une liste. |
+| OG title | Vos petites listes utiles méritent un foyer — Monica |
+| OG description | Livres, lieux, références de peinture et toutes les lignes que vous serez content d’avoir gardées. |
+| OG image | https://www.monicahq.com/og/lists-fr.jpg?v=cd2d4c12 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | listes personnelles à colonnes |
+| Secondary keywords | liste de lecture, liste de recommandations |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
+
 ## /fr/fonctionnalites/modeles/
 
 | Field | Content |
@@ -1312,6 +1331,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | modèles de contact |
 | Secondary keywords | champs de contact personnalisés, modèles de CRM personnel |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
+
+## /fr/fonctionnalites/notes/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/fonctionnalites/notes/ |
+| Canonical | https://www.monicahq.com/fr/fonctionnalites/notes/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Notes de connaissances personnelles et consignes de la maison — Monica |
+| Meta description | Rédigez des notes personnelles avec Markdown, des titres, des listes et des liens. Gardez consignes, idées et informations de référence dans les dossiers des Connaissances de Monica. |
+| H1 | Laissez une note utile pour plus tard. |
+| OG title | Écrivez-le une fois. Retrouvez-le quand il le faut — Monica |
+| OG description | Un endroit pratique pour les consignes, les idées et les détails qui méritent plus qu’une pensée passagère. |
+| OG image | https://www.monicahq.com/og/notes-fr.jpg?v=5cfad9a2 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | application de notes personnelles |
+| Secondary keywords | notes en Markdown, instructions pour la maison |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
 

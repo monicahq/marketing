@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1125,6 +1125,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 
+## /zh/features/lists/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/lists/ |
+| Canonical | https://www.monicahq.com/zh/features/lists/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 带自定义列的个人列表 — Monica |
+| Meta description | 在 Monica 中保存阅读清单、推荐和日常参考表。选择文本列，添加条目，并在知识库文件夹里整理你的列表。 |
+| H1 | 有些事放进列表里更清楚。 |
+| OG title | 你那些有用的小列表，值得有个家 — Monica |
+| OG description | 书、地点、涂料参考，还有所有你日后会庆幸留下的行。 |
+| OG image | https://www.monicahq.com/og/lists-zh.jpg?v=48d12e48 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 自定义列的个人列表 |
+| Secondary keywords | 阅读清单, 推荐列表 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
 ## /zh/features/locations/
 
 | Field | Content |
@@ -1160,6 +1179,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | 物品维护记录 |
 | Secondary keywords | 借用记录, 借给朋友的物品 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/features/notes/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/features/notes/ |
+| Canonical | https://www.monicahq.com/zh/features/notes/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | 个人知识笔记与家庭说明 — Monica |
+| Meta description | 用 Markdown、标题、列表和链接写个人笔记。把说明、想法和参考信息保存在 Monica 的知识库文件夹里。 |
+| H1 | 为以后留一条有用的笔记。 |
+| OG title | 写下来一次，需要时就找得到 — Monica |
+| OG description | 一个实用的地方，存放那些值得多想一想的说明、想法和细节。 |
+| OG image | https://www.monicahq.com/og/notes-zh.jpg?v=f16ea6d3 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | 个人笔记应用 |
+| Secondary keywords | Markdown 笔记, 家居说明 |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 

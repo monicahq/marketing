@@ -49,31 +49,7 @@
                         </div>
 
                         @foreach ($sections as [$name, $count, $documents])
-                            <div class="flex flex-col gap-2.5">
-                                <div class="flex items-center gap-2">
-                                    @include('_partials.icon', ['name' => 'folder', 'size' => 16, 'class' => 'text-text-soft'])
-                                    <span class="{{ $sectionTitle }}">{{ $name }}</span>
-                                    <span class="{{ $muted }}">{{ $count }}</span>
-                                </div>
-                                <div class="{{ $panel }}">
-                                    @foreach ($sorted($documents) as [$kind, $document, $line, $edited, $headings])
-                                        <div class="border-b border-border-subtle last:border-b-0">
-                                            <div class="flex items-center gap-3 px-4 py-3">
-                                                @include('_partials.icon', ['name' => $glyphs[$kind], 'size' => 16, 'class' => 'flex-none text-text-muted'])
-                                                <span class="min-w-0 flex-1 truncate text-base font-semibold text-text">{{ $document }}</span>
-                                                <span class="text-end text-xs text-text-muted max-sm:hidden">{{ $line }} · {{ $edited }}</span>
-                                            </div>
-                                            @if ($headings !== [])
-                                                <div class="flex flex-wrap gap-x-4 gap-y-1 ps-11 pe-4 pb-3">
-                                                    @foreach ($headings as $heading)
-                                                        <span class="text-small text-text-secondary underline decoration-border-strong underline-offset-3">{{ $heading }}</span>
-                                                    @endforeach
-                                                </div>
-                                            @endif
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
+                            @include('_partials.knowledge.contents-folder', ['name' => $name, 'count' => $count, 'documents' => $documents, 'active' => null])
                         @endforeach
                     </div>
                 </div>

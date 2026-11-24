@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1125,6 +1125,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | date and time preferences, international contact names |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
+## /en/features/lists/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/lists/ |
+| Canonical | https://www.monicahq.com/en/features/lists/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Personal lists with custom columns — Monica |
+| Meta description | Keep reading lists, recommendations and everyday reference tables in Monica. Choose text columns, add items and organise your lists in Knowledge folders. |
+| H1 | Some things make more sense in a list. |
+| OG title | Your useful little lists deserve a home — Monica |
+| OG description | Books, places, paint references and all the rows you will be glad you kept. |
+| OG image | https://www.monicahq.com/og/lists-en.jpg?v=12868184 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | personal lists with custom columns |
+| Secondary keywords | reading list, recommendation list |
+| Supporting keywords | custom list columns, everyday reference tables |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
 ## /en/features/locations/
 
 | Field | Content |
@@ -1161,6 +1180,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Primary keyword | possession maintenance records |
 | Secondary keywords | loan tracking, track items lent to friends |
 | Supporting keywords | maintenance history, who borrowed what |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/features/notes/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/features/notes/ |
+| Canonical | https://www.monicahq.com/en/features/notes/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Personal knowledge notes and household instructions — Monica |
+| Meta description | Write personal notes with Markdown, headings, lists and links. Keep instructions, ideas and reference information in Monica’s Knowledge folders. |
+| H1 | Leave a useful note for later. |
+| OG title | Write it down once. Find it when it matters — Monica |
+| OG description | A practical place for the instructions, ideas and details that deserve more than a passing thought. |
+| OG image | https://www.monicahq.com/og/notes-en.jpg?v=9b39225d (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | personal notes app |
+| Secondary keywords | Markdown notes, household instructions |
+| Supporting keywords | notes with checklists, notes in folders |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/features/people/

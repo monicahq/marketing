@@ -31,6 +31,8 @@ return [
             'locations' => "Standorte",
             'maintenanceLoans' => "Wartung und Verleih",
             'knowledge' => "Wissen",
+            'notes' => "Notizen",
+            'lists' => "Listen",
             'relationships' => "Beziehungen",
             'vaults' => "Tresore",
             'sharing' => "Teilen",
@@ -365,6 +367,32 @@ return [
                 'title' => "Behalten Sie, was Sie wissen.",
                 'description' => "Notizen, Listen und nützliche Alltagsinformationen.",
                 'alt' => "Der Monica-Panda sortiert Karten in einen Aktenschrank, mit den Worten „Behalten Sie, was Sie wissen.“",
+            ],
+        ],
+
+        'notes' => [
+            'title' => "Persönliche Notizen für Wissen und Anleitungen im Haushalt — Monica",
+            'description' => "Schreiben Sie persönliche Notizen mit Markdown, Überschriften, Listen und Links. Halten Sie Anleitungen, Ideen und Nachschlagewissen in den Ordnern von Monicas Wissen fest.",
+            'ogTitle' => "Einmal aufschreiben. Wiederfinden, wenn es darauf ankommt — Monica",
+            'ogDescription' => "Ein praktischer Ort für die Anleitungen, Ideen und Details, die mehr verdienen als einen flüchtigen Gedanken.",
+            'ogImage' => [
+                'eyebrow' => "Notizen in Wissen",
+                'title' => "Hinterlassen Sie eine nützliche Notiz.",
+                'description' => "Anleitungen, Ideen und Dinge, die man behalten will.",
+                'alt' => "Der Monica-Panda sortiert Karten in einen Aktenschrank, mit den Worten „Hinterlassen Sie eine nützliche Notiz.“",
+            ],
+        ],
+
+        'lists' => [
+            'title' => "Persönliche Listen mit eigenen Spalten — Monica",
+            'description' => "Führen Sie Leselisten, Empfehlungen und Alltagstabellen in Monica. Wählen Sie Textspalten, fügen Sie Einträge hinzu und ordnen Sie Ihre Listen in den Ordnern von Wissen.",
+            'ogTitle' => "Ihre nützlichen kleinen Listen verdienen ein Zuhause — Monica",
+            'ogDescription' => "Bücher, Orte, Farbangaben und all die Zeilen, über die Sie später froh sein werden.",
+            'ogImage' => [
+                'eyebrow' => "Listen in Wissen",
+                'title' => "Führen Sie eine nützliche Liste.",
+                'description' => "Ihre Spalten. Ihre Alltagsangaben.",
+                'alt' => "Der Monica-Panda sortiert Karten in einen Aktenschrank, mit den Worten „Führen Sie eine nützliche Liste.“",
             ],
         ],
 
@@ -3490,6 +3518,195 @@ return [
         'cta' => [
             'title' => "Speichern Sie eine Sache, die Sie ständig wieder suchen müssen.",
             'body' => "Ihr zukünftiges Ich hat schon genug Tabs offen.",
+            'button' => "Mit Monica beginnen",
+        ],
+    ],
+
+    /**
+     * The notes page: the notes of Knowledge. Its drawings show the same
+     * "Water shutoff" note as the knowledge page, read from `knowledge.note`
+     * and `knowledge.home`, so the two pages cannot disagree about it. `ui`
+     * holds the note editor's own words, as Erica translates them.
+     */
+    'notes' => [
+        'hero' => [
+            'eyebrow' => "Notizen in Wissen",
+            'title' => "Hinterlassen Sie eine nützliche Notiz für später.",
+            'lede' => "Wie man das Wasser abstellt. Das Rezept, das gelungen ist. Der Reiseplan, den Sie gern finden würden, bevor Sie am Flughafen sind.",
+            'body' => "Halten Sie Anleitungen und Ideen in :link fest, mit einem Titel und einem Ordner, die helfen, sie wiederzufinden.",
+            'knowledge' => "Wissen",
+            'cta' => "Mit Monica beginnen",
+            'label' => "Die Notiz Wasser abstellen in Monica, im Ordner Zuhause. Ihr Titel, dann eine Überschrift, Hauptventil, mit dem Ort des Ventils und wie man es schließt, und eine zweite Überschrift, Vor einer langen Reise, mit drei Aufgaben, zwei davon abgehakt.",
+            // The parts of the note named beside it, on a wide screen.
+            'parts' => [
+                'folder' => "Ordner",
+                'title' => "Titel",
+                'heading' => "Überschrift",
+                'checklist' => "Checkliste",
+            ],
+        ],
+        // The note editor's own words, as Erica translates them.
+        'ui' => [
+            'title' => "Titel",
+            'folder' => "Ordner",
+            'text' => "Text",
+            'addLink' => "Einen Link hinzufügen",
+            'help' => "Markdown: # für eine Überschrift, - für einen Aufzählungspunkt, - [ ] für eine Aufgabe, > für ein Zitat, **fett**. Webadressen werden von selbst zu Links.",
+            'saveChanges' => "Änderungen speichern",
+            'cancel' => "Abbrechen",
+            'delete' => "Löschen",
+        ],
+        'markdown' => [
+            'title' => "Behalten Sie die Worte, mit genug Struktur zum Lesen.",
+            'body' => "Notizen unterstützen Markdown für Überschriften, Hervorhebungen, Listen, Checklisten, Zitate und Weblinks. Nutzen Sie es, damit Anleitungen leichter zu befolgen sind, oder schreiben Sie einfach ein paar Sätze.",
+            'closing' => "Eine Notiz darf kurz sein. „Der Ersatzschlüssel ist bei Monica“ hat in einem Satz einen ganzen Tagesjob erledigt.",
+            'label' => "Dieselbe Notiz geöffnet im Editor: der Titel Wasser abstellen, der Ordner Zuhause und ihr Text in Markdown, zwei Überschriften mit ## und drei Aufgaben mit - [x] und - [ ] markiert.",
+        ],
+        'headings' => [
+            'title' => "Finden Sie das Wichtige, ohne alles noch einmal zu lesen.",
+            'body' => "Geben Sie einer langen Notiz aussagekräftige Überschriften. Die Inhaltsansicht von Wissen kann diese Überschriften anzeigen, damit Sie direkt zum gesuchten Abschnitt springen.",
+            'body2' => "Für Informationen, die immer dieselben Details wiederholen, etwa Farbangaben nach Raum, probieren Sie stattdessen eine :link.",
+            'listLabel' => "Liste mit Spalten",
+            'label' => "Der Ordner Zuhause im Inhalt von Wissen, in dem die Notiz Wasser abstellen ihre zwei Überschriften zeigt, Hauptventil und Vor einer langen Reise. Folgt man der zweiten, öffnet sich die Notiz an dieser Überschrift, mit ihren drei Aufgaben.",
+        ],
+        'folders' => [
+            'title' => "Legen Sie sie dort ab, wo Sie zuerst suchen würden.",
+            'body' => "Halten Sie die Notiz in einem benannten Ordner, verschieben Sie sie, wenn sich Ihre Ordnung ändert, und finden Sie gespeicherte Wörter mit der Suche in Wissen.",
+            'body2' => ":link erklären, wie Notizen und Listen nach Thema beisammenbleiben.",
+            'linkLabel' => "Ordner und Organisation",
+            'label' => "Die Ordner von Wissen neben der Notiz, mit geöffnetem Zuhause und Wasser abstellen als gerade gelesener Notiz.",
+        ],
+        'assistant' => [
+            'title' => "Lassen Sie einen Assistenten bei der Notiz helfen, ohne sie ihm zu überlassen.",
+            'body' => "Ein :link kann unterstützte Notizen anlegen, abrufen und aktualisieren. Sie können das Ergebnis prüfen und in der Web-App bearbeiten.",
+            'linkLabel' => "kompatibler verbundener Assistent",
+            'closing' => "Die Notiz gehört in Ihre persönliche Datenbank, auch wenn Sie nächste Woche einen anderen Assistenten nutzen.",
+            'prompt' => "„Speichere in Monica im Ordner Zuhause eine Notiz: Das Wasser wird im Schrank neben der Haustür abgestellt.“",
+            'name' => "Ihr Assistent",
+            'connected' => "Monica verbunden",
+            'answer' => "Erledigt. Die Notiz Wasser abstellen liegt in Ihrem Ordner Zuhause, mit dem Ort des Ventils.",
+            'label' => "Eine Anfrage an einen Assistenten, eine Notiz im Ordner Zuhause von Monica zu speichern, und seine Antwort, sobald die Notiz gespeichert ist.",
+        ],
+        'faq' => [
+            'title' => "Ein paar nützliche Antworten.",
+            'items' => [
+                [
+                    'q' => "Sind das die Notizen auf der Seite eines Kontakts?",
+                    'a' => "Nein. Diese Notizen liegen in den Ordnern von Wissen. Für den Zusammenhang zu einer Person nutzen Sie :link.",
+                    'link' => ['label' => "Kontaktnotizen", 'page' => 'details'],
+                ],
+                [
+                    'q' => "Kann ich Dateien anhängen oder Rückverweise zwischen Notizen anlegen?",
+                    'a' => "Diese Notizen in Wissen sind Text mit Markdown-Formatierung und gewöhnlichen Links. Dateianhänge und strukturierte Rückverweise zwischen Notizen gehören nicht zu dieser Funktion.",
+                ],
+                [
+                    'q' => "Kann ich Checklisten verwenden?",
+                    'a' => "Ja. Notizen können Aufgaben mit Kontrollkästchen enthalten. Für eine Tabelle mit wiederkehrenden Informationen nutzen Sie eine Liste in Wissen.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Schreiben Sie auf, was Sie sich nicht zweimal merken sollten.",
+            'body' => "Eine kleine Notiz kann eine ziemlich lange Suche ersparen.",
+            'button' => "Mit Monica beginnen",
+        ],
+    ],
+
+    /**
+     * The lists page: the lists of Knowledge. Its paint list is the knowledge
+     * page's (`knowledge.list`), and its paperback of The Shining is the
+     * locations page's (`locations.book`), so the pages cannot disagree.
+     * `ui` holds the list screens' own words, as Erica translates them.
+     */
+    'lists' => [
+        'hero' => [
+            'eyebrow' => "Listen in Wissen",
+            'title' => "Manches ergibt in einer Liste mehr Sinn.",
+            'lede' => "Bücher zum Lesen. Restaurants zum Ausprobieren. Wandfarben für die Zimmer, die Sie angeblich bald fertigstellen.",
+            'body' => "Halten Sie wiederkehrende Informationen in :link als Liste fest, mit den Spalten, die für Sie nützlich sind.",
+            'knowledge' => "Wissen",
+            'cta' => "Mit Monica beginnen",
+            'label' => "Die Liste Bücher zum Lesen in Monica, im Ordner Bücher und Filme, mit vier Spalten: Titel, Autor, Empfohlen von und Notiz. Shining von Stephen King, empfohlen von Joey, mit der Notiz, es aus dem Gefrierfach herauszuhalten. Betty und ihre Schwestern von Louisa May Alcott, empfohlen von Rachel. Jurassic Park von Michael Crichton, empfohlen von Ross.",
+        ],
+        // The list screens' own words, as Erica translates them.
+        'ui' => [
+            'list' => "Liste",
+            'edit' => "Bearbeiten",
+            'editColumns' => "Spalten bearbeiten",
+            'addItem' => "Einen Eintrag hinzufügen",
+            'columnsOf' => "Spalten von :title",
+            'columnsLead' => "Jeder Eintrag der Liste enthält einen Text pro Spalte. Wer eine Spalte entfernt, löscht, was darin geschrieben steht.",
+            'back' => "Zurück zur Liste",
+            'rename' => "Umbenennen",
+            'newColumn' => "Neue Spalte",
+            'newColumnPlaceholder' => "Stadt, Küche, Bewertung",
+            'addColumn' => "Die Spalte hinzufügen",
+        ],
+        'books' => [
+            'folder' => "Bücher und Filme",
+            'title' => "Bücher zum Lesen",
+            'edited' => "Bearbeitet vor 4 Tagen",
+            'count' => "3 Einträge",
+            'description' => "Bücher, die ich laut anderen unbedingt lesen soll.",
+            'columns' => ["Titel", "Autor", "Empfohlen von", "Notiz"],
+            'items' => [
+                ["Shining", "Stephen King", "Joey", "Aus dem Gefrierfach heraushalten"],
+                ["Betty und ihre Schwestern", "Louisa May Alcott", "Rachel", "Nicht von Joey das Ende verraten lassen"],
+                ["Jurassic Park", "Michael Crichton", "Ross", "Er hat Notizen"],
+            ],
+        ],
+        'columns' => [
+            'title' => "Legen Sie fest, was jede Zeile enthalten soll.",
+            'body' => "Benennen Sie die Spalten selbst. Behalten Sie Titel und Notiz bei oder ergänzen Sie die Angaben, die zur Liste passen: Stadt, Küche, Empfehlung, Farbangabe oder alles andere, was Sie als Text festhalten möchten.",
+            'closing' => "Sie können Spalten hinzufügen, umbenennen und umsortieren, während die Liste Gestalt annimmt. Sie darf nützlich werden, bevor sie perfekt geordnet ist.",
+        ],
+        'references' => [
+            'title' => "Halten Sie Alltagsangaben beisammen.",
+            'body' => "Eine Farbliste könnte Raum, Farbe und Oberfläche haben. Eine Reiseliste könnte Ort, Gegend und Warum hinfahren haben. Jeder Eintrag enthält dieselben Arten von Angaben, das macht den Vergleich der Einzelheiten leichter.",
+            'body2' => "Für eine vollständige Anleitung oder eine längere Erklärung nutzen Sie eine :link neben der Liste im selben Ordner.",
+            'note' => "Notiz",
+            'label' => "Die Liste Farbangaben, mit einer Spalte für Raum, Farbe und Oberfläche, neben der Seite, die ihre Spalten bearbeitet: Raum, Farbe und Oberfläche, jeweils mit einem Feld zum Umbenennen und einem Menü zum Verschieben oder Entfernen, und einem Feld, um eine neue Spalte hinzuzufügen.",
+        ],
+        'ideas' => [
+            'title' => "Eine Liste von Ideen ist etwas anderes als das, was Sie besitzen.",
+            'body' => "Führen Sie Bücher, die Sie lesen möchten, in einer Liste. Die bestimmten Bücher, die Sie besitzen, gehören in Ihr :link, wenn Sie Zustand, Standort oder Leihverlauf festhalten möchten.",
+            'inventory' => "Inventar",
+            'closing' => "Sie können beides nutzen. Sie beantworten verschiedene Fragen, was sich nicht von jeder Besprechung sagen lässt.",
+            'listCaption' => "Ein Buch, das Sie lesen möchten",
+            'thingCaption' => "Ein Exemplar, das Sie besitzen",
+            'label' => "Dasselbe Buch zweimal. Als Zeile der Liste Bücher zum Lesen: Shining von Stephen King, empfohlen von Joey. Und als Besitztum vom Typ Bücher: The Shining — Taschenbuch, aufbewahrt im oberen Regalfach des Bücherregals im Wohnzimmer.",
+        ],
+        'assistant' => [
+            'title' => "Tragen Sie einen Eintrag ein, solange die Empfehlung frisch ist.",
+            'body' => "Ein :link kann mit unterstützten Listen, Spalten und Einträgen arbeiten. Die gespeicherte Liste bleibt in Monica, damit Sie sie durchsehen und bearbeiten können.",
+            'linkLabel' => "kompatibler Assistent",
+            'prompt' => "„Füge das in Monica zu meiner Liste Bücher zum Lesen hinzu: Shining von Stephen King, empfohlen von Joey.“",
+            'name' => "Ihr Assistent",
+            'connected' => "Monica verbunden",
+            'answer' => "Erledigt. Shining steht jetzt in Bücher zum Lesen, mit Stephen King als Autor und Joey als demjenigen, der es empfohlen hat.",
+            'label' => "Eine Anfrage an einen Assistenten, ein Buch zu einer Liste in Monica hinzuzufügen, und seine Antwort, sobald der Eintrag hinzugefügt ist.",
+        ],
+        'faq' => [
+            'title' => "Ein paar nützliche Antworten.",
+            'items' => [
+                [
+                    'q' => "Sind das Tabellenkalkulationen?",
+                    'a' => "Es sind Listen mit benannten Textspalten und Zeilen. Tabellenformeln oder berechnete Felder bieten sie nicht.",
+                ],
+                [
+                    'q' => "Verweist „Empfohlen von“ automatisch auf einen Kontakt?",
+                    'a' => "Nein. Eine Zelle der Liste enthält Text. Ein dort geschriebener Name ist keine strukturierte Beziehung zu einem Kontakt.",
+                ],
+                [
+                    'q' => "Wo liegen Listen?",
+                    'a' => "Jede Liste gehört zu einem :link in einem Tresor.",
+                    'link' => ['label' => "Ordner in Wissen", 'href' => '#'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Legen Sie eine Liste an, zu der Sie wirklich zurückkehren.",
+            'body' => "Beginnen Sie mit der nächsten Empfehlung, die jemand Ihnen gibt.",
             'button' => "Mit Monica beginnen",
         ],
     ],

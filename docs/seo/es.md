@@ -1,6 +1,6 @@
 # Monica SEO sheets for es
 
-These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1220,6 +1220,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
 
+## /es/funcionalidades/listas/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/funcionalidades/listas/ |
+| Canonical | https://www.monicahq.com/es/funcionalidades/listas/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Listas personales con columnas a tu medida — Monica |
+| Meta description | Guarda listas de lectura, recomendaciones y tablas de referencia del día a día en Monica. Elige columnas de texto, añade elementos y organiza tus listas en las carpetas de Conocimiento. |
+| H1 | Algunas cosas tienen más sentido en una lista. |
+| OG title | Tus pequeñas listas útiles merecen un hogar — Monica |
+| OG description | Libros, lugares, referencias de pintura y todas las filas que te alegrará haber guardado. |
+| OG image | https://www.monicahq.com/og/lists-es.jpg?v=2786b19c (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | listas personales con columnas |
+| Secondary keywords | lista de lectura, lista de recomendaciones |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
 ## /es/funcionalidades/mantenimiento-y-prestamos/
 
 | Field | Content |
@@ -1236,6 +1255,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | registros de mantenimiento |
 | Secondary keywords | seguimiento de préstamos, cosas prestadas a amigos |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
+## /es/funcionalidades/notas/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/funcionalidades/notas/ |
+| Canonical | https://www.monicahq.com/es/funcionalidades/notas/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Notas personales de conocimiento e instrucciones del hogar — Monica |
+| Meta description | Escribe notas personales con Markdown, encabezados, listas y enlaces. Guarda instrucciones, ideas e información de referencia en las carpetas de Conocimiento de Monica. |
+| H1 | Deja una nota útil para más adelante. |
+| OG title | Apúntalo una vez. Encuéntralo cuando importe — Monica |
+| OG description | Un lugar práctico para las instrucciones, las ideas y los detalles que merecen más que un pensamiento pasajero. |
+| OG image | https://www.monicahq.com/og/notes-es.jpg?v=86c63a5c (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | aplicación de notas personales |
+| Secondary keywords | notas en Markdown, instrucciones para la casa |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
 

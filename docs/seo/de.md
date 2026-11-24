@@ -1,6 +1,6 @@
 # Monica SEO sheets for de
 
-These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1106,6 +1106,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 
+## /de/funktionen/listen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/listen/ |
+| Canonical | https://www.monicahq.com/de/funktionen/listen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persönliche Listen mit eigenen Spalten — Monica |
+| Meta description | Führen Sie Leselisten, Empfehlungen und Alltagstabellen in Monica. Wählen Sie Textspalten, fügen Sie Einträge hinzu und ordnen Sie Ihre Listen in den Ordnern von Wissen. |
+| H1 | Manches ergibt in einer Liste mehr Sinn. |
+| OG title | Ihre nützlichen kleinen Listen verdienen ein Zuhause — Monica |
+| OG description | Bücher, Orte, Farbangaben und all die Zeilen, über die Sie später froh sein werden. |
+| OG image | https://www.monicahq.com/og/lists-de.jpg?v=9f30d065 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persönliche Listen mit eigenen Spalten |
+| Secondary keywords | Leseliste, Empfehlungsliste |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
 ## /de/funktionen/menschen/
 
 | Field | Content |
@@ -1122,6 +1141,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | persönliche Kontaktverwaltung |
 | Secondary keywords | sich an Menschen erinnern, Freunde und Familie im Blick behalten |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/funktionen/notizen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/funktionen/notizen/ |
+| Canonical | https://www.monicahq.com/de/funktionen/notizen/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persönliche Notizen für Wissen und Anleitungen im Haushalt — Monica |
+| Meta description | Schreiben Sie persönliche Notizen mit Markdown, Überschriften, Listen und Links. Halten Sie Anleitungen, Ideen und Nachschlagewissen in den Ordnern von Monicas Wissen fest. |
+| H1 | Hinterlassen Sie eine nützliche Notiz für später. |
+| OG title | Einmal aufschreiben. Wiederfinden, wenn es darauf ankommt — Monica |
+| OG description | Ein praktischer Ort für die Anleitungen, Ideen und Details, die mehr verdienen als einen flüchtigen Gedanken. |
+| OG image | https://www.monicahq.com/og/notes-de.jpg?v=5bf5e9be (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persönliche Notizen-App |
+| Secondary keywords | Markdown-Notizen, Anleitungen für zu Hause |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 

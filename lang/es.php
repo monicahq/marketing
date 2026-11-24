@@ -31,6 +31,8 @@ return [
             'locations' => "Ubicaciones",
             'maintenanceLoans' => "Mantenimiento y préstamos",
             'knowledge' => "Conocimiento",
+            'notes' => "Notas",
+            'lists' => "Listas",
             'relationships' => "Relaciones",
             'vaults' => "Bóvedas",
             'sharing' => "Compartir",
@@ -369,6 +371,32 @@ return [
                 'title' => "Guarda lo que sabes.",
                 'description' => "Notas, listas e información útil del día a día.",
                 'alt' => "El panda de Monica archivando fichas en un archivador, con las palabras «Guarda lo que sabes.»",
+            ],
+        ],
+
+        'notes' => [
+            'title' => "Notas personales de conocimiento e instrucciones del hogar — Monica",
+            'description' => "Escribe notas personales con Markdown, encabezados, listas y enlaces. Guarda instrucciones, ideas e información de referencia en las carpetas de Conocimiento de Monica.",
+            'ogTitle' => "Apúntalo una vez. Encuéntralo cuando importe — Monica",
+            'ogDescription' => "Un lugar práctico para las instrucciones, las ideas y los detalles que merecen más que un pensamiento pasajero.",
+            'ogImage' => [
+                'eyebrow' => "Notas de Conocimiento",
+                'title' => "Deja una nota útil.",
+                'description' => "Instrucciones, ideas y cosas que merece la pena guardar.",
+                'alt' => "El panda de Monica archivando fichas en un archivador, con las palabras «Deja una nota útil.»",
+            ],
+        ],
+
+        'lists' => [
+            'title' => "Listas personales con columnas a tu medida — Monica",
+            'description' => "Guarda listas de lectura, recomendaciones y tablas de referencia del día a día en Monica. Elige columnas de texto, añade elementos y organiza tus listas en las carpetas de Conocimiento.",
+            'ogTitle' => "Tus pequeñas listas útiles merecen un hogar — Monica",
+            'ogDescription' => "Libros, lugares, referencias de pintura y todas las filas que te alegrará haber guardado.",
+            'ogImage' => [
+                'eyebrow' => "Listas de Conocimiento",
+                'title' => "Guarda una lista útil.",
+                'description' => "Tus columnas. Tus referencias del día a día.",
+                'alt' => "El panda de Monica archivando fichas en un archivador, con las palabras «Guarda una lista útil.»",
             ],
         ],
 
@@ -3495,6 +3523,195 @@ return [
         'cta' => [
             'title' => "Guarda una cosa que siempre tienes que volver a buscar.",
             'body' => "Tu yo del futuro ya tiene bastantes pestañas abiertas.",
+            'button' => "Empieza a usar Monica",
+        ],
+    ],
+
+    /**
+     * The notes page: the notes of Knowledge. Its drawings show the same
+     * "Water shutoff" note as the knowledge page, read from `knowledge.note`
+     * and `knowledge.home`, so the two pages cannot disagree about it. `ui`
+     * holds the note editor's own words, as Erica translates them.
+     */
+    'notes' => [
+        'hero' => [
+            'eyebrow' => "Notas de Conocimiento",
+            'title' => "Deja una nota útil para más adelante.",
+            'lede' => "Cómo cerrar el agua. La receta que salió bien. El plan de viaje que te gustaría encontrar antes de llegar al aeropuerto.",
+            'body' => "Guarda instrucciones e ideas en :link, con un título y una carpeta que te ayuden a encontrarlas de nuevo.",
+            'knowledge' => "Conocimiento",
+            'cta' => "Empieza a usar Monica",
+            'label' => "La nota Cierre del agua en Monica, en la carpeta Casa. Su título, luego un encabezado, Llave de paso principal, con dónde está la llave y cómo cerrarla, y un segundo encabezado, Antes de un viaje largo, con tres tareas, dos de ellas marcadas.",
+            // The parts of the note named beside it, on a wide screen.
+            'parts' => [
+                'folder' => "Carpeta",
+                'title' => "Título",
+                'heading' => "Encabezado",
+                'checklist' => "Lista de tareas",
+            ],
+        ],
+        // The note editor's own words, as Erica translates them.
+        'ui' => [
+            'title' => "Título",
+            'folder' => "Carpeta",
+            'text' => "Texto",
+            'addLink' => "Añadir un enlace",
+            'help' => "Markdown: # para un encabezado, - para una viñeta, - [ ] para una tarea, > para una cita, **negrita**. Las direcciones web se convierten en enlaces por sí solas.",
+            'saveChanges' => "Guardar los cambios",
+            'cancel' => "Cancelar",
+            'delete' => "Eliminar",
+        ],
+        'markdown' => [
+            'title' => "Conserva las palabras, con la estructura justa para leerlas.",
+            'body' => "Las notas admiten Markdown para encabezados, énfasis, listas, listas de tareas, citas y enlaces web. Úsalo para que las instrucciones sean más fáciles de seguir, o escribe simplemente unas frases.",
+            'closing' => "Una nota puede ser corta. «La llave de repuesto la tiene Monica» ha hecho el trabajo de un día entero en una sola frase.",
+            'label' => "La misma nota abierta en su editor: el título Cierre del agua, la carpeta Casa y su texto en Markdown, con dos encabezados marcados con ## y tres tareas marcadas con - [x] y - [ ].",
+        ],
+        'headings' => [
+            'title' => "Encuentra lo importante sin releerlo todo.",
+            'body' => "Da a una nota larga encabezados descriptivos. El índice de Conocimiento puede mostrar esos encabezados y ayudarte a saltar a la sección que necesitas.",
+            'body2' => "Para información que repite el mismo conjunto de datos, como las referencias de pintura por habitación, prueba mejor una :link.",
+            'listLabel' => "lista con columnas",
+            'label' => "La carpeta Casa en el índice de Conocimiento, donde la nota Cierre del agua muestra sus dos encabezados, Llave de paso principal y Antes de un viaje largo. Al seguir el segundo, la nota se abre en ese encabezado, con sus tres tareas.",
+        ],
+        'folders' => [
+            'title' => "Ponla donde pensarás en buscarla.",
+            'body' => "Guarda la nota en una carpeta con nombre, muévela cuando cambie tu organización y usa la búsqueda de Conocimiento para encontrar palabras guardadas.",
+            'body2' => ":link explican cómo las notas y las listas se mantienen juntas por tema.",
+            'linkLabel' => "Las carpetas y la organización",
+            'label' => "Las carpetas de Conocimiento junto a la nota, con Casa abierta y Cierre del agua marcada como la nota que se está leyendo.",
+        ],
+        'assistant' => [
+            'title' => "Deja que un asistente ayude con la nota, sin que se quede con ella.",
+            'body' => "Un :link puede crear, recuperar y actualizar las notas admitidas. Puedes revisar el resultado y editarlo en la aplicación web.",
+            'linkLabel' => "asistente conectado compatible",
+            'closing' => "La nota pertenece a tu base de datos personal, aunque la semana que viene uses otro asistente.",
+            'prompt' => "«Guarda en Monica, en la carpeta Casa, una nota: el cierre del agua está en el armario junto a la puerta de entrada.»",
+            'name' => "Tu asistente",
+            'connected' => "Monica conectada",
+            'answer' => "Hecho. La nota Cierre del agua está en tu carpeta Casa, con dónde encontrar la llave de paso.",
+            'label' => "Una petición a un asistente para guardar una nota en la carpeta Casa de Monica, y su respuesta una vez guardada la nota.",
+        ],
+        'faq' => [
+            'title' => "Algunas respuestas útiles.",
+            'items' => [
+                [
+                    'q' => "¿Son estas las notas de la página de un contacto?",
+                    'a' => "No. Estas notas viven en las carpetas de Conocimiento. Usa las :link para el contexto sobre una persona.",
+                    'link' => ['label' => "notas de contacto", 'page' => 'details'],
+                ],
+                [
+                    'q' => "¿Puedo adjuntar archivos o crear vínculos de retroceso entre notas?",
+                    'a' => "Estas notas de Conocimiento son texto con formato Markdown y enlaces normales. Los archivos adjuntos y los vínculos de retroceso estructurados entre notas no forman parte de esta función.",
+                ],
+                [
+                    'q' => "¿Puedo usar listas de tareas?",
+                    'a' => "Sí. Las notas pueden incluir casillas de verificación. Para una tabla de información repetida, usa una lista de Conocimiento.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Apunta una cosa que no deberías tener que recordar dos veces.",
+            'body' => "Una nota pequeña puede ahorrar una búsqueda bastante larga.",
+            'button' => "Empieza a usar Monica",
+        ],
+    ],
+
+    /**
+     * The lists page: the lists of Knowledge. Its paint list is the knowledge
+     * page's (`knowledge.list`), and its paperback of The Shining is the
+     * locations page's (`locations.book`), so the pages cannot disagree.
+     * `ui` holds the list screens' own words, as Erica translates them.
+     */
+    'lists' => [
+        'hero' => [
+            'eyebrow' => "Listas de Conocimiento",
+            'title' => "Algunas cosas tienen más sentido en una lista.",
+            'lede' => "Libros por leer. Restaurantes por probar. Colores de pintura para las habitaciones que sigues diciendo que terminarás.",
+            'body' => "Guarda la información repetida en una lista de :link, con las columnas que te resulten útiles.",
+            'knowledge' => "Conocimiento",
+            'cta' => "Empieza a usar Monica",
+            'label' => "La lista Libros por leer en Monica, en la carpeta Libros y películas, con cuatro columnas: Título, Autor, Recomendado por y Nota. El resplandor, de Stephen King, recomendado por Joey, con la nota de mantenerlo fuera del congelador. Mujercitas, de Louisa May Alcott, recomendado por Rachel. Parque Jurásico, de Michael Crichton, recomendado por Ross.",
+        ],
+        // The list screens' own words, as Erica translates them.
+        'ui' => [
+            'list' => "Lista",
+            'edit' => "Editar",
+            'editColumns' => "Editar columnas",
+            'addItem' => "Añadir un elemento",
+            'columnsOf' => "Columnas de :title",
+            'columnsLead' => "Cada elemento de la lista guarda un texto por columna. Quitar una columna elimina lo que estaba escrito en ella.",
+            'back' => "Volver a la lista",
+            'rename' => "Renombrar",
+            'newColumn' => "Nueva columna",
+            'newColumnPlaceholder' => "Ciudad, cocina, valoración",
+            'addColumn' => "Añadir la columna",
+        ],
+        'books' => [
+            'folder' => "Libros y películas",
+            'title' => "Libros por leer",
+            'edited' => "Editada hace 4 días",
+            'count' => "3 elementos",
+            'description' => "Libros que la gente insiste en que lea.",
+            'columns' => ["Título", "Autor", "Recomendado por", "Nota"],
+            'items' => [
+                ["El resplandor", "Stephen King", "Joey", "Mantenlo fuera del congelador"],
+                ["Mujercitas", "Louisa May Alcott", "Rachel", "Que Joey no te cuente el final"],
+                ["Parque Jurásico", "Michael Crichton", "Ross", "Tiene notas"],
+            ],
+        ],
+        'columns' => [
+            'title' => "Elige qué debe guardar cada fila.",
+            'body' => "Da nombre a las columnas como quieras. Conserva un título y una nota, o añade los detalles que encajen con la lista: ciudad, cocina, recomendación, referencia de color o cualquier otra cosa que quieras guardar como texto.",
+            'closing' => "Puedes añadir, renombrar y reordenar columnas a medida que la lista toma forma. Se le permite ser útil antes de estar perfectamente organizada.",
+        ],
+        'references' => [
+            'title' => "Mantén juntas las referencias del día a día.",
+            'body' => "Una lista de pintura podría tener Habitación, Color y Acabado. Una lista de viaje podría tener Lugar, Zona y Por qué ir. Cada elemento guarda los mismos tipos de información, así que comparar los detalles resulta más fácil.",
+            'body2' => "Para un conjunto completo de instrucciones o una explicación más larga, usa una :link junto a la lista, en la misma carpeta.",
+            'note' => "nota",
+            'label' => "La lista Referencias de pintura, con una columna para la habitación, el color y el acabado, junto a la página que edita sus columnas: Habitación, Color y Acabado, cada una con un campo para renombrarla y un menú para moverla o quitarla, y un campo para añadir una columna nueva.",
+        ],
+        'ideas' => [
+            'title' => "Una lista de ideas no es lo mismo que lo que tienes.",
+            'body' => "Guarda en una lista los libros que quieres leer. Guarda los libros concretos que tienes en tu :link cuando quieras anotar su estado, su ubicación o su historial de préstamos.",
+            'inventory' => "inventario",
+            'closing' => "Puedes usar ambos. Responden a preguntas distintas, que es más de lo que se puede decir de algunas reuniones.",
+            'listCaption' => "Un libro que quieres leer",
+            'thingCaption' => "Un ejemplar que tienes",
+            'label' => "El mismo libro dos veces. Como fila de la lista Libros por leer: El resplandor, de Stephen King, recomendado por Joey. Y como pertenencia del tipo Libros: The Shining — bolsillo, guardado en el estante superior de la librería del salón.",
+        ],
+        'assistant' => [
+            'title' => "Añade un elemento mientras la recomendación está fresca.",
+            'body' => "Un :link puede trabajar con las listas, columnas y elementos admitidos. La lista guardada sigue disponible en Monica para que la consultes y la edites.",
+            'linkLabel' => "asistente compatible",
+            'prompt' => "«Añade esto a mi lista Libros por leer en Monica: El resplandor, de Stephen King, recomendado por Joey.»",
+            'name' => "Tu asistente",
+            'connected' => "Monica conectada",
+            'answer' => "Hecho. He añadido El resplandor a Libros por leer, con Stephen King como autor y Joey como quien lo recomendó.",
+            'label' => "Una petición a un asistente para añadir un libro a una lista de Monica, y su respuesta una vez añadido el elemento.",
+        ],
+        'faq' => [
+            'title' => "Algunas respuestas útiles.",
+            'items' => [
+                [
+                    'q' => "¿Son hojas de cálculo?",
+                    'a' => "Son listas con columnas de texto con nombre y filas. No ofrecen fórmulas de hoja de cálculo ni campos calculados.",
+                ],
+                [
+                    'q' => "¿«Recomendado por» enlaza automáticamente con un contacto?",
+                    'a' => "No. Una celda de la lista contiene texto. Un nombre escrito ahí no es una relación estructurada con un contacto.",
+                ],
+                [
+                    'q' => "¿Dónde viven las listas?",
+                    'a' => "Cada lista pertenece a una :link dentro de una bóveda.",
+                    'link' => ['label' => "carpeta de Conocimiento", 'href' => '#'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Haz una lista a la que de verdad vuelvas.",
+            'body' => "Empieza por la próxima recomendación que te den.",
             'button' => "Empieza a usar Monica",
         ],
     ],

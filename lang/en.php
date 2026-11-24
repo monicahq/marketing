@@ -50,6 +50,8 @@ return [
             'locations' => "Locations",
             'maintenanceLoans' => "Maintenance & loans",
             'knowledge' => "Knowledge",
+            'notes' => "Notes",
+            'lists' => "Lists",
             'relationships' => "Relationships",
             'vaults' => "Vaults",
             'sharing' => "Sharing",
@@ -395,6 +397,32 @@ return [
                 'title' => "Keep what you know.",
                 'description' => "Notes, lists and useful everyday information.",
                 'alt' => "The Monica panda filing cards in a cabinet, with the words “Keep what you know.”",
+            ],
+        ],
+
+        'notes' => [
+            'title' => "Personal knowledge notes and household instructions — Monica",
+            'description' => "Write personal notes with Markdown, headings, lists and links. Keep instructions, ideas and reference information in Monica’s Knowledge folders.",
+            'ogTitle' => "Write it down once. Find it when it matters — Monica",
+            'ogDescription' => "A practical place for the instructions, ideas and details that deserve more than a passing thought.",
+            'ogImage' => [
+                'eyebrow' => "Knowledge notes",
+                'title' => "Leave a useful note.",
+                'description' => "Instructions, ideas and things worth keeping.",
+                'alt' => "The Monica panda filing cards in a cabinet, with the words “Leave a useful note.”",
+            ],
+        ],
+
+        'lists' => [
+            'title' => "Personal lists with custom columns — Monica",
+            'description' => "Keep reading lists, recommendations and everyday reference tables in Monica. Choose text columns, add items and organise your lists in Knowledge folders.",
+            'ogTitle' => "Your useful little lists deserve a home — Monica",
+            'ogDescription' => "Books, places, paint references and all the rows you will be glad you kept.",
+            'ogImage' => [
+                'eyebrow' => "Knowledge lists",
+                'title' => "Keep a useful list.",
+                'description' => "Your columns. Your everyday references.",
+                'alt' => "The Monica panda filing cards in a cabinet, with the words “Keep a useful list.”",
             ],
         ],
 
@@ -3521,6 +3549,195 @@ return [
         'cta' => [
             'title' => "Save one thing you keep having to find again.",
             'body' => "Future you has quite enough tabs open.",
+            'button' => "Start using Monica",
+        ],
+    ],
+
+    /**
+     * The notes page: the notes of Knowledge. Its drawings show the same
+     * "Water shutoff" note as the knowledge page, read from `knowledge.note`
+     * and `knowledge.home`, so the two pages cannot disagree about it. `ui`
+     * holds the note editor's own words, as Erica translates them.
+     */
+    'notes' => [
+        'hero' => [
+            'eyebrow' => "Knowledge notes",
+            'title' => "Leave a useful note for later.",
+            'lede' => "How to turn the water off. The recipe that worked. The travel plan you would like to find before you reach the airport.",
+            'body' => "Keep instructions and ideas in :link, with a title and a folder that help you find them again.",
+            'knowledge' => "Knowledge",
+            'cta' => "Start using Monica",
+            'label' => "The note Water shutoff in Monica, in the Home folder. Its title, then a heading, Main valve, with where the valve is and how to close it, and a second heading, Before a long trip, with three tasks, two of them ticked.",
+            // The parts of the note named beside it, on a wide screen.
+            'parts' => [
+                'folder' => "Folder",
+                'title' => "Title",
+                'heading' => "Heading",
+                'checklist' => "Checklist",
+            ],
+        ],
+        // The note editor's own words, as Erica translates them.
+        'ui' => [
+            'title' => "Title",
+            'folder' => "Folder",
+            'text' => "Text",
+            'addLink' => "Add a link",
+            'help' => "Markdown: # for a heading, - for a bullet, - [ ] for a task, > for a quote, **bold**. Web addresses become links on their own.",
+            'saveChanges' => "Save changes",
+            'cancel' => "Cancel",
+            'delete' => "Delete",
+        ],
+        'markdown' => [
+            'title' => "Keep the words, and enough structure to read them.",
+            'body' => "Notes support Markdown for headings, emphasis, lists, checklists, quotes and web links. Use it to make instructions easier to follow, or simply write a few sentences.",
+            'closing' => "A note can be short. “The spare key is with Monica” has done a full day’s work in one sentence.",
+            'label' => "The same note open in its editor: the title Water shutoff, the folder Home, and its text in Markdown, two headings marked with ## and three tasks marked with - [x] and - [ ].",
+        ],
+        'headings' => [
+            'title' => "Find the important part without rereading everything.",
+            'body' => "Give a long note descriptive headings. Knowledge’s contents view can surface those headings, helping you jump to the section you need.",
+            'body2' => "For information that repeats the same set of details, such as paint references by room, try a :link instead.",
+            'listLabel' => "list with columns",
+            'label' => "The Home folder in Knowledge’s contents, where the note Water shutoff shows its two headings, Main valve and Before a long trip. Following the second opens the note at that heading, with its three tasks.",
+        ],
+        'folders' => [
+            'title' => "Put it where you will think to look.",
+            'body' => "Keep the note in a named folder, move it when your organisation changes, and use Knowledge search to find saved words.",
+            'body2' => ":link explain how notes and lists stay together by topic.",
+            'linkLabel' => "Folders and organisation",
+            'label' => "The folders of Knowledge beside the note, with Home open and Water shutoff marked as the note being read.",
+        ],
+        'assistant' => [
+            'title' => "Let an assistant help with the note, not own it.",
+            'body' => "A :link can create, retrieve and update supported notes. You can check the result and edit it in the web app.",
+            'linkLabel' => "compatible connected assistant",
+            'closing' => "The note belongs in your personal database, even if you use a different assistant next week.",
+            'prompt' => "“Save a note in Monica’s Home folder: the water shutoff is in the cupboard beside the front door.”",
+            'name' => "Your assistant",
+            'connected' => "Monica connected",
+            'answer' => "Done. The note Water shutoff is in your Home folder, with where to find the valve.",
+            'label' => "A request to an assistant to save a note in Monica’s Home folder, and its answer once the note is saved.",
+        ],
+        'faq' => [
+            'title' => "A few useful answers.",
+            'items' => [
+                [
+                    'q' => "Are these the notes on a contact’s page?",
+                    'a' => "No. These notes live in Knowledge folders. Use :link for context about a person.",
+                    'link' => ['label' => "contact notes", 'page' => 'details'],
+                ],
+                [
+                    'q' => "Can I attach files or build backlinks between notes?",
+                    'a' => "These Knowledge notes are text with Markdown formatting and ordinary links. File attachments and structured note backlinks are not part of this feature.",
+                ],
+                [
+                    'q' => "Can I use checklist items?",
+                    'a' => "Yes. Notes can include task checkboxes. For a table of repeated information, use a Knowledge list.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Write down one thing you should not have to remember twice.",
+            'body' => "A small note can save quite a long search.",
+            'button' => "Start using Monica",
+        ],
+    ],
+
+    /**
+     * The lists page: the lists of Knowledge. Its paint list is the knowledge
+     * page's (`knowledge.list`), and its paperback of The Shining is the
+     * locations page's (`locations.book`), so the pages cannot disagree.
+     * `ui` holds the list screens' own words, as Erica translates them.
+     */
+    'lists' => [
+        'hero' => [
+            'eyebrow' => "Knowledge lists",
+            'title' => "Some things make more sense in a list.",
+            'lede' => "Books to read. Restaurants to try. Paint colours for the rooms you keep saying you will finish.",
+            'body' => "Keep repeated information in a :link list, with the columns that make it useful to you.",
+            'knowledge' => "Knowledge",
+            'cta' => "Start using Monica",
+            'label' => "The list Books to read in Monica, in the Books and Movies folder, with four columns: Title, Author, Recommended by and Note. The Shining, by Stephen King, recommended by Joey, with the note to keep it out of the freezer. Little Women, by Louisa May Alcott, recommended by Rachel. Jurassic Park, by Michael Crichton, recommended by Ross.",
+        ],
+        // The list screens' own words, as Erica translates them.
+        'ui' => [
+            'list' => "List",
+            'edit' => "Edit",
+            'editColumns' => "Edit columns",
+            'addItem' => "Add an item",
+            'columnsOf' => "Columns of :title",
+            'columnsLead' => "Every item of the list holds one text per column. Removing a column deletes what was written in it.",
+            'back' => "Back to the list",
+            'rename' => "Rename",
+            'newColumn' => "New column",
+            'newColumnPlaceholder' => "City, cuisine, rating",
+            'addColumn' => "Add the column",
+        ],
+        'books' => [
+            'folder' => "Books and Movies",
+            'title' => "Books to read",
+            'edited' => "Edited 4 days ago",
+            'count' => "3 items",
+            'description' => "Books people keep telling me to read.",
+            'columns' => ["Title", "Author", "Recommended by", "Note"],
+            'items' => [
+                ["The Shining", "Stephen King", "Joey", "Keep it out of the freezer"],
+                ["Little Women", "Louisa May Alcott", "Rachel", "Do not let Joey tell you the ending"],
+                ["Jurassic Park", "Michael Crichton", "Ross", "He has notes"],
+            ],
+        ],
+        'columns' => [
+            'title' => "Choose what each row should hold.",
+            'body' => "Name the columns yourself. Keep a title and note, or add the details that fit the list: city, cuisine, recommendation, colour reference or anything else you want to keep as text.",
+            'closing' => "You can add, rename and reorder columns as the list takes shape. It is allowed to become useful before it becomes perfectly organised.",
+        ],
+        'references' => [
+            'title' => "Keep everyday references together.",
+            'body' => "A paint list might have Room, Colour and Finish. A travel list might have Place, Area and Why go. Each item keeps the same kinds of information, so comparing the details is easier.",
+            'body2' => "For a full set of instructions or a longer explanation, use a :link alongside the list in the same folder.",
+            'note' => "note",
+            'label' => "The list Paint references, with a column for the room, the colour and the finish, beside the page that edits its columns: Room, Colour and Finish, each with a field to rename it and a menu to move or remove it, and a field to add a new column.",
+        ],
+        'ideas' => [
+            'title' => "A list of ideas is different from the things you own.",
+            'body' => "Keep books you want to read in a list. Keep the particular books you own in your :link when you want their condition, location or loan history.",
+            'inventory' => "inventory",
+            'closing' => "You can use both. They answer different questions, which is more than can be said for some meetings.",
+            'listCaption' => "A book you want to read",
+            'thingCaption' => "A copy you own",
+            'label' => "The same book twice. As a row of the list Books to read: The Shining, by Stephen King, recommended by Joey. And as a possession of the Books type: a paperback of The Shining, kept on the top shelf of the living room bookcase.",
+        ],
+        'assistant' => [
+            'title' => "Add an item while the recommendation is fresh.",
+            'body' => "A :link can work with supported lists, columns and items. The saved list stays available in Monica for you to browse and edit.",
+            'linkLabel' => "compatible assistant",
+            'prompt' => "“Add this to my Books to read list in Monica: The Shining, by Stephen King, recommended by Joey.”",
+            'name' => "Your assistant",
+            'connected' => "Monica connected",
+            'answer' => "Added The Shining to Books to read, with Stephen King as the author and Joey as the one who recommended it.",
+            'label' => "A request to an assistant to add a book to a list in Monica, and its answer once the item is added.",
+        ],
+        'faq' => [
+            'title' => "A few useful answers.",
+            'items' => [
+                [
+                    'q' => "Are these spreadsheets?",
+                    'a' => "They are lists with named text columns and rows. They do not provide spreadsheet formulas or calculated fields.",
+                ],
+                [
+                    'q' => "Does “Recommended by” automatically link to a contact?",
+                    'a' => "No. A list cell holds text. A name written there is not a structured contact relationship.",
+                ],
+                [
+                    'q' => "Where do lists live?",
+                    'a' => "Every list belongs to a :link inside a vault.",
+                    'link' => ['label' => "Knowledge folder", 'href' => '#'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Make a list you will actually come back to.",
+            'body' => "Start with the next recommendation someone gives you.",
             'button' => "Start using Monica",
         ],
     ],

@@ -1,6 +1,6 @@
 # Monica SEO sheets for ru
 
-These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2778,6 +2778,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 
+## /ru/vozmozhnosti/spiski/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/spiski/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/spiski/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Личные списки со своими столбцами — Monica |
+| Meta description | Храните списки для чтения, рекомендации и повседневные справочные таблицы в Monica. Выбирайте текстовые столбцы, добавляйте элементы и раскладывайте списки по папкам раздела «Знания». |
+| H1 | Кое-что понятнее в виде списка. |
+| OG title | Вашим полезным спискам нужен дом — Monica |
+| OG description | Книги, места, образцы краски и все строки, которые вы потом порадуетесь, что сохранили. |
+| OG image | https://www.monicahq.com/og/lists-ru.jpg?v=558da185 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | личные списки со своими столбцами |
+| Secondary keywords | список для чтения, список рекомендаций |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
 ## /ru/vozmozhnosti/veshchi/
 
 | Field | Content |
@@ -2813,6 +2832,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | многоязычная персональная CRM |
 | Secondary keywords | форматы имён, языки Monica |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
+## /ru/vozmozhnosti/zametki/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vozmozhnosti/zametki/ |
+| Canonical | https://www.monicahq.com/ru/vozmozhnosti/zametki/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Личные заметки и домашние инструкции — Monica |
+| Meta description | Пишите личные заметки с Markdown, заголовками, списками и ссылками. Храните инструкции, идеи и справочные сведения в папках раздела «Знания» в Monica. |
+| H1 | Оставьте полезную заметку на потом. |
+| OG title | Запишите один раз. Найдите, когда понадобится — Monica |
+| OG description | Удобное место для инструкций, идей и подробностей, которые заслуживают большего, чем мимолётная мысль. |
+| OG image | https://www.monicahq.com/og/notes-ru.jpg?v=e97b2e5d (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | приложение для личных заметок |
+| Secondary keywords | заметки в Markdown, инструкции по дому |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 

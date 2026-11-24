@@ -34,6 +34,8 @@ return [
             'locations' => "Locaties",
             'maintenanceLoans' => "Onderhoud en uitlenen",
             'knowledge' => "Kennis",
+            'notes' => "Notities",
+            'lists' => "Lijsten",
             'relationships' => "Relaties",
             'vaults' => "Kluizen",
             'sharing' => "Delen",
@@ -364,6 +366,32 @@ return [
                 'title' => "Bewaar wat je weet.",
                 'description' => "Notities, lijsten en nuttige informatie voor elke dag.",
                 'alt' => "De panda van Monica sorteert kaarten in een archiefkast, met de woorden “Bewaar wat je weet.”",
+            ],
+        ],
+
+        'notes' => [
+            'title' => "Persoonlijke notities en huishoudelijke instructies — Monica",
+            'description' => "Schrijf persoonlijke notities met Markdown, kopjes, lijsten en links. Bewaar instructies, ideeën en naslaginformatie in de Kennismappen van Monica.",
+            'ogTitle' => "Schrijf het één keer op. Vind het terug als het ertoe doet — Monica",
+            'ogDescription' => "Een praktische plek voor de instructies, ideeën en details die meer verdienen dan een vluchtige gedachte.",
+            'ogImage' => [
+                'eyebrow' => "Kennisnotities",
+                'title' => "Laat een nuttige notitie achter.",
+                'description' => "Instructies, ideeën en dingen die het bewaren waard zijn.",
+                'alt' => "De panda van Monica sorteert kaarten in een archiefkast, met de woorden “Laat een nuttige notitie achter.”",
+            ],
+        ],
+
+        'lists' => [
+            'title' => "Persoonlijke lijsten met eigen kolommen — Monica",
+            'description' => "Bewaar leeslijsten, aanbevelingen en alledaagse naslagtabellen in Monica. Kies tekstkolommen, voeg items toe en orden je lijsten in de Kennismappen.",
+            'ogTitle' => "Je nuttige lijstjes verdienen een thuis — Monica",
+            'ogDescription' => "Boeken, plekken, verfreferenties en alle rijen waar je later blij mee bent.",
+            'ogImage' => [
+                'eyebrow' => "Kennislijsten",
+                'title' => "Bewaar een nuttige lijst.",
+                'description' => "Jouw kolommen. Je alledaagse referenties.",
+                'alt' => "De panda van Monica sorteert kaarten in een archiefkast, met de woorden “Bewaar een nuttige lijst.”",
             ],
         ],
 
@@ -3490,6 +3518,195 @@ return [
         'cta' => [
             'title' => "Bewaar één ding dat je steeds opnieuw moet zoeken.",
             'body' => "Toekomstige jij heeft al genoeg tabbladen open.",
+            'button' => "Begin met Monica",
+        ],
+    ],
+
+    /**
+     * The notes page: the notes of Knowledge. Its drawings show the same
+     * "Water shutoff" note as the knowledge page, read from `knowledge.note`
+     * and `knowledge.home`, so the two pages cannot disagree about it. `ui`
+     * holds the note editor's own words, as Erica translates them.
+     */
+    'notes' => [
+        'hero' => [
+            'eyebrow' => "Kennisnotities",
+            'title' => "Laat een nuttige notitie achter voor later.",
+            'lede' => "Hoe je het water afsluit. Het recept dat werkte. Het reisplan dat je graag wilt terugvinden voordat je op het vliegveld bent.",
+            'body' => "Bewaar instructies en ideeën in :link, met een titel en een map waardoor je ze later terugvindt.",
+            'knowledge' => "Kennis",
+            'cta' => "Begin met Monica",
+            'label' => "De notitie Water afsluiten in Monica, in de map Huis. Eerst de titel, dan een kopje, Hoofdkraan, met waar de kraan zit en hoe je hem dichtdraait, en een tweede kopje, Voor een lange reis, met drie taken, twee ervan afgevinkt.",
+            // The parts of the note named beside it, on a wide screen.
+            'parts' => [
+                'folder' => "Map",
+                'title' => "Titel",
+                'heading' => "Kopje",
+                'checklist' => "Checklist",
+            ],
+        ],
+        // The note editor's own words, as Erica translates them.
+        'ui' => [
+            'title' => "Titel",
+            'folder' => "Map",
+            'text' => "Tekst",
+            'addLink' => "Een link toevoegen",
+            'help' => "Markdown: # voor een kop, - voor een opsommingsteken, - [ ] voor een taak, > voor een citaat, **vet**. Webadressen worden vanzelf links.",
+            'saveChanges' => "Wijzigingen opslaan",
+            'cancel' => "Annuleren",
+            'delete' => "Verwijderen",
+        ],
+        'markdown' => [
+            'title' => "Behoud de woorden, met net genoeg structuur om ze te lezen.",
+            'body' => "Notities ondersteunen Markdown voor kopjes, nadruk, lijsten, checklists, citaten en weblinks. Gebruik het om instructies makkelijker te volgen te maken, of schrijf gewoon een paar zinnen.",
+            'closing' => "Een notitie mag kort zijn. “De reservesleutel ligt bij Monica” heeft in één zin een hele dag werk verzet.",
+            'label' => "Dezelfde notitie geopend in de editor: de titel Water afsluiten, de map Huis en de tekst in Markdown, twee kopjes gemarkeerd met ## en drie taken gemarkeerd met - [x] en - [ ].",
+        ],
+        'headings' => [
+            'title' => "Vind het belangrijke deel zonder alles opnieuw te lezen.",
+            'body' => "Geef een lange notitie sprekende kopjes. De inhoudsweergave van Kennis kan die kopjes tonen, zodat je direct naar het stuk gaat dat je nodig hebt.",
+            'body2' => "Voor informatie die steeds dezelfde details herhaalt, zoals verfreferenties per kamer, kun je beter een :link proberen.",
+            'listLabel' => "lijst met kolommen",
+            'label' => "De map Huis in de inhoud van Kennis, waar de notitie Water afsluiten haar twee kopjes toont, Hoofdkraan en Voor een lange reis. Het tweede openen brengt je naar de notitie bij dat kopje, met de drie taken.",
+        ],
+        'folders' => [
+            'title' => "Zet het waar je het zult zoeken.",
+            'body' => "Houd de notitie in een map met een naam, verplaats hem als je indeling verandert en zoek met de zoekfunctie van Kennis naar bewaarde woorden.",
+            'body2' => "Lees in :link hoe notities en lijsten per onderwerp bij elkaar blijven.",
+            'linkLabel' => "Mappen en ordening",
+            'label' => "De mappen van Kennis naast de notitie, met Huis open en Water afsluiten gemarkeerd als de notitie die wordt gelezen.",
+        ],
+        'assistant' => [
+            'title' => "Laat een assistent meehelpen met de notitie, niet erover beslissen.",
+            'body' => "Een :link kan ondersteunde notities aanmaken, opvragen en bijwerken. Je kunt het resultaat controleren en in de web-app bewerken.",
+            'linkLabel' => "compatibele verbonden assistent",
+            'closing' => "De notitie hoort in je persoonlijke database, ook als je volgende week een andere assistent gebruikt.",
+            'prompt' => "“Bewaar een notitie in de map Huis van Monica: de hoofdkraan van het water zit in de kast naast de voordeur.”",
+            'name' => "Je assistent",
+            'connected' => "Monica verbonden",
+            'answer' => "Klaar. De notitie Water afsluiten staat in je map Huis, met waar je de kraan vindt.",
+            'label' => "Een verzoek aan een assistent om een notitie op te slaan in de map Huis van Monica, en het antwoord zodra de notitie is bewaard.",
+        ],
+        'faq' => [
+            'title' => "Een paar nuttige antwoorden.",
+            'items' => [
+                [
+                    'q' => "Zijn dit de notities op de pagina van een contact?",
+                    'a' => "Nee. Deze notities staan in de mappen van Kennis. Gebruik :link voor context over een persoon.",
+                    'link' => ['label' => "contactnotities", 'page' => 'details'],
+                ],
+                [
+                    'q' => "Kan ik bestanden bijvoegen of backlinks tussen notities maken?",
+                    'a' => "Deze notities in Kennis zijn tekst met Markdown-opmaak en gewone links. Bijlagen en gestructureerde backlinks tussen notities maken geen deel uit van deze functie.",
+                ],
+                [
+                    'q' => "Kan ik checklistitems gebruiken?",
+                    'a' => "Ja. Notities kunnen afvinkvakjes voor taken bevatten. Voor een tabel met terugkerende informatie gebruik je een lijst in Kennis.",
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Schrijf één ding op dat je niet twee keer hoeft te onthouden.",
+            'body' => "Een kleine notitie kan een flinke zoektocht besparen.",
+            'button' => "Begin met Monica",
+        ],
+    ],
+
+    /**
+     * The lists page: the lists of Knowledge. Its paint list is the knowledge
+     * page's (`knowledge.list`), and its paperback of The Shining is the
+     * locations page's (`locations.book`), so the pages cannot disagree.
+     * `ui` holds the list screens' own words, as Erica translates them.
+     */
+    'lists' => [
+        'hero' => [
+            'eyebrow' => "Kennislijsten",
+            'title' => "Sommige dingen zijn logischer in een lijst.",
+            'lede' => "Boeken om te lezen. Restaurants om uit te proberen. Verfkleuren voor de kamers waarvan je steeds zegt dat je ze afmaakt.",
+            'body' => "Bewaar terugkerende informatie in een lijst in :link, met de kolommen die het voor jou nuttig maken.",
+            'knowledge' => "Kennis",
+            'cta' => "Begin met Monica",
+            'label' => "De lijst Boeken om te lezen in Monica, in de map Boeken en films, met vier kolommen: Titel, Auteur, Aanbevolen door en Notitie. The Shining, van Stephen King, aanbevolen door Joey, met de notitie om het uit de vriezer te houden. Little Women, van Louisa May Alcott, aanbevolen door Rachel. Jurassic Park, van Michael Crichton, aanbevolen door Ross.",
+        ],
+        // The list screens' own words, as Erica translates them.
+        'ui' => [
+            'list' => "Lijst",
+            'edit' => "Bewerken",
+            'editColumns' => "Kolommen bewerken",
+            'addItem' => "Een item toevoegen",
+            'columnsOf' => "Kolommen van :title",
+            'columnsLead' => "Elk item van de lijst bevat één tekst per kolom. Een kolom verwijderen wist wat erin geschreven stond.",
+            'back' => "Terug naar de lijst",
+            'rename' => "Hernoemen",
+            'newColumn' => "Nieuwe kolom",
+            'newColumnPlaceholder' => "Stad, keuken, beoordeling",
+            'addColumn' => "De kolom toevoegen",
+        ],
+        'books' => [
+            'folder' => "Boeken en films",
+            'title' => "Boeken om te lezen",
+            'edited' => "Bewerkt 4 dagen geleden",
+            'count' => "3 items",
+            'description' => "Boeken die mensen me blijven aanraden.",
+            'columns' => ["Titel", "Auteur", "Aanbevolen door", "Notitie"],
+            'items' => [
+                ["The Shining", "Stephen King", "Joey", "Houd het uit de vriezer"],
+                ["Little Women", "Louisa May Alcott", "Rachel", "Laat Joey het einde niet verklappen"],
+                ["Jurassic Park", "Michael Crichton", "Ross", "Hij heeft aantekeningen"],
+            ],
+        ],
+        'columns' => [
+            'title' => "Kies wat elke rij moet bevatten.",
+            'body' => "Geef de kolommen zelf een naam. Houd het bij een titel en notitie, of voeg de details toe die bij de lijst passen: stad, keuken, aanbeveling, kleurreferentie of iets anders dat je als tekst wilt bewaren.",
+            'closing' => "Je kunt kolommen toevoegen, hernoemen en herordenen terwijl de lijst vorm krijgt. Het mag nuttig worden voordat het perfect geordend is.",
+        ],
+        'references' => [
+            'title' => "Houd alledaagse referenties bij elkaar.",
+            'body' => "Een verflijst kan Kamer, Kleur en Afwerking hebben. Een reislijst kan Plek, Gebied en Waarom gaan hebben. Elk item bewaart dezelfde soort informatie, dus details vergelijken gaat makkelijker.",
+            'body2' => "Gebruik voor een volledige handleiding of een langere uitleg een :link naast de lijst, in dezelfde map.",
+            'note' => "notitie",
+            'label' => "De lijst Verfreferenties, met een kolom voor de kamer, de kleur en de afwerking, naast de pagina waar je de kolommen bewerkt: Kamer, Kleur en Afwerking, elk met een veld om de naam te wijzigen en een menu om te verplaatsen of te verwijderen, en een veld om een nieuwe kolom toe te voegen.",
+        ],
+        'ideas' => [
+            'title' => "Een lijst met ideeën is iets anders dan de dingen die je bezit.",
+            'body' => "Bewaar boeken die je wilt lezen in een lijst. Bewaar de boeken die je echt bezit in je :link als je hun staat, locatie of uitleengeschiedenis wilt bijhouden.",
+            'inventory' => "inventaris",
+            'closing' => "Je kunt beide gebruiken. Ze beantwoorden verschillende vragen, wat je niet van elke vergadering kunt zeggen.",
+            'listCaption' => "Een boek dat je wilt lezen",
+            'thingCaption' => "Een exemplaar dat je bezit",
+            'label' => "Hetzelfde boek twee keer. Als rij van de lijst Boeken om te lezen: The Shining, van Stephen King, aanbevolen door Joey. En als bezitting van de soort Boeken: een pocket van The Shining, bewaard op de bovenste plank van de boekenkast in de woonkamer.",
+        ],
+        'assistant' => [
+            'title' => "Voeg een item toe zolang de aanbeveling vers is.",
+            'body' => "Een :link kan werken met ondersteunde lijsten, kolommen en items. De bewaarde lijst blijft in Monica beschikbaar om te bekijken en te bewerken.",
+            'linkLabel' => "compatibele verbonden assistent",
+            'prompt' => "“Voeg dit toe aan mijn lijst Boeken om te lezen in Monica: The Shining, van Stephen King, aanbevolen door Joey.”",
+            'name' => "Je assistent",
+            'connected' => "Monica verbonden",
+            'answer' => "The Shining toegevoegd aan Boeken om te lezen, met Stephen King als auteur en Joey als degene die het aanraadde.",
+            'label' => "Een verzoek aan een assistent om een boek toe te voegen aan een lijst in Monica, en het antwoord zodra het item is toegevoegd.",
+        ],
+        'faq' => [
+            'title' => "Een paar nuttige antwoorden.",
+            'items' => [
+                [
+                    'q' => "Zijn dit spreadsheets?",
+                    'a' => "Het zijn lijsten met benoemde tekstkolommen en rijen. Ze bieden geen spreadsheetformules of berekende velden.",
+                ],
+                [
+                    'q' => "Koppelt “Aanbevolen door” automatisch aan een contact?",
+                    'a' => "Nee. Een cel in een lijst bevat tekst. Een naam die je daar schrijft is geen gestructureerde contactrelatie.",
+                ],
+                [
+                    'q' => "Waar staan lijsten?",
+                    'a' => "Elke lijst hoort bij een :link in een kluis.",
+                    'link' => ['label' => "Kennismap", 'href' => '#'],
+                ],
+            ],
+        ],
+        'cta' => [
+            'title' => "Maak een lijst waar je echt op terugkomt.",
+            'body' => "Begin met de volgende aanbeveling die iemand je geeft.",
             'button' => "Begin met Monica",
         ],
     ],

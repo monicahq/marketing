@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 149 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 151 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1163,6 +1163,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 
+## /nl/functies/lijsten/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/lijsten/ |
+| Canonical | https://www.monicahq.com/nl/functies/lijsten/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persoonlijke lijsten met eigen kolommen — Monica |
+| Meta description | Bewaar leeslijsten, aanbevelingen en alledaagse naslagtabellen in Monica. Kies tekstkolommen, voeg items toe en orden je lijsten in de Kennismappen. |
+| H1 | Sommige dingen zijn logischer in een lijst. |
+| OG title | Je nuttige lijstjes verdienen een thuis — Monica |
+| OG description | Boeken, plekken, verfreferenties en alle rijen waar je later blij mee bent. |
+| OG image | https://www.monicahq.com/og/lists-nl.jpg?v=7434771d (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | persoonlijke lijsten met eigen kolommen |
+| Secondary keywords | leeslijst, lijst met aanraders |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
 ## /nl/functies/locaties/
 
 | Field | Content |
@@ -1198,6 +1217,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | persoonlijk contactbeheer |
 | Secondary keywords | mensen onthouden, vrienden en familie bijhouden |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/functies/notities/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/functies/notities/ |
+| Canonical | https://www.monicahq.com/nl/functies/notities/ |
+| Search intent | Evaluate the product or a specific use case |
+| SEO title | Persoonlijke notities en huishoudelijke instructies — Monica |
+| Meta description | Schrijf persoonlijke notities met Markdown, kopjes, lijsten en links. Bewaar instructies, ideeën en naslaginformatie in de Kennismappen van Monica. |
+| H1 | Laat een nuttige notitie achter voor later. |
+| OG title | Schrijf het één keer op. Vind het terug als het ertoe doet — Monica |
+| OG description | Een praktische plek voor de instructies, ideeën en details die meer verdienen dan een vluchtige gedachte. |
+| OG image | https://www.monicahq.com/og/notes-nl.jpg?v=fecdcb1a (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
+| Primary keyword | app voor persoonlijke notities |
+| Secondary keywords | notities in Markdown, instructies voor in huis |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 
