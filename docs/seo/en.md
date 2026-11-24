@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2813,6 +2813,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica privacy policy |
 | Secondary keywords | Monica personal data policy |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/sign-in/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/sign-in/ |
+| Canonical | https://www.monicahq.com/en/sign-in/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Sign in to Monica |
+| Meta description | Monica has two versions for now, each with its own accounts. Sign in to the new Monica or to Monica classic, wherever you first signed up. |
+| H1 | Choose your version of Monica |
+| OG title | Sign in to Monica |
+| OG description | Two versions of Monica, each with its own accounts. Sign in where you first signed up. |
+| OG image | https://www.monicahq.com/og/signIn-en.jpg?v=6c14868d (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica sign in |
+| Secondary keywords | Monica login, Monica classic login |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 

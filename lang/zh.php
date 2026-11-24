@@ -35,6 +35,7 @@ return [
             'terms' => "使用条款",
             'team' => "团队",
             'support' => "支持",
+            'signIn' => "登录",
             'about' => "关于 Monica",
             'privacy' => "隐私政策",
             'personalCrm' => "个人 CRM 指南",
@@ -160,6 +161,20 @@ return [
                 'title' => "帮我们把",
                 'accent' => "Monica 继续做下去。",
                 'description' => "文档、翻译和修复都有帮助，无论你是否写代码。",
+            ],
+        ],
+
+        'signIn' => [
+            'title' => "登录 Monica",
+            'description' => "Monica 目前有两个版本，各自使用独立的账户。请登录新版 Monica 或 Monica 经典版，以你注册时使用的版本为准。",
+            'ogTitle' => "登录 Monica",
+            'ogDescription' => "Monica 的两个版本各自使用独立的账户。请在你注册的版本中登录。",
+
+            'ogImage' => [
+                'eyebrow' => "登录",
+                'title' => "Monica 有两个版本，",
+                'accent' => "账户各自独立。",
+                'description' => "请在你注册的版本中登录。",
             ],
         ],
 
@@ -5921,6 +5936,26 @@ return [
             'issues' => "浏览未解决的 issue",
             'skillsButton' => "打开 skills 文件夹",
         ],
+    ],
+
+    // The sign-in chooser (route key `signIn`): while the new Monica and
+    // Monica classic run side by side, each with its own accounts.
+    'signIn' => [
+        'title' => "选择你使用的 Monica 版本",
+        'back' => "返回网站",
+        'new' => [
+            'eyebrow' => "新版本",
+            'title' => "登录新版 Monica",
+            'body' => "适用于 2026 年 10 月之后创建的账户",
+            'cta' => "登录",
+        ],
+        'classic' => [
+            'eyebrow' => "旧版本",
+            'title' => "登录 Monica 经典版",
+            'body' => "适用于 2026 年 10 月之前创建的账户",
+            'cta' => "登录",
+        ],
+        'note' => "两个版本的账户相互独立。请在你注册的版本中登录。",
     ],
 
     /**

@@ -21,6 +21,7 @@ return [
             'terms' => "Termos de uso",
             'team' => "Equipe",
             'support' => "Suporte",
+            'signIn' => "Entrar",
             'about' => "Sobre a Monica",
             'privacy' => "Política de privacidade",
             'personalCrm' => "Guia do CRM pessoal",
@@ -141,6 +142,20 @@ return [
                 'title' => "Ajude-nos a manter",
                 'accent' => "a Monica no ar.",
                 'description' => "Documentação, traduções e correções ajudam, escrevendo código ou não.",
+            ],
+        ],
+
+        'signIn' => [
+            'title' => "Entrar na Monica",
+            'description' => "Por enquanto, a Monica tem duas versões, cada uma com as próprias contas. Entre na nova Monica ou na Monica clássica, onde você se cadastrou.",
+            'ogTitle' => "Entrar na Monica",
+            'ogDescription' => "Duas versões da Monica, cada uma com as próprias contas. Entre onde você se cadastrou.",
+
+            'ogImage' => [
+                'eyebrow' => "Entrar",
+                'title' => "Duas versões da Monica,",
+                'accent' => "uma conta em cada uma.",
+                'description' => "Entre onde você se cadastrou.",
             ],
         ],
 
@@ -5921,6 +5936,26 @@ return [
             'issues' => "Ver as issues abertas",
             'skillsButton' => "Abrir a pasta de skills",
         ],
+    ],
+
+    // The sign-in chooser (route key `signIn`): while the new Monica and
+    // Monica classic run side by side, each with its own accounts.
+    'signIn' => [
+        'title' => "Escolha a sua versão da Monica",
+        'back' => "Voltar ao site",
+        'new' => [
+            'eyebrow' => "Nova versão",
+            'title' => "Entrar na nova Monica",
+            'body' => "Para contas criadas depois de outubro de 2026",
+            'cta' => "Entrar",
+        ],
+        'classic' => [
+            'eyebrow' => "Versão anterior",
+            'title' => "Entrar na Monica clássica",
+            'body' => "Para contas criadas antes de outubro de 2026",
+            'cta' => "Entrar",
+        ],
+        'note' => "As duas versões têm contas separadas. Entre onde você se cadastrou.",
     ],
 
     /**

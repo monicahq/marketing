@@ -17,6 +17,7 @@ return [
             'terms' => "Condiciones de uso",
             'team' => "Equipo",
             'support' => "Soporte",
+            'signIn' => "Iniciar sesión",
             'about' => "Sobre Monica",
             'privacy' => "Política de privacidad",
             'personalCrm' => "Guía del CRM personal",
@@ -137,6 +138,20 @@ return [
                 'title' => "Ayúdanos a mantener",
                 'accent' => "Monica en marcha.",
                 'description' => "Documentación, traducciones y correcciones ayudan, escribas código o no.",
+            ],
+        ],
+
+        'signIn' => [
+            'title' => "Iniciar sesión en Monica",
+            'description' => "Por ahora, Monica tiene dos versiones, cada una con sus propias cuentas. Inicia sesión en la nueva Monica o en Monica clásica, donde te registraste.",
+            'ogTitle' => "Iniciar sesión en Monica",
+            'ogDescription' => "Dos versiones de Monica, cada una con sus propias cuentas. Inicia sesión donde te registraste.",
+
+            'ogImage' => [
+                'eyebrow' => "Iniciar sesión",
+                'title' => "Dos versiones de Monica,",
+                'accent' => "una cuenta en cada una.",
+                'description' => "Inicia sesión donde te registraste.",
             ],
         ],
 
@@ -5898,6 +5913,26 @@ return [
             'issues' => "Ver los issues abiertos",
             'skillsButton' => "Abrir la carpeta de skills",
         ],
+    ],
+
+    // The sign-in chooser (route key `signIn`): while the new Monica and
+    // Monica classic run side by side, each with its own accounts.
+    'signIn' => [
+        'title' => "Elige tu versión de Monica",
+        'back' => "Volver al sitio web",
+        'new' => [
+            'eyebrow' => "Nueva versión",
+            'title' => "Iniciar sesión en la nueva Monica",
+            'body' => "Para cuentas creadas después de octubre de 2026",
+            'cta' => "Iniciar sesión",
+        ],
+        'classic' => [
+            'eyebrow' => "Versión anterior",
+            'title' => "Iniciar sesión en Monica clásica",
+            'body' => "Para cuentas creadas antes de octubre de 2026",
+            'cta' => "Iniciar sesión",
+        ],
+        'note' => "Las dos versiones tienen cuentas separadas. Inicia sesión donde te registraste.",
     ],
 
     /**

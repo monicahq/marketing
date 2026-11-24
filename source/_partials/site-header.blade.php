@@ -212,7 +212,7 @@
                 <span>{{ $page->starCount }}</span>
             </a>
             @include('_partials.theme-toggle', ['class' => 'text-text-secondary hover:bg-hover hover:text-text max-sm:hidden'])
-            <a href="{{ $page->links['signIn'] }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">
+            <a href="{{ $page->route('signIn') }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">
                 {{ $page->t('nav.signIn') }}
             </a>
             <a href="{{ $page->links['getStarted'] }}" class="mn-btn mn-btn-primary no-underline hover:no-underline">{{ $page->t('nav.getStarted') }}</a>

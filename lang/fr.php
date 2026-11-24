@@ -19,6 +19,7 @@ return [
             'terms' => "Conditions d’utilisation",
             'team' => "Équipe",
             'support' => "Support",
+            'signIn' => "Connexion",
             'about' => "À propos de Monica",
             'privacy' => "Politique de confidentialité",
             'personalCrm' => "Guide du CRM personnel",
@@ -139,6 +140,20 @@ return [
                 'title' => "Aidez-nous à faire",
                 'accent' => "vivre Monica.",
                 'description' => "Documentation, traductions et correctifs aident tous, que vous écriviez du code ou non.",
+            ],
+        ],
+
+        'signIn' => [
+            'title' => "Se connecter à Monica",
+            'description' => "Monica existe pour l’instant en deux versions, chacune avec ses propres comptes. Connectez-vous à la nouvelle Monica ou à Monica classique, là où vous avez créé votre compte.",
+            'ogTitle' => "Se connecter à Monica",
+            'ogDescription' => "Deux versions de Monica, chacune avec ses propres comptes. Connectez-vous là où vous avez créé votre compte.",
+
+            'ogImage' => [
+                'eyebrow' => "Connexion",
+                'title' => "Deux versions de Monica,",
+                'accent' => "un compte dans chacune.",
+                'description' => "Connectez-vous là où vous avez créé votre compte.",
             ],
         ],
 
@@ -5895,6 +5910,26 @@ return [
             'issues' => "Parcourir les tickets ouverts",
             'skillsButton' => "Ouvrir le dossier des skills",
         ],
+    ],
+
+    // The sign-in chooser (route key `signIn`): while the new Monica and
+    // Monica classic run side by side, each with its own accounts.
+    'signIn' => [
+        'title' => "Choisissez votre version de Monica",
+        'back' => "Retour au site",
+        'new' => [
+            'eyebrow' => "Nouvelle version",
+            'title' => "Se connecter à la nouvelle Monica",
+            'body' => "Pour les comptes créés après octobre 2026",
+            'cta' => "Se connecter",
+        ],
+        'classic' => [
+            'eyebrow' => "Version précédente",
+            'title' => "Se connecter à Monica classique",
+            'body' => "Pour les comptes créés avant octobre 2026",
+            'cta' => "Se connecter",
+        ],
+        'note' => "Les deux versions ont des comptes séparés. Connectez-vous là où vous avez créé votre compte.",
     ],
 
     /**

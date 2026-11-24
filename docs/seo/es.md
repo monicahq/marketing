@@ -1,6 +1,6 @@
 # Monica SEO sheets for es
 
-These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1445,6 +1445,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | software de gestión de información personal |
 | Secondary keywords | app de organización personal, base de datos personal, organizador de vida digital |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
+## /es/iniciar-sesion/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/iniciar-sesion/ |
+| Canonical | https://www.monicahq.com/es/iniciar-sesion/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Iniciar sesión en Monica |
+| Meta description | Por ahora, Monica tiene dos versiones, cada una con sus propias cuentas. Inicia sesión en la nueva Monica o en Monica clásica, donde te registraste. |
+| H1 | Elige tu versión de Monica |
+| OG title | Iniciar sesión en Monica |
+| OG description | Dos versiones de Monica, cada una con sus propias cuentas. Inicia sesión donde te registraste. |
+| OG image | https://www.monicahq.com/og/signIn-es.jpg?v=639ae69b (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | iniciar sesión en Monica |
+| Secondary keywords | acceso a Monica, Monica clásica |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
 

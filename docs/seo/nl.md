@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2720,6 +2720,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /nl/inloggen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/inloggen/ |
+| Canonical | https://www.monicahq.com/nl/inloggen/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Inloggen bij Monica |
+| Meta description | Monica heeft voorlopig twee versies, elk met eigen accounts. Log in bij de nieuwe Monica of bij Monica classic, waar je je account hebt aangemaakt. |
+| H1 | Kies je versie van Monica |
+| OG title | Inloggen bij Monica |
+| OG description | Twee versies van Monica, elk met eigen accounts. Log in waar je je account hebt aangemaakt. |
+| OG image | https://www.monicahq.com/og/signIn-nl.jpg?v=4d6c896e (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | inloggen bij Monica |
+| Secondary keywords | Monica login, Monica classic |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 
 ## /nl/mcp/
 

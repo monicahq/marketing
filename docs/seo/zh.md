@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2813,6 +2813,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica 隐私政策 |
 | Secondary keywords | Monica 个人数据 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/sign-in/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/sign-in/ |
+| Canonical | https://www.monicahq.com/zh/sign-in/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | 登录 Monica |
+| Meta description | Monica 目前有两个版本，各自使用独立的账户。请登录新版 Monica 或 Monica 经典版，以你注册时使用的版本为准。 |
+| H1 | 选择你使用的 Monica 版本 |
+| OG title | 登录 Monica |
+| OG description | Monica 的两个版本各自使用独立的账户。请在你注册的版本中登录。 |
+| OG image | https://www.monicahq.com/og/signIn-zh.jpg?v=d1cd6dcf (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | 登录 Monica |
+| Secondary keywords | Monica 登录, Monica 经典版 |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 

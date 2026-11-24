@@ -1,6 +1,6 @@
 # Monica SEO sheets for de
 
-These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -20,6 +20,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, SoftwareApplication |
 | Primary keyword | persönliches CRM |
 | Secondary keywords | persönliche Datenbank, Open-Source-CRM |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/anmelden/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/anmelden/ |
+| Canonical | https://www.monicahq.com/de/anmelden/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Bei Monica anmelden |
+| Meta description | Monica gibt es vorerst in zwei Versionen, jede mit eigenen Konten. Melden Sie sich bei der neuen Monica oder bei Monica Classic an, je nachdem, wo Sie sich registriert haben. |
+| H1 | Wählen Sie Ihre Version von Monica |
+| OG title | Bei Monica anmelden |
+| OG description | Zwei Versionen von Monica, jede mit eigenen Konten. Melden Sie sich dort an, wo Sie sich registriert haben. |
+| OG image | https://www.monicahq.com/og/signIn-de.jpg?v=278ed875 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica Anmeldung |
+| Secondary keywords | bei Monica anmelden, Monica Classic |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 

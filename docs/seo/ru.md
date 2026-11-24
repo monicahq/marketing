@@ -1,6 +1,6 @@
 # Monica SEO sheets for ru
 
-These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2509,6 +2509,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica v3 |
 | Secondary keywords | переработка Monica, новые возможности Monica |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
+
+## /ru/vkhod/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/vkhod/ |
+| Canonical | https://www.monicahq.com/ru/vkhod/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Вход в Monica |
+| Meta description | Пока у Monica две версии, и у каждой свои аккаунты. Войдите в новую Monica или в Monica Classic, в зависимости от того, где вы регистрировались. |
+| H1 | Выберите свою версию Monica |
+| OG title | Вход в Monica |
+| OG description | Две версии Monica, у каждой свои аккаунты. Войдите там, где вы регистрировались. |
+| OG image | https://www.monicahq.com/og/signIn-ru.jpg?v=e297367d (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | вход в Monica |
+| Secondary keywords | войти в Monica, Monica Classic |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 

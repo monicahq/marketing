@@ -1,6 +1,6 @@
 # Monica SEO sheets for fr
 
-These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1027,6 +1027,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | politique de confidentialité Monica |
 | Secondary keywords | données personnelles Monica |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
+
+## /fr/connexion/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/connexion/ |
+| Canonical | https://www.monicahq.com/fr/connexion/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Se connecter à Monica |
+| Meta description | Monica existe pour l’instant en deux versions, chacune avec ses propres comptes. Connectez-vous à la nouvelle Monica ou à Monica classique, là où vous avez créé votre compte. |
+| H1 | Choisissez votre version de Monica |
+| OG title | Se connecter à Monica |
+| OG description | Deux versions de Monica, chacune avec ses propres comptes. Connectez-vous là où vous avez créé votre compte. |
+| OG image | https://www.monicahq.com/og/signIn-fr.jpg?v=fe6b28b1 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | connexion Monica |
+| Secondary keywords | se connecter à Monica, Monica classique |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
 

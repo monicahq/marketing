@@ -1,6 +1,6 @@
 # Monica SEO sheets for pt
 
-These 152 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 153 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1008,6 +1008,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | o que é um CRM pessoal |
 | Secondary keywords | guia de CRM pessoal, CRM ou agenda de contatos |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
+
+## /pt/entrar/
+
+| Field | Content |
+| --- | --- |
+| Slug | /pt/entrar/ |
+| Canonical | https://www.monicahq.com/pt/entrar/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Entrar na Monica |
+| Meta description | Por enquanto, a Monica tem duas versões, cada uma com as próprias contas. Entre na nova Monica ou na Monica clássica, onde você se cadastrou. |
+| H1 | Escolha a sua versão da Monica |
+| OG title | Entrar na Monica |
+| OG description | Duas versões da Monica, cada uma com as próprias contas. Entre onde você se cadastrou. |
+| OG image | https://www.monicahq.com/og/signIn-pt.jpg?v=a595894b (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | entrar na Monica |
+| Secondary keywords | login Monica, Monica clássica |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/pt.php; retain the existing H1. |
 

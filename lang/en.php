@@ -36,6 +36,7 @@ return [
             'terms' => "Terms of use",
             'team' => "Team",
             'support' => "Support",
+            'signIn' => "Sign in",
             'about' => "About Monica",
             'privacy' => "Privacy policy",
             'personalCrm' => "Personal CRM guide",
@@ -167,6 +168,20 @@ return [
                 'title' => "Help us keep",
                 'accent' => "Monica going.",
                 'description' => "Documentation, translations and fixes all help, whether or not you write code.",
+            ],
+        ],
+
+        'signIn' => [
+            'title' => "Sign in to Monica",
+            'description' => "Monica has two versions for now, each with its own accounts. Sign in to the new Monica or to Monica classic, wherever you first signed up.",
+            'ogTitle' => "Sign in to Monica",
+            'ogDescription' => "Two versions of Monica, each with its own accounts. Sign in where you first signed up.",
+
+            'ogImage' => [
+                'eyebrow' => "Sign in",
+                'title' => "Two versions of Monica,",
+                'accent' => "one account in each.",
+                'description' => "Sign in where you first signed up.",
             ],
         ],
 
@@ -5940,6 +5955,26 @@ return [
             'issues' => "Browse open issues",
             'skillsButton' => "Open the skills folder",
         ],
+    ],
+
+    // The sign-in chooser (route key `signIn`): while the new Monica and
+    // Monica classic run side by side, each with its own accounts.
+    'signIn' => [
+        'title' => "Choose your version of Monica",
+        'back' => "Back to the website",
+        'new' => [
+            'eyebrow' => "New version",
+            'title' => "Sign in to the new Monica",
+            'body' => "For accounts created after October 2026",
+            'cta' => "Sign in",
+        ],
+        'classic' => [
+            'eyebrow' => "Previous version",
+            'title' => "Sign in to Monica classic",
+            'body' => "For accounts created before October 2026",
+            'cta' => "Sign in",
+        ],
+        'note' => "The two versions have separate accounts. Sign in where you first signed up.",
     ],
 
     /**

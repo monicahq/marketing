@@ -20,6 +20,7 @@ return [
             'terms' => "Gebruiksvoorwaarden",
             'team' => "Team",
             'support' => "Support",
+            'signIn' => "Inloggen",
             'about' => "Over Monica",
             'privacy' => "Privacybeleid",
             'personalCrm' => "Gids persoonlijke CRM",
@@ -140,6 +141,20 @@ return [
                 'title' => "Help ons Monica",
                 'accent' => "draaiende te houden.",
                 'description' => "Documentatie, vertalingen en fixes helpen allemaal, of je nu code schrijft of niet.",
+            ],
+        ],
+
+        'signIn' => [
+            'title' => "Inloggen bij Monica",
+            'description' => "Monica heeft voorlopig twee versies, elk met eigen accounts. Log in bij de nieuwe Monica of bij Monica classic, waar je je account hebt aangemaakt.",
+            'ogTitle' => "Inloggen bij Monica",
+            'ogDescription' => "Twee versies van Monica, elk met eigen accounts. Log in waar je je account hebt aangemaakt.",
+
+            'ogImage' => [
+                'eyebrow' => "Inloggen",
+                'title' => "Twee versies van Monica,",
+                'accent' => "elk met eigen accounts.",
+                'description' => "Log in waar je je account hebt aangemaakt.",
             ],
         ],
 
@@ -5896,6 +5911,26 @@ return [
             'issues' => "Bekijk openstaande issues",
             'skillsButton' => "Open de skillsmap",
         ],
+    ],
+
+    // The sign-in chooser (route key `signIn`): while the new Monica and
+    // Monica classic run side by side, each with its own accounts.
+    'signIn' => [
+        'title' => "Kies je versie van Monica",
+        'back' => "Terug naar de website",
+        'new' => [
+            'eyebrow' => "Nieuwe versie",
+            'title' => "Inloggen bij de nieuwe Monica",
+            'body' => "Voor accounts die na oktober 2026 zijn aangemaakt",
+            'cta' => "Inloggen",
+        ],
+        'classic' => [
+            'eyebrow' => "Vorige versie",
+            'title' => "Inloggen bij Monica classic",
+            'body' => "Voor accounts die vóór oktober 2026 zijn aangemaakt",
+            'cta' => "Inloggen",
+        ],
+        'note' => "De twee versies hebben aparte accounts. Log in waar je je account hebt aangemaakt.",
     ],
 
     /**

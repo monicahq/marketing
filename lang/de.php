@@ -17,6 +17,7 @@ return [
             'terms' => "Nutzungsbedingungen",
             'team' => "Team",
             'support' => "Support",
+            'signIn' => "Anmelden",
             'about' => "Über Monica",
             'privacy' => "Datenschutzerklärung",
             'personalCrm' => "Leitfaden persönliches CRM",
@@ -137,6 +138,20 @@ return [
                 'title' => "Helfen Sie uns,",
                 'accent' => "Monica am Laufen zu halten.",
                 'description' => "Dokumentation, Übersetzungen und Fehlerbehebungen helfen alle, mit oder ohne Code.",
+            ],
+        ],
+
+        'signIn' => [
+            'title' => "Bei Monica anmelden",
+            'description' => "Monica gibt es vorerst in zwei Versionen, jede mit eigenen Konten. Melden Sie sich bei der neuen Monica oder bei Monica Classic an, je nachdem, wo Sie sich registriert haben.",
+            'ogTitle' => "Bei Monica anmelden",
+            'ogDescription' => "Zwei Versionen von Monica, jede mit eigenen Konten. Melden Sie sich dort an, wo Sie sich registriert haben.",
+
+            'ogImage' => [
+                'eyebrow' => "Anmelden",
+                'title' => "Zwei Versionen von Monica,",
+                'accent' => "jede mit eigenen Konten.",
+                'description' => "Melden Sie sich dort an, wo Sie sich registriert haben.",
             ],
         ],
 
@@ -5893,6 +5908,26 @@ return [
             'issues' => "Offene Issues ansehen",
             'skillsButton' => "Skills-Ordner öffnen",
         ],
+    ],
+
+    // The sign-in chooser (route key `signIn`): while the new Monica and
+    // Monica classic run side by side, each with its own accounts.
+    'signIn' => [
+        'title' => "Wählen Sie Ihre Version von Monica",
+        'back' => "Zurück zur Website",
+        'new' => [
+            'eyebrow' => "Neue Version",
+            'title' => "Bei der neuen Monica anmelden",
+            'body' => "Für Konten, die nach Oktober 2026 erstellt wurden",
+            'cta' => "Anmelden",
+        ],
+        'classic' => [
+            'eyebrow' => "Vorherige Version",
+            'title' => "Bei Monica Classic anmelden",
+            'body' => "Für Konten, die vor Oktober 2026 erstellt wurden",
+            'cta' => "Anmelden",
+        ],
+        'note' => "Die beiden Versionen haben getrennte Konten. Melden Sie sich dort an, wo Sie sich registriert haben.",
     ],
 
     /**

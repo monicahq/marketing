@@ -593,6 +593,20 @@ return [
             'ru' => 'podderzhka',
         ],
 
+        // The page between the website and the two sign-in forms, while the
+        // new Monica and Monica classic run side by side with separate
+        // accounts. The header's sign-in button opens it.
+        'signIn' => [
+            'en' => 'sign-in',
+            'fr' => 'connexion',
+            'de' => 'anmelden',
+            'es' => 'iniciar-sesion',
+            'pt' => 'entrar',
+            'nl' => 'inloggen',
+            'zh' => 'sign-in',
+            'ru' => 'vkhod',
+        ],
+
         // The guide that answers the question the nav asks. Its slug says
         // "personal CRM" in each language rather than transliterating the
         // English one, because that is the phrase a reader searches for.
@@ -962,7 +976,7 @@ return [
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
         'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
-        'Company' => ['about', 'team', 'contribute', 'support'],
+        'Company' => ['about', 'team', 'contribute', 'support', 'signIn'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
         'Legal' => ['terms', 'privacy'],
@@ -1025,6 +1039,7 @@ return [
         'mcpServer' => '2026-11-20',
         'handbook' => '2026-11-18',
         'support' => '2026-11-20',
+        'signIn' => '2026-11-24',
     ],
 
     // ------------------------------------------------------------------ links
@@ -1039,7 +1054,10 @@ return [
      */
     'links' => [
         'github' => 'https://github.com/monicahq/monica',
+        // The two sign-in forms the sign-in page (route key `signIn`) offers,
+        // while both versions of the application run with separate accounts.
         'signIn' => 'https://my.monicahq.com/login',
+        'signInClassic' => 'https://app.monicahq.com/login',
         'getStarted' => 'https://my.monicahq.com/register',
         'selfHostingGuide' => '#',
         'docs' => 'https://my.monicahq.com/docs',
