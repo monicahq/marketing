@@ -180,7 +180,7 @@ Alpine.data('pricingFaq', (state) => ({
  * refreshes does need the hook, because morph patches nodes in place.) */
 Alpine.start();
 
-/* The features and docs menus in the header and the language menu in the footer are
+/* The features and docs menus in the header and the language menus in the header and the footer are
  * native <details>, so they open, close and take focus with no script at all.
  * What <details> does not do on its own is close when the reader presses
  * Escape or clicks somewhere else, which is what a menu is expected to do.

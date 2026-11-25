@@ -609,6 +609,8 @@ return [
         'toDark' => "Passer en mode sombre",
         'toLight' => "Passer en mode clair",
         'github' => ":count étoiles, Monica sur GitHub",
+        'githubTip' => "Visiter notre projet GitHub",
+        'themeTip' => "Basculer entre mode clair et sombre",
         'getStarted' => "Inscription",
         'stars' => ":count étoiles",
 

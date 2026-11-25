@@ -630,6 +630,8 @@ return [
         'toDark' => "切换到深色模式",
         'toLight' => "切换到浅色模式",
         'github' => ":count 星，Monica 的 GitHub 仓库",
+        'githubTip' => "访问我们的 GitHub 项目",
+        'themeTip' => "切换浅色/深色模式",
         'getStarted' => "注册",
         'stars' => ":count 星",
 
