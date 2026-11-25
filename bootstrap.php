@@ -214,10 +214,10 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
  * it, for the same reason _headers is copied rather than kept in source/.
  *
  * The features index (/en/features/, /fr/fonctionnalites/) is `pageless`: its
- * slug only prefixes the feature pages. Search engines still show it, mostly
- * for "monica api", so each locale's copy is sent to that locale's API page
- * with a 301. Both are read from `routes`, so a renamed slug moves the rule
- * with it. Written with and without the trailing slash, because Pages matches
+ * slug only prefixes the feature pages. Search engines still show it, so each
+ * locale's copy is sent with a 301 to that locale's people page, the first of
+ * the feature pages. Both are read from `routes`, so a renamed slug moves the
+ * rule with it. Written with and without the trailing slash, because Pages matches
  * the path as typed.
  */
 $events->afterBuild(function (Jigsaw $jigsaw) {
@@ -226,7 +226,7 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
 
     foreach ($jigsaw->getConfig('locales') as $locale) {
         $from = "/{$locale}/{$routes['features'][$locale]}";
-        $to = "/{$locale}/{$routes['api'][$locale]}/";
+        $to = "/{$locale}/{$routes['people'][$locale]}/";
         $lines[] = "{$from}/ {$to} 301";
         $lines[] = "{$from} {$to} 301";
     }
