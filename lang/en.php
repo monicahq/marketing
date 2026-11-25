@@ -5708,6 +5708,40 @@ return [
             'link' => "See what Monica does today",
         ],
 
+        // A post about a feature that just shipped (`category: feature` in its
+        // front matter): the badge beside its date, the links and similar
+        // features under its body, and the full-screen view of its screenshots.
+        'feature' => [
+            'badge' => "New feature",
+            'viewFullScreen' => "View full screen",
+
+            'links' => [
+                'title' => "Useful links",
+                'docs' => [
+                    'title' => "Documentation",
+                    'description' => "How the feature works, step by step, in the help centre",
+                ],
+                'pullRequest' => [
+                    'title' => "Pull request",
+                    'description' => "The code change behind this feature, with the discussion",
+                ],
+                'report' => [
+                    'title' => "Report a problem",
+                    'description' => "Something does not work as described? Tell us on GitHub",
+                ],
+            ],
+
+            'related' => "Similar features",
+
+            'lightbox' => [
+                'label' => "Screenshot, full screen",
+                'position' => ":position of :total",
+                'close' => "Close",
+                'previous' => "Previous screenshot",
+                'next' => "Next screenshot",
+            ],
+        ],
+
         'showing' => "Showing :from to :to of :total posts",
         'pageOf' => "Page :page of :total",
         'rssFeed' => "RSS feed",

@@ -297,3 +297,79 @@ document.addEventListener('turbo:load', () => {
         link.removeAttribute('data-email');
     }
 });
+
+/* The screenshot lightbox on feature posts. See _partials/blog/lightbox.blade.php
+ * for the dialog and $screenshotFigures in config.php for the links.
+ *
+ * Every screenshot is a link to its own file, so without this a click opens the
+ * image. With it, the click opens the dialog on that image instead, and the
+ * arrows walk through the other screenshots of the same post. A click with a
+ * modifier key is left alone, so "open in a new tab" still does that.
+ *
+ * Everything is delegated to the document, like the menus above, so it keeps
+ * working after Turbo swaps the <body>. */
+const lightbox = { items: [], index: 0 };
+
+const lightboxDialog = () => document.querySelector('dialog[data-lightbox-dialog]');
+
+const showScreenshot = (dialog, index) => {
+    const count = lightbox.items.length;
+    lightbox.index = (index + count) % count;
+
+    const link = lightbox.items[lightbox.index];
+    const thumbnail = link.querySelector('img');
+    const image = dialog.querySelector('[data-lightbox-image]');
+    const caption = link.closest('figure')?.querySelector('figcaption')?.textContent.trim();
+
+    image.src = link.href;
+    image.alt = thumbnail?.alt ?? '';
+    for (const attribute of ['width', 'height']) {
+        const value = thumbnail?.getAttribute(attribute);
+        value ? image.setAttribute(attribute, value) : image.removeAttribute(attribute);
+    }
+
+    dialog.querySelector('[data-lightbox-caption]').textContent = caption || image.alt;
+    dialog.querySelector('[data-lightbox-position]').textContent = dialog.dataset.position
+        .replace(':position', lightbox.index + 1)
+        .replace(':total', count);
+
+    for (const button of dialog.querySelectorAll('[data-lightbox-previous], [data-lightbox-next]')) {
+        button.classList.toggle('hidden', count < 2);
+        button.classList.toggle('grid', count > 1);
+    }
+};
+
+document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[data-lightbox]');
+    const dialog = lightboxDialog();
+    if (!dialog) return;
+
+    if (link) {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        event.preventDefault();
+        const group = link.closest('[data-lightbox-group]') ?? document;
+        lightbox.items = [...group.querySelectorAll('a[data-lightbox]')];
+        showScreenshot(dialog, lightbox.items.indexOf(link));
+        dialog.showModal();
+        return;
+    }
+
+    if (!dialog.open || !dialog.contains(event.target)) return;
+
+    if (event.target.closest('[data-lightbox-previous]')) showScreenshot(dialog, lightbox.index - 1);
+    else if (event.target.closest('[data-lightbox-next]')) showScreenshot(dialog, lightbox.index + 1);
+    // The close button, or anywhere on the scrim around the image.
+    else if (event.target.closest('[data-lightbox-close]') || !event.target.closest('img')) dialog.close();
+});
+
+document.addEventListener('keydown', (event) => {
+    const dialog = lightboxDialog();
+    if (!dialog?.open || lightbox.items.length < 2) return;
+
+    if (event.key === 'ArrowLeft') showScreenshot(dialog, lightbox.index - 1);
+    if (event.key === 'ArrowRight') showScreenshot(dialog, lightbox.index + 1);
+});
+
+/* Closed before Turbo snapshots the page, or Back would restore it open. */
+document.addEventListener('turbo:before-cache', () => lightboxDialog()?.close());

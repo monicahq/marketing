@@ -81,7 +81,10 @@ foreach (glob($root . '/lang/*.php') as $file) {
         $year = is_int($front['date']) ? date('Y', $front['date']) : substr((string) $front['date'], 0, 4);
 
         $cards[$locale]['blog-' . $front['slug']] = array_filter([
-            'eyebrow' => $dictionary['meta']['blog']['ogImage']['eyebrow'] . ' · ' . $year,
+            // A feature post says so on its card, where any other post says "Blog".
+            'eyebrow' => (($front['category'] ?? null) === 'feature'
+                ? $dictionary['blog']['feature']['badge']
+                : $dictionary['meta']['blog']['ogImage']['eyebrow']) . ' · ' . $year,
             'title' => $front['title'] ?? null,
             'description' => $front['description'] ?? null,
             'optionalDescription' => true,

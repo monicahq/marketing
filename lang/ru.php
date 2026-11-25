@@ -5687,6 +5687,40 @@ return [
             'link' => "Посмотреть, что Monica умеет сегодня",
         ],
 
+        // A post about a feature that just shipped (`category: feature` in its
+        // front matter): the badge beside its date, the links and similar
+        // features under its body, and the full-screen view of its screenshots.
+        'feature' => [
+            'badge' => "Новая возможность",
+            'viewFullScreen' => "Открыть на весь экран",
+
+            'links' => [
+                'title' => "Полезные ссылки",
+                'docs' => [
+                    'title' => "Документация",
+                    'description' => "Как работает возможность, шаг за шагом, в центре помощи",
+                ],
+                'pullRequest' => [
+                    'title' => "Pull request",
+                    'description' => "Изменение кода, на котором держится эта возможность, вместе с обсуждением",
+                ],
+                'report' => [
+                    'title' => "Сообщить о проблеме",
+                    'description' => "Что-то работает не так, как описано? Напишите нам на GitHub",
+                ],
+            ],
+
+            'related' => "Похожие возможности",
+
+            'lightbox' => [
+                'label' => "Скриншот на весь экран",
+                'position' => ":position из :total",
+                'close' => "Закрыть",
+                'previous' => "Предыдущий скриншот",
+                'next' => "Следующий скриншот",
+            ],
+        ],
+
         'showing' => "Показаны записи :from–:to из :total",
         'pageOf' => "Страница :page из :total",
         'rssFeed' => "RSS-лента",

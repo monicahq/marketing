@@ -86,6 +86,47 @@ $imageAttributes = function (string $html): string {
 };
 
 /**
+ * Turns every image in a feature post's rendered body into a screenshot the
+ * reader can open full screen.
+ *
+ * Each `<img>` becomes a `<figure>`: the image wrapped in a link to its own
+ * file, and, when the Markdown gave the image a title (`![alt](src "Caption")`),
+ * that title as the caption under it. The link is what makes this work without
+ * JavaScript, where it simply opens the file; with it, app.js catches the click
+ * and opens the image in the lightbox instead (`data-lightbox`). A Markdown
+ * image is the only thing an author can write, so this is done on the rendered
+ * HTML rather than asked of every post.
+ *
+ * Markdown puts a lone image in a paragraph of its own, and a figure is not
+ * allowed inside a paragraph, so that paragraph is dropped around it.
+ *
+ * Runs after $imageAttributes, so the image already carries its dimensions.
+ * `$label` is the screen reader text added to the link ("View full screen").
+ */
+$screenshotFigures = function (string $html, string $label): string {
+    $html = preg_replace_callback('/<img\b([^>]*)>/i', function ($match) use ($label) {
+        $attributes = $match[1];
+
+        if (! preg_match('/\bsrc="([^"]+)"/i', $attributes, $src)) {
+            return $match[0];
+        }
+
+        $caption = preg_match('/\btitle="([^"]*)"/i', $attributes, $title) ? $title[1] : '';
+        $attributes = preg_replace('/\s*\btitle="[^"]*"/i', '', $attributes);
+
+        return '<figure>'
+            . "<a href=\"{$src[1]}\" data-lightbox data-turbo=\"false\">"
+            . "<img{$attributes}>"
+            . '<span class="sr-only">' . e($label) . '</span>'
+            . '</a>'
+            . ($caption !== '' ? "<figcaption>{$caption}</figcaption>" : '')
+            . '</figure>';
+    }, $html);
+
+    return preg_replace('/<p>\s*(<figure>.*?<\/figure>)\s*<\/p>/s', '$1', $html);
+};
+
+/**
  * Everything a posts collection is, apart from where it reads and where it
  * writes. Shared by all five, so a change to the sort order or to a helper
  * cannot land in one language and miss the other four.
@@ -204,8 +245,90 @@ $postSettings = [
      * See $imageAttributes above for why that is done here rather than
      * written into the Markdown.
      */
-    'bodyHtml' => function ($post) use ($imageAttributes) {
-        return $imageAttributes($post->getContent());
+    'bodyHtml' => function ($post) use ($imageAttributes, $screenshotFigures) {
+        $html = $imageAttributes($post->getContent());
+
+        if (! $post->isFeature()) {
+            return $html;
+        }
+
+        // A feature post opens on its main screenshot, which lives in the
+        // front matter rather than the body so the index, the page and the
+        // social card can all find it. It goes through the same figure as the
+        // screenshots in the steps, so they look and open the same way.
+        $shot = $post->screenshot;
+        $hero = sprintf(
+            '<p><img src="%s" alt="%s" title="%s"></p>',
+            e($shot['src']),
+            e($shot['alt']),
+            e($shot['caption'] ?? ''),
+        );
+
+        return $screenshotFigures($imageAttributes($hero) . $html, $post->t('blog.feature.viewFullScreen'));
+    },
+
+    /**
+     * Whether the post is about a feature that just shipped in the app.
+     *
+     * A post opts in with `category: feature` in its front matter, and every
+     * other post is an ordinary one: an announcement, an essay, a release
+     * note. A feature post carries more front matter than the others, and
+     * this is where it is checked, so a feature post missing its screenshot or
+     * its links fails the build naming the file instead of rendering half a
+     * page. Any other value of `category` fails too, because a typo there
+     * would otherwise quietly turn a feature post into an ordinary one.
+     *
+     * Front matter of a feature post:
+     *
+     *   category: feature
+     *   icon: layers                   # a name from _partials/icon, for the related list
+     *   screenshot:
+     *     src: /assets/images/blog/<date>-<slug>-preview.webp
+     *     alt: What the screenshot shows
+     *     caption: The line under it   # optional
+     *   pullRequest: 8014              # in monicahq/monica
+     *   docs: https://my.monicahq.com/docs/en/...
+     *   related: [other-feature-slug]  # optional, other posts' slugs
+     */
+    'isFeature' => function ($post) {
+        if ($post->category === null) {
+            return false;
+        }
+
+        $where = "post '{$post->slug}' ({$post->locale})";
+
+        if ($post->category !== 'feature') {
+            throw new RuntimeException("Unknown category '{$post->category}' on {$where}. The only category is 'feature'.");
+        }
+
+        foreach (['icon', 'pullRequest', 'docs'] as $key) {
+            if (! $post->{$key}) {
+                throw new RuntimeException("Feature {$where} needs '{$key}' in its front matter.");
+            }
+        }
+
+        if (! isset($post->screenshot['src'], $post->screenshot['alt'])) {
+            throw new RuntimeException("Feature {$where} needs a 'screenshot' with 'src' and 'alt' in its front matter.");
+        }
+
+        return true;
+    },
+
+    /** The pull request in the application's repository that shipped the feature. */
+    'pullRequestUrl' => function ($post) {
+        return $post->links['github'] . '/pull/' . (int) $post->pullRequest;
+    },
+
+    /**
+     * The other feature posts this one points to, in the order the front
+     * matter lists them, from the same locale's archive. A slug that names no
+     * post fails the build rather than vanishing from the list.
+     */
+    'relatedPosts' => function ($post, $posts) {
+        return collect($post->related ?? [])->map(function ($slug) use ($post, $posts) {
+            return $posts->first(fn ($item) => $item->slug === $slug)
+                ?? throw new RuntimeException("Post '{$post->slug}' ({$post->locale}) lists '{$slug}' as related, and there is no such post.");
+        });
     },
 
     /**
@@ -223,10 +346,14 @@ $postSettings = [
      * having been told.
      */
     'feedContent' => function ($post) {
+        // A feed reader has no lightbox and no stylesheet, so the screen
+        // reader text on a feature post's screenshots would show as text.
+        $html = preg_replace('/<span class="sr-only">.*?<\/span>/s', '', $post->bodyHtml());
+
         return preg_replace_callback(
             '/\b(src|href)="(\/[^"]*)"/',
             fn ($match) => $match[1] . '="' . $post->absolute($match[2]) . '"',
-            $post->bodyHtml(),
+            $html,
         );
     },
 

@@ -161,3 +161,89 @@
 .mn-prose :target {
   scroll-margin-top: var(--space-6);
 }
+
+/* ---------------------------------------------------------------------------
+   Feature posts (`category: feature`).
+
+   Their screenshots arrive as <figure>: the image inside a link to its own
+   file, which app.js turns into the lightbox, and an optional caption taken
+   from the Markdown image's title. See $screenshotFigures in config.php.
+   --------------------------------------------------------------------------- */
+
+.mn-prose figure {
+  margin: var(--space-8) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* The figure holds the rhythm, so the image inside it sheds its own margin. */
+.mn-prose figure img {
+  margin: 0;
+}
+
+.mn-prose figure a {
+  display: block;
+  cursor: zoom-in;
+  border-radius: var(--radius-lg);
+}
+
+.mn-prose figure a:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.mn-prose figcaption {
+  font-size: var(--text-small);
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+/* The steps. A feature post explains how to reach the feature as an ordered
+   list, and each number is drawn in a small circle, as the Feature Post design
+   does, so the steps read as a sequence even when a screenshot sits between
+   two of them. The counter is ours rather than the browser's marker because a
+   marker cannot be drawn in a circle. */
+.mn-prose-feature ol {
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.mn-prose-feature ol > li {
+  counter-increment: step;
+  padding-left: calc(26px + var(--space-4));
+}
+
+.mn-prose-feature ol > li::before {
+  content: counter(step);
+  top: 1px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: none;
+  font-size: var(--text-small);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.mn-prose-feature ol > li > p {
+  margin: 0 0 var(--space-3);
+}
+
+.mn-prose-feature ol > li > :last-child {
+  margin-bottom: 0;
+}
+
+/* A screenshot inside a step belongs to that step, so it sits closer to it. */
+.mn-prose-feature ol figure {
+  margin: var(--space-4) 0 0;
+}

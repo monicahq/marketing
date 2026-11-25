@@ -121,3 +121,5 @@
         </aside>
     </div>
 </div>
+
+@include('_partials.blog.lightbox')

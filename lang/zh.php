@@ -5691,6 +5691,40 @@ return [
             'link' => "看看 Monica 现在能做什么",
         ],
 
+        // A post about a feature that just shipped (`category: feature` in its
+        // front matter): the badge beside its date, the links and similar
+        // features under its body, and the full-screen view of its screenshots.
+        'feature' => [
+            'badge' => "新功能",
+            'viewFullScreen' => "全屏查看",
+
+            'links' => [
+                'title' => "实用链接",
+                'docs' => [
+                    'title' => "文档",
+                    'description' => "在帮助中心里，一步一步了解这个功能如何使用",
+                ],
+                'pullRequest' => [
+                    'title' => "Pull request",
+                    'description' => "这个功能背后的代码改动，以及相关讨论",
+                ],
+                'report' => [
+                    'title' => "报告问题",
+                    'description' => "有什么地方和描述不一致？请在 GitHub 上告诉我们",
+                ],
+            ],
+
+            'related' => "类似的功能",
+
+            'lightbox' => [
+                'label' => "截图，全屏",
+                'position' => ":position / :total",
+                'close' => "关闭",
+                'previous' => "上一张截图",
+                'next' => "下一张截图",
+            ],
+        ],
+
         'showing' => "显示第 :from 至 :to 篇，共 :total 篇文章",
         'pageOf' => "第 :page 页，共 :total 页",
         'rssFeed' => "RSS 订阅",

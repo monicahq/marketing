@@ -75,7 +75,12 @@
                         @include('_partials.blog.outdated-notice', ['post' => $page])
                     @endif
 
-                    <div class="mn-prose mt-8">{!! $body !!}</div>
+                    <div @class(['mn-prose mt-8', 'mn-prose-feature' => $page->isFeature()]) data-lightbox-group>{!! $body !!}</div>
+
+                    @if ($page->isFeature())
+                        @include('_partials.blog.feature-links', ['post' => $page])
+                        @include('_partials.blog.related-features', ['related' => $page->relatedPosts($posts)])
+                    @endif
                 </article>
 
                 @include('_partials.blog.pager', ['previous' => $older, 'next' => $newer])
@@ -102,4 +107,6 @@
             </aside>
         </div>
     </div>
+
+    @include('_partials.blog.lightbox')
 @endsection
