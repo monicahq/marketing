@@ -6,6 +6,7 @@ published_at: 2018-02-25T00:00:00+00:00
 author: 'Regis Freyd'
 description: "Wir verwalten Übersetzungen jetzt mit einem einfachen Werkzeug."
 original_url: https://www.monicahq.com/blog/translations
+outdated: true
 ---
 Übersetzungen zu pflegen ist wirklich mühsam. Ich habe noch kein Projekt gefunden, in dem das ein einfacher und schmerzfreier Vorgang wäre. Bisher mussten Sie, um Monica zu übersetzen, das Repository klonen, die Sprachdatei anpassen und das Ergebnis schließlich als Pull Request einreichen. Damit ist Schluss.
 

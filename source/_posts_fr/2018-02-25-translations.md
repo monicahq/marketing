@@ -6,6 +6,7 @@ published_at: 2018-02-25T00:00:00+00:00
 author: 'Regis Freyd'
 description: "Nous utilisons désormais un outil simple pour gérer les traductions."
 original_url: https://www.monicahq.com/blog/translations
+outdated: true
 ---
 Maintenir des traductions est vraiment pénible. Je n'ai encore jamais vu de projet où ce soit un processus simple et indolore. Jusqu'à présent, pour traduire Monica, il fallait cloner le dépôt, modifier le fichier de langue et enfin soumettre le résultat sous forme de pull request. Eh bien, c'est terminé.
 

@@ -6,6 +6,7 @@ published_at: 2022-08-28T20:44:00+00:00
 author: 'Regis Freyd'
 description: "Une toute nouvelle version majeure arrive."
 original_url: https://www.monicahq.com/blog/a-new-version-is-coming
+outdated: true
 ---
 [Alexis](https://twitter.com/asbin) et moi [(Regis)](https://twitter.com/maazarin) travaillons depuis quelques mois (depuis janvier 2022, en fait) sur une toute nouvelle version de Monica. La première véritable version majeure depuis notre lancement il y a quelques années.
 

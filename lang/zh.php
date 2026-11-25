@@ -5682,6 +5682,13 @@ return [
         'copyLink' => "复制链接",
         'copyLinkDone' => "已复制",
 
+        // Above the body of a post flagged `outdated: true` in its front matter.
+        'outdated' => [
+            'title' => "这篇文章写于 :year 年",
+            'body' => "自那以后 Monica 已经有了很大变化，文中描述的内容可能与现在的应用不再一致。",
+            'link' => "看看 Monica 现在能做什么",
+        ],
+
         'showing' => "显示第 :from 至 :to 篇，共 :total 篇文章",
         'pageOf' => "第 :page 页，共 :total 页",
         'rssFeed' => "RSS 订阅",

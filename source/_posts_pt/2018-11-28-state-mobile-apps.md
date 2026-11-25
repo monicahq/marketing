@@ -6,6 +6,7 @@ published_at: 2018-11-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: "Removemos os aplicativos móveis das lojas"
 original_url: https://www.monicahq.com/blog/state-mobile-apps
+outdated: true
 ---
 Acabei de remover os aplicativos móveis tanto da Apple Store quanto da Play Store. A única forma de obtê-los agora é compilá-los a partir do repositório no GitHub.
 

@@ -6,6 +6,7 @@ published_at: 2022-08-28T20:44:00+00:00
 author: 'Regis Freyd'
 description: 'Скоро выйдет совершенно новая мажорная версия.'
 original_url: https://www.monicahq.com/blog/a-new-version-is-coming
+outdated: true
 ---
 [Alexis](https://twitter.com/asbin) и я [(Regis)](https://twitter.com/maazarin) вот уже несколько месяцев (вообще-то с января 2022 года) работаем над совершенно новой версией Monica. Это первая настоящая новая мажорная версия с тех пор, как мы запустили проект несколько лет назад.
 

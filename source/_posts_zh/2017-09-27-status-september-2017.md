@@ -6,6 +6,7 @@ published_at: 2017-09-27T00:00:00+00:00
 author: 'Regis Freyd'
 description: '2017 年 9 月，Monica 的进展如何？'
 original_url: https://www.monicahq.com/blog/status-september-2017
+outdated: true
 ---
 过去 40 天里，我在沟通方面不太活跃，回复 issue 和合并 pull request 也比以前慢。我并不喜欢这种状况，但在接下来一个月左右，我很难改变它。不过，情况会好起来的。
 

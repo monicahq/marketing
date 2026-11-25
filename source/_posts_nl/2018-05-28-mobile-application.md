@@ -6,6 +6,7 @@ published_at: 2018-05-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'De officiële mobiele applicatie is uit.'
 original_url: https://www.monicahq.com/blog/mobile-application
+outdated: true
 ---
 Sinds de openbare lancering in juni 2017 krijg ik bijna elke dag mails met de vraag om een mobiele applicatie.
 

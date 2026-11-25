@@ -343,6 +343,8 @@ The homepage, pricing, the v3 teaser, the team page, the about page (route key `
 
 Autodiscovery (`rel="alternate" type="application/rss+xml"`) is in `_layouts/base.blade.php`, so it is on every page rather than only the blog: the page someone is on when they decide to subscribe is rarely the index. It points at the current locale's feed. That is safe under Turbo for the same reason `<html lang>` is: the link is identical across a locale, and crossing locales is a full page load because the locale picker carries `data-turbo="false"`.
 
+**`outdated: true` marks a post that no longer describes Monica** (the mobile apps, Chandler, old roadmaps). `_layouts/post.blade.php` then shows `_partials/blog/outdated-notice.blade.php` above the body, a warning notice naming the year the post was written, with its copy under `blog.outdated` in `lang/`. Set it in every locale's file of the post, and leave `date` and `updated` alone: flagging a post is not a change to it, so its `lastmod` must not move.
+
 Posts have no categories: the two the old site used were dropped on import. Adding a post means drawing its cards afterwards (`npm run og -- blog-<slug>`), and a Markdown file in **every** `source/_posts_<locale>/` with `title`, `slug`, `date`, `author` and `description` (plus `updated` once it has been changed), and nothing else to register. The same slug and the same date in all of them, the title, the description and the body translated. A post present in one language and missing in another fails the dead-link check, because the sitemap lists it for every locale.
 
 See the [collections docs](https://jigsaw.tighten.com/docs/collections/).

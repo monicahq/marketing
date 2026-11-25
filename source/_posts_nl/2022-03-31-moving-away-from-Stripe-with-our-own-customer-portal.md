@@ -6,6 +6,7 @@ published_at: 2022-03-31T17:20:39+00:00
 author: 'Regis Freyd'
 description: 'We hebben besloten van Stripe naar Paddle te verhuizen.'
 original_url: https://www.monicahq.com/blog/moving-away-from-Stripe-with-our-own-customer-portal
+outdated: true
 ---
 Op dit moment gebruiken we Stripe om onze abonnementen te beheren. We zijn dol op Stripe als ontwikkelaar, maar het is een complete puinhoop om er wereldwijd de belastingen mee af te handelen, zeker aan het eind van het boekjaar. Onze boekhouder haat ons.
 We moeten over naar een andere betaaldienst die alle belastingen op de juiste manier afhandelt. Die betaaldienst heet [Paddle](https://paddle.com).

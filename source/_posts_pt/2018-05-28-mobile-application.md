@@ -6,6 +6,7 @@ published_at: 2018-05-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: "O aplicativo móvel oficial acaba de chegar."
 original_url: https://www.monicahq.com/blog/mobile-application
+outdated: true
 ---
 Recebo e-mails pedindo um aplicativo móvel quase todo dia desde o lançamento público em junho de 2017.
 

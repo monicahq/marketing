@@ -6,6 +6,7 @@ published_at: 2022-03-31T17:20:39+00:00
 author: 'Regis Freyd'
 description: "Nous avons décidé de quitter Stripe pour Paddle."
 original_url: https://www.monicahq.com/blog/moving-away-from-Stripe-with-our-own-customer-portal
+outdated: true
 ---
 Aujourd'hui, nous utilisons Stripe pour gérer nos abonnements. Autant nous adorons Stripe du point de vue d'un développeur, autant la gestion des taxes dans le monde entier est un vrai casse-tête, surtout en fin d'exercice comptable. Notre comptable nous déteste.
 Nous devons passer à un autre prestataire de paiement qui traitera correctement toutes ces taxes. Ce prestataire s'appelle [Paddle](https://paddle.com).

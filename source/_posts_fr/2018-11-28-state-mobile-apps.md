@@ -6,6 +6,7 @@ published_at: 2018-11-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: "Nous avons retiré les applications mobiles des stores"
 original_url: https://www.monicahq.com/blog/state-mobile-apps
+outdated: true
 ---
 Je viens de retirer les applications mobiles de l'App Store comme du Play Store. Le seul moyen de les obtenir est désormais de les compiler depuis le dépôt GitHub.
 

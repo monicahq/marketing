@@ -6,6 +6,7 @@ published_at: 2022-08-28T20:44:00+00:00
 author: 'Regis Freyd'
 description: '一个全新的主要版本即将到来。'
 original_url: https://www.monicahq.com/blog/a-new-version-is-coming
+outdated: true
 ---
 [Alexis](https://twitter.com/asbin) 和我 [(Regis)](https://twitter.com/maazarin) 已经花了几个月（其实是从 2022 年 1 月开始）在开发一个全新的 Monica 版本。这是自从几年前我们发布以来，真正意义上的第一个全新主要版本。
 

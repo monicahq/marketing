@@ -6,6 +6,7 @@ published_at: 2018-11-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'We hebben de mobiele apps uit de winkels gehaald'
 original_url: https://www.monicahq.com/blog/state-mobile-apps
+outdated: true
 ---
 Ik heb de mobiele applicaties zojuist uit zowel de Apple Store als de Play Store gehaald. De enige manier om ze nog te krijgen is ze zelf bouwen vanuit de repository op GitHub.
 

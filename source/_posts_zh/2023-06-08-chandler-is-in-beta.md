@@ -6,6 +6,7 @@ published_at: 2023-06-08T07:29:00+00:00
 author: 'Regis Freyd'
 description: '全新的主要版本现已推出 beta 版。'
 original_url: https://www.monicahq.com/blog/chandler-is-in-beta
+outdated: true
 ---
 我们很高兴地宣布，经过 18 个月的努力，我们的新版本（代号 Chandler）现已推出 beta 版：[https://beta.monicahq.com](https://beta.monicahq.com)
 

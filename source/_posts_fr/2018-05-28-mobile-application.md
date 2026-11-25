@@ -6,6 +6,7 @@ published_at: 2018-05-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: "L'application mobile officielle a atterri."
 original_url: https://www.monicahq.com/blog/mobile-application
+outdated: true
 ---
 Je reçois des emails réclamant une application mobile presque tous les jours depuis le lancement public de juin 2017.
 

@@ -6,6 +6,7 @@ published_at: 2022-03-31T17:20:39+00:00
 author: 'Regis Freyd'
 description: 'We’ve decided to move away from Stripe to Paddle.'
 original_url: https://www.monicahq.com/blog/moving-away-from-Stripe-with-our-own-customer-portal
+outdated: true
 ---
 Right now we use Stripe to manage our subscriptions. While we adore Stripe from a developer standpoint, it’s a complete mess to deal with taxes worldwide, especially at the end of the fiscal year. Our accountant hates us.
 We need to move to another payment processor which will deal with all the taxes the right way. This payment processor is called [Paddle](https://paddle.com).

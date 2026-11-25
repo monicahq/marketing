@@ -6,6 +6,7 @@ published_at: 2023-06-08T07:29:00+00:00
 author: 'Regis Freyd'
 description: 'De nieuwe hoofdversie is beschikbaar in bèta.'
 original_url: https://www.monicahq.com/blog/chandler-is-in-beta
+outdated: true
 ---
 Met veel plezier kondigen we aan dat onze nieuwe versie, met de codenaam Chandler, na 18 maanden hard werken beschikbaar is in bèta: [https://beta.monicahq.com](https://beta.monicahq.com)
 
