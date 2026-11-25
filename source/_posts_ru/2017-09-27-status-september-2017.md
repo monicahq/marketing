@@ -6,6 +6,7 @@ published_at: 2017-09-27T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'Что происходит с Monica в сентябре 2017 года.'
 original_url: https://www.monicahq.com/blog/status-september-2017
+outdated: true
 ---
 Последние 40 дней я был немного менее активен в общении. Я также медленнее
 отвечаю на задачи и принимаю pull request'ы. Мне это не нравится, но в ближайший

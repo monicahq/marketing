@@ -6,6 +6,7 @@ published_at: 2018-05-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'Вышло официальное мобильное приложение.'
 original_url: https://www.monicahq.com/blog/mobile-application
+outdated: true
 ---
 С момента публичного запуска в июне 2017 года я получаю письма с просьбой о мобильном приложении почти каждый день.
 

@@ -6,6 +6,7 @@ published_at: 2018-11-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'Мы убрали мобильные приложения из магазинов'
 original_url: https://www.monicahq.com/blog/state-mobile-apps
+outdated: true
 ---
 Я только что убрал мобильные приложения из App Store и Play Store. Теперь получить их можно только собрав из репозитория на GitHub.
 

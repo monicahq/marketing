@@ -6,6 +6,7 @@ published_at: 2022-03-31T17:20:39+00:00
 author: 'Regis Freyd'
 description: "Decidimos sair do Stripe e ir para o Paddle."
 original_url: https://www.monicahq.com/blog/moving-away-from-Stripe-with-our-own-customer-portal
+outdated: true
 ---
 Hoje usamos o Stripe para gerenciar nossas assinaturas. Embora adoremos o Stripe do ponto de vista de quem programa, lidar com impostos no mundo inteiro é uma confusão completa, especialmente no fim do ano fiscal. Nosso contador nos odeia.
 Precisamos migrar para outro processador de pagamentos que trate de todos os impostos do jeito certo. Esse processador se chama [Paddle](https://paddle.com).

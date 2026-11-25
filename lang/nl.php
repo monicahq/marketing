@@ -5659,6 +5659,13 @@ return [
         'copyLink' => "Link kopiëren",
         'copyLinkDone' => "Gekopieerd",
 
+        // Above the body of a post flagged `outdated: true` in its front matter.
+        'outdated' => [
+            'title' => "Dit bericht is uit :year",
+            'body' => "Monica is sindsdien flink veranderd, dus wat het beschrijft komt misschien niet meer overeen met de app.",
+            'link' => "Bekijk wat Monica vandaag doet",
+        ],
+
         'showing' => ":from tot :to van :total berichten",
         'pageOf' => "Pagina :page van :total",
         'rssFeed' => "RSS-feed",

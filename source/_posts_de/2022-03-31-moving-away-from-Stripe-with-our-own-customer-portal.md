@@ -6,6 +6,7 @@ published_at: 2022-03-31T17:20:39+00:00
 author: 'Regis Freyd'
 description: "Wir haben beschlossen, von Stripe zu Paddle zu wechseln."
 original_url: https://www.monicahq.com/blog/moving-away-from-Stripe-with-our-own-customer-portal
+outdated: true
 ---
 Derzeit nutzen wir Stripe, um unsere Abonnements zu verwalten. So sehr wir Stripe aus Entwicklersicht schätzen, so sehr ist der Umgang mit Steuern weltweit ein einziges Durcheinander, besonders zum Ende des Geschäftsjahres. Unser Buchhalter hasst uns.
 Wir müssen zu einem anderen Zahlungsdienstleister wechseln, der alle Steuern richtig abwickelt. Dieser Dienstleister heißt [Paddle](https://paddle.com).

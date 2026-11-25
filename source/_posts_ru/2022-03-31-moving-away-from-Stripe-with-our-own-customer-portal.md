@@ -6,6 +6,7 @@ published_at: 2022-03-31T17:20:39+00:00
 author: 'Regis Freyd'
 description: 'Мы решили перейти со Stripe на Paddle.'
 original_url: https://www.monicahq.com/blog/moving-away-from-Stripe-with-our-own-customer-portal
+outdated: true
 ---
 Сейчас мы управляем подписками через Stripe. Как разработчики мы обожаем Stripe, но справляться с налогами по всему миру с ним сплошная мука, особенно в конце финансового года. Наш бухгалтер нас ненавидит.
 Нам нужен другой платёжный сервис, который возьмёт на себя все налоги и сделает это правильно. Этот сервис называется [Paddle](https://paddle.com).

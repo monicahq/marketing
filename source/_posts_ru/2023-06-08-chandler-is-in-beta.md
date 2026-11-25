@@ -6,6 +6,7 @@ published_at: 2023-06-08T07:29:00+00:00
 author: 'Regis Freyd'
 description: 'Новая мажорная версия доступна в бета-версии.'
 original_url: https://www.monicahq.com/blog/chandler-is-in-beta
+outdated: true
 ---
 Мы рады сообщить, что после 18 месяцев упорной работы наша новая версия с кодовым именем Chandler стала доступна в бета-версии: [https://beta.monicahq.com](https://beta.monicahq.com)
 

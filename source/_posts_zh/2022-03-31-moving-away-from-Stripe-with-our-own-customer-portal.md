@@ -6,6 +6,7 @@ published_at: 2022-03-31T17:20:39+00:00
 author: 'Regis Freyd'
 description: '我们决定从 Stripe 迁移到 Paddle。'
 original_url: https://www.monicahq.com/blog/moving-away-from-Stripe-with-our-own-customer-portal
+outdated: true
 ---
 目前我们使用 Stripe 来管理订阅。从开发者的角度看，我们非常喜欢 Stripe，但要处理全球各地的税务，实在是一团乱，尤其是在财年末。我们的会计很讨厌我们。
 我们需要换一个能正确处理所有税务的支付服务商，它就是 [Paddle](https://paddle.com)。

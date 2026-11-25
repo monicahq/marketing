@@ -5683,6 +5683,13 @@ return [
         'copyLink' => "Copiar link",
         'copyLinkDone' => "Copiado",
 
+        // Above the body of a post flagged `outdated: true` in its front matter.
+        'outdated' => [
+            'title' => "Este artigo é de :year",
+            'body' => "A Monica mudou muito desde que este artigo foi escrito, por isso o que descreve pode já não corresponder à aplicação.",
+            'link' => "Ver o que a Monica faz hoje",
+        ],
+
         'showing' => "Artigos :from a :to de :total",
         'pageOf' => "Página :page de :total",
         'rssFeed' => "Feed RSS",

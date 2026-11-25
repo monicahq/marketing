@@ -6,6 +6,7 @@ published_at: 2018-11-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'We have removed the mobile apps from the store'
 original_url: https://www.monicahq.com/blog/state-mobile-apps
+outdated: true
 ---
 I've just removed the mobile applications from both Apple Store and Play Store. The only way to get them is now to build them from the GitHub repository.
 

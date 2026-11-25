@@ -6,6 +6,7 @@ published_at: 2022-08-28T20:44:00+00:00
 author: 'Regis Freyd'
 description: 'Er komt een volledig nieuwe hoofdversie aan.'
 original_url: https://www.monicahq.com/blog/a-new-version-is-coming
+outdated: true
 ---
 [Alexis](https://twitter.com/asbin) en ik [(Regis)](https://twitter.com/maazarin) werken nu een paar maanden (nou ja, sinds januari 2022) aan een gloednieuwe versie van Monica. De eerste echt nieuwe hoofdversie sinds we een paar jaar geleden lanceerden.
 

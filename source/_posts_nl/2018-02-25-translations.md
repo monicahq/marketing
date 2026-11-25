@@ -6,6 +6,7 @@ published_at: 2018-02-25T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'We gebruiken nu een eenvoudig hulpmiddel om vertalingen te beheren.'
 original_url: https://www.monicahq.com/blog/translations
+outdated: true
 ---
 Vertalingen onderhouden is echt een crime. Ik moet het project nog tegenkomen waar het een eenvoudig en pijnloos proces is. Tot nu toe moest je om Monica te vertalen de repository klonen, het taalbestand bijwerken en het resultaat als pull request insturen. Dat is voorbij.
 

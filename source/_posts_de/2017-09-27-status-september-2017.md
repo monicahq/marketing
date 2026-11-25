@@ -6,6 +6,7 @@ published_at: 2017-09-27T00:00:00+00:00
 author: 'Regis Freyd'
 description: "Wie steht es im September 2017 um Monica?"
 original_url: https://www.monicahq.com/blog/status-september-2017
+outdated: true
 ---
 In den letzten 40 Tagen war ich bei der Kommunikation etwas weniger aktiv. Auch
 beim Beantworten von Tickets und beim Zusammenführen von Pull Requests bin ich

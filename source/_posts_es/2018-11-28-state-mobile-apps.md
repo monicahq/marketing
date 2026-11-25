@@ -6,6 +6,7 @@ published_at: 2018-11-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: "Hemos retirado las aplicaciones móviles de las tiendas"
 original_url: https://www.monicahq.com/blog/state-mobile-apps
+outdated: true
 ---
 Acabo de retirar las aplicaciones móviles tanto de la App Store como de la Play Store. La única forma de conseguirlas ahora es compilarlas desde el repositorio de GitHub.
 

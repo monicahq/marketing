@@ -5678,6 +5678,13 @@ return [
         'copyLink' => "Копировать ссылку",
         'copyLinkDone' => "Скопировано",
 
+        // Above the body of a post flagged `outdated: true` in its front matter.
+        'outdated' => [
+            'title' => "Этот пост написан в :year году",
+            'body' => "С тех пор Monica сильно изменилась, и описанное здесь может уже не совпадать с приложением.",
+            'link' => "Посмотреть, что Monica умеет сегодня",
+        ],
+
         'showing' => "Показаны записи :from–:to из :total",
         'pageOf' => "Страница :page из :total",
         'rssFeed' => "RSS-лента",

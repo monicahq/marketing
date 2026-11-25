@@ -6,6 +6,7 @@ published_at: 2017-09-27T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'What''s going with Monica as of September 2017?'
 original_url: https://www.monicahq.com/blog/status-september-2017
+outdated: true
 ---
 I've been a bit less active on the communication side in the last 40 days. I'm
 also slower at responding to issues and merging pull requests. This is not a

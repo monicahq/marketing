@@ -71,6 +71,10 @@
                         @include('_partials.blog.copy-link')
                     </div>
 
+                    @if ($page->outdated)
+                        @include('_partials.blog.outdated-notice', ['post' => $page])
+                    @endif
+
                     <div class="mn-prose mt-8">{!! $body !!}</div>
                 </article>
 

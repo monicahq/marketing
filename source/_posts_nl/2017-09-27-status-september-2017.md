@@ -6,6 +6,7 @@ published_at: 2017-09-27T00:00:00+00:00
 author: 'Regis Freyd'
 description: 'Hoe staat het met Monica in september 2017?'
 original_url: https://www.monicahq.com/blog/status-september-2017
+outdated: true
 ---
 Ik ben de afgelopen 40 dagen wat minder actief geweest in de communicatie. Ik
 ben ook trager met het beantwoorden van issues en het samenvoegen van pull

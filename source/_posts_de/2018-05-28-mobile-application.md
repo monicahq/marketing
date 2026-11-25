@@ -6,6 +6,7 @@ published_at: 2018-05-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: "Die offizielle mobile Anwendung ist gelandet."
 original_url: https://www.monicahq.com/blog/mobile-application
+outdated: true
 ---
 Seit dem öffentlichen Start im Juni 2017 erhalte ich fast täglich E-Mails, die nach einer mobilen Anwendung fragen.
 

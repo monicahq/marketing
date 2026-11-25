@@ -6,6 +6,7 @@ published_at: 2018-11-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: '我们已把移动应用从应用商店下架'
 original_url: https://www.monicahq.com/blog/state-mobile-apps
+outdated: true
 ---
 我刚刚把移动应用从 Apple Store 和 Play Store 下架了。现在要获得它们，只能从 GitHub 仓库自行构建。
 

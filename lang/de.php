@@ -5669,6 +5669,13 @@ return [
         'copyLink' => "Link kopieren",
         'copyLinkDone' => "Kopiert",
 
+        // Above the body of a post flagged `outdated: true` in its front matter.
+        'outdated' => [
+            'title' => "Dieser Beitrag stammt aus dem Jahr :year",
+            'body' => "Monica hat sich seitdem stark verändert, daher passt das Beschriebene möglicherweise nicht mehr zur App.",
+            'link' => "Sehen, was Monica heute kann",
+        ],
+
         'showing' => "Beiträge :from bis :to von :total",
         'pageOf' => "Seite :page von :total",
         'rssFeed' => "RSS-Feed",

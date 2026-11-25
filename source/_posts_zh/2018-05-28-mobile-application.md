@@ -6,6 +6,7 @@ published_at: 2018-05-28T00:00:00+00:00
 author: 'Regis Freyd'
 description: '官方移动应用正式上线。'
 original_url: https://www.monicahq.com/blog/mobile-application
+outdated: true
 ---
 自 2017 年 6 月公开发布以来，我几乎每天都会收到询问移动应用的邮件。
 

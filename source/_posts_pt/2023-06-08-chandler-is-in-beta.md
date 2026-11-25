@@ -6,6 +6,7 @@ published_at: 2023-06-08T07:29:00+00:00
 author: 'Regis Freyd'
 description: "A nova versão principal está disponível em beta."
 original_url: https://www.monicahq.com/blog/chandler-is-in-beta
+outdated: true
 ---
 Temos o prazer de anunciar que, depois de 18 meses de trabalho duro, nossa nova versão, de codinome Chandler, já está disponível em beta: [https://beta.monicahq.com](https://beta.monicahq.com)
 

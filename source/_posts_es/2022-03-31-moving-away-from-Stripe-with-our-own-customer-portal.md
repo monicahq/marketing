@@ -6,6 +6,7 @@ published_at: 2022-03-31T17:20:39+00:00
 author: 'Regis Freyd'
 description: "Hemos decidido dejar Stripe y pasarnos a Paddle."
 original_url: https://www.monicahq.com/blog/moving-away-from-Stripe-with-our-own-customer-portal
+outdated: true
 ---
 Ahora mismo usamos Stripe para gestionar nuestras suscripciones. Aunque adoramos Stripe desde el punto de vista de quien programa, lidiar con los impuestos de todo el mundo es un auténtico lío, sobre todo al cierre del ejercicio fiscal. Nuestro contable nos odia.
 Necesitamos cambiar a otra pasarela de pago que gestione todos los impuestos como es debido. Esa pasarela se llama [Paddle](https://paddle.com).

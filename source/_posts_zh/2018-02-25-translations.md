@@ -6,6 +6,7 @@ published_at: 2018-02-25T00:00:00+00:00
 author: 'Regis Freyd'
 description: '我们现在使用一个简单的工具来管理翻译。'
 original_url: https://www.monicahq.com/blog/translations
+outdated: true
 ---
 维护翻译真的很痛苦。我还没见过哪个项目的翻译流程是轻松省心的。到目前为止，要翻译 Monica，你需要克隆代码仓库，更新语言文件，最后把结果作为 pull request 提交。现在不用了。
 
