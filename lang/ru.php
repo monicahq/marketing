@@ -633,6 +633,8 @@ return [
         'toDark' => "Включить тёмную тему",
         'toLight' => "Включить светлую тему",
         'github' => "Monica на GitHub, звёзд: :count",
+        'githubTip' => "Наш проект на GitHub",
+        'themeTip' => "Переключить светлую/тёмную тему",
         'getStarted' => "Регистрация",
         'stars' => ":count звёзд",
 

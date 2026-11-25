@@ -607,6 +607,8 @@ return [
         'toDark' => "Zum dunklen Modus wechseln",
         'toLight' => "Zum hellen Modus wechseln",
         'github' => ":count Sterne, Monica auf GitHub",
+        'githubTip' => "Unser GitHub-Projekt besuchen",
+        'themeTip' => "Hellen/dunklen Modus umschalten",
         'getStarted' => "Registrieren",
         'stars' => ":count Sterne",
 

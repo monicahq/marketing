@@ -637,6 +637,8 @@ return [
         'toDark' => "Switch to dark mode",
         'toLight' => "Switch to light mode",
         'github' => ":count stars, Monica on GitHub",
+        'githubTip' => "Visit our GitHub project",
+        'themeTip' => "Toggle light/dark mode",
         'getStarted' => "Sign up",
         'stars' => ":count stars",
 

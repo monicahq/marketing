@@ -1,5 +1,5 @@
 {{--
-    Language menu for the footer. Built on <details>, so it opens, closes and
+    Language menu, in the header (`'variant' => 'header'`) and in the footer. Built on <details>, so it opens, closes and
     takes keyboard focus with no JavaScript at all, and each entry is a real
     link to the same page in another locale, which is what a crawler and a
     middle-click both expect.
@@ -10,10 +10,20 @@
     English: wrong for screen readers, hyphenation, and anything reading the
     page's language. `data-turbo="false"` makes each one a full page load.
     instant.page still prefetches them, so the full load is a warm one.
+
+    The two variants differ only in their frame and in where the panel opens:
+    the header's sits on the page and opens downwards, the footer's sits on
+    the cream ground and opens upwards. Literal class strings, so Tailwind's
+    scanner finds them.
 --}}
-<details data-menu class="relative">
+@php
+    $inHeader = ($variant ?? 'footer') === 'header';
+@endphp
+<details data-menu class="relative {{ $class ?? '' }}">
     <summary
-        class="flex cursor-pointer list-none items-center gap-3 rounded-md border border-ground-cream-rule px-3 py-2 text-small text-ground-cream-ink [&::-webkit-details-marker]:hidden"
+        class="{{ $inHeader
+            ? 'flex h-9 cursor-pointer list-none items-center gap-2 rounded-md px-2.5 text-base font-medium text-text-secondary transition-colors duration-150 ease-standard hover:bg-hover hover:text-text [&::-webkit-details-marker]:hidden'
+            : 'flex cursor-pointer list-none items-center gap-3 rounded-md border border-ground-cream-rule px-3 py-2 text-small text-ground-cream-ink [&::-webkit-details-marker]:hidden' }}"
         aria-label="{{ $page->t('footer.languageLabel') }}"
     >
         @include('_partials.flag', ['flagLocale' => $page->locale])
@@ -22,7 +32,7 @@
     </summary>
 
     <div
-        class="absolute bottom-[calc(100%+6px)] left-0 z-20 flex min-w-45 flex-col rounded-lg border border-border bg-canvas p-1 shadow-pop"
+        class="absolute {{ $inHeader ? 'top-[calc(100%+6px)] right-0 z-50' : 'bottom-[calc(100%+6px)] left-0 z-20' }} flex min-w-45 flex-col rounded-lg border border-border bg-canvas p-1 shadow-pop"
     >
         @foreach ($page->alternates() as $alternate)
             <a

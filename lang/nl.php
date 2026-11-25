@@ -606,6 +606,8 @@ return [
         'toDark' => "Overschakelen naar donkere modus",
         'toLight' => "Overschakelen naar lichte modus",
         'github' => ":count sterren, Monica op GitHub",
+        'githubTip' => "Bezoek ons GitHub-project",
+        'themeTip' => "Wisselen tussen lichte en donkere modus",
         'getStarted' => "Aanmelden",
         'stars' => ":count sterren",
 

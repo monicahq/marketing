@@ -12,10 +12,13 @@
     The click is handled in `_partials/color-scheme`, on the document, so it
     survives Turbo swapping <body>. `js-only`, because without JavaScript it
     would do nothing.
+
+    `describedBy` names a tooltip beside it, as the header's has.
 --}}
 <button
     type="button"
     data-theme-toggle
+    @isset($describedBy) aria-describedby="{{ $describedBy }}" @endisset
     class="js-only mn-focusable inline-flex size-9 flex-none cursor-pointer items-center justify-center rounded-md transition-colors duration-150 ease-standard {{ $class ?? '' }}"
 >
     <span class="inline-flex dark:hidden">

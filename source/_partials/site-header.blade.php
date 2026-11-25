@@ -196,15 +196,28 @@
                  they push the two buttons onto a line of their own under the
                  logo in German and French. The footer has both a GitHub
                  button and a theme button at every width. --}}
-            <a
-                href="{{ $page->links['github'] }}"
-                aria-label="{{ $page->t('nav.github', [':count' => $page->starCount]) }}"
-                class="hidden h-9 items-center gap-2 rounded-md px-2.5 text-base font-medium text-text-secondary no-underline transition-colors duration-150 ease-standard hover:bg-hover hover:text-text hover:no-underline sm:flex"
-            >
-                @include('_partials.github-mark', ['size' => 18])
-                <span>{{ $page->starCount }}</span>
-            </a>
-            @include('_partials.theme-toggle', ['class' => 'text-text-secondary hover:bg-hover hover:text-text max-sm:hidden'])
+            {{-- Each of the two icon buttons carries a tooltip naming what it
+                 does (`_partials/tooltip`), on hover and on keyboard focus. --}}
+            <div class="group relative max-sm:hidden">
+                <a
+                    href="{{ $page->links['github'] }}"
+                    aria-label="{{ $page->t('nav.github', [':count' => $page->starCount]) }}"
+                    aria-describedby="header-github-tip"
+                    class="flex h-9 items-center gap-2 rounded-md px-2.5 text-base font-medium text-text-secondary no-underline transition-colors duration-150 ease-standard hover:bg-hover hover:text-text hover:no-underline"
+                >
+                    @include('_partials.github-mark', ['size' => 18])
+                    <span>{{ $page->starCount }}</span>
+                </a>
+                @include('_partials.tooltip', ['id' => 'header-github-tip', 'text' => $page->t('nav.githubTip')])
+            </div>
+            {{-- Beside the stars, the same language menu as the footer's,
+                 opening downwards. Left out below `sm` with its neighbours;
+                 the footer's is there at every width. --}}
+            @include('_partials.locale-picker', ['variant' => 'header', 'class' => 'max-sm:hidden'])
+            <div class="group relative max-sm:hidden">
+                @include('_partials.theme-toggle', ['class' => 'text-text-secondary hover:bg-hover hover:text-text', 'describedBy' => 'header-theme-tip'])
+                @include('_partials.tooltip', ['id' => 'header-theme-tip', 'text' => $page->t('nav.themeTip')])
+            </div>
             <a href="{{ $page->route('signIn') }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">
                 {{ $page->t('nav.signIn') }}
             </a>
