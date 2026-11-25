@@ -361,7 +361,7 @@ An article's front matter is `title`, `slug`, `section` (a key of `handbookSecti
 
 ## The features section
 
-`/en/features/` has no page. The route key `features` stays because its slug is the prefix the feature pages nest under (`/en/features/timeline/`), and the header's features menu still links into it while the pages its items describe are written. `pageless` in `config.php` keeps it out of the sitemap.
+`/en/features/` has no page. The route key `features` stays because its slug is the prefix the feature pages nest under (`/en/features/timeline/`), and the header's features menu still links into it while the pages its items describe are written. `pageless` in `config.php` keeps it out of the sitemap. Search engines still showed the old index, mostly for "monica api", so an `afterBuild` listener in `bootstrap.php` writes a `_redirects` file to the root of the build that sends each locale's features index to its API page with a 301, both read from `routes`.
 
 **The slugs nest**, so `timeline` in English is `features/timeline` and the file is `source/en/features/timeline.blade.php`. The helpers need nothing special for this: they only ever join a slug to a locale prefix. A slug with a slash and a file in a subdirectory are the whole trick.
 
