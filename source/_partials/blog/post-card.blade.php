@@ -47,5 +47,5 @@
     {{-- 12px of flex gap plus this, so the body starts 36px below the byline:
          further than the 12px holding the date, title and byline together, so
          they group as one header rather than four loose lines. --}}
-    <div class="mn-prose mt-6">{!! $post->bodyHtml() !!}</div>
+    <div @class(['mn-prose mt-6', 'mn-prose-feature' => $post->isFeature()]) data-lightbox-group>{!! $post->bodyHtml() !!}</div>
 </article>

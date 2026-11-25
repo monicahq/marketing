@@ -5668,6 +5668,40 @@ return [
             'link' => "Bekijk wat Monica vandaag doet",
         ],
 
+        // A post about a feature that just shipped (`category: feature` in its
+        // front matter): the badge beside its date, the links and similar
+        // features under its body, and the full-screen view of its screenshots.
+        'feature' => [
+            'badge' => "Nieuwe functie",
+            'viewFullScreen' => "Bekijk op volledig scherm",
+
+            'links' => [
+                'title' => "Handige links",
+                'docs' => [
+                    'title' => "Documentatie",
+                    'description' => "Hoe de functie werkt, stap voor stap, in het helpcentrum",
+                ],
+                'pullRequest' => [
+                    'title' => "Pull request",
+                    'description' => "De codewijziging achter deze functie, met de discussie",
+                ],
+                'report' => [
+                    'title' => "Een probleem melden",
+                    'description' => "Werkt iets niet zoals beschreven? Laat het ons weten op GitHub",
+                ],
+            ],
+
+            'related' => "Vergelijkbare functies",
+
+            'lightbox' => [
+                'label' => "Schermafbeelding, volledig scherm",
+                'position' => ":position van :total",
+                'close' => "Sluiten",
+                'previous' => "Vorige schermafbeelding",
+                'next' => "Volgende schermafbeelding",
+            ],
+        ],
+
         'showing' => ":from tot :to van :total berichten",
         'pageOf' => "Pagina :page van :total",
         'rssFeed' => "RSS-feed",
