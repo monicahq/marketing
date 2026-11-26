@@ -42,6 +42,7 @@ return [
             'compareDex' => "Monica и Dex",
             'compareFolk' => "Monica и folk",
             'compareMesh' => "Monica и Mesh",
+            'changes' => "Изменения",
             'signIn' => "Вход",
             'about' => "О Monica",
             'privacy' => "Политика конфиденциальности",
@@ -252,6 +253,20 @@ return [
                 'title' => "Monica и Mesh",
                 'accent' => "раньше Clay.",
                 'description' => "Синхронизация контактов, бесплатный тариф, приложения, экспорт и размещение у себя рядом.",
+            ],
+        ],
+
+        'changes' => [
+            'title' => "Изменения на сайте Monica",
+            'description' => "Каждое изменение на monicahq.com, сначала новые, со списком затронутых страниц. Время указано в UTC.",
+            'ogTitle' => "Каждое изменение на сайте Monica",
+            'ogDescription' => "Что изменилось на monicahq.com, когда и каких страниц это коснулось. Время указано в UTC.",
+
+            'ogImage' => [
+                'eyebrow' => "Изменения",
+                'title' => "Каждое изменение сайта,",
+                'accent' => "сначала новые.",
+                'description' => "Что изменилось на monicahq.com и когда, в UTC.",
             ],
         ],
 
@@ -5685,6 +5700,7 @@ return [
         'compareDex' => "Monica и Dex",
         'compareFolk' => "Monica и folk",
         'compareMesh' => "Monica и Mesh",
+        'changes' => "Изменения сайта",
         'personalCrm' => "Что такое персональная CRM?",
         'aiMemory' => "Память для ИИ",
         'personalData' => "Управление личными данными",
@@ -6464,6 +6480,17 @@ return [
      * The Monica vs Mesh comparison (route key `compareMesh`), English only.
      * Same shape as `compareDex` above.
      */
+    'changes' => [
+        'eyebrow' => "Журнал изменений сайта",
+        'title' => "Изменения на этом сайте",
+        'lede' => "Каждое изменение на monicahq.com, сначала новые. Изменения самого приложения собраны в :link.",
+        'productChangelog' => "журнале изменений продукта",
+        'pages' => "Затронутые страницы:",
+        'allPages' => "Все страницы",
+        'utc' => "Время указано в UTC.",
+        'note' => "Записи написаны на английском.",
+    ],
+
     'compareMesh' => [
         'name' => "Mesh",
         'title' => "Monica и Mesh (раньше Clay)",

@@ -1,6 +1,6 @@
 # Monica SEO sheets for de
 
-These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 161 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -20,6 +20,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, SoftwareApplication |
 | Primary keyword | persönliches CRM |
 | Secondary keywords | persönliche Datenbank, Open-Source-CRM |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
+
+## /de/aenderungen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/aenderungen/ |
+| Canonical | https://www.monicahq.com/de/aenderungen/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Änderungen an der Monica-Website |
+| Meta description | Jede Änderung an monicahq.com, die neueste zuerst, mit den betroffenen Seiten. Alle Zeiten in UTC. |
+| H1 | Änderungen an dieser Website |
+| OG title | Jede Änderung an der Monica-Website |
+| OG description | Was sich auf monicahq.com geändert hat, wann, und welche Seiten betroffen waren. Alle Zeiten in UTC. |
+| OG image | https://www.monicahq.com/og/changes-de.jpg?v=5edeeab7 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Änderungen der Monica-Website |
+| Secondary keywords | Änderungsprotokoll der Website |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/de.php; retain the existing H1. |
 

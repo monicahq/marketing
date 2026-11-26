@@ -25,6 +25,7 @@ return [
             'compareDex' => "Monica versus Dex",
             'compareFolk' => "Monica versus folk",
             'compareMesh' => "Monica versus Mesh",
+            'changes' => "Alterações",
             'signIn' => "Entrar",
             'about' => "Sobre a Monica",
             'privacy' => "Política de privacidade",
@@ -230,6 +231,20 @@ return [
                 'title' => "Monica versus Mesh",
                 'accent' => "antes Clay.",
                 'description' => "Sincronização, plano gratuito, apps, exportações e hospedagem própria, lado a lado.",
+            ],
+        ],
+
+        'changes' => [
+            'title' => "Alterações no site da Monica",
+            'description' => "Cada alteração feita em monicahq.com, da mais recente à mais antiga, com as páginas afetadas. Os horários estão em UTC.",
+            'ogTitle' => "Cada alteração no site da Monica",
+            'ogDescription' => "O que mudou em monicahq.com, quando e quais páginas foram afetadas. Os horários estão em UTC.",
+
+            'ogImage' => [
+                'eyebrow' => "Alterações",
+                'title' => "Cada alteração do site,",
+                'accent' => "da mais recente.",
+                'description' => "O que mudou em monicahq.com e quando, em UTC.",
             ],
         ],
 
@@ -5690,6 +5705,7 @@ return [
         'compareDex' => "Monica versus Dex",
         'compareFolk' => "Monica versus folk",
         'compareMesh' => "Monica versus Mesh",
+        'changes' => "Alterações do site",
         'personalCrm' => "O que é um CRM pessoal?",
         'aiMemory' => "Memória para IA",
         'personalData' => "Gestão de dados pessoais",
@@ -6468,6 +6484,17 @@ return [
      * The Monica vs Mesh comparison (route key `compareMesh`), English only.
      * Same shape as `compareDex` above.
      */
+    'changes' => [
+        'eyebrow' => "Registro do site",
+        'title' => "Alterações neste site",
+        'lede' => "Cada alteração feita em monicahq.com, da mais recente à mais antiga. As alterações do aplicativo estão no :link.",
+        'productChangelog' => "registro de alterações do produto",
+        'pages' => "Páginas afetadas:",
+        'allPages' => "Todas as páginas",
+        'utc' => "Os horários estão em UTC.",
+        'note' => "As entradas estão escritas em inglês.",
+    ],
+
     'compareMesh' => [
         'name' => "Mesh",
         'title' => "Monica versus Mesh (antes Clay)",

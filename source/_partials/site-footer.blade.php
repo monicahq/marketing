@@ -38,6 +38,7 @@
                 ['label' => $page->t('footer.contactSales'), 'href' => $page->route('sales')],
                 ['label' => $page->t('footer.privacy'), 'href' => $page->route('privacy')],
                 ['label' => $page->t('footer.terms'), 'href' => $page->route('terms')],
+                ['label' => $page->t('footer.changes'), 'href' => $page->route('changes')],
             ],
         ],
         [

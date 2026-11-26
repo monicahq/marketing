@@ -1,6 +1,6 @@
 # Monica SEO sheets for ru
 
-These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 161 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1029,6 +1029,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /ru/izmeneniya/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/izmeneniya/ |
+| Canonical | https://www.monicahq.com/ru/izmeneniya/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Изменения на сайте Monica |
+| Meta description | Каждое изменение на monicahq.com, сначала новые, со списком затронутых страниц. Время указано в UTC. |
+| H1 | Изменения на этом сайте |
+| OG title | Каждое изменение на сайте Monica |
+| OG description | Что изменилось на monicahq.com, когда и каких страниц это коснулось. Время указано в UTC. |
+| OG image | https://www.monicahq.com/og/changes-ru.jpg?v=f050f62a (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | изменения сайта Monica |
+| Secondary keywords | журнал изменений сайта |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/ru.php; retain the existing H1. |
 
 ## /ru/komanda/
 

@@ -1,6 +1,6 @@
 # Monica SEO sheets for fr
 
-These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 161 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2965,6 +2965,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, SoftwareApplication |
 | Primary keyword | mémoire IA personnelle |
 | Secondary keywords | mémoire IA persistante, mémoire partagée pour assistants IA, mémoire IA open source |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
+
+## /fr/modifications/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/modifications/ |
+| Canonical | https://www.monicahq.com/fr/modifications/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Modifications du site Monica |
+| Meta description | Chaque modification apportée à monicahq.com, de la plus récente à la plus ancienne, avec les pages concernées. Les heures sont en UTC. |
+| H1 | Modifications de ce site |
+| OG title | Chaque modification du site Monica |
+| OG description | Ce qui a changé sur monicahq.com, quand, et quelles pages sont concernées. Les heures sont en UTC. |
+| OG image | https://www.monicahq.com/og/changes-fr.jpg?v=adb09e05 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | modifications du site Monica |
+| Secondary keywords | journal du site Monica |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
 

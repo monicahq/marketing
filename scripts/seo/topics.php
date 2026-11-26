@@ -42,13 +42,14 @@ $english = [
     'compareDex' => ['Monica vs Dex', ['Dex alternative', 'Dex vs Monica personal CRM'], ['personal CRM with LinkedIn sync', 'self-hosted Dex alternative']],
     'compareFolk' => ['Monica vs folk', ['folk alternative', 'folk vs Monica personal CRM'], ['personal CRM vs team CRM', 'self-hosted folk alternative']],
     'compareMesh' => ['Monica vs Mesh', ['Clay.earth alternative', 'Mesh personal CRM alternative'], ['Clay personal CRM vs Monica', 'self-hosted Clay alternative']],
+    'changes' => ['Monica website changes', ['Monica website changelog'], []],
     'sales' => ['Monica sales', ['contact Monica sales', 'Monica demo'], []],
     'handbook' => ['Monica handbook', ['Monica project principles', 'running Monica'], ['independent open source project']],
 ];
 
 // Each line follows the route order below. These terms describe the existing
 // translated content; they do not add product claims to it.
-$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'signIn', 'sales', 'compareDex', 'compareFolk', 'compareMesh'];
+$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'signIn', 'sales', 'compareDex', 'compareFolk', 'compareMesh', 'changes'];
 $localized = [
     'fr' => <<<'TERMS'
 CRM personnel|base de données personnelle|CRM personnel open source
@@ -91,6 +92,7 @@ ventes Monica|contacter les ventes Monica|démo Monica
 Monica contre Dex|alternative à Dex|CRM personnel avec synchronisation LinkedIn
 Monica contre folk|alternative à folk|CRM personnel ou CRM d’équipe
 Monica contre Mesh|alternative à Clay.earth|alternative à Mesh
+modifications du site Monica|journal du site Monica
 TERMS,
     'de' => <<<'TERMS'
 persönliches CRM|persönliche Datenbank|Open-Source-CRM
@@ -133,6 +135,7 @@ Monica Vertrieb|Monica Vertrieb kontaktieren|Monica Demo
 Monica gegen Dex|Dex Alternative|persönliches CRM mit LinkedIn Sync
 Monica gegen folk|folk Alternative|persönliches CRM oder Team-CRM
 Monica gegen Mesh|Clay.earth Alternative|Mesh Alternative
+Änderungen der Monica-Website|Änderungsprotokoll der Website
 TERMS,
     'es' => <<<'TERMS'
 CRM personal|base de datos personal|CRM personal de código abierto
@@ -175,6 +178,7 @@ ventas de Monica|contactar con ventas de Monica|demo de Monica
 Monica frente a Dex|alternativa a Dex|CRM personal con sincronización de LinkedIn
 Monica frente a folk|alternativa a folk|CRM personal o CRM de equipo
 Monica frente a Mesh|alternativa a Clay.earth|alternativa a Mesh
+cambios del sitio de Monica|registro de cambios del sitio
 TERMS,
     'pt' => <<<'TERMS'
 CRM pessoal|banco de dados pessoal|CRM pessoal de código aberto
@@ -217,6 +221,7 @@ vendas Monica|contatar vendas Monica|demonstração Monica
 Monica versus Dex|alternativa ao Dex|CRM pessoal com sincronização do LinkedIn
 Monica versus folk|alternativa ao folk|CRM pessoal ou CRM de equipa
 Monica versus Mesh|alternativa ao Clay.earth|alternativa ao Mesh
+alterações do site da Monica|registro de alterações do site
 TERMS,
     'nl' => <<<'TERMS'
 persoonlijk CRM|persoonlijke database|open source persoonlijk CRM
@@ -259,6 +264,7 @@ Monica verkoop|contact met Monica verkoop|Monica demo
 Monica versus Dex|alternatief voor Dex|persoonlijke CRM met LinkedIn-sync
 Monica versus folk|alternatief voor folk|persoonlijke CRM of team-CRM
 Monica versus Mesh|alternatief voor Clay.earth|alternatief voor Mesh
+wijzigingen aan de Monica-website|wijzigingslogboek van de site
 TERMS,
     'zh' => <<<'TERMS'
 个人 CRM|个人数据库|开源个人 CRM
@@ -301,6 +307,7 @@ Monica 销售|联系 Monica 销售|Monica 演示
 Monica 对比 Dex|Dex 替代品|支持 LinkedIn 同步的个人 CRM
 Monica 对比 folk|folk 替代品|个人 CRM 与团队 CRM
 Monica 对比 Mesh|Clay.earth 替代品|Mesh 替代品
+Monica 网站更新记录|Monica 网站改动
 TERMS,
     'ru' => <<<'TERMS'
 персональная CRM|личная база данных|персональная CRM с открытым кодом
@@ -343,6 +350,7 @@ MCP-сервер Monica|MCP-сервер для личных данных|MCP-с
 Monica и Dex|альтернатива Dex|личная CRM с синхронизацией LinkedIn
 Monica и folk|альтернатива folk|личная CRM или командная CRM
 Monica и Mesh|альтернатива Clay.earth|альтернатива Mesh
+изменения сайта Monica|журнал изменений сайта
 TERMS,
 ];
 

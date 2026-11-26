@@ -39,6 +39,7 @@ return [
             'compareDex' => "Monica 对比 Dex",
             'compareFolk' => "Monica 对比 folk",
             'compareMesh' => "Monica 对比 Mesh",
+            'changes' => "更新记录",
             'signIn' => "登录",
             'about' => "关于 Monica",
             'privacy' => "隐私政策",
@@ -249,6 +250,20 @@ return [
                 'title' => "Monica 对比 Mesh",
                 'accent' => "原 Clay。",
                 'description' => "联系人同步、免费方案、应用、导出和自托管，并排对比。",
+            ],
+        ],
+
+        'changes' => [
+            'title' => "Monica 网站更新记录",
+            'description' => "monicahq.com 的每一次改动，最新的在前，并列出受影响的页面。时间均为 UTC。",
+            'ogTitle' => "Monica 网站的每一次改动",
+            'ogDescription' => "monicahq.com 改了什么、何时改的、涉及哪些页面。时间均为 UTC。",
+
+            'ogImage' => [
+                'eyebrow' => "更新记录",
+                'title' => "网站的每一次改动，",
+                'accent' => "最新的在前。",
+                'description' => "monicahq.com 改了什么、何时改的，均为 UTC。",
             ],
         ],
 
@@ -5689,6 +5704,7 @@ return [
         'compareDex' => "Monica 对比 Dex",
         'compareFolk' => "Monica 对比 folk",
         'compareMesh' => "Monica 对比 Mesh",
+        'changes' => "网站更新记录",
         'personalCrm' => "什么是个人 CRM？",
         'aiMemory' => "AI 记忆",
         'personalData' => "个人数据管理",
@@ -6468,6 +6484,17 @@ return [
      * The Monica vs Mesh comparison (route key `compareMesh`), English only.
      * Same shape as `compareDex` above.
      */
+    'changes' => [
+        'eyebrow' => "网站更新记录",
+        'title' => "本网站的改动",
+        'lede' => "monicahq.com 的每一次改动，最新的在前。应用本身的改动请看:link。",
+        'productChangelog' => "产品更新日志",
+        'pages' => "受影响的页面：",
+        'allPages' => "所有页面",
+        'utc' => "时间均为 UTC。",
+        'note' => "条目以英文撰写。",
+    ],
+
     'compareMesh' => [
         'name' => "Mesh",
         'title' => "Monica 对比 Mesh（原 Clay）",

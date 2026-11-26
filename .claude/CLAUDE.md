@@ -3,6 +3,10 @@
 Marketing site for **Monica**, the personal CRM. Static [Jigsaw](https://jigsaw.tighten.com) + Tailwind 4 site, built on the Monica design system, shipping in eight languages (English, French, German, Spanish, Portuguese, Dutch, Simplified Chinese and Russian).
 The owner is not a Jigsaw expert, so explain Jigsaw-specific choices briefly, and prefer boring, idiomatic Jigsaw over clever setups.
 
+## Log every change to the site
+
+Every change a reader of the site could notice needs an entry in `changes.php`, which feeds the `/changes` page, with its time in UTC. The `site-changes` skill says how, and is part of finishing the work.
+
 ## Guidelines for Git and GitHub
 
 - You MUST create a new branch when doing a new task, unless stated otherwise, based off of main branch. Make sure main is always up-to-date.
