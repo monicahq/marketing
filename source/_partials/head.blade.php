@@ -28,6 +28,8 @@
 
 @include('_partials.seo')
 
+@include('_partials.analytics')
+
 @viteRefresh()
 <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
 

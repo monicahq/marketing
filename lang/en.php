@@ -5900,7 +5900,7 @@ return [
     'privacy' => [
         'title' => "Our privacy policy",
         'updated' => "Last update: :date",
-        'updatedOn' => "Nov 20, 2026",
+        'updatedOn' => "November 26, 2026",
 
         'sections' => [
             [
@@ -5917,7 +5917,8 @@ return [
                     ['text' => "We use Sentry to track errors that happen in production. It records the errors along with the account ID, which lets us debug what's going on."],
                     ['text' => "We also use Laravel Nightwatch, a service of Laravel Holdings Inc., to monitor the application and to find and diagnose errors and performance problems. Nightwatch processes this data on our behalf. It receives technical information about the requests made to Monica (your IP address, the HTTP headers and your browser's user agent), your account ID, and the subject and recipient of the notifications we send. It identifies you by your account ID, not by your name. We rely on our legitimate interest in keeping the service secure and working well: detecting bugs, diagnosing errors and improving performance. This data is stored in the United States and deleted after 30 days."],
                     ['text' => "The site does not currently and will never show ads. It also does not, and don't intend to, sell data to a third party, with or without your consent. We are just against this. Fuck ads."],
-                    ['text' => "We do not use any tracking third parties, like Google Analytics or Intercom, that track user behaviours or data, neither on the marketing site or the hosted version. We are deeply against their principles as they would use those data to profile you, which we are totally against."],
+                    ['text' => "We do not use any tracking third parties, like Google Analytics or Intercom, that track user behaviours or data on the hosted version. We are deeply against their principles as they would use those data to profile you, which we are totally against."],
+                    ['text' => "On this marketing site, we measure visits with Pirsch, a privacy-friendly analytics service hosted in Germany. It sets no cookie and stores nothing in your browser. Each time a page is viewed, your browser sends a request to api.pirsch.io. Pirsch combines your IP address, your browser's user agent, the date of the day and a secret salt that is specific to our site into a hash. The IP address is only used in memory to compute that hash, and is then discarded, never stored. The hash lets us tell that the same visitor viewed several pages on the same day, and it expires at midnight, so nobody can be followed from one day to the next, or from our site to another one. We use it to count visits and see which pages are read, not to profile you."],
                     ['text' => "All the data you put on Monica belongs to you. We do not have any rights on it. Please don't put illegal stuff on it, otherwise we'd be in trouble."],
                     ['text' => "All the information about the contacts you put on Monica are private to you. We do not cross link information between accounts or use one information in an account to populate another account (unlike Facebook for instance)."],
                     ['text' => "You can connect your account to an external assistant or agent, such as Claude, ChatGPT, Gemini or any other application that supports MCP, through Monica's MCP server, the API, or one of the integrations and plugins we publish. Nothing is connected unless you set it up yourself: an assistant only gets access after you approve it from your Monica account, and an API key only works once you have created it. When you create an API key, you also choose whether it can read the values of fields marked sensitive."],

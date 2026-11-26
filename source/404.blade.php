@@ -24,6 +24,8 @@ permalink: 404.html
         <title>Page not found &mdash; Monica</title>
         <meta name="robots" content="noindex, follow">
 
+        @include('_partials.analytics')
+
         @viteRefresh()
         <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
     </head>
