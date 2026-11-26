@@ -13,6 +13,7 @@
  */
 
 return [
+    ['at' => '2026-11-26 16:23', 'summary' => 'Redirected the old blog, API and download addresses, which had no language prefix, to the blog in English, the API reference and the homepage.', 'pages' => ['blog', 'api']],
     ['at' => '2026-11-26 15:35', 'summary' => 'Added the changes page, linked from the footer, listing every change made to the website.', 'pages' => ['changes']],
     ['at' => '2026-11-26 15:24', 'summary' => 'Added the Monica vs Dex, Monica vs folk and Monica vs Mesh comparison pages, with a Comparisons column in the footer.', 'pages' => ['compareDex', 'compareFolk', 'compareMesh']],
     ['at' => '2026-11-26 14:40', 'summary' => 'Redirected the old features index to the people page in every language.', 'pages' => ['people']],
