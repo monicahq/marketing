@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 161 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -3041,6 +3041,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica verkoop |
 | Secondary keywords | contact met Monica verkoop, Monica demo |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/wijzigingen/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/wijzigingen/ |
+| Canonical | https://www.monicahq.com/nl/wijzigingen/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Wijzigingen aan de Monica-website |
+| Meta description | Elke wijziging aan monicahq.com, de nieuwste eerst, met de betrokken pagina’s. Alle tijden zijn in UTC. |
+| H1 | Wijzigingen aan deze website |
+| OG title | Elke wijziging aan de Monica-website |
+| OG description | Wat er op monicahq.com veranderde, wanneer, en welke pagina’s betrokken waren. Alle tijden zijn in UTC. |
+| OG image | https://www.monicahq.com/og/changes-nl.jpg?v=6973d375 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | wijzigingen aan de Monica-website |
+| Secondary keywords | wijzigingslogboek van de site |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 

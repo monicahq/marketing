@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 161 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1067,6 +1067,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /en/changes/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/changes/ |
+| Canonical | https://www.monicahq.com/en/changes/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Changes to the Monica website |
+| Meta description | Every change made to monicahq.com, newest first, with the pages it touched. Times are in UTC. |
+| H1 | Changes to this website |
+| OG title | Every change to the Monica website |
+| OG description | What changed on monicahq.com, when, and which pages it touched. Times are in UTC. |
+| OG image | https://www.monicahq.com/og/changes-en.jpg?v=2e2bc7ad (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica website changes |
+| Secondary keywords | Monica website changelog |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/compare/monica-vs-dex/
 

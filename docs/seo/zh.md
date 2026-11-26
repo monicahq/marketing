@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 161 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1067,6 +1067,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /zh/changes/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/changes/ |
+| Canonical | https://www.monicahq.com/zh/changes/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica 网站更新记录 |
+| Meta description | monicahq.com 的每一次改动，最新的在前，并列出受影响的页面。时间均为 UTC。 |
+| H1 | 本网站的改动 |
+| OG title | Monica 网站的每一次改动 |
+| OG description | monicahq.com 改了什么、何时改的、涉及哪些页面。时间均为 UTC。 |
+| OG image | https://www.monicahq.com/og/changes-zh.jpg?v=81a8eee5 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica 网站更新记录 |
+| Secondary keywords | Monica 网站改动 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 
 ## /zh/compare/monica-vs-dex/
 

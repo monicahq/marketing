@@ -24,6 +24,7 @@ return [
             'compareDex' => "Monica versus Dex",
             'compareFolk' => "Monica versus folk",
             'compareMesh' => "Monica versus Mesh",
+            'changes' => "Wijzigingen",
             'signIn' => "Inloggen",
             'about' => "Over Monica",
             'privacy' => "Privacybeleid",
@@ -229,6 +230,20 @@ return [
                 'title' => "Monica versus Mesh",
                 'accent' => "voorheen Clay.",
                 'description' => "Contactsynchronisatie, gratis abonnement, apps, exports en zelf hosten, naast elkaar.",
+            ],
+        ],
+
+        'changes' => [
+            'title' => "Wijzigingen aan de Monica-website",
+            'description' => "Elke wijziging aan monicahq.com, de nieuwste eerst, met de betrokken pagina’s. Alle tijden zijn in UTC.",
+            'ogTitle' => "Elke wijziging aan de Monica-website",
+            'ogDescription' => "Wat er op monicahq.com veranderde, wanneer, en welke pagina’s betrokken waren. Alle tijden zijn in UTC.",
+
+            'ogImage' => [
+                'eyebrow' => "Wijzigingen",
+                'title' => "Elke wijziging aan de site,",
+                'accent' => "de nieuwste eerst.",
+                'description' => "Wat er op monicahq.com veranderde, en wanneer, in UTC.",
             ],
         ],
 
@@ -5669,6 +5684,7 @@ return [
         'compareDex' => "Monica versus Dex",
         'compareFolk' => "Monica versus folk",
         'compareMesh' => "Monica versus Mesh",
+        'changes' => "Wijzigingen aan de site",
         'personalCrm' => "Wat is een persoonlijke CRM?",
         'aiMemory' => "AI-geheugen",
         'personalData' => "Beheer van persoonlijke gegevens",
@@ -6443,6 +6459,17 @@ return [
      * The Monica vs Mesh comparison (route key `compareMesh`), English only.
      * Same shape as `compareDex` above.
      */
+    'changes' => [
+        'eyebrow' => "Wijzigingslogboek van de website",
+        'title' => "Wijzigingen aan deze website",
+        'lede' => "Elke wijziging aan monicahq.com, de nieuwste eerst. Wijzigingen aan de applicatie zelf staan in het :link.",
+        'productChangelog' => "wijzigingslogboek van het product",
+        'pages' => "Betrokken pagina’s:",
+        'allPages' => "Alle pagina’s",
+        'utc' => "Alle tijden zijn in UTC.",
+        'note' => "De vermeldingen zijn in het Engels geschreven.",
+    ],
+
     'compareMesh' => [
         'name' => "Mesh",
         'title' => "Monica versus Mesh (voorheen Clay)",

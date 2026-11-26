@@ -40,6 +40,7 @@ return [
             'compareDex' => "Monica vs Dex",
             'compareFolk' => "Monica vs folk",
             'compareMesh' => "Monica vs Mesh",
+            'changes' => "Changes",
             'signIn' => "Sign in",
             'about' => "About Monica",
             'privacy' => "Privacy policy",
@@ -256,6 +257,20 @@ return [
                 'title' => "Monica vs Mesh",
                 'accent' => "formerly Clay.",
                 'description' => "Contact sync, the free plan, apps, exports and self-hosting, side by side.",
+            ],
+        ],
+
+        'changes' => [
+            'title' => "Changes to the Monica website",
+            'description' => "Every change made to monicahq.com, newest first, with the pages it touched. Times are in UTC.",
+            'ogTitle' => "Every change to the Monica website",
+            'ogDescription' => "What changed on monicahq.com, when, and which pages it touched. Times are in UTC.",
+
+            'ogImage' => [
+                'eyebrow' => "Changes",
+                'title' => "Every change to this site,",
+                'accent' => "newest first.",
+                'description' => "What changed on monicahq.com, and when, in UTC.",
             ],
         ],
 
@@ -5706,6 +5721,7 @@ return [
         'compareDex' => "Monica vs Dex",
         'compareFolk' => "Monica vs folk",
         'compareMesh' => "Monica vs Mesh",
+        'changes' => "Website changes",
         'personalCrm' => "What is a personal CRM?",
         'aiMemory' => "AI memory",
         'personalData' => "Personal data management",
@@ -6487,6 +6503,17 @@ return [
      * The Monica vs Mesh comparison (route key `compareMesh`), English only.
      * Same shape as `compareDex` above.
      */
+    'changes' => [
+        'eyebrow' => "Website changelog",
+        'title' => "Changes to this website",
+        'lede' => "Every change made to monicahq.com, newest first. Changes to the application itself are in the :link.",
+        'productChangelog' => "product changelog",
+        'pages' => "Pages affected:",
+        'allPages' => "Every page",
+        'utc' => "Times are in UTC.",
+        'note' => "Entries are written in English.",
+    ],
+
     'compareMesh' => [
         'name' => "Mesh",
         'title' => "Monica vs Mesh (formerly Clay)",

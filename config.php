@@ -733,6 +733,18 @@ return [
             'ru' => 'prodazhi',
         ],
 
+        // Every change made to the website, newest first. Linked from the footer.
+        'changes' => [
+            'en' => 'changes',
+            'fr' => 'modifications',
+            'de' => 'aenderungen',
+            'es' => 'cambios',
+            'pt' => 'alteracoes',
+            'nl' => 'wijzigingen',
+            'zh' => 'changes',
+            'ru' => 'izmeneniya',
+        ],
+
         // The three comparison pages. Their slugs nest under a translated
         // `compare` prefix that has no page of its own, as the feature pages
         // nest under `features`. Chinese keeps the English prefix.
@@ -1150,7 +1162,7 @@ return [
     'llms' => [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
         'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
-        'Company' => ['about', 'team', 'contribute', 'support', 'sales', 'signIn'],
+        'Company' => ['about', 'team', 'contribute', 'support', 'changes', 'sales', 'signIn'],
         'Compare' => ['compareDex', 'compareFolk', 'compareMesh'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
@@ -1218,6 +1230,7 @@ return [
         'compareDex' => '2026-11-25',
         'compareFolk' => '2026-11-25',
         'compareMesh' => '2026-11-25',
+        'changes' => '2026-11-26',
         'signIn' => '2026-11-24',
     ],
 
@@ -1275,6 +1288,9 @@ return [
      * mailto link in the browser. See _partials/support/email.blade.php.
      */
     'supportEmail' => ['support', 'monicahq.com'],
+
+    // The entries of /changes, one per change made to the website. See changes.php.
+    'changes' => require __DIR__ . '/changes.php',
 
     /**
      * The four documentation cards on the support page, in the order of

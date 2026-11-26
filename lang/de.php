@@ -21,6 +21,7 @@ return [
             'compareDex' => "Monica gegen Dex",
             'compareFolk' => "Monica gegen folk",
             'compareMesh' => "Monica gegen Mesh",
+            'changes' => "Änderungen",
             'signIn' => "Anmelden",
             'about' => "Über Monica",
             'privacy' => "Datenschutzerklärung",
@@ -226,6 +227,20 @@ return [
                 'title' => "Monica gegen Mesh",
                 'accent' => "früher Clay.",
                 'description' => "Synchronisierung, kostenloser Tarif, Apps, Exporte und Self-Hosting im Vergleich.",
+            ],
+        ],
+
+        'changes' => [
+            'title' => "Änderungen an der Monica-Website",
+            'description' => "Jede Änderung an monicahq.com, die neueste zuerst, mit den betroffenen Seiten. Alle Zeiten in UTC.",
+            'ogTitle' => "Jede Änderung an der Monica-Website",
+            'ogDescription' => "Was sich auf monicahq.com geändert hat, wann, und welche Seiten betroffen waren. Alle Zeiten in UTC.",
+
+            'ogImage' => [
+                'eyebrow' => "Änderungen",
+                'title' => "Jede Änderung an dieser Website,",
+                'accent' => "die neueste zuerst.",
+                'description' => "Was sich auf monicahq.com geändert hat, und wann, in UTC.",
             ],
         ],
 
@@ -5676,6 +5691,7 @@ return [
         'compareDex' => "Monica gegen Dex",
         'compareFolk' => "Monica gegen folk",
         'compareMesh' => "Monica gegen Mesh",
+        'changes' => "Änderungen der Website",
         'personalCrm' => "Was ist ein persönliches CRM?",
         'aiMemory' => "KI-Gedächtnis",
         'personalData' => "Persönliche Datenverwaltung",
@@ -6440,6 +6456,17 @@ return [
      * The Monica vs Mesh comparison (route key `compareMesh`), English only.
      * Same shape as `compareDex` above.
      */
+    'changes' => [
+        'eyebrow' => "Website-Änderungsprotokoll",
+        'title' => "Änderungen an dieser Website",
+        'lede' => "Jede Änderung an monicahq.com, die neueste zuerst. Änderungen an der Anwendung selbst stehen im :link.",
+        'productChangelog' => "Produkt-Änderungsprotokoll",
+        'pages' => "Betroffene Seiten:",
+        'allPages' => "Alle Seiten",
+        'utc' => "Alle Zeiten in UTC.",
+        'note' => "Die Einträge sind auf Englisch verfasst.",
+    ],
+
     'compareMesh' => [
         'name' => "Mesh",
         'title' => "Monica gegen Mesh (früher Clay)",
