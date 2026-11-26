@@ -36,6 +36,9 @@ return [
             'team' => "团队",
             'support' => "支持",
             'sales' => "销售",
+            'compareDex' => "Monica 对比 Dex",
+            'compareFolk' => "Monica 对比 folk",
+            'compareMesh' => "Monica 对比 Mesh",
             'signIn' => "登录",
             'about' => "关于 Monica",
             'privacy' => "隐私政策",
@@ -204,6 +207,48 @@ return [
                 'title' => "我们的销售团队",
                 'accent' => "绝不会联系你。",
                 'description' => "没有电话。没有会议。只有软件。",
+            ],
+        ],
+
+        'compareDex' => [
+            'title' => "Monica 对比 Dex：个人关系管理 — Monica",
+            'description' => "从 LinkedIn、保持联系提醒、联系人历史、移动应用、导出和自托管几个方面，对比 Monica 与 Dex。",
+            'ogTitle' => "Monica 对比 Dex：个人关系管理",
+            'ogDescription' => "从 LinkedIn、保持联系提醒、联系人历史、移动应用、导出和自托管几个方面，对比 Monica 与 Dex。",
+
+            'ogImage' => [
+                'eyebrow' => "对比",
+                'title' => "Monica 对比 Dex",
+                'accent' => "个人关系管理。",
+                'description' => "LinkedIn、提醒、联系人历史、导出和自托管，并排对比。",
+            ],
+        ],
+
+        'compareFolk' => [
+            'title' => "Monica 对比 folk：个人与团队关系管理 — Monica",
+            'description' => "从共享管道、指派跟进、LinkedIn、个人记录、价格和数据导出几个方面，对比 Monica 与 folk。",
+            'ogTitle' => "Monica 对比 folk：个人与团队关系管理",
+            'ogDescription' => "从共享管道、指派跟进、LinkedIn、个人记录、价格和数据导出几个方面，对比 Monica 与 folk。",
+
+            'ogImage' => [
+                'eyebrow' => "对比",
+                'title' => "Monica 对比 folk",
+                'accent' => "个人与团队。",
+                'description' => "共享管道、跟进、LinkedIn、价格和导出，并排对比。",
+            ],
+        ],
+
+        'compareMesh' => [
+            'title' => "Monica 对比 Mesh（原 Clay） — Monica",
+            'description' => "从联系人同步、免费方案、移动应用、数据导出和自托管几个方面，对比 Monica 与 Mesh（原 Clay.earth）。",
+            'ogTitle' => "Monica 对比 Mesh（原 Clay）",
+            'ogDescription' => "从联系人同步、免费方案、移动应用、数据导出和自托管几个方面，对比 Monica 与 Mesh（原 Clay.earth）。",
+
+            'ogImage' => [
+                'eyebrow' => "对比",
+                'title' => "Monica 对比 Mesh",
+                'accent' => "原 Clay。",
+                'description' => "联系人同步、免费方案、应用、导出和自托管，并排对比。",
             ],
         ],
 
@@ -5640,6 +5685,10 @@ return [
         'productLabel' => "产品",
         'developersLabel' => "开发者",
         'companyLabel' => "公司",
+        'comparisonsLabel' => "对比",
+        'compareDex' => "Monica 对比 Dex",
+        'compareFolk' => "Monica 对比 folk",
+        'compareMesh' => "Monica 对比 Mesh",
         'personalCrm' => "什么是个人 CRM？",
         'aiMemory' => "AI 记忆",
         'personalData' => "个人数据管理",
@@ -6102,6 +6151,473 @@ return [
             ['kind' => "参考", 'title' => "API", 'description' => "用你自己的脚本读取和写入联系人。涵盖每个端点，并附有 cURL、JavaScript 和 PHP 示例。"],
             ['kind' => "参考", 'title' => "MCP", 'description' => "让助手连接到你的实例，它就能读取你的通讯录并在其中记录人物，权限与你相同。"],
             ['kind' => "指南", 'title' => "CardDAV 和 CalDAV", 'description' => "让手机和电脑上的通讯录与日历应用与 Monica 保持同步。"],
+        ],
+    ],
+
+    /**
+     * The Monica vs Dex comparison (route key `compareDex`), written in English
+     * only, so it exists in no other locale.
+     *
+     * `refs` holds every link: a `url` for another site, or a `page` (a route
+     * key) for a page of this one. A section names the refs it cites by key.
+     */
+    'compareDex' => [
+        'name' => "Dex",
+        'title' => "Monica 对比 Dex",
+        'by' => "由 Monica 团队撰写。",
+        'verified' => "最后核实于 2026 年 11 月 25 日。",
+        'vs' => "对比",
+        'intro' => "Dex 把职业联系人和互动汇集在一起，并用这些历史帮你决定何时跟进。Monica 为你生活中的人、他们之间的关系，以及你想记住的事件提供结构化的记录。两者都有提醒、笔记和联系人时间线。信息如何进入这条时间线，是最大的差别之一。",
+        'introRefs' => ['dexTimeline', 'monicaTimeline'],
+        'toc' => "本页内容",
+
+        'fit' => [
+            'title' => "哪一个更适合你的需求？",
+            'cards' => [
+                [
+                    'who' => "Dex",
+                    'title' => "如果保持联系是主要任务，选 Dex",
+                    'items' => [
+                        "你的人脉大多在 LinkedIn 上，希望新的联系人和资料更新自动进入你的 CRM。",
+                        "你希望跟进提醒能在你与某人互动后顺延，并且想用原生的移动或桌面应用。",
+                        "订阅层级决定你的 LinkedIn 联系人上限。Outlook 列在 Professional 之下。",
+                    ],
+                    'refs' => ['dexPlans' => "Dex 方案", 'dexLinkedin' => "LinkedIn 同步", 'dexTimeline' => "互动指南"],
+                    'cta' => "访问 Dex",
+                    'ctaRef' => 'dexHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "如果你想保留一份结构化的个人记录，选 Monica",
+                    'items' => [
+                        "你想记录人与人之间是什么关系，保存重要日期、家庭事件，以及你选择添加的细节。",
+                        "你想把联系人与你的物品和笔记放在一起，或者想在自己的服务器上运行这个软件。",
+                        "Monica 文档中的同步涵盖兼容的通讯录，以及只读的日期和截止日期。如果你想记录收件箱或 LinkedIn 上的互动，请准备好手动录入。",
+                    ],
+                    'refs' => ['monicaRelationships' => "Monica 关系", 'monicaPossessions' => "Monica 物品", 'monicaDav' => "Monica 同步指南"],
+                    'cta' => "了解 Monica",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica 与 Dex 一览",
+            'what' => "关键点",
+            'sources' => "来源：",
+            'rows' => [
+                ["LinkedIn", "持续同步联系人。Premium 最多列出 2,500 位联系人，Professional 最多 9,000 位。根据同步指南，设置通过移动或桌面应用完成。", "文档中的集成不包括 LinkedIn 同步。"],
+                ["邮件、日历和联系人", "邮件和日历集成，Outlook 列在 Professional 之下。Dex 文档中有联系人双向同步，具体行为取决于来源。", "CardDAV 可以双向同步联系人。CalDAV 可以在兼容的应用中以只读方式显示日期和提醒截止日期。DAV 取决于具体的实例。"],
+                ["跟进提醒", "当符合条件的互动更改了上次互动日期时，保持联系的频率可以重新安排下一次提醒。Dex 也有生日提醒的文档。", "一次性和重复提醒，包括与已记录日期关联的提醒。文档中有应用内和邮件通知。Telegram 和短信取决于实例。"],
+                ["联系人历史", "一条时间线，涵盖笔记、邮件、会议、提醒和 LinkedIn 更新。有些消息会影响上次互动日期，但不会作为时间线条目出现。", "一条记录事件及其参与者的时间线。一个共享事件可以出现在每位参与者的时间线上。"],
+                ["关系可视化", "相关联系人、网络视图和地理地图。", "有类型的关系，以及显示某位联系人身边近亲的家庭视图。"],
+                ["移动和桌面", "iOS、Android、Mac 和 Windows 应用，外加网页版。", "可在手机上使用的网页应用，并通过 DAV 支持兼容的联系人和日历应用。"],
+                ["AI 与集成", "Copilot、因方案而异的研究额度，以及通过 MCP 连接外部助手。", "面向获授权的外部工具的 API 和 MCP。"],
+                ["托管与所有权", "托管服务。隐私政策说明了 Dex 为已连接的工具访问哪些内容。", "采用 AGPL-3.0 的自托管软件，以及 Monica 宣传的托管服务。"],
+                ["数据导出", "联系人、笔记和网络更新的 CSV 导出。", "按联系人导出 vCard 和 Markdown，外加 API 文档中说明的、针对受支持保险库数据的 JSON 导出。"],
+                ["宣传的入门价格", "Premium 按年付费为每年 144 USD。Professional 按年付费为每年 240 USD。七天试用需要绑定银行卡。", "自托管没有软件授权费用。托管服务宣传价格为每年 90 USD 或每月 9 USD。核实时，公开注册会跳转到候补名单。"],
+            ],
+            'refs' => ['dexPlans', 'dexLinkedin', 'dexContacts', 'dexChangelog', 'dexTimeline', 'dexCopilot', 'dexDesktop', 'monicaNotifications', 'monicaDav', 'monicaMcp', 'monicaPricing'],
+        ],
+
+        'scenarios' => [
+            'title' => "使用这些工具的两种方式",
+            'items' => [
+                [
+                    'who' => "从 Dex 开始",
+                    'title' => "你希望在某段职业关系冷下来时收到提醒",
+                    'body' => "你连接 LinkedIn 和日历，然后为想要定期联系的人设置保持联系的频率。当 Dex 记录到符合条件的互动时，它可以顺延下一次提醒。如果你依赖上次互动的日期，并希望 CRM 替你完成一部分追踪，就从 Dex 开始。请检查你所用渠道的互动规则。一条消息可能计入上次互动日期，却不会成为单独的时间线条目。",
+                    'refs' => ['dexTimeline', 'dexLinkedin'],
+                ],
+                [
+                    'who' => "从 Monica 开始",
+                    'title' => "你想记住一次家庭聚会的人和事",
+                    'body' => "你在 Monica 里把这次聚会记录一次，添加出席的人，并用关系类型把家人联系起来。这个事件可以出现在每位参与者的时间线上。你可以为某个具体日期或重复的时间表设置提醒。如果你想保存的正是这些关系、细节和带日期的记录，并且愿意自己录入背景信息，就从 Monica 开始。",
+                    'refs' => ['monicaTimelineHow', 'monicaLink', 'monicaReminders'],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "如果你要在 Dex 与 Monica 之间迁移",
+            'items' => [
+                [
+                    'title' => "从 Dex 到 Monica。",
+                    'body' => "Dex 文档中有联系人、笔记和网络更新的 CSV 导出。Monica 文档中有 CardDAV 同步，以及按联系人导出的 vCard 和 Markdown。要把基本的联系人字段放进 Monica，CSV 导出可能需要一个兼容的通讯录或一次转换。先试几条记录，再检查哪些笔记、提醒和联系人关联需要重新创建。",
+                    'refs' => ['dexExport', 'monicaVcard', 'monicaDav'],
+                ],
+                [
+                    'title' => "从 Monica 到 Dex。",
+                    'body' => "Dex 文档中有 CSV 导入和联系人同步。Monica 提供按联系人导出的 vCard 和 Markdown，并在文档中说明了通过 API 导出 JSON。请确认你的通讯录或 CSV 转换能否带过去你需要的字段。家庭关系、事件和提醒周期要分别测试。",
+                    'refs' => ['dexCsv', 'monicaSharing', 'monicaApi'],
+                ],
+            ],
+            'note' => "在我们审阅的 Monica 代码版本中，JSON 导出包含联系人、关系、人生事件和提醒等记录。它不包含物品，也不包含知识中独立的笔记和列表。如果你用到这些部分，请在切换之前想好如何保留或转移这些信息。",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "选择之前值得弄清楚的问题",
+            'items' => [
+                [
+                    'q' => "Dex 会自动更新提醒吗？",
+                    'a' => "当符合条件的互动更改了上次互动日期时，Dex 保持联系的周期可以随之更新。Dex 的文档说明了每个来源如何影响这个日期和时间线。Monica 支持按你设定的时间表重复的提醒。",
+                    'refs' => ['dexTimeline' => "Dex 互动指南", 'monicaReminders' => "Monica 提醒指南"],
+                ],
+                [
+                    'q' => "如果需要 Outlook 或很大的 LinkedIn 人脉，应该查看哪个 Dex 方案？",
+                    'a' => "Dex 把 Outlook、多账户邮件同步和最多 9,000 位 LinkedIn 联系人列在 Professional 之下。Premium 最多列出 2,500 位 LinkedIn 联系人。如果你的选择取决于某项集成或额度，请查看方案页面。",
+                    'refs' => ['dexPlans' => "Dex 方案"],
+                ],
+                [
+                    'q' => "不连接收件箱，能使用这两款产品吗？",
+                    'a' => "两者的文档都说明了直接添加联系人和笔记的方法。如果你把 Google 或其他账户连接到 Dex，请检查这个连接可以读取和写入什么。如果你自托管 Monica，服务器由你管理，也可以自行选择启用哪些集成。",
+                    'refs' => ['dexContacts' => "Dex 联系人指南", 'dexPrivacy' => "Dex 隐私政策", 'monicaPeople' => "Monica 人物功能", 'monicaSelf' => "Monica 自托管"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "我们如何核实这份对比",
+            'body' => "Monica 团队依据 Dex 公开的价格、帮助中心和更新日志，以及 Monica 公开的文档和代码撰写了这份对比。价格以 USD 计，不含适用税费。Dex 的付费功能、已连接账户的行为和完整迁移，没有用登录账户测试过。",
+        ],
+
+        'refs' => [
+            'dexHome' => ['label' => "Dex", 'url' => 'https://getdex.com/'],
+            'dexPlans' => ['label' => "Dex 价格", 'url' => 'https://getdex.com/pricing/'],
+            'dexLinkedin' => ['label' => "Dex LinkedIn 同步", 'url' => 'https://getdex.com/docs/faq/linkedin'],
+            'dexTimeline' => ['label' => "Dex 互动指南", 'url' => 'https://getdex.com/docs/workflows/interactions-and-the-timeline'],
+            'dexContacts' => ['label' => "Dex 联系人和网络视图", 'url' => 'https://getdex.com/docs/workflows/manage-your-contacts'],
+            'dexChangelog' => ['label' => "Dex 更新日志", 'url' => 'https://getdex.com/docs/changelog/2026'],
+            'dexDesktop' => ['label' => "Dex 桌面应用", 'url' => 'https://getdex.com/docs/desktop-app'],
+            'dexCopilot' => ['label' => "Dex Copilot", 'url' => 'https://getdex.com/docs/ai/copilot'],
+            'dexExport' => ['label' => "Dex 导出说明", 'url' => 'https://getdex.com/docs/ai/copilot'],
+            'dexCsv' => ['label' => "Dex CSV 导入", 'url' => 'https://getdex.com/docs/integrationsandfeatures/import/csv'],
+            'dexPrivacy' => ['label' => "Dex 隐私政策", 'url' => 'https://getdex.com/privacypolicy/'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Monica 价格", 'page' => 'pricing'],
+            'monicaPeople' => ['label' => "Monica 人物功能", 'page' => 'people'],
+            'monicaPossessions' => ['label' => "Monica 物品", 'page' => 'possessions'],
+            'monicaSelf' => ['label' => "Monica 自托管", 'handbook' => 'self-hosting'],
+            'monicaRelationships' => ['label' => "Monica 关系", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaLink' => ['label' => "关联两个人", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaTimeline' => ['label' => "Monica 时间线指南", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaTimelineHow' => ['label' => "Monica 的时间线如何运作", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaReminders' => ['label' => "设置提醒", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/set-a-reminder'],
+            'monicaNotifications' => ['label' => "Monica 通知", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/notification-channels'],
+            'monicaSharing' => ['label' => "Monica 分享和导出指南", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaVcard' => ['label' => "Monica vCard 说明", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica DAV", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "Monica API 参考", 'url' => 'https://my.monicahq.com/docs/api'],
+        ],
+    ],
+
+    /**
+     * The Monica vs folk comparison (route key `compareFolk`), English only.
+     * Same shape as `compareDex` above.
+     */
+    'compareFolk' => [
+        'name' => "folk",
+        'title' => "Monica 对比 folk",
+        'by' => "由 Monica 团队撰写。",
+        'verified' => "最后核实于 2026 年 11 月 25 日。",
+        'vs' => "对比",
+        'intro' => "如果你的团队需要指派跟进任务并运行共享管道，folk 更合适。如果你主要想记录生活中的人、他们之间的关系，以及你想记住的关于他们的事，Monica 正是围绕这种用途设计的。两者都能整理联系人和笔记，区别在于其他人访问和使用这些信息的方式不同。",
+        'introRefs' => ['folkPricing' => "folk 方案", 'monicaPeople' => "Monica 人物功能", 'monicaSharing' => "Monica 分享指南"],
+        'toc' => "本页内容",
+
+        'fit' => [
+            'title' => "哪一个更适合你的需求？",
+            'cards' => [
+                [
+                    'who' => "folk",
+                    'title' => "如果多个人要管理同一批关系，选 folk",
+                    'items' => [
+                        "你的团队需要看到谁负责下一步、指派任务，并让联系人在管道中推进。",
+                        "你想要接入邮件、日历或 WhatsApp 的互动，或者用 folkX 抓取 LinkedIn 资料。",
+                        "按用户预算。Premium 增加专属的 Deals 和自定义对象、序列、工作区角色，以及完整互动历史的访问权限。",
+                    ],
+                    'refs' => ['folkPricing' => "folk 方案", 'folkTasks' => "folk 任务", 'folkIntegrations' => "folk 集成"],
+                    'cta' => "访问 folk",
+                    'ctaRef' => 'folkHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "如果你是在为自己保存一份记录，选 Monica",
+                    'items' => [
+                        "你想整理朋友和家人，记录人生事件，追踪日期和提醒。",
+                        "你想把个人笔记和物品与联系人放在一起，通过链接分享选定的细节，或者在自己的服务器上运行这个软件。",
+                        "保险库属于个人账户。接收者可以阅读你分享的联系人信息，但不能编辑你的记录，也不能接手你保险库里的任务。",
+                    ],
+                    'refs' => ['monicaRelationships' => "Monica 关系", 'monicaPossessions' => "Monica 物品", 'monicaSharing' => "Monica 分享指南"],
+                    'cta' => "了解 Monica",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica 与 folk 一览",
+            'what' => "关键点",
+            'sources' => "来源：",
+            'rows' => [
+                ["协作", "共享的工作区，包含分组和管道、任务指派，以及取决于方案的角色或权限。", "个人保险库。联系人可以通过可撤销的链接以只读形式分享。"],
+                ["跟进", "任务可以被指派、关联到记录，并设为重复。", "提醒可以是一次性的或重复的，包括与你已记录的日期关联的提醒。"],
+                ["销售管道", "Standard 包含管道视图和营销活动。Premium 增加 Deals、自定义对象和序列。", "联系人分组、有类型的关系和时间线。文档中的工作流侧重于保存个人记录和提醒。"],
+                ["邮件、日历和消息", "邮件、日历和 WhatsApp 集成。完整互动历史列在 Premium 之下。", "CardDAV 可以双向同步联系人。CalDAV 可以以只读形式发布日期和提醒截止日期。"],
+                ["LinkedIn", "用 folkX 抓取资料，用扩展程序记录消息，或导入 LinkedIn 导出文件。folk 把这些工作流与自动同步全部 LinkedIn 联系人区分开来。", "文档中的集成不包括 LinkedIn 连接器。"],
+                ["移动端", "Contacts by folk 提供 iOS 和 Android 版本。其移动端帮助列出了支持的功能。", "可在手机上使用的网页应用，并在启用的情况下通过 DAV 支持兼容的联系人和日历应用。"],
+                ["AI 与集成", "助手和 AI 字段。folk 的文档中也有托管的 MCP 连接。其价格页面把 API 访问列在 Premium 之下。", "面向获授权的外部工具和助手的 API 和 MCP。"],
+                ["数据导出", "按分组视图导出联系人和笔记的 CSV。不包含互动和任务。", "按联系人导出 vCard 和 Markdown，外加 API 文档中说明的、针对受支持保险库数据的 JSON 导出。"],
+                ["托管与价格", "托管服务，按用户计费。Standard 按年付费为每位用户每月 24 USD，Premium 为 48 USD。试用 14 天，无需绑定银行卡。", "自托管没有软件授权费用。托管服务宣传价格为每年 90 USD 或每月 9 USD。核实时，公开注册会跳转到候补名单。"],
+            ],
+            'refs' => ['folkPricing' => "folk 价格", 'folkIntegrations' => "folk 集成帮助", 'folkLinkedin' => "folk LinkedIn 消息", 'folkMobile' => "folk 移动端", 'folkMcp' => "folk MCP", 'monicaReminders' => "Monica 提醒", 'monicaPricing', 'monicaDav', 'monicaMcp'],
+        ],
+
+        'scenarios' => [
+            'title' => "使用这些工具的两种方式",
+            'items' => [
+                [
+                    'who' => "从 folk 开始",
+                    'title' => "三位同事在跟进同一批合作伙伴",
+                    'body' => "一位同事记录最近一次谈话，指派下一步行动，并更新合作伙伴所处的阶段。团队其他人可以看到这段关系的进展，具体取决于工作区权限和这次互动的可见范围。如果你想整理的正是这类工作，就从 folk 开始。请对照你的需求检查 Standard 的管道，如果需要专属的 Deals 或工作区角色，可以考虑 Premium。按列出的年付价格，三个 Standard 席位合计每年 864 USD，未含税费。",
+                    'refs' => ['folkTasks' => "folk 任务", 'folkPricing' => "folk 价格", 'folkProfiles' => "folk 互动可见范围"],
+                ],
+                [
+                    'who' => "从 Monica 开始",
+                    'title' => "你在记录家庭细节，并分享一位联系人",
+                    'body' => "你记录一段家庭关系和一个即将到来的日期，然后为需要电话号码或地址的人生成一个只含选定细节的链接。对方可以在浏览器中打开这个链接。链接只提供只读访问，不包含关系、人生事件和提醒。发送之前，请检查联系人页面里选中了哪些分区。如果这份长期记录只供你自己使用，而这种程度的分享已经足够，就从 Monica 开始。",
+                    'refs' => ['monicaLink' => "在 Monica 中关联两个人", 'monicaShareContact' => "分享联系人", 'monicaLinkScope' => "联系人链接会显示什么"],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "如果你要在 folk 与 Monica 之间迁移",
+            'items' => [
+                [
+                    'title' => "从 folk 到 Monica。",
+                    'body' => "folk 文档中有按分组视图导出的功能。一个 ZIP 里包含该视图联系人和笔记的 CSV 文件，保留所显示的列和筛选条件。导出不包含互动和任务等内容。如果你想通过 CardDAV 把基本联系人带入 Monica，可以先用兼容的通讯录试一个样本。需要保留的任务指派、历史记录和交易阶段，要另行规划。",
+                    'refs' => ['folkExport' => "folk 导出指南", 'monicaVcard' => "Monica vCard 和导入帮助", 'monicaDav'],
+                ],
+                [
+                    'title' => "从 Monica 到 folk。",
+                    'body' => "Monica 提供 vCard 和 Markdown 联系人导出，并在文档中说明了通过 API 导出 JSON。folk 接受 CSV 导入。可能需要转换或手动处理，尤其是自定义字段。请决定如何表示家庭关系和人生事件，以及哪些个人笔记适合放进团队工作区。",
+                    'refs' => ['monicaSharing', 'monicaApi', 'folkPricing' => "folk 价格和 CSV 功能"],
+                ],
+            ],
+            'note' => "在我们审阅的 Monica 代码版本中，JSON 导出包含联系人、关系、人生事件和提醒等记录。它不包含物品，也不包含知识中独立的笔记和列表。如果你用到这些部分，请在切换之前想好如何保留或转移这些信息。",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "选择之前值得弄清楚的问题",
+            'items' => [
+                [
+                    'q' => "我能在 Monica 里运行共享管道吗？",
+                    'a' => "Monica 文档中的分享流程，允许接收者阅读某位联系人的选定信息。如果队友需要修改记录、指派下一步，并让交易在管道中推进，folk 更合适。",
+                    'refs' => ['monicaShareContact' => "Monica 联系人分享", 'folkPricing' => "folk 价格"],
+                ],
+                [
+                    'q' => "folk 会自动同步我的 LinkedIn 人脉吗？",
+                    'a' => "folk 的文档中有三种范围不同的工作流。你可以用 folkX 抓取一份资料，通过扩展程序记录一次 LinkedIn 对话，或者导出你的 LinkedIn 联系人再导入文件。其集成常见问题说明了自动同步的限制。",
+                    'refs' => ['folkIntegrations' => "folk 集成", 'folkLinkedin' => "追踪 LinkedIn 互动"],
+                ],
+                [
+                    'q' => "导出时我能拿到整个 folk 工作区吗？",
+                    'a' => "folk 的帮助说明的是按分组视图导出。该视图中的字段和筛选条件决定输出内容。指南列出了不包含的内容，包括任务和互动。如果导出整个工作区对你很重要，请先拿一个小分组，用你需要的各类记录测试一遍，再依赖这个导出。",
+                    'refs' => ['folkExport' => "folk 导出指南"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "我们如何核实这份对比",
+            'body' => "Monica 团队依据 folk 公开的价格和帮助中心，以及 Monica 公开的文档和代码撰写了这份对比。价格以 USD 计，不含适用税费。付费的工作区功能、权限和完整迁移，没有用登录账户测试过。",
+        ],
+
+        'refs' => [
+            'folkHome' => ['label' => "folk", 'url' => 'https://www.folk.app/'],
+            'folkPricing' => ['label' => "folk 价格", 'url' => 'https://www.folk.app/pricing'],
+            'folkTasks' => ['label' => "folk 任务", 'url' => 'https://help.folk.app/en/articles/15869200-tasks'],
+            'folkIntegrations' => ['label' => "folk 集成", 'url' => 'https://help.folk.app/en/articles/8170484-faq-sources-integrations'],
+            'folkLinkedin' => ['label' => "folk LinkedIn 消息", 'url' => 'https://help.folk.app/en/articles/7177488-track-linkedin-interactions'],
+            'folkMobile' => ['label' => "folk 移动端", 'url' => 'https://help.folk.app/en/articles/15178507-download-the-folk-mobile-app'],
+            'folkMcp' => ['label' => "folk MCP", 'url' => 'https://help.folk.app/en/articles/16760382-mcp-connect-folk-to-other-mcps'],
+            'folkProfiles' => ['label' => "folk 互动可见范围", 'url' => 'https://help.folk.app/en/articles/15179426-people-company-profiles-on-mobile'],
+            'folkExport' => ['label' => "folk 导出指南", 'url' => 'https://help.folk.app/en/articles/5007388-export-data'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Monica 价格", 'page' => 'pricing'],
+            'monicaPeople' => ['label' => "Monica 人物功能", 'page' => 'people'],
+            'monicaPossessions' => ['label' => "Monica 物品", 'page' => 'possessions'],
+            'monicaRelationships' => ['label' => "Monica 关系", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaReminders' => ['label' => "Monica 提醒", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/set-a-reminder'],
+            'monicaLink' => ['label' => "在 Monica 中关联两个人", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaSharing' => ['label' => "Monica 分享和导出指南", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaShareContact' => ['label' => "分享联系人", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/share-a-contact'],
+            'monicaLinkScope' => ['label' => "联系人链接会显示什么", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/what-a-link-shows'],
+            'monicaVcard' => ['label' => "Monica vCard 和导入帮助", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica DAV", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "Monica API 参考", 'url' => 'https://my.monicahq.com/docs/api'],
+        ],
+    ],
+
+    /**
+     * The Monica vs Mesh comparison (route key `compareMesh`), English only.
+     * Same shape as `compareDex` above.
+     */
+    'compareMesh' => [
+        'name' => "Mesh",
+        'title' => "Monica 对比 Mesh（原 Clay）",
+        'by' => "由 Monica 团队撰写。",
+        'verified' => "最后核实于 2026 年 11 月 25 日。",
+        'vs' => "对比",
+        'intro' => "个人 CRM Clay.earth 在 2026 年 3 月更名为 Mesh。Mesh 把你所连接账户里的联系人汇集到一起，并帮助保持他们的资料最新。Monica 为人、家庭关系、物品和笔记提供结构化的记录，也可以选择在你自己的服务器上运行。Clay.com 是另一项服务，面向销售和营销数据。",
+        'introRefs' => ['meshRename' => "Mesh 的公告", 'clayCom' => "Clay.com"],
+        'toc' => "本页内容",
+
+        'fit' => [
+            'title' => "哪一个更适合你的需求？",
+            'cards' => [
+                [
+                    'who' => "Mesh",
+                    'title' => "如果你想要一份自己生长的联系人列表，选 Mesh",
+                    'items' => [
+                        "你想把邮件、日历和受支持的社交账户里的人汇集起来，并在联系人换工作或搬家时收到更新。",
+                        "你想要原生的移动应用或托管的免费方案。Mesh Personal 最多支持 1,000 位联系人，需要绑定银行卡。",
+                        "Mesh 提供的部分资料信息不包含在它的 CSV 导出中。",
+                    ],
+                    'refs' => ['meshPricing' => "Mesh 方案", 'meshApps' => "Mesh 应用", 'meshExport' => "Mesh 导出指南"],
+                    'cta' => "访问 Mesh",
+                    'ctaRef' => 'meshHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "如果你想保留一份更详细的个人记录，选 Monica",
+                    'items' => [
+                        "你想记录人与人之间是什么关系，设置提醒，并保存关于你们一起参加过的事件的笔记。",
+                        "你想把物品和笔记与联系人一起整理，或者在自己的服务器上运行这个软件。",
+                        "你想保存的细节需要自己录入或同步。Monica 文档中的集成不包括替你收集这些细节的 LinkedIn 或收件箱连接器。",
+                    ],
+                    'refs' => ['monicaRelationships' => "Monica 关系", 'monicaPossessions' => "Monica 物品", 'monicaDav' => "Monica 同步指南"],
+                    'cta' => "了解 Monica",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica 与 Mesh 一览",
+            'what' => "关键点",
+            'sources' => "来源：",
+            'rows' => [
+                ["联系人从哪里来", "从邮件、日历、LinkedIn 等已连接的受支持来源导入人员。Mesh 可以丰富他们的资料。", "直接添加人员，或在启用的情况下，使用兼容的 CardDAV 通讯录进行联系人双向同步。"],
+                ["LinkedIn", "一项集成可以导入联系人并刷新资料。帮助中心说明了不同设备上的限制。", "你可以自己记录资料细节。文档中的集成不包括 LinkedIn 连接器。"],
+                ["日期与跟进", "生日通知、提醒，以及重新联系的提示。", "生日和重复提醒。在启用的情况下，CalDAV 可以在兼容的应用中以只读方式显示日期和提醒截止日期。"],
+                ["关系与历史", "笔记、联系人时间线、分组和网络更新。Mesh 还在 Vision Pro 上提供网络可视化。", "有类型的关系、围绕某位联系人的家庭视图，以及可以出现在多位联系人时间线上的人生事件。"],
+                ["移动和桌面", "iOS、Android、macOS 和 Windows 应用，外加网页应用。", "可在手机上使用的网页应用。兼容的手机和桌面应用可以通过 DAV 显示同步的联系人和日期。"],
+                ["AI", "Mesh 提供 Nexus，以及通过 MCP 连接外部助手的功能。", "Monica 可以通过 MCP 连接获授权的外部助手。文档中的工作流使用所连接的助手来生成模型回答。"],
+                ["与他人协作", "付费的 Team 方案支持共享工作区。", "个人保险库。你可以通过可撤销的只读链接，分享某位联系人的选定细节。"],
+                ["托管", "托管服务。", "采用 AGPL-3.0 的自托管软件，以及 Monica 宣传的托管服务。"],
+                ["数据导出", "导出你放进 Mesh 的数据的 CSV，部分授权信息不包含在内。", "按联系人导出 vCard 和 Markdown，外加 API 文档中说明的、针对受支持保险库数据的 JSON 导出。"],
+                ["宣传的入门价格", "Personal 最多 1,000 位联系人免费，需要绑定银行卡。Pro 为每年 120 USD 或每月 20 USD。", "自托管没有软件授权费用。托管服务宣传价格为每年 90 USD 或每月 9 USD。核实时，公开注册会跳转到候补名单。"],
+            ],
+            'refs' => ['meshSetup' => "Mesh 设置指南", 'meshRefresh' => "Mesh LinkedIn 帮助", 'meshPricing' => "Mesh 方案", 'meshApps' => "Mesh 应用", 'meshVision' => "Mesh Vision Pro", 'meshMcp' => "Mesh MCP", 'monicaDav' => "Monica 同步指南", 'monicaSharing' => "Monica 分享指南", 'monicaMcp' => "Monica MCP 指南", 'monicaPricing' => "Monica 价格"],
+        ],
+
+        'scenarios' => [
+            'title' => "使用这些工具的两种方式",
+            'items' => [
+                [
+                    'who' => "从 Mesh 开始",
+                    'title' => "你想知道职业人脉里的人什么时候换了工作",
+                    'body' => "你在不同的职位和活动中认识了许多人，其中不少已经在你的收件箱里或 LinkedIn 上。在 Mesh 中，你连接愿意分享的来源，查看它建立的资料，并借助更新或提醒决定联系谁。如果你换工具的原因是想少花些手工功夫就让人脉保持最新，Mesh 更合适。请检查每个连接会导入什么。Mesh 的文档说明，在外部来源中删除一位联系人，不会删除 Mesh 里的记录。",
+                    'refs' => ['meshSetup' => "Mesh 设置指南", 'meshDelete' => "在来源处删除之后会发生什么"],
+                ],
+                [
+                    'who' => "从 Monica 开始",
+                    'title' => "你想要一个地方，存放你选择记住的细节",
+                    'body' => "你想记录两个人是什么关系，记住一个重要日期，并保存一次聚会的笔记，让它出现在每位参与者的时间线上。在 Monica 中，你创建或同步这些人，添加关系，并记录这个事件。你还可以在同一个应用里保存你拥有的物品和一般笔记。如果这些记录正是你使用这个工具的目的，并且愿意自己添加背景信息，Monica 就适合你。",
+                    'refs' => ['monicaLink' => "在 Monica 中关联两个人", 'monicaTimeline' => "时间线如何运作", 'monicaKnowledge' => "Monica 知识功能"],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "如果你要在 Mesh 与 Monica 之间迁移",
+            'items' => [
+                [
+                    'title' => "从 Mesh 到 Monica。",
+                    'body' => "Mesh 可以给你发送 CSV 导出。其中包含你放进 Mesh 的数据，不包含某些授权字段。Monica 文档中有通过 CardDAV 的联系人同步，其转移流程使用受支持的 Monica JSON 格式。先在兼容的通讯录里测试一小批样本，检查有哪些内容到达了 Monica。在迁移其余内容之前，逐项验证笔记、分组和关系。",
+                    'refs' => ['meshExport' => "Mesh 导出指南", 'monicaVcard' => "Monica vCard 和导入说明", 'monicaDav' => "Monica 同步指南"],
+                ],
+                [
+                    'title' => "从 Monica 到 Mesh。",
+                    'body' => "Mesh Pro 支持 CSV 导入。Monica 提供 vCard 和 Markdown 格式的联系人导出，并在文档中说明了通过 API 导出 JSON。这些格式在导入 Mesh 之前，可能需要转换或手动复制。先在几位联系人身上检查生日、自定义字段和笔记。把你需要保留的信息，比如家庭关联、人生事件或物品，另存一份。",
+                    'refs' => ['monicaSharing', 'monicaApi', 'meshImport' => "Mesh CSV 导入"],
+                ],
+            ],
+            'note' => "在我们审阅的 Monica 代码版本中，JSON 导出包含联系人、关系、人生事件和提醒等记录。它不包含物品，也不包含知识中独立的笔记和列表。如果你用到这些部分，请在切换之前想好如何保留或转移这些信息。",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "选择之前值得弄清楚的问题",
+            'items' => [
+                [
+                    'q' => "我能不付费试用 Mesh 吗？",
+                    'a' => "Mesh 宣传有一个免费的 Personal 方案，最多 1,000 位联系人，需要绑定支付卡。其帮助中心说明，注册时会先开始 Pro 试用，并介绍了如何降级到 Personal。注册时请确认这个选择。",
+                    'refs' => ['meshPlans' => "Mesh 方案和试用条款"],
+                ],
+                [
+                    'q' => "Mesh 或 Monica 能让我手机里的联系人保持最新吗？",
+                    'a' => "Mesh 提供 iOS 和 Android 应用，并从受支持的来源导入联系人。Monica 文档中有面向兼容通讯录应用的 CardDAV 双向同步。使用 Monica 的 CardDAV，包括删除在内的更改可以双向传递。它通过 CalDAV 提供的日期和提醒截止日期是只读的。",
+                    'refs' => ['meshApps' => "Mesh 应用", 'monicaDav' => "Monica 同步指南"],
+                ],
+                [
+                    'q' => "自托管会带来什么变化？",
+                    'a' => "使用 Monica，你可以选择在哪里运行这个软件。更新、备份和服务器访问由你负责。如果你连接外部服务或助手，它收到什么数据取决于你授予的访问权限。对于 Mesh，请查看每个已连接账户提供了哪些信息，以及该服务可以导出哪些数据。",
+                    'refs' => ['monicaSelf' => "Monica 自托管", 'monicaPrivacy' => "Monica 隐私指南", 'meshPrivacy' => "Mesh 安全与隐私"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "我们如何核实这份对比",
+            'body' => "Monica 团队依据 Mesh 公开的价格、帮助中心和产品文档，以及 Monica 公开的文档和代码撰写了这份对比。价格以 USD 计，不含适用税费。Mesh 的付费功能和完整迁移，没有用登录账户测试过。方案限制、注册是否开放，以及导出的范围都可能变化。",
+        ],
+
+        'refs' => [
+            'meshHome' => ['label' => "Mesh", 'url' => 'https://me.sh/'],
+            'meshRename' => ['label' => "Mesh 的公告", 'url' => 'https://me.sh/stories/mesh'],
+            'meshPricing' => ['label' => "Mesh 方案", 'url' => 'https://me.sh/pricing'],
+            'meshApps' => ['label' => "Mesh 应用", 'url' => 'https://me.sh/start'],
+            'meshSetup' => ['label' => "Mesh 设置指南", 'url' => 'https://library.me.sh/knowledge-base/getting-started/'],
+            'meshRefresh' => ['label' => "Mesh LinkedIn 帮助", 'url' => 'https://library.me.sh/knowledge-base/editing-a-contact/'],
+            'meshDelete' => ['label' => "Mesh 删除说明", 'url' => 'https://library.me.sh/knowledge-base/what-happens-when-i-delete-a-contact-outside-of-mesh/'],
+            'meshMcp' => ['label' => "Mesh MCP", 'url' => 'https://github.com/mesh/mesh-mcp'],
+            'meshVision' => ['label' => "Mesh Vision Pro", 'url' => 'https://me.sh/apple-vision-pro'],
+            'meshExport' => ['label' => "Mesh 导出指南", 'url' => 'https://library.me.sh/knowledge-base/export-to-csv/'],
+            'meshImport' => ['label' => "Mesh CSV 导入", 'url' => 'https://library.me.sh/knowledge-base/csv-import/'],
+            'meshPlans' => ['label' => "Mesh 方案", 'url' => 'https://library.me.sh/knowledge-base/subscription-plans/'],
+            'meshPrivacy' => ['label' => "Mesh 安全与隐私", 'url' => 'https://library.me.sh/knowledge-base/security-and-privacy/'],
+            'clayCom' => ['label' => "Clay.com", 'url' => 'https://www.clay.com/'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Monica 价格", 'page' => 'pricing'],
+            'monicaPossessions' => ['label' => "Monica 物品", 'page' => 'possessions'],
+            'monicaSelf' => ['label' => "Monica 自托管", 'handbook' => 'self-hosting'],
+            'monicaRelationships' => ['label' => "Monica 关系", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaLink' => ['label' => "在 Monica 中关联两个人", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaTimeline' => ['label' => "时间线如何运作", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaKnowledge' => ['label' => "Monica 知识功能", 'url' => 'https://my.monicahq.com/docs/en/knowledge'],
+            'monicaSharing' => ['label' => "Monica 分享和导出指南", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaVcard' => ['label' => "Monica vCard 和导入说明", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica 同步指南", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP 指南", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "Monica API 参考", 'url' => 'https://my.monicahq.com/docs/api'],
+            'monicaPrivacy' => ['label' => "Monica 隐私指南", 'url' => 'https://my.monicahq.com/docs/en/your-account-and-security/privacy'],
         ],
     ],
 

@@ -6,13 +6,13 @@ These sheets are generated from the rendered build, not from the live website, s
 | Language | Sheets |
 | --- | --- |
 | English | [160 pages](en.md) |
-| French | [157 pages](fr.md) |
-| German | [157 pages](de.md) |
-| Spanish | [157 pages](es.md) |
-| Portuguese | [157 pages](pt.md) |
-| Dutch | [157 pages](nl.md) |
-| Simplified Chinese | [157 pages](zh.md) |
-| Russian | [157 pages](ru.md) |
+| French | [160 pages](fr.md) |
+| German | [160 pages](de.md) |
+| Spanish | [160 pages](es.md) |
+| Portuguese | [160 pages](pt.md) |
+| Dutch | [160 pages](nl.md) |
+| Simplified Chinese | [160 pages](zh.md) |
+| Russian | [160 pages](ru.md) |
 <!-- sheets:end -->
 
 ## Search and sharing copy

@@ -21,6 +21,9 @@ return [
             'team' => "Team",
             'support' => "Support",
             'sales' => "Verkoop",
+            'compareDex' => "Monica versus Dex",
+            'compareFolk' => "Monica versus folk",
+            'compareMesh' => "Monica versus Mesh",
             'signIn' => "Inloggen",
             'about' => "Over Monica",
             'privacy' => "Privacybeleid",
@@ -184,6 +187,48 @@ return [
                 'title' => "Ons verkoopteam neemt",
                 'accent' => "nooit contact met je op.",
                 'description' => "Geen telefoontjes. Geen afspraken. Alleen software.",
+            ],
+        ],
+
+        'compareDex' => [
+            'title' => "Monica versus Dex voor persoonlijk relatiebeheer — Monica",
+            'description' => "Vergelijk Monica en Dex op LinkedIn, herinneringen om contact te houden, contactgeschiedenis, mobiele apps, exports en zelf hosten.",
+            'ogTitle' => "Monica versus Dex voor persoonlijk relatiebeheer",
+            'ogDescription' => "Vergelijk Monica en Dex op LinkedIn, herinneringen om contact te houden, contactgeschiedenis, mobiele apps, exports en zelf hosten.",
+
+            'ogImage' => [
+                'eyebrow' => "Vergelijking",
+                'title' => "Monica versus Dex",
+                'accent' => "voor persoonlijke relaties.",
+                'description' => "LinkedIn, herinneringen, contactgeschiedenis, exports en zelf hosten, naast elkaar.",
+            ],
+        ],
+
+        'compareFolk' => [
+            'title' => "Monica versus folk voor persoonlijk en teamrelatiebeheer — Monica",
+            'description' => "Vergelijk Monica en folk op gedeelde pipelines, toegewezen opvolgtaken, LinkedIn, persoonlijke gegevens, prijzen en data-exports.",
+            'ogTitle' => "Monica versus folk voor persoonlijk en teamrelatiebeheer",
+            'ogDescription' => "Vergelijk Monica en folk op gedeelde pipelines, toegewezen opvolgtaken, LinkedIn, persoonlijke gegevens, prijzen en data-exports.",
+
+            'ogImage' => [
+                'eyebrow' => "Vergelijking",
+                'title' => "Monica versus folk",
+                'accent' => "voor mensen en teams.",
+                'description' => "Gedeelde pipelines, opvolging, LinkedIn, prijzen en exports, naast elkaar.",
+            ],
+        ],
+
+        'compareMesh' => [
+            'title' => "Monica versus Mesh (voorheen Clay) — Monica",
+            'description' => "Vergelijk Monica en Mesh, voorheen Clay.earth, op contactsynchronisatie, het gratis abonnement, mobiele apps, data-exports en zelf hosten.",
+            'ogTitle' => "Monica versus Mesh (voorheen Clay)",
+            'ogDescription' => "Vergelijk Monica en Mesh, voorheen Clay.earth, op contactsynchronisatie, het gratis abonnement, mobiele apps, data-exports en zelf hosten.",
+
+            'ogImage' => [
+                'eyebrow' => "Vergelijking",
+                'title' => "Monica versus Mesh",
+                'accent' => "voorheen Clay.",
+                'description' => "Contactsynchronisatie, gratis abonnement, apps, exports en zelf hosten, naast elkaar.",
             ],
         ],
 
@@ -5620,6 +5665,10 @@ return [
         'productLabel' => "Product",
         'developersLabel' => "Ontwikkelaars",
         'companyLabel' => "Bedrijf",
+        'comparisonsLabel' => "Vergelijkingen",
+        'compareDex' => "Monica versus Dex",
+        'compareFolk' => "Monica versus folk",
+        'compareMesh' => "Monica versus Mesh",
         'personalCrm' => "Wat is een persoonlijke CRM?",
         'aiMemory' => "AI-geheugen",
         'personalData' => "Beheer van persoonlijke gegevens",
@@ -6077,6 +6126,473 @@ return [
             ['kind' => "Naslag", 'title' => "API", 'description' => "Lees en schrijf je contacten vanuit je eigen scripts. Elk endpoint, met voorbeelden in cURL, JavaScript en PHP."],
             ['kind' => "Naslag", 'title' => "MCP", 'description' => "Koppel een assistent aan je instantie zodat die je adresboek kan lezen en er mensen in kan vastleggen, met de toegang die jij hebt."],
             ['kind' => "Handleiding", 'title' => "CardDAV en CalDAV", 'description' => "Houd de contacten- en agenda-apps op je telefoon en computer gelijk met Monica."],
+        ],
+    ],
+
+    /**
+     * The Monica vs Dex comparison (route key `compareDex`), written in English
+     * only, so it exists in no other locale.
+     *
+     * `refs` holds every link: a `url` for another site, or a `page` (a route
+     * key) for a page of this one. A section names the refs it cites by key.
+     */
+    'compareDex' => [
+        'name' => "Dex",
+        'title' => "Monica versus Dex",
+        'by' => "Geschreven door het Monica-team.",
+        'verified' => "Laatst gecontroleerd op 25 november 2026.",
+        'vs' => "versus",
+        'intro' => "Dex brengt zakelijke contacten en interacties samen en gebruikt die geschiedenis om je te helpen bepalen wanneer je contact opneemt. Monica geeft je gestructureerde gegevens over de mensen in je leven, hun onderlinge relaties en de gebeurtenissen die je wilt onthouden. Beide bieden herinneringen, notities en tijdlijnen per contact. Hoe informatie op die tijdlijn terechtkomt, is een van de grootste verschillen.",
+        'introRefs' => ['dexTimeline', 'monicaTimeline'],
+        'toc' => "Op deze pagina",
+
+        'fit' => [
+            'title' => "Welke past bij wat je nodig hebt?",
+            'cards' => [
+                [
+                    'who' => "Dex",
+                    'title' => "Kies Dex als contact houden de hoofdzaak is",
+                    'items' => [
+                        "Je hebt een groot deel van je netwerk op LinkedIn en wilt dat nieuwe connecties en profielupdates in je CRM terechtkomen.",
+                        "Je wilt herinneringen om contact op te nemen die kunnen verschuiven wanneer je met iemand in gesprek bent geweest, en native mobiele of desktopapps.",
+                        "Het abonnement bepaalt je limiet voor LinkedIn-connecties. Outlook staat vermeld onder Professional.",
+                    ],
+                    'refs' => ['dexPlans' => "Dex-abonnementen", 'dexLinkedin' => "LinkedIn-synchronisatie", 'dexTimeline' => "Gids over interacties"],
+                    'cta' => "Bezoek Dex",
+                    'ctaRef' => 'dexHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "Kies Monica als je een gestructureerd persoonlijk archief wilt bijhouden",
+                    'items' => [
+                        "Je wilt vastleggen hoe mensen aan elkaar verwant zijn en belangrijke data, familiegebeurtenissen en details bewaren die je zelf toevoegt.",
+                        "Je wilt je contacten naast een overzicht van je bezittingen en notities, of je wilt de software op je eigen server draaien.",
+                        "Monica’s gedocumenteerde synchronisatie omvat compatibele adresboeken en data en deadlines in alleen-lezen modus. Reken op handmatig invoeren als je interacties uit je inbox of van LinkedIn wilt vastleggen.",
+                    ],
+                    'refs' => ['monicaRelationships' => "Monica-relaties", 'monicaPossessions' => "Monica-bezittingen", 'monicaDav' => "Synchronisatiegids van Monica"],
+                    'cta' => "Ontdek Monica",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica en Dex in één oogopslag",
+            'what' => "Waar het om gaat",
+            'sources' => "Bronnen:",
+            'rows' => [
+                ["LinkedIn", "Doorlopende synchronisatie van connecties. Premium noemt tot 2,500 connecties en Professional tot 9,000. De installatie loopt volgens de synchronisatiegids via de mobiele of desktopapp.", "De gedocumenteerde integraties omvatten geen LinkedIn-synchronisatie."],
+                ["E-mail, agenda en contacten", "Integraties voor e-mail en agenda, met Outlook onder Professional. Dex documenteert tweerichtingssynchronisatie van contacten, waarbij het gedrag van de bron afhangt.", "CardDAV kan contacten in beide richtingen synchroniseren. CalDAV kan data en deadlines van herinneringen in alleen-lezen modus tonen in een compatibele app. DAV hangt af van de instantie."],
+                ["Herinneringen om contact op te nemen", "De frequentie om contact te houden kan de volgende herinnering verzetten wanneer een geldige interactie de datum van het laatste contact wijzigt. Dex documenteert ook verjaardagsherinneringen.", "Eenmalige en terugkerende herinneringen, ook gekoppeld aan vastgelegde data. Meldingen in de app en per e-mail zijn gedocumenteerd. Telegram en sms hangen af van de instantie."],
+                ["Contactgeschiedenis", "Een tijdlijn voor notities, e-mails, afspraken, herinneringen en LinkedIn-updates. Sommige berichten beïnvloeden de datum van het laatste contact zonder als item op de tijdlijn te verschijnen.", "Een tijdlijn van vastgelegde gebeurtenissen met deelnemers. Een gedeelde gebeurtenis kan op de tijdlijn van elke deelnemer verschijnen."],
+                ["Relaties in beeld", "Gerelateerde contacten, een netwerkweergave en een geografische kaart.", "Relaties met een type en een familieweergave met de naaste verwanten rond één contact."],
+                ["Mobiel en desktop", "Apps voor iOS, Android, Mac en Windows, plus web.", "Webapp die op een telefoon bruikbaar is, met DAV voor compatibele contact- en agenda-apps."],
+                ["AI en integraties", "Copilot, onderzoekscredits die per abonnement verschillen en een verbinding met een externe assistent via MCP.", "API en MCP voor geautoriseerde externe tools."],
+                ["Hosting en eigendom", "Beheerde dienst. Het privacybeleid beschrijft waartoe Dex toegang heeft voor gekoppelde tools.", "Zelf te hosten software onder AGPL-3.0 en een beheerd aanbod dat Monica adverteert."],
+                ["Data-export", "CSV-export voor contacten, notities en netwerkupdates.", "vCard en Markdown per contact, plus een JSON-export voor ondersteunde kluisgegevens die in de API is gedocumenteerd."],
+                ["Adverteerde instapprijs", "Premium kost 144 USD per jaar bij jaarlijkse betaling. Professional kost 240 USD per jaar bij jaarlijkse betaling. Voor de proefperiode van zeven dagen is een creditcard nodig.", "Geen softwarelicentiekosten bij zelf hosten. Beheerde hosting wordt geadverteerd voor 90 USD per jaar of 9 USD per maand. De openbare aanmelding leidde bij controle naar een wachtlijst."],
+            ],
+            'refs' => ['dexPlans', 'dexLinkedin', 'dexContacts', 'dexChangelog', 'dexTimeline', 'dexCopilot', 'dexDesktop', 'monicaNotifications', 'monicaDav', 'monicaMcp', 'monicaPricing'],
+        ],
+
+        'scenarios' => [
+            'title' => "Twee manieren om deze tools te gebruiken",
+            'items' => [
+                [
+                    'who' => "Begin met Dex",
+                    'title' => "Je wilt een herinnering wanneer het stil wordt met een zakelijke relatie",
+                    'body' => "Je koppelt LinkedIn en je agenda en stelt daarna een frequentie in voor mensen bij wie je wilt inchecken. Wanneer Dex een geldige interactie registreert, kan het de volgende herinnering verzetten. Begin met Dex als je afgaat op de datum van het laatste contact en wilt dat de CRM een deel van dat bijhouden voor je doet. Controleer de interactieregels voor de kanalen die je gebruikt. Een bericht kan meetellen voor de datum van het laatste contact zonder een apart item op de tijdlijn te worden.",
+                    'refs' => ['dexTimeline', 'dexLinkedin'],
+                ],
+                [
+                    'who' => "Begin met Monica",
+                    'title' => "Je wilt de mensen en gebeurtenissen rond een familiebijeenkomst onthouden",
+                    'body' => "Je legt de bijeenkomst één keer vast in Monica, voegt de aanwezigen toe en koppelt familieleden met relatietypes. De gebeurtenis kan op de tijdlijn van elke deelnemer verschijnen. Je kunt een herinnering instellen voor een bepaalde datum of volgens een terugkerend schema. Begin met Monica als je die relaties, details en gedateerde gegevens wilt bewaren en het prettig vindt om de context zelf in te voeren.",
+                    'refs' => ['monicaTimelineHow', 'monicaLink', 'monicaReminders'],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "Als je overstapt tussen Dex en Monica",
+            'items' => [
+                [
+                    'title' => "Van Dex naar Monica.",
+                    'body' => "Dex documenteert CSV-exports voor contacten, notities en netwerkupdates. Monica documenteert CardDAV-synchronisatie en exports per contact in vCard en Markdown. Een CSV-export heeft mogelijk een compatibel adresboek of een conversiestap nodig om de basisvelden van contacten in Monica te krijgen. Probeer eerst een paar gegevens en controleer welke notities, herinneringen en contactkoppelingen je opnieuw moet aanmaken.",
+                    'refs' => ['dexExport', 'monicaVcard', 'monicaDav'],
+                ],
+                [
+                    'title' => "Van Monica naar Dex.",
+                    'body' => "Dex documenteert CSV-import en contactsynchronisatie. Monica biedt vCard en Markdown per contact en documenteert JSON-exports via de API. Controleer of je adresboek of een CSV-conversie de velden kan overbrengen die je nodig hebt. Test familierelaties, gebeurtenissen en herinneringsfrequenties afzonderlijk.",
+                    'refs' => ['dexCsv', 'monicaSharing', 'monicaApi'],
+                ],
+            ],
+            'note' => "In de versie van Monica’s code die we hebben bekeken, bevat de JSON-export gegevens zoals contacten, relaties, levensgebeurtenissen en herinneringen. Bezittingen en de aparte notities en lijsten in Kennis worden niet meegenomen. Als je die onderdelen gebruikt, bedenk dan hoe je die informatie bewaart of overdraagt voordat je overstapt.",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "Vragen die je beter beantwoordt voordat je kiest",
+            'items' => [
+                [
+                    'q' => "Werkt Dex herinneringen automatisch bij?",
+                    'a' => "De frequentie om contact te houden in Dex kan worden bijgewerkt wanneer een geldige interactie de datum van het laatste contact wijzigt. Dex documenteert hoe elke bron die datum en de tijdlijn beïnvloedt. Monica ondersteunt terugkerende herinneringen volgens een schema dat je zelf instelt.",
+                    'refs' => ['dexTimeline' => "Interactiegids van Dex", 'monicaReminders' => "Herinneringsgids van Monica"],
+                ],
+                [
+                    'q' => "Welk Dex-abonnement moet ik bekijken voor Outlook of een groot LinkedIn-netwerk?",
+                    'a' => "Dex noemt Outlook, e-mailsynchronisatie met meerdere accounts en tot 9,000 LinkedIn-connecties onder Professional. Premium noemt tot 2,500 LinkedIn-connecties. Bekijk de abonnementspagina als je keuze afhangt van een bepaalde integratie of limiet.",
+                    'refs' => ['dexPlans' => "Dex-abonnementen"],
+                ],
+                [
+                    'q' => "Kan ik beide producten gebruiken zonder mijn inbox te koppelen?",
+                    'a' => "Beide documenteren manieren om contacten en notities rechtstreeks toe te voegen. Als je Google of een ander account met Dex verbindt, controleer dan wat die verbinding kan lezen en schrijven. Als je Monica zelf host, beheer je de server en kies je zelf welke integraties je inschakelt.",
+                    'refs' => ['dexContacts' => "Contactgids van Dex", 'dexPrivacy' => "Privacybeleid van Dex", 'monicaPeople' => "Mensenfuncties van Monica", 'monicaSelf' => "Zelf hosten met Monica"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "Hoe we deze vergelijking hebben gecontroleerd",
+            'body' => "Het Monica-team schreef deze vergelijking op basis van de openbare prijzen, het helpcentrum en de changelog van Dex, en de openbare documentatie en code van Monica. Prijzen staan in USD, vóór eventuele belastingen. Betaalde Dex-functies, het gedrag van gekoppelde accounts en volledige migraties zijn niet getest met een ingelogd account.",
+        ],
+
+        'refs' => [
+            'dexHome' => ['label' => "Dex", 'url' => 'https://getdex.com/'],
+            'dexPlans' => ['label' => "Prijzen van Dex", 'url' => 'https://getdex.com/pricing/'],
+            'dexLinkedin' => ['label' => "LinkedIn-synchronisatie van Dex", 'url' => 'https://getdex.com/docs/faq/linkedin'],
+            'dexTimeline' => ['label' => "Interactiegids van Dex", 'url' => 'https://getdex.com/docs/workflows/interactions-and-the-timeline'],
+            'dexContacts' => ['label' => "Contact- en netwerkweergaven van Dex", 'url' => 'https://getdex.com/docs/workflows/manage-your-contacts'],
+            'dexChangelog' => ['label' => "Changelog van Dex", 'url' => 'https://getdex.com/docs/changelog/2026'],
+            'dexDesktop' => ['label' => "Desktopapp van Dex", 'url' => 'https://getdex.com/docs/desktop-app'],
+            'dexCopilot' => ['label' => "Dex Copilot", 'url' => 'https://getdex.com/docs/ai/copilot'],
+            'dexExport' => ['label' => "Exportadvies van Dex", 'url' => 'https://getdex.com/docs/ai/copilot'],
+            'dexCsv' => ['label' => "CSV-import van Dex", 'url' => 'https://getdex.com/docs/integrationsandfeatures/import/csv'],
+            'dexPrivacy' => ['label' => "Privacybeleid van Dex", 'url' => 'https://getdex.com/privacypolicy/'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Prijzen van Monica", 'page' => 'pricing'],
+            'monicaPeople' => ['label' => "Mensenfuncties van Monica", 'page' => 'people'],
+            'monicaPossessions' => ['label' => "Monica-bezittingen", 'page' => 'possessions'],
+            'monicaSelf' => ['label' => "Zelf hosten met Monica", 'handbook' => 'self-hosting'],
+            'monicaRelationships' => ['label' => "Monica-relaties", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaLink' => ['label' => "Twee mensen koppelen", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaTimeline' => ['label' => "Tijdlijngids van Monica", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaTimelineHow' => ['label' => "Hoe de tijdlijn van Monica werkt", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaReminders' => ['label' => "Een herinnering instellen", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/set-a-reminder'],
+            'monicaNotifications' => ['label' => "Meldingen van Monica", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/notification-channels'],
+            'monicaSharing' => ['label' => "Gids voor delen en exporteren van Monica", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaVcard' => ['label' => "vCard-advies van Monica", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica DAV", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "API-referentie van Monica", 'url' => 'https://my.monicahq.com/docs/api'],
+        ],
+    ],
+
+    /**
+     * The Monica vs folk comparison (route key `compareFolk`), English only.
+     * Same shape as `compareDex` above.
+     */
+    'compareFolk' => [
+        'name' => "folk",
+        'title' => "Monica versus folk",
+        'by' => "Geschreven door het Monica-team.",
+        'verified' => "Laatst gecontroleerd op 25 november 2026.",
+        'vs' => "versus",
+        'intro' => "Als je team opvolgtaken moet toewijzen en een gedeelde pipeline draait, past folk beter. Als je vooral een overzicht wilt van de mensen in je leven, hoe ze met elkaar verbonden zijn en wat je over hen wilt onthouden, is Monica daarvoor ontworpen. Beide ordenen contacten en notities. Ze geven anderen alleen een andere manier om bij die informatie te komen en ermee te werken.",
+        'introRefs' => ['folkPricing' => "folk-abonnementen", 'monicaPeople' => "Mensenfuncties van Monica", 'monicaSharing' => "Deelgids van Monica"],
+        'toc' => "Op deze pagina",
+
+        'fit' => [
+            'title' => "Welke past bij wat je nodig hebt?",
+            'cards' => [
+                [
+                    'who' => "folk",
+                    'title' => "Kies folk als meerdere mensen dezelfde relaties beheren",
+                    'items' => [
+                        "Je team moet zien wie de volgende stap oppakt, taken toewijzen en contacten door een pipeline bewegen.",
+                        "Je wilt gekoppelde interacties via e-mail, agenda of WhatsApp, of LinkedIn-profielen vastleggen met folkX.",
+                        "Reken per gebruiker. Premium voegt eigen Deals en aangepaste objecten toe, sequenties, rollen in de werkruimte en toegang tot de volledige interactiegeschiedenis.",
+                    ],
+                    'refs' => ['folkPricing' => "folk-abonnementen", 'folkTasks' => "folk-taken", 'folkIntegrations' => "folk-integraties"],
+                    'cta' => "Bezoek folk",
+                    'ctaRef' => 'folkHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "Kies Monica als je een archief voor jezelf bijhoudt",
+                    'items' => [
+                        "Je wilt vrienden en familie ordenen, levensgebeurtenissen vastleggen en data en herinneringen bijhouden.",
+                        "Je wilt persoonlijke notities en bezittingen naast je contacten bewaren, geselecteerde details via een link delen of de software op je eigen server draaien.",
+                        "Kluizen horen bij een individueel account. Een ontvanger kan de contactgegevens lezen die je deelt. Die persoon kan je gegevens niet bewerken en geen taak in jouw kluis overnemen.",
+                    ],
+                    'refs' => ['monicaRelationships' => "Monica-relaties", 'monicaPossessions' => "Monica-bezittingen", 'monicaSharing' => "Deelgids van Monica"],
+                    'cta' => "Ontdek Monica",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica en folk in één oogopslag",
+            'what' => "Waar het om gaat",
+            'sources' => "Bronnen:",
+            'rows' => [
+                ["Samenwerken", "Een gedeelde werkruimte met groepen en pipelines, toewijzingen en rollen of rechten die van het abonnement afhangen.", "Individuele kluizen. Contacten kunnen in alleen-lezen vorm worden gedeeld via links die je kunt intrekken."],
+                ["Opvolging", "Taken kunnen worden toegewezen, aan gegevens worden gekoppeld en zich herhalen.", "Herinneringen kunnen eenmalig of terugkerend zijn, ook gekoppeld aan data die je hebt vastgelegd."],
+                ["Verkooppipeline", "Standard bevat pipelineweergaven en campagnes. Premium voegt Deals, aangepaste objecten en sequenties toe.", "Contactgroepen, relaties met een type en tijdlijnen. De gedocumenteerde workflows richten zich op het bijhouden van persoonlijke gegevens en herinneringen."],
+                ["E-mail, agenda en berichten", "Integraties voor e-mail, agenda en WhatsApp. De volledige interactiegeschiedenis staat onder Premium.", "CardDAV kan contacten in beide richtingen synchroniseren. CalDAV kan data en deadlines van herinneringen in alleen-lezen vorm publiceren."],
+                ["LinkedIn", "Profielen vastleggen met folkX, berichten registreren met de extensie of een LinkedIn-exportbestand importeren. folk onderscheidt deze workflows van automatische synchronisatie van al je LinkedIn-connecties.", "De gedocumenteerde integraties omvatten geen LinkedIn-connector."],
+                ["Mobiel", "Contacts by folk is beschikbaar op iOS en Android. De mobiele help vermeldt welke functies worden ondersteund.", "Webapp die op een telefoon bruikbaar is, plus DAV voor compatibele contact- en agenda-apps waar dat is ingeschakeld."],
+                ["AI en integraties", "Assistenten en AI-velden. folk documenteert ook een gehoste MCP-verbinding. De prijspagina noemt API-toegang onder Premium.", "API en MCP voor geautoriseerde externe tools en assistenten."],
+                ["Data-export", "CSV-export per groepsweergave voor contacten en notities. Interacties en taken worden niet meegenomen.", "vCard en Markdown per contact, plus een JSON-export voor ondersteunde kluisgegevens die in de API is gedocumenteerd."],
+                ["Hosting en prijs", "Beheerde dienst die per gebruiker wordt gefactureerd. Standard kost 24 USD per gebruiker per maand bij jaarlijkse betaling en Premium 48. De proefperiode duurt 14 dagen zonder creditcard.", "Geen softwarelicentiekosten bij zelf hosten. Beheerde hosting wordt geadverteerd voor 90 USD per jaar of 9 USD per maand. De openbare aanmelding leidde bij controle naar een wachtlijst."],
+            ],
+            'refs' => ['folkPricing' => "folk-prijzen", 'folkIntegrations' => "folk-integratiehulp", 'folkLinkedin' => "folk LinkedIn-berichten", 'folkMobile' => "folk mobiel", 'folkMcp' => "folk MCP", 'monicaReminders' => "Herinneringen van Monica", 'monicaPricing', 'monicaDav', 'monicaMcp'],
+        ],
+
+        'scenarios' => [
+            'title' => "Twee manieren om deze tools te gebruiken",
+            'items' => [
+                [
+                    'who' => "Begin met folk",
+                    'title' => "Drie collega’s volgen dezelfde partners op",
+                    'body' => "Een collega legt het laatste gesprek vast, wijst de volgende actie toe en werkt de fase van de partner bij. De rest van het team ziet waar die relatie staat, afhankelijk van de rechten in de werkruimte en de zichtbaarheid van de interactie. Begin met folk als dit het werk is dat je wilt organiseren. Controleer de pipeline van Standard aan de hand van wat je nodig hebt en overweeg Premium als je eigen Deals of rollen in de werkruimte nodig hebt. Tegen het genoemde jaartarief kosten drie Standard-plekken samen 864 USD per jaar, vóór belastingen.",
+                    'refs' => ['folkTasks' => "folk-taken", 'folkPricing' => "folk-prijzen", 'folkProfiles' => "zichtbaarheid van interacties in folk"],
+                ],
+                [
+                    'who' => "Begin met Monica",
+                    'title' => "Je houdt familiedetails bij en deelt één contact",
+                    'body' => "Je legt een familierelatie en een aankomende datum vast en maakt een link met geselecteerde details voor iemand die een telefoonnummer of adres nodig heeft. Die persoon kan de link in een browser openen. De link geeft alleen-lezen toegang en laat relaties, levensgebeurtenissen en herinneringen weg. Controleer welke onderdelen van de contactpagina zijn geselecteerd voordat je de link verstuurt. Begin met Monica als het doorlopende archief voor eigen gebruik is en deze mate van delen genoeg is.",
+                    'refs' => ['monicaLink' => "Twee mensen koppelen in Monica", 'monicaShareContact' => "Een contact delen", 'monicaLinkScope' => "Wat een contactlink toont"],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "Als je overstapt tussen folk en Monica",
+            'items' => [
+                [
+                    'title' => "Van folk naar Monica.",
+                    'body' => "folk documenteert exports vanuit een groepsweergave. Een ZIP bevat CSV-bestanden met contacten en notities van die weergave, met de getoonde kolommen en filters. De export laat onder meer interacties en taken weg. Probeer een voorbeeld met een compatibel adresboek als je basiscontacten via CardDAV in Monica wilt brengen. Plan apart voor toewijzingen, geschiedenis en dealfasen die je wilt behouden.",
+                    'refs' => ['folkExport' => "folk-exportgids", 'monicaVcard' => "vCard- en importhulp van Monica", 'monicaDav'],
+                ],
+                [
+                    'title' => "Van Monica naar folk.",
+                    'body' => "Monica biedt contactexports in vCard en Markdown en documenteert JSON-exports via de API. folk accepteert CSV-imports. Er is mogelijk een conversie of handmatige stap nodig, vooral voor aangepaste velden. Bepaal hoe je familierelaties en levensgebeurtenissen vastlegt en welke persoonlijke notities thuishoren in een teamwerkruimte.",
+                    'refs' => ['monicaSharing', 'monicaApi', 'folkPricing' => "folk-prijzen en CSV-functies"],
+                ],
+            ],
+            'note' => "In de versie van Monica’s code die we hebben bekeken, bevat de JSON-export gegevens zoals contacten, relaties, levensgebeurtenissen en herinneringen. Bezittingen en de aparte notities en lijsten in Kennis worden niet meegenomen. Als je die onderdelen gebruikt, bedenk dan hoe je die informatie bewaart of overdraagt voordat je overstapt.",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "Vragen die je beter beantwoordt voordat je kiest",
+            'items' => [
+                [
+                    'q' => "Kan ik in Monica een gedeelde pipeline draaien?",
+                    'a' => "Met de gedocumenteerde deelfunctie van Monica kan een ontvanger geselecteerde informatie over een contact lezen. Als teamgenoten gegevens moeten wijzigen, volgende stappen moeten toewijzen en deals door een pipeline moeten bewegen, past folk beter.",
+                    'refs' => ['monicaShareContact' => "Contacten delen in Monica", 'folkPricing' => "folk-prijzen"],
+                ],
+                [
+                    'q' => "Synchroniseert folk automatisch mijn LinkedIn-netwerk?",
+                    'a' => "folk documenteert drie workflows met een verschillend bereik. Je kunt een profiel vastleggen met folkX, een LinkedIn-gesprek registreren via de extensie, of je LinkedIn-connecties exporteren en het bestand importeren. De integratie-FAQ beschrijft de grenzen van automatische synchronisatie.",
+                    'refs' => ['folkIntegrations' => "folk-integraties", 'folkLinkedin' => "LinkedIn-interacties bijhouden"],
+                ],
+                [
+                    'q' => "Krijg ik de hele folk-werkruimte mee als ik exporteer?",
+                    'a' => "De help van folk beschrijft export per groepsweergave. De velden en filters in die weergave bepalen de uitvoer. De gids noemt uitzonderingen, waaronder taken en interacties. Als het exporteren van een hele werkruimte voor je telt, test dan een kleine groep met de soorten gegevens die je nodig hebt voordat je op de export vertrouwt.",
+                    'refs' => ['folkExport' => "folk-exportgids"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "Hoe we deze vergelijking hebben gecontroleerd",
+            'body' => "Het Monica-team schreef deze vergelijking op basis van de openbare prijzen en het helpcentrum van folk, en de openbare documentatie en code van Monica. Prijzen staan in USD, vóór eventuele belastingen. Betaalde functies van de werkruimte, rechten en volledige migraties zijn niet getest met een ingelogd account.",
+        ],
+
+        'refs' => [
+            'folkHome' => ['label' => "folk", 'url' => 'https://www.folk.app/'],
+            'folkPricing' => ['label' => "folk-prijzen", 'url' => 'https://www.folk.app/pricing'],
+            'folkTasks' => ['label' => "folk-taken", 'url' => 'https://help.folk.app/en/articles/15869200-tasks'],
+            'folkIntegrations' => ['label' => "folk-integraties", 'url' => 'https://help.folk.app/en/articles/8170484-faq-sources-integrations'],
+            'folkLinkedin' => ['label' => "folk LinkedIn-berichten", 'url' => 'https://help.folk.app/en/articles/7177488-track-linkedin-interactions'],
+            'folkMobile' => ['label' => "folk mobiel", 'url' => 'https://help.folk.app/en/articles/15178507-download-the-folk-mobile-app'],
+            'folkMcp' => ['label' => "folk MCP", 'url' => 'https://help.folk.app/en/articles/16760382-mcp-connect-folk-to-other-mcps'],
+            'folkProfiles' => ['label' => "zichtbaarheid van interacties in folk", 'url' => 'https://help.folk.app/en/articles/15179426-people-company-profiles-on-mobile'],
+            'folkExport' => ['label' => "folk-exportgids", 'url' => 'https://help.folk.app/en/articles/5007388-export-data'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Prijzen van Monica", 'page' => 'pricing'],
+            'monicaPeople' => ['label' => "Mensenfuncties van Monica", 'page' => 'people'],
+            'monicaPossessions' => ['label' => "Monica-bezittingen", 'page' => 'possessions'],
+            'monicaRelationships' => ['label' => "Monica-relaties", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaReminders' => ['label' => "Herinneringen van Monica", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/set-a-reminder'],
+            'monicaLink' => ['label' => "Twee mensen koppelen in Monica", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaSharing' => ['label' => "Gids voor delen en exporteren van Monica", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaShareContact' => ['label' => "Een contact delen", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/share-a-contact'],
+            'monicaLinkScope' => ['label' => "Wat een contactlink toont", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/what-a-link-shows'],
+            'monicaVcard' => ['label' => "vCard- en importhulp van Monica", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica DAV", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "API-referentie van Monica", 'url' => 'https://my.monicahq.com/docs/api'],
+        ],
+    ],
+
+    /**
+     * The Monica vs Mesh comparison (route key `compareMesh`), English only.
+     * Same shape as `compareDex` above.
+     */
+    'compareMesh' => [
+        'name' => "Mesh",
+        'title' => "Monica versus Mesh (voorheen Clay)",
+        'by' => "Geschreven door het Monica-team.",
+        'verified' => "Laatst gecontroleerd op 25 november 2026.",
+        'vs' => "versus",
+        'intro' => "Clay.earth, de persoonlijke CRM, werd in maart 2026 Mesh. Mesh brengt contacten samen uit de accounts die je koppelt en helpt hun profielen actueel te houden. Monica geeft je gestructureerde gegevens over mensen, familierelaties, bezittingen en notities, met de mogelijkheid om het op je eigen server te draaien. Clay.com is een aparte dienst voor verkoop- en marketinggegevens.",
+        'introRefs' => ['meshRename' => "Aankondiging van Mesh", 'clayCom' => "Clay.com"],
+        'toc' => "Op deze pagina",
+
+        'fit' => [
+            'title' => "Welke past bij wat je nodig hebt?",
+            'cards' => [
+                [
+                    'who' => "Mesh",
+                    'title' => "Kies Mesh als je een contactlijst wilt die zichzelf opbouwt",
+                    'items' => [
+                        "Je wilt mensen uit e-mail, agenda’s en ondersteunde sociale accounts samenbrengen, met updates wanneer contacten van baan veranderen of verhuizen.",
+                        "Je wilt een native mobiele app of een gehost gratis abonnement. Mesh Personal omvat tot 1,000 contacten en vereist een creditcard.",
+                        "Een deel van de profielinformatie die Mesh aanlevert, wordt niet meegenomen in de CSV-export.",
+                    ],
+                    'refs' => ['meshPricing' => "Mesh-abonnementen", 'meshApps' => "Mesh-apps", 'meshExport' => "Exportgids van Mesh"],
+                    'cta' => "Bezoek Mesh",
+                    'ctaRef' => 'meshHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "Kies Monica als je een gedetailleerder persoonlijk archief wilt bijhouden",
+                    'items' => [
+                        "Je wilt vastleggen hoe mensen aan elkaar verwant zijn, herinneringen instellen en notities bewaren over gebeurtenissen waar je samen bij was.",
+                        "Je wilt bezittingen en notities naast je contacten ordenen, of de software op je eigen server draaien.",
+                        "Je voert de details die je wilt bewaren zelf in of synchroniseert ze. Monica’s gedocumenteerde integraties omvatten geen LinkedIn- of inboxconnector die die details voor je verzamelt.",
+                    ],
+                    'refs' => ['monicaRelationships' => "Monica-relaties", 'monicaPossessions' => "Monica-bezittingen", 'monicaDav' => "Synchronisatiegids van Monica"],
+                    'cta' => "Ontdek Monica",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica en Mesh in één oogopslag",
+            'what' => "Waar het om gaat",
+            'sources' => "Bronnen:",
+            'rows' => [
+                ["Waar contacten vandaan komen", "Importeert mensen uit gekoppelde bronnen zoals e-mail, agenda’s, LinkedIn en andere ondersteunde diensten. Mesh kan hun profielen verrijken.", "Voeg mensen rechtstreeks toe of gebruik een compatibel CardDAV-adresboek voor tweerichtingssynchronisatie van contacten waar dat is ingeschakeld."],
+                ["LinkedIn", "Een integratie kan contacten importeren en profielen vernieuwen. Het helpcentrum beschrijft beperkingen per apparaat.", "Je kunt profielgegevens zelf vastleggen. De gedocumenteerde integraties omvatten geen LinkedIn-connector."],
+                ["Data en opvolging", "Verjaardagsmeldingen, herinneringen en aanzetten om weer contact te leggen.", "Verjaardagen en terugkerende herinneringen. CalDAV kan data en deadlines van herinneringen in compatibele apps in alleen-lezen modus tonen waar dat is ingeschakeld."],
+                ["Relaties en geschiedenis", "Notities, tijdlijnen per contact, groepen en netwerkupdates. Mesh biedt ook een netwerkvisualisatie op Vision Pro.", "Relaties met een type, een familieweergave rond een contact en levensgebeurtenissen die op meerdere contacttijdlijnen kunnen verschijnen."],
+                ["Mobiel en desktop", "Apps voor iOS, Android, macOS en Windows, plus een webapp.", "Webapp die op een telefoon bruikbaar is. Compatibele telefoon- en desktopapps kunnen gesynchroniseerde contacten en data tonen via DAV."],
+                ["AI", "Mesh biedt Nexus en een verbinding voor externe assistenten via MCP.", "Monica kan via MCP verbinden met een geautoriseerde externe assistent. De gedocumenteerde workflows gebruiken de gekoppelde assistent voor modelantwoorden."],
+                ["Samenwerken met anderen", "Een betaald Team-abonnement ondersteunt een gedeelde werkruimte.", "Individuele kluizen. Je kunt geselecteerde details van een contact delen via een alleen-lezen link die je kunt intrekken."],
+                ["Hosting", "Beheerde dienst.", "Zelf te hosten software onder AGPL-3.0 en een beheerd aanbod dat Monica adverteert."],
+                ["Data-export", "CSV voor gegevens die je in Mesh hebt gezet, waarbij sommige gelicentieerde informatie wordt weggelaten.", "vCard en Markdown per contact, plus een JSON-export voor ondersteunde kluisgegevens die in de API is gedocumenteerd."],
+                ["Adverteerde instapprijs", "Personal is gratis tot 1,000 contacten, met een creditcard vereist. Pro kost 120 USD per jaar of 20 USD per maand.", "Geen softwarelicentiekosten bij zelf hosten. Beheerde hosting wordt geadverteerd voor 90 USD per jaar of 9 USD per maand. De openbare aanmelding leidde bij controle naar een wachtlijst."],
+            ],
+            'refs' => ['meshSetup' => "Installatiegids van Mesh", 'meshRefresh' => "LinkedIn-hulp van Mesh", 'meshPricing' => "Mesh-abonnementen", 'meshApps' => "Mesh-apps", 'meshVision' => "Mesh op Vision Pro", 'meshMcp' => "Mesh MCP", 'monicaDav' => "Synchronisatiegids van Monica", 'monicaSharing' => "Deelgids van Monica", 'monicaMcp' => "MCP-gids van Monica", 'monicaPricing' => "Prijzen van Monica"],
+        ],
+
+        'scenarios' => [
+            'title' => "Twee manieren om deze tools te gebruiken",
+            'items' => [
+                [
+                    'who' => "Begin met Mesh",
+                    'title' => "Je wilt weten wanneer mensen in je zakelijke netwerk van baan veranderen",
+                    'body' => "Je hebt mensen ontmoet in verschillende rollen en op verschillende evenementen, en veel van hen staan al in je inbox of op LinkedIn. In Mesh koppel je de bronnen die je wilt delen, bekijk je de profielen die het opbouwt en gebruik je updates of herinneringen om te bepalen wie je benadert. Mesh past beter als je met minder handwerk een netwerk actueel wilt houden. Controleer wat elke koppeling importeert. Mesh documenteert dat het verwijderen van een contact in een externe bron het Mesh-record laat staan.",
+                    'refs' => ['meshSetup' => "Installatiegids van Mesh", 'meshDelete' => "Wat er gebeurt na verwijdering bij de bron"],
+                ],
+                [
+                    'who' => "Begin met Monica",
+                    'title' => "Je wilt één plek voor de details die je zelf onthouden wilt",
+                    'body' => "Je wilt vastleggen hoe twee mensen aan elkaar verwant zijn, een belangrijke datum onthouden en een notitie van een bijeenkomst bewaren die op de tijdlijn van elke deelnemer verschijnt. In Monica maak of synchroniseer je de mensen, voeg je de relaties toe en leg je de gebeurtenis vast. Je kunt spullen die je bezit en algemene notities in dezelfde applicatie bewaren. Monica past als die gegevens het doel van de tool zijn en je het prettig vindt om de context zelf toe te voegen.",
+                    'refs' => ['monicaLink' => "Twee mensen koppelen in Monica", 'monicaTimeline' => "Hoe de tijdlijn werkt", 'monicaKnowledge' => "Kennisfuncties van Monica"],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "Als je overstapt tussen Mesh en Monica",
+            'items' => [
+                [
+                    'title' => "Van Mesh naar Monica.",
+                    'body' => "Mesh kan je een CSV-export sturen. Die bevat gegevens die je in Mesh hebt gezet en laat bepaalde gelicentieerde velden weg. Monica documenteert contactsynchronisatie via CardDAV en gebruikt voor overdracht ondersteunde Monica-JSON-formaten. Test een kleine steekproef in een compatibel adresboek en controleer wat er in Monica aankomt. Controleer notities, groepen en relaties afzonderlijk voordat je de rest overzet.",
+                    'refs' => ['meshExport' => "Exportgids van Mesh", 'monicaVcard' => "vCard- en importadvies van Monica", 'monicaDav' => "Synchronisatiegids van Monica"],
+                ],
+                [
+                    'title' => "Van Monica naar Mesh.",
+                    'body' => "Mesh Pro ondersteunt CSV-imports. Monica levert contactexports in vCard en Markdown en documenteert een JSON-export via de API. Deze formaten moeten mogelijk worden geconverteerd of handmatig worden overgenomen voordat ze in Mesh kunnen worden geïmporteerd. Controleer eerst verjaardagen, aangepaste velden en notities bij een paar contacten. Bewaar een aparte kopie van informatie die je wilt behouden, zoals familiekoppelingen, levensgebeurtenissen of bezittingen.",
+                    'refs' => ['monicaSharing', 'monicaApi', 'meshImport' => "CSV-import van Mesh"],
+                ],
+            ],
+            'note' => "In de versie van Monica’s code die we hebben bekeken, bevat de JSON-export gegevens zoals contacten, relaties, levensgebeurtenissen en herinneringen. Bezittingen en de aparte notities en lijsten in Kennis worden niet meegenomen. Als je die onderdelen gebruikt, bedenk dan hoe je die informatie bewaart of overdraagt voordat je overstapt.",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "Vragen die je beter beantwoordt voordat je kiest",
+            'items' => [
+                [
+                    'q' => "Kan ik Mesh proberen zonder te betalen?",
+                    'a' => "Mesh adverteert een gratis Personal-abonnement voor maximaal 1,000 contacten en vereist een betaalkaart. Het helpcentrum zegt dat je aanmelding begint met een Pro-proefperiode en beschrijft hoe je terugschakelt naar Personal. Controleer die keuze bij het aanmelden.",
+                    'refs' => ['meshPlans' => "Mesh-abonnementen en proefvoorwaarden"],
+                ],
+                [
+                    'q' => "Kunnen Mesh of Monica mijn telefooncontacten actueel houden?",
+                    'a' => "Mesh biedt apps voor iOS en Android en importeert contacten uit ondersteunde bronnen. Monica documenteert tweerichtings-CardDAV voor compatibele adresboek-apps. Wijzigingen, ook verwijderingen, kunnen met CardDAV van Monica in beide richtingen reizen. De data en deadlines van herinneringen via CalDAV zijn alleen-lezen.",
+                    'refs' => ['meshApps' => "Mesh-apps", 'monicaDav' => "Synchronisatiegids van Monica"],
+                ],
+                [
+                    'q' => "Wat verandert er door zelf te hosten?",
+                    'a' => "Met Monica kies je zelf waar je de software draait. Je beheert updates, back-ups en servertoegang. Als je een externe dienst of assistent koppelt, hangt de data die die ontvangt af van de toegang die je geeft. Bekijk bij Mesh welke informatie elk gekoppeld account beschikbaar maakt en welke gegevens de dienst kan exporteren.",
+                    'refs' => ['monicaSelf' => "Zelf hosten met Monica", 'monicaPrivacy' => "Privacygids van Monica", 'meshPrivacy' => "Beveiliging en privacy bij Mesh"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "Hoe we deze vergelijking hebben gecontroleerd",
+            'body' => "Het Monica-team schreef deze vergelijking op basis van de openbare prijzen, het helpcentrum en de productdocumentatie van Mesh, en de openbare documentatie en code van Monica. Prijzen staan in USD, vóór eventuele belastingen. Betaalde Mesh-functies en volledige migraties zijn niet getest met een ingelogd account. Abonnementslimieten, de beschikbaarheid van aanmelding en het bereik van een export kunnen veranderen.",
+        ],
+
+        'refs' => [
+            'meshHome' => ['label' => "Mesh", 'url' => 'https://me.sh/'],
+            'meshRename' => ['label' => "Aankondiging van Mesh", 'url' => 'https://me.sh/stories/mesh'],
+            'meshPricing' => ['label' => "Mesh-abonnementen", 'url' => 'https://me.sh/pricing'],
+            'meshApps' => ['label' => "Mesh-apps", 'url' => 'https://me.sh/start'],
+            'meshSetup' => ['label' => "Installatiegids van Mesh", 'url' => 'https://library.me.sh/knowledge-base/getting-started/'],
+            'meshRefresh' => ['label' => "LinkedIn-hulp van Mesh", 'url' => 'https://library.me.sh/knowledge-base/editing-a-contact/'],
+            'meshDelete' => ['label' => "Verwijdering in Mesh", 'url' => 'https://library.me.sh/knowledge-base/what-happens-when-i-delete-a-contact-outside-of-mesh/'],
+            'meshMcp' => ['label' => "Mesh MCP", 'url' => 'https://github.com/mesh/mesh-mcp'],
+            'meshVision' => ['label' => "Mesh op Vision Pro", 'url' => 'https://me.sh/apple-vision-pro'],
+            'meshExport' => ['label' => "Exportgids van Mesh", 'url' => 'https://library.me.sh/knowledge-base/export-to-csv/'],
+            'meshImport' => ['label' => "CSV-import van Mesh", 'url' => 'https://library.me.sh/knowledge-base/csv-import/'],
+            'meshPlans' => ['label' => "Mesh-abonnementen", 'url' => 'https://library.me.sh/knowledge-base/subscription-plans/'],
+            'meshPrivacy' => ['label' => "Beveiliging en privacy bij Mesh", 'url' => 'https://library.me.sh/knowledge-base/security-and-privacy/'],
+            'clayCom' => ['label' => "Clay.com", 'url' => 'https://www.clay.com/'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Prijzen van Monica", 'page' => 'pricing'],
+            'monicaPossessions' => ['label' => "Monica-bezittingen", 'page' => 'possessions'],
+            'monicaSelf' => ['label' => "Zelf hosten met Monica", 'handbook' => 'self-hosting'],
+            'monicaRelationships' => ['label' => "Monica-relaties", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaLink' => ['label' => "Twee mensen koppelen in Monica", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaTimeline' => ['label' => "Hoe de tijdlijn werkt", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaKnowledge' => ['label' => "Kennisfuncties van Monica", 'url' => 'https://my.monicahq.com/docs/en/knowledge'],
+            'monicaSharing' => ['label' => "Gids voor delen en exporteren van Monica", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaVcard' => ['label' => "vCard- en importadvies van Monica", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Synchronisatiegids van Monica", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "MCP-gids van Monica", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "API-referentie van Monica", 'url' => 'https://my.monicahq.com/docs/api'],
+            'monicaPrivacy' => ['label' => "Privacygids van Monica", 'url' => 'https://my.monicahq.com/docs/en/your-account-and-security/privacy'],
         ],
     ],
 

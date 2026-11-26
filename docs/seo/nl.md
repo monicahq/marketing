@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 157 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -2965,6 +2965,63 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | Monica v3 |
 | Secondary keywords | Monica herbouw, Monica vernieuwingen |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/vergelijken/monica-vs-dex/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/vergelijken/monica-vs-dex/ |
+| Canonical | https://www.monicahq.com/nl/vergelijken/monica-vs-dex/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica versus Dex voor persoonlijk relatiebeheer — Monica |
+| Meta description | Vergelijk Monica en Dex op LinkedIn, herinneringen om contact te houden, contactgeschiedenis, mobiele apps, exports en zelf hosten. |
+| H1 | Monica versus Dex |
+| OG title | Monica versus Dex voor persoonlijk relatiebeheer |
+| OG description | Vergelijk Monica en Dex op LinkedIn, herinneringen om contact te houden, contactgeschiedenis, mobiele apps, exports en zelf hosten. |
+| OG image | https://www.monicahq.com/og/compareDex-nl.jpg?v=6066d8c8 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica versus Dex |
+| Secondary keywords | alternatief voor Dex, persoonlijke CRM met LinkedIn-sync |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/vergelijken/monica-vs-folk/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/vergelijken/monica-vs-folk/ |
+| Canonical | https://www.monicahq.com/nl/vergelijken/monica-vs-folk/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica versus folk voor persoonlijk en teamrelatiebeheer — Monica |
+| Meta description | Vergelijk Monica en folk op gedeelde pipelines, toegewezen opvolgtaken, LinkedIn, persoonlijke gegevens, prijzen en data-exports. |
+| H1 | Monica versus folk |
+| OG title | Monica versus folk voor persoonlijk en teamrelatiebeheer |
+| OG description | Vergelijk Monica en folk op gedeelde pipelines, toegewezen opvolgtaken, LinkedIn, persoonlijke gegevens, prijzen en data-exports. |
+| OG image | https://www.monicahq.com/og/compareFolk-nl.jpg?v=c1a84e2f (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica versus folk |
+| Secondary keywords | alternatief voor folk, persoonlijke CRM of team-CRM |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
+
+## /nl/vergelijken/monica-vs-mesh/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/vergelijken/monica-vs-mesh/ |
+| Canonical | https://www.monicahq.com/nl/vergelijken/monica-vs-mesh/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica versus Mesh (voorheen Clay) — Monica |
+| Meta description | Vergelijk Monica en Mesh, voorheen Clay.earth, op contactsynchronisatie, het gratis abonnement, mobiele apps, data-exports en zelf hosten. |
+| H1 | Monica versus Mesh (voorheen Clay) |
+| OG title | Monica versus Mesh (voorheen Clay) |
+| OG description | Vergelijk Monica en Mesh, voorheen Clay.earth, op contactsynchronisatie, het gratis abonnement, mobiele apps, data-exports en zelf hosten. |
+| OG image | https://www.monicahq.com/og/compareMesh-nl.jpg?v=d2776ca9 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica versus Mesh |
+| Secondary keywords | alternatief voor Clay.earth, alternatief voor Mesh |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/nl.php; retain the existing H1. |
 

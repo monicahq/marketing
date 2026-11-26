@@ -18,6 +18,9 @@ return [
             'team' => "Team",
             'support' => "Support",
             'sales' => "Vertrieb",
+            'compareDex' => "Monica gegen Dex",
+            'compareFolk' => "Monica gegen folk",
+            'compareMesh' => "Monica gegen Mesh",
             'signIn' => "Anmelden",
             'about' => "Über Monica",
             'privacy' => "Datenschutzerklärung",
@@ -181,6 +184,48 @@ return [
                 'title' => "Unser Vertriebsteam",
                 'accent' => "meldet sich nie bei Ihnen.",
                 'description' => "Keine Anrufe. Keine Meetings. Kein Nachfassen. Nur Software.",
+            ],
+        ],
+
+        'compareDex' => [
+            'title' => "Monica gegen Dex für die Pflege persönlicher Beziehungen — Monica",
+            'description' => "Vergleichen Sie Monica und Dex bei LinkedIn, Erinnerungen zum Kontakthalten, Kontaktverlauf, mobilen Apps, Exporten und Self-Hosting.",
+            'ogTitle' => "Monica gegen Dex für die Pflege persönlicher Beziehungen",
+            'ogDescription' => "Vergleichen Sie Monica und Dex bei LinkedIn, Erinnerungen zum Kontakthalten, Kontaktverlauf, mobilen Apps, Exporten und Self-Hosting.",
+
+            'ogImage' => [
+                'eyebrow' => "Vergleich",
+                'title' => "Monica gegen Dex",
+                'accent' => "für persönliche Beziehungen.",
+                'description' => "LinkedIn, Erinnerungen, Kontaktverlauf, Exporte und Self-Hosting im Vergleich.",
+            ],
+        ],
+
+        'compareFolk' => [
+            'title' => "Monica gegen folk für persönliche und Team-Beziehungen — Monica",
+            'description' => "Vergleichen Sie Monica und folk bei gemeinsamen Pipelines, zugewiesenen Nachfassaktionen, LinkedIn, persönlichen Einträgen, Preisen und Datenexporten.",
+            'ogTitle' => "Monica gegen folk für persönliche und Team-Beziehungen",
+            'ogDescription' => "Vergleichen Sie Monica und folk bei gemeinsamen Pipelines, zugewiesenen Nachfassaktionen, LinkedIn, persönlichen Einträgen, Preisen und Datenexporten.",
+
+            'ogImage' => [
+                'eyebrow' => "Vergleich",
+                'title' => "Monica gegen folk",
+                'accent' => "für Einzelne und Teams.",
+                'description' => "Gemeinsame Pipelines, Nachfassaktionen, LinkedIn, Preise und Exporte im Vergleich.",
+            ],
+        ],
+
+        'compareMesh' => [
+            'title' => "Monica gegen Mesh (früher Clay) — Monica",
+            'description' => "Vergleichen Sie Monica und Mesh, früher Clay.earth, bei Kontaktsynchronisierung, kostenlosem Tarif, mobilen Apps, Datenexporten und Self-Hosting.",
+            'ogTitle' => "Monica gegen Mesh (früher Clay)",
+            'ogDescription' => "Vergleichen Sie Monica und Mesh, früher Clay.earth, bei Kontaktsynchronisierung, kostenlosem Tarif, mobilen Apps, Datenexporten und Self-Hosting.",
+
+            'ogImage' => [
+                'eyebrow' => "Vergleich",
+                'title' => "Monica gegen Mesh",
+                'accent' => "früher Clay.",
+                'description' => "Synchronisierung, kostenloser Tarif, Apps, Exporte und Self-Hosting im Vergleich.",
             ],
         ],
 
@@ -5627,6 +5672,10 @@ return [
         'productLabel' => "Produkt",
         'developersLabel' => "Entwickler",
         'companyLabel' => "Unternehmen",
+        'comparisonsLabel' => "Vergleiche",
+        'compareDex' => "Monica gegen Dex",
+        'compareFolk' => "Monica gegen folk",
+        'compareMesh' => "Monica gegen Mesh",
         'personalCrm' => "Was ist ein persönliches CRM?",
         'aiMemory' => "KI-Gedächtnis",
         'personalData' => "Persönliche Datenverwaltung",
@@ -6074,6 +6123,473 @@ return [
             ['kind' => "Referenz", 'title' => "API", 'description' => "Lesen und schreiben Sie Ihre Kontakte aus Ihren eigenen Skripten. Jeder Endpunkt, mit Beispielen in cURL, JavaScript und PHP."],
             ['kind' => "Referenz", 'title' => "MCP", 'description' => "Verbinden Sie einen Assistenten mit Ihrer Instanz, damit er Ihr Verzeichnis lesen und Personen darin erfassen kann, mit den Rechten, die Sie haben."],
             ['kind' => "Anleitung", 'title' => "CardDAV und CalDAV", 'description' => "Halten Sie die Kontakte- und Kalender-Apps auf Telefon und Computer mit Monica synchron."],
+        ],
+    ],
+
+    /**
+     * The Monica vs Dex comparison (route key `compareDex`), written in English
+     * only, so it exists in no other locale.
+     *
+     * `refs` holds every link: a `url` for another site, or a `page` (a route
+     * key) for a page of this one. A section names the refs it cites by key.
+     */
+    'compareDex' => [
+        'name' => "Dex",
+        'title' => "Monica gegen Dex",
+        'by' => "Geschrieben vom Monica-Team.",
+        'verified' => "Zuletzt geprüft am 25. November 2026.",
+        'vs' => "gegen",
+        'intro' => "Dex führt berufliche Kontakte und Interaktionen zusammen und nutzt diesen Verlauf, um Ihnen bei der Entscheidung zu helfen, wann Sie sich wieder melden sollten. Monica gibt Ihnen strukturierte Einträge für die Menschen in Ihrem Leben, ihre Beziehungen und die Ereignisse, an die Sie sich erinnern möchten. Beide bieten Erinnerungen, Notizen und Kontaktverläufe. Wie Informationen in diesen Verlauf gelangen, ist einer der größten Unterschiede.",
+        'introRefs' => ['dexTimeline', 'monicaTimeline'],
+        'toc' => "Auf dieser Seite",
+
+        'fit' => [
+            'title' => "Was passt zu Ihnen?",
+            'cards' => [
+                [
+                    'who' => "Dex",
+                    'title' => "Wählen Sie Dex, wenn es vor allem darum geht, in Kontakt zu bleiben",
+                    'items' => [
+                        "Sie haben einen großen Teil Ihres Netzwerks auf LinkedIn und möchten, dass neue Kontakte und Profiländerungen in Ihr CRM einfließen.",
+                        "Sie wünschen sich Erinnerungen zum Nachfassen, die sich verschieben können, wenn Sie mit jemandem interagieren, sowie native Apps für Mobilgeräte und Desktop.",
+                        "Die Abostufe bestimmt Ihr Limit an LinkedIn-Kontakten. Outlook wird unter Professional aufgeführt.",
+                    ],
+                    'refs' => ['dexPlans' => "Dex-Tarife", 'dexLinkedin' => "LinkedIn-Synchronisierung", 'dexTimeline' => "Leitfaden zu Interaktionen"],
+                    'cta' => "Dex besuchen",
+                    'ctaRef' => 'dexHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "Wählen Sie Monica, wenn Sie ein strukturiertes persönliches Archiv führen möchten",
+                    'items' => [
+                        "Sie möchten festhalten, wie Menschen miteinander verbunden sind, und wichtige Daten, Familienereignisse und Details speichern, die Sie selbst hinzufügen.",
+                        "Sie möchten Ihre Kontakte zusammen mit einem Verzeichnis Ihrer Besitztümer und Notizen führen oder die Software auf Ihrem eigenen Server betreiben.",
+                        "Die dokumentierte Synchronisierung von Monica umfasst kompatible Adressbücher sowie Termine und Fristen im Nur-Lese-Modus. Planen Sie manuelle Eingabe ein, wenn Sie Posteingangs- oder LinkedIn-Interaktionen festhalten möchten.",
+                    ],
+                    'refs' => ['monicaRelationships' => "Beziehungen in Monica", 'monicaPossessions' => "Besitztümer in Monica", 'monicaDav' => "Monica-Leitfaden zur Synchronisierung"],
+                    'cta' => "Monica entdecken",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica und Dex auf einen Blick",
+            'what' => "Worauf es ankommt",
+            'sources' => "Quellen:",
+            'rows' => [
+                ["LinkedIn", "Fortlaufende Synchronisierung der Kontakte. Premium listet bis zu 2,500 Kontakte und Professional bis zu 9,000. Die Einrichtung läuft laut Synchronisierungsleitfaden über die mobile App oder die Desktop-App.", "Die dokumentierten Integrationen enthalten keine LinkedIn-Synchronisierung."],
+                ["E-Mail, Kalender und Kontakte", "Integrationen für E-Mail und Kalender, wobei Outlook unter Professional aufgeführt wird. Dex dokumentiert eine Zwei-Wege-Synchronisierung der Kontakte, deren Verhalten von der Quelle abhängt.", "CardDAV kann Kontakte in beide Richtungen synchronisieren. CalDAV kann Termine und Erinnerungsfristen in einer kompatiblen App im Nur-Lese-Modus anzeigen. DAV hängt von der Instanz ab."],
+                ["Erinnerungen zum Nachfassen", "Die Häufigkeit zum Kontakthalten kann die nächste Erinnerung neu terminieren, wenn eine passende Interaktion das Datum der letzten Interaktion ändert. Dex dokumentiert auch Geburtstagserinnerungen.", "Einmalige und wiederkehrende Erinnerungen, auch solche, die an erfasste Daten gebunden sind. Benachrichtigungen in der App und per E-Mail sind dokumentiert. Telegram und SMS hängen von der Instanz ab."],
+                ["Kontaktverlauf", "Ein Verlauf für Notizen, E-Mails, Treffen, Erinnerungen und LinkedIn-Aktualisierungen. Manche Nachrichten wirken sich auf das Datum der letzten Interaktion aus, ohne als Eintrag im Verlauf zu erscheinen.", "Ein Verlauf erfasster Ereignisse mit Beteiligten. Ein gemeinsames Ereignis kann im Verlauf jedes Beteiligten erscheinen."],
+                ["Beziehungen visualisieren", "Verknüpfte Kontakte, eine Netzwerkansicht und eine geografische Karte.", "Typisierte Beziehungen und eine Familienansicht, die nahe Verwandte um einen Kontakt zeigt."],
+                ["Mobil und Desktop", "Apps für iOS, Android, Mac und Windows sowie Web.", "Web-App, die sich auf dem Smartphone nutzen lässt, mit DAV für kompatible Kontakt- und Kalender-Apps."],
+                ["KI und Integrationen", "Copilot, Recherche-Guthaben je nach Tarif und die Anbindung eines externen Assistenten über MCP.", "API und MCP für autorisierte externe Werkzeuge."],
+                ["Hosting und Eigentum", "Verwalteter Dienst. Die Datenschutzerklärung beschreibt, worauf Dex bei verbundenen Werkzeugen zugreift.", "Selbst gehostete Software unter AGPL-3.0 und ein von Monica beworbenes verwaltetes Angebot."],
+                ["Datenexport", "CSV-Export für Kontakte, Notizen und Netzwerk-Aktualisierungen.", "vCard und Markdown pro Kontakt, dazu ein in der API dokumentierter JSON-Export für unterstützte Tresordaten."],
+                ["Beworbener Einstiegspreis", "Premium kostet 144 USD pro Jahr bei jährlicher Zahlung. Professional kostet 240 USD pro Jahr bei jährlicher Zahlung. Eine siebentägige Testphase erfordert eine Karte.", "Keine Softwarelizenzgebühr beim Self-Hosting. Das verwaltete Hosting wird mit 90 USD pro Jahr oder 9 USD monatlich beworben. Die öffentliche Anmeldung führte bei unserer Prüfung auf eine Warteliste."],
+            ],
+            'refs' => ['dexPlans', 'dexLinkedin', 'dexContacts', 'dexChangelog', 'dexTimeline', 'dexCopilot', 'dexDesktop', 'monicaNotifications', 'monicaDav', 'monicaMcp', 'monicaPricing'],
+        ],
+
+        'scenarios' => [
+            'title' => "Zwei Arten, diese Werkzeuge zu nutzen",
+            'items' => [
+                [
+                    'who' => "Mit Dex beginnen",
+                    'title' => "Sie möchten eine Erinnerung, wenn eine berufliche Beziehung einschläft",
+                    'body' => "Sie verbinden LinkedIn und Ihren Kalender und legen für Menschen, bei denen Sie sich melden möchten, eine Häufigkeit zum Kontakthalten fest. Wenn Dex eine passende Interaktion erfasst, kann es die nächste Erinnerung verschieben. Beginnen Sie mit Dex, wenn Sie sich auf das Datum der letzten Interaktion stützen und möchten, dass das CRM einen Teil dieser Nachverfolgung übernimmt. Prüfen Sie die Interaktionsregeln für die Kanäle, die Sie nutzen. Eine Nachricht kann für das Datum der letzten Interaktion zählen, ohne ein eigener Eintrag im Verlauf zu werden.",
+                    'refs' => ['dexTimeline', 'dexLinkedin'],
+                ],
+                [
+                    'who' => "Mit Monica beginnen",
+                    'title' => "Sie möchten sich an die Menschen und Ereignisse rund um ein Familientreffen erinnern",
+                    'body' => "Sie erfassen das Treffen einmal in Monica, fügen die Anwesenden hinzu und verknüpfen Familienmitglieder über Beziehungstypen. Das Ereignis kann im Verlauf jedes Beteiligten erscheinen. Sie können eine Erinnerung für ein bestimmtes Datum oder nach einem wiederkehrenden Rhythmus festlegen. Beginnen Sie mit Monica, wenn Sie genau diese Beziehungen, Details und datierten Einträge bewahren möchten und den Kontext gern selbst eintragen.",
+                    'refs' => ['monicaTimelineHow', 'monicaLink', 'monicaReminders'],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "Wenn Sie zwischen Dex und Monica wechseln",
+            'items' => [
+                [
+                    'title' => "Von Dex zu Monica.",
+                    'body' => "Dex dokumentiert CSV-Exporte für Kontakte, Notizen und Netzwerk-Aktualisierungen. Monica dokumentiert die Synchronisierung über CardDAV sowie vCard- und Markdown-Exporte pro Kontakt. Ein CSV-Export braucht womöglich ein kompatibles Adressbuch oder einen Konvertierungsschritt, damit die grundlegenden Kontaktfelder in Monica ankommen. Probieren Sie zuerst einige Einträge aus und prüfen Sie, welche Notizen, Erinnerungen und Kontaktverknüpfungen Sie neu anlegen müssen.",
+                    'refs' => ['dexExport', 'monicaVcard', 'monicaDav'],
+                ],
+                [
+                    'title' => "Von Monica zu Dex.",
+                    'body' => "Dex dokumentiert CSV-Import und Kontaktsynchronisierung. Monica bietet vCard- und Markdown-Exporte pro Kontakt und dokumentiert JSON-Exporte über die API. Klären Sie, ob Ihr Adressbuch oder eine CSV-Konvertierung die Felder übertragen kann, die Sie brauchen. Testen Sie Familienbeziehungen, Ereignisse und Erinnerungsrhythmen getrennt.",
+                    'refs' => ['dexCsv', 'monicaSharing', 'monicaApi'],
+                ],
+            ],
+            'note' => "In der von uns geprüften Version des Monica-Codes enthält der JSON-Export Einträge wie Kontakte, Beziehungen, Lebensereignisse und Erinnerungen. Besitztümer sowie die separaten Notizen und Listen im Bereich Wissen sind nicht enthalten. Wenn Sie diese Bereiche nutzen, prüfen Sie vor dem Wechsel, wie Sie diese Informationen behalten oder übertragen.",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "Fragen, die Sie vor der Entscheidung klären sollten",
+            'items' => [
+                [
+                    'q' => "Aktualisiert Dex Erinnerungen automatisch?",
+                    'a' => "Der Rhythmus zum Kontakthalten in Dex kann sich aktualisieren, wenn eine passende Interaktion das Datum der letzten Interaktion ändert. Dex dokumentiert, wie jede Quelle dieses Datum und den Verlauf beeinflusst. Monica unterstützt wiederkehrende Erinnerungen nach einem Rhythmus, den Sie festlegen.",
+                    'refs' => ['dexTimeline' => "Dex-Leitfaden zu Interaktionen", 'monicaReminders' => "Monica-Leitfaden zu Erinnerungen"],
+                ],
+                [
+                    'q' => "Welchen Dex-Tarif sollte ich für Outlook oder ein großes LinkedIn-Netzwerk prüfen?",
+                    'a' => "Dex führt Outlook, die Synchronisierung mehrerer E-Mail-Konten und bis zu 9,000 LinkedIn-Kontakte unter Professional auf. Premium nennt bis zu 2,500 LinkedIn-Kontakte. Prüfen Sie die Tarifseite, wenn Ihre Wahl von einer bestimmten Integration oder einem Kontingent abhängt.",
+                    'refs' => ['dexPlans' => "Dex-Tarife"],
+                ],
+                [
+                    'q' => "Kann ich beide Produkte nutzen, ohne mein Postfach zu verbinden?",
+                    'a' => "Beide dokumentieren Wege, Kontakte und Notizen direkt hinzuzufügen. Wenn Sie Google oder ein anderes Konto mit Dex verbinden, prüfen Sie, was diese Verbindung lesen und schreiben kann. Wenn Sie Monica selbst hosten, verwalten Sie den Server und entscheiden, welche Integrationen Sie aktivieren.",
+                    'refs' => ['dexContacts' => "Dex-Leitfaden zu Kontakten", 'dexPrivacy' => "Datenschutzerklärung von Dex", 'monicaPeople' => "Monica-Funktionen für Menschen", 'monicaSelf' => "Self-Hosting von Monica"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "Wie wir diesen Vergleich geprüft haben",
+            'body' => "Das Monica-Team hat diesen Vergleich auf Grundlage der öffentlichen Preise, des Hilfecenters und des Änderungsprotokolls von Dex sowie der öffentlichen Dokumentation und des Codes von Monica geschrieben. Preise sind in USD vor Steuern angegeben. Kostenpflichtige Dex-Funktionen, das Verhalten verbundener Konten und vollständige Migrationen wurden nicht mit einem angemeldeten Konto getestet.",
+        ],
+
+        'refs' => [
+            'dexHome' => ['label' => "Dex", 'url' => 'https://getdex.com/'],
+            'dexPlans' => ['label' => "Dex-Preise", 'url' => 'https://getdex.com/pricing/'],
+            'dexLinkedin' => ['label' => "Dex-LinkedIn-Synchronisierung", 'url' => 'https://getdex.com/docs/faq/linkedin'],
+            'dexTimeline' => ['label' => "Dex-Leitfaden zu Interaktionen", 'url' => 'https://getdex.com/docs/workflows/interactions-and-the-timeline'],
+            'dexContacts' => ['label' => "Dex-Kontakte und Netzwerkansichten", 'url' => 'https://getdex.com/docs/workflows/manage-your-contacts'],
+            'dexChangelog' => ['label' => "Dex-Änderungsprotokoll", 'url' => 'https://getdex.com/docs/changelog/2026'],
+            'dexDesktop' => ['label' => "Dex-Desktop-App", 'url' => 'https://getdex.com/docs/desktop-app'],
+            'dexCopilot' => ['label' => "Dex Copilot", 'url' => 'https://getdex.com/docs/ai/copilot'],
+            'dexExport' => ['label' => "Dex-Hinweise zum Export", 'url' => 'https://getdex.com/docs/ai/copilot'],
+            'dexCsv' => ['label' => "Dex-CSV-Import", 'url' => 'https://getdex.com/docs/integrationsandfeatures/import/csv'],
+            'dexPrivacy' => ['label' => "Datenschutzerklärung von Dex", 'url' => 'https://getdex.com/privacypolicy/'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Monica-Preise", 'page' => 'pricing'],
+            'monicaPeople' => ['label' => "Monica-Funktionen für Menschen", 'page' => 'people'],
+            'monicaPossessions' => ['label' => "Besitztümer in Monica", 'page' => 'possessions'],
+            'monicaSelf' => ['label' => "Self-Hosting von Monica", 'handbook' => 'self-hosting'],
+            'monicaRelationships' => ['label' => "Beziehungen in Monica", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaLink' => ['label' => "Zwei Menschen verknüpfen", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaTimeline' => ['label' => "Monica-Leitfaden zum Verlauf", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaTimelineHow' => ['label' => "So funktioniert der Verlauf in Monica", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaReminders' => ['label' => "Eine Erinnerung festlegen", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/set-a-reminder'],
+            'monicaNotifications' => ['label' => "Monica-Benachrichtigungen", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/notification-channels'],
+            'monicaSharing' => ['label' => "Monica-Leitfaden zu Teilen und Export", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaVcard' => ['label' => "Monica-Hinweise zu vCard", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica DAV", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "Monica-API-Referenz", 'url' => 'https://my.monicahq.com/docs/api'],
+        ],
+    ],
+
+    /**
+     * The Monica vs folk comparison (route key `compareFolk`), English only.
+     * Same shape as `compareDex` above.
+     */
+    'compareFolk' => [
+        'name' => "folk",
+        'title' => "Monica gegen folk",
+        'by' => "Geschrieben vom Monica-Team.",
+        'verified' => "Zuletzt geprüft am 25. November 2026.",
+        'vs' => "gegen",
+        'intro' => "Wenn Ihr Team Nachfassaktionen zuweisen und eine gemeinsame Pipeline führen muss, passt folk besser. Wenn Sie vor allem ein Archiv der Menschen in Ihrem Leben führen möchten, mit ihren Beziehungen und dem, was Sie über sie festhalten wollen, ist Monica dafür gemacht. Beide organisieren Kontakte und Notizen. Sie geben anderen Menschen aber unterschiedliche Möglichkeiten, auf diese Informationen zuzugreifen und damit zu arbeiten.",
+        'introRefs' => ['folkPricing' => "folk-Tarife", 'monicaPeople' => "Monica-Funktionen für Menschen", 'monicaSharing' => "Monica-Leitfaden zum Teilen"],
+        'toc' => "Auf dieser Seite",
+
+        'fit' => [
+            'title' => "Was passt zu Ihnen?",
+            'cards' => [
+                [
+                    'who' => "folk",
+                    'title' => "Wählen Sie folk, wenn mehrere Personen dieselben Beziehungen betreuen",
+                    'items' => [
+                        "Ihr Team muss sehen, wer den nächsten Schritt übernimmt, Aufgaben zuweisen und Kontakte durch eine Pipeline bewegen.",
+                        "Sie möchten verbundene Interaktionen über E-Mail, Kalender oder WhatsApp haben oder LinkedIn-Profile mit folkX erfassen.",
+                        "Planen Sie das Budget pro Nutzer. Premium ergänzt eigene Deals und benutzerdefinierte Objekte, Sequenzen, Rollen im Arbeitsbereich und Zugriff auf den vollständigen Interaktionsverlauf.",
+                    ],
+                    'refs' => ['folkPricing' => "folk-Tarife", 'folkTasks' => "folk-Aufgaben", 'folkIntegrations' => "folk-Integrationen"],
+                    'cta' => "folk besuchen",
+                    'ctaRef' => 'folkHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "Wählen Sie Monica, wenn Sie ein Archiv für sich selbst führen",
+                    'items' => [
+                        "Sie möchten Freunde und Familie organisieren, Lebensereignisse festhalten und Daten und Erinnerungen verfolgen.",
+                        "Sie möchten persönliche Notizen und Besitztümer neben Ihren Kontakten führen, ausgewählte Details per Link teilen oder die Software auf Ihrem eigenen Server betreiben.",
+                        "Tresore gehören zu einem einzelnen Konto. Eine empfangende Person kann die Kontaktdaten lesen, die Sie teilen. Sie kann Ihren Eintrag weder bearbeiten noch die Zuständigkeit für eine Aufgabe in Ihrem Tresor übernehmen.",
+                    ],
+                    'refs' => ['monicaRelationships' => "Beziehungen in Monica", 'monicaPossessions' => "Besitztümer in Monica", 'monicaSharing' => "Monica-Leitfaden zum Teilen"],
+                    'cta' => "Monica entdecken",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica und folk auf einen Blick",
+            'what' => "Worauf es ankommt",
+            'sources' => "Quellen:",
+            'rows' => [
+                ["Zusammenarbeit", "Ein gemeinsamer Arbeitsbereich mit Gruppen und Pipelines, Zuweisungen und tarifabhängigen Rollen oder Berechtigungen.", "Einzelne Tresore. Kontakte lassen sich über widerrufbare Links im Nur-Lese-Modus teilen."],
+                ["Nachfassaktionen", "Aufgaben lassen sich zuweisen, mit Einträgen verknüpfen und wiederholen.", "Erinnerungen können einmalig oder wiederkehrend sein, auch solche, die an von Ihnen erfasste Daten gebunden sind."],
+                ["Vertriebspipeline", "Standard enthält Pipeline-Ansichten und Kampagnen. Premium ergänzt Deals, benutzerdefinierte Objekte und Sequenzen.", "Kontaktgruppen, typisierte Beziehungen und Verläufe. Die dokumentierten Abläufe konzentrieren sich auf persönliche Aufzeichnungen und Erinnerungen."],
+                ["E-Mail, Kalender und Messaging", "Integrationen für E-Mail, Kalender und WhatsApp. Der vollständige Interaktionsverlauf wird unter Premium aufgeführt.", "CardDAV kann Kontakte in beide Richtungen synchronisieren. CalDAV kann Termine und Erinnerungsfristen im Nur-Lese-Modus veröffentlichen."],
+                ["LinkedIn", "Profile mit folkX erfassen, Nachrichten mit der Erweiterung protokollieren oder eine LinkedIn-Exportdatei importieren. folk unterscheidet diese Abläufe von einer automatischen Synchronisierung aller LinkedIn-Kontakte.", "Die dokumentierten Integrationen enthalten keinen LinkedIn-Anschluss."],
+                ["Mobil", "Contacts by folk ist für iOS und Android verfügbar. Die mobile Hilfe nennt die unterstützten Funktionen.", "Web-App, die sich auf dem Smartphone nutzen lässt, dazu DAV für kompatible Kontakt- und Kalender-Apps, wo aktiviert."],
+                ["KI und Integrationen", "Assistenten und KI-Felder. folk dokumentiert auch eine gehostete MCP-Verbindung. Laut Preisseite gehört der API-Zugriff zu Premium.", "API und MCP für autorisierte externe Werkzeuge und Assistenten."],
+                ["Datenexport", "CSV-Export pro Gruppenansicht für Kontakte und Notizen. Interaktionen und Aufgaben sind ausgeschlossen.", "vCard und Markdown pro Kontakt, dazu ein in der API dokumentierter JSON-Export für unterstützte Tresordaten."],
+                ["Hosting und Preis", "Verwalteter Dienst, abgerechnet pro Nutzer. Standard kostet 24 USD pro Nutzer und Monat bei jährlicher Abrechnung, Premium 48 USD. Die Testphase dauert 14 Tage ohne Karte.", "Keine Softwarelizenzgebühr beim Self-Hosting. Das verwaltete Hosting wird mit 90 USD pro Jahr oder 9 USD monatlich beworben. Die öffentliche Anmeldung führte bei unserer Prüfung auf eine Warteliste."],
+            ],
+            'refs' => ['folkPricing' => "folk-Preise", 'folkIntegrations' => "folk-Hilfe zu Integrationen", 'folkLinkedin' => "folk-LinkedIn-Nachrichten", 'folkMobile' => "folk mobil", 'folkMcp' => "folk MCP", 'monicaReminders' => "Monica-Erinnerungen", 'monicaPricing', 'monicaDav', 'monicaMcp'],
+        ],
+
+        'scenarios' => [
+            'title' => "Zwei Arten, diese Werkzeuge zu nutzen",
+            'items' => [
+                [
+                    'who' => "Mit folk beginnen",
+                    'title' => "Drei Kolleginnen und Kollegen fassen bei denselben Partnern nach",
+                    'body' => "Ein Kollege hält das letzte Gespräch fest, weist die nächste Aktion zu und aktualisiert die Phase des Partners. Der Rest des Teams sieht, wo diese Beziehung steht, vorbehaltlich der Berechtigungen im Arbeitsbereich und der Sichtbarkeit der Interaktion. Beginnen Sie mit folk, wenn Sie genau diese Arbeit organisieren möchten. Prüfen Sie die Standard-Pipeline anhand Ihrer Anforderungen und erwägen Sie Premium, wenn Sie eigene Deals oder Rollen im Arbeitsbereich brauchen. Beim aufgeführten Jahrespreis kosten drei Standard-Plätze 864 USD pro Jahr vor Steuern.",
+                    'refs' => ['folkTasks' => "folk-Aufgaben", 'folkPricing' => "folk-Preise", 'folkProfiles' => "Sichtbarkeit von Interaktionen in folk"],
+                ],
+                [
+                    'who' => "Mit Monica beginnen",
+                    'title' => "Sie halten Familiendetails fest und teilen einen Kontakt",
+                    'body' => "Sie erfassen eine Familienbeziehung und ein bevorstehendes Datum und erstellen dann einen Link mit ausgewählten Details für jemanden, der eine Telefonnummer oder Adresse braucht. Diese Person kann den Link im Browser öffnen. Der Link gewährt Lesezugriff und schließt Beziehungen, Lebensereignisse und Erinnerungen aus. Prüfen Sie vor dem Senden, welche Bereiche der Kontaktseite ausgewählt sind. Beginnen Sie mit Monica, wenn das fortlaufende Archiv für Ihren eigenen Gebrauch ist und dieses Maß an Teilen genügt.",
+                    'refs' => ['monicaLink' => "Zwei Menschen in Monica verknüpfen", 'monicaShareContact' => "Einen Kontakt teilen", 'monicaLinkScope' => "Was ein Kontaktlink zeigt"],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "Wenn Sie zwischen folk und Monica wechseln",
+            'items' => [
+                [
+                    'title' => "Von folk zu Monica.",
+                    'body' => "folk dokumentiert Exporte aus einer Gruppenansicht. Ein ZIP enthält CSV-Dateien mit den Kontakten und Notizen dieser Ansicht, mit den angezeigten Spalten und Filtern. Der Export schließt unter anderem Interaktionen und Aufgaben aus. Probieren Sie eine Stichprobe mit einem kompatiblen Adressbuch aus, wenn Sie grundlegende Kontakte über CardDAV in Monica übernehmen möchten. Planen Sie Zuweisungen, Verlauf und Deal-Phasen, die Sie behalten müssen, gesondert ein.",
+                    'refs' => ['folkExport' => "folk-Leitfaden zum Export", 'monicaVcard' => "Monica-Hilfe zu vCard und Import", 'monicaDav'],
+                ],
+                [
+                    'title' => "Von Monica zu folk.",
+                    'body' => "Monica bietet Kontaktexporte als vCard und Markdown und dokumentiert JSON-Exporte über die API. folk akzeptiert CSV-Importe. Eine Konvertierung oder ein manueller Schritt kann nötig sein, vor allem bei benutzerdefinierten Feldern. Entscheiden Sie, wie Sie Familienbeziehungen und Lebensereignisse abbilden und welche persönlichen Notizen in einen Team-Arbeitsbereich gehören.",
+                    'refs' => ['monicaSharing', 'monicaApi', 'folkPricing' => "folk-Preise und CSV-Funktionen"],
+                ],
+            ],
+            'note' => "In der von uns geprüften Version des Monica-Codes enthält der JSON-Export Einträge wie Kontakte, Beziehungen, Lebensereignisse und Erinnerungen. Besitztümer sowie die separaten Notizen und Listen im Bereich Wissen sind nicht enthalten. Wenn Sie diese Bereiche nutzen, prüfen Sie vor dem Wechsel, wie Sie diese Informationen behalten oder übertragen.",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "Fragen, die Sie vor der Entscheidung klären sollten",
+            'items' => [
+                [
+                    'q' => "Kann ich in Monica eine gemeinsame Pipeline führen?",
+                    'a' => "Mit dem dokumentierten Teilen von Monica kann eine empfangende Person ausgewählte Informationen zu einem Kontakt lesen. Wenn Teammitglieder Einträge ändern, nächste Schritte zuweisen und Deals durch eine Pipeline bewegen müssen, passt folk besser.",
+                    'refs' => ['monicaShareContact' => "Kontakte in Monica teilen", 'folkPricing' => "folk-Preise"],
+                ],
+                [
+                    'q' => "Synchronisiert folk mein LinkedIn-Netzwerk automatisch?",
+                    'a' => "folk dokumentiert drei Abläufe mit unterschiedlichem Umfang. Sie können ein Profil mit folkX erfassen, ein LinkedIn-Gespräch über die Erweiterung protokollieren oder Ihre LinkedIn-Kontakte exportieren und die Datei importieren. Die FAQ zu Integrationen beschreibt die Grenzen der automatischen Synchronisierung.",
+                    'refs' => ['folkIntegrations' => "folk-Integrationen", 'folkLinkedin' => "LinkedIn-Interaktionen verfolgen"],
+                ],
+                [
+                    'q' => "Bekomme ich beim Export den gesamten folk-Arbeitsbereich?",
+                    'a' => "Die Hilfe von folk beschreibt den Export pro Gruppenansicht. Die Felder und Filter dieser Ansicht bestimmen das Ergebnis. Der Leitfaden nennt Ausnahmen, darunter Aufgaben und Interaktionen. Wenn Ihnen der Export eines Arbeitsbereichs wichtig ist, testen Sie eine kleine Gruppe mit den Arten von Einträgen, die Sie brauchen, bevor Sie sich auf den Export verlassen.",
+                    'refs' => ['folkExport' => "folk-Leitfaden zum Export"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "Wie wir diesen Vergleich geprüft haben",
+            'body' => "Das Monica-Team hat diesen Vergleich auf Grundlage der öffentlichen Preise und des Hilfecenters von folk sowie der öffentlichen Dokumentation und des Codes von Monica geschrieben. Preise sind in USD vor Steuern angegeben. Kostenpflichtige Funktionen des Arbeitsbereichs, Berechtigungen und vollständige Migrationen wurden nicht mit einem angemeldeten Konto getestet.",
+        ],
+
+        'refs' => [
+            'folkHome' => ['label' => "folk", 'url' => 'https://www.folk.app/'],
+            'folkPricing' => ['label' => "folk-Preise", 'url' => 'https://www.folk.app/pricing'],
+            'folkTasks' => ['label' => "folk-Aufgaben", 'url' => 'https://help.folk.app/en/articles/15869200-tasks'],
+            'folkIntegrations' => ['label' => "folk-Integrationen", 'url' => 'https://help.folk.app/en/articles/8170484-faq-sources-integrations'],
+            'folkLinkedin' => ['label' => "folk-LinkedIn-Nachrichten", 'url' => 'https://help.folk.app/en/articles/7177488-track-linkedin-interactions'],
+            'folkMobile' => ['label' => "folk mobil", 'url' => 'https://help.folk.app/en/articles/15178507-download-the-folk-mobile-app'],
+            'folkMcp' => ['label' => "folk MCP", 'url' => 'https://help.folk.app/en/articles/16760382-mcp-connect-folk-to-other-mcps'],
+            'folkProfiles' => ['label' => "Sichtbarkeit von Interaktionen in folk", 'url' => 'https://help.folk.app/en/articles/15179426-people-company-profiles-on-mobile'],
+            'folkExport' => ['label' => "folk-Leitfaden zum Export", 'url' => 'https://help.folk.app/en/articles/5007388-export-data'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Monica-Preise", 'page' => 'pricing'],
+            'monicaPeople' => ['label' => "Monica-Funktionen für Menschen", 'page' => 'people'],
+            'monicaPossessions' => ['label' => "Besitztümer in Monica", 'page' => 'possessions'],
+            'monicaRelationships' => ['label' => "Beziehungen in Monica", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaReminders' => ['label' => "Monica-Erinnerungen", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/set-a-reminder'],
+            'monicaLink' => ['label' => "Zwei Menschen in Monica verknüpfen", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaSharing' => ['label' => "Monica-Leitfaden zu Teilen und Export", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaShareContact' => ['label' => "Einen Kontakt teilen", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/share-a-contact'],
+            'monicaLinkScope' => ['label' => "Was ein Kontaktlink zeigt", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/what-a-link-shows'],
+            'monicaVcard' => ['label' => "Monica-Hilfe zu vCard und Import", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica DAV", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "Monica-API-Referenz", 'url' => 'https://my.monicahq.com/docs/api'],
+        ],
+    ],
+
+    /**
+     * The Monica vs Mesh comparison (route key `compareMesh`), English only.
+     * Same shape as `compareDex` above.
+     */
+    'compareMesh' => [
+        'name' => "Mesh",
+        'title' => "Monica gegen Mesh (früher Clay)",
+        'by' => "Geschrieben vom Monica-Team.",
+        'verified' => "Zuletzt geprüft am 25. November 2026.",
+        'vs' => "gegen",
+        'intro' => "Clay.earth, das persönliche CRM, wurde im März 2026 zu Mesh. Mesh führt Kontakte aus den Konten zusammen, die Sie verbinden, und hilft dabei, ihre Profile aktuell zu halten. Monica gibt Ihnen strukturierte Einträge für Menschen, Familienbeziehungen, Besitztümer und Notizen, mit der Möglichkeit, es auf Ihrem eigenen Server zu betreiben. Clay.com ist ein eigenständiger Dienst für Vertriebs- und Marketingdaten.",
+        'introRefs' => ['meshRename' => "Ankündigung von Mesh", 'clayCom' => "Clay.com"],
+        'toc' => "Auf dieser Seite",
+
+        'fit' => [
+            'title' => "Was passt zu Ihnen?",
+            'cards' => [
+                [
+                    'who' => "Mesh",
+                    'title' => "Wählen Sie Mesh, wenn Sie eine Kontaktliste möchten, die sich selbst aufbaut",
+                    'items' => [
+                        "Sie möchten Menschen aus E-Mail, Kalendern und unterstützten Social-Media-Konten zusammenführen, mit Aktualisierungen, wenn Kontakte den Job wechseln oder umziehen.",
+                        "Sie möchten eine native mobile App oder einen gehosteten kostenlosen Tarif. Mesh Personal deckt bis zu 1,000 Kontakte ab und erfordert eine Karte.",
+                        "Einige von Mesh gelieferte Profilinformationen sind vom CSV-Export ausgeschlossen.",
+                    ],
+                    'refs' => ['meshPricing' => "Mesh-Tarife", 'meshApps' => "Mesh-Apps", 'meshExport' => "Mesh-Leitfaden zum Export"],
+                    'cta' => "Mesh besuchen",
+                    'ctaRef' => 'meshHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "Wählen Sie Monica, wenn Sie ein detaillierteres persönliches Archiv führen möchten",
+                    'items' => [
+                        "Sie möchten festhalten, wie Menschen miteinander verbunden sind, Erinnerungen festlegen und Notizen zu Ereignissen führen, an denen Sie gemeinsam teilgenommen haben.",
+                        "Sie möchten Besitztümer und Notizen neben Ihren Kontakten organisieren oder die Software auf Ihrem eigenen Server betreiben.",
+                        "Sie tragen die Details, die Sie behalten möchten, selbst ein oder synchronisieren sie. Die dokumentierten Integrationen von Monica enthalten keinen LinkedIn- oder Posteingangs-Anschluss, der diese Details für Sie sammelt.",
+                    ],
+                    'refs' => ['monicaRelationships' => "Beziehungen in Monica", 'monicaPossessions' => "Besitztümer in Monica", 'monicaDav' => "Monica-Leitfaden zur Synchronisierung"],
+                    'cta' => "Monica entdecken",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica und Mesh auf einen Blick",
+            'what' => "Worauf es ankommt",
+            'sources' => "Quellen:",
+            'rows' => [
+                ["Woher die Kontakte kommen", "Importiert Menschen aus verbundenen Quellen wie E-Mail, Kalendern, LinkedIn und anderen unterstützten Diensten. Mesh kann ihre Profile anreichern.", "Fügen Sie Menschen direkt hinzu oder nutzen Sie ein kompatibles CardDAV-Adressbuch für die Zwei-Wege-Synchronisierung von Kontakten, wo aktiviert."],
+                ["LinkedIn", "Eine Integration kann Kontakte importieren und Profile aktualisieren. Das Hilfecenter beschreibt gerätespezifische Einschränkungen.", "Sie können Profildetails selbst erfassen. Die dokumentierten Integrationen enthalten keinen LinkedIn-Anschluss."],
+                ["Daten und Nachfassaktionen", "Geburtstagsbenachrichtigungen, Erinnerungen und Hinweise, wieder Kontakt aufzunehmen.", "Geburtstage und wiederkehrende Erinnerungen. CalDAV kann Termine und Erinnerungsfristen in kompatiblen Apps im Nur-Lese-Modus anzeigen, wo aktiviert."],
+                ["Beziehungen und Verlauf", "Notizen, Kontaktverläufe, Gruppen und Netzwerk-Aktualisierungen. Mesh bietet außerdem eine Netzwerkvisualisierung auf der Vision Pro.", "Typisierte Beziehungen, eine Familienansicht rund um einen Kontakt und Lebensereignisse, die in mehreren Kontaktverläufen erscheinen können."],
+                ["Mobil und Desktop", "Apps für iOS, Android, macOS und Windows sowie eine Web-App.", "Web-App, die sich auf dem Smartphone nutzen lässt. Kompatible Apps auf Smartphone und Desktop können synchronisierte Kontakte und Termine über DAV anzeigen."],
+                ["KI", "Mesh bietet Nexus und eine Anbindung für externe Assistenten über MCP.", "Monica kann über MCP mit einem autorisierten externen Assistenten verbunden werden. Die dokumentierten Abläufe nutzen den verbundenen Assistenten für Modellantworten."],
+                ["Zusammenarbeit mit anderen", "Ein kostenpflichtiger Team-Tarif unterstützt einen gemeinsamen Arbeitsbereich.", "Einzelne Tresore. Sie können ausgewählte Details eines Kontakts über einen widerrufbaren Link im Nur-Lese-Modus teilen."],
+                ["Hosting", "Verwalteter Dienst.", "Selbst gehostete Software unter AGPL-3.0 und ein von Monica beworbenes verwaltetes Angebot."],
+                ["Datenexport", "CSV für Daten, die Sie in Mesh eingegeben haben, wobei einige lizenzierte Informationen ausgeschlossen sind.", "vCard und Markdown pro Kontakt, dazu ein in der API dokumentierter JSON-Export für unterstützte Tresordaten."],
+                ["Beworbener Einstiegspreis", "Personal ist für bis zu 1,000 Kontakte kostenlos, eine Karte ist erforderlich. Pro kostet 120 USD pro Jahr oder 20 USD monatlich.", "Keine Softwarelizenzgebühr beim Self-Hosting. Das verwaltete Hosting wird mit 90 USD pro Jahr oder 9 USD monatlich beworben. Die öffentliche Anmeldung führte bei unserer Prüfung auf eine Warteliste."],
+            ],
+            'refs' => ['meshSetup' => "Mesh-Einrichtungsleitfaden", 'meshRefresh' => "Mesh-Hilfe zu LinkedIn", 'meshPricing' => "Mesh-Tarife", 'meshApps' => "Mesh-Apps", 'meshVision' => "Mesh auf der Vision Pro", 'meshMcp' => "Mesh MCP", 'monicaDav' => "Monica-Leitfaden zur Synchronisierung", 'monicaSharing' => "Monica-Leitfaden zum Teilen", 'monicaMcp' => "Monica-MCP-Leitfaden", 'monicaPricing' => "Monica-Preise"],
+        ],
+
+        'scenarios' => [
+            'title' => "Zwei Arten, diese Werkzeuge zu nutzen",
+            'items' => [
+                [
+                    'who' => "Mit Mesh beginnen",
+                    'title' => "Sie möchten wissen, wann Menschen in Ihrem beruflichen Netzwerk den Job wechseln",
+                    'body' => "Sie haben Menschen in mehreren Rollen und bei verschiedenen Anlässen kennengelernt, und viele sind bereits in Ihrem Posteingang oder auf LinkedIn. In Mesh verbinden Sie die Quellen, die Sie teilen möchten, prüfen die Profile, die es aufbaut, und nutzen Aktualisierungen oder Erinnerungen, um zu entscheiden, wen Sie kontaktieren. Mesh passt besser, wenn der Grund für Ihren Wechsel ist, ein Netzwerk mit weniger manuellem Aufwand aktuell zu halten. Prüfen Sie, was jede Verbindung importiert. Mesh dokumentiert, dass das Löschen eines Kontakts in einer externen Quelle den Mesh-Eintrag bestehen lässt.",
+                    'refs' => ['meshSetup' => "Mesh-Einrichtungsleitfaden", 'meshDelete' => "Was nach dem Löschen an der Quelle passiert"],
+                ],
+                [
+                    'who' => "Mit Monica beginnen",
+                    'title' => "Sie möchten einen Ort für die Details, an die Sie sich erinnern wollen",
+                    'body' => "Sie möchten festhalten, wie zwei Menschen miteinander verbunden sind, sich ein wichtiges Datum merken und eine Notiz zu einem Treffen aufbewahren, die im Verlauf jedes Beteiligten erscheint. In Monica legen Sie die Menschen an oder synchronisieren sie, fügen die Beziehungen hinzu und erfassen das Ereignis. Eigene Besitztümer und allgemeine Notizen können Sie in derselben Anwendung führen. Monica passt, wenn genau diese Einträge der Zweck des Werkzeugs sind und Sie den Kontext gern selbst hinzufügen.",
+                    'refs' => ['monicaLink' => "Zwei Menschen in Monica verknüpfen", 'monicaTimeline' => "So funktioniert der Verlauf", 'monicaKnowledge' => "Wissensfunktionen von Monica"],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "Wenn Sie zwischen Mesh und Monica wechseln",
+            'items' => [
+                [
+                    'title' => "Von Mesh zu Monica.",
+                    'body' => "Mesh kann Ihnen einen CSV-Export senden. Er enthält Daten, die Sie in Mesh eingegeben haben, und schließt bestimmte lizenzierte Felder aus. Monica dokumentiert die Kontaktsynchronisierung über CardDAV, und der Transfer nutzt unterstützte JSON-Formate von Monica. Testen Sie eine kleine Stichprobe in einem kompatiblen Adressbuch und prüfen Sie, was in Monica ankommt. Kontrollieren Sie Notizen, Gruppen und Beziehungen einzeln, bevor Sie den Rest übertragen.",
+                    'refs' => ['meshExport' => "Mesh-Leitfaden zum Export", 'monicaVcard' => "Monica-Hinweise zu vCard und Import", 'monicaDav' => "Monica-Leitfaden zur Synchronisierung"],
+                ],
+                [
+                    'title' => "Von Monica zu Mesh.",
+                    'body' => "Mesh Pro unterstützt CSV-Importe. Monica liefert Kontaktexporte als vCard und Markdown und dokumentiert einen JSON-Export über die API. Diese Formate müssen eventuell konvertiert oder manuell kopiert werden, bevor sie in Mesh importiert werden können. Prüfen Sie zuerst Geburtstage, benutzerdefinierte Felder und Notizen bei einigen Kontakten. Bewahren Sie eine separate Kopie von Informationen wie Familienverknüpfungen, Lebensereignissen oder Besitztümern auf, die Sie behalten müssen.",
+                    'refs' => ['monicaSharing', 'monicaApi', 'meshImport' => "Mesh-CSV-Import"],
+                ],
+            ],
+            'note' => "In der von uns geprüften Version des Monica-Codes enthält der JSON-Export Einträge wie Kontakte, Beziehungen, Lebensereignisse und Erinnerungen. Besitztümer sowie die separaten Notizen und Listen im Bereich Wissen sind nicht enthalten. Wenn Sie diese Bereiche nutzen, prüfen Sie vor dem Wechsel, wie Sie diese Informationen behalten oder übertragen.",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "Fragen, die Sie vor der Entscheidung klären sollten",
+            'items' => [
+                [
+                    'q' => "Kann ich Mesh ausprobieren, ohne zu zahlen?",
+                    'a' => "Mesh bewirbt einen kostenlosen Personal-Tarif für bis zu 1,000 Kontakte und verlangt eine Zahlungskarte. Laut Hilfecenter beginnt die Anmeldung mit einer Pro-Testphase und beschreibt, wie man auf Personal zurückstuft. Prüfen Sie diese Auswahl bei der Anmeldung.",
+                    'refs' => ['meshPlans' => "Mesh-Tarife und Testbedingungen"],
+                ],
+                [
+                    'q' => "Können Mesh oder Monica meine Telefonkontakte aktuell halten?",
+                    'a' => "Mesh bietet Apps für iOS und Android und importiert Kontakte aus unterstützten Quellen. Monica dokumentiert Zwei-Wege-CardDAV für kompatible Adressbuch-Apps. Änderungen, auch Löschungen, können mit dem CardDAV von Monica in beide Richtungen laufen. Die Termine und Erinnerungsfristen über CalDAV sind schreibgeschützt.",
+                    'refs' => ['meshApps' => "Mesh-Apps", 'monicaDav' => "Monica-Leitfaden zur Synchronisierung"],
+                ],
+                [
+                    'q' => "Was ändert sich durch Self-Hosting?",
+                    'a' => "Mit Monica entscheiden Sie, wo die Software läuft. Sie kümmern sich um Updates, Backups und Serverzugriff. Wenn Sie einen externen Dienst oder Assistenten verbinden, hängen die Daten, die er erhält, vom Zugriff ab, den Sie gewähren. Prüfen Sie bei Mesh, welche Informationen jedes verbundene Konto bereitstellt und welche Daten der Dienst exportieren kann.",
+                    'refs' => ['monicaSelf' => "Self-Hosting von Monica", 'monicaPrivacy' => "Monica-Datenschutzleitfaden", 'meshPrivacy' => "Sicherheit und Datenschutz bei Mesh"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "Wie wir diesen Vergleich geprüft haben",
+            'body' => "Das Monica-Team hat diesen Vergleich auf Grundlage der öffentlichen Preise, des Hilfecenters und der Produktdokumentation von Mesh sowie der öffentlichen Dokumentation und des Codes von Monica geschrieben. Preise sind in USD vor Steuern angegeben. Kostenpflichtige Mesh-Funktionen und vollständige Migrationen wurden nicht mit einem angemeldeten Konto getestet. Tariflimits, die Verfügbarkeit der Anmeldung und der Umfang eines Exports können sich ändern.",
+        ],
+
+        'refs' => [
+            'meshHome' => ['label' => "Mesh", 'url' => 'https://me.sh/'],
+            'meshRename' => ['label' => "Ankündigung von Mesh", 'url' => 'https://me.sh/stories/mesh'],
+            'meshPricing' => ['label' => "Mesh-Tarife", 'url' => 'https://me.sh/pricing'],
+            'meshApps' => ['label' => "Mesh-Apps", 'url' => 'https://me.sh/start'],
+            'meshSetup' => ['label' => "Mesh-Einrichtungsleitfaden", 'url' => 'https://library.me.sh/knowledge-base/getting-started/'],
+            'meshRefresh' => ['label' => "Mesh-Hilfe zu LinkedIn", 'url' => 'https://library.me.sh/knowledge-base/editing-a-contact/'],
+            'meshDelete' => ['label' => "Löschen in Mesh", 'url' => 'https://library.me.sh/knowledge-base/what-happens-when-i-delete-a-contact-outside-of-mesh/'],
+            'meshMcp' => ['label' => "Mesh MCP", 'url' => 'https://github.com/mesh/mesh-mcp'],
+            'meshVision' => ['label' => "Mesh auf der Vision Pro", 'url' => 'https://me.sh/apple-vision-pro'],
+            'meshExport' => ['label' => "Mesh-Leitfaden zum Export", 'url' => 'https://library.me.sh/knowledge-base/export-to-csv/'],
+            'meshImport' => ['label' => "Mesh-CSV-Import", 'url' => 'https://library.me.sh/knowledge-base/csv-import/'],
+            'meshPlans' => ['label' => "Mesh-Tarife", 'url' => 'https://library.me.sh/knowledge-base/subscription-plans/'],
+            'meshPrivacy' => ['label' => "Sicherheit und Datenschutz bei Mesh", 'url' => 'https://library.me.sh/knowledge-base/security-and-privacy/'],
+            'clayCom' => ['label' => "Clay.com", 'url' => 'https://www.clay.com/'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Monica-Preise", 'page' => 'pricing'],
+            'monicaPossessions' => ['label' => "Besitztümer in Monica", 'page' => 'possessions'],
+            'monicaSelf' => ['label' => "Self-Hosting von Monica", 'handbook' => 'self-hosting'],
+            'monicaRelationships' => ['label' => "Beziehungen in Monica", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaLink' => ['label' => "Zwei Menschen in Monica verknüpfen", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaTimeline' => ['label' => "So funktioniert der Verlauf", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaKnowledge' => ['label' => "Wissensfunktionen von Monica", 'url' => 'https://my.monicahq.com/docs/en/knowledge'],
+            'monicaSharing' => ['label' => "Monica-Leitfaden zu Teilen und Export", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaVcard' => ['label' => "Monica-Hinweise zu vCard und Import", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica-Leitfaden zur Synchronisierung", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica-MCP-Leitfaden", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "Monica-API-Referenz", 'url' => 'https://my.monicahq.com/docs/api'],
+            'monicaPrivacy' => ['label' => "Monica-Datenschutzleitfaden", 'url' => 'https://my.monicahq.com/docs/en/your-account-and-security/privacy'],
         ],
     ],
 

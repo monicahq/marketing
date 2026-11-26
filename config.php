@@ -733,13 +733,39 @@ return [
             'ru' => 'prodazhi',
         ],
 
-        // Monica vs Dex, written in English only: the slug nests under
-        // `compare`, which has no page of its own, as the feature pages nest
-        // under `features`. A route with one locale is fine, as the sitemap,
-        // hreflang and the locale picker read the route's own locales.
-        'compareDex' => ['en' => 'compare/monica-vs-dex'],
-        'compareFolk' => ['en' => 'compare/monica-vs-folk'],
-        'compareMesh' => ['en' => 'compare/monica-vs-mesh'],
+        // The three comparison pages. Their slugs nest under a translated
+        // `compare` prefix that has no page of its own, as the feature pages
+        // nest under `features`. Chinese keeps the English prefix.
+        'compareDex' => [
+            'en' => 'compare/monica-vs-dex',
+            'fr' => 'comparer/monica-vs-dex',
+            'de' => 'vergleich/monica-vs-dex',
+            'es' => 'comparar/monica-vs-dex',
+            'pt' => 'comparar/monica-vs-dex',
+            'nl' => 'vergelijken/monica-vs-dex',
+            'zh' => 'compare/monica-vs-dex',
+            'ru' => 'sravnenie/monica-vs-dex',
+        ],
+        'compareFolk' => [
+            'en' => 'compare/monica-vs-folk',
+            'fr' => 'comparer/monica-vs-folk',
+            'de' => 'vergleich/monica-vs-folk',
+            'es' => 'comparar/monica-vs-folk',
+            'pt' => 'comparar/monica-vs-folk',
+            'nl' => 'vergelijken/monica-vs-folk',
+            'zh' => 'compare/monica-vs-folk',
+            'ru' => 'sravnenie/monica-vs-folk',
+        ],
+        'compareMesh' => [
+            'en' => 'compare/monica-vs-mesh',
+            'fr' => 'comparer/monica-vs-mesh',
+            'de' => 'vergleich/monica-vs-mesh',
+            'es' => 'comparar/monica-vs-mesh',
+            'pt' => 'comparar/monica-vs-mesh',
+            'nl' => 'vergelijken/monica-vs-mesh',
+            'zh' => 'compare/monica-vs-mesh',
+            'ru' => 'sravnenie/monica-vs-mesh',
+        ],
 
         // The page between the website and the two sign-in forms, while the
         // new Monica and Monica classic run side by side with separate

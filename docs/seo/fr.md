@@ -1,6 +1,6 @@
 # Monica SEO sheets for fr
 
-These 157 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1048,6 +1048,63 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /fr/comparer/monica-vs-dex/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/comparer/monica-vs-dex/ |
+| Canonical | https://www.monicahq.com/fr/comparer/monica-vs-dex/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica contre Dex pour la gestion des relations personnelles — Monica |
+| Meta description | Comparez Monica et Dex sur LinkedIn, les rappels de suivi, l’historique des contacts, les applications mobiles, les exports et l’auto-hébergement. |
+| H1 | Monica contre Dex |
+| OG title | Monica contre Dex pour la gestion des relations personnelles |
+| OG description | Comparez Monica et Dex sur LinkedIn, les rappels de suivi, l’historique des contacts, les applications mobiles, les exports et l’auto-hébergement. |
+| OG image | https://www.monicahq.com/og/compareDex-fr.jpg?v=269d700c (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica contre Dex |
+| Secondary keywords | alternative à Dex, CRM personnel avec synchronisation LinkedIn |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
+
+## /fr/comparer/monica-vs-folk/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/comparer/monica-vs-folk/ |
+| Canonical | https://www.monicahq.com/fr/comparer/monica-vs-folk/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica contre folk pour la gestion des relations personnelles et d’équipe — Monica |
+| Meta description | Comparez Monica et folk sur les pipelines partagés, les relances attribuées, LinkedIn, les fiches personnelles, les tarifs et les exports de données. |
+| H1 | Monica contre folk |
+| OG title | Monica contre folk pour la gestion des relations personnelles et d’équipe |
+| OG description | Comparez Monica et folk sur les pipelines partagés, les relances attribuées, LinkedIn, les fiches personnelles, les tarifs et les exports de données. |
+| OG image | https://www.monicahq.com/og/compareFolk-fr.jpg?v=14764f8d (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica contre folk |
+| Secondary keywords | alternative à folk, CRM personnel ou CRM d’équipe |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
+
+## /fr/comparer/monica-vs-mesh/
+
+| Field | Content |
+| --- | --- |
+| Slug | /fr/comparer/monica-vs-mesh/ |
+| Canonical | https://www.monicahq.com/fr/comparer/monica-vs-mesh/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica contre Mesh (anciennement Clay) — Monica |
+| Meta description | Comparez Monica et Mesh, anciennement Clay.earth, sur la synchronisation des contacts, l’offre gratuite, les applications mobiles, les exports et l’auto-hébergement. |
+| H1 | Monica contre Mesh (anciennement Clay) |
+| OG title | Monica contre Mesh (anciennement Clay) |
+| OG description | Comparez Monica et Mesh, anciennement Clay.earth, sur la synchronisation des contacts, l’offre gratuite, les applications mobiles, les exports et l’auto-hébergement. |
+| OG image | https://www.monicahq.com/og/compareMesh-fr.jpg?v=0a2147c2 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica contre Mesh |
+| Secondary keywords | alternative à Clay.earth, alternative à Mesh |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/fr.php; retain the existing H1. |
 
 ## /fr/conditions-utilisation/
 
