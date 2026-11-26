@@ -739,6 +739,7 @@ return [
         // hreflang and the locale picker read the route's own locales.
         'compareDex' => ['en' => 'compare/monica-vs-dex'],
         'compareFolk' => ['en' => 'compare/monica-vs-folk'],
+        'compareMesh' => ['en' => 'compare/monica-vs-mesh'],
 
         // The page between the website and the two sign-in forms, while the
         // new Monica and Monica classic run side by side with separate
@@ -1124,7 +1125,7 @@ return [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
         'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support', 'sales', 'signIn'],
-        'Compare' => ['compareDex', 'compareFolk'],
+        'Compare' => ['compareDex', 'compareFolk', 'compareMesh'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
         'Legal' => ['terms', 'privacy'],
@@ -1190,6 +1191,7 @@ return [
         'sales' => '2026-11-24',
         'compareDex' => '2026-11-25',
         'compareFolk' => '2026-11-25',
+        'compareMesh' => '2026-11-25',
         'signIn' => '2026-11-24',
     ],
 

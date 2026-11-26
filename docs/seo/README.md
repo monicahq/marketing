@@ -5,7 +5,7 @@ These sheets are generated from the rendered build, not from the live website, s
 <!-- sheets:start -->
 | Language | Sheets |
 | --- | --- |
-| English | [159 pages](en.md) |
+| English | [160 pages](en.md) |
 | French | [157 pages](fr.md) |
 | German | [157 pages](de.md) |
 | Spanish | [157 pages](es.md) |

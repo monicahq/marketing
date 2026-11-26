@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 159 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1104,6 +1104,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Primary keyword | Monica vs folk |
 | Secondary keywords | folk alternative, folk vs Monica personal CRM |
 | Supporting keywords | personal CRM vs team CRM, self-hosted folk alternative |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/compare/monica-vs-mesh/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/compare/monica-vs-mesh/ |
+| Canonical | https://www.monicahq.com/en/compare/monica-vs-mesh/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica vs Mesh (formerly Clay) — Monica |
+| Meta description | Compare Monica and Mesh, formerly Clay.earth, on contact sync, the free plan, mobile apps, data exports and self-hosting. |
+| H1 | Monica vs Mesh (formerly Clay) |
+| OG title | Monica vs Mesh (formerly Clay) |
+| OG description | Compare Monica and Mesh, formerly Clay.earth, on contact sync, the free plan, mobile apps, data exports and self-hosting. |
+| OG image | https://www.monicahq.com/og/compareMesh-en.jpg?v=8c80f507 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica vs Mesh |
+| Secondary keywords | Clay.earth alternative, Mesh personal CRM alternative |
+| Supporting keywords | Clay personal CRM vs Monica, self-hosted Clay alternative |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/contribute/

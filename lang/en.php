@@ -39,6 +39,7 @@ return [
             'sales' => "Sales",
             'compareDex' => "Monica vs Dex",
             'compareFolk' => "Monica vs folk",
+            'compareMesh' => "Monica vs Mesh",
             'signIn' => "Sign in",
             'about' => "About Monica",
             'privacy' => "Privacy policy",
@@ -241,6 +242,20 @@ return [
                 'title' => "Monica vs folk",
                 'accent' => "for people and teams.",
                 'description' => "Shared pipelines, follow-ups, LinkedIn, pricing and exports, side by side.",
+            ],
+        ],
+
+        'compareMesh' => [
+            'title' => "Monica vs Mesh (formerly Clay) — Monica",
+            'description' => "Compare Monica and Mesh, formerly Clay.earth, on contact sync, the free plan, mobile apps, data exports and self-hosting.",
+            'ogTitle' => "Monica vs Mesh (formerly Clay)",
+            'ogDescription' => "Compare Monica and Mesh, formerly Clay.earth, on contact sync, the free plan, mobile apps, data exports and self-hosting.",
+
+            'ogImage' => [
+                'eyebrow' => "Compare",
+                'title' => "Monica vs Mesh",
+                'accent' => "formerly Clay.",
+                'description' => "Contact sync, the free plan, apps, exports and self-hosting, side by side.",
             ],
         ],
 
@@ -6461,6 +6476,163 @@ return [
             'monicaDav' => ['label' => "Monica DAV", 'url' => 'https://my.monicahq.com/docs/carddav'],
             'monicaMcp' => ['label' => "Monica MCP", 'url' => 'https://my.monicahq.com/docs/mcp'],
             'monicaApi' => ['label' => "Monica API reference", 'url' => 'https://my.monicahq.com/docs/api'],
+        ],
+    ],
+
+    /**
+     * The Monica vs Mesh comparison (route key `compareMesh`), English only.
+     * Same shape as `compareDex` above.
+     */
+    'compareMesh' => [
+        'name' => "Mesh",
+        'title' => "Monica vs Mesh (formerly Clay)",
+        'by' => "Written by the Monica team.",
+        'verified' => "Last verified November 25, 2026.",
+        'vs' => "vs",
+        'intro' => "Clay.earth, the personal CRM, became Mesh in March 2026. Mesh brings contacts together from the accounts you connect and helps keep their profiles up to date. Monica gives you structured records for people, family relationships, possessions and notes, with the option to run it on your own server. Clay.com is a separate service for sales and marketing data.",
+        'introRefs' => ['meshRename' => "Mesh’s announcement", 'clayCom' => "Clay.com"],
+        'toc' => "On this page",
+
+        'fit' => [
+            'title' => "Which one fits what you need?",
+            'cards' => [
+                [
+                    'who' => "Mesh",
+                    'title' => "Choose Mesh if you want a contact list that builds itself",
+                    'items' => [
+                        "You want to bring together people from email, calendars and supported social accounts, with updates when contacts change jobs or move.",
+                        "You want a native mobile app or a hosted free plan. Mesh Personal covers up to 1,000 contacts and requires a card.",
+                        "Some profile information supplied by Mesh is excluded from its CSV export.",
+                    ],
+                    'refs' => ['meshPricing' => "Mesh plans", 'meshApps' => "Mesh apps", 'meshExport' => "Mesh export guide"],
+                    'cta' => "Visit Mesh",
+                    'ctaRef' => 'meshHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "Choose Monica if you want to keep a more detailed personal record",
+                    'items' => [
+                        "You want to record how people are related, set reminders and keep notes about events you took part in together.",
+                        "You want to organise possessions and notes alongside your contacts, or run the software on your own server.",
+                        "You’ll enter or sync the details you want to keep. Monica’s documented integrations don’t include a LinkedIn or inbox connector that collects those details for you.",
+                    ],
+                    'refs' => ['monicaRelationships' => "Monica relationships", 'monicaPossessions' => "Monica possessions", 'monicaDav' => "Monica sync guide"],
+                    'cta' => "Explore Monica",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica and Mesh at a glance",
+            'what' => "What matters",
+            'sources' => "Sources:",
+            'rows' => [
+                ["Where contacts come from", "Imports people from connected sources such as email, calendars, LinkedIn and other supported services. Mesh can enrich their profiles.", "Add people directly or use a compatible CardDAV address book for two-way contact sync where enabled."],
+                ["LinkedIn", "An integration can import contacts and refresh profiles. The help centre describes device-specific limits.", "You can record profile details yourself. The documented integrations do not include a LinkedIn connector."],
+                ["Dates and follow-ups", "Birthday notifications, reminders and prompts to reconnect.", "Birthdays and recurring reminders. CalDAV can show dates and reminder deadlines in compatible apps in read-only mode where enabled."],
+                ["Relationships and history", "Notes, contact timelines, groups and network updates. Mesh also offers a network visualisation on Vision Pro.", "Typed relationships, a family view around a contact, and life events that can appear on several contact timelines."],
+                ["Mobile and desktop", "iOS, Android, macOS and Windows apps, plus a web app.", "Web app usable on a phone. Compatible phone and desktop apps can display synced contacts and dates through DAV."],
+                ["AI", "Mesh offers Nexus and a connection for external assistants via MCP.", "Monica can connect to an authorised external assistant via MCP. Its documented workflows use the connected assistant for model responses."],
+                ["Working with other people", "A paid Team plan supports a shared workspace.", "Individual vaults. You can share selected details of a contact through a revocable, read-only link."],
+                ["Hosting", "Managed service.", "Self-hosted software under AGPL-3.0 and a managed offering advertised by Monica."],
+                ["Data export", "CSV for data you put into Mesh, with some licensed information excluded.", "Contact-level vCard and Markdown, plus an API-documented JSON export for supported vault data."],
+                ["Advertised entry price", "Personal is free for up to 1,000 contacts, with a card required. Pro is $120 USD per year or $20 USD monthly.", "No software licence fee when self-hosting. Managed hosting is advertised at $90 USD per year or $9 USD monthly. The public signup led to a waitlist when checked."],
+            ],
+            'refs' => ['meshSetup' => "Mesh setup guide", 'meshRefresh' => "Mesh LinkedIn help", 'meshPricing' => "Mesh plans", 'meshApps' => "Mesh apps", 'meshVision' => "Mesh Vision Pro", 'meshMcp' => "Mesh MCP", 'monicaDav' => "Monica sync guide", 'monicaSharing' => "Monica sharing guide", 'monicaMcp' => "Monica MCP guide", 'monicaPricing' => "Monica pricing"],
+        ],
+
+        'scenarios' => [
+            'title' => "Two ways to use these tools",
+            'items' => [
+                [
+                    'who' => "Start with Mesh",
+                    'title' => "You want to know when people in your professional network change jobs",
+                    'body' => "You’ve met people across several roles and events, and many are already in your inbox or on LinkedIn. In Mesh, you connect the sources you’re comfortable sharing, review the profiles it builds and use updates or reminders to decide who to contact. Mesh is the better fit if keeping a network current with less manual work is the reason you’re switching. Check what each connection imports. Mesh documents that deleting a contact in an external source leaves the Mesh record in place.",
+                    'refs' => ['meshSetup' => "Mesh setup guide", 'meshDelete' => "What happens after deletion at the source"],
+                ],
+                [
+                    'who' => "Start with Monica",
+                    'title' => "You want one place for the details you choose to remember",
+                    'body' => "You want to record how two people are related, remember an important date and keep a note from a gathering that appears on each participant’s timeline. In Monica, you create or sync the people, add the relationships and record the event. You can keep items you own and general notes in the same application. Monica fits if those records are the point of the tool and you’re comfortable adding the context yourself.",
+                    'refs' => ['monicaLink' => "Link two people in Monica", 'monicaTimeline' => "How the timeline works", 'monicaKnowledge' => "Monica knowledge features"],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "If you’re moving between Mesh and Monica",
+            'items' => [
+                [
+                    'title' => "From Mesh to Monica.",
+                    'body' => "Mesh can send you a CSV export. It includes data you put into Mesh and excludes certain licensed fields. Monica documents contact sync through CardDAV, and its transfer flow uses supported Monica JSON formats. Test a small sample in a compatible address book and check what reaches Monica. Verify notes, groups and relationships individually before moving the rest.",
+                    'refs' => ['meshExport' => "Mesh export guide", 'monicaVcard' => "Monica vCard and import guidance", 'monicaDav' => "Monica sync guide"],
+                ],
+                [
+                    'title' => "From Monica to Mesh.",
+                    'body' => "Mesh Pro supports CSV imports. Monica provides contact exports in vCard and Markdown, and documents a JSON export through its API. These formats may require conversion or manual copying before they can be imported into Mesh. Check birthdays, custom fields and notes on a few contacts first. Keep a separate copy of information such as family links, life events or possessions that you need to retain.",
+                    'refs' => ['monicaSharing', 'monicaApi', 'meshImport' => "Mesh CSV import"],
+                ],
+            ],
+            'note' => "In the version of Monica’s code we reviewed, the JSON export includes records such as contacts, relationships, life events and reminders. It excludes possessions and the separate notes and lists in Knowledge. If you use those areas, check how you’ll keep or transfer that information before switching.",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "Questions worth answering before you choose",
+            'items' => [
+                [
+                    'q' => "Can I try Mesh without paying?",
+                    'a' => "Mesh advertises a free Personal plan for up to 1,000 contacts and requires a payment card. Its help centre says signup starts on a Pro trial and describes how to downgrade to Personal. Check that selection when signing up.",
+                    'refs' => ['meshPlans' => "Mesh plans and trial terms"],
+                ],
+                [
+                    'q' => "Can Mesh or Monica keep my phone contacts up to date?",
+                    'a' => "Mesh offers iOS and Android apps and imports contacts from supported sources. Monica documents two-way CardDAV for compatible address-book apps. Changes, including deletions, can travel in both directions with Monica’s CardDAV. Its CalDAV dates and reminder deadlines are read-only.",
+                    'refs' => ['meshApps' => "Mesh apps", 'monicaDav' => "Monica sync guide"],
+                ],
+                [
+                    'q' => "What does self-hosting change?",
+                    'a' => "With Monica you can choose where to run the software. You handle updates, backups and server access. If you connect an external service or assistant, the data it receives depends on the access you grant. For Mesh, review the information each connected account makes available and which data the service can export.",
+                    'refs' => ['monicaSelf' => "Monica self-hosting", 'monicaPrivacy' => "Monica privacy guide", 'meshPrivacy' => "Mesh security and privacy"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "How we checked this comparison",
+            'body' => "The Monica team wrote this comparison using Mesh’s public pricing, help centre and product documentation, and Monica’s public documentation and code. Prices are in USD before applicable taxes. Paid Mesh features and full migrations weren’t tested with a signed-in account. Plan limits, signup availability and the scope of an export can change.",
+        ],
+
+        'refs' => [
+            'meshHome' => ['label' => "Mesh", 'url' => 'https://me.sh/'],
+            'meshRename' => ['label' => "Mesh’s announcement", 'url' => 'https://me.sh/stories/mesh'],
+            'meshPricing' => ['label' => "Mesh plans", 'url' => 'https://me.sh/pricing'],
+            'meshApps' => ['label' => "Mesh apps", 'url' => 'https://me.sh/start'],
+            'meshSetup' => ['label' => "Mesh setup guide", 'url' => 'https://library.me.sh/knowledge-base/getting-started/'],
+            'meshRefresh' => ['label' => "Mesh LinkedIn help", 'url' => 'https://library.me.sh/knowledge-base/editing-a-contact/'],
+            'meshDelete' => ['label' => "Mesh deletion", 'url' => 'https://library.me.sh/knowledge-base/what-happens-when-i-delete-a-contact-outside-of-mesh/'],
+            'meshMcp' => ['label' => "Mesh MCP", 'url' => 'https://github.com/mesh/mesh-mcp'],
+            'meshVision' => ['label' => "Mesh Vision Pro", 'url' => 'https://me.sh/apple-vision-pro'],
+            'meshExport' => ['label' => "Mesh export guide", 'url' => 'https://library.me.sh/knowledge-base/export-to-csv/'],
+            'meshImport' => ['label' => "Mesh CSV import", 'url' => 'https://library.me.sh/knowledge-base/csv-import/'],
+            'meshPlans' => ['label' => "Mesh plans", 'url' => 'https://library.me.sh/knowledge-base/subscription-plans/'],
+            'meshPrivacy' => ['label' => "Mesh security and privacy", 'url' => 'https://library.me.sh/knowledge-base/security-and-privacy/'],
+            'clayCom' => ['label' => "Clay.com", 'url' => 'https://www.clay.com/'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Monica pricing", 'page' => 'pricing'],
+            'monicaPossessions' => ['label' => "Monica possessions", 'page' => 'possessions'],
+            'monicaSelf' => ['label' => "Monica self-hosting", 'handbook' => 'self-hosting'],
+            'monicaRelationships' => ['label' => "Monica relationships", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaLink' => ['label' => "Link two people in Monica", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaTimeline' => ['label' => "How the timeline works", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaKnowledge' => ['label' => "Monica knowledge features", 'url' => 'https://my.monicahq.com/docs/en/knowledge'],
+            'monicaSharing' => ['label' => "Monica sharing and export guide", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaVcard' => ['label' => "Monica vCard and import guidance", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica sync guide", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP guide", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "Monica API reference", 'url' => 'https://my.monicahq.com/docs/api'],
+            'monicaPrivacy' => ['label' => "Monica privacy guide", 'url' => 'https://my.monicahq.com/docs/en/your-account-and-security/privacy'],
         ],
     ],
 

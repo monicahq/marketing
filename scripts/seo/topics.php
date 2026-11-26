@@ -41,6 +41,7 @@ $english = [
     'signIn' => ['Monica sign in', ['Monica login', 'Monica classic login'], []],
     'compareDex' => ['Monica vs Dex', ['Dex alternative', 'Dex vs Monica personal CRM'], ['personal CRM with LinkedIn sync', 'self-hosted Dex alternative']],
     'compareFolk' => ['Monica vs folk', ['folk alternative', 'folk vs Monica personal CRM'], ['personal CRM vs team CRM', 'self-hosted folk alternative']],
+    'compareMesh' => ['Monica vs Mesh', ['Clay.earth alternative', 'Mesh personal CRM alternative'], ['Clay personal CRM vs Monica', 'self-hosted Clay alternative']],
     'sales' => ['Monica sales', ['contact Monica sales', 'Monica demo'], []],
     'handbook' => ['Monica handbook', ['Monica project principles', 'running Monica'], ['independent open source project']],
 ];
