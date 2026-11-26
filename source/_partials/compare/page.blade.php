@@ -1,5 +1,6 @@
 {{--
-    Monica vs Dex (route key `compareDex`), English only.
+    A Monica vs competitor comparison, English only. `$key` is the route key and
+    the key of its copy in lang/en.php (`compareDex`, `compareFolk`).
 
     One long article, six numbered sections separated by a hairline, as in the
     design. Every link is a key of `compareDex.refs` in lang/en.php: a `url`
@@ -7,11 +8,11 @@
     this one. `$ref` turns a key into an anchor, and `$refs` a list of keys,
     where a map of key => label overrides the shared label.
 
-    Dex's own logo is deliberately not drawn: the site carries no third-party
+    The competitor's logo is deliberately not drawn: the site carries no third-party
     marks beyond the few the owner chose.
 --}}
 @php
-    $copy = $page->t('compareDex');
+    $copy = $page->t($key);
 
     $container = 'mx-auto w-full max-w-marketing px-4 py-section-sm md:px-8 lg:py-section';
     $section = 'scroll-mt-6 border-t border-border';
@@ -148,7 +149,7 @@
                     <thead>
                         <tr>
                             <th scope="col" class="w-1/5 border-b border-border px-5 py-4 text-small font-medium text-text-muted">{{ $copy['glance']['what'] }}</th>
-                            <th scope="col" class="w-2/5 border-b border-border border-l border-l-border-subtle px-5 py-4 font-semibold">Dex</th>
+                            <th scope="col" class="w-2/5 border-b border-border border-l border-l-border-subtle px-5 py-4 font-semibold">{{ $copy['name'] }}</th>
                             <th scope="col" class="w-2/5 border-b border-border border-l border-l-border-subtle px-5 py-4 font-semibold">
                                 <span class="flex items-center gap-2.5">
                                     <img src="/assets/images/monica-panda-mark.svg" alt="" width="32" height="29" class="h-auto w-5">Monica
@@ -170,7 +171,9 @@
 
             <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-small">
                 <span class="font-medium text-text">{{ $copy['glance']['sources'] }}</span>
-                {!! collect($copy['glance']['refs'])->map(fn ($key) => $ref($key))->implode('') !!}
+                @foreach ($copy['glance']['refs'] as $key => $label)
+                    {!! is_int($key) ? $ref($label) : $ref($key, $label) !!}
+                @endforeach
             </div>
         </div>
     </section>
