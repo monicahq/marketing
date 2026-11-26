@@ -231,6 +231,28 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
         $lines[] = "{$from} {$to} 301";
     }
 
+    // The old site had no language prefix: /blog/custom-genders, /api/gifts,
+    // /download. Search Console still lists them as 404s, and other sites
+    // still link to them. Posts keep one slug in every language, so each
+    // English post is read from the collection and only existing slugs are
+    // redirected. /api/* was the API reference, which now lives in the
+    // application; the old downloads page has no equivalent, so it lands on
+    // the homepage.
+    $default = $jigsaw->getConfig('defaultLocale');
+    $blog = "/{$default}/{$routes['blog'][$default]}/";
+    $lines[] = '';
+    $lines[] = "/blog {$blog} 301";
+    $lines[] = "/blog/ {$blog} 301";
+
+    foreach ($jigsaw->getCollection("posts_{$default}") as $post) {
+        $lines[] = "/blog/{$post->slug} {$blog}{$post->slug}/ 301";
+        $lines[] = "/blog/{$post->slug}/ {$blog}{$post->slug}/ 301";
+    }
+
+    $lines[] = '/api/* ' . $jigsaw->getConfig('links')['api'] . ' 301';
+    $lines[] = "/download /{$default}/ 301";
+    $lines[] = "/download/ /{$default}/ 301";
+
     file_put_contents($jigsaw->getDestinationPath() . '/_redirects', implode("\n", $lines) . "\n");
 });
 
