@@ -40,6 +40,14 @@
                 ['label' => $page->t('footer.terms'), 'href' => $page->route('terms')],
             ],
         ],
+        [
+            'label' => $page->t('footer.comparisonsLabel'),
+            'links' => [
+                ['label' => $page->t('footer.compareDex'), 'href' => $page->route('compareDex')],
+                ['label' => $page->t('footer.compareFolk'), 'href' => $page->route('compareFolk')],
+                ['label' => $page->t('footer.compareMesh'), 'href' => $page->route('compareMesh')],
+            ],
+        ],
     ];
 
     // The meadow, by day and by night. The two files need not share a ratio,

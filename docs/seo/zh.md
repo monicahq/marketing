@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -156,6 +156,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
 
+## /zh/blog/bulk-people-actions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/blog/bulk-people-actions/ |
+| Canonical | https://www.monicahq.com/zh/blog/bulk-people-actions/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | 现在你可以一次删除多个人，或一次更改他们的分类：Monica 博客 |
+| Meta description | 在“人员”列表中勾选你想处理的人，然后一次性更改他们的分类，或把他们删除。删除之前，Monica 会列出将被删除的每个人，而分类的更改可以撤销。 |
+| H1 | 现在你可以一次删除多个人，或一次更改他们的分类 |
+| OG title | 现在你可以一次删除多个人，或一次更改他们的分类 |
+| OG description | 在“人员”列表中勾选你想处理的人，然后一次性更改他们的分类，或把他们删除。删除之前，Monica 会列出将被删除的每个人，而分类的更改可以撤销。 |
+| OG image | https://www.monicahq.com/og/blog-bulk-people-actions-zh.jpg?v=6116989c (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | 现在你可以一次删除多个人，或一次更改他们的分类 |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
 ## /zh/blog/chandler-is-in-beta/
 
 | Field | Content |
@@ -171,6 +190,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-zh.jpg?v=42a0d427 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler 进入 beta 测试 |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /zh/blog/change-contact-template/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/blog/change-contact-template/ |
+| Canonical | https://www.monicahq.com/zh/blog/change-contact-template/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | 现在你可以更改联系人的模板了：Monica 博客 |
+| Meta description | 当一个人的页面不再合适时，把他换到另一个模板上。Monica 会先告诉你会发生什么，而且你写下的内容绝不会被删除。 |
+| H1 | 现在你可以更改联系人的模板了 |
+| OG title | 现在你可以更改联系人的模板了 |
+| OG description | 当一个人的页面不再合适时，把他换到另一个模板上。Monica 会先告诉你会发生什么，而且你写下的内容绝不会被删除。 |
+| OG image | https://www.monicahq.com/og/blog-change-contact-template-zh.jpg?v=d51bdca6 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | 现在你可以更改联系人的模板了 |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
@@ -1029,6 +1067,63 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /zh/compare/monica-vs-dex/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/compare/monica-vs-dex/ |
+| Canonical | https://www.monicahq.com/zh/compare/monica-vs-dex/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica 对比 Dex：个人关系管理 — Monica |
+| Meta description | 从 LinkedIn、保持联系提醒、联系人历史、移动应用、导出和自托管几个方面，对比 Monica 与 Dex。 |
+| H1 | Monica 对比 Dex |
+| OG title | Monica 对比 Dex：个人关系管理 |
+| OG description | 从 LinkedIn、保持联系提醒、联系人历史、移动应用、导出和自托管几个方面，对比 Monica 与 Dex。 |
+| OG image | https://www.monicahq.com/og/compareDex-zh.jpg?v=112c1719 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica 对比 Dex |
+| Secondary keywords | Dex 替代品, 支持 LinkedIn 同步的个人 CRM |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/compare/monica-vs-folk/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/compare/monica-vs-folk/ |
+| Canonical | https://www.monicahq.com/zh/compare/monica-vs-folk/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica 对比 folk：个人与团队关系管理 — Monica |
+| Meta description | 从共享管道、指派跟进、LinkedIn、个人记录、价格和数据导出几个方面，对比 Monica 与 folk。 |
+| H1 | Monica 对比 folk |
+| OG title | Monica 对比 folk：个人与团队关系管理 |
+| OG description | 从共享管道、指派跟进、LinkedIn、个人记录、价格和数据导出几个方面，对比 Monica 与 folk。 |
+| OG image | https://www.monicahq.com/og/compareFolk-zh.jpg?v=c05947a5 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica 对比 folk |
+| Secondary keywords | folk 替代品, 个人 CRM 与团队 CRM |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
+
+## /zh/compare/monica-vs-mesh/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/compare/monica-vs-mesh/ |
+| Canonical | https://www.monicahq.com/zh/compare/monica-vs-mesh/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica 对比 Mesh（原 Clay） — Monica |
+| Meta description | 从联系人同步、免费方案、移动应用、数据导出和自托管几个方面，对比 Monica 与 Mesh（原 Clay.earth）。 |
+| H1 | Monica 对比 Mesh（原 Clay） |
+| OG title | Monica 对比 Mesh（原 Clay） |
+| OG description | 从联系人同步、免费方案、移动应用、数据导出和自托管几个方面，对比 Monica 与 Mesh（原 Clay.earth）。 |
+| OG image | https://www.monicahq.com/og/compareMesh-zh.jpg?v=b28d918a (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica 对比 Mesh |
+| Secondary keywords | Clay.earth 替代品, Mesh 替代品 |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/zh.php; retain the existing H1. |
 
 ## /zh/contribute/
 

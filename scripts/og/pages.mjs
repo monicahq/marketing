@@ -73,7 +73,7 @@ try {
 }
 
 const only = args.filter((arg) => !arg.startsWith('--'));
-const known = Object.keys(Object.values(cards)[0] ?? {});
+const known = [...new Set(Object.values(cards).flatMap((locale) => Object.keys(locale)))];
 const unknown = only.filter((key) => !known.includes(key));
 if (unknown.length) {
   fail(`No ogImage block in lang/en.php for: ${unknown.join(', ')}`);
@@ -82,7 +82,7 @@ const keys = only.length ? only : known;
 
 const jobs = Object.keys(cards)
   .sort()
-  .flatMap((locale) => keys.map((key) => ({ locale, key, card: cards[locale][key] })));
+  .flatMap((locale) => keys.filter((key) => cards[locale][key]).map((key) => ({ locale, key, card: cards[locale][key] })));
 
 for (const { locale, key, card } of jobs) {
   for (const field of ['title']) {

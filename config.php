@@ -733,6 +733,40 @@ return [
             'ru' => 'prodazhi',
         ],
 
+        // The three comparison pages. Their slugs nest under a translated
+        // `compare` prefix that has no page of its own, as the feature pages
+        // nest under `features`. Chinese keeps the English prefix.
+        'compareDex' => [
+            'en' => 'compare/monica-vs-dex',
+            'fr' => 'comparer/monica-vs-dex',
+            'de' => 'vergleich/monica-vs-dex',
+            'es' => 'comparar/monica-vs-dex',
+            'pt' => 'comparar/monica-vs-dex',
+            'nl' => 'vergelijken/monica-vs-dex',
+            'zh' => 'compare/monica-vs-dex',
+            'ru' => 'sravnenie/monica-vs-dex',
+        ],
+        'compareFolk' => [
+            'en' => 'compare/monica-vs-folk',
+            'fr' => 'comparer/monica-vs-folk',
+            'de' => 'vergleich/monica-vs-folk',
+            'es' => 'comparar/monica-vs-folk',
+            'pt' => 'comparar/monica-vs-folk',
+            'nl' => 'vergelijken/monica-vs-folk',
+            'zh' => 'compare/monica-vs-folk',
+            'ru' => 'sravnenie/monica-vs-folk',
+        ],
+        'compareMesh' => [
+            'en' => 'compare/monica-vs-mesh',
+            'fr' => 'comparer/monica-vs-mesh',
+            'de' => 'vergleich/monica-vs-mesh',
+            'es' => 'comparar/monica-vs-mesh',
+            'pt' => 'comparar/monica-vs-mesh',
+            'nl' => 'vergelijken/monica-vs-mesh',
+            'zh' => 'compare/monica-vs-mesh',
+            'ru' => 'sravnenie/monica-vs-mesh',
+        ],
+
         // The page between the website and the two sign-in forms, while the
         // new Monica and Monica classic run side by side with separate
         // accounts. The header's sign-in button opens it.
@@ -1117,6 +1151,7 @@ return [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
         'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support', 'sales', 'signIn'],
+        'Compare' => ['compareDex', 'compareFolk', 'compareMesh'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
         'Legal' => ['terms', 'privacy'],
@@ -1180,6 +1215,9 @@ return [
         'handbook' => '2026-11-18',
         'support' => '2026-11-20',
         'sales' => '2026-11-24',
+        'compareDex' => '2026-11-25',
+        'compareFolk' => '2026-11-25',
+        'compareMesh' => '2026-11-25',
         'signIn' => '2026-11-24',
     ],
 

@@ -39,13 +39,16 @@ $english = [
     'terms' => ['Monica terms of use', ['Monica service terms'], []],
     'blog' => ['Monica blog', ['Monica release notes', 'Monica product updates'], ['building an open source personal CRM']],
     'signIn' => ['Monica sign in', ['Monica login', 'Monica classic login'], []],
+    'compareDex' => ['Monica vs Dex', ['Dex alternative', 'Dex vs Monica personal CRM'], ['personal CRM with LinkedIn sync', 'self-hosted Dex alternative']],
+    'compareFolk' => ['Monica vs folk', ['folk alternative', 'folk vs Monica personal CRM'], ['personal CRM vs team CRM', 'self-hosted folk alternative']],
+    'compareMesh' => ['Monica vs Mesh', ['Clay.earth alternative', 'Mesh personal CRM alternative'], ['Clay personal CRM vs Monica', 'self-hosted Clay alternative']],
     'sales' => ['Monica sales', ['contact Monica sales', 'Monica demo'], []],
     'handbook' => ['Monica handbook', ['Monica project principles', 'running Monica'], ['independent open source project']],
 ];
 
 // Each line follows the route order below. These terms describe the existing
 // translated content; they do not add product claims to it.
-$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'signIn', 'sales'];
+$keys = ['home', 'pricing', 'personalCrm', 'v3', 'templates', 'details', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages', 'about', 'team', 'contribute', 'support', 'privacy', 'terms', 'blog', 'personalData', 'aiMemory', 'mcpServer', 'handbook', 'people', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'signIn', 'sales', 'compareDex', 'compareFolk', 'compareMesh'];
 $localized = [
     'fr' => <<<'TERMS'
 CRM personnel|base de données personnelle|CRM personnel open source
@@ -85,6 +88,9 @@ listes personnelles à colonnes|liste de lecture|liste de recommandations
 ranger ses notes dans des dossiers|organiser ses connaissances|rechercher dans ses notes
 connexion Monica|se connecter à Monica|Monica classique
 ventes Monica|contacter les ventes Monica|démo Monica
+Monica contre Dex|alternative à Dex|CRM personnel avec synchronisation LinkedIn
+Monica contre folk|alternative à folk|CRM personnel ou CRM d’équipe
+Monica contre Mesh|alternative à Clay.earth|alternative à Mesh
 TERMS,
     'de' => <<<'TERMS'
 persönliches CRM|persönliche Datenbank|Open-Source-CRM
@@ -124,6 +130,9 @@ persönliche Listen mit eigenen Spalten|Leseliste|Empfehlungsliste
 Notizen in Ordnern ordnen|persönliches Wissen organisieren|Notizen durchsuchen
 Monica Anmeldung|bei Monica anmelden|Monica Classic
 Monica Vertrieb|Monica Vertrieb kontaktieren|Monica Demo
+Monica gegen Dex|Dex Alternative|persönliches CRM mit LinkedIn Sync
+Monica gegen folk|folk Alternative|persönliches CRM oder Team-CRM
+Monica gegen Mesh|Clay.earth Alternative|Mesh Alternative
 TERMS,
     'es' => <<<'TERMS'
 CRM personal|base de datos personal|CRM personal de código abierto
@@ -163,6 +172,9 @@ listas personales con columnas|lista de lectura|lista de recomendaciones
 organizar notas en carpetas|organizar el conocimiento personal|buscar en notas y listas
 iniciar sesión en Monica|acceso a Monica|Monica clásica
 ventas de Monica|contactar con ventas de Monica|demo de Monica
+Monica frente a Dex|alternativa a Dex|CRM personal con sincronización de LinkedIn
+Monica frente a folk|alternativa a folk|CRM personal o CRM de equipo
+Monica frente a Mesh|alternativa a Clay.earth|alternativa a Mesh
 TERMS,
     'pt' => <<<'TERMS'
 CRM pessoal|banco de dados pessoal|CRM pessoal de código aberto
@@ -202,6 +214,9 @@ listas pessoais com colunas|lista de leitura|lista de recomendações
 organizar notas em pastas|organizar o conhecimento pessoal|pesquisar notas e listas
 entrar na Monica|login Monica|Monica clássica
 vendas Monica|contatar vendas Monica|demonstração Monica
+Monica versus Dex|alternativa ao Dex|CRM pessoal com sincronização do LinkedIn
+Monica versus folk|alternativa ao folk|CRM pessoal ou CRM de equipa
+Monica versus Mesh|alternativa ao Clay.earth|alternativa ao Mesh
 TERMS,
     'nl' => <<<'TERMS'
 persoonlijk CRM|persoonlijke database|open source persoonlijk CRM
@@ -241,6 +256,9 @@ persoonlijke lijsten met eigen kolommen|leeslijst|lijst met aanraders
 notities in mappen ordenen|persoonlijke kennis ordenen|notities doorzoeken
 inloggen bij Monica|Monica login|Monica classic
 Monica verkoop|contact met Monica verkoop|Monica demo
+Monica versus Dex|alternatief voor Dex|persoonlijke CRM met LinkedIn-sync
+Monica versus folk|alternatief voor folk|persoonlijke CRM of team-CRM
+Monica versus Mesh|alternatief voor Clay.earth|alternatief voor Mesh
 TERMS,
     'zh' => <<<'TERMS'
 个人 CRM|个人数据库|开源个人 CRM
@@ -280,6 +298,9 @@ Monica 手册|Monica 项目原则|独立开源项目运营
 用文件夹整理笔记|整理个人知识|搜索笔记和列表
 登录 Monica|Monica 登录|Monica 经典版
 Monica 销售|联系 Monica 销售|Monica 演示
+Monica 对比 Dex|Dex 替代品|支持 LinkedIn 同步的个人 CRM
+Monica 对比 folk|folk 替代品|个人 CRM 与团队 CRM
+Monica 对比 Mesh|Clay.earth 替代品|Mesh 替代品
 TERMS,
     'ru' => <<<'TERMS'
 персональная CRM|личная база данных|персональная CRM с открытым кодом
@@ -319,6 +340,9 @@ MCP-сервер Monica|MCP-сервер для личных данных|MCP-с
 заметки по папкам|порядок в личных знаниях|поиск по заметкам
 вход в Monica|войти в Monica|Monica Classic
 продажи Monica|связаться с отделом продаж Monica|демо Monica
+Monica и Dex|альтернатива Dex|личная CRM с синхронизацией LinkedIn
+Monica и folk|альтернатива folk|личная CRM или командная CRM
+Monica и Mesh|альтернатива Clay.earth|альтернатива Mesh
 TERMS,
 ];
 

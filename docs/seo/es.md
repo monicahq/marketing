@@ -1,6 +1,6 @@
 # Monica SEO sheets for es
 
-These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -118,6 +118,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
 
+## /es/blog/bulk-people-actions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/blog/bulk-people-actions/ |
+| Canonical | https://www.monicahq.com/es/blog/bulk-people-actions/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Ahora puedes eliminar a varias personas, o cambiar su categoría, de una sola vez — el blog de Monica |
+| Meta description | Marca a las personas que quieras en la lista Personas y luego cambia su categoría o elimínalas de una vez. Monica nombra a quienes se van antes de eliminar a nadie, y un cambio de categoría se puede deshacer. |
+| H1 | Ahora puedes eliminar a varias personas, o cambiar su categoría, de una sola vez |
+| OG title | Ahora puedes eliminar a varias personas, o cambiar su categoría, de una sola vez |
+| OG description | Marca a las personas que quieras en la lista Personas y luego cambia su categoría o elimínalas de una vez. Monica nombra a quienes se van antes de eliminar a nadie, y un cambio de categoría se puede deshacer. |
+| OG image | https://www.monicahq.com/og/blog-bulk-people-actions-es.jpg?v=79fd2c78 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Ahora puedes eliminar a varias personas, o cambiar su categoría, de una sola vez |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
 ## /es/blog/chandler-is-in-beta/
 
 | Field | Content |
@@ -133,6 +152,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-es.jpg?v=2a0e4cef (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler está en beta |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /es/blog/change-contact-template/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/blog/change-contact-template/ |
+| Canonical | https://www.monicahq.com/es/blog/change-contact-template/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Ahora puedes cambiar la plantilla de un contacto — el blog de Monica |
+| Meta description | Pasa a alguien a otra plantilla cuando su página ya no le encaja. Monica te muestra antes lo que va a pasar, y nada de lo que escribiste se borra nunca. |
+| H1 | Ahora puedes cambiar la plantilla de un contacto |
+| OG title | Ahora puedes cambiar la plantilla de un contacto |
+| OG description | Pasa a alguien a otra plantilla cuando su página ya no le encaja. Monica te muestra antes lo que va a pasar, y nada de lo que escribiste se borra nunca. |
+| OG image | https://www.monicahq.com/og/blog-change-contact-template-es.jpg?v=49e24b29 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Ahora puedes cambiar la plantilla de un contacto |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
@@ -1008,6 +1046,63 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Schema | Organization, WebSite, WebPage, BreadcrumbList |
 | Primary keyword | colaborar con Monica |
 | Secondary keywords | traducir Monica, documentación de Monica |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
+## /es/comparar/monica-vs-dex/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/comparar/monica-vs-dex/ |
+| Canonical | https://www.monicahq.com/es/comparar/monica-vs-dex/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica frente a Dex para la gestión de relaciones personales — Monica |
+| Meta description | Compara Monica y Dex en LinkedIn, recordatorios de contacto, historial de contactos, aplicaciones móviles, exportaciones y autoalojamiento. |
+| H1 | Monica frente a Dex |
+| OG title | Monica frente a Dex para la gestión de relaciones personales |
+| OG description | Compara Monica y Dex en LinkedIn, recordatorios de contacto, historial de contactos, aplicaciones móviles, exportaciones y autoalojamiento. |
+| OG image | https://www.monicahq.com/og/compareDex-es.jpg?v=dd835baf (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica frente a Dex |
+| Secondary keywords | alternativa a Dex, CRM personal con sincronización de LinkedIn |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
+## /es/comparar/monica-vs-folk/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/comparar/monica-vs-folk/ |
+| Canonical | https://www.monicahq.com/es/comparar/monica-vs-folk/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica frente a folk para la gestión de relaciones personales y de equipo — Monica |
+| Meta description | Compara Monica y folk en embudos compartidos, seguimientos asignados, LinkedIn, registros personales, precios y exportaciones de datos. |
+| H1 | Monica frente a folk |
+| OG title | Monica frente a folk para la gestión de relaciones personales y de equipo |
+| OG description | Compara Monica y folk en embudos compartidos, seguimientos asignados, LinkedIn, registros personales, precios y exportaciones de datos. |
+| OG image | https://www.monicahq.com/og/compareFolk-es.jpg?v=d3b85e4e (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica frente a folk |
+| Secondary keywords | alternativa a folk, CRM personal o CRM de equipo |
+| Supporting keywords | No additional target |
+| Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
+
+## /es/comparar/monica-vs-mesh/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/comparar/monica-vs-mesh/ |
+| Canonical | https://www.monicahq.com/es/comparar/monica-vs-mesh/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica frente a Mesh (antes Clay) — Monica |
+| Meta description | Compara Monica y Mesh, antes Clay.earth, en sincronización de contactos, plan gratuito, aplicaciones móviles, exportaciones de datos y autoalojamiento. |
+| H1 | Monica frente a Mesh (antes Clay) |
+| OG title | Monica frente a Mesh (antes Clay) |
+| OG description | Compara Monica y Mesh, antes Clay.earth, en sincronización de contactos, plan gratuito, aplicaciones móviles, exportaciones de datos y autoalojamiento. |
+| OG image | https://www.monicahq.com/og/compareMesh-es.jpg?v=4ec119af (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica frente a Mesh |
+| Secondary keywords | alternativa a Clay.earth, alternativa a Mesh |
 | Supporting keywords | No additional target |
 | Copy decision | Use the localized search and sharing copy in lang/es.php; retain the existing H1. |
 

@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 160 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -156,6 +156,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
 
+## /en/blog/bulk-people-actions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/blog/bulk-people-actions/ |
+| Canonical | https://www.monicahq.com/en/blog/bulk-people-actions/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | You can now delete several people, or change their category, at once — the Monica blog |
+| Meta description | Tick the people you want on the People list, then change their category or delete them in one go. Monica names who goes before deleting anybody, and a change of category can be undone. |
+| H1 | You can now delete several people, or change their category, at once |
+| OG title | You can now delete several people, or change their category, at once |
+| OG description | Tick the people you want on the People list, then change their category or delete them in one go. Monica names who goes before deleting anybody, and a change of category can be undone. |
+| OG image | https://www.monicahq.com/og/blog-bulk-people-actions-en.jpg?v=e88155ba (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | You can now delete several people, or change their category, at once |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
 ## /en/blog/chandler-is-in-beta/
 
 | Field | Content |
@@ -171,6 +190,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-en.jpg?v=5e169368 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler is in beta |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /en/blog/change-contact-template/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/blog/change-contact-template/ |
+| Canonical | https://www.monicahq.com/en/blog/change-contact-template/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | You can now change the template of a contact — the Monica blog |
+| Meta description | Move somebody onto another template when their page no longer fits them. Monica shows you what will happen first, and nothing you wrote is ever deleted. |
+| H1 | You can now change the template of a contact |
+| OG title | You can now change the template of a contact |
+| OG description | Move somebody onto another template when their page no longer fits them. Monica shows you what will happen first, and nothing you wrote is ever deleted. |
+| OG image | https://www.monicahq.com/og/blog-change-contact-template-en.jpg?v=e97d4b15 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | You can now change the template of a contact |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
@@ -1029,6 +1067,63 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /en/compare/monica-vs-dex/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/compare/monica-vs-dex/ |
+| Canonical | https://www.monicahq.com/en/compare/monica-vs-dex/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica vs Dex for personal relationship management — Monica |
+| Meta description | Compare Monica and Dex on LinkedIn, keep-in-touch reminders, contact history, mobile apps, exports and self-hosting. |
+| H1 | Monica vs Dex |
+| OG title | Monica vs Dex for personal relationship management |
+| OG description | Compare Monica and Dex on LinkedIn, keep-in-touch reminders, contact history, mobile apps, exports and self-hosting. |
+| OG image | https://www.monicahq.com/og/compareDex-en.jpg?v=0cfd5975 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica vs Dex |
+| Secondary keywords | Dex alternative, Dex vs Monica personal CRM |
+| Supporting keywords | personal CRM with LinkedIn sync, self-hosted Dex alternative |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/compare/monica-vs-folk/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/compare/monica-vs-folk/ |
+| Canonical | https://www.monicahq.com/en/compare/monica-vs-folk/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica vs folk for personal and team relationship management — Monica |
+| Meta description | Compare Monica and folk on shared pipelines, assigned follow-ups, LinkedIn, personal records, pricing and data exports. |
+| H1 | Monica vs folk |
+| OG title | Monica vs folk for personal and team relationship management |
+| OG description | Compare Monica and folk on shared pipelines, assigned follow-ups, LinkedIn, personal records, pricing and data exports. |
+| OG image | https://www.monicahq.com/og/compareFolk-en.jpg?v=d2eaacc2 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica vs folk |
+| Secondary keywords | folk alternative, folk vs Monica personal CRM |
+| Supporting keywords | personal CRM vs team CRM, self-hosted folk alternative |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/compare/monica-vs-mesh/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/compare/monica-vs-mesh/ |
+| Canonical | https://www.monicahq.com/en/compare/monica-vs-mesh/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica vs Mesh (formerly Clay) — Monica |
+| Meta description | Compare Monica and Mesh, formerly Clay.earth, on contact sync, the free plan, mobile apps, data exports and self-hosting. |
+| H1 | Monica vs Mesh (formerly Clay) |
+| OG title | Monica vs Mesh (formerly Clay) |
+| OG description | Compare Monica and Mesh, formerly Clay.earth, on contact sync, the free plan, mobile apps, data exports and self-hosting. |
+| OG image | https://www.monicahq.com/og/compareMesh-en.jpg?v=8c80f507 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica vs Mesh |
+| Secondary keywords | Clay.earth alternative, Mesh personal CRM alternative |
+| Supporting keywords | Clay personal CRM vs Monica, self-hosted Clay alternative |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/contribute/
 
