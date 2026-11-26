@@ -255,7 +255,7 @@
             <p class="mt-5 text-copy-lg text-text-secondary text-pretty">{{ $copy['method']['body'] }}</p>
 
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="{{ $copy['refs']['dexHome']['url'] }}" target="_blank" rel="noopener" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['fit']['cards'][0]['cta'] }}</a>
+                <a href="{{ $copy['refs'][$copy['fit']['cards'][0]['ctaRef']]['url'] }}" target="_blank" rel="noopener" class="mn-btn mn-btn-secondary no-underline hover:no-underline">{{ $copy['fit']['cards'][0]['cta'] }}</a>
                 <a href="{{ $page->route('home') }}" class="mn-btn mn-btn-secondary no-underline hover:no-underline">
                     <img src="/assets/images/monica-panda-mark.svg" alt="" width="32" height="29" class="h-auto w-4">{{ $copy['fit']['cards'][1]['cta'] }}
                 </a>

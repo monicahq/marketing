@@ -1,6 +1,6 @@
 # Monica SEO sheets for en
 
-These 158 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 159 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -1085,6 +1085,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Primary keyword | Monica vs Dex |
 | Secondary keywords | Dex alternative, Dex vs Monica personal CRM |
 | Supporting keywords | personal CRM with LinkedIn sync, self-hosted Dex alternative |
+| Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
+
+## /en/compare/monica-vs-folk/
+
+| Field | Content |
+| --- | --- |
+| Slug | /en/compare/monica-vs-folk/ |
+| Canonical | https://www.monicahq.com/en/compare/monica-vs-folk/ |
+| Search intent | Learn about the people and project behind Monica |
+| SEO title | Monica vs folk for personal and team relationship management — Monica |
+| Meta description | Compare Monica and folk on shared pipelines, assigned follow-ups, LinkedIn, personal records, pricing and data exports. |
+| H1 | Monica vs folk |
+| OG title | Monica vs folk for personal and team relationship management |
+| OG description | Compare Monica and folk on shared pipelines, assigned follow-ups, LinkedIn, personal records, pricing and data exports. |
+| OG image | https://www.monicahq.com/og/compareFolk-en.jpg?v=d2eaacc2 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList |
+| Primary keyword | Monica vs folk |
+| Secondary keywords | folk alternative, folk vs Monica personal CRM |
+| Supporting keywords | personal CRM vs team CRM, self-hosted folk alternative |
 | Copy decision | Use the localized search and sharing copy in lang/en.php; retain the existing H1. |
 
 ## /en/contribute/
