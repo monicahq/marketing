@@ -24,6 +24,8 @@ permalink: 404.html
         <title>Page not found &mdash; Monica</title>
         <meta name="robots" content="noindex, follow">
 
+        <script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="lTlFdjRHJTDy7p3P9NQRj6prkSbz83tk"></script>
+
         @viteRefresh()
         <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
     </head>

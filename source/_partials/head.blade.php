@@ -28,6 +28,9 @@
 
 @include('_partials.seo')
 
+{{-- Pirsch: cookieless analytics, nothing stored in the browser. Described in the privacy policy. --}}
+<script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="lTlFdjRHJTDy7p3P9NQRj6prkSbz83tk"></script>
+
 @viteRefresh()
 <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
 
