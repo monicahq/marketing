@@ -37,6 +37,7 @@ return [
             'team' => "Team",
             'support' => "Support",
             'sales' => "Sales",
+            'compareDex' => "Monica vs Dex",
             'signIn' => "Sign in",
             'about' => "About Monica",
             'privacy' => "Privacy policy",
@@ -211,6 +212,20 @@ return [
                 'title' => "Our sales team will",
                 'accent' => "never contact you.",
                 'description' => "No calls. No meetings. No follow-ups. Just software.",
+            ],
+        ],
+
+        'compareDex' => [
+            'title' => "Monica vs Dex for personal relationship management — Monica",
+            'description' => "Compare Monica and Dex on LinkedIn, keep-in-touch reminders, contact history, mobile apps, exports and self-hosting.",
+            'ogTitle' => "Monica vs Dex for personal relationship management",
+            'ogDescription' => "Compare Monica and Dex on LinkedIn, keep-in-touch reminders, contact history, mobile apps, exports and self-hosting.",
+
+            'ogImage' => [
+                'eyebrow' => "Compare",
+                'title' => "Monica vs Dex",
+                'accent' => "for personal relationships.",
+                'description' => "LinkedIn, reminders, contact history, exports and self-hosting, side by side.",
             ],
         ],
 
@@ -6121,6 +6136,164 @@ return [
             ['kind' => "Reference", 'title' => "API", 'description' => "Read and write your contacts from your own scripts. Every endpoint, with examples in cURL, JavaScript and PHP."],
             ['kind' => "Reference", 'title' => "MCP", 'description' => "Point an assistant at your instance so it can read your directory and record people in it, with the access you have."],
             ['kind' => "Guide", 'title' => "CardDAV and CalDAV", 'description' => "Keep the contacts and calendar apps on your phone and computer in step with Monica."],
+        ],
+    ],
+
+    /**
+     * The Monica vs Dex comparison (route key `compareDex`), written in English
+     * only, so it exists in no other locale.
+     *
+     * `refs` holds every link: a `url` for another site, or a `page` (a route
+     * key) for a page of this one. A section names the refs it cites by key.
+     */
+    'compareDex' => [
+        'title' => "Monica vs Dex",
+        'by' => "Written by the Monica team.",
+        'verified' => "Last verified November 25, 2026.",
+        'vs' => "vs",
+        'intro' => "Dex brings professional contacts and interactions together and uses that history to help you decide when to follow up. Monica gives you structured records for the people in your life, their relationships and the events you want to remember. Both offer reminders, notes and contact timelines. How information reaches that timeline is one of the biggest differences.",
+        'introRefs' => ['dexTimeline', 'monicaTimeline'],
+        'toc' => "On this page",
+
+        'fit' => [
+            'title' => "Which one fits what you need?",
+            'cards' => [
+                [
+                    'who' => "Dex",
+                    'title' => "Choose Dex if staying in touch is the main job",
+                    'items' => [
+                        "You keep much of your network on LinkedIn and want new connections and profile updates to feed into your CRM.",
+                        "You want follow-up reminders that can move when you interact with someone, and native mobile or desktop apps.",
+                        "The subscription tier determines your LinkedIn connection limit. Outlook is listed under Professional.",
+                    ],
+                    'refs' => ['dexPlans' => "Dex plans", 'dexLinkedin' => "LinkedIn sync", 'dexTimeline' => "Interaction guide"],
+                    'cta' => "Visit Dex",
+                    'ctaRef' => 'dexHome',
+                ],
+                [
+                    'who' => "Monica",
+                    'title' => "Choose Monica if you want to keep a structured personal record",
+                    'items' => [
+                        "You want to record how people are related and keep important dates, family events and details you choose to add.",
+                        "You want your contacts alongside a record of your possessions and notes, or you want to run the software on your own server.",
+                        "Monica’s documented sync covers compatible address books and read-only dates and deadlines. Plan for manual entry if you want to record inbox or LinkedIn interactions.",
+                    ],
+                    'refs' => ['monicaRelationships' => "Monica relationships", 'monicaPossessions' => "Monica possessions", 'monicaDav' => "Monica sync guide"],
+                    'cta' => "Explore Monica",
+                    'ctaRef' => 'monicaHome',
+                ],
+            ],
+        ],
+
+        'glance' => [
+            'title' => "Monica and Dex at a glance",
+            'what' => "What matters",
+            'sources' => "Sources:",
+            'rows' => [
+                ["LinkedIn", "Ongoing connection sync. Premium lists up to 2,500 connections and Professional up to 9,000. Setup uses the mobile or desktop app according to the sync guide.", "The documented integrations do not include LinkedIn sync."],
+                ["Email, calendar and contacts", "Email and calendar integrations, with Outlook listed under Professional. Dex documents two-way contact sync, with behaviour depending on the source.", "CardDAV can sync contacts in both directions. CalDAV can show dates and reminder deadlines in a compatible app, in read-only mode. DAV depends on the instance."],
+                ["Follow-up reminders", "Keep-in-touch frequency can reschedule the next reminder when a qualifying interaction changes the last interaction date. Dex also documents birthday reminders.", "One-off and recurring reminders, including those tied to recorded dates. In-app and email notifications are documented. Telegram and SMS depend on the instance."],
+                ["Contact history", "A timeline for notes, emails, meetings, reminders and LinkedIn updates. Some messages affect the last interaction date without appearing as timeline entries.", "A timeline of recorded events with participants. A shared event can appear on each participant’s timeline."],
+                ["Visualising relationships", "Related contacts, a Network view and a geographic map.", "Typed relationships and a family view showing close relatives around one contact."],
+                ["Mobile and desktop", "iOS, Android, Mac and Windows apps, plus web.", "Web app usable on a phone, with DAV for compatible contact and calendar apps."],
+                ["AI and integrations", "Copilot, research credits that vary by plan, and an external-assistant connection via MCP.", "API and MCP for authorised external tools."],
+                ["Hosting and ownership", "Managed service. The privacy policy describes what Dex accesses for connected tools.", "Self-hosted software under AGPL-3.0 and a managed offering advertised by Monica."],
+                ["Data export", "CSV export for contacts, notes and network updates.", "Contact-level vCard and Markdown, plus an API-documented JSON export for supported vault data."],
+                ["Advertised entry price", "Premium is $144 USD per year at the annual rate. Professional is $240 USD per year at the annual rate. A seven-day trial requires a card.", "No software licence fee when self-hosting. Managed hosting is advertised at $90 USD per year or $9 USD monthly. The public signup led to a waitlist when checked."],
+            ],
+            'refs' => ['dexPlans', 'dexLinkedin', 'dexContacts', 'dexChangelog', 'dexTimeline', 'dexCopilot', 'dexDesktop', 'monicaNotifications', 'monicaDav', 'monicaMcp', 'monicaPricing'],
+        ],
+
+        'scenarios' => [
+            'title' => "Two ways to use these tools",
+            'items' => [
+                [
+                    'who' => "Start with Dex",
+                    'title' => "You want a reminder when a professional relationship goes quiet",
+                    'body' => "You connect LinkedIn and your calendar, then set a keep-in-touch frequency for people you want to check in with. When Dex records a qualifying interaction, it can move the next reminder. Start with Dex if you rely on the date of the last interaction and want the CRM to do some of that tracking for you. Check the interaction rules for the channels you use. A message can count towards the last interaction date without becoming a separate timeline entry.",
+                    'refs' => ['dexTimeline', 'dexLinkedin'],
+                ],
+                [
+                    'who' => "Start with Monica",
+                    'title' => "You want to remember the people and events around a family gathering",
+                    'body' => "You record the gathering once in Monica, add the people who attended, and link family members using relationship types. The event can appear on each participant’s timeline. You can set a reminder for a specific date or on a repeating schedule. Start with Monica if those relationships, details and dated records are what you want to preserve and you’re comfortable entering the context.",
+                    'refs' => ['monicaTimelineHow', 'monicaLink', 'monicaReminders'],
+                ],
+            ],
+        ],
+
+        'moving' => [
+            'title' => "If you’re moving between Dex and Monica",
+            'items' => [
+                [
+                    'title' => "From Dex to Monica.",
+                    'body' => "Dex documents CSV exports for contacts, notes and network updates. Monica documents CardDAV sync and contact-level vCard and Markdown exports. A CSV export may need a compatible address book or a conversion step to get basic contact fields into Monica. Try a few records first and check which notes, reminders and contact links need to be recreated.",
+                    'refs' => ['dexExport', 'monicaVcard', 'monicaDav'],
+                ],
+                [
+                    'title' => "From Monica to Dex.",
+                    'body' => "Dex documents CSV import and contact sync. Monica offers contact-level vCard and Markdown and documents JSON exports through the API. Confirm whether your address book or a CSV conversion can bring across the fields you need. Test family relationships, events and reminder cadences separately.",
+                    'refs' => ['dexCsv', 'monicaSharing', 'monicaApi'],
+                ],
+            ],
+            'note' => "In the version of Monica’s code we reviewed, the JSON export includes records such as contacts, relationships, life events and reminders. It excludes possessions and the separate notes and lists in Knowledge. If you use those areas, check how you’ll keep or transfer that information before switching.",
+            'noteRefs' => ['monicaSharing', 'monicaApi'],
+        ],
+
+        'questions' => [
+            'title' => "Questions worth answering before you choose",
+            'items' => [
+                [
+                    'q' => "Does Dex update reminders automatically?",
+                    'a' => "Dex’s keep-in-touch cadence can update when an eligible interaction changes the last interaction date. Dex documents how each source affects that date and the timeline. Monica supports recurring reminders on a schedule you set.",
+                    'refs' => ['dexTimeline' => "Dex interaction guide", 'monicaReminders' => "Monica reminder guide"],
+                ],
+                [
+                    'q' => "Which Dex plan should I check for Outlook or a large LinkedIn network?",
+                    'a' => "Dex lists Outlook, multi-account email sync and up to 9,000 LinkedIn connections under Professional. Premium lists up to 2,500 LinkedIn connections. Check the plan page if your choice depends on a particular integration or quota.",
+                    'refs' => ['dexPlans' => "Dex plans"],
+                ],
+                [
+                    'q' => "Can I use either product without connecting my inbox?",
+                    'a' => "Both document ways to add contacts and notes directly. If you connect Google or another account to Dex, check what the connection can read and write. If you self-host Monica, you manage the server and can choose which integrations to enable.",
+                    'refs' => ['dexContacts' => "Dex contact guide", 'dexPrivacy' => "Dex privacy policy", 'monicaPeople' => "Monica people features", 'monicaSelf' => "Monica self-hosting"],
+                ],
+            ],
+        ],
+
+        'method' => [
+            'title' => "How we checked this comparison",
+            'body' => "The Monica team wrote this comparison using Dex’s public pricing, help centre and changelog, and Monica’s public documentation and code. Prices are in USD before applicable taxes. Paid Dex features, connected-account behaviour and full migrations weren’t tested with a signed-in account.",
+        ],
+
+        'refs' => [
+            'dexHome' => ['label' => "Dex", 'url' => 'https://getdex.com/'],
+            'dexPlans' => ['label' => "Dex pricing", 'url' => 'https://getdex.com/pricing/'],
+            'dexLinkedin' => ['label' => "Dex LinkedIn sync", 'url' => 'https://getdex.com/docs/faq/linkedin'],
+            'dexTimeline' => ['label' => "Dex interaction guide", 'url' => 'https://getdex.com/docs/workflows/interactions-and-the-timeline'],
+            'dexContacts' => ['label' => "Dex contact and network views", 'url' => 'https://getdex.com/docs/workflows/manage-your-contacts'],
+            'dexChangelog' => ['label' => "Dex changelog", 'url' => 'https://getdex.com/docs/changelog/2026'],
+            'dexDesktop' => ['label' => "Dex desktop app", 'url' => 'https://getdex.com/docs/desktop-app'],
+            'dexCopilot' => ['label' => "Dex Copilot", 'url' => 'https://getdex.com/docs/ai/copilot'],
+            'dexExport' => ['label' => "Dex export guidance", 'url' => 'https://getdex.com/docs/ai/copilot'],
+            'dexCsv' => ['label' => "Dex CSV import", 'url' => 'https://getdex.com/docs/integrationsandfeatures/import/csv'],
+            'dexPrivacy' => ['label' => "Dex privacy policy", 'url' => 'https://getdex.com/privacypolicy/'],
+            'monicaHome' => ['label' => "Monica", 'page' => 'home'],
+            'monicaPricing' => ['label' => "Monica pricing", 'page' => 'pricing'],
+            'monicaPeople' => ['label' => "Monica people features", 'page' => 'people'],
+            'monicaPossessions' => ['label' => "Monica possessions", 'page' => 'possessions'],
+            'monicaSelf' => ['label' => "Monica self-hosting", 'handbook' => 'self-hosting'],
+            'monicaRelationships' => ['label' => "Monica relationships", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events'],
+            'monicaLink' => ['label' => "Link two people", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/link-two-people'],
+            'monicaTimeline' => ['label' => "Monica timeline guide", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaTimelineHow' => ['label' => "How Monica’s timeline works", 'url' => 'https://my.monicahq.com/docs/en/relationships-and-life-events/the-timeline'],
+            'monicaReminders' => ['label' => "Set a reminder", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/set-a-reminder'],
+            'monicaNotifications' => ['label' => "Monica notifications", 'url' => 'https://my.monicahq.com/docs/en/reminders-and-notifications/notification-channels'],
+            'monicaSharing' => ['label' => "Monica sharing and export guide", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync'],
+            'monicaVcard' => ['label' => "Monica vCard guidance", 'url' => 'https://my.monicahq.com/docs/en/sharing-export-and-sync/export-a-vcard'],
+            'monicaDav' => ['label' => "Monica DAV", 'url' => 'https://my.monicahq.com/docs/carddav'],
+            'monicaMcp' => ['label' => "Monica MCP", 'url' => 'https://my.monicahq.com/docs/mcp'],
+            'monicaApi' => ['label' => "Monica API reference", 'url' => 'https://my.monicahq.com/docs/api'],
         ],
     ],
 

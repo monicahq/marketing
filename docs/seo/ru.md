@@ -1,6 +1,6 @@
 # Monica SEO sheets for ru
 
-These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 157 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -118,6 +118,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
 
+## /ru/blog/bulk-people-actions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/blog/bulk-people-actions/ |
+| Canonical | https://www.monicahq.com/ru/blog/bulk-people-actions/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Теперь вы можете удалить сразу нескольких людей или изменить их категорию — блог Monica |
+| Meta description | Отметьте в списке «Люди» тех, кто вам нужен, и измените их категорию или удалите их за один раз. Прежде чем кого-то удалить, Monica назовёт всех по именам, а смену категории можно отменить. |
+| H1 | Теперь вы можете удалить сразу нескольких людей или изменить их категорию |
+| OG title | Теперь вы можете удалить сразу нескольких людей или изменить их категорию |
+| OG description | Отметьте в списке «Люди» тех, кто вам нужен, и измените их категорию или удалите их за один раз. Прежде чем кого-то удалить, Monica назовёт всех по именам, а смену категории можно отменить. |
+| OG image | https://www.monicahq.com/og/blog-bulk-people-actions-ru.jpg?v=e5216f27 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Теперь вы можете удалить сразу нескольких людей или изменить их категорию |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
 ## /ru/blog/chandler-is-in-beta/
 
 | Field | Content |
@@ -133,6 +152,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-ru.jpg?v=66a378b8 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler в бета-версии |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /ru/blog/change-contact-template/
+
+| Field | Content |
+| --- | --- |
+| Slug | /ru/blog/change-contact-template/ |
+| Canonical | https://www.monicahq.com/ru/blog/change-contact-template/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Теперь вы можете сменить шаблон контакта — блог Monica |
+| Meta description | Переведите человека на другой шаблон, когда его страница ему больше не подходит. Monica сначала покажет, что произойдёт, а написанное вами не удалится никогда. |
+| H1 | Теперь вы можете сменить шаблон контакта |
+| OG title | Теперь вы можете сменить шаблон контакта |
+| OG description | Переведите человека на другой шаблон, когда его страница ему больше не подходит. Monica сначала покажет, что произойдёт, а написанное вами не удалится никогда. |
+| OG image | https://www.monicahq.com/og/blog-change-contact-template-ru.jpg?v=088bf838 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Теперь вы можете сменить шаблон контакта |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |

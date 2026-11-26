@@ -1,6 +1,6 @@
 # Monica SEO sheets for es
 
-These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 157 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -118,6 +118,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
 
+## /es/blog/bulk-people-actions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/blog/bulk-people-actions/ |
+| Canonical | https://www.monicahq.com/es/blog/bulk-people-actions/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Ahora puedes eliminar a varias personas, o cambiar su categoría, de una sola vez — el blog de Monica |
+| Meta description | Marca a las personas que quieras en la lista Personas y luego cambia su categoría o elimínalas de una vez. Monica nombra a quienes se van antes de eliminar a nadie, y un cambio de categoría se puede deshacer. |
+| H1 | Ahora puedes eliminar a varias personas, o cambiar su categoría, de una sola vez |
+| OG title | Ahora puedes eliminar a varias personas, o cambiar su categoría, de una sola vez |
+| OG description | Marca a las personas que quieras en la lista Personas y luego cambia su categoría o elimínalas de una vez. Monica nombra a quienes se van antes de eliminar a nadie, y un cambio de categoría se puede deshacer. |
+| OG image | https://www.monicahq.com/og/blog-bulk-people-actions-es.jpg?v=79fd2c78 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Ahora puedes eliminar a varias personas, o cambiar su categoría, de una sola vez |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
 ## /es/blog/chandler-is-in-beta/
 
 | Field | Content |
@@ -133,6 +152,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-es.jpg?v=2a0e4cef (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler está en beta |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /es/blog/change-contact-template/
+
+| Field | Content |
+| --- | --- |
+| Slug | /es/blog/change-contact-template/ |
+| Canonical | https://www.monicahq.com/es/blog/change-contact-template/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Ahora puedes cambiar la plantilla de un contacto — el blog de Monica |
+| Meta description | Pasa a alguien a otra plantilla cuando su página ya no le encaja. Monica te muestra antes lo que va a pasar, y nada de lo que escribiste se borra nunca. |
+| H1 | Ahora puedes cambiar la plantilla de un contacto |
+| OG title | Ahora puedes cambiar la plantilla de un contacto |
+| OG description | Pasa a alguien a otra plantilla cuando su página ya no le encaja. Monica te muestra antes lo que va a pasar, y nada de lo que escribiste se borra nunca. |
+| OG image | https://www.monicahq.com/og/blog-change-contact-template-es.jpg?v=49e24b29 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Ahora puedes cambiar la plantilla de un contacto |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |

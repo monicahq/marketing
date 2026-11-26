@@ -733,6 +733,12 @@ return [
             'ru' => 'prodazhi',
         ],
 
+        // Monica vs Dex, written in English only: the slug nests under
+        // `compare`, which has no page of its own, as the feature pages nest
+        // under `features`. A route with one locale is fine, as the sitemap,
+        // hreflang and the locale picker read the route's own locales.
+        'compareDex' => ['en' => 'compare/monica-vs-dex'],
+
         // The page between the website and the two sign-in forms, while the
         // new Monica and Monica classic run side by side with separate
         // accounts. The header's sign-in button opens it.
@@ -1117,6 +1123,7 @@ return [
         'Product' => ['home', 'pricing', 'personalData', 'aiMemory', 'mcpServer', 'personalCrm', 'v3'],
         'Features' => ['people', 'templates', 'details', 'timelineReminders', 'possessions', 'inventory', 'locations', 'maintenanceLoans', 'knowledge', 'notes', 'lists', 'folders', 'reminders', 'timeline', 'relationships', 'vaults', 'sharing', 'api', 'privacyFeatures', 'languages'],
         'Company' => ['about', 'team', 'contribute', 'support', 'sales', 'signIn'],
+        'Compare' => ['compareDex'],
         'Handbook' => ['handbook'],
         'Blog' => ['blog'],
         'Legal' => ['terms', 'privacy'],
@@ -1180,6 +1187,7 @@ return [
         'handbook' => '2026-11-18',
         'support' => '2026-11-20',
         'sales' => '2026-11-24',
+        'compareDex' => '2026-11-25',
         'signIn' => '2026-11-24',
     ],
 

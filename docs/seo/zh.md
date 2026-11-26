@@ -1,6 +1,6 @@
 # Monica SEO sheets for zh
 
-These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 157 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -156,6 +156,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
 
+## /zh/blog/bulk-people-actions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/blog/bulk-people-actions/ |
+| Canonical | https://www.monicahq.com/zh/blog/bulk-people-actions/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | 现在你可以一次删除多个人，或一次更改他们的分类：Monica 博客 |
+| Meta description | 在“人员”列表中勾选你想处理的人，然后一次性更改他们的分类，或把他们删除。删除之前，Monica 会列出将被删除的每个人，而分类的更改可以撤销。 |
+| H1 | 现在你可以一次删除多个人，或一次更改他们的分类 |
+| OG title | 现在你可以一次删除多个人，或一次更改他们的分类 |
+| OG description | 在“人员”列表中勾选你想处理的人，然后一次性更改他们的分类，或把他们删除。删除之前，Monica 会列出将被删除的每个人，而分类的更改可以撤销。 |
+| OG image | https://www.monicahq.com/og/blog-bulk-people-actions-zh.jpg?v=6116989c (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | 现在你可以一次删除多个人，或一次更改他们的分类 |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
 ## /zh/blog/chandler-is-in-beta/
 
 | Field | Content |
@@ -171,6 +190,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-zh.jpg?v=42a0d427 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler 进入 beta 测试 |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /zh/blog/change-contact-template/
+
+| Field | Content |
+| --- | --- |
+| Slug | /zh/blog/change-contact-template/ |
+| Canonical | https://www.monicahq.com/zh/blog/change-contact-template/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | 现在你可以更改联系人的模板了：Monica 博客 |
+| Meta description | 当一个人的页面不再合适时，把他换到另一个模板上。Monica 会先告诉你会发生什么，而且你写下的内容绝不会被删除。 |
+| H1 | 现在你可以更改联系人的模板了 |
+| OG title | 现在你可以更改联系人的模板了 |
+| OG description | 当一个人的页面不再合适时，把他换到另一个模板上。Monica 会先告诉你会发生什么，而且你写下的内容绝不会被删除。 |
+| OG image | https://www.monicahq.com/og/blog-change-contact-template-zh.jpg?v=d51bdca6 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | 现在你可以更改联系人的模板了 |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |

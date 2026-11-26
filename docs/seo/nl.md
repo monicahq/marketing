@@ -1,6 +1,6 @@
 # Monica SEO sheets for nl
 
-These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 157 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -156,6 +156,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
 
+## /nl/blog/bulk-people-actions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/blog/bulk-people-actions/ |
+| Canonical | https://www.monicahq.com/nl/blog/bulk-people-actions/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Je kunt nu meerdere personen tegelijk verwijderen of hun categorie wijzigen — de blog van Monica |
+| Meta description | Vink op de lijst Personen aan wie je wilt, en wijzig dan in één keer hun categorie of verwijder ze. Monica noemt wie er verdwijnt voordat iemand wordt verwijderd, en een wijziging van categorie kun je ongedaan maken. |
+| H1 | Je kunt nu meerdere personen tegelijk verwijderen of hun categorie wijzigen |
+| OG title | Je kunt nu meerdere personen tegelijk verwijderen of hun categorie wijzigen |
+| OG description | Vink op de lijst Personen aan wie je wilt, en wijzig dan in één keer hun categorie of verwijder ze. Monica noemt wie er verdwijnt voordat iemand wordt verwijderd, en een wijziging van categorie kun je ongedaan maken. |
+| OG image | https://www.monicahq.com/og/blog-bulk-people-actions-nl.jpg?v=fab5379a (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Je kunt nu meerdere personen tegelijk verwijderen of hun categorie wijzigen |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
 ## /nl/blog/chandler-is-in-beta/
 
 | Field | Content |
@@ -171,6 +190,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-nl.jpg?v=377e8ff3 (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler is in bèta |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /nl/blog/change-contact-template/
+
+| Field | Content |
+| --- | --- |
+| Slug | /nl/blog/change-contact-template/ |
+| Canonical | https://www.monicahq.com/nl/blog/change-contact-template/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Je kunt nu het sjabloon van een contact wijzigen — de blog van Monica |
+| Meta description | Zet iemand op een ander sjabloon als zijn of haar pagina niet meer past. Monica laat je eerst zien wat er gaat gebeuren, en niets wat je schreef wordt ooit verwijderd. |
+| H1 | Je kunt nu het sjabloon van een contact wijzigen |
+| OG title | Je kunt nu het sjabloon van een contact wijzigen |
+| OG description | Zet iemand op een ander sjabloon als zijn of haar pagina niet meer past. Monica laat je eerst zien wat er gaat gebeuren, en niets wat je schreef wordt ooit verwijderd. |
+| OG image | https://www.monicahq.com/og/blog-change-contact-template-nl.jpg?v=00088473 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Je kunt nu het sjabloon van een contact wijzigen |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |

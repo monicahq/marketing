@@ -39,6 +39,7 @@ $english = [
     'terms' => ['Monica terms of use', ['Monica service terms'], []],
     'blog' => ['Monica blog', ['Monica release notes', 'Monica product updates'], ['building an open source personal CRM']],
     'signIn' => ['Monica sign in', ['Monica login', 'Monica classic login'], []],
+    'compareDex' => ['Monica vs Dex', ['Dex alternative', 'Dex vs Monica personal CRM'], ['personal CRM with LinkedIn sync', 'self-hosted Dex alternative']],
     'sales' => ['Monica sales', ['contact Monica sales', 'Monica demo'], []],
     'handbook' => ['Monica handbook', ['Monica project principles', 'running Monica'], ['independent open source project']],
 ];

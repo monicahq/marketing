@@ -1,6 +1,6 @@
 # Monica SEO sheets for de
 
-These 155 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
+These 157 sheets reflect the rendered pages in this branch. Regenerate them with `npm run seo:report` after building.
 
 Search targets are editorial choices without search-volume estimates. They are not meta keywords or a requirement to repeat every phrase. Article titles identify their specific topic. See [the editorial policy](README.md).
 
@@ -137,6 +137,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |
 
+## /de/blog/bulk-people-actions/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/blog/bulk-people-actions/ |
+| Canonical | https://www.monicahq.com/de/blog/bulk-people-actions/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Du kannst jetzt mehrere Personen auf einmal löschen oder ihre Kategorie ändern — der Monica-Blog |
+| Meta description | Hake in der Personenliste die gewünschten Personen an und ändere dann ihre Kategorie oder lösche sie in einem Schritt. Monica nennt vor dem Löschen, wer gehen wird, und eine Änderung der Kategorie lässt sich rückgängig machen. |
+| H1 | Du kannst jetzt mehrere Personen auf einmal löschen oder ihre Kategorie ändern |
+| OG title | Du kannst jetzt mehrere Personen auf einmal löschen oder ihre Kategorie ändern |
+| OG description | Hake in der Personenliste die gewünschten Personen an und ändere dann ihre Kategorie oder lösche sie in einem Schritt. Monica nennt vor dem Löschen, wer gehen wird, und eine Änderung der Kategorie lässt sich rückgängig machen. |
+| OG image | https://www.monicahq.com/og/blog-bulk-people-actions-de.jpg?v=fa4cd518 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Du kannst jetzt mehrere Personen auf einmal löschen oder ihre Kategorie ändern |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
 ## /de/blog/chandler-is-in-beta/
 
 | Field | Content |
@@ -152,6 +171,25 @@ Search targets are editorial choices without search-volume estimates. They are n
 | OG image | https://www.monicahq.com/og/blog-chandler-is-in-beta-de.jpg?v=dc94a76c (1200 × 630, card for this page) |
 | Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
 | Primary keyword | Chandler ist in der Beta |
+| Secondary keywords | No additional target |
+| Supporting keywords | No additional target |
+| Copy decision | Retain the article title and summary; social previews use the editorial title. |
+
+## /de/blog/change-contact-template/
+
+| Field | Content |
+| --- | --- |
+| Slug | /de/blog/change-contact-template/ |
+| Canonical | https://www.monicahq.com/de/blog/change-contact-template/ |
+| Search intent | Read about the specific subject of this article |
+| SEO title | Du kannst jetzt die Vorlage eines Kontakts ändern — der Monica-Blog |
+| Meta description | Weise jemandem eine andere Vorlage zu, wenn seine Seite nicht mehr passt. Monica zeigt dir vorher, was passieren wird, und nichts, was du geschrieben hast, wird jemals gelöscht. |
+| H1 | Du kannst jetzt die Vorlage eines Kontakts ändern |
+| OG title | Du kannst jetzt die Vorlage eines Kontakts ändern |
+| OG description | Weise jemandem eine andere Vorlage zu, wenn seine Seite nicht mehr passt. Monica zeigt dir vorher, was passieren wird, und nichts, was du geschrieben hast, wird jemals gelöscht. |
+| OG image | https://www.monicahq.com/og/blog-change-contact-template-de.jpg?v=02f04bc9 (1200 × 630, card for this page) |
+| Schema | Organization, WebSite, WebPage, BreadcrumbList, BlogPosting |
+| Primary keyword | Du kannst jetzt die Vorlage eines Kontakts ändern |
 | Secondary keywords | No additional target |
 | Supporting keywords | No additional target |
 | Copy decision | Retain the article title and summary; social previews use the editorial title. |

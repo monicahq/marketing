@@ -28,6 +28,9 @@ use Symfony\Component\Yaml\Yaml;
 $root = dirname(__DIR__, 2);
 require $root . '/vendor/autoload.php';
 $english = require $root . '/lang/en.php';
+// A page written in some locales only (route keys with a single slug) has no
+// card in the others.
+$routes = (require $root . '/config.php')['routes'];
 $keys = array_keys(array_filter($english['meta'], fn ($meta) => is_array($meta) && isset($meta['ogImage'])));
 
 $cards = [];
@@ -51,6 +54,10 @@ foreach (glob($root . '/lang/*.php') as $file) {
     $dictionary = require $file;
 
     foreach ($keys as $key) {
+        if (isset($routes[$key]) && ! isset($routes[$key][$locale])) {
+            continue;
+        }
+
         $card = $dictionary['meta'][$key]['ogImage'] ?? null;
 
         if (! is_array($card)) {
