@@ -28,10 +28,7 @@
 
 @include('_partials.seo')
 
-{{-- Pirsch: cookieless analytics, nothing stored in the browser. Described in the privacy policy. Production builds only, so local work never counts as a visit. --}}
-@if ($page->production)
-<script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="lTlFdjRHJTDy7p3P9NQRj6prkSbz83tk"></script>
-@endif
+@include('_partials.analytics')
 
 @viteRefresh()
 <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
