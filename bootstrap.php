@@ -210,6 +210,31 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
 });
 
 /**
+ * Writes _redirects to the root of the build, where Cloudflare Pages reads
+ * it, for the same reason _headers is copied rather than kept in source/.
+ *
+ * The features index (/en/features/, /fr/fonctionnalites/) is `pageless`: its
+ * slug only prefixes the feature pages. Search engines still show it, so each
+ * locale's copy is sent with a 301 to that locale's people page, the first of
+ * the feature pages. Both are read from `routes`, so a renamed slug moves the
+ * rule with it. Written with and without the trailing slash, because Pages matches
+ * the path as typed.
+ */
+$events->afterBuild(function (Jigsaw $jigsaw) {
+    $routes = $jigsaw->getConfig('routes');
+    $lines = ['# Written by bootstrap.php at build time. Do not edit in the build.'];
+
+    foreach ($jigsaw->getConfig('locales') as $locale) {
+        $from = "/{$locale}/{$routes['features'][$locale]}";
+        $to = "/{$locale}/{$routes['people'][$locale]}/";
+        $lines[] = "{$from}/ {$to} 301";
+        $lines[] = "{$from} {$to} 301";
+    }
+
+    file_put_contents($jigsaw->getDestinationPath() . '/_redirects', implode("\n", $lines) . "\n");
+});
+
+/**
  * Writes a Markdown copy of every page the build wrote, from the built HTML,
  * for the pages Jigsaw does not already write one for. After the post files
  * are in place, so it does not write over them, and before the link check,
